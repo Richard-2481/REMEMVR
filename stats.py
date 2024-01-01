@@ -12,3 +12,9 @@ def plot_histogram(df):
             plt.xlabel(column)
             plt.ylabel('Frequency')
             plt.show()
+def plot_scatterplot(df, x_column, y_column):
+    plt.scatter(df[x_column], df[y_column])
+    plt.title(f'Scatterplot of {y_column} vs {x_column}')
+    plt.xlabel(x_column)
+    plt.ylabel(y_column)
+    plt.show()

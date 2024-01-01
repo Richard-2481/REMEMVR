@@ -20,9 +20,10 @@ def main():
     query = "/load age sex education RAVLT_sum_of_trials"
     data_df = get_data(query, data_df)
     data_df.to_csv("data.csv", index=False)  # Save dataframe to CSV
-    from stats import descriptive_analysis, plot_histogram
+    from stats import descriptive_analysis, plot_histogram, plot_scatterplot
     descriptive_analysis(data_df)
     plot_histogram(data_df)
+    plot_scatterplot(data_df, 'age', 'REMEMVR')
 
     # query = "/add education vr_experience"
     # data_df = get_data(query, data_df)
