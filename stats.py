@@ -16,7 +16,7 @@ import numpy as np
 import seaborn as sns
 
 def plot_scatterplot(df, x_column, y_column):
-    sns.regplot(x=df[x_column], y=df[y_column])
+    sns.scatterplot(x=df[x_column], y=df[y_column], hue=df['education'])
     plt.title(f'Scatterplot of {y_column} vs {x_column} with Regression Line')
     plt.xlabel(x_column)
     plt.ylabel(y_column)
