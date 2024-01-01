@@ -23,7 +23,7 @@ def main():
     from stats_descriptive import descriptive_analysis
     from stats_histogram import plot_histogram
     descriptive_analysis(data_df)
-    plot_histogram(data_df, 'age')
+    plot_histogram(data_df)
 
     # query = "/add education vr_experience"
     # data_df = get_data(query, data_df)
