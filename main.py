@@ -21,7 +21,9 @@ def main():
     data_df = get_data(query, data_df)
     data_df.to_csv("data.csv", index=False)  # Save dataframe to CSV
     from stats_descriptive import descriptive_analysis
+    from stats_histogram import plot_histogram
     descriptive_analysis(data_df)
+    plot_histogram(data_df, 'age')
 
     # query = "/add education vr_experience"
     # data_df = get_data(query, data_df)
