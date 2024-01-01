@@ -20,7 +20,8 @@ def main():
     query = "/load age sex education RAVLT_sum_of_trials"
     data_df = get_data(query, data_df)
     data_df.to_csv("data.csv", index=False)  # Save dataframe to CSV
-    print(data_df)
+    from stats_descriptive import descriptive_analysis
+    descriptive_analysis(data_df)
 
     # query = "/add education vr_experience"
     # data_df = get_data(query, data_df)
