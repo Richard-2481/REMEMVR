@@ -1,12 +1,5 @@
 [
     {
-        "draw": 0,
-        "name": "",
-        "plot_type": "",
-        "xyz": ["", "", ""]
-    },
-
-    {
         "plot_type": "histogram",
         "name": "Age and Sex Distribution",
         "xyz": ["age", "sex", 10],
@@ -44,6 +37,54 @@
             "range": [4, 10],
             "labels": [4, 5, 6, 7, 8, 9, 10]
         },
+        "draw": 1
+    },
+    {
+        "plot_type": "scatter",
+        "name": "Depression vs Age",
+        "xyz": ["age", "depression", "sex"],
+        "labels": ["Age", "DASS Depression Score", "Sex", "Female", "Male"],
+        "line": 1,
+        "draw": 1
+    },
+    {
+        "plot_type": "scatter",
+        "name": "Anxiety vs Age",
+        "xyz": ["age", "anxiety", "sex"],
+        "labels": ["Age", "DASS Anxiety Score", "Sex", "Female", "Male"],
+        "line": 1,
+        "draw": 1
+    },
+    {
+        "plot_type": "scatter",
+        "name": "Stress vs Age",
+        "xyz": ["age", "stress", "sex"],
+        "labels": ["Age", "DASS Stress Score", "Sex", "Female", "Male"],
+        "line": 1,
+        "draw": 1
+    },
+    {
+        "plot_type": "scatter",
+        "name": "Depression vs Anxiety",
+        "xyz": ["depression", "anxiety", "sex"],
+        "labels": ["DASS Depression Score", "DASS Anxiety Score", "Sex", "Female", "Male"],
+        "line": 1,
+        "draw": 1
+    },
+    {
+        "plot_type": "scatter",
+        "name": "Depression vs Stress",
+        "xyz": ["depression", "stress", "sex"],
+        "labels": ["DASS Depression Score", "DASS Stress Score", "Sex", "Female", "Male"],
+        "line": 1,
+        "draw": 1
+    },
+    {
+        "plot_type": "scatter",
+        "name": "Anxiety vs Stress",
+        "xyz": ["anxiety", "stress", "sex"],
+        "labels": ["DASS Anxiety Score", "DASS Stress Score", "Sex", "Female", "Male"],
+        "line": 1,
         "draw": 1
     },
 
