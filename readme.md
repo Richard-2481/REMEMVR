@@ -1,4 +1,7 @@
 To do:
 
-Create readme file [x]
+
+
+Create readme file [Done!]
+
 Make it helpful [ ]
