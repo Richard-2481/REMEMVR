@@ -1,0 +1,222 @@
+[
+    {
+        "draw": 0,
+        "name": "",
+        "plot_type": "",
+        "xyz": ["", "", ""]
+    },
+
+    {
+        "plot_type": "histogram",
+        "name": "Age and Sex Distribution",
+        "xyz": ["age", "sex", 10],
+        "labels": ["Age", "Sex", "Female", "Male"],
+        "draw": 1
+    },
+    {
+        "plot_type": "histogram",
+        "name": "Years of Education and Sex Distribution",
+        "xyz": ["education", "sex", 9],
+        "labels": ["Years of Education", "Sex", "Female", "Male"],
+        "xaxis": {
+            "range": [1, 9],
+            "labels": [10, 11, 12, 13, 14, 15, 16, 17, "18+"]
+        },
+        "draw": 1
+    },
+    {
+        "plot_type": "histogram",
+        "name": "VR Experience and Sex Distribution",
+        "xyz": ["vr_experience", "sex", 5],
+        "labels": ["Hours of VR Use", "Sex", "Female", "Male"],
+        "xaxis": {
+            "range": [0, 4],
+            "labels": ["None", "0-1", "1-10", "10-50", "50+"]
+        },
+        "draw": 1
+    },
+    {
+        "plot_type": "histogram",
+        "name": "Typical Sleep and Sex Distribution",
+        "xyz": ["typical_sleep", "sex", 7],
+        "labels": ["Hours", "Sex", "Female", "Male"],
+        "xaxis": {
+            "range": [4, 10],
+            "labels": [4, 5, 6, 7, 8, 9, 10]
+        },
+        "draw": 1
+    },
+
+
+
+
+
+
+
+    {
+        "draw": 0,
+        "name": "bvmt vs age",
+        "plot_type": "scatter",
+        "xyz": ["age", "BVMT_total_recall"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "bvmt vs education",
+        "plot_type": "scatter",
+        "xyz": ["education", "BVMT_total_recall"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "rpm vs age",
+        "plot_type": "scatter",
+        "xyz": ["age", "RPM_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "rpm vs education",
+        "plot_type": "scatter",
+        "xyz": ["education", "RPM_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "rpm_score vs rpm_time",
+        "plot_type": "scatter",
+        "xyz": ["RPM_time", "RPM_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "nart vs age",
+        "plot_type": "scatter",
+        "xyz": ["age", "NART_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "nart vs education",
+        "plot_type": "scatter",
+        "xyz": ["education", "NART_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt1",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_trial_1_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_trial_2_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_trial_3_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_trial_4_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_trial_5_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_trial_distraction_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_trial_free_recall_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_trial_delayed_recall_score"],
+        "line": 1,
+        "residuals": 0
+    },
+    {
+        "draw": 0,
+        "name": "age v ravlt",
+        "plot_type": "scatter",
+        "xyz": ["age", "RAVLT_sum_of_trials"],
+        "line": 1,
+        "residuals": 0
+    },
+
+    
+    {
+        "draw": 0,
+        "name": "age v sex",
+        "plot_type": "histogram",
+        "xyz": ["age", "sex", 10]
+    },
+    {
+        "draw": 0,
+        "name": "education v sex",
+        "plot_type": "histogram",
+        "xyz": ["education", "sex", 10]
+    },
+    {
+        "draw": 0,
+        "name": "vr_exp v sex",
+        "plot_type": "histogram",
+        "xyz": ["vr_experience", "sex", 5]
+    },
+    {
+        "draw": 0,
+        "name": "depression v age v sex",
+        "plot_type": "scatter",
+        "xyz": ["age", "depression", "sex"]
+    },
+    {
+        "draw": 0,
+        "name": "anxiety v age v sex",
+        "plot_type": "scatter",
+        "xyz": ["age", "anxiety", "sex"]
+    },
+    {
+        "draw": 0,
+        "name": "stress v age v sex",
+        "plot_type": "scatter",
+        "xyz": ["age", "stress", "sex"]
+    }
+]

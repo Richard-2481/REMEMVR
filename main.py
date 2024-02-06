@@ -1,39 +1,86 @@
-import data_loader
+import data
+import plot
 import pandas as pd
+import json
 
-def get_data(query, data_df):
+def startup():
+    print("Loading Master Data...", end = "", flush=True)
+    master_df = pd.read_excel('data/master_data_clean.xlsx')
+    print(" Done")
+    # master_df = []
+
+    uid_list = [
+    'A010', 'A011', 'A012', 'A013', 'A014', 'A015', 'A016', 'A017', 'A018', 'A019',
+    'A020', 'A021', 'A022', 'A023', 'A024', 'A025', 'A026', 'A027', 'A028', 'A029',
+    'A030', 'A031', 'A032', 'A033', 'A034', 'A035', 'A036', 'A037', 'A038', 'A039',
+    'A040', 'A041', 'A042', 'A043', 'A044', 'A045', 'A046', 'A047', 'A048', 'A049',
+    'A050', 'A051', 'A052', 'A053', 'A054', 'A055', 'A056', 'A057', 'A058', 'A059',
+    'A060', 'A061', 'A062', 'A063', 'A064', 'A065', 'A066', 'A067', 'A068', 'A069',
+    'A070', 'A071', 'A072', 'A073', 'A074', 'A075', 'A076', 'A077', 'A078', 'A079',
+    'A080', 'A081', 'A082', 'A083', 'A084', 'A085', 'A086', 'A087', 'A088', 'A089',
+    'A090', 'A091', 'A092', 'A093', 'A094', 'A095', 'A096', 'A097', 'A098', 'A099',
+    'A100', 'A101', 'A102', 'A103', 'A104', 'A105', 'A106', 'A107', 'A108', 'A109'
+    ]
+
+    working_df = pd.DataFrame(uid_list, columns=['UID'])
+
+    with open('data/variable_list.json', 'r') as file:
+        variables_json = json.load(file)
+
+    # Add the variables from plot list to the working dataframe
+    print("Creating working dataframe", end = "", flush=True)
+
+    with open('data/plots.json', 'r') as file:
+        plots_json = json.load(file)
+
+    variable_list = []
+    for figure in plots_json:
+        if figure["draw"] == 1:
+            for variable in figure["xyz"]:
+                variable_list.append(variable)
+
+    # Remove duplicates from variable_list
+    variable_list = list(set(variable_list))
     
-    variables_list = query.split(" ")[1:]
-    search_results_df = data_loader.load(variables_list)
+    for variable in variables_json:
+        if variable["name"] in variable_list:
+            working_df = data.add(variable, working_df, master_df)
+            print(".", end = "", flush=True)
 
-    if query.startswith("/load"):
-        return search_results_df        
-        
-    if query.startswith("/add"):
-        merged_df = pd.merge(data_df, search_results_df, on='UID', how='left')
-        return merged_df
+    print(" Done")
+
+    return master_df, working_df, plots_json
 
 def main():
+
+    # Start the program by loading the master dataset and preparing our working dataframe and loading variables in JSON format
+    master_df, working_df, plots_json = startup()
+
+    # Now we plot our variables
     
-    data_df = pd.DataFrame()
-    
-    query = "/load age sex education RAVLT_sum_of_trials"
-    data_df = get_data(query, data_df)
-    data_df.to_csv("data.csv", index=False)  # Save dataframe to CSV
-    from stats import descriptive_analysis, plot_histogram, plot_scatterplot
-    descriptive_analysis(data_df)
-    plot_histogram(data_df)
-    plot_scatterplot(data_df, 'age', 'REMEMVR')
-
-    # query = "/add education vr_experience"
-    # data_df = get_data(query, data_df)
-    # data_df.to_csv("data.csv", index=False)  # Save dataframe to CSV
-    # print(data_df)
-
-    # query = "/add RAVLT_sum_of_trials"
-    # data_df = get_data(query, data_df)
-    # data_df.to_csv("data.csv", index=False)  # Save dataframe to CSV
-    # print(data_df)
-
+    for figure in plots_json:
+        if figure["draw"] == 1:
+            plot.plot(working_df, figure)
+                                
 if __name__ == "__main__":
     main()
+
+    # Add demographic variables to the working dataframe
+    # for variable in variables_json:
+    #     if variable["group"] == "demographics":
+    #         working_df = data.add(variable, working_df, master_df)
+    #         # plot.box(working_df[[variable["name"]]])
+    #         plot.histogram(working_df[[variable["name"]]])
+    
+    # Add cognitive testing variables to the working dataframe
+    # for variable in variables_json:
+    #     if variable["group"] == "cognitive":
+    #         working_df = data.add(variable, working_df, master_df)
+    #         plot.box(working_df[[variable["name"]]])
+
+
+    # Example of calling a specific variable
+    # variable_list = ["age", "sex"]
+    # for variable in variables_json:
+    #     if variable["name"] in variable_list:
+    #         print(variable["regex"])

@@ -1,0 +1,202 @@
+{
+    "age": {
+        "regex": ["DEM-X-Age"],
+        "func": "sum",
+        "text": "the participant's age in years"
+    },
+    "sex": {
+        "regex": ["DEM-X-Sex"],
+        "func": "sum",
+        "text": "the participant's gender dummy coded (female=0 male=1)"
+    },
+    "education": {
+        "regex": ["DEM-X-Education"],
+        "func": "sum",
+        "text": "the participant's education in years(0=High school (Year 9 or lower), 1=High school (Year 10), 2=High school (Year 12), 3=Certificate 1 & 2, 4=Certificate 3 & 4, 5=Diploma / Advanced Diploma, 6=Bachelor’s Degree, 7=Graduate Certificate / Diploma, 8=Master’s Degree, 9=Doctoral Degree)"
+    },
+    "vr_experience": {
+        "regex": ["DEM-X-VR_Exp"],
+        "func": "sum",
+        "text": "the participant's experience with virtual reality (0=Never, 1=Less than 1 hour, 2=1 – 10 hours, 3=10 – 50 hours, 4=More than 50 hours)"
+    },
+    "typical_sleep": {
+        "regex": ["DEM-X-SLEEP"],
+        "func": "sum",
+        "text": "the participant's typical sleep duration in hours"
+    },
+    "depression": {
+        "regex": ["DEM-X-DASS_Dep"],
+        "func": "sum",
+        "text": "the participant's depression score"
+    },
+    "anxiety": {
+        "regex": ["DEM-X-DASS_Anx"],
+        "func": "sum",
+        "text": "the participant's anxiety score"
+    },
+    "stress": {
+        "regex": ["DEM-X-DASS_Str"],
+        "func": "sum",
+        "text": "the participant's stress score"
+    },
+    "NART_score": {
+        "regex": ["COG-X-NAR-Scor"],
+        "func": "sum",
+        "text": "the participant's NART score, higher = better"
+    },
+    "NART_time": {
+        "regex": ["COG-X-NAR-Time"],
+        "func": "sum",
+        "text": "the participant's NART time in seconds"
+    },
+    "RPM_score": {
+        "regex": ["COG-X-RPM-Scor"],
+        "func": "sum",
+        "text": "the participant's Raven's Progressive Matrices score, higher = better"
+    },
+    "RPM_time": {
+        "regex": ["COG-X-RPM-Time"],
+        "func": "sum",
+        "text": "the participant's Raven's Progressive Matrices time in seconds"
+    },
+    "BVMT_total_recall": {
+        "regex": ["COG-X-BVM-TotR"],
+        "func": "sum",
+        "text": "the participant's total recall score for the Brief Visuospatial Memory Test, higher = better"
+    },
+    "BVMT_learning": {
+        "regex": ["COG-X-BVM-Lear"],
+        "func": "sum",
+        "text": "the participant's learning score for the Brief Visuospatial Memory Test, higher = better"
+    },
+    "BVMT_percent_recalled": {
+        "regex": ["COG-X-BVM-PerR"],
+        "func": "sum",
+        "text": "the participant's percent recalled score for the Brief Visuospatial Memory Test, higher = better"
+    },
+    "BVMT_recognition_hits": {
+        "regex": ["COG-X-BVM-ReHi"],
+        "func": "sum",
+        "text": "the participant's recognition hits score for the Brief Visuospatial Memory Test, higher = better"
+    },
+    "BVMT_recognition_false_alarms": {
+        "regex": ["COG-X-BVM-ReFA"],
+        "func": "sum",
+        "text": "the participant's recognition false alarms score for the Brief Visuospatial Memory Test, lower = better"
+    },
+    "BVMT_recognition_discrimination_index": {
+        "regex": ["COG-X-BVM-ReDI"],
+        "func": "sum",
+        "text": "the participant's recognition discrimination index score for the Brief Visuospatial Memory Test, higher = better"
+    },
+    "BVMT_recognition_response_bias": {
+        "regex": ["COG-X-BVM-ReRB"],
+        "func": "sum",
+        "text": "the participant's response bias score for the Brief Visuospatial Memory Test, higher = better"
+    },
+    "RAVLT_trial_1_score": {
+        "regex": ["COG-X-RAV-T1Sc"],
+        "func": "sum",
+        "text": "the participant's trial 1 score for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_1_time": {
+        "regex": ["COG-X-RAV-T1Ti"],
+        "func": "sum",
+        "text": "the participant's trial 1 time for the Rey Auditory Verbal Learning Test in seconds"
+    },
+    "RAVLT_trial_2_score": {
+        "regex": ["COG-X-RAV-T2Sc"],
+        "func": "sum",
+        "text": "the participant's trial 2 score for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_2_time": {
+        "regex": ["COG-X-RAV-T2Ti"],
+        "func": "sum",
+        "text": "the participant's trial 2 time for the Rey Auditory Verbal Learning Test in seconds"
+    },
+    "RAVLT_trial_3_score": {
+        "regex": ["COG-X-RAV-T3Sc"],
+        "func": "sum",
+        "text": "the participant's trial 3 score for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_3_time": {
+        "regex": ["COG-X-RAV-T3Ti"],
+        "func": "sum",
+        "text": "the participant's trial 3 time for the Rey Auditory Verbal Learning Test in seconds"
+    },
+    "RAVLT_trial_4_score": {
+        "regex": ["COG-X-RAV-T4Sc"],
+        "func": "sum",
+        "text": "the participant's trial 4 score for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_4_time": {
+        "regex": ["COG-X-RAV-T4Ti"],
+        "func": "sum",
+        "text": "the participant's trial 4 time for the Rey Auditory Verbal Learning Test in seconds"
+    },
+    "RAVLT_trial_5_score": {
+        "regex": ["COG-X-RAV-T5Sc"],
+        "func": "sum",
+        "text": "the participant's trial 5 score for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_5_time": {
+        "regex": ["COG-X-RAV-T5Ti"],
+        "func": "sum",
+        "text": "the participant's trial 5 time for the Rey Auditory Verbal Learning Test in seconds"
+    },
+    "RAVLT_trial_distraction_score": {
+        "regex": ["COG-X-RAV-TDSc"],
+        "func": "sum",
+        "text": "the participant's distraction trial score for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_distraction_time": {
+        "regex": ["COG-X-RAV-TDTi"],
+        "func": "sum",
+        "text": "the participant's distraction trial time for the Rey Auditory Verbal Learning Test in seconds"
+    },
+    "RAVLT_trial_free_recall_score": {
+        "regex": ["COG-X-RAV-FRSc"],
+        "func": "sum",
+        "text": "the participant's free recall trial score for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_free_recall_time": {
+        "regex": ["COG-X-RAV-FRTi"],
+        "func": "sum",
+        "text": "the participant's free recall trial time for the Rey Auditory Verbal Learning Test in seconds"
+    },
+    "RAVLT_delayed_recall_duration": {
+        "regex": ["COG-X-RAV-DRDe"],
+        "func": "sum",
+        "text": "the length of time before the participant's delayed recall trial in the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_delayed_recall_score": {
+        "regex": ["COG-X-RAV-DRSc"],
+        "func": "sum",
+        "text": "the participant's delayed recall trial score for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_delayed_recall_time": {
+        "regex": ["COG-X-RAV-DRTi"],
+        "func": "sum",
+        "text": "the participant's delayed recall trial time for the Rey Auditory Verbal Learning Test in seconds"
+    },
+    "RAVLT_recognition_hits": {
+        "regex": ["COG-X-RAV-RXXA"],
+        "func": "sum",
+        "text": "the participant's recognition hits for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_recognition_misses": {
+        "regex": ["COG-X-RAV-RXSA", "COG-X-RAV-RXPA", "COG-X-RAV-RSPA", "COG-X-RAV-RXXB", "COG-X-RAV-RXPB", "COG-X-RAV-RXSB", "COG-X-RAV-RSPB"],
+        "func": "sum",
+        "text": "the participant's recognition false alarms for the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_trial_12345_total": {
+        "regex": ["COG-X-RAV-T1Sc", "COG-X-RAV-T2Sc", "COG-X-RAV-T3Sc", "COG-X-RAV-T4Sc", "COG-X-RAV-T5Sc"],
+        "func": "sum",
+        "text": "the participant's total score for the first 5 trials of the Rey Auditory Verbal Learning Test, higher = better"
+    },
+    "RAVLT_sum_of_trials": {
+        "regex": ["COG-X-RAV-T1Sc", "COG-X-RAV-T2Sc", "COG-X-RAV-T3Sc", "COG-X-RAV-T4Sc", "COG-X-RAV-T5Sc", "COG-X-RAV-TDSc", "COG-X-RAV-FRSc", "COG-X-RAV-DRSc"],
+        "func": "sum",
+        "text": "the participant's total score for all trials of the Rey Auditory Verbal Learning Test, higher = better"
+    }
+}
