@@ -28,7 +28,7 @@ def pretty_print(name: str, descriptives: dict[dict]):
     print(print_str)
 
 
-def get_descriptives(scores: dict):
+def get_descriptives(scores: dict) -> dict[str,dict]:
     """Taking a dictionary of subscores in the form `{subscore1: [list,of,values], subscore2: [list,of,values],...}`
     returns a dictionary with the same keys but each value is a nested dict of relevant descriptive variables."""
     descriptives = {}

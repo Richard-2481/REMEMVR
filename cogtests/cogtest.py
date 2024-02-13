@@ -1,13 +1,14 @@
+from typing import Literal
 import pandas as pd
 import os, sys, inspect
 import json
 
-from RAVLT import RAVLT, RAVLT_desc
-from NART  import NART,  NART_desc
-from BVMT  import BVMT,  BVMT_desc
-from RPM   import RPM,   RPM_desc
+from cogtests.RAVLT import RAVLT
+from cogtests.NART  import NART
+from cogtests.BVMT  import BVMT
+from cogtests.RPM   import RPM
 
-from helpers import Demographics
+from cogtests.helpers import Demographics, get_descriptives, pretty_print
 
 
 def __init__():
@@ -41,22 +42,16 @@ def __init__():
         pd.to_pickle(working_df, "./cogtests/data/working_df.db")
 
         print("Saved working DataFrame!")
+    
+
+def cognitive_test_comparisons(print_out: list|str|None = None):
+    """Run the comparison tests for each cognitive test.\n
+    `print_out` may be None or any selection of: `"descriptives", "output", "unlikely"`."""
+    RAVLT(working_df, print_out, include_secondary=True)
+    BVMT( working_df, print_out)
+    NART( working_df, print_out)
+    RPM(  working_df, print_out)
 
 
 # Run init on import
 __init__()
-
-
-# Demographics(working_df)
-        
-# RAVLT_desc(working_df)
-print(RAVLT(working_df))
-
-# NART_desc(working_df)
-print(NART(working_df))
-
-# BVMT_desc(working_df)
-print(BVMT(working_df))
-
-# RPM_desc(working_df)
-print(RPM(working_df))

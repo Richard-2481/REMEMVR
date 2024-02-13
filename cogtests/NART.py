@@ -1,7 +1,12 @@
 import pandas as pd
-from helpers import get_descriptives, pretty_print
+from cogtests.helpers import get_descriptives, pretty_print
 
-def NART(working_df: pd.DataFrame):
+
+def NART(working_df: pd.DataFrame, print_out: list|str|None = None):
+    NART_Ts = NART_T_Scores(working_df)
+
+
+def NART_T_Scores(working_df: pd.DataFrame):
     pass
 
 
