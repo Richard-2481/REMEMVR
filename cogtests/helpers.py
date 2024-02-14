@@ -1,4 +1,5 @@
 import pandas as pd
+from math import sqrt
 from scipy import stats as st
 
 def Demographics(working_df: pd.DataFrame):
@@ -43,3 +44,67 @@ def get_descriptives(scores: dict) -> dict[str,dict]:
         descriptives[scorename]["stdev"] = round(score_desc.variance.__float__()**0.5, 2)
 
     return descriptives
+
+
+def education_years(education: int) -> int:
+    """Convert education score (1-9) into the 'number of years' format (9-20)."""
+    education_convert = {
+        # High school (Year 9 or lower):
+        0: 9,
+        # High school (Year 10):
+        1: 10,
+        # High school (Year 12):
+        2: 12,
+        # Certificate 1 & 2:
+        3: 12,
+        # Certificate 3 & 4:
+        4: 12,
+        # Diploma or Advanced Diploma:
+        5: 14,
+        # Bachelor's Degree:
+        6: 16,
+        # Graduate Certificate or Graduate Diploma:
+        7: 17,
+        # Master's Degree:
+        8: 18,
+        # Doctoral Degree:
+        9: 20}
+    
+    return education_convert[education]
+
+
+def calc_group_t(sample_scores, num_comparisons, pop_mean, pop_sd, pop_n) -> tuple[float, float, float]:
+    desc = get_descriptives({"score": sample_scores})["score"]
+
+    # Get values for Welch's T-Test:
+    # Mean
+    mean1 = desc["mean"]
+    mean2 = pop_mean
+
+    # Sample size
+    n1 = len(sample_scores)
+    n2 = pop_n
+
+    # Variance
+    var1 = desc["stdev"]**2
+    var2 = pop_sd**2
+
+    # Scaled variance
+    p1 = (var1**2)/n1
+    p2 = (var2**2)/n2
+    
+    # Perform Welch's T-Test comparing the demographic-adjusted
+    # T-Score distributions found in this study against the expected
+    # population demographic-adjusted T-Score distributions
+    welch_t = abs((mean1-mean2)/sqrt((var1/n1)+(var2/n2)))
+
+    # Calculate degrees of freedom
+    welch_df = ((p1+p2)**2)/(((p1**2)/(n1-1))+((p2**2)/(n2-1)))
+
+    # Calculate probability of this T-Score assuming null hypothesis
+    p_value = st.t.sf(welch_t, welch_df)
+
+    # Adjust p-value for multiple comparisons using simple Bonferroni correction
+    adjusted_p_value = min(0.999999,p_value*num_comparisons)
+
+    return welch_t, welch_df, adjusted_p_value

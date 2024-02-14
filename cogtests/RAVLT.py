@@ -1,11 +1,15 @@
 import pandas as pd
-from math import sqrt
 from scipy import stats as st
-from cogtests.helpers import get_descriptives, pretty_print
+from cogtests.helpers import get_descriptives, pretty_print, education_years, calc_group_t
+
+## Normative data acquired from: https://doi.org/10.1017%2FS1355617720000752
 
 
 def RAVLT(working_df: pd.DataFrame, print_out: list|str|None = None, include_secondary = False):
+    """Convert the sample of RAVLT scores into demographic-adjusted T-Scores then compare the
+    distribution of T-Scores against the population distribution."""
     print("Calculating RAVLT T-Scores...")
+
     if print_out and ("descriptives" in print_out):
         RAVLT_desc(working_df)
 
@@ -15,7 +19,11 @@ def RAVLT(working_df: pd.DataFrame, print_out: list|str|None = None, include_sec
 
     for name, t_scores in RAVLT_Participant_Ts.items():
         # Calculate group t-value for this scoring variable
-        welch_t, welch_df, adjusted_p_value = RAVLT_calc_group_t(name, t_scores, len(RAVLT_group_Ts))
+        welch_t, welch_df, adjusted_p_value = calc_group_t(t_scores,
+                                                           num_comparisons=len(RAVLT_group_Ts),
+                                                           pop_mean=50,
+                                                           pop_sd=10,
+                                                           pop_n=4428)
 
         # Add to group-level dataframe
         RAVLT_group_Ts.loc[name] = [welch_t, welch_df, adjusted_p_value]
@@ -47,7 +55,7 @@ def RAVLT_Participant_T_Scores(working_df: pd.DataFrame, include_secondary = Fal
     t_scores = pd.DataFrame(columns=score_names)
 
     for _, participant in working_df.iterrows():
-        participant["education"] = RAVLT_education(participant["education"])
+        participant["education"] = education_years(participant["education"])
 
         scaled_scores = RAVLT_scaled_scores(participant, score_names, include_secondary)
 
@@ -91,33 +99,6 @@ def str_to_range(string: str):
         # String is a single integer
         val = int(float(string))
         return range(val, val + 1)
-    
-
-def RAVLT_education(education: int) -> int:
-    """Convert education score (1-9) into the 'number of years' format specified by the RAVLT formula (9-20)"""
-    education_convert = {
-        # High school (Year 9 or lower):
-        0: 9,
-        # High school (Year 10):
-        1: 10,
-        # High school (Year 12):
-        2: 12,
-        # Certificate 1 & 2:
-        3: 12,
-        # Certificate 3 & 4:
-        4: 12,
-        # Diploma or Advanced Diploma:
-        5: 14,
-        # Bachelor's Degree:
-        6: 16,
-        # Graduate Certificate or Graduate Diploma:
-        7: 17,
-        # Master's Degree:
-        8: 18,
-        # Doctoral Degree:
-        9: 20}
-    
-    return education_convert[education]
     
 
 def RAVLT_scaled_scores(participant, score_names, include_secondary = False):
@@ -183,40 +164,3 @@ def RAVLT_calc_t_scores(scaled_scores, participant, score_names):
     t_scores = pd.Series({name: t_score(name) for name in score_names}, dtype=int)
 
     return t_scores
-
-
-def RAVLT_calc_group_t(name, t_scores, num_comparisons) -> tuple[float, float, float]:
-    desc = get_descriptives({name: t_scores})[name]
-
-    # Get values for Welch's T-Test:
-    # Mean
-    mean1 = desc["mean"]
-    mean2 = 50
-
-    # Sample size
-    n1 = len(t_scores)
-    n2 = 4428
-
-    # Variance
-    var1 = desc["stdev"]**2
-    var2 = 100
-
-    # Scaled variance
-    p1 = (var1**2)/n1
-    p2 = (var2**2)/n2
-    
-    # Perform Welch's T-Test comparing the demographic-adjusted
-    # T-Score distributions found in this study against the expected
-    # population demographic-adjusted T-Score distributions
-    welch_t = abs((mean1-mean2)/sqrt((var1/n1)+(var2/n2)))
-
-    # Calculate degrees of freedom
-    welch_df = ((p1+p2)**2)/(((p1**2)/(n1-1))+((p2**2)/(n2-1)))
-
-    # Calculate probability of this T-Score assuming null hypothesis
-    p_value = st.t.sf(welch_t, welch_df)
-
-    # Adjust p-value for multiple comparisons using simple Bonferroni correction
-    adjusted_p_value = min(0.999999,p_value*num_comparisons)
-
-    return welch_t, welch_df, adjusted_p_value

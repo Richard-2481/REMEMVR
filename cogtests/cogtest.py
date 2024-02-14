@@ -47,10 +47,10 @@ def __init__():
 def cognitive_test_comparisons(print_out: list|str|None = None):
     """Run the comparison tests for each cognitive test.\n
     `print_out` may be None or any selection of: `"descriptives", "output", "unlikely"`."""
-    RAVLT(working_df, print_out, include_secondary=True)
-    BVMT( working_df, print_out)
+    # RAVLT(working_df, print_out, include_secondary=True)
+    # BVMT( working_df, print_out)
     NART( working_df, print_out)
-    RPM(  working_df, print_out)
+    # RPM(  working_df, print_out)
 
 
 # Run init on import
