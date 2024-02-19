@@ -84,6 +84,41 @@
         "text": "the participant's Raven's Progressive Matrices time in seconds"
     },
     {
+        "name": "BVMT_trial_1_score",
+        "group": "cognitive",
+        "regex": ["COG-X-BVM-T1Sc"],
+        "func": "sum",
+        "text": "the participant's score for trial 1 of the Brief Visuospatial Memory Test, higher = better"
+    },
+    {
+        "name": "BVMT_trial_2_score",
+        "group": "cognitive",
+        "regex": ["COG-X-BVM-T2Sc"],
+        "func": "sum",
+        "text": "the participant's score for trial 2 of the Brief Visuospatial Memory Test, higher = better"
+    },
+    {
+        "name": "BVMT_trial_3_score",
+        "group": "cognitive",
+        "regex": ["COG-X-BVM-T3Sc"],
+        "func": "sum",
+        "text": "the participant's score for trial 3 of the Brief Visuospatial Memory Test, higher = better"
+    },
+    {
+        "name": "BVMT_total_recall",
+        "group": "cognitive",
+        "regex": ["COG-X-BVM-TotR"],
+        "func": "sum",
+        "text": "the participant's total recall score for the Brief Visuospatial Memory Test, higher = better"
+    },
+    {
+        "name": "BVMT_delayed_recall",
+        "group": "cognitive",
+        "regex": ["COG-X-BVM-TDSc"],
+        "func": "sum",
+        "text": "the participant's score for the delayed recall trial of the Brief Visuospatial Memory Test, higher = better"
+    },
+    {
         "name": "BVMT_total_recall",
         "group": "cognitive",
         "regex": ["COG-X-BVM-TotR"],
@@ -275,7 +310,7 @@
     {
         "name": "RAVLT_sum_of_trials",
         "group": "cognitive",
-        "regex": ["COG-X-RAV-T1Sc", "COG-X-RAV-T2Sc", "COG-X-RAV-T3Sc", "COG-X-RAV-T4Sc", "COG-X-RAV-T5Sc", "COG-X-RAV-TDSc", "COG-X-RAV-FRSc", "COG-X-RAV-DRSc"],
+        "regex": ["COG-X-RAV-T1Sc", "COG-X-RAV-T2Sc", "COG-X-RAV-T3Sc", "COG-X-RAV-T4Sc", "COG-X-RAV-T5Sc", "COG-X-RAV-FRSc", "COG-X-RAV-DRSc"],
         "func": "sum",
         "text": "the participant's total score for all trials of the Rey Auditory Verbal Learning Test, higher = better"
     }

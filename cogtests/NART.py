@@ -33,7 +33,12 @@ def NART(working_df: pd.DataFrame, print_out: list|str|None = None):
         print(NART_group_Ts)
 
     if print_out and ("unlikely" in print_out):
-        print(NART_group_Ts[NART_group_Ts["p-value"]<0.05])
+        unlikely_vals = NART_group_Ts[NART_group_Ts["p-value"]<0.05]
+        if not unlikely_vals.empty:
+            print("Variables with p-values less than 0.05:")
+            print(unlikely_vals)
+        else:
+            print("No p-values less than 0.05 found for the NART tests.")
 
     return NART_group_Ts
 

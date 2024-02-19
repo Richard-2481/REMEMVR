@@ -108,3 +108,23 @@ def calc_group_t(sample_scores, num_comparisons, pop_mean, pop_sd, pop_n) -> tup
     adjusted_p_value = min(0.999999,p_value*num_comparisons)
 
     return welch_t, welch_df, adjusted_p_value
+
+
+def str_to_range(string: str):
+    """Convert a string (e.g. `'1-5'`) or int into a range (e.g. `range(1,6)`)."""
+    string = str(string)
+    if not string:
+        # String is empty
+        return range(0,0)
+    if '-' in string:
+        # String contains range
+        a, b = string.split('-')
+        # Swap m character with minus sign
+        a = a.replace("m","-")
+        b = b.replace("m","-")
+        a, b = int(float(a)), int(float(b))
+        return range(a, b + 1)
+    else:
+        # String is a single integer
+        val = int(float(string))
+        return range(val, val + 1)

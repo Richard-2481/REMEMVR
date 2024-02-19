@@ -1,11 +1,11 @@
 import pandas as pd
 from scipy import stats as st
-from cogtests.helpers import get_descriptives, pretty_print, education_years, calc_group_t
+from cogtests.helpers import get_descriptives, pretty_print, education_years, calc_group_t, str_to_range
 
 ## Normative data acquired from: https://doi.org/10.1017%2FS1355617720000752
 
 
-def RAVLT(working_df: pd.DataFrame, print_out: list|str|None = None, include_secondary = False):
+def RAVLT(working_df: pd.DataFrame, print_out: list|str|None = None, include_secondary = True):
     """Convert the sample of RAVLT scores into demographic-adjusted T-Scores then compare the
     distribution of T-Scores against the population distribution."""
     print("Calculating RAVLT T-Scores...")
@@ -35,7 +35,12 @@ def RAVLT(working_df: pd.DataFrame, print_out: list|str|None = None, include_sec
         print(RAVLT_group_Ts)
 
     if print_out and ("unlikely" in print_out):
-        print(RAVLT_group_Ts[RAVLT_group_Ts["p-value"]<0.05])
+        unlikely_vals = RAVLT_group_Ts[RAVLT_group_Ts["p-value"]<0.05]
+        if not unlikely_vals.empty:
+            print("Variables with p-values less than 0.05:")
+            print(unlikely_vals)
+        else:
+            print("No p-values less than 0.05 found for the RAVLT tests.")
     
     return RAVLT_group_Ts
 
@@ -79,26 +84,6 @@ def RAVLT_desc(working_df: pd.DataFrame):
     desc = get_descriptives(subtest_dict)
     
     pretty_print("RAVLT", desc)
-
-
-def str_to_range(string: str):
-    """Convert a string (e.g. `'1-5'`) or int into a range (e.g. `range(1,6)`)."""
-    string = str(string)
-    if not string:
-        # String is empty
-        return range(0,0)
-    if '-' in string:
-        # String contains range
-        a, b = string.split('-')
-        # Swap m character with minus sign
-        a = a.replace("m","-")
-        b = b.replace("m","-")
-        a, b = int(float(a)), int(float(b))
-        return range(a, b + 1)
-    else:
-        # String is a single integer
-        val = int(float(string))
-        return range(val, val + 1)
     
 
 def RAVLT_scaled_scores(participant, score_names, include_secondary = False):

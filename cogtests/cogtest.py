@@ -1,4 +1,3 @@
-from typing import Literal
 import pandas as pd
 import os, sys, inspect
 import json
@@ -44,12 +43,15 @@ def __init__():
         print("Saved working DataFrame!")
     
 
-def cognitive_test_comparisons(print_out: list|str|None = None):
+def cognitive_test_comparisons(print_out: list|str|None = "all"):
     """Run the comparison tests for each cognitive test.\n
-    `print_out` may be None or any selection of: `"descriptives", "output", "unlikely"`."""
+    `print_out` may be None, "all", or any selection of: `"descriptives", "output", "unlikely"`."""
+    if print_out == "all":
+        print_out = ["descriptives", "output", "unlikely"]
+        
     # RAVLT(working_df, print_out, include_secondary=True)
-    # BVMT( working_df, print_out)
-    NART( working_df, print_out)
+    BVMT( working_df, print_out)
+    # NART( working_df, print_out)
     # RPM(  working_df, print_out)
 
 
