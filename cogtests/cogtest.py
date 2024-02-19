@@ -47,7 +47,7 @@ def cognitive_test_comparisons(print_out: list|str|None = "all"):
     """Run the comparison tests for each cognitive test.\n
     `print_out` may be None, "all", or any selection of: `"descriptives", "output", "unlikely"`."""
     if print_out == "all":
-        print_out = ["descriptives", "output", "unlikely"]
+        print_out = ["descriptives", "output"]
         
     # RAVLT(working_df, print_out, include_secondary=True)
     BVMT( working_df, print_out)
@@ -57,3 +57,5 @@ def cognitive_test_comparisons(print_out: list|str|None = "all"):
 
 # Run init on import
 __init__()
+
+cognitive_test_comparisons()
