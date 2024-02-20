@@ -1,6 +1,7 @@
 import pandas as pd
 from cogtests.helpers import get_descriptives, pretty_print, str_to_range, calc_group_t
 
+## Normative data acquired from: https://doi.org/10.1111/jnp.12308
 
 def RPM(working_df: pd.DataFrame, print_out: list|str|None = None):
     """Compare RPM scores from this sample against population scores."""
