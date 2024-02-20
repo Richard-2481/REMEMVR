@@ -49,13 +49,13 @@ def cognitive_test_comparisons(print_out: list|str|None = "all"):
     if print_out == "all":
         print_out = ["descriptives", "output"]
         
-    # RAVLT(working_df, print_out, include_secondary=True)
+    RAVLT(working_df, print_out, include_secondary=True)
     BVMT( working_df, print_out)
-    # NART( working_df, print_out)
-    # RPM(  working_df, print_out)
+    NART( working_df, print_out)
+    RPM(  working_df, print_out)
 
 
 # Run init on import
 __init__()
 
-cognitive_test_comparisons()
+cognitive_test_comparisons("output")

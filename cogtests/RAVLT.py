@@ -8,7 +8,7 @@ from cogtests.helpers import get_descriptives, pretty_print, education_years, ca
 def RAVLT(working_df: pd.DataFrame, print_out: list|str|None = None, include_secondary = True):
     """Convert the sample of RAVLT scores into demographic-adjusted T-Scores then compare the
     distribution of T-Scores against the population distribution."""
-    print("Calculating RAVLT T-Scores...")
+    print("\nCalculating RAVLT T-Scores...")
 
     if print_out and ("descriptives" in print_out):
         RAVLT_desc(working_df)

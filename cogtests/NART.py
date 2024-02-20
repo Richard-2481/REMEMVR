@@ -5,7 +5,8 @@ from cogtests.helpers import get_descriptives, pretty_print, education_years, ca
 
 
 def NART(working_df: pd.DataFrame, print_out: list|str|None = None):
-    print("Calculating NART T-Scores...")
+    """Compare  NART scores from this sample against population scores."""
+    print("\nCalculating NART T-Scores...")
     
     if print_out and ("descriptives" in print_out):
         NART_desc(working_df)

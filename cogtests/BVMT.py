@@ -6,7 +6,8 @@ from cogtests.helpers import get_descriptives, pretty_print, education_years, ca
 
 
 def BVMT(working_df: pd.DataFrame, print_out: list|str|None = None):
-    print("Calculating BVMT T-Scores...")
+    """Compare BVMT scores from this sample against population scores."""
+    print("\nCalculating BVMT T-Scores...")
     
     if print_out and ("descriptives" in print_out):
         BVMT_desc(working_df)
