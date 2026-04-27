@@ -1,0 +1,21 @@
+title: "REMEMVR Supplementary Materials"
+description: "Supplementary materials for the REMEMVR longitudinal episodic memory assessment in virtual reality"
+remote_theme: just-the-docs/just-the-docs
+
+url: "https://richard-2481.github.io"
+baseurl: "/REMEMVR"
+
+aux_links:
+  "View on GitHub":
+    - "https://github.com/Richard-2481/REMEMVR"
+
+nav_sort: order
+search_enabled: true
+color_scheme: light
+back_to_top: true
+back_to_top_text: "Back to top"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

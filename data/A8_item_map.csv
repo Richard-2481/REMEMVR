@@ -1,0 +1,25 @@
+room,item,start_location,start_label,end_location,end_label
+Bathroom,Ducky,in,B,in,D
+Bathroom,TV Remote,out,2,in,B
+Bathroom,T Brushes,out,3,out,4
+Bathroom,Book,in,C,out,3
+Bathroom,Hammer,in,A,in,C
+Bathroom,Glasses,out,1,in,A
+Bedroom,Alarm Clock,in,D,out,4
+Bedroom,Magazine,in,C,in,D
+Bedroom,Picture Frame,out,1,in,C
+Bedroom,Frying Pan,in,B,in,A
+Bedroom,Phone,out,4,out,2
+Bedroom,Knife,out,3,in,B
+Kitchen,Letters,out,2,in,C
+Kitchen,Cutlery,in,A,out,2
+Kitchen,Toaster,out,4,in,A
+Kitchen,Motor Oil,out,1,out,3
+Kitchen,Keys,in,D,in,B
+Kitchen,Toilet Paper,in,B,in,D
+Living Room,Drill,in,D,in,B
+Living Room,Sleep Mask,out,4,out,1
+Living Room,Lamp,out,2,in,D
+Living Room,Handbag,in,A,out,2
+Living Room,Laptop,in,C,in,A
+Living Room,Newspaper,out,3,in,C

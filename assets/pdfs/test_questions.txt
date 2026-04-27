@@ -1,0 +1,320 @@
+Section	Item No	Quiz ID	Sheet ID	Question										
+1	1	2571	Slp-User ID											
+	2	2574	Slp-Date											
+	3	2577	Slp-Time											
+	4	2580	Slp-Counter											
+	5	2583	Slp-Room											
+	6	2592	Slp-Hours	How many hours did you sleep last night?										
+	7	2596	Slp-Wake	What time did you wake up today?										
+	8	2598	Slp-Qual	How would you rate the quality of your sleep last night compared to a typical night's sleep?										
+	9	2601	Slp-Tired	How tired do you feel right now?										
+	10	2602	Slp-Caff	Have you consumed any caffeine or stimulants in the last six hours?										
+	11	4120	Slp-CaffTyp	Which stimulant and how many servings?										
+	12	4119	Slp-Tox	Have you consumed any intoxicating substances in the last six hours?										
+	13	2410	Slp-ToxTyp	Which substance and how many servings?										
+	14	2984	Slp-Help	Is anyone helping you complete this questionnaire?										
+	15	2985	Slp-HelpTyp	What is your relationship to this person?										
+2	16	2519	RFR-UserID											
+	17	2520	RFR-Date											
+	18	2521	RFR-Time											
+	19	2522	RFR-Counter											
+	20	2523	RFR-Room											
+	21	2529	RFR-Order	During your VR session you saw four rooms. Which one was the [user_meta key="c_room"]?										
+	22	2627	RFR-OrderC											
+	23	2530	RFR-Time	Approximately what time of day was it in the [user_meta key="c_room"]?										
+	24	2628	RFR-TimeC											
+	25	2531	RFR-Weat	What was the weather like outside the [user_meta key="c_room"]?										
+	26	2629	RFR-WeatC											
+	27	2536	RFR-O1N	Name the largest fixture/furniture in the [user_meta key="c_room"].										
+	28	2632	RFR-O1NC											
+	29	2612	RFR-O1-L	Which area of the room was this object located?										
+	30	2633	RFR-O1-LC											
+	31	2537	RFR-O2N	Name the second largest fixture/furniture in the [user_meta key="c_room"].										
+	32	2635	RFR-O2NC											
+	33	2613	RFR-O2L	Which area of the room was this object located?										
+	34	2634	RFR-O2LC											
+	35	2538	RFR-O3-N	Name the third largest fixture/furniture in the [user_meta key="c_room"].										
+	36	2636	RFR-O3-NC											
+	37	2614	RFR-O3L	Which area of the room was this object located?										
+	38	2637	RFR-O3LC											
+	39	2539	RFR-O4N	Name the fourth largest fixture/furniture in the [user_meta key="c_room"].										
+	40	2639	RFR-O4NC											
+	41	2615	RFR-O4L	Which area of the room was this object located?										
+	42	2638	RFR-O4LC											
+	43	2540	RFR-WN	Name the large strange object that didn't belong in the [user_meta key="c_room"].										
+	44	2640	RFR-WNC											
+	45	2616	RFR-WL	Which area of the room was this object located?										
+	46	2641	RFR-WLC											
+	47	2624	RFR-Wind	Select which of the [user_meta key="c_room"]'s wall(s) had a window.										
+	48	2646	RFR-WindC											
+	49	2626	RFR-Door	Select which of the [user_meta key="c_room"]'s wall(s) had a door.										
+	50	2647	RFR-DoorC											
+	51	2556	RFR-Pic1N	Describe one of the pictures on the [user_meta key="c_room"]'s wall.										
+	52	2648	RFR-Pic1NC											
+	53	2620	RFR-Pic1L	Which one of the [user_meta key="c_room"]'s walls had this picture?										
+	54	2649	RFR-Pic1LC											
+	55	2557	RFR-Pic2N	Describe the other picture on the [user_meta key="c_room"]'s wall.										
+	56	2650	RFR-Pic2NC											
+	57	2622	RFR-Pic2L	Which one of the [user_meta key="c_room"]'s walls had this picture?										
+	58	2651	RFR-Pic2LC											
+3	59	2654	IFR-UserID											
+	60	2655	IFR-Date											
+	61	2656	IFR-Time											
+	62	2657	IFR-Counter											
+	63	2658	IFR-Room											
+	64	2699	IFR-i1N	Name of the item										
+	65	2707	IFR-i1NC											
+	66	2713	IFR-i1PU	I picked this item up near the										
+	67	2708	IFR-i1PUC											
+	68	2706	IFR-i1PD	I put this item down near the										
+	69	2709	IFR-i1PDC											
+	70	2858	IFR-i1O	I picked this item up										
+	71	2735	IFR-i1OC											
+	72	2700	IFR-i2N	Name of the item										
+	73	2710	IFR-i2NC											
+	74	2717	IFR-i2PU	I picked this item up near the										
+	75	2712	IFR-i2PUC											
+	76	2718	IFR-i2PD	I put this item down near the										
+	77	2714	IFR-i2PDC											
+	78	2861	IFR-i2O	I picked this item up										
+	79	2736	IFR-i2OC											
+	80	2701	IFR-i3N	Name of the item										
+	81	2715	IFR-i3NC											
+	82	2722	IFR-i3PU	I picked this item up near the										
+	83	2719	IFR-i3PUC											
+	84	2724	IFR-i3PD	I put this item down near the										
+	85	2716	IFR-i3PDC											
+	86	2862	IFR-i3O	I picked this item up										
+	87	2737	IFR-i3OC											
+	88	2702	IFR-i4N	Name of the item										
+	89	2720	IFR-i4NC											
+	90	2727	IFR-i4PU	I picked this item up near the										
+	91	2721	IFR-i4PUC											
+	92	2728	IFR-i4PD	I put this item down near the										
+	93	2723	IFR-i4PDC											
+	94	2863	IFR-i4O	I picked this item up										
+	95	2738	IFR-i4OC											
+	96	2703	IFR-i5N	Name of the item										
+	97	2725	IFR-i5NC											
+	98	2734	IFR-i5PU	I picked this item up near the										
+	99	2726	IFR-i5PUC											
+	100	2731	IFR-i5PD	I put this item down near the										
+	101	2729	IFR-i5PDC											
+	102	2860	IFR-i5O	I picked this item up										
+	103	2739	IFR-i5OC											
+	104	2698	IFR-i6N	Name of the item										
+	105	2730	IFR-i6NC											
+	106	2705	IFR-i6PU	I picked this item up near the										
+	107	2733	IFR-i6PUC											
+	108	2711	IFR-i6PD	I put this item down near the										
+	109	2732	IFR-i6PDC											
+	110	2859	IFR-i6O	I picked this item up										
+	111	2740	IFR-i6OC											
+4	112	3435	TCR-UserID											
+	113	3436	TCR-Date											
+	114	3437	TCR-Time											
+	115	3438	TCR-Counter											
+	116	3439	TCR-Room											
+	117	4370	TCR-T1	Identify the [user_meta key="c_room"]'s four largest furniture/fixtures										
+	118	4003	TCR-T1C											
+	119	4372	TCR-T2	Count the number of doors/windows/lights										
+	120	4371	TCR-T2C											
+	121	4373	TCR-T3	Describe the [user_meta key="c_room"]'s walls/floor/pictures										
+	122	4374	TCR-T3C											
+	123	4376	TCR-T4	Notice the weather outside and time of day										
+	124	4375	TCR-T4C											
+	125	4378	TCR-T5	Look for objects that don't belong in the [user_meta key="c_room"]										
+	126	4377	TCR-T5C											
+	127	4379	TCR-T6	Freely explore the [user_meta key="c_room"] for one minute										
+	128	4380	TCR-T6C											
+5	129	3372	ICR-UserID											
+	130	3373	ICR-Date											
+	131	3374	ICR-Time											
+	132	3375	ICR-Counter											
+	133	3376	ICR-Room											
+	134	3598	ICR-i1Nbat	In the bathroom I picked up a										
+	135	3602	ICR-i1Nbed	In the bedroom I picked up a										
+	136	3601	ICR-i1Nkit	In the kitchen I picked up a										
+	137	3600	ICR-i1Nliv	In the living-room I picked up a										
+	138	3384	ICR-i1NC											
+	139	3382	ICR-i1PU	I picked this item up from near										
+	140	3386	ICR-i1PUC											
+	141	4127	ICR-i1PD	I put this item down near										
+	142	3387	ICR-i1PDC											
+	143	4207	ICR-i1O	I picked this item up										
+	144	4132	ICR-i1OC											
+	145	4290	ICR-i2Nbat	In the bathroom I picked up a										
+	146	4291	ICR-i2Nbed	In the bedroom I picked up a										
+	147	4292	ICR-i2Nkit	In the kitchen I picked up a										
+	148	4293	ICR-i2Nliv	In the living-room I picked up a										
+	149	4174	ICR-i2NC											
+	150	4210	ICR-i2PU	I picked this item up from near										
+	151	4175	ICR-i2PUC											
+	152	4228	ICR-i2PD	I put this item down near										
+	153	4176	ICR-i2PDC											
+	154	4204	ICR-i2O	I picked this item up										
+	155	4177	ICR-i2OC											
+	156	4164	ICR-i3Nbat	In the bathroom I picked up a										
+	157	4165	ICR-i3Nbed	In the bedroom I picked up a										
+	158	4166	ICR-i3Nkit	In the kitchen I picked up a										
+	159	4167	ICR-i3Nliv	In the living-room I picked up a										
+	160	4178	ICR-i3NC											
+	161	4340	ICR-i3PU	I picked this item up from near										
+	162	4179	ICR-i3PUC											
+	163	4344	ICR-i3PD	I put this item down near										
+	164	4180	ICR-i3PDC											
+	165	4348	ICR-i3O	I picked this item up										
+	166	4181	ICR-i3OC											
+	167	4296	ICR-i4Nbat	In the bathroom I picked up a										
+	168	4297	ICR-i4Nbed	In the bedroom I picked up a										
+	169	4298	ICR-i4Nkit	In the kitchen I picked up a										
+	170	4299	ICR-i4Nliv	In the living-room I picked up a										
+	171	4184	ICR-i4NC											
+	172	4341	ICR-i4PU	I picked this item up from near										
+	173	4182	ICR-i4PUC											
+	174	4345	ICR-i4PD	I put this item down near										
+	175	4183	ICR-i4PDC											
+	176	4349	ICR-i4O	I picked this item up										
+	177	4185	ICR-i4OC											
+	178	4302	ICR-i5Nbat	In the bathroom I picked up a										
+	179	4303	ICR-i5Nbed	In the bedroom I picked up a										
+	180	4304	ICR-i5Nkit	In the kitchen I picked up a										
+	181	4305	ICR-i5Nliv	In the living-room I picked up a										
+	182	4187	ICR-i5NC											
+	183	4342	ICR-i5PU	I picked this item up from near										
+	184	4188	ICR-i5PUC											
+	185	4346	ICR-i5PD	I put this item down near										
+	186	4186	ICR-i5PDC											
+	187	4350	ICR-i5O	I picked this item up										
+	188	4189	ICR-i5OC											
+	189	4308	ICR-i6Nbat	In the bathroom I picked up a										
+	190	4309	ICR-i6Nbed	In the bedroom I picked up a										
+	191	4310	ICR-i6Nkit	In the kitchen I picked up a										
+	192	4311	ICR-i6Nliv	In the living-room I picked up a										
+	193	4190	ICR-i6NC											
+	194	4343	ICR-i6PU	I picked this item up from near										
+	195	4192	ICR-i6PUC											
+	196	4347	ICR-i6PD	I put this item down near										
+	197	4191	ICR-i6PDC											
+	198	4351	ICR-i6O	I picked this item up										
+	199	4193	ICR-i6OC											
+6	200	2743	RRE-UserID											
+	201	2744	RRE-Date											
+	202	2745	RRE-Time											
+	203	2746	RRE-Counter											
+	204	2747	RRE-Room											
+	205	3795	RRE-Door	Using the image above, select which sections of wall had a door.										
+	206	3796	RRE-DoorC											
+	207	3798	RRE-Window	Using the image above, select which sections of wall had a window.										
+	208	3799	RRE-WindowC											
+	209	3773	RRE-LandNbat	Which landscape did you see in the bathroom?										
+	210	3774	RRE-LandNbed	Which landscape did you see in the bedroom?										
+	211	3775	RRE-LandNkit	Which landscape did you see in the kitchen?										
+	212	3776	RRE-LandNliv	Which landscape did you see in the living-room?										
+	213	3777	RRE-LandNC											
+	214	3779	RRE-LandL	Using the picture above, identify the location of this landscape in the [user_meta key="c_room"]										
+	215	3780	RRE-LandLC											
+	216	3759	RRE-PortNbat	Which portrait did you see in the bathroom?										
+	217	3760	RRE-PortNbed	Which portrait did you see in the bedroom?										
+	218	3761	RRE-PortNkit	Which portrait did you see in the kitchen?										
+	219	3762	RRE-PortNliv	Which portrait did you see in the living-room?										
+	220	3763	RRE-PortNC											
+	221	3765	RRE-PortL	Using the picture above, identify the location of this portrait in the [user_meta key="c_room"]										
+	222	3766	RRE-PortLC											
+	223	4354	RRE-StraNbat	Which strange object did you see in the bathroom?										
+	224	4355	RRE-StraNbed	Which strange object did you see in the bedroom?										
+	225	4356	RRE-StraNkit	Which strange object did you see in the kitchen?										
+	226	4357	RRE-StraNliv	Which strange object did you see in the living-room?										
+	227	4358	RRE-StraNC											
+	228	4360	RRE-StraL	Using the picture above, identify the location of this strange object in the [user_meta key="c_room"]										
+	229	4361	RRE-StraLC											
+7	230	2787	IRE-UserID											
+	231	2788	IRE-Date											
+	232	2789	IRE-Time											
+	233	2790	IRE-Counter											
+	234	2791	IRE-Room											
+	235	3726	IRE-i1Nbat	Which of the following items do you remember picking up in the bathroom?										
+	236	3727	IRE-i1Nbed	Which of the following items do you remember picking up in the bedroom?										
+	237	3728	IRE-i1Nkit	Which of the following items do you remember picking up in the kitchen?										
+	238	3729	IRE-i1Nliv	Which of the following items do you remember picking up in the living-room?										
+	239	3730	IRE-i1NC											
+	240	2840	IRE-i1PU	I picked this item up from near the										
+	241	2841	IRE-i1PUC											
+	242	2868	IRE-i1PD	I put this item down near the										
+	243	2842	IRE-i1PDC											
+	244	2922	IRE-i1O	I picked this item up										
+	245	2923	IRE-i1OC											
+	246	3805	IRE-i2Nbat	Which of the following items do you remember picking up in the bathroom?										
+	247	3806	IRE-i2Nbed	Which of the following items do you remember picking up in the bedroom?										
+	248	3807	IRE-i2Nkit	Which of the following items do you remember picking up in the kitchen?										
+	249	3808	IRE-i2Nliv	Which of the following items do you remember picking up in the living-room?										
+	250	3809	IRE-i2NC											
+	251	3819	IRE-i2PU	I picked this item up from near the										
+	252	3822	IRE-i2PUC											
+	253	3820	IRE-i2PD	I put this item down near the										
+	254	3823	IRE-i2PDC											
+	255	3818	IRE-i2O	I picked this item up										
+	256	3821	IRE-i2OC											
+	257	3828	IRE-i3Nbat	Which of the following items do you remember picking up in the bathroom?										
+	258	3829	IRE-i3Nbed	Which of the following items do you remember picking up in the bedroom?										
+	259	3830	IRE-i3Nkit	Which of the following items do you remember picking up in the kitchen?										
+	260	3831	IRE-i3Nliv	Which of the following items do you remember picking up in the living-room?										
+	261	3832	IRE-i3NC											
+	262	3842	IRE-i3PU	I picked this item up from near the										
+	263	3845	IRE-i3PUC											
+	264	3843	IRE-i3PD	I put this item down near the										
+	265	3846	IRE-i3PDC											
+	266	3841	IRE-i3O	I picked this item up										
+	267	3844	IRE-i3OC											
+	268	3851	IRE-i4Nbat	Which of the following items do you remember picking up in the bathroom?										
+	269	3852	IRE-i4Nbed	Which of the following items do you remember picking up in the bedroom?										
+	270	3853	IRE-i4Nkit	Which of the following items do you remember picking up in the kitchen?										
+	271	3854	IRE-i4Nliv	Which of the following items do you remember picking up in the living-room?										
+	272	3855	IRE-i4NC											
+	273	3865	IRE-i4PU	I picked this item up from near the										
+	274	3868	IRE-i4PUC											
+	275	3866	IRE-i4PD	I put this item down near the										
+	276	3869	IRE-i4PDC											
+	277	3864	IRE-i4O	I picked this item up										
+	278	3867	IRE-i4OC											
+	279	3874	IRE-i5Nbat	Which of the following items do you remember picking up in the bathroom?										
+	280	3875	IRE-i5Nbed	Which of the following items do you remember picking up in the bedroom?										
+	281	3876	IRE-i5Nkit	Which of the following items do you remember picking up in the kitchen?										
+	282	3877	IRE-i5Nliv	Which of the following items do you remember picking up in the living-room?										
+	283	3878	IRE-i5NC											
+	284	3888	IRE-i5PU	I picked this item up from near the										
+	285	3891	IRE-i5PUC											
+	286	3889	IRE-i5PD	I put this item down near the										
+	287	3892	IRE-i5PDC											
+	288	3887	IRE-i5O	I picked this item up										
+	289	3890	IRE-i5OC											
+	290	3897	IRE-i6Nbat	Which of the following items do you remember picking up in the bathroom?										
+	291	3898	IRE-i6Nbed	Which of the following items do you remember picking up in the bedroom?										
+	292	3899	IRE-i6Nkit	Which of the following items do you remember picking up in the kitchen?										
+	293	3900	IRE-i6Nliv	Which of the following items do you remember picking up in the living-room?										
+	294	3901	IRE-i6NC											
+	295	3911	IRE-i6PU	I picked this item up from near the										
+	296	3914	IRE-i6PUC											
+	297	3912	IRE-i6PD	I put this item down near the										
+	298	3915	IRE-i6PDC											
+	299	3910	IRE-i6O	I picked this item up										
+	300	3913	IRE-I6oc											
+8	301	2088	Str-UserID											
+	302	4421	Str-Date											
+	303	4422	Str-Time											
+	304	2087	Str-Counter											
+	305	2086	Str-Room											
+	306	4403	Str-Diff	How difficult was your REMEMVR test today?										
+	307	4408	Str-Diff2	How difficult was today's test compared to your previous REMEMVR test?										
+	308	4415	Str-Help	Did completing previous REMEMVR tests help you answer questions about the [user_meta key="c_room"]?										
+	309	4417	Str-How	Briefly describe how previous tests helped you answer questions about the [user_meta key="c_room"]										
+	310	4418	Str-Think	How often have you thought about the [user_meta key="c_room"] since you saw it in virtual reality?										
+	311	4420	Str-Think2	When you thought about your virtual experience in the [user_meta key="c_room"], what kind of elements did you think about?										
+	312	4404	Str-StratO	Did you use any specific strategies or techniques to remember the furniture/fixtures in the [user_meta key="c_room"]?										
+	313	4405	Str-StratOtxt	Describe your strategy here										
+	314	4406	Str-StratI	Did you use any specific strategies or techniques to remember the items and their locations in the [user_meta key="c_room"]?										
+	315	4407	Str-StratItxt	Describe your strategy here										
+	316	4409	Str-Mne	Were you aware of any mnemonic techniques (e.g., method of loci, visual imagery) before participating in this study?										
+	317	4410	Str-Mne2	Did you consciously apply any of these mnemonic techniques during the REMEMVR test?										
+	318	4411	Str-Mnetxt	Describe your technique here										
+	319	4413	Str-Feedback	(Optional) Please provide any thoughts, comments, or suggestions related to REMEMVR that you would like to share with the research team.										

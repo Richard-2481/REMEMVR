@@ -1,0 +1,25 @@
+item_code,category,correct_item,foil_2,foil_3,foil_4,foil_5,foil_6,foil_7,foil_8,foil_9,foil_10,foil_11,foil_12,foil_13,foil_14
+i1,Reading,Novel,Graphic novel,Short story collection,Poetry book,Comic book,Biography,Encyclopedia,Textbook,Dictionary,Cookbook,Magazine,Scientific journal,Newspaper,Atlas
+i1,Periodicals,Magazine,Newspaper,Gazette,Journal,Newsletter,Almanac,Comic book,Annual report,Catalog,Literary magazine,Trade publication,Zine,Academic journal,Digest
+i1,Mail,Letters,Envelopes,Postcards,Greeting cards,Packages,Certified mail,Priority mail,Postage stamps,Parcel,Express mail,Mailer,Return receipt,Shipping label,Padded envelope
+i1,Print media,Newspaper,Magazine,Comic book,Brochure,Flyer,Catalog,Phone book,Travel guide,Map,Coupon book,User manual,Art print,Academic journal,Poster
+i2,Eyewear,Glasses,Reading glasses,Sunglasses,Safety goggles,Aviator glasses,Swim goggles,Polarized lenses,Prescription goggles,Sports glasses,3D glasses,Ski goggles,Magnifying glass,Opera glasses,VR headset
+i2,Electronics,Cellphone,Smartphone charger,Laptop,Tablet,Desktop computer,Smartwatch,Digital camera,Headphones,Router,External hard drive,Video game console,Printer,Bluetooth speaker,VR headset
+i2,Keys,Car Keys,House keys,Office keys,Padlock keys,Bike lock keys,Luggage keys,Safe keys,File cabinet keys,Mailbox keys,Locker keys,Key fob,Keychain,Key card,Skeleton key
+i2,Bags,Handbag,Backpack,Tote bag,Briefcase,Messenger bag,Duffel bag,Clutch,Wallet,Satchel,Fanny pack,Gym bag,Diaper bag,Shoulder bag,Crossbody bag
+i3,Bath toys,Rubber Ducky,Toy boats,Floating frog,Toy submarine,Squirting fish,Wind-up swimmer,Bath puppet,Bath crayons,Foam letters,Bath stickers,Bath book,Toy fishing set,Bath time tea set,Bath time waterfall
+i3,Home decor,Picture Frame,Wall art,Wall mirror,Wall clock,Throw pillow,Area rug,Vase,Candle holder,Decorative tray,Figurine,Houseplant,Ornamental bowl,Table runner,Wind chime
+i3,Tableware,Plate with Knife and Fork,Spoon,Teaspoon,Glass,Mug,Bowl,Saucer,Chopsticks,Salad plate,Dinner plate,Appetizer plate,Dessert spoon,Steak knife,Tablecloth
+i3,Lighting,Lamp,Floor lamp,Table lamp,Chandelier,Pendant light,Wall sconce,Desk lamp,Track lighting,Outdoor light,Ceiling fan with light,Recessed lighting,String lights,Lantern,Night light
+i4,Dental hygiene,Toothbrushes in a cup,Toothpaste,Dental floss,Mouthwash,Interdental brush,Tongue scraper,Electric toothbrush,Denture cleaner,Dental picks,Water flosser,Orthodontic wax,Whitening strips,Tooth powder,Toothbrush cover
+i4,Timekeeping,Digital Alarm Clock,Wall clock,Wristwatch,Stopwatch,Timer,Hourglass,Sundial,Cuckoo clock,Grandfather clock,Pocket watch,World time clock,Atomic clock,Kitchen timer,Smartwatch
+i4,Small appliances,Toaster,Blender,Coffee maker,Microwave,Slow cooker,Electric kettle,Stand mixer,Rice cooker,Hand mixer,Food processor,Waffle maker,Air fryer,Juicer,Instant Pot
+i4,Computers,Laptop,Desktop,Tablet,Chromebook,Ultrabook,All-in-one computer,Gaming PC,Workstation,Netbook,Mini PC,Server,Convertible laptop,Macintosh,Raspberry Pi
+i5,Hand tools,Hammer,Screwdriver,Wrench,Pliers,Level,Tape measure,Ratchet,Pipe wrench,Chisel,Utility knife,Wire stripper,Hacksaw,Allen wrench,Wood rasp
+i5,Kitchen utensils,Chef's Knife,Whisk,Spatula,Can opener,Mixing bowl,Cheese grater,Measuring spoons,Cutting board,Garlic press,Rolling pin,Tongs,Colander,Potato masher,Frying pan
+i5,Automotive fluids,Motor Oil,Antifreeze,Brake fluid,Transmission fluid,Power steering fluid,Windshield washer fluid,Gasoline,Diesel,Lubricant,Engine coolant,Hydraulic fluid,Gear oil,Differential fluid,Additives
+i5,Power tools,Battery Drill,Jigsaw,Circular saw,Reciprocating saw,Angle grinder,Router,Belt sander,Impact driver,Rotary tool,Bench grinder,Orbital sander,Nail gun,Heat gun,Miter saw
+i6,Remotes,TV Remote,Game controller,DVD player remote,Cable box remote,Air conditioner remote,Projector remote,Ceiling fan remote,Camera remote,Sound system remote,Light switch remote,Garage door opener,Stereo remote,Presentation clicker,Car key fob
+i6,Cookware,Frying pan,Saute pan,Skillet,Saucepan,Stockpot,Wok,Grill pan,Dutch oven,Baking sheet,Casserole dish,Roasting pan,Crepe pan,Double boiler,Muffin tin
+i6,Hygiene products,Toilet Paper,Tissues,Paper towels,Wet wipes,Hand sanitizer,Soap,Shampoo,Conditioner,Deodorant,Body wash,Toothpaste,Moisturizer,Cotton swabs,Cotton balls
+i6,Sleep accessories,Sleep Mask,Earplugs,White noise machine,Humidifier,Aromatherapy diffuser,Weighted blanket,Pillow,Mattress pad,Body pillow,Sound machine,Sleep tracker,Sleepwear,Neck pillow,CPAP machine
