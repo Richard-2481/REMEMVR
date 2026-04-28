@@ -1,0 +1,150 @@
+2025-12-05 13:50:48,354 - INFO - ============================================================
+2025-12-05 13:50:48,354 - INFO - RQ 5.5.6 Step 02: Extract Variance Components per Location
+2025-12-05 13:50:48,354 - INFO - ============================================================
+2025-12-05 13:50:48,778 - INFO - Loaded Source model from results/ch5/5.5.6/data/step01_source_lmm_model.pkl
+2025-12-05 13:50:48,781 - INFO - Loaded Destination model from results/ch5/5.5.6/data/step01_destination_lmm_model.pkl
+2025-12-05 13:50:48,781 - INFO - Loaded metadata for Source: Full structure
+2025-12-05 13:50:48,782 - INFO - Loaded metadata for Destination: Full structure
+2025-12-05 13:50:48,782 - INFO - 
+Extracting variance components for Source location
+2025-12-05 13:50:48,782 - INFO -   Random structure: Full
+2025-12-05 13:50:48,782 - INFO -   var_intercept: 0.126829
+2025-12-05 13:50:48,782 - INFO -   var_slope: 0.002040
+2025-12-05 13:50:48,782 - INFO -   cov_int_slope: 0.009994
+2025-12-05 13:50:48,782 - INFO -   var_residual: 0.401714
+2025-12-05 13:50:48,782 - INFO -   correlation_int_slope: 0.621301
+2025-12-05 13:50:48,783 - INFO - 
+Extracting variance components for Destination location
+2025-12-05 13:50:48,783 - INFO -   Random structure: Full
+2025-12-05 13:50:48,783 - INFO -   var_intercept: 0.338263
+2025-12-05 13:50:48,783 - INFO -   var_slope: 0.010256
+2025-12-05 13:50:48,783 - INFO -   cov_int_slope: -0.050147
+2025-12-05 13:50:48,783 - INFO -   var_residual: 0.465018
+2025-12-05 13:50:48,783 - INFO -   correlation_int_slope: -0.851373
+2025-12-05 13:50:48,784 - INFO - 
+============================================================
+2025-12-05 13:50:48,784 - INFO - VALIDATION: Checking variance component constraints
+2025-12-05 13:50:48,784 - INFO - ============================================================
+2025-12-05 13:50:48,785 - INFO -   All variance components non-negative
+2025-12-05 13:50:48,785 - INFO -   var_intercept > 0 for both locations
+2025-12-05 13:50:48,786 - INFO -   var_residual > 0 for both locations
+2025-12-05 13:50:48,786 - INFO -   correlation_int_slope in [-1, 1] for all locations
+2025-12-05 13:50:48,786 - INFO -   All locations have 5 components
+2025-12-05 13:50:48,786 - INFO -   Total rows: 10 (expected 10)
+2025-12-05 13:50:48,787 - INFO -   No infinite values
+2025-12-05 13:50:48,788 - INFO - 
+Saved variance components to: results/ch5/5.5.6/data/step02_variance_components.csv
+2025-12-05 13:50:48,788 - INFO - 
+============================================================
+2025-12-05 13:50:48,788 - INFO - VARIANCE COMPONENTS SUMMARY
+2025-12-05 13:50:48,788 - INFO - ============================================================
+2025-12-05 13:50:48,789 - INFO - 
+Source Location:
+2025-12-05 13:50:48,789 - INFO -   var_intercept: 0.126829
+2025-12-05 13:50:48,789 - INFO -   var_slope: 0.002040
+2025-12-05 13:50:48,789 - INFO -   cov_int_slope: 0.009994
+2025-12-05 13:50:48,789 - INFO -   var_residual: 0.401714
+2025-12-05 13:50:48,789 - INFO -   correlation_int_slope: 0.621301
+2025-12-05 13:50:48,789 - INFO - 
+Destination Location:
+2025-12-05 13:50:48,790 - INFO -   var_intercept: 0.338263
+2025-12-05 13:50:48,790 - INFO -   var_slope: 0.010256
+2025-12-05 13:50:48,790 - INFO -   cov_int_slope: -0.050147
+2025-12-05 13:50:48,790 - INFO -   var_residual: 0.465018
+2025-12-05 13:50:48,790 - INFO -   correlation_int_slope: -0.851373
+2025-12-05 13:50:48,790 - INFO - 
+============================================================
+2025-12-05 13:50:48,790 - INFO - VARIANCE DECOMPOSITION PREVIEW (for ICC computation)
+2025-12-05 13:50:48,790 - INFO - ============================================================
+2025-12-05 13:50:48,791 - INFO - 
+Source Location:
+2025-12-05 13:50:48,791 - INFO -   var_intercept:  0.1268 (24.0% of simple total)
+2025-12-05 13:50:48,791 - INFO -   var_slope:      0.0020 (0.5% of simple total)
+2025-12-05 13:50:48,791 - INFO -   var_residual:   0.4017
+2025-12-05 13:50:48,791 - INFO - 
+Destination Location:
+2025-12-05 13:50:48,791 - INFO -   var_intercept:  0.3383 (42.1% of simple total)
+2025-12-05 13:50:48,791 - INFO -   var_slope:      0.0103 (2.2% of simple total)
+2025-12-05 13:50:48,792 - INFO -   var_residual:   0.4650
+2025-12-05 13:50:48,792 - INFO - 
+============================================================
+2025-12-05 13:50:48,792 - INFO - STEP 02 COMPLETE
+2025-12-05 13:50:48,792 - INFO - ============================================================
+2025-12-05 13:50:48,792 - INFO - Extracted variance components for 2 locations (Source, Destination)
+2025-12-05 13:50:48,792 - INFO - Output: 10 rows (5 components x 2 locations)
+2025-12-05 13:50:48,792 - INFO - Ready for Step 03: Compute ICC Estimates
+2025-12-05 13:51:39,938 - INFO - ============================================================
+2025-12-05 13:51:39,938 - INFO - RQ 5.5.6 Step 02: Extract Variance Components per Location
+2025-12-05 13:51:39,938 - INFO - ============================================================
+2025-12-05 13:51:40,372 - INFO - Loaded Source model from results/ch5/5.5.6/data/step01_source_lmm_model.pkl
+2025-12-05 13:51:40,375 - INFO - Loaded Destination model from results/ch5/5.5.6/data/step01_destination_lmm_model.pkl
+2025-12-05 13:51:40,376 - INFO - Loaded metadata for Source: Full structure
+2025-12-05 13:51:40,376 - INFO - Loaded metadata for Destination: Full structure
+2025-12-05 13:51:40,376 - INFO - 
+Extracting variance components for Source location
+2025-12-05 13:51:40,377 - INFO -   Random structure: Full
+2025-12-05 13:51:40,377 - INFO -   var_intercept: 0.126829
+2025-12-05 13:51:40,377 - INFO -   var_slope: 0.002040
+2025-12-05 13:51:40,377 - INFO -   cov_int_slope: 0.009994
+2025-12-05 13:51:40,377 - INFO -   var_residual: 0.401714
+2025-12-05 13:51:40,377 - INFO -   correlation_int_slope: 0.621301
+2025-12-05 13:51:40,377 - INFO - 
+Extracting variance components for Destination location
+2025-12-05 13:51:40,377 - INFO -   Random structure: Full
+2025-12-05 13:51:40,378 - INFO -   var_intercept: 0.338263
+2025-12-05 13:51:40,378 - INFO -   var_slope: 0.010256
+2025-12-05 13:51:40,378 - INFO -   cov_int_slope: -0.050147
+2025-12-05 13:51:40,378 - INFO -   var_residual: 0.465018
+2025-12-05 13:51:40,378 - INFO -   correlation_int_slope: -0.851373
+2025-12-05 13:51:40,378 - INFO - 
+============================================================
+2025-12-05 13:51:40,378 - INFO - VALIDATION: Checking variance component constraints
+2025-12-05 13:51:40,379 - INFO - ============================================================
+2025-12-05 13:51:40,380 - INFO -   All variance components non-negative
+2025-12-05 13:51:40,380 - INFO -   var_intercept > 0 for both locations
+2025-12-05 13:51:40,381 - INFO -   var_residual > 0 for both locations
+2025-12-05 13:51:40,381 - INFO -   correlation_int_slope in [-1, 1] for all locations
+2025-12-05 13:51:40,381 - INFO -   All locations have 5 components
+2025-12-05 13:51:40,381 - INFO -   Total rows: 10 (expected 10)
+2025-12-05 13:51:40,381 - INFO -   No infinite values
+2025-12-05 13:51:40,383 - INFO - 
+Saved variance components to: results/ch5/5.5.6/data/step02_variance_components.csv
+2025-12-05 13:51:40,383 - INFO - 
+============================================================
+2025-12-05 13:51:40,383 - INFO - VARIANCE COMPONENTS SUMMARY
+2025-12-05 13:51:40,383 - INFO - ============================================================
+2025-12-05 13:51:40,383 - INFO - 
+Source Location:
+2025-12-05 13:51:40,383 - INFO -   var_intercept: 0.126829
+2025-12-05 13:51:40,383 - INFO -   var_slope: 0.002040
+2025-12-05 13:51:40,383 - INFO -   cov_int_slope: 0.009994
+2025-12-05 13:51:40,384 - INFO -   var_residual: 0.401714
+2025-12-05 13:51:40,384 - INFO -   correlation_int_slope: 0.621301
+2025-12-05 13:51:40,384 - INFO - 
+Destination Location:
+2025-12-05 13:51:40,384 - INFO -   var_intercept: 0.338263
+2025-12-05 13:51:40,384 - INFO -   var_slope: 0.010256
+2025-12-05 13:51:40,384 - INFO -   cov_int_slope: -0.050147
+2025-12-05 13:51:40,384 - INFO -   var_residual: 0.465018
+2025-12-05 13:51:40,385 - INFO -   correlation_int_slope: -0.851373
+2025-12-05 13:51:40,385 - INFO - 
+============================================================
+2025-12-05 13:51:40,385 - INFO - VARIANCE DECOMPOSITION PREVIEW (for ICC computation)
+2025-12-05 13:51:40,385 - INFO - ============================================================
+2025-12-05 13:51:40,385 - INFO - 
+Source Location:
+2025-12-05 13:51:40,385 - INFO -   var_intercept:  0.1268 (24.0% of simple total)
+2025-12-05 13:51:40,385 - INFO -   var_slope:      0.0020 (0.5% of simple total)
+2025-12-05 13:51:40,385 - INFO -   var_residual:   0.4017
+2025-12-05 13:51:40,386 - INFO - 
+Destination Location:
+2025-12-05 13:51:40,386 - INFO -   var_intercept:  0.3383 (42.1% of simple total)
+2025-12-05 13:51:40,386 - INFO -   var_slope:      0.0103 (2.2% of simple total)
+2025-12-05 13:51:40,386 - INFO -   var_residual:   0.4650
+2025-12-05 13:51:40,386 - INFO - 
+============================================================
+2025-12-05 13:51:40,386 - INFO - STEP 02 COMPLETE
+2025-12-05 13:51:40,386 - INFO - ============================================================
+2025-12-05 13:51:40,386 - INFO - Extracted variance components for 2 locations (Source, Destination)
+2025-12-05 13:51:40,387 - INFO - Output: 10 rows (5 components x 2 locations)
+2025-12-05 13:51:40,387 - INFO - Ready for Step 03: Compute ICC Estimates

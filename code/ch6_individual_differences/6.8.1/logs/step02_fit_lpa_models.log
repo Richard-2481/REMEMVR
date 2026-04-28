@@ -1,0 +1,61 @@
+Step 02: Fit LPA Models
+
+Loading standardized theta scores...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step01_domain_theta_scores.csv
+100 rows, 3 columns
+['UID', 'theta_What', 'theta_Where']
+
+Input validation
+Input structure validated
+Feature matrix shape: (100, 2)
+Feature means: [ 4.44089210e-18 -4.21884749e-17]
+Feature SDs: [0.99498744 0.99498744]
+
+Fitting LPA models for K=[1, 2, 3, 4]
+n_init=100, max_iter=1000, covariance_type='full'
+
+[FIT K=1] Fitting 1-profile model...
+[FIT K=1] Converged: True, Iterations: 2
+[FIT K=1] BIC: 330.28, AIC: 317.25, Entropy: 1.0000
+[FIT K=1] Log-Likelihood: -153.62
+
+[FIT K=2] Fitting 2-profile model...
+[FIT K=2] Converged: True, Iterations: 4
+[FIT K=2] BIC: 349.07, AIC: 320.41, Entropy: 0.7417
+[FIT K=2] Log-Likelihood: -149.21
+
+[FIT K=3] Fitting 3-profile model...
+[FIT K=3] Converged: True, Iterations: 17
+[FIT K=3] BIC: 366.82, AIC: 322.53, Entropy: 0.5743
+[FIT K=3] Log-Likelihood: -144.27
+
+[FIT K=4] Fitting 4-profile model...
+[FIT K=4] Converged: True, Iterations: 20
+[FIT K=4] BIC: 366.72, AIC: 306.80, Entropy: 0.6688
+[FIT K=4] Log-Likelihood: -130.40
+
+Model fitting validation
+All models converged successfully
+
+Saving fitted models to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step02_lpa_fitted_models.pkl
+4 models saved
+
+Saving fit comparison to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step02_lpa_fit_comparison.csv
+Fit comparison table:
+ K        BIC        AIC  Entropy  Converged
+ 1 330.275389 317.249538 1.000000       True
+ 2 349.069632 320.412760 0.741748       True
+ 3 366.820349 322.532455 0.574290       True
+ 4 366.723331 306.804417 0.668753       True
+
+BIC minimum at K=1
+
+Saving convergence diagnostics to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step02_lpa_convergence_diagnostics.txt
+Convergence diagnostics written
+
+Model quality checks...
+All models converged
+BIC does not decrease from K=1 to K=2 (unusual)
+1 models with entropy >0.80
+
+Step 02 complete

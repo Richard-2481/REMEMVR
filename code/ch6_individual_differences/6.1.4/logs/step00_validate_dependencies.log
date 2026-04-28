@@ -1,0 +1,18 @@
+Step 00: validate_dependencies
+Defining dependency files to validate...
+2 dependency files to validate
+Running check_file_exists for each dependency...
+Checking ch5_theta_scores: /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+ch5_theta_scores: File exists (7186 bytes)
+Checking dfnonvr_data: /home/etai/projects/REMEMVR/data/dfnonvr.csv
+dfnonvr_data: File exists (60164 bytes)
+Performing additional data quality checks...
+ch5_theta_scores: 400 participants, UID column present
+dfnonvr_data: 100 participants, UID column present
+Generating dependency validation report...
+step00_dependency_validation.txt (1118 bytes)
+Running manual validation...
+Overall status: PASS
+Dependencies validated: 2
+Ready for RQ 7.1.4 analysis
+Step 00 complete

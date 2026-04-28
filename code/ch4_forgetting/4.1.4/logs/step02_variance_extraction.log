@@ -1,0 +1,253 @@
+Step 02: Extract Variance Components from LMM
+Loading model metadata from Step 1...
+Model metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+  Model source: results/ch5/rq7/data/lmm_Log.pkl
+  Model type: MixedLMResultsWrapper
+  Converged: True
+  Participants: 100
+  Observations: 400
+Loading model object from /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Log.pkl...
+'NoneType' object has no attribute 'f_locals'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq13/code/step02_extract_variance_components.py", line 160, in <module>
+    lmm_model = pickle.load(f)
+                ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 112, in __setstate__
+    _, design = dmatrices(d['formula'], data, eval_env=depth,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/highlevel.py", line 316, in dmatrices
+    eval_env = EvalEnvironment.capture(eval_env, reference=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/eval.py", line 242, in capture
+    [frame.f_locals, frame.f_globals],
+     ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'f_locals'
+Step 02: Extract Variance Components from LMM
+Loading model metadata from Step 1...
+Model metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+  Model source: results/ch5/rq7/data/lmm_Log.pkl
+  Model type: MixedLMResultsWrapper
+  Converged: True
+  Participants: 100
+  Observations: 400
+Loading model object from /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Log.pkl...
+Using statsmodels pickle workaround for patsy compatibility
+Model loaded successfully with patsy workaround
+Model object successfully loaded
+  Type: MixedLMResultsWrapper
+Extracting variance components from LMM...
+Random effects covariance matrix shape: (2, 2)
+Covariance matrix:
+             Group      log_Days
+Group     0.374322 -1.699179e-04
+log_Days -0.000170  9.073846e-08
+var_intercept (baseline variance): 0.374322
+var_slope (forgetting rate variance): 0.000000
+cov_int_slope (intercept-slope covariance): -0.000170
+var_residual (within-person variance): 0.328917
+cor_int_slope (standardized correlation): -0.921979
+  Formula: cov_int_slope / sqrt(var_intercept * var_slope)
+  = -0.000170 / sqrt(0.374322 * 0.000000)
+  = -0.000170 / 0.000184
+Variance components extracted
+Creating variance components DataFrame...
+Variance components DataFrame (5 rows)
+
+    component      estimate
+var_intercept  3.743216e-01
+    var_slope  9.073846e-08
+cov_int_slope -1.699179e-04
+ var_residual  3.289168e-01
+cor_int_slope -9.219789e-01
+/home/etai/projects/REMEMVR/results/ch5/rq13/data/step02_variance_components.csv (5 rows, 2 cols)
+Running validate_variance_positivity...
+FAIL - Found 2 component(s) with zero or negative variance: cov_int_slope, cor_int_slope. This indicates estimation issues (collinearity, convergence failure, or model misspecification).
+  Negative/zero components: ['cov_int_slope', 'cor_int_slope']
+Validation failed: Found 2 component(s) with zero or negative variance: cov_int_slope, cor_int_slope. This indicates estimation issues (collinearity, convergence failure, or model misspecification).
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq13/code/step02_extract_variance_components.py", line 312, in <module>
+    raise ValueError(f"Validation failed: {validation_result['message']}")
+ValueError: Validation failed: Found 2 component(s) with zero or negative variance: cov_int_slope, cor_int_slope. This indicates estimation issues (collinearity, convergence failure, or model misspecification).
+Step 02: Extract Variance Components from LMM
+Loading model metadata from Step 1...
+Model metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+  Model source: results/ch5/rq7/data/lmm_Log.pkl
+  Model type: MixedLMResultsWrapper
+  Converged: True
+  Participants: 100
+  Observations: 400
+Loading model object from /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Log.pkl...
+Using statsmodels pickle workaround for patsy compatibility
+Model loaded successfully with patsy workaround
+Model object successfully loaded
+  Type: MixedLMResultsWrapper
+Extracting variance components from LMM...
+Random effects covariance matrix shape: (2, 2)
+Covariance matrix:
+             Group      log_Days
+Group     0.374322 -1.699179e-04
+log_Days -0.000170  9.073846e-08
+var_intercept (baseline variance): 0.374322
+var_slope (forgetting rate variance): 0.000000
+cov_int_slope (intercept-slope covariance): -0.000170
+var_residual (within-person variance): 0.328917
+cor_int_slope (standardized correlation): -0.921979
+  Formula: cov_int_slope / sqrt(var_intercept * var_slope)
+  = -0.000170 / sqrt(0.374322 * 0.000000)
+  = -0.000170 / 0.000184
+Variance components extracted
+Creating variance components DataFrame...
+Variance components DataFrame (5 rows)
+
+    component      estimate
+var_intercept  3.743216e-01
+    var_slope  9.073846e-08
+cov_int_slope -1.699179e-04
+ var_residual  3.289168e-01
+cor_int_slope -9.219789e-01
+/home/etai/projects/REMEMVR/results/ch5/rq13/data/step02_variance_components.csv (5 rows, 2 cols)
+Running validate_variance_positivity...
+Checking 3 variance components (excluding cov/cor)
+PASS - All variance components valid
+  Message: All 3 components have positive variance (range: 0.0000 to 0.3743).
+'variance_range'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq13/code/step02_extract_variance_components.py", line 313, in <module>
+    log(f"  Variance range: {validation_result['variance_range']}")
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'variance_range'
+Step 02: Extract Variance Components from LMM
+Loading model metadata from Step 1...
+Model metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+  Model source: results/ch5/rq7/data/lmm_Log.pkl
+  Model type: MixedLMResultsWrapper
+  Converged: True
+  Participants: 100
+  Observations: 400
+Loading model object from /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Log.pkl...
+Using statsmodels pickle workaround for patsy compatibility
+Model loaded successfully with patsy workaround
+Model object successfully loaded
+  Type: MixedLMResultsWrapper
+Extracting variance components from LMM...
+Random effects covariance matrix shape: (2, 2)
+Covariance matrix:
+             Group      log_Days
+Group     0.374322 -1.699179e-04
+log_Days -0.000170  9.073846e-08
+var_intercept (baseline variance): 0.374322
+var_slope (forgetting rate variance): 0.000000
+cov_int_slope (intercept-slope covariance): -0.000170
+var_residual (within-person variance): 0.328917
+cor_int_slope (standardized correlation): -0.921979
+  Formula: cov_int_slope / sqrt(var_intercept * var_slope)
+  = -0.000170 / sqrt(0.374322 * 0.000000)
+  = -0.000170 / 0.000184
+Variance components extracted
+Creating variance components DataFrame...
+Variance components DataFrame (5 rows)
+
+    component      estimate
+var_intercept  3.743216e-01
+    var_slope  9.073846e-08
+cov_int_slope -1.699179e-04
+ var_residual  3.289168e-01
+cor_int_slope -9.219789e-01
+/home/etai/projects/REMEMVR/results/ch5/rq13/data/step02_variance_components.csv (5 rows, 2 cols)
+Running validate_variance_positivity...
+Checking 3 variance components (excluding cov/cor)
+PASS - All variance components valid
+  Message: All 3 components have positive variance (range: 0.0000 to 0.3743).
+PASS - Correlation in bounds: -0.9219788703709059 in [-1, 1]
+Step 02 complete
+Step 02: Extract Variance Components from LMM
+Loading model metadata from Step 1...
+Model metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+  Model source: results/ch5/rq7/data/lmm_Log.pkl
+  Model type: MixedLMResultsWrapper
+  Converged: True
+  Participants: 100
+  Observations: 400
+Loading model object from /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Log.pkl...
+Using statsmodels pickle workaround for patsy compatibility
+Model loaded successfully with patsy workaround
+Model object successfully loaded
+  Type: MixedLMResultsWrapper
+Extracting variance components from LMM...
+Random effects covariance matrix shape: (2, 2)
+Covariance matrix:
+             Group      log_Days
+Group     0.374322 -1.699179e-04
+log_Days -0.000170  9.073846e-08
+var_intercept (baseline variance): 0.374322
+var_slope (forgetting rate variance): 0.000000
+cov_int_slope (intercept-slope covariance): -0.000170
+var_residual (within-person variance): 0.328917
+cor_int_slope (standardized correlation): -0.921979
+  Formula: cov_int_slope / sqrt(var_intercept * var_slope)
+  = -0.000170 / sqrt(0.374322 * 0.000000)
+  = -0.000170 / 0.000184
+Variance components extracted
+Creating variance components DataFrame...
+Variance components DataFrame (5 rows)
+
+    component      estimate
+var_intercept  3.743216e-01
+    var_slope  9.073846e-08
+cov_int_slope -1.699179e-04
+ var_residual  3.289168e-01
+cor_int_slope -9.219789e-01
+/home/etai/projects/REMEMVR/results/ch5/rq13/data/step02_variance_components.csv (5 rows, 2 cols)
+Running validate_variance_positivity...
+Checking 3 variance components (excluding cov/cor)
+PASS - All variance components valid
+  Message: All 3 components have positive variance (range: 0.0000 to 0.3743).
+PASS - Correlation in bounds: -0.9219788703709059 in [-1, 1]
+Step 02 complete
+Step 02: Extract Variance Components from LMM
+Loading model metadata from Step 1...
+Model metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+  Model source: results/ch5/rq7/data/lmm_Lin+Log.pkl
+  Model type: MixedLMResultsWrapper
+  Converged: True
+  Participants: 100
+  Observations: 400
+Loading model object from /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Lin+Log.pkl...
+Using statsmodels pickle workaround for patsy compatibility
+Model loaded successfully with patsy workaround
+Model object successfully loaded
+  Type: MixedLMResultsWrapper
+Extracting variance components from LMM...
+Random effects covariance matrix shape: (2, 2)
+Covariance matrix:
+          Group      Days
+Group  0.476431 -0.003900
+Days  -0.003900  0.000157
+var_intercept (baseline variance): 0.476431
+var_slope (forgetting rate variance): 0.000157
+cov_int_slope (intercept-slope covariance): -0.003900
+var_residual (within-person variance): 0.309863
+cor_int_slope (standardized correlation): -0.451471
+  Formula: cov_int_slope / sqrt(var_intercept * var_slope)
+  = -0.003900 / sqrt(0.476431 * 0.000157)
+  = -0.003900 / 0.008638
+Variance components extracted
+Creating variance components DataFrame...
+Variance components DataFrame (5 rows)
+
+    component  estimate
+var_intercept  0.476431
+    var_slope  0.000157
+cov_int_slope -0.003900
+ var_residual  0.309863
+cor_int_slope -0.451471
+/home/etai/projects/REMEMVR/results/ch5/rq13/data/step02_variance_components.csv (5 rows, 2 cols)
+Running validate_variance_positivity...
+Checking 3 variance components (excluding cov/cor)
+PASS - All variance components valid
+  Message: All 3 components have positive variance (range: 0.0002 to 0.4764).
+PASS - Correlation in bounds: -0.4514709062062082 in [-1, 1]
+Step 02 complete

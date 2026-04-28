@@ -1,0 +1,55 @@
+Step 03: Fit Final K-Means Model
+Loading standardized features...
+100 rows, 7 columns
+Feature matrix: 100 participants, 6 features
+Reading optimal K from /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step02_optimal_k.txt...
+Optimal K=3
+Fitting final K-means with K=3...
+Parameters: n_init=50, random_state=42
+K-means fitting complete
+Cluster assignments: 100 participants
+Cluster centers: 3 clusters × 6 features
+Saving cluster assignments...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step03_cluster_assignments.csv (100 rows)
+Saving cluster centers...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step03_cluster_centers.csv (3 rows)
+Computing cluster sizes...
+Cluster sizes:
+Cluster 0: N=33 (33.0%)
+Cluster 1: N=31 (31.0%)
+Cluster 2: N=36 (36.0%)
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step03_cluster_sizes.txt
+Running validate_cluster_assignment...
+validate_cluster_assignment() got an unexpected keyword argument 'cluster_labels'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.8/code/step03_fit_final_kmeans.py", line 275, in <module>
+    validation_result = validate_cluster_assignment(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_cluster_assignment() got an unexpected keyword argument 'cluster_labels'
+Step 03: Fit Final K-Means Model
+Loading standardized features...
+100 rows, 7 columns
+Feature matrix: 100 participants, 6 features
+Reading optimal K from /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step02_optimal_k.txt...
+Optimal K=3
+Fitting final K-means with K=3...
+Parameters: n_init=50, random_state=42
+K-means fitting complete
+Cluster assignments: 100 participants
+Cluster centers: 3 clusters × 6 features
+Saving cluster assignments...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step03_cluster_assignments.csv (100 rows)
+Saving cluster centers...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step03_cluster_centers.csv (3 rows)
+Computing cluster sizes...
+Cluster sizes:
+Cluster 0: N=33 (33.0%)
+Cluster 1: N=31 (31.0%)
+Cluster 2: N=36 (36.0%)
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step03_cluster_sizes.txt
+Running validate_cluster_assignment...
+valid: True
+message: Valid cluster assignment: 3 clusters, sizes {2: 36, 0: 33, 1: 31}
+cluster_sizes: {2: 36, 0: 33, 1: 31}
+Step 03 complete

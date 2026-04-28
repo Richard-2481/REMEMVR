@@ -15,7 +15,7 @@ def log(msg):
     print(msg)
 
 try:
-    log("[START] Step 9: Synthesis")
+    log("Step 9: Synthesis")
     
     # Load all results
     df_step1 = pd.read_csv(RQ_DIR / "data" / "step01_interaction_effects_extracted.csv")
@@ -111,12 +111,12 @@ try:
     output_path = RQ_DIR / "results" / "step09_synthesis_summary.txt"
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(synthesis))
-    log(f"[SAVE] {output_path.name}")
+    log(f"{output_path.name}")
     
-    log("[SUCCESS] Step 9 complete")
+    log("Step 9 complete")
     sys.exit(0)
 except Exception as e:
-    log(f"[ERROR] {str(e)}")
+    log(f"{str(e)}")
     import traceback
     traceback.print_exc()
     sys.exit(1)

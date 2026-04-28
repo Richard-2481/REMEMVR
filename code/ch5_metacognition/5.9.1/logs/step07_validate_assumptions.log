@@ -1,0 +1,156 @@
+Step 7: Validate statistical assumptions
+Loading input data...
+step02_individual_decline_rates.csv (100 rows)
+step03_paired_ttest_results.csv (1 rows)
+step06_decline_ratio.csv (1 rows)
+Testing normality of paired differences...
+Difference: W = 0.9644, p = 0.008404
+Normality rejected (p < 0.05) - use bootstrap CI as primary
+Testing normality of ratio distribution...
+Ratio: W = 0.9234, p = 0.009838
+Ratio skewness: -0.8714
+Ratio kurtosis: 3.2502
+Ratio normality rejected
+Detecting outliers using IQR method...
+IQR bounds: [-0.014663, 0.018364]
+Outliers detected: 6
+Computing Cook's distance...
+Threshold: 0.0400
+Influential cases: 6
+Running sensitivity analyses...
+Non-parametric paired test...
+statistic = 3252.00, p = 0.006216
+Re-running paired t-test without outliers...
+t = 2.7399, p = 0.003684 (N=94)
+Generating histogram bin data...
+Saving analysis outputs...
+step07_normality_checks.csv (2 rows)
+step07_outlier_detection.csv (6 rows)
+step07_ratio_diagnostics.csv (1 rows)
+step07_sensitivity_analyses.csv (1 rows)
+step07_qqplot_data.csv (140 rows)
+step07_histogram_data.csv (40 rows)
+Running inline validation...
+Shapiro-Wilk (difference): W=0.9644, p=0.008404
+Shapiro-Wilk (ratio): W=0.9234, p=0.009838
+Outliers detected: 6
+Ratio skewness: -0.8714
+Sensitivity analyses: Wilcoxon, outlier exclusion, log transform
+Step 7 complete
+Step 7: Validate statistical assumptions
+Loading input data...
+step02_individual_decline_rates.csv (100 rows)
+step03_paired_ttest_results.csv (1 rows)
+step06_decline_ratio.csv (1 rows)
+Testing normality of paired differences...
+Difference: W = 0.9940, p = 0.939748
+Normality accepted (p > 0.05) - parametric CI valid
+Testing normality of ratio distribution...
+Ratio: W = 0.9770, p = 0.578237
+Ratio skewness: 0.2881
+Ratio kurtosis: -0.2553
+Ratio normality accepted
+Detecting outliers using IQR method...
+IQR bounds: [-0.016306, 0.015434]
+Outliers detected: 0
+Computing Cook's distance...
+Threshold: 0.0400
+Influential cases: 4
+Running sensitivity analyses...
+Non-parametric paired test...
+statistic = 2205.00, p = 0.864391
+Re-running paired t-test without outliers...
+t = -1.2133, p = 0.886041 (N=100)
+Generating histogram bin data...
+Saving analysis outputs...
+step07_normality_checks.csv (2 rows)
+step07_outlier_detection.csv (4 rows)
+step07_ratio_diagnostics.csv (1 rows)
+step07_sensitivity_analyses.csv (1 rows)
+step07_qqplot_data.csv (140 rows)
+step07_histogram_data.csv (40 rows)
+Running inline validation...
+Shapiro-Wilk (difference): W=0.9940, p=0.939748
+Shapiro-Wilk (ratio): W=0.9770, p=0.578237
+Outliers detected: 4
+Ratio skewness: 0.2881
+Sensitivity analyses: Wilcoxon, outlier exclusion, log transform
+Step 7 complete
+Step 7: Validate statistical assumptions
+Loading input data...
+step02_individual_decline_rates.csv (100 rows)
+step03_paired_ttest_results.csv (1 rows)
+step06_decline_ratio.csv (1 rows)
+Testing normality of paired differences...
+Difference: W = 0.9940, p = 0.939748
+Normality accepted (p > 0.05) - parametric CI valid
+Testing normality of ratio distribution...
+Ratio: W = 0.9770, p = 0.578237
+Ratio skewness: 0.2881
+Ratio kurtosis: -0.2553
+Ratio normality accepted
+Detecting outliers using IQR method...
+IQR bounds: [-0.016306, 0.015434]
+Outliers detected: 0
+Computing Cook's distance...
+Threshold: 0.0400
+Influential cases: 4
+Running sensitivity analyses...
+Non-parametric paired test...
+statistic = 2205.00, p = 0.864391
+Re-running paired t-test without outliers...
+t = -1.2133, p = 0.886041 (N=100)
+Generating histogram bin data...
+Saving analysis outputs...
+step07_normality_checks.csv (2 rows)
+step07_outlier_detection.csv (4 rows)
+step07_ratio_diagnostics.csv (1 rows)
+step07_sensitivity_analyses.csv (1 rows)
+step07_qqplot_data.csv (140 rows)
+step07_histogram_data.csv (40 rows)
+Running inline validation...
+Shapiro-Wilk (difference): W=0.9940, p=0.939748
+Shapiro-Wilk (ratio): W=0.9770, p=0.578237
+Outliers detected: 4
+Ratio skewness: 0.2881
+Sensitivity analyses: Wilcoxon, outlier exclusion, log transform
+Step 7 complete
+Step 7: Validate statistical assumptions
+Loading input data...
+step02_individual_decline_rates.csv (100 rows)
+step03_paired_ttest_results.csv (1 rows)
+step06_decline_ratio.csv (1 rows)
+Testing normality of paired differences...
+Difference: W = 0.9940, p = 0.939748
+Normality accepted (p > 0.05) - parametric CI valid
+Testing normality of ratio distribution...
+Ratio: W = 0.9770, p = 0.578237
+Ratio skewness: 0.2881
+Ratio kurtosis: -0.2553
+Ratio normality accepted
+Detecting outliers using IQR method...
+IQR bounds: [-0.016306, 0.015434]
+Outliers detected: 0
+Computing Cook's distance...
+Threshold: 0.0400
+Influential cases: 4
+Running sensitivity analyses...
+Non-parametric paired test...
+statistic = 2205.00, p = 0.864391
+Re-running paired t-test without outliers...
+t = -1.2133, p = 0.886041 (N=100)
+Generating histogram bin data...
+Saving analysis outputs...
+step07_normality_checks.csv (2 rows)
+step07_outlier_detection.csv (4 rows)
+step07_ratio_diagnostics.csv (1 rows)
+step07_sensitivity_analyses.csv (1 rows)
+step07_qqplot_data.csv (140 rows)
+step07_histogram_data.csv (40 rows)
+Running inline validation...
+Shapiro-Wilk (difference): W=0.9940, p=0.939748
+Shapiro-Wilk (ratio): W=0.9770, p=0.578237
+Outliers detected: 4
+Ratio skewness: 0.2881
+Sensitivity analyses: Wilcoxon, outlier exclusion, log transform
+Step 7 complete

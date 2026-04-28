@@ -2,7 +2,7 @@
 layout: default
 title: "A5. Ethics"
 parent: Home
-nav_order: 5
+nav_order: 6
 ---
 
 # A5. Ethics Application (2022/HE001298)

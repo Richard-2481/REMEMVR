@@ -1,0 +1,34 @@
+================================================================================
+Step 05c: Model Averaging
+================================================================================
+Loading input data and model comparison...
+  Training data: 400 observations
+  Models compared: 65
+  Best single model: PowerLaw_04 (weight=0.0560)
+  Competitive models (ΔAIC<2): 16
+  Cumulative weight: 57.1%
+
+Creating prediction grid...
+  Grid points: 100
+
+Computing model-averaged predictions...
+
+Model averaging complete:
+  Models used: 16
+  Effective N models: 15.01
+  Prediction variance: [0.0001, 0.0046]
+
+[POWER LAW] Effective alpha:
+  Weighted mean: α=0.410
+  Range: [0.1, 0.7]
+  Power-law models: 9/16
+
+Saving model-averaged predictions...
+  ✓ step05c_averaged_predictions.csv (100 rows)
+  ✓ step05c_averaging_summary.txt
+================================================================================
+Step 05c Complete
+  Effective α: 0.410
+  Models averaged: 16
+  Output: step05c_averaged_predictions.csv
+================================================================================

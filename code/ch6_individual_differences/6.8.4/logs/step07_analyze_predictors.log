@@ -1,0 +1,83 @@
+Step 07: analyze_predictors
+Loading predictor coefficients...
+Univariate: 15 coefficients
+Multivariate: 5 coefficients
+Organizing coefficients by context...
+24 predictor × context × domain combinations
+Computing Cohen's f² effect sizes...
+Computed 24 effect sizes
+Ranking predictors by importance...
+univariate #1: rpm (f² = 0.093)
+univariate #2: bvmt (f² = 0.022)
+univariate #3: ravlt (f² = 0.008)
+univariate #4: age (f² = 0.004)
+multivariate #1: rpm (f² = 0.084)
+multivariate #2: bvmt (f² = 0.020)
+multivariate #3: ravlt (f² = 0.007)
+multivariate #4: age (f² = 0.003)
+Applying multiple comparison corrections...
+Applied Bonferroni and FDR corrections to 12 tests
+Saving predictor analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_coefficients.csv (24 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_effect_sizes.csv (24 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_rankings.csv (8 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_significance.csv (24 rows)
+Running validation...
+All effect sizes valid
+Step 07 complete
+Step 07: analyze_predictors
+Loading predictor coefficients...
+Univariate: 15 coefficients
+Multivariate: 5 coefficients
+Organizing coefficients by context...
+24 predictor × context × domain combinations
+Computing Cohen's f² effect sizes...
+Computed 24 effect sizes
+Ranking predictors by importance...
+univariate #1: rpm (f² = 0.093)
+univariate #2: bvmt (f² = 0.022)
+univariate #3: ravlt (f² = 0.008)
+univariate #4: age (f² = 0.004)
+multivariate #1: rpm (f² = 0.084)
+multivariate #2: bvmt (f² = 0.020)
+multivariate #3: ravlt (f² = 0.007)
+multivariate #4: age (f² = 0.003)
+Applying multiple comparison corrections...
+Applied Bonferroni and FDR corrections to 12 tests
+Saving predictor analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_coefficients.csv (24 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_effect_sizes.csv (24 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_rankings.csv (8 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_significance.csv (24 rows)
+Running validation...
+All effect sizes valid
+Step 07 complete
+Step 07: analyze_predictors
+Loading predictor coefficients...
+Univariate: 18 coefficients
+Multivariate: 6 coefficients
+Organizing coefficients by context...
+30 predictor × context × domain combinations
+Computing Cohen's f² effect sizes...
+Computed 30 effect sizes
+Ranking predictors by importance...
+univariate #1: rpm (f² = 0.080)
+univariate #2: pctret (f² = 0.036)
+univariate #3: bvmt (f² = 0.018)
+univariate #4: ravlt (f² = 0.005)
+univariate #5: age (f² = 0.002)
+multivariate #1: rpm (f² = 0.072)
+multivariate #2: pctret (f² = 0.032)
+multivariate #3: bvmt (f² = 0.016)
+multivariate #4: ravlt (f² = 0.005)
+multivariate #5: age (f² = 0.002)
+Applying multiple comparison corrections...
+Applied Bonferroni and FDR corrections to 15 tests
+Saving predictor analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_coefficients.csv (30 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_effect_sizes.csv (30 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_rankings.csv (10 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step07_predictor_significance.csv (30 rows)
+Running validation...
+All effect sizes valid
+Step 07 complete

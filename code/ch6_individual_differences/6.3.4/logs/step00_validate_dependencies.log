@@ -1,0 +1,78 @@
+Step 00: validate_dependencies
+Checking 4 critical dependency files...
+[CHECK 1/4] Memory theta scores (accuracy outcomes)
+/home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+Memory theta scores (accuracy outcomes) - 7186 bytes
+[CHECK 2/4] Confidence theta scores (metacognitive outcomes)
+/home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+Confidence theta scores (metacognitive outcomes) - 12569 bytes
+[CHECK 3/4] Calibration metrics (metacognitive outcomes)
+/home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+Calibration metrics (metacognitive outcomes) - 32358 bytes
+[CHECK 4/4] DASS scores in prepared data (Ch7 uses dfnonvr.csv, NOT master.xlsx)
+/home/etai/projects/REMEMVR/data/dfnonvr.csv
+DASS scores in prepared data (Ch7 uses dfnonvr.csv, NOT master.xlsx) - 60164 bytes
+Verifying DASS column names in dfnonvr.csv...
+All 3 DASS columns found with correct lowercase hyphenated names
+Saving validation results...
+/home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step00_dependency_validation.csv (4 rows, 5 cols)
+Running validate_data_format...
+Output CSV format valid - all required columns present
+valid: True
+message: All required columns present (5 columns). DataFrame has 4 rows.
+missing_cols: []
+Dependency validation complete: 4/4 files valid
+All 4 critical dependencies found - RQ 7.3.4 ready to proceed
+Step 00 complete
+Step 00: validate_dependencies
+Checking 4 critical dependency files...
+[CHECK 1/4] Memory theta scores (accuracy outcomes)
+/home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+Memory theta scores (accuracy outcomes) - 7186 bytes
+[CHECK 2/4] Confidence theta scores (metacognitive outcomes)
+/home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+Confidence theta scores (metacognitive outcomes) - 11978 bytes
+[CHECK 3/4] Calibration metrics (metacognitive outcomes)
+/home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+Calibration metrics (metacognitive outcomes) - 32374 bytes
+[CHECK 4/4] DASS scores in prepared data (Ch7 uses dfnonvr.csv, NOT master.xlsx)
+/home/etai/projects/REMEMVR/data/dfnonvr.csv
+DASS scores in prepared data (Ch7 uses dfnonvr.csv, NOT master.xlsx) - 60164 bytes
+Verifying DASS column names in dfnonvr.csv...
+All 3 DASS columns found with correct lowercase hyphenated names
+Saving validation results...
+/home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step00_dependency_validation.csv (4 rows, 5 cols)
+Running validate_data_format...
+Output CSV format valid - all required columns present
+valid: True
+message: All required columns present (5 columns). DataFrame has 4 rows.
+missing_cols: []
+Dependency validation complete: 4/4 files valid
+All 4 critical dependencies found - RQ 7.3.4 ready to proceed
+Step 00 complete
+Step 00: validate_dependencies
+Checking 4 critical dependency files...
+[CHECK 1/4] Memory theta scores (accuracy outcomes)
+/home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+Memory theta scores (accuracy outcomes) - 7186 bytes
+[CHECK 2/4] Confidence theta scores (metacognitive outcomes)
+/home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+Confidence theta scores (metacognitive outcomes) - 11978 bytes
+[CHECK 3/4] Calibration metrics (metacognitive outcomes)
+/home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+Calibration metrics (metacognitive outcomes) - 32374 bytes
+[CHECK 4/4] DASS scores in prepared data (Ch7 uses dfnonvr.csv, NOT master.xlsx)
+/home/etai/projects/REMEMVR/data/dfnonvr.csv
+DASS scores in prepared data (Ch7 uses dfnonvr.csv, NOT master.xlsx) - 60164 bytes
+Verifying DASS column names in dfnonvr.csv...
+All 3 DASS columns found with correct lowercase hyphenated names
+Saving validation results...
+/home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step00_dependency_validation.csv (4 rows, 5 cols)
+Running validate_data_format...
+Output CSV format valid - all required columns present
+valid: True
+message: All required columns present (5 columns). DataFrame has 4 rows.
+missing_cols: []
+Dependency validation complete: 4/4 files valid
+All 4 critical dependencies found - RQ 7.3.4 ready to proceed
+Step 00 complete

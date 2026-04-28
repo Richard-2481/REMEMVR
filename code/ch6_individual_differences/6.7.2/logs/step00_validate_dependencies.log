@@ -1,0 +1,64 @@
+Step 00: Validate Dependencies
+Validating Ch5 5.1.1 completion status...
+Ch5 5.1.1 status: success
+Locating Ch5 5.1.1 theta scores file...
+Theta scores file: results/ch5/5.1.1/data/step03_theta_scores.csv
+Theta file structure valid: 400 rows, 100 unique participants
+Theta column name: 'Theta_All'
+Validating dfnonvr.csv data file...
+dfnonvr.csv structure valid: 100 participants
+All required demographic and RAVLT columns present
+Running validate_data_format on theta file...
+validate_data_format() got an unexpected keyword argument 'expected_columns'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.2/code/step00_validate_dependencies.py", line 220, in <module>
+    validation_result = validate_data_format(
+                        ^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_data_format() got an unexpected keyword argument 'expected_columns'
+Step 00: Validate Dependencies
+Validating Ch5 5.1.1 completion status...
+Ch5 5.1.1 status: success
+Locating Ch5 5.1.1 theta scores file...
+Theta scores file: results/ch5/5.1.1/data/step03_theta_scores.csv
+Theta file structure valid: 400 rows, 100 unique participants
+Theta column name: 'Theta_All'
+Validating dfnonvr.csv data file...
+dfnonvr.csv structure valid: 100 participants
+All required demographic and RAVLT columns present
+Running validate_data_format on theta file...
+validate_data_format() got an unexpected keyword argument 'expected_columns'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.2/code/step00_validate_dependencies.py", line 220, in <module>
+    validation_result = validate_data_format(
+                        ^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_data_format() got an unexpected keyword argument 'expected_columns'
+Step 00: Validate Dependencies
+Validating Ch5 5.1.1 completion status...
+Ch5 5.1.1 status: success
+Locating Ch5 5.1.1 theta scores file...
+Theta scores file: results/ch5/5.1.1/data/step03_theta_scores.csv
+Theta file structure valid: 400 rows, 100 unique participants
+Theta column name: 'Theta_All'
+Validating dfnonvr.csv data file...
+dfnonvr.csv structure valid: 100 participants
+All required demographic and RAVLT columns present
+Running validate_data_format on theta file...
+Theta file validation successful
+Validation results: data/step00_dependency_validation.txt
+Step 00 complete
+Step 00: Validate Dependencies
+Validating Ch5 5.1.1 completion status...
+Ch5 5.1.1 status: success
+Locating Ch5 5.1.1 theta scores file...
+Theta scores file: results/ch5/5.1.1/data/step03_theta_scores.csv
+Theta file structure valid: 400 rows, 100 unique participants
+Theta column name: 'Theta_All'
+Validating dfnonvr.csv data file...
+dfnonvr.csv structure valid: 100 participants
+All required demographic and RAVLT columns present
+Running validate_data_format on theta file...
+Theta file validation successful
+Validation results: data/step00_dependency_validation.txt
+Step 00 complete

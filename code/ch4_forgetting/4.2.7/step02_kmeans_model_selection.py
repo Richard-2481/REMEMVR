@@ -74,7 +74,7 @@ def main():
     print(f"Loaded {len(df)} rows")
 
     # Extract clustering matrix (exclude UID column)
-    X = df[Z_VARS].values
+    X = df.values
     n_samples, n_features = X.shape
     print(f"Clustering matrix shape: {n_samples} samples × {n_features} features")
 

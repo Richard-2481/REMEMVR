@@ -24,9 +24,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 
-# =============================================================================
 # Load data
-# =============================================================================
 
 dataset = pd.read_csv(RQ_DIR / "data" / "step01_analysis_dataset.csv")
 print(f"Loaded {len(dataset)} participants")
@@ -35,9 +33,7 @@ print(f"RPM_T range: {dataset['RPM_T'].min():.1f}-{dataset['RPM_T'].max():.1f}")
 print(f"theta_all range: {dataset['theta_all'].min():.3f}-{dataset['theta_all'].max():.3f}")
 print()
 
-# =============================================================================
 # Point estimates: Baron & Kenny paths
-# =============================================================================
 
 y = dataset['theta_all'].values
 age = dataset['Age_std'].values
@@ -88,9 +84,7 @@ print(f"\nModel R² (Age only):        {model_c.rsquared:.4f}")
 print(f"Model R² (Age + RPM):       {model_bc.rsquared:.4f}")
 print(f"Delta R² (RPM added):       {model_bc.rsquared - model_c.rsquared:.4f}")
 
-# =============================================================================
 # Bootstrap: 5,000 iterations for indirect effect CI
-# =============================================================================
 
 print("\n" + "=" * 70)
 print("BOOTSTRAP MEDIATION (5,000 iterations)")
@@ -159,9 +153,7 @@ print(f"\nIndirect effect (a*b):      {indirect:.4f}  95% CI [{ci_indirect[0]:.4
 print(f"Direct effect (c'):         {c_prime:.4f}  95% CI [{ci_c_prime[0]:.4f}, {ci_c_prime[1]:.4f}]  {direct_sig}")
 print(f"Proportion mediated:        {prop_mediated:.4f}  95% CI [{ci_proportion[0]:.4f}, {ci_proportion[1]:.4f}]")
 
-# =============================================================================
 # Comparison with full-battery mediation
-# =============================================================================
 
 print("\n" + "=" * 70)
 print("COMPARISON: RPM-Only vs Full Battery Mediation")
@@ -176,9 +168,7 @@ label_cp = "Direct effect (c')"
 print(f"{label_cp:<30} {c_prime:>15.4f} {0.026:>15.4f}")
 print(f"{'Proportion mediated':<30} {prop_mediated*100:>14.1f}% {120.5:>14.1f}%")
 
-# =============================================================================
 # Interpretation
-# =============================================================================
 
 print("\n" + "=" * 70)
 print("INTERPRETATION")
@@ -211,9 +201,7 @@ NOTE: The direct effect of age (c' = {c_prime:.4f}) becomes significant
 when only RPM is controlled, unlike the full-battery model. This suggests
 the memory tests were absorbing additional age-related variance.""")
 
-# =============================================================================
 # Save results
-# =============================================================================
 
 results = pd.DataFrame({
     'analysis': ['RPM_only_mediation'],

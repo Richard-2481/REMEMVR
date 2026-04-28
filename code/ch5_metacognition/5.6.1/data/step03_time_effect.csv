@@ -1,0 +1,2 @@
+effect,coefficient,SE,p_wald,p_lrt,significant,ml_valid,note
+Days,-0.0030065628331676472,0.0007072023908179591,2.1248855381138513e-05,3.9814086865597176e-05,True,True,"REML primary, ML LRT valid"

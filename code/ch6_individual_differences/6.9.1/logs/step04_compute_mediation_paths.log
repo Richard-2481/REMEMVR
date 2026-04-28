@@ -1,0 +1,12 @@
+======================================================================
+STEP 04: Compute Mediation Path Coefficients
+======================================================================
+Path c (total effect): -0.007653 (SE=0.004567, t=-1.6756, p=0.093809)
+Path a (age->cognitive): -0.234772 (SE=0.046816, t=-5.0148, p=0.000001)
+Path b (cognitive->where): 0.041928 (SE=0.008217, t=5.1028, p=0.000000)
+Path c' (direct effect):   0.002190 (SE=0.004438, t=0.4935, p=0.621668)
+Indirect (a*b): -0.009844 (Sobel SE=0.002752, Z=-3.5767, p=0.000348)
+Proportion mediated: 1.2862 (128.6%)
+All mediation paths computed successfully
+Saved: step04_where_mediation_paths.csv (6 rows)
+Validation PASSED

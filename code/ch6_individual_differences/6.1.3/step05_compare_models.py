@@ -15,13 +15,10 @@ from sklearn.preprocessing import StandardScaler
 import warnings
 warnings.filterwarnings('ignore')
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch7/7.1.3
 LOG_FILE = RQ_DIR / "logs" / "step05_compare_models.log"
 
@@ -39,7 +36,6 @@ OUTPUT_CONTRIBUTIONS = RQ_DIR / "data" / "step05_predictor_contributions.csv"
 LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -145,29 +141,21 @@ def compute_semi_partial_r2(data, domain, predictors):
     
     return semi_partial_r2
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 05: Compare Model Performance Across Domains")
-        log(f"[SETUP] RQ Directory: {RQ_DIR}")
-        
-        # =========================================================================
-        # STEP 1: Load model diagnostics and data
-        # =========================================================================
+        log("Step 05: Compare Model Performance Across Domains")
+        log(f"RQ Directory: {RQ_DIR}")
+        # Load model diagnostics and data
         log("\n[STEP 1] Loading model diagnostics and data...")
         
         diagnostics = pd.read_csv(INPUT_DIAGNOSTICS)
         data = pd.read_csv(INPUT_MERGED)
         
-        log(f"[INFO] Loaded diagnostics: {diagnostics.shape}")
-        log(f"[INFO] Loaded data: {data.shape}")
-        
-        # =========================================================================
-        # STEP 2: Extract and compare R² values
-        # =========================================================================
+        log(f"Loaded diagnostics: {diagnostics.shape}")
+        log(f"Loaded data: {data.shape}")
+        # Extract and compare R² values
         log("\n[STEP 2] Extracting and comparing R² values...")
         
         comparison_data = []
@@ -186,13 +174,10 @@ if __name__ == "__main__":
         
         comparison_df = pd.DataFrame(comparison_data)
         
-        log("\n[INFO] Model R² values:")
+        log("\nModel R² values:")
         for _, row in comparison_df.iterrows():
             log(f"  {row['domain']}: R²={row['r_squared']:.4f} ({row['effect_size']}), Adj R²={row['adj_r_squared']:.4f}")
-        
-        # =========================================================================
-        # STEP 3: Bootstrap confidence intervals for R²
-        # =========================================================================
+        # Bootstrap confidence intervals for R²
         log("\n[STEP 3] Computing bootstrap confidence intervals for R²...")
         
         predictors = ['RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']
@@ -200,7 +185,7 @@ if __name__ == "__main__":
         all_bootstrap_values = []
         
         for domain in ['What', 'Where', 'When']:
-            log(f"\n[BOOTSTRAP] {domain} domain (1000 iterations)...")
+            log(f"\n{domain} domain (1000 iterations)...")
             
             boot_results = bootstrap_r_squared(data, domain, predictors, n_bootstrap=1000, seed=42)
             
@@ -224,16 +209,13 @@ if __name__ == "__main__":
         
         # Save comparison with CIs
         comparison_df.to_csv(OUTPUT_COMPARISON, index=False)
-        log(f"[OUTPUT] Model comparison saved to: {OUTPUT_COMPARISON}")
+        log(f"Model comparison saved to: {OUTPUT_COMPARISON}")
         
         # Save bootstrap distributions (subsample to keep file reasonable)
         bootstrap_sample_df = pd.DataFrame(all_bootstrap_values)
         bootstrap_sample_df.to_csv(OUTPUT_BOOTSTRAP, index=False)
-        log(f"[OUTPUT] Bootstrap R² distributions saved to: {OUTPUT_BOOTSTRAP}")
-        
-        # =========================================================================
-        # STEP 4: Compute pairwise R² differences
-        # =========================================================================
+        log(f"Bootstrap R² distributions saved to: {OUTPUT_BOOTSTRAP}")
+        # Compute pairwise R² differences
         log("\n[STEP 4] Computing pairwise R² differences...")
         
         differences = []
@@ -270,15 +252,12 @@ if __name__ == "__main__":
         
         differences_df = pd.DataFrame(differences)
         differences_df.to_csv(OUTPUT_DIFFERENCES, index=False)
-        log(f"[OUTPUT] R² differences saved to: {OUTPUT_DIFFERENCES}")
+        log(f"R² differences saved to: {OUTPUT_DIFFERENCES}")
         
-        log("\n[INFO] Pairwise R² comparisons:")
+        log("\nPairwise R² comparisons:")
         for _, row in differences_df.iterrows():
             log(f"  {row['comparison']}: diff={row['r2_difference']:.3f} ({row['direction']})")
-        
-        # =========================================================================
-        # STEP 5: Compute semi-partial R² contributions
-        # =========================================================================
+        # Compute semi-partial R² contributions
         log("\n[STEP 5] Computing semi-partial R² for each predictor...")
         
         contributions = []
@@ -298,11 +277,8 @@ if __name__ == "__main__":
         
         contributions_df = pd.DataFrame(contributions)
         contributions_df.to_csv(OUTPUT_CONTRIBUTIONS, index=False)
-        log(f"[OUTPUT] Predictor contributions saved to: {OUTPUT_CONTRIBUTIONS}")
-        
-        # =========================================================================
-        # STEP 6: Test hypothesis and summarize
-        # =========================================================================
+        log(f"Predictor contributions saved to: {OUTPUT_CONTRIBUTIONS}")
+        # Test hypothesis and summarize
         log("\n[STEP 6] Testing hypotheses and summarizing findings...")
         
         # Hypothesis: When domain should have lowest R²
@@ -338,16 +314,16 @@ if __name__ == "__main__":
         log(f"  Where vs When CIs overlap: {'Yes' if overlap_where_when else 'No'}")
         
         # Summary
-        log("\n[SUMMARY] Key findings:")
+        log("\nKey findings:")
         log(f"  1. When domain has lowest predictability (R²={r2_when:.3f}) as hypothesized")
         log(f"  2. What (R²={r2_what:.3f}) and Where (R²={r2_where:.3f}) have similar predictability")
         log(f"  3. RPM is strongest predictor across all domains")
         log(f"  4. Domain-specific prediction patterns partially supported")
         
-        log("\n[COMPLETE] Step 05 completed successfully")
+        log("\nStep 05 completed successfully")
         
     except Exception as e:
         log(f"[CRITICAL ERROR] Unexpected error: {e}")
         import traceback
-        log(f"[TRACEBACK] {traceback.format_exc()}")
+        log(f"{traceback.format_exc()}")
         sys.exit(1)

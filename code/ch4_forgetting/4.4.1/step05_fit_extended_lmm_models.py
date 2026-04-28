@@ -30,60 +30,46 @@ CONTEXT:
 - step05b (17 models): Recip+Log wins with 73.7% weight
 - This step (70+ models): Full kitchen sink to verify Recip+Log robustness
 
-Author: Claude Code (adapted from 5.2.1)
 Date: 2025-12-08
 RQ: ch5/5.4.1
 Step: 05
 """
 
-# =============================================================================
 # IMPORTS
-# =============================================================================
 
 import sys
 from pathlib import Path
 import pandas as pd
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Import kitchen_sink model selection tool
 from tools.model_selection import compare_lmm_models_kitchen_sink
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch5/5.4.1
 LOG_FILE = RQ_DIR / "logs" / "step05_kitchen_sink.log"
 DATA_DIR = RQ_DIR / "data"
 
-# =============================================================================
 # LOGGING
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # MAIN ANALYSIS
-# =============================================================================
 
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05: Kitchen Sink LMM Model Comparison (Congruence × Time)")
+        log("Step 05: Kitchen Sink LMM Model Comparison (Congruence × Time)")
         log("=" * 80)
+        # Load LMM Input Data
 
-        # =====================================================================
-        # STEP 1: Load LMM Input Data
-        # =====================================================================
-
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         input_path = DATA_DIR / "step04_lmm_input.csv"
 
         if not input_path.exists():
@@ -111,12 +97,9 @@ if __name__ == "__main__":
         log(f"  ✓ Participants: {lmm_input['UID'].nunique()}")
         log(f"  ✓ Congruence levels: {sorted(lmm_input['congruence'].unique())}")
         log(f"  ✓ Congruence counts: {lmm_input['congruence'].value_counts().to_dict()}")
+        # Run Kitchen Sink Model Comparison
 
-        # =====================================================================
-        # STEP 2: Run Kitchen Sink Model Comparison
-        # =====================================================================
-
-        log("[ANALYSIS] Running kitchen sink model comparison...")
+        log("Running kitchen sink model comparison...")
         log("  Model suite: 70+ time transformations")
         log("  Outcome: theta (IRT ability estimates)")
         log("  Time variable: TSVR_hours (continuous)")
@@ -148,13 +131,10 @@ if __name__ == "__main__":
             log_file=LOG_FILE,
         )
 
-        log("[DONE] Kitchen sink comparison complete")
+        log("Kitchen sink comparison complete")
+        # Extract and Report Results
 
-        # =====================================================================
-        # STEP 3: Extract and Report Results
-        # =====================================================================
-
-        log("[RESULTS] Model comparison summary:")
+        log("Model comparison summary:")
         log("=" * 80)
 
         comparison = results['comparison']
@@ -195,10 +175,7 @@ if __name__ == "__main__":
             log(f"   Substantial evidence for best model (weight={best_weight*100:.1f}%)")
             log("   Model averaging optional but recommended for robustness")
             log("")
-
-        # =====================================================================
-        # STEP 4: Save Summary
-        # =====================================================================
+        # Save Summary
 
         summary_path = DATA_DIR / "step05_best_model_summary.txt"
         with open(summary_path, 'w', encoding='utf-8') as f:
@@ -228,14 +205,14 @@ if __name__ == "__main__":
                 f.write(f"   Best weight: {best_weight*100:.1f}% (30-70% range)\n")
                 f.write("   Action: Model averaging optional\n")
 
-        log(f"[SAVE] Summary written to: {summary_path.name}")
+        log(f"Summary written to: {summary_path.name}")
 
         log("=" * 80)
-        log("[SUCCESS] Step 05 complete")
+        log("Step 05 complete")
         log("=" * 80)
 
     except Exception as e:
-        log("[ERROR] Step 05 failed")
+        log("Step 05 failed")
         log(f"  {type(e).__name__}: {str(e)}")
         import traceback
         log(traceback.format_exc())

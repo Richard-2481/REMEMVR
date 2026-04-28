@@ -1,0 +1,21 @@
+Model,ICC_slope_pct,Family
+"PowerLaw_04
+(α=0.4)",32.34,Power-Law
+"PowerLaw_02
+(α=0.2)",32.19,Power-Law
+"PowerLaw_03
+(α=0.3)",32.11,Power-Law
+"PowerLaw_05
+(α=0.5)",32.09,Power-Law
+"PowerLaw_06
+(α=0.6)",31.74,Power-Law
+"PowerLaw_07
+(α=0.7)",31.16,Power-Law
+"LogLog
+(log-log)",9.36,Fractional Root
+"FourthRoot
+(t^0.25)",9.2,Fractional Root
+"Root_033
+(t^0.33)",3.44,Fractional Root
+"CubeRoot
+(t^0.333)",2.61,Fractional Root

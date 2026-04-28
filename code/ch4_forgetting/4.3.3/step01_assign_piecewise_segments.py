@@ -19,7 +19,6 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 RQ_DIR = SCRIPT_DIR.parent
 PROJECT_ROOT = RQ_DIR.parents[2]
 
-# Add project root to path for imports
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from tools.analysis_lmm import assign_piecewise_segments
@@ -71,8 +70,6 @@ def main():
     # --- Validation: Check segment assignment ---
     segment_counts = piecewise_data['Segment'].value_counts()
     logger.info(f"Segment counts: {dict(segment_counts)}")
-
-    # Expected: 600 Early (tests 1-2), 600 Late (tests 3-4) = 100 participants x 2 tests x 3 paradigms
     if 'Early' not in segment_counts or 'Late' not in segment_counts:
         logger.error("CRITICAL: Missing segment level")
         sys.exit(1)

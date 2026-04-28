@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
-# =============================================================================
-# STEP 07: Fit Parallel LMMs and Compare AIC
-# =============================================================================
+# Fit Parallel LMMs and Compare AIC
 """
 Step ID: step07
 Step Name: Fit Parallel LMMs and Compare AIC
 RQ: 5.3.6 - Purified CTT Effects (Paradigms)
-Generated: 2025-12-04
 
 PURPOSE:
 Fit 9 parallel LMMs (3 paradigms x 3 measurement types) using random intercepts
@@ -46,7 +43,6 @@ IMPLEMENTATION NOTES:
 - REML=False for valid AIC comparison across models
 - Computes delta_AIC for model comparisons (positive = first model worse)
 """
-# =============================================================================
 
 import sys
 from pathlib import Path
@@ -56,42 +52,31 @@ from typing import Dict, List, Tuple, Any
 import traceback
 import statsmodels.formula.api as smf
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step07_fit_parallel_lmms.log"
 
-# =============================================================================
 # Logging Function
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 07: Fit Parallel LMMs and Compare AIC")
-
-        # =========================================================================
-        # STEP 1: Load Standardized Scores
-        # =========================================================================
-        log("[LOAD] Loading standardized scores...")
+        log("Step 07: Fit Parallel LMMs and Compare AIC")
+        # Load Standardized Scores
+        log("Loading standardized scores...")
         input_path = RQ_DIR / "data" / "step06_standardized_scores.csv"
         df = pd.read_csv(input_path)
-        log(f"[LOADED] {len(df)} rows, {len(df.columns)} columns")
+        log(f"{len(df)} rows, {len(df.columns)} columns")
 
         # Validate expected columns
         required_cols = ['composite_ID', 'UID', 'test', 'TSVR_hours',
@@ -101,19 +86,16 @@ if __name__ == "__main__":
         missing = [c for c in required_cols if c not in df.columns]
         if missing:
             raise ValueError(f"Missing required columns: {missing}")
-        log(f"[VALIDATION] All required columns present")
-
-        # =========================================================================
-        # STEP 2: Fit Parallel LMMs for Each Paradigm
-        # =========================================================================
-        log("[ANALYSIS] Fitting 9 parallel LMMs (3 paradigms x 3 measurement types)...")
+        log(f"All required columns present")
+        # Fit Parallel LMMs for Each Paradigm
+        log("Fitting 9 parallel LMMs (3 paradigms x 3 measurement types)...")
 
         paradigms = ['IFR', 'ICR', 'IRE']
         measurement_types = ['IRT', 'full', 'purified']
         results = []
 
         for paradigm in paradigms:
-            log(f"[FIT] Paradigm: {paradigm}")
+            log(f"Paradigm: {paradigm}")
 
             paradigm_results = {
                 'paradigm': paradigm,
@@ -127,7 +109,7 @@ if __name__ == "__main__":
                 else:
                     dv = f'z_CTT_{mtype}_{paradigm}'
 
-                log(f"  [FIT] {mtype.upper()} model: {dv} ~ TSVR_hours + (1|UID)")
+                log(f"  {mtype.upper()} model: {dv} ~ TSVR_hours + (1|UID)")
 
                 # Fit LMM with random intercepts only
                 try:
@@ -146,11 +128,11 @@ if __name__ == "__main__":
                     paradigm_results[f'coef_intercept_{mtype}'] = intercept
                     paradigm_results[f'coef_slope_{mtype}'] = slope
 
-                    log(f"    [RESULT] AIC={aic:.2f}, converged={converged}, "
+                    log(f"    AIC={aic:.2f}, converged={converged}, "
                         f"intercept={intercept:.4f}, slope={slope:.4f}")
 
                 except Exception as e:
-                    log(f"    [ERROR] Model fitting failed: {e}")
+                    log(f"    Model fitting failed: {e}")
                     paradigm_results[f'AIC_{mtype}'] = np.nan
                     paradigm_results[f'convergence_flag_{mtype}'] = False
                     paradigm_results[f'coef_intercept_{mtype}'] = np.nan
@@ -160,11 +142,8 @@ if __name__ == "__main__":
 
         # Create results DataFrame
         df_results = pd.DataFrame(results)
-
-        # =========================================================================
-        # STEP 3: Compute Model Comparisons
-        # =========================================================================
-        log("[COMPARISON] Computing AIC differences...")
+        # Compute Model Comparisons
+        log("Computing AIC differences...")
 
         # Compute delta AICs
         # Positive delta = first model worse (higher AIC)
@@ -175,15 +154,12 @@ if __name__ == "__main__":
             df_results['AIC_purified'] - df_results['AIC_IRT']
         )
 
-        log("[COMPARISON] AIC differences computed:")
+        log("AIC differences computed:")
         for _, row in df_results.iterrows():
             log(f"  {row['paradigm']}: delta(Full-Purified)={row['delta_AIC_full_purified']:.2f}, "
                 f"delta(Purified-IRT)={row['delta_AIC_purified_IRT']:.2f}")
-
-        # =========================================================================
-        # STEP 4: Compute Slope Correlation Between Full and Purified CTT
-        # =========================================================================
-        log("[COMPARISON] Computing slope correlation between Full and Purified CTT...")
+        # Compute Slope Correlation Between Full and Purified CTT
+        log("Computing slope correlation between Full and Purified CTT...")
 
         # Extract slopes for full and purified across paradigms
         slopes_full = df_results['coef_slope_full'].values
@@ -193,12 +169,9 @@ if __name__ == "__main__":
         slope_corr = np.corrcoef(slopes_full, slopes_purified)[0, 1]
         df_results['slope_correlation_full_purified'] = slope_corr
 
-        log(f"[COMPARISON] Slope correlation (Full vs Purified): r={slope_corr:.4f}")
-
-        # =========================================================================
-        # STEP 5: Save Model Comparison Results
-        # =========================================================================
-        log("[SAVE] Saving model comparison results...")
+        log(f"Slope correlation (Full vs Purified): r={slope_corr:.4f}")
+        # Save Model Comparison Results
+        log("Saving model comparison results...")
 
         # Reorder columns for clarity
         col_order = [
@@ -216,12 +189,9 @@ if __name__ == "__main__":
 
         output_path = RQ_DIR / "data" / "step07_lmm_model_comparison.csv"
         df_results.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_path} ({len(df_results)} rows)")
-
-        # =========================================================================
-        # STEP 6: Generate Convergence Report
-        # =========================================================================
-        log("[REPORT] Generating convergence report...")
+        log(f"{output_path} ({len(df_results)} rows)")
+        # Generate Convergence Report
+        log("Generating convergence report...")
 
         report_lines = []
         report_lines.append("=" * 80)
@@ -254,9 +224,9 @@ if __name__ == "__main__":
                 all_converged = False
 
         if all_converged:
-            report_lines.append("[PASS] All models converged successfully")
+            report_lines.append("All models converged successfully")
         else:
-            report_lines.append("[WARNING] Some models failed to converge")
+            report_lines.append("Some models failed to converge")
         report_lines.append("")
 
         # AIC comparison
@@ -331,23 +301,20 @@ if __name__ == "__main__":
         report_path = RQ_DIR / "data" / "step07_lmm_convergence_report.txt"
         with open(report_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(report_lines))
-        log(f"[SAVED] {report_path}")
+        log(f"{report_path}")
 
         # Print report to log
         log("")
         for line in report_lines:
             log(line)
-
-        # =========================================================================
-        # STEP 7: Validation
-        # =========================================================================
-        log("[VALIDATION] Validating results...")
+        # Validation
+        log("Validating results...")
 
         # Check convergence
         if not all_converged:
-            log("[WARNING] Not all models converged - review convergence report")
+            log("Not all models converged - review convergence report")
         else:
-            log("[PASS] All models converged")
+            log("All models converged")
 
         # Check AIC values
         aic_cols = ['AIC_IRT', 'AIC_full', 'AIC_purified']
@@ -356,26 +323,26 @@ if __name__ == "__main__":
                 raise ValueError(f"NaN values found in {col}")
             if (df_results[col] <= 0).any():
                 raise ValueError(f"Non-positive AIC values found in {col}")
-        log("[PASS] All AIC values positive and finite")
+        log("All AIC values positive and finite")
 
         # Check paradigms
         if set(df_results['paradigm']) != {'IFR', 'ICR', 'IRE'}:
             raise ValueError("Not all paradigms present")
-        log("[PASS] All 3 paradigms present")
+        log("All 3 paradigms present")
 
         # Check coefficients
         coef_cols = [c for c in df_results.columns if c.startswith('coef_')]
         for col in coef_cols:
             if df_results[col].isna().any():
                 raise ValueError(f"NaN values found in {col}")
-        log("[PASS] No NaN values in coefficients")
+        log("No NaN values in coefficients")
 
-        log("[SUCCESS] Step 07 complete")
+        log("Step 07 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

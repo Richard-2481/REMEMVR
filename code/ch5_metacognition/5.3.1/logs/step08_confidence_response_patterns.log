@@ -1,0 +1,30 @@
+================================================================================
+VALIDATION: Confidence Response Patterns (Section 1.4)
+================================================================================
+
+Loading raw confidence ratings...
+400 rows (composite_IDs)
+72 TC_* confidence items identified
+100 unique participants
+
+Computing participant-level response patterns...
+
+Aggregate response pattern statistics...
+Full scale usage (all 5 values): 0/100 (0.0%)
+Extremes only (0 and 1): 0/100 (0.0%)
+Mean rating SD: 0.292 (median: 0.299)
+Mean rating: 0.637
+Median unique values per participant: 4
+
+GRM assumption validation...
+Only 0.0% of participants use full 5-point scale
+GRM assumes ordinal scale usage - restricted range may violate assumptions
+Only 0.0% use extremes only (acceptable)
+Mean rating SD = 0.292 (acceptable variability)
+
+Saving response pattern results...
+step08_response_patterns.csv (100 participants)
+step08_response_patterns_summary.txt
+
+Confidence response patterns documented
+GRM assumptions moderately satisfied

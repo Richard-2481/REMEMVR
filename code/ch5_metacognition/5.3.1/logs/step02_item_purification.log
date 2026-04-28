@@ -1,0 +1,161 @@
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 72 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_What', 'Discrim_Where', 'Discrim_When']
+  Difficulty range: [-0.01, 1.12]
+  Overall_Discrimination range: [2.07, 5.82]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 72 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 72 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_What', 'Discrim_Where', 'Discrim_When']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+
+'message'
+
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.1/code/step02_item_purification.py", line 237, in <module>
+    log(f"  {validation_result['message']}")
+             ~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'message'
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 72 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_What', 'Discrim_Where', 'Discrim_When']
+  Difficulty range: [-0.01, 1.12]
+  Overall_Discrimination range: [2.07, 5.82]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 72 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 72 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_What', 'Discrim_Where', 'Discrim_When']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 72 / 72
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 72
+Retained (Pass 2): 72 (100.0%)
+Excluded: 0 (0.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 72 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_What', 'Discrim_Where', 'Discrim_When']
+  Difficulty range: [0.01, 1.17]
+  Overall_Discrimination range: [2.03, 5.83]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 72 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 72 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_What', 'Discrim_Where', 'Discrim_When']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 72 / 72
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 72
+Retained (Pass 2): 72 (100.0%)
+Excluded: 0 (0.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 105 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_What', 'Discrim_Where', 'Discrim_When']
+  Difficulty range: [-7.91, 1.99]
+  Overall_Discrimination range: [0.31, 2.57]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 104 items (99.0%)
+  Excluded: 1 items (1.0%)
+Retention rate 99.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 104 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_What', 'Discrim_Where', 'Discrim_When']
+step02_excluded_items.csv
+  Rows: 1 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 104 / 104
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 105
+Retained (Pass 2): 104 (99.0%)
+Excluded: 1 (1.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================

@@ -1,0 +1,54 @@
+Step 08: Prepare Plot Data for Visualization
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step05_correlation_analysis.csv
+3 rows
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_model_comparison.csv
+3 rows
+
+[PLOT 1] Preparing correlation comparison data
+6 rows (3 dimensions x 2 CTT types)
+Dimensions: ['Common', 'Congruent', 'Incongruent']
+CTT types: ['Full', 'Purified']
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step08_correlation_comparison_data.csv
+6 rows
+
+[PLOT 2] Preparing AIC comparison data
+6 rows (3 dimensions x 2 CTT types)
+Dimensions: ['Common', 'Congruent', 'Incongruent']
+CTT types: ['Full', 'Purified']
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step08_aic_comparison_data.csv
+6 rows
+
+Checking for NaN values
+No NaN values in either plot dataset
+
+Checking complete factorial design
+Complete factorial design verified for both plots
+
+Step 08 complete
+Step 08: Prepare Plot Data for Visualization
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step05_correlation_analysis.csv
+3 rows
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_model_comparison.csv
+3 rows
+
+[PLOT 1] Preparing correlation comparison data
+6 rows (3 dimensions x 2 CTT types)
+Dimensions: ['Common', 'Congruent', 'Incongruent']
+CTT types: ['Full', 'Purified']
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step08_correlation_comparison_data.csv
+6 rows
+
+[PLOT 2] Preparing AIC comparison data
+6 rows (3 dimensions x 2 CTT types)
+Dimensions: ['Common', 'Congruent', 'Incongruent']
+CTT types: ['Full', 'Purified']
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step08_aic_comparison_data.csv
+6 rows
+
+Checking for NaN values
+No NaN values in either plot dataset
+
+Checking complete factorial design
+Complete factorial design verified for both plots
+
+Step 08 complete

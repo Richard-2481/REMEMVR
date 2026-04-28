@@ -1,0 +1,4 @@
+Comparison,Mean_Diff_Theta,Cohens_d,Interpretation,Direction
+Cued vs Free,-0.06837973293063082,-0.06365402852608111,Negligible,Free > Cued
+Recognition vs Free,-0.017553452591962948,-0.016340338344894352,Negligible,Free > Recognition
+Recognition vs Cued,0.05082628033866787,0.04731369018118676,Negligible,Recognition > Cued

@@ -23,7 +23,6 @@ Interpretation Thresholds (Cicchetti 1994):
     - Good: 0.60-0.74
     - Excellent: >= 0.75
 
-Author: Claude (g_code agent)
 Date: 2025-12-05
 """
 

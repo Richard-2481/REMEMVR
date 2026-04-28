@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-PLATINUM FINALIZATION: Random Slopes Comparison (MANDATORY)
+VALIDATION: Random Slopes Comparison 
 
 PURPOSE:
 Test intercepts-only vs intercepts+slopes random effects to validate homogeneous
-effects claim. Per rq_platinum agent protocol, we CANNOT claim homogeneous effects
+effects claim. Per validation process protocol, we CANNOT claim homogeneous effects
 if we never tested for heterogeneity.
 
 INPUTS:
@@ -39,7 +39,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step05_random_slopes_comparison.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -48,25 +47,22 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("PLATINUM FINALIZATION: Random Slopes Comparison")
+        log("VALIDATION: Random Slopes Comparison")
         log("=" * 80)
 
         # Load data
-        log("\n[LOAD] Loading LMM input data...")
+        log("\nLoading LMM input data...")
         input_path = RQ_DIR / "data" / "step04_lmm_input.csv"
         if not input_path.exists():
             raise FileNotFoundError(f"Input file not found: {input_path}")
 
         lmm_input = pd.read_csv(input_path, encoding='utf-8')
-        log(f"[LOADED] {len(lmm_input)} rows, {lmm_input['UID'].nunique()} participants")
-        log(f"[INFO] Domains: {sorted(lmm_input['domain'].unique())}")
-
-        # =====================================================================
+        log(f"{len(lmm_input)} rows, {lmm_input['UID'].nunique()} participants")
+        log(f"Domains: {sorted(lmm_input['domain'].unique())}")
         # Model 1: Intercepts-Only (Current Model)
-        # =====================================================================
         log("\n[MODEL 1] Fitting intercepts-only model...")
-        log("[FORMULA] theta ~ C(domain) * log_TSVR")
-        log("[RANDOM]  ~1 (random intercept per participant)")
+        log("theta ~ C(domain) * log_TSVR")
+        log("~1 (random intercept per participant)")
 
         model_intercepts = smf.mixedlm(
             formula="theta ~ C(domain) * log_TSVR",
@@ -80,25 +76,22 @@ if __name__ == "__main__":
             result_intercepts = model_intercepts.fit(reml=False)
 
             if w:
-                log(f"[WARNING] Intercepts model warnings: {len(w)}")
+                log(f"Intercepts model warnings: {len(w)}")
                 for warning in w:
                     log(f"  - {warning.message}")
 
-        log(f"[RESULT] Converged: {result_intercepts.converged}")
-        log(f"[RESULT] AIC: {result_intercepts.aic:.2f}")
-        log(f"[RESULT] BIC: {result_intercepts.bic:.2f}")
-        log(f"[RESULT] Log-Likelihood: {result_intercepts.llf:.2f}")
+        log(f"Converged: {result_intercepts.converged}")
+        log(f"AIC: {result_intercepts.aic:.2f}")
+        log(f"BIC: {result_intercepts.bic:.2f}")
+        log(f"Log-Likelihood: {result_intercepts.llf:.2f}")
 
         # Extract random intercept variance
         intercept_var = result_intercepts.cov_re.iloc[0, 0]
-        log(f"[RESULT] Random intercept variance: {intercept_var:.4f} (SD={np.sqrt(intercept_var):.4f})")
-
-        # =====================================================================
+        log(f"Random intercept variance: {intercept_var:.4f} (SD={np.sqrt(intercept_var):.4f})")
         # Model 2: Intercepts + Slopes
-        # =====================================================================
         log("\n[MODEL 2] Fitting intercepts+slopes model...")
-        log("[FORMULA] theta ~ C(domain) * log_TSVR")
-        log("[RANDOM]  ~log_TSVR (random intercept + random slope on time)")
+        log("theta ~ C(domain) * log_TSVR")
+        log("~log_TSVR (random intercept + random slope on time)")
 
         model_slopes = smf.mixedlm(
             formula="theta ~ C(domain) * log_TSVR",
@@ -118,22 +111,22 @@ if __name__ == "__main__":
                 slopes_converged = slopes_result.converged
 
                 if w:
-                    log(f"[WARNING] Slopes model warnings: {len(w)}")
+                    log(f"Slopes model warnings: {len(w)}")
                     for warning in w:
                         log(f"  - {warning.message}")
                         if "singular" in str(warning.message).lower() or "boundary" in str(warning.message).lower():
                             convergence_issue = str(warning.message)
 
             except Exception as e:
-                log(f"[ERROR] Slopes model failed to fit: {str(e)}")
+                log(f"Slopes model failed to fit: {str(e)}")
                 convergence_issue = str(e)
                 slopes_converged = False
 
         if slopes_converged and slopes_result is not None:
-            log(f"[RESULT] Converged: {slopes_result.converged}")
-            log(f"[RESULT] AIC: {slopes_result.aic:.2f}")
-            log(f"[RESULT] BIC: {slopes_result.bic:.2f}")
-            log(f"[RESULT] Log-Likelihood: {slopes_result.llf:.2f}")
+            log(f"Converged: {slopes_result.converged}")
+            log(f"AIC: {slopes_result.aic:.2f}")
+            log(f"BIC: {slopes_result.bic:.2f}")
+            log(f"Log-Likelihood: {slopes_result.llf:.2f}")
 
             # Extract random slope variance
             if slopes_result.cov_re.shape[0] >= 2:
@@ -141,19 +134,16 @@ if __name__ == "__main__":
                 intercept_slope_corr = slopes_result.cov_re.iloc[0, 1] / np.sqrt(
                     slopes_result.cov_re.iloc[0, 0] * slopes_result.cov_re.iloc[1, 1]
                 )
-                log(f"[RESULT] Random slope variance: {slope_var:.4f} (SD={np.sqrt(slope_var):.4f})")
-                log(f"[RESULT] Intercept-slope correlation: {intercept_slope_corr:.3f}")
+                log(f"Random slope variance: {slope_var:.4f} (SD={np.sqrt(slope_var):.4f})")
+                log(f"Intercept-slope correlation: {intercept_slope_corr:.3f}")
             else:
-                log("[WARNING] Random effects covariance matrix incomplete")
+                log("Random effects covariance matrix incomplete")
         else:
-            log("[RESULT] Model did NOT converge or failed to fit")
+            log("Model did NOT converge or failed to fit")
             if convergence_issue:
-                log(f"[ISSUE] {convergence_issue}")
-
-        # =====================================================================
+                log(f"{convergence_issue}")
         # Model Comparison
-        # =====================================================================
-        log("\n[COMPARISON] Model selection via AIC...")
+        log("\nModel selection via AIC...")
 
         comparison_results = []
 
@@ -198,16 +188,16 @@ if __name__ == "__main__":
                 decision = "MODELS EQUIVALENT - No clear winner"
                 interpretation = "ΔAIC < 2 suggests negligible difference. Either model acceptable, prefer simpler (intercepts-only)."
 
-            log(f"[DECISION] {decision}")
-            log(f"[INTERPRETATION] {interpretation}")
+            log(f"{decision}")
+            log(f"{interpretation}")
 
         else:
             delta_aic = np.nan
             decision = "SLOPES MODEL FAILED TO CONVERGE"
             interpretation = "Random slopes model did not converge. Likely insufficient data for stable estimation (N=4 timepoints per participant). Intercepts-only model is appropriate."
 
-            log(f"\n[DECISION] {decision}")
-            log(f"[INTERPRETATION] {interpretation}")
+            log(f"\n{decision}")
+            log(f"{interpretation}")
 
             comparison_results.append({
                 'model': 'Intercepts+slopes',
@@ -220,11 +210,8 @@ if __name__ == "__main__":
                 'n_params': np.nan,
                 'convergence_issue': convergence_issue if convergence_issue else "Failed to fit"
             })
-
-        # =====================================================================
         # Save Outputs
-        # =====================================================================
-        log("\n[SAVE] Saving comparison results...")
+        log("\nSaving comparison results...")
 
         # Comparison table
         comparison_df = pd.DataFrame(comparison_results)
@@ -232,7 +219,7 @@ if __name__ == "__main__":
 
         output_comparison = RQ_DIR / "data" / "step05_random_slopes_comparison.csv"
         comparison_df.to_csv(output_comparison, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_comparison.name}")
+        log(f"{output_comparison.name}")
 
         # Diagnostics report
         output_diagnostics = RQ_DIR / "data" / "step05_random_slopes_diagnostics.txt"
@@ -282,20 +269,20 @@ if __name__ == "__main__":
                 f.write("  - Homogeneity assumption is PRAGMATIC, not empirically tested\n\n")
 
             f.write("REFERENCE:\n")
-            f.write("  Per rq_platinum agent protocol (Section 4.4), testing random slopes is\n")
+            f.write("  Per validation process protocol (Section 4.4), testing random slopes is\n")
             f.write("  MANDATORY for modeling RQs. We cannot claim homogeneous effects without\n")
             f.write("  testing for heterogeneity. This comparison fulfills that requirement.\n")
 
-        log(f"[SAVED] {output_diagnostics.name}")
+        log(f"{output_diagnostics.name}")
 
-        log("\n[SUCCESS] Random slopes comparison complete")
-        log(f"[RECOMMENDATION] Use intercepts-only model (simpler, converges reliably)")
+        log("\nRandom slopes comparison complete")
+        log(f"Use intercepts-only model (simpler, converges reliably)")
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"\n{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

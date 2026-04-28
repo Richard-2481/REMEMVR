@@ -1,0 +1,42 @@
+Step 3: Extract Segment-Specific Slopes
+Loading fitted piecewise LMM model from Step 2...
+step02_piecewise_lmm_model.pkl
+Computing 6 segment-congruence slopes via delta method...
+Found 15 coefficients:
+  Intercept: 0.4613
+  C(Segment, Treatment('Early'))[T.Late]: -0.3872
+  C(Congruence, Treatment('Common'))[T.Congruent]: -0.0299
+  C(Congruence, Treatment('Common'))[T.Incongruent]: 0.0562
+  C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Congruent]: 0.0938
+  C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Incongruent]: -0.0652
+  Days_within: -0.2634
+  Days_within:C(Segment, Treatment('Early'))[T.Late]: 0.1702
+  Days_within:C(Congruence, Treatment('Common'))[T.Congruent]: 0.0100
+  Days_within:C(Congruence, Treatment('Common'))[T.Incongruent]: -0.0564
+  Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Congruent]: -0.0176
+  Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Incongruent]: 0.0596
+  Group Var: 0.6044
+  Group x Days_within Cov: -0.0373
+  Days_within Var: 0.0231
+Identified coefficients:
+  days_within: Days_within
+  days_seg_late: Days_within:C(Segment, Treatment('Early'))[T.Late]
+  days_cong_congruent: Days_within:C(Congruence, Treatment('Common'))[T.Congruent]
+  days_cong_incongruent: Days_within:C(Congruence, Treatment('Common'))[T.Incongruent]
+  days_seg_cong_congruent: Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Congruent]
+  days_seg_cong_incongruent: Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Incongruent]
+Early-Common: -0.2634 +/- 0.1643
+Early-Congruent: -0.2534 +/- 0.1643
+Early-Incongruent: -0.3198 +/- 0.1643
+Late-Common: -0.0932 +/- 0.0204
+Late-Congruent: -0.1009 +/- 0.0204
+Late-Incongruent: -0.0899 +/- 0.0204
+Computed 6 slopes
+Validating slopes...
+Slope count correct (6)
+All segment-congruence combinations present
+All SE values positive (delta method successful)
+No missing values
+CI ordering correct
+step03_segment_slopes.csv (6 rows)
+Step 3 complete

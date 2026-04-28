@@ -1,0 +1,62 @@
+Step 05: Hierarchical Regression
+Loading analysis dataset...
+step04_analysis_dataset.csv (100 rows, 8 cols)
+All required columns present: ['confidence_theta', 'age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+Setting up hierarchical predictor blocks...
+Sex variable already numeric
+Block 1 (Demographics): ['age', 'sex_dummy', 'education']
+Block 2 (Demographics + Cognitive): ['age', 'sex_dummy', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+Outcome variable: confidence_theta (N=100)
+Running hierarchical regression...
+Hierarchical regression models fitted
+Model 1 R² = 0.0203
+Model 2 R² = 0.1875
+ΔR² = 0.1673
+F-change = 6.382
+p-change = 0.000557
+Computing bootstrap confidence intervals (n=1000, seed=42)...
+Demographics model 95% CI: [0.0038, 0.1467]
+Cognitive model 95% CI: [0.1181, 0.3857]
+Computing Cohen's f² effect sizes...
+Demographics Cohen's f² = 0.0207
+Cognitive Cohen's f² = 0.2308
+step05_hierarchical_models.csv (2 rows, 8 cols)
+Hierarchical regression results:
+  Demographics: R²=0.0203, F=0.66, p=0.577268
+  Cognitive: R²=0.1875, F=3.58, p=0.003105
+Running model validation...
+Some checks FAILED:
+Issue: Model 1 did not converge
+Issue: Model 2 did not converge
+Step 05: Hierarchical regression complete
+Step 05: Hierarchical Regression
+Loading analysis dataset...
+step04_analysis_dataset.csv (100 rows, 10 cols)
+All required columns present: ['confidence_theta', 'age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+Setting up hierarchical predictor blocks...
+Sex variable already numeric
+Block 1 (Demographics): ['age', 'sex_dummy', 'education']
+Block 2 (Demographics + Cognitive): ['age', 'sex_dummy', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+Outcome variable: confidence_theta (N=100)
+Running hierarchical regression...
+Hierarchical regression models fitted
+Model 1 R² = 0.0203
+Model 2 R² = 0.2205
+ΔR² = 0.2002
+F-change = 4.674
+p-change = 0.000764
+Computing bootstrap confidence intervals (n=1000, seed=42)...
+Demographics model 95% CI: [0.0038, 0.1467]
+Cognitive model 95% CI: [0.1510, 0.4295]
+Computing Cohen's f² effect sizes...
+Demographics Cohen's f² = 0.0207
+Cognitive Cohen's f² = 0.2828
+step05_hierarchical_models.csv (2 rows, 8 cols)
+Hierarchical regression results:
+  Demographics: R²=0.0203, F=0.66, p=0.577268
+  Cognitive: R²=0.2205, F=3.22, p=0.002900
+Running model validation...
+Some checks FAILED:
+Issue: Model 1 did not converge
+Issue: Model 2 did not converge
+Step 05: Hierarchical regression complete

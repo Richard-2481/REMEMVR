@@ -1,0 +1,29 @@
+Step 01: prepare_predictors
+Loading merged data from Step 0...
+step00_lmm_input_raw.csv (400 rows, 7 cols)
+All required columns present: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'se_all', 'age']
+Computing grand-mean centered Age...
+Grand mean age = 44.57 years
+Age_c: mean = 0.000000, SD = 14.52
+Creating time transformations...
+Time (linear): range = [1.0, 246.2] hours
+Time_log: range = [0.693, 5.510]
+Time_log contains no NaN or inf values
+Saving prepared data...
+step01_lmm_input_prepared.csv (400 rows, 10 cols)
+Running validate_standardization...
+valid: False
+message: Standardization validation failed for 1 check(s): Age_c: SD=14.5242 (expected ~1, tolerance=0.01)
+mean_values: {'Age_c': np.float64(3.4106051316484808e-15)}
+sd_values: {'Age_c': np.float64(14.52420328978521)}
+Running validate_numeric_range for Age_c...
+valid: True
+message: Age_c: All values within range [-30.0, 30.0] (n=400).
+out_of_range_count: 0
+violations: []
+Running validate_numeric_range for Time_log...
+valid: True
+message: Time_log: All values within range [0.0, 6.0] (n=400).
+out_of_range_count: 0
+violations: []
+Step 01 complete

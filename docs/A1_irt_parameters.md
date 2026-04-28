@@ -2,7 +2,7 @@
 layout: default
 title: "A1. IRT Item Parameters"
 parent: Home
-nav_order: 1
+nav_order: 2
 ---
 
 # A1. IRT Item Parameters

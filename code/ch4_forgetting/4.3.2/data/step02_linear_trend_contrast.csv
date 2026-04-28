@@ -1,0 +1,2 @@
+contrast_name,estimate,SE,z_value,p_value_uncorrected,p_value_bonferroni,significant_uncorrected,significant_bonferroni,CI_lower,CI_upper
+Linear_Trend,-0.12744736265812068,0.05151083502507017,-2.4741855300169844,0.013354032759733618,0.20031049139600426,True,False,-0.2284085993072582,-0.026486126008983146

@@ -12,7 +12,6 @@ Structural Equation Modeling approach that properly accounts for IRT measurement
 Input: step01_merged_theta.csv (400 rows, theta + SE for accuracy and confidence)
 Output: step02_calibration_scores_SEM.csv (400 rows, with latent_calibration)
 
-Author: Claude Code (Phase 2 SEM Prototype)
 Date: 2025-12-28
 """
 
@@ -28,9 +27,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 
 from sem_calibration import quick_sem_calibration, compute_difference_score_reliability
 
-# ============================================================================
 # SETUP
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.2.1
 LOG_FILE = RQ_DIR / "logs" / "step02_SEM.log"
@@ -62,9 +59,7 @@ log(f"Phase 2 Prototype: Replacing simple difference with latent variables")
 log(f"Target reliability: r > 0.70 (vs r_diff=-0.16 for simple difference)")
 log("=" * 70)
 
-# ============================================================================
-# STEP 1: Load Merged Theta Scores
-# ============================================================================
+# Load Merged Theta Scores
 
 log("\n" + "=" * 70)
 log("STEP 1: Load Merged Theta Scores")
@@ -116,9 +111,7 @@ if n_missing_se_conf > 0:
 
 log("STEP 1 COMPLETE")
 
-# ============================================================================
-# STEP 2: Compute PRE-SEM Difference Score Reliability (Baseline)
-# ============================================================================
+# Compute PRE-SEM Difference Score Reliability (Baseline)
 
 log("\n" + "=" * 70)
 log("STEP 2: Compute PRE-SEM Difference Score Reliability (Baseline)")
@@ -203,9 +196,7 @@ else:
 
 log("STEP 2 COMPLETE")
 
-# ============================================================================
-# STEP 3: Compute SEM-Based Latent Calibration
-# ============================================================================
+# Compute SEM-Based Latent Calibration
 
 log("\n" + "=" * 70)
 log("STEP 3: Compute SEM-Based Latent Calibration")
@@ -310,9 +301,7 @@ for key, value in diagnostics.items():
 
 log("STEP 3 COMPLETE")
 
-# ============================================================================
-# STEP 4: Validate SEM Calibration Reliability (Target r>0.70)
-# ============================================================================
+# Validate SEM Calibration Reliability (Target r>0.70)
 
 log("\n" + "=" * 70)
 log("STEP 4: Validate SEM Calibration Reliability (Target r>0.70)")
@@ -383,9 +372,7 @@ else:
 
 log("STEP 4 COMPLETE")
 
-# ============================================================================
-# STEP 5: Save SEM-Based Calibration Scores
-# ============================================================================
+# Save SEM-Based Calibration Scores
 
 log("\n" + "=" * 70)
 log("STEP 5: Save SEM-Based Calibration Scores")
@@ -432,9 +419,7 @@ log(f"Saved diagnostics: {diagnostics_file}")
 
 log("STEP 5 COMPLETE")
 
-# ============================================================================
 # SUMMARY
-# ============================================================================
 
 log("\n" + "=" * 70)
 log("SEM-BASED CALIBRATION COMPUTATION COMPLETE")

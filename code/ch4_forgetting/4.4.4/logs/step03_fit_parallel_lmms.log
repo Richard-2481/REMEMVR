@@ -1,0 +1,82 @@
+2025-12-03 20:05:13,496 - INFO - ============================================================
+2025-12-03 20:05:13,496 - INFO - Step 03: Fit Parallel LMMs (IRT vs CTT)
+2025-12-03 20:05:13,496 - INFO - ============================================================
+2025-12-03 20:05:13,496 - INFO - Loading merged IRT-CTT data...
+2025-12-03 20:05:13,498 - INFO - Loaded merged data: 400 rows
+2025-12-03 20:05:13,498 - INFO - Loading TSVR mapping...
+2025-12-03 20:05:13,499 - INFO - Loaded TSVR: 400 rows
+2025-12-03 20:05:13,499 - INFO - Preparing IRT LMM input (long format)...
+2025-12-03 20:05:13,504 - INFO - IRT input: 1200 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'congruence', 'log_TSVR']
+2025-12-03 20:05:13,505 - INFO - Preparing CTT LMM input (long format)...
+2025-12-03 20:05:13,506 - INFO - CTT input: 1200 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'CTT_mean', 'congruence', 'log_TSVR']
+2025-12-03 20:05:13,507 - INFO - Fitting IRT LMM...
+2025-12-03 20:05:13,507 - INFO - Fitting IRT with random slopes: theta ~ C(congruence) * log_TSVR, re_formula=~log_TSVR
+2025-12-03 20:05:13,867 - INFO - IRT: Converged with random slopes
+2025-12-03 20:05:13,867 - INFO - Fitting CTT LMM...
+2025-12-03 20:05:13,867 - INFO - Fitting CTT with random slopes: CTT_mean ~ C(congruence) * log_TSVR, re_formula=~log_TSVR
+2025-12-03 20:05:14,290 - INFO - CTT: Converged with random slopes
+2025-12-03 20:05:14,290 - INFO - Checking structural equivalence...
+2025-12-03 20:05:14,290 - INFO - IRT structure: full, CTT structure: full
+2025-12-03 20:05:14,290 - INFO - Generating model summaries...
+2025-12-03 20:05:37,700 - INFO - ============================================================
+2025-12-03 20:05:37,700 - INFO - Step 03: Fit Parallel LMMs (IRT vs CTT)
+2025-12-03 20:05:37,700 - INFO - ============================================================
+2025-12-03 20:05:37,700 - INFO - Loading merged IRT-CTT data...
+2025-12-03 20:05:37,702 - INFO - Loaded merged data: 400 rows
+2025-12-03 20:05:37,702 - INFO - Loading TSVR mapping...
+2025-12-03 20:05:37,703 - INFO - Loaded TSVR: 400 rows
+2025-12-03 20:05:37,703 - INFO - Preparing IRT LMM input (long format)...
+2025-12-03 20:05:37,706 - INFO - IRT input: 1200 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'congruence', 'log_TSVR']
+2025-12-03 20:05:37,706 - INFO - Preparing CTT LMM input (long format)...
+2025-12-03 20:05:37,708 - INFO - CTT input: 1200 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'CTT_mean', 'congruence', 'log_TSVR']
+2025-12-03 20:05:37,708 - INFO - Fitting IRT LMM...
+2025-12-03 20:05:37,708 - INFO - Fitting IRT with random slopes: theta ~ C(congruence) * log_TSVR, re_formula=~log_TSVR
+2025-12-03 20:05:38,071 - INFO - IRT: Converged with random slopes
+2025-12-03 20:05:38,071 - INFO - Fitting CTT LMM...
+2025-12-03 20:05:38,071 - INFO - Fitting CTT with random slopes: CTT_mean ~ C(congruence) * log_TSVR, re_formula=~log_TSVR
+2025-12-03 20:05:38,491 - INFO - CTT: Converged with random slopes
+2025-12-03 20:05:38,491 - INFO - Checking structural equivalence...
+2025-12-03 20:05:38,491 - INFO - IRT structure: full, CTT structure: full
+2025-12-03 20:05:38,491 - INFO - Generating model summaries...
+2025-12-03 20:05:38,504 - INFO - Saved: step03_irt_lmm_model.pkl
+2025-12-03 20:05:38,505 - INFO - Saved: step03_ctt_lmm_model.pkl
+2025-12-03 20:05:38,508 - INFO - Saved: step03_irt_lmm_input.csv (1200 rows)
+2025-12-03 20:05:38,510 - INFO - Saved: step03_ctt_lmm_input.csv (1200 rows)
+2025-12-03 20:05:38,510 - INFO - ============================================================
+2025-12-03 20:05:38,510 - INFO - Model Fit Summary:
+2025-12-03 20:05:38,510 - INFO -   IRT: AIC=2559.06, BIC=2609.96, converged=True
+2025-12-03 20:05:38,510 - INFO -   CTT: AIC=-1069.30, BIC=-1018.40, converged=True
+2025-12-03 20:05:38,510 - INFO - ============================================================
+2025-12-03 20:05:38,510 - INFO - Step 03 COMPLETE: Both LMMs fitted successfully
+2025-12-03 20:05:38,510 - INFO - ============================================================
+2025-12-09 20:37:54,989 - INFO - ============================================================
+2025-12-09 20:37:55,003 - INFO - Step 03: Fit Parallel LMMs (IRT vs CTT)
+2025-12-09 20:37:55,004 - INFO - ============================================================
+2025-12-09 20:37:55,004 - INFO - Loading merged IRT-CTT data...
+2025-12-09 20:37:55,006 - INFO - Loaded merged data: 400 rows
+2025-12-09 20:37:55,007 - INFO - Loading TSVR mapping...
+2025-12-09 20:37:55,008 - INFO - Loaded TSVR: 400 rows
+2025-12-09 20:37:55,008 - INFO - Preparing IRT LMM input (long format)...
+2025-12-09 20:37:55,014 - INFO - IRT input: 1200 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'congruence', 'recip_TSVR', 'log_TSVR']
+2025-12-09 20:37:55,014 - INFO - Preparing CTT LMM input (long format)...
+2025-12-09 20:37:55,040 - INFO - CTT input: 1200 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'CTT_mean', 'congruence', 'recip_TSVR', 'log_TSVR']
+2025-12-09 20:37:55,041 - INFO - Fitting IRT LMM...
+2025-12-09 20:37:55,041 - INFO - Fitting IRT with random slopes: theta ~ C(congruence) * (recip_TSVR + log_TSVR), re_formula=~recip_TSVR
+2025-12-09 20:37:55,835 - INFO - IRT: Converged with random slopes
+2025-12-09 20:37:55,835 - INFO - Fitting CTT LMM...
+2025-12-09 20:37:55,836 - INFO - Fitting CTT with random slopes: CTT_mean ~ C(congruence) * (recip_TSVR + log_TSVR), re_formula=~recip_TSVR
+2025-12-09 20:37:56,754 - INFO - CTT: Converged with random slopes
+2025-12-09 20:37:56,754 - INFO - Checking structural equivalence...
+2025-12-09 20:37:56,754 - INFO - IRT structure: full, CTT structure: full
+2025-12-09 20:37:56,754 - INFO - Generating model summaries...
+2025-12-09 20:37:56,825 - INFO - Saved: step03_irt_lmm_model.pkl
+2025-12-09 20:37:56,831 - INFO - Saved: step03_ctt_lmm_model.pkl
+2025-12-09 20:37:56,851 - INFO - Saved: step03_irt_lmm_input.csv (1200 rows)
+2025-12-09 20:37:56,862 - INFO - Saved: step03_ctt_lmm_input.csv (1200 rows)
+2025-12-09 20:37:56,862 - INFO - ============================================================
+2025-12-09 20:37:56,863 - INFO - Model Fit Summary:
+2025-12-09 20:37:56,863 - INFO -   IRT: AIC=2529.98, BIC=2596.15, converged=True
+2025-12-09 20:37:56,863 - INFO -   CTT: AIC=-1077.45, BIC=-1011.28, converged=True
+2025-12-09 20:37:56,863 - INFO - ============================================================
+2025-12-09 20:37:56,863 - INFO - Step 03 COMPLETE: Both LMMs fitted successfully
+2025-12-09 20:37:56,871 - INFO - ============================================================

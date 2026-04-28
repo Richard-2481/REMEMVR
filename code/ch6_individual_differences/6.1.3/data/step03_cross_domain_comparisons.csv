@@ -1,0 +1,6 @@
+comparison,beta_difference,hypothesis,observed
+RAVLT_T_What - RAVLT_T_Where,0.044494697295578894,positive,positive
+RAVLT_Pct_Ret_T_What - RAVLT_Pct_Ret_T_Where,-0.01347438010123661,positive,negative
+BVMT_T_Where - BVMT_T_What,0.0014251628036348954,positive,positive
+BVMT_Pct_Ret_T_Where - BVMT_Pct_Ret_T_What,-0.029888509151725896,positive,negative
+RPM_range,0.1478454625753402,small (<0.1),large

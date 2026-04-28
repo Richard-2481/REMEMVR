@@ -1,0 +1,100 @@
+Step 3: Paired t-test on decline rate difference (PRIMARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running paired t-test...
+t(99) = 2.3290, p (two-tailed) = 0.021889
+p (one-tailed, conf > acc) = 0.010945
+Applying Decision D068 (dual p-value reporting)...
+p_uncorrected = 0.010945
+p_bonferroni = 0.010945 (no correction needed, single test)
+Computing mean difference and 95% CI...
+Mean difference: 0.001954
+SE difference: 0.000839
+95% CI: [0.000310, 0.003598]
+Saving analysis outputs...
+step03_paired_ttest_results.csv (1 rows, 8 cols)
+Running inline validation...
+Paired t-test complete: t(99) = 2.3290, p = 0.010945
+Mean difference: 0.001954
+Dual reporting per Decision D068
+Step 3 complete
+Step 3: Paired t-test on decline rate difference (PRIMARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running paired t-test...
+t(99) = -0.0600, p (two-tailed) = 0.952242
+p (one-tailed, conf > acc) = 0.523879
+Applying Decision D068 (dual p-value reporting)...
+p_uncorrected = 0.523879
+p_bonferroni = 0.523879 (no correction needed, single test)
+Computing mean difference and 95% CI...
+Mean difference: -0.000037
+SE difference: 0.000612
+95% CI: [-0.001237, 0.001163]
+Saving analysis outputs...
+step03_paired_ttest_results.csv (1 rows, 8 cols)
+Running inline validation...
+Paired t-test complete: t(99) = -0.0600, p = 0.523879
+Mean difference: -0.000037
+Dual reporting per Decision D068
+Step 3 complete
+Step 3: Paired t-test on decline rate difference (PRIMARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running paired t-test...
+t(99) = -1.2133, p (two-tailed) = 0.227918
+p (one-tailed, conf > acc) = 0.886041
+Applying Decision D068 (dual p-value reporting)...
+p_uncorrected = 0.886041
+p_bonferroni = 0.886041 (no correction needed, single test)
+Computing mean difference and 95% CI...
+Mean difference: -0.000714
+SE difference: 0.000589
+95% CI: [-0.001868, 0.000440]
+Saving analysis outputs...
+step03_paired_ttest_results.csv (1 rows, 8 cols)
+Running inline validation...
+Paired t-test complete: t(99) = -1.2133, p = 0.886041
+Mean difference: -0.000714
+Dual reporting per Decision D068
+Step 3 complete
+Step 3: Paired t-test on decline rate difference (PRIMARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running paired t-test...
+t(99) = -1.2133, p (two-tailed) = 0.227918
+p (one-tailed, conf > acc) = 0.886041
+Applying Decision D068 (dual p-value reporting)...
+p_uncorrected = 0.886041
+p_bonferroni = 0.886041 (no correction needed, single test)
+Computing mean difference and 95% CI...
+Mean difference: -0.000714
+SE difference: 0.000589
+95% CI: [-0.001868, 0.000440]
+Saving analysis outputs...
+step03_paired_ttest_results.csv (1 rows, 8 cols)
+Running inline validation...
+Paired t-test complete: t(99) = -1.2133, p = 0.886041
+Mean difference: -0.000714
+Dual reporting per Decision D068
+Step 3 complete
+Step 3: Paired t-test on decline rate difference (PRIMARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running paired t-test...
+t(99) = -1.2133, p (two-tailed) = 0.227918
+p (one-tailed, conf > acc) = 0.886041
+Applying Decision D068 (dual p-value reporting)...
+p_uncorrected = 0.886041
+p_bonferroni = 0.886041 (no correction needed, single test)
+Computing mean difference and 95% CI...
+Mean difference: -0.000714
+SE difference: 0.000589
+95% CI: [-0.001868, 0.000440]
+Saving analysis outputs...
+step03_paired_ttest_results.csv (1 rows, 8 cols)
+Running inline validation...
+Paired t-test complete: t(99) = -1.2133, p = 0.886041
+Mean difference: -0.000714
+Dual reporting per Decision D068
+Step 3 complete

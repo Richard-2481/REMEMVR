@@ -1,0 +1,82 @@
+Step 06: Model Diagnostics and Assumption Validation
+Loading analysis input data...
+step03_analysis_input.csv (100 rows, 8 cols)
+Refitting full Model 2 for diagnostics...
+Model refitted: R² = 0.2952, adj R² = 0.2497
+Computing Variance Inflation Factors (VIF)...
+age_std: 1.453
+sex: 1.038
+education_std: 1.041
+RAVLT_T_std: 1.198
+BVMT_T_std: 1.754
+RPM_T_std: 1.377
+Maximum VIF: 1.754 (threshold = 10.0)
+Multicollinearity check: PASS
+Testing normality of residuals (Shapiro-Wilk)...
+Shapiro-Wilk statistic: 0.9831
+p-value: 0.2301
+Normality assumption: PASS (alpha = 0.05)
+Testing homoscedasticity (Breusch-Pagan)...
+Breusch-Pagan LM statistic: 8.4931
+p-value: 0.2042
+Homoscedasticity assumption: PASS (alpha = 0.05)
+Computing Cook's D and leverage values...
+Cook's D threshold: 0.0400
+Observations with high Cook's D: 6 / 100
+Maximum Cook's D: 0.136425
+Leverage threshold: 0.1200
+Observations with high leverage: 9 / 100
+Maximum leverage: 0.178224
+Saving diagnostic test results...
+step06_model_diagnostics.csv (7 rows, 6 cols)
+Saving diagnostic plots data...
+step06_diagnostic_plots_data.csv (100 rows, 6 cols)
+Diagnostic test summary:
+Multicollinearity (VIF): PASS
+Normality (Shapiro-Wilk): PASS
+Homoscedasticity (Breusch-Pagan): PASS
+Influential observations: 6 high Cook's D, 9 high leverage
+Overall diagnostic status: ALL PASS
+Step 06 complete
+Step 06: Model Diagnostics and Assumption Validation
+Loading analysis input data...
+step03_analysis_input.csv (100 rows, 10 cols)
+Refitting full Model 2 for diagnostics...
+Model refitted: R² = 0.3358, adj R² = 0.2774
+Computing Variance Inflation Factors (VIF)...
+age_std: 1.446
+sex: 1.068
+education_std: 1.050
+RAVLT_T_std: 1.256
+BVMT_T_std: 1.884
+RPM_T_std: 1.389
+RAVLT_Pct_Ret_T_std: 1.170
+BVMT_Pct_Ret_T_std: 1.091
+Maximum VIF: 1.884 (threshold = 10.0)
+Multicollinearity check: PASS
+Testing normality of residuals (Shapiro-Wilk)...
+Shapiro-Wilk statistic: 0.9831
+p-value: 0.2300
+Normality assumption: PASS (alpha = 0.05)
+Testing homoscedasticity (Breusch-Pagan)...
+Breusch-Pagan LM statistic: 9.0988
+p-value: 0.3340
+Homoscedasticity assumption: PASS (alpha = 0.05)
+Computing Cook's D and leverage values...
+Cook's D threshold: 0.0400
+Observations with high Cook's D: 9 / 100
+Maximum Cook's D: 0.098953
+Leverage threshold: 0.1600
+Observations with high leverage: 12 / 100
+Maximum leverage: 0.290783
+Saving diagnostic test results...
+step06_model_diagnostics.csv (7 rows, 6 cols)
+Saving diagnostic plots data...
+step06_diagnostic_plots_data.csv (100 rows, 6 cols)
+Diagnostic test summary:
+Multicollinearity (VIF): PASS
+Normality (Shapiro-Wilk): PASS
+Homoscedasticity (Breusch-Pagan): PASS
+Influential observations: 9 high Cook's D, 12 high leverage
+Overall diagnostic status: ALL PASS
+Step 06 complete

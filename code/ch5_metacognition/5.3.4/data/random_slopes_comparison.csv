@@ -1,0 +1,4 @@
+domain,aic_intercepts_only,aic_intercepts_slopes,delta_aic,converged_intercepts,converged_slopes,var_slope,decision,rationale,slope_interpretation
+What,379.2034759671933,1166.7067498221932,-787.5032738549999,True,False,0.05681018754199039,INTERCEPTS BETTER (slopes overfit),ΔAIC=-787.50<-2: Intercepts-only preferred,Substantial slope variance (0.0568) - individual differences CONFIRMED
+Where,369.87656679066095,1191.4753757212916,-821.5988089306306,True,False,0.05953891046466731,INTERCEPTS BETTER (slopes overfit),ΔAIC=-821.60<-2: Intercepts-only preferred,Substantial slope variance (0.0595) - individual differences CONFIRMED
+When,554.1580309523042,549.5900327947929,4.567998157511283,True,True,1.6462263256515626e-06,SLOPES IMPROVE (use slopes model),ΔAIC=4.57>2: Slopes model justified by data,Negligible slope variance (0.000002) - homogeneous slopes

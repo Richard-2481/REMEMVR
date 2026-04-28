@@ -1,0 +1,5 @@
+Check,Test,Statistic,p_value,Result,Interpretation
+Normality,Shapiro-Wilk,0.9851832596604609,3.0956428103849303e-07,MARGINAL,"W=0.985, p=0.000"
+Homoscedasticity,Spearman (|resid| vs fitted),0.0031768473233911563,0.9285140623971468,PASS,"r=0.003, p=0.929"
+Independence,Durbin-Watson,1.2181593923354943,,MARGINAL,DW=1.218 (≈2.0 = independence)
+Outliers,Standardized residuals > 3,0.0,,PASS,0/800 (0.00%)

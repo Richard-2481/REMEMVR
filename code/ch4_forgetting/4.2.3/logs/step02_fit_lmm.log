@@ -1,0 +1,136 @@
+Step 02: Fit LMM with 3-Way Age x Domain x Time Interaction
+Loading LMM input data...
+step01_lmm_input.csv (1200 rows, 10 cols)
+Columns: ['UID', 'composite_ID', 'test', 'domain', 'theta', 'TSVR_hours', 'log_TSVR', 'age', 'Age_c', 'mean_age']
+Unique UIDs: 100
+Domains: ['What', 'When', 'Where']
+Tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Age range: 20.0 - 70.0
+Age_c range: -24.57 - 25.43
+Fitting LMM with 3-way Age x Domain x Time interaction...
+Formula: theta ~ TSVR_hours + log_TSVR + Age_c + domain + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:domain + log_TSVR:domain + Age_c:domain + TSVR_hours:Age_c:domain + log_TSVR:Age_c:domain
+Random effects: ~TSVR_hours (random slopes per participant)
+REML=False (ML estimation for model comparison)
+Error evaluating factor: NameError: name 'TSVR_hours' is not defined
+    ~TSVR_hours
+     ^^^^^^^^^^
+Full error details:
+Step 02: Fit LMM with 3-Way Age x Domain x Time Interaction
+Loading LMM input data...
+step01_lmm_input.csv (1200 rows, 10 cols)
+Columns: ['UID', 'composite_ID', 'test', 'domain', 'theta', 'TSVR_hours', 'log_TSVR', 'age', 'Age_c', 'mean_age']
+Unique UIDs: 100
+Domains: ['What', 'When', 'Where']
+Tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Age range: 20.0 - 70.0
+Age_c range: -24.57 - 25.43
+Fitting LMM with 3-way Age x Domain x Time interaction...
+Formula: theta ~ TSVR_hours + log_TSVR + Age_c + domain + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:domain + log_TSVR:domain + Age_c:domain + TSVR_hours:Age_c:domain + log_TSVR:Age_c:domain
+Random effects: ~TSVR_hours (random slopes per participant)
+REML=False (ML estimation for model comparison)
+LMM fitting complete
+Model converged: True
+Number of observations: 1200
+Number of groups: 100
+Log-likelihood: -1245.07
+AIC: 2534.13
+BIC: 2646.11
+Saving model object to step02_lmm_model.pkl...
+step02_lmm_model.pkl (statsmodels MixedLMResults object)
+Saving model summary to step02_lmm_summary.txt...
+step02_lmm_summary.txt (full model summary with fixed effects table)
+Saving fixed effects table to step02_fixed_effects.csv...
+step02_fixed_effects.csv (21 rows, 7 cols)
+Fixed effects include 21 terms
+3-way interaction terms found: 4
+  - TSVR_hours:Age_c:domain[T.When]: beta=-0.0001, p=0.5989
+  - TSVR_hours:Age_c:domain[T.Where]: beta=-0.0001, p=0.5508
+  - log_TSVR:Age_c:domain[T.When]: beta=-0.0004, p=0.9072
+  - log_TSVR:Age_c:domain[T.Where]: beta=0.0025, p=0.4976
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Model converged successfully
+Checking additional criteria...
+Random effects variance > 0 (0.2258)
+All fixed effects have finite estimates
+All required 3-way interaction terms present: ['TSVR_hours:Age_c:domain', 'log_TSVR:Age_c:domain']
+Step 02 complete
+Model ready for assumption validation (step02b) and model selection (step02c)
+Step 02: Fit LMM with 3-Way Age x Domain x Time Interaction
+Loading LMM input data...
+step01_lmm_input.csv (800 rows, 10 cols)
+Columns: ['UID', 'composite_ID', 'test', 'domain', 'theta', 'TSVR_hours', 'log_TSVR', 'age', 'Age_c', 'mean_age']
+Unique UIDs: 100
+Domains: ['What', 'Where']
+Tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Age range: 20.0 - 70.0
+Age_c range: -24.57 - 25.43
+Fitting LMM with 3-way Age x Domain x Time interaction...
+Formula: theta ~ TSVR_hours + log_TSVR + Age_c + domain + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:domain + log_TSVR:domain + Age_c:domain + TSVR_hours:Age_c:domain + log_TSVR:Age_c:domain
+Random effects: ~TSVR_hours (random slopes per participant)
+REML=False (ML estimation for model comparison)
+LMM fitting complete
+Model converged: False
+Number of observations: 800
+Number of groups: 100
+Log-likelihood: -1154.88
+AIC: 2341.76
+BIC: 2416.71
+Saving model object to step02_lmm_model.pkl...
+step02_lmm_model.pkl (statsmodels MixedLMResults object)
+Saving model summary to step02_lmm_summary.txt...
+step02_lmm_summary.txt (full model summary with fixed effects table)
+Saving fixed effects table to step02_fixed_effects.csv...
+step02_fixed_effects.csv (15 rows, 7 cols)
+Fixed effects include 15 terms
+3-way interaction terms found: 2
+  - TSVR_hours:Age_c:domain[T.Where]: beta=-0.0001, p=0.4081
+  - log_TSVR:Age_c:domain[T.Where]: beta=0.0025, p=0.3469
+Running validate_lmm_convergence...
+converged: False
+message: LMM did not converge
+warning: Results may be unreliable
+Model did not converge
+Message: LMM did not converge
+Step 02: Fit LMM with 3-Way Age x Domain x Time Interaction
+Loading LMM input data...
+step01_lmm_input.csv (800 rows, 10 cols)
+Columns: ['UID', 'composite_ID', 'test', 'domain', 'theta', 'TSVR_hours', 'log_TSVR', 'age', 'Age_c', 'mean_age']
+Unique UIDs: 100
+Domains: ['What', 'Where']
+Tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Age range: 20.0 - 70.0
+Age_c range: -24.57 - 25.43
+Fitting LMM with 3-way Age x Domain x Time interaction...
+Formula: theta ~ TSVR_hours + log_TSVR + Age_c + domain + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:domain + log_TSVR:domain + Age_c:domain + TSVR_hours:Age_c:domain + log_TSVR:Age_c:domain
+Random effects: Random intercepts only (convergence fix)
+REML=False (ML estimation for model comparison)
+Random slopes caused convergence issues with 2-domain data
+LMM fitting complete
+Model converged: True
+Number of observations: 800
+Number of groups: 100
+Log-likelihood: -760.64
+AIC: 1549.27
+BIC: 1614.86
+Saving model object to step02_lmm_model.pkl...
+step02_lmm_model.pkl (statsmodels MixedLMResults object)
+Saving model summary to step02_lmm_summary.txt...
+step02_lmm_summary.txt (full model summary with fixed effects table)
+Saving fixed effects table to step02_fixed_effects.csv...
+step02_fixed_effects.csv (13 rows, 7 cols)
+Fixed effects include 13 terms
+3-way interaction terms found: 2
+  - TSVR_hours:Age_c:domain[T.Where]: beta=-0.0001, p=0.4949
+  - log_TSVR:Age_c:domain[T.Where]: beta=0.0025, p=0.4377
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Model converged successfully
+Checking additional criteria...
+Random effects variance > 0 (0.3653)
+All fixed effects have finite estimates
+All required 3-way interaction terms present: ['TSVR_hours:Age_c:domain', 'log_TSVR:Age_c:domain']
+Step 02 complete
+Model ready for assumption validation (step02b) and model selection (step02c)

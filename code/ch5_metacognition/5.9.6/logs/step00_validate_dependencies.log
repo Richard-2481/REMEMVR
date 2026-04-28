@@ -1,0 +1,56 @@
+Step 0: Validate Cross-RQ Dependencies
+================================================================================
+
+[CHECK 1] Ch5 5.1.2 completion status...
+FAIL: Ch5 5.1.2 results analysis = {'status': 'success', 'timestamp': datetime.datetime(2025, 11, 28, 17, 0), 'context_dump': 'Results validated for scientific plausibility\n3 anomalies flagged: 1 triangulation failure, 1 model convergence issue, 1 assumption violations (see summary.md Sections 3-4)\nSummary documented in results/summary.md\n'} (expected: success)
+
+[CHECK 2] Ch5 5.1.2 practice effect baseline...
+Found: /home/etai/projects/REMEMVR/results/ch5/5.1.2/data/step07_practice_effect_by_phase.csv
+        Size: 267 bytes
+Practice file has 3 rows, required columns present
+        Accuracy saturation ratio: 0.18x (expected ~5.7)
+
+[CHECK 3] Ch6 6.1.1 completion status...
+mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.6/code/step00_validate_dependencies.py", line 196, in <module>
+    status_data = yaml.safe_load(f)
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+                         ^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12

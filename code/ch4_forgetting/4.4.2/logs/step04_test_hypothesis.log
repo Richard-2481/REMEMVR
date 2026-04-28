@@ -1,0 +1,71 @@
+Step 4: Test Key Hypothesis - Congruent Consolidation Benefit
+Loading fitted piecewise LMM model from Step 2...
+step02_piecewise_lmm_model.pkl
+Extracting fixed effects from LMM...
+15 fixed effects
+Applying Bonferroni correction (n_tests = 15)...
+Applied Bonferroni correction (alpha = 0.0033)
+Identifying primary hypothesis test...
+Primary test: Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Congruent]
+  Coefficient: -0.0180
+  p_uncorrected: 0.9380
+  p_bonferroni: 1.0000
+  Significant (Bonferroni): False
+Validating hypothesis tests...
+Test count incorrect: expected 11 fixed effects, found 15
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq6/code/step04_test_hypothesis.py", line 185, in <module>
+    raise ValueError(
+ValueError: Test count incorrect: expected 11 fixed effects, found 15
+Step 4: Test Key Hypothesis - Congruent Consolidation Benefit
+Loading fitted piecewise LMM model from Step 2...
+step02_piecewise_lmm_model.pkl
+Extracting fixed effects from LMM...
+15 fixed effects
+Applying Bonferroni correction (n_tests = 15)...
+Applied Bonferroni correction (alpha = 0.0033)
+Identifying primary hypothesis test...
+Primary test: Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Congruent]
+  Coefficient: -0.0180
+  p_uncorrected: 0.9380
+  p_bonferroni: 1.0000
+  Significant (Bonferroni): False
+Validating hypothesis tests...
+Test count mismatch: expected 12 fixed effects, found 15
+All required columns present
+p_uncorrected out of bounds [0, 1]
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq6/code/step04_test_hypothesis.py", line 205, in <module>
+    raise ValueError(
+ValueError: p_uncorrected out of bounds [0, 1]
+Step 4: Test Key Hypothesis - Congruent Consolidation Benefit
+Loading fitted piecewise LMM model from Step 2...
+step02_piecewise_lmm_model.pkl
+Extracting fixed effects from LMM...
+15 rows from summary table
+12 fixed effects (removed random effects rows)
+Applying Bonferroni correction (n_tests = 15)...
+Applied Bonferroni correction (alpha = 0.0033)
+Identifying primary hypothesis test...
+Primary test: Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Congruent]
+  Coefficient: -0.0180
+  p_uncorrected: 0.9380
+  p_bonferroni: 1.0000
+  Significant (Bonferroni): False
+Validating hypothesis tests...
+Test count matches model fixed effects (12)
+All required columns present
+p_uncorrected in valid range [0, 1]
+p_bonferroni in valid range [0, 1]
+Bonferroni correction applied correctly (p_bonf >= p_uncorr)
+Significance labeling correct
+Significant tests:
+  Uncorrected (alpha = 0.05): 2 / 12
+  Bonferroni (alpha = 0.05): 2 / 12
+Significant tests (Bonferroni-corrected):
+  Intercept: p = 0.0000
+  C(Segment, Treatment('Early'))[T.Late]: p = 0.0000
+step04_hypothesis_tests.csv (12 rows)
+Step 4 complete

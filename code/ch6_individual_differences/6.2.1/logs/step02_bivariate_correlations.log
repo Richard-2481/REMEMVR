@@ -1,0 +1,132 @@
+Step 2: Bivariate Correlations with Bootstrap CIs
+Loading merged analysis dataset...
+step01_analysis_dataset.csv (100 rows, 10 cols)
+Correlation variables: ['Age', 'theta_all', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+Final correlation data: 100 participants, 5 variables
+Computing pairwise correlations with bootstrap CIs...
+Computing correlation: Age vs theta_all
+'correlation'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step02_bivariate_correlations.py", line 201, in <module>
+    'r': bootstrap_result['correlation'],
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'correlation'
+Step 2: Bivariate Correlations with Bootstrap CIs
+Loading merged analysis dataset...
+step01_analysis_dataset.csv (100 rows, 10 cols)
+Correlation variables: ['Age', 'theta_all', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+Final correlation data: 100 participants, 5 variables
+Computing pairwise correlations with bootstrap CIs...
+Computing correlation: Age vs theta_all
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+Age vs theta_all: r = -0.193, 95% CI [-0.375, -0.015], p = 0.054
+Computing correlation: Age vs RAVLT_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+Age vs RAVLT_T: r = -0.287, 95% CI [-0.448, -0.103], p = 0.004
+Computing correlation: Age vs BVMT_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+Age vs BVMT_T: r = -0.545, 95% CI [-0.665, -0.408], p = 0.000
+Computing correlation: Age vs RPM_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+Age vs RPM_T: r = -0.293, 95% CI [-0.462, -0.121], p = 0.003
+Computing correlation: theta_all vs RAVLT_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+theta_all vs RAVLT_T: r = 0.266, 95% CI [0.097, 0.458], p = 0.007
+Computing correlation: theta_all vs BVMT_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+theta_all vs BVMT_T: r = 0.364, 95% CI [0.191, 0.522], p = 0.000
+Computing correlation: theta_all vs RPM_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+theta_all vs RPM_T: r = 0.457, 95% CI [0.289, 0.610], p = 0.000
+Computing correlation: RAVLT_T vs BVMT_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+RAVLT_T vs BVMT_T: r = 0.336, 95% CI [0.174, 0.503], p = 0.001
+Computing correlation: RAVLT_T vs RPM_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+RAVLT_T vs RPM_T: r = 0.285, 95% CI [0.108, 0.458], p = 0.004
+Computing correlation: BVMT_T vs RPM_T
+Using pearson_r, bootstrap keys: ['r', 'ci_lower', 'ci_upper', 'se', 'bootstrap_samples']
+BVMT_T vs RPM_T: r = 0.488, 95% CI [0.365, 0.603], p = 0.000
+Bootstrap correlation analysis complete
+Applying multiple comparison corrections...
+Multiple comparison corrections applied (Bonferroni alpha = 0.0050)
+[KEY FINDING] Age-theta_all correlation: r = -0.193, 95% CI [-0.375, -0.015], p_uncorrected = 0.054, p_bonferroni = 0.540, p_fdr = 0.054
+Age-theta_all correlation meets expected small negative threshold (< -0.15)
+Saving correlation results with dual p-values...
+step02_correlations.csv (10 rows, 8 cols)
+10 correlations computed
+Significant after Bonferroni correction: 8/10
+Significant after FDR correction: 9/10
+Running validate_hypothesis_test_dual_pvalues...
+valid: True
+missing_terms: []
+d068_compliant: True
+message: Decision D068 compliant: All 10 required terms present with both p_uncorrected and p_bonferroni.
+PASSED - Dual p-value reporting format verified
+Step 2 complete - Bivariate correlations with bootstrap CIs and dual p-values
+Step 2: Bivariate Correlations with Bootstrap CIs
+Loading merged analysis dataset...
+step01_analysis_dataset.csv (100 rows, 14 cols)
+Correlation variables: ['Age', 'theta_all', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+Final correlation data: 100 participants, 7 variables
+Computing pairwise correlations with bootstrap CIs...
+Computing correlation: Age vs theta_all
+Age vs theta_all: r = -0.193, 95% CI [-0.375, -0.015], p = 0.054
+Computing correlation: Age vs RAVLT_T
+Age vs RAVLT_T: r = -0.188, 95% CI [-0.380, 0.028], p = 0.061
+Computing correlation: Age vs BVMT_T
+Age vs BVMT_T: r = -0.545, 95% CI [-0.665, -0.408], p = 0.000
+Computing correlation: Age vs RPM_T
+Age vs RPM_T: r = -0.293, 95% CI [-0.462, -0.121], p = 0.003
+Computing correlation: Age vs RAVLT_Pct_Ret_T
+Age vs RAVLT_Pct_Ret_T: r = -0.188, 95% CI [-0.366, -0.001], p = 0.061
+Computing correlation: Age vs BVMT_Pct_Ret_T
+Age vs BVMT_Pct_Ret_T: r = -0.218, 95% CI [-0.404, 0.042], p = 0.029
+Computing correlation: theta_all vs RAVLT_T
+theta_all vs RAVLT_T: r = 0.279, 95% CI [0.104, 0.446], p = 0.005
+Computing correlation: theta_all vs BVMT_T
+theta_all vs BVMT_T: r = 0.364, 95% CI [0.191, 0.522], p = 0.000
+Computing correlation: theta_all vs RPM_T
+theta_all vs RPM_T: r = 0.457, 95% CI [0.289, 0.610], p = 0.000
+Computing correlation: theta_all vs RAVLT_Pct_Ret_T
+theta_all vs RAVLT_Pct_Ret_T: r = 0.365, 95% CI [0.174, 0.528], p = 0.000
+Computing correlation: theta_all vs BVMT_Pct_Ret_T
+theta_all vs BVMT_Pct_Ret_T: r = 0.195, 95% CI [-0.014, 0.393], p = 0.051
+Computing correlation: RAVLT_T vs BVMT_T
+RAVLT_T vs BVMT_T: r = 0.381, 95% CI [0.235, 0.526], p = 0.000
+Computing correlation: RAVLT_T vs RPM_T
+RAVLT_T vs RPM_T: r = 0.282, 95% CI [0.087, 0.460], p = 0.004
+Computing correlation: RAVLT_T vs RAVLT_Pct_Ret_T
+RAVLT_T vs RAVLT_Pct_Ret_T: r = 0.194, 95% CI [0.007, 0.375], p = 0.053
+Computing correlation: RAVLT_T vs BVMT_Pct_Ret_T
+RAVLT_T vs BVMT_Pct_Ret_T: r = 0.044, 95% CI [-0.210, 0.305], p = 0.663
+Computing correlation: BVMT_T vs RPM_T
+BVMT_T vs RPM_T: r = 0.488, 95% CI [0.365, 0.603], p = 0.000
+Computing correlation: BVMT_T vs RAVLT_Pct_Ret_T
+BVMT_T vs RAVLT_Pct_Ret_T: r = 0.270, 95% CI [0.052, 0.451], p = 0.007
+Computing correlation: BVMT_T vs BVMT_Pct_Ret_T
+BVMT_T vs BVMT_Pct_Ret_T: r = 0.238, 95% CI [-0.101, 0.502], p = 0.017
+Computing correlation: RPM_T vs RAVLT_Pct_Ret_T
+RPM_T vs RAVLT_Pct_Ret_T: r = 0.342, 95% CI [0.117, 0.520], p = 0.001
+Computing correlation: RPM_T vs BVMT_Pct_Ret_T
+RPM_T vs BVMT_Pct_Ret_T: r = 0.169, 95% CI [-0.019, 0.358], p = 0.093
+Computing correlation: RAVLT_Pct_Ret_T vs BVMT_Pct_Ret_T
+RAVLT_Pct_Ret_T vs BVMT_Pct_Ret_T: r = 0.114, 95% CI [-0.088, 0.310], p = 0.259
+Bootstrap correlation analysis complete
+Applying multiple comparison corrections...
+Multiple comparison corrections applied (Bonferroni alpha = 0.0024)
+[KEY FINDING] Age-theta_all correlation: r = -0.193, 95% CI [-0.375, -0.015], p_uncorrected = 0.054, p_bonferroni = 1.000, p_fdr = 0.071
+Age-theta_all correlation meets expected small negative threshold (< -0.15)
+Saving correlation results with dual p-values...
+step02_correlations.csv (21 rows, 8 cols)
+21 correlations computed
+Significant after Bonferroni correction: 7/21
+Significant after FDR correction: 13/21
+Running validate_hypothesis_test_dual_pvalues...
+valid: True
+missing_terms: []
+d068_compliant: True
+message: Decision D068 compliant: All 21 required terms present with both p_uncorrected and p_bonferroni.
+PASSED - Dual p-value reporting format verified
+Step 2 complete - Bivariate correlations with bootstrap CIs and dual p-values

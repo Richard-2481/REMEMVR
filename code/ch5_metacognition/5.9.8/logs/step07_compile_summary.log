@@ -1,0 +1,42 @@
+Step 07: Compile Summary Statistics and Theoretical Synthesis
+Loading result files...
+Correlations: 9 rows
+Moderation test: 7 rows
+Pooled effect: 1 rows
+Bootstrap CIs: 9 rows
+Computing summary statistics...
+Correlation range: [0.327, 0.599]
+Mean correlation: 0.432 (SD = 0.078)
+All r > 0.50: False
+Bonferroni-significant: 9/9
+Interaction terms: 2
+All interaction p > 0.05: True
+Interaction p-value range: [0.6260, 0.6619]
+Pooled effect: d = 0.105 [-0.128, 0.339]
+Negligible effect: True
+Bootstrap agreement: 9/9 (100.0%)
+Evaluating hypothesis support...
+Primary (schema NOT moderate): False
+  - All r > 0.50: False
+  - All interaction p > 0.05: True
+  - SD(r) < 0.10: True (SD = 0.078)
+Secondary 1 (both measures NULL): True
+  - |d_pooled| < 0.20: True (|d| = 0.105)
+Secondary 2 (CI excludes 0.20): False
+  - CI [-0.128, 0.339] within [-0.20, 0.20]: False
+All hypotheses supported: False
+Generating theoretical interpretation...
+Creating summary statistics table...
+Checking summary compilation...
+All expected statistics present
+Theoretical synthesis addresses all hypotheses
+Limitations section included
+Clear statement of hypothesis support
+PASS - All checks passed
+Summary statistics: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step07_summary_statistics.csv
+Theoretical synthesis: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step07_theoretical_synthesis.txt
+Summary statistics compiled
+Theoretical synthesis complete
+Primary hypothesis: NOT SUPPORTED
+Overall convergent NULL: NOT CONFIRMED
+Step 07 complete

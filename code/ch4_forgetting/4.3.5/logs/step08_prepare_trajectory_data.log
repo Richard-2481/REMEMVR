@@ -1,0 +1,27 @@
+2025-12-03 18:57:01,280 - INFO - ============================================================
+2025-12-03 18:57:01,280 - INFO - STEP 08: PREPARE TRAJECTORY COMPARISON DATA
+2025-12-03 18:57:01,280 - INFO - ============================================================
+2025-12-03 18:57:01,280 - INFO - 
+1. Loading data and models...
+2025-12-03 18:57:01,283 - INFO - Loaded IRT input: 1200 rows
+2025-12-03 18:57:01,283 - INFO - Loaded CTT input: 1200 rows
+2025-12-03 18:57:01,504 - INFO - Loaded IRT and CTT models
+2025-12-03 18:57:01,504 - INFO - 
+2. Computing trajectory summaries...
+2025-12-03 18:57:01,517 - INFO - Trajectory summaries: 24 rows
+2025-12-03 18:57:01,518 - INFO - 
+3. Validating data...
+2025-12-03 18:57:01,518 - INFO - Paradigm counts: {'ICR': 8, 'IFR': 8, 'IRE': 8}
+2025-12-03 18:57:01,518 - INFO - Measurement type counts: {'IRT': 12, 'CTT': 12}
+2025-12-03 18:57:01,518 - INFO - Trajectory data validation: PASS
+2025-12-03 18:57:01,518 - INFO - 
+4. Saving output...
+2025-12-03 18:57:01,519 - INFO -    Saved: step08_trajectory_data.csv (24 rows)
+2025-12-03 18:57:01,519 - INFO - 
+============================================================
+2025-12-03 18:57:01,519 - INFO - STEP 08 COMPLETE: Trajectory data prepared
+2025-12-03 18:57:01,519 - INFO - Trajectory data prepared: 24 rows (3 paradigms x 4 tests x 2 measurement types)
+2025-12-03 18:57:01,519 - INFO - All paradigms represented: IFR, ICR, IRE
+2025-12-03 18:57:01,519 - INFO - Both measurement types present: IRT, CTT
+2025-12-03 18:57:01,519 - INFO - Confidence intervals valid: CI_lower < observed_mean < CI_upper for all rows
+2025-12-03 18:57:01,519 - INFO - ============================================================

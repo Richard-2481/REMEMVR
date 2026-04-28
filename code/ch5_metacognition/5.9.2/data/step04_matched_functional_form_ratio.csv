@@ -1,0 +1,2 @@
+comparison,ICC_accuracy,ICC_confidence_PowerLaw,ratio,percent_reduction_from_single,interpretation
+matched_PowerLaw,0.007463065445604469,0.9184748171144945,123.06937729662411,-247.77854987129632,Confidence fitted with PowerLaw lambda=0.41 (matched to accuracy)

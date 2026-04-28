@@ -1,0 +1,242 @@
+Step 06: compute_clinical_metrics
+Loading classification matrix from step03...
+Classification matrix:
+
+            0   1  Total
+RAVLT_low               
+0          19  65     84
+1           9   7     16
+Total      28  72    100
+Extracting 2x2 cell counts...
+Cell counts:
+  True Positives (both impaired): 0
+  False Negatives (RAVLT low, REMEMVR normal): 0
+  True Negatives (both normal): 0
+  False Positives (RAVLT normal, REMEMVR low): 0
+Total participants: 0
+Computing diagnostic performance metrics...
+Sensitivity: nan (95% CI: [nan, nan])
+Specificity: nan (95% CI: [nan, nan])
+PPV: nan (95% CI: [nan, nan])
+NPV: nan (95% CI: [nan, nan])
+Computing base rates...
+division by zero
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.4/code/step06_compute_clinical_metrics.py", line 264, in <module>
+    ravlt_impairment_rate = (true_positives + false_negatives) / total
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+ZeroDivisionError: division by zero
+Step 06: compute_clinical_metrics
+Loading classification matrix from step03...
+Classification matrix:
+
+            0   1  Total
+RAVLT_low               
+0          19  65     84
+1           9   7     16
+Total      28  72    100
+Extracting 2x2 cell counts...
+1
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.4/code/step06_compute_clinical_metrics.py", line 163, in <module>
+    false_negatives = int(df_matrix.loc[1, 1])  # RAVLT low (1), REMEMVR normal (1)
+                          ~~~~~~~~~~~~~^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1184, in __getitem__
+    return self.obj._get_value(*key, takeable=self._takeable)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4225, in _get_value
+    series = self._get_item_cache(col)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4649, in _get_item_cache
+    loc = self.columns.get_loc(item)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 1
+Step 06: compute_clinical_metrics
+Loading classification matrix from step03...
+Classification matrix:
+
+            0   1  Total
+RAVLT_low               
+0          19  65     84
+1           9   7     16
+Total      28  72    100
+Extracting 2x2 cell counts...
+1
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.4/code/step06_compute_clinical_metrics.py", line 165, in <module>
+    false_negatives = int(df_matrix.loc[1, '1'])  # RAVLT low (1), REMEMVR normal ('1')
+                          ~~~~~~~~~~~~~^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1184, in __getitem__
+    return self.obj._get_value(*key, takeable=self._takeable)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4232, in _get_value
+    row = self.index.get_loc(index)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.4/code/step06_compute_clinical_metrics.py", line 171, in <module>
+    false_negatives = int(df_matrix.loc[1, 1])
+                          ~~~~~~~~~~~~~^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1184, in __getitem__
+    return self.obj._get_value(*key, takeable=self._takeable)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4225, in _get_value
+    series = self._get_item_cache(col)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4649, in _get_item_cache
+    loc = self.columns.get_loc(item)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 1
+Step 06: compute_clinical_metrics
+Loading classification matrix from step03...
+Classification matrix:
+
+            0   1  Total
+RAVLT_low               
+0          19  65     84
+1           9   7     16
+Total      28  72    100
+Extracting 2x2 cell counts...
+Cell counts:
+  True Positives (both impaired): 9
+  False Negatives (RAVLT low, REMEMVR normal): 7
+  True Negatives (both normal): 65
+  False Positives (RAVLT normal, REMEMVR low): 19
+Total participants: 100
+Computing diagnostic performance metrics...
+Sensitivity: 0.562 (95% CI: [0.332, 0.769])
+Specificity: 0.774 (95% CI: [0.674, 0.850])
+PPV: 0.321 (95% CI: [0.179, 0.507])
+NPV: 0.903 (95% CI: [0.813, 0.952])
+Computing base rates...
+RAVLT impairment rate: 0.160 (95% CI: [0.101, 0.244])
+REMEMVR normal rate: 0.720 (95% CI: [0.625, 0.799])
+False negative rate: 0.438 (95% CI: [0.231, 0.668])
+Creating clinical metrics table...
+Metrics table: 7 metrics
+Saving clinical metrics...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step06_clinical_metrics.csv
+Running validate_probability_range...
+All metric values in valid range [0, 1]
+All 7 expected metrics present
+All CIs valid (CI_Lower <= Value <= CI_Upper)
+No missing values
+Step 06 complete
+Step 06: compute_clinical_metrics
+Loading classification matrix from step03...
+Classification matrix:
+
+            0   1  Total
+RAVLT_low               
+0          19  65     84
+1           9   7     16
+Total      28  72    100
+Extracting 2x2 cell counts...
+Cell counts:
+  True Positives (both impaired): 9
+  False Negatives (RAVLT low, REMEMVR normal): 7
+  True Negatives (both normal): 65
+  False Positives (RAVLT normal, REMEMVR low): 19
+Total participants: 100
+Computing diagnostic performance metrics...
+Sensitivity: 0.562 (95% CI: [0.332, 0.769])
+Specificity: 0.774 (95% CI: [0.674, 0.850])
+PPV: 0.321 (95% CI: [0.179, 0.507])
+NPV: 0.903 (95% CI: [0.813, 0.952])
+Computing base rates...
+RAVLT impairment rate: 0.160 (95% CI: [0.101, 0.244])
+REMEMVR normal rate: 0.720 (95% CI: [0.625, 0.799])
+False negative rate: 0.438 (95% CI: [0.231, 0.668])
+Creating clinical metrics table...
+Metrics table: 7 metrics
+Saving clinical metrics...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step06_clinical_metrics.csv
+Running validate_probability_range...
+All metric values in valid range [0, 1]
+All 7 expected metrics present
+All CIs valid (CI_Lower <= Value <= CI_Upper)
+No missing values
+Step 06 complete
+Step 06: compute_clinical_metrics
+Loading classification matrix from step03...
+Classification matrix:
+
+            0   1  Total
+RAVLT_low               
+0          20  65     85
+1           8   7     15
+Total      28  72    100
+Extracting 2x2 cell counts...
+Cell counts:
+  True Positives (both impaired): 8
+  False Negatives (RAVLT low, REMEMVR normal): 7
+  True Negatives (both normal): 65
+  False Positives (RAVLT normal, REMEMVR low): 20
+Total participants: 100
+Computing diagnostic performance metrics...
+Sensitivity: 0.533 (95% CI: [0.301, 0.752])
+Specificity: 0.765 (95% CI: [0.664, 0.842])
+PPV: 0.286 (95% CI: [0.153, 0.471])
+NPV: 0.903 (95% CI: [0.813, 0.952])
+Computing base rates...
+RAVLT impairment rate: 0.150 (95% CI: [0.093, 0.233])
+REMEMVR normal rate: 0.720 (95% CI: [0.625, 0.799])
+False negative rate: 0.467 (95% CI: [0.248, 0.699])
+Creating clinical metrics table...
+Metrics table: 7 metrics
+Saving clinical metrics...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step06_clinical_metrics.csv
+Running validate_probability_range...
+All metric values in valid range [0, 1]
+All 7 expected metrics present
+All CIs valid (CI_Lower <= Value <= CI_Upper)
+No missing values
+Step 06 complete

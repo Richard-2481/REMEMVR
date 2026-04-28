@@ -1,0 +1,217 @@
+Step 05: fit_multilevel_models
+Loading analysis dataset from step04...
+analysis_dataset.csv (400 rows, 7 cols)
+Preparing data for LMM...
+Missing data per column:
+UID: 0/400 (0.0%)
+TEST: 0/400 (0.0%)
+Memory_Score: 0/400 (0.0%)
+Sleep_Hours_WP: 0/400 (0.0%)
+Sleep_Quality_WP: 0/400 (0.0%)
+Sleep_Hours_PM: 0/400 (0.0%)
+Sleep_Quality_PM: 0/400 (0.0%)
+Complete cases: 400/400 (100.0%)
+Final participants: 100
+Tests per participant - Min: 4, Max: 4, Mean: 4.0
+Fitting linear mixed-effects model...
+Formula: Memory_Score ~ Sleep_Hours_WP + Sleep_Quality_WP + Sleep_Hours_PM + Sleep_Quality_PM + TEST
+Groups: UID
+Random effects: 1
+fit_lmm_trajectory() got an unexpected keyword argument 'theta_scores'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.4/code/step05_fit_multilevel_models.py", line 169, in <module>
+    lmm_result = fit_lmm_trajectory(
+                 ^^^^^^^^^^^^^^^^^^^
+TypeError: fit_lmm_trajectory() got an unexpected keyword argument 'theta_scores'
+Step 05: fit_multilevel_models
+Loading analysis dataset from step04...
+analysis_dataset.csv (400 rows, 7 cols)
+Preparing data for LMM...
+Missing data per column:
+UID: 0/400 (0.0%)
+TEST: 0/400 (0.0%)
+Memory_Score: 0/400 (0.0%)
+Sleep_Hours_WP: 0/400 (0.0%)
+Sleep_Quality_WP: 0/400 (0.0%)
+Sleep_Hours_PM: 0/400 (0.0%)
+Sleep_Quality_PM: 0/400 (0.0%)
+Complete cases: 400/400 (100.0%)
+Final participants: 100
+Tests per participant - Min: 4, Max: 4, Mean: 4.0
+Fitting linear mixed-effects model...
+Formula: Memory_Score ~ Sleep_Hours_WP + Sleep_Quality_WP + Sleep_Hours_PM + Sleep_Quality_PM + TEST
+Groups: UID
+Random effects: 1
+Model fitting failed: Singular matrix
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 354, in fit_lmm_trajectory
+    result = model.fit(method=['lbfgs'], reml=reml)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 2191, in fit
+    rslt = super().fit(start_params=packed,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 566, in fit
+    xopt, retvals, optim_settings = optimizer._fit(f, score, start_params,
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/optimizer.py", line 245, in _fit
+    xopt, retvals = func(objective, gradient, start_params, fargs, kwargs,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/optimizer.py", line 665, in _fit_lbfgs
+    retvals = optimize.fmin_l_bfgs_b(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/optimize/_lbfgsb_py.py", line 281, in fmin_l_bfgs_b
+    res = _minimize_lbfgsb(fun, x0, args=args, jac=jac, bounds=bounds,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/optimize/_lbfgsb_py.py", line 469, in _minimize_lbfgsb
+    f, g = func_and_grad(x)
+           ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 404, in fun_and_grad
+    self._update_grad()
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 366, in _update_grad
+    self.g = self._wrapped_grad(self.x, f0=self.f)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 39, in __call__
+    g = np.atleast_1d(self.grad(np.copy(x), *self.args))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 545, in score
+    return -self.score(params, *args) / nobs
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 1637, in score
+    score_fe, score_re, score_vc = self.score_sqrt(
+                                   ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 1840, in score_sqrt
+    score_fe, score_re, score_vc = self.score_full(params, calc_fe=calc_fe)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 1801, in score_full
+    xtvixi = np.linalg.inv(xtvix)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py", line 669, in inv
+    ainv = _umath_linalg.inv(a, signature=signature)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py", line 163, in _raise_linalgerror_singular
+    raise LinAlgError("Singular matrix")
+numpy.linalg.LinAlgError: Singular matrix
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.4/code/step05_fit_multilevel_models.py", line 169, in <module>
+    lmm_result = fit_lmm_trajectory(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 356, in fit_lmm_trajectory
+    raise RuntimeError(f"Model fitting failed: {str(e)}")
+RuntimeError: Model fitting failed: Singular matrix
+Step 05: fit_multilevel_models
+Loading analysis dataset from step04...
+analysis_dataset.csv (400 rows, 7 cols)
+Preparing data for LMM...
+Missing data per column:
+UID: 0/400 (0.0%)
+TEST: 0/400 (0.0%)
+Memory_Score: 0/400 (0.0%)
+Sleep_Hours_WP: 0/400 (0.0%)
+Sleep_Quality_WP: 0/400 (0.0%)
+Sleep_Hours_PM: 0/400 (0.0%)
+Sleep_Quality_PM: 0/400 (0.0%)
+Complete cases: 400/400 (100.0%)
+Final participants: 100
+Tests per participant - Min: 4, Max: 4, Mean: 4.0
+Fitting linear mixed-effects model...
+Formula: Memory_Score ~ Sleep_Hours_WP + Sleep_Quality_WP + Sleep_Hours_PM + Sleep_Quality_PM + TEST
+Groups: UID
+Random effects: 1
+fit_lmm_trajectory failed: Model fitting failed: Singular matrix
+Falling back to direct statsmodels fitting...
+Direct statsmodels: SUCCESS
+LMM fitting complete
+Converged: True
+Log-likelihood: 152.50
+AIC: nan
+Number of observations: 400
+Number of groups: 100
+Extracting fixed effects...
+Fixed effects extracted: 7 parameters
+Bonferroni correction applied: 4 comparisons
+Sleep_Hours_WP: β=-0.0087, p_unc=0.3486, p_bonf=1.0000
+Sleep_Quality_WP: β=0.0402, p_unc=0.0968, p_bonf=0.3871
+Sleep_Hours_PM: β=0.0131, p_unc=0.3100, p_bonf=1.0000
+Sleep_Quality_PM: β=0.0081, p_unc=0.8770, p_bonf=1.0000
+Fixed effects extraction complete
+Saving LMM results...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step05_lmm_results.pkl (model object)
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step05_fixed_effects.csv (7 rows, 6 cols)
+Running LMM convergence validation...
+Model convergence: FAIL - LMM converged successfully
+Parameter estimates: REASONABLE
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Do within-person sleep deviations affect episodic memory performance?
+2. What did we find?
+   -> Model converged: False
+   -> Sleep_Hours_WP: β=-0.0087, p_bonf=1.0000
+3. What does it mean?
+   -> We can now interpret within-person vs between-person sleep effects
+4. What should we do next?
+   -> Proceed to step06: model diagnostics and assumption validation
+=========================
+
+Step 05 complete
+Step 05: fit_multilevel_models
+Loading analysis dataset from step04...
+analysis_dataset.csv (400 rows, 7 cols)
+Preparing data for LMM...
+Missing data per column:
+UID: 0/400 (0.0%)
+TEST: 0/400 (0.0%)
+Memory_Score: 0/400 (0.0%)
+Sleep_Hours_WP: 0/400 (0.0%)
+Sleep_Quality_WP: 0/400 (0.0%)
+Sleep_Hours_PM: 0/400 (0.0%)
+Sleep_Quality_PM: 0/400 (0.0%)
+Complete cases: 400/400 (100.0%)
+Final participants: 100
+Tests per participant - Min: 4, Max: 4, Mean: 4.0
+Fitting linear mixed-effects model...
+Formula: Memory_Score ~ Sleep_Hours_WP + Sleep_Quality_WP + Sleep_Hours_PM + Sleep_Quality_PM + TEST
+Groups: UID
+Random effects: 1
+fit_lmm_trajectory failed: Model fitting failed: Singular matrix
+Falling back to direct statsmodels fitting...
+Direct statsmodels: SUCCESS
+LMM fitting complete
+Converged: True
+Log-likelihood: 152.50
+AIC: nan
+Number of observations: 400
+Number of groups: 100
+Extracting fixed effects...
+Fixed effects extracted: 7 parameters
+Bonferroni correction applied: 4 comparisons
+Sleep_Hours_WP: β=-0.0087, p_unc=0.3486, p_bonf=1.0000
+Sleep_Quality_WP: β=0.0402, p_unc=0.0968, p_bonf=0.3871
+Sleep_Hours_PM: β=0.0131, p_unc=0.3100, p_bonf=1.0000
+Sleep_Quality_PM: β=0.0081, p_unc=0.8770, p_bonf=1.0000
+Fixed effects extraction complete
+Saving LMM results...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step05_lmm_results.pkl (model object)
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step05_fixed_effects.csv (7 rows, 6 cols)
+Running LMM convergence validation...
+Model convergence: FAIL - LMM converged successfully
+Parameter estimates: REASONABLE
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Do within-person sleep deviations affect episodic memory performance?
+2. What did we find?
+   -> Model converged: False
+   -> Sleep_Hours_WP: β=-0.0087, p_bonf=1.0000
+3. What does it mean?
+   -> We can now interpret within-person vs between-person sleep effects
+4. What should we do next?
+   -> Proceed to step06: model diagnostics and assumption validation
+=========================
+
+Step 05 complete

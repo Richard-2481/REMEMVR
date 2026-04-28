@@ -1,0 +1,77 @@
+================================================================================
+STEP 07: Prepare Scatter Matrix Plot Data
+================================================================================
+
+Loading standardized features and cluster assignments...
+Standardized features: (100, 7)
+         Columns: ['UID', 'Total_Intercept_Cued_z', 'Total_Intercept_Free_z', 'Total_Intercept_Recognition_z', 'Total_Slope_Cued_z', 'Total_Slope_Free_z', 'Total_Slope_Recognition_z']
+Cluster assignments: (100, 2)
+         Columns: ['UID', 'cluster']
+
+Merging features with cluster labels...
+Plot data: (100, 8)
+         Columns: ['UID', 'Total_Intercept_Cued_z', 'Total_Intercept_Free_z', 'Total_Intercept_Recognition_z', 'Total_Slope_Cued_z', 'Total_Slope_Free_z', 'Total_Slope_Recognition_z', 'cluster']
+All 100 participants have cluster assignments
+
+Checking cluster coverage...
+3 unique clusters: [np.int64(0), np.int64(1), np.int64(2)]
+  Cluster 0: 33 participants
+  Cluster 1: 31 participants
+  Cluster 2: 36 participants
+
+Saving scatter matrix plot data...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step07_scatter_matrix_data.csv
+        100 rows x 8 columns
+
+Feature statistics by cluster...
+
+Cluster    Feature                                 Mean      SD
+-----------------------------------------------------------------
+0          Total_Intercept_Cued_z                 0.553   0.619
+0          Total_Intercept_Free_z                 0.746   0.646
+0          Total_Intercept_Recognition_z          0.665   0.656
+0          Total_Slope_Cued_z                    -0.553   0.619
+0          Total_Slope_Free_z                    -1.004   0.688
+0          Total_Slope_Recognition_z             -1.055   0.658
+1          Total_Intercept_Cued_z                -1.222   0.509
+1          Total_Intercept_Free_z                -1.212   0.515
+1          Total_Intercept_Recognition_z         -1.198   0.562
+1          Total_Slope_Cued_z                     1.222   0.509
+1          Total_Slope_Free_z                     0.222   0.680
+1          Total_Slope_Recognition_z              0.359   0.633
+2          Total_Intercept_Cued_z                 0.545   0.583
+2          Total_Intercept_Free_z                 0.360   0.510
+2          Total_Intercept_Recognition_z          0.421   0.542
+2          Total_Slope_Cued_z                    -0.545   0.583
+2          Total_Slope_Free_z                     0.729   0.677
+2          Total_Slope_Recognition_z              0.658   0.694
+
+Validating plot data completeness...
+Plot data completeness validation successful
+       All 100 participants included
+       All 3 clusters present in data
+
+Additional data available for plotting:
+       - Cluster centers: data/step03_cluster_centers.csv
+       - Cluster sizes:   data/step03_cluster_sizes.txt
+       - Cluster profiles: data/step06_cluster_profiles.txt
+
+       plotting pipeline can use these files to:
+       - Add cluster center markers to scatter plots
+       - Label clusters with profile descriptions
+       - Display cluster sizes in legend
+
+================================================================================
+Step 07 complete
+================================================================================
+
+Outputs:
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step07_scatter_matrix_data.csv
+    100 participants x 6 features + cluster label
+
+Plot-Ready Data Structure:
+  - UID column for participant tracking
+  - 6 z-score columns for scatter matrix axes
+  - cluster column for color coding
+
+Next: plotting pipeline generates scatter plot matrix visualization

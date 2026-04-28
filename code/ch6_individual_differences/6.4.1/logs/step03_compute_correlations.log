@@ -1,0 +1,53 @@
+Step 3: compute_correlations_with_bootstrap_ci
+Loading correlation input data...
+step02_correlation_input.csv (100 rows, 4 cols)
+Columns match expected: ['uid', 'ravlt_total', 'theta_free_recall', 'theta_recognition']
+Data shape: (100, 4)
+Computing correlations with bootstrap confidence intervals...
+Bootstrap parameters: n=1000, confidence=0.95, method=pearson, seed=42
+Computing r(RAVLT, FreeRecall)...
+r(RAVLT, FreeRecall) = 0.2783 [0.1075, 0.4426]
+Computing r(RAVLT, Recognition)...
+r(RAVLT, Recognition) = 0.2843 [0.1170, 0.4447]
+Calculating p-values for correlations...
+p-values (uncorrected): r1=0.005061, r2=0.004150
+p-values (Bonferroni): r1=0.010122, r2=0.008301
+Compiling correlation results...
+step03_correlation_results.csv (2 rows, 7 cols)
+Running validate_correlation_test_d068...
+valid: True
+d068_compliant: True
+missing_cols: []
+message: Custom validation: 6 required columns.
+D068 compliance validated
+Step 3 complete
+Step 3: compute_correlations_with_bootstrap_ci
+Loading correlation input data...
+step02_correlation_input.csv (100 rows, 5 cols)
+All expected columns present: ['uid', 'ravlt_total', 'ravlt_pct_ret', 'theta_free_recall', 'theta_recognition']
+Data shape: (100, 5)
+Computing correlations with bootstrap confidence intervals...
+Bootstrap parameters: n=1000, confidence=0.95, method=pearson, seed=42
+Computing r(RAVLTtotal-FreeRecall)...
+r(RAVLTtotal-FreeRecall) = 0.2696 [0.0941, 0.4301]
+Computing r(RAVLTtotal-Recognition)...
+r(RAVLTtotal-Recognition) = 0.2793 [0.1157, 0.4388]
+Computing r(RAVLTpctret-FreeRecall)...
+r(RAVLTpctret-FreeRecall) = 0.3698 [0.1884, 0.5334]
+Computing r(RAVLTpctret-Recognition)...
+r(RAVLTpctret-Recognition) = 0.3675 [0.1865, 0.5310]
+Calculating p-values for correlations...
+Bonferroni correction for 4 tests
+RAVLTtotal-FreeRecall: p_uncorrected=0.006670, p_bonferroni=0.026681
+RAVLTtotal-Recognition: p_uncorrected=0.004886, p_bonferroni=0.019543
+RAVLTpctret-FreeRecall: p_uncorrected=0.000153, p_bonferroni=0.000611
+RAVLTpctret-Recognition: p_uncorrected=0.000169, p_bonferroni=0.000676
+Compiling correlation results...
+step03_correlation_results.csv (4 rows, 7 cols)
+Running validate_correlation_test_d068...
+valid: True
+d068_compliant: True
+missing_cols: []
+message: Custom validation: 6 required columns.
+D068 compliance validated
+Step 3 complete

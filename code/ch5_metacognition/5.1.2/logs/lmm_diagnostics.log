@@ -1,0 +1,33 @@
+[LMM DIAGNOSTICS] Starting assumption validation...
+[1] Refitting quadratic model for diagnostics...
+[1] Model converged: True
+[1] Residuals range: [-0.717, 0.540]
+[1] Fitted range: [-1.822, 0.300]
+[2] Generating Q-Q plot...
+[2] Q-Q plot saved to plots/diagnostics/qq_plot.png
+[2] Shapiro-Wilk test: W=0.9865, p=0.0009
+[2] WARNING: Residuals deviate from normality (p<0.05)
+[3] Generating residuals vs fitted plot...
+[3] Residuals vs fitted plot saved to plots/diagnostics/residuals_vs_fitted.png
+[4] Running Breusch-Pagan test...
+[4] Breusch-Pagan statistic: 3.6092
+[4] Breusch-Pagan p-value: 0.1645
+[4] PASS: Homoscedasticity assumption met (p>=0.05)
+[5] Generating diagnostic summary report...
+[5] VIF computed: [12.294661939228687, 12.294661939228687]
+[5] Diagnostic report saved to data/lmm_diagnostic_report.md
+[6] Saving diagnostic data...
+[6] Diagnostic data saved to data/lmm_diagnostics_data.csv
+
+============================================================
+LMM diagnostics complete
+============================================================
+Outputs:
+  - plots/diagnostics/qq_plot.png
+  - plots/diagnostics/residuals_vs_fitted.png
+  - data/lmm_diagnostic_report.md
+  - data/lmm_diagnostics_data.csv
+  - logs/lmm_diagnostics.log
+
+Next: Update validation.md with diagnostic findings
+============================================================

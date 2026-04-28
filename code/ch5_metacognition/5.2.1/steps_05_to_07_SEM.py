@@ -31,7 +31,6 @@ Steps:
   06: Test time effect with dual p-values (Decision D068)
   07: Prepare trajectory plot data
 
-Author: Claude Code (Phase 3 SEM prototype)
 Date: 2025-12-28
 """
 
@@ -43,9 +42,7 @@ import statsmodels.formula.api as smf
 import warnings
 warnings.filterwarnings('ignore')
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.2.1
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR root
@@ -66,9 +63,7 @@ def log(msg):
     print(msg, flush=True)
 
 
-# =============================================================================
-# STEP 05: Fit LMM for Calibration Trajectory (SEM VERSION)
-# =============================================================================
+# Fit LMM for Calibration Trajectory (SEM VERSION)
 
 def step05_fit_lmm_sem(df_calibration):
     """Fit LMM: latent_calibration ~ TSVR_hours + (TSVR_hours | UID)."""
@@ -148,9 +143,7 @@ def step05_fit_lmm_sem(df_calibration):
     return result, df
 
 
-# =============================================================================
-# STEP 06: Test Time Effect with Dual P-Values (SEM VERSION)
-# =============================================================================
+# Test Time Effect with Dual P-Values (SEM VERSION)
 
 def step06_test_time_effect_sem(lmm_result, df_with_time):
     """Extract Time effect with dual p-value reporting (Decision D068)."""
@@ -248,9 +241,7 @@ def step06_test_time_effect_sem(lmm_result, df_with_time):
     return df_result
 
 
-# =============================================================================
-# STEP 07: Prepare Calibration Trajectory Plot Data (SEM VERSION)
-# =============================================================================
+# Prepare Calibration Trajectory Plot Data (SEM VERSION)
 
 def step07_prepare_trajectory_plot_sem(df_calibration, lmm_result):
     """Create plot source CSV for SEM calibration trajectory."""
@@ -299,9 +290,7 @@ def step07_prepare_trajectory_plot_sem(df_calibration, lmm_result):
     return df_plot
 
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute SEM-based LMM analysis."""

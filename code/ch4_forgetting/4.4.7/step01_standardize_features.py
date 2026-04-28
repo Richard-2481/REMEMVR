@@ -35,12 +35,12 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 01: Standardize Features")
+        log("Step 01: Standardize Features")
 
         # Load wide-format random effects
-        log(f"[LOAD] Reading {INPUT_FILE}")
+        log(f"Reading {INPUT_FILE}")
         df_features = pd.read_csv(INPUT_FILE)
-        log(f"[LOADED] {len(df_features)} rows, {len(df_features.columns)} columns")
+        log(f"{len(df_features)} rows, {len(df_features.columns)} columns")
 
         # Extract feature columns (all except UID)
         feature_cols = [
@@ -49,20 +49,20 @@ if __name__ == "__main__":
             'Incongruent_Intercept', 'Incongruent_Slope'
         ]
 
-        log(f"[INFO] Standardizing {len(feature_cols)} features")
+        log(f"Standardizing {len(feature_cols)} features")
 
         # Extract features as numpy array
         X = df_features[feature_cols].values
 
         # Standardize to z-scores (mean=0, SD=1)
-        log("[STANDARDIZE] Applying StandardScaler (mean=0, SD=1)")
+        log("Applying StandardScaler (mean=0, SD=1)")
         scaler = StandardScaler(with_mean=True, with_std=True)
         X_z = scaler.fit_transform(X)
 
-        log(f"[INFO] Before standardization:")
+        log(f"Before standardization:")
         log(f"  Mean: {X.mean(axis=0)}")
         log(f"  SD: {X.std(axis=0)}")
-        log(f"[INFO] After standardization:")
+        log(f"After standardization:")
         log(f"  Mean: {X_z.mean(axis=0)}")
         log(f"  SD: {X_z.std(axis=0)}")
 
@@ -83,12 +83,12 @@ if __name__ == "__main__":
             raise ValueError(f"Found {nan_count} NaN values after standardization")
 
         # Save to CSV
-        log(f"[SAVE] Writing to {OUTPUT_FILE}")
+        log(f"Writing to {OUTPUT_FILE}")
         df_standardized.to_csv(OUTPUT_FILE, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_FILE}")
+        log(f"{OUTPUT_FILE}")
 
         # Validate standardization
-        log("[VALIDATION] Validating standardization")
+        log("Validating standardization")
         z_cols = [f"{col}_z" for col in feature_cols]
         validation_result = validate_standardization(
             df=df_standardized,
@@ -100,13 +100,13 @@ if __name__ == "__main__":
             raise ValueError(f"Validation failed: {validation_result['message']}")
 
         log(f"[VALIDATION PASS] {validation_result['message']}")
-        log("[SUCCESS] Step 01 complete")
+        log("Step 01 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

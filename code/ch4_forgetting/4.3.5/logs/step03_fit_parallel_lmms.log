@@ -1,0 +1,84 @@
+2025-12-03 18:54:19,626 - INFO - ============================================================
+2025-12-03 18:54:19,626 - INFO - STEP 03: FIT PARALLEL LMMs (IRT vs CTT)
+2025-12-03 18:54:19,626 - INFO - ============================================================
+2025-12-03 18:54:19,626 - INFO - 
+1. Loading input files...
+2025-12-03 18:54:19,628 - INFO - Loaded merged IRT-CTT: 400 rows
+2025-12-03 18:54:19,629 - INFO - Loaded TSVR mapping: 400 rows
+2025-12-03 18:54:19,629 - INFO - 
+2. Getting best model from RQ 5.3.1...
+2025-12-03 18:54:19,629 - INFO - Using default Log model (RQ 5.3.1 model comparison not found)
+2025-12-03 18:54:19,629 - INFO - 
+3. Preparing long format data...
+2025-12-03 18:54:19,654 - INFO - IRT long format: 1200 rows
+2025-12-03 18:54:19,654 - INFO - CTT long format: 1200 rows
+2025-12-03 18:54:19,654 - INFO - 
+4. Adding time transformations...
+2025-12-03 18:54:19,655 - INFO - Time transformations added: log_TSVR, TSVR_sq (best model: Log)
+2025-12-03 18:54:19,655 - INFO - Time transformations added: log_TSVR, TSVR_sq (best model: Log)
+2025-12-03 18:54:19,662 - INFO -    Saved: step03_irt_lmm_input.csv (1200 rows)
+2025-12-03 18:54:19,662 - INFO -    Saved: step03_ctt_lmm_input.csv (1200 rows)
+2025-12-03 18:54:19,662 - INFO - 
+5. Fitting IRT model...
+2025-12-03 18:54:19,871 - INFO - Model converged with random slopes: ~log_TSVR
+2025-12-03 18:54:19,871 - INFO - 
+6. Fitting CTT model...
+2025-12-03 18:54:19,971 - INFO - Model converged with random slopes: ~log_TSVR
+2025-12-03 18:54:19,971 - INFO - 
+7. Verifying structural equivalence...
+2025-12-03 18:54:19,971 - INFO - 
+8. Saving models...
+2025-12-03 18:54:19,975 - INFO -    Saved: step03_irt_lmm_model.pkl
+2025-12-03 18:54:19,975 - INFO -    Saved: step03_ctt_lmm_model.pkl
+2025-12-03 18:54:19,975 - INFO - 
+9. Saving model summaries...
+2025-12-03 18:54:19,982 - ERROR - STEP 03 FAILED: 'MixedLMResults' object has no attribute 'ngroups'
+2025-12-03 18:54:33,846 - INFO - ============================================================
+2025-12-03 18:54:33,846 - INFO - STEP 03: FIT PARALLEL LMMs (IRT vs CTT)
+2025-12-03 18:54:33,846 - INFO - ============================================================
+2025-12-03 18:54:33,846 - INFO - 
+1. Loading input files...
+2025-12-03 18:54:33,847 - INFO - Loaded merged IRT-CTT: 400 rows
+2025-12-03 18:54:33,848 - INFO - Loaded TSVR mapping: 400 rows
+2025-12-03 18:54:33,848 - INFO - 
+2. Getting best model from RQ 5.3.1...
+2025-12-03 18:54:33,848 - INFO - Using default Log model (RQ 5.3.1 model comparison not found)
+2025-12-03 18:54:33,848 - INFO - 
+3. Preparing long format data...
+2025-12-03 18:54:33,868 - INFO - IRT long format: 1200 rows
+2025-12-03 18:54:33,869 - INFO - CTT long format: 1200 rows
+2025-12-03 18:54:33,869 - INFO - 
+4. Adding time transformations...
+2025-12-03 18:54:33,869 - INFO - Time transformations added: log_TSVR, TSVR_sq (best model: Log)
+2025-12-03 18:54:33,870 - INFO - Time transformations added: log_TSVR, TSVR_sq (best model: Log)
+2025-12-03 18:54:33,876 - INFO -    Saved: step03_irt_lmm_input.csv (1200 rows)
+2025-12-03 18:54:33,877 - INFO -    Saved: step03_ctt_lmm_input.csv (1200 rows)
+2025-12-03 18:54:33,877 - INFO - 
+5. Fitting IRT model...
+2025-12-03 18:54:34,069 - INFO - Model converged with random slopes: ~log_TSVR
+2025-12-03 18:54:34,070 - INFO - 
+6. Fitting CTT model...
+2025-12-03 18:54:34,170 - INFO - Model converged with random slopes: ~log_TSVR
+2025-12-03 18:54:34,170 - INFO - 
+7. Verifying structural equivalence...
+2025-12-03 18:54:34,170 - INFO - 
+8. Saving models...
+2025-12-03 18:54:34,174 - INFO -    Saved: step03_irt_lmm_model.pkl
+2025-12-03 18:54:34,174 - INFO -    Saved: step03_ctt_lmm_model.pkl
+2025-12-03 18:54:34,174 - INFO - 
+9. Saving model summaries...
+2025-12-03 18:54:34,180 - INFO - Model summary saved to /home/etai/projects/REMEMVR/results/ch5/5.3.5/data/step03_irt_lmm_summary.txt
+2025-12-03 18:54:34,185 - INFO - Model summary saved to /home/etai/projects/REMEMVR/results/ch5/5.3.5/data/step03_ctt_lmm_summary.txt
+2025-12-03 18:54:34,185 - INFO - 
+10. Saving convergence log...
+2025-12-03 18:54:34,185 - INFO - Convergence log saved to /home/etai/projects/REMEMVR/results/ch5/5.3.5/data/step03_model_convergence_log.txt
+2025-12-03 18:54:34,185 - INFO - 
+============================================================
+2025-12-03 18:54:34,186 - INFO - STEP 03 COMPLETE: Parallel LMMs fitted
+2025-12-03 18:54:34,186 - INFO - IRT model convergence: True
+2025-12-03 18:54:34,186 - INFO - CTT model convergence: True
+2025-12-03 18:54:34,186 - INFO - Structural equivalence: MAINTAINED
+2025-12-03 18:54:34,186 - INFO - Final random structure: random_slopes
+2025-12-03 18:54:34,186 - INFO - IRT AIC: 2229.53
+2025-12-03 18:54:34,186 - INFO - CTT AIC: -1488.83
+2025-12-03 18:54:34,186 - INFO - ============================================================

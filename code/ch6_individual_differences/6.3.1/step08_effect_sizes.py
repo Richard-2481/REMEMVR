@@ -16,7 +16,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step08_effect_sizes.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -38,11 +37,11 @@ def bootstrap_effect_sizes(X, y, n_bootstrap=1000, random_state=42):
     bootstrap_f2 = []
     bootstrap_sr2 = {col: [] for col in X.columns}
     
-    log(f"[BOOTSTRAP] Running {n_bootstrap} bootstrap iterations...")
+    log(f"Running {n_bootstrap} bootstrap iterations...")
     
     for i in range(n_bootstrap):
         if i % 200 == 0:
-            log(f"[BOOTSTRAP] Progress: {i}/{n_bootstrap} iterations")
+            log(f"Progress: {i}/{n_bootstrap} iterations")
         
         # Resample with replacement
         indices = np.random.choice(n_samples, n_samples, replace=True)
@@ -86,23 +85,23 @@ def bootstrap_effect_sizes(X, y, n_bootstrap=1000, random_state=42):
     return ci_results
 
 try:
-    log("[START] Step 08: Effect Size Analysis")
-    log("[INFO] Purpose: Compute comprehensive effect size measures")
+    log("Step 08: Effect Size Analysis")
+    log("Purpose: Compute comprehensive effect size measures")
     
     # Load data
-    log("[LOAD] Loading analysis dataset...")
+    log("Loading analysis dataset...")
     df = pd.read_csv(RQ_DIR / "data" / "step04_analysis_dataset.csv")
-    log(f"[LOADED] Dataset: {len(df)} rows")
+    log(f"Dataset: {len(df)} rows")
     
     # Load hierarchical models for comparison
-    log("[LOAD] Loading hierarchical regression results...")
+    log("Loading hierarchical regression results...")
     hier_df = pd.read_csv(RQ_DIR / "data" / "step05_hierarchical_models.csv")
-    log(f"[LOADED] Hierarchical models: {len(hier_df)} models")
+    log(f"Hierarchical models: {len(hier_df)} models")
     
     # Load individual predictors for semi-partial correlations
-    log("[LOAD] Loading individual predictor results...")
+    log("Loading individual predictor results...")
     pred_df = pd.read_csv(RQ_DIR / "data" / "step06_individual_predictors.csv")
-    log(f"[LOADED] Individual predictors: {len(pred_df)} predictors")
+    log(f"Individual predictors: {len(pred_df)} predictors")
     
     # Prepare data
     predictors = ['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
@@ -110,7 +109,7 @@ try:
     y = df['confidence_theta']
     
     # Extract primary effect sizes
-    log("[COMPUTE] Calculating primary effect sizes...")
+    log("Calculating primary effect sizes...")
     
     # From hierarchical models
     cognitive_model = hier_df[hier_df['model'] == 'Cognitive'].iloc[0]
@@ -125,16 +124,16 @@ try:
     delta_r2 = r2_full - r2_demo
     f2_incremental = delta_r2 / (1 - r2_full)
     
-    log(f"[EFFECT] Overall model R² = {r2_full:.4f}")
-    log(f"[EFFECT] Overall model f² = {f2_full:.4f}")
-    log(f"[EFFECT] Demographics R² = {r2_demo:.4f}")
-    log(f"[EFFECT] Incremental R² = {delta_r2:.4f}")
-    log(f"[EFFECT] Incremental f² = {f2_incremental:.4f}")
+    log(f"Overall model R² = {r2_full:.4f}")
+    log(f"Overall model f² = {f2_full:.4f}")
+    log(f"Demographics R² = {r2_demo:.4f}")
+    log(f"Incremental R² = {delta_r2:.4f}")
+    log(f"Incremental f² = {f2_incremental:.4f}")
     
     # Bootstrap confidence intervals
     ci_results = bootstrap_effect_sizes(X, y, n_bootstrap=1000, random_state=42)
     
-    log("[BOOTSTRAP] Complete - calculating confidence intervals...")
+    log("Complete - calculating confidence intervals...")
     log(f"[CI] R² 95% CI: [{ci_results['r2'][0]:.4f}, {ci_results['r2'][1]:.4f}]")
     log(f"[CI] f² 95% CI: [{ci_results['f2'][0]:.4f}, {ci_results['f2'][1]:.4f}]")
     
@@ -173,7 +172,7 @@ try:
             'importance_rank': i + 1
         })
         
-        log(f"[PREDICTOR] {pred}: sr²={sr2:.4f}, f²={f2_individual:.4f}, "
+        log(f"{pred}: sr²={sr2:.4f}, f²={f2_individual:.4f}, "
             f"CI=[{ci_lower:.4f}, {ci_upper:.4f}]")
     
     # Sort by effect size and update ranks
@@ -186,7 +185,7 @@ try:
         effect_df.loc[effect_df['predictor'] == row['predictor'], 'importance_rank'] = idx + 1
     
     # Interpret effect sizes
-    log("[INTERPRET] Effect size interpretation (Cohen's conventions):")
+    log("Effect size interpretation (Cohen's conventions):")
     log("  f² < 0.02: negligible")
     log("  f² 0.02-0.15: small")
     log("  f² 0.15-0.35: medium")
@@ -204,26 +203,26 @@ try:
             interpretation = "large"
         
         if row['predictor'] != 'Overall_Model':
-            log(f"[INTERPRET] {row['predictor']}: f²={f2:.4f} ({interpretation})")
+            log(f"{row['predictor']}: f²={f2:.4f} ({interpretation})")
     
     # Save results
     output_path = RQ_DIR / "data" / "step08_effect_sizes.csv"
     effect_df.to_csv(output_path, index=False)
-    log(f"[SAVED] Effect sizes: {output_path}")
+    log(f"Effect sizes: {output_path}")
     
     # Validation
-    log("[VALIDATION] Checking effect size validity...")
+    log("Checking effect size validity...")
     sum_sr2 = effect_df[effect_df['predictor'] != 'Overall_Model']['sr2'].sum()
     
     if sum_sr2 <= r2_full:
-        log(f"[VALIDATION] PASS: Sum of sr² ({sum_sr2:.4f}) ≤ total R² ({r2_full:.4f})")
+        log(f"PASS: Sum of sr² ({sum_sr2:.4f}) ≤ total R² ({r2_full:.4f})")
     else:
-        log(f"[WARNING] Sum of sr² ({sum_sr2:.4f}) > total R² ({r2_full:.4f})")
+        log(f"Sum of sr² ({sum_sr2:.4f}) > total R² ({r2_full:.4f})")
     
-    log("[SUCCESS] Step 08 complete")
+    log("Step 08 complete")
     
 except Exception as e:
-    log(f"[ERROR] Critical error in effect size analysis: {str(e)}")
+    log(f"Critical error in effect size analysis: {str(e)}")
     import traceback
-    log(f"[TRACEBACK] {traceback.format_exc()}")
+    log(f"{traceback.format_exc()}")
     raise

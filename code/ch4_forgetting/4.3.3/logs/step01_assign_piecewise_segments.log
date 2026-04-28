@@ -1,0 +1,37 @@
+2025-12-02 15:28:25,683 - INFO - ============================================================
+2025-12-02 15:28:25,683 - INFO - Step 01: Assign Piecewise Segments
+2025-12-02 15:28:25,683 - INFO - ============================================================
+2025-12-02 15:28:25,684 - INFO - Loading data from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step00_theta_from_rq531.csv
+2025-12-02 15:28:25,685 - INFO - Data loaded: 1200 rows
+2025-12-02 15:28:25,685 - INFO - Applying piecewise segment assignment...
+2025-12-02 15:28:25,685 - INFO -   Early segment: TSVR_hours <= 24 hours (consolidation window)
+2025-12-02 15:28:25,686 - INFO -   Late segment: TSVR_hours > 24 hours (decay period)
+2025-12-02 15:28:25,689 - INFO - Segment assignment complete
+2025-12-02 15:28:25,690 - INFO - Segment counts: {'Late': np.int64(828), 'Early': np.int64(372)}
+2025-12-02 15:28:25,690 - INFO - Segment assignment complete: 372 Early, 828 Late
+2025-12-02 15:28:25,691 - INFO - Days_within - Early segment min: 0.0417
+2025-12-02 15:28:25,691 - INFO - Days_within - Late segment min: 0.0000
+2025-12-02 15:28:25,691 - INFO - Days_within computed: min=0.0000 for both segments (approx)
+2025-12-02 15:28:25,691 - INFO - VALIDATION - PASS: Dataframe structure validated
+2025-12-02 15:28:25,691 - INFO -   Early-IFR: 124 rows
+2025-12-02 15:28:25,691 - WARNING - WARNING: Expected 200 rows for Early-IFR, got 124
+2025-12-02 15:28:25,691 - INFO -   Early-ICR: 124 rows
+2025-12-02 15:28:25,691 - WARNING - WARNING: Expected 200 rows for Early-ICR, got 124
+2025-12-02 15:28:25,692 - INFO -   Early-IRE: 124 rows
+2025-12-02 15:28:25,692 - WARNING - WARNING: Expected 200 rows for Early-IRE, got 124
+2025-12-02 15:28:25,692 - INFO -   Late-IFR: 276 rows
+2025-12-02 15:28:25,692 - WARNING - WARNING: Expected 200 rows for Late-IFR, got 276
+2025-12-02 15:28:25,692 - INFO -   Late-ICR: 276 rows
+2025-12-02 15:28:25,693 - WARNING - WARNING: Expected 200 rows for Late-ICR, got 276
+2025-12-02 15:28:25,693 - INFO -   Late-IRE: 276 rows
+2025-12-02 15:28:25,693 - WARNING - WARNING: Expected 200 rows for Late-IRE, got 276
+2025-12-02 15:28:25,693 - INFO - 
+Days_within summary by Segment:
+2025-12-02 15:28:25,693 - INFO -   Early: min=0.042, max=0.996, mean=0.214
+2025-12-02 15:28:25,694 - INFO -   Late: min=0.000, max=9.254, mean=2.820
+2025-12-02 15:28:25,696 - INFO - 
+Output saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step01_piecewise_lmm_input.csv
+2025-12-02 15:28:25,697 - INFO - Output shape: (1200, 10)
+2025-12-02 15:28:25,697 - INFO - ============================================================
+2025-12-02 15:28:25,697 - INFO - STEP 01 COMPLETE
+2025-12-02 15:28:25,697 - INFO - ============================================================

@@ -1,0 +1,138 @@
+Step 03: Compute Planned Contrasts (Decision D068)
+============================================================
+
+Loading input data...
+data/step01_piecewise_lmm_model.pkl
+results/step02_segment_domain_slopes.csv (6 rows)
+Slopes file has all required columns
+All 6 segment-domain combinations present
+
+Computing 6 planned contrasts...
+============================================================
+POST-HOC PAIRWISE CONTRASTS (Decision D068)
+============================================================
+Family-wise alpha: 0.05
+Number of comparisons: 6
+Bonferroni-corrected alpha: 0.0083
+
+Computed 6 contrasts
+
+Results:
+  Significant (uncorrected alpha=0.05): 0/6
+  Significant (corrected alpha=0.0083): 0/6
+
+Contrast estimates:
+  where-what_early: beta=0.0233, z=0.23, p=0.8164 
+  when-what_early: beta=0.1440, z=1.44, p=0.1504 
+  where-what_late: beta=-0.0138, z=-0.34, p=0.7336 
+  when-what_late: beta=0.0630, z=1.55, p=0.1205 
+  where_slope_change-what_slope_change: beta=-0.0371, z=-0.34, p=0.7316 
+  when_slope_change-what_slope_change: beta=-0.0810, z=-0.75, p=0.4535 
+
+Computing effect sizes (Cohen's f-squared)...
+
+============================================================
+EFFECT SIZES (Cohen's f²)
+============================================================
+
+Effect sizes computed for 11 fixed effects
+  Negligible (f²<0.02): 8
+  Small (0.02≤f²<0.15): 3
+  Medium (0.15≤f²<0.35): 0
+  Large (f²≥0.35): 0
+============================================================
+
+Computed effect sizes for 11 terms
+
+Saving outputs...
+results/step03_planned_contrasts.csv (6 rows)
+results/step03_effect_sizes.csv (11 rows)
+
+Validating outputs...
+Contrast count correct: 6 rows
+Dual p-values present (D068 compliant)
+Bonferroni alpha correct: 0.0083
+p-values valid and correctly ordered
+Effect sizes computed: 11 terms
+
+All validation criteria passed
+
+============================================================
+SUMMARY
+============================================================
+
+Contrasts (sorted by p-value):
+  [ns] when-what_late: beta=0.0630, p=0.1205
+  [ns] when-what_early: beta=0.1440, p=0.1504
+  [ns] when_slope_change-what_slope_change: beta=-0.0810, p=0.4535
+  [ns] where_slope_change-what_slope_change: beta=-0.0371, p=0.7316
+  [ns] where-what_late: beta=-0.0138, p=0.7336
+  [ns] where-what_early: beta=0.0233, p=0.8164
+
+Effect size distribution:
+  negligible: 8 terms
+  small: 3 terms
+
+============================================================
+Step 03 complete
+============================================================
+Step 03: Compute Planned Contrasts (Decision D068)
+============================================================
+
+Loading input data...
+data/step01_piecewise_lmm_model.pkl
+results/step02_segment_domain_slopes.csv (4 rows)
+Slopes file has all required columns
+All 4 segment-domain combinations present (When excluded)
+
+Computing 3 planned contrasts (When domain excluded)...
+============================================================
+POST-HOC PAIRWISE CONTRASTS (Decision D068)
+============================================================
+Family-wise alpha: 0.05
+Number of comparisons: 3
+Bonferroni-corrected alpha: 0.0167
+
+Computed 3 contrasts
+
+Results:
+  Significant (uncorrected alpha=0.05): 0/3
+  Significant (corrected alpha=0.0167): 0/3
+
+Contrast estimates:
+  where-what_early: beta=0.0233, z=0.28, p=0.7817 
+  where-what_late: beta=-0.0138, z=-0.39, p=0.6992 
+  where_slope_change-what_slope_change: beta=-0.0371, z=-0.41, p=0.6844 
+
+Computing effect sizes (Cohen's f-squared)...
+Computed effect sizes for 7 terms
+
+Saving outputs...
+results/step03_planned_contrasts.csv (3 rows)
+results/step03_effect_sizes.csv (7 rows)
+
+Validating outputs...
+Contrast count correct: 3 rows (When excluded)
+Dual p-values present (D068 compliant)
+Bonferroni alpha correct: 0.0167
+p-values valid and correctly ordered
+Effect sizes computed: 7 terms
+
+All validation criteria passed
+
+============================================================
+SUMMARY
+============================================================
+
+Contrasts (sorted by p-value):
+  [ns] where_slope_change-what_slope_change: beta=-0.0371, p=0.6844
+  [ns] where-what_late: beta=-0.0138, p=0.6992
+  [ns] where-what_early: beta=0.0233, p=0.7817
+
+Effect size distribution:
+  negligible: 4 terms
+  small: 3 terms
+
+============================================================
+Step 03 complete
+============================================================

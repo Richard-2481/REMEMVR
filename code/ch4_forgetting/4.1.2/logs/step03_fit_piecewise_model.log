@@ -1,0 +1,449 @@
+Step 3: Fit Piecewise Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Segment', 'Days_within']
+Loading RQ 5.7 best continuous model AIC...
+RQ 5.7 best continuous AIC = 873.71
+Checking RQ 5.7 convergence status...
+RQ 5.7 status: RQ 5.7 Best Continuous Model Information
+============================================================
+Best model: Log
+AIC: 873.710488
+
+INTERPRETATION FOR RQ 5.8 STEP 3:
+------------------------------------------------------------
+RQ 5.7 completed successfully with Log as best model.
+AIC comparison in Step 3 uses this value as reference.
+RQ 5.7 model converged with maximal random structure
+AIC comparison valid (comparable random structures)
+Fitting piecewise LMM: theta ~ Days_within * Segment + (Days_within | UID)...
+Maximal random structure: (Days_within | UID) - allows individual slope differences
+Fallback strategy: (Days_within || UID) -> (1 | UID) if convergence fails
+Maximal random structure failed: 'composite_ID'
+Attempting uncorrelated random structure: (Days_within || UID)...
+Uncorrelated random structure failed: 'composite_ID'
+Attempting intercept-only random structure: (1 | UID)...
+'composite_ID'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'composite_ID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step03_fit_piecewise_model.py", line 214, in <module>
+    piecewise_model = fit_lmm_trajectory_tsvr(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1074, in fit_lmm_trajectory_tsvr
+    theta_scores[['UID', 'Test']] = theta_scores['composite_ID'].str.split('_', n=1, expand=True)
+                                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'composite_ID'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'composite_ID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step03_fit_piecewise_model.py", line 232, in <module>
+    piecewise_model = fit_lmm_trajectory_tsvr(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1074, in fit_lmm_trajectory_tsvr
+    theta_scores[['UID', 'Test']] = theta_scores['composite_ID'].str.split('_', n=1, expand=True)
+                                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'composite_ID'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'composite_ID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step03_fit_piecewise_model.py", line 248, in <module>
+    piecewise_model = fit_lmm_trajectory_tsvr(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1074, in fit_lmm_trajectory_tsvr
+    theta_scores[['UID', 'Test']] = theta_scores['composite_ID'].str.split('_', n=1, expand=True)
+                                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'composite_ID'
+Step 3: Fit Piecewise Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Segment', 'Days_within']
+Loading RQ 5.7 best continuous model AIC...
+RQ 5.7 best continuous AIC = 873.71
+Checking RQ 5.7 convergence status...
+RQ 5.7 status: RQ 5.7 Best Continuous Model Information
+============================================================
+Best model: Log
+AIC: 873.710488
+
+INTERPRETATION FOR RQ 5.8 STEP 3:
+------------------------------------------------------------
+RQ 5.7 completed successfully with Log as best model.
+AIC comparison in Step 3 uses this value as reference.
+RQ 5.7 model converged with maximal random structure
+AIC comparison valid (comparable random structures)
+Fitting piecewise LMM: theta ~ Days_within * Segment + (Days_within | UID)...
+Maximal random structure: (Days_within | UID) - allows individual slope differences
+Fallback strategy: (Days_within || UID) -> (1 | UID) if convergence fails
+Piecewise model converged with maximal random structure
+Piecewise LMM fitting complete
+Random structure used: (Days_within | UID)
+Extracting fixed effects and AIC...
+Piecewise model AIC = 878.74
+deltaAIC = 5.03 (Piecewise - Continuous)
+Continuous model FAVORED (deltaAIC > +2) - Evidence against two-phase forgetting
+Fixed effects extracted (Intercept, Days_within, Segment, interaction)
+'DataFrame' object has no attribute 'data'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step03_fit_piecewise_model.py", line 302, in <module>
+    fe_df = pd.DataFrame(fixed_effects.data[1:], columns=fixed_effects.data[0])
+                         ^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 6321, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'data'. Did you mean: '_data'?
+Step 3: Fit Piecewise Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Segment', 'Days_within']
+Loading RQ 5.7 best continuous model AIC...
+RQ 5.7 best continuous AIC = 873.71
+Checking RQ 5.7 convergence status...
+RQ 5.7 status: RQ 5.7 Best Continuous Model Information
+============================================================
+Best model: Log
+AIC: 873.710488
+
+INTERPRETATION FOR RQ 5.8 STEP 3:
+------------------------------------------------------------
+RQ 5.7 completed successfully with Log as best model.
+AIC comparison in Step 3 uses this value as reference.
+RQ 5.7 model converged with maximal random structure
+AIC comparison valid (comparable random structures)
+Fitting piecewise LMM: theta ~ Days_within * Segment + (Days_within | UID)...
+Maximal random structure: (Days_within | UID) - allows individual slope differences
+Fallback strategy: (Days_within || UID) -> (1 | UID) if convergence fails
+Piecewise model converged with maximal random structure
+Piecewise LMM fitting complete
+Random structure used: (Days_within | UID)
+Extracting fixed effects and AIC...
+Piecewise model AIC = 878.74
+deltaAIC = 5.03 (Piecewise - Continuous)
+Continuous model FAVORED (deltaAIC > +2) - Evidence against two-phase forgetting
+Fixed effects extracted (Intercept, Days_within, Segment, interaction)
+'DataFrame' object has no attribute 'data'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step03_fit_piecewise_model.py", line 301, in <module>
+    fe_df = pd.DataFrame(fixed_effects_table.data[1:], columns=fixed_effects_table.data[0])
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 6321, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'data'. Did you mean: '_data'?
+Step 3: Fit Piecewise Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Segment', 'Days_within']
+Loading RQ 5.7 best continuous model AIC...
+RQ 5.7 best continuous AIC = 873.71
+Checking RQ 5.7 convergence status...
+RQ 5.7 status: RQ 5.7 Best Continuous Model Information
+============================================================
+Best model: Log
+AIC: 873.710488
+
+INTERPRETATION FOR RQ 5.8 STEP 3:
+------------------------------------------------------------
+RQ 5.7 completed successfully with Log as best model.
+AIC comparison in Step 3 uses this value as reference.
+RQ 5.7 model converged with maximal random structure
+AIC comparison valid (comparable random structures)
+Fitting piecewise LMM: theta ~ Days_within * Segment + (Days_within | UID)...
+Maximal random structure: (Days_within | UID) - allows individual slope differences
+Fallback strategy: (Days_within || UID) -> (1 | UID) if convergence fails
+Piecewise model converged with maximal random structure
+Piecewise LMM fitting complete
+Random structure used: (Days_within | UID)
+Extracting fixed effects and AIC...
+Piecewise model AIC = 878.74
+deltaAIC = 5.03 (Piecewise - Continuous)
+Continuous model FAVORED (deltaAIC > +2) - Evidence against two-phase forgetting
+Fixed effects extracted (Intercept, Days_within, Segment, interaction)
+Interaction p-value = 0.0000
+Interaction significant at Bonferroni alpha = 0.0033
+Early and Late segments have DIFFERENT forgetting rates
+Generating model predictions for Early and Late segments...
+Computing fixed effects predictions (population-level trends)...
+Fixed effects: Intercept=0.6563, Days_within=-0.4321
+Segment[Late]=-0.8597, Interaction=0.3624
+Generated 18 predictions (9 Early + 9 Late)
+Saving piecewise model summary...
+/home/etai/projects/REMEMVR/results/ch5/rq8/results/step03_piecewise_model_summary.txt
+Saving piecewise predictions...
+data/step03_piecewise_predictions.csv (18 rows)
+Running validate_lmm_convergence...
+converged: False
+message: LMM did not converge
+warning: Results may be unreliable
+Checking fixed effects validity...
+All fixed effects finite
+Interaction p-value in valid range: 0.0000
+deltaAIC computed successfully: 5.03
+All 18 predictions generated (9 Early + 9 Late)
+Step 3 complete
+Step 3: Fit Piecewise Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Segment', 'Days_within']
+Loading RQ 5.7 best continuous model AIC...
+RQ 5.7 best continuous AIC = 873.71
+Checking RQ 5.7 convergence status...
+RQ 5.7 status: RQ 5.7 Best Continuous Model Information
+============================================================
+Best model: Log
+AIC: 873.710488
+
+INTERPRETATION FOR RQ 5.8 STEP 3:
+------------------------------------------------------------
+RQ 5.7 completed successfully with Log as best model.
+AIC comparison in Step 3 uses this value as reference.
+RQ 5.7 model converged with maximal random structure
+AIC comparison valid (comparable random structures)
+Fitting piecewise LMM: theta ~ Days_within * Segment + (Days_within | UID)...
+Maximal random structure: (Days_within | UID) - allows individual slope differences
+Fallback strategy: (Days_within || UID) -> (1 | UID) if convergence fails
+Piecewise model converged with maximal random structure
+Piecewise LMM fitting complete
+Random structure used: (Days_within | UID)
+Extracting fixed effects and AIC...
+Piecewise model AIC = 878.74
+deltaAIC = 5.03 (Piecewise - Continuous)
+Continuous model FAVORED (deltaAIC > +2) - Evidence against two-phase forgetting
+Fixed effects extracted (Intercept, Days_within, Segment, interaction)
+Interaction p-value = 0.0000
+Interaction significant at Bonferroni alpha = 0.0033
+Early and Late segments have DIFFERENT forgetting rates
+Generating model predictions for Early and Late segments...
+Computing fixed effects predictions (population-level trends)...
+Fixed effects: Intercept=0.6563, Days_within=-0.4321
+Segment[Late]=-0.8597, Interaction=0.3624
+Generated 18 predictions (9 Early + 9 Late)
+Saving piecewise model summary...
+/home/etai/projects/REMEMVR/results/ch5/rq8/results/step03_piecewise_model_summary.txt
+Saving piecewise predictions...
+data/step03_piecewise_predictions.csv (18 rows)
+Saving piecewise model pickle...
+step03_piecewise_model.pkl
+Running validate_lmm_convergence...
+converged: False
+message: LMM did not converge
+warning: Results may be unreliable
+Checking fixed effects validity...
+All fixed effects finite
+Interaction p-value in valid range: 0.0000
+deltaAIC computed successfully: 5.03
+All 18 predictions generated (9 Early + 9 Late)
+Step 3 complete
+Step 3: Fit Piecewise Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Segment', 'Days_within']
+Loading RQ 5.7 best continuous model AIC...
+RQ 5.7 best continuous AIC = 873.71
+Checking RQ 5.7 convergence status...
+RQ 5.7 status: RQ 5.7 Best Continuous Model Information
+============================================================
+Best model: Log
+AIC: 873.710488
+
+INTERPRETATION FOR RQ 5.8 STEP 3:
+------------------------------------------------------------
+RQ 5.7 completed successfully with Log as best model.
+AIC comparison in Step 3 uses this value as reference.
+RQ 5.7 model converged with maximal random structure
+AIC comparison valid (comparable random structures)
+Fitting piecewise LMM: theta ~ Days_within * Segment + (Days_within | UID)...
+Maximal random structure: (Days_within | UID) - allows individual slope differences
+Fallback strategy: (Days_within || UID) -> (1 | UID) if convergence fails
+Piecewise model converged with maximal random structure
+Piecewise LMM fitting complete
+Random structure used: (Days_within | UID)
+Extracting fixed effects and AIC...
+Piecewise model AIC = 878.74
+deltaAIC = 5.03 (Piecewise - Continuous)
+Continuous model FAVORED (deltaAIC > +2) - Evidence against two-phase forgetting
+Fixed effects extracted (Intercept, Days_within, Segment, interaction)
+Interaction p-value = 0.0000
+Interaction significant at Bonferroni alpha = 0.0033
+Early and Late segments have DIFFERENT forgetting rates
+Generating model predictions for Early and Late segments...
+Computing fixed effects predictions (population-level trends)...
+Fixed effects: Intercept=0.6563, Days_within=-0.4321
+Segment[Late]=-0.8597, Interaction=0.3624
+Generated 18 predictions (9 Early + 9 Late)
+Saving piecewise model summary...
+/home/etai/projects/REMEMVR/results/ch5/rq8/results/step03_piecewise_model_summary.txt
+Saving piecewise predictions...
+data/step03_piecewise_predictions.csv (18 rows)
+Saving piecewise model pickle...
+step03_piecewise_model.pkl
+Running validate_lmm_convergence...
+converged: False
+message: LMM did not converge
+warning: Results may be unreliable
+Checking fixed effects validity...
+All fixed effects finite
+Interaction p-value in valid range: 0.0000
+deltaAIC computed successfully: 5.03
+All 18 predictions generated (9 Early + 9 Late)
+Step 3 complete
+Step 3: Fit Piecewise Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Segment', 'Days_within']
+Loading RQ 5.7 best continuous model AIC...
+RQ 5.7 best continuous AIC = 873.71
+Checking RQ 5.7 convergence status...
+RQ 5.7 status: RQ 5.7 Best Continuous Model Information
+============================================================
+Best model: Log
+AIC: 873.710488
+
+INTERPRETATION FOR RQ 5.8 STEP 3:
+------------------------------------------------------------
+RQ 5.7 completed successfully with Log as best model.
+AIC comparison in Step 3 uses this value as reference.
+RQ 5.7 model converged with maximal random structure
+AIC comparison valid (comparable random structures)
+Fitting piecewise LMM: theta ~ Days_within * Segment + (Days_within | UID)...
+Maximal random structure: (Days_within | UID) - allows individual slope differences
+Fallback strategy: (Days_within || UID) -> (1 | UID) if convergence fails
+Piecewise model converged with maximal random structure
+Piecewise LMM fitting complete
+Random structure used: (Days_within | UID)
+Extracting fixed effects and AIC...
+Piecewise model AIC = 878.74
+deltaAIC = 5.03 (Piecewise - Continuous)
+Continuous model FAVORED (deltaAIC > +2) - Evidence against two-phase forgetting
+Fixed effects extracted (Intercept, Days_within, Segment, interaction)
+Interaction p-value = 0.0000
+Interaction significant at Bonferroni alpha = 0.0033
+Early and Late segments have DIFFERENT forgetting rates
+Generating model predictions for Early and Late segments...
+Computing fixed effects predictions (population-level trends)...
+Fixed effects: Intercept=0.6563, Days_within=-0.4321
+Segment[Late]=-0.8597, Interaction=0.3624
+Generated 18 predictions (9 Early + 9 Late)
+Saving piecewise model summary...
+/home/etai/projects/REMEMVR/results/ch5/rq8/results/step03_piecewise_model_summary.txt
+Saving piecewise predictions...
+data/step03_piecewise_predictions.csv (18 rows)
+Saving piecewise model pickle...
+step03_piecewise_model.pkl
+Running validate_lmm_convergence...
+converged: False
+message: LMM did not converge
+warning: Results may be unreliable
+Checking fixed effects validity...
+All fixed effects finite
+Interaction p-value in valid range: 0.0000
+deltaAIC computed successfully: 5.03
+All 18 predictions generated (9 Early + 9 Late)
+Step 3 complete
+Step 3: Fit Piecewise Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Segment', 'Days_within']
+Loading RQ 5.7 best continuous model AIC...
+RQ 5.7 best continuous AIC = 873.71
+Checking RQ 5.7 convergence status...
+RQ 5.7 status: RQ 5.7 Best Continuous Model Information
+============================================================
+Best model: Log
+AIC: 873.710488
+
+INTERPRETATION FOR RQ 5.8 STEP 3:
+------------------------------------------------------------
+RQ 5.7 completed successfully with Log as best model.
+AIC comparison in Step 3 uses this value as reference.
+RQ 5.7 model converged with maximal random structure
+AIC comparison valid (comparable random structures)
+Fitting piecewise LMM: theta ~ Days_within * Segment + (1 | UID)...
+Random structure: (1 | UID) - MATCHED to Step 02 quadratic model
+This enables VALID AIC comparison (same random structure across models)
+Piecewise model converged with matched random structure (1 | UID)
+Random structure matched to Step 02 quadratic model - AIC comparison VALID
+Piecewise LMM fitting complete
+Random structure used: (1 | UID)
+Extracting fixed effects and AIC...
+Piecewise model AIC = 873.31
+deltaAIC = -0.40 (Piecewise - Continuous)
+Models EQUIVALENT (-2 <= deltaAIC <= +2) - Inconclusive evidence
+Fixed effects extracted (Intercept, Days_within, Segment, interaction)
+Interaction p-value = 0.0000
+Interaction significant at Bonferroni alpha = 0.0033
+Early and Late segments have DIFFERENT forgetting rates
+Generating model predictions for Early and Late segments...
+Computing fixed effects predictions (population-level trends)...
+Fixed effects: Intercept=0.6563, Days_within=-0.4325
+Segment[Late]=-0.8610, Interaction=0.3636
+Generated 18 predictions (9 Early + 9 Late)
+Saving piecewise model summary...
+/home/etai/projects/REMEMVR/results/ch5/5.1.2/results/step03_piecewise_model_summary.txt
+Saving piecewise predictions...
+data/step03_piecewise_predictions.csv (18 rows)
+Saving piecewise model pickle...
+step03_piecewise_model.pkl
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Checking fixed effects validity...
+All fixed effects finite
+Interaction p-value in valid range: 0.0000
+deltaAIC computed successfully: -0.40
+All 18 predictions generated (9 Early + 9 Late)
+Step 3 complete

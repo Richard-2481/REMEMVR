@@ -1,0 +1,4 @@
+Paradigm,mean_abs_calibration,sd_abs_calibration,N,rank,interpretation
+IFR,0.699950691270905,0.578426316557509,400,1,Best calibrated
+ICR,0.7280527856374778,0.6091149644006656,400,2,Middle
+IRE,0.749372248659852,0.6026369195307881,400,3,Worst calibrated

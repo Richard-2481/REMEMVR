@@ -1,0 +1,5 @@
+test,statistic,p_value,interpretation
+Shapiro-Wilk Normality,0.9856348710964552,0.3525277897195951,Normal
+Breusch-Pagan Homoscedasticity,1.6314043552267066,0.6522902412756157,Homoscedastic
+Linearity (Y vs Fitted),0.20054586494638243,0.04543347877339657,Non-linear
+Durbin-Watson Independence,1.9057407192200357,,Independent

@@ -1,0 +1,20 @@
+Step 2: extract_overall_theta
+Loading Ch5 5.1.1 theta scores...
+step03_theta_scores.csv (400 rows, 3 cols)
+Unique participants: 100
+Tests per participant: 4.0 (expected: 4)
+Theta_All range: [-2.516, 2.728]
+Computing overall theta scores by participant...
+Filled 0 missing SE values with mean SE (0.356)
+Analysis complete
+Output contains 100 participants
+theta_overall range: [-1.954, 1.559]
+se_overall range: [0.074, 0.769]
+Saving step02_overall_theta.csv...
+step02_overall_theta.csv (100 rows, 3 cols)
+Running validate_numeric_range...
+valid: True
+message: theta_overall: All values within range [-4.0, 4.0] (n=100).
+out_of_range_count: 0
+violations: []
+Step 2 complete

@@ -1,0 +1,112 @@
+Step 05: Prepare Piecewise Trajectory Plot Data
+============================================================
+Loading input data...
+step00_piecewise_lmm_input.csv (1200 rows, 8 cols)
+         Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'domain', 'theta', 'Segment', 'Days_within']
+step01_piecewise_lmm_model.pkl (MixedLMResults object)
+RQ 5.1 step03_item_parameters.csv (69 items)
+         Mean item discrimination (a): 0.9490
+
+Aggregating theta scores by domain, test, and Segment...
+Aggregated to 12 groups (domain x test combinations)
+
+Generating model predictions for trajectory lines...
+Generated 12 predictions
+
+Saving theta-scale plot data...
+plots/step05_piecewise_theta_data.csv (12 rows)
+         Theta range: [-0.462, 0.648]
+
+Transforming theta to probability scale (Decision D069)...
+         Using IRT 2PL: P = 1 / (1 + exp(-(a * (theta - b))))
+         a = 0.9490 (mean discrimination)
+         b = 0.0 (reference difficulty)
+Transformed 12 rows to probability scale
+         Probability range: [0.392, 0.649]
+
+Saving probability-scale plot data...
+plots/step05_piecewise_probability_data.csv (12 rows)
+
+Running validation checks...
+Theta plot data has exactly 12 rows
+Probability plot data has exactly 12 rows
+All domains present: {what, where, when}
+All tests present: {1, 2, 3, 4}
+Segment assignment correct: T1,T2 -> 'Early'; T3,T4 -> 'Late'
+Theta range valid: [-0.462, 0.648]
+Probability range valid: [0.392, 0.649]
+Theta CI structure valid: CI_lower < mean < CI_upper
+Probability CI structure valid: CI_lower < mean < CI_upper
+No NaN values in output data
+
+All validation checks passed!
+
+============================================================
+Step 05 Complete
+============================================================
+Outputs:
+  - plots/step05_piecewise_theta_data.csv (12 rows)
+  - plots/step05_piecewise_probability_data.csv (12 rows)
+
+Decision D069 Implementation:
+  - Theta scale: For psychometricians and statistical rigor
+  - Probability scale: For general audience interpretability
+  - Transformation: IRT 2PL with a=0.9490, b=0
+
+Step 05 complete
+Step 05: Prepare Piecewise Trajectory Plot Data
+============================================================
+Loading input data...
+step00_piecewise_lmm_input.csv (800 rows, 8 cols)
+         Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'domain', 'theta', 'Segment', 'Days_within']
+step01_piecewise_lmm_model.pkl (MixedLMResults object)
+RQ 5.2.1 step03_item_parameters.csv (69 items)
+         Mean item discrimination (a): 0.9490
+
+Aggregating theta scores by domain, test, and Segment...
+Aggregated to 8 groups (domain x test combinations)
+
+Generating model predictions for trajectory lines...
+Generated 8 predictions
+
+Saving theta-scale plot data...
+plots/step05_piecewise_theta_data.csv (8 rows)
+         Theta range: [-0.462, 0.648]
+
+Transforming theta to probability scale (Decision D069)...
+         Using IRT 2PL: P = 1 / (1 + exp(-(a * (theta - b))))
+         a = 0.9490 (mean discrimination)
+         b = 0.0 (reference difficulty)
+Transformed 8 rows to probability scale
+         Probability range: [0.392, 0.649]
+
+Saving probability-scale plot data...
+plots/step05_piecewise_probability_data.csv (8 rows)
+
+Running validation checks...
+Theta plot data has exactly 8 rows (When excluded)
+Probability plot data has exactly 8 rows (When excluded)
+All domains present: {what, where} (When excluded)
+All tests present: {1, 2, 3, 4}
+Segment assignment correct: T1,T2 -> 'Early'; T3,T4 -> 'Late'
+Theta range valid: [-0.462, 0.648]
+Probability range valid: [0.392, 0.649]
+Theta CI structure valid: CI_lower < mean < CI_upper
+Probability CI structure valid: CI_lower < mean < CI_upper
+No NaN values in output data
+
+All validation checks passed!
+
+============================================================
+Step 05 Complete
+============================================================
+Outputs:
+  - plots/step05_piecewise_theta_data.csv (8 rows)
+  - plots/step05_piecewise_probability_data.csv (8 rows)
+
+Decision D069 Implementation:
+  - Theta scale: For psychometricians and statistical rigor
+  - Probability scale: For general audience interpretability
+  - Transformation: IRT 2PL with a=0.9490, b=0
+
+Step 05 complete

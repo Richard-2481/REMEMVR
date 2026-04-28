@@ -1,0 +1,42 @@
+Step 7: Variance Decomposition and Results Synthesis
+Loading analysis results...
+step04_beta_comparisons.csv (9 rows, 16 cols)
+Available comparisons: ['confidence_vs_accuracy_depression', 'calibration_vs_accuracy_depression', 'confidence_vs_calibration_depression', 'confidence_vs_accuracy_anxiety', 'calibration_vs_accuracy_anxiety', 'confidence_vs_calibration_anxiety', 'confidence_vs_accuracy_stress', 'calibration_vs_accuracy_stress', 'confidence_vs_calibration_stress']
+step03_model_results.csv (9 rows, 10 cols)
+step05_cross_validation.csv (3 rows, 8 cols)
+Running custom differential prediction synthesis...
+Testing primary hypothesis: DASS predicts metacognition > memory
+Analysis synthesis complete - 8 key findings identified
+Saving step07_analysis_summary.csv...
+step07_analysis_summary.csv (8 rows, 6 cols)
+Creating differential prediction summary...
+Saving differential_prediction_summary.txt...
+differential_prediction_summary.txt (2457 characters)
+Running validate_dataframe_structure...
+valid: True
+message: DataFrame structure valid: 8 rows, 6 columns (required: 6).
+checks: {'row_count_valid': True, 'actual_rows': 8, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+Hypothesis support distribution: {'No': np.int64(7), 'Yes': np.int64(1)}
+Primary hypothesis result: No
+Step 7 complete - Differential prediction analysis synthesized
+Step 7: Variance Decomposition and Results Synthesis
+Loading analysis results...
+step04_beta_comparisons.csv (9 rows, 16 cols)
+Available comparisons: ['confidence_vs_accuracy_depression', 'calibration_vs_accuracy_depression', 'confidence_vs_calibration_depression', 'confidence_vs_accuracy_anxiety', 'calibration_vs_accuracy_anxiety', 'confidence_vs_calibration_anxiety', 'confidence_vs_accuracy_stress', 'calibration_vs_accuracy_stress', 'confidence_vs_calibration_stress']
+step03_model_results.csv (9 rows, 10 cols)
+step05_cross_validation.csv (3 rows, 8 cols)
+Running custom differential prediction synthesis...
+Testing primary hypothesis: DASS predicts metacognition > memory
+Analysis synthesis complete - 8 key findings identified
+Saving step07_analysis_summary.csv...
+step07_analysis_summary.csv (8 rows, 6 cols)
+Creating differential prediction summary...
+Saving differential_prediction_summary.txt...
+differential_prediction_summary.txt (2457 characters)
+Running validate_dataframe_structure...
+valid: True
+message: DataFrame structure valid: 8 rows, 6 columns (required: 6).
+checks: {'row_count_valid': True, 'actual_rows': 8, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+Hypothesis support distribution: {'No': np.int64(7), 'Yes': np.int64(1)}
+Primary hypothesis result: No
+Step 7 complete - Differential prediction analysis synthesized

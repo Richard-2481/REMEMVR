@@ -1,0 +1,48 @@
+======================================================================
+validation TASK 5: Post-Hoc Power Verification
+======================================================================
+
+Loading TOST results for observed effect sizes...
+3 contrasts
+
+Current N: 100
+  Alpha: 0.0167 (Bonferroni-corrected)
+  Target power: 0.8
+
+======================================================================
+POST-HOC POWER ANALYSIS
+======================================================================
+
+[CONTRAST 1] where-what_early
+  Observed Cohen's d: 0.0254
+  Post-hoc power: 0.0176 (1.8%)
+  N for 80% power: >10000
+
+[CONTRAST 2] where-what_late
+  Observed Cohen's d: -0.0151
+  Post-hoc power: 0.0170 (1.7%)
+  N for 80% power: >10000
+
+[CONTRAST 3] where_slope_change-what_slope_change
+  Observed Cohen's d: -0.0405
+  Post-hoc power: 0.0189 (1.9%)
+  N for 80% power: >10000
+
+/home/etai/projects/REMEMVR/results/ch5/5.2.2/results/platinum_task05_power_analysis.csv
+
+======================================================================
+SUMMARY
+======================================================================
+
+Mean post-hoc power: 0.0178 (1.8%)
+Study SEVERELY UNDERPOWERED (all contrasts < 50% power)
+             NULL findings likely due to insufficient power
+             Larger N needed to detect small effects
+
+Summary.md claims ~20% power
+               Actual mean power: 1.8%
+               ⚠ Claim differs from calculated power
+
+======================================================================
+TASK 5 COMPLETE
+======================================================================

@@ -1,0 +1,101 @@
+RQ 6.3.3: Random Slopes Comparison
+======================================================================
+
+======================================================================
+RANDOM SLOPES COMPARISON FOR RQ 6.3.3
+======================================================================
+
+Purpose: Test if random slopes on TSVR_hours improve model fit
+Context: MANDATORY for quality validation (validation Step 12)
+
+Loading data from: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/step01_lmm_input.csv
+Loaded: 1200 rows, 9 columns
+Participants: 100, Observations per UID: 12
+
+Fixed effects formula: theta_confidence ~ TSVR_hours * Age_c * C(Domain)
+
+----------------------------------------------------------------------
+MODEL 1: INTERCEPTS-ONLY (baseline)
+----------------------------------------------------------------------
+Random effects: (1 | UID) - random intercept only
+
+Fitting intercepts-only model...
+Converged: True
+Log-likelihood: -431.8060
+AIC: 891.61
+BIC: 962.87
+
+Random effects variance (intercepts): 0.208144
+
+----------------------------------------------------------------------
+MODEL 2: INTERCEPTS + SLOPES
+----------------------------------------------------------------------
+Random effects: (1 + TSVR_hours | UID) - random intercept + slope
+
+Fitting intercepts+slopes model...
+Converged: True
+Log-likelihood: -359.2913
+AIC: 750.58
+BIC: 832.02
+
+Random effects covariance matrix:
+               Group  TSVR_hours
+Group       0.181415    0.000039
+TSVR_hours  0.000039    0.000006
+
+Random slope variance: 0.00000585
+Random slope SD: 0.00241882
+
+======================================================================
+MODEL COMPARISON
+======================================================================
+
+AIC comparison:
+  Intercepts-only AIC: 891.61
+  Intercepts+slopes AIC: 750.58
+  ΔAIC (Intercepts - Slopes): 141.03
+  Interpretation: Slopes improve fit
+
+BIC comparison:
+  Intercepts-only BIC: 962.87
+  Intercepts+slopes BIC: 832.02
+  ΔBIC (Intercepts - Slopes): 130.85
+  Interpretation: Slopes improve fit
+
+Log-likelihood comparison:
+  ΔLog-likelihood (Slopes - Intercepts): 72.5147
+
+Likelihood Ratio Test (LRT):
+  LRT statistic: 145.0294
+  df: 2 (slope variance + covariance)
+  p-value: 0.0000
+  Significant (p < 0.05): YES - Slopes improve fit
+
+======================================================================
+INTERPRETATION
+======================================================================
+
+🔴 OPTION A: Slopes Improve Fit (ΔAIC > 2)
+   - ΔAIC: 141.03 > 2
+   - Random slope SD: 0.002419
+   - INTERPRETATION: Individual differences in decline rates CONFIRMED
+   - RECOMMENDATION: Use slopes model for downstream analyses
+   - IMPACT: May reduce model uncertainty (individual trajectories captured)
+
+======================================================================
+SAVING RESULTS
+======================================================================
+
+Comparison table saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/random_slopes_comparison.csv
+Summary saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/random_slopes_comparison_summary.txt
+
+======================================================================
+RANDOM SLOPES COMPARISON COMPLETE
+======================================================================
+
+FINAL RECOMMENDATION: Use slopes model for downstream analyses
+INTERPRETATION: Individual differences in decline rates CONFIRMED
+
+✅ Random slopes comparison completed successfully
+   Output: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/random_slopes_comparison.csv
+   Summary: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/random_slopes_comparison_summary.txt

@@ -1,0 +1,79 @@
+2025-12-05 13:58:53,729 - INFO - ============================================================
+2025-12-05 13:58:53,730 - INFO - RQ 5.5.6 Step 05: Test Intercept-Slope Correlations per Location
+2025-12-05 13:58:53,730 - INFO - ============================================================
+2025-12-05 13:58:53,732 - INFO - Loaded random effects: 200 rows from results/ch5/5.5.6/data/step04_random_effects.csv
+2025-12-05 13:58:53,732 - INFO - Columns: ['UID', 'location', 'random_intercept', 'random_slope']
+2025-12-05 13:58:53,733 - INFO -   Input validation: PASS (200 rows, 4 columns)
+2025-12-05 13:58:53,733 - INFO - 
+Bonferroni correction:
+2025-12-05 13:58:53,733 - INFO -   Number of tests: 2
+2025-12-05 13:58:53,733 - INFO -   Family-wise alpha: 0.05
+2025-12-05 13:58:53,733 - INFO -   Per-test alpha (Bonferroni): 0.0250
+2025-12-05 13:58:53,734 - INFO - 
+============================================================
+2025-12-05 13:58:53,734 - INFO - INTERCEPT-SLOPE CORRELATION TESTS
+2025-12-05 13:58:53,734 - INFO - ============================================================
+2025-12-05 13:58:53,734 - INFO - 
+Source Location:
+2025-12-05 13:58:53,735 - INFO -   N = 100
+2025-12-05 13:58:53,735 - INFO -   r = 0.9890
+2025-12-05 13:58:53,735 - INFO -   t-statistic = 66.0709
+2025-12-05 13:58:53,735 - INFO -   df = 98
+2025-12-05 13:58:53,735 - INFO -   p_uncorrected = 0.0000
+2025-12-05 13:58:53,735 - INFO -   p_bonferroni = 0.0000
+2025-12-05 13:58:53,735 - INFO -   Significant (Bonferroni alpha=0.0250): True
+2025-12-05 13:58:53,735 - INFO -   Interpretation: Significant positive: high performers decline faster (regression to mean)
+2025-12-05 13:58:53,735 - INFO -   Decision D068: Dual p-values reported (uncorrected + Bonferroni)
+2025-12-05 13:58:53,735 - INFO - 
+Destination Location:
+2025-12-05 13:58:53,736 - INFO -   N = 100
+2025-12-05 13:58:53,736 - INFO -   r = -0.9033
+2025-12-05 13:58:53,736 - INFO -   t-statistic = -20.8390
+2025-12-05 13:58:53,736 - INFO -   df = 98
+2025-12-05 13:58:53,736 - INFO -   p_uncorrected = 0.0000
+2025-12-05 13:58:53,736 - INFO -   p_bonferroni = 0.0000
+2025-12-05 13:58:53,736 - INFO -   Significant (Bonferroni alpha=0.0250): True
+2025-12-05 13:58:53,736 - INFO -   Interpretation: Significant negative: high performers maintain advantage over time
+2025-12-05 13:58:53,736 - INFO -   Decision D068: Dual p-values reported (uncorrected + Bonferroni)
+2025-12-05 13:58:53,737 - INFO - 
+============================================================
+2025-12-05 13:58:53,737 - INFO - VALIDATION: Checking correlation results
+2025-12-05 13:58:53,737 - INFO - ============================================================
+2025-12-05 13:58:53,737 - INFO -   Row count: 2: PASS
+2025-12-05 13:58:53,737 - INFO -   All required columns present: PASS
+2025-12-05 13:58:53,737 - INFO -   All r in [-1, 1]: PASS
+2025-12-05 13:58:53,737 - INFO -   All N = 100: PASS
+2025-12-05 13:58:53,737 - INFO -   All df = 98: PASS
+2025-12-05 13:58:53,738 - INFO -   All p-values in [0, 1]: PASS
+2025-12-05 13:58:53,738 - INFO -   All p_bonferroni >= p_uncorrected: PASS
+2025-12-05 13:58:53,738 - INFO -   significant_bonferroni is boolean: PASS
+2025-12-05 13:58:53,739 - INFO - 
+Saved correlation results to: results/ch5/5.5.6/data/step05_intercept_slope_correlations.csv
+2025-12-05 13:58:53,739 - INFO - 
+============================================================
+2025-12-05 13:58:53,739 - INFO - KEY FINDINGS
+2025-12-05 13:58:53,739 - INFO - ============================================================
+2025-12-05 13:58:53,739 - INFO -   Source: SIGNIFICANT (r=0.989, p_bonf=0.0000)
+2025-12-05 13:58:53,739 - INFO -     -> High baseline performers decline faster (regression to mean)
+2025-12-05 13:58:53,739 - INFO -   Destination: SIGNIFICANT (r=-0.903, p_bonf=0.0000)
+2025-12-05 13:58:53,739 - INFO -     -> High baseline performers maintain advantage over time
+2025-12-05 13:58:53,739 - INFO - 
+------------------------------------------------------------
+2025-12-05 13:58:53,739 - INFO - THEORETICAL NOTE:
+2025-12-05 13:58:53,739 - INFO - ------------------------------------------------------------
+2025-12-05 13:58:53,739 - INFO - Intercept-slope correlations quantify whether baseline ability predicts
+2025-12-05 13:58:53,739 - INFO - forgetting rate. Negative correlations suggest high performers maintain
+2025-12-05 13:58:53,739 - INFO - their advantage over time (common in memory research).
+2025-12-05 13:58:53,739 - INFO - 
+IMPORTANT: With only 4 timepoints per person, slope estimates are unreliable.
+2025-12-05 13:58:53,739 - INFO - The variance decomposition analysis (RQ 5.5.6) found ICC_slope ~0.01,
+2025-12-05 13:58:53,739 - INFO - indicating most slope variance is residual noise rather than true individual
+2025-12-05 13:58:53,739 - INFO - differences. Interpret these correlations with caution.
+2025-12-05 13:58:53,739 - INFO - 
+============================================================
+2025-12-05 13:58:53,739 - INFO - STEP 05 COMPLETE
+2025-12-05 13:58:53,739 - INFO - ============================================================
+2025-12-05 13:58:53,740 - INFO - Tested intercept-slope correlations for 2 location types
+2025-12-05 13:58:53,740 - INFO - Decision D068 compliance: Both p_uncorrected and p_bonferroni reported
+2025-12-05 13:58:53,740 - INFO - Output: results/ch5/5.5.6/data/step05_intercept_slope_correlations.csv
+2025-12-05 13:58:53,740 - INFO - Ready for Step 06: Compare ICC Across Locations

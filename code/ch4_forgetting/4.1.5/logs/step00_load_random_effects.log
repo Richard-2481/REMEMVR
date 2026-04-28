@@ -1,0 +1,42 @@
+Step 00: Load Random Effects from RQ 5.1.4
+Validating cross-RQ dependency...
+Dependency file exists: /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step04_random_effects.csv
+Loading random effects from RQ 5.1.4 Step 4...
+step04_random_effects.csv (100 rows, 5 cols)
+Source CSV has expected columns: ['UID', 'total_intercept', 'total_slope']
+Extracting and standardizing column names...
+Standardized columns: ['UID', 'Total_Intercept', 'Total_Slope']
+Validating DataFrame structure...
+No NaN values in clustering variables
+DataFrame structure valid: 100 rows, 3 columns (required: 3).
+Saving local copy to step00_random_effects_from_rq514.csv...
+step00_random_effects_from_rq514.csv (100 rows, 3 cols)
+Step 00 complete:
+  - Source: results/ch5/5.1.4/data/step04_random_effects.csv
+  - Output: data/step00_random_effects_from_rq514.csv
+  - Rows: 100
+  - Columns: ['UID', 'Total_Intercept', 'Total_Slope']
+  - Total_Intercept range: [-0.9883, 2.0263]
+  - Total_Slope range: [0.0664, 0.0895]
+Step 00 complete
+Step 00: Load Random Effects from RQ 5.1.4
+Validating cross-RQ dependency...
+Dependency file exists: /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_averaged_random_effects.csv
+Loading MODEL-AVERAGED random effects from RQ 5.1.4 Step 06...
+step06_averaged_random_effects.csv (100 rows, 3 cols)
+Source CSV has expected columns: ['UID', 'intercept_avg', 'slope_avg']
+Extracting and standardizing column names...
+Standardized columns: ['UID', 'Total_Intercept', 'Total_Slope']
+Validating DataFrame structure...
+No NaN values in clustering variables
+DataFrame structure valid: 100 rows, 3 columns (required: 3).
+Saving local copy to step00_random_effects_from_rq514.csv...
+step00_random_effects_from_rq514.csv (100 rows, 3 cols)
+Step 00 complete:
+  - Source: results/ch5/5.1.4/data/step06_averaged_random_effects.csv
+  - Output: data/step00_random_effects_from_rq514.csv
+  - Rows: 100
+  - Columns: ['UID', 'Total_Intercept', 'Total_Slope']
+  - Total_Intercept range: [-1.5333, 1.2647]
+  - Total_Slope range: [-0.1062, 0.1156]
+Step 00 complete

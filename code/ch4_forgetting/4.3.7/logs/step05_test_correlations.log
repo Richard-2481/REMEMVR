@@ -1,0 +1,38 @@
+Step 05: Test Intercept-Slope Correlation Per Paradigm
+Loading random effects data...
+step04_random_effects.csv (300 rows, 4 cols)
+Paradigms present: ['ICR', 'IFR', 'IRE']
+Running test_intercept_slope_correlation_d068...
+Correlation tests complete
+Saving correlation results...
+'correlation_df'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.7/code/step05_test_correlations.py", line 159, in <module>
+    correlation_df = correlation_result['correlation_df']
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'correlation_df'
+Step 05: Test Intercept-Slope Correlation Per Paradigm
+Loading random effects data...
+step04_random_effects.csv (300 rows, 4 cols)
+Paradigms present: ['ICR', 'IFR', 'IRE']
+Running test_intercept_slope_correlation_d068 per paradigm...
+Testing IFR...
+  N = 100 participants
+  r = -0.270, p_uncorr = 0.0066, p_bonf = 0.0991
+  95% CI: [-0.443, -0.078]
+Testing ICR...
+  N = 100 participants
+  r = -1.000, p_uncorr = 0.0000, p_bonf = 0.0000
+  95% CI: [-1.000, -1.000]
+Testing IRE...
+  N = 100 participants
+  r = -0.352, p_uncorr = 0.0003, p_bonf = 0.0050
+  95% CI: [-0.513, -0.167]
+All correlation tests complete
+Saving correlation results...
+step05_intercept_slope_correlation.csv (3 rows, 7 cols)
+step05_correlation_interpretation.txt
+Running validate_correlation_test_d068...
+PASS: Custom validation: 7 required columns.
+Step 05 complete

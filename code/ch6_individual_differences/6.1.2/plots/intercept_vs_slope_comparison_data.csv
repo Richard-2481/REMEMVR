@@ -1,0 +1,3 @@
+model,r_squared,r_squared_ci_lower,r_squared_ci_upper,adj_r_squared,difference,difference_ci_lower,difference_ci_upper,difference_p_value,significant_predictors,key_coefficients
+intercept,0.2651444922471567,0.1520635009418073,0.4666219776366654,0.2247678159970004,,,,,none,RAVLT_T:0.0084;RAVLT_Pct_Ret_T:0.0094;BVMT_T:0.0031;BVMT_Pct_Ret_T:0.0062;RPM_T:0.0150
+slope,0.1151693439496888,0.0583019848932679,0.2882404562787484,0.0665522749359354,0.1499751482974679,-0.0657500525776628,0.3582818246925452,0.089,none,RAVLT_T:0.0014;RAVLT_Pct_Ret_T:-0.0004;BVMT_T:-0.0000;BVMT_Pct_Ret_T:0.0002;RPM_T:0.0007

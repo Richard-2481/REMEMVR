@@ -1,0 +1,81 @@
+Step 06: Cross-validation
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 8 cols)
+Dataset shape: (100, 8)
+Preparing data for cross-validation...
+Clean sample size: 100 participants
+Predictors: ['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+Running 5-fold cross-validation...
+Cross-validation complete
+Mean test R² = -0.1505 ± 0.0563
+Mean RMSE = 0.6804
+Mean MAE = 0.5355
+Overfitting detected: True
+Saving cross-validation results...
+step06_cross_validation.csv (5 rows, 7 cols)
+step06_overfitting_assessment.csv (3 rows, 5 cols)
+Running numeric range validation...
+All metrics in expected ranges: False
+train_r2: PASS - 5/5 values in range [0, 1]
+test_r2: FAIL - 0/5 values in range [0, 1]
+rmse: PASS - 5/5 values in range [0, 10]
+mae: PASS - 5/5 values in range [0, 10]
+Evaluating model stability and generalizability...
+R² coefficient of variation: inf (LOW stability)
+R² range across folds: -0.200 to -0.063 (range = 0.136)
+Model shows signs of overfitting - interpret results with caution
+Step 06 complete
+Step 06: Cross-validation
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 8 cols)
+Dataset shape: (100, 8)
+Preparing data for cross-validation...
+Clean sample size: 100 participants
+Predictors: ['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+Running 5-fold cross-validation...
+Cross-validation complete
+Mean test R² = -0.0864 ± 0.1097
+Mean RMSE = 0.7034
+Mean MAE = 0.5153
+Overfitting detected: True
+Saving cross-validation results...
+step06_cross_validation.csv (5 rows, 7 cols)
+step06_overfitting_assessment.csv (3 rows, 5 cols)
+Running numeric range validation...
+All metrics in expected ranges: False
+train_r2: PASS - 5/5 values in range [0, 1]
+test_r2: FAIL - 1/5 values in range [0, 1]
+rmse: PASS - 5/5 values in range [0, 10]
+mae: PASS - 5/5 values in range [0, 10]
+Evaluating model stability and generalizability...
+R² coefficient of variation: inf (LOW stability)
+R² range across folds: -0.248 to 0.051 (range = 0.299)
+Model shows signs of overfitting - interpret results with caution
+Step 06 complete
+Step 06: Cross-validation
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 10 cols)
+Dataset shape: (100, 10)
+Preparing data for cross-validation...
+Clean sample size: 100 participants
+Predictors: ['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+Running 5-fold cross-validation...
+Cross-validation complete
+Mean test R² = -0.1492 ± 0.1476
+Mean RMSE = 0.7260
+Mean MAE = 0.5415
+Overfitting detected: True
+Saving cross-validation results...
+step06_cross_validation.csv (5 rows, 7 cols)
+step06_overfitting_assessment.csv (3 rows, 5 cols)
+Running numeric range validation...
+All metrics in expected ranges: False
+train_r2: PASS - 5/5 values in range [0, 1]
+test_r2: FAIL - 0/5 values in range [0, 1]
+rmse: PASS - 5/5 values in range [0, 10]
+mae: PASS - 5/5 values in range [0, 10]
+Evaluating model stability and generalizability...
+R² coefficient of variation: inf (LOW stability)
+R² range across folds: -0.368 to -0.013 (range = 0.355)
+Model shows signs of overfitting - interpret results with caution
+Step 06 complete

@@ -1,0 +1,59 @@
+2025-12-03 15:11:07,237 - INFO - ============================================================
+2025-12-03 15:11:07,237 - INFO - RQ 5.2.6 Step 06: Compare ICC Across Domains
+2025-12-03 15:11:07,237 - INFO - ============================================================
+2025-12-03 15:11:07,239 - INFO - Loaded ICC estimates: 6 rows from results/ch5/5.2.6/data/step03_icc_estimates.csv
+2025-12-03 15:11:07,242 - INFO - 
+Filtered to slope_conditional: 2 rows
+2025-12-03 15:11:07,242 - INFO - Using ICC type: slope_conditional
+2025-12-03 15:11:07,244 - INFO - 
+Domain ICC ranking (descending):
+2025-12-03 15:11:07,244 - INFO -   Rank 1: Where (ICC=0.5306)
+2025-12-03 15:11:07,244 - INFO -   Rank 2: What (ICC=0.5184)
+2025-12-03 15:11:07,245 - INFO - 
+Domains meeting threshold (ICC >= 0.40): 2 domains
+2025-12-03 15:11:07,245 - INFO - 
+============================================================
+2025-12-03 15:11:07,245 - INFO - THEORETICAL PREDICTION CHECK
+2025-12-03 15:11:07,245 - INFO - ============================================================
+2025-12-03 15:11:07,245 - INFO - Prediction: ICC_Where > ICC_What
+2025-12-03 15:11:07,245 - INFO - Rationale: Where memory (hippocampal-dependent) may show greater
+2025-12-03 15:11:07,245 - INFO -            individual differences than What memory (perirhinal-dependent)
+2025-12-03 15:11:07,246 - INFO - 
+Result: MATCHES prediction
+2025-12-03 15:11:07,246 - INFO -   Where ICC (0.5306) > What ICC (0.5184)
+2025-12-03 15:11:07,248 - INFO - 
+============================================================
+2025-12-03 15:11:07,248 - INFO - VALIDATION: Checking comparison results
+2025-12-03 15:11:07,248 - INFO - ============================================================
+2025-12-03 15:11:07,248 - INFO -   Row count: 2: PASS
+2025-12-03 15:11:07,248 - INFO -   Ranks unique: PASS
+2025-12-03 15:11:07,248 - INFO -   All ICC in [0, 1]: PASS
+2025-12-03 15:11:07,249 - INFO -   All interpretations valid: PASS
+2025-12-03 15:11:07,250 - INFO - 
+Saved comparison results to: results/ch5/5.2.6/data/step06_domain_icc_comparison.csv
+2025-12-03 15:11:07,250 - INFO - 
+============================================================
+2025-12-03 15:11:07,250 - INFO - DOMAIN ICC COMPARISON SUMMARY
+2025-12-03 15:11:07,250 - INFO - ============================================================
+2025-12-03 15:11:07,250 - INFO - 
+Domain     ICC_slope_cond  Interpretation  Rank   Threshold 
+2025-12-03 15:11:07,250 - INFO - ------------------------------------------------------------
+2025-12-03 15:11:07,250 - INFO - Where      0.5306          Substantial     1      True      
+2025-12-03 15:11:07,250 - INFO - What       0.5184          Substantial     2      True      
+2025-12-03 15:11:07,250 - INFO - 
+Theoretical prediction (ICC_Where > ICC_What): Matches
+2025-12-03 15:11:07,251 - INFO - ICC difference (Where - What): 0.0122
+2025-12-03 15:11:07,251 - INFO - 
+------------------------------------------------------------
+2025-12-03 15:11:07,251 - INFO - INTERPRETATION:
+2025-12-03 15:11:07,251 - INFO - ------------------------------------------------------------
+2025-12-03 15:11:07,251 - INFO - Where domain shows HIGHER between-person variance than What domain.
+2025-12-03 15:11:07,251 - INFO - This suggests Where memory (spatial) has more stable individual differences
+2025-12-03 15:11:07,251 - INFO - than What memory (object identity), consistent with hippocampal aging effects.
+2025-12-03 15:11:07,251 - INFO - 
+============================================================
+2025-12-03 15:11:07,251 - INFO - STEP 06 COMPLETE
+2025-12-03 15:11:07,251 - INFO - ============================================================
+2025-12-03 15:11:07,251 - INFO - Compared ICC estimates across 2 domains
+2025-12-03 15:11:07,251 - INFO - Theoretical prediction: Matches
+2025-12-03 15:11:07,251 - INFO - Ready for Step 07: Prepare Domain ICC Barplot Data

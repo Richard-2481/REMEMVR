@@ -1,0 +1,4 @@
+dimension,N_total,N_retained,N_removed,retention_rate
+Common,24,19,5,0.7916666666666666
+Congruent,24,18,6,0.75
+Incongruent,24,13,11,0.5416666666666666

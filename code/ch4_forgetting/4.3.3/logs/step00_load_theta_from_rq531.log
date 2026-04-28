@@ -1,0 +1,27 @@
+2025-12-02 15:24:02,956 - INFO - ============================================================
+2025-12-02 15:24:02,956 - INFO - Step 00: Load Theta Scores from RQ 5.3.1
+2025-12-02 15:24:02,956 - INFO - ============================================================
+2025-12-02 15:24:02,956 - INFO - Checking source file: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step04_lmm_input.csv
+2025-12-02 15:24:02,956 - INFO - VALIDATION - PASS: Source file exists
+2025-12-02 15:24:02,956 - INFO - Loading data...
+2025-12-02 15:24:02,958 - INFO - Data loaded: 1200 rows, 8 columns
+2025-12-02 15:24:02,958 - INFO - Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'TSVR_hours_sq', 'TSVR_hours_log', 'paradigm', 'theta']
+2025-12-02 15:24:02,958 - INFO - VALIDATION - PASS: Required columns present: ['UID', 'test', 'TSVR_hours', 'paradigm', 'theta']
+2025-12-02 15:24:02,958 - INFO - VALIDATION - PASS: Row count = 1200 (expected 1200)
+2025-12-02 15:24:02,958 - INFO - VALIDATION - PASS: Paradigms present: ['cued_recall', 'free_recall', 'recognition']
+2025-12-02 15:24:02,959 - INFO - Paradigm codes mapped: {'free_recall': 'IFR', 'cued_recall': 'ICR', 'recognition': 'IRE'}
+2025-12-02 15:24:02,959 - INFO - VALIDATION - PASS: Tests present: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+2025-12-02 15:24:02,960 - INFO - Test codes mapped: {1: 'T1', 2: 'T2', 3: 'T3', 4: 'T4'}
+2025-12-02 15:24:02,960 - INFO - VALIDATION - PASS: No missing theta values
+2025-12-02 15:24:02,960 - INFO - Theta range: [-2.4059, 2.7987]
+2025-12-02 15:24:02,960 - INFO - VALIDATION - PASS: Theta in reasonable IRT range
+2025-12-02 15:24:02,960 - INFO - TSVR_hours range: [1.00, 246.24]
+2025-12-02 15:24:02,964 - INFO - Output saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step00_theta_from_rq531.csv
+2025-12-02 15:24:02,964 - INFO - Output shape: (1200, 8)
+2025-12-02 15:24:02,964 - INFO - ============================================================
+2025-12-02 15:24:02,964 - INFO - STEP 00 COMPLETE
+2025-12-02 15:24:02,964 - INFO - ============================================================
+2025-12-02 15:24:02,964 - INFO - Data loaded successfully: 1200 rows
+2025-12-02 15:24:02,964 - INFO - Paradigms present: IFR, ICR, IRE
+2025-12-02 15:24:02,964 - INFO - Tests present: T1, T2, T3, T4
+2025-12-02 15:24:02,964 - INFO - Participants: 100

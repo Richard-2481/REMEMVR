@@ -1,0 +1,247 @@
+Step 05: Cross-Validate Regression Models
+Loading analysis dataset...
+step02_analysis_dataset.csv (100 rows, 7 cols)
+Available columns: ['UID', 'z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Predictors extracted: ['z_Dep', 'z_Anx', 'z_Str']
+Outcome variables: ['theta_accuracy', 'confidence', 'calibration']
+[CV] Running cross-validation for theta_accuracy model...
+[CV] Complete cases for theta_accuracy: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.051, Test R²=-0.150, RMSE=0.599, MAE=0.493
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.009, Test R²=0.046, RMSE=0.793, MAE=0.630
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.055, Test R²=-0.076, RMSE=0.658, MAE=0.536
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.060, Test R²=-0.155, RMSE=0.628, MAE=0.536
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.099, Test R²=-0.220, RMSE=0.721, MAE=0.549
+[CV] theta_accuracy results:
+    Test R² Mean: -0.111 (SD: 0.091)
+    Train R² Mean: 0.055
+    RMSE Mean: 0.683
+    MAE Mean: 0.549
+    Train-Test Gap: 0.166
+    Shrinkage: 3.026
+    Overfitting (gap > 0.1): YES
+[CV] Running cross-validation for confidence model...
+[CV] Complete cases for confidence: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.039, Test R²=-0.041, RMSE=0.341, MAE=0.270
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.005, Test R²=0.047, RMSE=0.344, MAE=0.226
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.041, Test R²=-0.227, RMSE=0.337, MAE=0.274
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.039, Test R²=-0.117, RMSE=0.301, MAE=0.264
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.048, Test R²=-0.098, RMSE=0.324, MAE=0.246
+[CV] confidence results:
+    Test R² Mean: -0.087 (SD: 0.090)
+    Train R² Mean: 0.034
+    RMSE Mean: 0.330
+    MAE Mean: 0.256
+    Train-Test Gap: 0.122
+    Shrinkage: 3.532
+    Overfitting (gap > 0.1): YES
+[CV] Running cross-validation for calibration model...
+[CV] Complete cases for calibration: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.036, Test R²=-0.071, RMSE=0.812, MAE=0.647
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.003, Test R²=0.018, RMSE=0.768, MAE=0.597
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.019, Test R²=-0.038, RMSE=0.547, MAE=0.417
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.018, Test R²=0.008, RMSE=0.513, MAE=0.418
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.026, Test R²=-0.062, RMSE=0.581, MAE=0.405
+[CV] calibration results:
+    Test R² Mean: -0.029 (SD: 0.036)
+    Train R² Mean: 0.020
+    RMSE Mean: 0.656
+    MAE Mean: 0.497
+    Train-Test Gap: 0.049
+    Shrinkage: 2.435
+    Overfitting (gap > 0.1): NO
+Saving cross-validation results...
+step05_cross_validation.csv (3 rows, 8 cols)
+Cross-validation completed for 3 models:
+  theta_accuracy: Test R² = -0.111, Gap = 0.166, Overfitting = YES
+  confidence: Test R² = -0.087, Gap = 0.122, Overfitting = YES
+  calibration: Test R² = -0.029, Gap = 0.049, Overfitting = NO
+Running validate_dataframe_structure...
+'type' object is not iterable
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.4/code/step05_cross_validate_regression.py", line 322, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'type' object is not iterable
+Step 05: Cross-Validate Regression Models
+Loading analysis dataset...
+step02_analysis_dataset.csv (100 rows, 7 cols)
+Available columns: ['UID', 'z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Predictors extracted: ['z_Dep', 'z_Anx', 'z_Str']
+Outcome variables: ['theta_accuracy', 'confidence', 'calibration']
+[CV] Running cross-validation for theta_accuracy model...
+[CV] Complete cases for theta_accuracy: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.051, Test R²=-0.150, RMSE=0.599, MAE=0.493
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.009, Test R²=0.046, RMSE=0.793, MAE=0.630
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.055, Test R²=-0.076, RMSE=0.658, MAE=0.536
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.060, Test R²=-0.155, RMSE=0.628, MAE=0.536
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.099, Test R²=-0.220, RMSE=0.721, MAE=0.549
+[CV] theta_accuracy results:
+    Test R² Mean: -0.111 (SD: 0.091)
+    Train R² Mean: 0.055
+    RMSE Mean: 0.683
+    MAE Mean: 0.549
+    Train-Test Gap: 0.166
+    Shrinkage: 3.026
+    Overfitting (gap > 0.1): YES
+[CV] Running cross-validation for confidence model...
+[CV] Complete cases for confidence: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.025, Test R²=0.053, RMSE=0.761, MAE=0.626
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.019, Test R²=-0.099, RMSE=0.883, MAE=0.666
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.065, Test R²=-0.389, RMSE=0.821, MAE=0.648
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.038, Test R²=-0.029, RMSE=0.782, MAE=0.652
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.057, Test R²=-0.061, RMSE=0.804, MAE=0.661
+[CV] confidence results:
+    Test R² Mean: -0.105 (SD: 0.150)
+    Train R² Mean: 0.041
+    RMSE Mean: 0.811
+    MAE Mean: 0.651
+    Train-Test Gap: 0.146
+    Shrinkage: 3.560
+    Overfitting (gap > 0.1): YES
+[CV] Running cross-validation for calibration model...
+[CV] Complete cases for calibration: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.047, Test R²=-0.063, RMSE=0.706, MAE=0.524
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.022, Test R²=-0.005, RMSE=0.744, MAE=0.559
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.042, Test R²=-0.058, RMSE=0.740, MAE=0.592
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.048, Test R²=-0.111, RMSE=0.526, MAE=0.406
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.044, Test R²=-0.073, RMSE=0.762, MAE=0.573
+[CV] calibration results:
+    Test R² Mean: -0.062 (SD: 0.034)
+    Train R² Mean: 0.040
+    RMSE Mean: 0.701
+    MAE Mean: 0.531
+    Train-Test Gap: 0.103
+    Shrinkage: 2.538
+    Overfitting (gap > 0.1): YES
+Saving cross-validation results...
+step05_cross_validation.csv (3 rows, 8 cols)
+Cross-validation completed for 3 models:
+  theta_accuracy: Test R² = -0.111, Gap = 0.166, Overfitting = YES
+  confidence: Test R² = -0.105, Gap = 0.146, Overfitting = YES
+  calibration: Test R² = -0.062, Gap = 0.103, Overfitting = YES
+Running validate_dataframe_structure...
+'type' object is not iterable
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.4/code/step05_cross_validate_regression.py", line 322, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'type' object is not iterable
+Step 05: Cross-Validate Regression Models
+Loading analysis dataset...
+step02_analysis_dataset.csv (100 rows, 7 cols)
+Available columns: ['UID', 'z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Predictors extracted: ['z_Dep', 'z_Anx', 'z_Str']
+Outcome variables: ['theta_accuracy', 'confidence', 'calibration']
+[CV] Running cross-validation for theta_accuracy model...
+[CV] Complete cases for theta_accuracy: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.051, Test R²=-0.150, RMSE=0.599, MAE=0.493
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.009, Test R²=0.046, RMSE=0.793, MAE=0.630
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.055, Test R²=-0.076, RMSE=0.658, MAE=0.536
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.060, Test R²=-0.155, RMSE=0.628, MAE=0.536
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.099, Test R²=-0.220, RMSE=0.721, MAE=0.549
+[CV] theta_accuracy results:
+    Test R² Mean: -0.111 (SD: 0.091)
+    Train R² Mean: 0.055
+    RMSE Mean: 0.683
+    MAE Mean: 0.549
+    Train-Test Gap: 0.166
+    Shrinkage: 3.026
+    Overfitting (gap > 0.1): YES
+[CV] Running cross-validation for confidence model...
+[CV] Complete cases for confidence: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.025, Test R²=0.053, RMSE=0.761, MAE=0.626
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.019, Test R²=-0.099, RMSE=0.883, MAE=0.666
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.065, Test R²=-0.389, RMSE=0.821, MAE=0.648
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.038, Test R²=-0.029, RMSE=0.782, MAE=0.652
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.057, Test R²=-0.061, RMSE=0.804, MAE=0.661
+[CV] confidence results:
+    Test R² Mean: -0.105 (SD: 0.150)
+    Train R² Mean: 0.041
+    RMSE Mean: 0.811
+    MAE Mean: 0.651
+    Train-Test Gap: 0.146
+    Shrinkage: 3.560
+    Overfitting (gap > 0.1): YES
+[CV] Running cross-validation for calibration model...
+[CV] Complete cases for calibration: 100 participants
+  [CV] Processing fold 1/5
+    Fold 1: Train R²=0.047, Test R²=-0.063, RMSE=0.706, MAE=0.524
+  [CV] Processing fold 2/5
+    Fold 2: Train R²=0.022, Test R²=-0.005, RMSE=0.744, MAE=0.559
+  [CV] Processing fold 3/5
+    Fold 3: Train R²=0.042, Test R²=-0.058, RMSE=0.740, MAE=0.592
+  [CV] Processing fold 4/5
+    Fold 4: Train R²=0.048, Test R²=-0.111, RMSE=0.526, MAE=0.406
+  [CV] Processing fold 5/5
+    Fold 5: Train R²=0.044, Test R²=-0.073, RMSE=0.762, MAE=0.573
+[CV] calibration results:
+    Test R² Mean: -0.062 (SD: 0.034)
+    Train R² Mean: 0.040
+    RMSE Mean: 0.701
+    MAE Mean: 0.531
+    Train-Test Gap: 0.103
+    Shrinkage: 2.538
+    Overfitting (gap > 0.1): YES
+Saving cross-validation results...
+step05_cross_validation.csv (3 rows, 8 cols)
+Cross-validation completed for 3 models:
+  theta_accuracy: Test R² = -0.111, Gap = 0.166, Overfitting = YES
+  confidence: Test R² = -0.105, Gap = 0.146, Overfitting = YES
+  calibration: Test R² = -0.062, Gap = 0.103, Overfitting = YES
+Running validate_dataframe_structure...
+valid: True
+message: DataFrame structure valid: 3 rows, 8 columns (required: 8).
+checks: {'row_count_valid': True, 'actual_rows': 3, 'columns_valid': True, 'missing_columns': [], 'types_valid': True, 'type_mismatches': []}
+Checking CV metrics reasonableness...
+Some R² values outside valid range
+Models flagged for overfitting: 3/3
+Some shrinkage values outside reasonable range
+Step 05 complete - Cross-validation analysis finished

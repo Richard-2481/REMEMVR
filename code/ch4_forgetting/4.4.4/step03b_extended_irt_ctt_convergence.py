@@ -27,15 +27,12 @@ CRITICAL:
 Uses tools.model_selection.compare_lmm_models_kitchen_sink() adapted for
 parallel IRT+CTT model fitting with identical specifications.
 
-Author: Claude Code
 Date: 2025-12-09
 RQ: ch5/5.4.4
 Step: 03b (extended)
 """
 
-# =============================================================================
 # IMPORTS
-# =============================================================================
 
 import sys
 from pathlib import Path
@@ -43,7 +40,6 @@ import pandas as pd
 import numpy as np
 import warnings
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
@@ -52,27 +48,20 @@ from tools.model_selection import compare_lmm_models_kitchen_sink
 from scipy.stats import pearsonr
 from sklearn.metrics import cohen_kappa_score
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch5/5.4.4
 LOG_FILE = RQ_DIR / "logs" / "step03b_extended_convergence.log"
 DATA_DIR = RQ_DIR / "data"
 
-# =============================================================================
 # LOGGING
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # HELPER FUNCTIONS
-# =============================================================================
 
 def compute_kappa_from_models(irt_model, ctt_model, alpha=0.05):
     """
@@ -110,7 +99,7 @@ def compute_kappa_from_models(irt_model, ctt_model, alpha=0.05):
         return kappa, agreement * 100, len(common_terms)
 
     except Exception as e:
-        log(f"    [WARNING] Kappa computation failed: {e}")
+        log(f"    Kappa computation failed: {e}")
         return np.nan, np.nan, 0
 
 def compute_correlation_from_predictions(irt_model, ctt_model, data):
@@ -129,24 +118,19 @@ def compute_correlation_from_predictions(irt_model, ctt_model, data):
         return r, p
 
     except Exception as e:
-        log(f"    [WARNING] Correlation computation failed: {e}")
+        log(f"    Correlation computation failed: {e}")
         return np.nan, np.nan
 
-# =============================================================================
 # MAIN ANALYSIS
-# =============================================================================
 
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 03b: Extended IRT-CTT Convergence (66 Models)")
+        log("Step 03b: Extended IRT-CTT Convergence (66 Models)")
         log("=" * 80)
+        # Load Data
 
-        # =====================================================================
-        # STEP 1: Load Data
-        # =====================================================================
-
-        log("[LOAD] Loading merged IRT-CTT data...")
+        log("Loading merged IRT-CTT data...")
         merged_path = DATA_DIR / "step02_merged_irt_ctt.csv"
         tsvr_path = DATA_DIR / "step00_tsvr_mapping.csv"
 
@@ -168,12 +152,9 @@ if __name__ == "__main__":
         )
 
         log(f"  ✓ Merged dataset: {len(merged_with_tsvr)} rows")
+        # Prepare IRT and CTT Long-Format Data
 
-        # =====================================================================
-        # STEP 2: Prepare IRT and CTT Long-Format Data
-        # =====================================================================
-
-        log("[PREPARE] Creating long-format data for IRT and CTT...")
+        log("Creating long-format data for IRT and CTT...")
 
         # IRT input (long format)
         irt_long = merged_with_tsvr[['composite_ID', 'UID', 'TEST', 'TSVR_hours',
@@ -198,12 +179,9 @@ if __name__ == "__main__":
         ctt_long = ctt_long.drop(columns=['congruence_var'])
 
         log(f"  ✓ CTT long format: {len(ctt_long)} rows")
+        # Run Kitchen Sink for IRT
 
-        # =====================================================================
-        # STEP 3: Run Kitchen Sink for IRT
-        # =====================================================================
-
-        log("[ANALYSIS] Running kitchen sink for IRT theta...")
+        log("Running kitchen sink for IRT theta...")
         log("  This will fit 66 models (may take 30-45 minutes)...")
 
         irt_results = compare_lmm_models_kitchen_sink(
@@ -220,14 +198,11 @@ if __name__ == "__main__":
             log_file=LOG_FILE,
         )
 
-        log("[DONE] IRT kitchen sink complete")
+        log("IRT kitchen sink complete")
         log(f"  Models fitted: {len(irt_results['comparison'])}")
+        # Run Kitchen Sink for CTT
 
-        # =====================================================================
-        # STEP 4: Run Kitchen Sink for CTT
-        # =====================================================================
-
-        log("[ANALYSIS] Running kitchen sink for CTT scores...")
+        log("Running kitchen sink for CTT scores...")
         log("  This will fit 66 models (may take 30-45 minutes)...")
 
         ctt_results = compare_lmm_models_kitchen_sink(
@@ -244,14 +219,11 @@ if __name__ == "__main__":
             log_file=LOG_FILE,
         )
 
-        log("[DONE] CTT kitchen sink complete")
+        log("CTT kitchen sink complete")
         log(f"  Models fitted: {len(ctt_results['comparison'])}")
+        # Compute Convergence Metrics for Each Model Pair
 
-        # =====================================================================
-        # STEP 5: Compute Convergence Metrics for Each Model Pair
-        # =====================================================================
-
-        log("[ANALYSIS] Computing convergence metrics for 66 model pairs...")
+        log("Computing convergence metrics for 66 model pairs...")
 
         convergence_results = []
 
@@ -262,7 +234,7 @@ if __name__ == "__main__":
             log(f"  Processing: {model_name}")
 
             if model_name not in ctt_models:
-                log(f"    [SKIP] CTT model not found")
+                log(f"    CTT model not found")
                 continue
 
             irt_model = irt_models[model_name]
@@ -270,7 +242,7 @@ if __name__ == "__main__":
 
             # Check convergence
             if not irt_model.converged or not ctt_model.converged:
-                log(f"    [SKIP] Non-convergence (IRT:{irt_model.converged}, CTT:{ctt_model.converged})")
+                log(f"    Non-convergence (IRT:{irt_model.converged}, CTT:{ctt_model.converged})")
                 convergence_results.append({
                     'model_name': model_name,
                     'irt_converged': irt_model.converged,
@@ -309,13 +281,10 @@ if __name__ == "__main__":
         # Convert to DataFrame
         convergence_df = pd.DataFrame(convergence_results)
 
-        log(f"[DONE] Convergence metrics computed for {len(convergence_df)} model pairs")
+        log(f"Convergence metrics computed for {len(convergence_df)} model pairs")
+        # Compute Summary Statistics
 
-        # =====================================================================
-        # STEP 6: Compute Summary Statistics
-        # =====================================================================
-
-        log("[SUMMARY] Computing robustness statistics...")
+        log("Computing robustness statistics...")
 
         # Filter to converged models only
         converged = convergence_df[
@@ -371,12 +340,9 @@ if __name__ == "__main__":
             log(f"  Median agreement: {agreement_median:.1f}%")
             log(f"  Range: [{agreement_min:.1f}%, {agreement_max:.1f}%]")
             log(f"  agreement > 80%: {agreement_above_080}/{n_converged} ({agreement_above_080/n_converged*100:.1f}%)")
+        # Save Results
 
-        # =====================================================================
-        # STEP 7: Save Results
-        # =====================================================================
-
-        log("[SAVE] Saving convergence results...")
+        log("Saving convergence results...")
 
         # Save detailed results
         output_path = DATA_DIR / "step03b_extended_convergence.csv"
@@ -414,11 +380,11 @@ if __name__ == "__main__":
         log(f"  ✓ Saved: {summary_path.name}")
 
         log("=" * 80)
-        log("[SUCCESS] Step 03b complete")
+        log("Step 03b complete")
         log("=" * 80)
 
     except Exception as e:
-        log("[ERROR] Step 03b failed")
+        log("Step 03b failed")
         log(f"  {type(e).__name__}: {str(e)}")
         import traceback
         log(traceback.format_exc())

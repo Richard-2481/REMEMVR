@@ -1,0 +1,214 @@
+
+======================================================================
+EXECUTING MANDATORY VALIDATIONS
+======================================================================
+
+======================================================================
+SECTION 4.4: RANDOM SLOPES TESTING (MANDATORY)
+======================================================================
+
+Data loaded: 800 observations
+  N participants: 100
+  N timepoints: 4
+
+--------------------------------------------------
+MODEL A: Random Intercepts Only (Current)
+--------------------------------------------------
+  Converged: True
+  AIC: 1971.24
+  BIC: 1999.34
+  Log-Likelihood: -979.62
+  Random intercept variance: 0.2849
+
+--------------------------------------------------
+MODEL B: Random Intercepts + Slopes on log_TSVR
+--------------------------------------------------
+  Converged: True
+  AIC: 1950.24
+  BIC: 1987.71
+  Log-Likelihood: -967.12
+
+  Random Effects Covariance Matrix:
+    Intercept variance: 0.5762
+    Slope variance: 0.0223
+    Intercept-Slope correlation: -0.702
+
+==================================================
+MODEL COMPARISON
+==================================================
+
+ΔAIC (Intercepts - Slopes): 21.00
+ΔBIC (Intercepts - Slopes): 11.63
+
+✓ SLOPES IMPROVE FIT (ΔAIC = 21.00 > 2)
+  Random slope variance: 0.0223
+  RECOMMENDATION: Use slopes model going forward
+  INTERPRETATION: Individual differences in calibration trajectories exist
+  Document heterogeneity in summary.md
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/random_slopes_comparison.txt
+
+✓ Random slopes testing COMPLETE
+
+======================================================================
+SECTION 6.2: DIFFERENCE SCORE RELIABILITY (MANDATORY)
+======================================================================
+
+Source Location:
+  N observations: 400
+  r(accuracy, confidence): 0.638
+  Assumed r_xx (accuracy reliability): 0.80
+  Assumed r_yy (confidence reliability): 0.75
+
+  Difference Score Reliability:
+    r_diff = (r_xx + r_yy - 2*r_xy) / (2 - 2*r_xy)
+    r_diff = (0.80 + 0.75 - 2*0.638) / (2 - 2*0.638)
+    r_diff = 0.379
+
+  INTERPRETATION: POOR (< 0.50)
+  RECOMMENDATION: ⚠️ CRITICAL: Use SEM/latent variable approach
+
+Destination Location:
+  N observations: 400
+  r(accuracy, confidence): 0.521
+  Assumed r_xx (accuracy reliability): 0.80
+  Assumed r_yy (confidence reliability): 0.75
+
+  Difference Score Reliability:
+    r_diff = (r_xx + r_yy - 2*r_xy) / (2 - 2*r_xy)
+    r_diff = (0.80 + 0.75 - 2*0.521) / (2 - 2*0.521)
+    r_diff = 0.530
+
+  INTERPRETATION: QUESTIONABLE (0.50-0.70)
+  RECOMMENDATION: ⚠️ Consider SEM/latent variable approach
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/difference_score_reliability.csv
+
+==================================================
+OVERALL ASSESSMENT
+==================================================
+
+✗ DIFFERENCE SCORES UNRELIABLE (min r_diff = 0.379 < 0.50)
+  CRITICAL: Current analysis may be invalid
+  MANDATORY: Implement SEM/latent variable approach
+
+✓ Difference score reliability COMPLETE
+
+======================================================================
+SECTION 8.3: CONFIDENCE RESPONSE PATTERNS (MANDATORY)
+======================================================================
+
+Analyzing confidence theta patterns (theta = latent confidence)
+  N observations: 800
+  N participants: 100
+
+Confidence Theta Variability by Participant:
+  Mean SD: 0.376
+  Median SD: 0.370
+  Min SD: 0.076 (restricted range)
+  Max SD: 0.814 (full range)
+
+  Restricted range (SD < 0.5): 82 participants (82.0%)
+    ⚠️ WARNING: 82.0% participants show restricted confidence range
+    This may limit calibration measurement precision
+
+Overall Confidence Theta Distribution:
+  Range: [-2.18, 0.93]
+  Mean: -0.528
+  SD: 0.671
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/plots/diagnostics/confidence_response_patterns.png
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/confidence_response_patterns.csv
+
+✓ Confidence response patterns COMPLETE
+
+======================================================================
+SECTION 5.1: LMM DIAGNOSTICS
+======================================================================
+
+Model refitted successfully
+  N residuals: 800
+  Residual range: [-2.270, 2.161]
+  Residual mean: 0.000000 (should be ≈ 0)
+  Residual SD: 0.705
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/plots/diagnostics/lmm_diagnostics.png
+
+--------------------------------------------------
+Diagnostic Tests
+--------------------------------------------------
+
+Shapiro-Wilk test (normality):
+  W = 0.9954, p = 0.0182
+  ⚠️ Residuals deviate from normality (p < 0.05)
+  Mitigation: Large N (800) provides robustness (CLT)
+
+Breusch-Pagan test (homoscedasticity):
+  LM = 16.8016, p = 0.0008
+  ⚠️ Heteroscedasticity detected (p < 0.05)
+  Recommendation: Use robust standard errors
+
+✓ LMM diagnostics COMPLETE
+
+======================================================================
+SECTION 3.2: TOST EQUIVALENCE TESTING
+======================================================================
+
+LocationType Effect:
+  β = -0.1378
+  SE = 0.1192
+  p (uncorrected) = 0.2478
+
+Equivalence Bound: d = 0.2 (small effect threshold)
+  On beta scale (calibration is already standardized): ±0.2
+
+Two One-Sided Tests:
+  Test 1 (β > -0.2): t = 0.522, p = 0.3009
+  Test 2 (β < 0.2):  t = 2.834, p = 0.0024
+  TOST p-value: 0.3009
+
+✗ EQUIVALENCE NOT ESTABLISHED (TOST p = 0.3009 ≥ 0.05)
+  Cannot conclude effect is smaller than d = 0.2
+  This could be:
+    1. Underpowered (true effect exists but N insufficient)
+    2. Effect size near equivalence boundary
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/tost_equivalence.csv
+
+✓ TOST equivalence testing COMPLETE
+
+======================================================================
+validation VALIDATION COMPLETE
+======================================================================
+
+Files Created:
+  data/random_slopes_comparison.txt
+  data/difference_score_reliability.csv
+  data/confidence_response_patterns.csv
+  data/tost_equivalence.csv
+  plots/diagnostics/lmm_diagnostics.png
+  plots/diagnostics/confidence_response_patterns.png
+
+======================================================================
+validation STATUS CHECK
+======================================================================
+
+✓ Section 4.4: Random slopes tested
+    Recommendation: USE_SLOPES
+
+⚠️ Section 6.2: Difference score reliability questionable (r_diff = 0.379)
+
+✓ Section 8.3: Confidence response patterns documented
+
+✓ Section 5.1: LMM diagnostics generated
+
+✓ Section 3.2: TOST equivalence tested
+
+======================================================================
+⚠️ validation STATUS: CONDITIONAL
+======================================================================
+
+Blockers:
+  - Difference score reliability 0.379 < 0.70
+
+Recommendation: Update validation.md and summary.md with these findings

@@ -1,0 +1,99 @@
+Step 03: create_classification
+Loading standardized scores from step02...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step02_standardized_scores.csv (100 rows, 9 columns)
+Applying classification thresholds...
+RAVLT threshold: z < -1.0 (impaired)
+REMEMVR threshold: z > -0.5 (normal)
+RAVLT classification: 16 impaired, 84 normal
+REMEMVR classification: 28 impaired, 72 normal
+Creating 2x2 classification matrix...
+Classification matrix:
+
+REMEMVR_normal   0   1  Total
+RAVLT_low                    
+0               19  65     84
+1                9   7     16
+Total           28  72    100
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step03_classification_matrix.csv
+Identifying false negative cases...
+7 false negative cases
+False negative count (7) within expected range [3, 15]
+False negative UIDs: ['A017', 'A041', 'A058', 'A075', 'A077', 'A084', 'A097']
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step03_false_negatives.csv (7 rows, 11 columns)
+Computing classification cell counts...
+Classification cell counts:
+  True Negatives (both normal): 19
+  False Positives (RAVLT normal, REMEMVR low): 65
+  True Positives (both impaired): 9
+  False Negatives (RAVLT low, REMEMVR normal): 7
+False negative count verified: 7
+Running validate_dataframe_structure...
+Classification matrix validation: DataFrame structure validation failed: Missing columns: REMEMVR_normal
+False negatives structure validated
+Step 03 complete
+Step 03: create_classification
+Loading standardized scores from step02...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step02_standardized_scores.csv (100 rows, 9 columns)
+Applying classification thresholds...
+RAVLT threshold: z < -1.0 (impaired)
+REMEMVR threshold: z > -0.5 (normal)
+RAVLT classification: 16 impaired, 84 normal
+REMEMVR classification: 28 impaired, 72 normal
+Creating 2x2 classification matrix...
+Classification matrix:
+
+REMEMVR_normal   0   1  Total
+RAVLT_low                    
+0               19  65     84
+1                9   7     16
+Total           28  72    100
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step03_classification_matrix.csv
+Identifying false negative cases...
+7 false negative cases
+False negative count (7) within expected range [3, 15]
+False negative UIDs: ['A017', 'A041', 'A058', 'A075', 'A077', 'A084', 'A097']
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step03_false_negatives.csv (7 rows, 11 columns)
+Computing classification cell counts...
+Classification cell counts:
+  True Negatives (both normal): 19
+  False Positives (RAVLT normal, REMEMVR low): 65
+  True Positives (both impaired): 9
+  False Negatives (RAVLT low, REMEMVR normal): 7
+False negative count verified: 7
+Running validate_dataframe_structure...
+Classification matrix validation: DataFrame structure validation failed: Missing columns: REMEMVR_normal
+False negatives structure validated
+Step 03 complete
+Step 03: create_classification
+Loading standardized scores from step02...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step02_standardized_scores.csv (100 rows, 11 columns)
+Applying classification thresholds...
+RAVLT threshold: z < -1.0 (impaired)
+REMEMVR threshold: z > -0.5 (normal)
+RAVLT classification: 15 impaired, 85 normal
+REMEMVR classification: 28 impaired, 72 normal
+Creating 2x2 classification matrix...
+Classification matrix:
+
+REMEMVR_normal   0   1  Total
+RAVLT_low                    
+0               20  65     85
+1                8   7     15
+Total           28  72    100
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step03_classification_matrix.csv
+Identifying false negative cases...
+7 false negative cases
+False negative count (7) within expected range [3, 15]
+False negative UIDs: ['A017', 'A041', 'A049', 'A058', 'A075', 'A084', 'A097']
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step03_false_negatives.csv (7 rows, 13 columns)
+Computing classification cell counts...
+Classification cell counts:
+  True Negatives (both normal): 20
+  False Positives (RAVLT normal, REMEMVR low): 65
+  True Positives (both impaired): 8
+  False Negatives (RAVLT low, REMEMVR normal): 7
+False negative count verified: 7
+Running validate_dataframe_structure...
+Classification matrix validation: DataFrame structure validation failed: Missing columns: REMEMVR_normal
+False negatives structure validated
+Step 03 complete

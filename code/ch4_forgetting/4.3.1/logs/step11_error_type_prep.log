@@ -1,0 +1,65 @@
+======================================================================
+STEP 11: Recognition Error Type — Data Preparation & Descriptives
+======================================================================
+
+Loaded: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/recognition_error_types.csv
+Shape: (2400, 10)
+Columns: ['UID', 'test', 'TSVR_hours', 'Days', 'Room', 'Item', 'Name', 'Score', 'error_type', 'Conf']
+
+N participants: 100
+N tests: 4 ([np.int64(1), np.int64(2), np.int64(3), np.int64(4)])
+Items per participant-test: min=6, max=6
+Total rows: 2400 (expected 100×4×6 = 2400)
+
+--- Time variable (Days) ---
+  Test 1: Days mean=0.04, min=0.04, max=0.04
+  Test 2: Days mean=1.20, min=0.70, max=2.99
+  Test 3: Days mean=3.28, min=2.55, max=6.93
+  Test 4: Days mean=6.31, min=5.70, max=10.26
+
+--- log(Days) ---
+  Test 1: log(Days) mean=-3.178, min=-3.178, max=-3.178
+  Test 2: log(Days) mean=0.149, min=-0.351, max=1.097
+  Test 3: log(Days) mean=1.176, min=0.937, max=1.936
+  Test 4: log(Days) mean=1.837, min=1.741, max=2.328
+
+--- Score distribution ---
+  Score 1: 2194 (91.4%)
+  Score 2:  138 (5.8%)
+  Score 3:   23 (1.0%)
+  Score 4:    3 (0.1%)
+  Score 5:   32 (1.3%)
+  Score 6:   10 (0.4%)
+
+--- Error type distribution ---
+  correct     : 2194 (91.4%)
+  perceptual  :  161 (6.7%)
+  semantic    :   45 (1.9%)
+
+Binary column assertions passed.
+
+======================================================================
+DESCRIPTIVE TABLE: Error rates by session
+======================================================================
+Test   ~Day     N     Correct    Perceptual      Semantic     Total Err
+----------------------------------------------------------------------
+  T1    0.0   600   562 ( 93.7%)    37 (   6.2%)     1 (   0.2%)    38 (   6.3%)
+  T2    1.2   600   570 ( 95.0%)    23 (   3.8%)     7 (   1.2%)    30 (   5.0%)
+  T3    3.3   600   542 ( 90.3%)    43 (   7.2%)    15 (   2.5%)    58 (   9.7%)
+  T4    6.3   600   520 ( 86.7%)    58 (   9.7%)    22 (   3.7%)    80 (  13.3%)
+
+--- Absolute change T1 → T4 ---
+  Perceptual  : 6.2% → 9.7% (Δ = +3.5 pp)
+  Semantic    : 0.2% → 3.7% (Δ = +3.5 pp)
+  Any error   : 6.3% → 13.3% (Δ = +7.0 pp)
+
+Perceptual absolute increase: 3.5 percentage points
+Semantic absolute increase:   3.5 percentage points
+NOTE: Perceptual increases by MORE in absolute terms (+3.5 pp vs +3.5 pp)
+      But semantic has a LARGER multiplicative increase (0.2% → 3.7% = ~18×)
+      A log(Days) model captures multiplicative/proportional change,
+      which naturally favours the variable with the larger RATIO of change.
+
+======================================================================
+DONE: step11_error_type_prep.py
+======================================================================

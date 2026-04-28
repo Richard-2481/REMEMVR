@@ -1,0 +1,36 @@
+Step 03: Prepare Paradigm Plot Data
+Loading input data...
+marginal_means: 3 rows
+contrast_results: 1 rows
+Marginal means:
+      paradigm  marginal_mean        SE  CI_lower  CI_upper
+0  free_recall       0.012806  0.065365 -0.115310  0.140922
+1  cued_recall      -0.019450  0.065365 -0.147566  0.108666
+2  recognition       0.082667  0.065365 -0.045449  0.210783
+Contrast results:
+  contrast_name  estimate        SE   z_value  p_value_uncorrected  p_value_bonferroni  significant_uncorrected  significant_bonferroni  CI_lower  CI_upper
+0  Linear_Trend -0.127447  0.051511 -2.474186             0.013354             0.20031                     True                   False -0.228409 -0.026486
+Adding paradigm codes...
+Paradigm codes assigned: {'free_recall': 1, 'cued_recall': 2, 'recognition': 3}
+Computing linear trend line values...
+Contrast estimate: -0.1274
+Trend slope: -0.0637
+Trend intercept (mean MM): 0.0253
+Trend line values:
+  free_recall: marginal_mean=0.0128, trend=0.0891
+  cued_recall: marginal_mean=-0.0194, trend=0.0253
+  recognition: marginal_mean=0.0827, trend=-0.0384
+Reordering columns...
+Final plot data:
+      paradigm  paradigm_code  marginal_mean        SE  CI_lower  CI_upper  trend_line
+0  free_recall              1       0.012806  0.065365 -0.115310  0.140922    0.089065
+1  cued_recall              2      -0.019450  0.065365 -0.147566  0.108666    0.025341
+2  recognition              3       0.082667  0.065365 -0.045449  0.210783   -0.038383
+Creating contrast annotation text...
+Annotation: Linear trend: b = -0.127, z = -2.47, p = 0.01
+Checking output validity...
+All validation checks passed
+Saving output files...
+/home/etai/projects/REMEMVR/results/ch5/rq4/plots/step03_paradigm_forgetting_rates_data.csv (3 rows)
+/home/etai/projects/REMEMVR/results/ch5/rq4/plots/step03_contrast_annotation.txt
+Step 03 complete - Plot data prepared

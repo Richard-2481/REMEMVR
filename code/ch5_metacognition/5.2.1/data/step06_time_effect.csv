@@ -1,0 +1,2 @@
+effect,coefficient_per_100h,coefficient_per_hour,se,se_per_hour,p_uncorrected,p_corrected,interpretation,direction
+TSVR_hours,0.00917647975949555,9.176479759495549e-05,0.045715257637905966,0.00045715257637905966,0.840908741015464,0.7993323969900437,Not significant,Positive

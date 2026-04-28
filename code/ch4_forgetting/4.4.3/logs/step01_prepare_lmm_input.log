@@ -1,0 +1,77 @@
+Step 01: Merge Data and Prepare LMM Input
+
+[STEP 1] Load Input Files
+----------------------------------------------------------------------
+Theta wide: 400 rows, 7 columns
+TSVR mapping: 400 rows, 4 columns
+Age data: 100 rows, 2 columns
+
+[STEP 2] Merge Theta with TSVR Mapping
+----------------------------------------------------------------------
+Theta + TSVR: 400 rows
+Merge successful, no NaN values introduced
+
+[STEP 3] Merge with Age Data
+----------------------------------------------------------------------
+Theta + TSVR + Age: 400 rows
+Merge successful, no NaN values introduced
+Columns after merge: ['composite_ID', 'theta_common', 'theta_congruent', 'theta_incongruent', 'se_common', 'se_congruent', 'se_incongruent', 'UID', 'test', 'TSVR_hours', 'Age']
+
+[STEP 4] Reshape Wide to Long Format
+----------------------------------------------------------------------
+Long format: 1200 rows
+Expected: 1200 rows (400 x 3 congruence levels)
+Row count correct: 1200
+
+[STEP 5] Grand-Mean Center Age
+----------------------------------------------------------------------
+Age mean across 100 participants: 44.57
+Age SD across 100 participants: 14.58
+Age_c mean across participants: 0.0000
+Age_c mean within +/- 0.1 of 0: 0.0000
+
+[STEP 6] Create Time Transformations
+----------------------------------------------------------------------
+TSVR_hours range: [1.00, 246.24]
+recip_TSVR = 1 / (TSVR_hours + 1)
+recip_TSVR range: [0.0040, 0.5000]
+log_TSVR = log(TSVR_hours + 1)
+log_TSVR range: [0.69, 5.51]
+Two-process forgetting model: Recip+Log per RQ 5.4.1 ROOT
+
+[STEP 7] Final Validation
+----------------------------------------------------------------------
+No NaN values in any column
+Congruence levels correct: ['Common', 'Congruent', 'Incongruent']
+Each UID appears exactly 12 times (4 tests x 3 congruence)
+
+[STEP 8] Save Output
+----------------------------------------------------------------------
+/home/etai/projects/REMEMVR/results/ch5/5.4.3/data/step01_lmm_input.csv
+  1200 rows, 11 columns
+
+----------------------------------------------------------------------
+Input files:
+  Theta wide: 400 rows
+  TSVR mapping: 400 rows
+  Age data: 100 rows
+
+Output file:
+  LMM input: 1200 rows x 11 columns
+
+Transformations applied:
+  - Reshaped wide -> long format
+  - Grand-mean centered Age (Age_c)
+  - Created recip_TSVR = 1 / (TSVR_hours + 1)
+  - Created log_TSVR = log(TSVR_hours + 1)
+  - Two-process forgetting model: Recip+Log per RQ 5.4.1 ROOT
+
+Value ranges:
+  theta: [-2.15, 2.34]
+  Age: [20, 70]
+  Age_c: [-24.57, 25.43]
+  TSVR_hours: [1.00, 246.24]
+  recip_TSVR: [0.0040, 0.5000]
+  log_TSVR: [0.69, 5.51]
+
+Step 01 complete - LMM input prepared with Recip+Log transformations

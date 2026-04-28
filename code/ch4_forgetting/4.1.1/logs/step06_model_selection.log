@@ -1,0 +1,89 @@
+Step 6: AIC Model Selection
+Loading model comparison table...
+step05_model_comparison.csv (5 models)
+  Columns: ['model_name', 'AIC', 'delta_AIC', 'AIC_weight']
+  AIC range: [873.71, 905.54]
+Loading fitted model objects...
+'NoneType' object has no attribute 'f_locals'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step06_aic_model_selection.py", line 171, in <module>
+    model_fits[model_name] = pickle.load(f)
+                             ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 112, in __setstate__
+    _, design = dmatrices(d['formula'], data, eval_env=depth,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/highlevel.py", line 316, in dmatrices
+    eval_env = EvalEnvironment.capture(eval_env, reference=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/eval.py", line 242, in capture
+    [frame.f_locals, frame.f_globals],
+     ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'f_locals'
+Step 6: AIC Model Selection
+Loading model comparison table...
+step05_model_comparison.csv (5 models)
+  Columns: ['model_name', 'AIC', 'delta_AIC', 'AIC_weight']
+  AIC range: [873.71, 905.54]
+Loading fitted model objects...
+'NoneType' object has no attribute 'f_locals'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.1/code/step06_aic_model_selection.py", line 171, in <module>
+    model_fits[model_name] = pickle.load(f)
+                             ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 112, in __setstate__
+    _, design = dmatrices(d['formula'], data, eval_env=depth,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/highlevel.py", line 316, in dmatrices
+    eval_env = EvalEnvironment.capture(eval_env, reference=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/eval.py", line 242, in capture
+    [frame.f_locals, frame.f_globals],
+     ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'f_locals'
+Step 6: AIC Model Selection
+Loading model comparison table...
+step05_model_comparison.csv (5 models)
+  Columns: ['model_name', 'AIC', 'delta_AIC', 'AIC_weight']
+  AIC range: [873.71, 905.54]
+Skipping model pickle loading (patsy unpickling issue)
+Computing delta AIC...
+  Minimum AIC: 873.71
+  delta_AIC range: [0.00, 31.83]
+Computing Akaike weights...
+  Weight sum: 1.000000 (should be 1.0)
+  Weight range: [0.0000, 0.4820]
+Sorting by AIC ascending...
+Computing cumulative weights...
+
+AIC Comparison (sorted by AIC):
+model_name        AIC  delta_AIC  akaike_weight  cumulative_weight
+       Log 873.710488   0.000000   4.819531e-01           0.481953
+   Lin+Log 874.549192   0.838704   3.168710e-01           0.798824
+  Quad+Log 876.528487   2.817999   1.177834e-01           0.916608
+ Quadratic 877.219067   3.508579   8.339243e-02           1.000000
+    Linear 905.540198  31.829709   5.905698e-08           1.000000
+
+[BEST MODEL] Log
+  AIC: 873.71
+  Akaike weight: 0.4820
+  Uncertainty: Moderate (30-60% probability - substantial uncertainty)
+Saving AIC comparison to step06_aic_comparison.csv...
+step06_aic_comparison.csv
+Not saving best_model.pkl (model pickle exists as data/lmm_Log.pkl)
+Saving best model summary to step06_best_model_summary.txt...
+step06_best_model_summary.txt
+Validating AIC comparison metrics...
+Akaike weights sum to 1.0 (1.000000)
+All Akaike weights in (0, 1) exclusive
+Best model has delta_AIC = 0
+All delta_AIC >= 0
+cumulative_weight monotonic increasing
+cumulative_weight ends at 1.0 (1.000000)
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Step 6 complete

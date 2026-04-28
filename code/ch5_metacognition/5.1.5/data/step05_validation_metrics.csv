@@ -1,0 +1,6 @@
+metric,value,threshold,pass
+silhouette,0.5726107048217629,0.4,True
+davies_bouldin,0.5244704853450125,1.0,True
+jaccard_mean,0.8982824955998396,0.75,True
+jaccard_ci_lower,0.5017410714285714,,True
+jaccard_ci_upper,1.0,,True

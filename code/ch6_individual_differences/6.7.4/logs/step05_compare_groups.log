@@ -1,0 +1,126 @@
+Step 05: compare_groups
+Loading false negatives and all participants...
+False negatives: 7 cases
+All participants: 100 cases
+Other group: 93 participants
+Running Welch's t-tests for group comparisons...
+Bonferroni correction: alpha=0.05/6=0.008333
+Age...
+  t=0.472, p_uncorr=0.651519, p_bonf=1.000000
+  Mean diff: 2.613, 95% CI: [-7.542, 12.147]
+Education...
+  t=0.120, p_uncorr=0.906592, p_bonf=1.000000
+  Mean diff: 0.046, 95% CI: [-0.565, 0.793]
+VR_Experience...
+  t=-1.479, p_uncorr=0.183876, p_bonf=1.000000
+  Mean diff: -0.654, 95% CI: [-1.290, 0.203]
+NART_Score...
+  t=-1.277, p_uncorr=0.253646, p_bonf=1.000000
+  Mean diff: -5.753, 95% CI: [-14.814, 0.981]
+RAVLT_Total...
+  t=-5.431, p_uncorr=0.000911, p_bonf=0.005467
+  Mean diff: -14.777, 95% CI: [-20.196, -10.196]
+REMEMVR_theta...
+  t=0.562, p_uncorr=0.584267, p_bonf=1.000000
+  Mean diff: 0.073, 95% CI: [-0.158, 0.304]
+Creating comparison results table...
+Results table: 6 comparisons
+Saving group comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step05_group_comparisons.csv
+Validating comparison results...
+All required columns present
+All 6 variables tested
+Dual p-value reporting (D068) implemented
+All Bonferroni p-values <= 1.0 (max=1.000000)
+All confidence intervals valid (lower <= upper)
+Significance summary:
+  Significant (uncorrected α=0.05): 1/6
+    RAVLT_Total: p=0.000911
+  Significant (Bonferroni α=0.05): 1/6
+    RAVLT_Total: p=0.005467
+Step 05 complete
+Step 05: compare_groups
+Loading false negatives and all participants...
+False negatives: 7 cases
+All participants: 100 cases
+Other group: 93 participants
+Running Welch's t-tests for group comparisons...
+Bonferroni correction: alpha=0.05/6=0.008333
+Age...
+  t=0.472, p_uncorr=0.651519, p_bonf=1.000000
+  Mean diff: 2.613, 95% CI: [-7.542, 12.147]
+Education...
+  t=0.120, p_uncorr=0.906592, p_bonf=1.000000
+  Mean diff: 0.046, 95% CI: [-0.565, 0.793]
+VR_Experience...
+  t=-1.479, p_uncorr=0.183876, p_bonf=1.000000
+  Mean diff: -0.654, 95% CI: [-1.290, 0.203]
+NART_Score...
+  t=-1.277, p_uncorr=0.253646, p_bonf=1.000000
+  Mean diff: -5.753, 95% CI: [-14.814, 0.981]
+RAVLT_Total...
+  t=-5.431, p_uncorr=0.000911, p_bonf=0.005467
+  Mean diff: -14.777, 95% CI: [-20.196, -10.196]
+REMEMVR_theta...
+  t=0.562, p_uncorr=0.584267, p_bonf=1.000000
+  Mean diff: 0.073, 95% CI: [-0.158, 0.304]
+Creating comparison results table...
+Results table: 6 comparisons
+Saving group comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step05_group_comparisons.csv
+Validating comparison results...
+All required columns present
+All 6 variables tested
+Dual p-value reporting (D068) implemented
+All Bonferroni p-values <= 1.0 (max=1.000000)
+All confidence intervals valid (lower <= upper)
+Significance summary:
+  Significant (uncorrected α=0.05): 1/6
+    RAVLT_Total: p=0.000911
+  Significant (Bonferroni α=0.05): 1/6
+    RAVLT_Total: p=0.005467
+Step 05 complete
+Step 05: compare_groups
+Loading false negatives and all participants...
+False negatives: 7 cases
+All participants: 100 cases
+Other group: 93 participants
+Running Welch's t-tests for group comparisons...
+Bonferroni correction: alpha=0.05/7=0.007143
+Age...
+  t=0.000, p_uncorr=0.999793, p_bonf=1.000000
+  Mean diff: 0.002, 95% CI: [-10.369, 9.976]
+Education...
+  t=-0.258, p_uncorr=0.802142, p_bonf=1.000000
+  Mean diff: -0.108, 95% CI: [-0.816, 0.654]
+VR_Experience...
+  t=-0.355, p_uncorr=0.733995, p_bonf=1.000000
+  Mean diff: -0.194, 95% CI: [-1.137, 0.868]
+NART_Score...
+  t=-1.740, p_uncorr=0.137120, p_bonf=0.959837
+  Mean diff: -7.174, 95% CI: [-15.695, -0.756]
+RAVLT_Total...
+  t=-6.219, p_uncorr=0.000222, p_bonf=0.001557
+  Mean diff: -13.295, 95% CI: [-17.577, -9.903]
+RAVLT_Pct_Ret...
+  t=-1.076, p_uncorr=0.308262, p_bonf=1.000000
+  Mean diff: -3.717, 95% CI: [-9.797, 2.611]
+REMEMVR_theta...
+  t=0.569, p_uncorr=0.579278, p_bonf=1.000000
+  Mean diff: 0.075, 95% CI: [-0.168, 0.315]
+Creating comparison results table...
+Results table: 7 comparisons
+Saving group comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step05_group_comparisons.csv
+Validating comparison results...
+All required columns present
+All 7 variables tested
+Dual p-value reporting (D068) implemented
+All Bonferroni p-values <= 1.0 (max=1.000000)
+All confidence intervals valid (lower <= upper)
+Significance summary:
+  Significant (uncorrected α=0.05): 1/7
+    RAVLT_Total: p=0.000222
+  Significant (Bonferroni α=0.05): 1/7
+    RAVLT_Total: p=0.001557
+Step 05 complete

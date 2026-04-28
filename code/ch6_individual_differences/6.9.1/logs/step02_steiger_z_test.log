@@ -1,0 +1,13 @@
+======================================================================
+STEP 02: Steiger's Z Test for Dependent Correlations
+======================================================================
+Correlations:
+  r_ya (RPM-accuracy):   0.429128
+  r_yb (RPM-confidence): 0.357733
+  r_ab (acc-conf):       0.622247
+
+Steiger's Z = 1.135656
+p-value (uncorrected) = 0.256101
+p-value (Bonferroni) = 0.256101
+Saved: step02_steiger_z_test.csv (1 row)
+Validation PASSED: All Steiger's Z checks OK

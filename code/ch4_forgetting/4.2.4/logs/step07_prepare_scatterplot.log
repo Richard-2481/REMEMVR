@@ -1,0 +1,129 @@
+Step 07: Prepare Scatterplot Data
+Loading input data...
+step00_irt_theta_loaded.csv (400 rows, 4 cols)
+step01_ctt_scores.csv (1200 rows, 6 cols)
+step02_correlations.csv (4 rows, 9 cols)
+Converting IRT theta from wide to long format...
+IRT theta long format: 1200 rows, 3 cols
+Domains: ['What', 'When', 'Where']
+Joining IRT and CTT scores on composite_ID + domain...
+Combined data: 0 rows
+Merge resulted in 1200 unmatched IRT rows
+Adding correlation coefficients for plot annotations...
+Data with correlations: 0 rows, 5 cols
+Sorting by domain and composite_ID...
+Final data: 0 rows, 5 cols
+Saving to /home/etai/projects/REMEMVR/results/ch5/rq11/data/step07_scatterplot_data.csv...
+step07_scatterplot_data.csv (0 rows, 5 cols)
+Data summary:
+  - Domains: []
+  - IRT_score range: [nan, nan]
+  - CTT_score range: [nan, nan]
+  - Correlation coefficients (r): {}
+Running validate_plot_data_completeness...
+valid: False
+message: Plot data incomplete: Missing domains: What, Where, When
+missing_domains: ['What', 'Where', 'When']
+missing_groups: []
+Validation failed: Plot data incomplete: Missing domains: What, Where, When
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step07_prepare_scatterplot.py", line 306, in <module>
+    raise ValueError(f"Validation failed: {validation_result.get('message', 'Unknown error')}")
+ValueError: Validation failed: Plot data incomplete: Missing domains: What, Where, When
+Step 07: Prepare Scatterplot Data
+Loading input data...
+step00_irt_theta_loaded.csv (400 rows, 4 cols)
+step01_ctt_scores.csv (1200 rows, 6 cols)
+step02_correlations.csv (4 rows, 9 cols)
+Converting IRT theta from wide to long format...
+IRT theta long format: 1200 rows, 3 cols
+Domains: ['what', 'when', 'where']
+Joining IRT and CTT scores on composite_ID + domain...
+Combined data: 1200 rows
+Adding correlation coefficients for plot annotations...
+Data with correlations: 1200 rows, 5 cols
+Sorting by domain and composite_ID...
+Final data: 1200 rows, 5 cols
+Saving to /home/etai/projects/REMEMVR/results/ch5/rq11/data/step07_scatterplot_data.csv...
+step07_scatterplot_data.csv (1200 rows, 5 cols)
+Data summary:
+  - Domains: ['what', 'when', 'where']
+  - IRT_score range: [-2.47, 2.53]
+  - CTT_score range: [0.000, 1.000]
+  - Correlation coefficients (r): {'what': 0.9060400316930852, 'when': 0.9192826859433284, 'where': 0.9696821581256532}
+Running validate_plot_data_completeness...
+valid: True
+message: Plot data complete: 3 domains, 0 groups.
+missing_domains: []
+missing_groups: []
+Additional checks...
+Row count: 1200 (matches expected)
+No NaN values in IRT_score or CTT_score
+IRT scores in typical range: [-2.47, 2.53]
+CTT scores in valid range: [0.000, 1.000]
+Step 07 complete
+Step 07: Prepare Scatterplot Data
+Loading input data...
+step00_irt_theta_loaded.csv (400 rows, 3 cols)
+step01_ctt_scores.csv (800 rows, 6 cols)
+step02_correlations.csv (3 rows, 9 cols)
+Converting IRT theta from wide to long format (When excluded)...
+IRT theta long format: 800 rows, 3 cols
+Domains: ['what', 'where']
+Joining IRT and CTT scores on composite_ID + domain...
+Combined data: 800 rows
+Adding correlation coefficients for plot annotations...
+Data with correlations: 800 rows, 5 cols
+Sorting by domain and composite_ID...
+Final data: 800 rows, 5 cols
+Saving to /home/etai/projects/REMEMVR/results/ch5/5.2.4/data/step07_scatterplot_data.csv...
+step07_scatterplot_data.csv (800 rows, 5 cols)
+Data summary:
+  - Domains: ['what', 'where']
+  - IRT_score range: [-2.47, 2.53]
+  - CTT_score range: [0.105, 1.000]
+  - Correlation coefficients (r): {'what': 0.9060400316930852, 'where': 0.9696821581256532}
+Running validate_plot_data_completeness (When excluded)...
+valid: True
+message: Plot data complete: 2 domains, 0 groups.
+missing_domains: []
+missing_groups: []
+Additional checks...
+Row count: 800 (matches expected - When excluded)
+No NaN values in IRT_score or CTT_score
+IRT scores in typical range: [-2.47, 2.53]
+CTT scores in valid range: [0.105, 1.000]
+Step 07 complete
+Step 07: Prepare Scatterplot Data
+Loading input data...
+step00_irt_theta_loaded.csv (400 rows, 3 cols)
+step01_ctt_scores.csv (800 rows, 6 cols)
+step02_correlations.csv (3 rows, 9 cols)
+Converting IRT theta from wide to long format (When excluded)...
+IRT theta long format: 800 rows, 3 cols
+Domains: ['what', 'where']
+Joining IRT and CTT scores on composite_ID + domain...
+Combined data: 800 rows
+Adding correlation coefficients for plot annotations...
+Data with correlations: 800 rows, 5 cols
+Sorting by domain and composite_ID...
+Final data: 800 rows, 5 cols
+Saving to /home/etai/projects/REMEMVR/results/ch5/5.2.4/data/step07_scatterplot_data.csv...
+step07_scatterplot_data.csv (800 rows, 5 cols)
+Data summary:
+  - Domains: ['what', 'where']
+  - IRT_score range: [-2.47, 2.53]
+  - CTT_score range: [0.105, 1.000]
+  - Correlation coefficients (r): {'what': 0.9060400316930852, 'where': 0.9696821581256532}
+Running validate_plot_data_completeness (When excluded)...
+valid: True
+message: Plot data complete: 2 domains, 0 groups.
+missing_domains: []
+missing_groups: []
+Additional checks...
+Row count: 800 (matches expected - When excluded)
+No NaN values in IRT_score or CTT_score
+IRT scores in typical range: [-2.47, 2.53]
+CTT scores in valid range: [0.105, 1.000]
+Step 07 complete

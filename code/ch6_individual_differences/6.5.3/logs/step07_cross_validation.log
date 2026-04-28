@@ -1,0 +1,68 @@
+Step 07: Cross-validation
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants
+Outcome: theta_all
+Predictors: ['age', 'education_numeric', 'rehearsal_frequency', 'mnemonic_use']
+Sample size: n=100
+[CROSS-VALIDATION] Performing 5-fold cross-validation...
+Tools CV function failed: cross_validate_regression() got an unexpected keyword argument 'random_state', using custom implementation
+[FOLD 1] R²_CV = -0.1286, MSE_CV = 0.9184
+[FOLD 2] R²_CV = -0.0906, MSE_CV = 0.8878
+[FOLD 3] R²_CV = -0.2152, MSE_CV = 0.6921
+[FOLD 4] R²_CV = -0.1187, MSE_CV = 0.5098
+[FOLD 5] R²_CV = 0.0709, MSE_CV = 0.4502
+Analyzing cross-validation results...
+Cross-validation detailed results:
+  Fold 1.0: R²_CV = -0.1286
+  Fold 2.0: R²_CV = -0.0906
+  Fold 3.0: R²_CV = -0.2152
+  Fold 4.0: R²_CV = -0.1187
+  Fold 5.0: R²_CV = 0.0709
+Mean CV R² = -0.0964 ± 0.0418
+Successful folds: 5 / 5
+Poor generalization (Stable), 95% CI [-0.178, -0.015]
+R² range across folds: 0.2861
+CV performance is VARIABLE (range >= 0.20)
+Cross-validation results: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step07_cross_validation_detailed.csv (5 rows)
+Validating cross-validation results...
+CV R² validation completed via tools function
+Cross-validation assessment:
+  Generalization: POOR - Model does not generalize (negative R²)
+  Stability: STABLE - Consistent performance across folds
+  Overall: CONCERNING model with poor generalization
+Step 07 complete - cross-validation analysis
+Step 07: Cross-validation
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants
+Outcome: theta_all
+Predictors: ['age', 'education_numeric', 'rehearsal_frequency', 'mnemonic_use']
+Sample size: n=100
+[CROSS-VALIDATION] Performing 5-fold cross-validation...
+Tools CV function failed: cross_validate_regression() got an unexpected keyword argument 'random_state', using custom implementation
+[FOLD 1] R²_CV = -0.1286, MSE_CV = 0.9184
+[FOLD 2] R²_CV = -0.0906, MSE_CV = 0.8878
+[FOLD 3] R²_CV = -0.2152, MSE_CV = 0.6921
+[FOLD 4] R²_CV = -0.1187, MSE_CV = 0.5098
+[FOLD 5] R²_CV = 0.0709, MSE_CV = 0.4502
+Analyzing cross-validation results...
+Cross-validation detailed results:
+  Fold 1.0: R²_CV = -0.1286
+  Fold 2.0: R²_CV = -0.0906
+  Fold 3.0: R²_CV = -0.2152
+  Fold 4.0: R²_CV = -0.1187
+  Fold 5.0: R²_CV = 0.0709
+Mean CV R² = -0.0964 ± 0.0418
+Successful folds: 5 / 5
+Poor generalization (Stable), 95% CI [-0.178, -0.015]
+R² range across folds: 0.2861
+CV performance is VARIABLE (range >= 0.20)
+Cross-validation results: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step07_cross_validation_detailed.csv (5 rows)
+Validating cross-validation results...
+CV R² validation completed via tools function
+Cross-validation assessment:
+  Generalization: POOR - Model does not generalize (negative R²)
+  Stability: STABLE - Consistent performance across folds
+  Overall: CONCERNING model with poor generalization
+Step 07 complete - cross-validation analysis

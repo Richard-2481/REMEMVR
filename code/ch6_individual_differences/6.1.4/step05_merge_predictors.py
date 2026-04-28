@@ -30,10 +30,10 @@ def log(msg):
 
 def main():
     """Main execution."""
-    log("[START] Step 05: Merge all predictors")
+    log("Step 05: Merge all predictors")
     
     # Load all data files from previous steps
-    log("[LOAD] Loading data from previous steps...")
+    log("Loading data from previous steps...")
     
     # 1. Cognitive T-scores
     cognitive_path = RQ_DIR / "data" / "step01b_cognitive_t_scores.csv"
@@ -60,7 +60,7 @@ def main():
     log(f"  - Theta scores: {df_theta.shape}")
     
     # Sequential merge
-    log("[MERGE] Merging all datasets on uid...")
+    log("Merging all datasets on uid...")
     
     # Start with theta (outcome)
     merged = df_theta.copy()
@@ -78,14 +78,14 @@ def main():
     log(f"  - After adding self-report: {merged.shape}")
     
     # Check for missing values
-    log("[CHECK] Missing values per column:")
+    log("Missing values per column:")
     missing = merged.isnull().sum()
     for col, n_missing in missing.items():
         if n_missing > 0:
             log(f"  - {col}: {n_missing} missing ({n_missing/len(merged)*100:.1f}%)")
     
     # Standardize predictors (z-scores)
-    log("[STANDARDIZE] Converting predictors to z-scores...")
+    log("Converting predictors to z-scores...")
     
     # List columns to standardize (exclude uid, theta, and binary variables)
     cols_to_standardize = [
@@ -108,7 +108,7 @@ def main():
                 log(f"  - {col}: M={mean_val:.2f}, SD={std_val:.2f}")
     
     # Report predictor correlations with outcome
-    log("[CORRELATIONS] Predictor correlations with theta:")
+    log("Predictor correlations with theta:")
     z_cols = [col for col in merged.columns if col.endswith('_z')]
     for col in z_cols:
         if col in merged.columns:
@@ -118,7 +118,7 @@ def main():
                 log(f"  - {col}: r={corr:.3f}")
     
     # Summary statistics
-    log("[SUMMARY] Final merged dataset:")
+    log("Final merged dataset:")
     log(f"  - N participants: {len(merged)}")
     log(f"  - N columns: {len(merged.columns)}")
     log(f"  - Complete cases: {merged.dropna().shape[0]}")
@@ -127,9 +127,9 @@ def main():
     output_path = RQ_DIR / "data" / "step05_merged_predictors.csv"
     output_path.parent.mkdir(exist_ok=True)
     merged.to_csv(output_path, index=False)
-    log(f"[SAVE] Saved merged data to {output_path}")
+    log(f"Saved merged data to {output_path}")
     
-    log("[SUCCESS] Step 05 complete")
+    log("Step 05 complete")
     return 0
 
 if __name__ == "__main__":

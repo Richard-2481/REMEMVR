@@ -1,0 +1,226 @@
+RQ 6.3.3: Age x Domain Interaction in Confidence Decline
+======================================================================
+Analysis execution log
+
+Starting RQ 6.3.3 analysis pipeline...
+Output directory: /home/etai/projects/REMEMVR/results/ch6/6.3.3
+======================================================================
+STEP 0: Load Domain Confidence Theta from RQ 6.3.1 and Merge with Age
+======================================================================
+
+Loading theta from: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step03_theta_confidence.csv
+Theta loaded: 400 rows, columns: ['composite_ID', 'theta_What', 'theta_Where', 'theta_When']
+
+Parsed composite_ID: 100 unique UIDs, 4 tests
+
+Loading Age from: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+Age data: 100 unique participants
+TSVR data: 400 UID x test combinations
+
+Merged with Age: 400 rows
+Merged with TSVR: 400 rows
+
+--- Step 0 Validation ---
+Row count: 400 (expected 400)
+All theta columns present: theta_What, theta_Where, theta_When
+No missing theta values
+theta_What range: [-2.51, 0.35]
+theta_Where range: [-2.70, 0.28]
+theta_When range: [-2.37, 0.55]
+Age range: [20, 70] years
+TSVR range: [1.0, 246.2] hours
+Unique UIDs: 100
+
+Output saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/step00_theta_with_age.csv
+Data loading complete: 400 rows
+
+======================================================================
+STEP 1: Center Age and Reshape to Long Format
+======================================================================
+
+Age statistics:
+  Mean Age: 44.57 years
+  SD Age: 14.58 years
+  Range: [20, 70] years
+
+Age centered: Age_c = Age - 44.57
+Log-transformed time: log_TSVR = log(TSVR_hours + 1)
+
+Reshaping from wide to long format...
+Reshaped: 1200 rows (400 observations x 3 domains)
+
+--- Step 1 Validation ---
+Row count: 1200 (expected 1200)
+Age_c mean: 0.000000 (expected ~0)
+Balanced design: {'What': np.int64(400), 'Where': np.int64(400), 'When': np.int64(400)}
+Each UID has exactly 12 rows (4 tests x 3 domains)
+No missing values
+Domain levels: {'What', 'When', 'Where'}
+
+Output saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/step01_lmm_input.csv
+Long format: 1200 rows x 9 columns
+
+======================================================================
+STEP 2: Fit LMM with 3-Way Age x Domain x Time Interaction
+======================================================================
+
+Model formula: theta_confidence ~ TSVR_hours * Age_c * C(Domain)
+Random effects: (1 + TSVR_hours | UID) - random intercept and slope
+Reference category: What (alphabetically first)
+
+Model converged successfully
+
+Full summary saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/step02_lmm_model_summary.txt
+
+--- Fixed Effects ---
+  Intercept                                         : beta = -0.57985, SE = 0.04750, z = -12.21, p = 0.0000 ***
+  C(Domain)[T.When]                                 : beta =  0.10073, SE = 0.02824, z =   3.57, p = 0.0004 ***
+  C(Domain)[T.Where]                                : beta =  0.00895, SE = 0.02824, z =   0.32, p = 0.7512 
+  TSVR_hours                                        : beta = -0.00343, SE = 0.00034, z = -10.18, p = 0.0000 ***
+  TSVR_hours:C(Domain)[T.When]                      : beta = -0.00027, SE = 0.00032, z =  -0.82, p = 0.4114 
+  TSVR_hours:C(Domain)[T.Where]                     : beta = -0.00001, SE = 0.00032, z =  -0.04, p = 0.9691 
+  Age_c                                             : beta = -0.00761, SE = 0.00327, z =  -2.33, p = 0.0201 *
+  Age_c:C(Domain)[T.When]                           : beta =  0.00019, SE = 0.00194, z =   0.10, p = 0.9211 
+  Age_c:C(Domain)[T.Where]                          : beta = -0.00053, SE = 0.00194, z =  -0.27, p = 0.7850 
+  TSVR_hours:Age_c                                  : beta = -0.00002, SE = 0.00002, z =  -0.69, p = 0.4923 
+  TSVR_hours:Age_c:C(Domain)[T.When]                : beta =  0.00001, SE = 0.00002, z =   0.61, p = 0.5396 
+  TSVR_hours:Age_c:C(Domain)[T.Where]               : beta =  0.00003, SE = 0.00002, z =   1.12, p = 0.2644 
+
+--- Random Effects ---
+Random effects covariance matrix:
+               Group  TSVR_hours
+Group       0.185499    0.000039
+TSVR_hours  0.000039    0.000006
+
+--- Model Fit ---
+Log-likelihood: -435.52
+AIC: 901.05
+BIC: 977.40
+
+--- Step 2 Validation ---
+Model converged: True
+All fixed effects finite
+3-way interaction terms present: 2 terms
+
+Fixed effects saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/step02_lmm_fixed_effects.csv
+
+======================================================================
+STEP 3: Extract 3-Way Interaction Terms with Dual P-Values (Decision D068)
+======================================================================
+
+3-way interaction terms extracted: 2 terms
+
+Bonferroni correction: alpha = 0.0250 (0.05 / 2 contrasts)
+
+--- 3-Way Interaction Results (Age x Domain x Time) ---
+
+TSVR_hours:Age_c:C(Domain)[T.When]:
+  Estimate: 0.000014
+  SE: 0.000022
+  z: 0.61
+  p_uncorrected: 0.5396 (sig @ 0.05: NO)
+  p_bonferroni: 1.0000 (sig @ 0.05: NO)
+
+TSVR_hours:Age_c:C(Domain)[T.Where]:
+  Estimate: 0.000025
+  SE: 0.000022
+  z: 1.12
+  p_uncorrected: 0.2644 (sig @ 0.05: NO)
+  p_bonferroni: 0.5288 (sig @ 0.05: NO)
+
+*** PRIMARY HYPOTHESIS TEST: Age x Domain x Time Interaction ***
+Any significant (uncorrected): False
+Any significant (Bonferroni): False
+CONCLUSION: NULL - Age-invariant confidence decline across all domains (parallels Ch5 5.2.3)
+
+--- 2-Way Age x Time Interaction (Overall) ---
+TSVR_hours:Age_c: beta = -0.000016, p = 0.4923 (sig: NO)
+
+--- Step 3 Validation ---
+Row count: 2 (expected 2)
+Both domain contrasts present: Where vs What, When vs What
+p-values in valid range [0, 1]
+p_bonferroni >= p_uncorrected (Bonferroni correction correct)
+
+Output saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/step03_interaction_terms.csv
+Dual p-values created per Decision D068
+
+======================================================================
+STEP 4: Create Age Tertile x Domain Trajectories
+======================================================================
+
+Age tertile cutoffs:
+  33rd percentile: 36.7 years
+  67th percentile: 52.3 years
+
+Participants per tertile:
+  Young: N = 33
+  Middle: N = 34
+  Older: N = 33
+
+Aggregated data: 36 rows (3 tertiles x 3 domains x 4 tests = 36)
+
+Young tertile:
+  What: T1=-0.448, T4=-0.949, change=-0.501
+  Where: T1=-0.376, T4=-0.949, change=-0.574
+  When: T1=-0.299, T4=-0.900, change=-0.601
+
+Middle tertile:
+  What: T1=-0.509, T4=-1.045, change=-0.536
+  Where: T1=-0.489, T4=-1.097, change=-0.608
+  When: T1=-0.294, T4=-0.901, change=-0.607
+
+Older tertile:
+  What: T1=-0.626, T4=-1.215, change=-0.588
+  Where: T1=-0.619, T4=-1.125, change=-0.506
+  When: T1=-0.444, T4=-1.094, change=-0.650
+
+--- Step 4 Validation ---
+Row count: 36 (expected 36)
+All tertiles present: Young, Middle, Older
+All domains present: What, Where, When
+All tests present: T1, T2, T3, T4
+CI ordering correct: CI_upper > CI_lower
+No duplicate combinations
+
+Output saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/step04_tertile_domain_trajectories.csv
+Aggregated means: 36 rows (3 tertiles x 3 domains x 4 tests)
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+*** KEY FINDING: 3-Way Age x Domain x Time Interaction ***
+
+TSVR_hours:Age_c:C(Domain)[T.When]:
+  Estimate: 0.000014
+  p_uncorrected: 0.5396
+  p_bonferroni: 1.0000
+  Status: NOT SIGNIFICANT
+
+TSVR_hours:Age_c:C(Domain)[T.Where]:
+  Estimate: 0.000025
+  p_uncorrected: 0.2644
+  p_bonferroni: 0.5288
+  Status: NOT SIGNIFICANT
+
+*** CONCLUSION: NULL 3-WAY INTERACTION ***
+Age does NOT differentially moderate domain-specific confidence trajectories
+This PARALLELS Chapter 5 RQ 5.2.3 (age-invariant accuracy across domains)
+Validates VR ecological encoding framework: universal age-invariant pattern
+
+*** OUTPUT FILES CREATED ***
+  glmm_comparison.csv
+  glmm_fixed_effects.csv
+  glmm_long_format.csv
+  random_slopes_comparison.csv
+  step00_theta_with_age.csv
+  step01_lmm_input.csv
+  step02_lmm_fixed_effects.csv
+  step03_interaction_terms.csv
+  step04_tertile_domain_trajectories.csv
+  glmm_model_summary.txt
+  random_slopes_comparison_summary.txt
+  step02_lmm_model_summary.txt
+
+RQ 6.3.3 analysis complete - all validations passed

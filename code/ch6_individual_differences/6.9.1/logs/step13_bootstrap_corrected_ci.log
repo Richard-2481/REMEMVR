@@ -1,0 +1,19 @@
+======================================================================
+STEP 13: Bootstrap CIs for Corrected Correlations
+======================================================================
+Running bootstrap with B=5000 iterations...
+  Progress: 1000/5000 iterations
+  Progress: 2000/5000 iterations
+  Progress: 3000/5000 iterations
+  Progress: 4000/5000 iterations
+  Progress: 5000/5000 iterations
+Bootstrap correction completed: 5000 iterations
+Saved: step13_dass_bootstrap_corrected.csv (5000 rows)
+  depression r_corrected CI: [-0.3323, 0.6000]
+  anxiety r_corrected CI: [-0.0829, 1.0007]
+  stress r_corrected CI: [-0.1190, 0.8177]
+Saved: step13_dass_corrected_ci.csv (3 rows)
+Validation PASSED
+======================================================================
+SUB-ANALYSIS 4 COMPLETE
+======================================================================

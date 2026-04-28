@@ -1,0 +1,46 @@
+================================================================================
+Step 05c: Model Averaging (LocationType × Time)
+================================================================================
+Loading input data and model comparison...
+  Training data: 800 observations
+  Models compared: 65
+  LocationTypes: ['destination', 'source']
+  Best single model: Quadratic (weight=0.0670)
+  Competitive models (ΔAIC<2): 13
+  Cumulative weight: 54.3%
+
+Creating prediction grid...
+  Grid points: 200 (100 per location type)
+
+Computing model-averaged predictions...
+  NOTE: LocationType × Time interaction - averaging across functional forms
+
+Model averaging complete:
+  Models used: 13
+  Effective N models: 12.32
+  Prediction variance: [0.0001, 0.0191]
+
+Model types in competitive set:
+  Quadratic family: 2 models
+  Logarithmic family: 4 models
+  Square-root family: 3 models
+  Power-law family: 3 models
+  Reciprocal family: 1 models
+
+[POWER LAW] Effective alpha (if applicable):
+  Weighted mean: α=0.140
+  Range: [0.1, 0.2]
+
+Saving model-averaged predictions...
+  ✓ step05c_averaged_predictions.csv (200 rows)
+  ✓ step05c_averaging_summary.txt
+
+Averaged predictions per location type:
+  Source     : θ ∈ [-0.535, 0.419], SE ∈ [0.0105, 0.1384]
+  Destination: θ ∈ [-0.535, 0.419], SE ∈ [0.0105, 0.1384]
+================================================================================
+Step 05c Complete
+  Models averaged: 13
+  Effective N: 12.32
+  Output: step05c_averaged_predictions.csv
+================================================================================

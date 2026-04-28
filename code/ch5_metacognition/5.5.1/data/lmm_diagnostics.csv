@@ -1,0 +1,4 @@
+check,test_statistic,p_value,result
+Normality (Shapiro-Wilk),0.9951624293028395,0.0006938742327014992,REJECTED
+Homoscedasticity (Breusch-Pagan),33.25983434502873,3.3417391899532923e-06,REJECTED
+Influence (Standardized Resid),5.0,,OUTLIERS DETECTED

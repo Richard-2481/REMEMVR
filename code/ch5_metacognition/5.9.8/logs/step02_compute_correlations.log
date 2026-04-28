@@ -1,0 +1,36 @@
+Step 02: Compute Within-Schema Correlations
+Key timepoints: ['T1', 'T2', 'T4']
+Bonferroni correction: alpha = 0.05/9 = 0.0056
+Loading long-format data...
+1200 rows, 5 columns
+Filtering to key timepoints...
+900 rows retained
+Computing correlations...
+Common       x T1: r = 0.481 [CI: 0.314, 0.619], p = 0.0000, p_bonf = 0.0000
+Common       x T2: r = 0.353 [CI: 0.168, 0.514], p = 0.0003, p_bonf = 0.0028
+Common       x T4: r = 0.414 [CI: 0.237, 0.564], p = 0.0000, p_bonf = 0.0002
+Congruent    x T1: r = 0.428 [CI: 0.253, 0.576], p = 0.0000, p_bonf = 0.0001
+Congruent    x T2: r = 0.327 [CI: 0.139, 0.492], p = 0.0009, p_bonf = 0.0081
+Congruent    x T4: r = 0.599 [CI: 0.456, 0.711], p = 0.0000, p_bonf = 0.0000
+Incongruent  x T1: r = 0.442 [CI: 0.269, 0.587], p = 0.0000, p_bonf = 0.0000
+Incongruent  x T2: r = 0.411 [CI: 0.233, 0.562], p = 0.0000, p_bonf = 0.0002
+Incongruent  x T4: r = 0.432 [CI: 0.258, 0.580], p = 0.0000, p_bonf = 0.0001
+Computed 9 correlations
+Checking correlation results...
+Row count: 9
+All r in [-1, 1]
+Some correlations < 0.50 (weaker than expected)
+All SE_z > 0
+Mean SE_z = 0.1015 (expected ~0.101 for n=100)
+All p-values in [0, 1]
+All CIs properly ordered
+All n = 100
+Correlation range: [0.327, 0.599]
+Mean correlation: 0.432 (SD = 0.078)
+Bonferroni-significant: 9/9
+PASS - All checks passed
+Fisher Z transformation applied for CIs
+Bonferroni correction: alpha = 0.0056 (Decision D068)
+Dual p-values reported (uncorrected and Bonferroni)
+Output: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step02_within_schema_correlations.csv
+Step 02 complete

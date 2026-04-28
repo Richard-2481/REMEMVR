@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Verification utilities for rq_analysis agent v5.0.0
+Verification utilities for analysis pipeline v5.0.0
 Ensures 4_analysis.yaml contains only verified, correct information
 """
 

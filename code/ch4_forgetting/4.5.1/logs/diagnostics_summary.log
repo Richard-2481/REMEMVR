@@ -1,0 +1,9 @@
+LMM Diagnostics Summary - RQ 5.5.1
+================================================================================
+
+Shapiro-Wilk: W=0.9912, p=0.0001
+High influence points: 6
+
+Plots generated:
+  - plots/diagnostics_qq.png
+  - plots/diagnostics_resid_fitted.png

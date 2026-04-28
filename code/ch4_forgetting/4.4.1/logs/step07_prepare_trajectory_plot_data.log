@@ -1,0 +1,53 @@
+Step 07: Prepare Trajectory Plot Data
+RQ Directory: /home/etai/projects/REMEMVR/results/ch5/rq5
+
+Loading LMM input data...
+step04_lmm_input.csv (1200 rows, 9 cols)
+
+Computing group statistics...
+12 groups
+
+[CI] Computing 95% confidence intervals (theta scale)...
+  Theta mean range: [-0.399, 0.504]
+
+Transforming to probability scale...
+  Probability mean range: [0.402, 0.624]
+
+Sorting and finalizing output...
+  Theta plot: 12 rows
+  Probability plot: 12 rows
+
+Saving output files...
+step07_trajectory_theta_data.csv (12 rows)
+step07_trajectory_probability_data.csv (12 rows)
+
+Validating results...
+Both plot files created
+Row count: 12 (3 congruence x 4 tests)
+common: 4 rows
+congruent: 4 rows
+incongruent: 4 rows
+Theta mean range: [-0.399, 0.504]
+Probability mean range: [0.402, 0.624]
+CI bounds logical (lower < mean < upper)
+No NaN values
+
+  Trajectory Summary (Theta Scale):
+  ------------------------------------------------------------
+  common:
+    time=1.0h: theta=0.450 [0.281, 0.620]
+    time=28.8h: theta=0.124 [-0.021, 0.269]
+    time=78.7h: theta=-0.212 [-0.367, -0.057]
+    time=151.4h: theta=-0.382 [-0.537, -0.228]
+  congruent:
+    time=1.0h: theta=0.422 [0.242, 0.602]
+    time=28.8h: theta=0.153 [0.002, 0.304]
+    time=78.7h: theta=-0.116 [-0.280, 0.048]
+    time=151.4h: theta=-0.398 [-0.546, -0.250]
+  incongruent:
+    time=1.0h: theta=0.504 [0.359, 0.650]
+    time=28.8h: theta=0.096 [-0.055, 0.247]
+    time=78.7h: theta=-0.167 [-0.327, -0.007]
+    time=151.4h: theta=-0.399 [-0.560, -0.238]
+
+Step 07 complete (Trajectory Plot Data)

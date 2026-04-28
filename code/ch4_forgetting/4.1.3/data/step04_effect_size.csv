@@ -1,0 +1,3 @@
+scenario,age_c,age_years,time_hours,theta_predicted
+Average age,0.0,44.57,144.0,-0.4775600021681592
+Age + 1 SD,14.524203289785207,59.094203289785206,144.0,-0.5760705627426036

@@ -125,7 +125,7 @@ def main():
     # Load data
     print(f"\nLoading: {FEATURES_FILE}")
     df_features = pd.read_csv(FEATURES_FILE)
-    X = df_features[Z_VARS].values
+    X = df_features.values
     n_samples = len(X)
     print(f"Loaded {n_samples} samples × {X.shape[1]} features")
 

@@ -16,9 +16,7 @@ print("=" * 80)
 print("GLMM VALIDATION: RQ 6.5.1 - Schema Congruence Baseline Effects")
 print("=" * 80)
 
-# ============================================================================
-# STEP 1: Load item-level confidence data
-# ============================================================================
+# Load item-level confidence data
 
 print("\n[1] Loading item-level IRT input data...")
 
@@ -34,9 +32,7 @@ print(f"   Loaded {len(q_matrix)} items with factor assignments")
 tsvr = pd.read_csv('data/step00_tsvr_mapping.csv')
 print(f"   Loaded TSVR mapping for {len(tsvr)} observations")
 
-# ============================================================================
-# STEP 2: Reshape to long format (one row per item response)
-# ============================================================================
+# Reshape to long format (one row per item response)
 
 print("\n[2] Reshaping data to item-level long format...")
 
@@ -94,9 +90,7 @@ for schema in ['Common', 'Congruent', 'Incongruent']:
     pct = 100 * n / len(data_long)
     print(f"     {schema}: {n} ({pct:.1f}%)")
 
-# ============================================================================
-# STEP 3: Create time transformations for GLMM
-# ============================================================================
+# Create time transformations for GLMM
 
 print("\n[3] Creating time transformations...")
 
@@ -110,9 +104,7 @@ data_long['Schema_Incongruent'] = (data_long['Schema'] == 'Incongruent').astype(
 print(f"   Time range: {data_long['TSVR_hours'].min():.1f} to {data_long['TSVR_hours'].max():.1f} hours")
 print(f"   log(TSVR) range: {data_long['log_TSVR'].min():.2f} to {data_long['log_TSVR'].max():.2f}")
 
-# ============================================================================
-# STEP 4: Fit Gaussian GLMM (continuous outcome, 5-category ordinal)
-# ============================================================================
+# Fit Gaussian GLMM (continuous outcome, 5-category ordinal)
 
 print("\n[4] Fitting GLMM with schema intercept effects...")
 
@@ -146,9 +138,7 @@ print("\n   Fitting GLMM (this may take 2-3 minutes with ~28,000 observations)..
 result_glmm = model_glmm.fit(reml=False)  # Use ML for AIC comparison
 print("   GLMM fit complete!")
 
-# ============================================================================
-# STEP 5: Extract intercept effects and compare to IRT→LMM
-# ============================================================================
+# Extract intercept effects and compare to IRT→LMM
 
 print("\n[5] Extracting schema intercept effects...")
 
@@ -172,9 +162,7 @@ print("=" * 75)
 print(f"{'Congruent vs Common:':<30} {irt_lmm_congruent_p:<15.3f} {congruent_p:<15.3f} {congruent_beta:<15.3f}")
 print(f"{'Incongruent vs Common:':<30} {irt_lmm_incongruent_p:<15.3f} {incongruent_p:<15.3f} {incongruent_beta:<15.3f}")
 
-# ============================================================================
-# STEP 6: Interpret results
-# ============================================================================
+# Interpret results
 
 print("\n[6] Interpretation...")
 
@@ -205,9 +193,7 @@ if congruent_strengthened or incongruent_strengthened:
     if incongruent_strengthened:
         print(f"      Incongruent: p {irt_lmm_incongruent_p:.3f} → {incongruent_p:.3f}")
 
-# ============================================================================
-# STEP 7: Save results
-# ============================================================================
+# Save results
 
 print("\n[7] Saving GLMM validation results...")
 
@@ -238,9 +224,7 @@ with open('data/glmm_summary.txt', 'w') as f:
 
 print(f"   Saved: data/glmm_summary.txt")
 
-# ============================================================================
 # FINAL SUMMARY
-# ============================================================================
 
 print("\n" + "=" * 80)
 print("GLMM VALIDATION COMPLETE")

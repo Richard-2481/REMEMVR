@@ -1,0 +1,5 @@
+predictor,vif,multicollinearity_concern
+age,1.0149508330571515,No concern
+education_numeric,0.0,No concern
+rehearsal_frequency,1.0089687236534626,No concern
+mnemonic_use,1.0061866088794618,No concern

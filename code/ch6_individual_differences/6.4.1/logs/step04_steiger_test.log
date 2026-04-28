@@ -1,0 +1,63 @@
+Step 4: Steiger Z-test for process-specificity
+Loading correlation results from step03...
+step03_correlation_results.csv (2 rows, 7 cols)
+Loading raw correlation input data from step02...
+step02_correlation_input.csv (100 rows, 4 cols)
+Extracting r12 and r13 from correlation results...
+r12 (RAVLT-FreeRecall): 0.278253
+r13 (RAVLT-Recognition): 0.284285
+Sample size: 100
+Computing r23 = correlation(theta_free_recall, theta_recognition)...
+r23 (FreeRecall-Recognition): 0.984250
+Running Steiger's Z-test for dependent correlations...
+Z-statistic: -0.237643
+Two-tailed p-value: 0.81215821
+One-tailed p-value (H1: r12 > r13): 0.59392089
+Correlation difference (r12 - r13): -0.006032
+Significant (p < 0.00179): False
+No significant difference in RAVLT correlation strength between Free Recall and Recognition paradigms
+Saving Steiger test results...
+step04_steiger_test.csv (1 rows, 6 cols)
+Running validate_hypothesis_test_dual_pvalues...
+valid: True
+missing_terms: []
+d068_compliant: True
+message: Decision D068 compliant: All 1 required terms present with both p_uncorrected and p_bonferroni.
+Step 4 complete - Steiger's Z-test results generated
+Step 4: Steiger Z-test for process-specificity
+Loading correlation results from step03...
+step03_correlation_results.csv (4 rows, 7 cols)
+Loading raw correlation input data from step02...
+step02_correlation_input.csv (100 rows, 5 cols)
+Computing r23 = correlation(theta_free_recall, theta_recognition)...
+r23 (FreeRecall-Recognition): 0.984250
+Sample size: 100
+
+=== Steiger test for ravlt_total ===
+r12 (RAVLTtotal-FreeRecall): 0.269634
+r13 (RAVLTtotal-Recognition): 0.279334
+Z-statistic: -0.382145
+Two-tailed p-value: 0.70235345
+One-tailed p-value (H1: r12 > r13): 0.64882327
+Correlation difference (r12 - r13): -0.009700
+Significant (p < 0.00179): False
+No significant difference in ravlt_total correlation strength between Free Recall and Recognition paradigms
+
+=== Steiger test for ravlt_pct_ret ===
+r12 (RAVLTpctret-FreeRecall): 0.369808
+r13 (RAVLTpctret-Recognition): 0.367514
+Z-statistic: 0.090371
+Two-tailed p-value: 0.92799267
+One-tailed p-value (H1: r12 > r13): 0.46399634
+Correlation difference (r12 - r13): 0.002294
+Significant (p < 0.00179): False
+No significant difference in ravlt_pct_ret correlation strength between Free Recall and Recognition paradigms
+
+Saving Steiger test results...
+step04_steiger_test.csv (2 rows, 7 cols)
+Running validate_hypothesis_test_dual_pvalues...
+valid: True
+missing_terms: []
+d068_compliant: True
+message: Decision D068 compliant: All 2 required terms present with both p_uncorrected and p_bonferroni.
+Step 4 complete - Steiger's Z-test results generated

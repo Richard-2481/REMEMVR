@@ -1,0 +1,110 @@
+Step 02: Descriptive Statistics and Data Exploration
+Loading analysis dataset from Step 1...
+step01_analysis_dataset.csv (97 rows, 7 cols)
+Analysis variables: ['theta_all', 'dass_dep', 'dass_anx', 'dass_str', 'age', 'nart_score']
+Sample size: 97
+Computing descriptive statistics...
+theta_all: M=0.017, SD=0.653, n=97
+dass_dep: M=2.392, SD=3.296, n=97
+dass_anx: M=1.474, SD=2.407, n=97
+dass_str: M=3.433, SD=3.620, n=97
+age: M=44.814, SD=14.672, n=97
+nart_score: M=31.897, SD=8.570, n=97
+Descriptive statistics complete
+Computing correlation matrix...
+theta_all <-> dass_dep: r=0.038, p=0.713, n=97
+theta_all <-> dass_anx: r=0.209, p=0.040, n=97
+theta_all <-> dass_str: r=0.171, p=0.095, n=97
+theta_all <-> age: r=-0.185, p=0.069, n=97
+theta_all <-> nart_score: r=0.091, p=0.373, n=97
+dass_dep <-> dass_anx: r=0.417, p=0.000, n=97
+dass_dep <-> dass_str: r=0.643, p=0.000, n=97
+dass_dep <-> age: r=-0.141, p=0.167, n=97
+dass_dep <-> nart_score: r=0.024, p=0.813, n=97
+dass_anx <-> dass_str: r=0.715, p=0.000, n=97
+dass_anx <-> age: r=-0.303, p=0.003, n=97
+dass_anx <-> nart_score: r=-0.088, p=0.391, n=97
+dass_str <-> age: r=-0.261, p=0.010, n=97
+dass_str <-> nart_score: r=0.015, p=0.885, n=97
+age <-> nart_score: r=0.317, p=0.002, n=97
+Correlation analysis complete
+Testing normality of outcome variable...
+theta_all: W=0.971, p=0.032 -> Non-normal distribution (p=0.032 <= 0.05)
+Normality test complete
+Standardizing predictor variables...
+dass_dep: M=2.392->0.000, SD=3.296->1.000
+dass_anx: M=1.474->0.000, SD=2.407->1.000
+dass_str: M=3.433->0.000, SD=3.620->1.000
+age: M=44.814->0.000, SD=14.672->1.000
+nart_score: M=31.897->0.000, SD=8.570->1.000
+Predictor standardization complete
+step02_descriptives.csv (6 variables)
+step02_correlations.csv (15 correlations)
+step02_normality_tests.txt
+step02_standardized_dataset.csv (97 standardized cases)
+step02_standardization_log.csv (5 variables)
+Running validation checks...
+descriptives_valid: True
+correlations_computed: True
+normality_tested: True
+standardization_complete: True
+high_correlations: 0
+normality_violation: True
+sample_size: 97
+Outcome variable violates normality - consider robust methods
+Step 02 complete - descriptive statistics generated
+Step 02: Descriptive Statistics and Data Exploration
+Loading analysis dataset from Step 1...
+step01_analysis_dataset.csv (97 rows, 7 cols)
+Analysis variables: ['theta_all', 'dass_dep', 'dass_anx', 'dass_str', 'age', 'nart_score']
+Sample size: 97
+Computing descriptive statistics...
+theta_all: M=0.017, SD=0.653, n=97
+dass_dep: M=2.392, SD=3.296, n=97
+dass_anx: M=1.474, SD=2.407, n=97
+dass_str: M=3.433, SD=3.620, n=97
+age: M=44.814, SD=14.672, n=97
+nart_score: M=31.897, SD=8.570, n=97
+Descriptive statistics complete
+Computing correlation matrix...
+theta_all <-> dass_dep: r=0.038, p=0.713, n=97
+theta_all <-> dass_anx: r=0.209, p=0.040, n=97
+theta_all <-> dass_str: r=0.171, p=0.095, n=97
+theta_all <-> age: r=-0.185, p=0.069, n=97
+theta_all <-> nart_score: r=0.091, p=0.373, n=97
+dass_dep <-> dass_anx: r=0.417, p=0.000, n=97
+dass_dep <-> dass_str: r=0.643, p=0.000, n=97
+dass_dep <-> age: r=-0.141, p=0.167, n=97
+dass_dep <-> nart_score: r=0.024, p=0.813, n=97
+dass_anx <-> dass_str: r=0.715, p=0.000, n=97
+dass_anx <-> age: r=-0.303, p=0.003, n=97
+dass_anx <-> nart_score: r=-0.088, p=0.391, n=97
+dass_str <-> age: r=-0.261, p=0.010, n=97
+dass_str <-> nart_score: r=0.015, p=0.885, n=97
+age <-> nart_score: r=0.317, p=0.002, n=97
+Correlation analysis complete
+Testing normality of outcome variable...
+theta_all: W=0.971, p=0.032 -> Non-normal distribution (p=0.032 <= 0.05)
+Normality test complete
+Standardizing predictor variables...
+dass_dep: M=2.392->0.000, SD=3.296->1.000
+dass_anx: M=1.474->0.000, SD=2.407->1.000
+dass_str: M=3.433->0.000, SD=3.620->1.000
+age: M=44.814->0.000, SD=14.672->1.000
+nart_score: M=31.897->0.000, SD=8.570->1.000
+Predictor standardization complete
+step02_descriptives.csv (6 variables)
+step02_correlations.csv (15 correlations)
+step02_normality_tests.txt
+step02_standardized_dataset.csv (97 standardized cases)
+step02_standardization_log.csv (5 variables)
+Running validation checks...
+descriptives_valid: True
+correlations_computed: True
+normality_tested: True
+standardization_complete: True
+high_correlations: 0
+normality_violation: True
+sample_size: 97
+Outcome variable violates normality - consider robust methods
+Step 02 complete - descriptive statistics generated

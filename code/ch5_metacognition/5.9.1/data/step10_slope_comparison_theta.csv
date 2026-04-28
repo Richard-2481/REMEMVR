@@ -1,0 +1,2 @@
+acc_slope_theta,conf_slope_theta,slope_diff_theta,slope_ratio_theta,z_statistic,p_value,interpretation
+-0.006953279923605121,-0.007216159358586596,-0.00026287943498147504,1.0378065370400302,-0.40202768694936003,0.6876636501829476,Confidence declines FASTER than accuracy (supports hedging hypothesis)

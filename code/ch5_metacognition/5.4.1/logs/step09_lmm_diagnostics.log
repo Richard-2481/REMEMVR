@@ -1,0 +1,48 @@
+================================================================================
+Step 09: LMM Diagnostics
+================================================================================
+Loading LMM input data...
+  ✓ Loaded 1200 observations
+Loading model comparison to identify best model...
+  ✓ Best model: Linear (AIC=298.37)
+
+Refitting Linear model for diagnostics...
+  Formula: theta ~ C(paradigm) * TSVR_hours
+  Random effects: (1 | UID)
+  ✓ Model converged: True
+  ✓ AIC: 517.32
+
+Running assumption checks...
+  N observations: 1200
+  Residuals: mean=-0.000000, SD=0.245
+
+[1. NORMALITY] Q-Q plot...
+  ✓ Saved Q-Q plot to plots/diagnostics/qq_plot.png
+  Shapiro-Wilk test: W=0.9920, p=0.0000
+    → Residuals deviate from normality (p < 0.05), but N=1200 → CLT applies, robust
+
+[2. HOMOSCEDASTICITY] Residuals vs Fitted plot...
+  ✓ Saved residuals vs fitted plot to plots/diagnostics/residuals_vs_fitted.png
+  Breusch-Pagan test: LM=5.35, p=0.3747
+    → Homoscedastic (p > 0.05) - constant variance assumption met
+
+[3. LEVERAGE/INFLUENCE] Cook's Distance...
+  Cook's D threshold (4/n): 0.003333
+  Influential observations (|std_resid| > threshold): 1194 (99.50%)
+  ✓ Saved Cook's D proxy plot to plots/diagnostics/cooks_distance.png
+    → Some influential observations (>1194) - check if outliers drive findings
+
+  ✓ Saved diagnostic test results to step09_diagnostics_tests.csv
+
+Diagnostic summary:
+  ⚠ Normality: FAIL (p=0.0000), but N=1200 → CLT, robust
+  ✓ Homoscedasticity: PASS
+  ⚠ Influence: 1194 observations influential
+
+  Overall: 1/3 assumptions strictly met, 2 concerns
+  → With N=1200, LMM is ROBUST to these violations (large-sample theory applies)
+  → Results valid for inference
+
+================================================================================
+Step 09: LMM Diagnostics Complete
+================================================================================

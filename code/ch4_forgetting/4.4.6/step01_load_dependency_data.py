@@ -42,19 +42,15 @@ THETA_FILE = DEPENDENCY_RQ / "data" / "step03_theta_scores.csv"
 LMM_INPUT_FILE = DEPENDENCY_RQ / "data" / "step04_lmm_input.csv"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 01: Load Dependency Data from RQ 5.4.1")
-
-        # =====================================================================
-        # STEP 1: Check RQ 5.4.1 Completion Status
-        # =====================================================================
-        log("[CHECK] Verifying RQ 5.4.1 completion status...")
+        log("Step 01: Load Dependency Data from RQ 5.4.1")
+        # Check RQ 5.4.1 Completion Status
+        log("Verifying RQ 5.4.1 completion status...")
 
         if not STATUS_FILE.exists():
             raise FileNotFoundError(f"EXPECTATIONS ERROR: RQ 5.4.1 status.yaml not found at {STATUS_FILE}")
@@ -62,21 +58,18 @@ if __name__ == "__main__":
         with open(STATUS_FILE, 'r', encoding='utf-8') as f:
             status_data = yaml.safe_load(f)
 
-        # Check if rq_results section exists and has success status
-        if 'rq_results' not in status_data:
-            raise ValueError("EXPECTATIONS ERROR: RQ 5.4.1 status.yaml missing 'rq_results' section")
+        # Check if results analysis section exists and has success status
+        if 'results analysis' not in status_data:
+            raise ValueError("EXPECTATIONS ERROR: RQ 5.4.1 status.yaml missing 'results analysis' section")
 
-        rq_results_status = status_data.get('rq_results', {}).get('status', 'unknown')
+        results analysis_status = status_data.get('results analysis', {}).get('status', 'unknown')
 
-        if rq_results_status != 'success':
-            raise ValueError(f"EXPECTATIONS ERROR: RQ 5.4.1 not complete (status: {rq_results_status}). Cannot proceed with derived analysis.")
+        if results analysis_status != 'success':
+            raise ValueError(f"EXPECTATIONS ERROR: RQ 5.4.1 not complete (status: {results analysis_status}). Cannot proceed with derived analysis.")
 
-        log(f"[PASS] RQ 5.4.1 completion verified (status: {rq_results_status})")
-
-        # =====================================================================
-        # STEP 2: Check Dependency Files Exist
-        # =====================================================================
-        log("[CHECK] Verifying dependency files exist...")
+        log(f"RQ 5.4.1 completion verified (status: {results analysis_status})")
+        # Check Dependency Files Exist
+        log("Verifying dependency files exist...")
 
         required_files = {
             'theta_scores': THETA_FILE,
@@ -91,15 +84,12 @@ if __name__ == "__main__":
         if missing_files:
             raise FileNotFoundError(f"EXPECTATIONS ERROR: Missing dependency files:\n" + "\n".join(missing_files))
 
-        log(f"[PASS] All dependency files exist")
-
-        # =====================================================================
-        # STEP 3: Load and Validate Theta Scores
-        # =====================================================================
-        log("[LOAD] Loading theta scores from RQ 5.4.1...")
+        log(f"All dependency files exist")
+        # Load and Validate Theta Scores
+        log("Loading theta scores from RQ 5.4.1...")
 
         df_theta = pd.read_csv(THETA_FILE, encoding='utf-8')
-        log(f"[LOADED] Theta scores: {len(df_theta)} rows, {len(df_theta.columns)} columns")
+        log(f"Theta scores: {len(df_theta)} rows, {len(df_theta.columns)} columns")
 
         # Validate structure
         expected_theta_cols = ['composite_ID', 'theta_common', 'theta_congruent', 'theta_incongruent',
@@ -110,17 +100,14 @@ if __name__ == "__main__":
             raise ValueError(f"Theta scores missing columns: {missing_theta_cols}")
 
         if len(df_theta) != 400:
-            log(f"[WARNING] Expected 400 rows (100 UID x 4 tests), got {len(df_theta)}")
+            log(f"Expected 400 rows (100 UID x 4 tests), got {len(df_theta)}")
 
-        log(f"[PASS] Theta scores validated: {len(df_theta)} rows, all required columns present")
-
-        # =====================================================================
-        # STEP 4: Load and Validate LMM Input
-        # =====================================================================
-        log("[LOAD] Loading LMM input from RQ 5.4.1...")
+        log(f"Theta scores validated: {len(df_theta)} rows, all required columns present")
+        # Load and Validate LMM Input
+        log("Loading LMM input from RQ 5.4.1...")
 
         df_lmm_input = pd.read_csv(LMM_INPUT_FILE, encoding='utf-8')
-        log(f"[LOADED] LMM input: {len(df_lmm_input)} rows, {len(df_lmm_input.columns)} columns")
+        log(f"LMM input: {len(df_lmm_input)} rows, {len(df_lmm_input.columns)} columns")
 
         # Validate structure - use lowercase 'se' as that's what RQ 5.4.1 produces
         expected_lmm_cols = ['UID', 'test', 'TSVR_hours', 'congruence', 'theta', 'se']
@@ -130,7 +117,7 @@ if __name__ == "__main__":
             raise ValueError(f"LMM input missing columns: {missing_lmm_cols}")
 
         if len(df_lmm_input) != 1200:
-            log(f"[WARNING] Expected 1200 rows (100 UID x 4 tests x 3 congruence), got {len(df_lmm_input)}")
+            log(f"Expected 1200 rows (100 UID x 4 tests x 3 congruence), got {len(df_lmm_input)}")
 
         # Check congruence levels (case-insensitive check since they might be lowercase)
         congruence_levels = df_lmm_input['congruence'].unique()
@@ -144,7 +131,7 @@ if __name__ == "__main__":
         if actual_congruence != expected_congruence:
             raise ValueError(f"Unexpected congruence levels. Expected {expected_congruence}, got {actual_congruence}")
 
-        log(f"[PASS] Congruence levels validated: {sorted(congruence_levels)}")
+        log(f"Congruence levels validated: {sorted(congruence_levels)}")
 
         # Check for NaN values
         nan_theta = df_lmm_input['theta'].isna().sum()
@@ -155,18 +142,15 @@ if __name__ == "__main__":
         if nan_tsvr > 0:
             raise ValueError(f"Found {nan_tsvr} NaN values in TSVR_hours column")
 
-        log(f"[PASS] No NaN values in theta or TSVR_hours columns")
+        log(f"No NaN values in theta or TSVR_hours columns")
 
         # Check TSVR_hours range
         tsvr_min = df_lmm_input['TSVR_hours'].min()
         tsvr_max = df_lmm_input['TSVR_hours'].max()
 
-        log(f"[INFO] TSVR_hours range: [{tsvr_min:.2f}, {tsvr_max:.2f}] hours")
-
-        # =====================================================================
-        # STEP 5: Cache LMM Input Locally (with normalized congruence names)
-        # =====================================================================
-        log("[SAVE] Caching LMM input for local workflow...")
+        log(f"TSVR_hours range: [{tsvr_min:.2f}, {tsvr_max:.2f}] hours")
+        # Cache LMM Input Locally (with normalized congruence names)
+        log("Caching LMM input for local workflow...")
 
         # Normalize congruence to title case for consistency
         df_lmm_input['congruence'] = df_lmm_input['congruence'].str.title()
@@ -174,12 +158,9 @@ if __name__ == "__main__":
         output_lmm_input = RQ_DIR / "data" / "step01_loaded_lmm_input.csv"
         df_lmm_input.to_csv(output_lmm_input, index=False, encoding='utf-8')
 
-        log(f"[SAVED] {output_lmm_input.name} ({len(df_lmm_input)} rows, {len(df_lmm_input.columns)} columns)")
-
-        # =====================================================================
-        # STEP 6: Write Validation Report
-        # =====================================================================
-        log("[REPORT] Writing validation report...")
+        log(f"{output_lmm_input.name} ({len(df_lmm_input)} rows, {len(df_lmm_input.columns)} columns)")
+        # Write Validation Report
+        log("Writing validation report...")
 
         report_path = RQ_DIR / "data" / "step01_dependency_validation_report.txt"
 
@@ -190,7 +171,7 @@ if __name__ == "__main__":
 
             f.write("DEPENDENCY: RQ 5.4.1 (Schema-Specific IRT Calibration)\n\n")
 
-            f.write(f"RQ 5.4.1 Status: {rq_results_status}\n\n")
+            f.write(f"RQ 5.4.1 Status: {results analysis_status}\n\n")
 
             f.write("DEPENDENCY FILES:\n")
             f.write(f"  1. Theta scores: {THETA_FILE.name}\n")
@@ -213,14 +194,14 @@ if __name__ == "__main__":
             f.write("\n")
             f.write("All dependency checks passed. Ready to proceed with congruence-stratified analysis.\n")
 
-        log(f"[SAVED] {report_path.name}")
+        log(f"{report_path.name}")
 
-        log("[SUCCESS] Step 01 complete - All dependencies validated")
+        log("Step 01 complete - All dependencies validated")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

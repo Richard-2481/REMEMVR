@@ -1,0 +1,52 @@
+Step 6: Standardize Outcomes for Parallel LMM
+Loading input data...
+step00_theta_scores.csv (400 rows, 4 cols)
+step02_ctt_full_scores.csv (400 rows, 6 cols)
+step03_ctt_purified_scores.csv (400 rows, 6 cols)
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Merging all measurement approaches on composite_ID...
+All data merged (400 rows, 13 cols)
+Converting to long format (3 rows per composite_ID, 1 per domain)...
+Long format created (1200 rows = 400 composite_IDs x 3 domains)
+Computing z-scores per measurement type x domain...
+what - IRT theta: mean=-0.0072, SD=0.8986
+what - Full CTT: mean=0.7716, SD=0.1271
+what - Purified CTT: mean=0.7159, SD=0.1648
+where - IRT theta: mean=0.0368, SD=0.9319
+where - Full CTT: mean=0.5980, SD=0.1280
+where - Purified CTT: mean=0.6145, SD=0.1360
+when - IRT theta: mean=0.1087, SD=0.6876
+when - Full CTT: mean=0.4599, SD=0.1171
+when - Purified CTT: mean=0.3817, SD=0.2524
+Saving standardized outcomes...
+step06_standardized_outcomes.csv (1200 rows, 7 cols)
+Running validate_standardization...
+PASS - All z-scores meet standardization criteria (mean ≈ 0, SD ≈ 1)
+Mean values: {'z_full_ctt': np.float64(4.263256414560601e-16), 'z_purified_ctt': np.float64(-2.1908401019269756e-16), 'z_irt_theta': np.float64(-5.921189464667502e-18)}
+SD values: {'z_full_ctt': np.float64(0.9991656235510066), 'z_purified_ctt': np.float64(0.9991656235510066), 'z_irt_theta': np.float64(0.9991656235510066)}
+Step 6 complete
+Step 6: Standardize Outcomes for Parallel LMM
+Loading input data...
+step00_theta_scores.csv (400 rows, 3 cols)
+step02_ctt_full_scores.csv (400 rows, 5 cols)
+step03_ctt_purified_scores.csv (400 rows, 5 cols)
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Merging all measurement approaches on composite_ID...
+All data merged (400 rows, 10 cols)
+Converting to long format (2 rows per composite_ID, 1 per domain)...
+When domain EXCLUDED per RQ 5.2.1 floor effect
+Long format created (800 rows = 400 composite_IDs x 2 domains)
+Computing z-scores per measurement type x domain...
+what - IRT theta: mean=-0.0072, SD=0.8986
+what - Full CTT: mean=0.7716, SD=0.1271
+what - Purified CTT: mean=0.7159, SD=0.1648
+where - IRT theta: mean=0.0368, SD=0.9319
+where - Full CTT: mean=0.5980, SD=0.1280
+where - Purified CTT: mean=0.6145, SD=0.1360
+Saving standardized outcomes...
+step06_standardized_outcomes.csv (800 rows, 7 cols)
+Running validate_standardization...
+PASS - All z-scores meet standardization criteria (mean ≈ 0, SD ≈ 1)
+Mean values: {'z_full_ctt': np.float64(5.329070518200751e-16), 'z_purified_ctt': np.float64(-3.8191672047105384e-16), 'z_irt_theta': np.float64(-1.7763568394002505e-17)}
+SD values: {'z_full_ctt': np.float64(0.9993740218478918), 'z_purified_ctt': np.float64(0.9993740218478919), 'z_irt_theta': np.float64(0.9993740218478918)}
+Step 6 complete

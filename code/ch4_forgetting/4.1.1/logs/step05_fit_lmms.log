@@ -1,0 +1,73 @@
+Step 5: Fit 5 Candidate LMM Models
+Loading LMM input data...
+step04_lmm_input.csv (400 rows, 9 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'Theta', 'SE', 'TSVR_hours', 'Days', 'Days_squared', 'log_Days_plus1']
+  Theta range: [-2.516, 2.728]
+  Days range: [0.04, 10.26]
+Renaming columns for tool compatibility...
+  Renamed: Theta -> Ability, Days_squared -> Days_sq, log_Days_plus1 -> log_Days
+Fitting 5 candidate LMM models...
+  Models:
+    (1) Linear: Theta ~ Days
+    (2) Quadratic: Theta ~ Days + Days_squared
+    (3) Logarithmic: Theta ~ log_Days_plus1
+    (4) LinLog: Theta ~ Days + log_Days_plus1
+    (5) QuadLog: Theta ~ Days + Days_squared + log_Days_plus1
+  Random effects: (1 | UID)
+  REML: False (for AIC comparison)
+Fitting Linear model...
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Linear.pkl
+Fitting Quadratic model...
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:1634: UserWarning: Random effects covariance is singular
+  warnings.warn(msg)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Quadratic.pkl
+Fitting Log model...
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Log.pkl
+Fitting Lin+Log model...
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Lin+Log.pkl
+Fitting Quad+Log model...
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq7/data/lmm_Quad+Log.pkl
+All 5 models fitted
+  Best model: <statsmodels.regression.mixed_linear_model.MixedLMResultsWrapper object at 0x7f2d62f95d00>
+Saving model comparison table to step05_model_comparison.csv...
+step05_model_comparison.csv
+
+AIC Comparison:
+model_name        AIC  delta_AIC   AIC_weight
+       Log 873.710488   0.000000 4.819531e-01
+   Lin+Log 874.549192   0.838704 3.168710e-01
+  Quad+Log 876.528487   2.817999 1.177834e-01
+ Quadratic 877.219067   3.508579 8.339243e-02
+    Linear 905.540198  31.829709 5.905698e-08
+
+Expected pickle file not found: step05_model_fits.pkl
+Validating LMM convergence...
+Linear: Converged
+Quadratic: Converged
+Log: Converged
+Lin+Log: Converged
+Quad+Log: Converged
+"['BIC', 'log_likelihood'] not in index"
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step05_fit_5_candidate_lmms.py", line 268, in <module>
+    if aic_comparison[['AIC', 'BIC', 'log_likelihood']].isna().any().any():
+       ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4119, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6264, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['BIC', 'log_likelihood'] not in index"

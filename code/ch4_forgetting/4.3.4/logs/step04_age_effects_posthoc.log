@@ -1,0 +1,117 @@
+Step 04: Compute Age Effects and Post-Hoc Contrasts
+Loading fitted LMM model from step02...
+LMM model from /home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_lmm_model.pkl
+Model convergence: False
+Model did not converge - results may be unreliable
+Extracting marginal age slopes by paradigm at Day 3 (72h)...
+Extracted age effects for 1 paradigms
+Marginal age effects by paradigm:
+'paradigm'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'paradigm'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.4/code/step04_age_effects_posthoc.py", line 212, in <module>
+    log(f"  {row['paradigm']}: age_slope={row['age_slope']:.6f}, "
+             ~~~^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'paradigm'
+Step 04: Compute Age Effects and Post-Hoc Contrasts
+Loading fixed effects from Step 2...
+18 fixed effects from /home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_fixed_effects.csv
+Extracting age effect components...
+Age_c main effect: -0.011195 (SE=0.006758)
+Age_c × ICR: 0.001702 (SE=0.006004)
+Age_c × IRE: -0.001911 (SE=0.006004)
+Computing simple slopes (age effect by paradigm)...
+Age effects by paradigm:
+  IFR: -0.011195 (SE=0.006758, z=-1.656, p=0.0976)
+  ICR: -0.009492 (SE=0.009040, z=-1.050, p=0.2937)
+  IRE: -0.013106 (SE=0.009040, z=-1.450, p=0.1471)
+Creating age effects dataframe...
+Computing pairwise contrasts...
+Pairwise contrasts (Age effect differences):
+  IFR vs ICR: 0.001702 (SE=0.006004, z=0.284, p=0.7768)
+  IFR vs IRE: -0.001911 (SE=0.006004, z=-0.318, p=0.7502)
+  ICR vs IRE: -0.003614 (SE=0.008491, z=-0.426, p=0.6704)
+Creating contrasts dataframe...
+Saving output files...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step04_age_effects.csv
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step04_contrasts.csv
+Checking output format...
+Age effects: 3 paradigms
+All paradigms present: IFR, ICR, IRE
+Contrasts: 3 pairwise comparisons
+Dual p-values present (Decision D068 compliance)
+Significant age effects (Bonferroni): 0 of 3
+Significant contrasts (Bonferroni): 0 of 3
+Step 04 complete
+Age effects computed for 3 paradigms
+  IFR age effect: -0.0112 (p=0.0976)
+  ICR age effect: -0.0095 (p=0.2937)
+  IRE age effect: -0.0131 (p=0.1471)
+  Significant contrasts: 0 of 3
+  Output: data/step04_age_effects.csv, data/step04_contrasts.csv
+  Ready for Step 5 (prepare plot data by age tertiles)
+
+No significant age effects on memory performance at Bonferroni-corrected level
+  No significant differences in age effects between paradigms
+  Age-related memory changes are similar across IFR, ICR, and IRE
+Step 04: Compute Age Effects and Post-Hoc Contrasts
+Loading fixed effects from Step 2...
+18 fixed effects from /home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_fixed_effects.csv
+Extracting age effect components...
+Age_c main effect: -0.011515 (SE=0.007315)
+Age_c × ICR: 0.001702 (SE=0.006240)
+Age_c × IRE: -0.001911 (SE=0.006240)
+Computing simple slopes (age effect by paradigm)...
+Age effects by paradigm:
+  IFR: -0.011515 (SE=0.007315, z=-1.574, p=0.1155)
+  ICR: -0.009812 (SE=0.009615, z=-1.021, p=0.3075)
+  IRE: -0.013426 (SE=0.009615, z=-1.396, p=0.1626)
+Creating age effects dataframe...
+Computing pairwise contrasts...
+Pairwise contrasts (Age effect differences):
+  IFR vs ICR: 0.001702 (SE=0.006240, z=0.273, p=0.7850)
+  IFR vs IRE: -0.001911 (SE=0.006240, z=-0.306, p=0.7594)
+  ICR vs IRE: -0.003614 (SE=0.008824, z=-0.409, p=0.6822)
+Creating contrasts dataframe...
+Saving output files...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step04_age_effects.csv
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step04_contrasts.csv
+Checking output format...
+Age effects: 3 paradigms
+All paradigms present: IFR, ICR, IRE
+Contrasts: 3 pairwise comparisons
+Dual p-values present (Decision D068 compliance)
+Significant age effects (Bonferroni): 0 of 3
+Significant contrasts (Bonferroni): 0 of 3
+Step 04 complete
+Age effects computed for 3 paradigms
+  IFR age effect: -0.0115 (p=0.1155)
+  ICR age effect: -0.0098 (p=0.3075)
+  IRE age effect: -0.0134 (p=0.1626)
+  Significant contrasts: 0 of 3
+  Output: data/step04_age_effects.csv, data/step04_contrasts.csv
+  Ready for Step 5 (prepare plot data by age tertiles)
+
+No significant age effects on memory performance at Bonferroni-corrected level
+  No significant differences in age effects between paradigms
+  Age-related memory changes are similar across IFR, ICR, and IRE

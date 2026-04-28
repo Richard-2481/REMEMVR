@@ -1,0 +1,59 @@
+Step 07: Prepare Trajectory Plot Data
+Loading LMM input data...
+step04_lmm_input.csv (1200 rows, 8 cols)
+Loading fixed effects...
+step05_fixed_effects.csv (9 rows)
+Fixed effects from best model:
+       Intercept: 0.5290
+       C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]: 0.0230
+       C(Factor, Treatment('Free_Recall'))[T.Recognition]: 0.2100
+       log_Days: -0.4700
+       log_Days:C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]: -0.0510
+       log_Days:C(Factor, Treatment('Free_Recall'))[T.Recognition]: -0.1270
+       Group Var: 0.4990
+       Group x log_Days Cov: -0.1440
+       log_Days Var: 0.1430
+Parsing fixed effects structure...
+Intercept: 0.5290
+log_Days slope (Free_Recall): -0.4700
+Cued_Recall adjustment: 0.0230
+Recognition adjustment: 0.2100
+Computing observed means per paradigm x test...
+Observed statistics computed for 12 paradigm x test combinations
+free_recall: 4 test sessions, mean theta range [-0.390, 0.554]
+cued_recall: 4 test sessions, mean theta range [-0.453, 0.635]
+recognition: 4 test sessions, mean theta range [-0.498, 0.625]
+Generating prediction grid...
+Prediction grid: 50 points from 0 to 200 hours
+Computing model predictions for each paradigm...
+Generated 150 prediction points
+Creating theta-scale plot data...
+Theta plot data: 162 rows (observed + predicted)
+Creating probability-scale plot data (IRT 2PL transformation)...
+Probability plot data: 162 rows
+Saving theta-scale plot data...
+/home/etai/projects/REMEMVR/results/ch5/rq3/plots/step07_trajectory_theta_data.csv (162 rows)
+Saving probability-scale plot data...
+/home/etai/projects/REMEMVR/results/ch5/rq3/plots/step07_trajectory_probability_data.csv (162 rows)
+Running validation checks...
+Theta plot file exists
+Probability plot file exists
+All paradigms represented
+Theta predictions in valid range [-3, 3]
+Probability predictions in [0, 1]
+CI bounds valid
+Minimum rows met (162 >= 12)
+Step 07 complete
+
+============================================================
+SUMMARY
+============================================================
+Theta-scale data: /home/etai/projects/REMEMVR/results/ch5/rq3/plots/step07_trajectory_theta_data.csv
+  - Rows: 162
+  - Observed points: 12
+  - Predicted points: 150
+
+Probability-scale data: /home/etai/projects/REMEMVR/results/ch5/rq3/plots/step07_trajectory_probability_data.csv
+  - Rows: 162
+  - Probability range: [0.081, 0.677]
+============================================================

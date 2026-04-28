@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-RQ 6.2.5: Power Analysis and TOST for NULL Finding (PLATINUM Requirement)
+RQ 6.2.5: Power Analysis and TOST for NULL Finding (Validation Requirement)
 ==========================================================================
 
 Per improvement_taxonomy.md Section 3 (MANDATORY for NULL findings):
@@ -20,9 +20,7 @@ from pathlib import Path
 from scipy import stats
 import statsmodels.stats.power as smp
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step12e_power_and_tost.log"
@@ -237,7 +235,7 @@ def main():
     with open(LOG_FILE, 'w') as f:
         f.write("RQ 6.2.5: Power Analysis and TOST\n")
         f.write("=" * 70 + "\n")
-        f.write("PLATINUM Requirement: Section 3 (NULL findings)\n\n")
+        f.write("Validation Requirement: Section 3 (NULL findings)\n\n")
 
     log("Starting power analysis and equivalence testing...")
 

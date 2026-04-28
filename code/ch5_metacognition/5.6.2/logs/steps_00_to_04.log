@@ -1,0 +1,137 @@
+RQ 6.6.2: Individual Difference Predictors of HCE
+============================================================
+
+STEP 00: Merge Predictor Data Sources
+----------------------------------------
+Loading HCE rates from: /home/etai/projects/REMEMVR/results/ch6/6.6.1/data/step01_hce_rates.csv
+  HCE rates: 400 rows, columns: ['UID', 'TEST', 'TSVR', 'HCE_rate', 'n_HCE', 'n_total']
+  Aggregated to 100 participants (mean across 4 tests)
+  HCE_rate_mean range: [0.0000, 0.2153]
+
+Loading accuracy theta from: /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+  Accuracy theta: 400 rows, columns: ['UID', 'test', 'Theta_All']
+  Filtered to T1 (Day 0): 100 rows
+  baseline_accuracy range: [-2.2386, 2.7278]
+
+Loading confidence theta from: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+  Confidence theta: 400 rows, columns: ['composite_ID', 'theta_All', 'se_All']
+  Filtered to T1 (Day 0): 100 rows
+  baseline_confidence range: [-1.8179, 3.0353]
+
+Loading Age from: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+  dfData: 400 rows
+  Unique UID-Age pairs: 100
+  Age range: [20.0, 70.0]
+
+Merging all predictors...
+  After merging accuracy: 100 rows, NaN in baseline_accuracy: 0
+  After merging confidence: 100 rows, NaN in baseline_confidence: 0
+  After merging age: 100 rows, NaN in Age: 0
+
+Computing confidence bias...
+  confidence_bias range: [-4.2338, 2.2916]
+
+Validating Step 00 output...
+
+Step 00 OUTPUT: /home/etai/projects/REMEMVR/results/ch6/6.6.2/data/step00_predictor_data.csv
+  Shape: (100, 6)
+  Columns: ['UID', 'HCE_rate_mean', 'baseline_accuracy', 'baseline_confidence', 'Age', 'confidence_bias']
+  Data merge complete: 100 participants with complete predictors
+  All source files merged successfully
+
+============================================================
+STEP 01: Standardize Predictors
+----------------------------------------
+  z_baseline_accuracy: mean=-0.000000, SD=1.000000
+  z_baseline_confidence: mean=0.000000, SD=1.000000
+  z_Age: mean=0.000000, SD=1.000000
+  z_confidence_bias: mean=0.000000, SD=1.000000
+
+Validating z-scores...
+  z_baseline_accuracy: PASS (mean=-0.000000, SD=1.000000)
+  z_baseline_confidence: PASS (mean=0.000000, SD=1.000000)
+  z_Age: PASS (mean=0.000000, SD=1.000000)
+  z_confidence_bias: PASS (mean=0.000000, SD=1.000000)
+Standardization complete: 4 predictors z-scored
+Z-score validation PASS: mean near 0, SD near 1
+
+Step 01 OUTPUT: /home/etai/projects/REMEMVR/results/ch6/6.6.2/data/step01_standardized_predictors.csv
+
+============================================================
+STEP 02: Fit Multiple Regression Model
+----------------------------------------
+Formula: HCE_rate_mean ~ z_baseline_accuracy + z_baseline_confidence + z_Age + z_confidence_bias
+
+Model Summary:
+  R-squared: 0.3976
+  Adjusted R-squared: 0.3787
+  F-statistic: 21.1173
+  F p-value: 0.000000
+  N observations: 100.0
+
+Residual diagnostics:
+  Mean residual: -0.000000
+  SD residual: 0.027597
+  Shapiro-Wilk test: W=0.8647, p=0.0000
+  WARNING: Residuals slightly non-normal (regression robust to minor violations)
+
+Step 02 OUTPUT: /home/etai/projects/REMEMVR/results/ch6/6.6.2/data/step02_regression_model_summary.txt
+Regression model fitted successfully
+R-squared: 0.3976
+
+============================================================
+STEP 03: Extract Coefficients with Dual P-Values
+----------------------------------------
+
+Coefficient Table (Decision D068 Dual P-Values):
+--------------------------------------------------------------------------------
+  Intercept                 β= 0.04177 SE=0.00280 t= 14.905 p=0.0000 p_bonf=0.0000 ***
+  z_baseline_accuracy       β=-0.00071 SE=0.00189 t= -0.375 p=0.7082 p_bonf=1.0000 
+  z_baseline_confidence     β= 0.01240 SE=0.00188 t=  6.589 p=0.0000 p_bonf=0.0000 ***
+  z_Age                     β= 0.00324 SE=0.00288 t=  1.122 p=0.2646 p_bonf=1.0000 
+  z_confidence_bias         β= 0.01363 SE=0.00193 t=  7.075 p=0.0000 p_bonf=0.0000 ***
+
+Coefficients extracted with dual p-values (Decision D068)
+Bonferroni correction applied: 4 predictors
+
+Step 03 OUTPUT: /home/etai/projects/REMEMVR/results/ch6/6.6.2/data/step03_regression_coefficients.csv
+
+============================================================
+STEP 04: Compute Effect Sizes
+----------------------------------------
+  R_squared: 0.3976
+  Adjusted_R_squared: 0.3787
+
+Partial R-squared (unique variance explained):
+  z_baseline_accuracy: partial R² = 0.0000
+  z_baseline_confidence: partial R² = 0.0000
+  z_Age: partial R² = 0.0079
+  z_confidence_bias: partial R² = 0.0000
+
+Effect sizes computed: R-squared and partial R-squared
+Overall R-squared: 0.3976
+
+Step 04 OUTPUT: /home/etai/projects/REMEMVR/results/ch6/6.6.2/data/step04_effect_sizes.csv
+
+============================================================
+ANALYSIS COMPLETE: RQ 6.6.2
+============================================================
+
+HYPOTHESIS TEST RESULTS:
+----------------------------------------
+1. Dunning-Kruger: Direction correct but NOT significant (β=-0.0007, p_bonf=1.0000)
+2. Confidence Bias: SUPPORTED (β=0.0136, p_bonf=0.0000)
+   High overconfidence predicts more HCEs
+3. Metacognitive Skill: NOT SUPPORTED (β=0.0124, p_bonf=0.0000)
+4. Age NULL: CONFIRMED (β=0.0032, p_bonf=1.0000)
+   Age does NOT predict HCE rates (consistent with Ch5/Ch6 pattern)
+
+OVERALL MODEL FIT:
+  R² = 0.3976 (39.8% variance explained)
+  F(3,96) = 21.12, p = 0.0000
+
+  Significant predictors (Bonferroni): 2/4
+
+============================================================
+All steps completed successfully
+============================================================

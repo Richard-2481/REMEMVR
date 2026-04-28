@@ -1,0 +1,41 @@
+Step 02: Purify Items (Decision D039)
+a_threshold >= 0.4
+|b_threshold| <= 3.0
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv (105 rows, 4 cols)
+Columns: ['item_name', 'factor', 'a', 'b']
+Running filter_items_by_quality...
+df_items shape: (105, 4)
+a_threshold: 0.4
+b_threshold: 3.0
+Analysis complete
+Retained: 69 items
+Removed: 36 items
+Retention rate: 65.7%
+Saving purified items...
+step02_purified_items.csv (69 rows, 4 cols)
+Saving removed items...
+step02_removed_items.csv (36 rows)
+Exclusion reasons summary:
+  - a < 0.4 on when: 19 items
+  - a < 0.4 on where: 5 items
+  - a < 0.4 on what: 2 items
+  - |b| > 3.0 on when (b=3.05): 1 items
+  - |b| > 3.0 on what (b=-3.32): 1 items
+  - |b| > 3.0 on what (b=-5.79): 1 items
+  - |b| > 3.0 on what (b=-4.23): 1 items
+  - |b| > 3.0 on what (b=-5.49): 1 items
+  - |b| > 3.0 on what (b=-3.20): 1 items
+  - |b| > 3.0 on what (b=-3.73): 1 items
+  - |b| > 3.0 on what (b=-4.22): 1 items
+  - |b| > 3.0 on what (b=-3.09): 1 items
+  - |b| > 3.0 on when (b=-9.69): 1 items
+Running validate_irt_parameters...
+Validation using a_col='a', b_col='b'
+valid: True
+n_flagged: 0
+total_items: 69
+Checking domain coverage...
+Domain coverage check skipped (no Discrim_* columns)
+Retention rate (65.7%) within expected range [20%, 95%]
+Step 02 complete

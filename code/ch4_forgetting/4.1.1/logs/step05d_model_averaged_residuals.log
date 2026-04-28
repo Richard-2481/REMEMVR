@@ -1,0 +1,52 @@
+[2025-12-13 12:46:18] ======================================================================
+[2025-12-13 12:46:18] Step 05d: Model-Averaged Residuals (ΔAIC < 7)
+[2025-12-13 12:46:18] ======================================================================
+[2025-12-13 12:46:18] 
+Loading input data...
+[2025-12-13 12:46:18]   Observations: 400
+[2025-12-13 12:46:18]   Participants: 100
+[2025-12-13 12:46:18]   Models compared: 65
+[2025-12-13 12:46:18]   Best single model: PowerLaw_04 (weight=5.6%)
+[2025-12-13 12:46:18] 
+[STEP 1] Identifying competitive models (ΔAIC < 7)...
+[2025-12-13 12:46:18]   Competitive models: 51
+[2025-12-13 12:46:18]   Total original weight: 99.9%
+[2025-12-13 12:46:18]   Effective N models: 40.09
+[2025-12-13 12:46:18] 
+[STEP 2] Creating time transformations...
+[2025-12-13 12:46:18]   Columns added: ['TSVR', 'TSVR_sq', 'TSVR_cub', 'TSVR_4th', 'log_TSVR', 'log2_TSVR', 'log10_TSVR', 'log_log_TSVR', 'TSVR_pow_neg01', 'TSVR_pow_neg02', 'TSVR_pow_neg03', 'TSVR_pow_neg04', 'TSVR_pow_neg05', 'TSVR_pow_neg06', 'TSVR_pow_neg07', 'TSVR_pow_neg08', 'TSVR_pow_neg09', 'TSVR_pow_neg10', 'sqrt_TSVR', 'cbrt_TSVR', 'TSVR_pow_025', 'TSVR_pow_033', 'TSVR_pow_067', 'recip_TSVR', 'recip_TSVR_sq', 'neg_TSVR', 'neg_TSVR_sq', 'neg_sqrt_TSVR', 'sin_TSVR', 'cos_TSVR', 'tanh_TSVR', 'arctanh_TSVR', 'sinh_TSVR']
+[2025-12-13 12:46:18] 
+[STEP 3] Fitting competitive models and computing fitted values...
+[2025-12-13 12:46:18]     1/51: PowerLaw_04               w=0.056 - converged=True
+[2025-12-13 12:46:18]     2/51: PowerLaw_05               w=0.053 - converged=True
+[2025-12-13 12:46:18]     3/51: PowerLaw_03               w=0.050 - converged=True
+[2025-12-13 12:46:18]     4/51: LogLog                    w=0.049 - converged=True
+[2025-12-13 12:46:18]     5/51: Root_033                  w=0.044 - converged=True
+[2025-12-13 12:46:18]     ... fitting remaining 46 models ...
+[2025-12-13 12:46:23]     51/51: Quadratic                 w=0.002 - converged=True
+[2025-12-13 12:46:23] 
+[STEP 4] Computing model-averaged fitted values...
+[2025-12-13 12:46:23]   MA fitted range: [-2.1305, 1.9189]
+[2025-12-13 12:46:23]   MA fitted mean: 0.0062
+[2025-12-13 12:46:23] 
+[STEP 5] Computing model-averaged residuals...
+[2025-12-13 12:46:23]   Residuals range: [-1.3361, 1.5078]
+[2025-12-13 12:46:23]   Residuals mean: -0.000000 (should be ~0)
+[2025-12-13 12:46:23]   Residuals SD: 0.5087
+[2025-12-13 12:46:23] 
+[STEP 6] Creating output DataFrame...
+[2025-12-13 12:46:23]   Output rows: 400
+[2025-12-13 12:46:23]   Unique UIDs: 100
+[2025-12-13 12:46:23] 
+[STEP 7] Saving outputs...
+[2025-12-13 12:46:23]   Saved: step05d_model_averaged_residuals.csv (400 rows)
+[2025-12-13 12:46:23]   Saved: step05d_residuals_summary.txt
+[2025-12-13 12:46:23] 
+======================================================================
+[2025-12-13 12:46:23] Step 05d COMPLETE
+[2025-12-13 12:46:23] ======================================================================
+[2025-12-13 12:46:23]   Competitive models: 51
+[2025-12-13 12:46:23]   Effective N: 40.09
+[2025-12-13 12:46:23]   Output: step05d_model_averaged_residuals.csv
+[2025-12-13 12:46:23]   Purpose: Provides MA residuals for RQ 6.7.3
+[2025-12-13 12:46:23] ======================================================================

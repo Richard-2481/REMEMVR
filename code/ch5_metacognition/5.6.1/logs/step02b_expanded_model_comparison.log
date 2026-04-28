@@ -1,0 +1,408 @@
+Step 02b: EXPANDED AIC Model Comparison with Power-Law Transformations
+Loading HCE rate data from step01...
+step01_hce_rates.csv (400 rows, 6 cols)
+Data summary: 400 observations from 100 participants
+Creating EXPANDED time transformations from TSVR...
+Created transformations:
+  Basic:
+    - Days: [0.04, 10.26]
+    - Days_squared: [0.00, 105.27]
+    - log_Days_plus1: [0.041, 2.421]
+  Power-law:
+    - sqrt_Days_plus1 (0.5): [1.021, 3.356]
+    - Days_power_0_3: [1.012, 2.068]
+    - Days_power_0_7: [1.029, 5.446]
+    - Days_power_1_5: [1.063, 37.784]
+    - Days_cubed (3.0): [0.00, 1080.05]
+    - inv_Days_plus1: [0.089, 0.960]
+  Piecewise:
+    - breakpoint_day1: [0.000, 9.260]
+  Exponential:
+    - exp_neg_Days: [0.000, 0.959]
+
+Fitting 13 candidate LMM models with REML=False...
+
+Fitting Linear: Linear time trend
+  Formula: HCE_rate ~ Days
+  Random: ~Days
+  Linear converged successfully
+  AIC: -1467.26, BIC: -1443.32, LogLik: 739.63
+
+Fitting Quadratic: Quadratic time trend (Days + Days^2)
+  Formula: HCE_rate ~ Days + Days_squared
+  Random: ~Days
+  Quadratic converged successfully
+  AIC: -1465.54, BIC: -1437.60, LogLik: 739.77
+
+Fitting Logarithmic: Logarithmic time trend (log(Days+1))
+  Formula: HCE_rate ~ log_Days_plus1
+  Random: ~log_Days_plus1
+  Logarithmic converged successfully
+  AIC: -1467.31, BIC: -1443.36, LogLik: 739.66
+
+Fitting SquareRoot: Square root (power 0.5) transformation
+  Formula: HCE_rate ~ sqrt_Days_plus1
+  Random: ~sqrt_Days_plus1
+  SquareRoot converged successfully
+  AIC: -1467.92, BIC: -1443.97, LogLik: 739.96
+
+Fitting Power_0.3: Power 0.3 transformation (shallow curvature)
+  Formula: HCE_rate ~ Days_power_0_3
+  Random: ~Days_power_0_3
+  Power_0.3 did not converge (may still have valid AIC)
+  AIC: -1460.45, BIC: -1436.50, LogLik: 736.23
+
+Fitting Power_0.7: Power 0.7 transformation (moderate curvature)
+  Formula: HCE_rate ~ Days_power_0_7
+  Random: ~Days_power_0_7
+  Power_0.7 converged successfully
+  AIC: -1467.78, BIC: -1443.83, LogLik: 739.89
+
+Fitting Power_1.5: Power 1.5 transformation (accelerating growth)
+  Formula: HCE_rate ~ Days_power_1_5
+  Random: ~Days_power_1_5
+  Power_1.5 did not converge (may still have valid AIC)
+  AIC: -1464.09, BIC: -1440.14, LogLik: 738.05
+
+Fitting Inverse: Inverse/hyperbolic transformation (1/(Days+1))
+  Formula: HCE_rate ~ inv_Days_plus1
+  Random: ~inv_Days_plus1
+  Inverse converged successfully
+  AIC: -1462.67, BIC: -1438.72, LogLik: 737.33
+
+Fitting Cubic: Cubic polynomial (Days + Days^2 + Days^3)
+  Formula: HCE_rate ~ Days + Days_squared + Days_cubed
+  Random: ~Days
+  Cubic converged successfully
+  AIC: -1463.91, BIC: -1431.97, LogLik: 739.95
+
+Fitting ExponentialDecay: Exponential decay (exp(-Days))
+  Formula: HCE_rate ~ exp_neg_Days
+  Random: ~Days
+  ExponentialDecay converged successfully
+  AIC: -1460.03, BIC: -1436.08, LogLik: 736.01
+
+Fitting Piecewise_Day1: Piecewise: flat before Day 1, linear after
+  Formula: HCE_rate ~ breakpoint_day1
+  Random: ~Days
+  Piecewise_Day1 converged successfully
+  AIC: -1467.37, BIC: -1443.42, LogLik: 739.68
+
+Fitting Linear+Log: Linear + Logarithmic (Days + log(Days+1))
+  Formula: HCE_rate ~ Days + log_Days_plus1
+  Random: ~log_Days_plus1
+  Linear+Log converged successfully
+  AIC: -1466.71, BIC: -1438.77, LogLik: 740.35
+
+Fitting Quadratic+Log: Quadratic + Logarithmic (Days + Days^2 + log(Days+1))
+  Formula: HCE_rate ~ Days + Days_squared + log_Days_plus1
+  Random: ~log_Days_plus1
+  Quadratic+Log converged successfully
+  AIC: -1466.14, BIC: -1434.21, LogLik: 741.07
+
+All models fitted
+
+Computing Akaike weights...
+Akaike weights sum: 1.000000 (should be 1.0)
+
+Identifying top 5 models...
+[TOP 5] Ranked by AIC:
+  1. SquareRoot           - AIC=-1467.92, weight=0.1721, ΔAIC=0.00
+  2. Power_0.7            - AIC=-1467.78, weight=0.1605, ΔAIC=0.14
+  3. Piecewise_Day1       - AIC=-1467.37, weight=0.1306, ΔAIC=0.55
+  4. Logarithmic          - AIC=-1467.31, weight=0.1272, ΔAIC=0.60
+  5. Linear               - AIC=-1467.26, weight=0.1242, ΔAIC=0.65
+
+SquareRoot (weight=0.1721, AIC=-1467.92)
+No clear winner for SquareRoot model
+
+Checking for special patterns...
+Power-law < 1.0 model (SquareRoot) wins - diminishing returns pattern
+Competitive models - ΔAIC=0.14 < 2
+
+Saving expanded model comparison results...
+step02b_expanded_model_comparison.csv (13 models)
+step02b_best_model_selection.txt
+
+Checking results...
+All 13 models attempted
+13/13 models have finite AIC values
+Akaike weights sum to 1.0
+Top 5 models ranked
+Best model identified: SquareRoot
+2 special pattern flags documented
+All models fitted with REML=False (required for AIC comparison)
+
+Step 02b complete - all validations passed
+Step 02b: EXPANDED AIC Model Comparison with Power-Law Transformations
+Loading HCE rate data from step01...
+step01_hce_rates.csv (400 rows, 6 cols)
+Data summary: 400 observations from 100 participants
+Creating EXPANDED time transformations from TSVR...
+Created transformations:
+  Basic:
+    - Days: [0.04, 10.26]
+    - Days_squared: [0.00, 105.27]
+    - log_Days_plus1: [0.041, 2.421]
+  Power-law:
+    - sqrt_Days_plus1 (0.5): [1.021, 3.356]
+    - Days_power_0_3: [1.012, 2.068]
+    - Days_power_0_7: [1.029, 5.446]
+    - Days_power_1_5: [1.063, 37.784]
+    - Days_cubed (3.0): [0.00, 1080.05]
+    - inv_Days_plus1: [0.089, 0.960]
+  Piecewise:
+    - breakpoint_day1: [0.000, 9.260]
+  Exponential:
+    - exp_neg_Days: [0.000, 0.959]
+
+Fitting 13 candidate LMM models with REML=False...
+
+Fitting Linear: Linear time trend
+  Formula: HCE_rate ~ Days
+  Random: ~Days
+  Linear converged successfully
+  AIC: -1467.26, BIC: -1443.32, LogLik: 739.63
+
+Fitting Quadratic: Quadratic time trend (Days + Days^2)
+  Formula: HCE_rate ~ Days + Days_squared
+  Random: ~Days
+  Quadratic converged successfully
+  AIC: -1465.54, BIC: -1437.60, LogLik: 739.77
+
+Fitting Logarithmic: Logarithmic time trend (log(Days+1))
+  Formula: HCE_rate ~ log_Days_plus1
+  Random: ~log_Days_plus1
+  Logarithmic converged successfully
+  AIC: -1467.31, BIC: -1443.36, LogLik: 739.66
+
+Fitting SquareRoot: Square root (power 0.5) transformation
+  Formula: HCE_rate ~ sqrt_Days_plus1
+  Random: ~sqrt_Days_plus1
+  SquareRoot converged successfully
+  AIC: -1467.92, BIC: -1443.97, LogLik: 739.96
+
+Fitting Power_0.3: Power 0.3 transformation (shallow curvature)
+  Formula: HCE_rate ~ Days_power_0_3
+  Random: ~Days_power_0_3
+  Power_0.3 did not converge (may still have valid AIC)
+  AIC: -1460.45, BIC: -1436.50, LogLik: 736.23
+
+Fitting Power_0.7: Power 0.7 transformation (moderate curvature)
+  Formula: HCE_rate ~ Days_power_0_7
+  Random: ~Days_power_0_7
+  Power_0.7 converged successfully
+  AIC: -1467.78, BIC: -1443.83, LogLik: 739.89
+
+Fitting Power_1.5: Power 1.5 transformation (accelerating growth)
+  Formula: HCE_rate ~ Days_power_1_5
+  Random: ~Days_power_1_5
+  Power_1.5 did not converge (may still have valid AIC)
+  AIC: -1464.09, BIC: -1440.14, LogLik: 738.05
+
+Fitting Inverse: Inverse/hyperbolic transformation (1/(Days+1))
+  Formula: HCE_rate ~ inv_Days_plus1
+  Random: ~inv_Days_plus1
+  Inverse converged successfully
+  AIC: -1462.67, BIC: -1438.72, LogLik: 737.33
+
+Fitting Cubic: Cubic polynomial (Days + Days^2 + Days^3)
+  Formula: HCE_rate ~ Days + Days_squared + Days_cubed
+  Random: ~Days
+  Cubic converged successfully
+  AIC: -1463.91, BIC: -1431.97, LogLik: 739.95
+
+Fitting ExponentialDecay: Exponential decay (exp(-Days))
+  Formula: HCE_rate ~ exp_neg_Days
+  Random: ~Days
+  ExponentialDecay converged successfully
+  AIC: -1460.03, BIC: -1436.08, LogLik: 736.01
+
+Fitting Piecewise_Day1: Piecewise: flat before Day 1, linear after
+  Formula: HCE_rate ~ breakpoint_day1
+  Random: ~Days
+  Piecewise_Day1 converged successfully
+  AIC: -1467.37, BIC: -1443.42, LogLik: 739.68
+
+Fitting Linear+Log: Linear + Logarithmic (Days + log(Days+1))
+  Formula: HCE_rate ~ Days + log_Days_plus1
+  Random: ~log_Days_plus1
+  Linear+Log converged successfully
+  AIC: -1466.71, BIC: -1438.77, LogLik: 740.35
+
+Fitting Quadratic+Log: Quadratic + Logarithmic (Days + Days^2 + log(Days+1))
+  Formula: HCE_rate ~ Days + Days_squared + log_Days_plus1
+  Random: ~log_Days_plus1
+  Quadratic+Log converged successfully
+  AIC: -1466.14, BIC: -1434.21, LogLik: 741.07
+
+All models fitted
+
+Computing Akaike weights...
+Akaike weights sum: 1.000000 (should be 1.0)
+
+Identifying top 5 models...
+[TOP 5] Ranked by AIC:
+  1. SquareRoot           - AIC=-1467.92, weight=0.1721, ΔAIC=0.00
+  2. Power_0.7            - AIC=-1467.78, weight=0.1605, ΔAIC=0.14
+  3. Piecewise_Day1       - AIC=-1467.37, weight=0.1306, ΔAIC=0.55
+  4. Logarithmic          - AIC=-1467.31, weight=0.1272, ΔAIC=0.60
+  5. Linear               - AIC=-1467.26, weight=0.1242, ΔAIC=0.65
+
+SquareRoot (weight=0.1721, AIC=-1467.92)
+No clear winner for SquareRoot model
+
+Checking for special patterns...
+Power-law < 1.0 model (SquareRoot) wins - diminishing returns pattern
+Competitive models - ΔAIC=0.14 < 2
+
+Saving expanded model comparison results...
+step02b_expanded_model_comparison.csv (13 models)
+step02b_best_model_selection.txt
+
+Checking results...
+All 13 models attempted
+13/13 models have finite AIC values
+Akaike weights sum to 1.0
+Top 5 models ranked
+Best model identified: SquareRoot
+2 special pattern flags documented
+All models fitted with REML=False (required for AIC comparison)
+
+Step 02b complete - all validations passed
+Step 02b: EXPANDED AIC Model Comparison with Power-Law Transformations
+Loading HCE rate data from step01...
+step01_hce_rates.csv (400 rows, 6 cols)
+Data summary: 400 observations from 100 participants
+Creating EXPANDED time transformations from TSVR...
+Created transformations:
+  Basic:
+    - Days: [0.04, 10.26]
+    - Days_squared: [0.00, 105.27]
+    - log_Days_plus1: [0.041, 2.421]
+  Power-law:
+    - sqrt_Days_plus1 (0.5): [1.021, 3.356]
+    - Days_power_0_3: [1.012, 2.068]
+    - Days_power_0_7: [1.029, 5.446]
+    - Days_power_1_5: [1.063, 37.784]
+    - Days_cubed (3.0): [0.00, 1080.05]
+    - inv_Days_plus1: [0.089, 0.960]
+  Piecewise:
+    - breakpoint_day1: [0.000, 9.260]
+  Exponential:
+    - exp_neg_Days: [0.000, 0.959]
+
+Fitting 13 candidate LMM models with REML=False...
+
+Fitting Linear: Linear time trend
+  Formula: HCE_rate ~ Days
+  Random: ~Days
+  Linear converged successfully
+  AIC: -1467.26, BIC: -1443.32, LogLik: 739.63
+
+Fitting Quadratic: Quadratic time trend (Days + Days^2)
+  Formula: HCE_rate ~ Days + Days_squared
+  Random: ~Days
+  Quadratic converged successfully
+  AIC: -1465.54, BIC: -1437.60, LogLik: 739.77
+
+Fitting Logarithmic: Logarithmic time trend (log(Days+1))
+  Formula: HCE_rate ~ log_Days_plus1
+  Random: ~log_Days_plus1
+  Logarithmic converged successfully
+  AIC: -1467.31, BIC: -1443.36, LogLik: 739.66
+
+Fitting SquareRoot: Square root (power 0.5) transformation
+  Formula: HCE_rate ~ sqrt_Days_plus1
+  Random: ~sqrt_Days_plus1
+  SquareRoot converged successfully
+  AIC: -1467.92, BIC: -1443.97, LogLik: 739.96
+
+Fitting Power_0.3: Power 0.3 transformation (shallow curvature)
+  Formula: HCE_rate ~ Days_power_0_3
+  Random: ~Days_power_0_3
+  Power_0.3 did not converge (may still have valid AIC)
+  AIC: -1460.45, BIC: -1436.50, LogLik: 736.23
+
+Fitting Power_0.7: Power 0.7 transformation (moderate curvature)
+  Formula: HCE_rate ~ Days_power_0_7
+  Random: ~Days_power_0_7
+  Power_0.7 converged successfully
+  AIC: -1467.78, BIC: -1443.83, LogLik: 739.89
+
+Fitting Power_1.5: Power 1.5 transformation (accelerating growth)
+  Formula: HCE_rate ~ Days_power_1_5
+  Random: ~Days_power_1_5
+  Power_1.5 did not converge (may still have valid AIC)
+  AIC: -1464.09, BIC: -1440.14, LogLik: 738.05
+
+Fitting Inverse: Inverse/hyperbolic transformation (1/(Days+1))
+  Formula: HCE_rate ~ inv_Days_plus1
+  Random: ~inv_Days_plus1
+  Inverse converged successfully
+  AIC: -1462.67, BIC: -1438.72, LogLik: 737.33
+
+Fitting Cubic: Cubic polynomial (Days + Days^2 + Days^3)
+  Formula: HCE_rate ~ Days + Days_squared + Days_cubed
+  Random: ~Days
+  Cubic converged successfully
+  AIC: -1463.91, BIC: -1431.97, LogLik: 739.95
+
+Fitting ExponentialDecay: Exponential decay (exp(-Days))
+  Formula: HCE_rate ~ exp_neg_Days
+  Random: ~Days
+  ExponentialDecay converged successfully
+  AIC: -1460.03, BIC: -1436.08, LogLik: 736.01
+
+Fitting Piecewise_Day1: Piecewise: flat before Day 1, linear after
+  Formula: HCE_rate ~ breakpoint_day1
+  Random: ~Days
+  Piecewise_Day1 converged successfully
+  AIC: -1467.37, BIC: -1443.42, LogLik: 739.68
+
+Fitting Linear+Log: Linear + Logarithmic (Days + log(Days+1))
+  Formula: HCE_rate ~ Days + log_Days_plus1
+  Random: ~log_Days_plus1
+  Linear+Log converged successfully
+  AIC: -1466.71, BIC: -1438.77, LogLik: 740.35
+
+Fitting Quadratic+Log: Quadratic + Logarithmic (Days + Days^2 + log(Days+1))
+  Formula: HCE_rate ~ Days + Days_squared + log_Days_plus1
+  Random: ~log_Days_plus1
+  Quadratic+Log converged successfully
+  AIC: -1466.14, BIC: -1434.21, LogLik: 741.07
+
+All models fitted
+
+Computing Akaike weights...
+Akaike weights sum: 1.000000 (should be 1.0)
+
+Identifying top 5 models...
+[TOP 5] Ranked by AIC:
+  1. SquareRoot           - AIC=-1467.92, weight=0.1721, ΔAIC=0.00
+  2. Power_0.7            - AIC=-1467.78, weight=0.1605, ΔAIC=0.14
+  3. Piecewise_Day1       - AIC=-1467.37, weight=0.1306, ΔAIC=0.55
+  4. Logarithmic          - AIC=-1467.31, weight=0.1272, ΔAIC=0.60
+  5. Linear               - AIC=-1467.26, weight=0.1242, ΔAIC=0.65
+
+SquareRoot (weight=0.1721, AIC=-1467.92)
+No clear winner for SquareRoot model
+
+Checking for special patterns...
+Power-law < 1.0 model (SquareRoot) wins - diminishing returns pattern
+Competitive models - ΔAIC=0.14 < 2
+
+Saving expanded model comparison results...
+step02b_expanded_model_comparison.csv (13 models)
+step02b_best_model_selection.txt
+
+Checking results...
+All 13 models attempted
+13/13 models have finite AIC values
+Akaike weights sum to 1.0
+Top 5 models ranked
+Best model identified: SquareRoot
+2 special pattern flags documented
+All models fitted with REML=False (required for AIC comparison)
+
+Step 02b complete - all validations passed

@@ -1,0 +1,61 @@
+Step 7: Sensitivity Analyses
+Loading input data...
+step04_correlation_results.csv (2 rows, 8 cols)
+step06_assumption_checks.csv (4 rows, 5 cols)
+Merged dataset (100 participants)
+Running comprehensive sensitivity analyses...
+Original correlation difference: 0.012
+Test 1: Outlier exclusion
+Removed 0 outliers, 100 remain
+[OUTLIER TEST] Difference without outliers: 0.012, p=0.499, robust=True
+Test 2: Spearman rank correlations
+[SPEARMAN TEST] Difference with Spearman: 0.006, p=0.961, robust=True
+Test 3: Cross-validation stability
+[CV FOLD 1] Difference: 0.002
+[CV FOLD 2] Difference: 0.024
+[CV FOLD 3] Difference: 0.004
+[CV FOLD 4] Difference: 0.010
+[CV FOLD 5] Difference: 0.020
+[CV TEST] Mean difference: 0.012, SD: 0.009, stable=True
+Test 4: Bootstrap stability with alternative seed
+[BOOTSTRAP TEST] Alt seed difference: 0.012, CI: [-0.019, 0.043], robust=True
+Sensitivity analyses complete
+Saving sensitivity analysis results...
+step07_sensitivity_analyses.csv (4 rows, 5 cols)
+Running validate_bootstrap_stability...
+validate_bootstrap_stability() got an unexpected keyword argument 'bootstrap_results'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.4.3/code/step07_sensitivity_analyses.py", line 343, in <module>
+    validation_result = validate_bootstrap_stability(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bootstrap_stability() got an unexpected keyword argument 'bootstrap_results'
+Step 7: Sensitivity Analyses
+Loading input data...
+step04_correlation_results.csv (2 rows, 8 cols)
+step06_assumption_checks.csv (4 rows, 5 cols)
+Merged dataset (100 participants)
+Running comprehensive sensitivity analyses...
+Original correlation difference: 0.012
+Test 1: Outlier exclusion
+Removed 0 outliers, 100 remain
+[OUTLIER TEST] Difference without outliers: 0.012, p=0.499, robust=True
+Test 2: Spearman rank correlations
+[SPEARMAN TEST] Difference with Spearman: 0.006, p=0.961, robust=True
+Test 3: Cross-validation stability
+[CV FOLD 1] Difference: 0.002
+[CV FOLD 2] Difference: 0.024
+[CV FOLD 3] Difference: 0.004
+[CV FOLD 4] Difference: 0.010
+[CV FOLD 5] Difference: 0.020
+[CV TEST] Mean difference: 0.012, SD: 0.009, stable=True
+Test 4: Bootstrap stability with alternative seed
+[BOOTSTRAP TEST] Alt seed difference: 0.012, CI: [-0.019, 0.043], robust=True
+Sensitivity analyses complete
+Saving sensitivity analysis results...
+step07_sensitivity_analyses.csv (4 rows, 5 cols)
+Running validate_bootstrap_stability...
+stable: True
+4/4 sensitivity tests show robust results
+Overall robustness: HIGH
+Step 7 complete

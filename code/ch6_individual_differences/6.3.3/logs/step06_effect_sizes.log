@@ -1,0 +1,146 @@
+Step 06: Effect sizes
+Loading model comparison results...
+step04_model_comparison.csv (2 rows, 8 cols)
+Loading analysis dataset for bootstrap...
+step03_analysis_dataset.csv (100 rows, 13 cols)
+Extracting R² values from model comparison...
+[R²] Demographics model: 0.0171
+[R²] Full model: 0.0307
+[R²] Delta R²: 0.0137
+Calculating Cohen's f² effect sizes...
+[EFFECT SIZE] Overall model f²: 0.0317 (small, meaningful)
+[EFFECT SIZE] Incremental cognitive f²: 0.0141 (negligible, minimal)
+Calculating individual predictor effect sizes...
+ravlt_c: f²=0.0085 (negligible, minimal)
+bvmt_c: f²=0.0044 (negligible, minimal)
+rpm_c: f²=0.0014 (negligible, minimal)
+Computing bootstrap confidence intervals...
+Incremental f² 95% CI: [0.0044, 0.1550]
+Bootstrap iterations: 1000
+Conducting relative importance analysis...
+ravlt_c: 0.595 (59.5%)
+bvmt_c: 0.306 (30.6%)
+rpm_c: 0.099 (9.9%)
+Saving effect size results...
+step06_effect_sizes.csv (8 rows, 5 cols)
+Saving bootstrap confidence intervals...
+step06_effect_size_cis.csv (1 rows, 5 cols)
+Running validate_numeric_range...
+validate_numeric_range() got an unexpected keyword argument 'values'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.3/code/step06_effect_sizes.py", line 413, in <module>
+    validation_result = validate_numeric_range(
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_numeric_range() got an unexpected keyword argument 'values'
+Step 06: Effect sizes
+Loading model comparison results...
+step04_model_comparison.csv (2 rows, 8 cols)
+Loading analysis dataset for bootstrap...
+step03_analysis_dataset.csv (100 rows, 13 cols)
+Extracting R² values from model comparison...
+[R²] Demographics model: 0.0171
+[R²] Full model: 0.0307
+[R²] Delta R²: 0.0137
+Calculating Cohen's f² effect sizes...
+[EFFECT SIZE] Overall model f²: 0.0317 (small, meaningful)
+[EFFECT SIZE] Incremental cognitive f²: 0.0141 (negligible, minimal)
+Calculating individual predictor effect sizes...
+ravlt_c: f²=0.0085 (negligible, minimal)
+bvmt_c: f²=0.0044 (negligible, minimal)
+rpm_c: f²=0.0014 (negligible, minimal)
+Computing bootstrap confidence intervals...
+Incremental f² 95% CI: [0.0044, 0.1550]
+Bootstrap iterations: 1000
+Conducting relative importance analysis...
+ravlt_c: 0.595 (59.5%)
+bvmt_c: 0.306 (30.6%)
+rpm_c: 0.099 (9.9%)
+Saving effect size results...
+step06_effect_sizes.csv (8 rows, 5 cols)
+Saving bootstrap confidence intervals...
+step06_effect_size_cis.csv (1 rows, 5 cols)
+Running validate_numeric_range...
+validate_numeric_range() got an unexpected keyword argument 'allow_none'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.3/code/step06_effect_sizes.py", line 413, in <module>
+    validation_result = validate_numeric_range(
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_numeric_range() got an unexpected keyword argument 'allow_none'
+Step 06: Effect sizes
+Loading model comparison results...
+step04_model_comparison.csv (2 rows, 8 cols)
+Loading analysis dataset for bootstrap...
+step03_analysis_dataset.csv (100 rows, 13 cols)
+Extracting R² values from model comparison...
+[R²] Demographics model: 0.0171
+[R²] Full model: 0.0307
+[R²] Delta R²: 0.0137
+Calculating Cohen's f² effect sizes...
+[EFFECT SIZE] Overall model f²: 0.0317 (small, meaningful)
+[EFFECT SIZE] Incremental cognitive f²: 0.0141 (negligible, minimal)
+Calculating individual predictor effect sizes...
+ravlt_c: f²=0.0085 (negligible, minimal)
+bvmt_c: f²=0.0044 (negligible, minimal)
+rpm_c: f²=0.0014 (negligible, minimal)
+Computing bootstrap confidence intervals...
+Incremental f² 95% CI: [0.0044, 0.1550]
+Bootstrap iterations: 1000
+Conducting relative importance analysis...
+ravlt_c: 0.595 (59.5%)
+bvmt_c: 0.306 (30.6%)
+rpm_c: 0.099 (9.9%)
+Saving effect size results...
+step06_effect_sizes.csv (8 rows, 5 cols)
+Saving bootstrap confidence intervals...
+step06_effect_size_cis.csv (1 rows, 5 cols)
+Running validate_numeric_range...
+valid: True
+range: [0, 5]
+n_values: 5
+Effect size interpretation:
+- Overall model: small effect (f²=0.0317)
+- Cognitive contribution: negligible effect (f²=0.0141)
+- Strongest cognitive predictor: ravlt_c (f²=0.0085)
+Step 06 complete
+Step 06: Effect sizes
+Loading model comparison results...
+step04_model_comparison.csv (2 rows, 8 cols)
+Loading analysis dataset for bootstrap...
+step03_analysis_dataset.csv (100 rows, 17 cols)
+Extracting R² values from model comparison...
+[R²] Demographics model: 0.0171
+[R²] Full model: 0.1788
+[R²] Delta R²: 0.1617
+Calculating Cohen's f² effect sizes...
+[EFFECT SIZE] Overall model f²: 0.2177 (medium, substantial)
+[EFFECT SIZE] Incremental cognitive f²: 0.1969 (medium, substantial)
+Calculating individual predictor effect sizes...
+ravlt_c: f²=0.0010 (negligible, minimal)
+bvmt_c: f²=0.0005 (negligible, minimal)
+rpm_c: f²=0.0093 (negligible, minimal)
+ravlt_pct_ret_c: f²=0.0795 (small, meaningful)
+bvmt_pct_ret_c: f²=0.1192 (small, meaningful)
+Computing bootstrap confidence intervals...
+Incremental f² 95% CI: [0.0649, 0.7590]
+Bootstrap iterations: 1000
+Conducting relative importance analysis...
+ravlt_c: 0.005 (0.5%)
+bvmt_c: 0.002 (0.2%)
+rpm_c: 0.044 (4.4%)
+ravlt_pct_ret_c: 0.379 (37.9%)
+bvmt_pct_ret_c: 0.569 (56.9%)
+Saving effect size results...
+step06_effect_sizes.csv (12 rows, 5 cols)
+Saving bootstrap confidence intervals...
+step06_effect_size_cis.csv (1 rows, 5 cols)
+Running validate_numeric_range...
+valid: True
+range: [0, 5]
+n_values: 7
+Effect size interpretation:
+- Overall model: medium effect (f²=0.2177)
+- Cognitive contribution: medium effect (f²=0.1969)
+- Strongest cognitive predictor: bvmt_pct_ret_c (f²=0.1192)
+Step 06 complete

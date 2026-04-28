@@ -1,0 +1,158 @@
+Step 06: Validate Model Assumptions
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 participants)
+Model_1_Total: Total_z
+  Shapiro-Wilk: W=0.9840, p=0.2676
+  Residuals normally distributed (p=0.2676)
+  Breusch-Pagan: LM=0.7857, p=0.3754
+  Homoscedasticity assumption met (p=0.3754)
+  Durbin-Watson: DW=1.7882
+  No autocorrelation (DW=1.7882)
+  N/A (single predictor)
+  Cook's D: max=0.1389, threshold=0.0400
+  4 influential outliers detected (Cook's D > 0.0400)
+Model_2_Learning: Learning_z
+  Shapiro-Wilk: W=0.9762, p=0.0674
+  Residuals normally distributed (p=0.0674)
+  Breusch-Pagan: LM=0.9021, p=0.3422
+  Homoscedasticity assumption met (p=0.3422)
+  Durbin-Watson: DW=1.5535
+  No autocorrelation (DW=1.5535)
+  N/A (single predictor)
+  Cook's D: max=0.1297, threshold=0.0400
+  4 influential outliers detected (Cook's D > 0.0400)
+Model_3_LearningSlope: LearningSlope_z
+  Shapiro-Wilk: W=0.9789, p=0.1086
+  Residuals normally distributed (p=0.1086)
+  Breusch-Pagan: LM=0.3921, p=0.5312
+  Homoscedasticity assumption met (p=0.5312)
+  Durbin-Watson: DW=1.5800
+  No autocorrelation (DW=1.5800)
+  N/A (single predictor)
+  Cook's D: max=0.1003, threshold=0.0400
+  5 influential outliers detected (Cook's D > 0.0400)
+Model_4_Recognition: Recognition_z
+  Shapiro-Wilk: W=0.9804, p=0.1420
+  Residuals normally distributed (p=0.1420)
+  Breusch-Pagan: LM=0.1444, p=0.7040
+  Homoscedasticity assumption met (p=0.7040)
+  Durbin-Watson: DW=1.5411
+  No autocorrelation (DW=1.5411)
+  N/A (single predictor)
+  Cook's D: max=0.1208, threshold=0.0400
+  5 influential outliers detected (Cook's D > 0.0400)
+Model_5_Combined: Total_z, Learning_z
+  Shapiro-Wilk: W=0.9877, p=0.4844
+  Residuals normally distributed (p=0.4844)
+  Breusch-Pagan: LM=2.6317, p=0.2682
+  Homoscedasticity assumption met (p=0.2682)
+  Durbin-Watson: DW=1.7484
+  No autocorrelation (DW=1.7484)
+  Max VIF=1.09
+  No multicollinearity (max VIF=1.09)
+  Cook's D: max=0.0893, threshold=0.0400
+  5 influential outliers detected (Cook's D > 0.0400)
+All assumption tests complete
+Saving assumption test results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step06_assumption_tests.csv (5 models)
+Saving diagnostic data...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step06_diagnostic_data.csv (500 observations)
+No heteroscedasticity detected - robust SE not needed
+Assumption violations:
+  Model_1_Total: 4 outliers
+  Model_2_Learning: 4 outliers
+  Model_3_LearningSlope: 5 outliers
+  Model_4_Recognition: 5 outliers
+  Model_5_Combined: 5 outliers
+5/5 models have assumption violations
+Step 06 complete
+Step 06: Validate Model Assumptions
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 participants)
+Model_1_Total: Total_z
+  Shapiro-Wilk: W=0.9843, p=0.2813
+  Residuals normally distributed (p=0.2813)
+  Breusch-Pagan: LM=0.9335, p=0.3339
+  Homoscedasticity assumption met (p=0.3339)
+  Durbin-Watson: DW=1.6768
+  No autocorrelation (DW=1.6768)
+  N/A (single predictor)
+  Cook's D: max=0.0643, threshold=0.0400
+  4 influential outliers detected (Cook's D > 0.0400)
+Model_2_Learning: Learning_z
+  Shapiro-Wilk: W=0.9778, p=0.0896
+  Residuals normally distributed (p=0.0896)
+  Breusch-Pagan: LM=0.0874, p=0.7675
+  Homoscedasticity assumption met (p=0.7675)
+  Durbin-Watson: DW=1.6501
+  No autocorrelation (DW=1.6501)
+  N/A (single predictor)
+  Cook's D: max=0.1710, threshold=0.0400
+  7 influential outliers detected (Cook's D > 0.0400)
+Model_3_LearningSlope: LearningSlope_z
+  Shapiro-Wilk: W=0.9797, p=0.1271
+  Residuals normally distributed (p=0.1271)
+  Breusch-Pagan: LM=0.3541, p=0.5518
+  Homoscedasticity assumption met (p=0.5518)
+  Durbin-Watson: DW=1.6729
+  No autocorrelation (DW=1.6729)
+  N/A (single predictor)
+  Cook's D: max=0.0808, threshold=0.0400
+  6 influential outliers detected (Cook's D > 0.0400)
+Model_4_Forgetting: Forgetting_z
+  Shapiro-Wilk: W=0.9799, p=0.1312
+  Residuals normally distributed (p=0.1312)
+  Breusch-Pagan: LM=0.0678, p=0.7945
+  Homoscedasticity assumption met (p=0.7945)
+  Durbin-Watson: DW=1.6534
+  No autocorrelation (DW=1.6534)
+  N/A (single predictor)
+  Cook's D: max=0.1706, threshold=0.0400
+  6 influential outliers detected (Cook's D > 0.0400)
+Model_5_Recognition: Recognition_z
+  Shapiro-Wilk: W=0.9804, p=0.1420
+  Residuals normally distributed (p=0.1420)
+  Breusch-Pagan: LM=0.1444, p=0.7040
+  Homoscedasticity assumption met (p=0.7040)
+  Durbin-Watson: DW=1.5411
+  No autocorrelation (DW=1.5411)
+  N/A (single predictor)
+  Cook's D: max=0.1208, threshold=0.0400
+  5 influential outliers detected (Cook's D > 0.0400)
+Model_6_PctRet: PctRet_z
+  Shapiro-Wilk: W=0.9776, p=0.0858
+  Residuals normally distributed (p=0.0858)
+  Breusch-Pagan: LM=0.0610, p=0.8049
+  Homoscedasticity assumption met (p=0.8049)
+  Durbin-Watson: DW=1.6017
+  No autocorrelation (DW=1.6017)
+  N/A (single predictor)
+  Cook's D: max=0.1345, threshold=0.0400
+  6 influential outliers detected (Cook's D > 0.0400)
+Model_7_Combined: Total_z, Learning_z
+  Shapiro-Wilk: W=0.9875, p=0.4718
+  Residuals normally distributed (p=0.4718)
+  Breusch-Pagan: LM=3.8441, p=0.1463
+  Homoscedasticity assumption met (p=0.1463)
+  Durbin-Watson: DW=1.7545
+  No autocorrelation (DW=1.7545)
+  Max VIF=1.01
+  No multicollinearity (max VIF=1.01)
+  Cook's D: max=0.1121, threshold=0.0400
+  7 influential outliers detected (Cook's D > 0.0400)
+All assumption tests complete
+Saving assumption test results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step06_assumption_tests.csv (7 models)
+Saving diagnostic data...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step06_diagnostic_data.csv (700 observations)
+No heteroscedasticity detected - robust SE not needed
+Assumption violations:
+  Model_1_Total: 4 outliers
+  Model_2_Learning: 7 outliers
+  Model_3_LearningSlope: 6 outliers
+  Model_4_Forgetting: 6 outliers
+  Model_5_Recognition: 5 outliers
+  Model_6_PctRet: 6 outliers
+  Model_7_Combined: 7 outliers
+7/7 models have assumption violations
+Step 06 complete

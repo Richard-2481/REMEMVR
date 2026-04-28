@@ -1,0 +1,2 @@
+analysis,controlling_for,zero_order_rho,zero_order_p,partial_rho,partial_ci_lower,partial_ci_upper,t_statistic,df,p_value,interpretation,var_total_pct,var_unique_pct,var_shared_pct,conf_baseline_rho,baseline_slope_rho
+partial_correlation,baseline_accuracy,-0.6347674767476746,1.3232233438248035e-12,-0.2817768497031564,-0.4539408081468364,-0.08933069612054022,-2.892379434869058,97,0.004720262219776616,UNIQUE_PREDICTOR,40.292974953660966,7.93981930286352,32.35315565079745,0.5939873987398739,-0.9528352835283527

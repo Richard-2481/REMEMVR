@@ -1,0 +1,33 @@
+Step 06: Z-Standardize All Measurements
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step03_theta_scores.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step02_ctt_full_scores.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step03_ctt_purified_scores.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step00_tsvr_mapping.csv
+Merging all datasets on composite_ID
+400 rows retained
+Z-standardizing 9 score columns
+  theta_common: mean=-0.005, SD=0.856
+    -> z_theta_common: mean=0.000000, SD=1.000000
+  theta_congruent: mean=0.015, SD=0.875
+    -> z_theta_congruent: mean=0.000000, SD=1.000000
+  theta_incongruent: mean=0.009, SD=0.853
+    -> z_theta_incongruent: mean=0.000000, SD=1.000000
+  ctt_full_common: mean=0.581, SD=0.139
+    -> z_ctt_full_common: mean=-0.000000, SD=1.000000
+  ctt_full_congruent: mean=0.622, SD=0.146
+    -> z_ctt_full_congruent: mean=0.000000, SD=1.000000
+  ctt_full_incongruent: mean=0.548, SD=0.133
+    -> z_ctt_full_incongruent: mean=0.000000, SD=1.000000
+  ctt_purified_common: mean=0.612, SD=0.163
+    -> z_ctt_purified_common: mean=0.000000, SD=1.000000
+  ctt_purified_congruent: mean=0.657, SD=0.170
+    -> z_ctt_purified_congruent: mean=0.000000, SD=1.000000
+  ctt_purified_incongruent: mean=0.583, SD=0.195
+    -> z_ctt_purified_incongruent: mean=-0.000000, SD=1.000000
+All z-scores have mean ~0 and SD ~1 within tolerance
+Checking for NaN values
+No NaN values found
+Checking N = 400
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step06_standardized_scores.csv
+400 rows, 11 columns
+Step 06 complete

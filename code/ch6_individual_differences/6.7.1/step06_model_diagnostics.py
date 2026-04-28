@@ -22,7 +22,7 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 06: Model Diagnostics")
+        log("Step 06: Model Diagnostics")
 
         # Load data
         data_path = RQ_DIR / 'data' / 'step02_standardized_data.csv'
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         diagnostics = []
 
         for outcome in ['RAVLT_T', 'BVMT_T', 'RAVLT_PctRet_T', 'BVMT_PctRet_T']:
-            log(f"[DIAGNOSTIC] Testing {outcome} model...")
+            log(f"Testing {outcome} model...")
 
             X = df[['REMEMVR_T']].values
             y = df[outcome].values
@@ -54,8 +54,8 @@ if __name__ == "__main__":
             outlier_count = np.sum(cooks_d > threshold)
             max_cooks = np.max(cooks_d)
 
-            log(f"  Normality (Shapiro-Wilk): p={shapiro_p:.4f} {'[PASS]' if normality_pass else '[FAIL]'}")
-            log(f"  Homoscedasticity (BP): p={bp_p:.4f} {'[PASS]' if homoscedasticity_pass else '[FAIL]'}")
+            log(f"  Normality (Shapiro-Wilk): p={shapiro_p:.4f} {'' if normality_pass else ''}")
+            log(f"  Homoscedasticity (BP): p={bp_p:.4f} {'' if homoscedasticity_pass else ''}")
             log(f"  Outliers (Cook's D): {outlier_count} exceed threshold {threshold:.4f}, max={max_cooks:.4f}")
 
             # Remedial actions
@@ -81,13 +81,13 @@ if __name__ == "__main__":
         df_diagnostics = pd.DataFrame(diagnostics)
         output_path = RQ_DIR / 'data' / 'step06_model_diagnostics.csv'
         df_diagnostics.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_path}")
+        log(f"{output_path}")
 
-        log("[SUCCESS] Step 06 complete")
+        log("Step 06 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

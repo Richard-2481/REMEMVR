@@ -19,7 +19,6 @@ from pathlib import Path
 import sys
 from scipy import stats
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]  # Go up 4 levels from code file
 sys.path.insert(0, str(PROJECT_ROOT))
 
@@ -32,9 +31,7 @@ except ImportError:
     pass
 
 
-# =============================================================================
 # Configuration
-# =============================================================================
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch7/7.1.3
 LOG_FILE = RQ_DIR / "logs" / "step01_extract_data.log"
 
@@ -48,7 +45,6 @@ LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 OUTPUT_THETA.parent.mkdir(parents=True, exist_ok=True)
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -112,40 +108,32 @@ def compute_ravlt_percent_retention(df, log_fn):
             pct_ret[i] = (dr / denom) * 100
 
     n_valid = np.sum(~np.isnan(pct_ret))
-    log_fn(f"[COMPUTED] RAVLT Percent Retention: {n_valid}/{len(df)} valid, "
+    log_fn(f"RAVLT Percent Retention: {n_valid}/{len(df)} valid, "
            f"M={np.nanmean(pct_ret):.1f}%, SD={np.nanstd(pct_ret):.1f}%")
     return pct_ret
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 01: Extract and Prepare Domain-Specific Data")
-        log(f"[SETUP] RQ Directory: {RQ_DIR}")
-        
-        # =========================================================================
-        # STEP 1: Load Ch5 5.2.1 theta scores
-        # =========================================================================
+        log("Step 01: Extract and Prepare Domain-Specific Data")
+        log(f"RQ Directory: {RQ_DIR}")
+        # Load Ch5 5.2.1 theta scores
         log("\n[STEP 1] Loading Ch5 5.2.1 domain theta scores...")
         
         ch5_theta_file = PROJECT_ROOT / "results" / "ch5" / "5.2.1" / "data" / "step03_theta_scores.csv"
         theta_df = pd.read_csv(ch5_theta_file)
         
-        log(f"[INFO] Loaded theta scores: {theta_df.shape}")
-        log(f"[INFO] Columns: {theta_df.columns.tolist()}")
+        log(f"Loaded theta scores: {theta_df.shape}")
+        log(f"Columns: {theta_df.columns.tolist()}")
         
         # Extract UID from composite_ID (format: UID_test)
         theta_df['UID'] = theta_df['composite_ID'].str.split('_').str[0]
         theta_df['test'] = theta_df['composite_ID'].str.split('_').str[1]
         
-        log(f"[INFO] Unique participants: {theta_df['UID'].nunique()}")
-        log(f"[INFO] Unique tests: {theta_df['test'].unique().tolist()}")
-        
-        # =========================================================================
-        # STEP 2: Aggregate theta scores by UID and domain
-        # =========================================================================
+        log(f"Unique participants: {theta_df['UID'].nunique()}")
+        log(f"Unique tests: {theta_df['test'].unique().tolist()}")
+        # Aggregate theta scores by UID and domain
         log("\n[STEP 2] Aggregating theta scores by UID and domain...")
         
         # Calculate mean theta scores across tests for each domain
@@ -155,7 +143,7 @@ if __name__ == "__main__":
             'theta_when': 'mean'
         }).reset_index()
         
-        log(f"[INFO] Aggregated theta scores: {theta_agg.shape}")
+        log(f"Aggregated theta scores: {theta_agg.shape}")
         
         # Reshape to long format for domain-specific analysis
         theta_long = pd.melt(
@@ -194,25 +182,22 @@ if __name__ == "__main__":
             on=['UID', 'domain']
         )
         
-        log(f"[INFO] Domain theta scores shape: {domain_theta.shape}")
-        log(f"[INFO] Domains: {domain_theta['domain'].unique().tolist()}")
+        log(f"Domain theta scores shape: {domain_theta.shape}")
+        log(f"Domains: {domain_theta['domain'].unique().tolist()}")
         
         # Save domain theta scores
         domain_theta.to_csv(OUTPUT_THETA, index=False)
-        log(f"[OUTPUT] Domain theta scores saved to: {OUTPUT_THETA}")
-        
-        # =========================================================================
-        # STEP 3: Load and prepare cognitive test data (v2 with ceiling fix + percent retention)
-        # =========================================================================
+        log(f"Domain theta scores saved to: {OUTPUT_THETA}")
+        # Load and prepare cognitive test data (v2 with ceiling fix + percent retention)
         log("\n[STEP 3] Loading cognitive test data from dfnonvr.csv...")
 
         dfnonvr_file = PROJECT_ROOT / "data" / "dfnonvr.csv"
         df_cog = pd.read_csv(dfnonvr_file)
 
-        log(f"[INFO] Loaded cognitive data: {df_cog.shape}")
+        log(f"Loaded cognitive data: {df_cog.shape}")
 
         # --- RAVLT ceiling fix BEFORE computing totals ---
-        log("\n[CEILING] Applying RAVLT ceiling fix (0 -> 15 for unadministered trials)...")
+        log("\nApplying RAVLT ceiling fix (0 -> 15 for unadministered trials)...")
         df_cog = fix_ravlt_ceiling(df_cog, log)
 
         # --- RAVLT Total: Sum trials 1-5 (after ceiling fix) ---
@@ -222,7 +207,7 @@ if __name__ == "__main__":
             raise ValueError(f"Missing RAVLT trial columns: {missing_cols}")
 
         df_cog['RAVLT_Total'] = df_cog[ravlt_trials].sum(axis=1)
-        log(f"[SUCCESS] RAVLT Total (ceiling-fixed): "
+        log(f"RAVLT Total (ceiling-fixed): "
             f"M={df_cog['RAVLT_Total'].mean():.1f}, SD={df_cog['RAVLT_Total'].std():.1f}")
 
         # --- RAVLT Percent Retention (new predictor) ---
@@ -235,25 +220,25 @@ if __name__ == "__main__":
             raise ValueError(f"Missing BVMT trial columns: {missing_cols}")
 
         df_cog['BVMT_Total'] = df_cog[bvmt_trial_cols].sum(axis=1)
-        log(f"[SUCCESS] BVMT Total (sum trials 1-3): "
+        log(f"BVMT Total (sum trials 1-3): "
             f"M={df_cog['BVMT_Total'].mean():.1f}, SD={df_cog['BVMT_Total'].std():.1f}")
 
         # --- BVMT Percent Retained (new predictor, pre-computed in CSV) ---
         if 'bvmt-percent-retained' not in df_cog.columns:
             raise ValueError("Column 'bvmt-percent-retained' not found in dfnonvr.csv")
         df_cog['BVMT_Pct_Ret'] = df_cog['bvmt-percent-retained']
-        log(f"[SUCCESS] BVMT Percent Retained: "
+        log(f"BVMT Percent Retained: "
             f"M={df_cog['BVMT_Pct_Ret'].mean():.1f}%, SD={df_cog['BVMT_Pct_Ret'].std():.1f}%")
 
         # --- RPM ---
         if 'rpm-score' in df_cog.columns:
             df_cog['RPM_Total'] = df_cog['rpm-score']
-            log(f"[SUCCESS] RPM score extracted")
+            log(f"RPM score extracted")
         else:
             raise ValueError("RPM score column not found")
 
         # --- Convert ALL scores to T-scores ---
-        log("\n[PROCESS] Converting raw scores to T-scores (M=50, SD=10)...")
+        log("\nConverting raw scores to T-scores (M=50, SD=10)...")
 
         raw_to_t = {
             'RAVLT_Total': 'RAVLT_T',
@@ -275,12 +260,9 @@ if __name__ == "__main__":
 
         cognitive_df = df_cog[existing_cols].copy()
 
-        log(f"[INFO] Cognitive test data shape: {cognitive_df.shape}")
-        log(f"[INFO] Available columns: {cognitive_df.columns.tolist()}")
-        
-        # =========================================================================
-        # STEP 4: Merge domain theta with cognitive tests
-        # =========================================================================
+        log(f"Cognitive test data shape: {cognitive_df.shape}")
+        log(f"Available columns: {cognitive_df.columns.tolist()}")
+        # Merge domain theta with cognitive tests
         log("\n[STEP 4] Merging domain theta scores with cognitive tests...")
         
         # Ensure UID is string in both dataframes
@@ -295,26 +277,23 @@ if __name__ == "__main__":
             how='inner'
         )
         
-        log(f"[INFO] Merged dataset shape: {merged_df.shape}")
-        log(f"[INFO] Unique participants: {merged_df['UID'].nunique()}")
-        log(f"[INFO] Domains: {merged_df['domain'].value_counts().to_dict()}")
+        log(f"Merged dataset shape: {merged_df.shape}")
+        log(f"Unique participants: {merged_df['UID'].nunique()}")
+        log(f"Domains: {merged_df['domain'].value_counts().to_dict()}")
         
         # Check for missing values
         missing_counts = merged_df.isnull().sum()
         if missing_counts.any():
-            log(f"[WARNING] Missing values detected:")
+            log(f"Missing values detected:")
             for col, count in missing_counts[missing_counts > 0].items():
                 log(f"  - {col}: {count} missing")
         else:
-            log(f"[INFO] No missing values in merged dataset")
+            log(f"No missing values in merged dataset")
             
         # Save merged dataset
         merged_df.to_csv(OUTPUT_MERGED, index=False)
-        log(f"[OUTPUT] Merged dataset saved to: {OUTPUT_MERGED}")
-        
-        # =========================================================================
-        # STEP 5: Calculate descriptive statistics by domain
-        # =========================================================================
+        log(f"Merged dataset saved to: {OUTPUT_MERGED}")
+        # Calculate descriptive statistics by domain
         log("\n[STEP 5] Calculating descriptive statistics...")
         
         stats_list = []
@@ -334,14 +313,14 @@ if __name__ == "__main__":
             }
             
             stats_list.append(stats_dict)
-            log(f"[INFO] {domain}: n={stats_dict['n']}, mean={stats_dict['theta_mean']:.3f}, sd={stats_dict['theta_sd']:.3f}")
+            log(f"{domain}: n={stats_dict['n']}, mean={stats_dict['theta_mean']:.3f}, sd={stats_dict['theta_sd']:.3f}")
             
         stats_df = pd.DataFrame(stats_list)
         stats_df.to_csv(OUTPUT_STATS, index=False)
-        log(f"[OUTPUT] Descriptive statistics saved to: {OUTPUT_STATS}")
+        log(f"Descriptive statistics saved to: {OUTPUT_STATS}")
         
         # Check for outliers using IQR method
-        log("\n[INFO] Checking for outliers (IQR method)...")
+        log("\nChecking for outliers (IQR method)...")
         for domain in ['What', 'Where', 'When']:
             domain_data = merged_df[merged_df['domain'] == domain]['theta_mean']
             Q1 = domain_data.quantile(0.25)
@@ -352,15 +331,15 @@ if __name__ == "__main__":
             
             outliers = domain_data[(domain_data < lower_bound) | (domain_data > upper_bound)]
             if len(outliers) > 0:
-                log(f"[WARNING] {domain}: {len(outliers)} outliers detected (bounds: [{lower_bound:.3f}, {upper_bound:.3f}])")
+                log(f"{domain}: {len(outliers)} outliers detected (bounds: [{lower_bound:.3f}, {upper_bound:.3f}])")
             else:
-                log(f"[INFO] {domain}: No outliers detected")
+                log(f"{domain}: No outliers detected")
                 
-        log("\n[COMPLETE] Step 01 completed successfully")
-        log(f"[SUMMARY] Created {len(merged_df)} records (100 participants × 3 domains)")
+        log("\nStep 01 completed successfully")
+        log(f"Created {len(merged_df)} records (100 participants × 3 domains)")
         
     except Exception as e:
         log(f"[CRITICAL ERROR] Unexpected error: {e}")
         import traceback
-        log(f"[TRACEBACK] {traceback.format_exc()}")
+        log(f"{traceback.format_exc()}")
         sys.exit(1)

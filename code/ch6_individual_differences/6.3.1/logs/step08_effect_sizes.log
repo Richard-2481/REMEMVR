@@ -1,0 +1,80 @@
+Step 08: Effect Size Analysis
+Purpose: Compute comprehensive effect size measures
+Loading analysis dataset...
+Dataset: 100 rows
+Loading hierarchical regression results...
+Hierarchical models: 2 models
+Loading individual predictor results...
+Individual predictors: 6 predictors
+Calculating primary effect sizes...
+Overall model R² = 0.1875
+Overall model f² = 0.2308
+Demographics R² = 0.0203
+Incremental R² = 0.1673
+Incremental f² = 0.2059
+Running 1000 bootstrap iterations...
+Progress: 0/1000 iterations
+Progress: 200/1000 iterations
+Progress: 400/1000 iterations
+Progress: 600/1000 iterations
+Progress: 800/1000 iterations
+Complete - calculating confidence intervals...
+[CI] R² 95% CI: [0.1181, 0.3857]
+[CI] f² 95% CI: [0.1339, 0.6278]
+RAVLT_T: sr²=0.0024, f²=0.0030, CI=[0.0000, 0.0573]
+BVMT_T: sr²=0.0479, f²=0.0589, CI=[0.0061, 0.1400]
+RPM_T: sr²=0.0424, f²=0.0521, CI=[0.0006, 0.1437]
+Effect size interpretation (Cohen's conventions):
+  f² < 0.02: negligible
+  f² 0.02-0.15: small
+  f² 0.15-0.35: medium
+  f² > 0.35: large
+RAVLT_T: f²=0.0030 (negligible)
+BVMT_T: f²=0.0589 (small)
+RPM_T: f²=0.0521 (small)
+Effect sizes: /home/etai/projects/REMEMVR/results/ch7/7.3.1/data/step08_effect_sizes.csv
+Checking effect size validity...
+PASS: Sum of sr² (0.0926) ≤ total R² (0.1875)
+Step 08 complete
+Step 08: Effect Size Analysis
+Purpose: Compute comprehensive effect size measures
+Loading analysis dataset...
+Dataset: 100 rows
+Loading hierarchical regression results...
+Hierarchical models: 2 models
+Loading individual predictor results...
+Individual predictors: 8 predictors
+Calculating primary effect sizes...
+Overall model R² = 0.2205
+Overall model f² = 0.2828
+Demographics R² = 0.0203
+Incremental R² = 0.2002
+Incremental f² = 0.2568
+Running 1000 bootstrap iterations...
+Progress: 0/1000 iterations
+Progress: 200/1000 iterations
+Progress: 400/1000 iterations
+Progress: 600/1000 iterations
+Progress: 800/1000 iterations
+Complete - calculating confidence intervals...
+[CI] R² 95% CI: [0.1510, 0.4295]
+[CI] f² 95% CI: [0.1779, 0.7527]
+RAVLT_T: sr²=0.0008, f²=0.0010, CI=[0.0000, 0.0440]
+BVMT_T: sr²=0.0367, f²=0.0471, CI=[0.0019, 0.1128]
+RPM_T: sr²=0.0264, f²=0.0338, CI=[0.0001, 0.1219]
+RAVLT_Pct_Ret_T: sr²=0.0317, f²=0.0406, CI=[0.0003, 0.1042]
+BVMT_Pct_Ret_T: sr²=0.0016, f²=0.0020, CI=[0.0000, 0.0282]
+Effect size interpretation (Cohen's conventions):
+  f² < 0.02: negligible
+  f² 0.02-0.15: small
+  f² 0.15-0.35: medium
+  f² > 0.35: large
+RAVLT_T: f²=0.0010 (negligible)
+BVMT_T: f²=0.0471 (small)
+RPM_T: f²=0.0338 (small)
+RAVLT_Pct_Ret_T: f²=0.0406 (small)
+BVMT_Pct_Ret_T: f²=0.0020 (negligible)
+Effect sizes: /home/etai/projects/REMEMVR/results/ch7/7.3.1/data/step08_effect_sizes.csv
+Checking effect size validity...
+PASS: Sum of sr² (0.0971) ≤ total R² (0.2205)
+Step 08 complete

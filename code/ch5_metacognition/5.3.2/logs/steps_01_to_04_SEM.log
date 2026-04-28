@@ -1,0 +1,513 @@
+[2026-01-17 14:16:13] ======================================================================
+[2026-01-17 14:16:13] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:16:13] ======================================================================
+[2026-01-17 14:16:13] Started: 2026-01-17 14:16:13.795629
+[2026-01-17 14:16:13] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:16:13] ERROR: name 'step00_load_merge_data' is not defined
+[2026-01-17 14:16:13] Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 629, in main
+    df_calibration = step00_load_merge_data()
+                     ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'step00_load_merge_data' is not defined
+
+[2026-01-17 14:22:03] ======================================================================
+[2026-01-17 14:22:03] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:22:03] ======================================================================
+[2026-01-17 14:22:03] Started: 2026-01-17 14:22:03.803610
+[2026-01-17 14:22:03] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:22:03] ======================================================================
+[2026-01-17 14:22:03] STEP 00: Load SEM Latent Calibration Data
+[2026-01-17 14:22:03] ======================================================================
+[2026-01-17 14:22:03] ERROR: name 'ACCURACY_FILE' is not defined
+[2026-01-17 14:22:03] Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 629, in main
+    df_calibration = step00_load_sem_calibration()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 78, in step00_load_sem_calibration
+    log(f"Loading accuracy data from: {ACCURACY_FILE}")
+                                       ^^^^^^^^^^^^^
+NameError: name 'ACCURACY_FILE' is not defined
+
+[2026-01-17 14:23:08] ======================================================================
+[2026-01-17 14:23:08] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:23:08] ======================================================================
+[2026-01-17 14:23:08] Started: 2026-01-17 14:23:08.450050
+[2026-01-17 14:23:08] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:23:08] ======================================================================
+[2026-01-17 14:23:08] STEP 00: Load SEM Latent Calibration Data
+[2026-01-17 14:23:08] ======================================================================
+[2026-01-17 14:23:08] Loading SEM calibration from: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_calibration_scores_SEM.csv
+[2026-01-17 14:23:08]   Loaded: 1200 rows
+[2026-01-17 14:23:08]   Columns: ['UID', 'TEST', 'Domain', 'TSVR_hours', 'theta_accuracy', 'theta_confidence', 'theta_accuracy_z', 'theta_confidence_z', 'latent_calibration']
+[2026-01-17 14:23:08]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:23:08]   UIDs: 100
+[2026-01-17 14:23:08]   Latent calibration mean: -0.0000
+[2026-01-17 14:23:08]   Latent calibration std: 0.5388
+[2026-01-17 14:23:08] ======================================================================
+[2026-01-17 14:23:08] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:23:08] ======================================================================
+[2026-01-17 14:23:08] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:23:08] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:23:08]   WARNING: Random slope model failed (Error evaluating factor: NameError: name 'calibrat), trying intercept-only...
+[2026-01-17 14:23:08] ERROR: Error evaluating factor: NameError: name 'calibration' is not defined
+    calibration ~ C(Domain) * TSVR_centered
+    ^^^^^^^^^^^
+[2026-01-17 14:23:25] ======================================================================
+[2026-01-17 14:23:25] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:23:25] ======================================================================
+[2026-01-17 14:23:25] Started: 2026-01-17 14:23:25.775022
+[2026-01-17 14:23:25] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:23:25] ======================================================================
+[2026-01-17 14:23:25] STEP 00: Load SEM Latent Calibration Data
+[2026-01-17 14:23:25] ======================================================================
+[2026-01-17 14:23:25] Loading SEM calibration from: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_calibration_scores_SEM.csv
+[2026-01-17 14:23:25]   Loaded: 1200 rows
+[2026-01-17 14:23:25]   Columns: ['UID', 'TEST', 'Domain', 'TSVR_hours', 'theta_accuracy', 'theta_confidence', 'theta_accuracy_z', 'theta_confidence_z', 'latent_calibration']
+[2026-01-17 14:23:25]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:23:25]   UIDs: 100
+[2026-01-17 14:23:25]   Latent calibration mean: -0.0000
+[2026-01-17 14:23:25]   Latent calibration std: 0.5388
+[2026-01-17 14:23:25] ======================================================================
+[2026-01-17 14:23:25] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:23:25] ======================================================================
+[2026-01-17 14:23:25] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:23:25] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:23:26]   Model with random slopes converged successfully
+[2026-01-17 14:23:26] Extracting fixed effects...
+[2026-01-17 14:23:26] 
+Fixed Effects:
+[2026-01-17 14:23:26]   Intercept: β=0.0107, SE=0.0430, z=0.25, p=0.8043
+[2026-01-17 14:23:26]   C(Domain)[T.Where]: β=-0.0385, SE=0.0234, z=-1.65, p=0.0992
+[2026-01-17 14:23:26]   C(Domain)[T.When]: β=0.0035, SE=0.0234, z=0.15, p=0.8806
+[2026-01-17 14:23:26]   TSVR_centered: β=-0.0005, SE=0.0004, z=-1.35, p=0.1758
+[2026-01-17 14:23:26]   C(Domain)[T.Where]:TSVR_centered: β=0.0003, SE=0.0004, z=0.70, p=0.4844
+[2026-01-17 14:23:26]   C(Domain)[T.When]:TSVR_centered: β=-0.0027, SE=0.0004, z=-6.70, p=0.0000
+[2026-01-17 14:23:26] 
+Testing Domain main effect (LRT)...
+[2026-01-17 14:23:26]   WARNING: LRT for Domain failed: Error evaluating factor: NameError: name 'calibrat
+[2026-01-17 14:23:26] 
+Testing Domain × Time interaction (LRT)...
+[2026-01-17 14:23:26]   Domain × Time interaction: χ²(2)=64.56, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:23:26] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2026-01-17 14:23:26] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:23:26] ======================================================================
+[2026-01-17 14:23:26] STEP 02: Post-Hoc Domain Contrasts
+[2026-01-17 14:23:26] ======================================================================
+[2026-01-17 14:23:26] ERROR: 'Column not found: calibration'
+[2026-01-17 14:23:26] Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 666, in main
+    df_contrasts = step02_post_hoc_contrasts(df_calibration)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 491, in step02_post_hoc_contrasts
+    domain_stats = df.groupby('Domain')['calibration'].agg(['mean', 'std', 'count']).reset_index()
+                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/groupby/generic.py", line 1951, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/base.py", line 245, in __getitem__
+    raise KeyError(f"Column not found: {key}")
+KeyError: 'Column not found: calibration'
+
+[2026-01-17 14:23:46] ======================================================================
+[2026-01-17 14:23:46] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:23:46] ======================================================================
+[2026-01-17 14:23:46] Started: 2026-01-17 14:23:46.447069
+[2026-01-17 14:23:46] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:23:46] ======================================================================
+[2026-01-17 14:23:46] STEP 00: Load SEM Latent Calibration Data
+[2026-01-17 14:23:46] ======================================================================
+[2026-01-17 14:23:46] Loading SEM calibration from: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_calibration_scores_SEM.csv
+[2026-01-17 14:23:46]   Loaded: 1200 rows
+[2026-01-17 14:23:46]   Columns: ['UID', 'TEST', 'Domain', 'TSVR_hours', 'theta_accuracy', 'theta_confidence', 'theta_accuracy_z', 'theta_confidence_z', 'latent_calibration']
+[2026-01-17 14:23:46]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:23:46]   UIDs: 100
+[2026-01-17 14:23:46]   Latent calibration mean: -0.0000
+[2026-01-17 14:23:46]   Latent calibration std: 0.5388
+[2026-01-17 14:23:46] ======================================================================
+[2026-01-17 14:23:46] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:23:46] ======================================================================
+[2026-01-17 14:23:46] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:23:46] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:23:46]   Model with random slopes converged successfully
+[2026-01-17 14:23:46] Extracting fixed effects...
+[2026-01-17 14:23:46] 
+Fixed Effects:
+[2026-01-17 14:23:46]   Intercept: β=0.0107, SE=0.0430, z=0.25, p=0.8043
+[2026-01-17 14:23:46]   C(Domain)[T.Where]: β=-0.0385, SE=0.0234, z=-1.65, p=0.0992
+[2026-01-17 14:23:46]   C(Domain)[T.When]: β=0.0035, SE=0.0234, z=0.15, p=0.8806
+[2026-01-17 14:23:46]   TSVR_centered: β=-0.0005, SE=0.0004, z=-1.35, p=0.1758
+[2026-01-17 14:23:46]   C(Domain)[T.Where]:TSVR_centered: β=0.0003, SE=0.0004, z=0.70, p=0.4844
+[2026-01-17 14:23:46]   C(Domain)[T.When]:TSVR_centered: β=-0.0027, SE=0.0004, z=-6.70, p=0.0000
+[2026-01-17 14:23:46] 
+Testing Domain main effect (LRT)...
+[2026-01-17 14:23:46]   WARNING: LRT for Domain failed: Error evaluating factor: NameError: name 'calibrat
+[2026-01-17 14:23:46] 
+Testing Domain × Time interaction (LRT)...
+[2026-01-17 14:23:47]   Domain × Time interaction: χ²(2)=64.56, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:23:47] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2026-01-17 14:23:47] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:23:47] ======================================================================
+[2026-01-17 14:23:47] STEP 02: Post-Hoc Domain Contrasts
+[2026-01-17 14:23:47] ======================================================================
+[2026-01-17 14:23:47] Domain-level calibration statistics:
+[2026-01-17 14:23:47]   What: mean=0.0117, SD=0.5217, N=400
+[2026-01-17 14:23:47]   When: mean=0.0152, SD=0.5777, N=400
+[2026-01-17 14:23:47]   Where: mean=-0.0269, SD=0.5150, N=400
+[2026-01-17 14:23:47]   What vs Where: Δ=0.0385, z=1.05, p_uncorr=0.2932, p_bonf=0.8795, d=0.074
+[2026-01-17 14:23:47]   What vs When: Δ=-0.0035, z=-0.09, p_uncorr=0.9282, p_bonf=1.0000, d=-0.006
+[2026-01-17 14:23:47]   Where vs When: Δ=-0.0420, z=-1.09, p_uncorr=0.2773, p_bonf=0.8320, d=-0.077
+[2026-01-17 14:23:47] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:23:47] ======================================================================
+[2026-01-17 14:23:47] STEP 03: Rank Domains by Calibration Quality
+[2026-01-17 14:23:47] ======================================================================
+[2026-01-17 14:23:47] ERROR: 'Column not found: abs_calibration'
+[2026-01-17 14:23:47] Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 669, in main
+    df_ranking = step03_rank_domains(df_calibration)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 569, in step03_rank_domains
+    domain_ranking = df.groupby('Domain')['abs_calibration'].agg(['mean', 'std', 'count']).reset_index()
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/groupby/generic.py", line 1951, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/base.py", line 245, in __getitem__
+    raise KeyError(f"Column not found: {key}")
+KeyError: 'Column not found: abs_calibration'
+
+[2026-01-17 14:24:08] ======================================================================
+[2026-01-17 14:24:08] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:24:08] ======================================================================
+[2026-01-17 14:24:08] Started: 2026-01-17 14:24:08.718025
+[2026-01-17 14:24:08] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:24:08] ======================================================================
+[2026-01-17 14:24:08] STEP 00: Load SEM Latent Calibration Data
+[2026-01-17 14:24:08] ======================================================================
+[2026-01-17 14:24:08] Loading SEM calibration from: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_calibration_scores_SEM.csv
+[2026-01-17 14:24:08]   Loaded: 1200 rows
+[2026-01-17 14:24:08]   Columns: ['UID', 'TEST', 'Domain', 'TSVR_hours', 'theta_accuracy', 'theta_confidence', 'theta_accuracy_z', 'theta_confidence_z', 'latent_calibration']
+[2026-01-17 14:24:08]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:24:08]   UIDs: 100
+[2026-01-17 14:24:08]   Latent calibration mean: -0.0000
+[2026-01-17 14:24:08]   Latent calibration std: 0.5388
+[2026-01-17 14:24:08]   Mean |calibration|: 0.4087
+[2026-01-17 14:24:08] ======================================================================
+[2026-01-17 14:24:08] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:24:08] ======================================================================
+[2026-01-17 14:24:08] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:24:08] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:24:09]   Model with random slopes converged successfully
+[2026-01-17 14:24:09] Extracting fixed effects...
+[2026-01-17 14:24:09] 
+Fixed Effects:
+[2026-01-17 14:24:09]   Intercept: β=0.0107, SE=0.0430, z=0.25, p=0.8043
+[2026-01-17 14:24:09]   C(Domain)[T.Where]: β=-0.0385, SE=0.0234, z=-1.65, p=0.0992
+[2026-01-17 14:24:09]   C(Domain)[T.When]: β=0.0035, SE=0.0234, z=0.15, p=0.8806
+[2026-01-17 14:24:09]   TSVR_centered: β=-0.0005, SE=0.0004, z=-1.35, p=0.1758
+[2026-01-17 14:24:09]   C(Domain)[T.Where]:TSVR_centered: β=0.0003, SE=0.0004, z=0.70, p=0.4844
+[2026-01-17 14:24:09]   C(Domain)[T.When]:TSVR_centered: β=-0.0027, SE=0.0004, z=-6.70, p=0.0000
+[2026-01-17 14:24:09] 
+Testing Domain main effect (LRT)...
+[2026-01-17 14:24:09]   WARNING: LRT for Domain failed: Error evaluating factor: NameError: name 'calibrat
+[2026-01-17 14:24:09] 
+Testing Domain × Time interaction (LRT)...
+[2026-01-17 14:24:09]   Domain × Time interaction: χ²(2)=64.56, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:24:09] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2026-01-17 14:24:09] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:24:09] ======================================================================
+[2026-01-17 14:24:09] STEP 02: Post-Hoc Domain Contrasts
+[2026-01-17 14:24:09] ======================================================================
+[2026-01-17 14:24:09] Domain-level calibration statistics:
+[2026-01-17 14:24:09]   What: mean=0.0117, SD=0.5217, N=400
+[2026-01-17 14:24:09]   When: mean=0.0152, SD=0.5777, N=400
+[2026-01-17 14:24:09]   Where: mean=-0.0269, SD=0.5150, N=400
+[2026-01-17 14:24:09]   What vs Where: Δ=0.0385, z=1.05, p_uncorr=0.2932, p_bonf=0.8795, d=0.074
+[2026-01-17 14:24:09]   What vs When: Δ=-0.0035, z=-0.09, p_uncorr=0.9282, p_bonf=1.0000, d=-0.006
+[2026-01-17 14:24:09]   Where vs When: Δ=-0.0420, z=-1.09, p_uncorr=0.2773, p_bonf=0.8320, d=-0.077
+[2026-01-17 14:24:09] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:24:09] ======================================================================
+[2026-01-17 14:24:09] STEP 03: Rank Domains by Calibration Quality
+[2026-01-17 14:24:09] ======================================================================
+[2026-01-17 14:24:09] Domain ranking by calibration quality:
+[2026-01-17 14:24:09]   Rank 1: Where - mean |calibration|=0.3769 (Best calibrated)
+[2026-01-17 14:24:09]   Rank 2: What - mean |calibration|=0.3826 (Middle)
+[2026-01-17 14:24:09]   Rank 3: When - mean |calibration|=0.4667 (Worst calibrated)
+[2026-01-17 14:24:09] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step03_domain_ranking.csv
+[2026-01-17 14:24:09] ======================================================================
+[2026-01-17 14:24:09] STEP 04: Prepare Calibration Trajectory Plot Data
+[2026-01-17 14:24:09] ======================================================================
+[2026-01-17 14:24:09] ERROR: 'TEST'
+[2026-01-17 14:24:09] Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 676, in main
+    df_plot_data = step04_prepare_plot_data(df_calibration)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 616, in step04_prepare_plot_data
+    plot_data = df.groupby(['Domain', 'TEST']).agg({
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 9210, in groupby
+    return DataFrameGroupBy(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/groupby/groupby.py", line 1331, in __init__
+    grouper, exclusions, obj = get_grouper(
+                               ^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/groupby/grouper.py", line 1043, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'TEST'
+
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] Started: 2026-01-17 14:24:32.417406
+[2026-01-17 14:24:32] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] STEP 00: Load SEM Latent Calibration Data
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] Loading SEM calibration from: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_calibration_scores_SEM.csv
+[2026-01-17 14:24:32]   Loaded: 1200 rows
+[2026-01-17 14:24:32]   Columns: ['UID', 'TEST', 'Domain', 'TSVR_hours', 'theta_accuracy', 'theta_confidence', 'theta_accuracy_z', 'theta_confidence_z', 'latent_calibration']
+[2026-01-17 14:24:32]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:24:32]   UIDs: 100
+[2026-01-17 14:24:32]   Latent calibration mean: -0.0000
+[2026-01-17 14:24:32]   Latent calibration std: 0.5388
+[2026-01-17 14:24:32]   Mean |calibration|: 0.4087
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:24:32] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:24:32]   Model with random slopes converged successfully
+[2026-01-17 14:24:32] Extracting fixed effects...
+[2026-01-17 14:24:32] 
+Fixed Effects:
+[2026-01-17 14:24:32]   Intercept: β=0.0107, SE=0.0430, z=0.25, p=0.8043
+[2026-01-17 14:24:32]   C(Domain)[T.Where]: β=-0.0385, SE=0.0234, z=-1.65, p=0.0992
+[2026-01-17 14:24:32]   C(Domain)[T.When]: β=0.0035, SE=0.0234, z=0.15, p=0.8806
+[2026-01-17 14:24:32]   TSVR_centered: β=-0.0005, SE=0.0004, z=-1.35, p=0.1758
+[2026-01-17 14:24:32]   C(Domain)[T.Where]:TSVR_centered: β=0.0003, SE=0.0004, z=0.70, p=0.4844
+[2026-01-17 14:24:32]   C(Domain)[T.When]:TSVR_centered: β=-0.0027, SE=0.0004, z=-6.70, p=0.0000
+[2026-01-17 14:24:32] 
+Testing Domain main effect (LRT)...
+[2026-01-17 14:24:32]   WARNING: LRT for Domain failed: Error evaluating factor: NameError: name 'calibrat
+[2026-01-17 14:24:32] 
+Testing Domain × Time interaction (LRT)...
+[2026-01-17 14:24:32]   Domain × Time interaction: χ²(2)=64.56, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:24:32] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2026-01-17 14:24:32] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] STEP 02: Post-Hoc Domain Contrasts
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] Domain-level calibration statistics:
+[2026-01-17 14:24:32]   What: mean=0.0117, SD=0.5217, N=400
+[2026-01-17 14:24:32]   When: mean=0.0152, SD=0.5777, N=400
+[2026-01-17 14:24:32]   Where: mean=-0.0269, SD=0.5150, N=400
+[2026-01-17 14:24:32]   What vs Where: Δ=0.0385, z=1.05, p_uncorr=0.2932, p_bonf=0.8795, d=0.074
+[2026-01-17 14:24:32]   What vs When: Δ=-0.0035, z=-0.09, p_uncorr=0.9282, p_bonf=1.0000, d=-0.006
+[2026-01-17 14:24:32]   Where vs When: Δ=-0.0420, z=-1.09, p_uncorr=0.2773, p_bonf=0.8320, d=-0.077
+[2026-01-17 14:24:32] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] STEP 03: Rank Domains by Calibration Quality
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] Domain ranking by calibration quality:
+[2026-01-17 14:24:32]   Rank 1: Where - mean |calibration|=0.3769 (Best calibrated)
+[2026-01-17 14:24:32]   Rank 2: What - mean |calibration|=0.3826 (Middle)
+[2026-01-17 14:24:32]   Rank 3: When - mean |calibration|=0.4667 (Worst calibrated)
+[2026-01-17 14:24:32] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step03_domain_ranking.csv
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] STEP 04: Prepare Calibration Trajectory Plot Data
+[2026-01-17 14:24:32] ======================================================================
+[2026-01-17 14:24:32] Plot data summary:
+[2026-01-17 14:24:32]   Rows: 12
+[2026-01-17 14:24:32]   Domains: ['What', 'When', 'Where']
+[2026-01-17 14:24:32]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:24:33] ERROR: 'TEST'
+[2026-01-17 14:24:33] Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'TEST'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 676, in main
+    df_plot_data = step04_prepare_plot_data(df_calibration)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.2/code/steps_01_to_04_SEM.py", line 641, in step04_prepare_plot_data
+    t1_cal = domain_data[domain_data['TEST'] == 'T1']['mean_calibration'].values[0]
+                         ~~~~~~~~~~~^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'TEST'
+
+[2026-01-17 14:24:55] ======================================================================
+[2026-01-17 14:24:55] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:24:55] ======================================================================
+[2026-01-17 14:24:55] Started: 2026-01-17 14:24:55.587348
+[2026-01-17 14:24:55] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:24:55] ======================================================================
+[2026-01-17 14:24:55] STEP 00: Load SEM Latent Calibration Data
+[2026-01-17 14:24:55] ======================================================================
+[2026-01-17 14:24:55] Loading SEM calibration from: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_calibration_scores_SEM.csv
+[2026-01-17 14:24:55]   Loaded: 1200 rows
+[2026-01-17 14:24:55]   Columns: ['UID', 'TEST', 'Domain', 'TSVR_hours', 'theta_accuracy', 'theta_confidence', 'theta_accuracy_z', 'theta_confidence_z', 'latent_calibration']
+[2026-01-17 14:24:55]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:24:55]   UIDs: 100
+[2026-01-17 14:24:55]   Latent calibration mean: -0.0000
+[2026-01-17 14:24:55]   Latent calibration std: 0.5388
+[2026-01-17 14:24:55]   Mean |calibration|: 0.4087
+[2026-01-17 14:24:55] ======================================================================
+[2026-01-17 14:24:55] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:24:55] ======================================================================
+[2026-01-17 14:24:55] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:24:55] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:24:55]   Model with random slopes converged successfully
+[2026-01-17 14:24:55] Extracting fixed effects...
+[2026-01-17 14:24:55] 
+Fixed Effects:
+[2026-01-17 14:24:55]   Intercept: β=0.0107, SE=0.0430, z=0.25, p=0.8043
+[2026-01-17 14:24:55]   C(Domain)[T.Where]: β=-0.0385, SE=0.0234, z=-1.65, p=0.0992
+[2026-01-17 14:24:55]   C(Domain)[T.When]: β=0.0035, SE=0.0234, z=0.15, p=0.8806
+[2026-01-17 14:24:55]   TSVR_centered: β=-0.0005, SE=0.0004, z=-1.35, p=0.1758
+[2026-01-17 14:24:55]   C(Domain)[T.Where]:TSVR_centered: β=0.0003, SE=0.0004, z=0.70, p=0.4844
+[2026-01-17 14:24:55]   C(Domain)[T.When]:TSVR_centered: β=-0.0027, SE=0.0004, z=-6.70, p=0.0000
+[2026-01-17 14:24:55] 
+Testing Domain main effect (LRT)...
+[2026-01-17 14:24:55]   WARNING: LRT for Domain failed: Error evaluating factor: NameError: name 'calibrat
+[2026-01-17 14:24:55] 
+Testing Domain × Time interaction (LRT)...
+[2026-01-17 14:24:56]   Domain × Time interaction: χ²(2)=64.56, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:24:56] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2026-01-17 14:24:56] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:24:56] ======================================================================
+[2026-01-17 14:24:56] STEP 02: Post-Hoc Domain Contrasts
+[2026-01-17 14:24:56] ======================================================================
+[2026-01-17 14:24:56] Domain-level calibration statistics:
+[2026-01-17 14:24:56]   What: mean=0.0117, SD=0.5217, N=400
+[2026-01-17 14:24:56]   When: mean=0.0152, SD=0.5777, N=400
+[2026-01-17 14:24:56]   Where: mean=-0.0269, SD=0.5150, N=400
+[2026-01-17 14:24:56]   What vs Where: Δ=0.0385, z=1.05, p_uncorr=0.2932, p_bonf=0.8795, d=0.074
+[2026-01-17 14:24:56]   What vs When: Δ=-0.0035, z=-0.09, p_uncorr=0.9282, p_bonf=1.0000, d=-0.006
+[2026-01-17 14:24:56]   Where vs When: Δ=-0.0420, z=-1.09, p_uncorr=0.2773, p_bonf=0.8320, d=-0.077
+[2026-01-17 14:24:56] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:24:56] ======================================================================
+[2026-01-17 14:24:56] STEP 03: Rank Domains by Calibration Quality
+[2026-01-17 14:24:56] ======================================================================
+[2026-01-17 14:24:56] Domain ranking by calibration quality:
+[2026-01-17 14:24:56]   Rank 1: Where - mean |calibration|=0.3769 (Best calibrated)
+[2026-01-17 14:24:56]   Rank 2: What - mean |calibration|=0.3826 (Middle)
+[2026-01-17 14:24:56]   Rank 3: When - mean |calibration|=0.4667 (Worst calibrated)
+[2026-01-17 14:24:56] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step03_domain_ranking.csv
+[2026-01-17 14:24:56] ======================================================================
+[2026-01-17 14:24:56] STEP 04: Prepare Calibration Trajectory Plot Data
+[2026-01-17 14:24:56] ======================================================================
+[2026-01-17 14:24:56] Plot data summary:
+[2026-01-17 14:24:56]   Rows: 12
+[2026-01-17 14:24:56]   Domains: ['What', 'When', 'Where']
+[2026-01-17 14:24:56]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:24:56]   What: T1=-0.005 → T4=-0.056 (Δ=-0.051)
+[2026-01-17 14:24:56]   When: T1=0.323 → T4=-0.206 (Δ=-0.529)
+[2026-01-17 14:24:56]   Where: T1=-0.023 → T4=-0.054 (Δ=-0.031)
+[2026-01-17 14:24:56] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step04_calibration_trajectory_data.csv
+[2026-01-17 14:24:56] ======================================================================
+[2026-01-17 14:24:56] EXECUTION COMPLETE
+[2026-01-17 14:24:56] ======================================================================
+[2026-01-17 14:24:56] All steps completed successfully
+[2026-01-17 14:24:56] Ended: 2026-01-17 14:24:56.174039
+[2026-01-17 14:30:18] ======================================================================
+[2026-01-17 14:30:18] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:30:18] ======================================================================
+[2026-01-17 14:30:18] Started: 2026-01-17 14:30:18.589163
+[2026-01-17 14:30:18] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:30:18] ======================================================================
+[2026-01-17 14:30:18] STEP 00: Load SEM Latent Calibration Data
+[2026-01-17 14:30:18] ======================================================================
+[2026-01-17 14:30:18] Loading SEM calibration from: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_calibration_scores_SEM.csv
+[2026-01-17 14:30:18]   Loaded: 1200 rows
+[2026-01-17 14:30:18]   Columns: ['UID', 'TEST', 'Domain', 'TSVR_hours', 'theta_accuracy', 'theta_confidence', 'theta_accuracy_z', 'theta_confidence_z', 'latent_calibration']
+[2026-01-17 14:30:18]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:30:18]   UIDs: 100
+[2026-01-17 14:30:18]   Latent calibration mean: -0.0000
+[2026-01-17 14:30:18]   Latent calibration std: 0.5388
+[2026-01-17 14:30:18]   Mean |calibration|: 0.4087
+[2026-01-17 14:30:18] ======================================================================
+[2026-01-17 14:30:18] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:30:18] ======================================================================
+[2026-01-17 14:30:18] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:30:18] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:30:18]   Model with random slopes converged successfully
+[2026-01-17 14:30:18] Extracting fixed effects...
+[2026-01-17 14:30:18] 
+Fixed Effects:
+[2026-01-17 14:30:18]   Intercept: β=0.0107, SE=0.0430, z=0.25, p=0.8043
+[2026-01-17 14:30:18]   C(Domain)[T.Where]: β=-0.0385, SE=0.0234, z=-1.65, p=0.0992
+[2026-01-17 14:30:18]   C(Domain)[T.When]: β=0.0035, SE=0.0234, z=0.15, p=0.8806
+[2026-01-17 14:30:18]   TSVR_centered: β=-0.0005, SE=0.0004, z=-1.35, p=0.1758
+[2026-01-17 14:30:18]   C(Domain)[T.Where]:TSVR_centered: β=0.0003, SE=0.0004, z=0.70, p=0.4844
+[2026-01-17 14:30:18]   C(Domain)[T.When]:TSVR_centered: β=-0.0027, SE=0.0004, z=-6.70, p=0.0000
+[2026-01-17 14:30:18] 
+Testing Domain main effect (LRT)...
+[2026-01-17 14:30:18]   WARNING: LRT for Domain failed: Error evaluating factor: NameError: name 'calibrat
+[2026-01-17 14:30:18] 
+Testing Domain × Time interaction (LRT)...
+[2026-01-17 14:30:19]   Domain × Time interaction: χ²(2)=64.56, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:30:19] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2026-01-17 14:30:19] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:30:19] ======================================================================
+[2026-01-17 14:30:19] STEP 02: Post-Hoc Domain Contrasts
+[2026-01-17 14:30:19] ======================================================================
+[2026-01-17 14:30:19] Domain-level calibration statistics:
+[2026-01-17 14:30:19]   What: mean=0.0117, SD=0.5217, N=400
+[2026-01-17 14:30:19]   When: mean=0.0152, SD=0.5777, N=400
+[2026-01-17 14:30:19]   Where: mean=-0.0269, SD=0.5150, N=400
+[2026-01-17 14:30:19]   What vs Where: Δ=0.0385, z=1.05, p_uncorr=0.2932, p_bonf=0.8795, d=0.074
+[2026-01-17 14:30:19]   What vs When: Δ=-0.0035, z=-0.09, p_uncorr=0.9282, p_bonf=1.0000, d=-0.006
+[2026-01-17 14:30:19]   Where vs When: Δ=-0.0420, z=-1.09, p_uncorr=0.2773, p_bonf=0.8320, d=-0.077
+[2026-01-17 14:30:19] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:30:19] ======================================================================
+[2026-01-17 14:30:19] STEP 03: Rank Domains by Calibration Quality
+[2026-01-17 14:30:19] ======================================================================
+[2026-01-17 14:30:19] Domain ranking by calibration quality:
+[2026-01-17 14:30:19]   Rank 1: Where - mean |calibration|=0.3769 (Best calibrated)
+[2026-01-17 14:30:19]   Rank 2: What - mean |calibration|=0.3826 (Middle)
+[2026-01-17 14:30:19]   Rank 3: When - mean |calibration|=0.4667 (Worst calibrated)
+[2026-01-17 14:30:19] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step03_domain_ranking.csv
+[2026-01-17 14:30:19] ======================================================================
+[2026-01-17 14:30:19] STEP 04: Prepare Calibration Trajectory Plot Data
+[2026-01-17 14:30:19] ======================================================================
+[2026-01-17 14:30:19] Plot data summary:
+[2026-01-17 14:30:19]   Rows: 12
+[2026-01-17 14:30:19]   Domains: ['What', 'When', 'Where']
+[2026-01-17 14:30:19]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:30:19]   What: T1=-0.005 → T4=-0.056 (Δ=-0.051)
+[2026-01-17 14:30:19]   When: T1=0.323 → T4=-0.206 (Δ=-0.529)
+[2026-01-17 14:30:19]   Where: T1=-0.023 → T4=-0.054 (Δ=-0.031)
+[2026-01-17 14:30:19] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step04_calibration_trajectory_data.csv
+[2026-01-17 14:30:19] ======================================================================
+[2026-01-17 14:30:19] EXECUTION COMPLETE
+[2026-01-17 14:30:19] ======================================================================
+[2026-01-17 14:30:19] All steps completed successfully
+[2026-01-17 14:30:19] Ended: 2026-01-17 14:30:19.244666

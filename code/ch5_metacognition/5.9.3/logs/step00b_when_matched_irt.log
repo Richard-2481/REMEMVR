@@ -1,0 +1,37 @@
+Step 0b: When Domain Matched-Item IRT
+RQ directory: /home/etai/projects/REMEMVR/results/ch6/6.9.3
+Log file: /home/etai/projects/REMEMVR/results/ch6/6.9.3/logs/step00b_when_matched_irt.log
+Loading Ch6 6.3.1 purified items...
+Ch6 purified items: 104 total items
+When domain items in Ch6 confidence: 25 items
+When items with '-O-' tag: 25 items
+When domain has sufficient items: 25 items (>= 10 required)
+When item names (sample): ['TC_ICR-O-i1', 'TC_ICR-O-i2', 'TC_ICR-O-i3', 'TC_ICR-O-i4', 'TC_ICR-O-i5']
+Loading Ch5 5.2.1 raw accuracy data...
+Ch5 IRT input: 400 rows, 105 items (+ composite_ID)
+Ch5 Q-matrix: 105 items
+Mapping Ch6 item names (TC_) to Ch5 column names (TQ_)...
+Mapped Ch5 column names (sample): ['TQ_ICR-O-i1', 'TQ_ICR-O-i2', 'TQ_ICR-O-i3', 'TQ_ICR-O-i4', 'TQ_ICR-O-i5']
+All 25 When item columns found in Ch5 data
+Creating long-format DataFrame with matched When items...
+Extracted wide-format data: 400 rows × 25 items
+Long-format DataFrame: 10000 observations (400 participants × 25 items)
+Long-format columns: ['UID', 'test', 'item_name', 'score']
+Score distribution: {0: 7020, 1: 2980}
+Creating groups dict for When domain...
+Groups dict: {'when': [25 items]}
+Configuring IRT model parameters...
+IRT config: ['when'] factor(s), max_iter=500
+Sampling: mc_samples=100, iw_samples=100
+Running IRT calibration for When domain (18 matched items)...
+This may take 10-15 minutes...
+IRT calibration completed
+Theta estimates: 400 rows, 3 columns
+Item parameters: 25 rows, 4 columns
+Applying Decision D039 item quality thresholds...
+Thresholds: a > 0.5, |b| < 3.0
+Using factor-specific discrimination: Discrim_when
+Using difficulty: Difficulty
+Retained 5/25 items (20 removed)
+Insufficient items after purification: 5 items (<10 minimum)
+When domain has too few high-quality items for reliable theta estimation

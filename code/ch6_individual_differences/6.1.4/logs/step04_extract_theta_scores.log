@@ -1,0 +1,32 @@
+Step 04: Extract Ch5 theta scores
+Reading Ch5 5.1.1 theta scores from /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv...
+Loaded 400 theta scores
+Ch5 theta data structure:
+  - Columns: ['UID', 'test', 'Theta_All']
+  - Shape: (400, 3)
+Computing mean theta per participant...
+Aggregated to 100 participants
+Theta scores (mean across 4 tests):
+  - Mean: 0.006
+  - SD: 0.677
+  - Range: [-1.954, 1.559]
+  - All participants have 4 tests
+Saved theta scores to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step04_theta_scores.csv
+Shape: (100, 3)
+Step 04 complete
+Step 04: Extract Ch5 theta scores
+Reading Ch5 5.1.1 theta scores from /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv...
+Loaded 400 theta scores
+Ch5 theta data structure:
+  - Columns: ['UID', 'test', 'Theta_All']
+  - Shape: (400, 3)
+Computing mean theta per participant...
+Aggregated to 100 participants
+Theta scores (mean across 4 tests):
+  - Mean: 0.006
+  - SD: 0.677
+  - Range: [-1.954, 1.559]
+  - All participants have 4 tests
+Saved theta scores to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step04_theta_scores.csv
+Shape: (100, 3)
+Step 04 complete

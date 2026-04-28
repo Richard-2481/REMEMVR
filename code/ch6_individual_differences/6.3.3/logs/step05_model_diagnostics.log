@@ -1,0 +1,73 @@
+Step 05: Model diagnostics
+Loading regression results...
+step04_regression_results.csv (11 rows, 10 cols)
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 13 cols)
+Refitting full model for diagnostic analysis...
+Model refitted successfully
+Diagnostic quantities: 100 observations
+Computing VIF for multicollinearity check...
+Maximum VIF: 1.787 (threshold: 5.0)
+Multicollinearity concern: False
+Testing normality of residuals...
+Shapiro-Wilk: W=0.8832, p=0.000000
+Violation detected: True
+Testing homoscedasticity...
+Breusch-Pagan: LM=8.0500, p=0.234460
+Violation detected: False
+Identifying outliers and high leverage points...
+Cook's distance outliers: 5 (threshold: 0.0400)
+High leverage points: 0 (threshold: 0.2100)
+Testing for autocorrelation...
+Durbin-Watson: 2.2483
+Concern detected: False
+Saving diagnostic test results...
+step05_model_diagnostics.csv (5 rows, 5 cols)
+Saving diagnostic plot data...
+step05_diagnostic_plot_data.csv (100 rows, 6 cols)
+Running validate_regression_assumptions...
+normality: {'test': 'Shapiro-Wilk', 'statistic': np.float64(0.8831739959890115), 'p_value': np.float64(2.4787318728330407e-07), 'passed': np.False_}
+homoscedasticity: {'test': 'Breusch-Pagan', 'statistic': np.float64(8.050042556006364), 'p_value': np.float64(0.23445994543622672), 'passed': np.True_}
+linearity: {'mean_residual': np.float64(-1.1934897514720433e-17), 'passed': np.True_, 'note': 'Simplified check - visual inspection recommended'}
+independence: {'test': 'Durbin-Watson', 'statistic': np.float64(2.248251708714357), 'passed': np.True_, 'interpretation': 'No autocorrelation'}
+Assumption violations detected: 2
+- normality: VIOLATION -> use_bootstrap_cis
+- outliers: DETECTED -> sensitivity_analysis
+Step 05 complete
+Step 05: Model diagnostics
+Loading regression results...
+step04_regression_results.csv (13 rows, 10 cols)
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 17 cols)
+Refitting full model for diagnostic analysis...
+Model refitted successfully
+Diagnostic quantities: 100 observations
+Computing VIF for multicollinearity check...
+Maximum VIF: 1.883 (threshold: 5.0)
+Multicollinearity concern: False
+Testing normality of residuals...
+Shapiro-Wilk: W=0.9575, p=0.002700
+Violation detected: True
+Testing homoscedasticity...
+Breusch-Pagan: LM=31.6303, p=0.000108
+Violation detected: True
+Identifying outliers and high leverage points...
+Cook's distance outliers: 8 (threshold: 0.0400)
+High leverage points: 2 (threshold: 0.2700)
+Testing for autocorrelation...
+Durbin-Watson: 2.2990
+Concern detected: False
+Saving diagnostic test results...
+step05_model_diagnostics.csv (5 rows, 5 cols)
+Saving diagnostic plot data...
+step05_diagnostic_plot_data.csv (100 rows, 6 cols)
+Running validate_regression_assumptions...
+normality: {'test': 'Shapiro-Wilk', 'statistic': np.float64(0.9575498204055874), 'p_value': np.float64(0.0026998175089210626), 'passed': np.False_}
+homoscedasticity: {'test': 'Breusch-Pagan', 'statistic': np.float64(31.630296691372216), 'p_value': np.float64(0.00010846348969684172), 'passed': np.False_}
+linearity: {'mean_residual': np.float64(4.541506060107281e-17), 'passed': np.True_, 'note': 'Simplified check - visual inspection recommended'}
+independence: {'test': 'Durbin-Watson', 'statistic': np.float64(2.2989779644762196), 'passed': np.True_, 'interpretation': 'No autocorrelation'}
+Assumption violations detected: 3
+- normality: VIOLATION -> use_bootstrap_cis
+- homoscedasticity: VIOLATION -> use_robust_se
+- outliers: DETECTED -> sensitivity_analysis
+Step 05 complete

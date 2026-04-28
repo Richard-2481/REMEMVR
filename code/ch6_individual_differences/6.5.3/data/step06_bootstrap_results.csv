@@ -1,0 +1,5 @@
+predictor,original_coefficient,bootstrap_mean,bootstrap_se,CI_lower_percentile,CI_upper_percentile
+age,,,,,
+education_numeric,,,,,
+rehearsal_frequency,,,,,
+mnemonic_use,,,,,

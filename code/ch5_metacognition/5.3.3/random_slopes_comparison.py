@@ -5,7 +5,7 @@ RQ 6.3.3: Random Slopes Comparison
 Tests whether random slopes on TSVR_hours improve model fit compared to
 intercepts-only random effects structure.
 
-MANDATORY for PLATINUM certification (per rq_platinum agent Step 12).
+MANDATORY for quality validation (per validation process Step 12).
 
 Expected outcome: Random slope variance near zero (σ²=0.000006 from summary.md),
 suggesting homogeneous decline rates (age-invariant trajectories).
@@ -16,9 +16,7 @@ import numpy as np
 from pathlib import Path
 import statsmodels.formula.api as smf
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.3.3
 LOG_FILE = RQ_DIR / "logs" / "random_slopes_comparison.log"
@@ -45,7 +43,7 @@ def compare_random_slopes():
     log("RANDOM SLOPES COMPARISON FOR RQ 6.3.3")
     log("=" * 70)
     log("\nPurpose: Test if random slopes on TSVR_hours improve model fit")
-    log("Context: MANDATORY for PLATINUM certification (rq_platinum Step 12)")
+    log("Context: MANDATORY for quality validation (validation Step 12)")
     log("")
 
     # Load data
@@ -57,10 +55,7 @@ def compare_random_slopes():
     # Formula (same fixed effects for both models)
     formula = "theta_confidence ~ TSVR_hours * Age_c * C(Domain)"
     log(f"\nFixed effects formula: {formula}")
-
-    # =========================================================================
     # Model 1: Intercepts-only (random intercepts by UID)
-    # =========================================================================
     log("\n" + "-" * 70)
     log("MODEL 1: INTERCEPTS-ONLY (baseline)")
     log("-" * 70)
@@ -82,10 +77,7 @@ def compare_random_slopes():
 
     # Random effects variance
     log(f"\nRandom effects variance (intercepts): {result_intercepts.cov_re.iloc[0, 0]:.6f}")
-
-    # =========================================================================
     # Model 2: Intercepts + Slopes (random intercept + random slope on TSVR_hours)
-    # =========================================================================
     log("\n" + "-" * 70)
     log("MODEL 2: INTERCEPTS + SLOPES")
     log("-" * 70)
@@ -118,10 +110,7 @@ def compare_random_slopes():
         slope_var = np.nan
         slope_sd = np.nan
         log(f"\nWARNING: Could not extract random slope variance (convergence issue?)")
-
-    # =========================================================================
     # Model Comparison
-    # =========================================================================
     log("\n" + "=" * 70)
     log("MODEL COMPARISON")
     log("=" * 70)
@@ -158,10 +147,7 @@ def compare_random_slopes():
     log(f"  df: 2 (slope variance + covariance)")
     log(f"  p-value: {lrt_p:.4f}")
     log(f"  Significant (p < 0.05): {'YES - Slopes improve fit' if lrt_p < 0.05 else 'NO - Slopes do not improve fit'}")
-
-    # =========================================================================
-    # Interpretation (3 outcomes from rq_platinum Step 12C)
-    # =========================================================================
+    # Interpretation (3 outcomes from validation Step 12C)
     log("\n" + "=" * 70)
     log("INTERPRETATION")
     log("=" * 70)
@@ -206,10 +192,7 @@ def compare_random_slopes():
         log(f"   - INTERPRETATION: {interpretation}")
         log(f"   - RECOMMENDATION: {recommendation}")
         log(f"   - STRENGTH: {impact}")
-
-    # =========================================================================
     # Save Results
-    # =========================================================================
     log("\n" + "=" * 70)
     log("SAVING RESULTS")
     log("=" * 70)

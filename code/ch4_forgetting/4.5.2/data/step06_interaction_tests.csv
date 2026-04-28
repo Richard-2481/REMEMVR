@@ -1,0 +1,2 @@
+Term,Estimate,SE,z_score,p_uncorrected,p_bonferroni,Significant_bonferroni,Cohens_f2,Effect_interpretation
+Days_within:Segment[T.Late]:LocationType[T.Destination],0.0606613473956846,0.1189015430865205,0.5101813300399598,0.609924430788948,1.0,False,0.0004958046625547273,negligible

@@ -1,0 +1,36 @@
+Step 08: Prepare Comparison Plot Data
+Loading correlation analysis results...
+step05_correlation_analysis.csv (3 rows)
+Loading LMM model comparison results...
+step07_lmm_model_comparison.csv (3 rows)
+Creating correlation comparison data (long format)...
+Correlation comparison data: 6 rows x 5 columns
+Creating AIC comparison data...
+AIC comparison data: 3 rows x 5 columns
+Saving correlation comparison data...
+step08_correlation_comparison_data.csv (6 rows)
+Saving AIC comparison data...
+step08_aic_comparison_data.csv (3 rows)
+Validating correlation comparison data...
+Row count: 6 rows (3 paradigms x 2 CTT types)
+Column names: ['paradigm', 'ctt_type', 'r', 'CI_lower', 'CI_upper']
+r values in [-1, 1]: min=0.7905, max=0.9068
+All r values within their confidence intervals
+ctt_type contains only {'Purified', 'Full'}
+All paradigms present: {'IRE', 'ICR', 'IFR'}
+No NaN values in correlation comparison data
+Validating AIC comparison data...
+Row count: 3 rows (one per paradigm)
+Column names: ['paradigm', 'AIC_IRT', 'AIC_full', 'AIC_purified', 'delta_AIC_full_purified']
+All AIC values positive (min=958.46)
+All paradigms present: {'IRE', 'ICR', 'IFR'}
+No NaN values in AIC comparison data
+Correlation comparison data:
+  IFR: r_full=0.7905, r_purified=0.8886, delta_r=0.0981
+  ICR: r_full=0.8838, r_purified=0.9068, delta_r=0.0230
+  IRE: r_full=0.8170, r_purified=0.8673, delta_r=0.0503
+AIC comparison data:
+  IFR: AIC_IRT=1008.33, AIC_full=1056.34, AIC_purified=1089.69, delta=-33.35
+  ICR: AIC_IRT=983.93, AIC_full=958.46, AIC_purified=963.75, delta=-5.29
+  IRE: AIC_IRT=975.31, AIC_full=1005.71, AIC_purified=1012.55, delta=-6.83
+Step 08 complete

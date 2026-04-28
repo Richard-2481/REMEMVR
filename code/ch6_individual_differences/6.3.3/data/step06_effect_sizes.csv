@@ -1,0 +1,13 @@
+effect_type,value,interpretation,cohen_classification,practical_significance
+overall_model_f2,0.21768172663356633,Full model vs. null (R²=0.1788),medium,substantial
+incremental_f2_cognitive,0.19689065087529875,Cognitive block addition (ΔR²=0.1617),medium,substantial
+individual_f2_ravlt_c,0.0009799421973746172,Unique contribution of ravlt_c,negligible,minimal
+individual_f2_bvmt_c,0.0004682707107971205,Unique contribution of bvmt_c,negligible,minimal
+individual_f2_rpm_c,0.009316731295274657,Unique contribution of rpm_c,negligible,minimal
+individual_f2_ravlt_pct_ret_c,0.07946690280785912,Unique contribution of ravlt_pct_ret_c,small,meaningful
+individual_f2_bvmt_pct_ret_c,0.11918452548079828,Unique contribution of bvmt_pct_ret_c,small,meaningful
+relative_importance_ravlt_c,0.0046793962941534895,Relative weight: 0.5%,proportion,relative
+relative_importance_bvmt_c,0.0022360749793561485,Relative weight: 0.2%,proportion,relative
+relative_importance_rpm_c,0.04448903008109336,Relative weight: 4.4%,proportion,relative
+relative_importance_ravlt_pct_ret_c,0.3794684334476068,Relative weight: 37.9%,proportion,relative
+relative_importance_bvmt_pct_ret_c,0.5691270651977902,Relative weight: 56.9%,proportion,relative

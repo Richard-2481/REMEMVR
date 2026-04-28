@@ -1,0 +1,59 @@
+Step 05: Correlation Analysis with Steiger's Z-Test
+Loading input data...
+Full CTT: 400 rows, 5 cols
+Full CTT columns: ['UID', 'test', 'CTT_full_IFR', 'CTT_full_ICR', 'CTT_full_IRE']
+Full CTT test column dtype: object
+Purified CTT: 400 rows, 5 cols
+Purified CTT test column dtype: int64
+IRT theta (long format): 1200 rows, 3 cols
+Theta domain names: ['free_recall' 'cued_recall' 'recognition']
+Pivoting theta scores to wide format...
+Theta wide: 400 rows, columns: ['composite_ID', 'theta_ICR', 'theta_IFR', 'theta_IRE']
+Standardizing test columns and creating composite IDs...
+Full CTT composite_ID sample: ['A010_1', 'A010_2', 'A010_3']
+Purified CTT composite_ID sample: ['A010_1', 'A010_2', 'A010_3']
+Theta composite_ID sample: ['A010_1', 'A010_2', 'A010_3']
+Merging Full CTT, Purified CTT, and IRT theta scores...
+After CTT merge: 400 rows
+After theta merge: 400 rows
+Final columns: ['UID', 'test', 'CTT_full_IFR', 'CTT_full_ICR', 'CTT_full_IRE', 'composite_ID', 'CTT_purified_IFR', 'CTT_purified_ICR', 'CTT_purified_IRE', 'theta_ICR', 'theta_IFR', 'theta_IRE']
+Running Steiger's z-test for each paradigm...
+Processing IFR...
+IFR: N=400 observations after removing missing values
+IFR: r(IRT, Full CTT) = 0.790
+IFR: r(IRT, Purified CTT) = 0.889
+IFR: r(Full CTT, Purified CTT) = 0.807
+IFR: z = 6.245, p_uncorrected (one-tailed) = 0.0000
+IFR: delta_r = 0.098 (r_purified - r_full)
+Processing ICR...
+ICR: N=400 observations after removing missing values
+ICR: r(IRT, Full CTT) = 0.884
+ICR: r(IRT, Purified CTT) = 0.907
+ICR: r(Full CTT, Purified CTT) = 0.967
+ICR: z = 2.282, p_uncorrected (one-tailed) = 0.0112
+ICR: delta_r = 0.023 (r_purified - r_full)
+Processing IRE...
+IRE: N=400 observations after removing missing values
+IRE: r(IRT, Full CTT) = 0.817
+IRE: r(IRT, Purified CTT) = 0.867
+IRE: r(Full CTT, Purified CTT) = 0.929
+IRE: z = 3.354, p_uncorrected (one-tailed) = 0.0004
+IRE: delta_r = 0.050 (r_purified - r_full)
+Applying Bonferroni correction for 3 comparisons...
+Bonferroni correction: p_bonferroni = min(p_uncorrected × 3, 1.0)
+IFR: p_uncorrected=0.0000, p_bonferroni=0.0000
+IFR: SIGNIFICANT at alpha=0.05 (Bonferroni-corrected)
+ICR: p_uncorrected=0.0112, p_bonferroni=0.0337
+ICR: SIGNIFICANT at alpha=0.05 (Bonferroni-corrected)
+IRE: p_uncorrected=0.0004, p_bonferroni=0.0012
+IRE: SIGNIFICANT at alpha=0.05 (Bonferroni-corrected)
+Saving correlation analysis results...
+/home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step05_correlation_analysis.csv (3 rows, 9 cols)
+/home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step05_steiger_assumptions_report.txt
+Validating D068 compliance (dual p-value reporting)...
+D068 compliance: BOTH p-value columns present
+All correlations in valid range [-1, 1]
+All p-values in valid range [0, 1]
+p_bonferroni capped at 1.0 (max observed: 0.0337)
+All 3 paradigms present in results
+Step 05 complete

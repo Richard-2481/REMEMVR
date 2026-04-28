@@ -1,0 +1,4 @@
+Domain,mean_abs_calibration,sd_abs_calibration,N,rank,interpretation
+Where,0.37688134636101217,0.3515222193650886,400,1,Best calibrated
+What,0.38259215698533455,0.35431299783504144,400,2,Middle
+When,0.4667037127976434,0.3400509020638239,400,3,Worst calibrated

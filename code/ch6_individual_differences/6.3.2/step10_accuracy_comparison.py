@@ -24,10 +24,10 @@ def log(msg):
     print(msg, flush=True)
 
 if __name__ == "__main__":
-    log("[START] Step 10: Accuracy Comparison")
+    log("Step 10: Accuracy Comparison")
     
     # Load our calibration results
-    log("[LOAD] Loading calibration prediction results...")
+    log("Loading calibration prediction results...")
     calib_reg = pd.read_csv(DATA_DIR / "step04_model_comparison.csv")
     calib_pred = pd.read_csv(DATA_DIR / "step09_individual_predictors.csv")
     calib_effect = pd.read_csv(DATA_DIR / "step08_effect_summary.csv")
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     calib_r2 = calib_reg[calib_reg['model'] == 'Full_Model']['r2'].iloc[0]
     
     # Try to find accuracy prediction results (7.3.1 or 7.1.1)
-    log("[SEARCH] Looking for accuracy prediction results...")
+    log("Looking for accuracy prediction results...")
     accuracy_found = False
     accuracy_r2 = None
     accuracy_source = None
@@ -57,12 +57,12 @@ if __name__ == "__main__":
                         accuracy_r2 = acc_df[acc_df['model'].str.contains('Full|Cognitive', case=False, na=False)]['R_squared'].iloc[0]
                     accuracy_source = "RQ 7.3.1"
                     accuracy_found = True
-                    log(f"[FOUND] Accuracy results from {accuracy_source}: R² = {accuracy_r2:.4f}")
+                    log(f"Accuracy results from {accuracy_source}: R² = {accuracy_r2:.4f}")
                 elif 'r2' in acc_df.columns:
                     accuracy_r2 = acc_df[acc_df['model'].str.contains('Full', case=False, na=False)]['r2'].iloc[0]
                     accuracy_source = "RQ 7.3.1"  
                     accuracy_found = True
-                    log(f"[FOUND] Accuracy results from {accuracy_source}: R² = {accuracy_r2:.4f}")
+                    log(f"Accuracy results from {accuracy_source}: R² = {accuracy_r2:.4f}")
             except:
                 pass
     
@@ -78,12 +78,12 @@ if __name__ == "__main__":
                         accuracy_r2 = acc_df['r2'].iloc[0] if 'r2' in acc_df else None
                         accuracy_source = "RQ 7.1.1"
                         accuracy_found = True
-                        log(f"[FOUND] Accuracy results from {accuracy_source}: R² = {accuracy_r2:.4f}")
+                        log(f"Accuracy results from {accuracy_source}: R² = {accuracy_r2:.4f}")
                 except:
                     pass
     
     # Create comparison
-    log("[ANALYSIS] Creating calibration vs accuracy comparison...")
+    log("Creating calibration vs accuracy comparison...")
     
     comparison_data = {
         'measure': ['calibration_quality', 'accuracy'],
@@ -102,13 +102,13 @@ if __name__ == "__main__":
     # Theoretical interpretation
     if accuracy_found and accuracy_r2 is not None:
         calibration_harder = calib_r2 < accuracy_r2
-        log(f"[RESULT] Calibration prediction R² = {calib_r2:.4f}")
-        log(f"[RESULT] Accuracy prediction R² = {accuracy_r2:.4f}")
-        log(f"[RESULT] Calibration harder to predict: {calibration_harder}")
+        log(f"Calibration prediction R² = {calib_r2:.4f}")
+        log(f"Accuracy prediction R² = {accuracy_r2:.4f}")
+        log(f"Calibration harder to predict: {calibration_harder}")
         
         # Compute difference
         r2_diff = accuracy_r2 - calib_r2
-        log(f"[RESULT] R² difference = {r2_diff:.4f}")
+        log(f"R² difference = {r2_diff:.4f}")
         
         interpretation = (
             "Supports metacognitive dissociation: Calibration quality (matching confidence to accuracy) "
@@ -119,12 +119,12 @@ if __name__ == "__main__":
         )
     else:
         interpretation = "No accuracy comparison available - cannot test metacognitive dissociation hypothesis"
-        log("[WARNING] No accuracy prediction results found for comparison")
+        log("No accuracy prediction results found for comparison")
     
     # Save results
-    log("[SAVE] Saving comparison results...")
+    log("Saving comparison results...")
     comparison_df.to_csv(DATA_DIR / "step10_accuracy_comparison.csv", index=False)
-    log(f"[SAVED] step10_accuracy_comparison.csv")
+    log(f"step10_accuracy_comparison.csv")
     
     # Save interpretation
     interp_df = pd.DataFrame([{
@@ -137,6 +137,6 @@ if __name__ == "__main__":
     }])
     
     interp_df.to_csv(DATA_DIR / "step10_interpretation.csv", index=False)
-    log(f"[SAVED] step10_interpretation.csv")
+    log(f"step10_interpretation.csv")
     
-    log("[SUCCESS] Step 10 complete")
+    log("Step 10 complete")

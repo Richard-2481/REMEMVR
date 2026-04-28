@@ -1,0 +1,37 @@
+Step 01: Standardize Features
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step00_random_effects_from_rq546.csv
+100 rows, 7 columns
+Standardizing 6 features
+Applying StandardScaler (mean=0, SD=1)
+Before standardization:
+  Mean: [-7.31359417e-15 -3.85247390e-16 -1.47104551e-14 -1.08360586e-17
+  9.61795747e-18 -2.23627540e-17]
+  SD: [3.27617892e-01 3.54682828e-01 3.16804541e-01 2.09336623e-04
+ 1.21559670e-03 4.66847369e-04]
+After standardization:
+  Mean: [ 6.66133815e-18 -4.88498131e-17 -1.11022302e-17  1.33226763e-17
+  1.05471187e-17 -4.44089210e-18]
+  SD: [1. 1. 1. 1. 1. 1.]
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+Validating standardization
+[VALIDATION PASS] All 6 columns properly standardized (mean ≈ 0, SD ≈ 1 within tolerance=0.1).
+Step 01 complete
+Step 01: Standardize Features
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step00_random_effects_from_rq546.csv
+100 rows, 7 columns
+Standardizing 6 features
+Applying StandardScaler (mean=0, SD=1)
+Before standardization:
+  Mean: [ 3.16413562e-17 -9.45077350e-17  8.68957684e-15 -6.40390518e-16
+ -3.33066907e-14 -3.52010088e-15]
+  SD: [0.3009479  0.08390804 0.16457588 0.06687737 0.30625892 0.05488224]
+After standardization:
+  Mean: [-8.88178420e-18 -5.55111512e-18 -1.33226763e-17 -3.21964677e-17
+  2.22044605e-17  6.66133815e-18]
+  SD: [1. 1. 1. 1. 1. 1.]
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+Validating standardization
+[VALIDATION PASS] All 6 columns properly standardized (mean ≈ 0, SD ≈ 1 within tolerance=0.1).
+Step 01 complete

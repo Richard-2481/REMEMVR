@@ -1,0 +1,3 @@
+model,functional_form,slope_variance,detects_individual_differences
+IRT,Recip+Log,1.5066076080576831,True
+CTT,Recip+Log,0.02152628514892826,True

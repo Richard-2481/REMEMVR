@@ -1,0 +1,3 @@
+test_name,W_statistic,p_value,interpretation
+difference,0.9939849053131482,0.9397476183709592,Normal
+ratio,0.9769663298501534,0.5782373697859426,Normal

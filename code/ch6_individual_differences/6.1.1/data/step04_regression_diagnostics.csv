@@ -1,0 +1,7 @@
+assumption,test,test_statistic,p_value,threshold,result,interpretation
+Normality,Shapiro-Wilk,0.9849238339208545,0.3340968199434081,0.05,PASS,Residuals normally distributed
+Homoscedasticity,Breusch-Pagan,6.002855582966795,0.42287027227552104,0.05,PASS,Constant variance
+Multicollinearity,VIF,1.5413881359043067,,5.0,PASS,"Max VIF = 1.54, Mean VIF = 1.27"
+Independence,Durbin-Watson,1.585854625342724,,2.0,PASS,"DW = 1.586, No autocorrelation"
+Outliers,Cooks Distance,0.10945443513229591,,0.041237113402061855,WARNING,8 outliers detected (threshold = 0.0412)
+Linearity,R² vs Spearman,0.0,,0.1,WARNING,"R² = 0.000, Max |Spearman| = 0.382, Weak/Non-linear"

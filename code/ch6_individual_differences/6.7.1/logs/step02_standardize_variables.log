@@ -1,0 +1,40 @@
+Step 02: Standardize Variables
+Loading merged dataset...
+100 rows, 4 cols
+Converting to T-scores (M=50, SD=10)...
+REMEMVR_T: M=50.00, SD=10.00
+RAVLT_T: M=50.00, SD=10.00
+BVMT_T: M=50.00, SD=10.00
+Checking T-score properties...
+validate_standardization() got an unexpected keyword argument 'target_mean'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.1/code/step02_standardize_variables.py", line 110, in <module>
+    validation_result = validate_standardization(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_standardization() got an unexpected keyword argument 'target_mean'
+Step 02: Standardize Variables
+Loading merged dataset...
+100 rows, 4 cols
+Converting to T-scores (M=50, SD=10)...
+REMEMVR_T: M=50.00, SD=10.00
+RAVLT_T: M=50.00, SD=10.00
+BVMT_T: M=50.00, SD=10.00
+Checking T-score properties...
+Standardization validation: Standardization validation failed for 6 check(s): REMEMVR_T: mean=50.0000 (expected ~0, tolerance=0.01); REMEMVR_T: SD=10.0000 (expected ~1, tolerance=0.01); RAVLT_T: mean=50.0000 (expected ~0, tolerance=0.01); RAVLT_T: SD=10.0000 (expected ~1, tolerance=0.01); BVMT_T: mean=50.0000 (expected ~0, tolerance=0.01); BVMT_T: SD=10.0000 (expected ~1, tolerance=0.01)
+Saving T-scored variables...
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step02_standardized_data.csv
+Step 02 complete
+Step 02: Standardize Variables
+Loading merged dataset...
+100 rows, 6 cols
+Converting to T-scores (M=50, SD=10)...
+REMEMVR_T: M=50.00, SD=10.00
+RAVLT_T: M=50.00, SD=10.00
+BVMT_T: M=50.00, SD=10.00
+RAVLT_PctRet_T: M=50.00, SD=10.00
+BVMT_PctRet_T: M=50.00, SD=10.00
+Checking T-score properties...
+Standardization validation: Standardization validation failed for 10 check(s): REMEMVR_T: mean=50.0000 (expected ~0, tolerance=0.01); REMEMVR_T: SD=10.0000 (expected ~1, tolerance=0.01); RAVLT_T: mean=50.0000 (expected ~0, tolerance=0.01); RAVLT_T: SD=10.0000 (expected ~1, tolerance=0.01); BVMT_T: mean=50.0000 (expected ~0, tolerance=0.01); BVMT_T: SD=10.0000 (expected ~1, tolerance=0.01); RAVLT_PctRet_T: mean=50.0000 (expected ~0, tolerance=0.01); RAVLT_PctRet_T: SD=10.0000 (expected ~1, tolerance=0.01); BVMT_PctRet_T: mean=50.0000 (expected ~0, tolerance=0.01); BVMT_PctRet_T: SD=10.0000 (expected ~1, tolerance=0.01)
+Saving T-scored variables...
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step02_standardized_data.csv
+Step 02 complete

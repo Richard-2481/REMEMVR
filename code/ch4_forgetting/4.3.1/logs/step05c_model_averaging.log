@@ -1,0 +1,90 @@
+================================================================================
+Step 05c: Model Averaging (Paradigm × Time)
+================================================================================
+Loading input data and model comparison...
+  Training data: 1200 observations
+  Models compared: 65
+  Paradigms: ['cued_recall', 'free_recall', 'recognition']
+  Best single model: PowerLaw_01 (weight=0.0670)
+  Competitive models (ΔAIC<2): 14
+  Cumulative weight: 57.9%
+
+Creating prediction grid...
+  Grid points: 300 (100 per paradigm)
+
+Computing model-averaged predictions...
+  NOTE: Paradigm × Time interaction - averaging across functional forms
+
+Model averaging complete:
+  Models used: 14
+  Effective N models: 12.90
+  Prediction variance: [0.0000, 0.0022]
+
+Model types in competitive set:
+  Power-law family: 3 models
+  Logarithmic family: 9 models
+  Root family: 2 models
+
+[POWER LAW] Effective alpha (if applicable):
+  Weighted mean: α=0.140
+  Range: [0.1, 0.2]
+
+Saving model-averaged predictions...
+  ✓ step05c_averaged_predictions.csv (300 rows)
+  ✓ step05c_averaging_summary.txt
+
+Averaged predictions per paradigm:
+  free_recall    : θ ∈ [-0.685, 0.600], SE ∈ [0.0028, 0.0465]
+  cued_recall    : θ ∈ [-0.685, 0.600], SE ∈ [0.0028, 0.0465]
+  recognition    : θ ∈ [-0.685, 0.600], SE ∈ [0.0028, 0.0465]
+================================================================================
+Step 05c Complete
+  Models averaged: 14
+  Effective N: 12.90
+  Output: step05c_averaged_predictions.csv
+================================================================================
+================================================================================
+Step 05c: Model Averaging (Paradigm × Time)
+================================================================================
+Loading input data and model comparison...
+  Training data: 1200 observations
+  Models compared: 65
+  Paradigms: ['cued_recall', 'free_recall', 'recognition']
+  Best single model: PowerLaw_01 (weight=0.0670)
+  Competitive models (ΔAIC<2): 14
+  Cumulative weight: 57.9%
+
+Creating prediction grid...
+  Grid points: 300 (100 per paradigm)
+
+Computing model-averaged predictions...
+  NOTE: Paradigm × Time interaction - averaging across functional forms
+
+Model averaging complete:
+  Models used: 14
+  Effective N models: 12.90
+  Prediction variance: [0.0000, 0.0024]
+
+Model types in competitive set:
+  Power-law family: 3 models
+  Logarithmic family: 9 models
+  Root family: 2 models
+
+[POWER LAW] Effective alpha (if applicable):
+  Weighted mean: α=0.140
+  Range: [0.1, 0.2]
+
+Saving model-averaged predictions...
+  ✓ step05c_averaged_predictions.csv (300 rows)
+  ✓ step05c_averaging_summary.txt
+
+Averaged predictions per paradigm:
+  free_recall    : θ ∈ [-0.609, 0.544], SE ∈ [0.0027, 0.0456]
+  cued_recall    : θ ∈ [-0.689, 0.631], SE ∈ [0.0030, 0.0468]
+  recognition    : θ ∈ [-0.757, 0.626], SE ∈ [0.0031, 0.0486]
+================================================================================
+Step 05c Complete
+  Models averaged: 14
+  Effective N: 12.90
+  Output: step05c_averaged_predictions.csv
+================================================================================

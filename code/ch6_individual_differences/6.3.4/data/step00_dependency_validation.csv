@@ -1,0 +1,5 @@
+file_path,exists,size_bytes,status,note
+/home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv,True,7186,FOUND,Valid file (7186 bytes)
+/home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv,True,11978,FOUND,Valid file (11978 bytes)
+/home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv,True,32374,FOUND,Valid file (32374 bytes)
+/home/etai/projects/REMEMVR/data/dfnonvr.csv,True,60164,FOUND,"Valid file (60164 bytes) | DASS columns verified: ['total-dass-anxiety-items', 'total-dass-stress-items', 'total-dass-depression-items']"

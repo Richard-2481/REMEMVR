@@ -1,0 +1,38 @@
+2025-12-28 11:40:24,325 - INFO - === RQ 6.4.2: GLMM Validation ===
+2025-12-28 11:40:24,325 - INFO - Validating IRT→LMM paradigm baseline effects with item-level GLMM
+2025-12-28 11:40:24,325 - INFO - 
+Loading item-level data from source RQs...
+2025-12-28 11:40:24,325 - ERROR - EXPECTATIONS ERROR: Accuracy source missing: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step01_irt_input_paradigm.csv
+2026-01-17 14:16:08,643 - INFO - === RQ 6.4.2: GLMM Validation ===
+2026-01-17 14:16:08,643 - INFO - Validating IRT→LMM paradigm baseline effects with item-level GLMM
+2026-01-17 14:16:08,643 - INFO - 
+Loading item-level data from source RQs...
+2026-01-17 14:16:08,643 - ERROR - EXPECTATIONS ERROR: Accuracy source missing: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step01_irt_input_paradigm.csv
+2026-01-17 14:25:50,607 - INFO - === RQ 6.4.2: GLMM Validation ===
+2026-01-17 14:25:50,607 - INFO - Validating IRT→LMM paradigm baseline effects with item-level GLMM
+2026-01-17 14:25:50,607 - INFO - 
+Loading item-level data from source RQs...
+2026-01-17 14:25:50,612 - INFO - Accuracy: 400 items
+2026-01-17 14:25:50,612 - INFO - Confidence: 400 items
+2026-01-17 14:25:50,612 - INFO - 
+Merging accuracy and confidence item-level data...
+2026-01-17 14:26:23,713 - INFO - === RQ 6.4.2: GLMM Validation ===
+2026-01-17 14:26:23,713 - INFO - Validating IRT→LMM paradigm baseline effects with item-level GLMM
+2026-01-17 14:26:23,713 - INFO - 
+Loading item-level data from source RQs...
+2026-01-17 14:26:23,717 - INFO - Accuracy: 400 rows
+2026-01-17 14:26:23,717 - INFO - Confidence: 400 rows
+2026-01-17 14:26:23,717 - WARNING - SKIP: Accuracy data is in wide format (IRT input), not item-level long format
+2026-01-17 14:26:23,717 - WARNING - SKIP: GLMM validation requires item-level data that is not currently generated
+2026-01-17 14:26:23,717 - INFO - NOTE: This step is optional - baseline paradigm effects were validated in steps 00-08
+2026-01-17 14:26:23,717 - INFO - === STEP 09 SKIPPED (data format mismatch) ===
+2026-01-17 14:30:40,480 - INFO - === RQ 6.4.2: GLMM Validation ===
+2026-01-17 14:30:40,480 - INFO - Validating IRT→LMM paradigm baseline effects with item-level GLMM
+2026-01-17 14:30:40,480 - INFO - 
+Loading item-level data from source RQs...
+2026-01-17 14:30:40,484 - INFO - Accuracy: 400 rows
+2026-01-17 14:30:40,484 - INFO - Confidence: 400 rows
+2026-01-17 14:30:40,484 - WARNING - SKIP: Accuracy data is in wide format (IRT input), not item-level long format
+2026-01-17 14:30:40,485 - WARNING - SKIP: GLMM validation requires item-level data that is not currently generated
+2026-01-17 14:30:40,485 - INFO - NOTE: This step is optional - baseline paradigm effects were validated in steps 00-08
+2026-01-17 14:30:40,485 - INFO - === STEP 09 SKIPPED (data format mismatch) ===

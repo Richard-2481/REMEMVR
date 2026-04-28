@@ -1,0 +1,3 @@
+model,aic,bic,delta_aic,random_slope_var,converged,outcome,recommendation,failure_reason
+Intercepts_Only,,,,0.0,False,Option D: Intercepts-Only Failed (Slopes Required),Use slopes model (intercepts-only cannot fit),LinAlgError: Singular matrix
+Intercepts_Slopes,1756.0565539079244,1831.0103415506112,,7.294600176286078e-06,True,Option D: Intercepts-Only Failed (Slopes Required),Use slopes model (intercepts-only cannot fit),

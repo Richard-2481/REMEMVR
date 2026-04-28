@@ -5,7 +5,7 @@ RQ: ch7/7.1.1
 Purpose: Extract cognitive test scores from dfnonvr.csv and standardize to T-scores
 Output: results/ch7/7.1.1/data/step01_cognitive_tests.csv
 
-FIXED ISSUES:
+Changes:
 1. Uses correct column names from DATA_DICTIONARY.md
 2. Adds proper missing data analysis and documentation
 """
@@ -15,7 +15,6 @@ import numpy as np
 from pathlib import Path
 import sys
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
@@ -40,7 +39,6 @@ LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -57,28 +55,22 @@ def compute_t_score(raw_scores):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 01: Extract and Prepare Cognitive Test Data - FIXED VERSION")
-        log("[INFO] Using correct column names from DATA_DICTIONARY.md")
-        log("[INFO] Adding proper missing data analysis")
-        log(f"[SETUP] RQ Directory: {RQ_DIR}")
-        log(f"[SETUP] Output will be saved to: {OUTPUT_FILE}")
-        
-        # =========================================================================
-        # STEP 1: Load participant data with CORRECT column names
-        # =========================================================================
-        log("\n[DATA] Loading participant data from dfnonvr.csv...")
+        log("Step 01: Extract and Prepare Cognitive Test Data - FIXED VERSION")
+        log("Using correct column names from DATA_DICTIONARY.md")
+        log("Adding proper missing data analysis")
+        log(f"RQ Directory: {RQ_DIR}")
+        log(f"Output will be saved to: {OUTPUT_FILE}")
+        # Load participant data with CORRECT column names
+        log("\nLoading participant data from dfnonvr.csv...")
         
         data_path = PROJECT_ROOT / "data" / "dfnonvr.csv"
         if not data_path.exists():
             raise FileNotFoundError(f"Data file not found: {data_path}")
         
         cognitive_df = pd.read_csv(data_path)
-        log(f"[DATA] Loaded data for {len(cognitive_df)} participants")
-        
-        # =========================================================================
-        # STEP 2: Extract cognitive tests with CORRECT column names
-        # =========================================================================
-        log("\n[PROCESS] Extracting cognitive test scores with correct column names...")
+        log(f"Loaded data for {len(cognitive_df)} participants")
+        # Extract cognitive tests with CORRECT column names
+        log("\nExtracting cognitive test scores with correct column names...")
         
         extracted_data = pd.DataFrame()
         extracted_data['UID'] = cognitive_df['UID'].astype(str)
@@ -91,51 +83,48 @@ if __name__ == "__main__":
             if col in cognitive_df.columns:
                 ravlt_trial_cols.append(col)
             else:
-                log(f"[WARNING] Column '{col}' not found")
+                log(f"Column '{col}' not found")
         
         if len(ravlt_trial_cols) == 5:
-            log(f"[SUCCESS] Found all 5 RAVLT trial columns")
+            log(f"Found all 5 RAVLT trial columns")
             extracted_data['RAVLT_Total'] = cognitive_df[ravlt_trial_cols].sum(axis=1)
             log(f"  RAVLT Total: M={extracted_data['RAVLT_Total'].mean():.1f}, SD={extracted_data['RAVLT_Total'].std():.1f}")
         else:
-            log(f"[ERROR] Only found {len(ravlt_trial_cols)}/5 RAVLT trial columns")
+            log(f"Only found {len(ravlt_trial_cols)}/5 RAVLT trial columns")
             extracted_data['RAVLT_Total'] = np.nan
         
         # RAVLT Delayed Recall - CORRECT column name
         if 'ravlt-delayed-recall-score' in cognitive_df.columns:
             extracted_data['RAVLT_DR'] = cognitive_df['ravlt-delayed-recall-score']
-            log(f"[SUCCESS] RAVLT delayed recall extracted")
+            log(f"RAVLT delayed recall extracted")
         else:
-            log("[ERROR] RAVLT delayed recall column not found")
+            log("RAVLT delayed recall column not found")
             extracted_data['RAVLT_DR'] = np.nan
         
         # BVMT Total - CORRECT column name
         if 'bvmt-total-recall' in cognitive_df.columns:
             extracted_data['BVMT_Total'] = cognitive_df['bvmt-total-recall']
-            log(f"[SUCCESS] BVMT total recall extracted")
+            log(f"BVMT total recall extracted")
         else:
-            log("[ERROR] BVMT total recall column not found")
+            log("BVMT total recall column not found")
             extracted_data['BVMT_Total'] = np.nan
         
         # NART - CORRECT column name
         if 'nart-score' in cognitive_df.columns:
             extracted_data['NART_Score'] = cognitive_df['nart-score']
-            log(f"[SUCCESS] NART score extracted")
+            log(f"NART score extracted")
         else:
-            log("[ERROR] NART score column not found")
+            log("NART score column not found")
             extracted_data['NART_Score'] = np.nan
         
         # RPM - CORRECT column name
         if 'rpm-score' in cognitive_df.columns:
             extracted_data['RPM_Score'] = cognitive_df['rpm-score']
-            log(f"[SUCCESS] RPM score extracted")
+            log(f"RPM score extracted")
         else:
-            log("[ERROR] RPM score column not found")
+            log("RPM score column not found")
             extracted_data['RPM_Score'] = np.nan
-        
-        # =========================================================================
-        # STEP 3: Analyze missing data BEFORE processing
-        # =========================================================================
+        # Analyze missing data BEFORE processing
         log("\n[MISSING DATA] Analyzing missing data patterns...")
         
         key_columns = ['RAVLT_Total', 'RAVLT_DR', 'BVMT_Total', 'NART_Score', 'RPM_Score']
@@ -147,14 +136,14 @@ if __name__ == "__main__":
         # Save missing data report
         with open(MISSING_REPORT_FILE, 'w') as f:
             f.write(missing_report)
-        log(f"\n[SAVE] Missing data report saved to: {MISSING_REPORT_FILE}")
+        log(f"\nMissing data report saved to: {MISSING_REPORT_FILE}")
         
         # Document excluded participants if any
         complete_data = extracted_data.dropna(subset=key_columns)
         n_excluded = len(extracted_data) - len(complete_data)
         
         if n_excluded > 0:
-            log(f"\n[EXCLUSION] {n_excluded} participants will be excluded due to missing data")
+            log(f"\n{n_excluded} participants will be excluded due to missing data")
             
             # Get demographic data for comparison
             demo_cols = ['age', 'sex', 'education']
@@ -168,18 +157,15 @@ if __name__ == "__main__":
             )
             
             if not comparison.empty:
-                log("\n[EXCLUSION] Comparison of included vs excluded participants:")
+                log("\nComparison of included vs excluded participants:")
                 log(comparison.to_string())
                 
                 # Save comparison
                 comparison_file = RQ_DIR / "data" / "step01_exclusion_comparison.csv"
                 comparison.to_csv(comparison_file, index=False)
-                log(f"[SAVE] Exclusion comparison saved to: {comparison_file}")
-        
-        # =========================================================================
-        # STEP 4: Convert to T-scores
-        # =========================================================================
-        log("\n[PROCESS] Converting raw scores to T-scores (M=50, SD=10)...")
+                log(f"Exclusion comparison saved to: {comparison_file}")
+        # Convert to T-scores
+        log("\nConverting raw scores to T-scores (M=50, SD=10)...")
         
         # Use complete cases for T-score calculation
         t_score_df = complete_data.copy()
@@ -197,10 +183,7 @@ if __name__ == "__main__":
             mean = t_score_df[col].mean()
             std = t_score_df[col].std()
             log(f"  {col:15} M={mean:.1f}, SD={std:.1f}")
-        
-        # =========================================================================
-        # STEP 5: Save final dataset
-        # =========================================================================
+        # Save final dataset
         
         # Select final columns
         final_columns = ['UID', 'RAVLT_Total_T', 'RAVLT_DR_T', 'BVMT_Total_T', 'NART_T', 'RPM_T']
@@ -208,12 +191,9 @@ if __name__ == "__main__":
         
         # Save
         final_df.to_csv(OUTPUT_FILE, index=False)
-        log(f"\n[SAVE] Saved cognitive test T-scores to: {OUTPUT_FILE}")
-        log(f"[INFO] Final dataset: {final_df.shape[0]} participants, {final_df.shape[1]} columns")
-        
-        # =========================================================================
-        # STEP 6: Create summary
-        # =========================================================================
+        log(f"\nSaved cognitive test T-scores to: {OUTPUT_FILE}")
+        log(f"Final dataset: {final_df.shape[0]} participants, {final_df.shape[1]} columns")
+        # Create summary
         log("\n" + "="*60)
         log("SUMMARY")
         log("="*60)
@@ -225,10 +205,10 @@ if __name__ == "__main__":
         for old, new in COLUMN_MAPPINGS.items():
             if 'ravlt' in new.lower() or 'bvmt' in new.lower() or 'nart' in new.lower() or 'rpm' in new.lower():
                 log(f"  {old:30} → {new}")
-        log("\n[SUCCESS] Step 01 complete - All column names correct, missing data documented")
+        log("\nStep 01 complete - All column names correct, missing data documented")
         
     except Exception as e:
-        log(f"\n[ERROR] Script failed: {str(e)}")
+        log(f"\nScript failed: {str(e)}")
         import traceback
-        log(f"[TRACEBACK]\n{traceback.format_exc()}")
+        log(f"\n{traceback.format_exc()}")
         sys.exit(1)

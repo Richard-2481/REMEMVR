@@ -1,61 +1,5 @@
 #!/usr/bin/env python3
-# =============================================================================
-# SCRIPT METADATA
-# =============================================================================
-"""
-Step ID: step07b
-Step Name: Recip+Log ROOT Model Verification for RQ 5.2.5
-RQ: results/ch5/5.2.5
-Generated: 2025-12-10
-
-PURPOSE:
-Verify that Purification-Trajectory Paradox findings (RQ 5.2.5) remain robust
-when updating functional form from Log-only to Recip+Log (matching RQ 5.2.1
-ROOT model after extended comparison).
-
-KEY QUESTION:
-Does Purified CTT still have WORSE model fit (higher AIC) than Full CTT despite
-better correlation, regardless of functional form (Log vs Recip+Log)?
-
-**Purification-Trajectory Paradox (Original):**
-- Correlation: Purified CTT > Full CTT (r improves by Δr=+0.015-0.027)
-- Model Fit: Purified CTT < Full CTT (AIC WORSE by Δ=+154.42)
-- Paradox: Better correlation but WORSE trajectory fit
-
-EXPECTED INPUTS:
-  - data/step06_standardized_outcomes.csv
-    Columns: ['composite_ID', 'UID', 'TSVR_hours', 'domain', 'z_full_ctt', 'z_purified_ctt', 'z_irt_theta']
-    Format: Standardized outcomes (from step06, unchanged)
-    Expected rows: 800 (400 composite_IDs × 2 domains - What/Where only)
-
-EXPECTED OUTPUTS:
-  - data/step07b_lmm_model_comparison_recip_log.csv
-    Columns: ['measurement', 'AIC_log', 'AIC_recip_log', 'delta_AIC_log', 'delta_AIC_recip_log', 'paradox_robust']
-    Format: AIC comparison Log vs Recip+Log for 3 measurement types
-    Expected: Paradox persists (Purified CTT still highest AIC with both forms)
-
-  - data/step07b_full_ctt_model_recip_log.pkl
-  - data/step07b_purified_ctt_model_recip_log.pkl
-  - data/step07b_irt_theta_model_recip_log.pkl
-    Format: Fitted LMM objects (statsmodels save format)
-
-  - logs/step07b_recip_log_verification.log
-    Format: Execution log with AIC comparisons
-
-VALIDATION CRITERIA:
-  - All 3 models converge with Recip+Log
-  - AIC pattern persists: Full CTT < IRT < Purified CTT (regardless of functional form)
-  - Correlation improvements (step05) unchanged (measure static ability, not trajectories)
-
-g_code REASONING:
-- Approach: Refit step07 parallel LMMs with Recip+Log functional form
-- Why this approach: Purification Paradox tests measurement quality via trajectory fit
-- Precedent: RQ 5.4.5 showed paradox ROBUST across functional forms (strengthened)
-- Expected outcome: AIC deltas may shift but pattern persists (Full < IRT < Purified)
-- Data flow: Load step06 standardized z-scores → Add recip_TSVR → Fit 3 parallel models
-  → Compare AICs to original Log-only → Verify paradox persists
-"""
-# =============================================================================
+"""Recip+Log ROOT Model Verification for RQ 5.2.5: Verify that Purification-Trajectory Paradox findings (RQ 5.2.5) remain robust"""
 
 import sys
 from pathlib import Path
@@ -72,7 +16,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step07b_recip_log_verification.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -87,10 +30,7 @@ if __name__ == "__main__":
         log("  RQ 5.2.1 ROOT model changed from Log-only to Recip+Log")
         log("  Testing if Purification-Trajectory Paradox robust to functional form")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Standardized Outcomes and Add Recip+Log Transformation
-        # =====================================================================
+        # Load Standardized Outcomes and Add Recip+Log Transformation
         log("[STEP 1] Loading standardized outcomes...")
         log("")
 
@@ -114,10 +54,7 @@ if __name__ == "__main__":
 
         log(f"  Data: {data['UID'].nunique()} participants, {data['domain'].nunique()} domains")
         log("")
-
-        # =====================================================================
-        # STEP 2: Fit Parallel LMMs with Recip+Log Functional Form
-        # =====================================================================
+        # Fit Parallel LMMs with Recip+Log Functional Form
         log("[STEP 2] Fitting parallel LMMs with Recip+Log functional form...")
         log("")
 
@@ -169,10 +106,7 @@ if __name__ == "__main__":
                     'BIC_recip_log': np.nan,
                     'logLik_recip_log': np.nan
                 })
-
-        # =====================================================================
-        # STEP 3: Load Original Log-Only Results for Comparison
-        # =====================================================================
+        # Load Original Log-Only Results for Comparison
         log("[STEP 3] Loading original Log-only results...")
         log("")
 
@@ -238,10 +172,7 @@ if __name__ == "__main__":
             log("  Cannot compare to original Log-only results")
             log("")
             comparison = pd.DataFrame(aic_results)
-
-        # =====================================================================
-        # STEP 4: Save Model Objects
-        # =====================================================================
+        # Save Model Objects
         log("[STEP 4] Saving model objects...")
         log("")
 
@@ -252,10 +183,7 @@ if __name__ == "__main__":
                 model.save(str(model_file))
                 log(f"  Saved: {model_file.name}")
         log("")
-
-        # =====================================================================
-        # STEP 5: Verification Summary
-        # =====================================================================
+        # Verification Summary
         log("[STEP 5] VERIFICATION SUMMARY")
         log("=" * 80)
         log("")
@@ -300,16 +228,16 @@ if __name__ == "__main__":
 
         log("")
         log("=" * 80)
-        log("[SUCCESS] Step 07b complete")
-        log(f"[INFO] All outputs saved to {RQ_DIR / 'data'}")
+        log("Step 07b complete")
+        log(f"All outputs saved to {RQ_DIR / 'data'}")
         sys.exit(0)
 
     except Exception as e:
         log("")
         log("=" * 80)
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         log("")
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

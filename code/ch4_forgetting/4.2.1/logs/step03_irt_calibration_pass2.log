@@ -1,0 +1,57 @@
+============================================================
+Step 03: IRT Calibration Pass 2 (Purified Items - FINAL)
+============================================================
+
+Step 03: IRT Calibration Pass 2 (Purified Items)
+Loading input data...
+step00_irt_input.csv (400 rows, 106 cols)
+step02_purified_items.csv (69 rows)
+Total items in original data: 105
+Purified items retained: 69
+Filtering to purified items only...
+Retained 69 items in wide-format data
+Converting filtered wide format to long format for IRT...
+Long format created: 27600 rows
+Unique UIDs: 100
+Unique tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Unique items: 69
+Deriving factor groups for purified items...
+What: ['-N-'] -> 19 items
+Where: ['-L-', '-U-', '-D-'] -> 45 items
+When: ['-O-'] -> 5 items
+Running calibrate_irt (Pass 2 - purified items only)...
+Config: factors=['What', 'Where', 'When'], correlated=True
+Device: cpu, seed: 42
+Items: 69 (purified)
+IRT calibration complete
+Theta scores shape: (400, 5)
+Item parameters shape: (69, 6)
+Formatting and saving FINAL item parameters...
+step03_item_parameters.csv (69 items)
+Item parameters (Pass 2 - FINAL):
+Discrimination range: 0.389 - 3.683
+Difficulty range: -2.625 - 3.077
+what items: 19
+where items: 45
+when items: 5
+Formatting and saving FINAL theta scores...
+step03_theta_scores.csv (400 observations)
+Theta scores (Pass 2 - FINAL):
+theta_what: mean=-0.007, std=0.899
+theta_where: mean=0.037, std=0.932
+theta_when: mean=0.109, std=0.688
+Running validate_irt_convergence...
+Converged: True
+Message: Model converged successfully
+Additional parameter checks (D039 bounds):
+Discrimination in [0.4, 10.0]: False (actual: [0.389, 3.683])
+Difficulty in [-3.0, 3.0]: False (actual: [-2.625, 3.077])
+No NaN in parameters: True (0 items with NaN)
+No NaN in theta scores: True (0 observations with NaN)
+Some validation checks failed - review item parameters
+Step 03: IRT Calibration Pass 2 (FINAL) complete
+
+Next: Step 04 will merge theta scores with TSVR for LMM input
+Outputs saved to data/ (FINAL):
+  - data/step03_item_parameters.csv
+  - data/step03_theta_scores.csv

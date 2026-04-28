@@ -1,0 +1,368 @@
+================================================================================
+Step 05b: Model Averaging for RQ 6.1.1
+================================================================================
+
+Loading input data...
+  ✓ LMM input: 400 rows
+  ✓ Model comparison: 65 models
+  ✓ Best model: Sin+Cos (weight=21.7%)
+======================================================================
+MODEL AVERAGING FOR CONFIDENCE TRAJECTORIES
+======================================================================
+
+[STEP 1] Identifying competitive models (ΔAIC < 7.0)...
+  ✓ 48 competitive models identified
+  ✓ Total original weight: 97.5%
+
+[STEP 2] Creating time transformations...
+  ✓ 34 time transformations created
+
+[STEP 3] Fitting 48 models...
+  [ 1/48] Sin+Cos                   w=0.2228 (with slope) ✓
+  [ 2/48] Tanh+Log                  w=0.0482 (with slope) ✓
+  [ 3/48] PowerLaw_10               w=0.0280 (with slope) ✓
+  [ 4/48] Reciprocal                w=0.0280 (with slope) ✓
+  [ 5/48] Recip_sq                  w=0.0280 (with slope) ✓
+  [ 6/48] PowerLaw_09               w=0.0268 (with slope) ✓
+  [ 7/48] FourthRoot                w=0.0262 (with slope) ✓
+  [ 8/48] Root_033                  w=0.0254 (with slope) ✓
+  [ 9/48] CubeRoot                  w=0.0254 (with slope) ✓
+  [10/48] PowerLaw_08               w=0.0252 (with slope) ✓
+  [11/48] PowerLaw_07               w=0.0235 (with slope) ✓
+  [12/48] Cubic                     w=0.0235 (with slope) ✓
+  [13/48] LogLog                    w=0.0228 (with slope) ✓
+  [14/48] SquareRoot+Recip          w=0.0218 (with slope) ✓
+  [15/48] Exp_slow                  w=0.0217 (with slope) ✓
+  [16/48] SquareRoot                w=0.0217 (with slope) ✓
+  [17/48] PowerLaw_06               w=0.0216 (with slope) ✓
+  [18/48] PowerLaw_05               w=0.0196 (with slope) ✓
+  [19/48] Root_067                  w=0.0178 (with slope) ✓
+  [20/48] PowerLaw_04               w=0.0175 (with slope) ✓
+  [21/48] PowerLaw+Recip+Log        w=0.0157 (with slope) ✓
+  [22/48] PowerLaw_03               w=0.0155 (with slope) ✓
+  [23/48] Log+PowerLaw05            w=0.0135 (with slope) ✓
+  [24/48] PowerLaw_Log              w=0.0135 (with slope) ✓
+  [25/48] Quartic                   w=0.0135 (with slope) ✓
+  [26/48] PowerLaw_02               w=0.0134 (with slope) ✓
+  [27/48] Recip+Log                 w=0.0121 (with slope) ✓
+  [28/48] Log+Recip                 w=0.0121 (with slope) ✓
+  [29/48] Log+LogLog                w=0.0118 (with slope) ✓
+  [30/48] Recip+PowerLaw            w=0.0117 (with slope) ✓
+  [31/48] Recip+PowerLaw05          w=0.0117 (with slope) ✓
+  [32/48] PowerLaw_01               w=0.0115 (with slope) ✓
+  [33/48] Lin+Quad+Log              w=0.0108 (with slope) ✓
+  [34/48] Quad+Log                  w=0.0108 (with slope) ✓
+  [35/48] Exp+Recip                 w=0.0103 (with slope) ✓
+  [36/48] Recip+Lin                 w=0.0103 (with slope) ✓
+  [37/48] Root_Multi                w=0.0098 (with slope) ✓
+  [38/48] Log                       w=0.0098 (with slope) ✓
+  [39/48] Log10                     w=0.0098 (with slope) ✓
+  [40/48] Log2                      w=0.0098 (with slope) ✓
+  [41/48] CubeRoot+Log              w=0.0095 (with slope) ✓
+  [42/48] SquareRoot+Log            w=0.0093 (with slope) ✓
+  [43/48] Log+SquareRoot            w=0.0093 (with slope) ✓
+  [44/48] Quad+Log+SquareRoot       w=0.0089 (with slope) ✓
+  [45/48] SquareRoot+PowerLaw       w=0.0079 (with slope) ✓
+  [46/48] SquareRoot+Lin            w=0.0078 (with slope) ✓
+  [47/48] PowerLaw_Lin              w=0.0072 (with slope) ✓
+  [48/48] Exp+PowerLaw              w=0.0072 (with slope) ✓
+
+[STEP 4] Computing model-averaged predictions...
+  ✓ Predictions: mean=-0.6045, SD=0.1567
+  ✓ Uncond. variance: mean=0.008972, max=0.099129
+
+[STEP 5] Computing model-averaged random effects...
+  ✓ Slopes from 48 models (weight sum = 100.00%)
+  ✓ Random intercepts: mean=-0.0181, SD=0.3136
+  ✓ Random slopes: mean=-0.012575, SD=0.098935
+  ✓ Effective N models: 31.12
+
+[STEP 6] Preparing output files...
+
+Saving output files...
+  ✓ step05b_competitive_models.csv (48 models)
+  ✓ step05b_model_averaged_predictions.csv (400 rows)
+  ✓ step05b_model_averaged_theta.csv (400 rows)
+  ✓ step05b_model_averaged_random_effects.csv (100 UIDs)
+      (includes slopes from 48 models)
+  ✓ step05b_metadata.csv
+
+================================================================================
+Model Averaging Complete
+================================================================================
+  Models in competitive set: 48
+  Effective N models: 31.12
+  Top 3 models by renormalized weight:
+    1. Sin+Cos: 0.223
+    2. Tanh+Log: 0.048
+    3. PowerLaw_10: 0.028
+================================================================================
+================================================================================
+Step 05b: Model Averaging for RQ 6.1.1
+================================================================================
+
+Loading input data...
+  ✓ LMM input: 400 rows
+  ✓ Model comparison: 65 models
+  ✓ Best model: Sin+Cos (weight=21.7%)
+======================================================================
+MODEL AVERAGING FOR CONFIDENCE TRAJECTORIES
+======================================================================
+
+[STEP 1] Identifying competitive models (ΔAIC < 7.0)...
+  ✓ 48 competitive models identified
+  ✓ Total original weight: 97.5%
+
+[STEP 2] Creating time transformations...
+  ✓ 34 time transformations created
+
+[STEP 3] Fitting 48 models...
+  [ 1/48] Sin+Cos                   w=0.2228 (with slope) ✓
+  [ 2/48] Tanh+Log                  w=0.0482 (with slope) ✓
+  [ 3/48] PowerLaw_10               w=0.0280 (with slope) ✓
+  [ 4/48] Reciprocal                w=0.0280 (with slope) ✓
+  [ 5/48] Recip_sq                  w=0.0280 (with slope) ✓
+  [ 6/48] PowerLaw_09               w=0.0268 (with slope) ✓
+  [ 7/48] FourthRoot                w=0.0262 (with slope) ✓
+  [ 8/48] Root_033                  w=0.0254 (with slope) ✓
+  [ 9/48] CubeRoot                  w=0.0254 (with slope) ✓
+  [10/48] PowerLaw_08               w=0.0252 (with slope) ✓
+  [11/48] PowerLaw_07               w=0.0235 (with slope) ✓
+  [12/48] Cubic                     w=0.0235 (with slope) ✓
+  [13/48] LogLog                    w=0.0228 (with slope) ✓
+  [14/48] SquareRoot+Recip          w=0.0218 (with slope) ✓
+  [15/48] Exp_slow                  w=0.0217 (with slope) ✓
+  [16/48] SquareRoot                w=0.0217 (with slope) ✓
+  [17/48] PowerLaw_06               w=0.0216 (with slope) ✓
+  [18/48] PowerLaw_05               w=0.0196 (with slope) ✓
+  [19/48] Root_067                  w=0.0178 (with slope) ✓
+  [20/48] PowerLaw_04               w=0.0175 (with slope) ✓
+  [21/48] PowerLaw+Recip+Log        w=0.0157 (with slope) ✓
+  [22/48] PowerLaw_03               w=0.0155 (with slope) ✓
+  [23/48] Log+PowerLaw05            w=0.0135 (with slope) ✓
+  [24/48] PowerLaw_Log              w=0.0135 (with slope) ✓
+  [25/48] Quartic                   w=0.0135 (with slope) ✓
+  [26/48] PowerLaw_02               w=0.0134 (with slope) ✓
+  [27/48] Recip+Log                 w=0.0121 (with slope) ✓
+  [28/48] Log+Recip                 w=0.0121 (with slope) ✓
+  [29/48] Log+LogLog                w=0.0118 (with slope) ✓
+  [30/48] Recip+PowerLaw            w=0.0117 (with slope) ✓
+  [31/48] Recip+PowerLaw05          w=0.0117 (with slope) ✓
+  [32/48] PowerLaw_01               w=0.0115 (with slope) ✓
+  [33/48] Lin+Quad+Log              w=0.0108 (with slope) ✓
+  [34/48] Quad+Log                  w=0.0108 (with slope) ✓
+  [35/48] Exp+Recip                 w=0.0103 (with slope) ✓
+  [36/48] Recip+Lin                 w=0.0103 (with slope) ✓
+  [37/48] Root_Multi                w=0.0098 (with slope) ✓
+  [38/48] Log                       w=0.0098 (with slope) ✓
+  [39/48] Log10                     w=0.0098 (with slope) ✓
+  [40/48] Log2                      w=0.0098 (with slope) ✓
+  [41/48] CubeRoot+Log              w=0.0095 (with slope) ✓
+  [42/48] SquareRoot+Log            w=0.0093 (with slope) ✓
+  [43/48] Log+SquareRoot            w=0.0093 (with slope) ✓
+  [44/48] Quad+Log+SquareRoot       w=0.0089 (with slope) ✓
+  [45/48] SquareRoot+PowerLaw       w=0.0079 (with slope) ✓
+  [46/48] SquareRoot+Lin            w=0.0078 (with slope) ✓
+  [47/48] PowerLaw_Lin              w=0.0072 (with slope) ✓
+  [48/48] Exp+PowerLaw              w=0.0072 (with slope) ✓
+
+[STEP 4] Computing model-averaged predictions...
+  ✓ Predictions: mean=-0.6251, SD=0.3770
+  ✓ Uncond. variance: mean=0.032677, max=0.474557
+
+[STEP 5] Computing model-averaged random effects...
+  ✓ Slopes from 48 models (weight sum = 100.00%)
+  ✓ Random intercepts: mean=-0.0181, SD=0.3136
+  ✓ Random slopes: mean=-0.012575, SD=0.098935
+  ✓ Effective N models: 31.12
+
+[STEP 6] Preparing output files...
+
+Saving output files...
+  ✓ step05b_competitive_models.csv (48 models)
+  ✓ step05b_model_averaged_predictions.csv (400 rows)
+  ✓ step05b_model_averaged_theta.csv (400 rows)
+  ✓ step05b_model_averaged_random_effects.csv (100 UIDs)
+      (includes slopes from 48 models)
+  ✓ step05b_metadata.csv
+
+================================================================================
+Model Averaging Complete
+================================================================================
+  Models in competitive set: 48
+  Effective N models: 31.12
+  Top 3 models by renormalized weight:
+    1. Sin+Cos: 0.223
+    2. Tanh+Log: 0.048
+    3. PowerLaw_10: 0.028
+================================================================================
+================================================================================
+Step 05b: Model Averaging for RQ 6.1.1
+================================================================================
+
+Loading input data...
+  ✓ LMM input: 400 rows
+  ✓ Model comparison: 5 models
+
+'akaike_weight'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'akaike_weight'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.1/code/step05b_model_averaging.py", line 289, in <module>
+    log(f"  ✓ Best model: {comparison.iloc[0]['model_name']} (weight={comparison.iloc[0]['akaike_weight']:.1%})")
+                                                                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'akaike_weight'
+
+================================================================================
+Step 05b: Model Averaging for RQ 6.1.1
+================================================================================
+
+Loading input data...
+  ✓ LMM input: 400 rows
+  ✓ Model comparison: 5 models
+======================================================================
+MODEL AVERAGING FOR CONFIDENCE TRAJECTORIES
+======================================================================
+
+[STEP 1] Identifying competitive models (ΔAIC < 7.0)...
+
+'delta_AIC'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'delta_AIC'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.1/code/step05b_model_averaging.py", line 291, in <module>
+    results = run_model_averaging(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.1/code/step05b_model_averaging.py", line 82, in run_model_averaging
+    competitive = identify_competitive_models(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/model_averaging.py", line 51, in identify_competitive_models
+    (comparison_df['delta_AIC'] < delta_aic_threshold) &
+     ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'delta_AIC'
+
+================================================================================
+Step 05b: Model Averaging for RQ 6.1.1
+================================================================================
+
+Loading input data...
+  ✓ LMM input: 400 rows
+  ✓ Model comparison: 65 models
+======================================================================
+MODEL AVERAGING FOR CONFIDENCE TRAJECTORIES
+======================================================================
+
+[STEP 1] Identifying competitive models (ΔAIC < 7.0)...
+  ✓ 42 competitive models identified
+  ✓ Total original weight: 99.0%
+
+[STEP 2] Creating time transformations...
+  ✓ 34 time transformations created
+
+[STEP 3] Fitting 42 models...
+  [ 1/42] Root_033                  w=0.0637 (with slope) ✓
+  [ 2/42] CubeRoot                  w=0.0636 (with slope) ✓
+  [ 3/42] PowerLaw_04               w=0.0619 (with slope) ✓
+  [ 4/42] PowerLaw_05               w=0.0540 (with slope) ✓
+  [ 5/42] LogLog                    w=0.0525 (with slope) ✓
+  [ 6/42] PowerLaw_03               w=0.0505 (with slope) ✓
+  [ 7/42] FourthRoot                w=0.0495 (with slope) ✓
+  [ 8/42] PowerLaw_06               w=0.0344 (with slope) ✓
+  [ 9/42] SquareRoot+Lin            w=0.0294 (with slope) ✓
+  [10/42] PowerLaw_02               w=0.0289 (with slope) ✓
+  [11/42] SquareRoot+Recip          w=0.0263 (with slope) ✓
+  [12/42] Root_Multi                w=0.0256 (with slope) ✓
+  [13/42] Log+LogLog                w=0.0254 (with slope) ✓
+  [14/42] Recip+Log                 w=0.0250 (with slope) ✓
+  [15/42] Log+Recip                 w=0.0250 (with slope) ✓
+  [16/42] SquareRoot+PowerLaw       w=0.0246 (with slope) ✓
+  [17/42] CubeRoot+Log              w=0.0241 (with slope) ✓
+  [18/42] Recip+Lin                 w=0.0240 (with slope) ✓
+  [19/42] Exp+Recip                 w=0.0240 (with slope) ✓
+  [20/42] PowerLaw_Lin              w=0.0238 (with slope) ✓
+  [21/42] Exp+PowerLaw              w=0.0238 (with slope) ✓
+  [22/42] PowerLaw_Log              w=0.0232 (with slope) ✓
+  [23/42] Log+PowerLaw05            w=0.0232 (with slope) ✓
+  [24/42] Recip+PowerLaw05          w=0.0222 (with slope) ✓
+  [25/42] Recip+PowerLaw            w=0.0222 (with slope) ✓
+  [26/42] Tanh+Log                  w=0.0174 (with slope) ✓
+  [27/42] PowerLaw_07               w=0.0165 (with slope) ✓
+  [28/42] Exp+Log                   w=0.0160 (with slope) ✓
+  [29/42] Lin+Log                   w=0.0160 (with slope) ✓
+  [30/42] PowerLaw_01               w=0.0115 (with slope) ✓
+  [31/42] Recip+Quad                w=0.0107 (with slope) ✓
+  [32/42] PowerLaw+Recip+Log        w=0.0098 (with slope) ✓
+  [33/42] Lin+Log+PowerLaw          w=0.0090 (with slope) ✓
+  [34/42] Quad+Log                  w=0.0066 (with slope) ✓
+  [35/42] Lin+Quad+Log              w=0.0066 (with slope) ✓
+  [36/42] PowerLaw_08               w=0.0062 (with slope) ✓
+  [37/42] Sin+Log                   w=0.0053 (with slope) ✓
+  [38/42] Quad+Log+SquareRoot       w=0.0050 (with slope) ✓
+  [39/42] Log2                      w=0.0032 (with slope) ✓
+  [40/42] Log                       w=0.0032 (with slope) ✓
+  [41/42] Log10                     w=0.0032 (with slope) ✓
+  [42/42] Quartic                   w=0.0030 (with slope) ✓
+
+[STEP 4] Computing model-averaged predictions...
+  ✓ Predictions: mean=0.0310, SD=0.8987
+  ✓ Uncond. variance: mean=0.001016, max=0.011637
+
+[STEP 5] Computing model-averaged random effects...
+  ✓ Slopes from 42 models (weight sum = 100.00%)
+  ✓ Random intercepts: mean=0.0000, SD=0.7804
+  ✓ Random slopes: mean=-0.000000, SD=0.168018
+  ✓ Effective N models: 32.73
+
+[STEP 6] Preparing output files...
+
+Saving output files...
+  ✓ step05b_competitive_models.csv (42 models)
+  ✓ step05b_model_averaged_predictions.csv (400 rows)
+  ✓ step05b_model_averaged_theta.csv (400 rows)
+  ✓ step05b_model_averaged_random_effects.csv (100 UIDs)
+      (includes slopes from 42 models)
+  ✓ step05b_metadata.csv
+
+================================================================================
+Model Averaging Complete
+================================================================================
+  Models in competitive set: 42
+  Effective N models: 32.73
+  Top 3 models by renormalized weight:
+    1. Root_033: 0.064
+    2. CubeRoot: 0.064
+    3. PowerLaw_04: 0.062
+================================================================================

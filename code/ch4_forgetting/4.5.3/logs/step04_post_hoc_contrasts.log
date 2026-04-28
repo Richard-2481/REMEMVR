@@ -1,0 +1,30 @@
+Step 04: Location-Specific Age Effects at Day 3
+Loading model and fixed effects...
+Model and 12 fixed effects
+Evaluation point: Day 3 (TSVR_hours = 72.0, log_TSVR = 4.290)
+Computing marginal age effects by location at Day 3...
+Age effect (Destination): -0.005329
+Age effect (Source): -0.005031
+Age effects by location at Day 3:
+  Destination: slope=-0.005329, SE=0.0164, z=-0.33, p=0.7446
+  Source: slope=-0.005031, SE=0.0180, z=-0.28, p=0.7798
+Computing Destination - Source contrast...
+Destination - Source: diff=-0.000299, z=-0.01, p=0.9902, Cohen's d=-0.017
+Running validation checks...
+2 location-specific effects present
+1 contrast present
+Dual p-values present (Decision D068)
+Tukey adjustment valid
+Confidence intervals valid
+Saving outputs...
+step04_age_effects_by_location.csv
+step04_post_hoc_contrasts.csv
+Age effects at Day 3 are similar for both location types:
+    Destination: -0.005329 theta units per year
+    Source: -0.005031 theta units per year
+    Difference: -0.000299 (p=0.9902)
+  Neither age effect is significantly different from zero
+  and the contrast is not significant.
+  This supports the null hypothesis: age does NOT differentially
+  affect source vs destination memory.
+Step 04 complete - Post-hoc contrasts computed

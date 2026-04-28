@@ -1,0 +1,20 @@
+Step 0: validate_dependencies
+Checking accuracy file from Ch5 5.3.1...
+Accuracy file not found: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+SOURCE RQ INCOMPLETE: Ch5 5.3.1 accuracy data missing
+Step 0: validate_dependencies
+Checking accuracy file from Ch5 5.3.1...
+Accuracy file not found: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+SOURCE RQ INCOMPLETE: Ch5 5.3.1 accuracy data missing
+Step 0: validate_dependencies
+Checking accuracy file from Ch5 5.3.1...
+Accuracy file: 1200 rows, 3 columns
+Accuracy file validation complete
+Checking confidence file from Ch6 6.4.1...
+Confidence file: 400 rows, 4 columns
+Confidence file validation complete
+Saving validated dependency data...
+step00_accuracy_raw.csv (1200 rows)
+step00_confidence_raw.csv (400 rows)
+step00_dependency_validation.txt
+Step 0 complete - all dependencies validated

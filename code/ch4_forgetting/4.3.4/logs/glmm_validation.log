@@ -1,0 +1,101 @@
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 60.017835
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+================================================================================
+GLMM VALIDATION: RQ 5.3.4 - Age × Paradigm Interaction
+================================================================================
+
+[1] Loading item-level data...
+   Loaded 28,800 item responses
+   Participants: 100
+   Items: 72
+   Age range: 20-70 years
+   Age centered: mean(Age_c) = 0.0000
+
+[2] Preparing model variables...
+   IFR: 9,600 (33.3%)
+   ICR: 9,600 (33.3%)
+   IRE: 9,600 (33.3%)
+
+[3] Fitting item-level mixed model...
+   Model: Correct ~ Age_c * Paradigm
+   Random effects: (1 | UID)
+   Approximation: Gaussian (valid for binary with large N)
+
+   Fitting... (may take 2-3 minutes with 28,800 observations)
+   Complete! Converged: False
+
+[4] Extracting Age × Paradigm interaction effects...
+
+Effect                                   GLMM p          GLMM β          SE             
+=====================================================================================
+MAIN EFFECTS:
+  Age (centered):                        0.066           -0.0011        
+  Paradigm ICR vs IFR:                   0.000           0.1034         
+  Paradigm IRE vs IFR:                   0.000           0.1239         
+
+AGE × PARADIGM INTERACTIONS (Baseline):
+  Age × ICR:                             0.551           0.0003          0.0005         
+  Age × IRE:                             0.744           -0.0002         0.0005         
+
+[5] Comparison to IRT→LMM...
+
+IRT→LMM findings (from summary.md):
+  3-way Age × Paradigm × Time: p > 0.7 (all terms NULL)
+  Age main effect: p=0.116 (marginal)
+
+GLMM findings (item-level, N=28,800):
+  Age main effect: p=0.066
+  Age × ICR (baseline): p=0.551
+  Age × IRE (baseline): p=0.744
+
+[6] Interpretation...
+
+   ✅ Finding ROBUST across methods
+      Item-level model confirms NULL Age × Paradigm interactions
+      Age × ICR: p=0.551 (NULL)
+      Age × IRE: p=0.744 (NULL)
+
+   INTERPRETATION:
+      IRT→LMM NULL finding validated at item level (N=28,800)
+      Age does NOT modulate paradigm-specific baseline performance
+      Retrieval support hypothesis not supported in VR context
+
+[7] Saving results...
+   Saved: data/glmm_comparison.csv
+   Saved: data/glmm_summary.txt
+
+================================================================================
+ITEM-LEVEL VALIDATION COMPLETE
+================================================================================
+
+Observations: 28,800 item-level responses
+Participants: 100
+Items: 72
+
+Outcome: ROBUST
+
+   ✅ NULL findings ROBUST (IRT→LMM and item-level model agree)
+   ✅ Age × Paradigm interaction non-significant at item level
+   ✅ No thesis narrative revision needed
+   ✅ quality validation can proceed
+
+Files created:
+   - data/glmm_comparison.csv
+   - data/glmm_summary.txt
+   - data/item_level_responses_with_age.csv (prerequisite)
+
+================================================================================

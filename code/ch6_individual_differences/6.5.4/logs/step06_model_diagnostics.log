@@ -1,0 +1,121 @@
+Step 06: model_diagnostics
+Loading LMM model object from step05...
+'NoneType' object has no attribute 'f_locals'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.4/code/step06_model_diagnostics.py", line 104, in <module>
+    lmm_result = pickle.load(f)
+                 ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 112, in __setstate__
+    _, design = dmatrices(d['formula'], data, eval_env=depth,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/highlevel.py", line 316, in dmatrices
+    eval_env = EvalEnvironment.capture(eval_env, reference=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/eval.py", line 242, in capture
+    [frame.f_locals, frame.f_globals],
+     ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'f_locals'
+Step 06: model_diagnostics
+Loading analysis dataset...
+analysis_dataset.csv (400 rows, 7 cols)
+Loading fixed effects from step05...
+fixed effects (7 parameters)
+Refitting model for diagnostics...
+Model refit successful
+Complete cases for diagnostics: 400
+Running LMM assumptions validation...
+Alpha level: 0.05
+Output directory: /home/etai/projects/REMEMVR/results/ch7/7.5.4
+Tests: normality, homoscedasticity, random_effects_normality, multicollinearity
+LMM assumptions validation complete
+Processing diagnostic results...
+Diagnostic categories: ['valid', 'diagnostics', 'plot_paths', 'message']
+diagnostics: statistic=nan, p=nan, passed=False
+1 diagnostic tests
+Saving diagnostic results...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step06_diagnostics.csv (1 rows, 5 cols)
+Running diagnostic structure validation...
+validate_dataframe_structure() missing 1 required positional argument: 'expected_rows'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.4/code/step06_model_diagnostics.py", line 229, in <module>
+    structure_validation = validate_dataframe_structure(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_dataframe_structure() missing 1 required positional argument: 'expected_rows'
+Step 06: model_diagnostics
+Loading analysis dataset...
+analysis_dataset.csv (400 rows, 7 cols)
+Loading fixed effects from step05...
+fixed effects (7 parameters)
+Refitting model for diagnostics...
+Model refit successful
+Complete cases for diagnostics: 400
+Running LMM assumptions validation...
+Alpha level: 0.05
+Output directory: /home/etai/projects/REMEMVR/results/ch7/7.5.4
+Tests: normality, homoscedasticity, random_effects_normality, multicollinearity
+LMM assumptions validation complete
+Processing diagnostic results...
+Diagnostic categories: ['valid', 'diagnostics', 'plot_paths', 'message']
+diagnostics: statistic=nan, p=nan, passed=False
+1 diagnostic tests
+Saving diagnostic results...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step06_diagnostics.csv (1 rows, 5 cols)
+Running diagnostic structure validation...
+Diagnostic structure: PASS
+Diagnostic tests passed: 0/1
+Failed diagnostic tests:
+diagnostics: Unknown
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Are the assumptions of our LMM statistically valid?
+2. What did we find?
+   -> 0/1 diagnostic tests passed
+   -> Structure validation: True
+3. What does it mean?
+   -> Model assumptions determine validity of statistical inference
+4. What should we do next?
+   -> Proceed to step07: cross-validation and bootstrap confidence intervals
+=========================
+
+Step 06 complete
+Step 06: model_diagnostics
+Loading analysis dataset...
+analysis_dataset.csv (400 rows, 7 cols)
+Loading fixed effects from step05...
+fixed effects (7 parameters)
+Refitting model for diagnostics...
+Model refit successful
+Complete cases for diagnostics: 400
+Running LMM assumptions validation...
+Alpha level: 0.05
+Output directory: /home/etai/projects/REMEMVR/results/ch7/7.5.4
+Tests: normality, homoscedasticity, random_effects_normality, multicollinearity
+LMM assumptions validation complete
+Processing diagnostic results...
+Diagnostic categories: ['valid', 'diagnostics', 'plot_paths', 'message']
+diagnostics: statistic=nan, p=nan, passed=False
+1 diagnostic tests
+Saving diagnostic results...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step06_diagnostics.csv (1 rows, 5 cols)
+Running diagnostic structure validation...
+Diagnostic structure: PASS
+Diagnostic tests passed: 0/1
+Failed diagnostic tests:
+diagnostics: Unknown
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Are the assumptions of our LMM statistically valid?
+2. What did we find?
+   -> 0/1 diagnostic tests passed
+   -> Structure validation: True
+3. What does it mean?
+   -> Model assumptions determine validity of statistical inference
+4. What should we do next?
+   -> Proceed to step07: cross-validation and bootstrap confidence intervals
+=========================
+
+Step 06 complete

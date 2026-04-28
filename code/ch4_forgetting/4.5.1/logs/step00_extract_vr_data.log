@@ -1,0 +1,45 @@
+Step 0: Extract Source and Destination Location Data
+Loading dfData.csv...
+dfData.csv (400 rows, 214 cols)
+Base columns present: ['UID', 'TEST', 'TSVR']
+Identifying source/destination items from IFR/ICR/IRE...
+36 source/destination items
+IFR-U: 6 items
+IFR-D: 6 items
+ICR-U: 6 items
+ICR-D: 6 items
+IRE-U: 6 items
+IRE-D: 6 items
+Converting TQ values to binary (threshold=1.0)...
+36 items converted to binary
+Total responses: 14400
+Zeros (incorrect): 7845 (54.5%)
+Ones (correct): 6555 (45.5%)
+Missing (NaN): 0
+Creating composite_ID and reshaping to wide format...
+Wide-format IRT input created: 400 rows x 37 cols
+No duplicate composite_IDs
+[Q-MATRIX] Creating Q-matrix for 2-factor IRT...
+[Q-MATRIX] Created Q-matrix: 36 rows x 3 cols
+[Q-MATRIX] Source items: 18
+[Q-MATRIX] Destination items: 18
+Q-matrix validation passed: Each item loads on exactly one factor
+Extracting TSVR time variable...
+TSVR mapping created: 400 rows x 4 cols
+Range: [1.00, 246.24] hours
+Mean: 64.95 hours
+TSVR values outside expected [0, 168] range
+Saving output files...
+step00_irt_input.csv (400 rows, 37 cols)
+step00_q_matrix.csv (36 rows, 3 cols)
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Running validation checks...
+IRT input has 400 rows
+All item values in {0, 1, NaN}
+Q-matrix has 36 rows (18 source, 18 destination)
+TSVR mapping has 400 rows
+9 TSVR values outside [0, 168] range
+All 400 composite_IDs present in IRT input and TSVR mapping
+No items with >50% missing data (max: 0.0%)
+All validation checks passed
+Step 0 complete

@@ -1,0 +1,64 @@
+Step 05: Outlier Analysis and Robustness
+Reading domain slopes...
+100 rows
+Reading ICC estimates...
+2 rows
+[OUTLIER DETECTION] Using z-score method (threshold = 3.29)...
+0 outliers detected (|z| > 3.29)
+WHAT: 0.0% outliers (<10% threshold)
+0 outliers detected (|z| > 3.29)
+WHERE: 0.0% outliers (<10% threshold)
+[NORMALITY TEST] Running Shapiro-Wilk tests...
+Shapiro-Wilk: W=0.9938, p=0.9292 (normal)
+Shapiro-Wilk: W=0.9845, p=0.2942 (normal)
+Recomputing ICC without outliers...
+ICC original: 1.0000
+ICC no outliers: 1.0000
+Delta ICC: 0.0000
+ICC original: 1.0000
+ICC no outliers: 1.0000
+Delta ICC: 0.0000
+Outlier analysis table: 0 outliers (none detected)
+Robustness checks table: 2 rows
+Checking robustness results...
+All delta_icc values in reasonable range [-0.2, 0.2]
+Both domains represented in robustness checks
+Writing outlier analysis...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step05_outlier_analysis.csv (0 outliers)
+Writing robustness checks...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step05_robustness_checks.csv (2 rows)
+Step 05 complete
+Outliers detected: 0, max |delta_icc|: 0.0000
+Proceed to step06 (split-half reliability)
+Step 05: Outlier Analysis and Robustness
+Reading domain slopes...
+100 rows
+Reading ICC estimates...
+2 rows
+[OUTLIER DETECTION] Using z-score method (threshold = 3.29)...
+0 outliers detected (|z| > 3.29)
+WHAT: 0.0% outliers (<10% threshold)
+0 outliers detected (|z| > 3.29)
+WHERE: 0.0% outliers (<10% threshold)
+[NORMALITY TEST] Running Shapiro-Wilk tests...
+Shapiro-Wilk: W=0.9938, p=0.9292 (normal)
+Shapiro-Wilk: W=0.9845, p=0.2942 (normal)
+Recomputing ICC without outliers...
+ICC original: 1.0000
+ICC no outliers: 1.0000
+Delta ICC: 0.0000
+ICC original: 1.0000
+ICC no outliers: 1.0000
+Delta ICC: 0.0000
+Outlier analysis table: 0 outliers (none detected)
+Robustness checks table: 2 rows
+Checking robustness results...
+All delta_icc values in reasonable range [-0.2, 0.2]
+Both domains represented in robustness checks
+Writing outlier analysis...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step05_outlier_analysis.csv (0 outliers)
+Writing robustness checks...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step05_robustness_checks.csv (2 rows)
+Step 05 complete
+Outliers detected: 0, max |delta_icc|: 0.0000
+Proceed to step06 (split-half reliability)

@@ -1,0 +1,139 @@
+Step 00: Load Data from RQ 5.1 and Master Dataset
+Loading IRT theta scores from RQ 5.1...
+step03_theta_scores.csv (400 rows, 4 cols)
+  Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+  Theta range - What: [-2.47, 2.53]
+  Theta range - Where: [-2.31, 2.49]
+  Theta range - When: [-0.89, 2.07]
+Loading TSVR mapping from RQ 5.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+  TSVR range: [1.00, 246.24] hours
+Loading purified items list from RQ 5.1...
+step02_purified_items.csv (69 rows, 4 cols)
+  Columns: ['item_name', 'factor', 'a', 'b']
+  Items per factor: {'where': 45, 'what': 19, 'when': 5}
+Loading raw master data...
+dfData.csv (400 rows, 214 cols)
+Filtering raw data to purified items only...
+  Purified item count: 69
+  Items available in raw data: 69
+Raw data filtered (400 rows, 71 cols)
+  Base columns: ['UID', 'TEST']
+  Item columns: 69
+Saving output files...
+step00_irt_theta_loaded.csv (400 rows, 4 cols)
+step00_tsvr_loaded.csv (400 rows, 4 cols)
+step00_purified_items.csv (69 rows, 4 cols)
+step00_raw_data_filtered.csv (400 rows, 71 cols)
+Running data format validation...
+  IRT theta format...
+  Theta values in expected range: [-2.47, 2.53]
+  TSVR format...
+  TSVR_hours in expected range: [1.00, 246.24]
+  Purified items format...
+  Purified item count outside expected range [40, 60]: 69
+  Raw data filtered format...
+  Raw data row count: 400
+  Item columns in filtered data: 69
+  Composite ID alignment across files...
+  Composite IDs aligned: 400 unique IDs
+All validation checks passed
+Step 00 complete
+Step 00: Load Data from RQ 5.1 and Master Dataset
+Loading IRT theta scores from RQ 5.1...
+step03_theta_scores.csv (400 rows, 4 cols)
+  Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+  Theta range - What: [-2.47, 2.53]
+  Theta range - Where: [-2.31, 2.49]
+  Theta range - When: [-0.89, 2.07]
+Loading TSVR mapping from RQ 5.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+  TSVR range: [1.00, 246.24] hours
+Loading purified items list from RQ 5.1...
+step02_purified_items.csv (69 rows, 4 cols)
+  Columns: ['item_name', 'factor', 'a', 'b']
+  Items per factor: {'where': 45, 'what': 19, 'when': 5}
+Loading raw master data...
+dfData.csv (400 rows, 214 cols)
+Filtering raw data to purified items only...
+  Purified item count: 69
+  Items available in raw data: 69
+Raw data filtered (400 rows, 71 cols)
+  Base columns: ['UID', 'TEST']
+  Item columns: 69
+Applying dichotomization rule: 1=1, <1=0...
+  Unique values BEFORE dichotomization: [np.float64(0.0), np.float64(0.25), np.float64(0.5), np.float64(1.0)]
+  Unique values AFTER dichotomization: [np.int64(0), np.int64(1)]
+SUCCESS: All item scores are now binary (0 or 1)
+Saving output files...
+step00_irt_theta_loaded.csv (400 rows, 4 cols)
+step00_tsvr_loaded.csv (400 rows, 4 cols)
+step00_purified_items.csv (69 rows, 4 cols)
+step00_raw_data_filtered.csv (400 rows, 71 cols)
+Running data format validation...
+  IRT theta format...
+  Theta values in expected range: [-2.47, 2.53]
+  TSVR format...
+  TSVR_hours in expected range: [1.00, 246.24]
+  Purified items format...
+  Purified item count outside expected range [40, 60]: 69
+  Raw data filtered format...
+  Raw data row count: 400
+  Item columns in filtered data: 69
+  Composite ID alignment across files...
+  Composite IDs aligned: 400 unique IDs
+All validation checks passed
+Step 00 complete
+Step 00: Load Data from RQ 5.1 and Master Dataset
+Loading IRT theta scores from RQ 5.2.1...
+step03_theta_scores.csv (400 rows, 4 cols)
+  Columns (original): ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Excluding theta_when (floor effects - 6-9% probability at encoding)
+  Columns (after exclusion): ['composite_ID', 'theta_what', 'theta_where']
+  Theta range - What: [-2.47, 2.53]
+  Theta range - Where: [-2.31, 2.49]
+Loading TSVR mapping from RQ 5.2.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+  TSVR range: [1.00, 246.24] hours
+Loading purified items list from RQ 5.2.1...
+step02_purified_items.csv (69 rows, 4 cols)
+  Columns: ['item_name', 'factor', 'a', 'b']
+  Items per factor (BEFORE filter): {'where': 45, 'what': 19, 'when': 5}
+Excluding When domain items (factor='when') due to floor effects
+  Items per factor (AFTER filter): {'where': 45, 'what': 19}
+  Total items after exclusion: 64 (expected ~64)
+Loading raw master data...
+dfData.csv (400 rows, 214 cols)
+Filtering raw data to purified items only...
+  Purified item count: 64
+  Items available in raw data: 64
+Raw data filtered (400 rows, 66 cols)
+  Base columns: ['UID', 'TEST']
+  Item columns: 64
+Applying dichotomization rule: 1=1, <1=0...
+  Unique values BEFORE dichotomization: [np.float64(0.0), np.float64(0.25), np.float64(0.5), np.float64(1.0)]
+  Unique values AFTER dichotomization: [np.int64(0), np.int64(1)]
+SUCCESS: All item scores are now binary (0 or 1)
+Saving output files...
+step00_irt_theta_loaded.csv (400 rows, 3 cols)
+step00_tsvr_loaded.csv (400 rows, 4 cols)
+step00_purified_items.csv (64 rows, 4 cols)
+step00_raw_data_filtered.csv (400 rows, 66 cols)
+Running data format validation...
+  IRT theta format (What, Where only - When excluded)...
+  Theta values in expected range: [-2.47, 2.53]
+  TSVR format...
+  TSVR_hours in expected range: [1.00, 246.24]
+  Purified items format...
+  Purified item count in expected range: 64
+  When items properly excluded (0 items with factor='when')
+  Raw data filtered format...
+  Raw data row count: 400
+  Item columns in filtered data: 64 (expected ~64)
+  Composite ID alignment across files...
+  Composite IDs aligned: 400 unique IDs
+All validation checks passed
+Step 00 complete

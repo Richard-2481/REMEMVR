@@ -1,0 +1,128 @@
+================================================================================
+Step 08: Confidence Response Patterns
+================================================================================
+Loading raw confidence ratings...
+  ✓ Loaded 400 observations (UID × test combinations)
+  ✓ Found 72 TC_* confidence items
+  ✓ Unique participants: 100
+
+Computing per-participant response patterns...
+  ✓ Computed patterns for 100 participants
+
+Summary statistics:
+  N participants analyzed: 100
+  Full-range users (all 5 values): 0 (0.0%)
+  Extremes-only users (0 and 1.0 only): 0 (0.0%)
+  Mean unique values used: 4.97
+  Mean rating SD: 0.300
+  Median rating SD: 0.313
+
+[VALUE USAGE] Percentage of participants using each value:
+'uses_000'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'uses_000'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.4.1/code/step08_response_patterns.py", line 147, in <module>
+    pct = (patterns_df[col].sum() / n_participants) * 100
+           ~~~~~~~~~~~^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'uses_000'
+
+================================================================================
+Step 08: Confidence Response Patterns
+================================================================================
+Loading raw confidence ratings...
+  ✓ Loaded 400 observations (UID × test combinations)
+  ✓ Found 72 TC_* confidence items
+  ✓ Unique participants: 100
+
+Computing per-participant response patterns...
+  ✓ Computed patterns for 100 participants
+
+Summary statistics:
+  N participants analyzed: 100
+  Full-range users (all 5 values): 0 (0.0%)
+  Extremes-only users (0 and 1.0 only): 0 (0.0%)
+  Mean unique values used: 4.97
+  Mean rating SD: 0.300
+  Median rating SD: 0.313
+
+[VALUE USAGE] Percentage of participants using each value:
+  Value 0.0: 0 participants (0.0%)
+  Value 0.25: 0 participants (0.0%)
+  Value 0.5: 0 participants (0.0%)
+  Value 0.75: 0 participants (0.0%)
+  Value 1.0: 99 participants (99.0%)
+
+Response pattern quality:
+  Full-range usage: CONCERN - Few (0.0%) use full scale → GRM assumptions may be violated
+  Extremes-only: GOOD - Low extremes-only (0.0%) → GRM assumptions met
+  Rating SD: GOOD - Adequate variability (mean SD = 0.300) → Confidence scale sensitive
+
+Overall assessment:
+  Overall: CONCERNS
+  Response patterns raise concerns. 100% item retention may reflect lenient thresholds or GRM misfit.
+
+  ✓ Saved participant-level patterns to step08_response_patterns.csv
+name 'val' is not defined
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.4.1/code/step08_response_patterns.py", line 229, in <module>
+    f.write(f"  {val:.2f}: {patterns_df[col].sum()} participants ({pct:.1f}%)\n")
+                 ^^^
+NameError: name 'val' is not defined. Did you mean: 'eval'?
+
+================================================================================
+Step 08: Confidence Response Patterns
+================================================================================
+Loading raw confidence ratings...
+  ✓ Loaded 400 observations (UID × test combinations)
+  ✓ Found 72 TC_* confidence items
+  ✓ Unique participants: 100
+
+Computing per-participant response patterns...
+  ✓ Computed patterns for 100 participants
+
+Summary statistics:
+  N participants analyzed: 100
+  Full-range users (all 5 values): 0 (0.0%)
+  Extremes-only users (0 and 1.0 only): 0 (0.0%)
+  Mean unique values used: 4.97
+  Mean rating SD: 0.300
+  Median rating SD: 0.313
+
+[VALUE USAGE] Percentage of participants using each value:
+  Value 0.0: 0 participants (0.0%)
+  Value 0.25: 0 participants (0.0%)
+  Value 0.5: 0 participants (0.0%)
+  Value 0.75: 0 participants (0.0%)
+  Value 1.0: 99 participants (99.0%)
+
+Response pattern quality:
+  Full-range usage: CONCERN - Few (0.0%) use full scale → GRM assumptions may be violated
+  Extremes-only: GOOD - Low extremes-only (0.0%) → GRM assumptions met
+  Rating SD: GOOD - Adequate variability (mean SD = 0.300) → Confidence scale sensitive
+
+Overall assessment:
+  Overall: CONCERNS
+  Response patterns raise concerns. 100% item retention may reflect lenient thresholds or GRM misfit.
+
+  ✓ Saved participant-level patterns to step08_response_patterns.csv
+  ✓ Saved summary report to step08_response_patterns_summary.txt
+
+================================================================================
+Step 08: Response Patterns Complete
+================================================================================

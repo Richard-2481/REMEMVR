@@ -1,0 +1,3 @@
+predictor,statistic,value,ci_lower,ci_upper,excludes_zero,n_bootstrap,seed
+ravlt_total,correlation_difference,-0.011123306478470816,-0.04875182406080844,0.025562871450264014,False,1000,42
+ravlt_pct_ret,correlation_difference,0.002089052133228377,-0.028144499921629908,0.03412674261551338,False,1000,42

@@ -1,0 +1,1348 @@
+Step 04: Bootstrap Regression CI
+Loading analysis dataset...
+Analysis dataset (100 rows, 7 cols)
+Complete cases: 100 (removed 0 with missing data)
+Defined 9 beta coefficient comparisons
+Prepared predictor matrix X: (100, 3)
+Prepared outcome vectors: ['theta_accuracy', 'confidence', 'calibration']
+Starting bootstrap comparison analysis...
+[COMPARISON 1/9] confidence_vs_accuracy_depression
+  Predictor: z_Dep, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Bootstrap iteration 1 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 2 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 3 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 4 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 5 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 6 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 7 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 8 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 9 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 10 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 11 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 12 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 13 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 14 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 15 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 16 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 17 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 18 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 19 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 20 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 21 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 22 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 23 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 24 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 25 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 26 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 27 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 28 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 29 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 30 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 31 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 32 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 33 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 34 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 35 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 36 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 37 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 38 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 39 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 40 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 41 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 42 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 43 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 44 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 45 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 46 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 47 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 48 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 49 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 50 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 51 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 52 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 53 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 54 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 55 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 56 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 57 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 58 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 59 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 60 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 61 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 62 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 63 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 64 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 65 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 66 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 67 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 68 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 69 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 70 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 71 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 72 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 73 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 74 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 75 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 76 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 77 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 78 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 79 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 80 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 81 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 82 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 83 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 84 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 85 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 86 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 87 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 88 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 89 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 90 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 91 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 92 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 93 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 94 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 95 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 96 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 97 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 98 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 99 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 100 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 101 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 102 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 103 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 104 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 105 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 106 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 107 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 108 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 109 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 110 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 111 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 112 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 113 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 114 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 115 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 116 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 117 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 118 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 119 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 120 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 121 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 122 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 123 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 124 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 125 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 126 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 127 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 128 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 129 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 130 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 131 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 132 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 133 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 134 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 135 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 136 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 137 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 138 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 139 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 140 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 141 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 142 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 143 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 144 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 145 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 146 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 147 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 148 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 149 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 150 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 151 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 152 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 153 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 154 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 155 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 156 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 157 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 158 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 159 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 160 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 161 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 162 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 163 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 164 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 165 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 166 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 167 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 168 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 169 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 170 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 171 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 172 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 173 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 174 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 175 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 176 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 177 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 178 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 179 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 180 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 181 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 182 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 183 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 184 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 185 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 186 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 187 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 188 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 189 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 190 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 191 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 192 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 193 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 194 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 195 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 196 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 197 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 198 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 199 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 200 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 201 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 202 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 203 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 204 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 205 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 206 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 207 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 208 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 209 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 210 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 211 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 212 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 213 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 214 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 215 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 216 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 217 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 218 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 219 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 220 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 221 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 222 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 223 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 224 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 225 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 226 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 227 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 228 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 229 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 230 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 231 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 232 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 233 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 234 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 235 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 236 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 237 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 238 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 239 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 240 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 241 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 242 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 243 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 244 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 245 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 246 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 247 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 248 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 249 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 250 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 251 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 252 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 253 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 254 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 255 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 256 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 257 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 258 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 259 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 260 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 261 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 262 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 263 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 264 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 265 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 266 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 267 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 268 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 269 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 270 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 271 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 272 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 273 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 274 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 275 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 276 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 277 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 278 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 279 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 280 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 281 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 282 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 283 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 284 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 285 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 286 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 287 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 288 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 289 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 290 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 291 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 292 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 293 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 294 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 295 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 296 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 297 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 298 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 299 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 300 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 301 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 302 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 303 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 304 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 305 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 306 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 307 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 308 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 309 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 310 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 311 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 312 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 313 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 314 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 315 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 316 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 317 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 318 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 319 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 320 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 321 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 322 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 323 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 324 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 325 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 326 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 327 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 328 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 329 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 330 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 331 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 332 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 333 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 334 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 335 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 336 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 337 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 338 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 339 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 340 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 341 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 342 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 343 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 344 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 345 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 346 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 347 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 348 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 349 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 350 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 351 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 352 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 353 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 354 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 355 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 356 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 357 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 358 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 359 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 360 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 361 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 362 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 363 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 364 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 365 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 366 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 367 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 368 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 369 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 370 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 371 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 372 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 373 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 374 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 375 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 376 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 377 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 378 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 379 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 380 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 381 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 382 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 383 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 384 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 385 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 386 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 387 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 388 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 389 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 390 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 391 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 392 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 393 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 394 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 395 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 396 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 397 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 398 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 399 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 400 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 401 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 402 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 403 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 404 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 405 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 406 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 407 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 408 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 409 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 410 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 411 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 412 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 413 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 414 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 415 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 416 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 417 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 418 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 419 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 420 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 421 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 422 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 423 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 424 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 425 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 426 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 427 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 428 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 429 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 430 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 431 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 432 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 433 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 434 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 435 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 436 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 437 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 438 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 439 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 440 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 441 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 442 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 443 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 444 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 445 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 446 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 447 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 448 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 449 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 450 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 451 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 452 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 453 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 454 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 455 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 456 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 457 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 458 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 459 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 460 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 461 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 462 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 463 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 464 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 465 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 466 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 467 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 468 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 469 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 470 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 471 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 472 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 473 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 474 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 475 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 476 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 477 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 478 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 479 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 480 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 481 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 482 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 483 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 484 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 485 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 486 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 487 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 488 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 489 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 490 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 491 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 492 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 493 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 494 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 495 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 496 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 497 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 498 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 499 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 500 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 501 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 502 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 503 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 504 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 505 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 506 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 507 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 508 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 509 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 510 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 511 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 512 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 513 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 514 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 515 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 516 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 517 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 518 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 519 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 520 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 521 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 522 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 523 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 524 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 525 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 526 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 527 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 528 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 529 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 530 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 531 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 532 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 533 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 534 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 535 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 536 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 537 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 538 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 539 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 540 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 541 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 542 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 543 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 544 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 545 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 546 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 547 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 548 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 549 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 550 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 551 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 552 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 553 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 554 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 555 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 556 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 557 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 558 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 559 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 560 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 561 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 562 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 563 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 564 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 565 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 566 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 567 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 568 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 569 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 570 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 571 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 572 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 573 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 574 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 575 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 576 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 577 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 578 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 579 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 580 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 581 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 582 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 583 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 584 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 585 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 586 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 587 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 588 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 589 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 590 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 591 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 592 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 593 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 594 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 595 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 596 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 597 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 598 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 599 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 600 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 601 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 602 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 603 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 604 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 605 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 606 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 607 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 608 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 609 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 610 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 611 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 612 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 613 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 614 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 615 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 616 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 617 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 618 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 619 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 620 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 621 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 622 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 623 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 624 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 625 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 626 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 627 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 628 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 629 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 630 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 631 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 632 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 633 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 634 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 635 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 636 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 637 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 638 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 639 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 640 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 641 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 642 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 643 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 644 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 645 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 646 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 647 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 648 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 649 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 650 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 651 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 652 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 653 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 654 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 655 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 656 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 657 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 658 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 659 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 660 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 661 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 662 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 663 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 664 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 665 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 666 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 667 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 668 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 669 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 670 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 671 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 672 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 673 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 674 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 675 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 676 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 677 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 678 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 679 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 680 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 681 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 682 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 683 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 684 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 685 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 686 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 687 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 688 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 689 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 690 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 691 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 692 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 693 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 694 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 695 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 696 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 697 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 698 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 699 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 700 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 701 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 702 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 703 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 704 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 705 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 706 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 707 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 708 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 709 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 710 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 711 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 712 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 713 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 714 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 715 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 716 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 717 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 718 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 719 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 720 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 721 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 722 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 723 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 724 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 725 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 726 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 727 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 728 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 729 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 730 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 731 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 732 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 733 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 734 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 735 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 736 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 737 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 738 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 739 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 740 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 741 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 742 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 743 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 744 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 745 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 746 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 747 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 748 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 749 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 750 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 751 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 752 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 753 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 754 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 755 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 756 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 757 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 758 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 759 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 760 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 761 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 762 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 763 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 764 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 765 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 766 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 767 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 768 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 769 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 770 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 771 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 772 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 773 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 774 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 775 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 776 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 777 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 778 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 779 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 780 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 781 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 782 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 783 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 784 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 785 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 786 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 787 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 788 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 789 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 790 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 791 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 792 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 793 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 794 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 795 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 796 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 797 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 798 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 799 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 800 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 801 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 802 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 803 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 804 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 805 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 806 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 807 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 808 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 809 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 810 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 811 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 812 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 813 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 814 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 815 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 816 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 817 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 818 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 819 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 820 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 821 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 822 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 823 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 824 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 825 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 826 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 827 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 828 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 829 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 830 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 831 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 832 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 833 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 834 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 835 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 836 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 837 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 838 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 839 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 840 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 841 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 842 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 843 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 844 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 845 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 846 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 847 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 848 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 849 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 850 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 851 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 852 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 853 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 854 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 855 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 856 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 857 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 858 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 859 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 860 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 861 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 862 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 863 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 864 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 865 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 866 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 867 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 868 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 869 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 870 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 871 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 872 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 873 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 874 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 875 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 876 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 877 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 878 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 879 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 880 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 881 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 882 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 883 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 884 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 885 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 886 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 887 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 888 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 889 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 890 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 891 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 892 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 893 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 894 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 895 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 896 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 897 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 898 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 899 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 900 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 901 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 902 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 903 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 904 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 905 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 906 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 907 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 908 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 909 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 910 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 911 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 912 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 913 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 914 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 915 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 916 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 917 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 918 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 919 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 920 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 921 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 922 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 923 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 924 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 925 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 926 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 927 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 928 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 929 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 930 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 931 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 932 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 933 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 934 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 935 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 936 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 937 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 938 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 939 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 940 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 941 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 942 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 943 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 944 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 945 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 946 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 947 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 948 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 949 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 950 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 951 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 952 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 953 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 954 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 955 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 956 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 957 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 958 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 959 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 960 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 961 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 962 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 963 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 964 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 965 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 966 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 967 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 968 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 969 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 970 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 971 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 972 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 973 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 974 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 975 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 976 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 977 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 978 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 979 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 980 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 981 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 982 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 983 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 984 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 985 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 986 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 987 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 988 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 989 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 990 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 991 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 992 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 993 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 994 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 995 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 996 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 997 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 998 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 999 failed: 'numpy.ndarray' object has no attribute 'values'
+Bootstrap iteration 1000 failed: 'numpy.ndarray' object has no attribute 'values'
+index -1 is out of bounds for axis 0 with size 0
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.4/code/step04_bootstrap_regression_ci.py", line 278, in <module>
+    boot_result1 = bootstrap_regression_ci_custom(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.4/code/step04_bootstrap_regression_ci.py", line 161, in bootstrap_regression_ci_custom
+    ci_lower = np.percentile(bootstrap_betas, lower_percentile, axis=0)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4292, in percentile
+    return _quantile_unchecked(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4569, in _quantile_unchecked
+    return _ureduce(a,
+           ^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 3914, in _ureduce
+    r = func(a, **kwargs)
+        ^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4744, in _quantile_ureduce_func
+    result = _quantile(arr,
+             ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py", line 4866, in _quantile
+    slices_having_nans = np.isnan(arr[-1, ...])
+                                  ~~~^^^^^^^^^
+IndexError: index -1 is out of bounds for axis 0 with size 0
+Step 04: Bootstrap Regression CI
+Loading analysis dataset...
+Analysis dataset (100 rows, 7 cols)
+Complete cases: 100 (removed 0 with missing data)
+Defined 9 beta coefficient comparisons
+Prepared predictor matrix X: (100, 3)
+Prepared outcome vectors: ['theta_accuracy', 'confidence', 'calibration']
+Starting bootstrap comparison analysis...
+[COMPARISON 1/9] confidence_vs_accuracy_depression
+  Predictor: z_Dep, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+'numpy.ndarray' object has no attribute 'values'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.4/code/step04_bootstrap_regression_ci.py", line 282, in <module>
+    boot_result1 = bootstrap_regression_ci_custom(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.4/code/step04_bootstrap_regression_ci.py", line 171, in bootstrap_regression_ci_custom
+    point_estimates = model_orig.params[1:].values
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'values'
+Step 04: Bootstrap Regression CI
+Loading analysis dataset...
+Analysis dataset (100 rows, 7 cols)
+Complete cases: 100 (removed 0 with missing data)
+Defined 9 beta coefficient comparisons
+Prepared predictor matrix X: (100, 3)
+Prepared outcome vectors: ['theta_accuracy', 'confidence', 'calibration']
+Starting bootstrap comparison analysis...
+[COMPARISON 1/9] confidence_vs_accuracy_depression
+  Predictor: z_Dep, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0106 [-0.1973, 0.2069]
+  P-value (uncorrected): 0.9760
+[COMPARISON 2/9] calibration_vs_accuracy_depression
+  Predictor: z_Dep, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0067 [-0.2707, 0.2045]
+  P-value (uncorrected): 0.9200
+[COMPARISON 3/9] confidence_vs_calibration_depression
+  Predictor: z_Dep, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0039 [-0.1607, 0.2356]
+  P-value (uncorrected): 0.8780
+[COMPARISON 4/9] confidence_vs_accuracy_anxiety
+  Predictor: z_Anx, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.0847 [-0.2983, 0.1187]
+  P-value (uncorrected): 0.4520
+[COMPARISON 5/9] calibration_vs_accuracy_anxiety
+  Predictor: z_Anx, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.1684 [-0.4459, 0.0538]
+  P-value (uncorrected): 0.1500
+[COMPARISON 6/9] confidence_vs_calibration_anxiety
+  Predictor: z_Anx, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0837 [-0.0880, 0.2588]
+  P-value (uncorrected): 0.3120
+[COMPARISON 7/9] confidence_vs_accuracy_stress
+  Predictor: z_Str, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.0368 [-0.2634, 0.2099]
+  P-value (uncorrected): 0.8320
+[COMPARISON 8/9] calibration_vs_accuracy_stress
+  Predictor: z_Str, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.0631 [-0.3086, 0.2299]
+  P-value (uncorrected): 0.7060
+[COMPARISON 9/9] confidence_vs_calibration_stress
+  Predictor: z_Str, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0263 [-0.1829, 0.2317]
+  P-value (uncorrected): 0.8540
+Applying multiple comparison corrections...
+Bonferroni threshold: 0.0056
+FDR threshold: 0.05
+Computing effect size interpretations...
+Saving bootstrap comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step04_beta_comparisons.csv (9 rows, 16 cols)
+Beta comparison analysis summary:
+  Total comparisons: 9
+  Significant (Bonferroni): 0
+  Significant (FDR): 0
+  Largest effect: calibration_vs_accuracy_anxiety (|beta_diff| = 0.1684)
+  CIs excluding zero: 0
+Running validate_effect_sizes...
+valid: True
+message: All effect sizes valid (n=9, range=[0.004, 0.168]).
+warnings: []
+Step 04 complete
+Step 04: Bootstrap Regression CI
+Loading analysis dataset...
+Analysis dataset (100 rows, 7 cols)
+Complete cases: 100 (removed 0 with missing data)
+Defined 9 beta coefficient comparisons
+Prepared predictor matrix X: (100, 3)
+Prepared outcome vectors: ['theta_accuracy', 'confidence', 'calibration']
+Starting bootstrap comparison analysis...
+[COMPARISON 1/9] confidence_vs_accuracy_depression
+  Predictor: z_Dep, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0238 [-0.2703, 0.2963]
+  P-value (uncorrected): 0.9320
+[COMPARISON 2/9] calibration_vs_accuracy_depression
+  Predictor: z_Dep, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0977 [-0.1937, 0.3129]
+  P-value (uncorrected): 0.5800
+[COMPARISON 3/9] confidence_vs_calibration_depression
+  Predictor: z_Dep, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.0739 [-0.3342, 0.2186]
+  P-value (uncorrected): 0.7020
+[COMPARISON 4/9] confidence_vs_accuracy_anxiety
+  Predictor: z_Anx, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.1082 [-0.1730, 0.4202]
+  P-value (uncorrected): 0.4940
+[COMPARISON 5/9] calibration_vs_accuracy_anxiety
+  Predictor: z_Anx, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.0044 [-0.3226, 0.2731]
+  P-value (uncorrected): 0.8880
+[COMPARISON 6/9] confidence_vs_calibration_anxiety
+  Predictor: z_Anx, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.1126 [-0.2052, 0.4029]
+  P-value (uncorrected): 0.4520
+[COMPARISON 7/9] confidence_vs_accuracy_stress
+  Predictor: z_Str, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.1920 [-0.5629, 0.1424]
+  P-value (uncorrected): 0.2940
+[COMPARISON 8/9] calibration_vs_accuracy_stress
+  Predictor: z_Str, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.2850 [-0.5956, 0.0088]
+  P-value (uncorrected): 0.0660
+[COMPARISON 9/9] confidence_vs_calibration_stress
+  Predictor: z_Str, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0930 [-0.3037, 0.4311]
+  P-value (uncorrected): 0.6280
+Applying multiple comparison corrections...
+Bonferroni threshold: 0.0056
+FDR threshold: 0.05
+Computing effect size interpretations...
+Saving bootstrap comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step04_beta_comparisons.csv (9 rows, 16 cols)
+Beta comparison analysis summary:
+  Total comparisons: 9
+  Significant (Bonferroni): 0
+  Significant (FDR): 0
+  Largest effect: calibration_vs_accuracy_stress (|beta_diff| = 0.2850)
+  CIs excluding zero: 0
+Running validate_effect_sizes...
+valid: True
+message: All effect sizes valid (n=9, range=[0.004, 0.285]).
+warnings: []
+Step 04 complete
+Step 04: Bootstrap Regression CI
+Loading analysis dataset...
+Analysis dataset (100 rows, 7 cols)
+Complete cases: 100 (removed 0 with missing data)
+Defined 9 beta coefficient comparisons
+Prepared predictor matrix X: (100, 3)
+Prepared outcome vectors: ['theta_accuracy', 'confidence', 'calibration']
+Starting bootstrap comparison analysis...
+[COMPARISON 1/9] confidence_vs_accuracy_depression
+  Predictor: z_Dep, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0238 [-0.2703, 0.2963]
+  P-value (uncorrected): 0.9320
+[COMPARISON 2/9] calibration_vs_accuracy_depression
+  Predictor: z_Dep, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0977 [-0.1937, 0.3129]
+  P-value (uncorrected): 0.5800
+[COMPARISON 3/9] confidence_vs_calibration_depression
+  Predictor: z_Dep, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.0739 [-0.3342, 0.2186]
+  P-value (uncorrected): 0.7020
+[COMPARISON 4/9] confidence_vs_accuracy_anxiety
+  Predictor: z_Anx, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.1082 [-0.1730, 0.4202]
+  P-value (uncorrected): 0.4940
+[COMPARISON 5/9] calibration_vs_accuracy_anxiety
+  Predictor: z_Anx, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.0044 [-0.3226, 0.2731]
+  P-value (uncorrected): 0.8880
+[COMPARISON 6/9] confidence_vs_calibration_anxiety
+  Predictor: z_Anx, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.1126 [-0.2052, 0.4029]
+  P-value (uncorrected): 0.4520
+[COMPARISON 7/9] confidence_vs_accuracy_stress
+  Predictor: z_Str, Models: confidence vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.1920 [-0.5629, 0.1424]
+  P-value (uncorrected): 0.2940
+[COMPARISON 8/9] calibration_vs_accuracy_stress
+  Predictor: z_Str, Models: calibration vs theta_accuracy
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: -0.2850 [-0.5956, 0.0088]
+  P-value (uncorrected): 0.0660
+[COMPARISON 9/9] confidence_vs_calibration_stress
+  Predictor: z_Str, Models: confidence vs calibration
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+Running 1000 bootstrap iterations...
+Completed 1000 successful iterations
+  Beta difference: 0.0930 [-0.3037, 0.4311]
+  P-value (uncorrected): 0.6280
+Applying multiple comparison corrections...
+Bonferroni threshold: 0.0056
+FDR threshold: 0.05
+Computing effect size interpretations...
+Saving bootstrap comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step04_beta_comparisons.csv (9 rows, 16 cols)
+Beta comparison analysis summary:
+  Total comparisons: 9
+  Significant (Bonferroni): 0
+  Significant (FDR): 0
+  Largest effect: calibration_vs_accuracy_stress (|beta_diff| = 0.2850)
+  CIs excluding zero: 0
+Running validate_effect_sizes...
+valid: True
+message: All effect sizes valid (n=9, range=[0.004, 0.285]).
+warnings: []
+Step 04 complete

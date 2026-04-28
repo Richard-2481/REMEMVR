@@ -1,0 +1,46 @@
+Step 06: Prepare Two-Phase Plot Data
+Loading piecewise data from step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows)
+Segment distribution: Early=196, Late=204
+Re-fitting piecewise model for predictions...
+"['Theta'] not in index"
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.2/code/step06_prepare_twophase_plot_data.py", line 145, in <module>
+    piecewise_model = fit_lmm_trajectory_tsvr(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1139, in fit_lmm_trajectory_tsvr
+    lmm_data = merged[['UID', 'Test', 'Domain', 'Theta', 'Days']].copy()
+               ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4119, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6264, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Theta'] not in index"
+Step 06: Prepare Two-Phase Plot Data
+Loading piecewise data from step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows)
+Segment distribution: Early=196, Late=204
+Time_Early_Days range: [0.00, 1.99]
+Time_Late_Days range: [0.00, 8.26]
+Re-fitting piecewise model for predictions...
+Piecewise model re-fitted
+Fitted values extracted from model
+Aggregating observed data by Segment and TSVR_hours...
+Aggregated to 18 timepoints (5 Early, 13 Late)
+Creating theta-scale plot data...
+Theta-scale plot data created (18 rows)
+Creating probability-scale plot data (Decision D069)...
+Probability-scale plot data created (18 rows)
+Saving theta-scale plot data to step06_twophase_theta_data.csv...
+step06_twophase_theta_data.csv (18 rows)
+Saving probability-scale plot data to step06_twophase_probability_data.csv...
+step06_twophase_probability_data.csv (18 rows)
+Running custom plot data checks...
+PASS - Reasonable number of aggregated timepoints (18)
+PASS - Both plot data files have same row count
+PASS - Both Early and Late segments present
+Step 06 complete

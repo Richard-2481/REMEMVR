@@ -1,0 +1,37 @@
+Step 04: bivariate_correlation (Forgetting + Pct Retention)
+Loading merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step03_analysis_input.csv (100 rows, 13 cols)
+REMEMVR_Slope - N=100, Mean=0.0000, SD=0.0045
+
+=== Correlating RAVLT_Forgetting with REMEMVR_Slope ===
+RAVLT_Forgetting - N=100, Mean=1.750, SD=1.920
+Pearson r = 0.3324, p_uncorrected = 0.000727
+Computing bootstrap confidence intervals...
+Bootstrap 95% CI: [0.1432, 0.5000]
+[D068] p_bonferroni = 0.020367 (factor = 28)
+
+=== Correlating RAVLT_Pct_Ret with REMEMVR_Slope ===
+RAVLT_Pct_Ret - N=100, Mean=83.282, SD=14.716
+Pearson r = -0.3183, p_uncorrected = 0.001250
+Computing bootstrap confidence intervals...
+Bootstrap 95% CI: [-0.4850, -0.1147]
+[D068] p_bonferroni = 0.035008 (factor = 28)
+
+Saving correlation results...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step04_bivariate_correlation.csv (2 rows, 7 cols)
+Running validate_correlation_test_d068...
+PASS - RAVLT_Forgetting meets D068 requirements
+PASS - RAVLT_Pct_Ret meets D068 requirements
+
+Bivariate Correlation Results:
+======================================================================
+  RAVLT_Forgetting:
+    r = 0.3324, 95% CI [0.1432, 0.5000]
+    p_uncorrected = 0.000727, p_bonferroni = 0.020367
+    N = 100
+  RAVLT_Pct_Ret:
+    r = -0.3183, 95% CI [-0.4850, -0.1147]
+    p_uncorrected = 0.001250, p_bonferroni = 0.035008
+    N = 100
+======================================================================
+Step 04 complete

@@ -41,7 +41,7 @@ POPULATION_NORMS = {
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 10: Extract DASS Observed Correlations and Descriptives
+# Extract DASS Observed Correlations and Descriptives
 # ══════════════════════════════════════════════════════════════════════════════
 
 log10 = make_log("step10_dass_observed_correlations")
@@ -113,7 +113,7 @@ log10("Validation PASSED")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 11: Compute Restriction Ratios (u)
+# Compute Restriction Ratios (u)
 # ══════════════════════════════════════════════════════════════════════════════
 
 log11 = make_log("step11_restriction_ratios")
@@ -156,7 +156,7 @@ log11("Validation PASSED")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 12: Apply Thorndike Case II Correction
+# Apply Thorndike Case II Correction
 # ══════════════════════════════════════════════════════════════════════════════
 
 log12 = make_log("step12_thorndike_correction")
@@ -213,7 +213,7 @@ log12("Validation PASSED")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 13: Bootstrap Confidence Intervals for Corrected Correlations
+# Bootstrap Confidence Intervals for Corrected Correlations
 # ══════════════════════════════════════════════════════════════════════════════
 
 log13 = make_log("step13_bootstrap_corrected_ci")

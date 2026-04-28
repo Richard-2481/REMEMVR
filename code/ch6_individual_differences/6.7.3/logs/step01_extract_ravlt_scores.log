@@ -1,0 +1,75 @@
+Step 01: Extract RAVLT Scores
+Loading dfnonvr.csv...
+dfnonvr.csv (100 participants, 235 columns)
+Extracting RAVLT columns...
+RAVLT columns (100 participants)
+Computing alternative scoring metrics...
+Total, Learning, LearningSlope, Forgetting, Recognition
+Computing z-scores for regression models...
+All metrics converted to z-scores
+Running validation checks...
+ravlt_trial_1 within range [3, 12]
+ravlt_trial_2 within range [5, 15]
+ravlt_trial_3 within range [0, 15]
+ravlt_trial_4 within range [0, 15]
+ravlt_trial_5 within range [0, 15]
+ravlt_delayed within range [4, 15]
+ravlt_recognition within range [9, 15]
+Total_z range: [-2.92, 2.07]
+Learning_z range: [-4.54, 1.28]
+LearningSlope_z range: [-2.81, 2.44]
+Forgetting_z range: [-4.65, 1.49]
+Recognition_z range: [-4.02, 0.78]
+No missing values
+Saving RAVLT scores...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step01_ravlt_scores.csv (100 participants, 18 columns)
+Descriptive statistics:
+  Total: M=50.60, SD=8.42, Range=[26, 68]
+  Learning: M=5.38, SD=3.61
+  LearningSlope: M=0.96, SD=0.70
+  Forgetting: M=1.15, SD=3.26
+  Recognition: M=14.03, SD=1.25
+Step 01 complete
+Step 01: Extract RAVLT Scores
+Loading dfnonvr.csv...
+dfnonvr.csv (100 participants, 235 columns)
+[CEILING FIX] Applying ceiling fix to raw trial scores...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+Extracting RAVLT columns...
+RAVLT columns (100 participants)
+Computing alternative scoring metrics...
+Total, Learning, LearningSlope, Forgetting, Recognition, PctRet
+Computing z-scores for regression models...
+All metrics converted to z-scores
+Running validation checks...
+ravlt_trial_1 within range [3, 12]
+ravlt_trial_2 within range [5, 15]
+ravlt_trial_3 within range [5, 15]
+ravlt_trial_4 within range [2, 15]
+ravlt_trial_5 within range [5, 15]
+ravlt_delayed within range [4, 15]
+ravlt_recognition within range [9, 15]
+Total_z range: [-2.79, 2.28]
+Learning_z range: [-2.40, 1.94]
+LearningSlope_z range: [-1.57, 2.84]
+Forgetting_z range: [-2.46, 2.20]
+Recognition_z range: [-4.02, 0.78]
+PctRet_z range: [-2.63, 2.17]
+No missing values
+Saving RAVLT scores...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step01_ravlt_scores.csv (100 participants, 20 columns)
+Descriptive statistics:
+  Total: M=51.65, SD=8.48, Range=[28, 71]
+  Learning: M=5.98, SD=2.07
+  LearningSlope: M=1.03, SD=0.58
+  Forgetting: M=1.75, SD=1.93
+  Recognition: M=14.03, SD=1.25
+  PctRet: M=83.28, SD=14.79
+Step 01 complete

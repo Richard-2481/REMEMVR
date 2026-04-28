@@ -41,14 +41,14 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 05: Characterize Clusters")
+        log("Step 05: Characterize Clusters")
 
         # Load cluster centers (z-scored)
-        log(f"[LOAD] Reading {INPUT_CENTERS_FILE}")
+        log(f"Reading {INPUT_CENTERS_FILE}")
         df_centers_z = pd.read_csv(INPUT_CENTERS_FILE)
 
         # Load original scale features (for back-transformation means/SDs)
-        log(f"[LOAD] Reading {INPUT_ORIGINAL_FILE}")
+        log(f"Reading {INPUT_ORIGINAL_FILE}")
         df_original = pd.read_csv(INPUT_ORIGINAL_FILE)
 
         feature_cols = [
@@ -61,7 +61,7 @@ if __name__ == "__main__":
         means = df_original[feature_cols].mean().values
         sds = df_original[feature_cols].std().values
 
-        log("[BACKTRANSFORM] Converting z-scores to original scale")
+        log("Converting z-scores to original scale")
         log(f"  Means: {means}")
         log(f"  SDs: {sds}")
 
@@ -80,7 +80,7 @@ if __name__ == "__main__":
         df_centers_orig = df_centers_orig[['cluster'] + feature_cols]
 
         # Load assignments to get cluster sizes
-        log(f"[LOAD] Reading {INPUT_ASSIGNMENTS_FILE}")
+        log(f"Reading {INPUT_ASSIGNMENTS_FILE}")
         df_assignments = pd.read_csv(INPUT_ASSIGNMENTS_FILE)
         cluster_sizes = df_assignments['cluster'].value_counts().to_dict()
 
@@ -92,12 +92,12 @@ if __name__ == "__main__":
         df_centers_orig['label'] = ['High' if x > 0.1 else 'Low' if x < -0.1 else 'Medium' for x in mean_intercept]
 
         # Save back-transformed centers
-        log(f"[SAVE] Writing to {OUTPUT_CENTERS_FILE}")
+        log(f"Writing to {OUTPUT_CENTERS_FILE}")
         df_centers_orig.to_csv(OUTPUT_CENTERS_FILE, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_CENTERS_FILE}")
+        log(f"{OUTPUT_CENTERS_FILE}")
 
         # Compute cluster-specific summary statistics
-        log("[STATS] Computing cluster-specific summary statistics")
+        log("Computing cluster-specific summary statistics")
         df_full = pd.merge(df_assignments, df_original, on='UID')
 
         summary_rows = []
@@ -116,25 +116,25 @@ if __name__ == "__main__":
         df_summary = pd.DataFrame(summary_rows)
 
         # Save summary statistics
-        log(f"[SAVE] Writing to {OUTPUT_STATS_FILE}")
+        log(f"Writing to {OUTPUT_STATS_FILE}")
         df_summary.to_csv(OUTPUT_STATS_FILE, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_STATS_FILE}")
+        log(f"{OUTPUT_STATS_FILE}")
 
         # Report cluster characteristics
-        log("[CLUSTERS]")
+        log("")
         for _, row in df_centers_orig.iterrows():
             log(f"  Cluster {int(row['cluster'])}: N={int(row['N'])}, label={row['label']}")
             log(f"    Common: I={row['Common_Intercept']:.4f}, S={row['Common_Slope']:.6f}")
             log(f"    Congruent: I={row['Congruent_Intercept']:.4f}, S={row['Congruent_Slope']:.6f}")
             log(f"    Incongruent: I={row['Incongruent_Intercept']:.4f}, S={row['Incongruent_Slope']:.6f}")
 
-        log("[SUCCESS] Step 05 complete")
+        log("Step 05 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

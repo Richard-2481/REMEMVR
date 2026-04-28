@@ -40,12 +40,9 @@ def main() -> int:
     """Main execution function."""
     try:
         log("="*80)
-        log("[START] Step 08: Generate plot data - FIXED VERSION (No fake data)")
+        log("Step 08: Generate plot data - FIXED VERSION (No fake data)")
         log("="*80)
-        
-        # =========================================================================
-        # STEP 1: Load Real Analysis Results
-        # =========================================================================
+        # Load Real Analysis Results
         log("\n[DATA LOADING] Loading real analysis results...")
         
         # Load analysis dataset
@@ -63,11 +60,8 @@ def main() -> int:
         # Load cross-validation results
         cv_df = pd.read_csv(INPUT_DIR / 'step05_cross_validation.csv')
         log(f"  - Loaded cross-validation results: {cv_df.shape}")
-        
-        # =========================================================================
-        # STEP 2: Generate Correlation Plot Data (REAL)
-        # =========================================================================
-        log("\n[ANALYSIS] Creating correlation plot data from real correlations...")
+        # Generate Correlation Plot Data (REAL)
+        log("\nCreating correlation plot data from real correlations...")
         
         # Variables to include in correlation matrix
         variables = ['theta_all', 'Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
@@ -107,11 +101,8 @@ def main() -> int:
                 })
         
         corr_plot_df = pd.DataFrame(correlation_plot_data)
-        
-        # =========================================================================
-        # STEP 3: Skip Diagnostic Plot Data (Cannot Generate Without Model Objects)
-        # =========================================================================
-        log("\n[SKIP] Diagnostic plot data requires actual model residuals")
+        # Skip Diagnostic Plot Data (Cannot Generate Without Model Objects)
+        log("\nDiagnostic plot data requires actual model residuals")
         log("  - Cannot generate without re-fitting regression models")
         log("  - Recommend generating these during model fitting in step03")
         
@@ -124,11 +115,8 @@ def main() -> int:
                               'Or skip diagnostic plots if not essential',
                               'Never use synthetic data for model diagnostics']
         })
-        
-        # =========================================================================
-        # STEP 4: Generate Mediation Path Diagram Data (REAL)
-        # =========================================================================
-        log("\n[ANALYSIS] Creating mediation path diagram data from real results...")
+        # Generate Mediation Path Diagram Data (REAL)
+        log("\nCreating mediation path diagram data from real results...")
         
         # Extract real mediation results
         beta_total = mediation_df['beta_total'].iloc[0]
@@ -176,11 +164,8 @@ def main() -> int:
         ]
         
         mediation_plot_df = pd.DataFrame(mediation_plot_data)
-        
-        # =========================================================================
-        # STEP 5: Generate Cross-Validation Plot Data (REAL)
-        # =========================================================================
-        log("\n[ANALYSIS] Creating cross-validation plot data from real CV results...")
+        # Generate Cross-Validation Plot Data (REAL)
+        log("\nCreating cross-validation plot data from real CV results...")
         
         # Real CV results should be in step05 output
         cv_plot_data = []
@@ -208,11 +193,8 @@ def main() -> int:
                     })
         
         cv_plot_df = pd.DataFrame(cv_plot_data)
-        
-        # =========================================================================
-        # STEP 6: Generate Age Effect Plot Data (REAL)
-        # =========================================================================
-        log("\n[ANALYSIS] Creating age effect plot data from real analysis...")
+        # Generate Age Effect Plot Data (REAL)
+        log("\nCreating age effect plot data from real analysis...")
         
         # Use actual theta and age data
         age_effect_data = []
@@ -229,11 +211,8 @@ def main() -> int:
             })
         
         age_effect_df = pd.DataFrame(age_effect_data)
-        
-        # =========================================================================
-        # STEP 7: Save All Plot Data
-        # =========================================================================
-        log("\n[SAVE] Saving plot data files...")
+        # Save All Plot Data
+        log("\nSaving plot data files...")
         
         # Save correlation plot data
         output_path = OUTPUT_DIR / 'step08_correlation_plot_data.csv'
@@ -259,25 +238,22 @@ def main() -> int:
         output_path = OUTPUT_DIR / 'step08_age_effect_plot_data.csv'
         age_effect_df.to_csv(output_path, index=False)
         log(f"  - Saved age effect plot data: {output_path}")
-        
-        # =========================================================================
-        # STEP 8: Summary
-        # =========================================================================
+        # Summary
         log("\n" + "="*80)
-        log("[SUMMARY] Plot data generation complete - NO FAKE DATA USED")
+        log("Plot data generation complete - NO FAKE DATA USED")
         log(f"  - Correlation plot: {len(corr_plot_df)} pairs")
         log(f"  - Diagnostic plots: Skipped (requires model residuals)")
         log(f"  - Mediation paths: {len(mediation_plot_df)} paths")
         log(f"  - CV performance: {len(cv_plot_df)} fold results")
         log(f"  - Age effects: {len(age_effect_df)} participants")
-        log("\n[SUCCESS] Step 08 complete - All data is REAL")
+        log("\nStep 08 complete - All data is REAL")
         log("="*80)
         
         return 0
         
     except Exception as e:
-        log(f"\n[ERROR] Script failed: {str(e)}")
-        log(f"[TRACEBACK]\n{traceback.format_exc()}")
+        log(f"\nScript failed: {str(e)}")
+        log(f"\n{traceback.format_exc()}")
         return 1
 
 if __name__ == "__main__":

@@ -1,0 +1,164 @@
+======================================================================
+STEP 12: Recognition Error Type — Binomial GEE Models
+======================================================================
+
+Data: 2400 rows, 100 participants
+Days range: 0.042 to 10.260
+log(Days) range: -3.178 to 2.328
+
+======================================================================
+SECTION 1: SEPARATE MODELS — log(Days) as time predictor
+======================================================================
+
+NOTE: log(Days) captures PROPORTIONAL change.
+  Semantic: 0.2% → 3.7% = 18.5× increase (huge on log scale)
+  Perceptual: 6.2% → 9.7% = 1.6× increase (modest on log scale)
+  Both increase ~3.5 percentage points in ABSOLUTE terms.
+
+--- A. P(perceptual) ~ log(Days) ---
+Formula: is_perceptual ~ log_Days
+N observations: 2400
+N clusters (UID): 100
+Events: 161/2400 (6.71%)
+
+Coefficients:
+           Parameter      Coef        SE         z         p        OR     OR_lo     OR_hi
+------------------------------------------------------------------------------------------
+           Intercept   -2.6429    0.1067   -24.778    0.0000     0.071     0.058     0.088
+            log_Days    0.0819    0.0517     1.585    0.1129     1.085     0.981     1.201
+
+--- B. P(semantic) ~ log(Days) ---
+Formula: is_semantic ~ log_Days
+N observations: 2400
+N clusters (UID): 100
+Events: 45/2400 (1.88%)
+
+Coefficients:
+           Parameter      Coef        SE         z         p        OR     OR_lo     OR_hi
+------------------------------------------------------------------------------------------
+           Intercept   -4.4718    0.2782   -16.075    0.0000     0.011     0.007     0.020
+            log_Days    0.6541    0.1756     3.726    0.0002     1.923     1.364     2.713
+
+--- C. P(any error) ~ log(Days) ---
+Formula: is_error ~ log_Days
+N observations: 2400
+N clusters (UID): 100
+Events: 206/2400 (8.58%)
+
+Coefficients:
+           Parameter      Coef        SE         z         p        OR     OR_lo     OR_hi
+------------------------------------------------------------------------------------------
+           Intercept   -2.4047    0.1009   -23.831    0.0000     0.090     0.074     0.110
+            log_Days    0.1611    0.0486     3.316    0.0009     1.175     1.068     1.292
+
+======================================================================
+SECTION 2: SEPARATE MODELS — linear Days as time predictor
+======================================================================
+
+NOTE: Linear Days captures ABSOLUTE change per day.
+  This should better reflect what the plot shows.
+
+--- D. P(perceptual) ~ Days ---
+Formula: is_perceptual ~ Days
+N observations: 2400
+N clusters (UID): 100
+Events: 161/2400 (6.71%)
+
+Coefficients:
+           Parameter      Coef        SE         z         p        OR     OR_lo     OR_hi
+------------------------------------------------------------------------------------------
+           Intercept   -2.9406    0.1428   -20.588    0.0000     0.053     0.040     0.070
+                Days    0.1036    0.0343     3.023    0.0025     1.109     1.037     1.186
+
+--- E. P(semantic) ~ Days ---
+Formula: is_semantic ~ Days
+N observations: 2400
+N clusters (UID): 100
+Events: 45/2400 (1.88%)
+
+Coefficients:
+           Parameter      Coef        SE         z         p        OR     OR_lo     OR_hi
+------------------------------------------------------------------------------------------
+           Intercept   -4.9449    0.2711   -18.239    0.0000     0.007     0.004     0.012
+                Days    0.2784    0.0521     5.339    0.0000     1.321     1.193     1.463
+
+--- F. P(any error) ~ Days ---
+Formula: is_error ~ Days
+N observations: 2400
+N clusters (UID): 100
+Events: 206/2400 (8.58%)
+
+Coefficients:
+           Parameter      Coef        SE         z         p        OR     OR_lo     OR_hi
+------------------------------------------------------------------------------------------
+           Intercept   -2.8219    0.1342   -21.033    0.0000     0.059     0.046     0.077
+                Days    0.1485    0.0303     4.907    0.0000     1.160     1.093     1.231
+
+======================================================================
+SECTION 3: JOINT STACKED MODEL — Direct interaction test
+======================================================================
+
+To directly test whether the two error types have DIFFERENT slopes,
+we create a stacked/long dataset with one row per observation per error type,
+and test the error_type × time interaction.
+
+Stacked dataset: 4800 rows (2 × 2400)
+  Perceptual events: 161
+  Semantic events:   45
+
+--- G. Stacked: occurred ~ log(Days) × error_type ---
+Formula: occurred ~ log_Days * C(etype, Treatment(reference='semantic'))
+N observations: 4800
+N clusters (UID): 100
+Events: 206/4800 (4.29%)
+
+Coefficients:
+           Parameter      Coef        SE         z         p        OR     OR_lo     OR_hi
+------------------------------------------------------------------------------------------
+           Intercept   -4.4762    0.2802   -15.977    0.0000     0.011     0.007     0.020
+C(etype, Treatment(reference='semantic'))[T.perceptual]    1.8324    0.2844     6.443    0.0000     6.249     3.578    10.911
+            log_Days    0.6569    0.1777     3.696    0.0002     1.929     1.361     2.733
+log_Days:C(etype, Treatment(reference='semantic'))[T.perceptual]   -0.5758    0.1904    -3.024    0.0025     0.562     0.387     0.817
+
+--- H. Stacked: occurred ~ Days × error_type ---
+Formula: occurred ~ Days * C(etype, Treatment(reference='semantic'))
+N observations: 4800
+N clusters (UID): 100
+Events: 206/4800 (4.29%)
+
+Coefficients:
+           Parameter      Coef        SE         z         p        OR     OR_lo     OR_hi
+------------------------------------------------------------------------------------------
+           Intercept   -4.9378    0.2733   -18.069    0.0000     0.007     0.004     0.012
+C(etype, Treatment(reference='semantic'))[T.perceptual]    2.0050    0.2956     6.783    0.0000     7.426     4.161    13.255
+                Days    0.2780    0.0525     5.299    0.0000     1.320     1.191     1.463
+Days:C(etype, Treatment(reference='semantic'))[T.perceptual]   -0.1757    0.0621    -2.828    0.0047     0.839     0.743     0.947
+
+======================================================================
+SECTION 4: SUMMARY COMPARISON
+======================================================================
+
+--- log(Days) models (proportional change) ---
+  Perceptual: b = 0.0819, p = 0.1129
+  Semantic:   b = 0.6541, p = 0.0002
+  Semantic slope is 8.0× larger (on log scale)
+
+--- Linear Days models (absolute change per day) ---
+  Perceptual: b = 0.1036, p = 0.0025
+  Semantic:   b = 0.2784, p = 0.0000
+  Perceptual slope is 0.4× larger (on linear scale)
+
+--- Interpretation ---
+The choice of time scale matters enormously here:
+  - log(Days): semantic wins because 0.2%→3.7% is a larger RATIO
+  - linear Days: perceptual should win because 6.2%→9.7% is a larger ABSOLUTE change
+Both are 'correct' — they answer different questions:
+  - log: 'Which error type is ACCELERATING fastest?'
+  - linear: 'Which error type ADDS MORE errors per day?'
+For Jason's question ('what drives the steeper recognition decline'),
+the linear scale is more directly relevant — it tells you which
+error type contributes more additional errors over time.
+
+======================================================================
+DONE: step12_error_type_glmm.py
+======================================================================

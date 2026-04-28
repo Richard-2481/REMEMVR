@@ -1,0 +1,16 @@
+Step 00: Load and Reshape Random Effects
+Loading random effects from RQ 5.3.7...
+File: /home/etai/projects/REMEMVR/results/ch5/5.3.7/data/step04_random_effects.csv
+300 rows, 4 columns
+Paradigms in data: ['ICR', 'IFR', 'IRE']
+Verified: 300 rows, 3 paradigms, no missing values
+Pivoting from long to wide format...
+Pivot complete: 100 rows, 7 columns
+Columns: ['UID', 'Total_Intercept_Cued', 'Total_Intercept_Free', 'Total_Intercept_Recognition', 'Total_Slope_Cued', 'Total_Slope_Free', 'Total_Slope_Recognition']
+Saving wide-format random effects...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step00_random_effects_wide.csv (100 rows, 7 cols)
+Running validate_dataframe_structure...
+valid: True
+message: DataFrame structure valid: 100 rows, 7 columns (required: 7).
+checks: {'row_count_valid': True, 'actual_rows': 100, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+Step 00 complete

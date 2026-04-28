@@ -1,0 +1,56 @@
+======================================================================
+validation TASK 4: LMM Diagnostic Plots
+======================================================================
+
+Loading piecewise LMM input data...
+800 observations
+
+Loading fitted LMM model...
+Re-fitting model to extract diagnostics...
+Model re-fit complete
+
+Computing residuals and fitted values...
+800 fitted values, 800 residuals
+
+======================================================================
+DIAGNOSTIC 1: Q-Q Plot (Residual Normality)
+======================================================================
+
+/home/etai/projects/REMEMVR/results/ch5/5.2.2/plots/diagnostics/qq_plot_residuals.png
+Shapiro-Wilk test for normality:
+       W = 0.9966, p = 0.0844
+       ✓ Residuals consistent with normal distribution (p > 0.05)
+
+======================================================================
+DIAGNOSTIC 2: Residuals vs Fitted (Homoscedasticity)
+======================================================================
+
+/home/etai/projects/REMEMVR/results/ch5/5.2.2/plots/diagnostics/residuals_vs_fitted.png
+Breusch-Pagan test for homoscedasticity:
+       LM statistic = 41.6990, p = 0.0000
+       ⚠ Heteroscedasticity detected (p < 0.05)
+         Consider robust standard errors
+
+======================================================================
+DIAGNOSTIC 3: Scale-Location Plot
+======================================================================
+
+/home/etai/projects/REMEMVR/results/ch5/5.2.2/plots/diagnostics/scale_location.png
+
+======================================================================
+SUMMARY
+======================================================================
+
+Diagnostic plots generated:
+  1. Q-Q plot: /home/etai/projects/REMEMVR/results/ch5/5.2.2/plots/diagnostics/qq_plot_residuals.png
+  2. Residuals vs Fitted: /home/etai/projects/REMEMVR/results/ch5/5.2.2/plots/diagnostics/residuals_vs_fitted.png
+  3. Scale-Location: /home/etai/projects/REMEMVR/results/ch5/5.2.2/plots/diagnostics/scale_location.png
+
+Visual inspection recommended for:
+  - Q-Q plot: Points should follow diagonal line (normality)
+  - Resid vs Fitted: Random scatter around zero (homoscedasticity)
+  - Scale-Location: Horizontal band (constant variance)
+
+======================================================================
+TASK 4 COMPLETE
+======================================================================

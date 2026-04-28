@@ -1,0 +1,526 @@
+
+======================================================================
+RQ 6.8.4: Source-Destination Confidence Clustering
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.4
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Reshape Random Effects Data (Long -> Wide)
+======================================================================
+
+Loading random effects from: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step03_random_effects.csv
+  Loaded: 200 rows, columns: ['UID', 'location_type', 'random_intercept', 'random_slope']
+
+Pivoting to wide format...
+
+Reshaped 200 rows -> 100 rows (2 locations -> 4 features per participant)
+  Columns: ['UID', 'Source_intercept', 'Source_slope', 'Destination_intercept', 'Destination_slope']
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step00_clustering_input.csv
+
+All 100 participants matched between source and destination
+
+======================================================================
+STEP 01: Standardize Features
+======================================================================
+
+Standardization verification:
+  Source_intercept_z: mean=0.0000, SD=1.0050
+  Source_slope_z: mean=0.0000, SD=1.0050
+  Destination_intercept_z: mean=0.0000, SD=1.0050
+  Destination_slope_z: mean=-0.0000, SD=1.0050
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step01_standardized_features.csv
+
+Standardized 4 features: mean approximately 0, SD approximately 1
+
+======================================================================
+STEP 02: K-Means Cluster Selection (BIC)
+======================================================================
+  K=1: inertia=400.00, BIC=157.05
+  K=2: inertia=238.51, BIC=123.76
+  K=3: inertia=148.91, BIC=95.08
+  K=4: inertia=119.76, BIC=91.72
+  K=5: inertia=98.56, BIC=90.65
+  K=6: inertia=87.22, BIC=96.85
+
+BIC minimum at K = 5
+Optimal K selected: 5
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step02_cluster_selection.csv
+
+======================================================================
+STEP 03: Fit Final K-Means Clustering (K=5)
+======================================================================
+
+Cluster sizes:
+  Cluster 0: 30 participants (30.0%)
+  Cluster 1: 16 participants (16.0%)
+  Cluster 2: 16 participants (16.0%)
+  Cluster 3: 28 participants (28.0%)
+  Cluster 4: 10 participants (10.0%)
+  All clusters >= 10% of N
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step03_cluster_assignments.csv
+
+Fitted K-means with K = 5 clusters
+
+======================================================================
+STEP 04: Validate Clustering Quality
+======================================================================
+
+Running Jaccard bootstrap stability (100 iterations)...
+
+Clustering Quality Metrics:
+  Silhouette coefficient: 0.3302 (threshold >= 0.40) -> FAIL
+  Davies-Bouldin index: 0.9672 (threshold < 1.0) -> PASS
+  Jaccard stability: 0.6470 (threshold > 0.70) -> FAIL
+
+  Ch5 5.5.7 Silhouette: 0.4170
+  This RQ Silhouette: 0.3302
+  -> THRESHOLD NOT MET: Below Ch5 5.5.7 quality
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step04_validation.csv
+
+======================================================================
+STEP 05: Characterize Clusters
+======================================================================
+
+Cluster Characterizations:
+
+  Cluster 0 (N=30):
+    Source:      intercept=0.250, slope=0.131
+    Destination: intercept=0.196, slope=0.120
+    Phenotype: HighSrc-Resilient, HighDst-Resilient
+
+  Cluster 1 (N=16):
+    Source:      intercept=-0.569, slope=-0.024
+    Destination: intercept=-0.578, slope=0.016
+    Phenotype: LowSrc-Declining, LowDst-Resilient
+
+  Cluster 2 (N=16):
+    Source:      intercept=0.106, slope=-0.260
+    Destination: intercept=0.094, slope=-0.208
+    Phenotype: HighSrc-Declining, HighDst-Declining
+
+  Cluster 3 (N=28):
+    Source:      intercept=0.362, slope=-0.037
+    Destination: intercept=0.405, slope=-0.090
+    Phenotype: HighSrc-Declining, HighDst-Declining
+
+  Cluster 4 (N=10):
+    Source:      intercept=-1.022, slope=0.167
+    Destination: intercept=-0.946, slope=0.199
+    Phenotype: LowSrc-Resilient, LowDst-Resilient
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step05_cluster_characterization.csv
+
+Characterized 5 clusters
+
+======================================================================
+STEP 06: Cross-Tabulate with Ch5 5.5.7 Accuracy Clusters
+======================================================================
+
+Loading Ch5 5.5.7 accuracy clusters from: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step04_cluster_assignments.csv
+  Merged: 100 participants matched
+
+Cross-tabulation (Confidence x Accuracy):
+cluster_accuracy     0   1   2   3  All
+cluster_confidence                     
+0                    8   2  18   2   30
+1                    0   9   4   3   16
+2                    1   6   3   6   16
+3                   11   3   8   6   28
+4                    0   6   2   2   10
+All                 20  26  35  19  100
+
+Chi-square test of association:
+  X² = 43.68
+  df = 12
+  p_uncorrected = 1.7325e-05
+  p_bonferroni = 1.7325e-05
+  -> SIGNIFICANT: Confidence and accuracy phenotypes are ASSOCIATED
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step06_crosstab.csv
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step06_chi_square.csv
+
+Chi-square test: X2 = 43.68, df = 12, p = 1.7325e-05
+
+======================================================================
+STEP 07: Prepare Visualization Data (PCA Projection)
+======================================================================
+
+PCA projection complete: 4D -> 2D
+  PC1 explains 58.4% variance
+  PC2 explains 34.0% variance
+  Total: 92.4%
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step07_cluster_scatter_data.csv
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_clustering_input.csv (100 rows x 4 features)
+  data/step01_standardized_features.csv (100 rows x 4 z-scores)
+  data/step02_cluster_selection.csv (BIC for K=1-6)
+  data/step03_cluster_assignments.csv (100 UIDs x cluster)
+  data/step04_validation.csv (quality metrics)
+  data/step05_cluster_characterization.csv (phenotypes)
+  data/step06_crosstab.csv (confidence x accuracy)
+  data/step06_chi_square.csv (association test)
+  data/step07_cluster_scatter_data.csv (PCA for plots)
+
+KEY RESULTS:
+  Optimal K: 5
+  Silhouette: 0.3302 (threshold >= 0.40)
+  Ch5 5.5.7 Silhouette: 0.417
+  -> HYPOTHESIS NOT SUPPORTED: Clustering quality below threshold
+
+======================================================================
+RQ 6.8.4: Source-Destination Confidence Clustering
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.4
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Reshape Random Effects Data (Long -> Wide)
+======================================================================
+
+Loading random effects from: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step03_random_effects.csv
+  Loaded: 200 rows, columns: ['UID', 'location_type', 'random_intercept', 'random_slope']
+
+Pivoting to wide format...
+
+Reshaped 200 rows -> 100 rows (2 locations -> 4 features per participant)
+  Columns: ['UID', 'Source_intercept', 'Source_slope', 'Destination_intercept', 'Destination_slope']
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step00_clustering_input.csv
+
+All 100 participants matched between source and destination
+
+======================================================================
+STEP 01: Standardize Features
+======================================================================
+
+Standardization verification:
+  Source_intercept_z: mean=-0.0000, SD=1.0050
+  Source_slope_z: mean=-0.0000, SD=1.0050
+  Destination_intercept_z: mean=-0.0000, SD=1.0050
+  Destination_slope_z: mean=0.0000, SD=1.0050
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step01_standardized_features.csv
+
+Standardized 4 features: mean approximately 0, SD approximately 1
+
+======================================================================
+STEP 02: K-Means Cluster Selection (BIC)
+======================================================================
+  K=1: inertia=400.00, BIC=157.05
+  K=2: inertia=271.83, BIC=136.84
+  K=3: inertia=196.09, BIC=122.60
+  K=4: inertia=155.74, BIC=117.99
+  K=5: inertia=131.78, BIC=119.70
+  K=6: inertia=115.29, BIC=124.75
+
+BIC minimum at K = 4
+Optimal K selected: 4
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step02_cluster_selection.csv
+
+======================================================================
+STEP 03: Fit Final K-Means Clustering (K=4)
+======================================================================
+
+Cluster sizes:
+  Cluster 0: 36 participants (36.0%)
+  Cluster 1: 16 participants (16.0%)
+  Cluster 2: 20 participants (20.0%)
+  Cluster 3: 28 participants (28.0%)
+  All clusters >= 10% of N
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step03_cluster_assignments.csv
+
+Fitted K-means with K = 4 clusters
+
+======================================================================
+STEP 04: Validate Clustering Quality
+======================================================================
+
+Running Jaccard bootstrap stability (100 iterations)...
+
+Clustering Quality Metrics:
+  Silhouette coefficient: 0.2791 (threshold >= 0.40) -> FAIL
+  Davies-Bouldin index: 1.1253 (threshold < 1.0) -> FAIL
+  Jaccard stability: 0.6760 (threshold > 0.70) -> FAIL
+
+  Ch5 5.5.7 Silhouette: 0.4170
+  This RQ Silhouette: 0.2791
+  -> THRESHOLD NOT MET: Below Ch5 5.5.7 quality
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step04_validation.csv
+
+======================================================================
+STEP 05: Characterize Clusters
+======================================================================
+
+Cluster Characterizations:
+
+  Cluster 0 (N=36):
+    Source:      intercept=0.107, slope=0.163
+    Destination: intercept=0.111, slope=0.106
+    Phenotype: HighSrc-Resilient, HighDst-Resilient
+
+  Cluster 1 (N=16):
+    Source:      intercept=-0.169, slope=-0.519
+    Destination: intercept=-0.449, slope=-0.200
+    Phenotype: LowSrc-Declining, LowDst-Declining
+
+  Cluster 2 (N=20):
+    Source:      intercept=-0.850, slope=0.089
+    Destination: intercept=-0.805, slope=0.081
+    Phenotype: LowSrc-Resilient, LowDst-Resilient
+
+  Cluster 3 (N=28):
+    Source:      intercept=0.566, slope=0.023
+    Destination: intercept=0.689, slope=-0.080
+    Phenotype: HighSrc-Resilient, HighDst-Declining
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step05_cluster_characterization.csv
+
+Characterized 4 clusters
+
+======================================================================
+STEP 06: Cross-Tabulate with Ch5 5.5.7 Accuracy Clusters
+======================================================================
+
+Loading Ch5 5.5.7 accuracy clusters from: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step04_cluster_assignments.csv
+  Merged: 100 participants matched
+
+Cross-tabulation (Confidence x Accuracy):
+cluster_accuracy     0   1   2   3  All
+cluster_confidence                     
+0                    7   8  16   5   36
+1                    1   8   4   3   16
+2                    1  10   5   4   20
+3                   11   0  10   7   28
+All                 20  26  35  19  100
+
+Chi-square test of association:
+  X² = 27.41
+  df = 9
+  p_uncorrected = 1.1939e-03
+  p_bonferroni = 1.1939e-03
+  -> SIGNIFICANT: Confidence and accuracy phenotypes are ASSOCIATED
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step06_crosstab.csv
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step06_chi_square.csv
+
+Chi-square test: X2 = 27.41, df = 9, p = 1.1939e-03
+
+======================================================================
+STEP 07: Prepare Visualization Data (PCA Projection)
+======================================================================
+
+PCA projection complete: 4D -> 2D
+  PC1 explains 47.7% variance
+  PC2 explains 41.0% variance
+  Total: 88.7%
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step07_cluster_scatter_data.csv
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_clustering_input.csv (100 rows x 4 features)
+  data/step01_standardized_features.csv (100 rows x 4 z-scores)
+  data/step02_cluster_selection.csv (BIC for K=1-6)
+  data/step03_cluster_assignments.csv (100 UIDs x cluster)
+  data/step04_validation.csv (quality metrics)
+  data/step05_cluster_characterization.csv (phenotypes)
+  data/step06_crosstab.csv (confidence x accuracy)
+  data/step06_chi_square.csv (association test)
+  data/step07_cluster_scatter_data.csv (PCA for plots)
+
+KEY RESULTS:
+  Optimal K: 4
+  Silhouette: 0.2791 (threshold >= 0.40)
+  Ch5 5.5.7 Silhouette: 0.417
+  -> HYPOTHESIS NOT SUPPORTED: Clustering quality below threshold
+
+======================================================================
+RQ 6.8.4: Source-Destination Confidence Clustering
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.4
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Reshape Random Effects Data (Long -> Wide)
+======================================================================
+
+Loading random effects from: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step03_random_effects.csv
+  Loaded: 200 rows, columns: ['UID', 'location_type', 'random_intercept', 'random_slope']
+
+Pivoting to wide format...
+
+Reshaped 200 rows -> 100 rows (2 locations -> 4 features per participant)
+  Columns: ['UID', 'Source_intercept', 'Source_slope', 'Destination_intercept', 'Destination_slope']
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step00_clustering_input.csv
+
+All 100 participants matched between source and destination
+
+======================================================================
+STEP 01: Standardize Features
+======================================================================
+
+Standardization verification:
+  Source_intercept_z: mean=-0.0000, SD=1.0050
+  Source_slope_z: mean=-0.0000, SD=1.0050
+  Destination_intercept_z: mean=-0.0000, SD=1.0050
+  Destination_slope_z: mean=0.0000, SD=1.0050
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step01_standardized_features.csv
+
+Standardized 4 features: mean approximately 0, SD approximately 1
+
+======================================================================
+STEP 02: K-Means Cluster Selection (BIC)
+======================================================================
+  K=1: inertia=400.00, BIC=157.05
+  K=2: inertia=271.83, BIC=136.84
+  K=3: inertia=196.09, BIC=122.60
+  K=4: inertia=155.74, BIC=117.99
+  K=5: inertia=131.78, BIC=119.70
+  K=6: inertia=115.29, BIC=124.75
+
+BIC minimum at K = 4
+Optimal K selected: 4
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step02_cluster_selection.csv
+
+======================================================================
+STEP 03: Fit Final K-Means Clustering (K=4)
+======================================================================
+
+Cluster sizes:
+  Cluster 0: 36 participants (36.0%)
+  Cluster 1: 16 participants (16.0%)
+  Cluster 2: 20 participants (20.0%)
+  Cluster 3: 28 participants (28.0%)
+  All clusters >= 10% of N
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step03_cluster_assignments.csv
+
+Fitted K-means with K = 4 clusters
+
+======================================================================
+STEP 04: Validate Clustering Quality
+======================================================================
+
+Running Jaccard bootstrap stability (100 iterations)...
+
+Clustering Quality Metrics:
+  Silhouette coefficient: 0.2791 (threshold >= 0.40) -> FAIL
+  Davies-Bouldin index: 1.1253 (threshold < 1.0) -> FAIL
+  Jaccard stability: 0.6502 (threshold > 0.70) -> FAIL
+
+  Ch5 5.5.7 Silhouette: 0.4170
+  This RQ Silhouette: 0.2791
+  -> THRESHOLD NOT MET: Below Ch5 5.5.7 quality
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step04_validation.csv
+
+======================================================================
+STEP 05: Characterize Clusters
+======================================================================
+
+Cluster Characterizations:
+
+  Cluster 0 (N=36):
+    Source:      intercept=0.107, slope=0.163
+    Destination: intercept=0.111, slope=0.106
+    Phenotype: HighSrc-Resilient, HighDst-Resilient
+
+  Cluster 1 (N=16):
+    Source:      intercept=-0.169, slope=-0.519
+    Destination: intercept=-0.449, slope=-0.200
+    Phenotype: LowSrc-Declining, LowDst-Declining
+
+  Cluster 2 (N=20):
+    Source:      intercept=-0.850, slope=0.089
+    Destination: intercept=-0.805, slope=0.081
+    Phenotype: LowSrc-Resilient, LowDst-Resilient
+
+  Cluster 3 (N=28):
+    Source:      intercept=0.566, slope=0.023
+    Destination: intercept=0.689, slope=-0.080
+    Phenotype: HighSrc-Resilient, HighDst-Declining
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step05_cluster_characterization.csv
+
+Characterized 4 clusters
+
+======================================================================
+STEP 06: Cross-Tabulate with Ch5 5.5.7 Accuracy Clusters
+======================================================================
+
+Loading Ch5 5.5.7 accuracy clusters from: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step04_cluster_assignments.csv
+  Merged: 100 participants matched
+
+Cross-tabulation (Confidence x Accuracy):
+cluster_accuracy     0   1   2   3  All
+cluster_confidence                     
+0                    7   8  16   5   36
+1                    1   8   4   3   16
+2                    1  10   5   4   20
+3                   11   0  10   7   28
+All                 20  26  35  19  100
+
+Chi-square test of association:
+  X² = 27.41
+  df = 9
+  p_uncorrected = 1.1939e-03
+  p_bonferroni = 1.1939e-03
+  -> SIGNIFICANT: Confidence and accuracy phenotypes are ASSOCIATED
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step06_crosstab.csv
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step06_chi_square.csv
+
+Chi-square test: X2 = 27.41, df = 9, p = 1.1939e-03
+
+======================================================================
+STEP 07: Prepare Visualization Data (PCA Projection)
+======================================================================
+
+PCA projection complete: 4D -> 2D
+  PC1 explains 47.7% variance
+  PC2 explains 41.0% variance
+  Total: 88.7%
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.4/data/step07_cluster_scatter_data.csv
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_clustering_input.csv (100 rows x 4 features)
+  data/step01_standardized_features.csv (100 rows x 4 z-scores)
+  data/step02_cluster_selection.csv (BIC for K=1-6)
+  data/step03_cluster_assignments.csv (100 UIDs x cluster)
+  data/step04_validation.csv (quality metrics)
+  data/step05_cluster_characterization.csv (phenotypes)
+  data/step06_crosstab.csv (confidence x accuracy)
+  data/step06_chi_square.csv (association test)
+  data/step07_cluster_scatter_data.csv (PCA for plots)
+
+KEY RESULTS:
+  Optimal K: 4
+  Silhouette: 0.2791 (threshold >= 0.40)
+  Ch5 5.5.7 Silhouette: 0.417
+  -> HYPOTHESIS NOT SUPPORTED: Clustering quality below threshold

@@ -13,13 +13,10 @@ import sys
 from scipy import stats
 from statsmodels.stats.multitest import multipletests
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch7/7.1.3
 LOG_FILE = RQ_DIR / "logs" / "step04_steiger_tests.log"
 
@@ -37,7 +34,6 @@ OUTPUT_BOOTSTRAP = RQ_DIR / "data" / "step04_bootstrap_correlation_diffs.csv"
 LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -102,22 +98,17 @@ def bootstrap_correlation_difference(data, var1, var2, var3, n_bootstrap=1000, s
     
     return np.array(diffs), ci_lower, ci_upper
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 04: Perform Steiger Z-Tests for Cross-Domain Comparisons")
-        log(f"[SETUP] RQ Directory: {RQ_DIR}")
-        
-        # =========================================================================
-        # STEP 1: Load data and prepare for correlation analysis
-        # =========================================================================
+        log("Step 04: Perform Steiger Z-Tests for Cross-Domain Comparisons")
+        log(f"RQ Directory: {RQ_DIR}")
+        # Load data and prepare for correlation analysis
         log("\n[STEP 1] Loading merged dataset and preparing for analysis...")
         
         data = pd.read_csv(INPUT_MERGED)
-        log(f"[INFO] Loaded data: {data.shape}")
+        log(f"Loaded data: {data.shape}")
         
         # Pivot data to wide format for correlations
         # We need separate columns for each domain's theta scores
@@ -127,12 +118,9 @@ if __name__ == "__main__":
         cog_data = data[['UID', 'RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']].drop_duplicates()
         analysis_data = pd.merge(theta_wide, cog_data, on='UID')
         
-        log(f"[INFO] Analysis data shape: {analysis_data.shape}")
-        log(f"[INFO] Columns: {analysis_data.columns.tolist()}")
-        
-        # =========================================================================
-        # STEP 2: Calculate correlation matrix
-        # =========================================================================
+        log(f"Analysis data shape: {analysis_data.shape}")
+        log(f"Columns: {analysis_data.columns.tolist()}")
+        # Calculate correlation matrix
         log("\n[STEP 2] Calculating correlation matrix...")
         
         # Select variables for correlation matrix
@@ -141,17 +129,14 @@ if __name__ == "__main__":
         
         # Save correlation matrix
         corr_matrix.to_csv(OUTPUT_CORRELATION)
-        log(f"[OUTPUT] Correlation matrix saved to: {OUTPUT_CORRELATION}")
+        log(f"Correlation matrix saved to: {OUTPUT_CORRELATION}")
         
         # Display key correlations
-        log("\n[INFO] Key correlations:")
+        log("\nKey correlations:")
         for test in ['RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']:
             for domain in ['What', 'Where', 'When']:
                 log(f"  {test}-{domain}: r={corr_matrix.loc[test, domain]:.3f}")
-        
-        # =========================================================================
-        # STEP 3: Perform Steiger Z-tests for key comparisons
-        # =========================================================================
+        # Perform Steiger Z-tests for key comparisons
         log("\n[STEP 3] Performing Steiger Z-tests for dependent correlations...")
         
         n = len(analysis_data)
@@ -238,10 +223,7 @@ if __name__ == "__main__":
             'z_statistic': test5['z_statistic'],
             'p_uncorrected': test5['p_value']
         })
-        
-        # =========================================================================
-        # STEP 4: Apply multiple comparison corrections
-        # =========================================================================
+        # Apply multiple comparison corrections
         log("\n[STEP 4] Applying multiple comparison corrections...")
         
         # Extract p-values
@@ -273,7 +255,7 @@ if __name__ == "__main__":
         # Save Steiger test results
         steiger_df = pd.DataFrame(steiger_results)
         steiger_df.to_csv(OUTPUT_STEIGER, index=False)
-        log(f"[OUTPUT] Steiger Z-test results saved to: {OUTPUT_STEIGER}")
+        log(f"Steiger Z-test results saved to: {OUTPUT_STEIGER}")
         
         # Save corrected p-values separately
         pval_df = pd.DataFrame({
@@ -283,17 +265,14 @@ if __name__ == "__main__":
             'p_fdr': p_fdr.tolist()
         })
         pval_df.to_csv(OUTPUT_PVALUES, index=False)
-        log(f"[OUTPUT] Corrected p-values saved to: {OUTPUT_PVALUES}")
-        
-        # =========================================================================
-        # STEP 5: Bootstrap confidence intervals for correlation differences
-        # =========================================================================
+        log(f"Corrected p-values saved to: {OUTPUT_PVALUES}")
+        # Bootstrap confidence intervals for correlation differences
         log("\n[STEP 5] Computing bootstrap confidence intervals...")
         
         bootstrap_results = []
         
         # Bootstrap for RAVLT: What vs Where
-        log("[BOOTSTRAP] RAVLT: What vs Where...")
+        log("RAVLT: What vs Where...")
         diffs, ci_lower, ci_upper = bootstrap_correlation_difference(
             analysis_data, 'RAVLT_T', 'What', 'Where', n_bootstrap=1000, seed=42
         )
@@ -305,7 +284,7 @@ if __name__ == "__main__":
         })
         
         # Bootstrap for BVMT: Where vs What
-        log("[BOOTSTRAP] BVMT: Where vs What...")
+        log("BVMT: Where vs What...")
         diffs, ci_lower, ci_upper = bootstrap_correlation_difference(
             analysis_data, 'BVMT_T', 'Where', 'What', n_bootstrap=1000, seed=42
         )
@@ -317,7 +296,7 @@ if __name__ == "__main__":
         })
         
         # Bootstrap for RAVLT_Pct_Ret: What vs Where
-        log("[BOOTSTRAP] RAVLT_Pct_Ret: What vs Where...")
+        log("RAVLT_Pct_Ret: What vs Where...")
         diffs, ci_lower, ci_upper = bootstrap_correlation_difference(
             analysis_data, 'RAVLT_Pct_Ret_T', 'What', 'Where', n_bootstrap=1000, seed=42
         )
@@ -329,7 +308,7 @@ if __name__ == "__main__":
         })
 
         # Bootstrap for BVMT_Pct_Ret: Where vs What
-        log("[BOOTSTRAP] BVMT_Pct_Ret: Where vs What...")
+        log("BVMT_Pct_Ret: Where vs What...")
         diffs, ci_lower, ci_upper = bootstrap_correlation_difference(
             analysis_data, 'BVMT_Pct_Ret_T', 'Where', 'What', n_bootstrap=1000, seed=42
         )
@@ -341,7 +320,7 @@ if __name__ == "__main__":
         })
 
         # Bootstrap for RPM: What vs Where
-        log("[BOOTSTRAP] RPM: What vs Where...")
+        log("RPM: What vs Where...")
         diffs, ci_lower, ci_upper = bootstrap_correlation_difference(
             analysis_data, 'RPM_T', 'What', 'Where', n_bootstrap=1000, seed=42
         )
@@ -354,14 +333,11 @@ if __name__ == "__main__":
         
         bootstrap_df = pd.DataFrame(bootstrap_results)
         bootstrap_df.to_csv(OUTPUT_BOOTSTRAP, index=False)
-        log(f"[OUTPUT] Bootstrap results saved to: {OUTPUT_BOOTSTRAP}")
-        
-        # =========================================================================
-        # STEP 6: Summary of results
-        # =========================================================================
+        log(f"Bootstrap results saved to: {OUTPUT_BOOTSTRAP}")
+        # Summary of results
         log("\n[STEP 6] Summary of Steiger Z-test results...")
         
-        log("\n[RESULTS] Cross-domain correlation comparisons:")
+        log("\nCross-domain correlation comparisons:")
         for _, row in steiger_df.iterrows():
             log(f"\n  {row['comparison']}:")
             log(f"    r1={row['r1']:.3f}, r2={row['r2']:.3f}, diff={row['r_diff']:.3f}")
@@ -385,11 +361,11 @@ if __name__ == "__main__":
                 hypothesis_met = row['r_diff'] < 0.1
                 log(f"    Hypothesis (RPM consistent across domains): {'supported' if hypothesis_met else 'not supported'}")
 
-        log("\n[COMPLETE] Step 04 completed successfully")
-        log(f"[SUMMARY] Performed {len(steiger_results)} Steiger Z-tests with multiple comparison corrections")
+        log("\nStep 04 completed successfully")
+        log(f"Performed {len(steiger_results)} Steiger Z-tests with multiple comparison corrections")
         
     except Exception as e:
         log(f"[CRITICAL ERROR] Unexpected error: {e}")
         import traceback
-        log(f"[TRACEBACK] {traceback.format_exc()}")
+        log(f"{traceback.format_exc()}")
         sys.exit(1)

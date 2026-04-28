@@ -32,9 +32,7 @@ def log(msg: str):
         f.flush()
     print(msg, flush=True)
 
-# =============================================================================
-# STEP 00: Merge Accuracy and Confidence Theta Scores
-# =============================================================================
+# Merge Accuracy and Confidence Theta Scores
 def step00_merge_accuracy_confidence():
     """Merge accuracy theta (RQ 5.4.1) and confidence theta (RQ 6.5.1)."""
     log("\n" + "="*60)
@@ -152,9 +150,7 @@ def step00_merge_accuracy_confidence():
 
     return df_long
 
-# =============================================================================
-# STEP 01: Compute Calibration Scores
-# =============================================================================
+# Compute Calibration Scores
 def step01_compute_calibration(df: pd.DataFrame):
     """Compute calibration = z(confidence) - z(accuracy) within each congruence level."""
     log("\n" + "="*60)
@@ -218,9 +214,7 @@ def step01_compute_calibration(df: pd.DataFrame):
 
     return df
 
-# =============================================================================
-# STEP 02: Fit LMM and Test Congruence Effects
-# =============================================================================
+# Fit LMM and Test Congruence Effects
 def step02_fit_lmm_congruence(df: pd.DataFrame):
     """Fit LMM testing Congruence × Time interaction on calibration."""
     log("\n" + "="*60)
@@ -456,9 +450,7 @@ def step02_fit_lmm_congruence(df: pd.DataFrame):
 
     return result, effects_df, contrasts_df
 
-# =============================================================================
 # MAIN
-# =============================================================================
 def main():
     log(f"RQ 6.5.2: Schema Confidence Calibration")
     log(f"Started: {pd.Timestamp.now()}")

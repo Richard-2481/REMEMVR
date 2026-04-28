@@ -1,0 +1,10 @@
+congruence,icc_type,value,magnitude
+Common,intercept,0.2768864510447849,Moderate clustering (0.10-0.30)
+Common,slope_conditional,0.3134763838456848,High clustering (0.30-0.75)
+Common,slope_simple,1.5643561115440082e-07,Low clustering (<0.10)
+Congruent,intercept,0.3649563765823756,High clustering (0.30-0.75)
+Congruent,slope_conditional,0.22944293615637432,Moderate clustering (0.10-0.30)
+Congruent,slope_simple,1.5962269931690956e-05,Low clustering (<0.10)
+Incongruent,intercept,0.26650516706165056,Moderate clustering (0.10-0.30)
+Incongruent,slope_conditional,0.3480656247467718,High clustering (0.30-0.75)
+Incongruent,slope_simple,7.890785193598243e-07,Low clustering (<0.10)

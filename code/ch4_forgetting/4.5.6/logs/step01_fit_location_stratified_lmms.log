@@ -1,0 +1,79 @@
+2025-12-05 13:48:42,063 - INFO - ============================================================
+2025-12-05 13:48:42,063 - INFO - RQ 5.5.6 Step 01: Fit Location-Stratified LMMs
+2025-12-05 13:48:42,063 - INFO - ============================================================
+2025-12-05 13:48:42,066 - INFO - Loaded input data: 800 rows from results/ch5/5.5.1/data/step04_lmm_input.csv
+2025-12-05 13:48:42,068 - INFO - LocationType values in data: ['source', 'destination']
+2025-12-05 13:48:42,069 - INFO - 
+Processing location: source
+2025-12-05 13:48:42,070 - INFO -   Rows: 400
+2025-12-05 13:48:42,070 - INFO - 
+============================================================
+2025-12-05 13:48:42,070 - INFO - Fitting LMM for location: source
+2025-12-05 13:48:42,070 - INFO - ============================================================
+2025-12-05 13:48:42,070 - INFO -   Observations: 400
+2025-12-05 13:48:42,070 - INFO -   Groups (participants): 100
+2025-12-05 13:48:42,071 - INFO -   log_TSVR range: [0.693, 5.510]
+2025-12-05 13:48:42,071 - INFO -   Attempting fit with full random structure (intercept + slope correlated)
+2025-12-05 13:48:42,419 - INFO -   Model converged: True
+2025-12-05 13:48:42,420 - INFO -   Log-likelihood: -444.26
+2025-12-05 13:48:42,421 - INFO -   AIC: 900.52
+2025-12-05 13:48:42,421 - INFO -   BIC: 924.47
+2025-12-05 13:48:42,421 - INFO - Saved metadata to: results/ch5/5.5.6/data/step01_model_metadata_source.yaml
+2025-12-05 13:48:42,422 - INFO - 
+Processing location: destination
+2025-12-05 13:48:42,422 - INFO -   Rows: 400
+2025-12-05 13:48:42,422 - INFO - 
+============================================================
+2025-12-05 13:48:42,422 - INFO - Fitting LMM for location: destination
+2025-12-05 13:48:42,422 - INFO - ============================================================
+2025-12-05 13:48:42,422 - INFO -   Observations: 400
+2025-12-05 13:48:42,422 - INFO -   Groups (participants): 100
+2025-12-05 13:48:42,423 - INFO -   log_TSVR range: [0.693, 5.510]
+2025-12-05 13:48:42,423 - INFO -   Attempting fit with full random structure (intercept + slope correlated)
+2025-12-05 13:48:42,512 - INFO -   Model converged: True
+2025-12-05 13:48:42,514 - INFO -   Log-likelihood: -459.08
+2025-12-05 13:48:42,514 - INFO -   AIC: 930.15
+2025-12-05 13:48:42,514 - INFO -   BIC: 954.10
+2025-12-05 13:48:42,514 - INFO - Saved metadata to: results/ch5/5.5.6/data/step01_model_metadata_destination.yaml
+2025-12-05 13:48:42,516 - INFO - Saved fitted model to: results/ch5/5.5.6/data/step01_source_lmm_model.pkl
+2025-12-05 13:48:42,517 - INFO - Saved fitted model to: results/ch5/5.5.6/data/step01_destination_lmm_model.pkl
+2025-12-05 13:48:42,517 - INFO - 
+============================================================
+2025-12-05 13:48:42,517 - INFO - MODEL SUMMARIES
+2025-12-05 13:48:42,517 - INFO - ============================================================
+2025-12-05 13:48:42,517 - INFO - 
+--- Source Location ---
+2025-12-05 13:48:42,517 - INFO - Random structure: Full
+2025-12-05 13:48:42,517 - INFO - 
+Fixed Effects:
+2025-12-05 13:48:42,518 - INFO -   Intercept: 0.6525 (SE: 0.0801)
+2025-12-05 13:48:42,518 - INFO -   log_TSVR:  -0.2009 (SE: 0.0197)
+2025-12-05 13:48:42,518 - INFO - 
+Random Effects Variances:
+2025-12-05 13:48:42,518 - INFO -   cov_re shape: (2, 2)
+2025-12-05 13:48:42,518 - INFO -   Group Var (intercept): 0.126829
+2025-12-05 13:48:42,518 - INFO -   log_TSVR Var (slope):  0.002040
+2025-12-05 13:48:42,519 - INFO -   Cov(intercept, slope): 0.009994
+2025-12-05 13:48:42,519 - INFO -   Scale (residual): 0.401714
+2025-12-05 13:48:42,519 - INFO - 
+--- Destination Location ---
+2025-12-05 13:48:42,519 - INFO - Random structure: Full
+2025-12-05 13:48:42,519 - INFO - 
+Fixed Effects:
+2025-12-05 13:48:42,519 - INFO -   Intercept: 0.5283 (SE: 0.0967)
+2025-12-05 13:48:42,519 - INFO -   log_TSVR:  -0.1506 (SE: 0.0230)
+2025-12-05 13:48:42,519 - INFO - 
+Random Effects Variances:
+2025-12-05 13:48:42,519 - INFO -   cov_re shape: (2, 2)
+2025-12-05 13:48:42,520 - INFO -   Group Var (intercept): 0.338263
+2025-12-05 13:48:42,520 - INFO -   log_TSVR Var (slope):  0.010256
+2025-12-05 13:48:42,520 - INFO -   Cov(intercept, slope): -0.050147
+2025-12-05 13:48:42,520 - INFO -   Scale (residual): 0.465018
+2025-12-05 13:48:42,520 - INFO - 
+============================================================
+2025-12-05 13:48:42,520 - INFO - STEP 01 COMPLETE
+2025-12-05 13:48:42,520 - INFO - ============================================================
+2025-12-05 13:48:42,520 - INFO - Models fitted: 2
+2025-12-05 13:48:42,520 - INFO -   source: Full structure, AIC=900.52
+2025-12-05 13:48:42,520 - INFO -   destination: Full structure, AIC=930.15
+2025-12-05 13:48:42,520 - INFO - Ready for Step 02: Extract Variance Components

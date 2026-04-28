@@ -1,0 +1,5 @@
+domain,measurement_type,correlation,significance
+what,Full CTT,0.8788789313087595,Significant improvement
+what,Purified CTT,0.9061293169635136,Significant improvement
+where,Full CTT,0.940221874924077,Significant improvement
+where,Purified CTT,0.9553395488649172,Significant improvement

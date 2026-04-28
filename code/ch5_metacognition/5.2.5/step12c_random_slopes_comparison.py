@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-RQ 6.2.5: Random Slopes Comparison (PLATINUM Requirement)
+RQ 6.2.5: Random Slopes Comparison (Validation Requirement)
 ==========================================================
 
-Per improvement_taxonomy.md Section 4.4 (MANDATORY):
+Per improvement_taxonomy.md Section 4.4 :
 "Test intercepts-only vs random slopes (NON-NEGOTIABLE)"
 
 Compares two models via AIC:
@@ -20,9 +20,7 @@ from pathlib import Path
 import statsmodels.formula.api as smf
 import warnings
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step12c_random_slopes_comparison.log"
@@ -225,7 +223,7 @@ def main():
     with open(LOG_FILE, 'w') as f:
         f.write("RQ 6.2.5: Random Slopes Comparison\n")
         f.write("=" * 70 + "\n")
-        f.write("PLATINUM Requirement: Section 4.4 (MANDATORY)\n\n")
+        f.write("Validation Requirement: Section 4.4 \n\n")
 
     log("Starting random slopes comparison...")
     log(f"Data file: {DATA_FILE}")

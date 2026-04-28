@@ -1,0 +1,47 @@
+Step 00: validate_dependencies
+Checking Ch6 HCE data availability...
+Ch6 HCE data at primary path: /home/etai/projects/REMEMVR/results/ch6/6.6.1/data/step01_hce_rates.csv
+Checking HCE data format: /home/etai/projects/REMEMVR/results/ch6/6.6.1/data/step01_hce_rates.csv
+HCE data has columns: ['UID', 'TEST', 'TSVR', 'HCE_rate', 'n_HCE', 'n_total']
+HCE data: 400 rows, 100 unique participants
+HCE rates: 0.0000 to 0.2778
+Ch6 HCE data validation successful
+Checking dfnonvr.csv accessibility...
+dfnonvr.csv at: /home/etai/projects/REMEMVR/data/dfnonvr.csv
+Checking dfnonvr.csv column names...
+dfnonvr.csv has 235 total columns
+Required columns for cognitive analysis:
+  UID
+  ravlt-trial-1-score
+  ravlt-trial-2-score
+  ravlt-trial-3-score
+  ravlt-trial-4-score
+  ravlt-trial-5-score
+  bvmt-trial-1-score
+  bvmt-trial-2-score
+  bvmt-trial-3-score
+  bvmt-delayed-recall-score
+  rpm-score
+  age
+  sex
+  education
+All 14 required columns found in dfnonvr.csv
+dfnonvr.csv: 100 rows, 100 unique participants
+[DATA QUALITY] Checking for missing values in key columns:
+  UID: 0 missing (0.0%)
+  rpm-score: 0 missing (0.0%)
+  age: 0 missing (0.0%)
+  sex: 0 missing (0.0%)
+dfnonvr.csv validation successful
+Checking participant overlap between datasets...
+HCE data participants: 100
+Cognitive data participants: 100
+Overlapping participants: 100
+HCE only: 0
+Cognitive only: 0
+Overlap percentage: 100.0%
+Sufficient participant overlap (100) for analysis
+Creating validation report...
+Validation report: /home/etai/projects/REMEMVR/results/ch7/7.3.3/data/step00_dependency_validation.txt
+235 columns verified, 100 participants available
+Step 00 complete - all dependencies validated

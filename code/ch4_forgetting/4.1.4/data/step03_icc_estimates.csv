@@ -1,0 +1,4 @@
+icc_type,icc_value,interpretation
+intercept,0.6059194240160627,High clustering (0.30-0.75)
+slope_conditional,0.6059194240160627,High clustering (0.30-0.75)
+slope_simple,0.0005051577156194745,Low clustering (<0.10)

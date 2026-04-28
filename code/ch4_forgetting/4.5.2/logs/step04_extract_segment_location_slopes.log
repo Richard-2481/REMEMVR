@@ -1,0 +1,79 @@
+Step 4: Extract segment-location slopes
+Loading fitted piecewise LMM model...
+Piecewise LMM model from step03_piecewise_lmm_model.pkl
+Model has 8 fixed effects coefficients
+Coefficients: ['Intercept', 'Segment[T.Late]', 'LocationType[T.Destination]', 'Segment[T.Late]:LocationType[T.Destination]', 'Days_within', 'Days_within:Segment[T.Late]', 'Days_within:LocationType[T.Destination]', 'Days_within:Segment[T.Late]:LocationType[T.Destination]']
+Extracting variance-covariance matrix...
+Variance-covariance matrix shape: (11, 11)
+Identifying coefficient indices for slope calculations...
+Days_within index: 4
+Days_within:Segment[T.Late] index: 5
+Days_within:LocationType[T.Destination] index: 6
+Days_within:Segment[T.Late]:LocationType[T.Destination] index: 7
+Computing segment-location slopes via linear combinations...
+Source_Early slope: -0.206219
+Source_Late slope: -0.104042
+Destination_Early slope: -0.209130
+Destination_Late slope: -0.046292
+Applying delta method for SE propagation...
+shapes (8,) and (11, 11) not aligned
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 1803, in __rmatmul__
+    return self.T.dot(np.transpose(other)).T
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 1757, in dot
+    raise ValueError(
+ValueError: Dot product shape mismatch, (11, 11) vs (8,)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.2/code/step04_extract_segment_location_slopes.py", line 237, in <module>
+    se_source_late = np.sqrt(gradient_source_late @ vcov_matrix @ gradient_source_late)
+                             ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 2193, in __array_ufunc__
+    return arraylike.array_ufunc(self, ufunc, method, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/arraylike.py", line 276, in array_ufunc
+    result = maybe_dispatch_ufunc_to_dunder_op(self, ufunc, method, *inputs, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/ops_dispatch.pyx", line 113, in pandas._libs.ops_dispatch.maybe_dispatch_ufunc_to_dunder_op
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 1809, in __rmatmul__
+    raise ValueError(msg) from err
+ValueError: shapes (8,) and (11, 11) not aligned
+Step 4: Extract segment-location slopes
+Loading fitted piecewise LMM model...
+Piecewise LMM model from step03_piecewise_lmm_model.pkl
+Model has 8 fixed effects coefficients
+Coefficients: ['Intercept', 'Segment[T.Late]', 'LocationType[T.Destination]', 'Segment[T.Late]:LocationType[T.Destination]', 'Days_within', 'Days_within:Segment[T.Late]', 'Days_within:LocationType[T.Destination]', 'Days_within:Segment[T.Late]:LocationType[T.Destination]']
+Extracting variance-covariance matrix...
+Full variance-covariance matrix shape: (11, 11)
+Fixed effects vcov matrix shape: (8, 8)
+Identifying coefficient indices for slope calculations...
+Days_within index: 4
+Days_within:Segment[T.Late] index: 5
+Days_within:LocationType[T.Destination] index: 6
+Days_within:Segment[T.Late]:LocationType[T.Destination] index: 7
+Computing segment-location slopes via linear combinations...
+Source_Early slope: -0.206219
+Source_Late slope: -0.104042
+Destination_Early slope: -0.209130
+Destination_Late slope: -0.046292
+Applying delta method for SE propagation...
+Source_Early SE: 0.080590
+Source_Late SE: 0.029262
+Destination_Early SE: 0.080590
+Destination_Late SE: 0.029262
+[CI] Computing 95% confidence intervals and p-values...
+[CI] Source_Early: slope=-0.206219, SE=0.080590, 95%CI=[-0.364175, -0.048262], p=0.010501
+[CI] Source_Late: slope=-0.104042, SE=0.029262, 95%CI=[-0.161396, -0.046688], p=0.000377
+[CI] Destination_Early: slope=-0.209130, SE=0.080590, 95%CI=[-0.367086, -0.051174], p=0.009459
+[CI] Destination_Late: slope=-0.046292, SE=0.029262, 95%CI=[-0.103646, 0.011063], p=0.113660
+Saving segment-location slopes...
+step04_segment_location_slopes.csv (4 rows, 7 columns)
+Running validate_dataframe_structure...
+PASS: DataFrame structure valid: 4 rows, 7 columns (required: 7).
+Running additional range checks...
+All range checks passed
+Step 4 complete

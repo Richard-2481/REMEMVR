@@ -1,0 +1,4 @@
+term,hypothesis,coef,se,z,p_uncorrected,p_bonferroni,sig_uncorrected,sig_bonferroni,interpretation
+Age_c,H1: Age affects baseline memory (intercept),-0.0124564763056911,0.0066406215789427,-1.8757997512146016,0.0606827821779395,0.18204834653381852,False,False,"Baseline memory: negative (older adults worse), not significant (Bonferroni)"
+Time:Age_c,H2: Age affects linear forgetting rate,1.4583044981291232e-05,6.812879615035184e-05,0.2140511179605794,0.8305071944784143,1.0,False,False,"Linear forgetting rate: positive (older adults better), not significant (Bonferroni)"
+Time_log:Age_c,H3: Age affects logarithmic forgetting rate,0.0007181431767292,0.002362448921739,0.3039825200540759,0.7611412083721039,1.0,False,False,"Logarithmic forgetting rate: positive (older adults better), not significant (Bonferroni)"

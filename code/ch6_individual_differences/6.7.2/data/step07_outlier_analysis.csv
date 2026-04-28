@@ -1,0 +1,15 @@
+variable,UID,Group,value,lower_bound,upper_bound,outlier_type
+Education,A011,RAVLT-favored,2.0,3.875,8.875,low
+Education,A050,Concordant,9.0,3.875,8.875,high
+Education,A051,Concordant,1.0,3.875,8.875,low
+Education,A052,Concordant,9.0,3.875,8.875,high
+Education,A076,Concordant,1.0,3.875,8.875,low
+Education,A082,Concordant,9.0,3.875,8.875,high
+Education,A083,Concordant,9.0,3.875,8.875,high
+Education,A085,Concordant,2.0,3.875,8.875,low
+Education,A089,VR-favored,3.0,3.875,8.875,low
+Education,A101,Concordant,2.0,3.875,8.875,low
+NART,A017,VR-favored,6.0,10.5,54.5,low
+BVMT,A100,Concordant,12.0,16.375,41.375,low
+BVMT,A105,Concordant,15.0,16.375,41.375,low
+BVMT,A109,Concordant,14.0,16.375,41.375,low

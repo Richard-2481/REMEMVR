@@ -1,0 +1,2 @@
+r_xy_zero_order,p_xy,r_xz,p_xz,r_yz,p_yz,r_partial,suppression_detected,interpretation
+-0.014635707344119713,0.8850861318660557,0.2882027790465609,0.003640302808549074,-0.61188875862796,1.348460355735997e-11,0.21351443398554765,True,Suppression: true relationship masked by ability confound

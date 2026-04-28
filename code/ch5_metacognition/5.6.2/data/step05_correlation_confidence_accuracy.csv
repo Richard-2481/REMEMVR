@@ -1,0 +1,9 @@
+metric,value
+pearson_r,0.537075855232692
+p_value,8.377264138655769e-09
+r_squared,0.2884504742739275
+N,100
+ci_95_lower,0.38082915219907276
+ci_95_upper,0.6635024179092357
+interpretation,Large (r ≥ 0.50)
+overconfidence_support,"MINIMAL - Well-calibrated at encoding, positive effect may reflect other mechanisms"

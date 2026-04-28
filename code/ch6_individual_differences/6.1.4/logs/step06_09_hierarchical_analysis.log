@@ -1,0 +1,171 @@
+Steps 06-09: Hierarchical regression analysis
+
+[STEP 06] Preparing regression data...
+Loaded 100 participants
+Complete cases: 97 (removed 3 with missing data)
+Model 1 (Demographics): 3 predictors
+Model 2 (+ Cognitive): 8 predictors
+Model 3 (+ Self-report): 13 predictors
+Saved prepared data to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step06_regression_ready.csv
+
+[STEP 07] Fitting hierarchical regression models...
+
+Full-sample R² values:
+  Model 1 (Demographics): R²=0.0421, Adj R²=0.0112
+  Model 2 (+ Cognitive): R²=0.2471, Adj R²=0.1786
+  Model 3 (+ Self-report): R²=0.3049, Adj R²=0.1961
+
+R² change:
+  Block 2 (Cognitive): ΔR²=0.2050
+  Block 3 (Self-report): ΔR²=0.0578
+
+[F-TESTS] Incremental validity:
+  Block 2: F(5,88)=4.792, p=0.0006
+  Block 3: F(5,83)=1.382, p=0.2396
+
+[CROSS-VALIDATION] 5-fold CV...
+  Fold 1: M1 test R²=-0.141, M2 test R²=-0.041, M3 test R²=-0.004
+  Fold 2: M1 test R²=-0.209, M2 test R²=-0.092, M3 test R²=-0.101
+  Fold 3: M1 test R²=-0.393, M2 test R²=-0.100, M3 test R²=-0.405
+  Fold 4: M1 test R²=-0.400, M2 test R²=-1.010, M3 test R²=-1.893
+  Fold 5: M1 test R²=0.058, M2 test R²=0.404, M3 test R²=0.412
+
+[CV SUMMARY] Mean test R² across folds:
+  Model 1: -0.2170 (SD=0.1708)
+  Model 2: -0.1678 (SD=0.4609)
+  Model 3: -0.3982 (SD=0.7917)
+Saved hierarchical results to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step07_hierarchical_models.csv
+Saved CV results to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step07_cross_validation_results.csv
+
+[STEP 08] Computing Cohen's f² effect sizes...
+
+[EFFECT SIZES] Cohen's f²:
+  Block 1 (Demographics): f²=0.0440 (small)
+  Block 2 (Cognitive): f²=0.2723 (medium)
+  Block 3 (Self-report): f²=0.0832 (small)
+  Total model: f²=0.4387 (large)
+
+Computing 95% CIs (1000 iterations)...
+  Model 1 R²: 0.0730 [95% CI: 0.0081, 0.1833]
+  Model 2 R²: 0.3093 [95% CI: 0.1683, 0.4602]
+  Model 3 R²: 0.3909 [95% CI: 0.2384, 0.5530]
+Saved effect sizes to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step08_incremental_validity.csv
+
+[STEP 09] Residual variance analysis...
+
+[RESIDUAL VARIANCE] Unexplained by all predictors:
+  Residual variance: 0.6951 (69.5%)
+  95% CI: [0.4470, 0.7616]
+  Interpretation: 69.5% of REMEMVR variance remains unexplained
+  [HYPOTHESIS SUPPORTED] Substantial residual variance (>50%) confirms incremental validity
+
+[POWER ANALYSIS]:
+  Post-hoc power to detect f²=0.15 with N=97: 0.053
+  Minimum detectable f² with 80% power: 2.264
+
+Model 3 assumptions:
+  Normality (Shapiro-Wilk): p=0.9159 (PASS)
+  Homoscedasticity (Breusch-Pagan): p=0.5366 (PASS)
+  Multicollinearity (Max VIF): 3.10 (PASS)
+Saved residual analysis to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step09_residual_variance.csv
+
+Steps 06-09 complete
+
+[KEY FINDING] 69.5% of REMEMVR variance unexplained by all predictors
+REMEMVR captures unique variance beyond traditional measures
+Steps 06-09: Hierarchical regression analysis
+
+[STEP 06] Preparing regression data...
+Loaded 100 participants
+Complete cases: 97 (removed 3 with missing data)
+Model 1 (Demographics): 3 predictors
+Model 2 (+ Cognitive): 10 predictors
+Model 3 (+ Self-report): 15 predictors
+Saved prepared data to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step06_regression_ready.csv
+
+[STEP 07] Fitting hierarchical regression models...
+
+Full-sample R² values:
+  Model 1 (Demographics): R²=0.0421, Adj R²=0.0112
+  Model 2 (+ Cognitive): R²=0.2834, Adj R²=0.2000
+  Model 3 (+ Self-report): R²=0.3492, Adj R²=0.2287
+
+R² change:
+  Block 2 (Cognitive): ΔR²=0.2412
+  Block 3 (Self-report): ΔR²=0.0659
+
+[F-TESTS] Incremental validity:
+  Block 2: F(7,86)=4.136, p=0.0006
+  Block 3: F(5,81)=1.640, p=0.1588
+
+Full model (Model 3) individual predictors:
+  Variable                         B       SE        t        p
+  ------------------------- -------- -------- -------- --------
+  Intercept                   0.0622   0.0729    0.853   0.3962 
+  age_z                       0.0791   0.0852    0.928   0.3561 
+  sex_binary                 -0.1703   0.1497   -1.138   0.2586 
+  education_z                 0.0119   0.0605    0.197   0.8441 
+  RAVLT_T_z                   0.1411   0.1090    1.295   0.1990 
+  RAVLT_DR_T_z               -0.0914   0.1490   -0.613   0.5414 
+  RAVLT_Pct_Ret_z             0.1566   0.1156    1.354   0.1795 
+  BVMT_T_z                    0.0603   0.0821    0.735   0.4647 
+  BVMT_Pct_Ret_z              0.1186   0.0623    1.906   0.0602 
+  NART_T_z                    0.0087   0.0709    0.123   0.9025 
+  RPM_T_z                     0.1995   0.0722    2.764   0.0071 *
+  DASS_Dep_z                 -0.1147   0.0790   -1.452   0.1505 
+  DASS_Anx_z                  0.1643   0.0875    1.879   0.0638 
+  DASS_Str_z                  0.0290   0.1037    0.280   0.7803 
+  VR_Exp_z                    0.0498   0.0760    0.655   0.5143 
+  Sleep_z                    -0.0469   0.0619   -0.758   0.4506 
+Saved predictor coefficients to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step07_predictor_coefficients.csv
+
+[CROSS-VALIDATION] 5-fold CV...
+  Fold 1: M1 test R²=-0.141, M2 test R²=0.011, M3 test R²=0.055
+  Fold 2: M1 test R²=-0.209, M2 test R²=-0.107, M3 test R²=-0.112
+  Fold 3: M1 test R²=-0.393, M2 test R²=0.043, M3 test R²=-0.219
+  Fold 4: M1 test R²=-0.400, M2 test R²=-0.777, M3 test R²=-1.604
+  Fold 5: M1 test R²=0.058, M2 test R²=0.010, M3 test R²=0.181
+
+[CV SUMMARY] Mean test R² across folds:
+  Model 1: -0.2170 (SD=0.1708)
+  Model 2: -0.1641 (SD=0.3109)
+  Model 3: -0.3399 (SD=0.6470)
+Saved hierarchical results to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step07_hierarchical_models.csv
+Saved CV results to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step07_cross_validation_results.csv
+
+[STEP 08] Computing Cohen's f² effect sizes...
+
+[EFFECT SIZES] Cohen's f²:
+  Block 1 (Demographics): f²=0.0440 (small)
+  Block 2 (Cognitive): f²=0.3366 (medium)
+  Block 3 (Self-report): f²=0.1012 (small)
+  Total model: f²=0.5367 (large)
+
+Computing 95% CIs (1000 iterations)...
+  Model 1 R²: 0.0730 [95% CI: 0.0081, 0.1833]
+  Model 2 R²: 0.3604 [95% CI: 0.2129, 0.5145]
+  Model 3 R²: 0.4446 [95% CI: 0.3004, 0.5944]
+Saved effect sizes to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step08_incremental_validity.csv
+
+[STEP 09] Residual variance analysis...
+
+[RESIDUAL VARIANCE] Unexplained by all predictors:
+  Residual variance: 0.6508 (65.1%)
+  95% CI: [0.4056, 0.6996]
+  Interpretation: 65.1% of REMEMVR variance remains unexplained
+  [HYPOTHESIS SUPPORTED] Substantial residual variance (>50%) confirms incremental validity
+
+[POWER ANALYSIS]:
+  Post-hoc power to detect f²=0.15 with N=97: 0.053
+  Minimum detectable f² with 80% power: 2.263
+
+Model 3 assumptions:
+  Normality (Shapiro-Wilk): p=0.3058 (PASS)
+  Homoscedasticity (Breusch-Pagan): p=0.6941 (PASS)
+  Multicollinearity (Max VIF): 6.39 (WARNING)
+Saved residual analysis to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step09_residual_variance.csv
+
+Steps 06-09 complete
+
+[KEY FINDING] 65.1% of REMEMVR variance unexplained by all predictors
+REMEMVR captures unique variance beyond traditional measures

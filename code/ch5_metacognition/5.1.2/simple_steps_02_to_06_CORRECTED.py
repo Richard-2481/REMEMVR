@@ -28,9 +28,7 @@ def log(msg, logfile="simple_steps_CORRECTED.log"):
         f.flush()
     print(msg, flush=True)
 
-# =============================================================================
-# STEP 2: Quadratic Model WITH RANDOM SLOPES
-# =============================================================================
+# Quadratic Model WITH RANDOM SLOPES
 log("[STEP 2] Fitting quadratic model WITH RANDOM SLOPES...")
 df = pd.read_csv(DATA_DIR / "step00_lmm_input.csv")
 
@@ -46,7 +44,7 @@ result = model.fit(reml=False, method='powell')
 
 log(f"[STEP 2] Model converged: {result.converged}")
 if not result.converged:
-    log("[ERROR] Quadratic model did not converge - trying different optimizer...")
+    log("Quadratic model did not converge - trying different optimizer...")
     result = model.fit(reml=False, method='lbfgs')
     log(f"[STEP 2] LBFGS convergence: {result.converged}")
 
@@ -73,9 +71,7 @@ quadratic_test = pd.DataFrame({
 quadratic_test.to_csv(DATA_DIR / "step02_quadratic_test.csv", index=False)
 log(f"[STEP 2] Quadratic term p={pvals.get('TSVR_sq', np.nan):.4f}, Bonf p={bonf_sq:.4f}")
 
-# =============================================================================
-# STEP 3: Piecewise vs Continuous Comparison WITH RANDOM SLOPES
-# =============================================================================
+# Piecewise vs Continuous Comparison WITH RANDOM SLOPES
 log("[STEP 3] Comparing piecewise vs continuous models WITH RANDOM SLOPES...")
 df_pw = pd.read_csv(DATA_DIR / "step01_piecewise_input.csv")
 
@@ -88,7 +84,7 @@ cont_result = cont_model.fit(reml=False, method='powell')
 
 log(f"[STEP 3] Continuous model converged: {cont_result.converged}")
 if not cont_result.converged:
-    log("[ERROR] Continuous model did not converge - trying LBFGS...")
+    log("Continuous model did not converge - trying LBFGS...")
     cont_result = cont_model.fit(reml=False, method='lbfgs')
     log(f"[STEP 3] Continuous LBFGS convergence: {cont_result.converged}")
 
@@ -101,7 +97,7 @@ pw_result = pw_model.fit(reml=False, method='powell')
 
 log(f"[STEP 3] Piecewise model converged: {pw_result.converged}")
 if not pw_result.converged:
-    log("[ERROR] Piecewise model did not converge - trying LBFGS...")
+    log("Piecewise model did not converge - trying LBFGS...")
     pw_result = pw_model.fit(reml=False, method='lbfgs')
     log(f"[STEP 3] Piecewise LBFGS convergence: {pw_result.converged}")
 
@@ -123,9 +119,7 @@ log(f"[STEP 3] Continuous AIC={aic_cont:.2f}, Piecewise AIC={aic_pw:.2f}, Delta=
 # Save piecewise model for later steps
 pw_result_obj = pw_result  # Keep in memory
 
-# =============================================================================
-# STEP 4: Slope Ratio
-# =============================================================================
+# Slope Ratio
 log("[STEP 4] Computing slope ratio...")
 
 # Extract slopes from piecewise model
@@ -148,9 +142,7 @@ slope_ratio = pd.DataFrame({
 slope_ratio.to_csv(DATA_DIR / "step04_slope_ratio.csv", index=False)
 log(f"[STEP 4] Early slope={slope_early:.4f}, Late slope={slope_late:.4f}, Ratio={ratio:.2f}")
 
-# =============================================================================
-# STEP 5: Compare to Ch5 5.1.2
-# =============================================================================
+# Compare to Ch5 5.1.2
 log("[STEP 5] Comparing to Ch5 5.1.2...")
 
 # Load our test results
@@ -183,9 +175,7 @@ comparison_df = pd.DataFrame({
 comparison_df.to_csv(DATA_DIR / "step05_ch5_comparison.csv", index=False)
 log(f"[STEP 5] Evidence count: {evidence_count}/3, Conclusion: {conclusion}")
 
-# =============================================================================
-# STEP 6: Prepare Plot Data
-# =============================================================================
+# Prepare Plot Data
 log("[STEP 6] Preparing plot data...")
 
 # Get fitted values from piecewise model
@@ -244,4 +234,4 @@ prob_plot.to_csv(DATA_DIR / "step06_twophase_probability_data.csv", index=False)
 
 log(f"[STEP 6] Created plot data: {len(theta_plot)} theta rows, {len(prob_plot)} prob rows")
 
-log("[SUCCESS] All steps 2-6 complete WITH RANDOM SLOPES!")
+log("All steps 2-6 complete WITH RANDOM SLOPES!")

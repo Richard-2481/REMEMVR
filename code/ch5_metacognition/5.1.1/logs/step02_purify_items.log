@@ -1,0 +1,42 @@
+Step 2: Purify Items (Decision D039)
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv (105 items, 7 columns)
+Columns: ['item_name', 'dimension', 'a', 'b1', 'b2', 'b3', 'b4']
+Discrimination (a) range: [0.69, 1.73]
+Computing b_mean = mean(b1, b2, b3, b4) for each item...
+b_mean range: [-2.79, 2.63]
+|b_mean| range: [0.00, 2.79]
+Applying Decision D039 thresholds:
+- Minimum discrimination a >= 0.4
+- Maximum |b_mean| <= 3.0
+Items failing criteria:
+- Low discrimination (a < 0.4): 0 items
+- Extreme difficulty (|b_mean| > 3.0): 0 items
+Purification summary:
+- Total items: 105
+- Retained items: 105
+- Excluded items: 0
+- Retention rate: 100.0%
+Saving purified items list...
+step02_purified_items.csv (105 items)
+Generating purification report...
+step02_purification_report.txt
+Validating purification results...
+Retention rate 100.0% outside expected range [30%, 70%]
+This may indicate unusual data quality or inappropriate thresholds
+No duplicate item names in purified list
+All 105 retained items exist in Pass 1 item parameters
+Exclusion count verified: 0 items
+All validation checks passed
+Step 2 complete
+
+======================================================================
+PURIFICATION COMPLETE
+======================================================================
+Outputs:
+  - Purified items list: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step02_purified_items.csv
+  - Purification report: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step02_purification_report.txt
+Summary:
+  - 105/105 items retained (100.0%)
+  - 0/105 items excluded (0.0%)
+======================================================================

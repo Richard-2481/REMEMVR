@@ -19,19 +19,19 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 04: Extract Forward Results")
+        log("Step 04: Extract Forward Results")
 
         # Load reverse results
         reverse_path = RQ_DIR / 'data' / 'step03_reverse_models.csv'
         df_reverse = pd.read_csv(reverse_path)
-        log(f"[LOADED] Reverse results: {len(df_reverse)} models")
+        log(f"Reverse results: {len(df_reverse)} models")
 
         # Try to load forward results from RQ 7.1.1
         forward_path = PROJECT_ROOT / 'results' / 'ch7' / '7.1.1' / 'data' / 'step03_forward_models.csv'
 
         if not forward_path.exists():
-            log("[INFO] RQ 7.1.1 forward results not available")
-            log("[INFO] Creating empty comparison file (reverse-only mode)")
+            log("RQ 7.1.1 forward results not available")
+            log("Creating empty comparison file (reverse-only mode)")
 
             # Create empty DataFrame with warning
             rows = []
@@ -49,7 +49,7 @@ if __name__ == "__main__":
                 })
             df_output = pd.DataFrame(rows)
         else:
-            log(f"[LOADED] Forward results from RQ 7.1.1")
+            log(f"Forward results from RQ 7.1.1")
             df_forward = pd.read_csv(forward_path)
 
             # Extract R² values and compute asymmetry ratios
@@ -62,13 +62,13 @@ if __name__ == "__main__":
 
         output_path = RQ_DIR / 'data' / 'step04_bidirectional_comparison.csv'
         df_output.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_path}")
+        log(f"{output_path}")
 
-        log("[SUCCESS] Step 04 complete")
+        log("Step 04 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

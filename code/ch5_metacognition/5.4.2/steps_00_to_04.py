@@ -32,9 +32,7 @@ import scipy.stats as stats
 import statsmodels.api as sm
 from statsmodels.formula.api import mixedlm
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.4.2
 LOG_FILE = RQ_DIR / "logs" / "steps_00_to_04.log"
@@ -54,9 +52,7 @@ PARADIGM_MAP_ACC = {
 
 PARADIGMS = ['IFR', 'ICR', 'IRE']
 
-# ============================================================================
 # LOGGING
-# ============================================================================
 
 def log(msg: str):
     """Log message to file and stdout."""
@@ -73,9 +69,7 @@ def log_section(title: str):
     log(title)
     log("=" * 70)
 
-# ============================================================================
-# STEP 00: LOAD AND MERGE DATA
-# ============================================================================
+# LOAD AND MERGE DATA
 
 def step00_load_merge_data() -> pd.DataFrame:
     """
@@ -243,9 +237,7 @@ def step00_load_merge_data() -> pd.DataFrame:
 
     return df_merged
 
-# ============================================================================
-# STEP 01: FIT LMM WITH PARADIGM × TIME INTERACTION
-# ============================================================================
+# FIT LMM WITH PARADIGM × TIME INTERACTION
 
 def step01_fit_lmm(df: pd.DataFrame) -> dict:
     """
@@ -453,9 +445,7 @@ def step01_fit_lmm(df: pd.DataFrame) -> dict:
         'random_slope': random_slope
     }
 
-# ============================================================================
-# STEP 02: POST-HOC PARADIGM CONTRASTS
-# ============================================================================
+# POST-HOC PARADIGM CONTRASTS
 
 def step02_post_hoc_contrasts(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -532,9 +522,7 @@ def step02_post_hoc_contrasts(df: pd.DataFrame) -> pd.DataFrame:
 
     return df_contrasts
 
-# ============================================================================
-# STEP 03: RANK PARADIGMS BY CALIBRATION QUALITY
-# ============================================================================
+# RANK PARADIGMS BY CALIBRATION QUALITY
 
 def step03_rank_paradigms(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -575,9 +563,7 @@ def step03_rank_paradigms(df: pd.DataFrame) -> pd.DataFrame:
 
     return paradigm_ranking
 
-# ============================================================================
-# STEP 04: PREPARE PLOT DATA
-# ============================================================================
+# PREPARE PLOT DATA
 
 def step04_prepare_plot_data(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -622,9 +608,7 @@ def step04_prepare_plot_data(df: pd.DataFrame) -> pd.DataFrame:
 
     return plot_data
 
-# ============================================================================
 # MAIN
-# ============================================================================
 
 def main():
     """Execute all analysis steps."""

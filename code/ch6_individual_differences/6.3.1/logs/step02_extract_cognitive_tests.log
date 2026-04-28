@@ -1,0 +1,93 @@
+Step 02: Extract Cognitive Tests
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+All 14 required columns present
+Extracting cognitive test raw totals...
+Starting cognitive test extraction...
+RAVLT_total from 5 trials
+BVMT_total from 3 trials
+RPM_total from rpm-score
+Demographics: age
+Demographics: sex
+Demographics: education
+Extracted data for 100 participants
+Cognitive test extraction complete
+[RAW STATS] RAVLT_total: M=50.60, SD=8.42, N=100
+[RAW STATS] BVMT_total: M=28.22, SD=5.06, N=100
+[RAW STATS] RPM_total: M=9.87, SD=1.93, N=100
+Converting to T-scores (M=50, SD=10)...
+[T-SCORE] Converting 3 measures to T-scores...
+[T-SCORE] RAVLT: Raw M=50.60, SD=8.42
+[T-SCORE] RAVLT: T-score M=50.00, SD=10.00
+[T-SCORE] BVMT: Raw M=28.22, SD=5.06
+[T-SCORE] BVMT: T-score M=50.00, SD=10.00
+[T-SCORE] RPM: Raw M=9.87, SD=1.93
+[T-SCORE] RPM: T-score M=50.00, SD=10.00
+T-score conversion complete
+Saving cognitive tests with T-scores...
+Dropped 0 participants with missing T-scores (0.0%)
+step02_cognitive_tests.csv (100 rows, 7 cols)
+Running T-score validation...
+Validating T-score computation...
+T-score validation FAIL: BVMT_T: Range [17.9, 65.4] outside [20, 80]; RPM_T: Range [19.5, 61.1] outside [20, 80]
+T-score validation FAIL
+BVMT_T: Range [17.9, 65.4] outside [20, 80]
+RPM_T: Range [19.5, 61.1] outside [20, 80]
+Sample size criterion met: N=100 >= 95
+Step 02 complete
+Step 02: Extract Cognitive Tests
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+All 16 required columns present
+[CEILING FIX] Applying RAVLT ceiling fix...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+Extracting cognitive test raw totals...
+Starting cognitive test extraction...
+RAVLT_total from 5 trials
+BVMT_total from 3 trials
+RPM_total from rpm-score
+Demographics: age
+Demographics: sex
+Demographics: education
+Extracted data for 100 participants
+Cognitive test extraction complete
+Computing percent retention measures...
+RAVLT Percent Retention: 100/100 valid
+BVMT Percent Retention: 100/100 valid
+[RAW STATS] RAVLT_total: M=51.65, SD=8.48, N=100
+[RAW STATS] BVMT_total: M=28.22, SD=5.06, N=100
+[RAW STATS] RPM_total: M=9.87, SD=1.93, N=100
+[RAW STATS] RAVLT_Pct_Ret_total: M=86.12, SD=15.82, N=100
+[RAW STATS] BVMT_Pct_Ret_total: M=96.70, SD=9.05, N=100
+Converting to T-scores (M=50, SD=10)...
+[T-SCORE] Converting 5 measures to T-scores...
+[T-SCORE] RAVLT: Raw M=51.65, SD=8.48
+[T-SCORE] RAVLT: T-score M=50.00, SD=10.00
+[T-SCORE] BVMT: Raw M=28.22, SD=5.06
+[T-SCORE] BVMT: T-score M=50.00, SD=10.00
+[T-SCORE] RPM: Raw M=9.87, SD=1.93
+[T-SCORE] RPM: T-score M=50.00, SD=10.00
+[T-SCORE] RAVLT_Pct_Ret: Raw M=86.12, SD=15.82
+[T-SCORE] RAVLT_Pct_Ret: T-score M=50.00, SD=10.00
+[T-SCORE] BVMT_Pct_Ret: Raw M=96.70, SD=9.05
+[T-SCORE] BVMT_Pct_Ret: T-score M=50.00, SD=10.00
+T-score conversion complete
+Saving cognitive tests with T-scores...
+Dropped 0 participants with missing T-scores (0.0%)
+step02_cognitive_tests.csv (100 rows, 9 cols)
+Running T-score validation...
+Validating T-score computation...
+T-score validation FAIL: BVMT_T: Range [17.9, 65.4] outside [20, 80]; RPM_T: Range [19.5, 61.1] outside [20, 80]; BVMT_Pct_Ret_T: Range [4.5, 69.4] outside [20, 80]
+T-score validation FAIL
+BVMT_T: Range [17.9, 65.4] outside [20, 80]
+RPM_T: Range [19.5, 61.1] outside [20, 80]
+BVMT_Pct_Ret_T: Range [4.5, 69.4] outside [20, 80]
+Sample size criterion met: N=100 >= 95
+Step 02 complete

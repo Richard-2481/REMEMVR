@@ -1,0 +1,134 @@
+======================================================================
+RQ 6.2.2: Over-Underconfidence Trajectory Analysis (SEM VERSION)
+======================================================================
+Phase 2 Prototype: Using SEM latent calibration (r=0.70 vs r_diff=-0.25)
+======================================================================
+
+======================================================================
+STEP 00: Load SEM Calibration Data from RQ 6.2.1
+======================================================================
+Source file (SEM version): /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores_SEM.csv
+Using SEM latent calibration (r=0.70) instead of simple difference (r_diff=-0.25)
+Loaded: 400 rows, 7 columns
+Columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'z_theta_accuracy', 'z_theta_confidence', 'calibration']
+Renamed 'calibration' -> 'Calibration' for consistency
+No missing values in Calibration column
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.2/data/step00_calibration_loaded.csv (400 rows)
+
+Loaded calibration data: 400 rows, 7 columns
+STEP 00 COMPLETE
+
+======================================================================
+STEP 01: Classify Observations by Calibration Sign
+======================================================================
+
+Classification with epsilon=0.1:
+  Overconfident: 165 (41.2%)
+  Underconfident: 160 (40.0%)
+  Calibrated: 75 (18.8%)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.2/data/step01_calibration_classified.csv (400 rows)
+Classification complete: 400 observations classified
+STEP 01 COMPLETE
+
+======================================================================
+STEP 02: Compute Proportion Overconfident Per Timepoint
+======================================================================
+T1: 54/100 = 0.540 [0.443, 0.634]
+T2: 39/100 = 0.390 [0.300, 0.488]
+T3: 37/100 = 0.370 [0.282, 0.468]
+T4: 35/100 = 0.350 [0.264, 0.447]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.2/data/step02_proportion_overconfident.csv (4 rows)
+Proportion overconfident computed: 4 timepoints
+STEP 02 COMPLETE
+
+======================================================================
+STEP 03: Trend Test (Logistic Regression)
+======================================================================
+
+Binary outcome:
+  Overconfident (1): 165
+  Not Overconfident (0): 235
+
+Logistic regression converged: True
+
+Trend test results:
+  Intercept: β=-0.0963, SE=0.1490, z=-0.646, p=0.5180
+  time_ordinal: β=-0.1052, SE=0.0454, z=-2.317, p=0.0205
+
+Odds ratio per day: 0.9002 [0.8236, 0.9839]
+Trend test complete: slope = -0.1052, p = 0.0205
+
+INTERPRETATION: SIGNIFICANT DECREASE in overconfidence over time (p < 0.05)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.2/data/step03_trend_test.csv (2 rows)
+STEP 03 COMPLETE
+
+======================================================================
+STEP 04: Compute Mean Calibration Per Timepoint
+======================================================================
+T1: mean = 0.1018 [0.0134, 0.1902], SD = 0.4510, N = 100
+T2: mean = 0.0097 [-0.0794, 0.0989], SD = 0.4547, N = 100
+T3: mean = -0.0316 [-0.1159, 0.0526], SD = 0.4300, N = 100
+T4: mean = -0.0799 [-0.1696, 0.0099], SD = 0.4580, N = 100
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.2/data/step04_mean_calibration.csv (4 rows)
+Mean calibration computed: 4 timepoints
+STEP 04 COMPLETE
+
+======================================================================
+STEP 05: Prepare Overconfidence Trajectory Plot Data
+======================================================================
+
+Plot data merged: 4 rows
+
+Plot data summary:
+  T1 (Day 0): prop_over=0.540, mean_cal=0.1018
+  T2 (Day 1): prop_over=0.390, mean_cal=0.0097
+  T3 (Day 3): prop_over=0.370, mean_cal=-0.0316
+  T4 (Day 6): prop_over=0.350, mean_cal=-0.0799
+Merge successful: 4 tests matched across proportion and mean files
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.2/data/step05_overconfidence_trajectory_data.csv (4 rows)
+Plot data preparation complete: 4 rows created
+STEP 05 COMPLETE
+
+======================================================================
+ANALYSIS COMPLETE - SUMMARY
+======================================================================
+
+1. PROPORTION OVERCONFIDENT TRAJECTORY:
+   T1: 54.0% [44.3%, 63.4%]
+   T2: 39.0% [30.0%, 48.8%]
+   T3: 37.0% [28.2%, 46.8%]
+   T4: 35.0% [26.4%, 44.7%]
+
+   Change T1→T4: -19.0%
+
+2. TREND TEST (Logistic Regression):
+   Slope (log-odds/day): β = -0.1052 (SE = 0.0454)
+   z = -2.317, p = 0.0205
+   Odds ratio: 0.9002 [0.8236, 0.9839]
+   Result: SIGNIFICANT (α = 0.05)
+
+3. MEAN CALIBRATION TRAJECTORY:
+   T1: +0.1018 [+0.0134, +0.1902]
+   T2: +0.0097 [-0.0794, +0.0989]
+   T3: -0.0316 [-0.1159, +0.0526]
+   T4: -0.0799 [-0.1696, +0.0099]
+
+   Change T1→T4: -0.1817
+
+4. INTERPRETATION:
+   OVERCONFIDENCE DECREASES SIGNIFICANTLY OVER TIME
+   Confidence declines faster than accuracy (unexpected pattern)
+
+5. CROSS-REFERENCE WITH RQ 6.2.1:
+   RQ 6.2.1 found calibration worsens significantly (p_LRT=0.004)
+   This RQ tests directionality: Does proportion overconfident INCREASE?
+   Pattern: T1=+0.102, T4=-0.080
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================

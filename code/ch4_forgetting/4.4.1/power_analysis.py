@@ -115,7 +115,7 @@ if __name__ == "__main__":
         log("")
 
         # Load effect sizes
-        log("[LOAD] Loading effect sizes from step06...")
+        log("Loading effect sizes from step06...")
         df_effects = pd.read_csv(INPUT_EFFECTS)
         log(f"  Loaded {len(df_effects)} effect sizes")
         log("")
@@ -126,10 +126,7 @@ if __name__ == "__main__":
         for idx, row in df_effects.iterrows():
             log(f"  {row['effect']:30s}: f² = {row['f_squared']:.6f}")
         log("")
-
-        # =====================================================================
         # POWER ANALYSIS FOR INTERACTION EFFECTS (NULL FINDINGS)
-        # =====================================================================
 
         # Extract interaction effects (schema congruence effects)
         interactions = df_effects[df_effects['effect'].str.contains('×|:')].copy()
@@ -200,10 +197,7 @@ if __name__ == "__main__":
                 'n_required_observed': n_required_observed,
                 'n_required_small': n_required_small
             })
-
-        # =====================================================================
         # EQUIVALENCE TESTING (TOST)
-        # =====================================================================
         log("="*70)
         log("EQUIVALENCE TESTING (TOST)")
         log("="*70)
@@ -246,10 +240,7 @@ if __name__ == "__main__":
                 log(f"    Observed f² >= {EQUIV_BOUND_F2} (NOT smaller than small effect)")
                 log(f"    Cannot claim equivalence to zero")
             log("")
-
-        # =====================================================================
         # INTERPRETATION
-        # =====================================================================
         log("="*70)
         log("INTERPRETATION")
         log("="*70)
@@ -299,11 +290,8 @@ RECOMMENDATION:
 
         log(interpretation)
         log(recommendation)
-
-        # =====================================================================
         # SAVE REPORT
-        # =====================================================================
-        log("\n[SAVE] Writing power analysis report...")
+        log("\nWriting power analysis report...")
 
         OUTPUT_REPORT.parent.mkdir(parents=True, exist_ok=True)
         with open(OUTPUT_REPORT, 'w', encoding='utf-8') as f:
@@ -358,13 +346,13 @@ RECOMMENDATION:
             f.write("3. Acknowledge ambiguity if power < 0.80\n")
             f.write("4. Update validation.md with power analysis results\n")
 
-        log(f"[SAVED] {OUTPUT_REPORT.name}")
-        log("\n[SUCCESS] Power analysis complete")
+        log(f"{OUTPUT_REPORT.name}")
+        log("\nPower analysis complete")
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

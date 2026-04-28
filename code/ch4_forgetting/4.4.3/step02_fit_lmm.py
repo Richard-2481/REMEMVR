@@ -39,9 +39,7 @@ import pandas as pd
 import statsmodels.formula.api as smf
 from statsmodels.regression.mixed_linear_model import MixedLM
 
-# ==============================================================================
 # PATHS
-# ==============================================================================
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 RQ_DIR = PROJECT_ROOT / "results" / "ch5" / "5.4.3"
 DATA_DIR = RQ_DIR / "data"
@@ -51,9 +49,7 @@ LOG_FILE = LOG_DIR / "step02_fit_lmm.log"
 # Create directories
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-# ==============================================================================
 # LOGGING SETUP
-# ==============================================================================
 class Logger:
     def __init__(self, log_path: Path):
         self.log_path = log_path
@@ -70,29 +66,21 @@ class Logger:
 logger = Logger(LOG_FILE)
 log = logger.log
 
-# ==============================================================================
 # MAIN PROCESSING
-# ==============================================================================
 def main():
-    log("[START] Step 02: Fit LMM with 3-Way Interaction")
+    log("Step 02: Fit LMM with 3-Way Interaction")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 1: Load Data
-    # -------------------------------------------------------------------------
     log("[STEP 1] Load LMM Input Data")
     log("-" * 70)
 
     lmm_input = pd.read_csv(DATA_DIR / "step01_lmm_input.csv", encoding='utf-8')
-    log(f"[LOADED] LMM input: {len(lmm_input)} rows, {len(lmm_input.columns)} columns")
-    log(f"[INFO] Columns: {list(lmm_input.columns)}")
-    log(f"[INFO] Unique UIDs: {lmm_input['UID'].nunique()}")
-    log(f"[INFO] Congruence levels: {sorted(lmm_input['congruence'].unique())}")
+    log(f"LMM input: {len(lmm_input)} rows, {len(lmm_input.columns)} columns")
+    log(f"Columns: {list(lmm_input.columns)}")
+    log(f"Unique UIDs: {lmm_input['UID'].nunique()}")
+    log(f"Congruence levels: {sorted(lmm_input['congruence'].unique())}")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 2: Create Dummy Variables for Congruence
-    # -------------------------------------------------------------------------
     log("[STEP 2] Create Dummy Variables for Congruence")
     log("-" * 70)
 
@@ -101,14 +89,11 @@ def main():
     lmm_input['Congruent'] = (lmm_input['congruence'] == 'Congruent').astype(int)
     lmm_input['Incongruent'] = (lmm_input['congruence'] == 'Incongruent').astype(int)
 
-    log(f"[CREATED] Dummy variables: Congruent, Incongruent (reference: Common)")
-    log(f"[INFO] Congruent sum: {lmm_input['Congruent'].sum()} (expected: 400)")
-    log(f"[INFO] Incongruent sum: {lmm_input['Incongruent'].sum()} (expected: 400)")
+    log(f"Dummy variables: Congruent, Incongruent (reference: Common)")
+    log(f"Congruent sum: {lmm_input['Congruent'].sum()} (expected: 400)")
+    log(f"Incongruent sum: {lmm_input['Incongruent'].sum()} (expected: 400)")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 3: Fit LMM Model
-    # -------------------------------------------------------------------------
     log("[STEP 3] Fit LMM Model")
     log("-" * 70)
 
@@ -125,7 +110,7 @@ def main():
             Age_c:Incongruent:recip_TSVR + Age_c:Incongruent:log_TSVR
     """.strip().replace('\n', ' ')
 
-    log(f"[INFO] Model formula (fixed effects - Recip+Log two-process):")
+    log(f"Model formula (fixed effects - Recip+Log two-process):")
     log(f"  theta ~ 1 + recip_TSVR + log_TSVR + Age_c + Congruent + Incongruent")
     log(f"        + Age_c:recip_TSVR + Age_c:log_TSVR")
     log(f"        + Congruent:recip_TSVR + Congruent:log_TSVR")
@@ -136,11 +121,11 @@ def main():
     log("")
     # UPDATED: RQ 5.4.1 ROOT established Recip+Log as two-process forgetting model
     # Random slope on recip_TSVR (rapid component)
-    log(f"[INFO] Random effects: ~recip_TSVR | UID (per RQ 5.4.1 ROOT Recip+Log model)")
-    log(f"[INFO] Two-process forgetting: rapid 1/(t+1) + slow log(t+1)")
+    log(f"Random effects: ~recip_TSVR | UID (per RQ 5.4.1 ROOT Recip+Log model)")
+    log(f"Two-process forgetting: rapid 1/(t+1) + slow log(t+1)")
     log("")
 
-    log("[INFO] Fitting model (this may take a moment)...")
+    log("Fitting model (this may take a moment)...")
 
     # Try to fit with random slopes on log_TSVR (per RQ 5.4.1 best model)
     try:
@@ -152,11 +137,11 @@ def main():
         )
         result = model.fit(method='lbfgs', maxiter=500)
         random_structure = "random intercepts + slopes for recip_TSVR (per 5.4.1 ROOT)"
-        log(f"[SUCCESS] Model fitted with random slopes on recip_TSVR (two-process forgetting)")
+        log(f"Model fitted with random slopes on recip_TSVR (two-process forgetting)")
 
     except Exception as e:
-        log(f"[WARNING] Random slopes failed: {e}")
-        log("[INFO] Trying random intercepts only...")
+        log(f"Random slopes failed: {e}")
+        log("Trying random intercepts only...")
 
         try:
             model = smf.mixedlm(
@@ -166,29 +151,26 @@ def main():
             )
             result = model.fit(method='lbfgs', maxiter=500)
             random_structure = "random intercepts only"
-            log(f"[SUCCESS] Model fitted with random intercepts only")
+            log(f"Model fitted with random intercepts only")
 
         except Exception as e2:
-            log(f"[FAIL] Model fitting failed: {e2}")
+            log(f"Model fitting failed: {e2}")
             return False
 
     # Check convergence
     converged = result.converged
-    log(f"[INFO] Model converged: {converged}")
+    log(f"Model converged: {converged}")
 
     if not converged:
-        log("[WARNING] Model did not converge - results may be unreliable")
+        log("Model did not converge - results may be unreliable")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 4: Extract Fixed Effects
-    # -------------------------------------------------------------------------
     log("[STEP 4] Extract Fixed Effects")
     log("-" * 70)
 
     # Get summary table
     summary = result.summary()
-    log(f"[INFO] Model summary available")
+    log(f"Model summary available")
 
     # Extract fixed effects - need to align indices properly
     fe_params = result.fe_params
@@ -226,31 +208,28 @@ def main():
 
     fixed_effects = pd.DataFrame(fixed_effects_list)
 
-    log(f"[EXTRACTED] Fixed effects: {len(fixed_effects)} terms")
+    log(f"Fixed effects: {len(fixed_effects)} terms")
     log("")
 
     # Print key terms
-    log("[INFO] Fixed Effects Table:")
+    log("Fixed Effects Table:")
     log("-" * 70)
     for _, row in fixed_effects.iterrows():
         sig = "*" if row['p'] < 0.05 else ""
         log(f"  {row['term']:40s} coef={row['coef']:8.4f} SE={row['se']:6.4f} p={row['p']:.4f}{sig}")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 5: Model Diagnostics
-    # -------------------------------------------------------------------------
     log("[STEP 5] Model Diagnostics")
     log("-" * 70)
 
     # Model fit statistics
-    log(f"[INFO] Log-Likelihood: {result.llf:.2f}")
-    log(f"[INFO] AIC: {result.aic:.2f}")
-    log(f"[INFO] BIC: {result.bic:.2f}")
+    log(f"Log-Likelihood: {result.llf:.2f}")
+    log(f"AIC: {result.aic:.2f}")
+    log(f"BIC: {result.bic:.2f}")
     log("")
 
     # Random effects variance
-    log("[INFO] Random Effects:")
+    log("Random Effects:")
     log(f"  Group Var (UID): {result.cov_re.iloc[0, 0]:.4f}")
     if result.cov_re.shape[0] > 1:
         log(f"  TSVR_hours Var: {result.cov_re.iloc[1, 1]:.4f}")
@@ -259,15 +238,12 @@ def main():
     log("")
 
     # Sample size info
-    log(f"[INFO] Sample Size:")
+    log(f"Sample Size:")
     log(f"  Observations: {result.nobs}")
     n_groups = lmm_input['UID'].nunique()
     log(f"  Groups (UIDs): {n_groups}")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 6: Validate LMM Assumptions (Basic Checks)
-    # -------------------------------------------------------------------------
     log("[STEP 6] Validate LMM Assumptions (Basic Checks)")
     log("-" * 70)
 
@@ -276,36 +252,33 @@ def main():
 
     # Residual mean (should be ~0)
     resid_mean = residuals.mean()
-    log(f"[CHECK] Residual mean: {resid_mean:.6f} (should be ~0)")
+    log(f"Residual mean: {resid_mean:.6f} (should be ~0)")
     if abs(resid_mean) < 0.01:
-        log(f"[PASS] Residual mean approximately zero")
+        log(f"Residual mean approximately zero")
     else:
-        log(f"[WARNING] Residual mean not zero - may indicate model misspecification")
+        log(f"Residual mean not zero - may indicate model misspecification")
 
     # Residual variance
     resid_std = residuals.std()
-    log(f"[INFO] Residual SD: {resid_std:.4f}")
+    log(f"Residual SD: {resid_std:.4f}")
 
     # Check for extreme residuals (potential outliers)
     n_extreme = (np.abs(residuals) > 3 * resid_std).sum()
-    log(f"[CHECK] Observations with |residual| > 3 SD: {n_extreme}")
+    log(f"Observations with |residual| > 3 SD: {n_extreme}")
     if n_extreme < 0.01 * len(residuals):
-        log(f"[PASS] Few extreme residuals (<1% of observations)")
+        log(f"Few extreme residuals (<1% of observations)")
     else:
-        log(f"[WARNING] {n_extreme} extreme residuals - consider outlier analysis")
+        log(f"{n_extreme} extreme residuals - consider outlier analysis")
 
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 7: Save Outputs
-    # -------------------------------------------------------------------------
     log("[STEP 7] Save Outputs")
     log("-" * 70)
 
     # Save fixed effects to CSV
     fe_path = DATA_DIR / "step02_fixed_effects.csv"
     fixed_effects.to_csv(fe_path, index=False, encoding='utf-8')
-    log(f"[SAVED] Fixed effects: {fe_path}")
+    log(f"Fixed effects: {fe_path}")
     log(f"  {len(fixed_effects)} rows, {len(fixed_effects.columns)} columns")
 
     # Save model summary to text file
@@ -334,19 +307,19 @@ def main():
         f.write("=" * 70 + "\n")
         f.write(str(result.cov_re))
         f.write(f"\n\nResidual Variance: {result.scale:.4f}\n")
-    log(f"[SAVED] Model summary: {summary_path}")
+    log(f"Model summary: {summary_path}")
 
     # Save model object (pickle) - with workaround for patsy issue
     model_path = DATA_DIR / "step02_lmm_model.pkl"
     with open(model_path, 'wb') as f:
         pickle.dump(result, f)
-    log(f"[SAVED] Model object: {model_path}")
+    log(f"Model object: {model_path}")
     log("")
 
     # -------------------------------------------------------------------------
     # SUMMARY
     # -------------------------------------------------------------------------
-    log("[SUMMARY]")
+    log("")
     log("-" * 70)
     log(f"Model: 3-way Age x Congruence x Time LMM")
     log(f"Random Structure: {random_structure}")
@@ -370,20 +343,18 @@ def main():
             sig = "SIGNIFICANT" if row['p'] < 0.05 else "not significant"
             log(f"  {row['term']}: p={row['p']:.4f} ({sig})")
     log("")
-    log("[SUCCESS] Step 02 complete - LMM model fitted")
+    log("Step 02 complete - LMM model fitted")
 
     return True
 
-# ==============================================================================
 # ENTRY POINT
-# ==============================================================================
 if __name__ == "__main__":
     try:
         success = main()
         logger.close()
         sys.exit(0 if success else 1)
     except Exception as e:
-        log(f"[ERROR] Unexpected error: {e}")
+        log(f"Unexpected error: {e}")
         log(traceback.format_exc())
         logger.close()
         sys.exit(1)

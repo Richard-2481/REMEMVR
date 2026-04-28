@@ -1,0 +1,36 @@
+================================================================================
+VALIDATION: Ch5 5.2.1 Confidence-Accuracy Comparison (H1)
+================================================================================
+
+Loading RQ 6.3.1 confidence results...
+step05_lmm_coefficients.csv (6 coefficients)
+
+RQ 6.3.1 Confidence - Domain × Time Interactions:
+
+Confidence shows NULL Domain × Time interaction (p >= 0.05)
+
+Loading Ch5 5.2.1 accuracy results...
+summary.md
+
+Ch5 5.2.1 Accuracy - Key Findings (from summary.md):
+  Theta space: All domains show identical decline (~0.86 SD over 6 days)
+  Probability space:
+    - What: 87% -> 72% (15 pp decline)
+    - Where: 59% -> 41% (18 pp decline)
+    - When: 19% -> 5% (14 pp decline, FLOOR EFFECT)
+
+Ch5 conclusion:
+  Domain × Time interaction: NULL in theta space (domain-invariant forgetting rates)
+  Domain differences are in BASELINE encoding, not forgetting rate
+
+Creating confidence-accuracy comparison...
+
+Confidence-Accuracy Divergence Analysis:
+CONVERGENCE
+
+Saving comparison results...
+step09_ch5_comparison.csv
+step09_ch5_comparison_summary.txt
+
+Ch5 comparison complete (H1 RESOLVED)
+CONVERGENCE

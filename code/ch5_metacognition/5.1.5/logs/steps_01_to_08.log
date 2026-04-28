@@ -1,0 +1,140 @@
+RQ 6.1.5: Trajectory Clustering - Confidence Phenotypes (V2)
+============================================================
+Project root: /home/etai/projects/REMEMVR
+RQ directory: /home/etai/projects/REMEMVR/results/ch6/6.1.5
+FORCED_K: 3 (matched to Ch5 5.1.5)
+
+============================================================
+STEP 01: Load Random Effects from RQ 6.1.4
+============================================================
+Loaded 100 rows from step03_random_effects.csv
+Columns: ['UID', 'random_intercept', 'random_slope']
+Saved: step01_random_effects_loaded.csv
+VALIDATION PASS: 100 participants loaded, no NaN values
+Intercept range: [-2.4401, 1.5984]
+Slope range: [-0.5895, 0.9012]
+
+============================================================
+STEP 02: Standardize Features to Z-Scores
+============================================================
+intercept_z: mean=-0.000000, SD=1.005038
+slope_z: mean=-0.000000, SD=1.005038
+WARNING: Outliers detected - intercept: 1, slope: 1 (>3 SD)
+  Outlier UIDs: ['A103']
+Saved: step02_standardized_features.csv
+VALIDATION PASS: Z-score statistics within tolerance
+
+============================================================
+STEP 03: K-Means Clustering for K=2-6 with BIC Analysis
+============================================================
+K=2: SSE=69.5565, BIC=-27.0927, silhouette=0.5689
+K=3: SSE=33.0205, BIC=-96.9886, silhouette=0.5726
+K=4: SSE=21.3487, BIC=-135.9970, silhouette=0.5549
+K=5: SSE=14.2184, BIC=-172.0376, silhouette=0.5619
+K=6: SSE=9.6003, BIC=-206.7063, silhouette=0.5741
+
+BIC minimum at K=6
+NOTE: BIC monotonically decreases - not reliable for this data
+Silhouette maximum at K=6
+
+DECISION: Using K=3 to match Ch5 5.1.5 for valid cross-RQ comparison
+  Ch5 5.1.5 used K=3 (cluster sizes: 25, 44, 31)
+  This enables meaningful chi-square test of phenotype association
+Saved: step03_cluster_selection.csv
+Saved: step03_bic_plot_data.csv
+
+Selected K: 3 (matched to Ch5 5.1.5)
+VALIDATION PASS: K selection complete
+
+============================================================
+STEP 04: Fit Final K-Means Model with K=3
+============================================================
+Cluster sizes:
+  Cluster 0: N=49
+  Cluster 1: N=27
+  Cluster 2: N=24
+All clusters meet minimum size threshold (>= 10)
+Saved: step04_cluster_assignments.csv
+Saved: step04_cluster_centers.csv
+
+Final K-means fit complete with K=3
+VALIDATION PASS: All participants assigned to clusters
+
+============================================================
+STEP 05: Validate Cluster Quality
+============================================================
+Silhouette score: 0.5726 (threshold: 0.4, pass: True)
+Davies-Bouldin index: 0.5245 (threshold: 1.0, pass: True)
+Computing Jaccard bootstrap stability (1000 iterations)...
+Jaccard stability: 0.8983 (95% CI: [0.5017, 1.0000], threshold: 0.75, pass: True)
+Saved: step05_validation_metrics.csv
+VALIDATION PASS: Cluster quality metrics computed
+
+============================================================
+STEP 06: Characterize Clusters
+============================================================
+Cluster characterization (K=3):
+  Cluster 0: N=49, mean_intercept=0.0215, mean_slope=-0.0079, phenotype=Resilient
+  Cluster 1: N=27, mean_intercept=0.8799, mean_slope=-0.3251, phenotype=High-Baseline-Fast-Decline
+  Cluster 2: N=24, mean_intercept=-1.0337, mean_slope=0.3818, phenotype=Low-Baseline-Slow-Decline
+Saved: step06_cluster_characterization.csv
+Saved: step06_phenotype_descriptions.txt
+VALIDATION PASS: All clusters characterized
+
+============================================================
+STEP 07: Cross-Tabulate with Ch5 5.1.5 Accuracy Clusters
+============================================================
+Loaded 100 accuracy cluster assignments from Ch5 5.1.5
+Ch5 5.1.5 cluster sizes: {1: 44, 2: 31, 0: 25}
+All 100 participants matched between RQ 6.1.5 and Ch5 5.1.5
+Cross-tabulation: 3 confidence clusters x 3 accuracy clusters
+Saved: step07_crosstab_confidence_accuracy.csv
+Saved: step07_crosstab_row_percentages.csv
+Saved: step07_crosstab_column_percentages.csv
+
+Contingency Table (counts):
+cluster_accuracy     0   1   2
+cluster_confidence            
+0                   10  22  17
+1                    1  18   8
+2                   14   4   6
+
+VALIDATION PASS: Crosstab sums to 100 participants
+
+============================================================
+STEP 08: Chi-Square Test of Association
+============================================================
+Chi-square test: chi2=23.7257, df=4, p=0.000091
+Effect size (Cramer's V): 0.3444
+  V < 0.10: negligible, 0.10-0.30: small, 0.30-0.50: medium, > 0.50: large
+
+INTERPRETATION: INTEGRATED
+  p < 0.05: Confidence and accuracy phenotypes are ASSOCIATED
+  Metacognition tracks memory state (integrated memory-metacognition system)
+Saved: step08_chi_square_test.csv
+Saved: step08_association_interpretation.txt
+
+VALIDATION PASS: Association test complete
+
+============================================================
+RQ 6.1.5 ANALYSIS COMPLETE
+============================================================
+K: 3 (matched to Ch5 5.1.5)
+Phenotypes identified: ['Resilient', 'High-Baseline-Fast-Decline', 'Low-Baseline-Slow-Decline']
+Cluster sizes: [np.int64(49), np.int64(27), np.int64(24)]
+
+OUTPUT FILES:
+  step01_random_effects_loaded.csv
+  step02_standardized_features.csv
+  step03_bic_plot_data.csv
+  step03_cluster_selection.csv
+  step04_cluster_assignments.csv
+  step04_cluster_centers.csv
+  step05_validation_metrics.csv
+  step06_cluster_characterization.csv
+  step07_crosstab_column_percentages.csv
+  step07_crosstab_confidence_accuracy.csv
+  step07_crosstab_row_percentages.csv
+  step08_chi_square_test.csv
+  step06_phenotype_descriptions.txt
+  step08_association_interpretation.txt

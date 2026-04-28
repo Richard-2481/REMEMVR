@@ -1,0 +1,2 @@
+effect_size,n_simulations,n_detected,power,ci_lower,ci_upper,target_met
+0.01,100,100,1.0,0.97,1,True

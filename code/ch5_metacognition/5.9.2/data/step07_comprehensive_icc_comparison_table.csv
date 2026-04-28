@@ -1,0 +1,5 @@
+measure_type,method,ICC_slope,ICC_conditional,variance_slope,N_models,functional_form,source_RQ
+Binary Accuracy,Model-averaged PowerLaw,0.007463065445604469,,0.0023951413521619627,9.84,PowerLaw_lambda_0.41,ch5/5.1.4
+Ordinal Confidence,Single-model Recip_sq,0.2640976039075434,0.0907648851651225,0.0849164941624516,1.0,Recip_sq,ch6/6.1.4
+Ordinal Confidence,Model-averaged 48 models,0.0401089522251023,0.028586268604027,0.0098870604017384,48.0,Mixed 48 functional forms,ch6/6.1.1
+Ordinal Confidence,Matched PowerLaw lambda=0.41,0.9184748171144944,,,1.0,PowerLaw_lambda_0.41,ch6/6.9.2 step04

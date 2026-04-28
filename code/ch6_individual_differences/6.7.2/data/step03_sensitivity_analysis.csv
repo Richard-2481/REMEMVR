@@ -1,0 +1,7 @@
+metric,cutoff_sd,vr_favored_n,ravlt_favored_n,concordant_n
+RAVLT_Total,0.75,22,23,55
+RAVLT_Total,1.0,14,19,67
+RAVLT_Total,1.25,9,10,81
+RAVLT_Pct_Ret,0.75,19,21,60
+RAVLT_Pct_Ret,1.0,13,18,69
+RAVLT_Pct_Ret,1.25,8,14,78

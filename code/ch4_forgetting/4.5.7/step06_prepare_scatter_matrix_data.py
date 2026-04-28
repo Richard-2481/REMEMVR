@@ -157,7 +157,7 @@ def main():
                "Destination_intercept, Destination_slope)")
     logger.info(f"  All clusters represented")
     logger.info(f"  Output: {output_path}")
-    logger.info("  Ready for rq_plots to generate scatter matrix PNG")
+    logger.info("  Ready for plotting pipeline to generate scatter matrix PNG")
     logger.info("=" * 60)
 
     return df

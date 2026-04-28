@@ -249,7 +249,7 @@ def compute_model_averaged_predictions(
     # Effective number of models (Shannon diversity)
     effective_n = np.exp(-np.sum(weights * np.log(weights + 1e-10)))
     
-    print(f"\n[RESULTS] Model averaging complete:")
+    print(f"\nModel averaging complete:")
     print(f"  Models used: {len(model_names)}/{len(competitive)}")
     print(f"  Effective N models: {effective_n:.2f}")
     print(f"  Prediction variance range: [{np.min(between_var):.4f}, {np.max(between_var):.4f}]")
@@ -584,7 +584,7 @@ def compute_model_averaged_random_effects(
     # Effective N models
     effective_n = np.exp(-np.sum(fitted_weights * np.log(fitted_weights + 1e-10)))
 
-    print(f"\n[RESULTS] Model-averaged random effects computed")
+    print(f"\nModel-averaged random effects computed")
     print(f"  Models used: {len(fitted_names)}")
     print(f"  Effective N: {effective_n:.2f}")
     print(f"  Participants: {len(uids)}")
@@ -806,7 +806,7 @@ def run_model_averaging_pipeline(
         }])
         meta.to_csv(output_dir / 'step05b_model_averaging_metadata.csv', index=False)
 
-        print(f"\n[SAVED] Outputs to {output_dir}")
+        print(f"\nOutputs to {output_dir}")
 
     print("\n" + "=" * 70)
     print("MODEL AVERAGING COMPLETE")

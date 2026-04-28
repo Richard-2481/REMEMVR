@@ -1,0 +1,3 @@
+variable,shapiro_W,shapiro_p,normal
+SD_confidence_residuals,0.9071291436298018,3.108248106373994e-06,False
+SD_accuracy_residuals,0.964792964903615,0.008962888981813077,False

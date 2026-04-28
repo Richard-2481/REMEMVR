@@ -2,7 +2,7 @@
 layout: default
 title: "A8. Scoring Rules and Foil Materials"
 parent: Home
-nav_order: 8
+nav_order: 9
 ---
 
 # A8. Scoring Rules and Foil Materials

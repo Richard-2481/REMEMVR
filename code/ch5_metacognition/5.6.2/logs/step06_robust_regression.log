@@ -1,0 +1,112 @@
+================================================================================
+ROBUST REGRESSION SENSITIVITY ANALYSIS
+================================================================================
+
+Data Loaded:
+  N = 100
+  Predictors: ['z_baseline_accuracy', 'z_baseline_confidence', 'z_Age', 'z_confidence_bias']
+  Outcome: HCE_rate_mean
+
+--------------------------------------------------------------------------------
+METHOD 1: ORIGINAL OLS REGRESSION
+--------------------------------------------------------------------------------
+
+OLS Coefficients:
+=========================================================================================
+                            coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+const                     0.0418      0.003     12.981      0.000       0.035       0.048
+z_baseline_accuracy      -0.0009      0.002     -0.441      0.660      -0.005       0.003
+z_baseline_confidence     0.0085      0.002      4.004      0.000       0.004       0.013
+z_Age                     0.0021      0.003      0.631      0.529      -0.004       0.009
+z_confidence_bias         0.0102      0.002      4.502      0.000       0.006       0.015
+=========================================================================================
+
+OLS R-squared: 0.2058
+OLS Adj R-squared: 0.1810
+
+Residual Diagnostics:
+  Shapiro-Wilk W = 0.8678, p = 0.000000
+  → Non-normal (p<0.05)
+
+--------------------------------------------------------------------------------
+METHOD 2: ROBUST REGRESSION (HUBER M-ESTIMATOR)
+--------------------------------------------------------------------------------
+
+Robust Coefficients:
+=========================================================================================
+                            coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+const                     0.0375      0.003     14.960      0.000       0.033       0.042
+z_baseline_accuracy       0.0003      0.002      0.157      0.875      -0.003       0.004
+z_baseline_confidence     0.0076      0.002      4.581      0.000       0.004       0.011
+z_Age                     0.0008      0.003      0.322      0.748      -0.004       0.006
+z_confidence_bias         0.0079      0.002      4.475      0.000       0.004       0.011
+=========================================================================================
+
+--------------------------------------------------------------------------------
+METHOD 3: BOOTSTRAP CONFIDENCE INTERVALS (1000 ITERATIONS)
+--------------------------------------------------------------------------------
+
+Bootstrap Results (1000 iterations):
+  Mean coefficients computed from bootstrap distribution
+  95% CI from percentile method
+
+================================================================================
+COMPARISON: OLS vs ROBUST vs BOOTSTRAP
+================================================================================
+
+Coefficient Comparison:
+            predictor  ols_coef  rlm_coef  boot_mean  ols_rlm_pct_change
+            Intercept  0.041771  0.037525   0.041753           10.163801
+  z_baseline_accuracy -0.000947  0.000263  -0.001059         -127.825556
+z_baseline_confidence  0.008518  0.007598   0.008721           10.803589
+                z_Age  0.002085  0.000829   0.002329           60.236953
+    z_confidence_bias  0.010189  0.007895   0.010528           22.511076
+
+✓ Full comparison saved to data/step06_robust_vs_ols_comparison.csv
+
+--------------------------------------------------------------------------------
+SIGNIFICANCE COMPARISON (α = 0.05, Bonferroni α = 0.0125)
+--------------------------------------------------------------------------------
+
+z_baseline_accuracy:
+  OLS:       β = -0.000947, p = 0.660467 n.s.
+  Robust:    β = 0.000263, p = 0.875018 n.s.
+  Bootstrap: β = -0.001059, 95% CI = [-0.005814, 0.002763] n.s.
+  → All methods agree: n.s.
+
+z_baseline_confidence:
+  OLS:       β = 0.008518, p = 0.000123 ***
+  Robust:    β = 0.007598, p = 0.000005 ***
+  Bootstrap: β = 0.008721, 95% CI = [0.005533, 0.012989] ***
+  → All methods agree: ***
+
+z_Age:
+  OLS:       β = 0.002085, p = 0.529500 n.s.
+  Robust:    β = 0.000829, p = 0.747528 n.s.
+  Bootstrap: β = 0.002329, 95% CI = [-0.004149, 0.009487] n.s.
+  → All methods agree: n.s.
+
+z_confidence_bias:
+  OLS:       β = 0.010189, p = 0.000019 ***
+  Robust:    β = 0.007895, p = 0.000008 ***
+  Bootstrap: β = 0.010528, 95% CI = [0.006388, 0.016407] ***
+  → All methods agree: ***
+
+================================================================================
+CONCLUSION
+================================================================================
+
+Maximum coefficient change (OLS vs Robust): 127.83%
+Conclusion: SENSITIVE - Coefficients differ by ≥10% across methods
+Recommendation: Consider reporting robust regression or bootstrap CIs in addition to OLS.
+
+Significance conclusions: ALL METHODS AGREE
+  - z_baseline_confidence: Significant across OLS, Robust, Bootstrap
+  - z_confidence_bias: Significant across OLS, Robust, Bootstrap
+  → Findings are ROBUST to method choice
+
+================================================================================
+✓ Robust regression analysis complete
+================================================================================

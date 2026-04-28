@@ -1,0 +1,150 @@
+Step 02: Prepare analysis dataset
+Loading merged data...
+Merged data (100 rows, 8 cols)
+Loading strategy variables...
+Strategy variables (100 rows, 4 cols)
+Merging strategy variables with outcomes...
+Analysis dataset: 100 participants
+Converting education to numeric years...
+Education years - Mean: 11.0, Range: 11-11
+Education categories -> years mapping:
+  1: 11 years (n=2)
+  2: 11 years (n=3)
+  3: 11 years (n=1)
+  4: 11 years (n=6)
+  5: 11 years (n=13)
+  6: 11 years (n=43)
+  7: 11 years (n=8)
+  8: 11 years (n=20)
+  9: 11 years (n=4)
+Computing descriptive statistics...
+Descriptive statistics: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step02_descriptive_stats.csv
+Variable summary:
+  theta_all: M=-0.50, SD=0.82, n=100
+  rehearsal_frequency: M=0.02, SD=0.20, n=100
+  mnemonic_use: M=0.02, SD=0.14, n=100
+  age: M=44.57, SD=14.58, n=100
+  education_numeric: M=11.00, SD=0.00, n=100
+  vr_exposure: M=1.18, SD=1.08, n=100
+  sleep_hours: M=7.07, SD=0.99, n=100
+Checking for outliers...
+Outlier summary:
+  theta_all: 0 outliers (0.0%)
+  rehearsal_frequency: 1 outliers (1.0%)
+  mnemonic_use: 2 outliers (2.0%)
+  age: 0 outliers (0.0%)
+  education_numeric: 0 outliers (0.0%)
+  vr_exposure: 0 outliers (0.0%)
+  sleep_hours: 1 outliers (1.0%)
+Missing data summary:
+  No missing data in analysis variables
+Analysis dataset: 100 complete cases
+Analysis dataset: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step02_analysis_dataset.csv (100 rows, 8 cols)
+Running dataset validation...
+columns_match: True
+expected_rows: True
+no_missing_data: True
+theta_numeric: True
+age_numeric: True
+valid: True
+Step 02 complete - analysis dataset prepared with descriptive statistics
+Step 02: Prepare analysis dataset
+Loading merged data...
+Merged data (100 rows, 8 cols)
+Loading strategy variables...
+Strategy variables (100 rows, 4 cols)
+Merging strategy variables with outcomes...
+Analysis dataset: 100 participants
+Converting education to numeric years...
+Education years - Mean: 11.0, Range: 11-11
+Education categories -> years mapping:
+  1: 11 years (n=2)
+  2: 11 years (n=3)
+  3: 11 years (n=1)
+  4: 11 years (n=6)
+  5: 11 years (n=13)
+  6: 11 years (n=43)
+  7: 11 years (n=8)
+  8: 11 years (n=20)
+  9: 11 years (n=4)
+Computing descriptive statistics...
+Descriptive statistics: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step02_descriptive_stats.csv
+Variable summary:
+  theta_all: M=-0.50, SD=0.82, n=100
+  rehearsal_frequency: M=0.02, SD=0.20, n=100
+  mnemonic_use: M=0.02, SD=0.14, n=100
+  age: M=44.57, SD=14.58, n=100
+  education_numeric: M=11.00, SD=0.00, n=100
+  vr_exposure: M=1.18, SD=1.08, n=100
+  sleep_hours: M=7.07, SD=0.99, n=100
+Checking for outliers...
+Outlier summary:
+  theta_all: 0 outliers (0.0%)
+  rehearsal_frequency: 1 outliers (1.0%)
+  mnemonic_use: 2 outliers (2.0%)
+  age: 0 outliers (0.0%)
+  education_numeric: 0 outliers (0.0%)
+  vr_exposure: 0 outliers (0.0%)
+  sleep_hours: 1 outliers (1.0%)
+Missing data summary:
+  No missing data in analysis variables
+Analysis dataset: 100 complete cases
+Analysis dataset: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step02_analysis_dataset.csv (100 rows, 8 cols)
+Running dataset validation...
+columns_match: True
+expected_rows: True
+no_missing_data: True
+theta_numeric: True
+age_numeric: True
+valid: True
+Step 02 complete - analysis dataset prepared with descriptive statistics
+Step 02: Prepare analysis dataset
+Loading merged data...
+Merged data (100 rows, 8 cols)
+Loading strategy variables...
+Strategy variables (100 rows, 4 cols)
+Merging strategy variables with outcomes...
+Analysis dataset: 100 participants
+Converting education to numeric years...
+Education years - Mean: 11.0, Range: 11-11
+Education categories -> years mapping:
+  1: 11 years (n=2)
+  2: 11 years (n=3)
+  3: 11 years (n=1)
+  4: 11 years (n=6)
+  5: 11 years (n=13)
+  6: 11 years (n=43)
+  7: 11 years (n=8)
+  8: 11 years (n=20)
+  9: 11 years (n=4)
+Computing descriptive statistics...
+Descriptive statistics: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step02_descriptive_stats.csv
+Variable summary:
+  theta_all: M=-0.50, SD=0.82, n=100
+  rehearsal_frequency: M=0.02, SD=0.20, n=100
+  mnemonic_use: M=0.02, SD=0.14, n=100
+  age: M=44.57, SD=14.58, n=100
+  education_numeric: M=11.00, SD=0.00, n=100
+  vr_exposure: M=1.18, SD=1.08, n=100
+  sleep_hours: M=7.07, SD=0.99, n=100
+Checking for outliers...
+Outlier summary:
+  theta_all: 0 outliers (0.0%)
+  rehearsal_frequency: 1 outliers (1.0%)
+  mnemonic_use: 2 outliers (2.0%)
+  age: 0 outliers (0.0%)
+  education_numeric: 0 outliers (0.0%)
+  vr_exposure: 0 outliers (0.0%)
+  sleep_hours: 1 outliers (1.0%)
+Missing data summary:
+  No missing data in analysis variables
+Analysis dataset: 100 complete cases
+Analysis dataset: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step02_analysis_dataset.csv (100 rows, 8 cols)
+Running dataset validation...
+columns_match: True
+expected_rows: True
+no_missing_data: True
+theta_numeric: True
+age_numeric: True
+valid: True
+Step 02 complete - analysis dataset prepared with descriptive statistics

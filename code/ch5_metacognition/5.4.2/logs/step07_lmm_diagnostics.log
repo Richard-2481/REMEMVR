@@ -1,0 +1,84 @@
+2025-12-28 11:37:14,634 - INFO - === RQ 6.4.2: LMM Diagnostic Plots ===
+2025-12-28 11:37:14,635 - INFO - Loading calibration data...
+2025-12-28 11:37:14,638 - INFO - Loaded 1200 observations
+2025-12-28 11:37:14,639 - INFO - TSVR centered at mean = 64.95 hours
+2025-12-28 11:37:14,639 - INFO - Refitting LMM with random slopes...
+2025-12-28 11:37:14,945 - INFO - Model converged successfully
+2025-12-28 11:37:14,950 - INFO - Residuals: N=1200, Mean=0.0000, SD=0.5114
+2025-12-28 11:37:14,950 - INFO - Fitted values: Range=[-3.2412, 2.4690]
+2025-12-28 11:37:14,950 - INFO - Generating diagnostic plots...
+2025-12-28 11:37:14,966 - INFO - Plot 1: Q-Q plot (normality of residuals)
+2025-12-28 11:37:14,968 - INFO - Shapiro-Wilk test: W=0.9958, p=0.0021
+2025-12-28 11:37:14,968 - INFO - Plot 2: Residuals vs Fitted (homoscedasticity)
+2025-12-28 11:37:15,002 - INFO - Plot 3: Scale-Location (constant variance)
+2025-12-28 11:37:15,034 - INFO - Plot 4: Histogram of residuals
+2025-12-28 11:37:15,584 - INFO - Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/plots/lmm_diagnostic_plots.png
+2025-12-28 11:37:15,585 - INFO - 
+=== Assumption Test Results ===
+2025-12-28 11:37:15,585 - INFO - Normality (Shapiro-Wilk): W=0.9958, p=0.0021
+2025-12-28 11:37:15,585 - WARNING -   ⚠ Residuals deviate from normality (p ≤ 0.05)
+2025-12-28 11:37:15,585 - INFO -   Note: With N=1200, minor deviations acceptable (CLT applies)
+2025-12-28 11:37:15,592 - INFO - Homoscedasticity (Breusch-Pagan): LM=27.1145, p=0.0001
+2025-12-28 11:37:15,592 - WARNING -   ⚠ Heteroscedasticity detected (p ≤ 0.05)
+2025-12-28 11:37:15,592 - INFO -   Recommendation: Use robust standard errors or weighted LMM
+2025-12-28 11:37:15,594 - INFO - Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step07_diagnostic_tests.csv
+2025-12-28 11:37:15,594 - INFO - 
+=== LMM Diagnostics Complete ===
+2025-12-28 11:37:15,594 - INFO - Diagnostic plots saved to plots/lmm_diagnostic_plots.png
+2025-12-28 11:37:15,594 - INFO - Test results saved to data/step07_diagnostic_tests.csv
+2026-01-17 14:15:55,321 - INFO - === RQ 6.4.2: LMM Diagnostic Plots ===
+2026-01-17 14:15:55,321 - INFO - Loading calibration data...
+2026-01-17 14:15:55,323 - INFO - Loaded 1200 observations
+2026-01-17 14:15:55,324 - INFO - TSVR centered at mean = 64.95 hours
+2026-01-17 14:15:55,324 - INFO - Refitting LMM with random slopes...
+2026-01-17 14:15:55,784 - INFO - Model converged successfully
+2026-01-17 14:15:55,790 - INFO - Residuals: N=1200, Mean=0.0000, SD=0.5114
+2026-01-17 14:15:55,790 - INFO - Fitted values: Range=[-3.2412, 2.4690]
+2026-01-17 14:15:55,791 - INFO - Generating diagnostic plots...
+2026-01-17 14:15:55,806 - INFO - Plot 1: Q-Q plot (normality of residuals)
+2026-01-17 14:15:55,808 - INFO - Shapiro-Wilk test: W=0.9958, p=0.0021
+2026-01-17 14:15:55,808 - INFO - Plot 2: Residuals vs Fitted (homoscedasticity)
+2026-01-17 14:15:55,843 - INFO - Plot 3: Scale-Location (constant variance)
+2026-01-17 14:15:55,879 - INFO - Plot 4: Histogram of residuals
+2026-01-17 14:15:56,603 - INFO - Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/plots/lmm_diagnostic_plots.png
+2026-01-17 14:15:56,603 - INFO - 
+=== Assumption Test Results ===
+2026-01-17 14:15:56,603 - INFO - Normality (Shapiro-Wilk): W=0.9958, p=0.0021
+2026-01-17 14:15:56,603 - WARNING -   ⚠ Residuals deviate from normality (p ≤ 0.05)
+2026-01-17 14:15:56,603 - INFO -   Note: With N=1200, minor deviations acceptable (CLT applies)
+2026-01-17 14:15:56,609 - INFO - Homoscedasticity (Breusch-Pagan): LM=27.1145, p=0.0001
+2026-01-17 14:15:56,609 - WARNING -   ⚠ Heteroscedasticity detected (p ≤ 0.05)
+2026-01-17 14:15:56,609 - INFO -   Recommendation: Use robust standard errors or weighted LMM
+2026-01-17 14:15:56,610 - INFO - Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step07_diagnostic_tests.csv
+2026-01-17 14:15:56,610 - INFO - 
+=== LMM Diagnostics Complete ===
+2026-01-17 14:15:56,610 - INFO - Diagnostic plots saved to plots/lmm_diagnostic_plots.png
+2026-01-17 14:15:56,610 - INFO - Test results saved to data/step07_diagnostic_tests.csv
+2026-01-17 14:30:30,693 - INFO - === RQ 6.4.2: LMM Diagnostic Plots ===
+2026-01-17 14:30:30,693 - INFO - Loading calibration data...
+2026-01-17 14:30:30,695 - INFO - Loaded 1200 observations
+2026-01-17 14:30:30,696 - INFO - TSVR centered at mean = 64.95 hours
+2026-01-17 14:30:30,696 - INFO - Refitting LMM with random slopes...
+2026-01-17 14:30:31,011 - INFO - Model converged successfully
+2026-01-17 14:30:31,018 - INFO - Residuals: N=1200, Mean=0.0000, SD=0.5114
+2026-01-17 14:30:31,018 - INFO - Fitted values: Range=[-3.2412, 2.4690]
+2026-01-17 14:30:31,018 - INFO - Generating diagnostic plots...
+2026-01-17 14:30:31,033 - INFO - Plot 1: Q-Q plot (normality of residuals)
+2026-01-17 14:30:31,035 - INFO - Shapiro-Wilk test: W=0.9958, p=0.0021
+2026-01-17 14:30:31,035 - INFO - Plot 2: Residuals vs Fitted (homoscedasticity)
+2026-01-17 14:30:31,069 - INFO - Plot 3: Scale-Location (constant variance)
+2026-01-17 14:30:31,104 - INFO - Plot 4: Histogram of residuals
+2026-01-17 14:30:31,667 - INFO - Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/plots/lmm_diagnostic_plots.png
+2026-01-17 14:30:31,667 - INFO - 
+=== Assumption Test Results ===
+2026-01-17 14:30:31,667 - INFO - Normality (Shapiro-Wilk): W=0.9958, p=0.0021
+2026-01-17 14:30:31,667 - WARNING -   ⚠ Residuals deviate from normality (p ≤ 0.05)
+2026-01-17 14:30:31,667 - INFO -   Note: With N=1200, minor deviations acceptable (CLT applies)
+2026-01-17 14:30:31,675 - INFO - Homoscedasticity (Breusch-Pagan): LM=27.1145, p=0.0001
+2026-01-17 14:30:31,676 - WARNING -   ⚠ Heteroscedasticity detected (p ≤ 0.05)
+2026-01-17 14:30:31,676 - INFO -   Recommendation: Use robust standard errors or weighted LMM
+2026-01-17 14:30:31,677 - INFO - Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step07_diagnostic_tests.csv
+2026-01-17 14:30:31,677 - INFO - 
+=== LMM Diagnostics Complete ===
+2026-01-17 14:30:31,677 - INFO - Diagnostic plots saved to plots/lmm_diagnostic_plots.png
+2026-01-17 14:30:31,677 - INFO - Test results saved to data/step07_diagnostic_tests.csv

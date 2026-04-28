@@ -1,0 +1,128 @@
+================================================================================
+RQ 6.1.4 - Step 06b: Model-Averaged ICC Validation
+Started: 2026-01-17T14:37:25.451167
+================================================================================
+
+[STEP 1] Load Original Single-Model Results
+------------------------------------------------------------
+  Original ICC_intercept: 0.7219
+  Original ICC_slope: 0.2641
+  Original model: Recip_sq (21.7% Akaike weight)
+  Original var_intercept: 0.614031
+  Original var_slope: 0.084916
+  Original var_residual: 0.236618
+
+[STEP 2] Load Model-Averaged Random Effects from 6.1.1
+------------------------------------------------------------
+  ✓ Loaded 100 participants
+  ✓ Columns: ['UID', 'ma_intercept', 'ma_slope']
+
+  MA Intercept Stats:
+    Mean: -0.018067
+    SD: 0.315218
+    Range: [-0.8132, 0.7175]
+
+  MA Slope Stats:
+    Mean: -0.012575
+    SD: 0.099434
+    Range: [-0.2953, 0.2214]
+
+[STEP 3] Compute Model-Averaged Variance Components
+------------------------------------------------------------
+  var(ma_intercept): 0.099362
+  var(ma_slope): 0.009887
+
+  MA Metadata:
+    n_competitive_models: 48
+    n_models_fitted: 48
+    n_models_with_slopes: 48
+    delta_aic_threshold: 7.0
+    effective_n_models: 31.11699399776719
+    total_original_weight: 0.974781050388058
+    top_model: Sin+Cos
+    top_model_renorm_weight: 0.2227603651208372
+    top_model_original_weight: 0.217142582697317
+    prediction_mean: -0.625064317345134
+    prediction_std: 0.3769564828169064
+    max_model_variance: 0.4745570820210035
+    mean_model_variance: 0.0326772172821823
+    intercept_sd: 0.3136379569791201
+    slope_sd: 0.0989352808543094
+
+  Using original var_residual: 0.236618
+  (Residual variance is approximately invariant across model specifications)
+
+[STEP 4] Compute Model-Averaged ICC Estimates
+------------------------------------------------------------
+
+  ICC Formulas (Hoffman & Stawski 2009 simplified):
+  ICC = var(random_effect) / (var(random_effect) + var_residual)
+
+  Model-Averaged ICC Estimates:
+    ICC_intercept_MA: 0.2957
+    ICC_slope_MA: 0.0401
+
+[STEP 5] Compare Original vs Model-Averaged ICCs
+------------------------------------------------------------
+
+  ICC_intercept Comparison:
+    Original (Recip_sq): 0.7219
+    Model-Averaged: 0.2957
+    Delta: -0.4262 (-59.0%)
+
+  ICC_slope Comparison:
+    Original (Recip_sq): 0.2641
+    Model-Averaged: 0.0401
+    Delta: -0.2240 (-84.8%)
+
+[STEP 6] Recompute Confidence vs Accuracy ICC Ratio with MA
+------------------------------------------------------------
+
+  ICC_slope_accuracy (Ch5 dichotomous): 0.0005
+
+  Original Ratio (Recip_sq / Ch5):
+    0.2641 / 0.0005 = 528.2×
+
+  MA Ratio (MA / Ch5):
+    0.0401 / 0.0005 = 80.2×
+
+  Ratio Change: -448.0× (-84.8%)
+
+[STEP 7] Assess Robustness of 824× Finding
+------------------------------------------------------------
+
+  Robustness Assessment: MODERATE ATTENUATION
+
+  Interpretation:
+  Model averaging moderately attenuates the ICC ratio. MA ratio = 80.2× (vs original 824×). Ordinal advantage present but magnitude uncertain. Finding should be interpreted with caution.
+
+  Additional Checks:
+    ICC_slope_MA > 0.10 (detectable)? False (value = 0.0401)
+    ICC_slope_MA > 0.30 (substantial)? False (value = 0.0401)
+    ICC_slope_MA within 20% of original? False (change = -84.8%)
+
+[STEP 8] Save Validation Results
+------------------------------------------------------------
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step06b_icc_ma_validation.csv
+
+================================================================================
+Model-Averaged ICC Validation Complete
+================================================================================
+
+  ORIGINAL (Single Model: Recip_sq, 21.7% weight):
+    ICC_intercept: 0.7219
+    ICC_slope: 0.2641
+    Ratio vs Ch5: 528.2×
+
+  MODEL-AVERAGED (48 models, Eff_N=31.1):
+    ICC_intercept: 0.2957 (-59.0% change)
+    ICC_slope: 0.0401 (-84.8% change)
+    Ratio vs Ch5: 80.2× (-84.8% change)
+
+  ROBUSTNESS: MODERATE ATTENUATION
+
+  INTERPRETATION:
+    Model averaging moderately attenuates the ICC ratio. MA ratio = 80.2× (vs original 824×). Ordinal advantage present but magnitude uncertain. Finding should be interpreted with caution.
+    
+
+Completed: 2026-01-17T14:37:25.458433

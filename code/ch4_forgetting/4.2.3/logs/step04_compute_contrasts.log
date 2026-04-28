@@ -1,0 +1,85 @@
+Step 04: Compute Domain-Specific Age Effects and Post-Hoc Contrasts
+Loading LMM model from Step 2c...
+[Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/rq10/results/step02_lmm_model.pkl'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step04_compute_contrasts.py", line 148, in <module>
+    lmm_model = MixedLMResults.load(str(lmm_model_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 2289, in load
+    return load_pickle(fname)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/iolib/smpickle.py", line 41, in load_pickle
+    with get_file_obj(fname, "rb") as fin:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/iolib/openfile.py", line 65, in get_file_obj
+    return fname.open(mode=mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/rq10/results/step02_lmm_model.pkl'
+Step 04: Compute Domain-Specific Age Effects and Post-Hoc Contrasts
+Loading LMM model from Step 2c...
+LMM model from step02_lmm_model.pkl
+Model has 100 groups (participants)
+Model converged: True
+Loading fixed effects table from Step 2c...
+step02_fixed_effects.csv (21 terms)
+Running compute_contrasts_pairwise...
+Computing pairwise contrasts: Where-What, When-What, Where-When
+Applying Tukey HSD correction with family_alpha=0.05
+'sig_uncorrected'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step04_compute_contrasts.py", line 179, in <module>
+    contrasts = compute_contrasts_pairwise(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 908, in compute_contrasts_pairwise
+    print(f"  Significant (uncorrected alpha=0.05): {df_contrasts['sig_uncorrected'].sum()}/{k}")
+                                                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'sig_uncorrected'
+Step 04: Compute Domain-Specific Age Effects
+Loading LMM model from Step 2c...
+LMM model from step02_lmm_model.pkl
+Model has 100 groups (participants)
+Model converged: True
+Extracting marginal age effects by domain...
+Evaluation timepoint: TSVR = 72.0 hours (Day 3, midpoint)
+Using delta method for SE propagation
+Age effect extraction complete
+Extracted age effects for 3 domains
+What: age_slope=-0.000014, SE=0.000049, p=0.7794
+Where: age_slope=0.000014, SE=0.000049, p=0.7794
+When: age_slope=-0.000014, SE=0.000049, p=0.7794
+Saving age effects by domain...
+step04_age_effects_by_domain.csv (3 rows, 7 columns)
+Creating summary report...
+step04_summary.txt
+Validating outputs...
+All checks passed
+Step 04 complete
+Step 04: Compute Domain-Specific Age Effects
+Loading LMM model from Step 2c...
+LMM model from step02_lmm_model.pkl
+Model has 100 groups (participants)
+Model converged: True
+Extracting marginal age effects by domain...
+Evaluation timepoint: TSVR = 72.0 hours (Day 3, midpoint)
+Using delta method for SE propagation
+Age effect extraction complete
+Extracted age effects for 2 domains
+What: age_slope=-0.000014, SE=0.000041, p=0.7368
+Where: age_slope=0.000014, SE=0.000041, p=0.7368
+Saving age effects by domain...
+step04_age_effects_by_domain.csv (2 rows, 7 columns)
+Creating summary report...
+step04_summary.txt
+Validating outputs...
+All checks passed
+Step 04 complete

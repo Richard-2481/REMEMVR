@@ -1,0 +1,6 @@
+model_name,num_predictors,predictor_list,rationale
+Minimal,2,"Age, RAVLT_T",Core age and verbal memory model
+Core,3,"Age, RAVLT_T, BVMT_T",Add visuospatial memory to core model
+Extended,5,"Age, RAVLT_T, BVMT_T, RPM_T, Education",Add fluid intelligence and education
+Full,8,"Age, RAVLT_T, BVMT_T, RPM_T, Education, DASS_Total, Sleep, Sex","Complete model with mood, sleep, and demographic factors (NART not available)"
+Full+Retention,10,"Age, RAVLT_T, BVMT_T, RPM_T, Education, DASS_Total, Sleep, Sex, RAVLT_Pct_Ret_T, BVMT_Pct_Ret_T",Add percent retention predictors to test incremental validity of forgetting rate measures

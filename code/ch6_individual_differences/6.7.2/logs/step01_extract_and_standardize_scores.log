@@ -1,0 +1,70 @@
+Step 01: Extract and Standardize Scores
+Reading dependency validation results...
+Theta file path: results/ch5/5.1.1/data/step03_theta_scores.csv
+Loading Ch5 theta scores...
+Using theta column: 'Theta_All'
+Theta scores: 400 rows
+100 unique participants (mean theta across sessions)
+Loading dfnonvr.csv for RAVLT data...
+dfnonvr.csv: 100 participants
+RAVLT Total from trials 1-5
+RAVLT Total range: 26.0 to 68.0
+Merging REMEMVR theta scores with RAVLT scores...
+100 participants with both REMEMVR and RAVLT scores
+Converting raw scores to z-scores...
+REMEMVR_z: M=0.0000, SD=1.0050
+RAVLT_z: M=-0.0000, SD=1.0050
+Computing 95% CIs for standardization parameters...
+REMEMVR mean 95% CI: [-0.1290, 0.1313]
+REMEMVR SD 95% CI: [0.5858, 0.7686]
+RAVLT mean 95% CI: [49.05, 52.33]
+RAVLT SD 95% CI: [7.16, 9.53]
+Saving standardized scores...
+step01_standardized_scores.csv (100 rows)
+step01_standardization_stats.csv (2 rows)
+Running validate_standardization...
+Standardization validation successful
+Step 01 complete
+Step 01: Extract and Standardize Scores
+Reading dependency validation results...
+Theta file path: results/ch5/5.1.1/data/step03_theta_scores.csv
+Loading Ch5 theta scores...
+Using theta column: 'Theta_All'
+Theta scores: 400 rows
+100 unique participants (mean theta across sessions)
+Loading dfnonvr.csv for RAVLT data...
+dfnonvr.csv: 100 participants
+[CEILING FIX] Applying RAVLT ceiling fix before computing totals...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+RAVLT Total from trials 1-5 (post-ceiling-fix)
+RAVLT Total range: 28.0 to 71.0
+Computing RAVLT Percent Retention...
+RAVLT Percent Retention = DR / max(trials 1-5) * 100
+RAVLT Pct Ret range: 44.4% to 115.4%
+RAVLT Pct Ret M=83.3%, SD=14.8%
+Merging REMEMVR theta scores with RAVLT scores...
+100 participants with both REMEMVR and RAVLT scores
+Converting raw scores to z-scores...
+REMEMVR_z: M=0.0000, SD=1.0050
+RAVLT_z: M=0.0000, SD=1.0050
+RAVLT_Pct_Ret_z: M=0.0000, SD=1.0050
+Computing 95% CIs for standardization parameters...
+REMEMVR mean 95% CI: [-0.1290, 0.1313]
+REMEMVR SD 95% CI: [0.5858, 0.7686]
+RAVLT mean 95% CI: [50.07, 53.28]
+RAVLT SD 95% CI: [7.29, 9.56]
+RAVLT Pct Ret mean 95% CI: [80.56, 85.99]
+RAVLT Pct Ret SD 95% CI: [12.83, 16.51]
+Saving standardized scores...
+step01_standardized_scores.csv (100 rows)
+step01_standardization_stats.csv (3 rows)
+Running validate_standardization...
+Standardization validation successful
+Step 01 complete

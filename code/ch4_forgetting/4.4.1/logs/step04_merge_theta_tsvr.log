@@ -1,0 +1,40 @@
+Step 04: Merge Theta Scores with TSVR
+RQ Directory: /home/etai/projects/REMEMVR/results/ch5/rq5
+
+Loading input data...
+step03_theta_scores.csv (400 rows, 7 cols)
+step00_tsvr_mapping.csv (400 rows)
+
+Merging theta scores with TSVR mapping...
+All 400 rows have TSVR data
+400 rows
+
+Reshaping to long format...
+1200 rows (expected ~1200)
+
+Creating time transformations...
+  TSVR_hours range: [1.00, 246.24]
+  TSVR_sq range: [1.00, 60634.14]
+  TSVR_log range: [0.693, 5.510]
+
+Setting congruence as categorical...
+  Congruence categories: ['common', 'congruent', 'incongruent']
+  Reference category: common
+
+Preparing output columns...
+1200 rows, 9 cols
+
+Saving output file...
+step04_lmm_input.csv (1200 rows)
+
+Validating output...
+Row count: 1200 (400 x 3)
+No NaN in TSVR_hours
+common: 400 rows
+congruent: 400 rows
+incongruent: 400 rows
+TSVR range [1.00, 246.24] outside expected [0, 170]
+Theta range: [-2.151, 2.335]
+Unique UIDs: 100
+
+Step 04 complete (Merge Theta + TSVR)

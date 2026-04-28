@@ -1,0 +1,88 @@
+Step 01: Extract and Merge Data
+Loading Ch5 theta scores...
+Ch5 theta scores: 400 rows, 3 cols
+Columns: ['UID', 'test', 'Theta_All']
+Unique UIDs: 100
+Unique tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Computing participant-level theta means...
+Theta means: 100 participants
+Theta range: [-1.954, 1.559]
+Theta mean: 0.006, SD: 0.677
+Loading cognitive test data from dfnonvr.csv...
+dfnonvr.csv: 100 rows, 235 cols
+Computing RAVLT and BVMT totals...
+RAVLT total from columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+RAVLT total range: [26, 68]
+BVMT total from columns: ['bvmt-trial-1-score', 'bvmt-trial-2-score', 'bvmt-trial-3-score']
+BVMT total range: [12, 36]
+Cognitive data subset: 100 participants
+Merging theta and cognitive data by UID...
+Final dataset: 100 rows, 4 cols
+Columns: ['UID', 'theta_all_mean', 'ravlt_total', 'bvmt_total']
+Validating merged dataset...
+No duplicate UIDs
+No missing values
+Theta range valid: [-1.954, 1.559]
+RAVLT range valid: [26, 68]
+BVMT range valid: [12, 36]
+Saving merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step01_merged_dataset.csv
+Output shape: (100, 4)
+Dataset statistics:
+  N participants: 100
+  Theta mean: 0.006 (SD=0.677)
+  RAVLT mean: 50.6 (SD=8.4)
+  BVMT mean: 28.2 (SD=5.1)
+Step 01 complete
+Step 01: Extract and Merge Data
+Loading Ch5 theta scores...
+Ch5 theta scores: 400 rows, 3 cols
+Columns: ['UID', 'test', 'Theta_All']
+Unique UIDs: 100
+Unique tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Computing participant-level theta means...
+Theta means: 100 participants
+Theta range: [-1.954, 1.559]
+Theta mean: 0.006, SD: 0.677
+Loading cognitive test data from dfnonvr.csv...
+dfnonvr.csv: 100 rows, 235 cols
+[CEILING FIX] Applying RAVLT ceiling fix...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+Computing RAVLT and BVMT totals...
+RAVLT total from columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+RAVLT total range: [28, 71]
+BVMT total from columns: ['bvmt-trial-1-score', 'bvmt-trial-2-score', 'bvmt-trial-3-score']
+BVMT total range: [12, 36]
+Computing percent retention scores...
+RAVLT pct retention: mean=83.3%, range=[44.4, 115.4]
+BVMT pct retention: mean=96.7%, range=[55.6, 114.3]
+Cognitive data subset: 100 participants
+Merging theta and cognitive data by UID...
+Final dataset: 100 rows, 6 cols
+Columns: ['UID', 'theta_all_mean', 'ravlt_total', 'bvmt_total', 'ravlt_pct_ret', 'bvmt_pct_ret']
+Validating merged dataset...
+No duplicate UIDs
+No missing values
+Theta range valid: [-1.954, 1.559]
+RAVLT range valid: [28, 71]
+BVMT range valid: [12, 36]
+RAVLT pct retention range valid: [44.4, 115.4]
+BVMT pct retention range valid: [55.6, 114.3]
+Saving merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step01_merged_dataset.csv
+Output shape: (100, 6)
+Dataset statistics:
+  N participants: 100
+  Theta mean: 0.006 (SD=0.677)
+  RAVLT mean: 51.6 (SD=8.5)
+  BVMT mean: 28.2 (SD=5.1)
+  RAVLT pct ret mean: 83.3 (SD=14.8)
+  BVMT pct ret mean: 96.7 (SD=9.0)
+Step 01 complete

@@ -38,29 +38,22 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step06_compare_icc_across_congruence.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 06: Compare ICC Across Congruence Levels")
-
-        # =====================================================================
-        # STEP 1: Load ICC Estimates
-        # =====================================================================
-        log("[LOAD] Loading ICC estimates...")
+        log("Step 06: Compare ICC Across Congruence Levels")
+        # Load ICC Estimates
+        log("Loading ICC estimates...")
 
         icc_file = RQ_DIR / "data" / "step03_icc_estimates.csv"
         df_icc = pd.read_csv(icc_file, encoding='utf-8')
 
-        log(f"[LOADED] {icc_file.name} ({len(df_icc)} rows)")
-
-        # =====================================================================
-        # STEP 2: Pivot to Wide Format
-        # =====================================================================
-        log("[TRANSFORM] Pivoting ICC estimates to wide format...")
+        log(f"{icc_file.name} ({len(df_icc)} rows)")
+        # Pivot to Wide Format
+        log("Pivoting ICC estimates to wide format...")
 
         # Pivot: rows=congruence, columns=icc_type
         df_wide = df_icc.pivot(index='congruence', columns='icc_type', values='value')
@@ -68,13 +61,10 @@ if __name__ == "__main__":
         # Reset index to make congruence a column
         df_wide = df_wide.reset_index()
 
-        log(f"[PIVOTED] {len(df_wide)} rows (one per congruence)")
+        log(f"{len(df_wide)} rows (one per congruence)")
         log(f"  Columns: {list(df_wide.columns)}")
-
-        # =====================================================================
-        # STEP 3: Rank by ICC_slope_simple
-        # =====================================================================
-        log("[RANK] Ranking congruence levels by ICC slope (descending)...")
+        # Rank by ICC_slope_simple
+        log("Ranking congruence levels by ICC slope (descending)...")
 
         # Rank by icc_slope_simple (1 = highest, 3 = lowest)
         df_wide['rank_by_slope'] = df_wide['slope_simple'].rank(ascending=False).astype(int)
@@ -82,24 +72,18 @@ if __name__ == "__main__":
         # Sort by rank
         df_wide = df_wide.sort_values('rank_by_slope')
 
-        log("\n[RANKING]")
+        log("\n")
         for _, row in df_wide.iterrows():
             log(f"  Rank {row['rank_by_slope']}: {row['congruence']:12s} (ICC_slope={row['slope_simple']:.4f})")
-
-        # =====================================================================
-        # STEP 4: Save Comparison Table
-        # =====================================================================
-        log("\n[SAVE] Saving ICC comparison table...")
+        # Save Comparison Table
+        log("\nSaving ICC comparison table...")
 
         output_file = RQ_DIR / "data" / "step06_congruence_icc_comparison.csv"
         df_wide.to_csv(output_file, index=False, encoding='utf-8')
 
-        log(f"[SAVED] {output_file.name} ({len(df_wide)} rows)")
-
-        # =====================================================================
-        # STEP 5: Create Bar Plot
-        # =====================================================================
-        log("[PLOT] Creating ICC comparison bar plot...")
+        log(f"{output_file.name} ({len(df_wide)} rows)")
+        # Create Bar Plot
+        log("Creating ICC comparison bar plot...")
 
         fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -144,12 +128,9 @@ if __name__ == "__main__":
         plt.savefig(plot_file, dpi=300, bbox_inches='tight')
         plt.close()
 
-        log(f"[SAVED] {plot_file.name}")
-
-        # =====================================================================
-        # STEP 6: Create Interpretation Report
-        # =====================================================================
-        log("[REPORT] Creating interpretation report...")
+        log(f"{plot_file.name}")
+        # Create Interpretation Report
+        log("Creating interpretation report...")
 
         report_path = RQ_DIR / "data" / "step06_icc_comparison_interpretation.txt"
 
@@ -216,18 +197,15 @@ if __name__ == "__main__":
             else:
                 f.write("Common items show intermediate stability.\n")
 
-        log(f"[SAVED] {report_path.name}")
-
-        # =====================================================================
-        # STEP 7: Validate Comparison Table
-        # =====================================================================
-        log("\n[VALIDATION] Validating comparison table...")
+        log(f"{report_path.name}")
+        # Validate Comparison Table
+        log("\nValidating comparison table...")
 
         # Check row count
         if len(df_wide) != 3:
             raise ValueError(f"Expected 3 rows (one per congruence), got {len(df_wide)}")
 
-        log("[PASS] Comparison table has 3 rows")
+        log("Comparison table has 3 rows")
 
         # Check congruence levels
         expected_congruence = {'Common', 'Congruent', 'Incongruent'}
@@ -236,7 +214,7 @@ if __name__ == "__main__":
         if actual_congruence != expected_congruence:
             raise ValueError(f"Expected congruence levels {expected_congruence}, got {actual_congruence}")
 
-        log("[PASS] All 3 congruence levels present")
+        log("All 3 congruence levels present")
 
         # Check ICC values in [0, 1]
         icc_cols = ['intercept', 'slope_simple', 'slope_conditional']
@@ -244,14 +222,14 @@ if __name__ == "__main__":
             if (df_wide[col] < 0).any() or (df_wide[col] > 1).any():
                 raise ValueError(f"ICC values in {col} outside [0, 1] range")
 
-        log("[PASS] All ICC values in [0, 1] range")
+        log("All ICC values in [0, 1] range")
 
         # Check ranking
         ranks = set(df_wide['rank_by_slope'].values)
         if ranks != {1, 2, 3}:
             raise ValueError(f"Expected ranks {{1, 2, 3}}, got {ranks}")
 
-        log("[PASS] Ranking valid (1, 2, 3 with no duplicates)")
+        log("Ranking valid (1, 2, 3 with no duplicates)")
 
         # Check plot file
         if not plot_file.exists():
@@ -260,14 +238,14 @@ if __name__ == "__main__":
         if plot_file.stat().st_size < 10000:
             raise ValueError(f"Plot file too small (< 10KB): {plot_file.stat().st_size} bytes")
 
-        log(f"[PASS] Plot file validated ({plot_file.stat().st_size} bytes)")
+        log(f"Plot file validated ({plot_file.stat().st_size} bytes)")
 
-        log("\n[SUCCESS] Step 06 complete - ICC comparison across congruence complete")
+        log("\nStep 06 complete - ICC comparison across congruence complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

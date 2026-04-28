@@ -1,0 +1,75 @@
+Step 01: Extract Domain Theta Scores
+
+Loading Ch5 5.2.1 theta scores...
+/home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+400 rows, 4 columns
+['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+
+Data structure validation
+Columns match expected structure
+First 5 rows:
+  composite_ID  theta_what  theta_where  theta_when
+0       A010_1    1.972308     2.443998   -0.241549
+1       A010_2    0.532142     0.591483    0.685995
+2       A010_3   -0.246205    -0.091231   -0.076383
+3       A010_4    0.765641     0.470840    1.170524
+4       A011_1    1.175870     0.986044    0.225482
+
+Extracting UID from composite_ID...
+100 unique participants
+4 unique test sessions
+Test distribution:
+test
+1    100
+2    100
+3    100
+4    100
+Data completeness check
+UID extraction complete
+
+Computing participant-level mean theta scores...
+When domain (77% floor effect per Ch5 documentation)
+100 participants (reduced from 400 test-level rows)
+['UID', 'theta_what', 'theta_where']
+Descriptive statistics (raw means):
+       theta_what  theta_where
+count  100.000000   100.000000
+mean    -0.007222     0.036790
+std      0.637882     0.670982
+min     -1.949288    -1.833671
+25%     -0.445401    -0.416387
+50%      0.088226     0.136691
+75%      0.394656     0.455696
+max      1.471614     1.591360
+
+Aggregation validation
+Expected participant count (N=100)
+
+Applying z-score standardization...
+theta_What - Mean: -0.0072, SD: 0.6379
+theta_Where - Mean: 0.0368, SD: 0.6710
+Z-scored domains
+Post-standardization statistics:
+         theta_What   theta_Where
+count  1.000000e+02  1.000000e+02
+mean   2.220446e-18 -4.218847e-17
+std    1.000000e+00  1.000000e+00
+min   -3.044553e+00 -2.787647e+00
+25%   -6.869279e-01 -6.753938e-01
+50%    1.496336e-01  1.488879e-01
+75%    6.300202e-01  6.243190e-01
+max    2.318354e+00  2.316859e+00
+
+Standardization validation
+Z-score properties validated
+
+Writing output to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step01_domain_theta_scores.csv
+100 rows, 3 columns
+['UID', 'theta_What', 'theta_Where']
+
+Final output validation...
+Row count = 100
+No missing values
+Z-score properties validated
+
+Step 01 complete

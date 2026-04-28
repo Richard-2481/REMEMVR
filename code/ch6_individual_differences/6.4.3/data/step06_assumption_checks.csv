@@ -1,0 +1,5 @@
+variable,normality_p,outlier_count,assumption_met,remedial_action
+rpm_score,6.596346653958562e-07,0,False,Use bootstrap CIs (already computed)
+theta_overall,0.05690341481228442,0,True,No action needed
+theta_what,0.09487746696733185,0,True,No action needed
+multivariate,,0,True,No action needed

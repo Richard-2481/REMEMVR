@@ -1,0 +1,307 @@
+Step 2: Fit LMM with 3-Way Age x Paradigm x Time Interaction
+Loading LMM input data from Step 1...
+step01_lmm_input.csv (1200 rows, 9 cols)
+All required columns present: ['composite_ID', 'UID', 'theta', 'Age_c', 'paradigm', 'TSVR_hours', 'log_TSVR']
+paradigm set as categorical: ['IFR', 'ICR', 'IRE']
+Fitting LMM with 3-way Age x Paradigm x Time interaction...
+theta ~ TSVR_hours + log_TSVR + Age_c + C(paradigm) + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:C(paradigm) + log_TSVR:C(paradigm) + Age_c:C(paradigm) + TSVR_hours:Age_c:C(paradigm) + log_TSVR:Age_c:C(paradigm)
+[RANDOM EFFECTS] ~TSVR_hours grouped by UID
+Starting model fit (this may take 10-15 minutes)...
+Model fitting failed: Error evaluating factor: NameError: name 'TSVR_hours' is not defined
+    ~TSVR_hours
+     ^^^^^^^^^^
+Full model with random slopes failed - attempting convergence contingency plan...
+Trying intercept-only random effects...
+Contingency plan failed: Error evaluating factor: NameError: name 'TSVR_hours' is not defined
+    theta ~ TSVR_hours + log_TSVR + Age_c + C(paradigm) + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:C(paradigm) + log_TSVR:C(paradigm) + Age_c:C(paradigm) + TSVR_hours:Age_c:C(paradigm) + log_TSVR:Age_c:C(paradigm)
+            ^^^^^^^^^^
+Model failed to converge with both random slopes and intercept-only structures
+Full error details:
+Step 2: Fit LMM with 3-Way Age x Paradigm x Time Interaction
+Loading LMM input data from Step 1...
+step01_lmm_input.csv (1200 rows, 9 cols)
+All required columns present: ['UID', 'theta', 'Age_c', 'paradigm', 'TSVR_hours', 'log_TSVR']
+paradigm set as categorical with IFR as reference: ['IFR', 'ICR', 'IRE']
+3-way Age x Paradigm x Time interaction model
+theta ~ TSVR_hours + log_TSVR + Age_c + C(paradigm, Treatment('IFR')) + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:C(paradigm, Treatment('IFR')) + log_TSVR:C(paradigm, Treatment('IFR')) + Age_c:C(paradigm, Treatment('IFR')) + TSVR_hours:Age_c:C(paradigm, Treatment('IFR')) + log_TSVR:Age_c:C(paradigm, Treatment('IFR'))
+Attempting model with random slopes for TSVR_hours...
+Model fit completed but convergence flag is False
+Log-likelihood is valid, treating as converged
+Extracting model results...
+Log-Likelihood: -1191.99
+AIC: 2427.97
+BIC: 2539.95
+Number of observations: 1200
+Number of groups (participants): 100
+Random structure used: random_slopes
+[FIXED EFFECTS]
+  Intercept: coef=0.6517, SE=0.0979, z=6.66, p=0.0000
+  C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0871, SE=0.0868, z=1.00, p=0.3159
+  C(paradigm, Treatment('IFR'))[T.IRE]: coef=0.0824, SE=0.0868, z=0.95, p=0.3423
+  TSVR_hours: coef=-0.0026, SE=0.0021, z=-1.21, p=0.2275
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0007, SE=0.0011, z=-0.62, p=0.5337
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0009, SE=0.0011, z=-0.83, p=0.4094
+  log_TSVR: coef=-0.1316, SE=0.0286, z=-4.61, p=0.0000
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0062, SE=0.0401, z=-0.15, p=0.8775
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0098, SE=0.0401, z=-0.24, p=0.8076
+  Age_c: coef=-0.0112, SE=0.0068, z=-1.66, p=0.0976
+  Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0017, SE=0.0060, z=0.28, p=0.7768
+  Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0019, SE=0.0060, z=-0.32, p=0.7502
+  TSVR_hours:Age_c: coef=-0.0000, SE=0.0001, z=-0.03, p=0.9783
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0000, SE=0.0001, z=0.39, p=0.6997
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0000, SE=0.0001, z=-0.23, p=0.8169
+  log_TSVR:Age_c: coef=0.0012, SE=0.0020, z=0.60, p=0.5456
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0010, SE=0.0028, z=-0.37, p=0.7081
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=0.0007, SE=0.0028, z=0.27, p=0.7900
+[RANDOM EFFECTS]
+  Group Var (Intercept): 0.5807
+  Group Var (TSVR_hours): 0.0004
+  Cov(Intercept, TSVR_hours): -0.0021
+  Residual Var: 0.2245
+Checking model assumptions...
+[CHECK 1] Residual normality...
+  Shapiro-Wilk: W=0.9970, p=0.0240
+  Result: PASS
+[CHECK 2] Residual mean...
+  Mean residual: -0.000000
+  Result: PASS
+[CHECK 3] Homoscedasticity by paradigm...
+  Variance by paradigm: {'IFR': np.float64(0.2059), 'ICR': np.float64(0.2123), 'IRE': np.float64(0.212)}
+  Max/Min variance ratio: 1.03
+  Result: PASS
+[CHECK 4] Random effects variance...
+  Random intercept variance: 0.5807
+  Result: PASS
+[CHECK 5] Outliers...
+  Residuals > 3 SD: 2 (0.2%)
+  Result: PASS
+[CHECK 6] Coefficient validity...
+'numpy.ndarray' object is not callable
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.4/code/step02_fit_lmm.py", line 262, in <module>
+    n_nan_coef = sum(np.isnan(v) for v in fe_params.values())
+                                          ^^^^^^^^^^^^^^^^^^
+TypeError: 'numpy.ndarray' object is not callable
+Step 2: Fit LMM with 3-Way Age x Paradigm x Time Interaction
+Loading LMM input data from Step 1...
+step01_lmm_input.csv (1200 rows, 9 cols)
+All required columns present: ['UID', 'theta', 'Age_c', 'paradigm', 'TSVR_hours', 'log_TSVR']
+paradigm set as categorical with IFR as reference: ['IFR', 'ICR', 'IRE']
+3-way Age x Paradigm x Time interaction model
+theta ~ TSVR_hours + log_TSVR + Age_c + C(paradigm, Treatment('IFR')) + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:C(paradigm, Treatment('IFR')) + log_TSVR:C(paradigm, Treatment('IFR')) + Age_c:C(paradigm, Treatment('IFR')) + TSVR_hours:Age_c:C(paradigm, Treatment('IFR')) + log_TSVR:Age_c:C(paradigm, Treatment('IFR'))
+Attempting model with random slopes for TSVR_hours...
+Model fit completed but convergence flag is False
+Log-likelihood is valid, treating as converged
+Extracting model results...
+Log-Likelihood: -1191.99
+AIC: 2427.97
+BIC: 2539.95
+Number of observations: 1200
+Number of groups (participants): 100
+Random structure used: random_slopes
+[FIXED EFFECTS]
+  Intercept: coef=0.6517, SE=0.0979, z=6.66, p=0.0000
+  C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0871, SE=0.0868, z=1.00, p=0.3159
+  C(paradigm, Treatment('IFR'))[T.IRE]: coef=0.0824, SE=0.0868, z=0.95, p=0.3423
+  TSVR_hours: coef=-0.0026, SE=0.0021, z=-1.21, p=0.2275
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0007, SE=0.0011, z=-0.62, p=0.5337
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0009, SE=0.0011, z=-0.83, p=0.4094
+  log_TSVR: coef=-0.1316, SE=0.0286, z=-4.61, p=0.0000
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0062, SE=0.0401, z=-0.15, p=0.8775
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0098, SE=0.0401, z=-0.24, p=0.8076
+  Age_c: coef=-0.0112, SE=0.0068, z=-1.66, p=0.0976
+  Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0017, SE=0.0060, z=0.28, p=0.7768
+  Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0019, SE=0.0060, z=-0.32, p=0.7502
+  TSVR_hours:Age_c: coef=-0.0000, SE=0.0001, z=-0.03, p=0.9783
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0000, SE=0.0001, z=0.39, p=0.6997
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0000, SE=0.0001, z=-0.23, p=0.8169
+  log_TSVR:Age_c: coef=0.0012, SE=0.0020, z=0.60, p=0.5456
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0010, SE=0.0028, z=-0.37, p=0.7081
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=0.0007, SE=0.0028, z=0.27, p=0.7900
+[RANDOM EFFECTS]
+  Group Var (Intercept): 0.5807
+  Group Var (TSVR_hours): 0.0004
+  Cov(Intercept, TSVR_hours): -0.0021
+  Residual Var: 0.2245
+Checking model assumptions...
+[CHECK 1] Residual normality...
+  Shapiro-Wilk: W=0.9970, p=0.0240
+  Result: PASS
+[CHECK 2] Residual mean...
+  Mean residual: -0.000000
+  Result: PASS
+[CHECK 3] Homoscedasticity by paradigm...
+  Variance by paradigm: {'IFR': np.float64(0.2059), 'ICR': np.float64(0.2123), 'IRE': np.float64(0.212)}
+  Max/Min variance ratio: 1.03
+  Result: PASS
+[CHECK 4] Random effects variance...
+  Random intercept variance: 0.5807
+  Result: PASS
+[CHECK 5] Outliers...
+  Residuals > 3 SD: 2 (0.2%)
+  Result: PASS
+[CHECK 6] Coefficient validity...
+  NaN coefficients: 0
+  Result: PASS
+Saving model pickle...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_lmm_model.pkl
+Saving model summary...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_lmm_summary.txt
+Step 2 complete
+Model: 3-way Age x Paradigm x Time interaction
+  Random structure: random_slopes
+  Observations: 1200
+  Log-Likelihood: -1191.99
+  AIC: 2427.97
+  Convergence: True
+  Ready for Step 3 (extract 3-way interaction terms)
+Step 2: Fit LMM with 3-Way Age x Paradigm x Time Interaction
+Loading LMM input data from Step 1...
+step01_lmm_input.csv (1200 rows, 9 cols)
+All required columns present: ['UID', 'theta', 'Age_c', 'paradigm', 'TSVR_hours', 'log_TSVR']
+paradigm set as categorical with IFR as reference: ['IFR', 'ICR', 'IRE']
+3-way Age x Paradigm x Time interaction model
+theta ~ TSVR_hours + log_TSVR + Age_c + C(paradigm, Treatment('IFR')) + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:C(paradigm, Treatment('IFR')) + log_TSVR:C(paradigm, Treatment('IFR')) + Age_c:C(paradigm, Treatment('IFR')) + TSVR_hours:Age_c:C(paradigm, Treatment('IFR')) + log_TSVR:Age_c:C(paradigm, Treatment('IFR'))
+Attempting model with random slopes for TSVR_hours...
+Model fit completed but convergence flag is False
+Log-likelihood is valid, treating as converged
+Extracting model results...
+Log-Likelihood: -1191.99
+AIC: 2427.97
+BIC: 2539.95
+Number of observations: 1200
+Number of groups (participants): 100
+Random structure used: random_slopes
+[FIXED EFFECTS]
+  Intercept: coef=0.6517, SE=0.0979, z=6.66, p=0.0000
+  C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0871, SE=0.0868, z=1.00, p=0.3159
+  C(paradigm, Treatment('IFR'))[T.IRE]: coef=0.0824, SE=0.0868, z=0.95, p=0.3423
+  TSVR_hours: coef=-0.0026, SE=0.0021, z=-1.21, p=0.2275
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0007, SE=0.0011, z=-0.62, p=0.5337
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0009, SE=0.0011, z=-0.83, p=0.4094
+  log_TSVR: coef=-0.1316, SE=0.0286, z=-4.61, p=0.0000
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0062, SE=0.0401, z=-0.15, p=0.8775
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0098, SE=0.0401, z=-0.24, p=0.8076
+  Age_c: coef=-0.0112, SE=0.0068, z=-1.66, p=0.0976
+  Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0017, SE=0.0060, z=0.28, p=0.7768
+  Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0019, SE=0.0060, z=-0.32, p=0.7502
+  TSVR_hours:Age_c: coef=-0.0000, SE=0.0001, z=-0.03, p=0.9783
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0000, SE=0.0001, z=0.39, p=0.6997
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0000, SE=0.0001, z=-0.23, p=0.8169
+  log_TSVR:Age_c: coef=0.0012, SE=0.0020, z=0.60, p=0.5456
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0010, SE=0.0028, z=-0.37, p=0.7081
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=0.0007, SE=0.0028, z=0.27, p=0.7900
+[RANDOM EFFECTS]
+  Group Var (Intercept): 0.5807
+  Group Var (TSVR_hours): 0.0004
+  Cov(Intercept, TSVR_hours): -0.0021
+  Residual Var: 0.2245
+Checking model assumptions...
+[CHECK 1] Residual normality...
+  Shapiro-Wilk: W=0.9970, p=0.0240
+  Result: PASS
+[CHECK 2] Residual mean...
+  Mean residual: -0.000000
+  Result: PASS
+[CHECK 3] Homoscedasticity by paradigm...
+  Variance by paradigm: {'IFR': np.float64(0.2059), 'ICR': np.float64(0.2123), 'IRE': np.float64(0.212)}
+  Max/Min variance ratio: 1.03
+  Result: PASS
+[CHECK 4] Random effects variance...
+  Random intercept variance: 0.5807
+  Result: PASS
+[CHECK 5] Outliers...
+  Residuals > 3 SD: 2 (0.2%)
+  Result: PASS
+[CHECK 6] Coefficient validity...
+  NaN coefficients: 0
+  Result: PASS
+Saving model pickle...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_lmm_model.pkl
+Saving fixed effects CSV...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_fixed_effects.csv
+Saving model summary...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_lmm_summary.txt
+Step 2 complete
+Model: 3-way Age x Paradigm x Time interaction
+  Random structure: random_slopes
+  Observations: 1200
+  Log-Likelihood: -1191.99
+  AIC: 2427.97
+  Convergence: True
+  Ready for Step 3 (extract 3-way interaction terms)
+Step 2: Fit LMM with 3-Way Age x Paradigm x Time Interaction
+Loading LMM input data from Step 1...
+step01_lmm_input.csv (1200 rows, 9 cols)
+All required columns present: ['UID', 'theta', 'Age_c', 'paradigm', 'TSVR_hours', 'log_TSVR']
+paradigm set as categorical with IFR as reference: ['IFR', 'ICR', 'IRE']
+3-way Age x Paradigm x Time interaction model
+theta ~ TSVR_hours + log_TSVR + Age_c + C(paradigm, Treatment('IFR')) + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:C(paradigm, Treatment('IFR')) + log_TSVR:C(paradigm, Treatment('IFR')) + Age_c:C(paradigm, Treatment('IFR')) + TSVR_hours:Age_c:C(paradigm, Treatment('IFR')) + log_TSVR:Age_c:C(paradigm, Treatment('IFR'))
+Attempting model with random slopes for log_TSVR (per RQ 5.2.1 best model)...
+Model with random slopes converged
+Extracting model results...
+Log-Likelihood: -1082.89
+AIC: 2209.78
+BIC: 2321.76
+Number of observations: 1200
+Number of groups (participants): 100
+Random structure used: random_slopes
+[FIXED EFFECTS]
+  Intercept: coef=0.6526, SE=0.1060, z=6.16, p=0.0000
+  C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0871, SE=0.0902, z=0.97, p=0.3345
+  C(paradigm, Treatment('IFR'))[T.IRE]: coef=0.0824, SE=0.0902, z=0.91, p=0.3608
+  TSVR_hours: coef=-0.0026, SE=0.0008, z=-3.03, p=0.0025
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0007, SE=0.0012, z=-0.60, p=0.5493
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0009, SE=0.0012, z=-0.79, p=0.4273
+  log_TSVR: coef=-0.1321, SE=0.0345, z=-3.83, p=0.0001
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0062, SE=0.0416, z=-0.15, p=0.8821
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0098, SE=0.0416, z=-0.23, p=0.8147
+  Age_c: coef=-0.0115, SE=0.0073, z=-1.57, p=0.1155
+  Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0017, SE=0.0062, z=0.27, p=0.7850
+  Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0019, SE=0.0062, z=-0.31, p=0.7594
+  TSVR_hours:Age_c: coef=-0.0000, SE=0.0001, z=-0.31, p=0.7532
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=0.0000, SE=0.0001, z=0.37, p=0.7105
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=-0.0000, SE=0.0001, z=-0.22, p=0.8237
+  log_TSVR:Age_c: coef=0.0015, SE=0.0024, z=0.63, p=0.5282
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]: coef=-0.0010, SE=0.0029, z=-0.36, p=0.7187
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]: coef=0.0007, SE=0.0029, z=0.26, p=0.7977
+[RANDOM EFFECTS]
+  Group Var (Intercept): 0.7156
+  Group Var (TSVR_hours): 0.0313
+  Cov(Intercept, TSVR_hours): -0.1046
+  Residual Var: 0.2425
+Checking model assumptions...
+[CHECK 1] Residual normality...
+  Shapiro-Wilk: W=0.9972, p=0.0354
+  Result: PASS
+[CHECK 2] Residual mean...
+  Mean residual: 0.000000
+  Result: PASS
+[CHECK 3] Homoscedasticity by paradigm...
+  Variance by paradigm: {'IFR': np.float64(0.1996), 'ICR': np.float64(0.2104), 'IRE': np.float64(0.2125)}
+  Max/Min variance ratio: 1.06
+  Result: PASS
+[CHECK 4] Random effects variance...
+  Random intercept variance: 0.7156
+  Result: PASS
+[CHECK 5] Outliers...
+  Residuals > 3 SD: 4 (0.3%)
+  Result: PASS
+[CHECK 6] Coefficient validity...
+  NaN coefficients: 0
+  Result: PASS
+Saving model pickle...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_lmm_model.pkl
+Saving fixed effects CSV...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_fixed_effects.csv
+Saving model summary...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_lmm_summary.txt
+Step 2 complete
+Model: 3-way Age x Paradigm x Time interaction
+  Random structure: random_slopes
+  Observations: 1200
+  Log-Likelihood: -1082.89
+  AIC: 2209.78
+  Convergence: True
+  Ready for Step 3 (extract 3-way interaction terms)

@@ -1,0 +1,108 @@
+Step 01: Extract and Prepare Domain-Specific Data
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.3
+
+[STEP 1] Loading Ch5 5.2.1 domain theta scores...
+Loaded theta scores: (400, 4)
+Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Unique participants: 100
+Unique tests: ['1', '2', '3', '4']
+
+[STEP 2] Aggregating theta scores by UID and domain...
+Aggregated theta scores: (100, 4)
+Domain theta scores shape: (300, 4)
+Domains: ['What', 'Where', 'When']
+Domain theta scores saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step01_domain_theta_scores.csv
+
+[STEP 3] Loading cognitive test data from dfnonvr.csv...
+Loaded cognitive data: (100, 101)
+Calculated RAVLT_Total from trials 1-5
+Using BVMT total recall
+Using RPM Score
+Created T-score: RAVLT_T (mean=50.60, sd=8.42)
+Created T-score: BVMT_T (mean=28.22, sd=5.06)
+Created T-score: RPM_T (mean=9.87, sd=1.93)
+Cognitive test data shape: (100, 4)
+Available columns: ['UID', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+
+[STEP 4] Merging domain theta scores with cognitive tests...
+Merged dataset shape: (300, 7)
+Unique participants: 100
+Domains: {'What': 100, 'Where': 100, 'When': 100}
+No missing values in merged dataset
+Merged dataset saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step01_merged_dataset.csv
+
+[STEP 5] Calculating descriptive statistics...
+What: n=100, mean=-0.007, sd=0.638
+Where: n=100, mean=0.037, sd=0.671
+When: n=100, mean=0.109, sd=0.282
+Descriptive statistics saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step01_descriptive_stats.csv
+
+Checking for outliers (IQR method)...
+What: 1 outliers detected (bounds: [-1.705, 1.655])
+Where: 1 outliers detected (bounds: [-1.725, 1.764])
+When: No outliers detected
+
+Step 01 completed successfully
+Created 300 records (100 participants × 3 domains)
+Step 01: Extract and Prepare Domain-Specific Data
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.3
+
+[STEP 1] Loading Ch5 5.2.1 domain theta scores...
+Loaded theta scores: (400, 4)
+Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Unique participants: 100
+Unique tests: ['1', '2', '3', '4']
+
+[STEP 2] Aggregating theta scores by UID and domain...
+Aggregated theta scores: (100, 4)
+Domain theta scores shape: (300, 4)
+Domains: ['What', 'Where', 'When']
+Domain theta scores saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step01_domain_theta_scores.csv
+
+[STEP 3] Loading cognitive test data from dfnonvr.csv...
+Loaded cognitive data: (100, 235)
+
+Applying RAVLT ceiling fix (0 -> 15 for unadministered trials)...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+RAVLT Total (ceiling-fixed): M=51.6, SD=8.5
+RAVLT Percent Retention: 100/100 valid, M=86.1%, SD=15.7%
+BVMT Total (sum trials 1-3): M=28.2, SD=5.1
+BVMT Percent Retained: M=96.7%, SD=9.0%
+RPM score extracted
+
+Converting raw scores to T-scores (M=50, SD=10)...
+  RAVLT_T              M=50.0, SD=10.1
+  RAVLT_Pct_Ret_T      M=50.0, SD=10.1
+  BVMT_T               M=50.0, SD=10.1
+  BVMT_Pct_Ret_T       M=50.0, SD=10.1
+  RPM_T                M=50.0, SD=10.1
+Cognitive test data shape: (100, 6)
+Available columns: ['UID', 'RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']
+
+[STEP 4] Merging domain theta scores with cognitive tests...
+Merged dataset shape: (300, 9)
+Unique participants: 100
+Domains: {'What': 100, 'Where': 100, 'When': 100}
+No missing values in merged dataset
+Merged dataset saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step01_merged_dataset.csv
+
+[STEP 5] Calculating descriptive statistics...
+What: n=100, mean=-0.007, sd=0.638
+Where: n=100, mean=0.037, sd=0.671
+When: n=100, mean=0.109, sd=0.282
+Descriptive statistics saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step01_descriptive_stats.csv
+
+Checking for outliers (IQR method)...
+What: 1 outliers detected (bounds: [-1.705, 1.655])
+Where: 1 outliers detected (bounds: [-1.725, 1.764])
+When: No outliers detected
+
+Step 01 completed successfully
+Created 300 records (100 participants × 3 domains)

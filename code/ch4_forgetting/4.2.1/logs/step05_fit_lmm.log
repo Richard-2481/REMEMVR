@@ -1,0 +1,76 @@
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+Step 05: Fit LMM Trajectory Models
+============================================================
+
+Loading LMM input data from step04...
+step04_lmm_input.csv (1200 rows, 6 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'domain', 'theta']
+  Unique UIDs: 100
+  Domains: ['what', 'when', 'where']
+  TSVR_hours range: 1.0 - 246.2
+
+Preparing data for LMM tool...
+  Created time variables: Days, Days_sq, log_Days
+  Days range: 0.04 - 10.26
+  Factor levels: ['What', 'When', 'Where']
+
+Running compare_lmm_models_by_aic...
+  n_factors: 3 (what, where, when)
+  reference_group: 'What' (treatment coding)
+  groups: 'UID' (random effects grouping)
+Fitting Linear model...
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq1/results/lmm_Linear.pkl
+Fitting Quadratic model...
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq1/results/lmm_Quadratic.pkl
+Fitting Log model...
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq1/results/lmm_Log.pkl
+Fitting Lin+Log model...
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq1/results/lmm_Lin+Log.pkl
+Fitting Quad+Log model...
+  Model saved to /home/etai/projects/REMEMVR/results/ch5/rq1/results/lmm_Quad+Log.pkl
+Model comparison complete
+
+Best model: Log
+  AIC: 2523.36
+  BIC: 2574.26
+  Log-Likelihood: -1251.68
+
+Saved AIC comparison: /home/etai/projects/REMEMVR/results/ch5/rq1/results/step05_lmm_model_comparison.csv
+  5 models compared
+  AIC Comparison Table:
+    Log: AIC=2523.36, delta=0.00, weight=0.917
+    Lin+Log: AIC=2528.39, delta=5.03, weight=0.074
+    Quad+Log: AIC=2532.77, delta=9.41, weight=0.008
+    Quadratic: AIC=2537.55, delta=14.18, weight=0.001
+    Linear: AIC=2581.09, delta=57.73, weight=0.000
+Saved model summary: /home/etai/projects/REMEMVR/results/ch5/rq1/results/step05_lmm_model_summary.txt
+Saved fitted model: /home/etai/projects/REMEMVR/results/ch5/rq1/data/step05_lmm_fitted_model.pkl
+
+Running validate_lmm_convergence...
+  converged: True
+  message: LMM converged successfully
+
+Additional checks:
+  Converged models: 5/5
+  Random effects variance: 0.2923
+  Fixed effects: All 9 estimates are finite
+
+============================================================
+Step 05 complete
+============================================================
+
+Outputs:
+  - /home/etai/projects/REMEMVR/results/ch5/rq1/results/step05_lmm_model_comparison.csv
+  - /home/etai/projects/REMEMVR/results/ch5/rq1/results/step05_lmm_model_summary.txt
+  - /home/etai/projects/REMEMVR/results/ch5/rq1/data/step05_lmm_fitted_model.pkl
+
+Best Model: Log
+  Formula: Ability ~ Days * C(Factor, Treatment('What'))
+  AIC: 2523.36

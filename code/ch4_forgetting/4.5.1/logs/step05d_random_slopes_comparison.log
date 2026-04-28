@@ -1,0 +1,40 @@
+================================================================================
+Random Slopes Testing (Section 4.4 MANDATORY CHECK)
+================================================================================
+
+Loading LMM input data...
+  ✓ Loaded 800 observations
+  ✓ Participants: 100
+  ✓ LocationTypes: ['source', 'destination']
+
+Defining two model specifications...
+  Model: Logarithmic (competitive with best Quadratic, ΔAIC=0.34)
+  Formula: theta ~ log_Days_plus1 * LocationType
+
+  Variant 1: Intercepts-only (re_formula='~1')
+  Variant 2: Intercepts+slopes (re_formula='~log_Days_plus1')
+
+Intercepts-only...
+  Random effects: ~1
+  ✗ FAILED: Singular matrix
+
+Intercepts+slopes...
+  Random effects: ~log_Days_plus1
+  ✓ Converged: True
+  ✓ AIC: 1747.77
+  ✓ BIC: 1785.24
+  ✓ Intercept variance: 0.2616
+  ✓ Slope variance: 0.0437
+
+⚠ WARNING: Model fitting failed, cannot compare AIC
+
+Comparison saved: step05d_random_slopes_comparison.csv
+
+================================================================================
+Random slopes testing complete
+================================================================================
+
+NEXT STEPS:
+1. Update validation.md with findings
+2. Document in summary.md Section 1 (Model Selection)
+3. Proceed with power analysis for NULL main effect

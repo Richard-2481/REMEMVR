@@ -1,0 +1,9 @@
+metric,value
+n_outliers,7
+threshold_sd,2.5
+r_original,0.21351443398554756
+p_original,0.03292784777779375
+r_clean,0.14949160588768312
+p_clean,0.15266040734635086
+delta_r,-0.06402282809786444
+robust_to_outliers,False

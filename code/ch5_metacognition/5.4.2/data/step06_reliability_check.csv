@@ -1,0 +1,9 @@
+metric,value
+r_xx_confidence,0.87
+r_yy_accuracy,0.83
+r_xy,0.5554303570815141
+r_diff,0.6625950458171448
+threshold,0.7
+adequate,False
+interpretation,MARGINAL
+robustness,SENSITIVE TO ASSUMPTIONS

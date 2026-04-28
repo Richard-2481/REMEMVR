@@ -1,0 +1,300 @@
+2025-12-30 09:56:18,716 - INFO - ================================================================================
+2025-12-30 09:56:18,717 - INFO - RQ 6.5.3 - GEE Validation for High-Confidence Errors
+2025-12-30 09:56:18,717 - INFO - ================================================================================
+2025-12-30 09:56:19,402 - INFO - ✓ Imported statsmodels GEE modules
+2025-12-30 09:56:19,402 - INFO - 
+================================================================================
+2025-12-30 09:56:19,402 - INFO - STEP 1: Load HCE Data
+2025-12-30 09:56:19,402 - INFO - ================================================================================
+2025-12-30 09:56:19,408 - INFO - ✓ Loaded 7,200 item-responses from data/step01_hce_flags.csv
+2025-12-30 09:56:19,409 - INFO -   Columns: UID, ItemID, Test, TSVR, Paradigm, Item, Congruence, Accuracy, Confidence, HCE_flag
+2025-12-30 09:56:19,411 - INFO -   Participants: 100
+2025-12-30 09:56:19,411 - INFO -   HCE events: 358 (4.97%)
+2025-12-30 09:56:19,411 - INFO - 
+================================================================================
+2025-12-30 09:56:19,411 - INFO - STEP 2: Prepare Data for GEE
+2025-12-30 09:56:19,411 - INFO - ================================================================================
+2025-12-30 09:56:19,413 - INFO - ✓ Created Days variable from Test (0, 1, 3, 6)
+2025-12-30 09:56:19,414 - INFO - ✓ Created dummy variables (reference: Common)
+2025-12-30 09:56:19,414 - INFO -   Common: n=2,400
+2025-12-30 09:56:19,415 - INFO -   Congruent: n=2,400
+2025-12-30 09:56:19,415 - INFO -   Incongruent: n=2,400
+2025-12-30 09:56:19,415 - INFO - ✓ Created interaction terms
+2025-12-30 09:56:19,417 - INFO - ✓ Sorted by UID for GEE clustering
+2025-12-30 09:56:19,418 - INFO - ✓ Design matrix: 7200 observations × 6 predictors
+2025-12-30 09:56:19,418 - INFO - 
+================================================================================
+2025-12-30 09:56:19,419 - INFO - STEP 3: Fit GEE Model
+2025-12-30 09:56:19,419 - INFO - ================================================================================
+2025-12-30 09:56:19,419 - INFO - Model specification:
+2025-12-30 09:56:19,419 - INFO -   Family: Binomial (logit link)
+2025-12-30 09:56:19,419 - INFO -   Correlation: Exchangeable
+2025-12-30 09:56:19,419 - INFO -   Clustering: By participant (UID)
+2025-12-30 09:56:19,424 - INFO - Fitting GEE model...
+2025-12-30 09:56:19,443 - INFO - ✓ GEE model converged successfully
+2025-12-30 09:56:19,443 - INFO - 
+================================================================================
+2025-12-30 09:56:19,443 - INFO - STEP 4: Extract Fixed Effect Estimates
+2025-12-30 09:56:19,443 - INFO - ================================================================================
+2025-12-30 09:56:19,444 - INFO - ✓ Saved fixed effect estimates to data/step03b_gee_results.csv
+2025-12-30 09:56:19,445 - INFO - 
+Fixed Effect Estimates:
+2025-12-30 09:56:19,445 - INFO - ----------------------------------------------------------------------------------------------------
+2025-12-30 09:56:19,445 - INFO - Intercept (Common at Day 0)    β= -3.0986 SE= 0.1751 z=-17.695 p=0.000000 ***
+2025-12-30 09:56:19,445 - INFO - Congruent vs Common            β=  0.0845 SE= 0.2196 z=  0.385 p=0.700500 ns
+2025-12-30 09:56:19,445 - INFO - Incongruent vs Common          β=  0.3781 SE= 0.1981 z=  1.908 p=0.056338 ns
+2025-12-30 09:56:19,445 - INFO - Time (Days)                    β= -0.0193 SE= 0.0483 z= -0.399 p=0.690216 ns
+2025-12-30 09:56:19,445 - INFO - Congruent × Time               β=  0.0626 SE= 0.0649 z=  0.964 p=0.335071 ns
+2025-12-30 09:56:19,445 - INFO - Incongruent × Time             β= -0.0255 SE= 0.0541 z= -0.471 p=0.637746 ns
+2025-12-30 09:56:19,446 - INFO - 
+================================================================================
+2025-12-30 09:56:19,446 - INFO - STEP 5: Post-Hoc Pairwise Contrasts
+2025-12-30 09:56:19,446 - INFO - ================================================================================
+2025-12-30 09:56:19,447 - INFO - ✓ Saved post-hoc contrasts to data/step03b_gee_contrasts.csv
+2025-12-30 09:56:19,447 - INFO - 
+Pairwise Contrasts (Bonferroni correction for 3 tests):
+2025-12-30 09:56:19,447 - INFO - --------------------------------------------------------------------------------------------------------------
+2025-12-30 09:56:19,447 - INFO - Contrast                         Estimate       SE        z   p_uncorr     p_bonf   Sig
+2025-12-30 09:56:19,448 - INFO - --------------------------------------------------------------------------------------------------------------
+2025-12-30 09:56:19,448 - INFO - Incongruent vs Common              0.3781   0.1981    1.908   0.056338   0.169014    ns
+2025-12-30 09:56:19,448 - INFO - Congruent vs Common                0.0845   0.2196    0.385   0.700500   1.000000    ns
+2025-12-30 09:56:19,448 - INFO - Incongruent vs Congruent           0.2936   0.2958    0.993   0.320889   0.962666    ns
+2025-12-30 09:56:19,448 - INFO - 
+================================================================================
+2025-12-30 09:56:19,448 - INFO - STEP 6: Save Full Model Summary
+2025-12-30 09:56:19,448 - INFO - ================================================================================
+2025-12-30 09:56:19,452 - INFO - ✓ Saved full model summary to data/step03b_gee_model_summary.txt
+2025-12-30 09:56:19,452 - INFO - 
+================================================================================
+2025-12-30 09:56:19,453 - INFO - STEP 7: Compare GEE vs LPM Results
+2025-12-30 09:56:19,453 - INFO - ================================================================================
+2025-12-30 09:56:19,453 - INFO - LPM Results (from original analysis):
+2025-12-30 09:56:19,454 - INFO -                                                 Effect        Type  Estimate       SE   z_value  p_value
+       C(Congruence, Treatment('Common'))[T.Congruent]  Congruence  0.003492 0.009138  0.382166 0.702338
+     C(Congruence, Treatment('Common'))[T.Incongruent]  Congruence  0.018452 0.009138  2.019399 0.043446
+                                                  Time        Time -0.000754 0.001917 -0.393287 0.694107
+  C(Congruence, Treatment('Common'))[T.Congruent]:Time Interaction  0.002937 0.002695  1.089808 0.275798
+C(Congruence, Treatment('Common'))[T.Incongruent]:Time Interaction -0.001548 0.002695 -0.574358 0.565725
+2025-12-30 09:56:19,454 - INFO - 
+Key Comparison (Incongruent vs Common):
+2025-12-30 09:56:19,454 - INFO -   LPM: p_uncorrected = 0.043, p_bonferroni = .130
+2025-12-30 09:56:19,454 - INFO -   GEE: p_uncorrected = 0.056338, p_bonferroni = 0.169014
+2025-12-30 09:56:19,455 - INFO -   → GEE confirms NULL result (consistent with LPM)
+2025-12-30 09:56:19,455 - INFO - 
+================================================================================
+2025-12-30 09:56:19,455 - INFO - SUMMARY: GEE Validation Complete
+2025-12-30 09:56:19,455 - INFO - ================================================================================
+2025-12-30 09:56:19,455 - INFO - ✓ GEE model converged successfully
+2025-12-30 09:56:19,455 - INFO - ✓ Fixed effects: 6 parameters estimated
+2025-12-30 09:56:19,455 - INFO - ✓ Post-hoc contrasts: 3 pairwise comparisons with Bonferroni correction
+2025-12-30 09:56:19,455 - INFO - ✓ NULL RESULT confirmed: No contrasts significant after Bonferroni correction
+2025-12-30 09:56:19,455 - INFO - 
+Files created:
+2025-12-30 09:56:19,455 - INFO -   1. data/step03b_gee_results.csv (fixed effect estimates)
+2025-12-30 09:56:19,455 - INFO -   2. data/step03b_gee_contrasts.csv (post-hoc contrasts)
+2025-12-30 09:56:19,456 - INFO -   3. data/step03b_gee_model_summary.txt (full model summary)
+2025-12-30 09:56:19,456 - INFO -   4. logs/step03b_gee_validation.log (analysis log)
+2025-12-30 09:56:19,456 - INFO - 
+================================================================================
+2025-12-30 09:56:19,456 - INFO - GEE VALIDATION COMPLETE
+2025-12-30 09:56:19,456 - INFO - ================================================================================
+2026-01-17 14:16:32,138 - INFO - ================================================================================
+2026-01-17 14:16:32,138 - INFO - RQ 6.5.3 - GEE Validation for High-Confidence Errors
+2026-01-17 14:16:32,138 - INFO - ================================================================================
+2026-01-17 14:16:32,639 - INFO - ✓ Imported statsmodels GEE modules
+2026-01-17 14:16:32,639 - INFO - 
+================================================================================
+2026-01-17 14:16:32,639 - INFO - STEP 1: Load HCE Data
+2026-01-17 14:16:32,639 - INFO - ================================================================================
+2026-01-17 14:16:32,645 - INFO - ✓ Loaded 7,200 item-responses from data/step01_hce_flags.csv
+2026-01-17 14:16:32,645 - INFO -   Columns: UID, ItemID, Test, TSVR, Paradigm, Item, Congruence, Accuracy, Confidence, HCE_flag
+2026-01-17 14:16:32,645 - INFO -   Participants: 100
+2026-01-17 14:16:32,646 - INFO -   HCE events: 358 (4.97%)
+2026-01-17 14:16:32,646 - INFO - 
+================================================================================
+2026-01-17 14:16:32,646 - INFO - STEP 2: Prepare Data for GEE
+2026-01-17 14:16:32,646 - INFO - ================================================================================
+2026-01-17 14:16:32,646 - INFO - ✓ Created Days variable from Test (0, 1, 3, 6)
+2026-01-17 14:16:32,647 - INFO - ✓ Created dummy variables (reference: Common)
+2026-01-17 14:16:32,647 - INFO -   Common: n=2,400
+2026-01-17 14:16:32,648 - INFO -   Congruent: n=2,400
+2026-01-17 14:16:32,648 - INFO -   Incongruent: n=2,400
+2026-01-17 14:16:32,649 - INFO - ✓ Created interaction terms
+2026-01-17 14:16:32,651 - INFO - ✓ Sorted by UID for GEE clustering
+2026-01-17 14:16:32,652 - INFO - ✓ Design matrix: 7200 observations × 6 predictors
+2026-01-17 14:16:32,652 - INFO - 
+================================================================================
+2026-01-17 14:16:32,652 - INFO - STEP 3: Fit GEE Model
+2026-01-17 14:16:32,652 - INFO - ================================================================================
+2026-01-17 14:16:32,652 - INFO - Model specification:
+2026-01-17 14:16:32,652 - INFO -   Family: Binomial (logit link)
+2026-01-17 14:16:32,652 - INFO -   Correlation: Exchangeable
+2026-01-17 14:16:32,652 - INFO -   Clustering: By participant (UID)
+2026-01-17 14:16:32,655 - INFO - Fitting GEE model...
+2026-01-17 14:16:32,676 - INFO - ✓ GEE model converged successfully
+2026-01-17 14:16:32,676 - INFO - 
+================================================================================
+2026-01-17 14:16:32,676 - INFO - STEP 4: Extract Fixed Effect Estimates
+2026-01-17 14:16:32,676 - INFO - ================================================================================
+2026-01-17 14:16:32,679 - INFO - ✓ Saved fixed effect estimates to data/step03b_gee_results.csv
+2026-01-17 14:16:32,679 - INFO - 
+Fixed Effect Estimates:
+2026-01-17 14:16:32,679 - INFO - ----------------------------------------------------------------------------------------------------
+2026-01-17 14:16:32,679 - INFO - Intercept (Common at Day 0)    β= -3.0986 SE= 0.1751 z=-17.695 p=0.000000 ***
+2026-01-17 14:16:32,679 - INFO - Congruent vs Common            β=  0.0845 SE= 0.2196 z=  0.385 p=0.700500 ns
+2026-01-17 14:16:32,680 - INFO - Incongruent vs Common          β=  0.3781 SE= 0.1981 z=  1.908 p=0.056338 ns
+2026-01-17 14:16:32,680 - INFO - Time (Days)                    β= -0.0193 SE= 0.0483 z= -0.399 p=0.690216 ns
+2026-01-17 14:16:32,680 - INFO - Congruent × Time               β=  0.0626 SE= 0.0649 z=  0.964 p=0.335071 ns
+2026-01-17 14:16:32,680 - INFO - Incongruent × Time             β= -0.0255 SE= 0.0541 z= -0.471 p=0.637746 ns
+2026-01-17 14:16:32,680 - INFO - 
+================================================================================
+2026-01-17 14:16:32,680 - INFO - STEP 5: Post-Hoc Pairwise Contrasts
+2026-01-17 14:16:32,680 - INFO - ================================================================================
+2026-01-17 14:16:32,682 - INFO - ✓ Saved post-hoc contrasts to data/step03b_gee_contrasts.csv
+2026-01-17 14:16:32,682 - INFO - 
+Pairwise Contrasts (Bonferroni correction for 3 tests):
+2026-01-17 14:16:32,682 - INFO - --------------------------------------------------------------------------------------------------------------
+2026-01-17 14:16:32,682 - INFO - Contrast                         Estimate       SE        z   p_uncorr     p_bonf   Sig
+2026-01-17 14:16:32,682 - INFO - --------------------------------------------------------------------------------------------------------------
+2026-01-17 14:16:32,683 - INFO - Incongruent vs Common              0.3781   0.1981    1.908   0.056338   0.169014    ns
+2026-01-17 14:16:32,683 - INFO - Congruent vs Common                0.0845   0.2196    0.385   0.700500   1.000000    ns
+2026-01-17 14:16:32,683 - INFO - Incongruent vs Congruent           0.2936   0.2958    0.993   0.320889   0.962666    ns
+2026-01-17 14:16:32,683 - INFO - 
+================================================================================
+2026-01-17 14:16:32,683 - INFO - STEP 6: Save Full Model Summary
+2026-01-17 14:16:32,683 - INFO - ================================================================================
+2026-01-17 14:16:32,688 - INFO - ✓ Saved full model summary to data/step03b_gee_model_summary.txt
+2026-01-17 14:16:32,688 - INFO - 
+================================================================================
+2026-01-17 14:16:32,689 - INFO - STEP 7: Compare GEE vs LPM Results
+2026-01-17 14:16:32,689 - INFO - ================================================================================
+2026-01-17 14:16:32,689 - INFO - LPM Results (from original analysis):
+2026-01-17 14:16:32,690 - INFO -                                                 Effect        Type  Estimate       SE   z_value  p_value
+       C(Congruence, Treatment('Common'))[T.Congruent]  Congruence  0.003492 0.009138  0.382166 0.702338
+     C(Congruence, Treatment('Common'))[T.Incongruent]  Congruence  0.018452 0.009138  2.019399 0.043446
+                                                  Time        Time -0.000754 0.001917 -0.393287 0.694107
+  C(Congruence, Treatment('Common'))[T.Congruent]:Time Interaction  0.002937 0.002695  1.089808 0.275798
+C(Congruence, Treatment('Common'))[T.Incongruent]:Time Interaction -0.001548 0.002695 -0.574358 0.565725
+2026-01-17 14:16:32,691 - INFO - 
+Key Comparison (Incongruent vs Common):
+2026-01-17 14:16:32,691 - INFO -   LPM: p_uncorrected = 0.043, p_bonferroni = .130
+2026-01-17 14:16:32,691 - INFO -   GEE: p_uncorrected = 0.056338, p_bonferroni = 0.169014
+2026-01-17 14:16:32,691 - INFO -   → GEE confirms NULL result (consistent with LPM)
+2026-01-17 14:16:32,691 - INFO - 
+================================================================================
+2026-01-17 14:16:32,691 - INFO - SUMMARY: GEE Validation Complete
+2026-01-17 14:16:32,691 - INFO - ================================================================================
+2026-01-17 14:16:32,692 - INFO - ✓ GEE model converged successfully
+2026-01-17 14:16:32,692 - INFO - ✓ Fixed effects: 6 parameters estimated
+2026-01-17 14:16:32,692 - INFO - ✓ Post-hoc contrasts: 3 pairwise comparisons with Bonferroni correction
+2026-01-17 14:16:32,692 - INFO - ✓ NULL RESULT confirmed: No contrasts significant after Bonferroni correction
+2026-01-17 14:16:32,692 - INFO - 
+Files created:
+2026-01-17 14:16:32,692 - INFO -   1. data/step03b_gee_results.csv (fixed effect estimates)
+2026-01-17 14:16:32,692 - INFO -   2. data/step03b_gee_contrasts.csv (post-hoc contrasts)
+2026-01-17 14:16:32,692 - INFO -   3. data/step03b_gee_model_summary.txt (full model summary)
+2026-01-17 14:16:32,692 - INFO -   4. logs/step03b_gee_validation.log (analysis log)
+2026-01-17 14:16:32,693 - INFO - 
+================================================================================
+2026-01-17 14:16:32,693 - INFO - GEE VALIDATION COMPLETE
+2026-01-17 14:16:32,693 - INFO - ================================================================================
+2026-01-17 14:30:37,694 - INFO - ================================================================================
+2026-01-17 14:30:37,694 - INFO - RQ 6.5.3 - GEE Validation for High-Confidence Errors
+2026-01-17 14:30:37,694 - INFO - ================================================================================
+2026-01-17 14:30:38,139 - INFO - ✓ Imported statsmodels GEE modules
+2026-01-17 14:30:38,139 - INFO - 
+================================================================================
+2026-01-17 14:30:38,139 - INFO - STEP 1: Load HCE Data
+2026-01-17 14:30:38,139 - INFO - ================================================================================
+2026-01-17 14:30:38,146 - INFO - ✓ Loaded 7,200 item-responses from data/step01_hce_flags.csv
+2026-01-17 14:30:38,147 - INFO -   Columns: UID, ItemID, Test, TSVR, Paradigm, Item, Congruence, Accuracy, Confidence, HCE_flag
+2026-01-17 14:30:38,147 - INFO -   Participants: 100
+2026-01-17 14:30:38,147 - INFO -   HCE events: 358 (4.97%)
+2026-01-17 14:30:38,147 - INFO - 
+================================================================================
+2026-01-17 14:30:38,147 - INFO - STEP 2: Prepare Data for GEE
+2026-01-17 14:30:38,147 - INFO - ================================================================================
+2026-01-17 14:30:38,148 - INFO - ✓ Created Days variable from Test (0, 1, 3, 6)
+2026-01-17 14:30:38,149 - INFO - ✓ Created dummy variables (reference: Common)
+2026-01-17 14:30:38,149 - INFO -   Common: n=2,400
+2026-01-17 14:30:38,150 - INFO -   Congruent: n=2,400
+2026-01-17 14:30:38,150 - INFO -   Incongruent: n=2,400
+2026-01-17 14:30:38,151 - INFO - ✓ Created interaction terms
+2026-01-17 14:30:38,153 - INFO - ✓ Sorted by UID for GEE clustering
+2026-01-17 14:30:38,154 - INFO - ✓ Design matrix: 7200 observations × 6 predictors
+2026-01-17 14:30:38,155 - INFO - 
+================================================================================
+2026-01-17 14:30:38,155 - INFO - STEP 3: Fit GEE Model
+2026-01-17 14:30:38,155 - INFO - ================================================================================
+2026-01-17 14:30:38,155 - INFO - Model specification:
+2026-01-17 14:30:38,155 - INFO -   Family: Binomial (logit link)
+2026-01-17 14:30:38,155 - INFO -   Correlation: Exchangeable
+2026-01-17 14:30:38,155 - INFO -   Clustering: By participant (UID)
+2026-01-17 14:30:38,159 - INFO - Fitting GEE model...
+2026-01-17 14:30:38,178 - INFO - ✓ GEE model converged successfully
+2026-01-17 14:30:38,178 - INFO - 
+================================================================================
+2026-01-17 14:30:38,178 - INFO - STEP 4: Extract Fixed Effect Estimates
+2026-01-17 14:30:38,178 - INFO - ================================================================================
+2026-01-17 14:30:38,180 - INFO - ✓ Saved fixed effect estimates to data/step03b_gee_results.csv
+2026-01-17 14:30:38,180 - INFO - 
+Fixed Effect Estimates:
+2026-01-17 14:30:38,181 - INFO - ----------------------------------------------------------------------------------------------------
+2026-01-17 14:30:38,181 - INFO - Intercept (Common at Day 0)    β= -3.0986 SE= 0.1751 z=-17.695 p=0.000000 ***
+2026-01-17 14:30:38,181 - INFO - Congruent vs Common            β=  0.0845 SE= 0.2196 z=  0.385 p=0.700500 ns
+2026-01-17 14:30:38,181 - INFO - Incongruent vs Common          β=  0.3781 SE= 0.1981 z=  1.908 p=0.056338 ns
+2026-01-17 14:30:38,181 - INFO - Time (Days)                    β= -0.0193 SE= 0.0483 z= -0.399 p=0.690216 ns
+2026-01-17 14:30:38,181 - INFO - Congruent × Time               β=  0.0626 SE= 0.0649 z=  0.964 p=0.335071 ns
+2026-01-17 14:30:38,181 - INFO - Incongruent × Time             β= -0.0255 SE= 0.0541 z= -0.471 p=0.637746 ns
+2026-01-17 14:30:38,181 - INFO - 
+================================================================================
+2026-01-17 14:30:38,181 - INFO - STEP 5: Post-Hoc Pairwise Contrasts
+2026-01-17 14:30:38,181 - INFO - ================================================================================
+2026-01-17 14:30:38,184 - INFO - ✓ Saved post-hoc contrasts to data/step03b_gee_contrasts.csv
+2026-01-17 14:30:38,184 - INFO - 
+Pairwise Contrasts (Bonferroni correction for 3 tests):
+2026-01-17 14:30:38,184 - INFO - --------------------------------------------------------------------------------------------------------------
+2026-01-17 14:30:38,184 - INFO - Contrast                         Estimate       SE        z   p_uncorr     p_bonf   Sig
+2026-01-17 14:30:38,184 - INFO - --------------------------------------------------------------------------------------------------------------
+2026-01-17 14:30:38,184 - INFO - Incongruent vs Common              0.3781   0.1981    1.908   0.056338   0.169014    ns
+2026-01-17 14:30:38,184 - INFO - Congruent vs Common                0.0845   0.2196    0.385   0.700500   1.000000    ns
+2026-01-17 14:30:38,184 - INFO - Incongruent vs Congruent           0.2936   0.2958    0.993   0.320889   0.962666    ns
+2026-01-17 14:30:38,184 - INFO - 
+================================================================================
+2026-01-17 14:30:38,184 - INFO - STEP 6: Save Full Model Summary
+2026-01-17 14:30:38,184 - INFO - ================================================================================
+2026-01-17 14:30:38,189 - INFO - ✓ Saved full model summary to data/step03b_gee_model_summary.txt
+2026-01-17 14:30:38,189 - INFO - 
+================================================================================
+2026-01-17 14:30:38,189 - INFO - STEP 7: Compare GEE vs LPM Results
+2026-01-17 14:30:38,189 - INFO - ================================================================================
+2026-01-17 14:30:38,190 - INFO - LPM Results (from original analysis):
+2026-01-17 14:30:38,191 - INFO -                                                 Effect        Type  Estimate       SE   z_value  p_value
+       C(Congruence, Treatment('Common'))[T.Congruent]  Congruence  0.003492 0.009138  0.382166 0.702338
+     C(Congruence, Treatment('Common'))[T.Incongruent]  Congruence  0.018452 0.009138  2.019399 0.043446
+                                                  Time        Time -0.000754 0.001917 -0.393287 0.694107
+  C(Congruence, Treatment('Common'))[T.Congruent]:Time Interaction  0.002937 0.002695  1.089808 0.275798
+C(Congruence, Treatment('Common'))[T.Incongruent]:Time Interaction -0.001548 0.002695 -0.574358 0.565725
+2026-01-17 14:30:38,191 - INFO - 
+Key Comparison (Incongruent vs Common):
+2026-01-17 14:30:38,191 - INFO -   LPM: p_uncorrected = 0.043, p_bonferroni = .130
+2026-01-17 14:30:38,191 - INFO -   GEE: p_uncorrected = 0.056338, p_bonferroni = 0.169014
+2026-01-17 14:30:38,191 - INFO -   → GEE confirms NULL result (consistent with LPM)
+2026-01-17 14:30:38,191 - INFO - 
+================================================================================
+2026-01-17 14:30:38,191 - INFO - SUMMARY: GEE Validation Complete
+2026-01-17 14:30:38,191 - INFO - ================================================================================
+2026-01-17 14:30:38,191 - INFO - ✓ GEE model converged successfully
+2026-01-17 14:30:38,191 - INFO - ✓ Fixed effects: 6 parameters estimated
+2026-01-17 14:30:38,191 - INFO - ✓ Post-hoc contrasts: 3 pairwise comparisons with Bonferroni correction
+2026-01-17 14:30:38,191 - INFO - ✓ NULL RESULT confirmed: No contrasts significant after Bonferroni correction
+2026-01-17 14:30:38,192 - INFO - 
+Files created:
+2026-01-17 14:30:38,192 - INFO -   1. data/step03b_gee_results.csv (fixed effect estimates)
+2026-01-17 14:30:38,192 - INFO -   2. data/step03b_gee_contrasts.csv (post-hoc contrasts)
+2026-01-17 14:30:38,192 - INFO -   3. data/step03b_gee_model_summary.txt (full model summary)
+2026-01-17 14:30:38,192 - INFO -   4. logs/step03b_gee_validation.log (analysis log)
+2026-01-17 14:30:38,192 - INFO - 
+================================================================================
+2026-01-17 14:30:38,192 - INFO - GEE VALIDATION COMPLETE
+2026-01-17 14:30:38,192 - INFO - ================================================================================

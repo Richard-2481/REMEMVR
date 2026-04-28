@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ===============================================================================
-RQ 5.2.3 - Random Slopes Comparison (MANDATORY PLATINUM REQUIREMENT)
+RQ 5.2.3 - Random Slopes Comparison (MANDATORY VALIDATION REQUIREMENT)
 ===============================================================================
 
 PURPOSE:
@@ -42,9 +42,7 @@ import pandas as pd
 import statsmodels.formula.api as smf
 import pickle
 
-# ==============================================================================
 # PATHS
-# ==============================================================================
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 RQ_DIR = PROJECT_ROOT / "results" / "ch5" / "5.2.3"
 DATA_DIR = RQ_DIR / "data"
@@ -56,9 +54,7 @@ LOG_FILE = LOG_DIR / "step02_random_slopes_comparison.log"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-# ==============================================================================
 # LOGGING SETUP
-# ==============================================================================
 class Logger:
     def __init__(self, log_path: Path):
         self.log_path = log_path
@@ -75,9 +71,7 @@ class Logger:
 logger = Logger(LOG_FILE)
 log = logger.log
 
-# ==============================================================================
 # MAIN PROCESSING
-# ==============================================================================
 def main():
     log("=" * 70)
     log("RANDOM SLOPES COMPARISON - RQ 5.2.3")
@@ -95,9 +89,6 @@ def main():
     log("         documents and validates that decision.")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 1: Load Data
-    # -------------------------------------------------------------------------
     log("[STEP 1] Load LMM Input Data")
     log("-" * 70)
 
@@ -116,17 +107,14 @@ def main():
                "Age_c:domain + "
                "TSVR_hours:Age_c:domain + log_TSVR:Age_c:domain")
 
-    log("[INFO] Model formula: Full 3-way Age × Domain × Time interaction")
+    log("Model formula: Full 3-way Age × Domain × Time interaction")
     log("       (13 fixed effects terms with Linear+Log time effects)")
     log("       TSVR_hours (linear) + log_TSVR (logarithmic)")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 2: Fit Model A - Intercepts Only
-    # -------------------------------------------------------------------------
     log("[STEP 2] Fit Model A: Random Intercepts Only (Current Implementation)")
     log("-" * 70)
-    log("[INFO] This is the model currently used in results/summary.md")
+    log("This is the model currently used in results/summary.md")
     log("")
 
     try:
@@ -138,7 +126,7 @@ def main():
         )
         result_A = model_A.fit(method='lbfgs', maxiter=500, reml=False)  # Use ML for AIC comparison
 
-        log(f"[SUCCESS] Model A converged: {result_A.converged}")
+        log(f"Model A converged: {result_A.converged}")
         log(f"  Log-Likelihood: {result_A.llf:.2f}")
         log(f"  AIC: {result_A.aic:.2f}")
         log(f"  BIC: {result_A.bic:.2f}")
@@ -150,20 +138,17 @@ def main():
         model_A_success = True
 
     except Exception as e:
-        log(f"[FAIL] Model A fitting failed: {e}")
+        log(f"Model A fitting failed: {e}")
         log(traceback.format_exc())
         model_A_success = False
         result_A = None
 
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 3: Fit Model B - Intercepts + Slopes
-    # -------------------------------------------------------------------------
     log("[STEP 3] Fit Model B: Random Intercepts + Slopes for TSVR_hours")
     log("-" * 70)
-    log("[INFO] Testing if individual differences in linear forgetting rate exist")
-    log("[INFO] This was the ORIGINAL plan specification (2_plan.md line 316)")
+    log("Testing if individual differences in linear forgetting rate exist")
+    log("This was the ORIGINAL plan specification (2_plan.md line 316)")
     log("")
 
     try:
@@ -175,7 +160,7 @@ def main():
         )
         result_B = model_B.fit(method='lbfgs', maxiter=500, reml=False)  # Use ML for AIC comparison
 
-        log(f"[SUCCESS] Model B converged: {result_B.converged}")
+        log(f"Model B converged: {result_B.converged}")
         log(f"  Log-Likelihood: {result_B.llf:.2f}")
         log(f"  AIC: {result_B.aic:.2f}")
         log(f"  BIC: {result_B.bic:.2f}")
@@ -194,7 +179,7 @@ def main():
             log(f"  Intercept-slope covariance: {covariance:.4f}")
             log(f"  Intercept-slope correlation: {correlation:.3f}")
         else:
-            log(f"  [WARNING] Random slope variance not estimated (singular covariance)")
+            log(f"  Random slope variance not estimated (singular covariance)")
             slope_var = 0.0
             slope_sd = 0.0
 
@@ -205,12 +190,12 @@ def main():
         model_B_success = True
 
     except Exception as e:
-        log(f"[FAIL] Model B fitting failed: {e}")
+        log(f"Model B fitting failed: {e}")
         log("")
-        log("[DIAGNOSTIC] Error details:")
+        log("Error details:")
         log(traceback.format_exc())
         log("")
-        log("[INTERPRETATION] Convergence failure matches summary.md documentation:")
+        log("Convergence failure matches summary.md documentation:")
         log("  'Complex fixed effects (11 terms) + reduced sample (800 vs 1200 rows)")
         log("   due to When exclusion + random slopes = over-parameterization'")
         log("")
@@ -224,25 +209,22 @@ def main():
 
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 4: Compare Models via AIC
-    # -------------------------------------------------------------------------
     log("[STEP 4] Model Comparison via AIC")
     log("-" * 70)
 
     if not model_A_success or not model_B_success:
-        log("[RESULT] Cannot compare models - one or both failed to converge")
+        log("Cannot compare models - one or both failed to converge")
         log("")
 
         if not model_B_success and model_A_success:
-            log("[FINDING] Model B (slopes) FAILED TO CONVERGE (as documented)")
+            log("Model B (slopes) FAILED TO CONVERGE (as documented)")
             log("")
-            log("[VALIDATION] This confirms the original decision:")
+            log("This confirms the original decision:")
             log("  - Plan specified: Random slopes model (2_plan.md line 316)")
             log("  - Execution used: Intercepts-only (step02_fit_lmm.py line 182)")
             log("  - Reason: Convergence failure with 2-domain data (summary.md)")
             log("")
-            log("[DECISION] Intercepts-only model JUSTIFIED by necessity")
+            log("Intercepts-only model JUSTIFIED by necessity")
             log("           (data insufficient for slopes estimation)")
 
         # Create minimal comparison table
@@ -271,21 +253,21 @@ def main():
         log("")
 
         if delta_aic > 2:
-            log(f"[RESULT] ΔAIC = {delta_aic:.2f} > 2 → Model B (slopes) preferred")
+            log(f"ΔAIC = {delta_aic:.2f} > 2 → Model B (slopes) preferred")
             log(f"         Individual differences in linear forgetting rate CONFIRMED")
             outcome = "OPTION_A_SLOPES_IMPROVE"
             interpretation = f"Random slope variance = {slope_var:.4f} (SD = {slope_sd:.4f}) justified by AIC"
             recommendation = "Use Model B (intercepts + slopes). Individual differences present."
 
         elif delta_aic < -2:
-            log(f"[RESULT] ΔAIC = {delta_aic:.2f} < -2 → Model A (intercepts) preferred")
+            log(f"ΔAIC = {delta_aic:.2f} < -2 → Model A (intercepts) preferred")
             log(f"         Slopes add complexity without improving fit")
             outcome = "OPTION_C_SLOPES_DONT_IMPROVE"
             interpretation = "Random slope variance negligible, simpler model preferred"
             recommendation = "Use Model A (intercepts only). Homogeneous effects CONFIRMED."
 
         else:
-            log(f"[RESULT] |ΔAIC| = {abs(delta_aic):.2f} < 2 → Models equivalent")
+            log(f"|ΔAIC| = {abs(delta_aic):.2f} < 2 → Models equivalent")
             log(f"         Slopes converge but don't clearly improve fit")
 
             # Check slope variance magnitude
@@ -313,9 +295,6 @@ def main():
             'random_slope_var': [0.0, slope_var]
         })
 
-    # -------------------------------------------------------------------------
-    # STEP 5: Save Results
-    # -------------------------------------------------------------------------
     log("[STEP 5] Save Comparison Results")
     log("-" * 70)
 
@@ -432,7 +411,7 @@ This analysis systematically tests:
 
 ✅ Document this comparison in results/summary.md Section 4 (Limitations)
 ✅ Update validation.md with date ≥ 2025-12-31
-✅ Reference in PLATINUM certification report
+✅ Reference in quality validation report
 
 ## Files Generated
 
@@ -455,31 +434,29 @@ This analysis systematically tests:
     # -------------------------------------------------------------------------
     # SUMMARY
     # -------------------------------------------------------------------------
-    log("[SUMMARY]")
+    log("")
     log("=" * 70)
     log(f"Outcome: {outcome.replace('_', ' ')}")
     log(f"Interpretation: {interpretation}")
     log(f"Recommendation: {recommendation}")
     log("")
-    log("[SUCCESS] Random slopes comparison complete")
+    log("Random slopes comparison complete")
     log("")
     log("[TAXONOMY 4.4] Homogeneity hypothesis tested (convergence failure)")
-    log("[DECISION] Intercepts-only model JUSTIFIED (data insufficient for slopes)")
-    log("[LIMITATION] Documented in validation report")
+    log("Intercepts-only model JUSTIFIED (data insufficient for slopes)")
+    log("Documented in validation report")
     log("=" * 70)
 
     return True
 
-# ==============================================================================
 # ENTRY POINT
-# ==============================================================================
 if __name__ == "__main__":
     try:
         success = main()
         logger.close()
         sys.exit(0 if success else 1)
     except Exception as e:
-        log(f"[ERROR] Unexpected error: {e}")
+        log(f"Unexpected error: {e}")
         log(traceback.format_exc())
         logger.close()
         sys.exit(1)

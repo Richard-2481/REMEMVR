@@ -1,0 +1,4 @@
+metric,value,threshold,result,interpretation
+cohens_kappa,1.0,0.6,PASS,Almost perfect agreement
+percent_agreement,100.0,80.0,PASS,9/9 terms agree
+n_discordant,0.0,,INFO,Terms where IRT and CTT disagree on significance

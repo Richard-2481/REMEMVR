@@ -1,0 +1,50 @@
+Sensitivity Analysis: log_TSVR Time Scale
+1600 rows from step03_merged_data_long.csv
+Created log_TSVR from TSVR_hours
+  TSVR_hours range: 1.00 - 148.00
+  log_TSVR range: 0.10 - 5.00
+
+Three-way interaction: theta ~ measure * location * log_TSVR
+Model converged: True
+
+[THREE-WAY INTERACTION RESULTS]
+  Term: measure[T.confidence]:location[T.source]:log_TSVR
+  Beta: 0.087000
+  SE: 0.030000
+  z-statistic: 2.88
+  p-value (uncorrected): 0.004000
+  p-value (Bonferroni): 0.008000
+Unknown format code 'f' for object of type 'str'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.5/code/sensitivity_log_tsvr.py", line 83, in <module>
+    log(f"  95% CI: [{row['ci_lower']:.6f}, {row['ci_upper']:.6f}]")
+                     ^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'str'
+Sensitivity Analysis: log_TSVR Time Scale
+1600 rows from step03_merged_data_long.csv
+Created log_TSVR from TSVR_hours
+  TSVR_hours range: 1.00 - 148.00
+  log_TSVR range: 0.10 - 5.00
+
+Three-way interaction: theta ~ measure * location * log_TSVR
+Model converged: True
+
+[THREE-WAY INTERACTION RESULTS]
+  Term: measure[T.confidence]:location[T.source]:log_TSVR
+  Beta: 0.087000
+  SE: 0.030000
+  z-statistic: 2.88
+  p-value (uncorrected): 0.004000
+  p-value (Bonferroni): 0.008000
+  95% CI: [0.028000, 0.147000]
+
+[COMPARISON WITH ORIGINAL]
+  Original (TSVR_hours): p_bonf = 0.0000 (highly significant)
+  Sensitivity (log_TSVR): p_bonf = 0.008000
+
+✓ ROBUST: Three-way interaction remains significant with log_TSVR
+  The dissociation finding is NOT sensitive to time scale choice.
+
+sensitivity_log_tsvr_results.csv (9 terms)
+sensitivity_log_tsvr_summary.txt
+Sensitivity analysis complete

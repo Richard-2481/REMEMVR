@@ -1,0 +1,124 @@
+======================================================================
+RQ 6.7.1: Additional Analyses for ROOT RQ Standards
+======================================================================
+
+Starting Additional Analyses for ROOT RQ Standards
+Output directory: /home/etai/projects/REMEMVR/results/ch6/6.7.1
+
+======================================================================
+STEP 6A: Simple Linear Regression with Diagnostics
+======================================================================
+
+--- Regression Summary ---
+Model: forgetting_slope ~ Day0_confidence
+N = 100
+
+Coefficients:
+  Intercept: β = 0.078915, SE = 0.000479, t = 164.643, p = 0.000000
+  Day0_confidence: β = -0.003079, SE = 0.000435, t = -7.075, p = 0.000000
+
+Model Fit:
+  R² = 0.3381
+  Adj R² = 0.3313
+  F(1, 98) = 50.050, p = 0.000000
+
+--- Residual Diagnostics ---
+Residuals:
+  Mean: 0.000000 (should be ~0)
+  SD: 0.003630
+  Range: [-0.011711, 0.010719]
+
+Normality of Residuals (Shapiro-Wilk):
+  W = 0.9820, p = 0.1905
+  → Normality assumption NOT violated (p >= 0.05)
+
+Homoscedasticity (Breusch-Pagan test):
+  LM statistic = 3.7377, p = 0.0532
+  → Homoscedasticity assumption NOT violated (p >= 0.05)
+
+Cook's Distance (outlier detection):
+  Threshold: 0.0400 (4/N)
+  Max Cook's D: 0.1782
+  Influential points (D > threshold): 7
+  → Indices: [ 5 12 26 55 78 86 93]
+  → UIDs: ['A015', 'A022', 'A036', 'A065', 'A088', 'A096', 'A103']
+
+Saved: data/step06a_regression_coefficients.csv
+Saved: data/step06a_regression_diagnostics.csv
+Saved: plots/regression_diagnostics.png
+
+======================================================================
+STEP 6B: Partial Correlation (CRITICAL - Disentangle from Baseline)
+======================================================================
+
+Data merged: 100 participants with confidence, slopes, and baseline accuracy
+Baseline accuracy range: [-0.988, 2.026]
+
+--- Zero-Order Correlations (Spearman) ---
+Confidence-Slope: rho = -0.6348, p = 0.000000
+Baseline-Slope: rho = -0.9528, p = 0.000000
+Confidence-Baseline: rho = 0.5940, p = 0.000000
+
+--- PARTIAL CORRELATION (Controlling Baseline Accuracy) ---
+Partial rho (Confidence-Slope | Baseline): -0.2818
+95% CI: [-0.4539, -0.0893]
+t(97) = -2.892, p = 0.004720
+
+--- INTERPRETATION ---
+Partial rho = -0.2818 REMAINS SIGNIFICANT (p = 0.004720)
+→ Confidence has UNIQUE predictive value beyond baseline ability
+→ Metacognitive monitoring adds information not captured by baseline performance
+→ Confidence is not merely a proxy for baseline ability
+
+--- Variance Partitioning ---
+Total variance explained by Confidence: 40.3%
+Unique variance (after controlling baseline): 7.9%
+Shared variance (with baseline ability): 32.4%
+Proportion unique: 19.7% of total
+
+Saved: data/step06b_partial_correlation.csv
+
+======================================================================
+STEP 6C: Sensitivity Analysis (Excluding Influential Points)
+======================================================================
+
+Full sample (N=100): rho = -0.6348, p = 0.000000
+Reduced sample (N=93, excluding 7 influential): rho = -0.6819, p = 0.000000
+Change in rho: -0.0471
+→ Results ROBUST to influential point exclusion (Δrho < 0.05)
+
+Trimmed sample (N=90, 5% trim each tail): rho = -0.5799, p = 0.000000
+Change in rho from full: +0.0549
+
+Saved: data/step06c_sensitivity_analysis.csv
+
+======================================================================
+ADDITIONAL ANALYSES COMPLETE
+======================================================================
+
+**ROOT RQ BULLETPROOF STATUS:**
+
+1. Regression Diagnostics: COMPLETE
+   - Q-Q plot, residuals vs fitted, Cook's D all generated
+   - Diagnostic plots saved to plots/regression_diagnostics.png
+
+2. Partial Correlation (CRITICAL): UNIQUE_PREDICTOR
+   - Partial rho = -0.2818 (controlling baseline accuracy)
+   - p = 0.004720
+
+   Confidence has UNIQUE predictive value beyond baseline ability!
+   Metacognitive monitoring provides additional information.
+
+3. Sensitivity Analysis: ROBUST
+   - Results stable across outlier exclusion methods
+
+Files created:
+  data/step06a_regression_coefficients.csv
+  data/step06a_regression_diagnostics.csv
+  data/step06b_partial_correlation.csv
+  data/step06c_sensitivity_analysis.csv
+  plots/regression_diagnostics.png
+
+======================================================================
+RQ 6.7.1 Additional Analyses Complete
+======================================================================

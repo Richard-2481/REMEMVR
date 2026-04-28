@@ -32,7 +32,7 @@ def log(msg, log_file=None):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 3: Extract and Merge Where Domain Data
+# Extract and Merge Where Domain Data
 # ══════════════════════════════════════════════════════════════════════════════
 
 log("=" * 70)
@@ -91,7 +91,7 @@ log("Validation PASSED")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 4: Compute Mediation Path Coefficients
+# Compute Mediation Path Coefficients
 # ══════════════════════════════════════════════════════════════════════════════
 
 LOG_FILE_4 = RQ_DIR / "logs" / "step04_compute_mediation_paths.log"
@@ -188,7 +188,7 @@ log("Validation PASSED", LOG_FILE_4)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 5: Bootstrap Mediation CI
+# Bootstrap Mediation CI
 # ══════════════════════════════════════════════════════════════════════════════
 
 LOG_FILE_5 = RQ_DIR / "logs" / "step05_bootstrap_mediation.log"

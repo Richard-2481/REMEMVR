@@ -1,0 +1,28 @@
+Step 02: Reshape Wide to Long
+Loading wide-format data from Step 1...
+step01_piecewise_time_variables.csv (400 rows, 10 cols)
+Columns: ['composite_ID', 'UID', 'test', 'theta_source', 'theta_destination', 'se_source', 'se_destination', 'TSVR_hours', 'Segment', 'Days_within']
+Reshaping from wide to long format...
+After melt: 800 rows
+Creating LocationType factor...
+LocationType distribution:
+LocationType
+Source         400
+Destination    400
+Name: count, dtype: int64
+Matching SE values to theta...
+SE range: [0.500, 0.500]
+Finalizing column structure...
+Final columns: ['UID', 'test', 'LocationType', 'theta', 'se', 'TSVR_hours', 'Segment', 'Days_within']
+Saving long-format LMM input...
+step02_lmm_input_long.csv (800 rows, 8 cols)
+Running validate_data_format()...
+All required columns present (8 columns). DataFrame has 800 rows.
+Performing additional data quality checks...
+Row count: 800 (expected 800)
+LocationType distribution: 400 Source, 400 Destination
+Each UID x test appears exactly 2 times
+No NaN values in any column
+Theta range: [-1.868, 2.251] (within [-3, 3])
+SE range: [0.500, 0.500] (within [0.1, 1.0])
+Step 02 complete - wide-to-long reshape successful

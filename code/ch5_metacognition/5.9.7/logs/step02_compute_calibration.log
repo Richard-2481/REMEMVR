@@ -1,0 +1,43 @@
+Step 2: compute_calibration
+Loading merged calibration data from Step 1...
+step01_merged_calibration_data.csv (1200 rows, 7 cols)
+Computing within-paradigm z-scores...
+Z-scores computed for 3 paradigms
+Checking standardization quality by paradigm:
+  free_recall:
+    z_accuracy: mean=-0.000000, SD=1.000000
+    z_confidence: mean=0.000000, SD=1.000000
+  cued_recall:
+    z_accuracy: mean=0.000000, SD=1.000000
+    z_confidence: mean=0.000000, SD=1.000000
+  recognition:
+    z_accuracy: mean=0.000000, SD=1.000000
+    z_confidence: mean=0.000000, SD=1.000000
+Computing calibration = z_confidence - z_accuracy...
+Calibration scores for 1200 observations
+  Range: [-3.845, 2.564]
+  Mean: 0.000, SD: 0.939
+No invalid calibration values
+Running standardization validation...
+Standardization validated: All 2 columns properly standardized (mean ≈ 0, SD ≈ 1 within tolerance=0.01).
+Computing statistics by paradigm × timepoint...
+Descriptive statistics: 12 cells (3 paradigms × 4 times)
+Total outliers (|calibration| > 3): 5 (0.42%)
+Outlier proportion acceptable (< 5%)
+Descriptive statistics by paradigm × time:
+  cued_recall, T1: n=100, mean=-0.084, SD=0.939, outliers=1
+  cued_recall, T2: n=100, mean=-0.059, SD=1.014, outliers=1
+  cued_recall, T3: n=100, mean=0.057, SD=0.854, outliers=0
+  cued_recall, T4: n=100, mean=0.085, SD=0.959, outliers=0
+  free_recall, T1: n=100, mean=-0.113, SD=0.873, outliers=0
+  free_recall, T2: n=100, mean=-0.015, SD=0.983, outliers=1
+  free_recall, T3: n=100, mean=0.064, SD=0.901, outliers=1
+  free_recall, T4: n=100, mean=0.064, SD=0.958, outliers=0
+  recognition, T1: n=100, mean=-0.060, SD=0.907, outliers=0
+  recognition, T2: n=100, mean=-0.035, SD=0.951, outliers=0
+  recognition, T3: n=100, mean=0.031, SD=0.887, outliers=0
+  recognition, T4: n=100, mean=0.064, SD=1.045, outliers=1
+Saving calibration scores and descriptive statistics...
+step02_calibration_scores.csv (1200 rows, 10 cols)
+step02_descriptive_stats.csv (12 rows)
+Step 2 complete

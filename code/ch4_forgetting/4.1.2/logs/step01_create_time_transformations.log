@@ -1,0 +1,52 @@
+Step 01: Create Time Transformations
+Loading input data...
+step00_theta_tsvr.csv (400 rows, 4 cols)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours']
+Running assign_piecewise_segments...
+Parameters: tsvr_col='TSVR_hours', early_cutoff_hours=48.0
+Piecewise segment assignment complete
+Segments created: ['Early', 'Late']
+Creating quadratic and log transformations...
+Transformations complete
+Added columns: Time, Time_squared, Time_log
+Saving step01_time_transformed.csv...
+step01_time_transformed.csv (400 rows, 9 cols)
+Final columns: ['UID', 'test', 'theta', 'TSVR_hours', 'Segment', 'Days_within', 'Time', 'Time_squared', 'Time_log']
+Running validate_data_columns...
+valid: True
+n_required: 9
+n_missing: 0
+Additional checks...
+No NaN values (deterministic transformations confirmed)
+Segment distribution: {'Late': 204, 'Early': 196}
+Early: 49.0%, Late: 51.0%
+Days_within min (Early): 0.04
+Days_within min (Late): 0.00
+Days_within does not start at 0 for both segments
+Step 01 complete
+Step 01: Create Time Transformations
+Loading input data...
+step00_theta_tsvr.csv (400 rows, 4 cols)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours']
+Running assign_piecewise_segments...
+Parameters: tsvr_col='TSVR_hours', early_cutoff_hours=48.0
+Piecewise segment assignment complete
+Segments created: ['Early', 'Late']
+Creating quadratic and log transformations...
+Transformations complete
+Added columns: Time, Time_squared, Time_log
+Saving step01_time_transformed.csv...
+step01_time_transformed.csv (400 rows, 9 cols)
+Final columns: ['UID', 'test', 'theta', 'TSVR_hours', 'Segment', 'Days_within', 'Time', 'Time_squared', 'Time_log']
+Running validate_data_columns...
+valid: True
+n_required: 9
+n_missing: 0
+Additional checks...
+No NaN values (deterministic transformations confirmed)
+Segment distribution: {'Late': 204, 'Early': 196}
+Early: 49.0%, Late: 51.0%
+Days_within min (Early): 0.04
+Days_within min (Late): 0.00
+Days_within does not start at 0 for both segments
+Step 01 complete

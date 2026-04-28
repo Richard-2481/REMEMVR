@@ -138,7 +138,7 @@ def main():
     print(f"Saved: {summary_file}")
 
     # Compute cluster means for labeling
-    cluster_means = df.groupby('cluster')[RAW_VARS].mean()
+    cluster_means = df.groupby('cluster').mean()
 
     # Generate characterizations
     print("\n" + "=" * 60)

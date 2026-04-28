@@ -1,0 +1,3 @@
+measure,beta,se,t_stat,p_value
+accuracy,-0.136,0.049,-2.78,0.025
+confidence,-0.009,0.015,-0.59,0.553

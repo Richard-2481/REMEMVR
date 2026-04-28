@@ -1,0 +1,117 @@
+Step 4: Formal Mediation Analysis with Bootstrap
+Loading hierarchical regression results from Step 3...
+step03_hierarchical_models.csv (2 rows, 8 cols)
+Loading analysis dataset from Step 1...
+step01_analysis_dataset.csv (100 rows, 10 cols)
+Model 1 (total effect): Model_1_Age_Only
+Model 2 (direct effect): Model_2_Age_Plus_Cognitive
+Running bootstrap analysis for Model 1 (total effect = c path)...
+bootstrap_regression_ci() got an unexpected keyword argument 'confidence_level'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step04_mediation_analysis.py", line 171, in <module>
+    bootstrap_model1 = bootstrap_regression_ci(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: bootstrap_regression_ci() got an unexpected keyword argument 'confidence_level'
+Step 4: Formal Mediation Analysis with Bootstrap
+Loading hierarchical regression results from Step 3...
+step03_hierarchical_models.csv (2 rows, 8 cols)
+Loading analysis dataset from Step 1...
+step01_analysis_dataset.csv (100 rows, 10 cols)
+Model 1 (total effect): Model_1_Age_Only
+Model 2 (direct effect): Model_2_Age_Plus_Cognitive
+Running bootstrap analysis for Model 1 (total effect = c path)...
+bootstrap_regression_ci() got an unexpected keyword argument 'confidence'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step04_mediation_analysis.py", line 171, in <module>
+    bootstrap_model1 = bootstrap_regression_ci(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: bootstrap_regression_ci() got an unexpected keyword argument 'confidence'
+Step 4: Formal Mediation Analysis with Bootstrap
+Loading hierarchical regression results from Step 3...
+step03_hierarchical_models.csv (2 rows, 8 cols)
+Loading analysis dataset from Step 1...
+step01_analysis_dataset.csv (100 rows, 10 cols)
+Model 1 (total effect): Model_1_Age_Only
+Model 2 (direct effect): Model_2_Age_Plus_Cognitive
+Running bootstrap analysis for Model 1 (total effect = c path)...
+'coefficient'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step04_mediation_analysis.py", line 180, in <module>
+    age_coef_model1_data = bootstrap_model1[bootstrap_model1['coefficient'].str.contains('Age_std', na=False)]
+                                            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'coefficient'
+Step 4: Formal Mediation Analysis with Bootstrap
+Loading hierarchical regression results from Step 3...
+step03_hierarchical_models.csv (2 rows, 8 cols)
+Loading analysis dataset from Step 1...
+step01_analysis_dataset.csv (100 rows, 10 cols)
+Model 1 (total effect): Model_1_Age_Only
+Model 2 (direct effect): Model_2_Age_Plus_Cognitive
+Running bootstrap analysis for Model 1 (total effect = c path)...
+[MODEL 1] Age beta (total effect, c path): -0.1302 [-0.2600, -0.0004]
+Running bootstrap analysis for Model 2 (direct effect = c' path)...
+[MODEL 2] Age beta (direct effect, c' path): 0.0258 [-0.1040, 0.1556]
+Computing formal mediation statistics...
+Mediation effect (c - c'): -0.1560
+Proportion mediated: 1.1982 (119.8%)
+Computing bootstrap confidence intervals for mediation effect...
+Mediation effect 95% CI: [-0.2555, -0.0718]
+Mediation effect: significant (95% CI excludes 0)
+[EFFECT SIZE] Proportion mediated effect size: large
+Effect size categories: small (<0.25), medium (0.25-0.75), large (>0.75)
+Saving mediation analysis results...
+step04_mediation_analysis.csv (1 rows, 8 cols)
+Running validate_numeric_range...
+valid: True
+message: proportion_mediated: All values within range [-2.0, 2.0] (n=1).
+out_of_range_count: 0
+violations: []
+Mediation Analysis Summary:
+  Total effect (c): -0.1302 (Age -> REMEMVR)
+  Direct effect (c'): 0.0258 (Age -> REMEMVR | cognitive tests)
+  Mediation effect: -0.1560 (difference between total and direct)
+  Proportion mediated: 1.1982 (119.8% of age effect)
+  Significance: significant
+  Effect size: large
+  -> Cognitive tests partially mediate the age-REMEMVR relationship
+  -> Supporting VR scaffolding hypothesis: cognitive tests explain age-related VR differences
+Step 4 complete
+Step 4: Formal Mediation Analysis with Bootstrap
+Loading hierarchical regression results from Step 3...
+step03_hierarchical_models.csv (2 rows, 8 cols)
+Loading analysis dataset from Step 1...
+step01_analysis_dataset.csv (100 rows, 14 cols)
+Model 1 (total effect): Model_1_Age_Only
+Model 2 (direct effect): Model_2_Age_Plus_Cognitive
+Running bootstrap analysis for Model 1 (total effect = c path)...
+[MODEL 1] Age beta (total effect, c path): -0.1302 [-0.2600, -0.0004]
+Running bootstrap analysis for Model 2 (direct effect = c' path)...
+[MODEL 2] Age beta (direct effect, c' path): 0.0258 [-0.1040, 0.1556]
+Computing formal mediation statistics...
+Mediation effect (c - c'): -0.1560
+Proportion mediated: 1.1982 (119.8%)
+Computing bootstrap confidence intervals for mediation effect...
+Mediation effect 95% CI: [-0.2653, -0.0690]
+Mediation effect: significant (95% CI excludes 0)
+[EFFECT SIZE] Proportion mediated effect size: large
+Effect size categories: small (<0.25), medium (0.25-0.75), large (>0.75)
+Saving mediation analysis results...
+step04_mediation_analysis.csv (1 rows, 8 cols)
+Running validate_numeric_range...
+valid: True
+message: proportion_mediated: All values within range [-2.0, 2.0] (n=1).
+out_of_range_count: 0
+violations: []
+Mediation Analysis Summary:
+  Total effect (c): -0.1302 (Age -> REMEMVR)
+  Direct effect (c'): 0.0258 (Age -> REMEMVR | cognitive tests)
+  Mediation effect: -0.1560 (difference between total and direct)
+  Proportion mediated: 1.1982 (119.8% of age effect)
+  Significance: significant
+  Effect size: large
+  -> Cognitive tests partially mediate the age-REMEMVR relationship
+  -> Supporting VR scaffolding hypothesis: cognitive tests explain age-related VR differences
+Step 4 complete

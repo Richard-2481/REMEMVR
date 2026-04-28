@@ -24,7 +24,6 @@ OUTPUT:
 - plots/power_curve.png (power vs sample size)
 - logs/step06b_power_analysis.log
 
-Author: rq_platinum agent
 Date: 2025-12-27
 RQ: ch5/5.5.1
 """
@@ -93,11 +92,11 @@ def sample_size_for_power(beta, se_per_n, target_power=0.80, alpha=0.05):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Power Analysis for NULL Main Effect (Section 3.1)")
+        log("Power Analysis for NULL Main Effect (Section 3.1)")
         log("=" * 80)
 
         # Observed effect from step06_post_hoc_contrasts.csv
-        log("\n[OBSERVED] LocationType Main Effect:")
+        log("\nLocationType Main Effect:")
         log("  Coefficient (β): +0.100 theta units")
         log("  SE: 0.077")
         log("  p-value: 0.403 (NULL)")
@@ -111,7 +110,7 @@ if __name__ == "__main__":
         # Estimate pooled SD from theta data
         lmm_input = pd.read_csv(DATA_DIR / "step04_lmm_input.csv")
         pooled_sd = lmm_input.groupby('LocationType')['theta'].std().mean()
-        log(f"\n[INFO] Pooled SD (theta): {pooled_sd:.3f}")
+        log(f"\nPooled SD (theta): {pooled_sd:.3f}")
 
         # Convert observed beta to Cohen's d
         d_observed = beta_to_cohen_d(beta_observed, pooled_sd)
@@ -132,7 +131,7 @@ if __name__ == "__main__":
             log(f"  ✓ ADEQUATE POWER (power ≥ 0.80)")
 
         # Power for standard effect sizes
-        log("\n[POWER] Standard Effect Sizes (Cohen's benchmarks):")
+        log("\nStandard Effect Sizes (Cohen's benchmarks):")
         effect_sizes = {
             'Small': 0.20,
             'Medium': 0.50,
@@ -172,11 +171,11 @@ if __name__ == "__main__":
         power_df = pd.DataFrame(results)
         output_path = DATA_DIR / "step06b_power_analysis.csv"
         power_df.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"\n[SAVE] Power analysis saved: {output_path.name}")
+        log(f"\nPower analysis saved: {output_path.name}")
 
         # Summary interpretation
         log("\n" + "=" * 80)
-        log("[INTERPRETATION]")
+        log("")
         log("=" * 80)
 
         if power_observed < 0.30:
@@ -200,11 +199,11 @@ if __name__ == "__main__":
             log("  Study cannot rule out small true effects")
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] Power analysis complete")
+        log("Power analysis complete")
         log("=" * 80)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
         log(traceback.format_exc())
         raise

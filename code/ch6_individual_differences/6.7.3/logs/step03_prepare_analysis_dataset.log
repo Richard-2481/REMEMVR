@@ -1,0 +1,66 @@
+Step 03: Prepare Analysis Dataset
+Loading RAVLT scores...
+step01_ravlt_scores.csv (100 participants, 18 columns)
+Loading theta scores...
+step02_theta_scores.csv (100 participants, 3 columns)
+Merging RAVLT and theta data on UID...
+100 participants after merge
+Selecting analysis columns...
+6 columns for analysis
+Running quality checks...
+No missing values
+Final sample size: N=100
+Computing predictor intercorrelation matrix...
+Correlation matrix
+No correlations exceed 0.9 threshold
+Predictor correlation matrix:
+  Total_z:  1.000  0.288 -0.032  0.447
+  Learning_z:  0.288  1.000  0.875  0.078
+  LearningSlope_z: -0.032  0.875  1.000 -0.107
+  Recognition_z:  0.447  0.078 -0.107  1.000
+Saving analysis dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step03_analysis_dataset.csv (100 participants, 6 columns)
+Saving correlation matrix...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step03_correlation_matrix.csv
+Descriptive statistics:
+  Total_z: M=-0.00, SD=1.00
+  Learning_z: M=0.00, SD=1.00
+  LearningSlope_z: M=0.00, SD=1.00
+  Recognition_z: M=0.00, SD=1.00
+  theta_all: M=0.01, SD=0.68
+Step 03 complete
+Step 03: Prepare Analysis Dataset
+Loading RAVLT scores...
+step01_ravlt_scores.csv (100 participants, 20 columns)
+Loading theta scores...
+step02_theta_scores.csv (100 participants, 3 columns)
+Merging RAVLT and theta data on UID...
+100 participants after merge
+Selecting analysis columns...
+8 columns for analysis
+Running quality checks...
+No missing values
+Final sample size: N=100
+Computing predictor intercorrelation matrix...
+Correlation matrix
+No correlations exceed 0.9 threshold
+Predictor correlation matrix:
+  Total_z:  1.000  0.107 -0.264 -0.081  0.412  0.264
+  Learning_z:  0.107  1.000  0.858  0.226  0.129 -0.010
+  LearningSlope_z: -0.264  0.858  1.000  0.181 -0.128 -0.092
+  Forgetting_z: -0.081  0.226  0.181  1.000 -0.311 -0.892
+  Recognition_z:  0.412  0.129 -0.128 -0.311  1.000  0.453
+  PctRet_z:  0.264 -0.010 -0.092 -0.892  0.453  1.000
+Saving analysis dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step03_analysis_dataset.csv (100 participants, 8 columns)
+Saving correlation matrix...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step03_correlation_matrix.csv
+Descriptive statistics:
+  Total_z: M=0.00, SD=1.00
+  Learning_z: M=-0.00, SD=1.00
+  LearningSlope_z: M=0.00, SD=1.00
+  Forgetting_z: M=0.00, SD=1.00
+  Recognition_z: M=0.00, SD=1.00
+  PctRet_z: M=0.00, SD=1.00
+  theta_all: M=0.01, SD=0.68
+Step 03 complete

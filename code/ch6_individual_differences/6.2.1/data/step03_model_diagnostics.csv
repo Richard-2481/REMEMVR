@@ -1,0 +1,6 @@
+test,statistic,p_value,threshold,violated,remedial_action
+normality_shapiro_wilk,0.9874813934789047,0.4707899392050798,0.05,False,None needed
+homoscedasticity_breusch_pagan,6.16004269134568,0.405503060055806,0.05,False,None needed
+multicollinearity_max_vif,1.8789266505505038,,5.0,False,None needed
+outliers_max_cooks_d,0.12468160624754818,,0.04,True,Investigate high-leverage points
+autocorrelation_durbin_watson,1.616041474095904,,1.5,False,None needed

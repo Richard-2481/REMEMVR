@@ -1,0 +1,77 @@
+Step 02: Compute Pearson Correlations between IRT and CTT Scores
+Loading IRT theta scores from RQ 5.5.1...
+step00_irt_theta_from_rq551.csv (800 rows, 7 cols)
+Loading CTT mean scores from Step 1...
+step01_ctt_scores.csv (800 rows, 7 cols)
+Merging IRT theta and CTT scores on composite_ID + location_type...
+Combined dataset: 800 rows
+Running compute_pearson_correlations_with_correction...
+Parameters:
+  irt_col: 'irt_theta'
+  ctt_col: 'ctt_mean_score'
+  factor_col: 'location_type'
+  thresholds: [0.70, 0.90]
+Correlation analysis complete
+Generated 3 correlation results
+Saving step02_correlations.csv...
+step02_correlations.csv (3 rows, 9 cols)
+Results summary:
+'location_type'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'location_type'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.4/code/step02_compute_correlations.py", line 225, in <module>
+    loc_type = row['location_type']
+               ~~~^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'location_type'
+Step 02: Compute Pearson Correlations between IRT and CTT Scores
+Loading IRT theta scores from RQ 5.5.1...
+step00_irt_theta_from_rq551.csv (800 rows, 7 cols)
+Loading CTT mean scores from Step 1...
+step01_ctt_scores.csv (800 rows, 7 cols)
+Merging IRT theta and CTT scores on composite_ID + location_type...
+Combined dataset: 800 rows
+Running compute_pearson_correlations_with_correction...
+Parameters:
+  irt_col: 'irt_theta'
+  ctt_col: 'ctt_mean_score'
+  factor_col: 'location_type'
+  thresholds: [0.70, 0.90]
+Correlation analysis complete
+Generated 3 correlation results
+Output columns: ['factor', 'r', 'CI_lower', 'CI_upper', 'p_uncorrected', 'n', 'p_holm', 'threshold_0.70', 'threshold_0.90']
+Renamed 'factor' -> 'location_type'
+Saving step02_correlations.csv...
+step02_correlations.csv (3 rows, 9 cols)
+Results summary:
+  source: r=0.944 [95% CI: 0.932, 0.954], p_uncorr=0.0000, p_holm=0.0000, n=400
+  destination: r=0.871 [95% CI: 0.846, 0.893], p_uncorr=0.0000, p_holm=0.0000, n=400
+  Overall: r=0.746 [95% CI: 0.714, 0.776], p_uncorr=0.0000, p_holm=0.0000, n=800
+Running validate_correlation_test_d068...
+PASS - All D068 compliance checks passed
+Message: Decision D068 compliant: Correlation test results (3 rows) have both p_uncorrected and p_holm.
+Additional checks...
+Row count: 3 rows (PASS)
+Correlation bounds: all r in [-1, 1] (PASS)
+Holm correction monotonicity: all p_holm >= p_uncorrected (PASS)
+Location types: {'Overall', 'source', 'destination'} (PASS)
+Step 02 complete

@@ -21,7 +21,6 @@ Variance Components:
     - var_residual: Within-person variance (measurement error + unexplained)
     - total_variance: Sum of all variance components
 
-Author: Claude (g_code agent)
 Date: 2025-12-03
 """
 

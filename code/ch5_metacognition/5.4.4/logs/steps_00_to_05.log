@@ -1,0 +1,382 @@
+================================================================================
+RQ 6.4.4 - ICC Decomposition by Paradigm
+Started: 2025-12-12T09:29:55.698930
+================================================================================
+================================================================================
+[STEP 00] Import Theta Confidence Data from RQ 6.4.1
+================================================================================
+Loading LMM input from RQ 6.4.1: /home/etai/projects/REMEMVR/results/ch6/6.4.1/data/step04_lmm_input.csv
+  ✓ Loaded 1200 rows × 7 columns
+  ✓ Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'log_TSVR', 'paradigm', 'theta']
+  ✓ Paradigms: ['IFR', 'ICR', 'IRE']
+  ✓ Rows per paradigm:
+      ICR: 400 rows (100 participants × 4 tests)
+      IFR: 400 rows (100 participants × 4 tests)
+      IRE: 400 rows (100 participants × 4 tests)
+  ✓ N participants: 100
+  ✓ TSVR_hours range: [1.00, 246.24] hours
+  ✓ log_TSVR range: [0.6931, 5.5104]
+  ✓ theta range: [-2.4049, 0.5785]
+  ✓ theta mean: -0.7759
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step00_lmm_input.csv
+
+================================================================================
+[STEP 01] Fit Paradigm-Stratified LMMs with Random Slopes
+================================================================================
+
+Fitting LMM for Free Recall...
+  ✓ N rows: 400 (100 participants × 4 tests)
+  Formula: theta ~ log_TSVR
+  Random effects: (1 + log_TSVR | UID)
+  ✓ Converged: True
+  ✓ AIC: 370.7792
+  ✓ BIC: 394.7280
+  ✓ Log-likelihood: -179.3896
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step01_lmm_ifr_summary.txt
+
+Fitting LMM for Cued Recall...
+  ✓ N rows: 400 (100 participants × 4 tests)
+  Formula: theta ~ log_TSVR
+  Random effects: (1 + log_TSVR | UID)
+  ✓ Converged: True
+  ✓ AIC: 330.3004
+  ✓ BIC: 354.2492
+  ✓ Log-likelihood: -159.1502
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step01_lmm_icr_summary.txt
+
+Fitting LMM for Recognition...
+  ✓ N rows: 400 (100 participants × 4 tests)
+  Formula: theta ~ log_TSVR
+  Random effects: (1 + log_TSVR | UID)
+  ✓ Converged: True
+  ✓ AIC: 298.8206
+  ✓ BIC: 322.7694
+  ✓ Log-likelihood: -143.4103
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step01_lmm_ire_summary.txt
+
+================================================================================
+[STEP 02] Extract Variance Components Per Paradigm
+================================================================================
+
+Extracting variance components...
+  Random effects covariance matrix:
+             Group  log_TSVR
+Group     0.185691 -0.001754
+log_TSVR -0.001754  0.003264
+  Random effect names: ['Group', 'log_TSVR']
+  var_intercept: 0.185691
+  var_slope: 0.003264
+  cov_int_slope: -0.001754
+  cor_int_slope: -0.0712
+  var_residual: 0.068302
+
+Extracting variance components...
+  Random effects covariance matrix:
+             Group  log_TSVR
+Group     0.209654 -0.004984
+log_TSVR -0.004984  0.003343
+  Random effect names: ['Group', 'log_TSVR']
+  var_intercept: 0.209654
+  var_slope: 0.003343
+  cov_int_slope: -0.004984
+  cor_int_slope: -0.1883
+  var_residual: 0.057890
+
+Extracting variance components...
+  Random effects covariance matrix:
+             Group  log_TSVR
+Group     0.174218  0.001443
+log_TSVR  0.001443  0.002202
+  Random effect names: ['Group', 'log_TSVR']
+  var_intercept: 0.174218
+  var_slope: 0.002202
+  cov_int_slope: 0.001443
+  cor_int_slope: 0.0737
+  var_residual: 0.055412
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step02_variance_components.csv
+
+================================================================================
+[STEP 03] Compute ICC Estimates Per Paradigm
+================================================================================
+
+:
+  Mean log_TSVR: 3.3612
+  Max log_TSVR (Day 6): 5.5104
+
+Computing ICCs...
+  ICC_intercept: 0.6654
+  ICC_slope_simple: 0.045607
+  ICC_slope_conditional: 0.2969
+
+Computing ICCs...
+  ICC_intercept: 0.7713
+  ICC_slope_simple: 0.054589
+  ICC_slope_conditional: 0.3231
+
+Computing ICCs...
+  ICC_intercept: 0.6594
+  ICC_slope_simple: 0.038225
+  ICC_slope_conditional: 0.2141
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step03_icc_estimates.csv
+
+[SUMMARY TABLE]:
+Paradigm      ICC_intercept   ICC_slope_simple  interpretation
+------------------------------------------------------------
+IFR                  0.6654           0.045607      Negligible
+ICR                  0.7713           0.054589           Small
+IRE                  0.6594           0.038225      Negligible
+
+================================================================================
+[STEP 04] Compare ICC Across Paradigms
+================================================================================
+
+[RANKING by ICC_slope_simple]:
+  1. ICR: 0.054589
+  2. IFR: 0.045607
+  3. IRE: 0.038225
+
+[PAIRWISE COMPARISONS]:
+  IFR - ICR: Δ_simple = -0.008982, Δ_conditional = -0.0262 (ICR higher)
+  IFR - IRE: Δ_simple = +0.007382, Δ_conditional = +0.0829 (IFR higher)
+  ICR - IRE: Δ_simple = +0.016364, Δ_conditional = +0.1091 (ICR higher)
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step04_paradigm_icc_comparison.csv
+
+:
+  ICR shows highest ICC_slope (0.054589): Unexpected pattern
+
+[HYPOTHESIS TEST]:
+  REFUTED - ICR has highest ICC_slope, not Free Recall
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step04_paradigm_summary.txt
+
+================================================================================
+[STEP 05] Compare to Ch5 5.3.7 Accuracy ICC
+================================================================================
+  ✓ Loaded Ch5 5.3.7 ICC estimates: 9 rows
+  ✓ Ch5 paradigms: ['cued_recall', 'free_recall', 'recognition']
+
+:
+  ICC_intercept: confidence=0.6654, accuracy=0.5014, diff=+0.1639
+  ICC_slope: confidence=0.045607, accuracy=0.022051, diff=+0.023556
+  Interpretation: Confidence and accuracy show SIMILAR slope variance
+
+:
+  ICC_intercept: confidence=0.7713, accuracy=0.4366, diff=+0.3347
+  ICC_slope: confidence=0.054589, accuracy=0.000089, diff=+0.054500
+  Interpretation: Confidence reveals MORE slope variance than accuracy
+
+:
+  ICC_intercept: confidence=0.6594, accuracy=0.5150, diff=+0.1444
+  ICC_slope: confidence=0.038225, accuracy=0.013827, diff=+0.024399
+  Interpretation: Confidence and accuracy show SIMILAR slope variance
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step05_ch5_comparison.csv
+
+[OVERALL PATTERN]:
+  Average ICC_slope difference: +0.034152
+  Confidence and accuracy show SIMILAR slope variance patterns
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step05_ch5_summary.txt
+
+================================================================================
+RQ 6.4.4 Complete
+================================================================================
+
+:
+  Pattern: ICR shows highest ICC_slope (0.054589): Unexpected pattern
+  Hypothesis: REFUTED - ICR has highest ICC_slope, not Free Recall
+
+  Completed: 2025-12-12T09:29:57.247594
+================================================================================
+RQ 6.4.4 - ICC Decomposition by Paradigm
+Started: 2026-01-17T14:31:32.201101
+================================================================================
+================================================================================
+[STEP 00] Import Theta Confidence Data from RQ 6.4.1
+================================================================================
+Loading LMM input from RQ 6.4.1: /home/etai/projects/REMEMVR/results/ch6/6.4.1/data/step04_lmm_input.csv
+  ✓ Loaded 1200 rows × 7 columns
+  ✓ Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'log_TSVR', 'paradigm', 'theta']
+  ✓ Paradigms: ['IFR', 'ICR', 'IRE']
+  ✓ Rows per paradigm:
+      ICR: 400 rows (100 participants × 4 tests)
+      IFR: 400 rows (100 participants × 4 tests)
+      IRE: 400 rows (100 participants × 4 tests)
+  ✓ N participants: 100
+  ✓ TSVR_hours range: [1.00, 246.24] hours
+  ✓ log_TSVR range: [0.6931, 5.5104]
+  ✓ theta range: [-3.1467, 3.6055]
+  ✓ theta mean: 0.0381
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step00_lmm_input.csv
+
+================================================================================
+[STEP 01] Fit Paradigm-Stratified LMMs with Random Slopes
+================================================================================
+
+Fitting LMM for Free Recall...
+  ✓ N rows: 400 (100 participants × 4 tests)
+  Formula: theta ~ log_TSVR
+  Random effects: (1 + log_TSVR | UID)
+  ✓ Converged: True
+  ✓ AIC: 897.6312
+  ✓ BIC: 921.5800
+  ✓ Log-likelihood: -442.8156
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step01_lmm_ifr_summary.txt
+
+Fitting LMM for Cued Recall...
+  ✓ N rows: 400 (100 participants × 4 tests)
+  Formula: theta ~ log_TSVR
+  Random effects: (1 + log_TSVR | UID)
+  ✓ Converged: True
+  ✓ AIC: 767.9523
+  ✓ BIC: 791.9011
+  ✓ Log-likelihood: -377.9762
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step01_lmm_icr_summary.txt
+
+Fitting LMM for Recognition...
+  ✓ N rows: 400 (100 participants × 4 tests)
+  Formula: theta ~ log_TSVR
+  Random effects: (1 + log_TSVR | UID)
+  ✓ Converged: True
+  ✓ AIC: 790.6940
+  ✓ BIC: 814.6427
+  ✓ Log-likelihood: -389.3470
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step01_lmm_ire_summary.txt
+
+================================================================================
+[STEP 02] Extract Variance Components Per Paradigm
+================================================================================
+
+Extracting variance components...
+  Random effects covariance matrix:
+             Group  log_TSVR
+Group     0.697944 -0.063324
+log_TSVR -0.063324  0.019315
+  Random effect names: ['Group', 'log_TSVR']
+  var_intercept: 0.697944
+  var_slope: 0.019315
+  cov_int_slope: -0.063324
+  cor_int_slope: -0.5454
+  var_residual: 0.275276
+
+Extracting variance components...
+  Random effects covariance matrix:
+             Group  log_TSVR
+Group     0.649552 -0.035389
+log_TSVR -0.035389  0.013699
+  Random effect names: ['Group', 'log_TSVR']
+  var_intercept: 0.649552
+  var_slope: 0.013699
+  cov_int_slope: -0.035389
+  cor_int_slope: -0.3752
+  var_residual: 0.170524
+
+Extracting variance components...
+  Random effects covariance matrix:
+             Group  log_TSVR
+Group     0.615573 -0.034407
+log_TSVR -0.034407  0.013511
+  Random effect names: ['Group', 'log_TSVR']
+  var_intercept: 0.615573
+  var_slope: 0.013511
+  cov_int_slope: -0.034407
+  cor_int_slope: -0.3773
+  var_residual: 0.189985
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step02_variance_components.csv
+
+================================================================================
+[STEP 03] Compute ICC Estimates Per Paradigm
+================================================================================
+
+:
+  Mean log_TSVR: 3.3612
+  Max log_TSVR (Day 6): 5.5104
+
+Computing ICCs...
+  ICC_intercept: 0.9115
+  ICC_slope_simple: 0.065566
+  ICC_slope_conditional: 0.6805
+
+Computing ICCs...
+  ICC_intercept: 0.8814
+  ICC_slope_simple: 0.074363
+  ICC_slope_conditional: 0.4917
+
+Computing ICCs...
+  ICC_intercept: 0.8468
+  ICC_slope_simple: 0.066396
+  ICC_slope_conditional: 0.4904
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step03_icc_estimates.csv
+
+[SUMMARY TABLE]:
+Paradigm      ICC_intercept   ICC_slope_simple  interpretation
+------------------------------------------------------------
+IFR                  0.9115           0.065566           Small
+ICR                  0.8814           0.074363           Small
+IRE                  0.8468           0.066396           Small
+
+================================================================================
+[STEP 04] Compare ICC Across Paradigms
+================================================================================
+
+[RANKING by ICC_slope_simple]:
+  1. ICR: 0.074363
+  2. IRE: 0.066396
+  3. IFR: 0.065566
+
+[PAIRWISE COMPARISONS]:
+  IFR - ICR: Δ_simple = -0.008797, Δ_conditional = +0.1888 (ICR higher)
+  IFR - IRE: Δ_simple = -0.000830, Δ_conditional = +0.1901 (Equivalent)
+  ICR - IRE: Δ_simple = +0.007967, Δ_conditional = +0.0013 (ICR higher)
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step04_paradigm_icc_comparison.csv
+
+:
+  ICR shows highest ICC_slope (0.074363): Unexpected pattern
+
+[HYPOTHESIS TEST]:
+  REFUTED - ICR has highest ICC_slope, not Free Recall
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step04_paradigm_summary.txt
+
+================================================================================
+[STEP 05] Compare to Ch5 5.3.7 Accuracy ICC
+================================================================================
+  ✓ Loaded Ch5 5.3.7 ICC estimates: 9 rows
+  ✓ Ch5 paradigms: ['cued_recall', 'free_recall', 'recognition']
+
+:
+  ICC_intercept: confidence=0.9115, accuracy=0.5014, diff=+0.4100
+  ICC_slope: confidence=0.065566, accuracy=0.022051, diff=+0.043515
+  Interpretation: Confidence and accuracy show SIMILAR slope variance
+
+:
+  ICC_intercept: confidence=0.8814, accuracy=0.4366, diff=+0.4448
+  ICC_slope: confidence=0.074363, accuracy=0.000089, diff=+0.074274
+  Interpretation: Confidence reveals MORE slope variance than accuracy
+
+:
+  ICC_intercept: confidence=0.8468, accuracy=0.5150, diff=+0.3318
+  ICC_slope: confidence=0.066396, accuracy=0.013827, diff=+0.052569
+  Interpretation: Confidence reveals MORE slope variance than accuracy
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step05_ch5_comparison.csv
+
+[OVERALL PATTERN]:
+  Average ICC_slope difference: +0.056786
+  5-level confidence data reveals MORE slope variance than dichotomous accuracy
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.4/data/step05_ch5_summary.txt
+
+================================================================================
+RQ 6.4.4 Complete
+================================================================================
+
+:
+  Pattern: ICR shows highest ICC_slope (0.074363): Unexpected pattern
+  Hypothesis: REFUTED - ICR has highest ICC_slope, not Free Recall
+
+  Completed: 2026-01-17T14:31:33.696469

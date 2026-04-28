@@ -38,19 +38,14 @@ from scipy import stats
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step02b_extended_age_models.log"
 
-# =============================================================================
 # Logging
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -60,9 +55,7 @@ LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 with open(LOG_FILE, 'w', encoding='utf-8') as f:
     f.write("")  # Clear previous log
 
-# =============================================================================
 # Model Fitting Function
-# =============================================================================
 
 def fit_age_lmm(formula, data, model_name, re_formula='Time'):
     """
@@ -123,7 +116,7 @@ def fit_age_lmm(formula, data, model_name, re_formula='Time'):
         }
 
     except Exception as e:
-        log(f"  [FAIL] {model_name}: {str(e)[:100]}")
+        log(f"  {model_name}: {str(e)[:100]}")
         return {
             'model': None,
             'model_name': model_name,
@@ -139,9 +132,7 @@ def fit_age_lmm(formula, data, model_name, re_formula='Time'):
             'error': str(e)[:200]
         }
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
@@ -150,10 +141,7 @@ if __name__ == "__main__":
         log("="*70)
         log(f"Date: {pd.Timestamp.now()}")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Prepared Data
-        # =====================================================================
+        # Load Prepared Data
 
         log("[STEP 1] Loading prepared LMM input...")
         input_path = RQ_DIR / "data" / "step01_lmm_input_prepared.csv"
@@ -166,10 +154,7 @@ if __name__ == "__main__":
         log(f"  Age_c range: [{df['Age_c'].min():.2f}, {df['Age_c'].max():.2f}]")
         log(f"  Time range: [{df['Time'].min():.2f}, {df['Time'].max():.2f}] hours")
         log("")
-
-        # =====================================================================
-        # STEP 2: Add Extended Time Transformations
-        # =====================================================================
+        # Add Extended Time Transformations
 
         log("[STEP 2] Adding 66-model time transformations...")
 
@@ -199,10 +184,7 @@ if __name__ == "__main__":
 
         log(f"  Added {len([c for c in df.columns if 'Days' in c or 'pow' in c])} time transforms")
         log("")
-
-        # =====================================================================
-        # STEP 3: Define 66-Model Suite with Age Interactions
-        # =====================================================================
+        # Define 66-Model Suite with Age Interactions
 
         log("[STEP 3] Defining 66-model suite...")
 
@@ -303,10 +285,7 @@ if __name__ == "__main__":
         log("  Each model formula: theta ~ (time_transform) * Age_c")
         log("  Age effects tested: Intercept (Age_c), Slope (time:Age_c)")
         log("")
-
-        # =====================================================================
-        # STEP 4: Fit All 66 Models with Age Interactions
-        # =====================================================================
+        # Fit All 66 Models with Age Interactions
 
         log("[STEP 4] Fitting 66 models with Age interactions...")
         log("  Random effects: ~Time | UID (random intercepts + slopes)")
@@ -325,17 +304,14 @@ if __name__ == "__main__":
                 failed_models.append(name)
 
         log("")
-        log(f"[SUMMARY] Fitted {len(results)} models")
+        log(f"Fitted {len(results)} models")
         log(f"  Converged: {sum(r['converged'] for r in results)}/66")
         log(f"  Failed: {len(failed_models)}/66")
         if failed_models:
             log(f"  Failed models: {', '.join(failed_models[:10])}" +
                 (" ..." if len(failed_models) > 10 else ""))
         log("")
-
-        # =====================================================================
-        # STEP 5: Compute AIC Weights and Model Comparison Table
-        # =====================================================================
+        # Compute AIC Weights and Model Comparison Table
 
         log("[STEP 5] Computing AIC weights...")
 
@@ -379,10 +355,7 @@ if __name__ == "__main__":
         log(f"  Competitive models (95% cumulative weight): {n_competitive}")
         log(f"  Evidence ratio (best vs Log): {converged[0]['akaike_weight'] / [r['akaike_weight'] for r in converged if r['model_name']=='Log'][0]:.1f}:1")
         log("")
-
-        # =====================================================================
-        # STEP 6: Model-Averaged Age Effects
-        # =====================================================================
+        # Model-Averaged Age Effects
 
         log("[STEP 6] Computing model-averaged age effects...")
 
@@ -459,10 +432,7 @@ if __name__ == "__main__":
             log(f"    Z: {ae['z_averaged']:.3f}, p={ae['p_averaged']:.4f}")
             log(f"    Based on {ae['n_models']} models")
         log("")
-
-        # =====================================================================
-        # STEP 7: Save Outputs
-        # =====================================================================
+        # Save Outputs
 
         log("[STEP 7] Saving outputs...")
 
@@ -509,7 +479,7 @@ if __name__ == "__main__":
 
         log("")
         log("="*70)
-        log("[SUCCESS] Extended age model comparison complete!")
+        log("Extended age model comparison complete!")
         log("="*70)
         log(f"Next: Examine step02b_model_comparison.csv for functional form effects")
         log(f"      and step02b_age_effects_averaged.csv for robust age estimates")
@@ -517,7 +487,7 @@ if __name__ == "__main__":
     except Exception as e:
         log("")
         log("="*70)
-        log("[ERROR] Extended age model comparison failed!")
+        log("Extended age model comparison failed!")
         log("="*70)
         log(f"Error: {str(e)}")
         log("")

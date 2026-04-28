@@ -1,0 +1,7 @@
+predictor,p_uncorrected,p_bonferroni_within,p_bonferroni_chapter,p_fdr,significant_uncorrected,significant_bonferroni_within,significant_bonferroni_chapter,significant_fdr
+RAVLT_T,0.1656996586327577,0.9941979517965462,1.0,0.30324200011427654,False,False,False,False
+RAVLT_Pct_Ret_T,0.0606689679017976,0.3640138074107856,1.0,0.1820069037053928,False,False,False,False
+BVMT_T,0.5559291536777416,1.0,1.0,0.6337485689647167,False,False,False,False
+BVMT_Pct_Ret_T,0.2021613334095177,1.0,1.0,0.30324200011427654,False,False,False,False
+NART_T,0.6337485689647167,1.0,1.0,0.6337485689647167,False,False,False,False
+RPM_T,0.0115498143394651,0.0692988860367906,0.3233948015050228,0.0692988860367906,True,False,False,False

@@ -1,0 +1,13 @@
+metric,value
+Observed_effect,-0.008818
+SE,0.013119
+P_value,0.501492
+Power_observed,0.103149
+Power_small,0.967937
+Power_medium,1.000000
+Power_large,1.000000
+TOST_p,0.001117
+CI_90_lower,-0.030601
+CI_90_upper,0.012965
+N_required_small,424.467416
+N_current,800.000000

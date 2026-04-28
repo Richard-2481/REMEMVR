@@ -1,0 +1,83 @@
+======================================================================
+STEP 00: DEPENDENCY VALIDATION FOR RQ 7.2.2
+======================================================================
+
+1. Checking RQ 7.2.1 regression results...
+ERROR: No regression results file found for RQ 7.2.1
+
+2. Checking Ch5 theta score files...
+Overall (5.1.1): FILE NOT FOUND: results/ch5/5.1.1/data/step03_theta_scores.csv
+What domain (5.2.1): FILE NOT FOUND: results/ch5/5.2.1/data/step03_theta_scores.csv
+Where domain (5.2.2): FILE NOT FOUND: results/ch5/5.2.2/data/step03_theta_scores.csv
+When domain (5.2.3): FILE NOT FOUND: results/ch5/5.2.3/data/step03_theta_scores.csv
+
+3. Writing validation report...
+
+VALIDATION - FAIL: Missing dependencies, cannot proceed
+See data/step00_dependency_validation.txt for details
+======================================================================
+STEP 00: DEPENDENCY VALIDATION FOR RQ 7.2.2
+======================================================================
+
+1. Checking RQ 7.2.1 regression results...
+Found alternative regression file: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step04_mediation_analysis.csv
+EXISTS: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step04_mediation_analysis.csv (210 bytes)
+
+2. Checking Ch5 theta score files...
+Overall (5.1.1): VALID: step03_theta_scores.csv (400 rows)
+What domain (5.2.1): VALID: step03_theta_scores.csv (400 rows)
+Where domain (5.2.2): FILE NOT FOUND: /home/etai/projects/REMEMVR/results/ch5/5.2.2/data/step03_theta_scores.csv
+When domain (5.2.3): FILE NOT FOUND: /home/etai/projects/REMEMVR/results/ch5/5.2.3/data/step03_theta_scores.csv
+
+3. Writing validation report...
+
+VALIDATION - FAIL: Missing dependencies, cannot proceed
+See data/step00_dependency_validation.txt for details
+======================================================================
+STEP 00: DEPENDENCY VALIDATION FOR RQ 7.2.2
+======================================================================
+
+1. Checking RQ 7.2.1 regression results...
+Found alternative regression file: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step04_mediation_analysis.csv
+EXISTS: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step04_mediation_analysis.csv (210 bytes)
+
+2. Checking Ch5 theta score files...
+Overall (5.1.1): VALID: step03_theta_scores.csv (400 rows)
+What domain (5.2.1): VALID: step03_theta_scores.csv (400 rows)
+Where domain (5.2.2): FILE NOT FOUND: /home/etai/projects/REMEMVR/results/ch5/5.2.2/data/step03_theta_scores.csv
+When domain (5.2.3): FILE NOT FOUND: /home/etai/projects/REMEMVR/results/ch5/5.2.3/data/step03_theta_scores.csv
+
+3. Writing validation report...
+
+VALIDATION - FAIL: Missing dependencies, cannot proceed
+See data/step00_dependency_validation.txt for details
+======================================================================
+STEP 00: DEPENDENCY VALIDATION FOR RQ 7.2.2
+======================================================================
+
+1. Checking RQ 7.2.1 regression results...
+Found alternative regression file: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step04_mediation_analysis.csv
+EXISTS: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step04_mediation_analysis.csv (210 bytes)
+
+2. Checking Ch5 theta score files...
+Overall (5.1.1): VALID: step03_theta_scores.csv (400 rows)
+Domain theta (5.2.1): VALID: step03_theta_scores.csv (400 rows)
+
+3. Writing validation report...
+
+VALIDATION - PASS: All dependencies found, ready to proceed with analysis
+======================================================================
+STEP 00: DEPENDENCY VALIDATION FOR RQ 7.2.2
+======================================================================
+
+1. Checking RQ 7.2.1 regression results...
+Found alternative regression file: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step04_mediation_analysis.csv
+EXISTS: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step04_mediation_analysis.csv (211 bytes)
+
+2. Checking Ch5 theta score files...
+Overall (5.1.1): VALID: step03_theta_scores.csv (400 rows)
+Domain theta (5.2.1): VALID: step03_theta_scores.csv (400 rows)
+
+3. Writing validation report...
+
+VALIDATION - PASS: All dependencies found, ready to proceed with analysis

@@ -1,0 +1,10 @@
+======================================================================
+STEP 03: Extract and Merge Where Domain Data
+======================================================================
+Loaded 7.2.2 data: (100, 13), columns: ['UID', 'theta_all', 'theta_what', 'theta_where', 'theta_when', 'beta_age_bivariate_all', 'beta_age_controlled_all', 'beta_age_bivariate_what', 'beta_age_controlled_what', 'beta_age_bivariate_where', 'beta_age_controlled_where', 'beta_age_bivariate_when', 'beta_age_controlled_when']
+Loaded 7.3.1 cognitive tests: (100, 9)
+Loaded dfnonvr: (100, 235)
+Merged data: 100 participants with complete data
+No missing values detected
+Saved: step03_where_mediation_input.csv (100 rows)
+Validation PASSED

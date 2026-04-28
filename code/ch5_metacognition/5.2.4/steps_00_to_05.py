@@ -14,7 +14,6 @@ Steps:
 4. Correlations (baseline accuracy vs calibration metrics)
 5. Prepare plot data
 
-Author: Claude Code (automated execution)
 Date: 2025-12-11
 """
 
@@ -24,9 +23,7 @@ from pathlib import Path
 from scipy import stats
 from datetime import datetime
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.2.4
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR root
@@ -69,9 +66,7 @@ def validate_range(value: float, min_val: float, max_val: float, name: str) -> b
     return True
 
 
-# ============================================================================
-# STEP 0: Merge Calibration Metrics from Prior RQs
-# ============================================================================
+# Merge Calibration Metrics from Prior RQs
 
 def step00_merge_metrics():
     """Load and merge baseline metrics from 4 source RQs."""
@@ -168,9 +163,7 @@ def step00_merge_metrics():
     return merged
 
 
-# ============================================================================
-# STEP 1: Create Accuracy Tertiles
-# ============================================================================
+# Create Accuracy Tertiles
 
 def step01_create_tertiles():
     """Split participants into Low/Med/High accuracy tertiles."""
@@ -241,9 +234,7 @@ def step01_create_tertiles():
     return df[output_cols]
 
 
-# ============================================================================
-# STEP 2: Compare Calibration Metrics Across Tertiles
-# ============================================================================
+# Compare Calibration Metrics Across Tertiles
 
 def step02_tertile_comparison():
     """Test calibration metrics across tertiles using ANOVA/Kruskal-Wallis."""
@@ -355,9 +346,7 @@ def step02_tertile_comparison():
     return df_comparison
 
 
-# ============================================================================
-# STEP 3: Test Dunning-Kruger Hypothesis (One-Sample t-Tests)
-# ============================================================================
+# Test Dunning-Kruger Hypothesis (One-Sample t-Tests)
 
 def step03_dunning_kruger_test():
     """Test if low performers show overconfidence (calibration > 0)."""
@@ -436,9 +425,7 @@ def step03_dunning_kruger_test():
     return df_dk
 
 
-# ============================================================================
-# STEP 4: Compute Correlations
-# ============================================================================
+# Compute Correlations
 
 def step04_correlation():
     """Compute correlations: baseline_accuracy vs abs_calibration, vs mean_gamma."""
@@ -542,9 +529,7 @@ def step04_correlation():
     return df_corr
 
 
-# ============================================================================
-# STEP 5: Prepare Plot Data
-# ============================================================================
+# Prepare Plot Data
 
 def step05_prepare_plot_data():
     """Create plot source CSV for visualization."""
@@ -590,9 +575,7 @@ def step05_prepare_plot_data():
     return df_plot
 
 
-# ============================================================================
 # MAIN EXECUTION
-# ============================================================================
 
 if __name__ == "__main__":
     log("=" * 70)

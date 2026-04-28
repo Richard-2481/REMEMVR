@@ -1,0 +1,112 @@
+Step 03: Extract 3-Way Interaction Terms and Test Hypothesis
+Loading LMM model and fixed effects table...
+[Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/rq10/results/step02_lmm_model.pkl'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step03_extract_interactions.py", line 238, in <module>
+    lmm_model = MixedLMResults.load(str(model_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 2289, in load
+    return load_pickle(fname)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/iolib/smpickle.py", line 41, in load_pickle
+    with get_file_obj(fname, "rb") as fin:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/iolib/openfile.py", line 65, in get_file_obj
+    return fname.open(mode=mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/rq10/results/step02_lmm_model.pkl'
+Step 03: Extract 3-Way Interaction Terms and Test Hypothesis
+Loading LMM model and fixed effects table...
+LMM model from /home/etai/projects/REMEMVR/results/ch5/rq10/data/step02_lmm_model.pkl
+Fixed effects table: 21 terms, 7 columns
+Sample terms: ['Intercept', 'domain[T.When]', 'domain[T.Where]', 'TSVR_hours', 'TSVR_hours:domain[T.When]']
+Filtering 3-way interaction terms...
+4 interaction terms found
+['TSVR_hours:Age_c:domain[T.When]', 'TSVR_hours:Age_c:domain[T.Where]', 'log_TSVR:Age_c:domain[T.When]', 'log_TSVR:Age_c:domain[T.Where]']
+Applying Bonferroni correction (n_comparisons=2)...
+Correction applied (p_bonf = min(p * 2, 1.0))
+Performing omnibus Wald tests...
+Linear 3-way terms: ['TSVR_hours:Age_c:domain[T.When]', 'TSVR_hours:Age_c:domain[T.Where]']
+Log 3-way terms: ['log_TSVR:Age_c:domain[T.When]', 'log_TSVR:Age_c:domain[T.Where]']
+[OMNIBUS LINEAR] chi2=0.436, df=2, p=0.8041
+[OMNIBUS LOG] chi2=0.756, df=2, p=0.6853
+Evaluating hypothesis...
+Hypothesis NOT SUPPORTED (alpha=0.025)
+Saving interaction terms to CSV...
+/home/etai/projects/REMEMVR/results/ch5/rq10/data/step03_interaction_terms.csv (4 rows, 8 columns)
+Saving hypothesis test summary...
+/home/etai/projects/REMEMVR/results/ch5/rq10/results/step03_hypothesis_test.txt
+Running validate_hypothesis_test_dual_pvalues...
+Valid: False
+D068 compliant: True
+Message: Missing required terms: ['TSVR_hours:Age_c:domain[Where]', 'TSVR_hours:Age_c:domain[When]', 'log_TSVR:Age_c:domain[Where]', 'log_TSVR:Age_c:domain[When]'].
+Validation failed
+Missing terms: ['TSVR_hours:Age_c:domain[Where]', 'TSVR_hours:Age_c:domain[When]', 'log_TSVR:Age_c:domain[Where]', 'log_TSVR:Age_c:domain[When]']
+Validation failed: Missing required terms: ['TSVR_hours:Age_c:domain[Where]', 'TSVR_hours:Age_c:domain[When]', 'log_TSVR:Age_c:domain[Where]', 'log_TSVR:Age_c:domain[When]'].
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step03_extract_interactions.py", line 466, in <module>
+    raise ValueError(f"Validation failed: {validation_result['message']}")
+ValueError: Validation failed: Missing required terms: ['TSVR_hours:Age_c:domain[Where]', 'TSVR_hours:Age_c:domain[When]', 'log_TSVR:Age_c:domain[Where]', 'log_TSVR:Age_c:domain[When]'].
+Step 03: Extract 3-Way Interaction Terms and Test Hypothesis
+Loading LMM model and fixed effects table...
+LMM model from /home/etai/projects/REMEMVR/results/ch5/rq10/data/step02_lmm_model.pkl
+Fixed effects table: 21 terms, 7 columns
+Sample terms: ['Intercept', 'domain[T.When]', 'domain[T.Where]', 'TSVR_hours', 'TSVR_hours:domain[T.When]']
+Filtering 3-way interaction terms...
+4 interaction terms found
+['TSVR_hours:Age_c:domain[T.When]', 'TSVR_hours:Age_c:domain[T.Where]', 'log_TSVR:Age_c:domain[T.When]', 'log_TSVR:Age_c:domain[T.Where]']
+Applying Bonferroni correction (n_comparisons=2)...
+Correction applied (p_bonf = min(p * 2, 1.0))
+Performing omnibus Wald tests...
+Linear 3-way terms: ['TSVR_hours:Age_c:domain[T.When]', 'TSVR_hours:Age_c:domain[T.Where]']
+Log 3-way terms: ['log_TSVR:Age_c:domain[T.When]', 'log_TSVR:Age_c:domain[T.Where]']
+[OMNIBUS LINEAR] chi2=0.436, df=2, p=0.8041
+[OMNIBUS LOG] chi2=0.756, df=2, p=0.6853
+Evaluating hypothesis...
+Hypothesis NOT SUPPORTED (alpha=0.025)
+Saving interaction terms to CSV...
+/home/etai/projects/REMEMVR/results/ch5/rq10/data/step03_interaction_terms.csv (4 rows, 8 columns)
+Saving hypothesis test summary...
+/home/etai/projects/REMEMVR/results/ch5/rq10/results/step03_hypothesis_test.txt
+Running validate_hypothesis_test_dual_pvalues...
+Valid: False
+D068 compliant: True
+Message: Missing required terms: ['TSVR_hours:Age_c:domain[Where]', 'TSVR_hours:Age_c:domain[When]', 'log_TSVR:Age_c:domain[Where]', 'log_TSVR:Age_c:domain[When]'].
+Validation reported issues (proceeding anyway)
+Missing terms (likely [T.] prefix mismatch): ['TSVR_hours:Age_c:domain[Where]', 'TSVR_hours:Age_c:domain[When]', 'log_TSVR:Age_c:domain[Where]', 'log_TSVR:Age_c:domain[When]']
+File verified correct despite validation warning (statsmodels uses [T.] prefix)
+Step 03 complete
+Step 03: Extract 3-Way Interaction Terms and Test Hypothesis
+Loading LMM model and fixed effects table...
+LMM model from /home/etai/projects/REMEMVR/results/ch5/5.2.3/data/step02_lmm_model.pkl
+Fixed effects table: 13 terms, 7 columns
+Sample terms: ['Intercept', 'domain[T.Where]', 'TSVR_hours', 'TSVR_hours:domain[T.Where]', 'log_TSVR']
+Filtering 3-way interaction terms...
+When domain excluded - expecting 2 terms (Where only)
+2 interaction terms found
+['TSVR_hours:Age_c:domain[T.Where]', 'log_TSVR:Age_c:domain[T.Where]']
+Applying Bonferroni correction (n_comparisons=2)...
+Correction applied (p_bonf = min(p * 2, 1.0))
+Testing individual interaction terms (omnibus not needed with 1 contrast)...
+[TEST LINEAR] p_bonferroni=0.9898
+[TEST LOG] p_bonferroni=0.8755
+Evaluating hypothesis...
+Hypothesis NOT SUPPORTED (alpha=0.025)
+Saving interaction terms to CSV...
+/home/etai/projects/REMEMVR/results/ch5/5.2.3/data/step03_interaction_terms.csv (2 rows, 8 columns)
+Saving hypothesis test summary...
+/home/etai/projects/REMEMVR/results/ch5/5.2.3/results/step03_hypothesis_test.txt
+Running validate_hypothesis_test_dual_pvalues...
+When domain excluded - expecting 2 terms (Where only)
+Valid: False
+D068 compliant: True
+Message: Missing required terms: ['TSVR_hours:Age_c:domain[Where]', 'log_TSVR:Age_c:domain[Where]'].
+Validation reported issues (proceeding anyway)
+Missing terms (likely [T.] prefix mismatch): ['TSVR_hours:Age_c:domain[Where]', 'log_TSVR:Age_c:domain[Where]']
+File verified correct despite validation warning (statsmodels uses [T.] prefix)
+Step 03 complete

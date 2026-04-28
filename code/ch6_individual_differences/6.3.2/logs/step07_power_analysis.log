@@ -1,0 +1,110 @@
+Step 07: Power Analysis
+Loading cross-validation and regression results...
+step06_cross_validation.csv (5 rows)
+step04_regression_results.csv (6 rows)
+Mean test R² from CV: -0.1505
+Approximate sample size: 100
+Number of predictors: 6
+Computing post-hoc power analysis...
+Overall model power: 0.000
+Overall model f²: -0.131 (negligible)
+Power analysis complete
+Interpreting individual predictor effect sizes...
+age: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+sex: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+education: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+RAVLT_T: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+BVMT_T: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+RPM_T: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+Effect size interpretation complete
+Looking for RQ 7.1.1 comparison data...
+Found comparison file: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step04_regression_diagnostics.csv
+No R² data found in comparison file
+Saving power analysis results...
+step07_power_analysis.csv (1 rows, 8 cols)
+step07_effect_sizes.csv (6 rows, 5 cols)
+Running numeric range validation...
+All metrics in expected ranges: False
+power: PASS - 1/1 values in range [0, 1]
+f2: FAIL - 0/1 values in range [0, 10]
+r2: FAIL - 0/1 values in range [0, 1]
+Final power and effect size assessment...
+Overall model power: 0.000 (inadequate for α = 0.000597)
+Overall effect size: f² = -0.131 (negligible)
+Strong individual effects: 0/6 predictors
+Study may be underpowered - consider larger sample size for future research
+Step 07 complete
+Step 07: Power Analysis
+Loading cross-validation and regression results...
+step06_cross_validation.csv (5 rows)
+step04_regression_results.csv (6 rows)
+Mean test R² from CV: -0.0864
+Approximate sample size: 100
+Number of predictors: 6
+Computing post-hoc power analysis...
+Overall model power: 0.000
+Overall model f²: -0.080 (negligible)
+Power analysis complete
+Interpreting individual predictor effect sizes...
+age: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+sex: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+education: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+RAVLT_T: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+BVMT_T: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+RPM_T: sr²=0.0004, f²=0.0004 (negligible), practical=negligible
+Effect size interpretation complete
+Looking for RQ 7.1.1 comparison data...
+Found comparison file: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step04_regression_diagnostics.csv
+No R² data found in comparison file
+Saving power analysis results...
+step07_power_analysis.csv (1 rows, 8 cols)
+step07_effect_sizes.csv (6 rows, 5 cols)
+Running numeric range validation...
+All metrics in expected ranges: False
+power: PASS - 1/1 values in range [0, 1]
+f2: FAIL - 0/1 values in range [0, 10]
+r2: FAIL - 0/1 values in range [0, 1]
+Final power and effect size assessment...
+Overall model power: 0.000 (inadequate for α = 0.000597)
+Overall effect size: f² = -0.080 (negligible)
+Strong individual effects: 0/6 predictors
+Study may be underpowered - consider larger sample size for future research
+Step 07 complete
+Step 07: Power Analysis
+Loading cross-validation and regression results...
+step06_cross_validation.csv (5 rows)
+step04_regression_results.csv (8 rows)
+Mean test R² from CV: -0.1492
+Approximate sample size: 100
+Number of predictors: 8
+Computing post-hoc power analysis...
+Overall model power: 0.000
+Overall model f²: -0.130 (negligible)
+Power analysis complete
+Interpreting individual predictor effect sizes...
+age: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+sex: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+education: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+RAVLT_T: sr²=0.0001, f²=0.0001 (negligible), practical=negligible
+BVMT_T: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+RPM_T: sr²=0.0004, f²=0.0003 (negligible), practical=negligible
+RAVLT_Pct_Ret_T: sr²=0.0000, f²=0.0000 (negligible), practical=negligible
+BVMT_Pct_Ret_T: sr²=0.0002, f²=0.0002 (negligible), practical=negligible
+Effect size interpretation complete
+Looking for RQ 7.1.1 comparison data...
+Found comparison file: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step04_regression_diagnostics.csv
+No R² data found in comparison file
+Saving power analysis results...
+step07_power_analysis.csv (1 rows, 8 cols)
+step07_effect_sizes.csv (8 rows, 5 cols)
+Running numeric range validation...
+All metrics in expected ranges: False
+power: PASS - 1/1 values in range [0, 1]
+f2: FAIL - 0/1 values in range [0, 10]
+r2: FAIL - 0/1 values in range [0, 1]
+Final power and effect size assessment...
+Overall model power: 0.000 (inadequate for α = 0.000597)
+Overall effect size: f² = -0.130 (negligible)
+Strong individual effects: 0/8 predictors
+Study may be underpowered - consider larger sample size for future research
+Step 07 complete

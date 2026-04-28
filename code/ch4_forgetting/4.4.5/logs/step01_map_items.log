@@ -1,0 +1,14 @@
+Step 01: Map Items by Retention Status
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step00_full_item_list.csv
+72 items total
+Computing retention statistics by dimension
+Common: 19/24 retained (79.2%)
+Congruent: 18/24 retained (75.0%)
+Incongruent: 13/24 retained (54.2%)
+Checking accounting identity (N_total = N_retained + N_removed)
+Accounting identity verified
+Checking retention rates in [0.6, 0.9]
+Incongruent retention rate 54.2% outside expected range [60%, 90%]
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step01_item_mapping.csv
+3 rows, 5 columns
+Step 01 complete

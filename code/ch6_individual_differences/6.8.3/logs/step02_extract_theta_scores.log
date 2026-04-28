@@ -1,0 +1,92 @@
+Step 02: Extract Theta Scores
+Loading Ch5 5.1.1 theta scores...
+Ch5 theta scores: 400 rows, 3 columns
+Theta_all: mean=0.006, SD=0.944, range=[-2.516, 2.728]
+All theta values within [-4.0, 4.0] range
+Loading cognitive test data from step 1...
+Cognitive tests: 100 rows, 9 columns
+Cognitive columns: ['UID', 'Age', 'Sex', 'Education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'DASS_Total', 'Sleep']
+Merging theta scores with cognitive tests on UID...
+400 rows after merge
+Merge incomplete: -300 participants missing theta scores
+Missing UIDs: set()
+Merge failed: -300 participants missing theta scores
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step02_extract_theta_scores.py", line 159, in <module>
+    raise ValueError(f"Merge failed: {n_missing} participants missing theta scores")
+ValueError: Merge failed: -300 participants missing theta scores
+Step 02: Extract Theta Scores
+Loading Ch5 5.1.1 theta scores...
+Ch5 theta scores: 400 rows, 3 columns
+Theta_all (all rows): mean=0.006, SD=0.944, range=[-2.516, 2.728]
+Averaging theta scores across 4 tests per participant...
+100 unique participants (from 400 test-level rows)
+Theta_all (participant-level): mean=0.006, SD=0.677, range=[-1.954, 1.559]
+All theta values within [-4.0, 4.0] range
+Loading cognitive test data from step 1...
+Cognitive tests: 100 rows, 9 columns
+Cognitive columns: ['UID', 'Age', 'Sex', 'Education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'DASS_Total', 'Sleep']
+Merging theta scores with cognitive tests on UID...
+100 rows after merge
+All cognitive test participants have theta scores
+Saving theta scores to /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step02_Theta_All_scores.csv
+100 rows
+Saving merged analysis dataset to /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step02_analysis_input.csv
+100 rows, 10 columns
+Validating merged dataset...
+No missing data in merged dataset
+validate_numeric_range() got an unexpected keyword argument 'df'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step02_extract_theta_scores.py", line 207, in <module>
+    validation_result = validate_numeric_range(
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_numeric_range() got an unexpected keyword argument 'df'
+Step 02: Extract Theta Scores
+Loading Ch5 5.1.1 theta scores...
+Ch5 theta scores: 400 rows, 3 columns
+Theta_all (all rows): mean=0.006, SD=0.944, range=[-2.516, 2.728]
+Averaging theta scores across 4 tests per participant...
+100 unique participants (from 400 test-level rows)
+Theta_all (participant-level): mean=0.006, SD=0.677, range=[-1.954, 1.559]
+All theta values within [-4.0, 4.0] range
+Loading cognitive test data from step 1...
+Cognitive tests: 100 rows, 9 columns
+Cognitive columns: ['UID', 'Age', 'Sex', 'Education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'DASS_Total', 'Sleep']
+Merging theta scores with cognitive tests on UID...
+100 rows after merge
+All cognitive test participants have theta scores
+Saving theta scores to /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step02_Theta_All_scores.csv
+100 rows
+Saving merged analysis dataset to /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step02_analysis_input.csv
+100 rows, 10 columns
+Validating merged dataset...
+No missing data in merged dataset
+Theta range validation passed
+Column order matches expected
+Step 02 complete
+Step 02: Extract Theta Scores
+Loading Ch5 5.1.1 theta scores...
+Ch5 theta scores: 400 rows, 3 columns
+Theta_all (all rows): mean=0.006, SD=0.944, range=[-2.516, 2.728]
+Averaging theta scores across 4 tests per participant...
+100 unique participants (from 400 test-level rows)
+Theta_all (participant-level): mean=0.006, SD=0.677, range=[-1.954, 1.559]
+All theta values within [-4.0, 4.0] range
+Loading cognitive test data from step 1...
+Cognitive tests: 100 rows, 11 columns
+Cognitive columns: ['UID', 'Age', 'Sex', 'Education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'DASS_Total', 'Sleep']
+Merging theta scores with cognitive tests on UID...
+100 rows after merge
+All cognitive test participants have theta scores
+Saving theta scores to /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step02_Theta_All_scores.csv
+100 rows
+Saving merged analysis dataset to /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step02_analysis_input.csv
+100 rows, 12 columns
+Validating merged dataset...
+No missing data in merged dataset
+Theta range validation passed
+Expected columns: ['UID', 'Age', 'Sex', 'Education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'DASS_Total', 'Sleep', 'Theta_All']
+Actual columns: ['UID', 'Age', 'Sex', 'Education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'DASS_Total', 'Sleep', 'Theta_All']
+Step 02 complete

@@ -1,0 +1,3 @@
+stratification_method,cv_r2_mean,cv_r2_sd
+Age tertiles,0.0169058686941169,
+Theta tertiles,0.09591339675140118,0.2383374057273097

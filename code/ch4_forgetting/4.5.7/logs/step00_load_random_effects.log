@@ -1,0 +1,21 @@
+2025-12-05 14:30:44,052 - INFO - ============================================================
+2025-12-05 14:30:44,053 - INFO - RQ 5.5.7 Step 00: Load Random Effects from RQ 5.5.6
+2025-12-05 14:30:44,053 - INFO - ============================================================
+2025-12-05 14:30:44,054 - INFO - Loaded 200 rows from RQ 5.5.6
+2025-12-05 14:30:44,054 - INFO - Columns: ['UID', 'location', 'random_intercept', 'random_slope']
+2025-12-05 14:30:44,057 - INFO - Input validation PASSED: 200 rows, 4 columns, correct locations
+2025-12-05 14:30:44,057 - INFO - Reshaping from long (200 rows) to wide (100 rows)...
+2025-12-05 14:30:44,062 - INFO - Reshaped to 100 rows x 5 columns
+2025-12-05 14:30:44,062 - INFO - No missing values detected
+2025-12-05 14:30:44,063 - INFO - Reshaping validation PASSED: 100 rows, 5 columns, no NaN, no duplicates
+2025-12-05 14:30:44,063 - INFO - Source_intercept: min=-0.5655, max=0.6831, mean=0.0000, SD=0.2901
+2025-12-05 14:30:44,063 - INFO - Source_slope: min=-0.0591, max=0.0737, mean=0.0000, SD=0.0309
+2025-12-05 14:30:44,063 - INFO - Destination_intercept: min=-0.7833, max=0.9292, mean=0.0000, SD=0.3925
+2025-12-05 14:30:44,064 - INFO - Destination_slope: min=-0.1138, max=0.0939, mean=-0.0000, SD=0.0522
+2025-12-05 14:30:44,065 - INFO - Saved to /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step00_random_effects_from_rq556.csv
+2025-12-05 14:30:44,065 - INFO - ============================================================
+2025-12-05 14:30:44,065 - INFO - Step 00 COMPLETE
+2025-12-05 14:30:44,065 - INFO -   Input:  results/ch5/5.5.6/data/step04_random_effects.csv (200 rows)
+2025-12-05 14:30:44,065 - INFO -   Output: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step00_random_effects_from_rq556.csv (100 rows)
+2025-12-05 14:30:44,065 - INFO -   Features: Source_intercept, Source_slope, Destination_intercept, Destination_slope
+2025-12-05 14:30:44,065 - INFO - ============================================================

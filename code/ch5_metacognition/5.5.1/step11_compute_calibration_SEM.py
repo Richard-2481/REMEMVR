@@ -12,7 +12,6 @@ using factor score regression with reliability-weighted shrinkage.
 Input: step00_calibration_by_schema.csv (1200 rows: 100 UID x 4 tests x 3 schema levels)
 Output: step11_calibration_scores_SEM.csv (1200 rows, with latent_calibration by schema)
 
-Author: Claude Code (SEM consistency)
 Date: 2026-04-07
 """
 
@@ -28,9 +27,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 
 from sem_calibration import compute_difference_score_reliability, SEMCalibration
 
-# ============================================================================
 # SETUP
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.5.1
 LOG_FILE = RQ_DIR / "logs" / "step11_SEM.log"
@@ -60,9 +57,7 @@ log("Using tools/sem_calibration.py (SEMCalibration class)")
 log("Same methodology as RQ 6.2.1, 6.3.2, 6.4.2, 6.8.2")
 log("=" * 70)
 
-# ============================================================================
-# STEP 1: Load Schema-Stratified Data
-# ============================================================================
+# Load Schema-Stratified Data
 
 log("\n" + "=" * 70)
 log("STEP 1: Load Schema-Stratified Calibration Data")
@@ -103,9 +98,7 @@ if n_missing_acc > 0 or n_missing_conf > 0:
 log("No missing values in theta scores")
 log("STEP 1 COMPLETE")
 
-# ============================================================================
-# STEP 2: Compute PRE-SEM Reliability BY SCHEMA
-# ============================================================================
+# Compute PRE-SEM Reliability BY SCHEMA
 
 log("\n" + "=" * 70)
 log("STEP 2: Compute PRE-SEM Difference Score Reliability (BY SCHEMA)")
@@ -174,9 +167,7 @@ for res in reliability_results:
 
 log("STEP 2 COMPLETE")
 
-# ============================================================================
-# STEP 3: Compute SEM-Based Latent Calibration (BY SCHEMA)
-# ============================================================================
+# Compute SEM-Based Latent Calibration (BY SCHEMA)
 
 log("\n" + "=" * 70)
 log("STEP 3: Compute SEM-Based Latent Calibration (BY SCHEMA)")
@@ -333,9 +324,7 @@ for diag in sem_diagnostics:
 
 log("STEP 3 COMPLETE")
 
-# ============================================================================
-# STEP 4: Save
-# ============================================================================
+# Save
 
 log("\n" + "=" * 70)
 log("STEP 4: Save SEM Calibration Scores")

@@ -12,7 +12,7 @@ A) Slopes improve fit (ΔAIC > 2) → Use slopes model, report individual differ
 B) Slopes don't converge → Document attempt, keep intercepts-only
 C) Slopes converge but don't improve (ΔAIC < 2) → Keep intercepts, document negligible variance
 
-Date: 2025-12-31 (PLATINUM certification)
+Date: 2025-12-31 (quality validation)
 """
 
 import pandas as pd
@@ -184,7 +184,7 @@ def main():
     """Main execution: Test random slopes for both IRT and CTT."""
 
     logger.info("="*60)
-    logger.info("RQ 5.4.4: Random Slopes Comparison (PLATINUM Certification)")
+    logger.info("RQ 5.4.4: Random Slopes Comparison (Quality Validation)")
     logger.info("="*60)
     logger.info("Testing intercepts-only vs intercepts+slopes for parallel LMMs")
     logger.info("Mandatory per improvement_taxonomy.md Section 4.4\n")

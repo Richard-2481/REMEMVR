@@ -1,0 +1,65 @@
+================================================================================
+STEP 05: DIFFERENCE SCORE RELIABILITY ANALYSIS
+================================================================================
+
+[1] Loading calibration data...
+   Loaded 1200 observations
+   Columns: ['UID', 'TEST', 'theta_accuracy', 'Domain', 'theta_confidence', 'TSVR_hours', 'theta_accuracy_z', 'theta_confidence_z', 'calibration', 'abs_calibration']
+
+[2] Computing correlations between accuracy and confidence theta...
+
+   OVERALL:
+   r(theta_accuracy, theta_confidence) = 0.438, p = 0.000000
+
+   BY DOMAIN:
+   What    : r = 0.571, p = 0.000000, N = 400
+   Where   : r = 0.602, p = 0.000000, N = 400
+   When    : r = 0.087, p = 0.081553, N = 400
+
+[3] Estimating IRT reliabilities (person separation)...
+   NOTE: Using empirical approach since source RQs don't report formal reliability.
+   Method: Variance of true scores / Total variance approximation
+
+   Accuracy reliability estimate (r_xx): 0.320
+   (Variance between persons / Total variance)
+
+   Confidence reliability estimate (r_yy): 0.651
+   (Variance between persons / Total variance)
+
+[4] Computing difference score reliability...
+
+   Formula: r_diff = (r_xx + r_yy - 2*r_xy) / (2 - 2*r_xy)
+
+   OVERALL DIFFERENCE SCORE RELIABILITY:
+   r_xx (accuracy) = 0.320
+   r_yy (confidence) = 0.651
+   r_xy (correlation) = 0.438
+   r_diff = 0.085
+
+   BY DOMAIN:
+   What    : r_xx=0.504, r_yy=0.709, r_xy=0.571 → r_diff=0.083
+   Where   : r_xx=0.518, r_yy=0.715, r_xy=0.602 → r_diff=0.037
+   When    : r_xx=0.169, r_yy=0.620, r_xy=0.087 → r_diff=0.336
+
+================================================================================
+RELIABILITY ASSESSMENT
+================================================================================
+
+   Overall r_diff = 0.085 < 0.7 ... FAIL
+   What r_diff = 0.083 < 0.7 ... FAIL
+   Where r_diff = 0.037 < 0.7 ... FAIL
+   When r_diff = 0.336 < 0.7 ... FAIL
+
+[5] Saving results...
+   Saved to: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_diff_score_reliability.csv
+
+================================================================================
+CIRCUIT BREAKER CHECK
+================================================================================
+
+🔴 BLOCKER: Overall difference score reliability (0.085) < 0.7
+   Calibration difference scores are UNRELIABLE.
+   REQUIRED ACTION: Switch to latent variable approach (SEM)
+   Estimated additional time: 4-6 hours per calibration RQ
+
+   Recommend consulting with user before proceeding.

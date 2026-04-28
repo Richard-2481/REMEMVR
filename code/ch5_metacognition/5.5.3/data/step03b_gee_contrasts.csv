@@ -1,0 +1,4 @@
+Contrast,Estimate,SE,z,p_uncorrected,p_bonferroni,Sig_uncorr,Sig_bonf
+Incongruent vs Common,0.378054,0.198099,1.908411,0.056338,0.169014,ns,ns
+Congruent vs Common,0.084474,0.219614,0.384646,0.700500,1.000000,ns,ns
+Incongruent vs Congruent,0.293580,0.295759,0.992633,0.320889,0.962666,ns,ns

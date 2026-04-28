@@ -1,0 +1,2 @@
+validation_result,missing_columns,row_count,sleep_completeness,hours_slept_missing_pct,sleep_quality_missing_pct,expected_rows,row_count_acceptable
+True,[],400,True,0.0,0.0,400,True

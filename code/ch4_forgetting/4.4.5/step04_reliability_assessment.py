@@ -21,7 +21,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step04_reliability_assessment.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -81,22 +80,22 @@ def bootstrap_alpha(item_scores, n_bootstrap=1000, random_seed=42):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 04: Cronbach's Alpha Reliability Assessment")
+        log("Step 04: Cronbach's Alpha Reliability Assessment")
 
         # Load wide-format data
         data_path = PROJECT_ROOT / "data" / "cache" / "dfData.csv"
-        log(f"[LOAD] Reading {data_path}")
+        log(f"Reading {data_path}")
         df_data = pd.read_csv(data_path, encoding='utf-8')
-        log(f"[LOADED] {len(df_data)} rows, {len(df_data.columns)} columns")
+        log(f"{len(df_data)} rows, {len(df_data.columns)} columns")
 
         # Load full item list
         full_item_list_path = RQ_DIR / "data" / "step00_full_item_list.csv"
-        log(f"[LOAD] Reading {full_item_list_path}")
+        log(f"Reading {full_item_list_path}")
         full_item_list = pd.read_csv(full_item_list_path, encoding='utf-8')
 
         # Load purified item list
         purified_items_path = PROJECT_ROOT / "results" / "ch5" / "5.4.1" / "data" / "step02_purified_items.csv"
-        log(f"[LOAD] Reading {purified_items_path}")
+        log(f"Reading {purified_items_path}")
         purified_items = pd.read_csv(purified_items_path, encoding='utf-8')
 
         # Create dimension mappings
@@ -107,7 +106,7 @@ if __name__ == "__main__":
         results = []
 
         for dimension in ['common', 'congruent', 'incongruent']:
-            log(f"[ANALYSIS] Processing {dimension.capitalize()} dimension")
+            log(f"Processing {dimension.capitalize()} dimension")
 
             # Get items for this dimension - Full set
             full_items = [col for col in df_data.columns
@@ -153,37 +152,37 @@ if __name__ == "__main__":
         reliability_assessment = pd.DataFrame(results)
 
         # Validation: Check alpha values in [0, 1]
-        log("[VALIDATION] Checking alpha values in [0, 1]")
+        log("Checking alpha values in [0, 1]")
         alpha_cols = ['alpha_full', 'alpha_purified']
         for col in alpha_cols:
             min_val = reliability_assessment[col].min()
             max_val = reliability_assessment[col].max()
             if min_val < 0.0 or max_val > 1.0:
                 raise ValueError(f"{col} out of range: [{min_val:.3f}, {max_val:.3f}]")
-        log("[PASS] All alpha values in valid range")
+        log("All alpha values in valid range")
 
         # Validation: Check CI contains estimate
-        log("[VALIDATION] Checking CI_lower < alpha < CI_upper")
+        log("Checking CI_lower < alpha < CI_upper")
         for idx, row in reliability_assessment.iterrows():
             if not (row['alpha_full_CI_lower'] < row['alpha_full'] < row['alpha_full_CI_upper']):
                 raise ValueError(f"Full alpha CI does not contain estimate for {row['dimension']}")
             if not (row['alpha_purified_CI_lower'] < row['alpha_purified'] < row['alpha_purified_CI_upper']):
                 raise ValueError(f"Purified alpha CI does not contain estimate for {row['dimension']}")
-        log("[PASS] All CIs contain estimates")
+        log("All CIs contain estimates")
 
         # Save results
         output_path = RQ_DIR / "data" / "step04_reliability_assessment.csv"
-        log(f"[SAVE] Writing {output_path}")
+        log(f"Writing {output_path}")
         reliability_assessment.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {len(reliability_assessment)} rows, {len(reliability_assessment.columns)} columns")
+        log(f"{len(reliability_assessment)} rows, {len(reliability_assessment.columns)} columns")
 
-        log("[SUCCESS] Step 04 complete")
+        log("Step 04 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

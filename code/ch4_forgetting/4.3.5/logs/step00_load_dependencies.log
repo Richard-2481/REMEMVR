@@ -1,0 +1,47 @@
+2025-12-03 18:49:27,616 - INFO - ============================================================
+2025-12-03 18:49:27,617 - INFO - STEP 00: LOAD DEPENDENCIES FROM RQ 5.3.1
+2025-12-03 18:49:27,617 - INFO - ============================================================
+2025-12-03 18:49:27,617 - INFO - 
+1. Checking RQ 5.3.1 completion status...
+2025-12-03 18:49:27,619 - ERROR - STEP 00 FAILED: EXPECTATIONS ERROR: RQ 5.3.1 rq_inspect status is '{'status': 'success', 'completed': datetime.date(2025, 11, 24), 'context_dump': 'All 8 steps validated (step00-step07). 4-layer validation PASS for all.\nIRT: 72 items -> 43 purified (59.7%), theta [-2.48, 2.95], convergence=True\nLMM: Best model=Log (AIC=2346.60), all 5 converged, 2/3 contrasts significant\nOutputs: 11 data files, 2 plot CSVs (theta+probability scales)\n'}', expected 'success'
+2025-12-03 18:49:43,992 - INFO - ============================================================
+2025-12-03 18:49:43,992 - INFO - STEP 00: LOAD DEPENDENCIES FROM RQ 5.3.1
+2025-12-03 18:49:43,992 - INFO - ============================================================
+2025-12-03 18:49:43,992 - INFO - 
+1. Checking RQ 5.3.1 completion status...
+2025-12-03 18:49:43,994 - INFO - RQ 5.3.1 status check: PASS (rq_inspect: success)
+2025-12-03 18:49:43,994 - INFO - 
+2. Loading and transforming theta scores...
+2025-12-03 18:49:43,997 - INFO - Loaded theta scores: 1200 rows, columns: ['composite_ID', 'domain_name', 'theta']
+2025-12-03 18:49:44,006 - INFO - Transformed theta scores: 400 rows, columns: ['composite_ID', 'theta_IFR', 'theta_ICR', 'theta_IRE', 'se_IFR', 'se_ICR', 'se_IRE']
+2025-12-03 18:49:44,007 - INFO -   theta_IFR: min=-2.367, max=2.616
+2025-12-03 18:49:44,007 - INFO -   theta_ICR: min=-2.259, max=2.434
+2025-12-03 18:49:44,007 - INFO -   theta_IRE: min=-2.406, max=2.799
+2025-12-03 18:49:44,007 - INFO - 
+3. Loading and transforming TSVR mapping...
+2025-12-03 18:49:44,008 - INFO - Loaded TSVR mapping: 400 rows, columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+2025-12-03 18:49:44,008 - INFO - Transformed TSVR mapping: 400 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'Days']
+2025-12-03 18:49:44,009 - INFO - 
+4. Loading and transforming purified items...
+2025-12-03 18:49:44,010 - INFO - Loaded purified items: 45 rows, columns: ['item', 'domain', 'Discrimination', 'Difficulty_1']
+2025-12-03 18:49:44,010 - INFO - Transformed purified items: 45 rows, columns: ['item_name', 'paradigm', 'dimension', 'a', 'b']
+2025-12-03 18:49:44,011 - INFO - Items per paradigm: {'ICR': 19, 'IRE': 14, 'IFR': 12}
+2025-12-03 18:49:44,011 - INFO - 
+5. Verifying dfData.csv items...
+2025-12-03 18:49:44,025 - INFO - All 45 purified item tags verified in dfData.csv
+2025-12-03 18:49:44,025 - INFO - 
+6. Verifying composite_ID consistency...
+2025-12-03 18:49:44,025 - INFO - All 400 composite_IDs matched between theta and TSVR
+2025-12-03 18:49:44,025 - INFO - 
+7. Saving transformed files...
+2025-12-03 18:49:44,027 - INFO -    Saved: step00_irt_theta.csv (400 rows)
+2025-12-03 18:49:44,028 - INFO -    Saved: step00_tsvr_mapping.csv (400 rows)
+2025-12-03 18:49:44,028 - INFO -    Saved: step00_purified_items.csv (45 rows)
+2025-12-03 18:49:44,028 - INFO - 
+8. Writing verification report...
+2025-12-03 18:49:44,029 - INFO - Verification report written to /home/etai/projects/REMEMVR/results/ch5/5.3.5/data/step00_dependency_verification.txt
+2025-12-03 18:49:44,029 - INFO - 
+============================================================
+2025-12-03 18:49:44,029 - INFO - STEP 00 COMPLETE: Dependency check PASS
+2025-12-03 18:49:44,029 - INFO - IFR items: 12, ICR items: 19, IRE items: 14
+2025-12-03 18:49:44,029 - INFO - ============================================================

@@ -1,0 +1,9 @@
+predictor,test_type,statistic,p_value,conclusion
+RAVLT_Forgetting,normality_RAVLT_Forgetting,0.11179151616634336,0.15215480582925334,PASS
+RAVLT_Forgetting,normality_REMEMVR,0.10293517890137255,0.22394198874091273,PASS
+RAVLT_Forgetting,linearity,0.02574484132659538,,PASS
+RAVLT_Forgetting,outliers,0.0,,0 outliers detected (0.00%)
+RAVLT_Pct_Ret,normality_RAVLT_Pct_Ret,0.06202088671860917,0.8134630232810554,PASS
+RAVLT_Pct_Ret,normality_REMEMVR,0.10293517890137255,0.22394198874091273,PASS
+RAVLT_Pct_Ret,linearity,0.03311020868757303,,PASS
+RAVLT_Pct_Ret,outliers,0.0,,0 outliers detected (0.00%)

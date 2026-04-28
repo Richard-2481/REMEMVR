@@ -1,0 +1,37 @@
+Step 4: Prepare LMM Input Data
+Loading Pass 2 theta scores...
+step03_theta_scores.csv (400 rows, 3 cols)
+  Columns: ['UID', 'test', 'Theta_All']
+Loading TSVR time variable...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+  TSVR_hours range: [1.0, 246.2]
+Merging theta scores with TSVR data...
+Successfully merged 400 rows
+  Merge success rate: 100% (400 / 400)
+composite_ID column from UID and test
+Renaming columns...
+  Renamed: Theta_All -> Theta, created placeholder SE=0.3
+Creating time transformations...
+  Days range: [0.04, 10.26]
+  Days_squared range: [0.00, 105.27]
+  log_Days_plus1 range: [0.041, 2.421]
+All time transformations valid (no NaN, no Inf)
+Saving LMM input dataset to step04_lmm_input.csv...
+step04_lmm_input.csv (400 rows, 9 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'Theta', 'SE', 'TSVR_hours', 'Days', 'Days_squared', 'log_Days_plus1']
+Validating LMM input dataset...
+Row count correct (400 observations)
+Column count correct (9 columns)
+No NaN values in dataset
+All 100 UIDs appear exactly 4 times (T1-T4)
+TSVR_hours outside expected range:
+  Min: 1.0 (expected >=0)
+  Max: 246.2 (expected <=168)
+Days outside expected range [0, 7]
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Step 4 complete

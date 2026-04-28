@@ -14,9 +14,7 @@ print("=" * 80)
 print("TOST EQUIVALENCE TESTING - RQ 5.4.2")
 print("=" * 80)
 
-# ============================================================================
 # OBSERVED EFFECT EXTRACTION
-# ============================================================================
 
 print("\n1. OBSERVED EFFECT")
 print("-" * 80)
@@ -44,9 +42,7 @@ print(f"  p (NHST) = {p_val:.4f}")
 N = 1200  # Total observations
 df = N - 12  # Degrees of freedom (12 parameters in model)
 
-# ============================================================================
 # EQUIVALENCE BOUNDS
-# ============================================================================
 
 print("\n2. EQUIVALENCE BOUNDS")
 print("-" * 80)
@@ -63,9 +59,7 @@ print(f"Equivalence bounds: β in [{-beta_bound:.4f}, {beta_bound:.4f}]")
 print(f"  Lower bound: {-beta_bound:.4f}")
 print(f"  Upper bound: {beta_bound:.4f}")
 
-# ============================================================================
 # TWO ONE-SIDED TESTS (TOST)
-# ============================================================================
 
 print("\n3. TWO ONE-SIDED TESTS (TOST)")
 print("-" * 80)
@@ -100,9 +94,7 @@ if p2 < 0.05:
 else:
     print(f"  ✗ FAIL TO REJECT H0: Cannot rule out effect above upper bound")
 
-# ============================================================================
 # EQUIVALENCE CONCLUSION
-# ============================================================================
 
 print("\n4. EQUIVALENCE CONCLUSION")
 print("-" * 80)
@@ -133,9 +125,7 @@ else:
     print(f"\n  Effect may be within or outside equivalence bounds")
     print(f"  Recommendation: Increase sample size or revise equivalence bounds")
 
-# ============================================================================
 # CONFIDENCE INTERVAL FOR EQUIVALENCE
-# ============================================================================
 
 print("\n5. CONFIDENCE INTERVAL FOR EQUIVALENCE")
 print("-" * 80)
@@ -164,9 +154,7 @@ elif ci_lower < -beta_bound or ci_upper > beta_bound:
         overlap_pct = ((overlap_upper - overlap_lower) / (ci_upper - ci_lower)) * 100
         print(f"  {overlap_pct:.1f}% of CI overlaps with equivalence region")
 
-# ============================================================================
 # ALTERNATIVE EQUIVALENCE BOUNDS
-# ============================================================================
 
 print("\n6. SENSITIVITY TO EQUIVALENCE BOUNDS")
 print("-" * 80)
@@ -200,9 +188,7 @@ for label, d in bounds_to_test.items():
     
     print(f"  {label}: TOST p = {tost_p_b:.4f}, Equivalent: {equiv}")
 
-# ============================================================================
 # SAVE RESULTS
-# ============================================================================
 
 print("\n7. SAVING RESULTS")
 print("-" * 80)

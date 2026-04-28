@@ -1,0 +1,135 @@
+================================================================================
+Step 05c: Model Averaging (Congruence × Time)
+================================================================================
+Loading input data and model comparison...
+  Training data: 1200 observations
+  Models compared: 65
+  Congruence levels: ['common', 'congruent', 'incongruent']
+  Best single model: PowerLaw_01 (weight=0.0604)
+  Competitive models (ΔAIC<2): 15
+  Cumulative weight: 56.4%
+
+Creating prediction grid...
+  Grid points: 300 (100 per congruence level)
+
+Computing model-averaged predictions...
+  NOTE: Congruence × Time interaction - averaging across functional forms
+
+Model averaging complete:
+  Models used: 15
+  Effective N models: 13.96
+  Prediction variance: [0.0000, 0.0019]
+
+Model types in competitive set:
+  Reciprocal family: 3 models
+  Power-law family: 6 models
+  Logarithmic family: 6 models
+
+[POWER LAW] Effective alpha (if applicable):
+  Weighted mean: α=0.181
+  Range: [0.1, 0.3]
+
+Saving model-averaged predictions...
+  ✓ step05c_averaged_predictions.csv (300 rows)
+  ✓ step05c_averaging_summary.txt
+
+Averaged predictions per congruence level:
+  Common      : θ ∈ [-0.576, 0.459], SE ∈ [0.0032, 0.0432]
+  Congruent   : θ ∈ [-0.576, 0.459], SE ∈ [0.0032, 0.0432]
+  Incongruent : θ ∈ [-0.576, 0.459], SE ∈ [0.0032, 0.0432]
+================================================================================
+Step 05c Complete
+  Models averaged: 15
+  Effective N: 13.96
+  Output: step05c_averaged_predictions.csv
+================================================================================
+================================================================================
+Step 05c: Model Averaging (Congruence × Time)
+================================================================================
+Loading input data and model comparison...
+  Training data: 1200 observations
+  Models compared: 65
+  Congruence levels: ['common', 'congruent', 'incongruent']
+  Best single model: PowerLaw_01 (weight=0.0604)
+  Competitive models (ΔAIC<2): 15
+  Cumulative weight: 56.4%
+
+Creating prediction grid...
+  Grid points: 300 (100 per congruence level)
+
+Computing model-averaged predictions...
+  NOTE: Congruence × Time interaction - averaging across functional forms
+
+Model averaging complete:
+  Models used: 15
+  Effective N models: 13.96
+  Prediction variance: [0.0000, 0.0019]
+
+Model types in competitive set:
+  Reciprocal family: 3 models
+  Power-law family: 6 models
+  Logarithmic family: 6 models
+
+[POWER LAW] Effective alpha (if applicable):
+  Weighted mean: α=0.181
+  Range: [0.1, 0.3]
+
+Saving model-averaged predictions...
+  ✓ step05c_averaged_predictions.csv (300 rows)
+  ✓ step05c_averaging_summary.txt
+
+Averaged predictions per congruence level:
+  Common      : θ ∈ [-0.576, 0.459], SE ∈ [0.0032, 0.0432]
+  Congruent   : θ ∈ [-0.576, 0.459], SE ∈ [0.0032, 0.0432]
+  Incongruent : θ ∈ [-0.576, 0.459], SE ∈ [0.0032, 0.0432]
+================================================================================
+Step 05c Complete
+  Models averaged: 15
+  Effective N: 13.96
+  Output: step05c_averaged_predictions.csv
+================================================================================
+================================================================================
+Step 05c: Model Averaging (Congruence × Time)
+================================================================================
+Loading input data and model comparison...
+  Training data: 1200 observations
+  Models compared: 65
+  Congruence levels: ['common', 'congruent', 'incongruent']
+  Best single model: PowerLaw_01 (weight=0.0604)
+  Competitive models (ΔAIC<2): 15
+  Cumulative weight: 56.4%
+
+Creating prediction grid...
+  Grid points: 300 (100 per congruence level)
+
+Computing model-averaged predictions...
+  NOTE: Congruence × Time interaction - averaging across functional forms
+
+Model averaging complete:
+  Models used: 15
+  Effective N models: 13.96
+  Prediction variance: [0.0000, 0.0032]
+
+Model types in competitive set:
+  Reciprocal family: 3 models
+  Power-law family: 6 models
+  Logarithmic family: 6 models
+
+[POWER LAW] Effective alpha (if applicable):
+  Weighted mean: α=0.181
+  Range: [0.1, 0.3]
+
+Saving model-averaged predictions...
+  ✓ step05c_averaged_predictions.csv (300 rows)
+  ✓ step05c_averaging_summary.txt
+
+Averaged predictions per congruence level:
+  Common      : θ ∈ [-0.587, 0.452], SE ∈ [0.0031, 0.0455]
+  Congruent   : θ ∈ [-0.553, 0.435], SE ∈ [0.0048, 0.0461]
+  Incongruent : θ ∈ [-0.587, 0.489], SE ∈ [0.0032, 0.0566]
+================================================================================
+Step 05c Complete
+  Models averaged: 15
+  Effective N: 13.96
+  Output: step05c_averaged_predictions.csv
+================================================================================

@@ -1,0 +1,147 @@
+Step 13: Formal Dissociation Tests (Matched 6-Predictor Models)
+Accuracy dataset: (100, 10)
+Confidence dataset: (100, 10)
+N=100 participants with both accuracy and confidence theta
+Accuracy R2 = 0.300673 (expect ~0.249)
+Confidence R2 = 0.220454 (expect ~0.188)
+
+======================================================================
+TEST 1: Steiger's Z Tests for Dependent Correlations
+======================================================================
+
+RPM_T:
+  r(RPM_T-accuracy)   = 0.4569
+  r(RPM_T-confidence) = 0.3632
+  r(accuracy-confidence)   = 0.6061
+  sr2 accuracy  = 0.061101
+  sr2 confidence = 0.026361
+  Steiger Z = 1.4811, p = 0.138584
+    n.s.
+
+BVMT_T:
+  r(BVMT_T-accuracy)   = 0.3635
+  r(BVMT_T-confidence) = 0.3632
+  r(accuracy-confidence)   = 0.6061
+  sr2 accuracy  = 0.008240
+  sr2 confidence = 0.036715
+  Steiger Z = 0.0052, p = 0.995886
+    n.s.
+
+RAVLT_T:
+  r(RAVLT_T-accuracy)   = 0.2786
+  r(RAVLT_T-confidence) = 0.2028
+  r(accuracy-confidence)   = 0.6061
+  sr2 accuracy  = 0.009073
+  sr2 confidence = 0.000789
+  Steiger Z = 1.1029, p = 0.270078
+    n.s.
+
+RAVLT_Pct_Ret_T:
+  r(RAVLT_Pct_Ret_T-accuracy)   = 0.3653
+  r(RAVLT_Pct_Ret_T-confidence) = 0.3118
+  r(accuracy-confidence)   = 0.6061
+  sr2 accuracy  = 0.040176
+  sr2 confidence = 0.031651
+  Steiger Z = 0.8070, p = 0.419689
+    n.s.
+
+BVMT_Pct_Ret_T:
+  r(BVMT_Pct_Ret_T-accuracy)   = 0.1955
+  r(BVMT_Pct_Ret_T-confidence) = 0.1294
+  r(accuracy-confidence)   = 0.6061
+  sr2 accuracy  = 0.009782
+  sr2 confidence = 0.001556
+  Steiger Z = 0.9396, p = 0.347424
+    n.s.
+
+step13_steiger_z_tests.csv
+
+======================================================================
+TEST 2: Bootstrap sr2 Difference for RPM (B=5000)
+======================================================================
+Point estimate: 0.061101 - 0.026361 = 0.034740
+BVMT point estimate: 0.008240 - 0.036715 = -0.028475
+Running bootstrap (B=5000)...
+  Progress: 1000/5000
+  Progress: 2000/5000
+  Progress: 3000/5000
+  Progress: 4000/5000
+  Progress: 5000/5000
+Bootstrap complete: 5000 successful, 0 failed
+
+RPM sr2 difference:
+  Point estimate: 0.034740
+  Percentile 95% CI: [-0.032473, 0.104569]
+  BCa 95% CI: [-0.014442, 0.125782]
+  Proportion positive: 0.8478
+    CI includes zero
+
+BVMT sr2 difference (accuracy - confidence):
+  Point estimate: -0.028475
+  Percentile 95% CI: [-0.088797, 0.025781]
+  Proportion positive: 0.1540
+  Note: NEGATIVE means confidence > accuracy (reversed direction)
+
+step13_bootstrap_sr2_difference.csv
+
+======================================================================
+TEST 3: 5-Fold Cross-Validation for Accuracy Model
+======================================================================
+  Fold 1: train R2=0.3848, test R2=-0.4878, RMSE=0.6815
+  Fold 2: train R2=0.2365, test R2=0.3754, RMSE=0.6412
+  Fold 3: train R2=0.3550, test R2=-0.0782, RMSE=0.6585
+  Fold 4: train R2=0.2728, test R2=0.2596, RMSE=0.5030
+  Fold 5: train R2=0.3310, test R2=-0.0926, RMSE=0.6826
+
+Summary:
+  Mean train R2: 0.3160 +/- 0.0605
+  Mean test R2:  -0.0047 +/- 0.3394
+  Train-test gap: 0.3208
+  OVERFITTING CONCERN
+step13_accuracy_cross_validation.csv
+
+======================================================================
+TEST 4: Omnibus R2 Difference (Accuracy vs Confidence)
+======================================================================
+Point estimate: R2_acc (0.3007) - R2_conf (0.2205) = 0.0802
+Running bootstrap (B=5000)...
+  Progress: 1000/5000
+  Progress: 2000/5000
+  Progress: 3000/5000
+  Progress: 4000/5000
+  Progress: 5000/5000
+
+Omnibus R2 difference:
+  Point estimate: 0.0802
+  Percentile 95% CI: [-0.0885, 0.2429]
+  Proportion positive: 0.8322
+    CI includes zero
+step13_omnibus_r2_comparison.csv
+
+======================================================================
+SUMMARY OF ALL DISSOCIATION TESTS
+======================================================================
+All tests use matched 6-predictor models, N=100
+
+1. STEIGER'S Z TESTS:
+   RPM_T: Z=1.481, p=0.1386 n.s.
+   BVMT_T: Z=0.005, p=0.9959 n.s.
+   RAVLT_T: Z=1.103, p=0.2701 n.s.
+   RAVLT_Pct_Ret_T: Z=0.807, p=0.4197 n.s.
+   BVMT_Pct_Ret_T: Z=0.940, p=0.3474 n.s.
+
+2. BOOTSTRAP SR2 DIFFERENCE (RPM):
+   Delta = 0.0347, 95% CI [-0.0325, 0.1046], BCa [-0.0144, 0.1258]
+   84.8% of bootstrap samples favour accuracy > confidence
+
+3. CROSS-VALIDATION (ACCURACY MODEL):
+   Mean test R2 = -0.0047 (train = 0.3160, gap = 0.3208)
+
+4. OMNIBUS R2 DIFFERENCE:
+   Delta R2 = 0.0802, 95% CI [-0.0885, 0.2429]
+   83.2% of bootstrap samples favour accuracy > confidence
+
+INTERPRETATION: RPM dissociation remains non-significant
+  -> S6.3 retains 'numerical trend' framing
+
+Step 13: Formal dissociation tests complete

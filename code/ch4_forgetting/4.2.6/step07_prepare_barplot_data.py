@@ -19,9 +19,8 @@ Plot Description:
     X-axis: Domain
     Colored bars indicate interpretation category (Low/Moderate/Substantial)
 
-Note: Actual PNG plot will be generated later by rq_plots agent.
+Note: Actual PNG plot will be generated later by plotting pipeline.
 
-Author: Claude (g_code agent)
 Date: 2025-12-03
 """
 
@@ -155,10 +154,10 @@ def main():
     logger.info(f"\nSaved barplot data to: {output_path}")
 
     # ---------------------------------------------------------------------
-    # 6. Preview for rq_plots agent
+    # 6. Preview for plotting pipeline
     # ---------------------------------------------------------------------
     logger.info("\n" + "=" * 60)
-    logger.info("BARPLOT DATA PREVIEW (for rq_plots)")
+    logger.info("BARPLOT DATA PREVIEW (for plotting pipeline)")
     logger.info("=" * 60)
 
     logger.info(f"\n{'Domain':<10} {'ICC':<10} {'Interp':<15} {'Order':<6} {'Color':<15}")
@@ -168,9 +167,9 @@ def main():
 
     logger.info(f"\nThreshold line: 0.40 (horizontal reference)")
 
-    # Plot instructions for rq_plots
+    # Plot instructions for plotting pipeline
     logger.info("\n" + "-" * 60)
-    logger.info("PLOT INSTRUCTIONS (for rq_plots agent):")
+    logger.info("PLOT INSTRUCTIONS (for plotting pipeline):")
     logger.info("-" * 60)
     logger.info("Type: Grouped barplot")
     logger.info("X-axis: domain (What, Where)")
@@ -187,7 +186,7 @@ def main():
     logger.info("STEP 07 COMPLETE")
     logger.info("=" * 60)
     logger.info(f"Prepared barplot data for {len(barplot_data)} domains")
-    logger.info("Plot source CSV ready for rq_plots agent")
+    logger.info("Plot source CSV ready for plotting pipeline")
     logger.info("\nAll analysis steps complete for RQ 5.2.6")
 
 

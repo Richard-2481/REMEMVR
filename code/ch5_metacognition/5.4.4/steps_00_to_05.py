@@ -31,7 +31,6 @@ METHODOLOGY:
 - Compare ICC_slope across paradigms (test if Free Recall highest)
 - Compare to Ch5 5.3.7 (test if confidence reveals more variance than accuracy)
 
-Author: Claude Code
 Date: 2025-12-12
 RQ: ch6/6.4.4
 """
@@ -90,7 +89,7 @@ def step00_import_data():
 
     # Load LMM input from RQ 6.4.1
     input_path = PROJECT_ROOT / "results" / "ch6" / "6.4.1" / "data" / "step04_lmm_input.csv"
-    log(f"[LOAD] Loading LMM input from RQ 6.4.1: {input_path}")
+    log(f"Loading LMM input from RQ 6.4.1: {input_path}")
 
     df = pd.read_csv(input_path)
     log(f"  ✓ Loaded {len(df)} rows × {len(df.columns)} columns")
@@ -99,14 +98,14 @@ def step00_import_data():
     # Verify expected structure
     expected_rows = 1200  # 100 participants × 4 tests × 3 paradigms
     if len(df) != expected_rows:
-        log(f"[WARNING] Expected {expected_rows} rows, found {len(df)}")
+        log(f"Expected {expected_rows} rows, found {len(df)}")
 
     # Check paradigms
     paradigms = df['paradigm'].unique()
     log(f"  ✓ Paradigms: {list(paradigms)}")
 
     if set(paradigms) != {'IFR', 'ICR', 'IRE'}:
-        log(f"[ERROR] Expected paradigms IFR, ICR, IRE, found {set(paradigms)}")
+        log(f"Expected paradigms IFR, ICR, IRE, found {set(paradigms)}")
         raise ValueError("Missing paradigms")
 
     # Count per paradigm
@@ -173,7 +172,7 @@ def step01_fit_paradigm_lmms(df):
         try:
             result = model.fit(reml=False, method='powell')
         except Exception as e:
-            log(f"  [FALLBACK] Powell failed, trying default optimizer")
+            log(f"  Powell failed, trying default optimizer")
             result = model.fit(reml=False)
 
         models[paradigm] = result
@@ -251,10 +250,10 @@ def step02_extract_variance_components(models):
 
         # Validate
         if var_intercept < 0:
-            log(f"[ERROR] Negative intercept variance for {paradigm}")
+            log(f"Negative intercept variance for {paradigm}")
             raise ValueError(f"Negative intercept variance for {paradigm}")
         if var_slope < 0:
-            log(f"[WARNING] Negative slope variance for {paradigm} - setting to 0 (boundary)")
+            log(f"Negative slope variance for {paradigm} - setting to 0 (boundary)")
             var_slope = 0.0
 
         var_total = var_intercept + var_slope + var_residual
@@ -294,7 +293,7 @@ def step03_compute_icc(variance_df, df):
     # Get time parameters
     mean_time = df['log_TSVR'].mean()
     max_time = df['log_TSVR'].max()
-    log(f"\n[PARAMETERS]:")
+    log(f"\n:")
     log(f"  Mean log_TSVR: {mean_time:.4f}")
     log(f"  Max log_TSVR (Day 6): {max_time:.4f}")
 
@@ -432,7 +431,7 @@ def step04_compare_paradigms(icc_df):
         pattern = f"{highest} shows highest ICC_slope ({icc_dict[highest]:.6f}): Unexpected pattern"
         hypothesis_result = f"REFUTED - {highest} has highest ICC_slope, not Free Recall"
 
-    log(f"\n[PATTERN]:")
+    log(f"\n:")
     log(f"  {pattern}")
     log(f"\n[HYPOTHESIS TEST]:")
     log(f"  {hypothesis_result}")
@@ -478,7 +477,7 @@ def step05_compare_ch5(icc_df):
     ch5_path = PROJECT_ROOT / "results" / "ch5" / "5.3.7" / "data" / "step03_icc_estimates.csv"
 
     if not ch5_path.exists():
-        log(f"[WARNING] Ch5 5.3.7 file not found: {ch5_path}")
+        log(f"Ch5 5.3.7 file not found: {ch5_path}")
         log("  Skipping Ch5 comparison (non-fatal)")
         return None
 
@@ -500,7 +499,7 @@ def step05_compare_ch5(icc_df):
         ch5_row = ch5_wide[ch5_wide['paradigm'] == ch5_paradigm]
 
         if len(ch5_row) == 0:
-            log(f"[WARNING] Ch5 paradigm '{ch5_paradigm}' not found")
+            log(f"Ch5 paradigm '{ch5_paradigm}' not found")
             continue
 
         ch5_row = ch5_row.iloc[0]
@@ -612,15 +611,15 @@ if __name__ == "__main__":
         ch5_comparison = step05_compare_ch5(icc_df)
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] RQ 6.4.4 Complete")
+        log("RQ 6.4.4 Complete")
         log("=" * 80)
-        log(f"\n[SUMMARY]:")
+        log(f"\n:")
         log(f"  Pattern: {pattern}")
         log(f"  Hypothesis: {hypothesis_result}")
         log(f"\n  Completed: {datetime.now().isoformat()}")
 
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

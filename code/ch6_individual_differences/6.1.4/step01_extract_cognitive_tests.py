@@ -81,29 +81,23 @@ def compute_ravlt_percent_retention(df, log_fn):
             pct_ret[i] = (dr / denom) * 100
 
     n_valid = np.sum(~np.isnan(pct_ret))
-    log_fn(f"[COMPUTED] RAVLT Percent Retention: {n_valid}/{len(df)} valid, "
+    log_fn(f"RAVLT Percent Retention: {n_valid}/{len(df)} valid, "
            f"M={np.nanmean(pct_ret):.1f}%, SD={np.nanstd(pct_ret):.1f}%")
     return pct_ret
 
 def main():
     """Main execution."""
-    log("[START] Step 01: Extract cognitive tests (v2 - ceiling fix + percent retention)")
+    log("Step 01: Extract cognitive tests (v2 - ceiling fix + percent retention)")
 
     # Load participant data
-    log("[LOAD] Reading dfnonvr.csv...")
+    log("Reading dfnonvr.csv...")
     df = pd.read_csv(PROJ_ROOT / "data" / "dfnonvr.csv")
-    log(f"[INFO] Loaded {len(df)} participants from dfnonvr.csv")
-
-    # =========================================================================
+    log(f"Loaded {len(df)} participants from dfnonvr.csv")
     # Apply RAVLT ceiling fix BEFORE computing totals
-    # =========================================================================
-    log("\n[CEILING] Applying RAVLT ceiling fix (0 -> 15 for unadministered trials)...")
+    log("\nApplying RAVLT ceiling fix (0 -> 15 for unadministered trials)...")
     df = fix_ravlt_ceiling(df, log)
-
-    # =========================================================================
     # Extract and compute cognitive test scores
-    # =========================================================================
-    log("\n[EXTRACT] Extracting cognitive test scores...")
+    log("\nExtracting cognitive test scores...")
 
     # Initialize output dataframe
     cognitive_df = pd.DataFrame()
@@ -116,13 +110,13 @@ def main():
         raise ValueError(f"Missing RAVLT trial columns: {missing_cols}")
 
     cognitive_df['RAVLT_T'] = df[ravlt_cols].sum(axis=1)
-    log(f"[SUCCESS] RAVLT Total (ceiling-fixed): "
+    log(f"RAVLT Total (ceiling-fixed): "
         f"M={cognitive_df['RAVLT_T'].mean():.1f}, SD={cognitive_df['RAVLT_T'].std():.1f}")
 
     # RAVLT Delayed Recall
     if 'ravlt-delayed-recall-score' in df.columns:
         cognitive_df['RAVLT_DR_T'] = df['ravlt-delayed-recall-score']
-        log("[SUCCESS] RAVLT delayed recall extracted")
+        log("RAVLT delayed recall extracted")
     else:
         raise ValueError("Column 'ravlt-delayed-recall-score' not found")
 
@@ -136,39 +130,39 @@ def main():
         raise ValueError(f"Missing BVMT trial columns: {missing_cols}")
 
     cognitive_df['BVMT_T'] = df[bvmt_trial_cols].sum(axis=1)
-    log(f"[SUCCESS] BVMT Total (sum trials 1-3): "
+    log(f"BVMT Total (sum trials 1-3): "
         f"M={cognitive_df['BVMT_T'].mean():.1f}, SD={cognitive_df['BVMT_T'].std():.1f}")
 
     # BVMT Percent Retained (new predictor, pre-computed in CSV)
     if 'bvmt-percent-retained' not in df.columns:
         raise ValueError("Column 'bvmt-percent-retained' not found in dfnonvr.csv")
     cognitive_df['BVMT_Pct_Ret'] = df['bvmt-percent-retained']
-    log(f"[SUCCESS] BVMT Percent Retained: "
+    log(f"BVMT Percent Retained: "
         f"M={cognitive_df['BVMT_Pct_Ret'].mean():.1f}%, SD={cognitive_df['BVMT_Pct_Ret'].std():.1f}%")
 
     # NART
     if 'nart-score' in df.columns:
         cognitive_df['NART_T'] = df['nart-score']
-        log("[SUCCESS] NART score extracted")
+        log("NART score extracted")
     else:
         raise ValueError("Column 'nart-score' not found")
 
     # RPM
     if 'rpm-score' in df.columns:
         cognitive_df['RPM_T'] = df['rpm-score']
-        log("[SUCCESS] RPM score extracted")
+        log("RPM score extracted")
     else:
         raise ValueError("Column 'rpm-score' not found")
 
     # Check for missing values
-    log("\n[CHECK] Checking for missing values...")
+    log("\nChecking for missing values...")
     missing = cognitive_df.isnull().sum()
     for col, n_missing in missing.items():
         if n_missing > 0:
             log(f"  - {col}: {n_missing} missing values")
 
     # Summary statistics
-    log("\n[SUMMARY] Cognitive test scores (raw):")
+    log("\nCognitive test scores (raw):")
     for col in ['RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret', 'BVMT_T', 'BVMT_Pct_Ret', 'NART_T', 'RPM_T']:
         if col in cognitive_df.columns:
             mean_val = cognitive_df[col].mean()
@@ -181,11 +175,11 @@ def main():
     output_path = RQ_DIR / "data" / "step01_cognitive_tests.csv"
     output_path.parent.mkdir(exist_ok=True)
     cognitive_df.to_csv(output_path, index=False)
-    log(f"\n[SAVE] Saved cognitive tests to {output_path}")
-    log(f"[INFO] Shape: {cognitive_df.shape}")
-    log(f"[INFO] Columns: {cognitive_df.columns.tolist()}")
+    log(f"\nSaved cognitive tests to {output_path}")
+    log(f"Shape: {cognitive_df.shape}")
+    log(f"Columns: {cognitive_df.columns.tolist()}")
 
-    log("\n[SUCCESS] Step 01 complete (v2 - ceiling fix + percent retention)")
+    log("\nStep 01 complete (v2 - ceiling fix + percent retention)")
     return 0
 
 if __name__ == "__main__":

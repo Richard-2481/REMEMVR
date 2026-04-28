@@ -30,31 +30,30 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step07_fit_lmms.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 07: Fit Parallel LMMs and Compare AIC")
+        log("Step 07: Fit Parallel LMMs and Compare AIC")
 
         # Load standardized scores
         input_path = RQ_DIR / "data" / "step06_standardized_scores.csv"
-        log(f"[LOAD] Reading {input_path}")
+        log(f"Reading {input_path}")
         standardized_scores = pd.read_csv(input_path, encoding='utf-8')
-        log(f"[LOADED] {len(standardized_scores)} rows")
+        log(f"{len(standardized_scores)} rows")
 
         # Extract UID from composite_ID
         standardized_scores['UID'] = standardized_scores['composite_ID'].str.split('_').str[0]
-        log(f"[CREATED] UID column (e.g., {standardized_scores['UID'].iloc[0]})")
+        log(f"UID column (e.g., {standardized_scores['UID'].iloc[0]})")
 
         # Add time transformations for two-process forgetting model
-        log(f"[TRANSFORM] Creating recip_TSVR and log_TSVR transformations")
+        log(f"Creating recip_TSVR and log_TSVR transformations")
         standardized_scores['recip_TSVR'] = 1.0 / (standardized_scores['TSVR_hours'] + 1)  # Rapid component
         standardized_scores['log_TSVR'] = np.log1p(standardized_scores['TSVR_hours'])      # Slow component
-        log(f"[CREATED] recip_TSVR (rapid): 1/(t+1), range [{standardized_scores['recip_TSVR'].min():.3f}, {standardized_scores['recip_TSVR'].max():.3f}]")
-        log(f"[CREATED] log_TSVR (slow): log(t+1), range [{standardized_scores['log_TSVR'].min():.3f}, {standardized_scores['log_TSVR'].max():.3f}]")
+        log(f"recip_TSVR (rapid): 1/(t+1), range [{standardized_scores['recip_TSVR'].min():.3f}, {standardized_scores['recip_TSVR'].max():.3f}]")
+        log(f"log_TSVR (slow): log(t+1), range [{standardized_scores['log_TSVR'].min():.3f}, {standardized_scores['log_TSVR'].max():.3f}]")
 
         # Define dimensions and score types
         dimensions = ['common', 'congruent', 'incongruent']
@@ -73,13 +72,13 @@ if __name__ == "__main__":
         }
 
         # Fit models
-        log(f"[ANALYSIS] Fitting 9 LMMs (3 dimensions x 3 score types)")
-        log(f"[NOTE] Formula: score ~ recip_TSVR + log_TSVR + (recip_TSVR | UID)")
-        log(f"[NOTE] Recip+Log two-process forgetting per RQ 5.4.1 ROOT cascade")
-        log(f"[NOTE] Will attempt ~recip_TSVR random slopes, fallback to ~1 if singular")
+        log(f"Fitting 9 LMMs (3 dimensions x 3 score types)")
+        log(f"Formula: score ~ recip_TSVR + log_TSVR + (recip_TSVR | UID)")
+        log(f"Recip+Log two-process forgetting per RQ 5.4.1 ROOT cascade")
+        log(f"Will attempt ~recip_TSVR random slopes, fallback to ~1 if singular")
 
         for dimension in dimensions:
-            log(f"\n[DIMENSION] {dimension.capitalize()}")
+            log(f"\n{dimension.capitalize()}")
 
             aic_values = {}
 
@@ -87,7 +86,7 @@ if __name__ == "__main__":
                 # Construct column name
                 score_col = f'z_{score_prefix}_{dimension}'
 
-                log(f"  [MODEL] {score_label} ({score_col})")
+                log(f"  {score_label} ({score_col})")
 
                 # Prepare data with Recip+Log transformations
                 exog = sm.add_constant(standardized_scores[['recip_TSVR', 'log_TSVR']])
@@ -115,7 +114,7 @@ if __name__ == "__main__":
                     aic = result.aic
                     aic_values[score_label] = aic
 
-                    log(f"    [SUCCESS] Random slopes model converged")
+                    log(f"    Random slopes model converged")
                     log(f"    AIC = {aic:.2f}")
                     log(f"    Log-likelihood: {result.llf:.2f}")
 
@@ -130,7 +129,7 @@ if __name__ == "__main__":
 
                 except Exception as e:
                     # Fallback to random intercepts only
-                    log(f"    [FALLBACK] Random slopes failed ({str(e)[:50]}...), trying ~1")
+                    log(f"    Random slopes failed ({str(e)[:50]}...), trying ~1")
 
                     try:
                         model = MixedLM(
@@ -147,7 +146,7 @@ if __name__ == "__main__":
                         aic = result.aic
                         aic_values[score_label] = aic
 
-                        log(f"    [SUCCESS] Random intercepts model converged")
+                        log(f"    Random intercepts model converged")
                         log(f"    AIC = {aic:.2f}")
                         log(f"    Converged: {result.converged}")
                         log(f"    Log-likelihood: {result.llf:.2f}")
@@ -162,8 +161,8 @@ if __name__ == "__main__":
                             model_summaries['purified'].append(f"\n{'='*80}\n{dimension.upper()} - Purified CTT (RE: {re_spec})\n{'='*80}\n{result.summary()}")
 
                     except Exception as e2:
-                        log(f"    [ERROR] Random intercepts also failed: {str(e2)}")
-                        log(f"    [FALLBACK] Using OLS estimate for AIC comparison")
+                        log(f"    Random intercepts also failed: {str(e2)}")
+                        log(f"    Using OLS estimate for AIC comparison")
 
                         # Final fallback to OLS
                         from statsmodels.regression.linear_model import OLS
@@ -186,7 +185,7 @@ if __name__ == "__main__":
             delta_aic = aic_values['Purified'] - aic_values['Full']
             improvement = "Yes" if abs(delta_aic) > 2 else "No"
 
-            log(f"  [SUMMARY] AIC comparison:")
+            log(f"  AIC comparison:")
             log(f"    IRT:      {aic_values['IRT']:.2f}")
             log(f"    Full:     {aic_values['Full']:.2f}")
             log(f"    Purified: {aic_values['Purified']:.2f}")
@@ -208,25 +207,25 @@ if __name__ == "__main__":
 
         # Save comparison table
         output_path = RQ_DIR / "data" / "step07_lmm_model_comparison.csv"
-        log(f"\n[SAVE] Writing {output_path}")
+        log(f"\nWriting {output_path}")
         lmm_comparison.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {len(lmm_comparison)} rows, {len(lmm_comparison.columns)} columns")
+        log(f"{len(lmm_comparison)} rows, {len(lmm_comparison.columns)} columns")
 
         # Save model summaries
         for score_type, summaries in [('theta', 'theta'), ('full', 'full'), ('purified', 'purified')]:
             summary_path = RQ_DIR / "data" / f"step07_lmm_summaries_{score_type}.txt"
-            log(f"[SAVE] Writing {summary_path}")
+            log(f"Writing {summary_path}")
             with open(summary_path, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(model_summaries[score_type]))
-            log(f"[SAVED] {score_type} model summaries")
+            log(f"{score_type} model summaries")
 
-        log("\n[SUCCESS] Step 07 complete")
+        log("\nStep 07 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

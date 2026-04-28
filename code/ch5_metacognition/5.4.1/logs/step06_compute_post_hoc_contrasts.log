@@ -1,0 +1,89 @@
+
+============================================================
+Step 06: Compute Post-Hoc Contrasts (Decision D068)
+============================================================
+
+Loading Step 05 fixed effects coefficients...
+step05_lmm_coefficients.csv (6 rows)
+
+Checking Domain × Time interaction significance...
+2 interaction terms:
+
+  - C(paradigm)[T.IFR]:log_TSVR: p=0.0236
+  - C(paradigm)[T.IRE]:log_TSVR: p=0.5254
+
+Minimum interaction p-value: 0.0236
+Threshold: 0.05
+Result: SIGNIFICANT (p < 0.05)
+
+Domain × Time interaction IS significant
+          Post-hoc pairwise contrasts appropriate
+
+Loading LMM input data for model re-fitting...
+step04_lmm_input.csv (1200 rows)
+
+Re-fitting LMM model...
+      Formula: theta ~ C(paradigm) * log_TSVR
+      Random effects: ~log_TSVR | UID
+      Method: powell (ML estimation)
+
+Model converged: True
+         AIC: 1936.53
+         BIC: 1987.43
+         Log-Likelihood: -958.27
+
+Computing pairwise slope contrasts...
+           Implementing Decision D068: Dual p-value reporting
+           - Family-wise alpha: 0.05
+           - Number of comparisons: 3
+           - Bonferroni-corrected alpha: 0.0167
+
+step06_post_hoc_contrasts.csv (3 rows)
+
+============================================================
+POST-HOC CONTRASTS SUMMARY (Decision D068)
+============================================================
+
+Contrast: IFR vs ICR
+  Estimate: +0.0490
+  SE: 0.0185
+  z: +2.650
+  p (uncorrected): 0.0081
+  p (Bonferroni): 0.0242
+  Significance: *
+  Cohen's d: +0.113
+
+Contrast: IRE vs ICR
+  Estimate: -0.0137
+  SE: 0.0185
+  z: -0.743
+  p (uncorrected): 0.4573
+  p (Bonferroni): 1.0000
+  Significance: ns
+  Cohen's d: -0.032
+
+Contrast: IFR vs IRE
+  Estimate: +0.0627
+  SE: 0.0185
+  z: +3.393
+  p (uncorrected): 0.0007
+  p (Bonferroni): 0.0021
+  Significance: **
+  Cohen's d: +0.145
+
+step06_contrast_decision.txt
+
+============================================================
+Checking outputs...
+============================================================
+
+Required files exist
+Contrasts CSV has correct columns
+Dual p-values in valid ranges (Decision D068)
+Standard errors positive
+No NaN values in contrasts
+
+============================================================
+Step 06 Complete
+============================================================
+

@@ -1,0 +1,84 @@
+Step 06: Final Model Fitting
+Loading data and optimal model specification...
+Optimal model: Extended
+Predictors (5): ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education']
+N=100, Predictors=5, Outcome=Theta_All
+Fitting final model on full dataset...
+R²=0.2473, Adj R²=0.2073
+F(5, 94)=6.1772, p=5.4068e-05
+Computing 1000 bootstrap CIs for coefficients...
+Bootstrap complete
+Extracting coefficients with dual p-values...
+const: β=-2.2692, SE=0.6284, 95% CI=[-3.3200, -1.1684]
+       p_uncorr=0.0005, p_bonf=0.0025
+Age: β=0.0018, SE=0.0050, 95% CI=[-0.0071, 0.0103]
+       p_uncorr=0.7225, p_bonf=1.0000
+RAVLT_T: β=0.0080, SE=0.0066, 95% CI=[-0.0062, 0.0219]
+       p_uncorr=0.2293, p_bonf=1.0000
+BVMT_T: β=0.0118, SE=0.0080, 95% CI=[-0.0034, 0.0283]
+       p_uncorr=0.1445, p_bonf=0.7225
+RPM_T: β=0.0235, SE=0.0071, 95% CI=[0.0099, 0.0399]
+       p_uncorr=0.0012, p_bonf=0.0061
+Education: β=0.0049, SE=0.0375, 95% CI=[-0.0692, 0.0748]
+       p_uncorr=0.8955, p_bonf=1.0000
+Computing unique variance contributions...
+Unique variance:
+  Age: sr²=0.0010 (0.10%)
+  RAVLT_T: sr²=0.0117 (1.17%)
+  BVMT_T: sr²=0.0173 (1.73%)
+  RPM_T: sr²=0.0890 (8.90%)
+  Education: sr²=0.0001 (0.01%)
+Sum of sr²: 0.1192 (Model R²: 0.2473)
+
+Saving final model results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step06_final_model_summary.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step06_coefficients.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step06_semipartial_correlations.csv
+
+Validating final model results...
+R²=0.2473 differs from CV-R²=0.0213 by 0.2261
+Wide bootstrap CIs detected (max width=2.1516)
+Sum of sr²=0.1192 vs R²=0.2473 (difference due to shared variance)
+Step 06 complete
+Step 06: Final Model Fitting
+Loading data and optimal model specification...
+Optimal model: Extended
+Predictors (5): ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education']
+N=100, Predictors=5, Outcome=Theta_All
+Fitting final model on full dataset...
+R²=0.2481, Adj R²=0.2081
+F(5, 94)=6.2041, p=5.1627e-05
+Computing 1000 bootstrap CIs for coefficients...
+Bootstrap complete
+Extracting coefficients with dual p-values...
+const: β=-2.1872, SE=0.6058, 95% CI=[-3.1883, -1.1253]
+       p_uncorr=0.0005, p_bonf=0.0025
+Age: β=0.0008, SE=0.0050, 95% CI=[-0.0083, 0.0096]
+       p_uncorr=0.8692, p_bonf=1.0000
+RAVLT_T: β=0.0083, SE=0.0066, 95% CI=[-0.0054, 0.0209]
+       p_uncorr=0.2137, p_bonf=1.0000
+BVMT_T: β=0.0105, SE=0.0082, 95% CI=[-0.0051, 0.0275]
+       p_uncorr=0.2065, p_bonf=1.0000
+RPM_T: β=0.0237, SE=0.0070, 95% CI=[0.0101, 0.0396]
+       p_uncorr=0.0011, p_bonf=0.0055
+Education: β=0.0056, SE=0.0375, 95% CI=[-0.0682, 0.0752]
+       p_uncorr=0.8821, p_bonf=1.0000
+Computing unique variance contributions...
+Unique variance:
+  Age: sr²=0.0002 (0.02%)
+  RAVLT_T: sr²=0.0125 (1.25%)
+  BVMT_T: sr²=0.0129 (1.29%)
+  RPM_T: sr²=0.0906 (9.06%)
+  Education: sr²=0.0002 (0.02%)
+Sum of sr²: 0.1165 (Model R²: 0.2481)
+
+Saving final model results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step06_final_model_summary.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step06_coefficients.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step06_semipartial_correlations.csv
+
+Validating final model results...
+R²=0.2481 differs from CV-R²=0.0169 by 0.2312
+Wide bootstrap CIs detected (max width=2.0630)
+Sum of sr²=0.1165 vs R²=0.2481 (difference due to shared variance)
+Step 06 complete

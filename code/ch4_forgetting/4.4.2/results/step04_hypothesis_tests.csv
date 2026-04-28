@@ -1,0 +1,13 @@
+Test_Name,Coefficient,SE,z_value,p_uncorrected,CI_lower,CI_upper,p_bonferroni,Significant_Bonferroni
+Intercept,0.461,0.081,5.67,0.0,0.302,0.621,0.0,True
+"C(Segment, Treatment('Early'))[T.Late]",-0.387,0.091,-4.248,0.0,-0.566,-0.209,0.0,True
+"C(Congruence, Treatment('Common'))[T.Congruent]",-0.03,0.092,-0.324,0.746,-0.211,0.151,1.0,False
+"C(Congruence, Treatment('Common'))[T.Incongruent]",0.056,0.092,0.608,0.543,-0.125,0.237,1.0,False
+"C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Congruent]",0.094,0.128,0.733,0.464,-0.157,0.345,1.0,False
+"C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Incongruent]",-0.065,0.128,-0.509,0.611,-0.316,0.186,1.0,False
+Days_within,-0.263,0.164,-1.603,0.109,-0.585,0.059,1.0,False
+"Days_within:C(Segment, Treatment('Early'))[T.Late]",0.17,0.164,1.035,0.301,-0.152,0.493,1.0,False
+"Days_within:C(Congruence, Treatment('Common'))[T.Congruent]",0.01,0.224,0.044,0.965,-0.43,0.45,1.0,False
+"Days_within:C(Congruence, Treatment('Common'))[T.Incongruent]",-0.056,0.224,-0.252,0.801,-0.496,0.383,1.0,False
+"Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Congruent]",-0.018,0.226,-0.078,0.938,-0.46,0.425,1.0,False
+"Days_within:C(Segment, Treatment('Early'))[T.Late]:C(Congruence, Treatment('Common'))[T.Incongruent]",0.06,0.226,0.264,0.792,-0.383,0.502,1.0,False

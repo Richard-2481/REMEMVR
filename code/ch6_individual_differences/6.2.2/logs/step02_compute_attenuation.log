@@ -1,0 +1,62 @@
+======================================================================
+STEP 02: COMPUTE ATTENUATION RATIOS
+======================================================================
+
+1. Loading coefficient table from Step 01...
+  Loaded 4 domains
+  Columns: ['domain', 'n', 'beta_bivariate', 'se_bivariate', 'p_bivariate', 'r2_bivariate', 'beta_controlled', 'se_controlled', 'p_controlled', 'r2_controlled', 'n_predictors_controlled', 'source_bivariate', 'source_controlled']
+
+2. Computing attenuation for each domain...
+
+  OVERALL DOMAIN:
+    Bivariate beta:  -0.1302 (SE=0.0668, p=0.0540)
+    Controlled beta: 0.0267 (SE=0.0705, p=0.7057)
+    R2 bivariate:    0.0374
+    R2 controlled:   0.2955
+    Attenuation:     120.5%
+    Classification:  suppression
+    N:               100
+    *** SUPPRESSION EFFECT DETECTED ***
+    Age coefficient reversed sign after controlling for cognitive tests
+
+  WHAT DOMAIN:
+    Bivariate beta:  -0.1368 (SE=0.0626, p=0.0313)
+    Controlled beta: 0.0109 (SE=0.0657, p=0.8688)
+    R2 bivariate:    0.0465
+    R2 controlled:   0.3100
+    Attenuation:     108.0%
+    Classification:  suppression
+    N:               100
+    *** SUPPRESSION EFFECT DETECTED ***
+    Age coefficient reversed sign after controlling for cognitive tests
+
+  WHERE DOMAIN:
+    Bivariate beta:  -0.1110 (SE=0.0665, p=0.0982)
+    Controlled beta: 0.0440 (SE=0.0705, p=0.5340)
+    R2 bivariate:    0.0277
+    R2 controlled:   0.2819
+    Attenuation:     139.7%
+    Classification:  suppression
+    N:               100
+    *** SUPPRESSION EFFECT DETECTED ***
+    Age coefficient reversed sign after controlling for cognitive tests
+
+  WHEN DOMAIN:
+    Bivariate beta:  -0.0504 (SE=0.0279, p=0.0741)
+    Controlled beta: -0.0214 (SE=0.0333, p=0.5230)
+    R2 bivariate:    0.0322
+    R2 controlled:   0.0947
+    Attenuation:     57.6%
+    Classification:  partial
+    N:               100
+
+3. Saving outputs...
+  Saved attenuation ratios to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step02_attenuation_ratios.csv
+  Saved effect classification to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step02_effect_classification.txt
+
+======================================================================
+KEY FINDING: Overall attenuation = 120.5% (suppression)
+SUPPRESSION EFFECT: Age coefficient reversed sign
+======================================================================
+
+Step 02 complete: Attenuation ratios computed

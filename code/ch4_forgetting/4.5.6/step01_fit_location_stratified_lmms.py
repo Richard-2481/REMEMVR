@@ -27,7 +27,6 @@ Note on LocationType values:
     - Input data has "source" and "destination" (lowercase)
     - Outputs use lowercase for consistency with input data
 
-Author: Claude (g_code agent)
 Date: 2025-12-05
 """
 

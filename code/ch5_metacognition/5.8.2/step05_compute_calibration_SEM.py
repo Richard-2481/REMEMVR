@@ -6,7 +6,7 @@ RQ 6.8.2: SEM-Based LocationType-Stratified Calibration Computation
 Tier 2 SEM Validation: DIFFERENCE SCORE RELIABILITY BLOCKER
 - Source: r_diff=0.379 (CRITICAL - < 0.50)
 - Destination: r_diff=0.530 (QUESTIONABLE - < 0.70)
-- Status: CONDITIONAL PLATINUM - SEM required for full certification
+- Status: CONDITIONAL validation - SEM required for full certification
 
 **Approach:** Compute SEM latent calibration SEPARATELY FOR EACH LocationType
 - Source (-U- tags): r_diff=0.379
@@ -15,7 +15,6 @@ Tier 2 SEM Validation: DIFFERENCE SCORE RELIABILITY BLOCKER
 Input: step01_calibration_by_location.csv (800 rows: 100 UID × 4 tests × 2 locations)
 Output: step05_calibration_scores_SEM.csv (800 rows, with latent_calibration by location)
 
-Author: Claude Code (Tier 2 Batch - LocationType-Stratified SEM)
 Date: 2025-12-28
 """
 
@@ -31,9 +30,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 
 from sem_calibration import compute_difference_score_reliability, SEMCalibration
 
-# ============================================================================
 # SETUP
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.8.2
 LOG_FILE = RQ_DIR / "logs" / "step05_SEM.log"
@@ -66,9 +63,7 @@ log("  - Destination: r_diff=0.530 (QUESTIONABLE)")
 log("Target: r>0.70 for EACH LocationType after SEM")
 log("=" * 70)
 
-# ============================================================================
-# STEP 1: Load LocationType-Stratified Data
-# ============================================================================
+# Load LocationType-Stratified Data
 
 log("\n" + "=" * 70)
 log("STEP 1: Load LocationType-Stratified Calibration Data")
@@ -137,9 +132,7 @@ log("✓ Z-scores computed within LocationType")
 
 log("STEP 1 COMPLETE")
 
-# ============================================================================
-# STEP 2: Compute PRE-SEM Reliability BY LocationType
-# ============================================================================
+# Compute PRE-SEM Reliability BY LocationType
 
 log("\n" + "=" * 70)
 log("STEP 2: Compute PRE-SEM Difference Score Reliability (BY LocationType)")
@@ -240,9 +233,7 @@ for res in reliability_results:
 
 log("STEP 2 COMPLETE")
 
-# ============================================================================
-# STEP 3: Compute SEM-Based Latent Calibration (BY LocationType)
-# ============================================================================
+# Compute SEM-Based Latent Calibration (BY LocationType)
 
 log("\n" + "=" * 70)
 log("STEP 3: Compute SEM-Based Latent Calibration (BY LocationType)")
@@ -427,9 +418,7 @@ for diag in sem_diagnostics:
 
 log("STEP 3 COMPLETE")
 
-# ============================================================================
-# STEP 4: Validate & Save SEM Calibration Scores
-# ============================================================================
+# Validate & Save SEM Calibration Scores
 
 log("\n" + "=" * 70)
 log("STEP 4: Validate & Save SEM Calibration Scores")
@@ -465,9 +454,7 @@ log(f"Saved diagnostics: {diagnostics_file}")
 
 log("STEP 4 COMPLETE")
 
-# ============================================================================
 # SUMMARY
-# ============================================================================
 
 log("\n" + "=" * 70)
 log("SEM-BASED LocationType-STRATIFIED CALIBRATION COMPLETE")

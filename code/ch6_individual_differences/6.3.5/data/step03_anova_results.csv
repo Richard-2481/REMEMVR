@@ -1,0 +1,4 @@
+DV,F_stat,p_uncorrected,p_bonferroni,eta_squared,eta_ci_lower,eta_ci_upper
+education,,0.9934220975190338,1.0,,,
+rpm,,0.04097904019442378,0.24587424116654266,,,
+age,,0.969970892464024,1.0,,,

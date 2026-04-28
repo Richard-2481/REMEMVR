@@ -1,0 +1,64 @@
+Step 01: extract_sleep_data
+Loading dfvr.csv data...
+dfvr.csv (400 rows, 244 cols)
+Extracting sleep variables...
+Sleep variables for 400 observations
+Sleep_Hours missing: 0/400 (0.0%)
+Sleep_Quality missing: 0/400 (0.0%)
+Sleep extraction complete
+Saving sleep data...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step01_sleep_data.csv (400 rows, 4 cols)
+Running sleep hours validation...
+Running sleep quality validation...
+Checking participant coverage...
+Tests per UID - Min: 4, Max: 4, Mean: 4.0
+UIDs with <3 tests: 0
+Sleep hours range: PASS
+Sleep quality range: PASS
+Participant coverage: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Can we extract clean per-test sleep data for within-person analysis?
+2. What did we find?
+   -> 400 observations, sleep hours range valid: True
+   -> Sleep quality range valid: True
+3. What does it mean?
+   -> Clean sleep data enables multilevel modeling of within-person effects
+4. What should we do next?
+   -> Proceed to step02: create person-centered sleep variables
+=========================
+
+Step 01 complete
+Step 01: extract_sleep_data
+Loading dfvr.csv data...
+dfvr.csv (400 rows, 244 cols)
+Extracting sleep variables...
+Sleep variables for 400 observations
+Sleep_Hours missing: 0/400 (0.0%)
+Sleep_Quality missing: 0/400 (0.0%)
+Sleep extraction complete
+Saving sleep data...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step01_sleep_data.csv (400 rows, 4 cols)
+Running sleep hours validation...
+Running sleep quality validation...
+Checking participant coverage...
+Tests per UID - Min: 4, Max: 4, Mean: 4.0
+UIDs with <3 tests: 0
+Sleep hours range: PASS
+Sleep quality range: PASS
+Participant coverage: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Can we extract clean per-test sleep data for within-person analysis?
+2. What did we find?
+   -> 400 observations, sleep hours range valid: True
+   -> Sleep quality range valid: True
+3. What does it mean?
+   -> Clean sleep data enables multilevel modeling of within-person effects
+4. What should we do next?
+   -> Proceed to step02: create person-centered sleep variables
+=========================
+
+Step 01 complete

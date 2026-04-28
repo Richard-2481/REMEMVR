@@ -1,0 +1,8 @@
+hypothesis,test_statistic,p_value,significant_uncorrected,significant_bonferroni_within,significant_bonferroni_chapter
+RAVLT_T_beta_nonzero,1.3974970787238523,0.1656996586327577,False,False,False
+RAVLT_Pct_Ret_T_beta_nonzero,1.899743303299653,0.0606689679017976,False,False,False
+BVMT_T_beta_nonzero,0.5911088679300538,0.5559291536777416,False,False,False
+BVMT_Pct_Ret_T_beta_nonzero,1.2847935643172093,0.2021613334095177,False,False,False
+NART_T_beta_nonzero,0.4780855182671833,0.6337485689647167,False,False,False
+RPM_T_beta_nonzero,2.578391226343034,0.0115498143394651,True,False,False
+overall_model_significance,F_approximate,0.0115498143394651,True,False,False

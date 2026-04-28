@@ -1,0 +1,31 @@
+Step 05: Compute Inverse-Variance Weighted Mean Effect Size
+Loading extracted effect sizes...
+2 effect sizes
+Accuracy: d = 0.200, SE = 0.196
+Confidence: d = 0.050, SE = 0.150
+Computing inverse-variance weights...
+Raw weights: Accuracy = 26.031, Confidence = 44.444
+Normalized weights: Accuracy = 0.369, Confidence = 0.631
+Weight sum = 1.000000 (should be 1.0)
+Computing pooled effect size...
+Pooled effect size: d = 0.105
+Pooled SE: 0.119
+95% CI: [-0.128, 0.339]
+Interpreting pooled effect size...
+Negligible effect, convergent NULL confirmed
+Limitation: K=2 insufficient for formal meta-analysis
+Checking weighted combination...
+Row count: 1
+SE_pooled > 0
+CI ordering: CI_lower < d_pooled < CI_upper
+Weights sum to 1.0
+Weights in [0, 1]
+CI width approximately 4*SE_pooled
+Pooled effect: d = 0.105 [-0.128, 0.339]
+Negligible effect (|d| < 0.20), convergent NULL confirmed
+Effect size negligible (|d| < 0.20)
+Convergent NULL confirmed
+PASS - All checks passed
+Limitation acknowledged: K=2 insufficient for formal meta-analysis
+Output: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step05_weighted_combination.csv
+Step 05 complete

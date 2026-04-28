@@ -1,0 +1,51 @@
+Step 07: bootstrap_stability (Forgetting + Pct Retention)
+Loading merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step03_analysis_input.csv (100 rows, 13 cols)
+
+=== Bootstrap Stability for RAVLT_Forgetting ===
+RAVLT_Forgetting - N=100, Mean=1.750, SD=1.920
+Full sample bootstrap (n=1000)...
+Full sample r=0.3324, CI=[0.1432, 0.5000]
+Outlier-robust analysis (remove |z| > 2.5)...
+Removed 1 outliers (1.0%)
+Clean sample N=99
+Outlier-robust r=0.2875, CI=[0.1172, 0.4491]
+Stability index=0.9551
+Subsample stability (random 80%)...
+Subsample N=80 (80% of original)
+Subsample r=0.3651, CI=[0.1443, 0.5493]
+Stability index=0.9673
+
+=== Bootstrap Stability for RAVLT_Pct_Ret ===
+RAVLT_Pct_Ret - N=100, Mean=83.282, SD=14.716
+Full sample bootstrap (n=1000)...
+Full sample r=-0.3183, CI=[-0.4850, -0.1147]
+Outlier-robust analysis (remove |z| > 2.5)...
+Removed 2 outliers (2.0%)
+Clean sample N=98
+Outlier-robust r=-0.2541, CI=[-0.4425, -0.0556]
+Stability index=0.9358
+Subsample stability (random 80%)...
+Subsample N=80 (80% of original)
+Subsample r=-0.2917, CI=[-0.4924, -0.0644]
+Stability index=0.9734
+
+Saving bootstrap stability results...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step07_bootstrap_results.csv (6 rows, 6 cols)
+Running validate_numeric_range on stability_index...
+valid: True
+message: stability_index: All values within range [0.0, 1.0] (n=6).
+out_of_range_count: 0
+violations: []
+PASS - All stability indices in valid range [0, 1]
+
+Bootstrap Stability Results:
+======================================================================
+  [RAVLT_Forgetting] full_sample_correlation: r=0.3324, stability=1.0000
+  [RAVLT_Forgetting] outlier_robust_correlation: r=0.2875, stability=0.9551
+  [RAVLT_Forgetting] subsample_correlation: r=0.3651, stability=0.9673
+  [RAVLT_Pct_Ret] full_sample_correlation: r=-0.3183, stability=1.0000
+  [RAVLT_Pct_Ret] outlier_robust_correlation: r=-0.2541, stability=0.9358
+  [RAVLT_Pct_Ret] subsample_correlation: r=-0.2917, stability=0.9734
+======================================================================
+Step 07 complete

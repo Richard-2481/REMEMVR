@@ -1,0 +1,29 @@
+Step 6: Check Assumptions
+Loading input data...
+step01_rpm_scores.csv (100 rows, 3 cols)
+step02_overall_theta.csv (100 rows, 3 cols)
+step03_what_theta.csv (100 rows, 3 cols)
+Combined dataset (100 rows with complete data)
+Running assumption checks...
+Checking assumptions for rpm_score...
+rpm_score: statistic=0.8928, p=0.000001
+rpm_score: 0 outliers found (|z| > 3.29)
+rpm_score: assumption_met=False, action=Use bootstrap CIs (already computed)
+Checking assumptions for theta_overall...
+theta_overall: statistic=0.9753, p=0.056903
+theta_overall: 0 outliers found (|z| > 3.29)
+theta_overall: assumption_met=True, action=No action needed
+Checking assumptions for theta_what...
+theta_what: statistic=0.9781, p=0.094877
+theta_what: 0 outliers found (|z| > 3.29)
+theta_what: assumption_met=True, action=No action needed
+Checking multivariate outliers...
+0 multivariate outliers found (critical=16.266)
+Analysis complete
+Saving assumption_checks.csv...
+step06_assumption_checks.csv (4 rows, 5 cols)
+Running validate_data_format...
+valid: True
+message: All required columns present (5 columns). DataFrame has 4 rows.
+missing_cols: []
+Step 6 complete

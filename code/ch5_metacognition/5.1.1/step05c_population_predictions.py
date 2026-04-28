@@ -18,7 +18,6 @@ Ch6 step05b generates individual-level predictions (with random effects),
 but cross-chapter comparisons (e.g., RQ 6.9.1) require population-level
 predictions to compare functional forms. This script fills that gap.
 
-Author: Claude Code
 Date: 2026-02-04
 RQ: ch6/6.1.1
 Step: 05c
@@ -45,11 +44,11 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05c: Population-Level Model-Averaged Predictions")
+        log("Step 05c: Population-Level Model-Averaged Predictions")
         log("=" * 80)
 
         # Load data
-        log("\n[LOAD] Loading input data...")
+        log("\nLoading input data...")
         lmm_input = pd.read_csv(RQ_DIR / "data" / "step04_lmm_input.csv")
 
         # Load full competitive models from step05b (ΔAIC < 7, 48 models)
@@ -69,7 +68,7 @@ if __name__ == "__main__":
         log(f"  Cumulative weight: {competitive['renorm_weight'].sum():.1%}")
 
         # Create prediction grid (population-level)
-        log("\n[GRID] Creating population-level prediction grid...")
+        log("\nCreating population-level prediction grid...")
         tsvr_max = lmm_input['TSVR_hours'].max()
         tsvr_grid = np.linspace(1, tsvr_max, 100)
         pred_grid = pd.DataFrame({
@@ -80,7 +79,7 @@ if __name__ == "__main__":
         log(f"  TSVR range: [1, {tsvr_max:.1f}] hours")
 
         # Compute model-averaged predictions
-        log("\n[AVERAGING] Computing model-averaged predictions...")
+        log("\nComputing model-averaged predictions...")
 
         # Create comparison dataframe in the format expected by the function
         # Drop old akaike_weight column and use renorm_weight
@@ -107,13 +106,13 @@ if __name__ == "__main__":
         pred_var = results['prediction_variance']
         effective_n = results['effective_n_models']
 
-        log(f"\n[RESULTS] Model averaging complete:")
+        log(f"\nModel averaging complete:")
         log(f"  Models used: {len(models_used)}")
         log(f"  Effective N models: {effective_n:.2f}")
         log(f"  Prediction variance: [{pred_var.min():.6f}, {pred_var.max():.6f}]")
 
         # Save population-level predictions
-        log("\n[SAVE] Saving population-level predictions...")
+        log("\nSaving population-level predictions...")
         output = pd.DataFrame({
             'TSVR_hours': pred_grid['TSVR_hours'],
             'theta_averaged': averaged_preds,
@@ -126,20 +125,20 @@ if __name__ == "__main__":
         log(f"  ✓ {output_path.name} ({len(output)} rows)")
 
         # Summary stats
-        log("\n[SUMMARY] Prediction characteristics:")
+        log("\nPrediction characteristics:")
         log(f"  Mean theta: {averaged_preds.mean():.4f}")
         log(f"  SD theta: {averaged_preds.std():.4f}")
         log(f"  Range: [{averaged_preds.min():.4f}, {averaged_preds.max():.4f}]")
         log(f"  Total decline (t=1 to t=246): {averaged_preds.iloc[0] - averaged_preds.iloc[-1]:.4f} theta units")
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] Step 05c Complete")
+        log("Step 05c Complete")
         log(f"  Models averaged: {len(models_used)}")
         log(f"  Output: {output_path.name}")
         log("=" * 80)
 
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

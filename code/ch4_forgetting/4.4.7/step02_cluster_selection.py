@@ -38,12 +38,12 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 02: Cluster Model Selection (BIC)")
+        log("Step 02: Cluster Model Selection (BIC)")
 
         # Load standardized features
-        log(f"[LOAD] Reading {INPUT_FILE}")
+        log(f"Reading {INPUT_FILE}")
         df_standardized = pd.read_csv(INPUT_FILE)
-        log(f"[LOADED] {len(df_standardized)} rows, {len(df_standardized.columns)} columns")
+        log(f"{len(df_standardized)} rows, {len(df_standardized.columns)} columns")
 
         # Extract z-scored feature columns
         feature_cols = [
@@ -54,13 +54,13 @@ if __name__ == "__main__":
 
         X = df_standardized[feature_cols].values
         N = X.shape[0]
-        log(f"[INFO] Clustering on {N} samples, {X.shape[1]} features")
+        log(f"Clustering on {N} samples, {X.shape[1]} features")
 
         # Test K=1 to K=6
         K_range = range(1, 7)
         results = []
 
-        log("[CLUSTERING] Testing K=1 to K=6")
+        log("Testing K=1 to K=6")
         for K in K_range:
             log(f"  Fitting K={K}...")
             kmeans = KMeans(n_clusters=K, random_state=42, n_init=50)
@@ -85,26 +85,26 @@ if __name__ == "__main__":
         # Find optimal K (minimum BIC)
         optimal_idx = df_bic['BIC'].idxmin()
         optimal_k = int(df_bic.loc[optimal_idx, 'K'])
-        log(f"[RESULT] Optimal K = {optimal_k} (BIC = {df_bic.loc[optimal_idx, 'BIC']:.4f})")
+        log(f"Optimal K = {optimal_k} (BIC = {df_bic.loc[optimal_idx, 'BIC']:.4f})")
 
         # Verify inertia is monotonically decreasing
         inertia_diffs = np.diff(df_bic['inertia'].values)
         if not np.all(inertia_diffs <= 0):
-            log("[WARNING] Inertia not monotonically decreasing (unexpected!)")
+            log("Inertia not monotonically decreasing (unexpected!)")
 
         # Save BIC table
-        log(f"[SAVE] Writing BIC table to {OUTPUT_BIC_FILE}")
+        log(f"Writing BIC table to {OUTPUT_BIC_FILE}")
         df_bic.to_csv(OUTPUT_BIC_FILE, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_BIC_FILE}")
+        log(f"{OUTPUT_BIC_FILE}")
 
         # Save optimal K
-        log(f"[SAVE] Writing optimal K to {OUTPUT_K_FILE}")
+        log(f"Writing optimal K to {OUTPUT_K_FILE}")
         with open(OUTPUT_K_FILE, 'w', encoding='utf-8') as f:
             f.write(str(optimal_k))
-        log(f"[SAVED] {OUTPUT_K_FILE}")
+        log(f"{OUTPUT_K_FILE}")
 
         # Validation: Check BIC selection quality
-        log("[VALIDATION] Validating BIC model selection")
+        log("Validating BIC model selection")
 
         # Check all K values present
         if len(df_bic) != 6:
@@ -112,7 +112,7 @@ if __name__ == "__main__":
 
         # Check BIC has minimum within range (not at boundary)
         if optimal_k == 1 or optimal_k == 6:
-            log("[WARNING] Optimal K at boundary (K=1 or K=6) - may need wider search range")
+            log("Optimal K at boundary (K=1 or K=6) - may need wider search range")
 
         # Check no NaN values
         nan_count = df_bic.isna().sum().sum()
@@ -120,13 +120,13 @@ if __name__ == "__main__":
             raise ValueError(f"Found {nan_count} NaN values in BIC table")
 
         log("[VALIDATION PASS] BIC model selection valid")
-        log(f"[SUCCESS] Step 02 complete - Optimal K = {optimal_k}")
+        log(f"Step 02 complete - Optimal K = {optimal_k}")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

@@ -1,3 +1,8 @@
+---
+nav_exclude: true
+search_exclude: true
+---
+
 # Appendix [model_comparisons]: Complete Model Comparison Tables for Trajectory Analyses
 
 This appendix provides the complete 65-model AIC comparison tables for all five trajectory analyses reported in Chapter 4 (Forgetting Trajectories). Each table lists every candidate model tested in the kitchen-sink comparison, with AIC, ΔAIC, and Akaike weights, allowing readers to evaluate model selection uncertainty and verify the model averaging approach described in Sections 4.2--4.6.

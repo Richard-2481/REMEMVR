@@ -1,0 +1,36 @@
+Step 00: Extract Congruence Data
+RQ Directory: /home/etai/projects/REMEMVR/results/ch5/rq5
+Project Root: /home/etai/projects/REMEMVR
+
+Checking RQ 5.1 input files...
+Found: /home/etai/projects/REMEMVR/results/ch5/rq1/data/step00_irt_input.csv
+Found: /home/etai/projects/REMEMVR/results/ch5/rq1/data/step00_tsvr_mapping.csv
+
+Loading RQ 5.1 IRT input...
+step00_irt_input.csv (400 rows, 106 cols)
+
+Filtering to interactive paradigm items...
+Kept 72 interactive paradigm items
+Removed 33 non-interactive columns
+
+[Q-MATRIX] Creating congruence Q-matrix...
+[Q-MATRIX] Created Q-matrix with 72 items:
+  - common: 24 items
+  - congruent: 24 items
+  - incongruent: 24 items
+
+Copying TSVR mapping from RQ 5.1...
+step00_tsvr_mapping.csv (400 rows)
+
+Saving output files...
+step00_irt_input.csv (400 rows, 73 cols)
+step00_q_matrix.csv (72 rows)
+step00_tsvr_mapping.csv (400 rows)
+
+Final validation checks...
+Row count preserved: 400 rows
+All congruence categories present
+Item values valid (0, 1, NaN only)
+All output files created
+
+Step 00 complete

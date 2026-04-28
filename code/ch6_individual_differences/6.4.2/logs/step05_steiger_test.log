@@ -1,0 +1,145 @@
+Step 05: steiger_test
+Loading correlation results from Step 4...
+step04_correlations.csv (2 rows, 8 cols)
+Available correlations: ['BVMT_Where', 'BVMT_What']
+Loading analysis dataset from Step 3 for r23 calculation...
+step03_analysis_dataset.csv (100 rows, 4 cols)
+Extracting correlations for Steiger's test...
+r12 (BVMT-Where): 0.3483
+r13 (BVMT-What): 0.3734
+Sample size n: 100
+r23 (Where-What): 0.9615
+Running Steiger's Z-test for domain-specificity...
+Steiger's Z-test complete
+Computing dual p-values per Decision D068...
+p_uncorrected: 0.336375
+p_bonferroni: 1.000000 (alpha_corrected: 0.00179)
+Cohen's q effect size: 0.0289
+Saving Steiger's Z-test results...
+'z_statistic'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.4.2/code/step05_steiger_test.py", line 239, in <module>
+    'z_statistic': [float(steiger_result['z_statistic'])],
+                          ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'z_statistic'
+Step 05: steiger_test
+Loading correlation results from Step 4...
+step04_correlations.csv (2 rows, 8 cols)
+Available correlations: ['BVMT_Where', 'BVMT_What']
+Loading analysis dataset from Step 3 for r23 calculation...
+step03_analysis_dataset.csv (100 rows, 4 cols)
+Extracting correlations for Steiger's test...
+r12 (BVMT-Where): 0.3483
+r13 (BVMT-What): 0.3734
+Sample size n: 100
+r23 (Where-What): 0.9615
+Running Steiger's Z-test for domain-specificity...
+Steiger's Z-test complete
+Steiger result keys: ['z', 'p_value']
+Computing dual p-values per Decision D068...
+p_uncorrected: 0.336375
+p_bonferroni: 1.000000 (alpha_corrected: 0.00179)
+Cohen's q effect size: 0.0289
+Saving Steiger's Z-test results...
+'z_statistic'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.4.2/code/step05_steiger_test.py", line 242, in <module>
+    'z_statistic': [float(steiger_result['z_statistic'])],
+                          ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'z_statistic'
+Step 05: steiger_test
+Loading correlation results from Step 4...
+step04_correlations.csv (2 rows, 8 cols)
+Available correlations: ['BVMT_Where', 'BVMT_What']
+Loading analysis dataset from Step 3 for r23 calculation...
+step03_analysis_dataset.csv (100 rows, 4 cols)
+Extracting correlations for Steiger's test...
+r12 (BVMT-Where): 0.3483
+r13 (BVMT-What): 0.3734
+Sample size n: 100
+r23 (Where-What): 0.9615
+Running Steiger's Z-test for domain-specificity...
+Steiger's Z-test complete
+Steiger result keys: ['z', 'p_value']
+Computing dual p-values per Decision D068...
+p_uncorrected: 0.336375
+p_bonferroni: 1.000000 (alpha_corrected: 0.00179)
+Cohen's q effect size: 0.0289
+Saving Steiger's Z-test results...
+step05_steiger_test.csv (1 rows, 9 cols)
+Running custom validation checks...
+Single test result: PASS
+Z-statistic finite: PASS (-0.9614)
+P-values valid range: PASS
+Effect size computed: PASS (Cohen's q = 0.0289)
+Summary: 4/4 checks passed
+Single test result: PASS
+Z-statistic finite: PASS
+P-values valid range: PASS
+Effect size computed: PASS
+Step 05 complete
+Step 05: steiger_test
+Loading correlation results from Step 4...
+step04_correlations.csv (2 rows, 8 cols)
+Available correlations: ['BVMT_Where', 'BVMT_What']
+Loading analysis dataset from Step 3 for r23 calculation...
+step03_analysis_dataset.csv (100 rows, 4 cols)
+Extracting correlations for Steiger's test...
+r12 (BVMT-Where): 0.3483
+r13 (BVMT-What): 0.3734
+Sample size n: 100
+r23 (Where-What): 0.9615
+Running Steiger's Z-test for domain-specificity...
+Steiger's Z-test complete
+Steiger result keys: ['z', 'p_value']
+Computing dual p-values per Decision D068...
+p_uncorrected: 0.336375
+p_bonferroni: 1.000000 (alpha_corrected: 0.00179)
+Cohen's q effect size: 0.0289
+Saving Steiger's Z-test results...
+step05_steiger_test.csv (1 rows, 9 cols)
+Running custom validation checks...
+Single test result: PASS
+Z-statistic finite: PASS (-0.9614)
+P-values valid range: PASS
+Effect size computed: PASS (Cohen's q = 0.0289)
+Summary: 4/4 checks passed
+Single test result: PASS
+Z-statistic finite: PASS
+P-values valid range: PASS
+Effect size computed: PASS
+Step 05 complete
+Step 05: steiger_test
+Loading correlation results from Step 4...
+step04_correlations.csv (4 rows, 8 cols)
+Available correlations: ['BVMT_Where', 'BVMT_What', 'BVMTret_Where', 'BVMTret_What']
+Loading analysis dataset from Step 3 for r23 calculation...
+step03_analysis_dataset.csv (100 rows, 5 cols)
+r23 (Where-What): 0.9615
+Running Steiger's Z-test for bvmt_total...
+bvmt_total r12 (Where): 0.3483
+bvmt_total r13 (What): 0.3734
+Sample size n: 100
+Steiger result keys: ['z', 'p_value']
+bvmt_total: z=-0.9614, p_uncorr=0.336375, p_bonf=1.000000, q=0.0289, dir=What > Where
+Running Steiger's Z-test for bvmt_pct_ret...
+bvmt_pct_ret r12 (Where): 0.1820
+bvmt_pct_ret r13 (What): 0.2307
+Sample size n: 100
+Steiger result keys: ['z', 'p_value']
+bvmt_pct_ret: z=-1.7983, p_uncorr=0.072129, p_bonf=1.000000, q=0.0509, dir=What > Where
+Saving Steiger's Z-test results...
+step05_steiger_test.csv (2 rows, 10 cols)
+Running custom validation checks...
+Row count: PASS (2 tests)
+Z-statistics finite: PASS
+P-values valid range: PASS
+Effect sizes computed: PASS
+Summary: 4/4 checks passed
+Row count: PASS (2 tests)
+Z-statistics finite: PASS
+P-values valid range: PASS
+Effect sizes computed: PASS
+Step 05 complete

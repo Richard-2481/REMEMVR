@@ -22,7 +22,6 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 RQ_DIR = SCRIPT_DIR.parent
 PROJECT_ROOT = RQ_DIR.parents[2]
 
-# Add project root to path for imports
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Setup logging
@@ -96,10 +95,8 @@ def compute_contrasts(result, slopes_df):
     estimate = late_icr - early_icr
 
     # For ICR, the contrast involves multiple coefficients
-    # Late ICR slope = Days_within + Days_within:Segment[Late] + Days_within:paradigm[ICR] + interaction
-    # Early ICR slope = Days_within + Days_within:paradigm[ICR]
-    # Difference = Days_within:Segment[Late] + Days_within:Segment[Late]:paradigm[ICR]
-    coefs = ['Days_within:Segment[T.Late]', 'Days_within:Segment[T.Late]:paradigm_code[T.ICR]']
+    # Late ICR slope = Days_within + Days_within:Segment[Late] + Days_within:paradigm+ interaction
+    # Early ICR slope = Days_within + Days_within:paradigm# Difference = Days_within:Segment[Late] + Days_within:Segment[Late]:paradigmcoefs = ['Days_within:Segment[T.Late]', 'Days_within:Segment[T.Late]:paradigm_code[T.ICR]']
     var = sum(fe_cov.loc[c1, c2] for c1 in coefs for c2 in coefs if c1 in fe_cov.index and c2 in fe_cov.columns)
     se = np.sqrt(var)
     z = estimate / se
@@ -143,8 +140,7 @@ def compute_contrasts(result, slopes_df):
     icr_benefit = late_icr - early_icr
     estimate = ifr_benefit - icr_benefit
 
-    # This equals -Days_within:Segment[Late]:paradigm[ICR]
-    contrast_coef = 'Days_within:Segment[T.Late]:paradigm_code[T.ICR]'
+    # This equals -Days_within:Segment[Late]:paradigmcontrast_coef = 'Days_within:Segment[T.Late]:paradigm_code[T.ICR]'
     se = np.sqrt(fe_cov.loc[contrast_coef, contrast_coef])
     z = estimate / se
     p_uncorrected = 2 * (1 - stats.norm.cdf(abs(z)))
@@ -179,8 +175,7 @@ def compute_contrasts(result, slopes_df):
     # Contrast 6: ICR vs IRE benefit difference
     estimate = icr_benefit - ire_benefit
 
-    # This is Days_within:Segment[Late]:paradigm[IRE] - Days_within:Segment[Late]:paradigm[ICR]
-    coefs = ['Days_within:Segment[T.Late]:paradigm_code[T.ICR]',
+    # This is Days_within:Segment[Late]:paradigm- Days_within:Segment[Late]:paradigmcoefs = ['Days_within:Segment[T.Late]:paradigm_code[T.ICR]',
              'Days_within:Segment[T.Late]:paradigm_code[T.IRE]']
     # Var(A - B) = Var(A) + Var(B) - 2*Cov(A,B)
     var = (fe_cov.loc[coefs[0], coefs[0]] +

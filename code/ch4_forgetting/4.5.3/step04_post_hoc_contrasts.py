@@ -43,19 +43,19 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    logger.info("[START] Step 04: Location-Specific Age Effects at Day 3")
+    logger.info("Step 04: Location-Specific Age Effects at Day 3")
 
     # -------------------------------------------------------------------------
     # 1. Load model and fixed effects
     # -------------------------------------------------------------------------
-    logger.info("[LOAD] Loading model and fixed effects...")
+    logger.info("Loading model and fixed effects...")
 
     with open(DATA_DIR / "step02_lmm_model.pkl", 'rb') as f:
         lmm_model = pickle.load(f)
 
     fixed_effects = pd.read_csv(DATA_DIR / "step02_fixed_effects.csv")
 
-    logger.info(f"[LOADED] Model and {len(fixed_effects)} fixed effects")
+    logger.info(f"Model and {len(fixed_effects)} fixed effects")
 
     # -------------------------------------------------------------------------
     # 2. Define Day 3 evaluation point
@@ -64,7 +64,7 @@ def main():
     tsvr_eval = 72.0
     log_tsvr_eval = np.log(tsvr_eval + 1)
 
-    logger.info(f"[EVAL] Evaluation point: Day 3 (TSVR_hours = {tsvr_eval}, log_TSVR = {log_tsvr_eval:.3f})")
+    logger.info(f"Evaluation point: Day 3 (TSVR_hours = {tsvr_eval}, log_TSVR = {log_tsvr_eval:.3f})")
 
     # -------------------------------------------------------------------------
     # 3. Compute location-specific age effects
@@ -80,7 +80,7 @@ def main():
     coefs = dict(zip(fixed_effects['term'], fixed_effects['coef']))
     ses = dict(zip(fixed_effects['term'], fixed_effects['se']))
 
-    logger.info("[COMPUTE] Computing marginal age effects by location at Day 3...")
+    logger.info("Computing marginal age effects by location at Day 3...")
 
     # Age effect for DESTINATION (reference category, LocationType[T.Source] = 0)
     # Marginal effect of Age_c = Age_c + TSVR_hours:Age_c * TSVR + log_TSVR:Age_c * log_TSVR
@@ -98,8 +98,8 @@ def main():
         (coefs.get('log_TSVR:Age_c', 0) + coefs.get('log_TSVR:Age_c:LocationType[T.Source]', 0)) * log_tsvr_eval
     )
 
-    logger.info(f"[RESULT] Age effect (Destination): {age_dest:.6f}")
-    logger.info(f"[RESULT] Age effect (Source): {age_source:.6f}")
+    logger.info(f"Age effect (Destination): {age_dest:.6f}")
+    logger.info(f"Age effect (Source): {age_source:.6f}")
 
     # -------------------------------------------------------------------------
     # 4. Compute standard errors using delta method approximation
@@ -156,7 +156,7 @@ def main():
         }
     ])
 
-    logger.info("[INFO] Age effects by location at Day 3:")
+    logger.info("Age effects by location at Day 3:")
     for _, row in age_effects.iterrows():
         logger.info(f"  {row['location']}: slope={row['age_slope']:.6f}, SE={row['se']:.4f}, "
                    f"z={row['z']:.2f}, p={row['p_tukey']:.4f}")
@@ -164,7 +164,7 @@ def main():
     # -------------------------------------------------------------------------
     # 6. Compute contrast: Destination - Source
     # -------------------------------------------------------------------------
-    logger.info("[CONTRAST] Computing Destination - Source contrast...")
+    logger.info("Computing Destination - Source contrast...")
 
     diff = age_dest - age_source
     se_diff = np.sqrt(se_dest**2 + se_source**2)  # Conservative pooled SE
@@ -191,49 +191,49 @@ def main():
         'ci_upper': diff + 1.96 * se_diff
     }])
 
-    logger.info(f"[CONTRAST] Destination - Source: diff={diff:.6f}, z={z_diff:.2f}, "
+    logger.info(f"Destination - Source: diff={diff:.6f}, z={z_diff:.2f}, "
                f"p={p_tukey_contrast:.4f}, Cohen's d={cohens_d:.3f}")
 
     # -------------------------------------------------------------------------
     # 7. Validation
     # -------------------------------------------------------------------------
-    logger.info("[VALIDATION] Running validation checks...")
+    logger.info("Running validation checks...")
 
     all_pass = True
 
     # Check 1: 2 location effects
     if len(age_effects) == 2:
-        logger.info("[PASS] 2 location-specific effects present")
+        logger.info("2 location-specific effects present")
     else:
-        logger.info(f"[FAIL] Expected 2 locations, found {len(age_effects)}")
+        logger.info(f"Expected 2 locations, found {len(age_effects)}")
         all_pass = False
 
     # Check 2: 1 contrast
     if len(contrasts) == 1:
-        logger.info("[PASS] 1 contrast present")
+        logger.info("1 contrast present")
     else:
-        logger.info(f"[FAIL] Expected 1 contrast, found {len(contrasts)}")
+        logger.info(f"Expected 1 contrast, found {len(contrasts)}")
         all_pass = False
 
     # Check 3: Both p-value columns present (Decision D068)
     if 'p_uncorrected' in age_effects.columns and 'p_tukey' in age_effects.columns:
-        logger.info("[PASS] Dual p-values present (Decision D068)")
+        logger.info("Dual p-values present (Decision D068)")
     else:
-        logger.info("[FAIL] Missing p-value columns")
+        logger.info("Missing p-value columns")
         all_pass = False
 
     # Check 4: p_tukey >= p_uncorrected
     if all(age_effects['p_tukey'] >= age_effects['p_uncorrected']):
-        logger.info("[PASS] Tukey adjustment valid")
+        logger.info("Tukey adjustment valid")
     else:
-        logger.info("[FAIL] Tukey adjustment error")
+        logger.info("Tukey adjustment error")
         all_pass = False
 
     # Check 5: CI logic
     if all(age_effects['ci_upper'] > age_effects['ci_lower']):
-        logger.info("[PASS] Confidence intervals valid")
+        logger.info("Confidence intervals valid")
     else:
-        logger.info("[FAIL] Invalid confidence intervals")
+        logger.info("Invalid confidence intervals")
         all_pass = False
 
     if not all_pass:
@@ -242,18 +242,18 @@ def main():
     # -------------------------------------------------------------------------
     # 8. Save outputs
     # -------------------------------------------------------------------------
-    logger.info("[SAVE] Saving outputs...")
+    logger.info("Saving outputs...")
 
     age_effects.to_csv(DATA_DIR / "step04_age_effects_by_location.csv", index=False)
-    logger.info("[SAVED] step04_age_effects_by_location.csv")
+    logger.info("step04_age_effects_by_location.csv")
 
     contrasts.to_csv(DATA_DIR / "step04_post_hoc_contrasts.csv", index=False)
-    logger.info("[SAVED] step04_post_hoc_contrasts.csv")
+    logger.info("step04_post_hoc_contrasts.csv")
 
     # -------------------------------------------------------------------------
     # 9. Interpretation
     # -------------------------------------------------------------------------
-    logger.info("[INTERPRETATION]")
+    logger.info("")
     logger.info("  Age effects at Day 3 are similar for both location types:")
     logger.info(f"    Destination: {age_dest:.6f} theta units per year")
     logger.info(f"    Source: {age_source:.6f} theta units per year")
@@ -263,7 +263,7 @@ def main():
     logger.info("  This supports the null hypothesis: age does NOT differentially")
     logger.info("  affect source vs destination memory.")
 
-    logger.info("[SUCCESS] Step 04 complete - Post-hoc contrasts computed")
+    logger.info("Step 04 complete - Post-hoc contrasts computed")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,30 @@
+Step 2: Purify Items by Quality Thresholds (Decision D039)
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv (36 rows, 4 cols)
+Total items: 36
+Items by factor:
+  - destination: 18 items
+  - source: 18 items
+Running filter_items_by_quality (Decision D039)...
+Thresholds: a >= 0.4, |b| <= 3.0
+Item purification complete
+Retained: 32 items
+Excluded: 4 items
+Saving purified items...
+step02_purified_items.csv (32 rows, 5 cols)
+Retained items by factor:
+  - destination: 15 items
+  - source: 17 items
+Generating purification report...
+step02_purification_report.txt
+Running validate_irt_parameters...
+valid: True
+n_flagged: 0
+flagged_items: []
+total_items: 32
+Checking minimum items per factor (threshold: 10)...
+Factor 'destination': 15 items Factor 'source': 17 items Checking for NaN values...
+No NaN values found Checking for duplicate items...
+No duplicate items found Step 2 complete - All validations passed
+32 items retained, 4 items excluded
+Ready for Pass 2 calibration (Step 3)

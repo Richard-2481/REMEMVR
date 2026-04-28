@@ -1,0 +1,8 @@
+metric,value
+r_observed,0.21351443398554756
+p_parametric,0.03292784777779375
+p_permutation,0.031
+n_permutations,1000
+null_mean,-0.002126643772525584
+null_sd,0.09575817533657832
+perm_confirms_parametric,True

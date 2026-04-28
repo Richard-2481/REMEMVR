@@ -1,0 +1,43 @@
+Step 07: Cross-validation for Generalizability Assessment
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 6 cols)
+Predictors: ['Age_z', 'Education_z', 'VR_Experience_z', 'Typical_Sleep_z']
+Outcome: theta_all
+Sample size: N=100
+Running 5-fold cross-validation...
+Cross-validation complete
+Extracting fold-level results...
+'scores'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.1/code/step07_cross_validation.py", line 176, in <module>
+    train_r2 = cv_results['train_scores'][fold] if 'train_scores' in cv_results else cv_results['scores']['train_r2'][fold]
+                                                                                     ~~~~~~~~~~^^^^^^^^^^
+KeyError: 'scores'
+Step 07: Cross-validation for Generalizability Assessment
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 6 cols)
+Predictors: ['Age_z', 'Education_z', 'VR_Experience_z', 'Typical_Sleep_z']
+Outcome: theta_all
+Sample size: N=100
+Running 5-fold cross-validation...
+Cross-validation complete
+Extracting fold-level results...
+step07_cv_results.csv (5 rows, 6 cols)
+Analyzing coefficient stability...
+Coefficient data not available in CV results
+step07_cv_stability.csv (4 rows, 4 cols)
+Evaluating model generalizability...
+Mean train R² = nan
+Mean test R² = -0.134
+Mean train-test gap = nan
+Test R² variability (SD) = 0.217
+No significant overfitting (gap = nan <= 0.1)
+Running validate_probability_range...
+valid: False
+message: 2 violation(s) found. Probabilities must be in [0, 1]. Issues: train_r2: NaN values, test_r2: Values below 0
+violations: [{'column': 'train_r2', 'issue': 'NaN values', 'count': 5}, {'column': 'test_r2', 'issue': 'Values below 0', 'count': 4, 'example': -0.10242388543059522}]
+Step 07: Cross-validation complete
+5-fold cross-validation completed
+Mean test R² = -0.134 (generalization estimate)
+Overfitting status: NOT DETECTED

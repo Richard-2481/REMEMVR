@@ -45,9 +45,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-# ==============================================================================
 # PATHS
-# ==============================================================================
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 RQ_DIR = PROJECT_ROOT / "results" / "ch5" / "5.4.3"
 DATA_DIR = RQ_DIR / "data"
@@ -57,9 +55,7 @@ LOG_FILE = LOG_DIR / "step04_compute_age_effects.log"
 # Create directories
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-# ==============================================================================
 # LOGGING SETUP
-# ==============================================================================
 class Logger:
     def __init__(self, log_path: Path):
         self.log_path = log_path
@@ -76,35 +72,27 @@ class Logger:
 logger = Logger(LOG_FILE)
 log = logger.log
 
-# ==============================================================================
 # MAIN PROCESSING
-# ==============================================================================
 def main():
-    log("[START] Step 04: Compute Congruence-Specific Age Effects with Tukey HSD")
+    log("Step 04: Compute Congruence-Specific Age Effects with Tukey HSD")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 1: Load Data
-    # -------------------------------------------------------------------------
     log("[STEP 1] Load Data")
     log("-" * 70)
 
     fixed_effects = pd.read_csv(DATA_DIR / "step02_fixed_effects.csv", encoding='utf-8')
-    log(f"[LOADED] Fixed effects: {len(fixed_effects)} rows")
+    log(f"Fixed effects: {len(fixed_effects)} rows")
 
     lmm_input = pd.read_csv(DATA_DIR / "step01_lmm_input.csv", encoding='utf-8')
-    log(f"[LOADED] LMM input: {len(lmm_input)} rows")
+    log(f"LMM input: {len(lmm_input)} rows")
 
     # Create coefficient lookup
     coef_dict = dict(zip(fixed_effects['term'], fixed_effects['coef']))
     se_dict = dict(zip(fixed_effects['term'], fixed_effects['se']))
 
-    log(f"[INFO] Available coefficients: {len(coef_dict)}")
+    log(f"Available coefficients: {len(coef_dict)}")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 2: Compute Day 3 Reference Timepoint
-    # -------------------------------------------------------------------------
     log("[STEP 2] Compute Day 3 Reference Timepoint")
     log("-" * 70)
 
@@ -113,13 +101,10 @@ def main():
     TSVR_day3 = day3_data['TSVR_hours'].mean()
     log_TSVR_day3 = np.log(TSVR_day3 + 1)
 
-    log(f"[INFO] Day 3 (test=3) mean TSVR_hours: {TSVR_day3:.2f}")
-    log(f"[INFO] Day 3 log(TSVR_hours + 1): {log_TSVR_day3:.4f}")
+    log(f"Day 3 (test=3) mean TSVR_hours: {TSVR_day3:.2f}")
+    log(f"Day 3 log(TSVR_hours + 1): {log_TSVR_day3:.4f}")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 3: Compute Marginal Age Effects by Congruence
-    # -------------------------------------------------------------------------
     log("[STEP 3] Compute Marginal Age Effects by Congruence")
     log("-" * 70)
 
@@ -154,14 +139,11 @@ def main():
         (get_coef('Age_c:log_TSVR') + get_coef('Age_c:Incongruent:log_TSVR')) * log_TSVR_day3
     )
 
-    log(f"[COMPUTED] Age effect for Common: {age_effect_common:.6f}")
-    log(f"[COMPUTED] Age effect for Congruent: {age_effect_congruent:.6f}")
-    log(f"[COMPUTED] Age effect for Incongruent: {age_effect_incongruent:.6f}")
+    log(f"Age effect for Common: {age_effect_common:.6f}")
+    log(f"Age effect for Congruent: {age_effect_congruent:.6f}")
+    log(f"Age effect for Incongruent: {age_effect_incongruent:.6f}")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 4: Estimate Standard Errors (Simple Delta Method Approximation)
-    # -------------------------------------------------------------------------
     log("[STEP 4] Estimate Standard Errors")
     log("-" * 70)
 
@@ -177,10 +159,10 @@ def main():
     se_congruent = np.sqrt(se_base**2 + get_se('Age_c:Congruent')**2)
     se_incongruent = np.sqrt(se_base**2 + get_se('Age_c:Incongruent')**2)
 
-    log(f"[INFO] SE estimation method: simplified delta method approximation")
-    log(f"[INFO] SE for Common: {se_common:.6f}")
-    log(f"[INFO] SE for Congruent: {se_congruent:.6f}")
-    log(f"[INFO] SE for Incongruent: {se_incongruent:.6f}")
+    log(f"SE estimation method: simplified delta method approximation")
+    log(f"SE for Common: {se_common:.6f}")
+    log(f"SE for Congruent: {se_congruent:.6f}")
+    log(f"SE for Incongruent: {se_incongruent:.6f}")
     log("")
 
     # Compute 95% CIs
@@ -199,7 +181,7 @@ def main():
         'TSVR_day3': [TSVR_day3, TSVR_day3, TSVR_day3]
     })
 
-    log("[INFO] Age Effects by Congruence (at Day 3):")
+    log("Age Effects by Congruence (at Day 3):")
     log(f"{'Congruence':<15} {'Age Slope':>12} {'SE':>10} {'95% CI':>25}")
     log("-" * 65)
     for _, row in age_effects.iterrows():
@@ -207,9 +189,6 @@ def main():
         log(f"{row['congruence']:<15} {row['age_slope']:>12.6f} {row['se']:>10.6f} {ci_str:>25}")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 5: Compute Tukey HSD Post-Hoc Contrasts
-    # -------------------------------------------------------------------------
     log("[STEP 5] Compute Tukey HSD Post-Hoc Contrasts")
     log("-" * 70)
 
@@ -254,7 +233,7 @@ def main():
 
     tukey_df = pd.DataFrame(tukey_results)
 
-    log("[INFO] Tukey HSD Post-Hoc Contrasts (Decision D068 Dual P-Values):")
+    log("Tukey HSD Post-Hoc Contrasts (Decision D068 Dual P-Values):")
     log("")
     log(f"{'Contrast':<25} {'Estimate':>10} {'SE':>10} {'z':>8} {'p_uncor':>10} {'p_tukey':>10} {'Sig':>5}")
     log("-" * 90)
@@ -267,72 +246,67 @@ def main():
 
     # Summary
     n_significant = tukey_df['significant_tukey'].sum()
-    log(f"[SUMMARY] Significant contrasts: {n_significant} / 3")
+    log(f"Significant contrasts: {n_significant} / 3")
 
     if n_significant == 0:
-        log("[FINDING] No significant differences in age effects across congruence levels")
-        log("[INTERPRETATION] Age-related forgetting is similar for Common, Congruent, and Incongruent items")
+        log("No significant differences in age effects across congruence levels")
+        log("Age-related forgetting is similar for Common, Congruent, and Incongruent items")
     else:
         sig_contrasts = tukey_df[tukey_df['significant_tukey']]['contrast'].tolist()
-        log(f"[FINDING] Significant contrasts: {sig_contrasts}")
+        log(f"Significant contrasts: {sig_contrasts}")
     log("")
 
-    # -------------------------------------------------------------------------
-    # STEP 6: Validate and Save Outputs
-    # -------------------------------------------------------------------------
     log("[STEP 6] Validate and Save Outputs")
     log("-" * 70)
 
     # Validate age effects
     if len(age_effects) != 3:
-        log(f"[FAIL] Expected 3 age effects, found {len(age_effects)}")
+        log(f"Expected 3 age effects, found {len(age_effects)}")
         return False
-    log("[PASS] Age effects: 3 congruence levels")
+    log("Age effects: 3 congruence levels")
 
     # Validate CI direction
     if not all(age_effects['CI_upper'] > age_effects['CI_lower']):
-        log("[FAIL] CI_upper not greater than CI_lower for all rows")
+        log("CI_upper not greater than CI_lower for all rows")
         return False
-    log("[PASS] Confidence intervals valid (CI_upper > CI_lower)")
+    log("Confidence intervals valid (CI_upper > CI_lower)")
 
     # Validate contrasts
     if len(tukey_df) != 3:
-        log(f"[FAIL] Expected 3 contrasts, found {len(tukey_df)}")
+        log(f"Expected 3 contrasts, found {len(tukey_df)}")
         return False
-    log("[PASS] Tukey contrasts: 3 pairwise comparisons")
+    log("Tukey contrasts: 3 pairwise comparisons")
 
     # Check dual p-values present
     if 'p_uncorrected' not in tukey_df.columns or 'p_tukey' not in tukey_df.columns:
-        log("[FAIL] Dual p-values missing (Decision D068 violation)")
+        log("Dual p-values missing (Decision D068 violation)")
         return False
-    log("[PASS] Dual p-values present (p_uncorrected + p_tukey)")
+    log("Dual p-values present (p_uncorrected + p_tukey)")
 
     # Save outputs
     age_effects_path = DATA_DIR / "step04_age_effects_by_congruence.csv"
     age_effects.to_csv(age_effects_path, index=False, encoding='utf-8')
-    log(f"[SAVED] {age_effects_path}")
+    log(f"{age_effects_path}")
     log(f"  {len(age_effects)} rows, {len(age_effects.columns)} columns")
 
     tukey_path = DATA_DIR / "step04_tukey_contrasts.csv"
     tukey_df.to_csv(tukey_path, index=False, encoding='utf-8')
-    log(f"[SAVED] {tukey_path}")
+    log(f"{tukey_path}")
     log(f"  {len(tukey_df)} rows, {len(tukey_df.columns)} columns")
     log("")
 
-    log("[SUCCESS] Step 04 complete - Age effects and Tukey contrasts computed")
+    log("Step 04 complete - Age effects and Tukey contrasts computed")
 
     return True
 
-# ==============================================================================
 # ENTRY POINT
-# ==============================================================================
 if __name__ == "__main__":
     try:
         success = main()
         logger.close()
         sys.exit(0 if success else 1)
     except Exception as e:
-        log(f"[ERROR] Unexpected error: {e}")
+        log(f"Unexpected error: {e}")
         log(traceback.format_exc())
         logger.close()
         sys.exit(1)

@@ -1,0 +1,256 @@
+Step 3: IRT Calibration Pass 2 (Purified Items)
+Checking item retention rate...
+step02_purified_items.csv (72 items retained)
+step01_pass1_item_params.csv (72 items in Pass 1)
+72/72 items retained (100.0%)
+100% retention detected - copying Pass 1 results
+This is mathematically equivalent to re-running IRT
+Estimated time saved: ~5 minutes
+step01_pass1_theta.csv -> step03_theta_confidence.csv
+step01_pass1_item_params.csv -> step03_item_parameters.csv
+step03_theta_confidence.csv (400 rows, 3 cols)
+step03_item_parameters.csv (72 rows, 7 cols)
+Running validate_irt_convergence...
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Checking Pass 2 specific criteria...
+No NaN in theta_confidence.csv
+No NaN in item_parameters.csv
+Expected N (400 composite_IDs)
+Item count matches purified list (72 items)
+Theta in expected range: [-2.24, 0.49]
+SE outside [0.1, 1.5]: range=[0.03, 0.03]
+Discrimination in expected range: [1.742, 5.350]
+Threshold ordering violation in item TC_ICR-D-i1
+Threshold ordering violation in item TC_ICR-D-i2
+Threshold ordering violation in item TC_ICR-D-i3
+Threshold ordering violation in item TC_ICR-D-i4
+Threshold ordering violation in item TC_ICR-D-i5
+Threshold ordering violation in item TC_ICR-D-i6
+Threshold ordering violation in item TC_ICR-N-i1
+Threshold ordering violation in item TC_ICR-N-i2
+Threshold ordering violation in item TC_ICR-N-i3
+Threshold ordering violation in item TC_ICR-N-i4
+Threshold ordering violation in item TC_ICR-N-i5
+Threshold ordering violation in item TC_ICR-N-i6
+Threshold ordering violation in item TC_ICR-O-i1
+Threshold ordering violation in item TC_ICR-O-i2
+Threshold ordering violation in item TC_ICR-O-i3
+Threshold ordering violation in item TC_ICR-O-i4
+Threshold ordering violation in item TC_ICR-O-i5
+Threshold ordering violation in item TC_ICR-O-i6
+Threshold ordering violation in item TC_ICR-U-i1
+Threshold ordering violation in item TC_ICR-U-i2
+Threshold ordering violation in item TC_ICR-U-i3
+Threshold ordering violation in item TC_ICR-U-i4
+Threshold ordering violation in item TC_ICR-U-i5
+Threshold ordering violation in item TC_ICR-U-i6
+Threshold ordering violation in item TC_IFR-D-i1
+Threshold ordering violation in item TC_IFR-D-i2
+Threshold ordering violation in item TC_IFR-D-i3
+Threshold ordering violation in item TC_IFR-D-i4
+Threshold ordering violation in item TC_IFR-D-i5
+Threshold ordering violation in item TC_IFR-D-i6
+Threshold ordering violation in item TC_IFR-N-i1
+Threshold ordering violation in item TC_IFR-N-i2
+Threshold ordering violation in item TC_IFR-N-i3
+Threshold ordering violation in item TC_IFR-N-i4
+Threshold ordering violation in item TC_IFR-N-i5
+Threshold ordering violation in item TC_IFR-N-i6
+Threshold ordering violation in item TC_IFR-O-i1
+Threshold ordering violation in item TC_IFR-O-i2
+Threshold ordering violation in item TC_IFR-O-i3
+Threshold ordering violation in item TC_IFR-O-i4
+Threshold ordering violation in item TC_IFR-O-i5
+Threshold ordering violation in item TC_IFR-O-i6
+Threshold ordering violation in item TC_IFR-U-i1
+Threshold ordering violation in item TC_IFR-U-i2
+Threshold ordering violation in item TC_IFR-U-i3
+Threshold ordering violation in item TC_IFR-U-i4
+Threshold ordering violation in item TC_IFR-U-i5
+Threshold ordering violation in item TC_IFR-U-i6
+Threshold ordering violation in item TC_IRE-D-i1
+Threshold ordering violation in item TC_IRE-D-i2
+Threshold ordering violation in item TC_IRE-D-i3
+Threshold ordering violation in item TC_IRE-D-i4
+Threshold ordering violation in item TC_IRE-D-i5
+Threshold ordering violation in item TC_IRE-D-i6
+Threshold ordering violation in item TC_IRE-N-i1
+Threshold ordering violation in item TC_IRE-N-i2
+Threshold ordering violation in item TC_IRE-N-i3
+Threshold ordering violation in item TC_IRE-N-i4
+Threshold ordering violation in item TC_IRE-N-i5
+Threshold ordering violation in item TC_IRE-N-i6
+Threshold ordering violation in item TC_IRE-O-i1
+Threshold ordering violation in item TC_IRE-O-i2
+Threshold ordering violation in item TC_IRE-O-i3
+Threshold ordering violation in item TC_IRE-O-i4
+Threshold ordering violation in item TC_IRE-O-i5
+Threshold ordering violation in item TC_IRE-O-i6
+Threshold ordering violation in item TC_IRE-U-i1
+Threshold ordering violation in item TC_IRE-U-i2
+Threshold ordering violation in item TC_IRE-U-i3
+Threshold ordering violation in item TC_IRE-U-i4
+Threshold ordering violation in item TC_IRE-U-i5
+Threshold ordering violation in item TC_IRE-U-i6
+72 items violated threshold ordering constraint
+Step 3 complete
+Step 3: IRT Calibration Pass 2 (Purified Items)
+Checking item retention rate...
+step02_purified_items.csv (72 items retained)
+step01_pass1_item_params.csv (72 items in Pass 1)
+72/72 items retained (100.0%)
+100% retention detected - copying Pass 1 results
+This is mathematically equivalent to re-running IRT
+Estimated time saved: ~5 minutes
+step01_pass1_theta.csv -> step03_theta_confidence.csv
+step01_pass1_item_params.csv -> step03_item_parameters.csv
+step03_theta_confidence.csv (400 rows, 3 cols)
+step03_item_parameters.csv (72 rows, 7 cols)
+Running validate_irt_convergence...
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Checking Pass 2 specific criteria...
+No NaN in theta_confidence.csv
+No NaN in item_parameters.csv
+Expected N (400 composite_IDs)
+Item count matches purified list (72 items)
+Theta in expected range: [-2.24, 0.49]
+SE outside [0.1, 1.5]: range=[0.03, 0.03]
+Discrimination in expected range: [1.742, 5.350]
+Threshold ordering violation in item TC_ICR-D-i1
+Threshold ordering violation in item TC_ICR-D-i2
+Threshold ordering violation in item TC_ICR-D-i3
+Threshold ordering violation in item TC_ICR-D-i4
+Threshold ordering violation in item TC_ICR-D-i5
+Threshold ordering violation in item TC_ICR-D-i6
+Threshold ordering violation in item TC_ICR-N-i1
+Threshold ordering violation in item TC_ICR-N-i2
+Threshold ordering violation in item TC_ICR-N-i3
+Threshold ordering violation in item TC_ICR-N-i4
+Threshold ordering violation in item TC_ICR-N-i5
+Threshold ordering violation in item TC_ICR-N-i6
+Threshold ordering violation in item TC_ICR-O-i1
+Threshold ordering violation in item TC_ICR-O-i2
+Threshold ordering violation in item TC_ICR-O-i3
+Threshold ordering violation in item TC_ICR-O-i4
+Threshold ordering violation in item TC_ICR-O-i5
+Threshold ordering violation in item TC_ICR-O-i6
+Threshold ordering violation in item TC_ICR-U-i1
+Threshold ordering violation in item TC_ICR-U-i2
+Threshold ordering violation in item TC_ICR-U-i3
+Threshold ordering violation in item TC_ICR-U-i4
+Threshold ordering violation in item TC_ICR-U-i5
+Threshold ordering violation in item TC_ICR-U-i6
+Threshold ordering violation in item TC_IFR-D-i1
+Threshold ordering violation in item TC_IFR-D-i2
+Threshold ordering violation in item TC_IFR-D-i3
+Threshold ordering violation in item TC_IFR-D-i4
+Threshold ordering violation in item TC_IFR-D-i5
+Threshold ordering violation in item TC_IFR-D-i6
+Threshold ordering violation in item TC_IFR-N-i1
+Threshold ordering violation in item TC_IFR-N-i2
+Threshold ordering violation in item TC_IFR-N-i3
+Threshold ordering violation in item TC_IFR-N-i4
+Threshold ordering violation in item TC_IFR-N-i5
+Threshold ordering violation in item TC_IFR-N-i6
+Threshold ordering violation in item TC_IFR-O-i1
+Threshold ordering violation in item TC_IFR-O-i2
+Threshold ordering violation in item TC_IFR-O-i3
+Threshold ordering violation in item TC_IFR-O-i4
+Threshold ordering violation in item TC_IFR-O-i5
+Threshold ordering violation in item TC_IFR-O-i6
+Threshold ordering violation in item TC_IFR-U-i1
+Threshold ordering violation in item TC_IFR-U-i2
+Threshold ordering violation in item TC_IFR-U-i3
+Threshold ordering violation in item TC_IFR-U-i4
+Threshold ordering violation in item TC_IFR-U-i5
+Threshold ordering violation in item TC_IFR-U-i6
+Threshold ordering violation in item TC_IRE-D-i1
+Threshold ordering violation in item TC_IRE-D-i2
+Threshold ordering violation in item TC_IRE-D-i3
+Threshold ordering violation in item TC_IRE-D-i4
+Threshold ordering violation in item TC_IRE-D-i5
+Threshold ordering violation in item TC_IRE-D-i6
+Threshold ordering violation in item TC_IRE-N-i1
+Threshold ordering violation in item TC_IRE-N-i2
+Threshold ordering violation in item TC_IRE-N-i3
+Threshold ordering violation in item TC_IRE-N-i4
+Threshold ordering violation in item TC_IRE-N-i5
+Threshold ordering violation in item TC_IRE-N-i6
+Threshold ordering violation in item TC_IRE-O-i1
+Threshold ordering violation in item TC_IRE-O-i2
+Threshold ordering violation in item TC_IRE-O-i3
+Threshold ordering violation in item TC_IRE-O-i4
+Threshold ordering violation in item TC_IRE-O-i5
+Threshold ordering violation in item TC_IRE-O-i6
+Threshold ordering violation in item TC_IRE-U-i1
+Threshold ordering violation in item TC_IRE-U-i2
+Threshold ordering violation in item TC_IRE-U-i3
+Threshold ordering violation in item TC_IRE-U-i4
+Threshold ordering violation in item TC_IRE-U-i5
+Threshold ordering violation in item TC_IRE-U-i6
+72 items violated threshold ordering constraint
+Step 3 complete
+Step 3: IRT Calibration Pass 2 (Purified Items)
+Checking item retention rate...
+step02_purified_items.csv (72 items retained)
+step01_pass1_item_params.csv (72 items in Pass 1)
+72/72 items retained (100.0%)
+100% retention detected - copying Pass 1 results
+This is mathematically equivalent to re-running IRT
+Estimated time saved: ~5 minutes
+step01_pass1_theta.csv -> step03_theta_confidence.csv
+step01_pass1_item_params.csv -> step03_item_parameters.csv
+step03_theta_confidence.csv (400 rows, 3 cols)
+step03_item_parameters.csv (72 rows, 7 cols)
+Running validate_irt_convergence...
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Checking Pass 2 specific criteria...
+No NaN in theta_confidence.csv
+No NaN in item_parameters.csv
+Expected N (400 composite_IDs)
+Item count matches purified list (72 items)
+Theta in expected range: [-2.91, 3.05]
+SE outside [0.1, 1.5]: range=[0.09, 0.09]
+Discrimination in expected range: [0.612, 1.823]
+All items satisfy threshold ordering (b1 < b2 < b3 < b4)
+Step 3 complete
+Step 3: IRT Calibration Pass 2 (Purified Items)
+Checking item retention rate...
+step02_purified_items.csv (105 items retained)
+step01_pass1_item_params.csv (105 items in Pass 1)
+105/105 items retained (100.0%)
+100% retention detected - copying Pass 1 results
+This is mathematically equivalent to re-running IRT
+Estimated time saved: ~5 minutes
+step01_pass1_theta.csv -> step03_theta_confidence.csv
+step01_pass1_item_params.csv -> step03_item_parameters.csv
+step03_theta_confidence.csv (400 rows, 3 cols)
+step03_item_parameters.csv (105 rows, 7 cols)
+Running validate_irt_convergence...
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Checking Pass 2 specific criteria...
+No NaN in theta_confidence.csv
+No NaN in item_parameters.csv
+Expected N (400 composite_IDs)
+Item count matches purified list (105 items)
+Theta in expected range: [-2.99, 3.04]
+SE outside [0.1, 1.5]: range=[0.07, 0.07]
+Discrimination in expected range: [0.689, 1.733]
+All items satisfy threshold ordering (b1 < b2 < b3 < b4)
+Step 3 complete

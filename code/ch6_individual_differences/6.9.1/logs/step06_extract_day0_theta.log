@@ -1,0 +1,10 @@
+======================================================================
+STEP 06: Extract Day 0 Theta Scores
+======================================================================
+Loaded Ch5 5.1.1 theta: (400, 3), columns: ['UID', 'test', 'Theta_All']
+Day 0 theta extracted: 100 participants
+Loaded Ch5 5.2.1 domain theta: (400, 4), columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Domain-specific Day 0 theta added: ['theta_what_day0', 'theta_where_day0', 'theta_when_day0']
+Final Day 0 dataset: 100 participants, columns: ['UID', 'theta_overall_day0', 'theta_what_day0', 'theta_where_day0', 'theta_when_day0']
+Saved: step06_day0_theta.csv (100 rows)
+Validation PASSED

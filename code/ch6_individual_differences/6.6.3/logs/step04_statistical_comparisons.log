@@ -1,0 +1,60 @@
+Step 04: Statistical Comparisons Between Domains
+Single comparison only (What-Where), When domain excluded
+Reading bootstrap distributions...
+2000 rows
+Reading ICC estimates...
+2 rows
+Calculating bootstrap difference distribution...
+Bootstrap differences calculated: 1000 samples
+Mean: 0.0000
+95% CI: [0.0000, 0.0000]
+ICC_what = 1.0000, ICC_where = 1.0000
+Difference = 0.0000
+[P-VALUE] Uncorrected: 1.0000
+[P-VALUE] Bonferroni (n=1): 1.0000
+[P-VALUE] FDR (n=1): 1.0000
+All p-values identical (single test, no correction needed)
+[EFFECT SIZE] Cohen's d: 0.0000
+Pairwise comparisons table: 1 row
+Checking Decision D068 compliance...
+Decision D068 compliance verified
+All required comparisons present
+Dual p-values (uncorrected + bonferroni + fdr) present
+p_bonferroni >= p_uncorrected
+All p-values in [0, 1]
+Effect size in reasonable range
+Writing pairwise comparisons...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step04_pairwise_comparisons.csv (1 row)
+Step 04 complete
+What-Where comparison: diff=0.0000, p=1.0000, d=0.0000
+Proceed to step05 (outlier analysis)
+Step 04: Statistical Comparisons Between Domains
+Single comparison only (What-Where), When domain excluded
+Reading bootstrap distributions...
+2000 rows
+Reading ICC estimates...
+2 rows
+Calculating bootstrap difference distribution...
+Bootstrap differences calculated: 1000 samples
+Mean: 0.0000
+95% CI: [0.0000, 0.0000]
+ICC_what = 1.0000, ICC_where = 1.0000
+Difference = 0.0000
+[P-VALUE] Uncorrected: 1.0000
+[P-VALUE] Bonferroni (n=1): 1.0000
+[P-VALUE] FDR (n=1): 1.0000
+All p-values identical (single test, no correction needed)
+[EFFECT SIZE] Cohen's d: 0.0000
+Pairwise comparisons table: 1 row
+Checking Decision D068 compliance...
+Decision D068 compliance verified
+All required comparisons present
+Dual p-values (uncorrected + bonferroni + fdr) present
+p_bonferroni >= p_uncorrected
+All p-values in [0, 1]
+Effect size in reasonable range
+Writing pairwise comparisons...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step04_pairwise_comparisons.csv (1 row)
+Step 04 complete
+What-Where comparison: diff=0.0000, p=1.0000, d=0.0000
+Proceed to step05 (outlier analysis)

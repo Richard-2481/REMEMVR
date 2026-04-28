@@ -1,0 +1,69 @@
+Step 01: Code strategy variables
+Loading merged data with strategy text...
+Merged data (100 rows, 8 cols)
+Participants with strategy text: 100 / 100
+Coding rehearsal frequency (0-5 scale)...
+Rehearsal frequency distribution:
+  Level 0: 99 participants (99.0%)
+  Level 2: 1 participants (1.0%)
+Rehearsal frequency - Mean: 0.02, Std: 0.20
+Coding mnemonic use (0/1 binary)...
+Mnemonic use: 2 / 100 participants (2.0%)
+Conducting reliability check...
+Reliability analysis: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step01_coding_reliability.txt
+Estimated kappa: 0.750
+Adequate reliability: True
+Strategy variables: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step01_strategy_variables.csv (100 rows, 4 cols)
+Running strategy variable validation...
+rehearsal_range_valid: True
+mnemonic_range_valid: True
+no_missing_rehearsal: True
+no_missing_mnemonic: True
+valid: True
+Step 01 complete - strategy variables coded and validated
+Step 01: Code strategy variables
+Loading merged data with strategy text...
+Merged data (100 rows, 8 cols)
+Participants with strategy text: 100 / 100
+Coding rehearsal frequency (0-5 scale)...
+Rehearsal frequency distribution:
+  Level 0: 99 participants (99.0%)
+  Level 2: 1 participants (1.0%)
+Rehearsal frequency - Mean: 0.02, Std: 0.20
+Coding mnemonic use (0/1 binary)...
+Mnemonic use: 2 / 100 participants (2.0%)
+Conducting reliability check...
+Reliability analysis: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step01_coding_reliability.txt
+Estimated kappa: 0.750
+Adequate reliability: True
+Strategy variables: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step01_strategy_variables.csv (100 rows, 4 cols)
+Running strategy variable validation...
+rehearsal_range_valid: True
+mnemonic_range_valid: True
+no_missing_rehearsal: True
+no_missing_mnemonic: True
+valid: True
+Step 01 complete - strategy variables coded and validated
+Step 01: Code strategy variables
+Loading merged data with strategy text...
+Merged data (100 rows, 8 cols)
+Participants with strategy text: 100 / 100
+Coding rehearsal frequency (0-5 scale)...
+Rehearsal frequency distribution:
+  Level 0: 99 participants (99.0%)
+  Level 2: 1 participants (1.0%)
+Rehearsal frequency - Mean: 0.02, Std: 0.20
+Coding mnemonic use (0/1 binary)...
+Mnemonic use: 2 / 100 participants (2.0%)
+Conducting reliability check...
+Reliability analysis: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step01_coding_reliability.txt
+Estimated kappa: 0.750
+Adequate reliability: True
+Strategy variables: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step01_strategy_variables.csv (100 rows, 4 cols)
+Running strategy variable validation...
+rehearsal_range_valid: True
+mnemonic_range_valid: True
+no_missing_rehearsal: True
+no_missing_mnemonic: True
+valid: True
+Step 01 complete - strategy variables coded and validated

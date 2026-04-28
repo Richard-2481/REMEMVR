@@ -1,0 +1,104 @@
+Step 5b: Extended Model Comparison (Paradigm x Time)
+Loading LMM input data...
+1200 rows, 8 cols
+  Paradigms: ['free_recall' 'cued_recall' 'recognition']
+  N subjects: 100
+Adding new time transformations...
+  Added transformations (same as RQ 5.1.1)
+Defining extended model set...
+  NOTE: All models include Paradigm x Time interaction
+  Total models to fit: 17
+Fitting all models...
+  Fitting Linear...
+    ✓ AIC=2421.52
+  Fitting Quadratic...
+    ✓ AIC=2388.69
+  Fitting Log...
+    ✓ AIC=2375.80
+  Fitting Lin+Log...
+    ✓ AIC=2381.60
+  Fitting Quad+Log...
+    ✓ AIC=2387.37
+  Fitting PowerLaw_LogLog...
+    ✓ AIC=2385.16
+  Fitting PowerLaw_Alpha05...
+    ✓ AIC=2383.88
+  Fitting PowerLaw_Alpha03...
+    ✓ AIC=2378.21
+  Fitting PowerLaw_Alpha07...
+    ✓ AIC=2392.14
+  Fitting PowerLaw_Combined...
+    ✓ AIC=2381.51
+  Fitting SquareRoot...
+    ✓ AIC=2376.48
+  Fitting CubeRoot...
+    ✓ AIC=2379.29
+  Fitting SquareRoot+Log...
+    ✓ AIC=2381.77
+  Fitting Reciprocal...
+    ✓ AIC=2407.85
+  Fitting Recip+Log...
+    ✓ AIC=2381.52
+  Fitting Exponential...
+    ✓ AIC=2421.52
+  Fitting Exp+Log...
+    ✓ AIC=2381.60
+Computing AIC comparison metrics...
+Extended Model Comparison:
+
+       model_name         AIC  delta_AIC  akaike_weight
+              Log 2375.796753   0.000000   4.014796e-01
+       SquareRoot 2376.478491   0.681738   2.855131e-01
+ PowerLaw_Alpha03 2378.213513   2.416760   1.199142e-01
+         CubeRoot 2379.293920   3.497167   6.986558e-02
+PowerLaw_Combined 2381.511707   5.714954   2.305032e-02
+        Recip+Log 2381.516492   5.719739   2.299524e-02
+          Lin+Log 2381.597997   5.801244   2.207696e-02
+          Exp+Log 2381.597997   5.801244   2.207696e-02
+   SquareRoot+Log 2381.767068   5.970315   2.028739e-02
+ PowerLaw_Alpha05 2383.884109   8.087356   7.039090e-03
+  PowerLaw_LogLog 2385.160153   9.363400   3.719007e-03
+         Quad+Log 2387.366729  11.569976   1.233886e-03
+        Quadratic 2388.693871  12.897118   6.354626e-04
+ PowerLaw_Alpha07 2392.144176  16.347423   1.132050e-04
+       Reciprocal 2407.845745  32.048992   4.408729e-08
+           Linear 2421.515816  45.719063   4.741274e-11
+      Exponential 2421.515816  45.719063   4.741274e-11
+
+[BEST MODEL] Log
+  AIC: 2375.80
+  Weight: 0.4015 (40.1%)
+
+Original 'Log' model:
+  Rank: #1 of 17
+  AIC: 2375.80 (Δ = 0.00)
+  Weight: 0.4015 (40.1%)
+  Original weight (5-model comparison): 99.99%
+
+[POWER LAW MODELS]
+  #3: PowerLaw_Alpha03
+       AIC=2378.21, Δ=2.42, weight=0.1199
+  #5: PowerLaw_Combined
+       AIC=2381.51, Δ=5.71, weight=0.0231
+  #10: PowerLaw_Alpha05
+       AIC=2383.88, Δ=8.09, weight=0.0070
+  #11: PowerLaw_LogLog
+       AIC=2385.16, Δ=9.36, weight=0.0037
+  #14: PowerLaw_Alpha07
+       AIC=2392.14, Δ=16.35, weight=0.0001
+Saving results...
+  ✓ step05b_extended_model_comparison.csv
+  ✓ step05b_extended_model_fits.pkl
+
+Total models tested: 17
+  Successful fits: 17
+  Failed fits: 0
+  Best model: Log
+  Best AIC: 2375.80
+  Original Log model rank: #1
+
+RQ 5.1.1 vs 5.3.1 Comparison:
+  RQ 5.1.1 (single trajectory): Power law wins, Log ranked #10
+  RQ 5.3.1 (Paradigm x Time): [results above]
+  ✗ LOG WINS: Log (#1) beats best power law (#3)
+Step 5b complete

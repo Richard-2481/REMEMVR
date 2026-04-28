@@ -1,0 +1,30 @@
+2025-12-03 18:56:55,330 - INFO - ============================================================
+2025-12-03 18:56:55,330 - INFO - STEP 05: COMPARE FIXED EFFECTS (IRT vs CTT)
+2025-12-03 18:56:55,330 - INFO - ============================================================
+2025-12-03 18:56:55,330 - INFO - 
+1. Loading models...
+2025-12-03 18:56:55,394 - INFO - Loaded IRT and CTT models
+2025-12-03 18:56:55,394 - INFO - 
+2. Extracting fixed effects...
+2025-12-03 18:56:55,398 - INFO - IRT fixed effects: 6 terms
+2025-12-03 18:56:55,401 - INFO - CTT fixed effects: 6 terms
+2025-12-03 18:56:55,401 - INFO - 
+3. Saving fixed effects...
+2025-12-03 18:56:55,403 - INFO -    Saved: step05_irt_fixed_effects.csv (6 terms)
+2025-12-03 18:56:55,403 - INFO -    Saved: step05_ctt_fixed_effects.csv (6 terms)
+2025-12-03 18:56:55,403 - INFO - 
+4. Computing agreement metrics...
+2025-12-03 18:56:55,408 - INFO - Cohen's kappa: 0.667 (Substantial)
+2025-12-03 18:56:55,408 - INFO - Percentage agreement: 83.3%
+2025-12-03 18:56:55,409 - INFO - 
+5. Saving comparison and metrics...
+2025-12-03 18:56:55,409 - INFO -    Saved: step05_coefficient_comparison.csv (6 terms)
+2025-12-03 18:56:55,409 - INFO -    Saved: step05_agreement_metrics.csv (3 metrics)
+2025-12-03 18:56:55,409 - INFO - 
+============================================================
+2025-12-03 18:56:55,409 - INFO - STEP 05 COMPLETE: Fixed effects compared
+2025-12-03 18:56:55,409 - INFO - Fixed effects extracted: 6 terms for IRT model
+2025-12-03 18:56:55,409 - INFO - Fixed effects extracted: 6 terms for CTT model
+2025-12-03 18:56:55,410 - INFO - Agreement metrics: Cohen's kappa = 0.667, Percentage agreement = 83.3%
+2025-12-03 18:56:55,410 - INFO - Dual p-values reported per Decision D068
+2025-12-03 18:56:55,410 - INFO - ============================================================

@@ -21,7 +21,6 @@ OUTPUT:
 - data/step05c_random_slopes_comparison.csv (AIC, BIC, variance components)
 - data/step05c_slopes_model_summary.txt (if slopes converge)
 
-Author: rq_platinum finalization
 Date: 2025-12-28
 RQ: ch6/6.4.1
 """
@@ -48,13 +47,13 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05c: Random Slopes Comparison")
+        log("Step 05c: Random Slopes Comparison")
         log("=" * 80)
 
         # Import here to avoid statsmodels import overhead
         import statsmodels.formula.api as smf
 
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         lmm_input = pd.read_csv(DATA_DIR / "step04_lmm_input.csv", encoding='utf-8')
         log(f"  ✓ Loaded {len(lmm_input)} rows ({lmm_input['UID'].nunique()} participants)")
         log(f"  ✓ Variables: theta (outcome), TSVR_hours (time), paradigm (IFR/ICR/IRE)")
@@ -144,7 +143,7 @@ if __name__ == "__main__":
             var_residual_B = np.nan
 
         # COMPARISON
-        log("\n[COMPARISON] Intercepts-only vs Intercepts+Slopes")
+        log("\nIntercepts-only vs Intercepts+Slopes")
 
         if slopes_converged:
             delta_aic = aic_intercepts - aic_slopes
@@ -156,20 +155,20 @@ if __name__ == "__main__":
             if delta_aic > 2:
                 conclusion = "SLOPES IMPROVE FIT"
                 recommendation = "Use random slopes model. Individual participants have different confidence decline rates."
-                log(f"\n[CONCLUSION] {conclusion}")
+                log(f"\n{conclusion}")
                 log(f"  Recommendation: {recommendation}")
                 log(f"  Random slope variance SD = {np.sqrt(var_slope_B):.4f} (individual differences confirmed)")
 
             elif delta_aic < -2:
                 conclusion = "INTERCEPTS PREFERRED"
                 recommendation = "Random slopes overfit. Keep intercepts-only model (homogeneous effects)."
-                log(f"\n[CONCLUSION] {conclusion}")
+                log(f"\n{conclusion}")
                 log(f"  Recommendation: {recommendation}")
 
             else:
                 conclusion = "MODELS EQUIVALENT"
                 recommendation = "Keep intercepts-only (parsimony). Slope variance negligible."
-                log(f"\n[CONCLUSION] {conclusion}")
+                log(f"\n{conclusion}")
                 log(f"  Recommendation: {recommendation}")
                 log(f"  Random slope variance SD = {np.sqrt(var_slope_B):.4f} (near zero, shrinkage to fixed effect)")
         else:
@@ -177,7 +176,7 @@ if __name__ == "__main__":
             delta_bic = np.nan
             conclusion = "SLOPES CONVERGENCE FAILED"
             recommendation = "Keep intercepts-only model. Random slopes not estimable with N=4 timepoints."
-            log(f"\n[CONCLUSION] {conclusion}")
+            log(f"\n{conclusion}")
             log(f"  Recommendation: {recommendation}")
             log("  → This is ACCEPTABLE: Document attempt, explain insufficient data for slopes")
 
@@ -205,7 +204,7 @@ if __name__ == "__main__":
         log(f"\n  ✓ Saved comparison to step05c_random_slopes_comparison.csv")
 
         # INTERPRETATION FOR THESIS
-        log("\n[INTERPRETATION] For summary.md:")
+        log("\nFor summary.md:")
         if slopes_converged and delta_aic > 2:
             log("  → Random slopes IMPROVE fit: Individual differences in confidence decline rates exist")
             log(f"  → Report: 'Participants varied in forgetting rates (slope SD = {np.sqrt(var_slope_B):.3f})'")
@@ -217,11 +216,11 @@ if __name__ == "__main__":
             log("  → Report: 'Random slopes attempted, failed to converge with N=4 timepoints (insufficient data)'")
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] Step 05c: Random Slopes Comparison Complete")
+        log("Step 05c: Random Slopes Comparison Complete")
         log("=" * 80)
 
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         import traceback
         log(traceback.format_exc())
         raise

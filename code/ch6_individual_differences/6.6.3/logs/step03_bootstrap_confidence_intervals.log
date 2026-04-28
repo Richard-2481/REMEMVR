@@ -1,0 +1,72 @@
+Step 03: Bootstrap Confidence Intervals
+Reading domain slopes...
+100 rows
+Reading variance components...
+2 rows
+Parameters: n=1000, seed=42, confidence=0.95
+Starting bootstrap (1000 iterations)...
+'mean'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.6.3/code/step03_bootstrap_confidence_intervals.py", line 159, in <module>
+    icc_boot_mean = boot_result['mean']
+                    ~~~~~~~~~~~^^^^^^^^
+KeyError: 'mean'
+Step 03: Bootstrap Confidence Intervals
+Reading domain slopes...
+100 rows
+Reading variance components...
+2 rows
+Parameters: n=1000, seed=42, confidence=0.95
+Starting bootstrap (1000 iterations)...
+Original ICC: 1.0000
+Bootstrap mean: 1.0000
+95% CI: [1.0000, 1.0000]
+Bootstrap bias: 0.0000
+Starting bootstrap (1000 iterations)...
+Original ICC: 1.0000
+Bootstrap mean: 1.0000
+95% CI: [1.0000, 1.0000]
+Bootstrap bias: 0.0000
+Bootstrap CIs table: 2 rows
+Bootstrap distributions table: 2000 rows
+Checking bootstrap results...
+All 1000 iterations completed for both domains
+All CI bounds in [0, 1]
+What: Bootstrap bias acceptable (0.0000)
+Where: Bootstrap bias acceptable (0.0000)
+Writing bootstrap CIs...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step03_bootstrap_cis.csv (2 rows)
+Writing bootstrap distributions...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step03_bootstrap_distributions.csv (2000 rows)
+Step 03 complete
+Proceed to step04 (pairwise domain comparison)
+Step 03: Bootstrap Confidence Intervals
+Reading domain slopes...
+100 rows
+Reading variance components...
+2 rows
+Parameters: n=1000, seed=42, confidence=0.95
+Starting bootstrap (1000 iterations)...
+Original ICC: 1.0000
+Bootstrap mean: 1.0000
+95% CI: [1.0000, 1.0000]
+Bootstrap bias: 0.0000
+Starting bootstrap (1000 iterations)...
+Original ICC: 1.0000
+Bootstrap mean: 1.0000
+95% CI: [1.0000, 1.0000]
+Bootstrap bias: 0.0000
+Bootstrap CIs table: 2 rows
+Bootstrap distributions table: 2000 rows
+Checking bootstrap results...
+All 1000 iterations completed for both domains
+All CI bounds in [0, 1]
+What: Bootstrap bias acceptable (0.0000)
+Where: Bootstrap bias acceptable (0.0000)
+Writing bootstrap CIs...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step03_bootstrap_cis.csv (2 rows)
+Writing bootstrap distributions...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step03_bootstrap_distributions.csv (2000 rows)
+Step 03 complete
+Proceed to step04 (pairwise domain comparison)

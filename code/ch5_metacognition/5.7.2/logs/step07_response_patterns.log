@@ -1,0 +1,138 @@
+======================================================================
+RQ 6.7.2: Response Pattern Analysis (Confidence Ratings)
+======================================================================
+
+Loaded dfData.csv: 400 rows
+Found 72 TC_ columns for paradigms: ['IFR', 'ICR', 'IRE']
+
+======================================================================
+RESPONSE PATTERN SUMMARY (N=100 participants)
+======================================================================
+
+Full Scale Usage (all 5 levels):
+  N = 97 (97.0%)
+  Interpretation: EXCELLENT
+
+Extremes Only (1s and 5s):
+  N = 0 (0.0%)
+  Interpretation: NONE DETECTED
+
+Rating Variability:
+  Mean SD: 0.300
+  SD range: [0.128, 0.378]
+
+Restricted Range (SD < 0.15):
+  N = 3 (3.0%)
+  Interpretation: EXCELLENT
+
+======================================================================
+OVERALL DATA QUALITY ASSESSMENT
+======================================================================
+STATUS: EXCELLENT
+  ✓ Full scale usage: 97.0% (target: ≥70%)
+  ✓ Extremes only: 0.0% (target: <5%)
+  ✓ Restricted range: 3.0% (target: <10%)
+  ✓ Mean SD: 0.300 (target: ≥0.20)
+
+INTERPRETATION:
+  Confidence ratings capture genuine metacognitive variability.
+  No evidence of response bias artifacts.
+  Data quality suitable for variability analysis.
+
+Saved: data/step07_response_patterns.csv (100 rows)
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+======================================================================
+RQ 6.7.2: Response Pattern Analysis (Confidence Ratings)
+======================================================================
+
+Loaded dfData.csv: 400 rows
+Found 72 TC_ columns for paradigms: ['IFR', 'ICR', 'IRE']
+
+======================================================================
+RESPONSE PATTERN SUMMARY (N=100 participants)
+======================================================================
+
+Full Scale Usage (all 5 levels):
+  N = 97 (97.0%)
+  Interpretation: EXCELLENT
+
+Extremes Only (1s and 5s):
+  N = 0 (0.0%)
+  Interpretation: NONE DETECTED
+
+Rating Variability:
+  Mean SD: 0.300
+  SD range: [0.128, 0.378]
+
+Restricted Range (SD < 0.15):
+  N = 3 (3.0%)
+  Interpretation: EXCELLENT
+
+======================================================================
+OVERALL DATA QUALITY ASSESSMENT
+======================================================================
+STATUS: EXCELLENT
+  ✓ Full scale usage: 97.0% (target: ≥70%)
+  ✓ Extremes only: 0.0% (target: <5%)
+  ✓ Restricted range: 3.0% (target: <10%)
+  ✓ Mean SD: 0.300 (target: ≥0.20)
+
+INTERPRETATION:
+  Confidence ratings capture genuine metacognitive variability.
+  No evidence of response bias artifacts.
+  Data quality suitable for variability analysis.
+
+Saved: data/step07_response_patterns.csv (100 rows)
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+======================================================================
+RQ 6.7.2: Response Pattern Analysis (Confidence Ratings)
+======================================================================
+
+Loaded dfData.csv: 400 rows
+Found 72 TC_ columns for paradigms: ['IFR', 'ICR', 'IRE']
+
+======================================================================
+RESPONSE PATTERN SUMMARY (N=100 participants)
+======================================================================
+
+Full Scale Usage (all 5 levels):
+  N = 97 (97.0%)
+  Interpretation: EXCELLENT
+
+Extremes Only (1s and 5s):
+  N = 0 (0.0%)
+  Interpretation: NONE DETECTED
+
+Rating Variability:
+  Mean SD: 0.300
+  SD range: [0.128, 0.378]
+
+Restricted Range (SD < 0.15):
+  N = 3 (3.0%)
+  Interpretation: EXCELLENT
+
+======================================================================
+OVERALL DATA QUALITY ASSESSMENT
+======================================================================
+STATUS: EXCELLENT
+  ✓ Full scale usage: 97.0% (target: ≥70%)
+  ✓ Extremes only: 0.0% (target: <5%)
+  ✓ Restricted range: 3.0% (target: <10%)
+  ✓ Mean SD: 0.300 (target: ≥0.20)
+
+INTERPRETATION:
+  Confidence ratings capture genuine metacognitive variability.
+  No evidence of response bias artifacts.
+  Data quality suitable for variability analysis.
+
+Saved: data/step07_response_patterns.csv (100 rows)
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================

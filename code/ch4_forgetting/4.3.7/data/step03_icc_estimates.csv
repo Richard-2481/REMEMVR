@@ -1,0 +1,10 @@
+paradigm,icc_type,icc_value,interpretation
+cued_recall,intercept,0.43662613779887416,Substantial
+cued_recall,slope_simple,8.919071969028219e-05,Low
+cued_recall,slope_conditional,0.40986334652326273,Substantial
+free_recall,intercept,0.5014266526728113,Substantial
+free_recall,slope_simple,0.02205120864440581,Low
+free_recall,slope_conditional,0.45073822690779336,Substantial
+recognition,intercept,0.5150253747880594,Substantial
+recognition,slope_simple,0.013826589412610373,Low
+recognition,slope_conditional,0.4617830148318541,Substantial

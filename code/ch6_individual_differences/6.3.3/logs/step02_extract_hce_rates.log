@@ -1,0 +1,60 @@
+Step 02: extract_hce_rates
+Loading HCE rates from Ch6 analysis...
+/home/etai/projects/REMEMVR/results/ch6/6.6.1/data/step01_hce_rates.csv (400 rows, 6 cols)
+Columns found: ['UID', 'TEST', 'TSVR', 'HCE_rate', 'n_HCE', 'n_total']
+Found 100 unique participants
+Average 4.0 tests per participant
+Aggregating HCE rates to participant level...
+All HCE rates in valid [0,1] range
+Aggregated to 100 participants
+Mean tests per participant: 4.0
+HCE rate range: 0.000 - 0.215
+Mean HCE rate: 0.042 (SD = 0.036)
+Saving participant-level HCE rates...
+/home/etai/projects/REMEMVR/results/ch7/7.3.3/data/step02_hce_rates.csv (100 rows, 2 cols)
+Participant HCE rate statistics:
+  - N participants: 100
+  - Mean HCE rate: 0.0418
+  - SD HCE rate: 0.0356
+  - Min HCE rate: 0.0000
+  - Max HCE rate: 0.2153
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['hce_rate', 'UID']
+n_required: 2
+n_missing: 0
+Column validation PASSED
+Verifying HCE rates in [0,1] range...
+All final HCE rates in valid [0,1] range
+Step 02 complete
+Step 02: extract_hce_rates
+Loading HCE rates from Ch6 analysis...
+/home/etai/projects/REMEMVR/results/ch6/6.6.1/data/step01_hce_rates.csv (400 rows, 6 cols)
+Columns found: ['UID', 'TEST', 'TSVR', 'HCE_rate', 'n_HCE', 'n_total']
+Found 100 unique participants
+Average 4.0 tests per participant
+Aggregating HCE rates to participant level...
+All HCE rates in valid [0,1] range
+Aggregated to 100 participants
+Mean tests per participant: 4.0
+HCE rate range: 0.000 - 0.215
+Mean HCE rate: 0.042 (SD = 0.036)
+Saving participant-level HCE rates...
+/home/etai/projects/REMEMVR/results/ch7/7.3.3/data/step02_hce_rates.csv (100 rows, 2 cols)
+Participant HCE rate statistics:
+  - N participants: 100
+  - Mean HCE rate: 0.0418
+  - SD HCE rate: 0.0356
+  - Min HCE rate: 0.0000
+  - Max HCE rate: 0.2153
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['hce_rate', 'UID']
+n_required: 2
+n_missing: 0
+Column validation PASSED
+Verifying HCE rates in [0,1] range...
+All final HCE rates in valid [0,1] range
+Step 02 complete

@@ -1,0 +1,4 @@
+path,coefficient,ci_lower,ci_upper,p_value,significance_flag
+Total_Effect_c,-0.1302,-0.22820000000000001,-0.032200000000000006,0.054,marginal
+Direct_Effect_c_prime,0.0258,-0.0722,0.12380000000000001,0.75,non_significant
+Mediated_Effect_ab,-0.156,-0.2653291505163178,-0.0690168271573159,0.01,significant

@@ -1,0 +1,2 @@
+n_competitive_models,n_models_fitted,delta_aic_threshold,effective_n_models,total_original_weight,top_model,top_model_renorm_weight,prediction_mean,prediction_std,factor_variable
+4,4,7.0,2.429040677703401,0.9200153396702433,Ultimate,0.604676785420656,-0.7665599884246341,0.2156363781321967,domain

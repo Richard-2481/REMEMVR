@@ -16,7 +16,6 @@ Output:
 
 Note: This file is REQUIRED INPUT for RQ 5.2.7 (domain-based clustering).
 
-Author: Claude (g_code agent)
 Date: 2025-12-03
 """
 

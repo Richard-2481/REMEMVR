@@ -1,0 +1,312 @@
+RQ 6.5.2: Schema Confidence Calibration
+Started: 2025-12-12 09:55:46.376321
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.5.2
+
+============================================================
+STEP 00: Merge Accuracy and Confidence Theta Scores
+============================================================
+Reading accuracy theta: /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step03_theta_scores.csv
+  Accuracy data: 400 rows, columns: ['composite_ID', 'theta_common', 'theta_congruent', 'theta_incongruent', 'se_common', 'se_congruent', 'se_incongruent']
+Reading confidence theta: /home/etai/projects/REMEMVR/results/ch6/6.5.1/data/step03_theta_confidence.csv
+  Confidence data: 400 rows, columns: ['composite_ID', 'theta_Common', 'theta_Congruent', 'theta_Incongruent']
+Reading TSVR mapping: /home/etai/projects/REMEMVR/results/ch6/6.5.1/data/step00_tsvr_mapping.csv
+  TSVR data: 400 rows
+  Normalized accuracy IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+  Confidence IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+  Merged: 400 rows (expected ~400)
+  After TSVR merge: 400 rows
+  Long format: 1200 rows (expected ~1200 = 400 x 3)
+  Unique composite_IDs: 400
+  Congruence levels: ['Common', 'Congruent', 'Incongruent']
+  NaN in theta_accuracy: 0
+  NaN in theta_confidence: 0
+  Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step00_merged_accuracy_confidence.csv
+STEP 00 COMPLETE: 1200 observations merged
+
+============================================================
+STEP 01: Compute Calibration Scores
+============================================================
+  Common:
+    Accuracy: mean=-0.005, SD=0.856
+    Confidence: mean=-0.751, SD=0.617
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=0.000000, SD=1.000
+  Congruent:
+    Accuracy: mean=0.015, SD=0.875
+    Confidence: mean=-0.760, SD=0.605
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=0.000000, SD=1.000
+  Incongruent:
+    Accuracy: mean=0.009, SD=0.853
+    Confidence: mean=-0.757, SD=0.606
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=-0.000000, SD=1.000
+
+Calibration Summary:
+  Common: mean=0.0000, SD=0.9949, range=[-3.551, 2.804]
+  Congruent: mean=0.0000, SD=0.9604, range=[-3.824, 2.181]
+  Incongruent: mean=-0.0000, SD=1.0015, range=[-3.217, 3.002]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step01_calibration_by_congruence.csv
+STEP 01 COMPLETE: Calibration computed for 1200 observations
+
+============================================================
+STEP 02: Fit LMM and Test Congruence Effects
+============================================================
+Reference level: Common
+Observations: 1200
+Unique participants: 100
+Formula: calibration ~ C(congruence, Treatment('Common')) * log_TSVR
+Random effects: ~log_TSVR | UID
+Model converged: True
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_lmm_summary.txt
+
+Fixed Effects:
+  Intercept: β=-0.0942, SE=0.1062, z=-0.887, p=0.3751
+  C(congruence, Treatment('Common'))[T.Congruent]: β=0.1522, SE=0.1089, z=1.398, p=0.1623
+  C(congruence, Treatment('Common'))[T.Incongruent]: β=0.0270, SE=0.1089, z=0.248, p=0.8040
+  log_TSVR: β=0.0277, SE=0.0257, z=1.078, p=0.2812
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: β=-0.0453, SE=0.0291, z=-1.558, p=0.1193
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: β=-0.0080, SE=0.0291, z=-0.277, p=0.7820
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_congruence_effects.csv
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_post_hoc_contrasts.csv
+
+Post-hoc Contrasts (Bonferroni-corrected alpha = 0.0167):
+  Congruent - Common: est=0.1522, SE=0.1089, z=1.398, p_bonf=0.4868 
+  Incongruent - Common: est=0.0270, SE=0.1089, z=0.248, p_bonf=1.0000 
+  Congruent - Incongruent: est=0.1251, SE=0.1540, z=0.813, p_bonf=1.0000 
+
+Model R²: 0.5830
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_effect_sizes.csv
+
+Effect Sizes (Cohen's f²):
+  C(congruence, Treatment('Common'))[T.Congruent]: f²=0.0500 (small)
+  C(congruence, Treatment('Common'))[T.Incongruent]: f²=0.0016 (negligible)
+  log_TSVR: f²=0.0017 (negligible)
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: f²=0.0044 (negligible)
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: f²=0.0001 (negligible)
+
+============================================================
+HYPOTHESIS TEST SUMMARY
+============================================================
+HYPOTHESIS DIRECTION CORRECT but not significant: Congruent > Common (trend)
+  Difference: 0.1522 (p_bonf=0.4868)
+
+Congruence × Time Interaction:
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: p=0.1193 (NOT significant)
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: p=0.7820 (NOT significant)
+
+STEP 02 COMPLETE
+
+============================================================
+ALL STEPS COMPLETE
+Finished: 2025-12-12 09:55:46.810799
+============================================================
+RQ 6.5.2: Schema Confidence Calibration
+Started: 2026-01-17 14:15:41.944190
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.5.2
+
+============================================================
+STEP 00: Merge Accuracy and Confidence Theta Scores
+============================================================
+Reading accuracy theta: /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step03_theta_scores.csv
+  Accuracy data: 400 rows, columns: ['composite_ID', 'theta_common', 'theta_congruent', 'theta_incongruent', 'se_common', 'se_congruent', 'se_incongruent']
+Reading confidence theta: /home/etai/projects/REMEMVR/results/ch6/6.5.1/data/step03_theta_confidence.csv
+  Confidence data: 400 rows, columns: ['composite_ID', 'theta_Common', 'theta_Congruent', 'theta_Incongruent']
+Reading TSVR mapping: /home/etai/projects/REMEMVR/results/ch6/6.5.1/data/step00_tsvr_mapping.csv
+  TSVR data: 400 rows
+  Normalized accuracy IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+  Confidence IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+  Merged: 400 rows (expected ~400)
+  After TSVR merge: 400 rows
+  Long format: 1200 rows (expected ~1200 = 400 x 3)
+  Unique composite_IDs: 400
+  Congruence levels: ['Common', 'Congruent', 'Incongruent']
+  NaN in theta_accuracy: 0
+  NaN in theta_confidence: 0
+  Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step00_merged_accuracy_confidence.csv
+STEP 00 COMPLETE: 1200 observations merged
+
+============================================================
+STEP 01: Compute Calibration Scores
+============================================================
+  Common:
+    Accuracy: mean=-0.005, SD=0.856
+    Confidence: mean=-0.751, SD=0.617
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=0.000000, SD=1.000
+  Congruent:
+    Accuracy: mean=0.015, SD=0.875
+    Confidence: mean=-0.760, SD=0.605
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=0.000000, SD=1.000
+  Incongruent:
+    Accuracy: mean=0.009, SD=0.853
+    Confidence: mean=-0.757, SD=0.606
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=-0.000000, SD=1.000
+
+Calibration Summary:
+  Common: mean=0.0000, SD=0.9949, range=[-3.551, 2.804]
+  Congruent: mean=0.0000, SD=0.9604, range=[-3.824, 2.181]
+  Incongruent: mean=-0.0000, SD=1.0015, range=[-3.217, 3.002]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step01_calibration_by_congruence.csv
+STEP 01 COMPLETE: Calibration computed for 1200 observations
+
+============================================================
+STEP 02: Fit LMM and Test Congruence Effects
+============================================================
+Reference level: Common
+Observations: 1200
+Unique participants: 100
+Formula: calibration ~ C(congruence, Treatment('Common')) * log_TSVR
+Random effects: ~log_TSVR | UID
+Model converged: True
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_lmm_summary.txt
+
+Fixed Effects:
+  Intercept: β=-0.0942, SE=0.1062, z=-0.887, p=0.3751
+  C(congruence, Treatment('Common'))[T.Congruent]: β=0.1522, SE=0.1089, z=1.398, p=0.1623
+  C(congruence, Treatment('Common'))[T.Incongruent]: β=0.0270, SE=0.1089, z=0.248, p=0.8040
+  log_TSVR: β=0.0277, SE=0.0257, z=1.078, p=0.2812
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: β=-0.0453, SE=0.0291, z=-1.558, p=0.1193
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: β=-0.0080, SE=0.0291, z=-0.277, p=0.7820
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_congruence_effects.csv
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_post_hoc_contrasts.csv
+
+Post-hoc Contrasts (Bonferroni-corrected alpha = 0.0167):
+  Congruent - Common: est=0.1522, SE=0.1089, z=1.398, p_bonf=0.4868 
+  Incongruent - Common: est=0.0270, SE=0.1089, z=0.248, p_bonf=1.0000 
+  Congruent - Incongruent: est=0.1251, SE=0.1540, z=0.813, p_bonf=1.0000 
+
+Model R²: 0.5830
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_effect_sizes.csv
+
+Effect Sizes (Cohen's f²):
+  C(congruence, Treatment('Common'))[T.Congruent]: f²=0.0500 (small)
+  C(congruence, Treatment('Common'))[T.Incongruent]: f²=0.0016 (negligible)
+  log_TSVR: f²=0.0017 (negligible)
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: f²=0.0044 (negligible)
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: f²=0.0001 (negligible)
+
+============================================================
+HYPOTHESIS TEST SUMMARY
+============================================================
+HYPOTHESIS DIRECTION CORRECT but not significant: Congruent > Common (trend)
+  Difference: 0.1522 (p_bonf=0.4868)
+
+Congruence × Time Interaction:
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: p=0.1193 (NOT significant)
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: p=0.7820 (NOT significant)
+
+STEP 02 COMPLETE
+
+============================================================
+ALL STEPS COMPLETE
+Finished: 2026-01-17 14:15:42.499729
+============================================================
+RQ 6.5.2: Schema Confidence Calibration
+Started: 2026-01-17 14:30:09.337435
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.5.2
+
+============================================================
+STEP 00: Merge Accuracy and Confidence Theta Scores
+============================================================
+Reading accuracy theta: /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step03_theta_scores.csv
+  Accuracy data: 400 rows, columns: ['composite_ID', 'theta_common', 'theta_congruent', 'theta_incongruent', 'se_common', 'se_congruent', 'se_incongruent']
+Reading confidence theta: /home/etai/projects/REMEMVR/results/ch6/6.5.1/data/step03_theta_confidence.csv
+  Confidence data: 400 rows, columns: ['composite_ID', 'theta_Common', 'theta_Congruent', 'theta_Incongruent']
+Reading TSVR mapping: /home/etai/projects/REMEMVR/results/ch6/6.5.1/data/step00_tsvr_mapping.csv
+  TSVR data: 400 rows
+  Normalized accuracy IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+  Confidence IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+  Merged: 400 rows (expected ~400)
+  After TSVR merge: 400 rows
+  Long format: 1200 rows (expected ~1200 = 400 x 3)
+  Unique composite_IDs: 400
+  Congruence levels: ['Common', 'Congruent', 'Incongruent']
+  NaN in theta_accuracy: 0
+  NaN in theta_confidence: 0
+  Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step00_merged_accuracy_confidence.csv
+STEP 00 COMPLETE: 1200 observations merged
+
+============================================================
+STEP 01: Compute Calibration Scores
+============================================================
+  Common:
+    Accuracy: mean=-0.005, SD=0.856
+    Confidence: mean=-0.751, SD=0.617
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=0.000000, SD=1.000
+  Congruent:
+    Accuracy: mean=0.015, SD=0.875
+    Confidence: mean=-0.760, SD=0.605
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=0.000000, SD=1.000
+  Incongruent:
+    Accuracy: mean=0.009, SD=0.853
+    Confidence: mean=-0.757, SD=0.606
+    Z-acc: mean=0.000000, SD=1.000
+    Z-conf: mean=-0.000000, SD=1.000
+
+Calibration Summary:
+  Common: mean=0.0000, SD=0.9949, range=[-3.551, 2.804]
+  Congruent: mean=0.0000, SD=0.9604, range=[-3.824, 2.181]
+  Incongruent: mean=-0.0000, SD=1.0015, range=[-3.217, 3.002]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step01_calibration_by_congruence.csv
+STEP 01 COMPLETE: Calibration computed for 1200 observations
+
+============================================================
+STEP 02: Fit LMM and Test Congruence Effects
+============================================================
+Reference level: Common
+Observations: 1200
+Unique participants: 100
+Formula: calibration ~ C(congruence, Treatment('Common')) * log_TSVR
+Random effects: ~log_TSVR | UID
+Model converged: True
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_lmm_summary.txt
+
+Fixed Effects:
+  Intercept: β=-0.0942, SE=0.1062, z=-0.887, p=0.3751
+  C(congruence, Treatment('Common'))[T.Congruent]: β=0.1522, SE=0.1089, z=1.398, p=0.1623
+  C(congruence, Treatment('Common'))[T.Incongruent]: β=0.0270, SE=0.1089, z=0.248, p=0.8040
+  log_TSVR: β=0.0277, SE=0.0257, z=1.078, p=0.2812
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: β=-0.0453, SE=0.0291, z=-1.558, p=0.1193
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: β=-0.0080, SE=0.0291, z=-0.277, p=0.7820
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_congruence_effects.csv
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_post_hoc_contrasts.csv
+
+Post-hoc Contrasts (Bonferroni-corrected alpha = 0.0167):
+  Congruent - Common: est=0.1522, SE=0.1089, z=1.398, p_bonf=0.4868 
+  Incongruent - Common: est=0.0270, SE=0.1089, z=0.248, p_bonf=1.0000 
+  Congruent - Incongruent: est=0.1251, SE=0.1540, z=0.813, p_bonf=1.0000 
+
+Model R²: 0.5830
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/data/step02_effect_sizes.csv
+
+Effect Sizes (Cohen's f²):
+  C(congruence, Treatment('Common'))[T.Congruent]: f²=0.0500 (small)
+  C(congruence, Treatment('Common'))[T.Incongruent]: f²=0.0016 (negligible)
+  log_TSVR: f²=0.0017 (negligible)
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: f²=0.0044 (negligible)
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: f²=0.0001 (negligible)
+
+============================================================
+HYPOTHESIS TEST SUMMARY
+============================================================
+HYPOTHESIS DIRECTION CORRECT but not significant: Congruent > Common (trend)
+  Difference: 0.1522 (p_bonf=0.4868)
+
+Congruence × Time Interaction:
+  C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR: p=0.1193 (NOT significant)
+  C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR: p=0.7820 (NOT significant)
+
+STEP 02 COMPLETE
+
+============================================================
+ALL STEPS COMPLETE
+Finished: 2026-01-17 14:30:09.824677
+============================================================

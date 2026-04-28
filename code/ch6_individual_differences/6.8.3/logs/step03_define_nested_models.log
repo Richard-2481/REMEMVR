@@ -1,0 +1,73 @@
+Step 03: Define Nested Models
+Loading analysis dataset...
+Analysis dataset: 100 rows, 10 columns
+Available columns: ['UID', 'Age', 'Sex', 'Education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'DASS_Total', 'Sleep', 'Theta_All']
+Checking all predictors exist in dataset...
+Model 'Minimal': 2 predictors
+All predictors available for 'Minimal'
+Model 'Core': 3 predictors
+All predictors available for 'Core'
+Model 'Extended': 5 predictors
+All predictors available for 'Extended'
+Model 'Full': 8 predictors
+All predictors available for 'Full'
+Checking models are properly nested...
+'Minimal' properly nested in 'Core'
+'Core' properly nested in 'Extended'
+'Extended' properly nested in 'Full'
+Checking for duplicate predictors within models...
+No duplicate predictors in 'Minimal'
+No duplicate predictors in 'Core'
+No duplicate predictors in 'Extended'
+No duplicate predictors in 'Full'
+Saving model specifications...
+Model specifications: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step03_nested_models.csv (4 models)
+Saving detailed specifications to /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step03_model_specs.txt
+Detailed specifications: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step03_model_specs.txt
+Validating output structure...
+Output structure validated
+Model specifications:
+  Minimal   : 2 predictors
+  Core      : 3 predictors
+  Extended  : 5 predictors
+  Full      : 8 predictors
+Step 03 complete
+Step 03: Define Nested Models
+Loading analysis dataset...
+Analysis dataset: 100 rows, 12 columns
+Available columns: ['UID', 'Age', 'Sex', 'Education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'DASS_Total', 'Sleep', 'Theta_All']
+Checking all predictors exist in dataset...
+Model 'Minimal': 2 predictors
+All predictors available for 'Minimal'
+Model 'Core': 3 predictors
+All predictors available for 'Core'
+Model 'Extended': 5 predictors
+All predictors available for 'Extended'
+Model 'Full': 8 predictors
+All predictors available for 'Full'
+Model 'Full+Retention': 10 predictors
+All predictors available for 'Full+Retention'
+Checking models are properly nested...
+'Minimal' properly nested in 'Core'
+'Core' properly nested in 'Extended'
+'Extended' properly nested in 'Full'
+'Full' properly nested in 'Full+Retention'
+Checking for duplicate predictors within models...
+No duplicate predictors in 'Minimal'
+No duplicate predictors in 'Core'
+No duplicate predictors in 'Extended'
+No duplicate predictors in 'Full'
+No duplicate predictors in 'Full+Retention'
+Saving model specifications...
+Model specifications: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step03_nested_models.csv (5 models)
+Saving detailed specifications to /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step03_model_specs.txt
+Detailed specifications: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step03_model_specs.txt
+Validating output structure...
+Output structure validated
+Model specifications:
+  Minimal   : 2 predictors
+  Core      : 3 predictors
+  Extended  : 5 predictors
+  Full      : 8 predictors
+  Full+Retention: 10 predictors
+Step 03 complete

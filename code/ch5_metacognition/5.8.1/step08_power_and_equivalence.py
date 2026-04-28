@@ -9,7 +9,6 @@ CRITICAL: NULL findings MUST demonstrate either:
          1. Adequately powered to detect meaningful effects (power ≥ 0.80), OR
          2. Effect is significantly smaller than meaningful threshold (TOST)
 
-Author: rq_platinum agent
 Date: 2025-12-27
 """
 

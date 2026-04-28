@@ -1,0 +1,2 @@
+model_name,n,p,in_sample_r2,adjusted_r2,ols_loocv_r2,ridge_loocv_r2,ridge_alpha,shrinkage_ols,shrinkage_ridge
+lifestyle_prediction,100,4,0.0626,0.0232,-0.0381,-0.0255,184.207,0.1008,0.0882

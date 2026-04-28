@@ -106,7 +106,7 @@ def main():
 
     rho_partial, p_partial, df = spearman_partial_correlation(x, y, z)
 
-    log(f"rho(SD_conf, SD_acc | mean_acc) [SPEARMAN]:")
+    log(f"rho(SD_conf, SD_acc | mean_acc) :")
     log(f"  Partial rho = {rho_partial:.4f}")
     log(f"  p-value = {p_partial:.4f}")
     log(f"  df = {df}")

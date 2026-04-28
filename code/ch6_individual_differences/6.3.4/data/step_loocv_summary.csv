@@ -1,0 +1,4 @@
+model_name,n,p,in_sample_r2,adjusted_r2,ols_loocv_r2,ridge_loocv_r2,ridge_alpha,shrinkage_ols,shrinkage_ridge
+dass_accuracy,100,3,0.051,0.0213,-0.0364,-0.0452,184.207,0.0874,0.0962
+dass_confidence,100,3,0.0388,0.0088,-0.0346,-0.0545,59.6362,0.0734,0.0933
+dass_calibration,100,3,0.0346,0.0045,-0.054,-0.0297,1000.0,0.0886,0.0643

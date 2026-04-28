@@ -1,0 +1,2 @@
+r_xx_accuracy,r_yy_confidence,r_xy_correlation,r_diff_PRE_SEM,r_split_half_POST_SEM,r_full_length_POST_SEM,reliability_improvement,method,approach,n_observations
+0.44120710944911107,0.595013579136024,0.6561931980044539,-0.40162920835311205,0.8187866861664035,0.9003658234294898,1.301995031782602,fallback_factor_score_regression,latent_difference,400

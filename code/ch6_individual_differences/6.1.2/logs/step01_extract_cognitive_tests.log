@@ -1,0 +1,96 @@
+Step 01: Extract and Prepare Cognitive Test Data - v2 (Percent Retention)
+Includes RAVLT ceiling fix + percent retention predictors
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.2
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.2/data/step01_cognitive_tests.csv
+
+Loading participant data from dfnonvr.csv...
+Loaded data for 100 participants
+
+Applying RAVLT ceiling fix (0 -> 15 for unadministered trials)...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+
+Extracting cognitive test scores...
+RAVLT Total (ceiling-fixed): M=51.6, SD=8.5
+RAVLT Delayed Recall extracted
+RAVLT Percent Retention: 100/100 valid, M=86.1%, SD=15.7%
+BVMT Total (sum trials 1-3): M=28.2, SD=5.1
+BVMT Percent Retained: M=96.7%, SD=9.0%
+NART score extracted
+RPM score extracted
+
+[MISSING DATA] Analyzing missing data patterns...
+
+============================================================
+MISSING DATA ANALYSIS REPORT
+============================================================
+
+OVERALL SUMMARY
+----------------------------------------
+Total participants: 100
+Complete cases: 97 (97.0%)
+Incomplete cases: 3 (3.0%)
+
+MISSING DATA BY VARIABLE
+----------------------------------------
+NART_Score                       3 missing (3.0%)
+
+MISSING COMPLETELY AT RANDOM (MCAR) TEST
+----------------------------------------
+Test statistic: 4.32
+p-value: 0.9770
+Result: Data appears to be MCAR
+
+Note: This is a simplified test. For publication, use
+      specialized packages for full Little's MCAR test.
+
+RECOMMENDATIONS
+----------------------------------------
+• Complete case analysis is reasonable (>95% complete)
+
+============================================================
+
+Missing data report saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.2/data/step01_missing_data_report.txt
+
+3 participants excluded due to missing data
+
+Comparison of included vs excluded participants:
+    Variable  Included_Mean  Included_SD  Excluded_Mean  Excluded_SD  Difference  p_value
+0        age          44.81        14.67          36.67         9.61       -8.15    0.343
+1        sex           0.30         0.46           0.33         0.58        0.03    0.899
+2  education           6.10         1.67           6.00         0.00       -0.10    0.915
+Exclusion comparison saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.2/data/step01_exclusion_comparison.csv
+
+Converting raw scores to T-scores (M=50, SD=10)...
+
+[T-SCORES] Summary statistics:
+  RAVLT_T              M=50.0, SD=10.1
+  RAVLT_DR_T           M=50.0, SD=10.1
+  RAVLT_Pct_Ret_T      M=50.0, SD=10.1
+  BVMT_T               M=50.0, SD=10.1
+  BVMT_Pct_Ret_T       M=50.0, SD=10.1
+  NART_T               M=50.0, SD=10.1
+  RPM_T                M=50.0, SD=10.1
+
+Saved cognitive test T-scores to: /home/etai/projects/REMEMVR/results/ch7/7.1.2/data/step01_cognitive_tests.csv
+Final dataset: 97 participants, 8 columns
+Columns: ['UID', 'RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T']
+
+============================================================
+SUMMARY
+============================================================
+Total participants loaded: 100
+Participants with complete data: 97
+Participants excluded: 3
+Exclusion rate: 3.0%
+
+Ceiling fixes applied for participants with trial N == 0 and trial N-1 >= 14
+New predictors: RAVLT_Pct_Ret_T, BVMT_Pct_Ret_T
+
+Step 01 complete - v2 with ceiling fix + percent retention

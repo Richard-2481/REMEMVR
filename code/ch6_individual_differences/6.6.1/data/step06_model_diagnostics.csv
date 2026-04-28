@@ -1,0 +1,8 @@
+test,statistic,p_value,threshold,passes,interpretation
+VIF_maximum,1.8844512101263384,,10.0,True,Multicollinearity: Not problematic
+Shapiro_Wilk,0.9831017610426788,0.2300199032467003,0.05,True,Residual normality: Reasonable
+Breusch_Pagan,9.098772588821458,0.3340323067995944,0.05,True,Homoscedasticity: Reasonable
+Cooks_D_max,0.09895339257897673,,0.04,False,Maximum influence: Potentially problematic
+Leverage_max,0.29078349286112015,,0.16,False,Maximum leverage: Potentially high
+High_Cooks_D_count,9.0,,0.0,False,9 observations exceed Cook's D threshold
+High_Leverage_count,12.0,,0.0,False,12 observations exceed leverage threshold

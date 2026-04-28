@@ -1,0 +1,7 @@
+location_type,model,aic,delta_aic,interpretation
+source,IRT,1020.714223419016,46.222654326490556,Decisive (favoring Full CTT)
+source,Full_CTT,974.4915690925254,0.0,Reference
+source,Purified_CTT,979.7527818156212,5.2612127230958095,Substantial (favoring Full CTT)
+destination,IRT,1111.0879337246497,13.088007633864436,Decisive (favoring Full CTT)
+destination,Full_CTT,1097.9999260907853,0.0,Reference
+destination,Purified_CTT,1115.92039097085,17.92046488006463,Decisive (favoring Full CTT)

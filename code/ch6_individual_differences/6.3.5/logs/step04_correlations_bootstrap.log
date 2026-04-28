@@ -1,0 +1,38 @@
+Step 4: Correlations with Bootstrap
+Loading calibration groups data...
+step02_calibration_groups.csv (100 rows, 9 cols)
+Clean data for correlations: 100 participants (removed 0 with missing data)
+Computing correlation: residual vs education...
+'correlation'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.5/code/step04_correlations_bootstrap.py", line 225, in <module>
+    result = compute_correlation_with_bootstrap(x, y, variable_pair, n_bootstrap=1000, seed=42)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.5/code/step04_correlations_bootstrap.py", line 136, in compute_correlation_with_bootstrap
+    corr_coeff = result['correlation']
+                 ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'correlation'
+Step 4: Correlations with Bootstrap
+Loading calibration groups data...
+step02_calibration_groups.csv (100 rows, 9 cols)
+Clean data for correlations: 100 participants (removed 0 with missing data)
+Computing correlation: residual vs education...
+residual_vs_education: r = -0.006, p = 0.956, CI = [-0.173, 0.172]
+Computing correlation: residual vs rpm...
+residual_vs_rpm: r = 0.108, p = 0.283, CI = [-0.065, 0.285]
+Computing correlation: residual vs age...
+residual_vs_age: r = -0.018, p = 0.861, CI = [-0.215, 0.185]
+Saving correlation results...
+step04_correlations.csv (3 rows, 8 cols)
+step04_bootstrap_distributions.csv (0 rows, 3 cols)
+Running validate_correlation_test_d068...
+valid: True
+d068_compliant: True
+missing_cols: []
+message: Custom validation: 4 required columns.
+Correlation Results Summary:
+  residual_vs_education: r = -0.006, p_uncorr = 0.956, p_bonf = 1.000, effect = negligible
+  residual_vs_rpm: r = 0.108, p_uncorr = 0.283, p_bonf = 1.000, effect = small
+  residual_vs_age: r = -0.018, p_uncorr = 0.861, p_bonf = 1.000, effect = negligible
+Step 4 complete

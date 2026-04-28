@@ -1,0 +1,100 @@
+======================================================================
+validation TASK 1-2: Random Slopes vs Intercepts-Only Comparison
+======================================================================
+
+Loading piecewise LMM input data...
+800 observations, 8 columns
+N participants: 100
+Domains: ['what', 'where']
+
+======================================================================
+MODEL 1: Random Intercepts + Random Slopes (CURRENT)
+======================================================================
+
+Formula: theta ~ Days_within * C(Segment, Treatment('Early')) * C(domain, Treatment('what'))
+Random effects: ~Days_within (intercepts + slopes)
+
+Model with random slopes converged
+  - Log-Likelihood: -756.8167
+  - AIC: 1537.63
+  - BIC: 1593.85
+  - N observations: 800
+
+[RANDOM EFFECTS] Variance Components:
+  - Intercept variance: 0.393930 (SD: 0.6276)
+  - Slope variance: 0.011565 (SD: 0.1075)
+  - Covariance: -0.009771
+
+Random slope variance very small (0.011565)
+       This explains boundary warning
+
+======================================================================
+MODEL 2: Random Intercepts Only (SIMPLER)
+======================================================================
+
+Formula: theta ~ Days_within * C(Segment, Treatment('Early')) * C(domain, Treatment('what'))
+Random effects: ~1 (intercepts only)
+
+Intercepts-only model converged
+  - Log-Likelihood: -762.5632
+  - AIC: 1545.13
+  - BIC: 1591.97
+  - N observations: 800
+
+[RANDOM EFFECTS] Variance Components:
+  - Intercept variance: 0.385939 (SD: 0.6212)
+
+
+======================================================================
+MODEL COMPARISON
+======================================================================
+
+[AIC COMPARISON]
+  Slopes model:      AIC = 1537.63
+  Intercepts model:  AIC = 1545.13
+  ΔAIC (Intercepts - Slopes): 7.49
+
+[BIC COMPARISON]
+  Slopes model:      BIC = 1593.85
+  Intercepts model:  BIC = 1591.97
+  ΔBIC (Intercepts - Slopes): -1.88
+
+[LIKELIHOOD RATIO TEST]
+  LR statistic: 11.4930
+  df: 2
+  p-value: 0.0032
+
+======================================================================
+INTERPRETATION
+======================================================================
+
+Intercepts-only model STRONGLY PREFERRED (ΔAIC > 2)
+           ΔAIC = 7.49 favors intercepts
+
+SWITCH to intercepts-only model
+         Simpler model preferred, no evidence of slope heterogeneity
+
+======================================================================
+BOUNDARY WARNING INVESTIGATION
+======================================================================
+
+Boundary warning: 'MLE may be on boundary of parameter space'
+Random slope variance = 0.011565 (very small)
+
+- Minimal individual differences in forgetting slopes
+  - Most participants show similar trajectories (homogeneous effects)
+  - MLE estimation pushes variance toward zero
+  - Model CONVERGED successfully (not a convergence failure)
+
+Boundary warning suggests SIMPLER MODEL:
+  - Intercepts-only preferred by AIC
+  - Random slope variance negligible
+
+/home/etai/projects/REMEMVR/results/ch5/5.2.2/results/platinum_task01_random_slopes_comparison.csv
+
+Alternative model: /home/etai/projects/REMEMVR/results/ch5/5.2.2/data/step01_piecewise_lmm_model_intercepts_only.pkl
+Model change recommended - requires user approval
+
+======================================================================
+TASK 1-2 COMPLETE: SWITCH_TO_INTERCEPTS
+======================================================================

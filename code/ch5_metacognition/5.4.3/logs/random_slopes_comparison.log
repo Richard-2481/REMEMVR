@@ -1,0 +1,58 @@
+================================================================================
+RANDOM SLOPES COMPARISON: RQ 6.4.3
+================================================================================
+
+Loading data from /home/etai/projects/REMEMVR/results/ch6/6.4.3/data/step00_lmm_input.csv
+Loaded 1200 observations
+
+================================================================================
+MODEL 1: INTERCEPTS-ONLY (Current implementation check)
+================================================================================
+
+Fitting intercepts-only model...
+Formula: theta_confidence ~ log_TSVR * C(Paradigm_cat) * Age_c
+Random: ~1 (intercepts only)
+
+Converged: True
+AIC: 475.44
+BIC: 546.70
+Log-likelihood: -223.72
+Random intercept variance: 0.202903
+
+================================================================================
+MODEL 2: INTERCEPTS + SLOPES (Testing random slope necessity)
+================================================================================
+
+Fitting intercepts+slopes model...
+Formula: theta_confidence ~ log_TSVR * C(Paradigm_cat) * Age_c
+Random: ~log_TSVR (intercepts + slopes on time)
+
+Converged: True
+AIC: 260.18
+BIC: 341.62
+Log-likelihood: -114.09
+Random intercept variance: 0.220840
+Random slope variance: 0.006291
+Random slope SD: 0.079314
+Intercept-slope covariance: -0.012931
+
+================================================================================
+MODEL COMPARISON
+================================================================================
+
+ΔAIC (Intercepts - Slopes): 215.26
+ΔBIC (Intercepts - Slopes): 205.08
+
+================================================================================
+INTERPRETATION
+================================================================================
+
+Option A: Slopes improve fit (ΔAIC > 2)
+Interpretation: Random slopes variance (0.006291) is substantial. AIC favors complexity.
+Action: Should use slopes model for downstream analyses (heterogeneous effects confirmed)
+
+Comparison table saved to /home/etai/projects/REMEMVR/results/ch6/6.4.3/data/random_slopes_comparison.csv
+
+================================================================================
+COMPARISON COMPLETE
+================================================================================

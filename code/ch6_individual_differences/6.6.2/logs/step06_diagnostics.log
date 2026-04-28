@@ -1,0 +1,50 @@
+Step 06: diagnostic_tests (Forgetting + Pct Retention)
+Loading merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step03_analysis_input.csv (100 rows, 13 cols)
+
+=== Diagnostics for RAVLT_Forgetting vs REMEMVR_Slope ===
+RAVLT_Forgetting - N=100, Mean=1.750, SD=1.920
+REMEMVR_Slope - N=100, Mean=0.0000, SD=0.0045
+Testing normality of RAVLT_Forgetting (Kolmogorov-Smirnov)...
+K-S test RAVLT_Forgetting: statistic=0.1118, p=0.1522, conclusion=PASS
+Testing normality of REMEMVR_Slope (Kolmogorov-Smirnov)...
+K-S test REMEMVR: statistic=0.1029, p=0.2239, conclusion=PASS
+Testing linearity (Pearson vs Spearman comparison)...
+Pearson r=0.3324, Spearman r=0.3067, diff=0.0257
+Linearity conclusion: PASS (threshold=0.1)
+Detecting outliers (|z-score| > 3)...
+Outliers detected: 0 (0.00%)
+
+=== Diagnostics for RAVLT_Pct_Ret vs REMEMVR_Slope ===
+RAVLT_Pct_Ret - N=100, Mean=83.282, SD=14.716
+REMEMVR_Slope - N=100, Mean=0.0000, SD=0.0045
+Testing normality of RAVLT_Pct_Ret (Kolmogorov-Smirnov)...
+K-S test RAVLT_Pct_Ret: statistic=0.0620, p=0.8135, conclusion=PASS
+Testing normality of REMEMVR_Slope (Kolmogorov-Smirnov)...
+K-S test REMEMVR: statistic=0.1029, p=0.2239, conclusion=PASS
+Testing linearity (Pearson vs Spearman comparison)...
+Pearson r=-0.3183, Spearman r=-0.2852, diff=0.0331
+Linearity conclusion: PASS (threshold=0.1)
+Detecting outliers (|z-score| > 3)...
+Outliers detected: 0 (0.00%)
+
+Saving diagnostic results...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step06_diagnostics.csv (8 rows, 5 cols)
+Running validate_data_format...
+valid: True
+message: All required columns present (5 columns). DataFrame has 8 rows.
+missing_cols: []
+PASS - Diagnostic results format valid
+
+Diagnostic Test Results:
+============================================================
+  [RAVLT_Forgetting] normality_RAVLT_Forgetting: PASS
+  [RAVLT_Forgetting] normality_REMEMVR: PASS
+  [RAVLT_Forgetting] linearity: PASS
+  [RAVLT_Forgetting] outliers: 0 outliers detected (0.00%)
+  [RAVLT_Pct_Ret] normality_RAVLT_Pct_Ret: PASS
+  [RAVLT_Pct_Ret] normality_REMEMVR: PASS
+  [RAVLT_Pct_Ret] linearity: PASS
+  [RAVLT_Pct_Ret] outliers: 0 outliers detected (0.00%)
+============================================================
+Step 06 complete

@@ -1,0 +1,132 @@
+Step 07: Cross-Validation Analysis
+Loading analysis input data...
+step03_analysis_input.csv (100 rows, 8 cols)
+Preparing data for cross-validation...
+Predictors: ['age_std', 'sex', 'education_std', 'RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std']
+Response: slope
+Sample size: 100
+[CV] Initializing 5-fold cross-validation...
+[CV] Random state: 42
+[CV] Shuffle: True
+[CV] Running cross-validation folds...
+[CV] --- Fold 1/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.3561
+[CV] Test R²: -0.5709
+[CV] R² gap: 0.9270 (threshold = 0.10)
+[CV] RMSE: 0.004046
+[CV] MAE: 0.003324
+[CV] Overfitting: YES
+[CV] --- Fold 2/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.2693
+[CV] Test R²: 0.3130
+[CV] R² gap: -0.0438 (threshold = 0.10)
+[CV] RMSE: 0.004340
+[CV] MAE: 0.003249
+[CV] Overfitting: NO
+[CV] --- Fold 3/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.3457
+[CV] Test R²: -0.0921
+[CV] R² gap: 0.4379 (threshold = 0.10)
+[CV] RMSE: 0.004300
+[CV] MAE: 0.003293
+[CV] Overfitting: YES
+[CV] --- Fold 4/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.2692
+[CV] Test R²: 0.2102
+[CV] R² gap: 0.0590 (threshold = 0.10)
+[CV] RMSE: 0.003825
+[CV] MAE: 0.003112
+[CV] Overfitting: NO
+[CV] --- Fold 5/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.3002
+[CV] Test R²: 0.1791
+[CV] R² gap: 0.1212 (threshold = 0.10)
+[CV] RMSE: 0.004205
+[CV] MAE: 0.003062
+[CV] Overfitting: YES
+[CV] Aggregating cross-validation results...
+[CV] Mean train R²: 0.3081
+[CV] Mean test R²: 0.0079 (SD = 0.3565)
+[CV] Mean RMSE: 0.004143
+[CV] Mean MAE: 0.003208
+[CV] Folds with overfitting: 3 / 5
+Saving cross-validation results...
+step07_cross_validation.csv (5 rows, 8 cols)
+Cross-validation validation checks:
+R² values in [0, 1]: FAIL
+All 5 folds completed: PASS
+Folds with train R² >= test R²: 4 / 5
+WARNING: 3 folds show overfitting (R² gap > 0.10)
+Overall validation: FAIL
+Step 07 complete
+Step 07: Cross-Validation Analysis
+Loading analysis input data...
+step03_analysis_input.csv (100 rows, 10 cols)
+Preparing data for cross-validation...
+Predictors: ['age_std', 'sex', 'education_std', 'RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std', 'RAVLT_Pct_Ret_T_std', 'BVMT_Pct_Ret_T_std']
+Response: slope
+Sample size: 100
+[CV] Initializing 5-fold cross-validation...
+[CV] Random state: 42
+[CV] Shuffle: True
+[CV] Running cross-validation folds...
+[CV] --- Fold 1/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.4123
+[CV] Test R²: -0.6399
+[CV] R² gap: 1.0521 (threshold = 0.10)
+[CV] RMSE: 0.004134
+[CV] MAE: 0.003442
+[CV] Overfitting: YES
+[CV] --- Fold 2/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.3073
+[CV] Test R²: 0.3594
+[CV] R² gap: -0.0522 (threshold = 0.10)
+[CV] RMSE: 0.004191
+[CV] MAE: 0.003004
+[CV] Overfitting: NO
+[CV] --- Fold 3/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.3752
+[CV] Test R²: 0.0157
+[CV] R² gap: 0.3595 (threshold = 0.10)
+[CV] RMSE: 0.004083
+[CV] MAE: 0.002857
+[CV] Overfitting: YES
+[CV] --- Fold 4/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.3232
+[CV] Test R²: 0.2340
+[CV] R² gap: 0.0892 (threshold = 0.10)
+[CV] RMSE: 0.003767
+[CV] MAE: 0.002925
+[CV] Overfitting: NO
+[CV] --- Fold 5/5 ---
+[CV] Train size: 80, Test size: 20
+[CV] Train R²: 0.3337
+[CV] Test R²: 0.1539
+[CV] R² gap: 0.1798 (threshold = 0.10)
+[CV] RMSE: 0.004269
+[CV] MAE: 0.003115
+[CV] Overfitting: YES
+[CV] Aggregating cross-validation results...
+[CV] Mean train R²: 0.3503
+[CV] Mean test R²: 0.0246 (SD = 0.3919)
+[CV] Mean RMSE: 0.004089
+[CV] Mean MAE: 0.003069
+[CV] Folds with overfitting: 3 / 5
+Saving cross-validation results...
+step07_cross_validation.csv (5 rows, 8 cols)
+Cross-validation validation checks:
+R² values in [0, 1]: FAIL
+All 5 folds completed: PASS
+Folds with train R² >= test R²: 4 / 5
+WARNING: 3 folds show overfitting (R² gap > 0.10)
+Overall validation: FAIL
+Step 07 complete

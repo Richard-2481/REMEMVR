@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-RQ 6.6.2: PLATINUM Certification - Power Analysis, TOST, and Correlation
+RQ 6.6.2: Quality Validation - Power Analysis, TOST, and Correlation
 
-This script performs three critical analyses for PLATINUM status:
+This script performs three critical analyses for validation status:
 1. Power analysis for baseline accuracy NULL finding
 2. TOST equivalence test (establishes "true null" vs "underpowered")
 3. Baseline confidence × baseline accuracy correlation (clarifies unexpected positive effect)
 
-Author: rq_platinum agent
 Date: 2025-12-28
 """
 
@@ -17,9 +16,7 @@ from scipy import stats
 import warnings
 warnings.filterwarnings('ignore')
 
-# ==============================================================================
 # ANALYSIS 1: POWER ANALYSIS FOR BASELINE ACCURACY NULL
-# ==============================================================================
 
 print("=" * 80)
 print("ANALYSIS 1: POWER ANALYSIS FOR BASELINE ACCURACY NULL")
@@ -156,9 +153,7 @@ power_results = pd.DataFrame({
 power_results.to_csv(f'{BASE_DIR}/data/step05_power_analysis.csv', index=False)
 print("\n✓ Power analysis saved to data/step05_power_analysis.csv")
 
-# ==============================================================================
 # ANALYSIS 2: TOST EQUIVALENCE TEST
-# ==============================================================================
 
 print("\n" + "=" * 80)
 print("ANALYSIS 2: TOST EQUIVALENCE TEST")
@@ -258,9 +253,7 @@ tost_results = pd.DataFrame({
 tost_results.to_csv(f'{BASE_DIR}/data/step05_tost_equivalence.csv', index=False)
 print("\n✓ TOST results saved to data/step05_tost_equivalence.csv")
 
-# ==============================================================================
 # ANALYSIS 3: BASELINE CONFIDENCE × BASELINE ACCURACY CORRELATION
-# ==============================================================================
 
 print("\n" + "=" * 80)
 print("ANALYSIS 3: BASELINE CONFIDENCE × BASELINE ACCURACY CORRELATION")
@@ -341,12 +334,10 @@ correlation_results = pd.DataFrame({
 correlation_results.to_csv(f'{BASE_DIR}/data/step05_correlation_confidence_accuracy.csv', index=False)
 print("\n✓ Correlation analysis saved to data/step05_correlation_confidence_accuracy.csv")
 
-# ==============================================================================
 # SUMMARY REPORT
-# ==============================================================================
 
 print("\n" + "=" * 80)
-print("PLATINUM CERTIFICATION - TIER 1 ANALYSES COMPLETE")
+print("QUALITY VALIDATION - TIER 1 ANALYSES COMPLETE")
 print("=" * 80)
 
 print(f"\n1. POWER ANALYSIS:")

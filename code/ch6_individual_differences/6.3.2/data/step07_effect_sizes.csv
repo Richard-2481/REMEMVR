@@ -1,0 +1,9 @@
+predictor,sr_squared,f2,cohens_convention,practical_significance
+age,1.0280961641549234e-06,8.946383094795716e-07,negligible,negligible
+sex,6.667949650110701e-06,5.802378620460463e-06,negligible,negligible
+education,9.942646385698315e-06,8.65198476989349e-06,negligible,negligible
+RAVLT_T,7.113345926134664e-05,6.189957706273033e-05,negligible,negligible
+BVMT_T,4.401942988224875e-05,3.830523807710188e-05,negligible,negligible
+RPM_T,0.0003544193659187,0.0003084119496087792,negligible,negligible
+RAVLT_Pct_Ret_T,9.688570288353897e-06,8.430890461663851e-06,negligible,negligible
+BVMT_Pct_Ret_T,0.0002432875121316,0.00021170619652084136,negligible,negligible

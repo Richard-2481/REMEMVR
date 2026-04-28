@@ -1,0 +1,82 @@
+Step 05: Fit LMM with Domain x Time Interaction
+Loading LMM input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+Domains: ['Destination', 'Source', 'UID']
+Participants: 100
+Observations: 1200
+Fitting LMM with formula: theta ~ C(location) * log_TSVR
+Random effects: (1 | UID) - random intercept only
+endog has evaluated to an array with multiple columns that has shape (1200, 900). This occurs when the variable converted to endog is non-numeric (e.g., bool or str).
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.8.1/code/step05_fit_lmm.py", line 169, in <module>
+    model = smf.mixedlm(
+            ^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 1046, in from_formula
+    mod = super().from_formula(formula, data, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 209, in from_formula
+    raise ValueError('endog has evaluated to an array with multiple '
+ValueError: endog has evaluated to an array with multiple columns that has shape (1200, 900). This occurs when the variable converted to endog is non-numeric (e.g., bool or str).
+Step 05: Fit LMM with Domain x Time Interaction
+Loading LMM input data...
+step04_lmm_input.csv (800 rows, 7 cols)
+Domains: ['Destination', 'Source']
+Participants: 100
+Observations: 800
+Fitting LMM with formula: theta ~ C(location) * log_TSVR
+Random effects: (1 | UID) - random intercept only
+LMM fitting complete
+Converged: True
+AIC: 887.80
+BIC: 915.91
+Extracting fixed effects coefficients...
+Number of fixed effects: 4
+Fixed effect terms: ['Intercept', 'C(location)[T.Source]', 'log_TSVR', 'C(location)[T.Source]:log_TSVR']
+Fixed effects table created (4 rows)
+Fixed Effects:
+  Intercept: coef=-0.0685, p=0.2958 
+  C(location)[T.Source]: coef=0.0389, p=0.4843 
+  log_TSVR: coef=-0.1379, p=0.0000 ***
+  C(location)[T.Source]:log_TSVR: coef=-0.0088, p=0.5528 
+Domain x Time interaction terms found: ['C(location)[T.Source]:log_TSVR']
+C(location)[T.Source]:log_TSVR: p=0.5528 -> NULL (p >= 0.05)
+Saving fixed effects table...
+step05_lmm_coefficients.csv (4 rows, 5 cols)
+Saving full LMM summary...
+step05_lmm_summary.txt
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Step 05 complete - Domain x Time interaction tested
+Step 05: Fit LMM with Domain x Time Interaction
+Loading LMM input data...
+step04_lmm_input.csv (800 rows, 7 cols)
+Domains: ['Destination', 'Source']
+Participants: 100
+Observations: 800
+Fitting LMM with formula: theta ~ C(location) * log_TSVR
+Random effects: (1 | UID) - random intercept only
+LMM fitting complete
+Converged: True
+AIC: 1541.48
+BIC: 1569.58
+Extracting fixed effects coefficients...
+Number of fixed effects: 4
+Fixed effect terms: ['Intercept', 'C(location)[T.Source]', 'log_TSVR', 'C(location)[T.Source]:log_TSVR']
+Fixed effects table created (4 rows)
+Fixed Effects:
+  Intercept: coef=0.7285, p=0.0000 ***
+  C(location)[T.Source]: coef=0.0092, p=0.9143 
+  log_TSVR: coef=-0.2189, p=0.0000 ***
+  C(location)[T.Source]:log_TSVR: coef=-0.0046, p=0.8396 
+Domain x Time interaction terms found: ['C(location)[T.Source]:log_TSVR']
+C(location)[T.Source]:log_TSVR: p=0.8396 -> NULL (p >= 0.05)
+Saving fixed effects table...
+step05_lmm_coefficients.csv (4 rows, 5 cols)
+Saving full LMM summary...
+step05_lmm_summary.txt
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Step 05 complete - Domain x Time interaction tested

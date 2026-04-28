@@ -1,0 +1,12 @@
+Step 8: prepare_plot_data
+step02_calibration_scores.csv (1200 rows)
+step06_paradigm_by_time.csv (12 rows)
+Creating mean trajectory plot data...
+step08_plot_mean_trajectories.csv (12 rows)
+Creating individual trajectory plot data...
+step08_plot_individual_trajectories.csv (1200 rows)
+Model predictions plot data (optional) - skipped
+Can be generated from LMM fitted values if needed
+Validating plot data completeness...
+Plot data validation successful
+Step 8 complete

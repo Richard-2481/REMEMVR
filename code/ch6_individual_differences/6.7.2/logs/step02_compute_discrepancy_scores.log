@@ -1,0 +1,78 @@
+Step 02: Compute Discrepancy Scores
+Loading standardized z-scores from step 1...
+100 participants with standardized scores
+Computing discrepancy scores (REMEMVR_z - RAVLT_z)...
+Discrepancy scores for 100 participants
+Discrepancy: M=0.0000, SD=1.2174
+Computing distribution statistics...
+VR-favored (Discrepancy > 0): 50 (50.0%)
+RAVLT-favored (Discrepancy < 0): 50 (50.0%)
+Concordant (Discrepancy = 0): 0
+Shapiro-Wilk normality test: W=0.9913, p=0.7721
+Computing 95% CIs for distribution statistics...
+Mean 95% CI: [-0.2304, 0.2143]
+SD 95% CI: [1.0274, 1.3905]
+Saving discrepancy scores and descriptives...
+step02_discrepancy_scores.csv (100 rows)
+step02_discrepancy_descriptives.csv (11 rows)
+Running validate_numeric_range...
+validate_numeric_range() got an unexpected keyword argument 'df'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.2/code/step02_compute_discrepancy_scores.py", line 235, in <module>
+    validation_result = validate_numeric_range(
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_numeric_range() got an unexpected keyword argument 'df'
+Step 02: Compute Discrepancy Scores
+Loading standardized z-scores from step 1...
+100 participants with standardized scores
+Computing discrepancy scores (REMEMVR_z - RAVLT_z)...
+Discrepancy scores for 100 participants
+Discrepancy: M=0.0000, SD=1.2174
+Computing distribution statistics...
+VR-favored (Discrepancy > 0): 50 (50.0%)
+RAVLT-favored (Discrepancy < 0): 50 (50.0%)
+Concordant (Discrepancy = 0): 0
+Shapiro-Wilk normality test: W=0.9913, p=0.7721
+Computing 95% CIs for distribution statistics...
+Mean 95% CI: [-0.2304, 0.2143]
+SD 95% CI: [1.0274, 1.3905]
+Saving discrepancy scores and descriptives...
+step02_discrepancy_scores.csv (100 rows)
+step02_discrepancy_descriptives.csv (11 rows)
+Running validate_numeric_range...
+Discrepancy scores within reasonable range [-4, 4]
+No missing discrepancy values
+Discrepancy calculation verified (REMEMVR_z - RAVLT_z)
+Step 02 complete
+Step 02: Compute Discrepancy Scores
+Loading standardized z-scores from step 1...
+100 participants with standardized scores
+Computing discrepancy scores (REMEMVR_z - RAVLT_z)...
+Discrepancy scores for 100 participants
+Discrepancy (Total): M=-0.0000, SD=1.2072
+Discrepancy (Pct Ret): M=-0.0000, SD=1.1650
+Computing distribution statistics...
+--- RAVLT_Total ---
+VR-favored (Discrepancy > 0): 50 (50.0%)
+RAVLT-favored (Discrepancy < 0): 50 (50.0%)
+Concordant (Discrepancy = 0): 0
+Shapiro-Wilk normality test: W=0.9943, p=0.9519
+RAVLT_Total Mean 95% CI: [-0.2312, 0.2211]
+--- RAVLT_Pct_Ret ---
+VR-favored (Discrepancy_PctRet > 0): 57 (57.0%)
+RAVLT-favored (Discrepancy_PctRet < 0): 43 (43.0%)
+Concordant (Discrepancy_PctRet = 0): 0
+Shapiro-Wilk normality test: W=0.9795, p=0.1208
+RAVLT_Pct_Ret Mean 95% CI: [-0.2306, 0.2086]
+Saving discrepancy scores and descriptives...
+step02_discrepancy_scores.csv (100 rows)
+step02_discrepancy_descriptives.csv (22 rows)
+Running validate_numeric_range...
+RAVLT Total discrepancy scores within reasonable range [-4, 4]
+No missing RAVLT Total discrepancy values
+RAVLT Total discrepancy calculation verified (REMEMVR_z - RAVLT_z)
+RAVLT Pct Ret discrepancy scores within reasonable range [-4, 4]
+No missing RAVLT Pct Ret discrepancy values
+RAVLT Pct Ret discrepancy calculation verified (REMEMVR_z - RAVLT_Pct_Ret_z)
+Step 02 complete

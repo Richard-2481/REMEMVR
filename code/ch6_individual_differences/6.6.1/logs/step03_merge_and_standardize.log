@@ -1,0 +1,88 @@
+Step 03: Merge Datasets and Standardize Predictors
+Loading step01 cognitive tests...
+step01_cognitive_tests.csv (100 rows, 7 cols)
+Loading step02 slopes...
+step02_slopes_extracted.csv (100 rows, 2 cols)
+Checking required columns...
+All required columns present
+Merging cognitive tests with slopes on UID (inner join)...
+100 participants after inner join
+Cognitive data: 100 rows
+Slopes data: 100 rows
+Merged data: 100 rows
+Computing z-scores for continuous predictors...
+age: mean=44.5700, SD=14.5791 -> age_std (z-score)
+education: mean=6.1000, SD=1.6422 -> education_std (z-score)
+RAVLT_T: mean=50.0000, SD=10.0000 -> RAVLT_T_std (z-score)
+BVMT_T: mean=50.0000, SD=10.0000 -> BVMT_T_std (z-score)
+RPM_T: mean=50.0000, SD=10.0000 -> RPM_T_std (z-score)
+sex column preserved as binary (NOT standardized)
+Creating final analysis dataset...
+Output dataset (100 rows, 8 cols)
+Validating standardization...
+age_std: mean=0.000000, SD=1.000000
+education_std: mean=0.000000, SD=1.000000
+RAVLT_T_std: mean=-0.000000, SD=1.000000
+BVMT_T_std: mean=0.000000, SD=1.000000
+RPM_T_std: mean=0.000000, SD=1.000000
+All standardized variables have mean~=0, SD~=1
+No missing values in output dataset
+Participant count: 100 (expected 100)
+/home/etai/projects/REMEMVR/results/ch7/7.6.1/data/step03_analysis_input.csv
+100 participants ready for regression analysis
+Final dataset statistics:
+  Slope: mean=0.0000, SD=0.0045
+  age_std: mean=0.000000, SD=1.000000
+  sex: mean=0.3000 (proportion)
+  education_std: mean=0.000000, SD=1.000000
+  RAVLT_T_std: mean=-0.000000, SD=1.000000
+  BVMT_T_std: mean=0.000000, SD=1.000000
+  RPM_T_std: mean=0.000000, SD=1.000000
+Step 03 complete
+Step 03: Merge Datasets and Standardize Predictors
+Loading step01 cognitive tests...
+step01_cognitive_tests.csv (100 rows, 9 cols)
+Loading step02 slopes...
+step02_slopes_extracted.csv (100 rows, 2 cols)
+Checking required columns...
+All required columns present
+Merging cognitive tests with slopes on UID (inner join)...
+100 participants after inner join
+Cognitive data: 100 rows
+Slopes data: 100 rows
+Merged data: 100 rows
+Computing z-scores for continuous predictors...
+age: mean=44.5700, SD=14.5791 -> age_std (z-score)
+education: mean=6.1000, SD=1.6422 -> education_std (z-score)
+RAVLT_T: mean=50.0000, SD=10.0000 -> RAVLT_T_std (z-score)
+BVMT_T: mean=50.0000, SD=10.0000 -> BVMT_T_std (z-score)
+RPM_T: mean=50.0000, SD=10.0000 -> RPM_T_std (z-score)
+RAVLT_Pct_Ret_T: mean=50.0000, SD=10.0000 -> RAVLT_Pct_Ret_T_std (z-score)
+BVMT_Pct_Ret_T: mean=50.0000, SD=10.0000 -> BVMT_Pct_Ret_T_std (z-score)
+sex column preserved as binary (NOT standardized)
+Creating final analysis dataset...
+Output dataset (100 rows, 10 cols)
+Validating standardization...
+age_std: mean=0.000000, SD=1.000000
+education_std: mean=0.000000, SD=1.000000
+RAVLT_T_std: mean=0.000000, SD=1.000000
+BVMT_T_std: mean=0.000000, SD=1.000000
+RPM_T_std: mean=0.000000, SD=1.000000
+RAVLT_Pct_Ret_T_std: mean=0.000000, SD=1.000000
+BVMT_Pct_Ret_T_std: mean=-0.000000, SD=1.000000
+All standardized variables have mean~=0, SD~=1
+No missing values in output dataset
+Participant count: 100 (expected 100)
+/home/etai/projects/REMEMVR/results/ch7/7.6.1/data/step03_analysis_input.csv
+100 participants ready for regression analysis
+Final dataset statistics:
+  Slope: mean=0.0000, SD=0.0045
+  age_std: mean=0.000000, SD=1.000000
+  sex: mean=0.3000 (proportion)
+  education_std: mean=0.000000, SD=1.000000
+  RAVLT_T_std: mean=0.000000, SD=1.000000
+  BVMT_T_std: mean=0.000000, SD=1.000000
+  RPM_T_std: mean=0.000000, SD=1.000000
+  RAVLT_Pct_Ret_T_std: mean=0.000000, SD=1.000000
+  BVMT_Pct_Ret_T_std: mean=-0.000000, SD=1.000000
+Step 03 complete

@@ -25,7 +25,6 @@ METHODOLOGY:
 4. Recompute 824× ratio with MA ICC
 5. Assess robustness: Does ratio remain >500×?
 
-Author: Claude Code
 Date: 2025-12-14
 RQ: ch6/6.1.4
 Task: T1.1 from rq_rework.md
@@ -66,10 +65,7 @@ def main():
     log("RQ 6.1.4 - Step 06b: Model-Averaged ICC Validation")
     log(f"Started: {datetime.now().isoformat()}")
     log("=" * 80)
-
-    # =========================================================================
-    # STEP 1: Load Original Single-Model Results
-    # =========================================================================
+    # Load Original Single-Model Results
     log("\n[STEP 1] Load Original Single-Model Results")
     log("-" * 60)
 
@@ -92,10 +88,7 @@ def main():
     log(f"  Original var_intercept: {var_intercept_original:.6f}")
     log(f"  Original var_slope: {var_slope_original:.6f}")
     log(f"  Original var_residual: {var_residual_original:.6f}")
-
-    # =========================================================================
-    # STEP 2: Load Model-Averaged Random Effects
-    # =========================================================================
+    # Load Model-Averaged Random Effects
     log("\n[STEP 2] Load Model-Averaged Random Effects from 6.1.1")
     log("-" * 60)
 
@@ -115,10 +108,7 @@ def main():
     log(f"    Mean: {ma_re['ma_slope'].mean():.6f}")
     log(f"    SD: {ma_re['ma_slope'].std():.6f}")
     log(f"    Range: [{ma_re['ma_slope'].min():.4f}, {ma_re['ma_slope'].max():.4f}]")
-
-    # =========================================================================
-    # STEP 3: Compute MA Variance Components
-    # =========================================================================
+    # Compute MA Variance Components
     log("\n[STEP 3] Compute Model-Averaged Variance Components")
     log("-" * 60)
 
@@ -144,10 +134,7 @@ def main():
     var_residual_ma = var_residual_original
     log(f"\n  Using original var_residual: {var_residual_ma:.6f}")
     log(f"  (Residual variance is approximately invariant across model specifications)")
-
-    # =========================================================================
-    # STEP 4: Compute MA ICC Estimates
-    # =========================================================================
+    # Compute MA ICC Estimates
     log("\n[STEP 4] Compute Model-Averaged ICC Estimates")
     log("-" * 60)
 
@@ -168,10 +155,7 @@ def main():
     log(f"\n  Model-Averaged ICC Estimates:")
     log(f"    ICC_intercept_MA: {ICC_intercept_ma:.4f}")
     log(f"    ICC_slope_MA: {ICC_slope_ma:.4f}")
-
-    # =========================================================================
-    # STEP 5: Compare Original vs MA ICCs
-    # =========================================================================
+    # Compare Original vs MA ICCs
     log("\n[STEP 5] Compare Original vs Model-Averaged ICCs")
     log("-" * 60)
 
@@ -191,10 +175,7 @@ def main():
     log(f"    Original (Recip_sq): {ICC_slope_original:.4f}")
     log(f"    Model-Averaged: {ICC_slope_ma:.4f}")
     log(f"    Delta: {delta_icc_slope:+.4f} ({pct_change_slope:+.1f}%)")
-
-    # =========================================================================
-    # STEP 6: Recompute 824× Ratio with MA ICC
-    # =========================================================================
+    # Recompute 824× Ratio with MA ICC
     log("\n[STEP 6] Recompute Confidence vs Accuracy ICC Ratio with MA")
     log("-" * 60)
 
@@ -217,10 +198,7 @@ def main():
     pct_change_ratio = (delta_ratio / ratio_original) * 100
 
     log(f"\n  Ratio Change: {delta_ratio:+.1f}× ({pct_change_ratio:+.1f}%)")
-
-    # =========================================================================
-    # STEP 7: Assess Robustness
-    # =========================================================================
+    # Assess Robustness
     log("\n[STEP 7] Assess Robustness of 824× Finding")
     log("-" * 60)
 
@@ -261,10 +239,7 @@ def main():
     log(f"    ICC_slope_MA > 0.10 (detectable)? {ICC_slope_ma > 0.10} (value = {ICC_slope_ma:.4f})")
     log(f"    ICC_slope_MA > 0.30 (substantial)? {ICC_slope_ma > 0.30} (value = {ICC_slope_ma:.4f})")
     log(f"    ICC_slope_MA within 20% of original? {abs(pct_change_slope) < 20} (change = {pct_change_slope:+.1f}%)")
-
-    # =========================================================================
-    # STEP 8: Save Results
-    # =========================================================================
+    # Save Results
     log("\n[STEP 8] Save Validation Results")
     log("-" * 60)
 
@@ -317,12 +292,9 @@ def main():
     output_path = DATA_DIR / "step06b_icc_ma_validation.csv"
     results_df.to_csv(output_path, index=False)
     log(f"  ✓ Saved: {output_path}")
-
-    # =========================================================================
     # SUMMARY
-    # =========================================================================
     log("\n" + "=" * 80)
-    log("[SUMMARY] Model-Averaged ICC Validation Complete")
+    log("Model-Averaged ICC Validation Complete")
     log("=" * 80)
 
     log(f"""
@@ -357,7 +329,7 @@ if __name__ == "__main__":
     try:
         results = main()
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

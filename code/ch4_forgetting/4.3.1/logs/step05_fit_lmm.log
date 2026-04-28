@@ -1,0 +1,73 @@
+Step 05: Fit LMM and Select Best Model
+============================================================
+
+Loading LMM input data from step04...
+step04_lmm_input.csv (1200 rows, 8 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'TSVR_hours_sq', 'TSVR_hours_log', 'paradigm', 'theta']
+  Unique UIDs: 100
+  Paradigms: ['cued_recall', 'free_recall', 'recognition']
+  TSVR_hours range: 1.0 - 246.2
+
+Preparing data for LMM tool...
+  Created time variables: Days, Days_sq, log_Days
+  Days range: 0.04 - 10.26
+  Factor levels: ['Cued_Recall', 'Free_Recall', 'Recognition']
+  Using reference_group: 'Free_Recall'
+
+Running compare_lmm_models_by_aic...
+  n_factors: 3 (free_recall, cued_recall, recognition)
+  reference_group: 'Free_Recall' (treatment coding)
+  groups: 'UID' (random effects grouping)
+Fitting Linear model...
+  Loading existing model from /home/etai/projects/REMEMVR/results/ch5/rq3/data/lmm_Linear.pkl
+Fitting Quadratic model...
+  Loading existing model from /home/etai/projects/REMEMVR/results/ch5/rq3/data/lmm_Quadratic.pkl
+Fitting Log model...
+  Loading existing model from /home/etai/projects/REMEMVR/results/ch5/rq3/data/lmm_Log.pkl
+Fitting Lin+Log model...
+  Loading existing model from /home/etai/projects/REMEMVR/results/ch5/rq3/data/lmm_Lin+Log.pkl
+Fitting Quad+Log model...
+  Loading existing model from /home/etai/projects/REMEMVR/results/ch5/rq3/data/lmm_Quad+Log.pkl
+Model comparison complete
+
+Best model: Log
+  AIC: 2346.60
+  BIC: 2397.50
+  Log-Likelihood: -1163.30
+
+Saved AIC comparison: /home/etai/projects/REMEMVR/results/ch5/rq3/data/step05_model_comparison.csv
+  5 models compared
+  AIC Comparison Table:
+    Log: AIC=2346.60, delta=0.00, weight=1.000
+    Lin+Log: AIC=2366.88, delta=20.29, weight=0.000
+    Quadratic: AIC=2369.43, delta=22.84, weight=0.000
+    Quad+Log: AIC=2371.61, delta=25.02, weight=0.000
+    Linear: AIC=2410.22, delta=63.62, weight=0.000
+Saved model summary: /home/etai/projects/REMEMVR/results/ch5/rq3/results/step05_lmm_model_summary.txt
+
+Extracting fixed effects from best model...
+Saved fixed effects: /home/etai/projects/REMEMVR/results/ch5/rq3/data/step05_fixed_effects.csv
+  9 fixed effect terms
+Saved fitted model: /home/etai/projects/REMEMVR/results/ch5/rq3/data/step05_lmm_fitted_model.pkl
+
+Running validate_lmm_convergence...
+  converged: True
+  message: LMM converged successfully
+
+Additional checks:
+  Converged models: 5/5
+  Random effects variance: 0.4995
+  Fixed effects: All 9 estimates are finite
+  All 5 models have valid AIC values: ============================================================
+Step 05 complete
+============================================================
+
+Outputs:
+  - /home/etai/projects/REMEMVR/results/ch5/rq3/data/step05_model_comparison.csv
+  - /home/etai/projects/REMEMVR/results/ch5/rq3/results/step05_lmm_model_summary.txt
+  - /home/etai/projects/REMEMVR/results/ch5/rq3/data/step05_fixed_effects.csv
+  - /home/etai/projects/REMEMVR/results/ch5/rq3/data/step05_lmm_fitted_model.pkl
+
+Best Model: Log
+  Formula: Ability ~ Days * C(Factor, Treatment('Free_Recall'))
+  AIC: 2346.60

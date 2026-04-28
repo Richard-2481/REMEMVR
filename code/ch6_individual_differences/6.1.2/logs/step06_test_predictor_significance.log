@@ -1,0 +1,25 @@
+Step 06: Test Predictor Significance
+Loading intercept regression results...
+step03_intercept_predictions.csv (6 rows, 8 cols)
+Loading slope regression results...
+step04_slope_predictions.csv (6 rows, 9 cols)
+Extracting cognitive test predictors...
+Intercept model: 5 cognitive predictors
+Slope model: 5 cognitive predictors
+Combining results and computing significance flags...
+Generating effect interpretations...
+Effect interpretations for 10 predictor-outcome combinations
+Saving predictor significance results...
+step06_predictor_significance.csv (10 rows, 9 cols)
+Running validate_hypothesis_test_dual_pvalues...
+valid: True
+missing_terms: []
+d068_compliant: True
+message: Decision D068 compliant: All 5 required terms present with both p_uncorrected and p_bonferroni.
+Predictor significance analysis PASSED validation
+Predictor significance test complete:
+  - Total predictor-outcome combinations: 10
+  - Significant (uncorrected p<0.05): 2
+  - Significant (Bonferroni p<0.0050): 0
+  - Dual p-value reporting: Decision D068 compliant
+Step 06 complete

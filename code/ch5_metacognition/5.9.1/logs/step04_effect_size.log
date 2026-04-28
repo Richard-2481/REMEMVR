@@ -1,0 +1,95 @@
+Step 4: Compute Effect Size (Cohen's d)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Computing Cohen's d for paired samples...
+Mean difference: 0.001954
+SD difference: 0.008389
+Cohen's d: 0.2329
+Applying Cohen (1988) conventions...
+|d| = 0.2329 -> small
+Hedging hypothesis SUPPORTED if:
+(1) p_uncorrected < 0.05 (Step 3)
+AND (2) |cohen_d| > 0.3 (medium+ effect)
+Full decision made in results analysis
+Saving analysis outputs...
+step04_effect_size.csv (1 rows, 2 cols)
+Running inline validation...
+Cohen's d = 0.2329
+interpretation: small
+Step 4 complete
+Step 4: Compute Effect Size (Cohen's d)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Computing Cohen's d for paired samples...
+Mean difference: -0.000037
+SD difference: 0.006122
+Cohen's d: -0.0060
+Applying Cohen (1988) conventions...
+|d| = 0.0060 -> negligible
+Hedging hypothesis SUPPORTED if:
+(1) p_uncorrected < 0.05 (Step 3)
+AND (2) |cohen_d| > 0.3 (medium+ effect)
+Full decision made in results analysis
+Saving analysis outputs...
+step04_effect_size.csv (1 rows, 2 cols)
+Running inline validation...
+Cohen's d = -0.0060
+interpretation: negligible
+Step 4 complete
+Step 4: Compute Effect Size (Cohen's d)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Computing Cohen's d for paired samples...
+Mean difference: -0.000714
+SD difference: 0.005888
+Cohen's d: -0.1213
+Applying Cohen (1988) conventions...
+|d| = 0.1213 -> negligible
+Hedging hypothesis SUPPORTED if:
+(1) p_uncorrected < 0.05 (Step 3)
+AND (2) |cohen_d| > 0.3 (medium+ effect)
+Full decision made in results analysis
+Saving analysis outputs...
+step04_effect_size.csv (1 rows, 2 cols)
+Running inline validation...
+Cohen's d = -0.1213
+interpretation: negligible
+Step 4 complete
+Step 4: Compute Effect Size (Cohen's d)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Computing Cohen's d for paired samples...
+Mean difference: -0.000714
+SD difference: 0.005888
+Cohen's d: -0.1213
+Applying Cohen (1988) conventions...
+|d| = 0.1213 -> negligible
+Hedging hypothesis SUPPORTED if:
+(1) p_uncorrected < 0.05 (Step 3)
+AND (2) |cohen_d| > 0.3 (medium+ effect)
+Full decision made in results analysis
+Saving analysis outputs...
+step04_effect_size.csv (1 rows, 2 cols)
+Running inline validation...
+Cohen's d = -0.1213
+interpretation: negligible
+Step 4 complete
+Step 4: Compute Effect Size (Cohen's d)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Computing Cohen's d for paired samples...
+Mean difference: -0.000714
+SD difference: 0.005888
+Cohen's d: -0.1213
+Applying Cohen (1988) conventions...
+|d| = 0.1213 -> negligible
+Hedging hypothesis SUPPORTED if:
+(1) p_uncorrected < 0.05 (Step 3)
+AND (2) |cohen_d| > 0.3 (medium+ effect)
+Full decision made in results analysis
+Saving analysis outputs...
+step04_effect_size.csv (1 rows, 2 cols)
+Running inline validation...
+Cohen's d = -0.1213
+interpretation: negligible
+Step 4 complete

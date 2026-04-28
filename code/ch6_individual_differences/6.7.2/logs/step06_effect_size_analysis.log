@@ -1,0 +1,76 @@
+Step 06: Effect Size Analysis
+Loading ANOVA results and demographic data...
+5 ANOVA results, 100 participants
+Variables: ['Age' 'Education' 'VR_Experience' 'NART' 'BVMT']
+Groups: ['VR-favored' 'RAVLT-favored' 'Concordant']
+Calculating effect sizes for all pairwise comparisons...
+[ES] Age (VR-favored vs RAVLT-favored): d=-0.028, 95% CI=[-0.803, 0.729], negligible
+[ES] Age (VR-favored vs Concordant): d=0.367, 95% CI=[-1.043, 0.274], small
+[ES] Age (RAVLT-favored vs Concordant): d=0.405, 95% CI=[-0.908, 0.105], small
+[ES] Education (VR-favored vs RAVLT-favored): d=-0.360, 95% CI=[-0.455, 1.115], small
+[ES] Education (VR-favored vs Concordant): d=0.225, 95% CI=[-0.885, 0.317], small
+[ES] Education (RAVLT-favored vs Concordant): d=0.542, 95% CI=[-1.098, -0.130], medium
+[ES] VR_Experience (VR-favored vs RAVLT-favored): d=-0.118, 95% CI=[-0.680, 1.047], negligible
+[ES] VR_Experience (VR-favored vs Concordant): d=-0.061, 95% CI=[-0.631, 0.812], negligible
+[ES] VR_Experience (RAVLT-favored vs Concordant): d=0.062, 95% CI=[-0.574, 0.469], negligible
+[ES] NART (VR-favored vs RAVLT-favored): d=0.140, 95% CI=[-1.044, 0.591], negligible
+[ES] NART (VR-favored vs Concordant): d=0.456, 95% CI=[-1.085, 0.153], small
+[ES] NART (RAVLT-favored vs Concordant): d=0.304, 95% CI=[-0.866, 0.286], small
+[ES] BVMT (VR-favored vs RAVLT-favored): d=-0.043, 95% CI=[-0.648, 0.951], negligible
+[ES] BVMT (VR-favored vs Concordant): d=-0.224, 95% CI=[-0.393, 0.742], small
+[ES] BVMT (RAVLT-favored vs Concordant): d=-0.190, 95% CI=[-0.290, 0.635], negligible
+Creating clinical profiles by group...
+Saving effect size results...
+step06_effect_sizes.csv (15 rows)
+step06_clinical_profiles.csv (15 rows)
+step06_clinical_interpretation.txt
+Running validate_effect_sizes...
+Effect sizes validated
+Step 06 complete
+Step 06: Effect Size Analysis
+Loading ANOVA results and demographic data...
+10 ANOVA results, 100 participants
+Variables: ['Age', 'Education', 'VR_Experience', 'NART', 'BVMT']
+Grouping schemes: {'RAVLT_Total': 'Group_RAVLT_Total', 'RAVLT_Pct_Ret': 'Group_RAVLT_Pct_Ret'}
+Calculating effect sizes for all pairwise comparisons...
+
+[ES] === RAVLT_Total (column: Group_RAVLT_Total) ===
+[ES] RAVLT_Total/Age (VR-favored vs RAVLT-favored): d=0.272, 95% CI=[-1.172, 0.379], small
+[ES] RAVLT_Total/Age (VR-favored vs Concordant): d=0.378, 95% CI=[-1.053, 0.259], small
+[ES] RAVLT_Total/Age (RAVLT-favored vs Concordant): d=0.098, 95% CI=[-0.648, 0.416], negligible
+[ES] RAVLT_Total/Education (VR-favored vs RAVLT-favored): d=-0.264, 95% CI=[-0.556, 1.076], small
+[ES] RAVLT_Total/Education (VR-favored vs Concordant): d=0.339, 95% CI=[-0.962, 0.202], small
+[ES] RAVLT_Total/Education (RAVLT-favored vs Concordant): d=0.579, 95% CI=[-1.088, -0.181], medium
+[ES] RAVLT_Total/VR_Experience (VR-favored vs RAVLT-favored): d=-0.287, 95% CI=[-0.392, 1.055], small
+[ES] RAVLT_Total/VR_Experience (VR-favored vs Concordant): d=-0.253, 95% CI=[-0.411, 0.931], small
+[ES] RAVLT_Total/VR_Experience (RAVLT-favored vs Concordant): d=0.042, 95% CI=[-0.520, 0.434], negligible
+[ES] RAVLT_Total/NART (VR-favored vs RAVLT-favored): d=0.439, 95% CI=[-1.458, 0.249], small
+[ES] RAVLT_Total/NART (VR-favored vs Concordant): d=0.487, 95% CI=[-1.042, 0.025], small
+[ES] RAVLT_Total/NART (RAVLT-favored vs Concordant): d=0.041, 95% CI=[-0.572, 0.494], negligible
+[ES] RAVLT_Total/BVMT (VR-favored vs RAVLT-favored): d=-0.033, 95% CI=[-0.663, 0.903], negligible
+[ES] RAVLT_Total/BVMT (VR-favored vs Concordant): d=-0.150, 95% CI=[-0.488, 0.745], negligible
+[ES] RAVLT_Total/BVMT (RAVLT-favored vs Concordant): d=-0.128, 95% CI=[-0.368, 0.551], negligible
+
+[ES] === RAVLT_Pct_Ret (column: Group_RAVLT_Pct_Ret) ===
+[ES] RAVLT_Pct_Ret/Age (VR-favored vs Concordant): d=0.130, 95% CI=[-0.728, 0.531], negligible
+[ES] RAVLT_Pct_Ret/Age (VR-favored vs RAVLT-favored): d=0.110, 95% CI=[-0.920, 0.635], negligible
+[ES] RAVLT_Pct_Ret/Age (Concordant vs RAVLT-favored): d=-0.037, 95% CI=[-0.425, 0.456], negligible
+[ES] RAVLT_Pct_Ret/Education (VR-favored vs Concordant): d=-0.148, 95% CI=[-0.490, 0.810], negligible
+[ES] RAVLT_Pct_Ret/Education (VR-favored vs RAVLT-favored): d=-0.137, 95% CI=[-0.645, 0.887], negligible
+[ES] RAVLT_Pct_Ret/Education (Concordant vs RAVLT-favored): d=-0.010, 95% CI=[-0.559, 0.578], negligible
+[ES] RAVLT_Pct_Ret/VR_Experience (VR-favored vs Concordant): d=-0.210, 95% CI=[-0.428, 0.894], small
+[ES] RAVLT_Pct_Ret/VR_Experience (VR-favored vs RAVLT-favored): d=0.115, 95% CI=[-0.896, 0.652], negligible
+[ES] RAVLT_Pct_Ret/VR_Experience (Concordant vs RAVLT-favored): d=0.337, 95% CI=[-0.954, 0.238], small
+[ES] RAVLT_Pct_Ret/NART (VR-favored vs Concordant): d=0.385, 95% CI=[-0.995, 0.153], small
+[ES] RAVLT_Pct_Ret/NART (VR-favored vs RAVLT-favored): d=0.003, 95% CI=[-0.791, 0.715], negligible
+[ES] RAVLT_Pct_Ret/NART (Concordant vs RAVLT-favored): d=-0.372, 95% CI=[-0.196, 0.952], small
+[ES] RAVLT_Pct_Ret/BVMT (VR-favored vs Concordant): d=-0.352, 95% CI=[-0.084, 0.747], small
+[ES] RAVLT_Pct_Ret/BVMT (VR-favored vs RAVLT-favored): d=-0.521, 95% CI=[-0.209, 1.389], medium
+[ES] RAVLT_Pct_Ret/BVMT (Concordant vs RAVLT-favored): d=0.006, 95% CI=[-0.394, 0.395], negligible
+Saving effect size results...
+step06_effect_sizes.csv (30 rows)
+step06_clinical_profiles.csv (30 rows)
+step06_clinical_interpretation.txt
+Running validate_effect_sizes...
+Effect sizes validated
+Step 06 complete

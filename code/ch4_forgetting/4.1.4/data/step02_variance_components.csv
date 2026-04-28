@@ -1,0 +1,6 @@
+component,estimate
+var_intercept,0.4764312066495972
+var_slope,0.0001566090258021635
+cov_int_slope,-0.003899763434313227
+var_residual,0.3098634519566388
+cor_int_slope,-0.4514709062062082

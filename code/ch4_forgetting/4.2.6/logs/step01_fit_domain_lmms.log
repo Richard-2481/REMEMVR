@@ -1,0 +1,73 @@
+2025-12-03 15:05:41,261 - INFO - ============================================================
+2025-12-03 15:05:41,261 - INFO - RQ 5.2.6 Step 01: Fit Domain-Stratified LMMs
+2025-12-03 15:05:41,261 - INFO - ============================================================
+2025-12-03 15:05:41,264 - INFO - Loaded input data: 800 rows from results/ch5/5.2.6/data/step00_lmm_input_filtered.csv
+2025-12-03 15:05:41,267 - INFO - Domains in data: ['what', 'where']
+2025-12-03 15:05:41,268 - INFO - 
+============================================================
+2025-12-03 15:05:41,268 - INFO - Fitting LMM for domain: What
+2025-12-03 15:05:41,268 - INFO - ============================================================
+2025-12-03 15:05:41,268 - INFO -   Observations: 400
+2025-12-03 15:05:41,268 - INFO -   Groups (participants): 100
+2025-12-03 15:05:41,269 - INFO -   log_TSVR range: [0.693, 5.510]
+2025-12-03 15:05:41,269 - INFO -   Attempting fit with full random structure (intercept + slope correlated)
+2025-12-03 15:05:41,379 - INFO -   Model converged: True
+2025-12-03 15:05:41,381 - INFO -   Log-likelihood: -424.10
+2025-12-03 15:05:41,381 - INFO -   AIC: 860.20
+2025-12-03 15:05:41,381 - INFO -   BIC: 884.15
+2025-12-03 15:05:41,382 - INFO - Saved metadata to: results/ch5/5.2.6/data/step01_model_metadata_what.yaml
+2025-12-03 15:05:41,383 - INFO - 
+============================================================
+2025-12-03 15:05:41,383 - INFO - Fitting LMM for domain: Where
+2025-12-03 15:05:41,383 - INFO - ============================================================
+2025-12-03 15:05:41,383 - INFO -   Observations: 400
+2025-12-03 15:05:41,383 - INFO -   Groups (participants): 100
+2025-12-03 15:05:41,384 - INFO -   log_TSVR range: [0.693, 5.510]
+2025-12-03 15:05:41,384 - INFO -   Attempting fit with full random structure (intercept + slope correlated)
+2025-12-03 15:05:41,488 - INFO -   Model converged: True
+2025-12-03 15:05:41,489 - INFO -   Log-likelihood: -433.63
+2025-12-03 15:05:41,490 - INFO -   AIC: 879.26
+2025-12-03 15:05:41,490 - INFO -   BIC: 903.21
+2025-12-03 15:05:41,490 - INFO - Saved metadata to: results/ch5/5.2.6/data/step01_model_metadata_where.yaml
+2025-12-03 15:05:41,494 - INFO - 
+Saved fitted models to: results/ch5/5.2.6/data/step01_fitted_models.pkl
+2025-12-03 15:05:41,494 - INFO - 
+============================================================
+2025-12-03 15:05:41,494 - INFO - MODEL SUMMARIES
+2025-12-03 15:05:41,494 - INFO - ============================================================
+2025-12-03 15:05:41,494 - INFO - 
+--- What Domain ---
+2025-12-03 15:05:41,494 - INFO - Random structure: Full
+2025-12-03 15:05:41,494 - INFO - 
+Fixed Effects:
+2025-12-03 15:05:41,495 - INFO -   Intercept: 0.7965 (SE: 0.0859)
+2025-12-03 15:05:41,495 - INFO -   log_TSVR:  -0.2391 (SE: 0.0178)
+2025-12-03 15:05:41,495 - INFO - 
+Random Effects Variances:
+2025-12-03 15:05:41,495 - INFO -   cov_re shape: (2, 2)
+2025-12-03 15:05:41,495 - INFO -   Group Var (intercept): 0.330125
+2025-12-03 15:05:41,495 - INFO -   log_TSVR Var (slope):  0.002609
+2025-12-03 15:05:41,495 - INFO -   Cov(intercept, slope): -0.005239
+2025-12-03 15:05:41,495 - INFO -   Scale (residual): 0.318300
+2025-12-03 15:05:41,495 - INFO - 
+--- Where Domain ---
+2025-12-03 15:05:41,495 - INFO - Random structure: Full
+2025-12-03 15:05:41,495 - INFO - 
+Fixed Effects:
+2025-12-03 15:05:41,496 - INFO -   Intercept: 0.8666 (SE: 0.0917)
+2025-12-03 15:05:41,496 - INFO -   log_TSVR:  -0.2469 (SE: 0.0182)
+2025-12-03 15:05:41,496 - INFO - 
+Random Effects Variances:
+2025-12-03 15:05:41,496 - INFO -   cov_re shape: (2, 2)
+2025-12-03 15:05:41,496 - INFO -   Group Var (intercept): 0.424859
+2025-12-03 15:05:41,496 - INFO -   log_TSVR Var (slope):  0.003615
+2025-12-03 15:05:41,496 - INFO -   Cov(intercept, slope): -0.014815
+2025-12-03 15:05:41,496 - INFO -   Scale (residual): 0.324638
+2025-12-03 15:05:41,496 - INFO - 
+============================================================
+2025-12-03 15:05:41,497 - INFO - STEP 01 COMPLETE
+2025-12-03 15:05:41,497 - INFO - ============================================================
+2025-12-03 15:05:41,497 - INFO - Models fitted: 2
+2025-12-03 15:05:41,497 - INFO -   What: Full structure, AIC=860.20
+2025-12-03 15:05:41,497 - INFO -   Where: Full structure, AIC=879.26
+2025-12-03 15:05:41,497 - INFO - Ready for Step 02: Extract Variance Components

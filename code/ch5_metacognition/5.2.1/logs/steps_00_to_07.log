@@ -1,0 +1,764 @@
+======================================================================
+RQ 6.2.1: CALIBRATION OVER TIME
+======================================================================
+Started: 2025-12-11 19:02:07.305115
+RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.2.1
+
+======================================================================
+STEP 00a: Load Accuracy Theta Scores
+======================================================================
+Loaded accuracy theta: 400 rows
+Columns: ['UID', 'test', 'Theta_All']
+  Validating accuracy_theta...
+  WARNING: NaN values in accuracy_theta: {'se_accuracy': np.int64(400)}
+  VALIDATION - PASS: accuracy_theta (400 rows, 3 columns)
+Theta accuracy range: [-2.516, 2.728]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00a_accuracy_theta.csv
+
+======================================================================
+STEP 00b: Load Confidence Theta Scores
+======================================================================
+Loaded confidence theta: 400 rows
+Columns: ['composite_ID', 'theta_All', 'se_All']
+Sample composite_ID format: A010_T1
+  Validating confidence_theta...
+  VALIDATION - PASS: confidence_theta (400 rows, 3 columns)
+Theta confidence range: [-2.241, 0.491]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00b_confidence_theta.csv
+
+======================================================================
+STEP 00c: Load TSVR Mapping
+======================================================================
+Loaded TSVR mapping: 400 rows
+Columns: ['composite_ID', 'TSVR_hours', 'test']
+Sample composite_ID format: A010_1
+Converted composite_ID format from UID_N to UID_TN
+  Validating tsvr_mapping...
+  VALIDATION - PASS: tsvr_mapping (400 rows, 3 columns)
+TSVR_hours range: [1.0, 246.2] hours
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00c_tsvr_mapping.csv
+
+======================================================================
+STEP 01: Merge Theta Scores with TSVR
+======================================================================
+After accuracy-confidence merge: 400 rows
+After TSVR merge: 400 rows
+Z-standardization z_theta_accuracy: mean=0.000000, std=1.000000
+Z-standardization z_theta_confidence: mean=-0.000000, std=1.000000
+  Validating merged_theta...
+  WARNING: NaN values in merged_theta: {'se_accuracy': np.int64(400)}
+  VALIDATION - PASS: merged_theta (400 rows, 10 columns)
+Unique UIDs: 100
+Tests per UID: {4: 100}
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step01_merged_theta.csv
+VALIDATION - PASS: Merge and z-standardization complete
+
+======================================================================
+STEP 02: Compute Calibration Metric
+======================================================================
+Calibration statistics:
+  Mean: -0.0000
+  Std: 0.9207
+  Min: -3.8344
+  Max: 3.1506
+Overconfident observations: 201 (50.2%)
+Underconfident observations: 199 (49.8%)
+  Validating calibration_scores...
+  VALIDATION - PASS: calibration_scores (400 rows, 7 columns)
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+VALIDATION - PASS: Calibration metric computed
+
+======================================================================
+STEP 03: Compute Brier Score (Item-Level Calibration)
+======================================================================
+Loaded dfData: 400 rows
+TQ (accuracy) columns: 105
+TC (confidence) columns: 105
+Matched TQ/TC item pairs: 105
+Interactive paradigm items: 105
+Brier score range: [0.0535, 0.3541]
+Brier score mean: 0.1667
+Items per observation: min=105.0, max=105.0, mean=105.0
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step03_brier_scores.csv
+VALIDATION - PASS: Brier scores computed
+
+======================================================================
+STEP 04: Compute Expected Calibration Error (ECE)
+======================================================================
+ECE results:
+  1.0: ECE=0.0903, n_items=10500.0
+  2.0: ECE=0.1023, n_items=10500.0
+  3.0: ECE=0.0920, n_items=10500.0
+  4.0: ECE=0.0939, n_items=10500.0
+ECE range: [0.0903, 0.1023]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step04_ece_by_time.csv
+VALIDATION - PASS: ECE computed for 4 timepoints
+
+======================================================================
+STEP 05: Fit LMM for Calibration Trajectory
+======================================================================
+Model formula: calibration ~ TSVR_hours
+Random effects: (1 + TSVR_hours | UID)
+N observations: 400
+N groups (UIDs): 100
+Model converged: True
+
+Model Summary:
+           Mixed Linear Model Regression Results
+===========================================================
+Model:              MixedLM Dependent Variable: calibration
+No. Observations:   400     Method:             ML         
+No. Groups:         100     Scale:              0.4933     
+Min. group size:    4       Log-Likelihood:     -503.6116  
+Max. group size:    4       Converged:          Yes        
+Mean group size:    4.0                                    
+-----------------------------------------------------------
+                 Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-----------------------------------------------------------
+Intercept        -0.095    0.078 -1.216 0.224 -0.249  0.058
+Time              0.146    0.072  2.036 0.042  0.005  0.287
+Group Var         0.336    0.153                           
+Group x Time Cov -0.077    0.106                           
+Time Var          0.141    0.134                           
+===========================================================
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step05_lmm_model_summary.txt
+Log-likelihood: -503.61
+AIC: 1019.22
+BIC: 1043.17
+VALIDATION - PASS: LMM converged
+
+======================================================================
+STEP 06: Test Time Effect (Decision D068 Dual P-Values)
+======================================================================
+Fixed Effects:
+  Intercept: coef=-0.095432, SE=0.078485, z=-1.216, p=0.224010
+  Time: coef=0.146117, SE=0.071784, z=2.036, p=0.041799
+
+Time effect (per 100 hours): 0.146117
+Time effect (per hour): 0.00146117
+Wald p-value (uncorrected): 0.041799
+LRT statistic: 8.3526 (df=1)
+LRT p-value (corrected): 0.003851
+
+Interpretation: Significant (Positive)
+  → Calibration WORSENS over time (increasing overconfidence)
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step06_time_effect.csv
+VALIDATION - PASS: Dual p-values present (D068)
+
+======================================================================
+STEP 07: Prepare Calibration Trajectory Plot Data
+======================================================================
+Trajectory plot data:
+  T1: time=1.0h, cal=-0.1160 [-0.2904, 0.0585]
+  T2: time=28.8h, cal=-0.0341 [-0.2218, 0.1536]
+  T3: time=78.7h, cal=0.0388 [-0.1448, 0.2224]
+  T4: time=151.4h, cal=0.1113 [-0.0641, 0.2868]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step07_calibration_trajectory_theta_data.csv
+VALIDATION - PASS: Plot data complete with 4 timepoints
+
+======================================================================
+EXECUTION COMPLETE
+======================================================================
+
+PRIMARY FINDING: Time Effect on Calibration
+  Coefficient (per hour): 0.00146117
+  p-value (Wald): 0.041799
+  p-value (LRT): 0.003851
+  Interpretation: Significant (Positive)
+
+SECONDARY METRICS:
+  Mean Brier score: 0.1667
+  ECE range: [0.0903, 0.1023]
+
+Files created:
+  step00a_accuracy_theta.csv
+  step00b_confidence_theta.csv
+  step00c_tsvr_mapping.csv
+  step01_merged_theta.csv
+  step02_calibration_scores.csv
+  step03_brier_scores.csv
+  step04_ece_by_time.csv
+  step06_time_effect.csv
+  step07_calibration_trajectory_theta_data.csv
+
+Completed: 2025-12-11 19:02:07.866010
+SUCCESS: All steps completed
+======================================================================
+RQ 6.2.1: CALIBRATION OVER TIME
+======================================================================
+Started: 2026-01-17 14:15:48.100041
+RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.2.1
+
+======================================================================
+STEP 00a: Load Accuracy Theta Scores
+======================================================================
+Loaded accuracy theta: 400 rows
+Columns: ['UID', 'test', 'Theta_All']
+  Validating accuracy_theta...
+  WARNING: NaN values in accuracy_theta: {'se_accuracy': np.int64(400)}
+  VALIDATION - PASS: accuracy_theta (400 rows, 3 columns)
+Theta accuracy range: [-2.516, 2.728]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00a_accuracy_theta.csv
+
+======================================================================
+STEP 00b: Load Confidence Theta Scores
+======================================================================
+Loaded confidence theta: 400 rows
+Columns: ['composite_ID', 'theta_All', 'se_All']
+Sample composite_ID format: A010_T1
+  Validating confidence_theta...
+  VALIDATION - PASS: confidence_theta (400 rows, 3 columns)
+Theta confidence range: [-2.993, 3.035]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00b_confidence_theta.csv
+
+======================================================================
+STEP 00c: Load TSVR Mapping
+======================================================================
+Loaded TSVR mapping: 400 rows
+Columns: ['composite_ID', 'TSVR_hours', 'test']
+Sample composite_ID format: A010_1
+Converted composite_ID format from UID_N to UID_TN
+  Validating tsvr_mapping...
+  VALIDATION - PASS: tsvr_mapping (400 rows, 3 columns)
+TSVR_hours range: [1.0, 246.2] hours
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00c_tsvr_mapping.csv
+
+======================================================================
+STEP 01: Merge Theta Scores with TSVR
+======================================================================
+After accuracy-confidence merge: 400 rows
+After TSVR merge: 400 rows
+Z-standardization z_theta_accuracy: mean=0.000000, std=1.000000
+Z-standardization z_theta_confidence: mean=-0.000000, std=1.000000
+  Validating merged_theta...
+  WARNING: NaN values in merged_theta: {'se_accuracy': np.int64(400)}
+  VALIDATION - PASS: merged_theta (400 rows, 10 columns)
+Unique UIDs: 100
+Tests per UID: {4: 100}
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step01_merged_theta.csv
+VALIDATION - PASS: Merge and z-standardization complete
+
+======================================================================
+STEP 02: Compute Calibration Metric
+======================================================================
+Calibration statistics:
+  Mean: -0.0000
+  Std: 0.8292
+  Min: -3.7266
+  Max: 2.9759
+Overconfident observations: 195 (48.8%)
+Underconfident observations: 205 (51.2%)
+  Validating calibration_scores...
+  VALIDATION - PASS: calibration_scores (400 rows, 7 columns)
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+VALIDATION - PASS: Calibration metric computed
+
+======================================================================
+STEP 03: Compute Brier Score (Item-Level Calibration)
+======================================================================
+Loaded dfData: 400 rows
+TQ (accuracy) columns: 105
+TC (confidence) columns: 105
+Matched TQ/TC item pairs: 105
+Interactive paradigm items: 105
+Brier score range: [0.0535, 0.3541]
+Brier score mean: 0.1667
+Items per observation: min=105.0, max=105.0, mean=105.0
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step03_brier_scores.csv
+VALIDATION - PASS: Brier scores computed
+
+======================================================================
+STEP 04: Compute Expected Calibration Error (ECE)
+======================================================================
+ECE results:
+  1.0: ECE=0.0903, n_items=10500.0
+  2.0: ECE=0.1023, n_items=10500.0
+  3.0: ECE=0.0920, n_items=10500.0
+  4.0: ECE=0.0939, n_items=10500.0
+ECE range: [0.0903, 0.1023]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step04_ece_by_time.csv
+VALIDATION - PASS: ECE computed for 4 timepoints
+
+======================================================================
+STEP 05: Fit LMM for Calibration Trajectory
+======================================================================
+Model formula: calibration ~ TSVR_hours
+Random effects: (1 + TSVR_hours | UID)
+N observations: 400
+N groups (UIDs): 100
+Model converged: True
+
+Model Summary:
+           Mixed Linear Model Regression Results
+===========================================================
+Model:              MixedLM Dependent Variable: calibration
+No. Observations:   400     Method:             ML         
+No. Groups:         100     Scale:              0.2807     
+Min. group size:    4       Log-Likelihood:     -409.0950  
+Max. group size:    4       Converged:          Yes        
+Mean group size:    4.0                                    
+-----------------------------------------------------------
+                 Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-----------------------------------------------------------
+Intercept        -0.006    0.075 -0.079 0.937 -0.154  0.142
+Time              0.009    0.046  0.201 0.841 -0.080  0.099
+Group Var         0.411    0.191                           
+Group x Time Cov -0.005    0.081                           
+Time Var          0.000    0.086                           
+===========================================================
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step05_lmm_model_summary.txt
+Log-likelihood: -409.09
+AIC: 830.19
+BIC: 854.14
+VALIDATION - PASS: LMM converged
+
+======================================================================
+STEP 06: Test Time Effect (Decision D068 Dual P-Values)
+======================================================================
+Fixed Effects:
+  Intercept: coef=-0.005954, SE=0.075429, z=-0.079, p=0.937088
+  Time: coef=0.009176, SE=0.045715, z=0.201, p=0.840909
+
+Time effect (per 100 hours): 0.009176
+Time effect (per hour): 0.00009176
+Wald p-value (uncorrected): 0.840909
+LRT statistic: 0.0646 (df=1)
+LRT p-value (corrected): 0.799332
+
+Interpretation: Not significant (Positive)
+  → Calibration WORSENS over time (increasing overconfidence)
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step06_time_effect.csv
+VALIDATION - PASS: Dual p-values present (D068)
+
+======================================================================
+STEP 07: Prepare Calibration Trajectory Plot Data
+======================================================================
+Trajectory plot data:
+  T1: time=1.0h, cal=-0.0081 [-0.1773, 0.1610]
+  T2: time=28.8h, cal=-0.0108 [-0.1763, 0.1547]
+  T3: time=78.7h, cal=0.0146 [-0.1407, 0.1700]
+  T4: time=151.4h, cal=0.0043 [-0.1579, 0.1665]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step07_calibration_trajectory_theta_data.csv
+VALIDATION - PASS: Plot data complete with 4 timepoints
+
+======================================================================
+EXECUTION COMPLETE
+======================================================================
+
+PRIMARY FINDING: Time Effect on Calibration
+  Coefficient (per hour): 0.00009176
+  p-value (Wald): 0.840909
+  p-value (LRT): 0.799332
+  Interpretation: Not significant (Positive)
+
+SECONDARY METRICS:
+  Mean Brier score: 0.1667
+  ECE range: [0.0903, 0.1023]
+
+Files created:
+  step00a_accuracy_theta.csv
+  step00b_confidence_theta.csv
+  step00c_tsvr_mapping.csv
+  step01_merged_theta.csv
+  step02_SEM_diagnostics.csv
+  step02_calibration_scores.csv
+  step02_calibration_scores_SEM.csv
+  step03_brier_scores.csv
+  step04_ece_by_time.csv
+  step06_time_effect.csv
+  step06_time_effect_SEM.csv
+  step07_calibration_trajectory_theta_data.csv
+  step07_calibration_trajectory_theta_data_SEM.csv
+  step08_diff_score_reliability.csv
+  step09_confidence_response_patterns.csv
+
+Completed: 2026-01-17 14:15:48.863644
+SUCCESS: All steps completed
+======================================================================
+RQ 6.2.1: CALIBRATION OVER TIME
+======================================================================
+Started: 2026-01-17 14:30:18.252739
+RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.2.1
+
+======================================================================
+STEP 00a: Load Accuracy Theta Scores
+======================================================================
+Loaded accuracy theta: 400 rows
+Columns: ['UID', 'test', 'Theta_All']
+  Validating accuracy_theta...
+  WARNING: NaN values in accuracy_theta: {'se_accuracy': np.int64(400)}
+  VALIDATION - PASS: accuracy_theta (400 rows, 3 columns)
+Theta accuracy range: [-2.516, 2.728]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00a_accuracy_theta.csv
+
+======================================================================
+STEP 00b: Load Confidence Theta Scores
+======================================================================
+Loaded confidence theta: 400 rows
+Columns: ['composite_ID', 'theta_All', 'se_All']
+Sample composite_ID format: A010_T1
+  Validating confidence_theta...
+  VALIDATION - PASS: confidence_theta (400 rows, 3 columns)
+Theta confidence range: [-2.993, 3.035]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00b_confidence_theta.csv
+
+======================================================================
+STEP 00c: Load TSVR Mapping
+======================================================================
+Loaded TSVR mapping: 400 rows
+Columns: ['composite_ID', 'TSVR_hours', 'test']
+Sample composite_ID format: A010_1
+Converted composite_ID format from UID_N to UID_TN
+  Validating tsvr_mapping...
+  VALIDATION - PASS: tsvr_mapping (400 rows, 3 columns)
+TSVR_hours range: [1.0, 246.2] hours
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00c_tsvr_mapping.csv
+
+======================================================================
+STEP 01: Merge Theta Scores with TSVR
+======================================================================
+After accuracy-confidence merge: 400 rows
+After TSVR merge: 400 rows
+Z-standardization z_theta_accuracy: mean=0.000000, std=1.000000
+Z-standardization z_theta_confidence: mean=-0.000000, std=1.000000
+  Validating merged_theta...
+  WARNING: NaN values in merged_theta: {'se_accuracy': np.int64(400)}
+  VALIDATION - PASS: merged_theta (400 rows, 10 columns)
+Unique UIDs: 100
+Tests per UID: {4: 100}
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step01_merged_theta.csv
+VALIDATION - PASS: Merge and z-standardization complete
+
+======================================================================
+STEP 02: Compute Calibration Metric
+======================================================================
+Calibration statistics:
+  Mean: -0.0000
+  Std: 0.8292
+  Min: -3.7266
+  Max: 2.9759
+Overconfident observations: 195 (48.8%)
+Underconfident observations: 205 (51.2%)
+  Validating calibration_scores...
+  VALIDATION - PASS: calibration_scores (400 rows, 7 columns)
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+VALIDATION - PASS: Calibration metric computed
+
+======================================================================
+STEP 03: Compute Brier Score (Item-Level Calibration)
+======================================================================
+Loaded dfData: 400 rows
+TQ (accuracy) columns: 105
+TC (confidence) columns: 105
+Matched TQ/TC item pairs: 105
+Interactive paradigm items: 105
+Brier score range: [0.0535, 0.3541]
+Brier score mean: 0.1667
+Items per observation: min=105.0, max=105.0, mean=105.0
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step03_brier_scores.csv
+VALIDATION - PASS: Brier scores computed
+
+======================================================================
+STEP 04: Compute Expected Calibration Error (ECE)
+======================================================================
+ECE results:
+  1.0: ECE=0.0903, n_items=10500.0
+  2.0: ECE=0.1023, n_items=10500.0
+  3.0: ECE=0.0920, n_items=10500.0
+  4.0: ECE=0.0939, n_items=10500.0
+ECE range: [0.0903, 0.1023]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step04_ece_by_time.csv
+VALIDATION - PASS: ECE computed for 4 timepoints
+
+======================================================================
+STEP 05: Fit LMM for Calibration Trajectory
+======================================================================
+Model formula: calibration ~ TSVR_hours
+Random effects: (1 + TSVR_hours | UID)
+N observations: 400
+N groups (UIDs): 100
+Model converged: True
+
+Model Summary:
+           Mixed Linear Model Regression Results
+===========================================================
+Model:              MixedLM Dependent Variable: calibration
+No. Observations:   400     Method:             ML         
+No. Groups:         100     Scale:              0.2807     
+Min. group size:    4       Log-Likelihood:     -409.0950  
+Max. group size:    4       Converged:          Yes        
+Mean group size:    4.0                                    
+-----------------------------------------------------------
+                 Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-----------------------------------------------------------
+Intercept        -0.006    0.075 -0.079 0.937 -0.154  0.142
+Time              0.009    0.046  0.201 0.841 -0.080  0.099
+Group Var         0.411    0.191                           
+Group x Time Cov -0.005    0.081                           
+Time Var          0.000    0.086                           
+===========================================================
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step05_lmm_model_summary.txt
+Log-likelihood: -409.09
+AIC: 830.19
+BIC: 854.14
+VALIDATION - PASS: LMM converged
+
+======================================================================
+STEP 06: Test Time Effect (Decision D068 Dual P-Values)
+======================================================================
+Fixed Effects:
+  Intercept: coef=-0.005954, SE=0.075429, z=-0.079, p=0.937088
+  Time: coef=0.009176, SE=0.045715, z=0.201, p=0.840909
+
+Time effect (per 100 hours): 0.009176
+Time effect (per hour): 0.00009176
+Wald p-value (uncorrected): 0.840909
+LRT statistic: 0.0646 (df=1)
+LRT p-value (corrected): 0.799332
+
+Interpretation: Not significant (Positive)
+  → Calibration WORSENS over time (increasing overconfidence)
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step06_time_effect.csv
+VALIDATION - PASS: Dual p-values present (D068)
+
+======================================================================
+STEP 07: Prepare Calibration Trajectory Plot Data
+======================================================================
+Trajectory plot data:
+  T1: time=1.0h, cal=-0.0081 [-0.1773, 0.1610]
+  T2: time=28.8h, cal=-0.0108 [-0.1763, 0.1547]
+  T3: time=78.7h, cal=0.0146 [-0.1407, 0.1700]
+  T4: time=151.4h, cal=0.0043 [-0.1579, 0.1665]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step07_calibration_trajectory_theta_data.csv
+VALIDATION - PASS: Plot data complete with 4 timepoints
+
+======================================================================
+EXECUTION COMPLETE
+======================================================================
+
+PRIMARY FINDING: Time Effect on Calibration
+  Coefficient (per hour): 0.00009176
+  p-value (Wald): 0.840909
+  p-value (LRT): 0.799332
+  Interpretation: Not significant (Positive)
+
+SECONDARY METRICS:
+  Mean Brier score: 0.1667
+  ECE range: [0.0903, 0.1023]
+
+Files created:
+  step00a_accuracy_theta.csv
+  step00b_confidence_theta.csv
+  step00c_tsvr_mapping.csv
+  step01_merged_theta.csv
+  step02_SEM_diagnostics.csv
+  step02_calibration_scores.csv
+  step02_calibration_scores_SEM.csv
+  step03_brier_scores.csv
+  step04_ece_by_time.csv
+  step06_time_effect.csv
+  step06_time_effect_SEM.csv
+  step07_calibration_trajectory_theta_data.csv
+  step07_calibration_trajectory_theta_data_SEM.csv
+  step08_diff_score_reliability.csv
+  step09_confidence_response_patterns.csv
+
+Completed: 2026-01-17 14:30:19.056404
+SUCCESS: All steps completed
+======================================================================
+RQ 6.2.1: CALIBRATION OVER TIME
+======================================================================
+Started: 2026-04-06 13:13:13.712427
+RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.2.1
+
+======================================================================
+STEP 00a: Load Accuracy Theta Scores
+======================================================================
+Loaded accuracy theta: 400 rows
+Columns: ['UID', 'test', 'Theta_All']
+  Validating accuracy_theta...
+  WARNING: NaN values in accuracy_theta: {'se_accuracy': np.int64(400)}
+  VALIDATION - PASS: accuracy_theta (400 rows, 3 columns)
+Theta accuracy range: [-2.516, 2.728]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00a_accuracy_theta.csv
+
+======================================================================
+STEP 00b: Load Confidence Theta Scores
+======================================================================
+Loaded confidence theta: 400 rows
+Columns: ['composite_ID', 'theta_All', 'se_All']
+Sample composite_ID format: A010_T1
+  Validating confidence_theta...
+  VALIDATION - PASS: confidence_theta (400 rows, 3 columns)
+Theta confidence range: [-2.993, 3.035]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00b_confidence_theta.csv
+
+======================================================================
+STEP 00c: Load TSVR Mapping
+======================================================================
+Loaded TSVR mapping: 400 rows
+Columns: ['composite_ID', 'TSVR_hours', 'test']
+Sample composite_ID format: A010_1
+Converted composite_ID format from UID_N to UID_TN
+  Validating tsvr_mapping...
+  VALIDATION - PASS: tsvr_mapping (400 rows, 3 columns)
+TSVR_hours range: [1.0, 246.2] hours
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step00c_tsvr_mapping.csv
+
+======================================================================
+STEP 01: Merge Theta Scores with TSVR
+======================================================================
+After accuracy-confidence merge: 400 rows
+After TSVR merge: 400 rows
+Z-standardization z_theta_accuracy: mean=0.000000, std=1.000000
+Z-standardization z_theta_confidence: mean=-0.000000, std=1.000000
+  Validating merged_theta...
+  WARNING: NaN values in merged_theta: {'se_accuracy': np.int64(400)}
+  VALIDATION - PASS: merged_theta (400 rows, 10 columns)
+Unique UIDs: 100
+Tests per UID: {4: 100}
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step01_merged_theta.csv
+VALIDATION - PASS: Merge and z-standardization complete
+
+======================================================================
+STEP 02: Compute Calibration Metric
+======================================================================
+Calibration statistics:
+  Mean: -0.0000
+  Std: 0.8292
+  Min: -3.7266
+  Max: 2.9759
+Overconfident observations: 195 (48.8%)
+Underconfident observations: 205 (51.2%)
+  Validating calibration_scores...
+  VALIDATION - PASS: calibration_scores (400 rows, 7 columns)
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+VALIDATION - PASS: Calibration metric computed
+
+======================================================================
+STEP 03: Compute Brier Score (Item-Level Calibration)
+======================================================================
+Loaded dfData: 400 rows
+TQ (accuracy) columns: 105
+TC (confidence) columns: 105
+Matched TQ/TC item pairs: 105
+Interactive paradigm items: 105
+Brier score range: [0.0960, 0.4427]
+Brier score mean: 0.1993
+Items per observation: min=105.0, max=105.0, mean=105.0
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step03_brier_scores.csv
+VALIDATION - PASS: Brier scores computed
+
+======================================================================
+STEP 04: Compute Expected Calibration Error (ECE)
+======================================================================
+ECE results:
+  1.0: ECE=0.1202, n_items=10500.0
+  2.0: ECE=0.1146, n_items=10500.0
+  3.0: ECE=0.1026, n_items=10500.0
+  4.0: ECE=0.0897, n_items=10500.0
+ECE range: [0.0897, 0.1202]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step04_ece_by_time.csv
+VALIDATION - PASS: ECE computed for 4 timepoints
+
+======================================================================
+STEP 05: Fit LMM for Calibration Trajectory
+======================================================================
+Model formula: calibration ~ TSVR_hours
+Random effects: (1 + TSVR_hours | UID)
+N observations: 400
+N groups (UIDs): 100
+Model converged: True
+
+Model Summary:
+           Mixed Linear Model Regression Results
+===========================================================
+Model:              MixedLM Dependent Variable: calibration
+No. Observations:   400     Method:             ML         
+No. Groups:         100     Scale:              0.2807     
+Min. group size:    4       Log-Likelihood:     -409.0950  
+Max. group size:    4       Converged:          Yes        
+Mean group size:    4.0                                    
+-----------------------------------------------------------
+                 Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-----------------------------------------------------------
+Intercept        -0.006    0.075 -0.079 0.937 -0.154  0.142
+Time              0.009    0.046  0.201 0.841 -0.080  0.099
+Group Var         0.411    0.191                           
+Group x Time Cov -0.005    0.081                           
+Time Var          0.000    0.086                           
+===========================================================
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step05_lmm_model_summary.txt
+Log-likelihood: -409.09
+AIC: 830.19
+BIC: 854.14
+VALIDATION - PASS: LMM converged
+
+======================================================================
+STEP 06: Test Time Effect (Decision D068 Dual P-Values)
+======================================================================
+Fixed Effects:
+  Intercept: coef=-0.005954, SE=0.075429, z=-0.079, p=0.937088
+  Time: coef=0.009176, SE=0.045715, z=0.201, p=0.840909
+
+Time effect (per 100 hours): 0.009176
+Time effect (per hour): 0.00009176
+Wald p-value (uncorrected): 0.840909
+LRT statistic: 0.0646 (df=1)
+LRT p-value (corrected): 0.799332
+
+Interpretation: Not significant (Positive)
+  → Calibration WORSENS over time (increasing overconfidence)
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step06_time_effect.csv
+VALIDATION - PASS: Dual p-values present (D068)
+
+======================================================================
+STEP 07: Prepare Calibration Trajectory Plot Data
+======================================================================
+Trajectory plot data:
+  T1: time=1.0h, cal=-0.0081 [-0.1773, 0.1610]
+  T2: time=28.8h, cal=-0.0108 [-0.1763, 0.1547]
+  T3: time=78.7h, cal=0.0146 [-0.1407, 0.1700]
+  T4: time=151.4h, cal=0.0043 [-0.1579, 0.1665]
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step07_calibration_trajectory_theta_data.csv
+VALIDATION - PASS: Plot data complete with 4 timepoints
+
+======================================================================
+EXECUTION COMPLETE
+======================================================================
+
+PRIMARY FINDING: Time Effect on Calibration
+  Coefficient (per hour): 0.00009176
+  p-value (Wald): 0.840909
+  p-value (LRT): 0.799332
+  Interpretation: Not significant (Positive)
+
+SECONDARY METRICS:
+  Mean Brier score: 0.1993
+  ECE range: [0.0897, 0.1202]
+
+Files created:
+  step00a_accuracy_theta.csv
+  step00b_confidence_theta.csv
+  step00c_tsvr_mapping.csv
+  step01_merged_theta.csv
+  step02_SEM_diagnostics.csv
+  step02_calibration_scores.csv
+  step02_calibration_scores_SEM.csv
+  step03_brier_scores.csv
+  step04_ece_by_time.csv
+  step06_time_effect.csv
+  step06_time_effect_SEM.csv
+  step07_calibration_trajectory_theta_data.csv
+  step07_calibration_trajectory_theta_data_SEM.csv
+  step08_diff_score_reliability.csv
+  step09_confidence_response_patterns.csv
+  step10_murphy_bin_detail.csv
+  step10_murphy_decomposition.csv
+
+Completed: 2026-04-06 13:13:14.432945
+SUCCESS: All steps completed

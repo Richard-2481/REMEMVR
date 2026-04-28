@@ -1,0 +1,2 @@
+n_competitive_models,n_models_fitted,delta_aic_threshold,effective_n_models,total_original_weight,top_model,top_model_renorm_weight,prediction_mean,prediction_std,factor_variable
+2,2,7.0,1.7632746707419251,0.8753693843833323,Quad+Log+SquareRoot,0.745548772603562,-0.7804500735754691,0.22004552066301178,congruence

@@ -1,0 +1,81 @@
+Step 06: compare_models
+Loading model results...
+Univariate: 3 models
+Multivariate: 5 CV folds
+Comparing AIC values...
+Univariate AIC sum: 393.04
+Multivariate AIC: Not available (MANOVA limitation)
+Comparing CV performance...
+What: Univariate CV R² = -0.005, Multivariate CV R² = -0.005, Delta = -0.000
+Where: Univariate CV R² = -0.022, Multivariate CV R² = -0.022, Delta = -0.000
+When: Univariate CV R² = 0.025, Multivariate CV R² = 0.025, Delta = 0.000
+Computing bootstrap confidence intervals...
+What: Effect = -0.000, 95% CI = [-0.877, 0.877]
+Where: Effect = -0.000, 95% CI = [-0.742, 0.742]
+When: Effect = 0.000, 95% CI = [-0.261, 0.261]
+Running significance tests (Decision D068)...
+What: z = -0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+Where: z = -0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+When: z = 0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+Saving model comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_model_comparison.csv (4 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_effect_size_comparison.csv (3 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_significance_tests.csv (3 rows)
+Validating comparison results...
+All p-values in valid range [0, 1]
+Bonferroni correction validated
+Step 06 complete
+Step 06: compare_models
+Loading model results...
+Univariate: 3 models
+Multivariate: 5 CV folds
+Comparing AIC values...
+Univariate AIC sum: 393.04
+Multivariate AIC: Not available (MANOVA limitation)
+Comparing CV performance...
+What: Univariate CV R² = -0.005, Multivariate CV R² = -0.005, Delta = -0.000
+Where: Univariate CV R² = -0.022, Multivariate CV R² = -0.022, Delta = -0.000
+When: Univariate CV R² = 0.025, Multivariate CV R² = 0.025, Delta = 0.000
+Computing bootstrap confidence intervals...
+What: Effect = -0.000, 95% CI = [-0.877, 0.877]
+Where: Effect = -0.000, 95% CI = [-0.742, 0.742]
+When: Effect = 0.000, 95% CI = [-0.261, 0.261]
+Running significance tests (Decision D068)...
+What: z = -0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+Where: z = -0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+When: z = 0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+Saving model comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_model_comparison.csv (4 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_effect_size_comparison.csv (3 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_significance_tests.csv (3 rows)
+Validating comparison results...
+All p-values in valid range [0, 1]
+Bonferroni correction validated
+Step 06 complete
+Step 06: compare_models
+Loading model results...
+Univariate: 3 models
+Multivariate: 5 CV folds
+Comparing AIC values...
+Univariate AIC sum: 388.98
+Multivariate AIC: Not available (MANOVA limitation)
+Comparing CV performance...
+What: Univariate CV R² = 0.071, Multivariate CV R² = 0.071, Delta = 0.000
+Where: Univariate CV R² = 0.032, Multivariate CV R² = 0.032, Delta = 0.000
+When: Univariate CV R² = 0.027, Multivariate CV R² = 0.027, Delta = 0.000
+Computing bootstrap confidence intervals...
+What: Effect = 0.000, 95% CI = [-0.754, 0.754]
+Where: Effect = 0.000, 95% CI = [-0.628, 0.628]
+When: Effect = 0.000, 95% CI = [-0.307, 0.307]
+Running significance tests (Decision D068)...
+What: z = 0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+Where: z = 0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+When: z = 0.000, p_uncorrected = 1.0000, p_bonferroni = 1.0000
+Saving model comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_model_comparison.csv (4 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_effect_size_comparison.csv (3 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step06_significance_tests.csv (3 rows)
+Validating comparison results...
+All p-values in valid range [0, 1]
+Bonferroni correction validated
+Step 06 complete

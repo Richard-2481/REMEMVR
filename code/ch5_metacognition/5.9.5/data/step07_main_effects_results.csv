@@ -1,0 +1,6 @@
+effect,beta,se,t_stat,p_uncorrected,p_bonferroni,interpretation
+Intercept,0.29,0.054,5.398,0.0,0.0,Main effect
+measure[T.confidence],-0.94,0.06,-15.728,0.0,0.0,Main effect
+location[T.source],0.077,0.06,1.284,0.199,0.199,Main effect
+TSVR_hours,-0.004,0.001,-8.54,0.0,0.0,Main effect
+Group Var,0.111,0.034,,,,Main effect

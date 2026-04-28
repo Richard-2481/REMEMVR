@@ -1,0 +1,7 @@
+domain,icc_type,icc_value,interpretation,threshold_used
+What,intercept,0.5091184745868444,Substantial,>=0.40
+What,slope_simple,0.008130155768747812,Low,<0.20
+What,slope_conditional,0.5183823080526268,Substantial,>=0.40
+Where,intercept,0.5668588599683566,Substantial,>=0.40
+Where,slope_simple,0.011012835218180595,Low,<0.20
+Where,slope_conditional,0.5305796508306955,Substantial,>=0.40

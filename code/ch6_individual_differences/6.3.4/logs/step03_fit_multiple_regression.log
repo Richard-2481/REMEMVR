@@ -1,0 +1,157 @@
+Step 03: Fit Multiple Regression Models
+Loading analysis dataset...
+step02_analysis_dataset.csv (100 rows, 7 cols)
+All required columns present: ['z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Predictors: ['z_Dep', 'z_Anx', 'z_Str']
+Models: ['accuracy_model', 'confidence_model', 'calibration_model']
+Sample size: N = 100
+Fitting multiple regression models...
+Fitting accuracy_model (outcome: theta_accuracy)...
+accuracy_model: R² = 0.051, F-test p = 0.1683
+Fitting confidence_model (outcome: confidence)...
+confidence_model: R² = 0.031, F-test p = 0.3924
+Fitting calibration_model (outcome: calibration)...
+calibration_model: R² = 0.017, F-test p = 0.6397
+All 3 models fitted successfully
+Saving model results...
+step03_model_results.csv (9 rows, 10 cols)
+Saving model diagnostics...
+step03_model_diagnostics.csv (3 rows, 8 cols)
+Running model convergence validation...
+Checking accuracy_model...
+validate_model_convergence() got an unexpected keyword argument 'min_observations'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.4/code/step03_fit_multiple_regression.py", line 421, in <module>
+    validation_result = validate_model_convergence(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_model_convergence() got an unexpected keyword argument 'min_observations'
+Step 03: Fit Multiple Regression Models
+Loading analysis dataset...
+step02_analysis_dataset.csv (100 rows, 7 cols)
+All required columns present: ['z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Predictors: ['z_Dep', 'z_Anx', 'z_Str']
+Models: ['accuracy_model', 'confidence_model', 'calibration_model']
+Sample size: N = 100
+Fitting multiple regression models...
+Fitting accuracy_model (outcome: theta_accuracy)...
+accuracy_model: R² = 0.051, F-test p = 0.1683
+Fitting confidence_model (outcome: confidence)...
+confidence_model: R² = 0.031, F-test p = 0.3924
+Fitting calibration_model (outcome: calibration)...
+calibration_model: R² = 0.017, F-test p = 0.6397
+All 3 models fitted successfully
+Saving model results...
+step03_model_results.csv (9 rows, 10 cols)
+Saving model diagnostics...
+step03_model_diagnostics.csv (3 rows, 8 cols)
+Running model convergence validation...
+Checking accuracy_model...
+accuracy_model valid: False
+accuracy_model message: Model object missing "converged" attribute. Cannot validate convergence.
+accuracy_model converged: False
+Checking confidence_model...
+confidence_model valid: False
+confidence_model message: Model object missing "converged" attribute. Cannot validate convergence.
+confidence_model converged: False
+Checking calibration_model...
+calibration_model valid: False
+calibration_model message: Model object missing "converged" attribute. Cannot validate convergence.
+calibration_model converged: False
+Summary checks:
+All 3 models converged: True
+9 coefficient estimates: True
+Bootstrap CIs computed: True
+VIF < 5.0 check: True (max VIF = 2.07)
+Assumption tests completed: True
+Model performance:
+accuracy_model: R² = 0.051, Adj R² = 0.021
+confidence_model: R² = 0.031, Adj R² = 0.000
+calibration_model: R² = 0.017, Adj R² = -0.013
+Step 03 complete
+Step 03: Fit Multiple Regression Models
+Loading analysis dataset...
+step02_analysis_dataset.csv (100 rows, 7 cols)
+All required columns present: ['z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Predictors: ['z_Dep', 'z_Anx', 'z_Str']
+Models: ['accuracy_model', 'confidence_model', 'calibration_model']
+Sample size: N = 100
+Fitting multiple regression models...
+Fitting accuracy_model (outcome: theta_accuracy)...
+accuracy_model: R² = 0.051, F-test p = 0.1683
+Fitting confidence_model (outcome: confidence)...
+confidence_model: R² = 0.039, F-test p = 0.2818
+Fitting calibration_model (outcome: calibration)...
+calibration_model: R² = 0.035, F-test p = 0.3336
+All 3 models fitted successfully
+Saving model results...
+step03_model_results.csv (9 rows, 10 cols)
+Saving model diagnostics...
+step03_model_diagnostics.csv (3 rows, 8 cols)
+Running model convergence validation...
+Checking accuracy_model...
+accuracy_model valid: False
+accuracy_model message: Model object missing "converged" attribute. Cannot validate convergence.
+accuracy_model converged: False
+Checking confidence_model...
+confidence_model valid: False
+confidence_model message: Model object missing "converged" attribute. Cannot validate convergence.
+confidence_model converged: False
+Checking calibration_model...
+calibration_model valid: False
+calibration_model message: Model object missing "converged" attribute. Cannot validate convergence.
+calibration_model converged: False
+Summary checks:
+All 3 models converged: True
+9 coefficient estimates: True
+Bootstrap CIs computed: True
+VIF < 5.0 check: True (max VIF = 2.07)
+Assumption tests completed: True
+Model performance:
+accuracy_model: R² = 0.051, Adj R² = 0.021
+confidence_model: R² = 0.039, Adj R² = 0.009
+calibration_model: R² = 0.035, Adj R² = 0.004
+Step 03 complete
+Step 03: Fit Multiple Regression Models
+Loading analysis dataset...
+step02_analysis_dataset.csv (100 rows, 7 cols)
+All required columns present: ['z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Predictors: ['z_Dep', 'z_Anx', 'z_Str']
+Models: ['accuracy_model', 'confidence_model', 'calibration_model']
+Sample size: N = 100
+Fitting multiple regression models...
+Fitting accuracy_model (outcome: theta_accuracy)...
+accuracy_model: R² = 0.051, F-test p = 0.1683
+Fitting confidence_model (outcome: confidence)...
+confidence_model: R² = 0.039, F-test p = 0.2818
+Fitting calibration_model (outcome: calibration)...
+calibration_model: R² = 0.035, F-test p = 0.3336
+All 3 models fitted successfully
+Saving model results...
+step03_model_results.csv (9 rows, 10 cols)
+Saving model diagnostics...
+step03_model_diagnostics.csv (3 rows, 8 cols)
+Running model convergence validation...
+Checking accuracy_model...
+accuracy_model valid: False
+accuracy_model message: Model object missing "converged" attribute. Cannot validate convergence.
+accuracy_model converged: False
+Checking confidence_model...
+confidence_model valid: False
+confidence_model message: Model object missing "converged" attribute. Cannot validate convergence.
+confidence_model converged: False
+Checking calibration_model...
+calibration_model valid: False
+calibration_model message: Model object missing "converged" attribute. Cannot validate convergence.
+calibration_model converged: False
+Summary checks:
+All 3 models converged: True
+9 coefficient estimates: True
+Bootstrap CIs computed: True
+VIF < 5.0 check: True (max VIF = 2.07)
+Assumption tests completed: True
+Model performance:
+accuracy_model: R² = 0.051, Adj R² = 0.021
+confidence_model: R² = 0.039, Adj R² = 0.009
+calibration_model: R² = 0.035, Adj R² = 0.004
+Step 03 complete

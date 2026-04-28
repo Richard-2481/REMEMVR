@@ -1,0 +1,96 @@
+METHOD B: LMM Slope Comparison Analysis
+============================================================
+
+[STEP 9] Fitting separate LMMs for accuracy and confidence...
+Data: 400 observations
+
+Fitting Accuracy LMM...
+  Intercept: 0.4578 (SE=0.0758)
+  Slope: -0.006953 (SE=0.000520, p=0.0000)
+  AIC: nan, BIC: nan
+
+Fitting Confidence LMM...
+  Intercept: 0.4997 (SE=0.0850)
+  Slope: -0.007216 (SE=0.000396, p=0.0000)
+  AIC: nan, BIC: nan
+step09_lmm_models.csv
+
+[STEP 10] Comparing slopes on theta scale...
+  Accuracy slope: -0.006953 theta/hour
+  Confidence slope: -0.007216 theta/hour
+  Slope difference: -0.000263
+  Slope ratio: 1.038
+  Interpretation: Confidence declines FASTER than accuracy (supports hedging hypothesis)
+
+Testing slope difference...
+  Slope difference: -0.000263
+  SE of difference: 0.000654
+  z-statistic: -0.402
+  p-value: 0.6877
+  [NOT SIGNIFICANT] No significant slope difference
+step10_slope_comparison_theta.csv
+
+[STEP 11] Transforming LMM slopes to probability scale...
+
+Loading item parameters...
+  Accuracy (Ch5 5.1.1):
+    Filtered 88/105 items (discrim 0.25-4.0)
+    Mean a=0.775, mean b=-0.391
+  Confidence (Ch6 6.1.1):
+    Filtered 105/105 items (discrim 0.25-4.0)
+    Mean a=1.312, mean b=0.002 (mean of thresholds)
+  Item parameters used:
+    Accuracy: a=0.775, b=-0.391
+    Confidence: a=1.312, b=0.002
+  Baseline theta and probabilities:
+    Accuracy: theta=0.661 -> P=69.3%
+    Confidence: theta=0.709 -> P=71.7%
+  Probability derivatives at baseline (dP/dθ = a*P(1-P)):
+    Accuracy: 0.1649
+    Confidence: 0.2664
+  Probability slopes (dP/dt):
+    Accuracy: -0.001147 probability/hour
+    Confidence: -0.001923 probability/hour
+  Slope difference: -0.000776 probability/hour
+  Slope ratio: 1.677
+  Interpretation: Confidence declines FASTER than accuracy on probability scale
+step11_slope_comparison_probability.csv
+
+[STEP 12] Comparing METHOD A vs METHOD B...
+  METHOD A (individual rates): mean_diff=-0.000714, p=0.8860
+  METHOD B (LMM slopes): slope_diff=-0.000263, p=0.6877
+  Direction: AGREE on direction
+  Significance: AGREE on significance
+  Correlation between methods: r=-0.021
+step12_method_comparison.csv
+
+[STEP 13] Extended trajectory analysis...
+  Ch5 5.1.1 best model: Logarithmic
+  Ch6 6.1.1 best model: Sin+Cos
+  Different functional forms may explain why simple linear comparison misleading
+  Area between curves: 111.31 theta*hours
+step13_trajectory_analysis.csv
+
+============================================================
+METHOD B Analysis Complete
+
+Theta scale (LMM slopes):
+  Accuracy slope: -0.006953 theta/hour
+  Confidence slope: -0.007216 theta/hour
+  Slope difference: -0.000263
+  Slope ratio: 1.038
+  z-statistic: -0.402, p=0.6877
+  Interpretation: Confidence declines FASTER than accuracy (supports hedging hypothesis)
+
+Probability scale (transformed LMM slopes):
+  Accuracy slope: -0.001147 probability/hour
+  Confidence slope: -0.001923 probability/hour
+  Slope difference: -0.000776
+  Slope ratio: 1.677
+  Interpretation: Confidence declines FASTER than accuracy on probability scale
+
+Method comparison:
+  Methods AGREE on direction on direction
+  Methods AGREE on significance on significance
+
+Extended analysis complete

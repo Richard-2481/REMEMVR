@@ -1,0 +1,78 @@
+Step 02: Extract Confidence Variance Components
+
+Loading accuracy ICC from Step 1...
+Unknown format code 'f' for object of type 'str'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step02_extract_confidence_variance.py", line 108, in <module>
+    log(f"ICC_slope_accuracy = {ICC_slope_accuracy:.6f}")
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'str'
+Step 02: Extract Confidence Variance Components
+
+Loading accuracy ICC from Step 1...
+ICC_slope_accuracy = 0.007463
+  WARNING: ICC_accuracy < 0.01, ratios may be numerically unstable
+
+Extracting Ch6 6.1.4 single-model variance...
+step01_variance_components.csv
+  var_intercept: 0.614031
+  var_slope: 0.084916
+  var_residual: 0.236618
+  ICC_slope: 0.264098
+  ICC_conditional: 0.090765
+
+Extracting Ch6 6.1.1 model-averaged variance...
+step05b_model_averaged_random_effects.csv (100 rows)
+  var_intercept: 0.099362
+  var_slope: 0.009887
+  cov_int_slope: 0.025878
+  Searching for alternative variance files...
+EXPECTATIONS ERROR: Could not extract var_residual from Ch6 6.1.1
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step02_extract_confidence_variance.py", line 216, in <module>
+    raise ValueError("EXPECTATIONS ERROR: Could not extract var_residual from Ch6 6.1.1")
+ValueError: EXPECTATIONS ERROR: Could not extract var_residual from Ch6 6.1.1
+Step 02: Extract Confidence Variance Components
+
+Loading accuracy ICC from Step 1...
+ICC_slope_accuracy = 0.007463
+  WARNING: ICC_accuracy < 0.01, ratios may be numerically unstable
+
+Extracting Ch6 6.1.4 single-model variance...
+step01_variance_components.csv
+  var_intercept: 0.614031
+  var_slope: 0.084916
+  var_residual: 0.236618
+  ICC_slope: 0.264098
+  ICC_conditional: 0.090765
+
+Extracting Ch6 6.1.1 model-averaged variance...
+step05b_model_averaged_random_effects.csv (100 rows)
+  var_intercept: 0.099362
+  var_slope: 0.009887
+  cov_int_slope: 0.025878
+  Searching for alternative variance files...
+  WARNING: No variance file found in Ch6 6.1.1
+  Using single-model residual variance (Ch6 6.1.4) as approximation
+  var_residual (approximated): 0.236618
+  ICC_slope: 0.040109
+  ICC_conditional: 0.028586
+
+Computing preliminary ratios...
+  Ratio (single-model): 35.4x
+  Ratio (model-averaged): 5.4x
+
+Creating output files...
+step02_confidence_variance_components.csv (2 rows)
+step02_preliminary_ratios.csv (2 rows)
+
+Summary:
+  All ICC values in [0, 1]: PASS
+  All variance components >= 0: PASS
+  Ratio_single > Ratio_ma: PASS
+  No NaN values: PASS
+  Numerical stability: WARNING
+
+Step 02 complete - Confidence variance components extracted

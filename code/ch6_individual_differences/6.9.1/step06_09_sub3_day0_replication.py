@@ -35,7 +35,7 @@ def make_log(step_name):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 6: Extract Day 0 Theta Scores
+# Extract Day 0 Theta Scores
 # ══════════════════════════════════════════════════════════════════════════════
 
 log6 = make_log("step06_extract_day0_theta")
@@ -115,7 +115,7 @@ log6("Validation PASSED")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 7: Day 0 Age-Theta Correlation
+# Day 0 Age-Theta Correlation
 # ══════════════════════════════════════════════════════════════════════════════
 
 log7 = make_log("step07_day0_age_correlation")
@@ -166,7 +166,7 @@ log7("Validation PASSED")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 8: Day 0 RPM Dominance Test
+# Day 0 RPM Dominance Test
 # ══════════════════════════════════════════════════════════════════════════════
 
 log8 = make_log("step08_day0_rpm_dominance")
@@ -262,7 +262,7 @@ log8("Validation PASSED")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 9: Day 0 Domain Intercorrelation
+# Day 0 Domain Intercorrelation
 # ══════════════════════════════════════════════════════════════════════════════
 
 log9 = make_log("step09_day0_domain_correlation")

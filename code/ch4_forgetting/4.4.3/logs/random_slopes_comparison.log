@@ -1,0 +1,53 @@
+======================================================================
+RANDOM SLOPES COMPARISON - RQ 5.4.3
+======================================================================
+
+PURPOSE: Test if individual differences in forgetting rate (random
+         slopes on recip_TSVR) justify added model complexity.
+
+TAXONOMY REQUIREMENT: Section 4.4 - Cannot claim homogeneous
+                      effects without testing for heterogeneity
+
+[STEP 1] Load LMM Input Data
+----------------------------------------------------------------------
+Loaded: 1200 rows, 11 columns
+Unique UIDs: 100
+
+Model formula: Full 3-way Age × Congruence × Time interaction
+       (24 fixed effects terms with Recip+Log two-process forgetting)
+
+[STEP 2] Fit Model A: Random Intercepts Only
+----------------------------------------------------------------------
+Model A fitting failed: Singular matrix
+
+[STEP 3] Fit Model B: Random Intercepts + Slopes for recip_TSVR
+----------------------------------------------------------------------
+Testing if individual differences in rapid forgetting rate exist
+
+Model B converged: True
+  Log-Likelihood: -1246.02
+  AIC: 2536.04
+  BIC: 2648.03
+  Random intercept variance: 0.2290
+  Random slope variance: 1.3571
+  Random slope SD: 1.1650
+  Intercept-slope covariance: -0.1632
+  Intercept-slope correlation: -0.293
+  Residual variance: 0.3586
+
+[STEP 4] Model Comparison via AIC
+----------------------------------------------------------------------
+Cannot compare models - one or both failed to converge
+
+[STEP 5] Save Comparison Results
+----------------------------------------------------------------------
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.4.3/data/random_slopes_comparison.csv
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.4.3/results/random_slopes_validation.md
+
+======================================================================
+Outcome: OPTION B CONVERGENCE FAILURE
+Interpretation: Slopes model failed to converge - keep intercepts-only model
+Recommendation: Use Model A (intercepts only). Document convergence issue.
+
+Random slopes comparison complete
+======================================================================

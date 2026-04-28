@@ -1,0 +1,62 @@
+Step 02: Fit Quadratic Model
+Loading input data from step00_lmm_input.csv...
+step00_lmm_input.csv (400 rows, 6 cols)
+Theta range: [-2.993, 3.035]
+TSVR range: [1.0, 246.2] hours
+Fitting quadratic LMM...
+Formula: theta_confidence ~ TSVR_hours + I(TSVR_hours**2)
+Random effects: ~TSVR_hours
+Groups: UID
+REML: False (ML estimation for model comparison)
+"['Theta'] not in index"
+Full error details:
+Step 02: Fit Quadratic Model
+Loading input data from step00_lmm_input.csv...
+step00_lmm_input.csv (400 rows, 6 cols)
+Theta range: [-2.993, 3.035]
+TSVR range: [1.0, 246.2] hours
+Fitting quadratic LMM...
+Formula: theta_confidence ~ TSVR_hours + I(TSVR_hours**2)
+Random effects: ~TSVR_hours
+Groups: UID
+REML: False (ML estimation for model comparison)
+Error evaluating factor: NameError: name 'TSVR_hours' is not defined
+    ~TSVR_hours
+     ^^^^^^^^^^
+Full error details:
+Step 02: Fit Quadratic Model
+Loading input data from step00_lmm_input.csv...
+step00_lmm_input.csv (400 rows, 6 cols)
+Theta range: [-2.993, 3.035]
+TSVR range: [1.0, 246.2] hours
+Fitting quadratic LMM...
+Formula: Theta ~ Days + I(Days**2)
+Random effects: ~Days
+Groups: UID
+REML: False (ML estimation for model comparison)
+Quadratic model fitted
+Extracting fixed effects...
+'TSVR_hours'
+Full error details:
+Step 02: Fit Quadratic Model
+Loading input data from step00_lmm_input.csv...
+step00_lmm_input.csv (400 rows, 6 cols)
+Theta range: [-2.993, 3.035]
+TSVR range: [1.0, 246.2] hours
+Fitting quadratic LMM...
+Formula: Theta ~ Days + I(Days**2)
+Random effects: ~Days
+Groups: UID
+REML: False (ML estimation for model comparison)
+Quadratic model fitted
+Extracting fixed effects...
+Fixed effects extracted
+Linear term (Days): beta=-0.400884, p_bonf=0.0000
+Quadratic term (Days^2): beta=0.034357, p_bonf=0.0000
+Quadratic term SIGNIFICANT (p < 0.05 Bonferroni) -> Two-phase pattern SUPPORTED
+Saving model summary to step02_quadratic_model_summary.txt...
+step02_quadratic_model_summary.txt
+Saving quadratic test results to step02_quadratic_test.csv...
+step02_quadratic_test.csv (2 rows)
+Running validate_lmm_convergence...
+Step 02 complete

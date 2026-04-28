@@ -1,0 +1,60 @@
+Step 5: Prepare Plot Data by Age Tertiles
+Loading LMM input data...
+step01_lmm_input.csv (1200 rows, 9 cols)
+Data structure: 100 participants, 3 paradigms, 4 tests
+Creating age tertiles...
+100 unique participants
+Age range: 20.0 to 70.0 years
+Age tertile distribution:
+  - Young: 33 participants
+  - Middle: 34 participants
+  - Older: 33 participants
+Tertile age ranges:
+  - Young: 20.0 to 36.0 years (N=33)
+  - Middle: 37.0 to 52.0 years (N=34)
+  - Older: 53.0 to 70.0 years (N=33)
+Aggregating statistics by age tertile, paradigm, and test...
+Aggregated data: 36 rows
+Mean sample size per group: 33.3
+Range of sample sizes: 33 to 34
+Saving plot data...
+step05_plot_data.csv (36 rows, 7 cols)
+step05_age_tertiles.csv (3 rows, 5 cols)
+Running completeness checks...
+All 3 paradigms present (IFR, ICR, IRE)
+All 3 age tertiles present (Young, Middle, Older)
+Row count: 36 (expected 36)
+No missing values in aggregated data
+All standard errors positive
+All groups have N >= 10
+Step 5 complete
+Step 5: Prepare Plot Data by Age Tertiles
+Loading LMM input data...
+step01_lmm_input.csv (1200 rows, 9 cols)
+Data structure: 100 participants, 3 paradigms, 4 tests
+Creating age tertiles...
+100 unique participants
+Age range: 20.0 to 70.0 years
+Age tertile distribution:
+  - Young: 33 participants
+  - Middle: 34 participants
+  - Older: 33 participants
+Tertile age ranges:
+  - Young: 20.0 to 36.0 years (N=33)
+  - Middle: 37.0 to 52.0 years (N=34)
+  - Older: 53.0 to 70.0 years (N=33)
+Aggregating statistics by age tertile, paradigm, and test...
+Aggregated data: 36 rows
+Mean sample size per group: 33.3
+Range of sample sizes: 33 to 34
+Saving plot data...
+step05_plot_data.csv (36 rows, 7 cols)
+step05_age_tertiles.csv (3 rows, 5 cols)
+Running completeness checks...
+All 3 paradigms present (IFR, ICR, IRE)
+All 3 age tertiles present (Young, Middle, Older)
+Row count: 36 (expected 36)
+No missing values in aggregated data
+All standard errors positive
+All groups have N >= 10
+Step 5 complete

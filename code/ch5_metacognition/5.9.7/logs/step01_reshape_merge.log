@@ -1,0 +1,46 @@
+Step 1: reshape_merge
+Loading validated input data from Step 0...
+step00_accuracy_raw.csv (1200 rows, 3 cols)
+step00_confidence_raw.csv (400 rows, 4 cols)
+Converting confidence from wide to long format...
+Confidence data: 400 -> 1200 rows
+Paradigm names: ['cued_recall', 'free_recall', 'recognition']
+Accuracy paradigm column renamed
+Merging accuracy and confidence by composite_ID + paradigm...
+Result: 0 rows, 4 columns
+Merge produced 0 rows, expected 1200
+MERGE INCOMPLETE: Some accuracy/confidence rows did not match
+Step 1: reshape_merge
+Loading validated input data from Step 0...
+step00_accuracy_raw.csv (1200 rows, 3 cols)
+step00_confidence_raw.csv (400 rows, 4 cols)
+Converting confidence from wide to long format...
+Confidence data: 400 -> 1200 rows
+Paradigm names: ['cued_recall', 'free_recall', 'recognition']
+Aligning composite_ID formats...
+Accuracy composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+Confidence composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+Accuracy paradigm column renamed
+Merging accuracy and confidence by composite_ID + paradigm...
+Result: 1200 rows, 4 columns
+Merge complete with no missing values
+Extracting UID and test from composite_ID...
+100 unique UIDs, 4 unique tests
+All UIDs have exactly 12 rows (4 tests × 3 paradigms)
+Adding TSVR_hours time variable...
+TSVR_hours using nominal time mapping
+  Time range: 0.0 to 144.0 hours
+Validating merged dataset structure...
+All required columns present
+Paradigm distribution:
+  free_recall: 400 rows
+  cued_recall: 400 rows
+  recognition: 400 rows
+Test distribution:
+  T1: 300 rows
+  T2: 300 rows
+  T3: 300 rows
+  T4: 300 rows
+step01_merged_calibration_data.csv (1200 rows, 7 cols)
+Final columns: ['composite_ID', 'paradigm', 'theta_accuracy', 'theta_confidence', 'UID', 'test', 'TSVR_hours']
+Step 1 complete

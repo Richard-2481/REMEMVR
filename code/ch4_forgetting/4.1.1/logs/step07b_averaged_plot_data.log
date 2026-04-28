@@ -1,0 +1,18 @@
+================================================================================
+Step 07b: Prepare Averaged Plot Data
+================================================================================
+Loading observed data and averaged predictions...
+  Observed: 400 points
+  Predicted: 100 points
+Creating combined plot dataset...
+Saving plot data...
+  ✓ step07b_averaged_trajectory_data.csv (500 rows)
+
+Observed: 400 participant-level points
+  Predicted: 100 averaged trajectory points
+  Confidence bands: ±1.96 SE (95% CI)
+  Functional form: Power law (α_eff=0.410)
+================================================================================
+Step 07b Complete
+  Output: step07b_averaged_trajectory_data.csv
+================================================================================

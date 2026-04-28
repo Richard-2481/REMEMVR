@@ -1,0 +1,3 @@
+domain,r,p_uncorrected,p_bonferroni,n,interpretation
+What,0.2716929663844856,0.006249260134298214,0.012498520268596427,100,Not significant: no reliable relationship between baseline and forgetting rate
+Where,-0.31612312514786267,0.001354984733892869,0.002709969467785738,100,Significant negative: high performers maintain advantage over time

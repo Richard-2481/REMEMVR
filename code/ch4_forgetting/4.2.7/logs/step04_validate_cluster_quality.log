@@ -1,0 +1,55 @@
+============================================================
+RQ 5.2.7 Step 04: Validate Cluster Quality
+============================================================
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step01_standardized_features.csv
+Loaded 100 samples × 4 features
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step03_cluster_assignments.csv
+Loaded 5 cluster assignments
+
+----------------------------------------
+1. Silhouette Score (Cohesion & Separation)
+----------------------------------------
+   Silhouette score: 0.3403
+   Interpretation: Poor
+   Thresholds: Good ≥ 0.5, Acceptable ≥ 0.4, Poor ≥ 0.25
+
+----------------------------------------
+2. Davies-Bouldin Index (Cluster Separation)
+----------------------------------------
+   Davies-Bouldin index: 0.9814
+   Interpretation: Good
+   Thresholds: Good < 1.0, Acceptable < 1.5
+
+----------------------------------------
+3. Bootstrap Stability (Jaccard Coefficient)
+----------------------------------------
+   Running 100 bootstrap iterations (80% subsample)...
+      Completed 25/100 iterations
+      Completed 50/100 iterations
+      Completed 75/100 iterations
+      Completed 100/100 iterations
+
+   Bootstrap Jaccard mean: 0.8847
+   95% CI: [0.7953, 0.9908]
+   Interpretation: Stable
+   Thresholds: Stable > 0.75, Moderate > 0.6
+
+========================================
+Overall Cluster Quality Assessment
+========================================
+
+   Silhouette: 0.340 (Poor)
+   Davies-Bouldin: 0.981 (Good)
+   Bootstrap Jaccard: 0.885 (Stable)
+
+   Overall cluster quality: POOR
+   Recommendation: Interpret clusters cautiously - consider alternative K or GMM sensitivity
+
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step04_cluster_validation.csv
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step04_validation_summary.txt
+
+============================================================
+Step 04 COMPLETE: Cluster quality = POOR
+============================================================

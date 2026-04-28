@@ -1,0 +1,42 @@
+Step 03: Extract 3-Way Interaction Terms
+Loading fixed effects from Step 02...
+12 fixed effects
+All fixed effects:
+  Intercept: coef=0.471345, p=0.000001
+  LocationType[T.Source]: coef=0.021945, p=0.849178
+  TSVR_hours: coef=-0.001647, p=0.140869
+  TSVR_hours:LocationType[T.Source]: coef=-0.002725, p=0.071699
+  log_TSVR: coef=-0.102113, p=0.007124
+  log_TSVR:LocationType[T.Source]: coef=0.032604, p=0.540369
+  Age_c: coef=-0.003233, p=0.617944
+  Age_c:LocationType[T.Source]: coef=-0.008445, p=0.290023
+  TSVR_hours:Age_c: coef=0.000123, p=0.116031
+  TSVR_hours:Age_c:LocationType[T.Source]: coef=-0.000185, p=0.079771
+  log_TSVR:Age_c: coef=-0.002548, p=0.334264
+  log_TSVR:Age_c:LocationType[T.Source]: coef=0.005151, p=0.164675
+Extracting 3-way interaction terms...
+TSVR_hours:Age_c:LocationType[T.Source]: coef=-0.000185, p=0.079771
+log_TSVR:Age_c:LocationType[T.Source]: coef=0.005151, p=0.164675
+Applying Bonferroni correction (2 tests, alpha=0.025)...
+TSVR_hours:Age_c:LocationType[T.Source]
+  p_uncorrected: 0.079771
+  p_bonferroni: 0.159543
+  significant at 0.025: False
+log_TSVR:Age_c:LocationType[T.Source]
+  p_uncorrected: 0.164675
+  p_bonferroni: 0.329349
+  significant at 0.025: False
+Running validation checks...
+2 interaction terms present
+Dual p-values present (Decision D068)
+Bonferroni correction applied correctly
+All p-values in [0, 1]
+Saving interaction terms...
+step03_interaction_terms.csv (2 rows)
+Primary Hypothesis Test Results:
+  Null Hypothesis: Age does NOT moderate source-destination forgetting
+  3-way interactions (Age_c x LocationType x Time):
+    TSVR_hours:Age_c:LocationType[T.Source]: beta=-0.0002, z=-1.75, p=0.1595
+    log_TSVR:Age_c:LocationType[T.Source]: beta=0.0052, z=1.39, p=0.3293
+PRIMARY HYPOTHESIS SUPPORTED (NULL) - Age does NOT moderate effect
+Step 03 complete - Interaction terms extracted

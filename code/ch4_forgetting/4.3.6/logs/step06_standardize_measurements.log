@@ -1,0 +1,123 @@
+Step 06: Z-Standardize Measurements
+Loading input data...
+Theta scores: 1200 rows, 3 cols
+Theta domains: ['free_recall', 'cued_recall', 'recognition']
+Full CTT scores: 400 rows, 5 cols
+Purified CTT scores: 400 rows, 5 cols
+TSVR mapping: 400 rows, 4 cols
+Converting theta from long to wide format...
+Theta wide format: 400 rows, 4 cols
+Theta columns: ['composite_ID', 'theta_ICR', 'theta_IFR', 'theta_IRE']
+Creating composite_ID for CTT files...
+Full CTT composite_ID sample: ['A010_T1', 'A010_T2', 'A010_T3']
+Purified CTT composite_ID sample: ['A010_1', 'A010_2', 'A010_3']
+Merging all datasets on composite_ID...
+Base (TSVR): 400 rows
++ Theta: 400 rows
++ Full CTT: 400 rows
++ Purified CTT: 400 rows
+Final dataset: 400 rows, 13 cols
+Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'theta_ICR', 'theta_IFR', 'theta_IRE', 'CTT_full_IFR', 'CTT_full_ICR', 'CTT_full_IRE', 'CTT_purified_IFR', 'CTT_purified_ICR', 'CTT_purified_IRE']
+Missing values detected:
+  CTT_full_IFR: 400 missing
+  CTT_full_ICR: 400 missing
+  CTT_full_IRE: 400 missing
+Z-standardizing all measurement paradigms...
+IRT theta scores (IFR, ICR, IRE)
+Full CTT scores (IFR, ICR, IRE)
+Purified CTT scores (IFR, ICR, IRE)
+Selecting and ordering output columns...
+Output dataset: 400 rows, 13 cols
+Validating z-standardization...
+z_theta_IFR mean = -0.000000
+z_theta_IFR SD = 1.000000
+z_theta_ICR mean = 0.000000
+z_theta_ICR SD = 1.000000
+z_theta_IRE mean = 0.000000
+z_theta_IRE SD = 1.000000
+z_CTT_full_IFR mean = nan
+z_CTT_full_IFR SD = nan (expected ~1)
+z_CTT_full_ICR mean = nan
+z_CTT_full_ICR SD = nan (expected ~1)
+z_CTT_full_IRE mean = nan
+z_CTT_full_IRE SD = nan (expected ~1)
+z_CTT_purified_IFR mean = 0.000000
+z_CTT_purified_IFR SD = 1.000000
+z_CTT_purified_ICR mean = -0.000000
+z_CTT_purified_ICR SD = 1.000000
+z_CTT_purified_IRE mean = -0.000000
+z_CTT_purified_IRE SD = 1.000000
+NaN values detected in z_* columns:
+  z_CTT_full_IFR: 400 NaN values
+  z_CTT_full_ICR: 400 NaN values
+  z_CTT_full_IRE: 400 NaN values
+TSVR_hours range [1.00, 246.24] outside expected [0, 168]
+400 rows present (100 participants × 4 tests)
+Validation failed - see errors above
+Step 06: Z-Standardize Measurements
+Loading input data...
+Theta scores: 1200 rows, 3 cols
+Theta domains: ['free_recall', 'cued_recall', 'recognition']
+Full CTT scores: 400 rows, 5 cols
+Purified CTT scores: 400 rows, 5 cols
+TSVR mapping: 400 rows, 4 cols
+Converting theta from long to wide format...
+Theta wide format: 400 rows, 4 cols
+Theta columns: ['composite_ID', 'theta_ICR', 'theta_IFR', 'theta_IRE']
+Creating composite_ID for CTT files...
+Full CTT composite_ID sample: ['A010_1', 'A010_2', 'A010_3']
+Purified CTT composite_ID sample: ['A010_1', 'A010_2', 'A010_3']
+Merging all datasets on composite_ID...
+Base (TSVR): 400 rows
++ Theta: 400 rows
++ Full CTT: 400 rows
++ Purified CTT: 400 rows
+Final dataset: 400 rows, 13 cols
+Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'theta_ICR', 'theta_IFR', 'theta_IRE', 'CTT_full_IFR', 'CTT_full_ICR', 'CTT_full_IRE', 'CTT_purified_IFR', 'CTT_purified_ICR', 'CTT_purified_IRE']
+Z-standardizing all measurement paradigms...
+IRT theta scores (IFR, ICR, IRE)
+Full CTT scores (IFR, ICR, IRE)
+Purified CTT scores (IFR, ICR, IRE)
+Selecting and ordering output columns...
+Output dataset: 400 rows, 13 cols
+Validating z-standardization...
+z_theta_IFR mean = -0.000000
+z_theta_IFR SD = 1.000000
+z_theta_ICR mean = 0.000000
+z_theta_ICR SD = 1.000000
+z_theta_IRE mean = 0.000000
+z_theta_IRE SD = 1.000000
+z_CTT_full_IFR mean = -0.000000
+z_CTT_full_IFR SD = 1.000000
+z_CTT_full_ICR mean = -0.000000
+z_CTT_full_ICR SD = 1.000000
+z_CTT_full_IRE mean = -0.000000
+z_CTT_full_IRE SD = 1.000000
+z_CTT_purified_IFR mean = 0.000000
+z_CTT_purified_IFR SD = 1.000000
+z_CTT_purified_ICR mean = -0.000000
+z_CTT_purified_ICR SD = 1.000000
+z_CTT_purified_IRE mean = -0.000000
+z_CTT_purified_IRE SD = 1.000000
+No NaN values in z_* columns
+TSVR_hours range [1.00, 246.24] within [0, 250]
+400 rows present (100 participants × 4 tests)
+All checks passed
+/home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step06_standardized_scores.csv (400 rows, 13 cols)
+Z-standardization summary:
+  Total observations: 400
+  Participants: 100
+  Test sessions: 4
+  Z-standardized paradigms: 9
+
+  Descriptive statistics for each z_* column:
+    z_theta_IFR              : mean=-0.0000, SD= 1.0000, range=[-2.6791,  2.8614]
+    z_theta_ICR              : mean= 0.0000, SD= 1.0000, range=[-2.5287,  2.5836]
+    z_theta_IRE              : mean= 0.0000, SD= 1.0000, range=[-2.5249,  2.8674]
+    z_CTT_full_IFR           : mean=-0.0000, SD= 1.0000, range=[-2.4509,  3.4326]
+    z_CTT_full_ICR           : mean=-0.0000, SD= 1.0000, range=[-3.0282,  2.7967]
+    z_CTT_full_IRE           : mean=-0.0000, SD= 1.0000, range=[-3.1314,  2.8860]
+    z_CTT_purified_IFR       : mean= 0.0000, SD= 1.0000, range=[-2.1689,  2.4787]
+    z_CTT_purified_ICR       : mean=-0.0000, SD= 1.0000, range=[-2.9885,  2.4832]
+    z_CTT_purified_IRE       : mean=-0.0000, SD= 1.0000, range=[-2.8225,  2.3183]
+Step 06 complete

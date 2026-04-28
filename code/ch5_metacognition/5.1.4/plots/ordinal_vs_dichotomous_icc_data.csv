@@ -1,0 +1,3 @@
+measurement_type,icc_slope_percent,icc_slope_proportion
+Dichotomous (Binary Accuracy),0.05,0.0005
+Ordinal (5-Level Confidence),26.40976039075434,0.2640976039075434

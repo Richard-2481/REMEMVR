@@ -1,0 +1,27 @@
+================================================================================
+Step 05b: Model Averaging for RQ 6.5.1 (Schema Congruence)
+================================================================================
+
+LMM input: 1200 rows, 3 congruence levels
+  Best model: Quad+Log+SquareRoot (weight=65.3%)
+======================================================================
+MODEL AVERAGING WITH CONGRUENCE INTERACTION
+======================================================================
+
+[STEP 1] Identifying competitive models (ΔAIC < 7.0)...
+  ✓ 2 competitive models identified
+
+[STEP 2] Creating time transformations...
+
+[STEP 3] Fitting 2 models with congruence interaction...
+  [ 1/2] Quad+Log+SquareRoot       w=0.7455 ✓
+  [ 2/2] Ultimate                  w=0.2545 ✓
+
+[STEP 4] Computing model-averaged predictions...
+  ✓ Predictions: mean=-0.7805, SD=0.2200
+  ✓ Uncond. variance: mean=0.000046, max=0.006727
+  ✓ Effective N models: 1.76
+
+Saving output files...
+
+Model averaging complete: 2 models, effective N = 1.76

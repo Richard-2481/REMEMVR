@@ -1,0 +1,20 @@
+Step 6: descriptive_by_time
+step02_calibration_scores.csv (1200 rows)
+Computing descriptive statistics by paradigm × timepoint...
+12 cells (3 paradigms × 4 timepoints)
+Descriptive statistics by paradigm × time:
+  T1, recognition: n=100, mean=-0.060, SD=0.907, rank=1
+  T1, cued_recall: n=100, mean=-0.084, SD=0.939, rank=2
+  T1, free_recall: n=100, mean=-0.113, SD=0.873, rank=3
+  T2, free_recall: n=100, mean=-0.015, SD=0.983, rank=1
+  T2, recognition: n=100, mean=-0.035, SD=0.951, rank=2
+  T2, cued_recall: n=100, mean=-0.059, SD=1.014, rank=3
+  T3, recognition: n=100, mean=0.031, SD=0.887, rank=1
+  T3, cued_recall: n=100, mean=0.057, SD=0.854, rank=2
+  T3, free_recall: n=100, mean=0.064, SD=0.901, rank=3
+  T4, recognition: n=100, mean=0.064, SD=1.045, rank=1
+  T4, free_recall: n=100, mean=0.064, SD=0.958, rank=2
+  T4, cued_recall: n=100, mean=0.085, SD=0.959, rank=3
+Structure validation successful
+step06_paradigm_by_time.csv (12 rows)
+Step 6 complete

@@ -1,0 +1,106 @@
+================================================================================
+ANALYSIS 1: POWER ANALYSIS FOR BASELINE ACCURACY NULL
+================================================================================
+
+Observed Effect:
+  β = -0.000947
+  SE = 0.002149
+  p = 0.660
+
+Variance Explained:
+  R² (full model) = 0.2058
+  Partial R² (baseline_accuracy) = 0.000000
+
+Effect Size (Cohen's f²):
+  f² = 0.000000
+  Interpretation: Negligible (Cohen's thresholds: small=0.02, medium=0.15, large=0.35)
+
+Post-Hoc Power (Manual Calculation):
+  Observed effect: f² = 0.000000
+  Since effect is essentially zero, power ≈ alpha = 0.0500
+
+Power for Cohen's Standard Effect Sizes:
+  Small (f²=0.02):   Power = 0.2881
+  Medium (f²=0.15):  Power = 0.9695
+  Large (f²=0.35):   Power = 1.0000
+
+Sample Size for 80% Power:
+  Small effect (f²=0.02):   N = 400
+  Medium effect (f²=0.15):  N = 60
+  Large effect (f²=0.35):   N = 50
+  Current N:                N = 100
+
+Assessment: UNDERPOWERED for small effects (power=0.288 < 0.80)
+
+✓ Power analysis saved to data/step05_power_analysis.csv
+
+================================================================================
+ANALYSIS 2: TOST EQUIVALENCE TEST
+================================================================================
+
+Equivalence Bounds:
+  f² threshold: 0.02 (small effect per Cohen)
+  β threshold: ±0.126033
+
+TOST Results:
+  Test 1 (β > -0.126033): t = 58.2050, p = 0.000000
+  Test 2 (β < +0.126033): t = 59.0863, p = 0.000000
+  TOST p-value: 0.000000
+
+Interpretation:
+  SIGNIFICANT - Effect is statistically equivalent to zero (true null)
+  Conclusion: Baseline accuracy effect is negligible. Dunning-Kruger hypothesis NOT SUPPORTED.
+
+90% Confidence Interval:
+  [-0.004482, 0.002588]
+  Equivalence bounds: [-0.126033, 0.126033]
+  ✓ 90% CI entirely within equivalence bounds (supports equivalence)
+
+✓ TOST results saved to data/step05_tost_equivalence.csv
+
+================================================================================
+ANALYSIS 3: BASELINE CONFIDENCE × BASELINE ACCURACY CORRELATION
+================================================================================
+
+Correlation (Day 0):
+  Pearson r = 0.5685
+  p-value = 0.000000
+  N = 100
+
+Interpretation:
+  Effect size: Large (r ≥ 0.50)
+  Overconfidence explanation: MINIMAL - Well-calibrated at encoding, positive effect may reflect other mechanisms
+
+Variance Explained:
+  R² = 0.3232 (32.32% shared variance)
+
+95% Confidence Interval:
+  [0.4189, 0.6881]
+
+✓ Correlation analysis saved to data/step05_correlation_confidence_accuracy.csv
+
+================================================================================
+QUALITY VALIDATION - TIER 1 ANALYSES COMPLETE
+================================================================================
+
+1. POWER ANALYSIS:
+   - Observed effect: f² = 0.000000 (negligible)
+   - Post-hoc power: 0.0500 (effect is zero, power = alpha)
+   - Power for small effect (f²=0.02): 0.2881
+   - N for 80% power (small): 400 (current N=100)
+   → UNDERPOWERED for small effects (power=0.288 < 0.80)
+
+2. TOST EQUIVALENCE:
+   - TOST p-value: 0.000000
+   - Significant: YES
+   - ✓ 90% CI entirely within equivalence bounds (supports equivalence)
+   → Conclusion: Baseline accuracy effect is negligible. Dunning-Kruger hypothesis NOT SUPPORTED.
+
+3. CORRELATION:
+   - Baseline confidence × accuracy: r = 0.5685, p = 0.000000
+   - Interpretation: Large (r ≥ 0.50)
+   → Overconfidence explanation: MINIMAL - Well-calibrated at encoding, positive effect may reflect other mechanisms
+
+================================================================================
+✓ All TIER 1 analyses complete. Outputs saved to data/step05_*.csv
+================================================================================

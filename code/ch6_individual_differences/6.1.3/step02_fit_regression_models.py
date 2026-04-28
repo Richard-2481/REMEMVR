@@ -16,13 +16,10 @@ from sklearn.preprocessing import StandardScaler
 import warnings
 warnings.filterwarnings('ignore')
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch7/7.1.3
 LOG_FILE = RQ_DIR / "logs" / "step02_fit_models.log"
 
@@ -40,7 +37,6 @@ OUTPUT_BOOTSTRAP = RQ_DIR / "data" / "step02_bootstrap_coefficients.csv"
 LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -49,11 +45,11 @@ def log(msg):
 def fit_domain_model(data, domain_name, predictors=['RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']):
     """Fit regression model for a specific domain."""
     
-    log(f"\n[FITTING] {domain_name} domain model...")
+    log(f"\n{domain_name} domain model...")
     
     # Select domain data
     domain_data = data[data['domain'] == domain_name].copy()
-    log(f"[INFO] {domain_name} domain: {len(domain_data)} observations")
+    log(f"{domain_name} domain: {len(domain_data)} observations")
     
     # Prepare data
     X = domain_data[predictors].copy()
@@ -73,9 +69,9 @@ def fit_domain_model(data, domain_name, predictors=['RAVLT_T', 'RAVLT_Pct_Ret_T'
     # Fit OLS model
     model = sm.OLS(y, X_scaled).fit()
     
-    log(f"[INFO] {domain_name} R²: {model.rsquared:.4f}")
-    log(f"[INFO] {domain_name} Adj R²: {model.rsquared_adj:.4f}")
-    log(f"[INFO] {domain_name} F-statistic: {model.fvalue:.2f} (p={model.f_pvalue:.4f})")
+    log(f"{domain_name} R²: {model.rsquared:.4f}")
+    log(f"{domain_name} Adj R²: {model.rsquared_adj:.4f}")
+    log(f"{domain_name} F-statistic: {model.fvalue:.2f} (p={model.f_pvalue:.4f})")
     
     # Extract results
     results = []
@@ -106,8 +102,8 @@ def fit_domain_model(data, domain_name, predictors=['RAVLT_T', 'RAVLT_Pct_Ret_T'
     max_cooks = cooks_d.max()
     n_influential = (cooks_d > 4/len(domain_data)).sum()
     
-    log(f"[INFO] {domain_name} Max Cook's D: {max_cooks:.4f}")
-    log(f"[INFO] {domain_name} Influential points (Cook's D > 4/n): {n_influential}")
+    log(f"{domain_name} Max Cook's D: {max_cooks:.4f}")
+    log(f"{domain_name} Influential points (Cook's D > 4/n): {n_influential}")
     
     # Store max Cook's D for each predictor row
     for result in results:
@@ -144,8 +140,8 @@ def fit_domain_model(data, domain_name, predictors=['RAVLT_T', 'RAVLT_Pct_Ret_T'
     diagnostics['breusch_pagan_p'] = bp_test[1]
     diagnostics['heteroscedasticity_violated'] = bp_test[1] < 0.05
     
-    log(f"[INFO] {domain_name} Normality: Shapiro-Wilk p={shapiro_p:.4f} ({'violated' if shapiro_p < 0.05 else 'OK'})")
-    log(f"[INFO] {domain_name} Homoscedasticity: Breusch-Pagan p={bp_test[1]:.4f} ({'violated' if bp_test[1] < 0.05 else 'OK'})")
+    log(f"{domain_name} Normality: Shapiro-Wilk p={shapiro_p:.4f} ({'violated' if shapiro_p < 0.05 else 'OK'})")
+    log(f"{domain_name} Homoscedasticity: Breusch-Pagan p={bp_test[1]:.4f} ({'violated' if bp_test[1] < 0.05 else 'OK'})")
     
     return pd.DataFrame(results), diagnostics, model, X_scaled, y
 
@@ -181,27 +177,19 @@ def bootstrap_coefficients(X, y, n_bootstrap=1000, confidence_level=0.95, random
     
     return bootstrap_coefs, ci_lower, ci_upper
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 02: Fit Domain-Specific Regression Models")
-        log(f"[SETUP] RQ Directory: {RQ_DIR}")
-        
-        # =========================================================================
-        # STEP 1: Load merged dataset
-        # =========================================================================
+        log("Step 02: Fit Domain-Specific Regression Models")
+        log(f"RQ Directory: {RQ_DIR}")
+        # Load merged dataset
         log("\n[STEP 1] Loading merged dataset...")
         
         data = pd.read_csv(INPUT_FILE)
-        log(f"[INFO] Loaded data: {data.shape}")
-        log(f"[INFO] Domains: {data['domain'].value_counts().to_dict()}")
-        
-        # =========================================================================
-        # STEP 2: Fit regression models for each domain
-        # =========================================================================
+        log(f"Loaded data: {data.shape}")
+        log(f"Domains: {data['domain'].value_counts().to_dict()}")
+        # Fit regression models for each domain
         log("\n[STEP 2] Fitting domain-specific regression models...")
         
         all_diagnostics = []
@@ -223,7 +211,7 @@ if __name__ == "__main__":
             }[domain]
             
             results_df.to_csv(output_file, index=False)
-            log(f"[OUTPUT] {domain} model results saved to: {output_file}")
+            log(f"{domain} model results saved to: {output_file}")
             
             # Store diagnostics
             all_diagnostics.append(diagnostics)
@@ -232,15 +220,12 @@ if __name__ == "__main__":
         # Save diagnostics
         diagnostics_df = pd.DataFrame(all_diagnostics)
         diagnostics_df.to_csv(OUTPUT_DIAGNOSTICS, index=False)
-        log(f"[OUTPUT] Model diagnostics saved to: {OUTPUT_DIAGNOSTICS}")
-        
-        # =========================================================================
-        # STEP 3: Bootstrap confidence intervals
-        # =========================================================================
+        log(f"Model diagnostics saved to: {OUTPUT_DIAGNOSTICS}")
+        # Bootstrap confidence intervals
         log("\n[STEP 3] Computing bootstrap confidence intervals...")
         
         for domain in domains:
-            log(f"\n[BOOTSTRAP] {domain} domain (1000 iterations)...")
+            log(f"\n{domain} domain (1000 iterations)...")
             
             model, X_scaled, y = models[domain]
             
@@ -263,23 +248,20 @@ if __name__ == "__main__":
                     'model_se': model.bse[i]
                 })
                 
-            log(f"[INFO] {domain} bootstrap complete")
+            log(f"{domain} bootstrap complete")
             
         # Save bootstrap results
         bootstrap_df = pd.DataFrame(all_bootstrap_results)
         bootstrap_df.to_csv(OUTPUT_BOOTSTRAP, index=False)
-        log(f"[OUTPUT] Bootstrap results saved to: {OUTPUT_BOOTSTRAP}")
-        
-        # =========================================================================
-        # STEP 4: Summary of key findings
-        # =========================================================================
+        log(f"Bootstrap results saved to: {OUTPUT_BOOTSTRAP}")
+        # Summary of key findings
         log("\n[STEP 4] Summary of findings...")
         
-        log("\n[SUMMARY] Model R² values:")
+        log("\nModel R² values:")
         for _, row in diagnostics_df.iterrows():
             log(f"  {row['domain']}: R²={row['r_squared']:.4f}, Adj R²={row['adj_r_squared']:.4f}")
             
-        log("\n[SUMMARY] Key beta coefficients:")
+        log("\nKey beta coefficients:")
         for domain in domains:
             results_file = {
                 'What': OUTPUT_WHAT,
@@ -327,10 +309,10 @@ if __name__ == "__main__":
         r2_when = diagnostics_df[diagnostics_df['domain'] == 'When']['r_squared'].values[0]
         log(f"  R² When ({r2_when:.3f}) < What ({r2_what:.3f}) & Where ({r2_where:.3f})? {'✓' if r2_when < min(r2_what, r2_where) else '✗'}")
         
-        log("\n[COMPLETE] Step 02 completed successfully")
+        log("\nStep 02 completed successfully")
         
     except Exception as e:
         log(f"[CRITICAL ERROR] Unexpected error: {e}")
         import traceback
-        log(f"[TRACEBACK] {traceback.format_exc()}")
+        log(f"{traceback.format_exc()}")
         sys.exit(1)

@@ -47,7 +47,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step05_test_correlations_plot_diagnostics.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -102,22 +101,16 @@ def create_qq_plot(data, title, output_path):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 05: Test Correlations and Create Diagnostic Plots")
-
-        # =====================================================================
-        # STEP 1: Load Random Effects
-        # =====================================================================
-        log("[LOAD] Loading random effects...")
+        log("Step 05: Test Correlations and Create Diagnostic Plots")
+        # Load Random Effects
+        log("Loading random effects...")
 
         random_effects_file = RQ_DIR / "data" / "step04_random_effects.csv"
         df_re = pd.read_csv(random_effects_file, encoding='utf-8')
 
-        log(f"[LOADED] {random_effects_file.name} ({len(df_re)} rows)")
-
-        # =====================================================================
-        # STEP 2: Test Intercept-Slope Correlation (Decision D068)
-        # =====================================================================
-        log("\n[ANALYSIS] Testing intercept-slope correlations with D068 dual p-values...")
+        log(f"{random_effects_file.name} ({len(df_re)} rows)")
+        # Test Intercept-Slope Correlation (Decision D068)
+        log("\nTesting intercept-slope correlations with D068 dual p-values...")
 
         # Call catalogued tool with D068 compliance for each congruence level
         all_correlations = []
@@ -161,27 +154,21 @@ if __name__ == "__main__":
         # Convert to DataFrame
         df_corr = pd.DataFrame(all_correlations)
 
-        log(f"\n[COMPUTED] {len(df_corr)} correlation tests")
+        log(f"\n{len(df_corr)} correlation tests")
 
         # Display results
         log("\n[CORRELATION RESULTS]")
         for _, row in df_corr.iterrows():
             log(f"  {row['congruence']:12s} | r={row['r']:7.4f} | p_raw={row['p_uncorrected']:.4f} | p_bonf={row['p_bonferroni']:.4f}")
-
-        # =====================================================================
-        # STEP 3: Save Correlation Results
-        # =====================================================================
-        log("\n[SAVE] Saving correlation results...")
+        # Save Correlation Results
+        log("\nSaving correlation results...")
 
         corr_output = RQ_DIR / "data" / "step05_intercept_slope_correlation.csv"
         df_corr.to_csv(corr_output, index=False, encoding='utf-8')
 
-        log(f"[SAVED] {corr_output.name}")
-
-        # =====================================================================
-        # STEP 4: Create Correlation Interpretation Report
-        # =====================================================================
-        log("[REPORT] Creating correlation interpretation report...")
+        log(f"{corr_output.name}")
+        # Create Correlation Interpretation Report
+        log("Creating correlation interpretation report...")
 
         report_path = RQ_DIR / "data" / "step05_correlation_interpretation.txt"
 
@@ -224,12 +211,9 @@ if __name__ == "__main__":
 
                 f.write("\n")
 
-        log(f"[SAVED] {report_path.name}")
-
-        # =====================================================================
-        # STEP 5: Create Histograms with Normal Overlay
-        # =====================================================================
-        log("\n[PLOT] Creating histograms with normal distribution overlay...")
+        log(f"{report_path.name}")
+        # Create Histograms with Normal Overlay
+        log("\nCreating histograms with normal distribution overlay...")
 
         congruence_levels = df_re['congruence'].unique()
 
@@ -247,12 +231,9 @@ if __name__ == "__main__":
                 output_path
             )
 
-            log(f"  [SAVED] {output_path.name}")
-
-        # =====================================================================
-        # STEP 6: Create Q-Q Plots
-        # =====================================================================
-        log("\n[PLOT] Creating Q-Q plots for normality assessment...")
+            log(f"  {output_path.name}")
+        # Create Q-Q Plots
+        log("\nCreating Q-Q plots for normality assessment...")
 
         for congruence in congruence_levels:
             log(f"  Creating Q-Q plot for {congruence}...")
@@ -268,12 +249,9 @@ if __name__ == "__main__":
                 output_path
             )
 
-            log(f"  [SAVED] {output_path.name}")
-
-        # =====================================================================
-        # STEP 7: Validate Correlation Test Results (Decision D068)
-        # =====================================================================
-        log("\n[VALIDATION] Validating correlation test results (D068 compliance)...")
+            log(f"  {output_path.name}")
+        # Validate Correlation Test Results (Decision D068)
+        log("\nValidating correlation test results (D068 compliance)...")
 
         validation = validate_correlation_test_d068(
             df_corr,
@@ -281,15 +259,12 @@ if __name__ == "__main__":
         )
 
         if validation['valid']:
-            log("[PASS] Correlation test validated (D068 compliant)")
+            log("Correlation test validated (D068 compliant)")
         else:
-            log(f"[FAIL] Correlation validation failed: {validation['message']}")
+            log(f"Correlation validation failed: {validation['message']}")
             raise ValueError(validation['message'])
-
-        # =====================================================================
-        # STEP 8: Validate Plot Files Exist
-        # =====================================================================
-        log("\n[VALIDATION] Validating plot files...")
+        # Validate Plot Files Exist
+        log("\nValidating plot files...")
 
         expected_plots = []
         for congruence in ['common', 'congruent', 'incongruent']:
@@ -306,14 +281,14 @@ if __name__ == "__main__":
         if missing_plots:
             raise FileNotFoundError(f"Missing or invalid plot files: {', '.join(missing_plots)}")
 
-        log(f"[PASS] All {len(expected_plots)} plot files validated (exist and > 10KB)")
+        log(f"All {len(expected_plots)} plot files validated (exist and > 10KB)")
 
-        log("\n[SUCCESS] Step 05 complete - Correlations tested and diagnostic plots created")
+        log("\nStep 05 complete - Correlations tested and diagnostic plots created")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

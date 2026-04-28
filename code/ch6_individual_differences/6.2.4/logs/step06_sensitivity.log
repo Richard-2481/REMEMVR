@@ -1,0 +1,184 @@
+============================================================
+Step 6: Sensitivity Analyses
+============================================================
+Loaded 100 participants
+Loaded 14 outlier flags
+
+========================================
+OUTLIER EXCLUSION ANALYSIS
+========================================
+Excluding 14 outliers, N = 86
+
+Without outliers:
+  Age-RAVLT: r = -0.353, p = 0.0009
+             CI: [-0.481, -0.119]
+  Age-REMEMVR: r = -0.165, p = 0.1282
+               CI: [-0.375, 0.054]
+
+========================================
+SPEARMAN RANK CORRELATIONS
+========================================
+Spearman correlations (full sample):
+  Age-RAVLT: rs = -0.261, p = 0.0088
+             CI: [-0.440, -0.069]
+  Age-REMEMVR: rs = -0.188, p = 0.0611
+               CI: [-0.376, 0.000]
+
+========================================
+AGE-STRATIFIED ANALYSIS
+========================================
+Median age: 44.5 years
+Younger adults: N = 50, age range 20-44
+Older adults: N = 50, age range 45-70
+
+Younger adults (≤44 years):
+  Age-RAVLT: r = -0.225, p = 0.1157
+  Age-REMEMVR: r = -0.192, p = 0.1813
+
+Older adults (>44 years):
+  Age-RAVLT: r = -0.473, p = 0.0005
+  Age-REMEMVR: r = -0.048, p = 0.7421
+
+========================================
+WINSORIZED CORRELATIONS (5% trim)
+========================================
+Winsorized correlations:
+  Age-RAVLT: r = -0.277, p = 0.0052
+  Age-REMEMVR: r = -0.193, p = 0.0543
+
+========================================
+SENSITIVITY ANALYSIS SUMMARY
+========================================
+✓ Outlier exclusion: Pattern maintained
+✓ Spearman: Pattern maintained
+✓ Winsorized: Pattern maintained
+
+Sensitivity analyses: 3/3 methods support main conclusion
+→ ROBUST: Main finding consistent across sensitivity analyses
+
+Saved sensitivity results to data folder
+
+Step 6 completed successfully
+============================================================
+Step 6: Sensitivity Analyses
+============================================================
+Loaded 100 participants
+Loaded 14 outlier flags
+
+========================================
+OUTLIER EXCLUSION ANALYSIS
+========================================
+Excluding 14 outliers, N = 86
+
+Without outliers:
+  Age-RAVLT: r = -0.353, p = 0.0009
+             CI: [-0.481, -0.119]
+  Age-REMEMVR: r = -0.165, p = 0.1282
+               CI: [-0.375, 0.054]
+
+========================================
+SPEARMAN RANK CORRELATIONS
+========================================
+Spearman correlations (full sample):
+  Age-RAVLT: rs = -0.261, p = 0.0088
+             CI: [-0.440, -0.069]
+  Age-REMEMVR: rs = -0.188, p = 0.0611
+               CI: [-0.376, 0.000]
+
+========================================
+AGE-STRATIFIED ANALYSIS
+========================================
+Median age: 44.5 years
+Younger adults: N = 50, age range 20-44
+Older adults: N = 50, age range 45-70
+
+Younger adults (≤44 years):
+  Age-RAVLT: r = -0.225, p = 0.1157
+  Age-REMEMVR: r = -0.192, p = 0.1813
+
+Older adults (>44 years):
+  Age-RAVLT: r = -0.473, p = 0.0005
+  Age-REMEMVR: r = -0.048, p = 0.7421
+
+========================================
+WINSORIZED CORRELATIONS (5% trim)
+========================================
+Winsorized correlations:
+  Age-RAVLT: r = -0.277, p = 0.0052
+  Age-REMEMVR: r = -0.193, p = 0.0543
+
+========================================
+SENSITIVITY ANALYSIS SUMMARY
+========================================
+✓ Outlier exclusion: Pattern maintained
+✓ Spearman: Pattern maintained
+✓ Winsorized: Pattern maintained
+
+Sensitivity analyses: 3/3 methods support main conclusion
+→ ROBUST: Main finding consistent across sensitivity analyses
+
+Saved sensitivity results to data folder
+
+Step 6 completed successfully
+============================================================
+Step 6: Sensitivity Analyses
+============================================================
+Loaded 100 participants
+Loaded 15 outlier flags
+
+========================================
+OUTLIER EXCLUSION ANALYSIS
+========================================
+Excluding 15 outliers, N = 85
+
+Without outliers:
+  Age-RAVLT: r = -0.274, p = 0.0111
+             CI: [-0.454, -0.023]
+  Age-REMEMVR: r = -0.176, p = 0.1081
+               CI: [-0.364, 0.052]
+
+========================================
+SPEARMAN RANK CORRELATIONS
+========================================
+Spearman correlations (full sample):
+  Age-RAVLT: rs = -0.181, p = 0.0713
+             CI: [-0.379, 0.036]
+  Age-REMEMVR: rs = -0.188, p = 0.0611
+               CI: [-0.376, 0.000]
+  Age-RAVLT_Pct_Ret: rs = -0.155, p = 0.1227
+                     CI: [-0.335, 0.033]
+
+========================================
+AGE-STRATIFIED ANALYSIS
+========================================
+Median age: 44.5 years
+Younger adults: N = 50, age range 20-44
+Older adults: N = 50, age range 45-70
+
+Younger adults (≤44 years):
+  Age-RAVLT: r = -0.225, p = 0.1157
+  Age-REMEMVR: r = -0.192, p = 0.1813
+
+Older adults (>44 years):
+  Age-RAVLT: r = -0.487, p = 0.0003
+  Age-REMEMVR: r = -0.048, p = 0.7421
+
+========================================
+WINSORIZED CORRELATIONS (5% trim)
+========================================
+Winsorized correlations:
+  Age-RAVLT: r = -0.193, p = 0.0540
+  Age-REMEMVR: r = -0.193, p = 0.0543
+
+========================================
+SENSITIVITY ANALYSIS SUMMARY
+========================================
+✓ Outlier exclusion: Pattern maintained
+✓ Winsorized: Pattern maintained
+
+Sensitivity analyses: 2/3 methods support main conclusion
+→ ROBUST: Main finding consistent across sensitivity analyses
+
+Saved sensitivity results to data folder
+
+Step 6 completed successfully

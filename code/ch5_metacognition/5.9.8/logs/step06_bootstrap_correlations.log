@@ -1,0 +1,98 @@
+Step 06: Bootstrap Confidence Intervals for Correlations
+Bootstrap: 1000 iterations, seed=42, participant-level resampling
+Random seed set to 42
+Loading long-format data...
+1200 rows
+Filtering to key timepoints...
+900 rows retained
+Loading parametric correlations...
+9 parametric correlations
+Starting bootstrap iterations...
+Common x T1...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.376, 0.594]
+  Parametric CI: [0.314, 0.619]
+  Observed r: 0.481
+  Agreement: PASS (overlap = 0.218, 50% of param width = 0.152)
+Common x T2...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.203, 0.509]
+  Parametric CI: [0.168, 0.514]
+  Observed r: 0.353
+  Agreement: PASS (overlap = 0.306, 50% of param width = 0.173)
+Common x T4...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.286, 0.541]
+  Parametric CI: [0.237, 0.564]
+  Observed r: 0.414
+  Agreement: PASS (overlap = 0.256, 50% of param width = 0.164)
+Congruent x T1...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.271, 0.575]
+  Parametric CI: [0.253, 0.576]
+  Observed r: 0.428
+  Agreement: PASS (overlap = 0.304, 50% of param width = 0.162)
+Congruent x T2...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.204, 0.447]
+  Parametric CI: [0.139, 0.492]
+  Observed r: 0.327
+  Agreement: PASS (overlap = 0.243, 50% of param width = 0.176)
+Congruent x T4...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.506, 0.687]
+  Parametric CI: [0.456, 0.711]
+  Observed r: 0.599
+  Agreement: PASS (overlap = 0.182, 50% of param width = 0.128)
+Incongruent x T1...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.342, 0.549]
+  Parametric CI: [0.269, 0.587]
+  Observed r: 0.442
+  Agreement: PASS (overlap = 0.206, 50% of param width = 0.159)
+Incongruent x T2...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.270, 0.540]
+  Parametric CI: [0.233, 0.562]
+  Observed r: 0.411
+  Agreement: PASS (overlap = 0.270, 50% of param width = 0.164)
+Incongruent x T4...
+  Observations: 100
+  Unique UIDs: 100
+  Bootstrap iterations completed: 1000/1000
+  Bootstrap CI: [0.294, 0.565]
+  Parametric CI: [0.258, 0.580]
+  Observed r: 0.432
+  Agreement: PASS (overlap = 0.271, 50% of param width = 0.161)
+Bootstrap complete: 9 results
+Checking bootstrap results...
+Row count: 9
+All r_observed in [-1, 1]
+All CI bounds in [-1, 1]
+All CIs valid (lower < upper)
+Agreement: 9/9 (100.0%)
+Most CIs agree (>= 50%)
+Bootstrap CIs wider than parametric: 0/9
+Bootstrap CIs not consistently wider than parametric
+PASS - All checks passed
+Output: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step06_bootstrap_correlations.csv
+Bootstrap: 1000 iterations, seed=42, participant-level resampling
+9 bootstrap CIs computed
+Agreement: 9/9 rows
+Step 06 complete

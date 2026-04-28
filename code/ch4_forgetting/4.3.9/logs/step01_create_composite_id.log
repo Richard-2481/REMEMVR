@@ -1,0 +1,27 @@
+Step 01: Create Composite ID
+Loading response-level data from Step 00...
+step00_response_level_data.csv (18000 rows, 6 cols)
+Columns: ['UID', 'Test', 'Item', 'Response', 'paradigm', 'Difficulty']
+Creating composite_ID (format: UID_Test)...
+composite_ID column added
+Example composite_IDs: ['A010_1', 'A010_1', 'A010_1']
+Unique composite_IDs: 400 (expected: 400)
+Checking paradigm assignment consistency...
+All items belong to exactly ONE paradigm
+Checking for duplicate UID × Test × Item observations...
+No duplicate UID × Test × Item observations
+Saving analysis-ready data...
+step01_analysis_ready.csv (18000 rows, 7 cols)
+Running validate_data_format...
+Data format: All required columns present (7 columns). DataFrame has 18000 rows.
+Verifying composite_ID format...
+All composite_IDs follow format: UID_Test
+Step 01 data structure verification complete:
+  Total rows: 18000
+  Unique composite_IDs: 400
+  Unique participants: 100
+  Unique tests: 4
+  Unique items: 45
+  Paradigms: 3 (ICR, IFR, IRE)
+  Data integrity: No duplicates, paradigm assignment consistent
+Step 01 complete

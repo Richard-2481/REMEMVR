@@ -1,0 +1,3 @@
+model,converged,aic,delta_aic,random_slope_var
+Intercepts_Only,True,1549.2724662226728,0.0,0.0
+Intercepts_Slopes,False,2341.758334667712,-792.4858684450392,0.15449454703997215

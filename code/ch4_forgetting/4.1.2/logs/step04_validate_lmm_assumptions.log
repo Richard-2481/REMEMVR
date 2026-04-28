@@ -1,0 +1,89 @@
+Step 4: Validate LMM Assumptions
+Loading fitted models from Steps 2-3...
+Loading quadratic model from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step02_quadratic_model.pkl
+Quadratic model (400 observations)
+Loading piecewise model from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step03_piecewise_model.pkl
+Piecewise model not found: /home/etai/projects/REMEMVR/results/ch5/rq8/data/step03_piecewise_model.pkl
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step04_validate_lmm_assumptions.py", line 177, in <module>
+    raise FileNotFoundError(f"Piecewise model not found: {piecewise_model_path}")
+FileNotFoundError: Piecewise model not found: /home/etai/projects/REMEMVR/results/ch5/rq8/data/step03_piecewise_model.pkl
+Step 4: Validate LMM Assumptions
+Loading fitted models from Steps 2-3...
+Loading quadratic model from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step02_quadratic_model.pkl
+Quadratic model (400 observations)
+Loading piecewise model from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step03_piecewise_model.pkl
+Piecewise model (400 observations)
+Loading time-transformed data from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step01_time_transformed.csv
+Time data (400 rows, 9 cols)
+Running assumption validation for quadratic model...
+'MixedLMResults' object has no attribute 'get_influence'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step04_validate_lmm_assumptions.py", line 203, in <module>
+    quadratic_validation = validate_lmm_assumptions_comprehensive(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 1144, in validate_lmm_assumptions_comprehensive
+    influence = lmm_result.get_influence()
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/wrapper.py", line 34, in __getattribute__
+    obj = getattr(results, attr)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MixedLMResults' object has no attribute 'get_influence'
+Step 4: Validate LMM Assumptions
+Loading fitted models from Steps 2-3...
+Loading quadratic model from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step02_quadratic_model.pkl
+Quadratic model (400 observations)
+Loading piecewise model from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step03_piecewise_model.pkl
+Piecewise model (400 observations)
+Loading time-transformed data from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step01_time_transformed.csv
+Time data (400 rows, 9 cols)
+Running assumption validation for quadratic model...
+Quadratic model assumption validation complete
+Quadratic model valid: False
+Quadratic diagnostics: 6 checks performed
+Running assumption validation for piecewise model...
+Piecewise model assumption validation complete
+Piecewise model valid: False
+Piecewise diagnostics: 6 checks performed
+Saving assumption validation report...
+/home/etai/projects/REMEMVR/results/ch5/rq8/results/step04_assumption_validation_report.txt
+Running meta-validation on assumption test results...
+Some assumption tests missing: ['Shapiro-Wilk', 'Breusch-Pagan', 'ACF', "Cook's D"]
+All test statistics finite
+Meta-validation results:
+  Required terms present: False
+  Test statistics finite: True
+  Quadratic model checks: 6
+  Piecewise model checks: 6
+Meta-validation FAIL - Some issues detected (see warnings above)
+Step 4 complete
+Step 4: Validate LMM Assumptions
+Loading fitted models from Steps 2-3...
+Loading quadratic model from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step02_quadratic_model.pkl
+Quadratic model (400 observations)
+Loading piecewise model from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step03_piecewise_model.pkl
+Piecewise model (400 observations)
+Loading time-transformed data from /home/etai/projects/REMEMVR/results/ch5/rq8/data/step01_time_transformed.csv
+Time data (400 rows, 9 cols)
+Running assumption validation for quadratic model...
+Quadratic model assumption validation complete
+Quadratic model valid: False
+Quadratic diagnostics: 6 checks performed
+Running assumption validation for piecewise model...
+Piecewise model assumption validation complete
+Piecewise model valid: False
+Piecewise diagnostics: 6 checks performed
+Saving assumption validation report...
+/home/etai/projects/REMEMVR/results/ch5/rq8/results/step04_assumption_validation_report.txt
+Running meta-validation on assumption test results...
+Some assumption tests missing: ['Shapiro-Wilk', 'Breusch-Pagan', 'ACF', "Cook's D"]
+All test statistics finite
+Meta-validation results:
+  Required terms present: False
+  Test statistics finite: True
+  Quadratic model checks: 6
+  Piecewise model checks: 6
+Meta-validation FAIL - Some issues detected (see warnings above)
+Step 4 complete

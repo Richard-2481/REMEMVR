@@ -1,0 +1,20 @@
+metric,value
+ICC_intercept_original,0.7219267688845667
+ICC_intercept_MA,0.2957386475788342
+ICC_intercept_delta,-0.4261881213057325
+ICC_intercept_pct_change,-59.03481345680345
+ICC_slope_original,0.2640976039075434
+ICC_slope_MA,0.04010895222510236
+ICC_slope_delta,-0.22398865168244103
+ICC_slope_pct_change,-84.81282994178777
+ICC_slope_accuracy_ch5,0.0005
+ratio_original,528.1952078150867
+ratio_MA,80.21790445020471
+ratio_delta,-447.977303364882
+ratio_pct_change,-84.81282994178777
+robustness_assessment,MODERATE ATTENUATION
+var_intercept_original,0.6140309769927124
+var_intercept_MA,0.09936239197781452
+var_slope_original,0.0849164941624516
+var_slope_MA,0.009887060401738458
+var_residual,0.2366180177227058

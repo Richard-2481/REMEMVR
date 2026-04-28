@@ -1,0 +1,162 @@
+Step 07: Cross-Validation
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 participants)
+[CV] Running 5-fold cross-validation...
+[CV] Model_1_Total: Total_z
+  Fold 1: train_R2=0.0784, test_R2=-0.1602, RMSE=0.6018, MAE=0.5210
+  Fold 2: train_R2=0.0548, test_R2=0.0544, RMSE=0.7889, MAE=0.5817
+  Fold 3: train_R2=0.0882, test_R2=-0.1024, RMSE=0.6659, MAE=0.5189
+  Fold 4: train_R2=0.1031, test_R2=-0.2596, RMSE=0.6561, MAE=0.5247
+  Fold 5: train_R2=0.0334, test_R2=0.2019, RMSE=0.5834, MAE=0.4748
+Model_1_Total
+[CV] Model_2_Learning: Learning_z
+  Fold 1: train_R2=0.0129, test_R2=-0.1964, RMSE=0.6111, MAE=0.5283
+  Fold 2: train_R2=0.0104, test_R2=-0.0355, RMSE=0.8256, MAE=0.6650
+  Fold 3: train_R2=0.0157, test_R2=-0.1297, RMSE=0.6741, MAE=0.5000
+  Fold 4: train_R2=0.0004, test_R2=-0.1279, RMSE=0.6209, MAE=0.5061
+  Fold 5: train_R2=0.0267, test_R2=-0.0802, RMSE=0.6787, MAE=0.5263
+Model_2_Learning
+[CV] Model_3_LearningSlope: LearningSlope_z
+  Fold 1: train_R2=0.0529, test_R2=-0.1722, RMSE=0.6049, MAE=0.5062
+  Fold 2: train_R2=0.0336, test_R2=0.0282, RMSE=0.7998, MAE=0.6378
+  Fold 3: train_R2=0.0572, test_R2=-0.1203, RMSE=0.6713, MAE=0.4979
+  Fold 4: train_R2=0.0312, test_R2=-0.0286, RMSE=0.5929, MAE=0.4756
+  Fold 5: train_R2=0.0623, test_R2=-0.0345, RMSE=0.6642, MAE=0.5165
+Model_3_LearningSlope
+[CV] Model_4_Recognition: Recognition_z
+  Fold 1: train_R2=0.0230, test_R2=-0.1330, RMSE=0.5947, MAE=0.5091
+  Fold 2: train_R2=0.0150, test_R2=-0.0006, RMSE=0.8115, MAE=0.6495
+  Fold 3: train_R2=0.0230, test_R2=-0.0640, RMSE=0.6542, MAE=0.5144
+  Fold 4: train_R2=0.0832, test_R2=-0.5215, RMSE=0.7211, MAE=0.5853
+  Fold 5: train_R2=0.0120, test_R2=0.0860, RMSE=0.6243, MAE=0.4725
+Model_4_Recognition
+[CV] Model_5_Combined: Total_z, Learning_z
+  Fold 1: train_R2=0.1244, test_R2=-0.1727, RMSE=0.6050, MAE=0.5156
+  Fold 2: train_R2=0.0853, test_R2=0.1066, RMSE=0.7668, MAE=0.5649
+  Fold 3: train_R2=0.1401, test_R2=-0.1410, RMSE=0.6774, MAE=0.4995
+  Fold 4: train_R2=0.1106, test_R2=-0.1061, RMSE=0.6149, MAE=0.4846
+  Fold 5: train_R2=0.0874, test_R2=0.1609, RMSE=0.5982, MAE=0.5090
+Model_5_Combined
+[CV] All models complete (25 results)
+Computing CV summary statistics...
+Model_1_Total:
+  Mean test R²: -0.0532 (SD=0.1824)
+  Train-test gap: 0.1247 (shrinkage=174.3%)
+  Overfitting detected (gap > 0.1)
+Model_2_Learning:
+  Mean test R²: -0.1140 (SD=0.0603)
+  Train-test gap: 0.1272 (shrinkage=961.0%)
+  Overfitting detected (gap > 0.1)
+Model_3_LearningSlope:
+  Mean test R²: -0.0655 (SD=0.0798)
+  Train-test gap: 0.1129 (shrinkage=238.1%)
+  Overfitting detected (gap > 0.1)
+Model_4_Recognition:
+  Mean test R²: -0.1266 (SD=0.2351)
+  Train-test gap: 0.1578 (shrinkage=505.4%)
+  Overfitting detected (gap > 0.1)
+Model_5_Combined:
+  Mean test R²: -0.0304 (SD=0.1530)
+  Train-test gap: 0.1400 (shrinkage=127.8%)
+  Overfitting detected (gap > 0.1)
+Saving CV results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step07_cv_results.csv (25 fold results)
+Saving CV summary...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step07_cv_summary.csv (5 models)
+Cross-validation complete:
+  Total CV runs: 25 (5 folds × 5 models)
+  Models with overfitting: 5/5
+  Best model (by test R²): Model_5_Combined (R²=-0.0304)
+Step 07 complete
+Step 07: Cross-Validation
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 participants)
+[CV] Running 5-fold cross-validation...
+[CV] Model_1_Total: Total_z
+  Fold 1: train_R2=0.0930, test_R2=-0.2133, RMSE=0.6154, MAE=0.5364
+  Fold 2: train_R2=0.0788, test_R2=0.0237, RMSE=0.8016, MAE=0.5966
+  Fold 3: train_R2=0.1005, test_R2=-0.1248, RMSE=0.6726, MAE=0.5232
+  Fold 4: train_R2=0.0763, test_R2=-0.0610, RMSE=0.6022, MAE=0.4606
+  Fold 5: train_R2=0.0436, test_R2=0.2056, RMSE=0.5821, MAE=0.4880
+Model_1_Total
+[CV] Model_2_Learning: Learning_z
+  Fold 1: train_R2=0.0330, test_R2=-0.1578, RMSE=0.6012, MAE=0.4933
+  Fold 2: train_R2=0.0118, test_R2=0.0120, RMSE=0.8064, MAE=0.6448
+  Fold 3: train_R2=0.0436, test_R2=-0.1548, RMSE=0.6815, MAE=0.4843
+  Fold 4: train_R2=0.0174, test_R2=-0.0567, RMSE=0.6010, MAE=0.5005
+  Fold 5: train_R2=0.0608, test_R2=-0.1286, RMSE=0.6938, MAE=0.5080
+Model_2_Learning
+[CV] Model_3_LearningSlope: LearningSlope_z
+  Fold 1: train_R2=0.0812, test_R2=-0.1593, RMSE=0.6016, MAE=0.4932
+  Fold 2: train_R2=0.0397, test_R2=0.0837, RMSE=0.7766, MAE=0.6110
+  Fold 3: train_R2=0.0905, test_R2=-0.1423, RMSE=0.6778, MAE=0.4913
+  Fold 4: train_R2=0.0603, test_R2=-0.0210, RMSE=0.5907, MAE=0.4885
+  Fold 5: train_R2=0.0863, test_R2=-0.0054, RMSE=0.6548, MAE=0.4923
+Model_3_LearningSlope
+[CV] Model_4_Forgetting: Forgetting_z
+  Fold 1: train_R2=0.1343, test_R2=-0.1481, RMSE=0.5987, MAE=0.4952
+  Fold 2: train_R2=0.0694, test_R2=0.1706, RMSE=0.7389, MAE=0.6181
+  Fold 3: train_R2=0.1287, test_R2=-0.0191, RMSE=0.6402, MAE=0.4779
+  Fold 4: train_R2=0.1128, test_R2=0.0291, RMSE=0.5760, MAE=0.4878
+  Fold 5: train_R2=0.1492, test_R2=-0.0237, RMSE=0.6608, MAE=0.4890
+Model_4_Forgetting
+[CV] Model_5_Recognition: Recognition_z
+  Fold 1: train_R2=0.0230, test_R2=-0.1330, RMSE=0.5947, MAE=0.5091
+  Fold 2: train_R2=0.0150, test_R2=-0.0006, RMSE=0.8115, MAE=0.6495
+  Fold 3: train_R2=0.0230, test_R2=-0.0640, RMSE=0.6542, MAE=0.5144
+  Fold 4: train_R2=0.0832, test_R2=-0.5215, RMSE=0.7211, MAE=0.5853
+  Fold 5: train_R2=0.0120, test_R2=0.0860, RMSE=0.6243, MAE=0.4725
+Model_5_Recognition
+[CV] Model_6_PctRet: PctRet_z
+  Fold 1: train_R2=0.1222, test_R2=-0.1572, RMSE=0.6010, MAE=0.5082
+  Fold 2: train_R2=0.0749, test_R2=0.1268, RMSE=0.7581, MAE=0.6238
+  Fold 3: train_R2=0.1192, test_R2=-0.0423, RMSE=0.6475, MAE=0.4858
+  Fold 4: train_R2=0.1156, test_R2=-0.0667, RMSE=0.6038, MAE=0.5097
+  Fold 5: train_R2=0.1028, test_R2=0.1239, RMSE=0.6113, MAE=0.4721
+Model_6_PctRet
+[CV] Model_7_Combined: Total_z, Learning_z
+  Fold 1: train_R2=0.1414, test_R2=-0.1733, RMSE=0.6052, MAE=0.5243
+  Fold 2: train_R2=0.0994, test_R2=0.1086, RMSE=0.7660, MAE=0.5682
+  Fold 3: train_R2=0.1646, test_R2=-0.1992, RMSE=0.6945, MAE=0.4890
+  Fold 4: train_R2=0.1026, test_R2=0.0680, RMSE=0.5644, MAE=0.4315
+  Fold 5: train_R2=0.1092, test_R2=0.1331, RMSE=0.6081, MAE=0.4984
+Model_7_Combined
+[CV] All models complete (35 results)
+Computing CV summary statistics...
+Model_1_Total:
+  Mean test R²: -0.0340 (SD=0.1596)
+  Train-test gap: 0.1124 (shrinkage=143.3%)
+  Overfitting detected (gap > 0.1)
+Model_2_Learning:
+  Mean test R²: -0.0972 (SD=0.0734)
+  Train-test gap: 0.1305 (shrinkage=391.8%)
+  Overfitting detected (gap > 0.1)
+Model_3_LearningSlope:
+  Mean test R²: -0.0489 (SD=0.1014)
+  Train-test gap: 0.1205 (shrinkage=168.3%)
+  Overfitting detected (gap > 0.1)
+Model_4_Forgetting:
+  Mean test R²: 0.0018 (SD=0.1149)
+  Train-test gap: 0.1171 (shrinkage=98.5%)
+  Overfitting detected (gap > 0.1)
+Model_5_Recognition:
+  Mean test R²: -0.1266 (SD=0.2351)
+  Train-test gap: 0.1578 (shrinkage=505.4%)
+  Overfitting detected (gap > 0.1)
+Model_6_PctRet:
+  Mean test R²: -0.0031 (SD=0.1248)
+  Train-test gap: 0.1101 (shrinkage=102.9%)
+  Overfitting detected (gap > 0.1)
+Model_7_Combined:
+  Mean test R²: -0.0126 (SD=0.1605)
+  Train-test gap: 0.1360 (shrinkage=110.2%)
+  Overfitting detected (gap > 0.1)
+Saving CV results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step07_cv_results.csv (35 fold results)
+Saving CV summary...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step07_cv_summary.csv (7 models)
+Cross-validation complete:
+  Total CV runs: 35 (5 folds × 7 models)
+  Models with overfitting: 7/7
+  Best model (by test R²): Model_4_Forgetting (R²=0.0018)
+Step 07 complete

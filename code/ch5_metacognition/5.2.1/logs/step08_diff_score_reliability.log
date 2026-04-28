@@ -1,0 +1,42 @@
+======================================================================
+STEP 08: Difference Score Reliability
+======================================================================
+Loaded: 400 observations
+
+Correlation between accuracy and confidence:
+  r_xy = 0.5761 (p = 0.000000)
+
+Accuracy reliability (conservative estimate): r_xx = 0.850
+Confidence reliability (from SE): r_yy = 0.999
+
+Difference Score Reliability:
+  r_diff = (r_xx + r_yy - 2*r_xy) / (2 - 2*r_xy)
+  r_diff = (0.850 + 0.999 - 2*0.576) / (2 - 2*0.576)
+  r_diff = 0.822
+
+Interpretation: ACCEPTABLE (r_diff >= 0.70)
+Recommendation: Difference scores reliable. Calibration metric valid.
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step08_diff_score_reliability.csv
+VALIDATION - PASS: Difference score reliability computed
+======================================================================
+STEP 08: Difference Score Reliability
+======================================================================
+Loaded: 400 observations
+
+Correlation between accuracy and confidence:
+  r_xy = 0.6562 (p = 0.000000)
+
+Accuracy reliability (conservative estimate): r_xx = 0.850
+Confidence reliability (from SE): r_yy = 0.995
+
+Difference Score Reliability:
+  r_diff = (r_xx + r_yy - 2*r_xy) / (2 - 2*r_xy)
+  r_diff = (0.850 + 0.995 - 2*0.656) / (2 - 2*0.656)
+  r_diff = 0.774
+
+Interpretation: ACCEPTABLE (r_diff >= 0.70)
+Recommendation: Difference scores reliable. Calibration metric valid.
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step08_diff_score_reliability.csv
+VALIDATION - PASS: Difference score reliability computed

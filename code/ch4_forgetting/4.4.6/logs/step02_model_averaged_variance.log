@@ -1,0 +1,199 @@
+[2025-12-09 14:25:40] ================================================================================
+[2025-12-09 14:25:40] Model-Averaged Variance Decomposition
+[2025-12-09 14:25:40] ================================================================================
+[2025-12-09 14:25:40] 
+[STEP 1] Validating inputs...
+[2025-12-09 14:25:40]   Outcome: theta
+[2025-12-09 14:25:40]   TSVR: TSVR_hours
+[2025-12-09 14:25:40]   Groups: UID (N=100)
+[2025-12-09 14:25:40]   Stratify by: congruence
+[2025-12-09 14:25:40]   Stratify levels: ['common', 'congruent', 'incongruent']
+[2025-12-09 14:25:40]   N observations: 1200
+[2025-12-09 14:25:40]   Random effects: intercept=True, slope=True
+[2025-12-09 14:25:40] 
+[STEP 2] Running kitchen sink model comparison (unstratified)...
+[2025-12-09 14:25:40]   This identifies competitive functional forms across ALL data
+[2025-12-09 14:25:40]   (not stratified by congruence/domain - form is global property)
+[2025-12-09 14:25:40]   Random effects formula: ~TSVR_hours
+[2025-12-09 14:26:41]   ✓ Kitchen sink complete: 65 models converged
+[2025-12-09 14:26:41]   Best model: PowerLaw_01 (weight=6.1%)
+[2025-12-09 14:26:41] 
+[STEP 3] Selecting competitive models (ΔAIC < 2.0)...
+[2025-12-09 14:26:41]   Competitive models: 20
+[2025-12-09 14:26:41]   Cumulative weight: 67.1%
+[2025-12-09 14:26:41]   Capping at 6 models (computational cost control)
+[2025-12-09 14:26:41]   Adjusted cumulative weight: 32.5%
+[2025-12-09 14:26:41]   Models to average: ['PowerLaw_01', 'Log', 'Log10', 'Log2', 'PowerLaw_02', 'SquareRoot']
+[2025-12-09 14:26:41] 
+[STEP 4] Fitting stratified LMMs...
+[2025-12-09 14:26:41]   Total LMMs to fit: 6 models × 3 levels = 18
+[2025-12-09 14:26:41] 
+  === Stratified Level: common ===
+[2025-12-09 14:26:41]     N observations: 400
+[2025-12-09 14:26:41]     N groups: 100
+[2025-12-09 14:26:41]     [1/6] Fitting PowerLaw_01 (w=0.1866)...
+[2025-12-09 14:26:41]       ✓ Converged: True
+[2025-12-09 14:26:41]         ICC_int=0.132, ICC_slope_simple=0.258779
+[2025-12-09 14:26:41]     [2/6] Fitting Log (w=0.1789)...
+[2025-12-09 14:26:42]       ✓ Converged: True
+[2025-12-09 14:26:42]         ICC_int=0.356, ICC_slope_simple=0.074909
+[2025-12-09 14:26:42]     [3/6] Fitting Log10 (w=0.1789)...
+[2025-12-09 14:26:43]       ✓ Converged: True
+[2025-12-09 14:26:43]         ICC_int=0.365, ICC_slope_simple=0.329836
+[2025-12-09 14:26:43]     [4/6] Fitting Log2 (w=0.1789)...
+[2025-12-09 14:26:44]       ✓ Converged: True
+[2025-12-09 14:26:44]         ICC_int=0.356, ICC_slope_simple=0.038235
+[2025-12-09 14:26:44]     [5/6] Fitting PowerLaw_02 (w=0.1550)...
+[2025-12-09 14:26:44]       ✓ Converged: True
+[2025-12-09 14:26:44]         ICC_int=0.235, ICC_slope_simple=0.093339
+[2025-12-09 14:26:44]     [6/6] Fitting SquareRoot (w=0.1217)...
+[2025-12-09 14:26:45]       ✓ Converged: True
+[2025-12-09 14:26:45]         ICC_int=0.355, ICC_slope_simple=0.049636
+[2025-12-09 14:26:45]     Models converged: 6/6
+[2025-12-09 14:26:45]     Computing model-averaged variance components...
+[2025-12-09 14:26:45]       ICC_int (avg) = 0.297
+[2025-12-09 14:26:45]       ICC_slope_simple (avg) = 0.148048
+[2025-12-09 14:26:45]     Computing model-averaged random effects...
+[2025-12-09 14:26:45]       Random effects averaged across 6 models
+[2025-12-09 14:26:45]       N participants: 100
+[2025-12-09 14:26:45] 
+  === Stratified Level: congruent ===
+[2025-12-09 14:26:45]     N observations: 400
+[2025-12-09 14:26:45]     N groups: 100
+[2025-12-09 14:26:45]     [1/6] Fitting PowerLaw_01 (w=0.1866)...
+[2025-12-09 14:26:45]       ✓ Converged: True
+[2025-12-09 14:26:45]         ICC_int=0.005, ICC_slope_simple=0.194664
+[2025-12-09 14:26:45]     [2/6] Fitting Log (w=0.1789)...
+[2025-12-09 14:26:46]       ✓ Converged: True
+[2025-12-09 14:26:46]         ICC_int=0.189, ICC_slope_simple=0.001025
+[2025-12-09 14:26:46]     [3/6] Fitting Log10 (w=0.1789)...
+[2025-12-09 14:26:48]       ✓ Converged: True
+[2025-12-09 14:26:48]         ICC_int=0.220, ICC_slope_simple=0.039461
+[2025-12-09 14:26:48]     [4/6] Fitting Log2 (w=0.1789)...
+[2025-12-09 14:26:49]       ✓ Converged: True
+[2025-12-09 14:26:49]         ICC_int=0.185, ICC_slope_simple=0.002278
+[2025-12-09 14:26:49]     [5/6] Fitting PowerLaw_02 (w=0.1550)...
+[2025-12-09 14:26:50]       ✓ Converged: True
+[2025-12-09 14:26:50]         ICC_int=0.009, ICC_slope_simple=0.221670
+[2025-12-09 14:26:50]     [6/6] Fitting SquareRoot (w=0.1217)...
+[2025-12-09 14:26:51]       ✓ Converged: True
+[2025-12-09 14:26:51]         ICC_int=0.192, ICC_slope_simple=0.000763
+[2025-12-09 14:26:51]     Models converged: 6/6
+[2025-12-09 14:26:51]     Computing model-averaged variance components...
+[2025-12-09 14:26:51]       ICC_int (avg) = 0.132
+[2025-12-09 14:26:51]       ICC_slope_simple (avg) = 0.078428
+[2025-12-09 14:26:51]     Computing model-averaged random effects...
+[2025-12-09 14:26:51]       Random effects averaged across 6 models
+[2025-12-09 14:26:51]       N participants: 100
+[2025-12-09 14:26:51] 
+  === Stratified Level: incongruent ===
+[2025-12-09 14:26:51]     N observations: 400
+[2025-12-09 14:26:51]     N groups: 100
+[2025-12-09 14:26:51]     [1/6] Fitting PowerLaw_01 (w=0.1866)...
+[2025-12-09 14:26:53]       ✓ Converged: True
+[2025-12-09 14:26:53]         ICC_int=0.247, ICC_slope_simple=0.072191
+[2025-12-09 14:26:53]     [2/6] Fitting Log (w=0.1789)...
+[2025-12-09 14:26:54]       ✓ Converged: True
+[2025-12-09 14:26:54]         ICC_int=0.302, ICC_slope_simple=0.082613
+[2025-12-09 14:26:54]     [3/6] Fitting Log10 (w=0.1789)...
+[2025-12-09 14:26:56]       ✓ Converged: True
+[2025-12-09 14:26:56]         ICC_int=0.271, ICC_slope_simple=0.024126
+[2025-12-09 14:26:56]     [4/6] Fitting Log2 (w=0.1789)...
+[2025-12-09 14:26:57]       ✓ Converged: True
+[2025-12-09 14:26:57]         ICC_int=0.256, ICC_slope_simple=0.004025
+[2025-12-09 14:26:57]     [5/6] Fitting PowerLaw_02 (w=0.1550)...
+[2025-12-09 14:26:59]       ✓ Converged: True
+[2025-12-09 14:26:59]         ICC_int=0.284, ICC_slope_simple=0.015053
+[2025-12-09 14:26:59]     [6/6] Fitting SquareRoot (w=0.1217)...
+[2025-12-09 14:27:00]       ✓ Converged: True
+[2025-12-09 14:27:00]         ICC_int=0.259, ICC_slope_simple=0.003836
+[2025-12-09 14:27:00]     Models converged: 6/6
+[2025-12-09 14:27:00]     Computing model-averaged variance components...
+[2025-12-09 14:27:00]       ICC_int (avg) = 0.270
+[2025-12-09 14:27:00]       ICC_slope_simple (avg) = 0.036088
+[2025-12-09 14:27:00]     Computing model-averaged random effects...
+[2025-12-09 14:27:00]       Random effects averaged across 6 models
+[2025-12-09 14:27:00]       N participants: 100
+[2025-12-09 14:27:00] 
+[STEP 7] Aggregating results across levels...
+[2025-12-09 14:27:00]   ✓ Averaged variance components: 3 levels
+[2025-12-09 14:27:00]   ✓ Averaged ICCs: 3 levels
+[2025-12-09 14:27:00]   ✓ Averaged random effects: 300 rows (100 UID × 3 levels)
+[2025-12-09 14:27:00] 
+[STEP 8] Computing summary statistics...
+[2025-12-09 14:27:00]   Effective N models: 5.94
+[2025-12-09 14:27:00]   Convergence rate: 100.0%
+[2025-12-09 14:27:00] 
+[STEP 9] Saving outputs to /home/etai/projects/REMEMVR/results/ch5/5.4.6/data...
+[2025-12-09 14:27:00]   ✓ model_comparison.csv
+[2025-12-09 14:27:00]   ✓ competitive_models.csv
+[2025-12-09 14:27:00]   ✓ variance_components_averaged.csv
+[2025-12-09 14:27:00]   ✓ ICCs_averaged.csv
+[2025-12-09 14:27:00]   ✓ random_effects_averaged.csv
+[2025-12-09 14:27:00]   ✓ common_* (model-specific results)
+[2025-12-09 14:27:00]   ✓ congruent_* (model-specific results)
+[2025-12-09 14:27:00]   ✓ incongruent_* (model-specific results)
+Model averaging complete
+  Models used: 6
+  Effective N models: 5.94
+
+Saving model-averaged results...
+step02_averaged_variance_components.csv (3 rows)
+step02_averaged_iccs.csv (3 rows)
+step02_averaged_random_effects.csv (300 rows)
+step02_model_specific_variance.csv (18 rows)
+
+Saving model selection metadata...
+step02_competitive_models_metadata.yaml
+
+Validating model-averaged results...
+6 competitive models used
+ICC_intercept bounded in [0, 1]: [0.1319, 0.2969]
+ICC_slope_simple bounded in [0, 1]: [0.0361, 0.1480]
+ICC_slope_conditional bounded in [0, 1]: [0.5070, 0.8969]
+Random effects means (should be ≈ 0):
+  Mean intercept: -0.000000
+  Mean slope: -0.000000
+Random effects centered at zero
+
+Model-averaged variance decomposition results:
+--------------------------------------------------------------------------------
+
+common congruence:
+  var_intercept:   0.185752
+  var_slope:       0.083365
+  cov_int_slope:   -0.027757
+  var_residual:    0.422580
+
+congruent congruence:
+  var_intercept:   0.091527
+  var_slope:       0.054525
+  cov_int_slope:   -0.012138
+  var_residual:    0.559215
+
+incongruent congruence:
+  var_intercept:   0.154192
+  var_slope:       0.015877
+  cov_int_slope:   0.015007
+  var_residual:    0.416363
+
+--------------------------------------------------------------------------------
+
+common ICCs:
+  ICC_intercept:          0.2969
+  ICC_slope_simple:       0.1480
+  ICC_slope_conditional:  0.8969
+
+congruent ICCs:
+  ICC_intercept:          0.1319
+  ICC_slope_simple:       0.0784
+  ICC_slope_conditional:  0.5070
+
+incongruent ICCs:
+  ICC_intercept:          0.2700
+  ICC_slope_simple:       0.0361
+  ICC_slope_conditional:  0.7678
+
+================================================================================
+Step 02 complete - Model-averaged variance decomposition
+================================================================================

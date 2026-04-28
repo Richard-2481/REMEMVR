@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
-# =============================================================================
 # Random Slopes Testing: Intercepts-Only vs Intercepts+Slopes Comparison
-# =============================================================================
 """
 Step ID: step05d
 Step Name: Random Slopes Comparison (MANDATORY - Section 4.4 BLOCKER)
 RQ: ch5/5.2.1
-Generated: 2025-12-27 (rq_platinum agent)
 
 PURPOSE:
 Test whether random slopes improve model fit vs intercepts-only for top 10
@@ -44,7 +41,6 @@ VALIDATION CRITERIA:
 - If slopes don't improve (ΔAIC < 2): Recommend intercepts-only
 - Document convergence failures (boundary warnings)
 """
-# =============================================================================
 
 import sys
 from pathlib import Path
@@ -58,9 +54,7 @@ import warnings
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step05d_random_slopes_comparison.log"
@@ -119,20 +113,15 @@ TOP_MODELS = {
     }
 }
 
-# =============================================================================
 # Logging Function
-# =============================================================================
 
-def log(msg: str) -> None:
-    """Write to both log file and console."""
+def log(msg):
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # Data Preparation
-# =============================================================================
 
 def prepare_data(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -171,9 +160,7 @@ def prepare_data(df: pd.DataFrame) -> pd.DataFrame:
 
     return df_prep
 
-# =============================================================================
 # Model Fitting Functions
-# =============================================================================
 
 def fit_model_pair(
     model_name: str,
@@ -207,7 +194,7 @@ def fit_model_pair(
     log(f"Formula: {formula}")
 
     # Fit intercepts-only
-    log(f"\n[FIT] Intercepts-only (re_formula='{re_intercepts}')...")
+    log(f"\nIntercepts-only (re_formula='{re_intercepts}')...")
     try:
         model_int = smf.mixedlm(
             formula,
@@ -233,13 +220,13 @@ def fit_model_pair(
             log(f"  Warnings: {conv_warnings_int}")
 
     except Exception as e:
-        log(f"  [ERROR] Intercepts-only failed: {str(e)}")
+        log(f"  Intercepts-only failed: {str(e)}")
         result_int = None
         aic_int = np.inf
         converged_int = False
 
     # Fit intercepts+slopes
-    log(f"\n[FIT] Intercepts+slopes (re_formula='{re_slopes}')...")
+    log(f"\nIntercepts+slopes (re_formula='{re_slopes}')...")
     try:
         model_slopes = smf.mixedlm(
             formula,
@@ -272,7 +259,7 @@ def fit_model_pair(
             log(f"  Warnings: {conv_warnings_slopes}")
 
     except Exception as e:
-        log(f"  [ERROR] Intercepts+slopes failed: {str(e)}")
+        log(f"  Intercepts+slopes failed: {str(e)}")
         result_slopes = None
         aic_slopes = np.inf
         converged_slopes = False
@@ -282,26 +269,26 @@ def fit_model_pair(
     delta_aic = aic_int - aic_slopes  # Positive = slopes improve fit
     slopes_improve = delta_aic > 2.0
 
-    log(f"\n[COMPARISON]")
+    log(f"\n")
     log(f"  ΔAIC (intercepts - slopes): {delta_aic:.2f}")
     log(f"  Slopes improve fit (ΔAIC > 2): {slopes_improve}")
 
     # Interpretation
     if not converged_int and not converged_slopes:
-        log(f"  [INTERPRETATION] Both models failed to converge")
+        log(f"  Both models failed to converge")
         interpretation = "BOTH_FAILED"
     elif not converged_slopes:
-        log(f"  [INTERPRETATION] Slopes failed, use intercepts-only")
+        log(f"  Slopes failed, use intercepts-only")
         interpretation = "SLOPES_FAILED"
     elif not converged_int:
-        log(f"  [INTERPRETATION] Intercepts failed but slopes converged (unusual)")
+        log(f"  Intercepts failed but slopes converged (unusual)")
         interpretation = "INTERCEPTS_FAILED"
     elif slopes_improve:
-        log(f"  [INTERPRETATION] Slopes improve fit substantially (ΔAIC={delta_aic:.2f})")
+        log(f"  Slopes improve fit substantially (ΔAIC={delta_aic:.2f})")
         log(f"  → Use slopes model, report slope variance = {slope_var:.4f}")
         interpretation = "SLOPES_WIN"
     else:
-        log(f"  [INTERPRETATION] Slopes don't improve fit (ΔAIC={delta_aic:.2f} < 2)")
+        log(f"  Slopes don't improve fit (ΔAIC={delta_aic:.2f} < 2)")
         log(f"  → Use intercepts-only (simpler model), homogeneous effects")
         interpretation = "INTERCEPTS_WIN"
 
@@ -320,26 +307,24 @@ def fit_model_pair(
 
     return result_int, result_slopes, summary
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 05d: Random Slopes Comparison")
+        log("Step 05d: Random Slopes Comparison")
         log("="*60)
         log("\nPURPOSE: Test intercepts-only vs intercepts+slopes for top 10 models")
         log("REQUIREMENT: improvement_taxonomy.md Section 4.4 MANDATORY")
         log("BLOCKER: Cannot claim heterogeneous effects without testing slopes")
 
         # Load data
-        log("\n[LOAD] Loading LMM input data...")
+        log("\nLoading LMM input data...")
         input_path = RQ_DIR / "data" / "step04_lmm_input.csv"
         df_lmm = pd.read_csv(input_path, encoding='utf-8')
         log(f"  Loaded: {len(df_lmm)} rows, {len(df_lmm.columns)} cols")
 
         # Prepare data
-        log("\n[PREP] Creating time transformations...")
+        log("\nCreating time transformations...")
         df_prep = prepare_data(df_lmm)
         log(f"  Created: Days, log_Days, sqrt_Days, cbrt_Days, recip_Days, etc.")
 
@@ -356,7 +341,7 @@ if __name__ == "__main__":
         # Save results
         output_path = RQ_DIR / "results" / "step05d_random_slopes_comparison.csv"
         df_results.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"\n[SAVE] Saved results: {output_path}")
+        log(f"\nSaved results: {output_path}")
 
         # Generate summary report
         log("\n" + "="*60)
@@ -435,16 +420,16 @@ if __name__ == "__main__":
             f.write("="*60 + "\n\n")
             f.write(df_results.to_string(index=False))
 
-        log(f"\n[SAVE] Saved summary: {summary_path}")
+        log(f"\nSaved summary: {summary_path}")
 
         log("\n" + "="*60)
-        log("[SUCCESS] Step 05d complete")
+        log("Step 05d complete")
         log("="*60)
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

@@ -1,0 +1,6 @@
+effect,f_squared,interpretation
+"C(Factor, Treatment('What'))[T.When]",0.014054303283999816,negligible
+"C(Factor, Treatment('What'))[T.Where]",0.000762956006805626,negligible
+log_Days,0.10506991536509293,small
+"log_Days:C(Factor, Treatment('What'))[T.When]",0.03893602738007373,small
+"log_Days:C(Factor, Treatment('What'))[T.Where]",0.00017983626113572682,negligible

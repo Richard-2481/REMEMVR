@@ -1,0 +1,26 @@
+Step 02: Extract REMEMVR Slopes from Ch5 5.1.4
+Loading random effects from Ch5 5.1.4...
+CRITICAL FIX: Using Ch5 5.1.4 (NOT 5.1.1) - proven working in RQ 7.6.1
+step04_random_effects.csv (100 rows, 5 cols)
+All expected columns present: ['UID', 'random_intercept', 'random_slope']
+Extracting random slopes and intercepts...
+Columns renamed to: ['UID', 'REMEMVR_Slope', 'REMEMVR_Intercept']
+Verifying data quality...
+No missing values in slope/intercept columns
+Participant count: 100
+REMEMVR_Slope: mean=0.0000, std=0.0045, range=[-0.0103, 0.0128]
+REMEMVR_Intercept: mean=0.0000, std=0.5920, range=[-1.6735, 1.3411]
+Slope interpretation:
+- Negative slopes = forgetting over time
+- Slopes near 0 = stable retention
+- Positive slopes = improvement over time (rare)
+Slope distribution: 58 negative (forgetting), 42 positive (improvement)
+Saving REMEMVR slopes to: /home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step02_rememvr_slopes.csv
+step02_rememvr_slopes.csv (100 rows, 3 cols)
+Running validate_numeric_range on REMEMVR_Slope...
+valid: True
+message: REMEMVR_Slope: All values within range [-0.5, 0.1] (n=100).
+out_of_range_count: 0
+violations: []
+PASS - Slopes within expected range [-0.5, 0.1]
+Step 02 complete

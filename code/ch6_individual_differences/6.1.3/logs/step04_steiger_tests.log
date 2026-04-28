@@ -1,0 +1,136 @@
+Step 04: Perform Steiger Z-Tests for Cross-Domain Comparisons
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.3
+
+[STEP 1] Loading merged dataset and preparing for analysis...
+Loaded data: (300, 7)
+Analysis data shape: (100, 7)
+Columns: ['UID', 'What', 'When', 'Where', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+
+[STEP 2] Calculating correlation matrix...
+Correlation matrix saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step04_correlation_matrix.csv
+
+Key correlations:
+  RAVLT-What: r=0.298
+  RAVLT-Where: r=0.261
+  RAVLT-When: r=0.191
+  BVMT-What: r=0.373
+  BVMT-Where: r=0.348
+  BVMT-When: r=0.229
+  RPM-What: r=0.445
+  RPM-Where: r=0.449
+  RPM-When: r=0.253
+
+[STEP 3] Performing Steiger Z-tests for dependent correlations...
+
+[STEP 4] Applying multiple comparison corrections...
+Steiger Z-test results saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step04_steiger_z_tests.csv
+Corrected p-values saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step04_corrected_pvalues.csv
+
+[STEP 5] Computing bootstrap confidence intervals...
+RAVLT: What vs Where...
+BVMT: Where vs What...
+RPM: What vs Where...
+Bootstrap results saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step04_bootstrap_correlation_diffs.csv
+
+[STEP 6] Summary of Steiger Z-test results...
+
+Cross-domain correlation comparisons:
+
+  RAVLT: What vs Where:
+    r1=0.298, r2=0.261, diff=0.036
+    Z=0.05, p=0.956 ns
+    p(Bonferroni)=1.000, p(FDR)=0.994
+    Hypothesis (RAVLT->What > RAVLT->Where): ✓
+
+  BVMT: Where vs What:
+    r1=0.348, r2=0.373, diff=-0.025
+    Z=-0.04, p=0.968 ns
+    p(Bonferroni)=1.000, p(FDR)=0.994
+    Hypothesis (BVMT->Where > BVMT->What): ✗
+
+  RPM: consistency test:
+    r1=0.445, r2=0.449, diff=0.196
+    Z=1.36, p=0.994 ns
+    p(Bonferroni)=1.000, p(FDR)=0.994
+    Hypothesis (RPM consistent across domains): ✗
+
+Step 04 completed successfully
+Performed 3 Steiger Z-tests with multiple comparison corrections
+Step 04: Perform Steiger Z-Tests for Cross-Domain Comparisons
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.3
+
+[STEP 1] Loading merged dataset and preparing for analysis...
+Loaded data: (300, 9)
+Analysis data shape: (100, 9)
+Columns: ['UID', 'What', 'When', 'Where', 'RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']
+
+[STEP 2] Calculating correlation matrix...
+Correlation matrix saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step04_correlation_matrix.csv
+
+Key correlations:
+  RAVLT_T-What: r=0.325
+  RAVLT_T-Where: r=0.258
+  RAVLT_T-When: r=0.203
+  RAVLT_Pct_Ret_T-What: r=0.362
+  RAVLT_Pct_Ret_T-Where: r=0.362
+  RAVLT_Pct_Ret_T-When: r=0.127
+  BVMT_T-What: r=0.373
+  BVMT_T-Where: r=0.348
+  BVMT_T-When: r=0.229
+  BVMT_Pct_Ret_T-What: r=0.231
+  BVMT_Pct_Ret_T-Where: r=0.182
+  BVMT_Pct_Ret_T-When: r=0.047
+  RPM_T-What: r=0.445
+  RPM_T-Where: r=0.449
+  RPM_T-When: r=0.253
+
+[STEP 3] Performing Steiger Z-tests for dependent correlations...
+
+[STEP 4] Applying multiple comparison corrections...
+Steiger Z-test results saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step04_steiger_z_tests.csv
+Corrected p-values saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step04_corrected_pvalues.csv
+
+[STEP 5] Computing bootstrap confidence intervals...
+RAVLT: What vs Where...
+BVMT: Where vs What...
+RAVLT_Pct_Ret: What vs Where...
+BVMT_Pct_Ret: Where vs What...
+RPM: What vs Where...
+Bootstrap results saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step04_bootstrap_correlation_diffs.csv
+
+[STEP 6] Summary of Steiger Z-test results...
+
+Cross-domain correlation comparisons:
+
+  RAVLT: What vs Where:
+    r1=0.325, r2=0.258, diff=0.067
+    Z=0.10, p=0.918 ns
+    p(Bonferroni)=1.000, p(FDR)=1.000
+    Hypothesis (RAVLT->What > RAVLT->Where): supported
+
+  BVMT: Where vs What:
+    r1=0.348, r2=0.373, diff=-0.025
+    Z=-0.04, p=0.968 ns
+    p(Bonferroni)=1.000, p(FDR)=1.000
+    Hypothesis (BVMT->Where > BVMT->What): not supported
+
+  RPM: consistency test:
+    r1=0.445, r2=0.449, diff=0.196
+    Z=1.36, p=0.994 ns
+    p(Bonferroni)=1.000, p(FDR)=1.000
+    Hypothesis (RPM consistent across domains): not supported
+
+  RAVLT_Pct_Ret: What vs Where:
+    r1=0.362, r2=0.362, diff=-0.000
+    Z=-0.00, p=1.000 ns
+    p(Bonferroni)=1.000, p(FDR)=1.000
+    Hypothesis (RAVLT_Pct_Ret->What > Where): not supported
+
+  BVMT_Pct_Ret: Where vs What:
+    r1=0.182, r2=0.231, diff=-0.049
+    Z=-0.07, p=0.943 ns
+    p(Bonferroni)=1.000, p(FDR)=1.000
+    Hypothesis (BVMT_Pct_Ret->Where > What): not supported
+
+Step 04 completed successfully
+Performed 5 Steiger Z-tests with multiple comparison corrections

@@ -1,0 +1,8 @@
+Metric,Value,Interpretation
+Entropy,1.0,Excellent
+Silhouette_Coefficient,,N/A
+Davies_Bouldin_Index,,N/A
+Calinski_Harabasz_Index,,N/A
+Avg_Posterior_Probability,1.0,100.0% certainty
+High_Confidence_Pct,100.0,Excellent
+Bootstrap_Jaccard_Mean,1.0,Stable

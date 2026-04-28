@@ -1,0 +1,53 @@
+2025-12-03 18:51:00,383 - INFO - ============================================================
+2025-12-03 18:51:00,383 - INFO - STEP 01: COMPUTE CTT MEAN SCORES PER PARADIGM
+2025-12-03 18:51:00,383 - INFO - ============================================================
+2025-12-03 18:51:00,383 - INFO - 
+1. Loading input files...
+2025-12-03 18:51:00,384 - INFO - Loaded purified items: 45 items
+2025-12-03 18:51:00,385 - INFO - Loaded TSVR mapping: 400 rows
+2025-12-03 18:51:00,391 - INFO - Loaded dfData: 400 rows, 214 columns
+2025-12-03 18:51:00,391 - INFO - 
+2. Computing CTT scores...
+2025-12-03 18:51:00,392 - INFO - Purified items: 45
+2025-12-03 18:51:00,395 - INFO - Filtered to TSVR mapping: 400 rows
+2025-12-03 18:51:00,395 - INFO - Available items: 45/45
+2025-12-03 18:51:00,395 - INFO - Using 45 items for CTT computation
+2025-12-03 18:51:00,397 - INFO - Items per paradigm: {'ICR': 19, 'IFR': 12, 'IRE': 14}
+2025-12-03 18:51:00,435 - INFO - CTT scores computed: 1200 rows
+2025-12-03 18:51:00,435 - INFO - 
+3. Validating results...
+2025-12-03 18:51:00,435 - ERROR - STEP 01 FAILED: 'CTT_mean'
+2025-12-03 18:51:40,142 - INFO - ============================================================
+2025-12-03 18:51:40,143 - INFO - STEP 01: COMPUTE CTT MEAN SCORES PER PARADIGM
+2025-12-03 18:51:40,143 - INFO - ============================================================
+2025-12-03 18:51:40,143 - INFO - 
+1. Loading input files...
+2025-12-03 18:51:40,144 - INFO - Loaded purified items: 45 items
+2025-12-03 18:51:40,145 - INFO - Loaded TSVR mapping: 400 rows
+2025-12-03 18:51:40,149 - INFO - Loaded dfData: 400 rows, 214 columns
+2025-12-03 18:51:40,149 - INFO - 
+2. Computing CTT scores...
+2025-12-03 18:51:40,150 - INFO - Purified items: 45
+2025-12-03 18:51:40,151 - INFO - Filtered to TSVR mapping: 400 rows
+2025-12-03 18:51:40,151 - INFO - Available items: 45/45
+2025-12-03 18:51:40,151 - INFO - Using 45 items for CTT computation
+2025-12-03 18:51:40,151 - INFO - Items per paradigm: {'ICR': 19, 'IFR': 12, 'IRE': 14}
+2025-12-03 18:51:40,190 - INFO - CTT scores computed: 1200 rows
+2025-12-03 18:51:40,190 - INFO - Columns after renaming: ['composite_ID', 'UID', 'TEST', 'paradigm', 'CTT_mean', 'n_items']
+2025-12-03 18:51:40,191 - INFO - 
+3. Validating results...
+2025-12-03 18:51:40,191 - INFO - Paradigm distribution: {'IFR': 400, 'ICR': 400, 'IRE': 400}
+2025-12-03 18:51:40,191 - INFO - CTT scores validation: PASS
+2025-12-03 18:51:40,191 - INFO - 
+4. Saving output files...
+2025-12-03 18:51:40,194 - INFO -    Saved: step01_ctt_scores.csv (1200 rows)
+2025-12-03 18:51:40,194 - INFO - 
+5. Writing computation report...
+2025-12-03 18:51:40,196 - INFO - Computation report written to /home/etai/projects/REMEMVR/results/ch5/5.3.5/data/step01_ctt_computation_report.txt
+2025-12-03 18:51:40,196 - INFO - 
+============================================================
+2025-12-03 18:51:40,196 - INFO - STEP 01 COMPLETE: CTT computation successful
+2025-12-03 18:51:40,196 - INFO - CTT computation complete: 1200 scores created (400 x 3 paradigms)
+2025-12-03 18:51:40,196 - INFO - All paradigms represented: IFR, ICR, IRE
+2025-12-03 18:51:40,196 - INFO - No NaN values in CTT_mean column
+2025-12-03 18:51:40,196 - INFO - ============================================================

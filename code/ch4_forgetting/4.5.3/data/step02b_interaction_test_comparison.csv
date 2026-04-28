@@ -1,0 +1,5 @@
+interaction_type,approach,term,beta,se,p_uncorrected,p_bonferroni,null_robust
+TSVR_linear,Log-only,TSVR_hours:Age_c:LocationType[T.Source],-0.0001854805829103,0.0001058670871256,0.0797714588931865,0.159542917786373,True
+TSVR_linear,Model-Averaged (13 models),TSVR_hours:Age_c:LocationType[T.Source],-1.0650075918070232e-19,3.0551879661304547e-06,0.9999999999999721,1.0,True
+log_TSVR,Log-only,log_TSVR:Age_c:LocationType[T.Source],0.005150622638883,0.0037067641576851,0.1646747076138232,0.3293494152276464,True
+log_TSVR,Model-Averaged (13 models),log_TSVR:Age_c:LocationType[T.Source],6.5553064512648466e-18,0.0001069724458782929,0.9999999999999512,1.0,True

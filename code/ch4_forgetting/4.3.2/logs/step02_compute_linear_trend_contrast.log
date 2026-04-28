@@ -1,0 +1,37 @@
+Step 02: Compute Linear Trend Contrast
+Verifying Step 1 completed...
+marginal_means: 3 rows
+Loading fitted LMM model...
+Model with 9 parameters
+Coefficient names: ['Intercept', "C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]", "C(Factor, Treatment('Free_Recall'))[T.Recognition]", 'log_Days', "log_Days:C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]", "log_Days:C(Factor, Treatment('Free_Recall'))[T.Recognition]", 'Group Var', 'Group x log_Days Cov', 'log_Days Var']
+Identifying slope coefficient names (exact matching)...
+Base slope (Free_Recall): log_Days
+Cued_Recall slope diff: log_Days:C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]
+Recognition slope diff: log_Days:C(Factor, Treatment('Free_Recall'))[T.Recognition]
+Computing paradigm-specific forgetting slopes...
+Free_Recall slope = -0.4697
+Cued_Recall slope = -0.5203
+Recognition slope = -0.5971
+Computing linear trend contrast estimate...
+Contrast weights: Free=-1, Cued=0, Recog=1
+Linear trend contrast estimate = -0.1274
+Computing contrast standard error...
+Contrast SE = 0.0515
+Computing z-statistic and p-values...
+z-value = -2.4742
+p-value (uncorrected) = 0.013354
+p-value (Bonferroni) = 0.200310
+Significant (uncorrected, p < 0.05): True
+Significant (Bonferroni, p < 0.05): False
+Computing 95% confidence interval...
+95% CI: [-0.2284, -0.0265]
+Building contrast results DataFrame...
+Contrast results:
+  contrast_name  estimate        SE   z_value  p_value_uncorrected  p_value_bonferroni  significant_uncorrected  significant_bonferroni  CI_lower  CI_upper
+0  Linear_Trend -0.127447  0.051511 -2.474186             0.013354             0.20031                     True                   False -0.228409 -0.026486
+Generating contrast interpretation...
+Checking output validity...
+All validation checks passed
+/home/etai/projects/REMEMVR/results/ch5/rq4/data/step02_linear_trend_contrast.csv
+/home/etai/projects/REMEMVR/results/ch5/rq4/data/step02_contrast_interpretation.txt
+Step 02 complete - Linear trend contrast computed

@@ -15,7 +15,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step10_accuracy_comparison.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -43,19 +42,19 @@ def bootstrap_difference_ci(data1, data2, n_bootstrap=1000, random_state=42):
     return diff, ci_lower, ci_upper
 
 try:
-    log("[START] Step 10: Accuracy Comparison")
-    log("[INFO] Purpose: Compare confidence vs accuracy prediction patterns")
+    log("Step 10: Accuracy Comparison")
+    log("Purpose: Compare confidence vs accuracy prediction patterns")
     
     # Load confidence prediction results (current RQ)
-    log("[LOAD] Loading confidence prediction results...")
+    log("Loading confidence prediction results...")
     conf_effects = pd.read_csv(RQ_DIR / "data" / "step08_effect_sizes.csv")
     conf_hier = pd.read_csv(RQ_DIR / "data" / "step05_hierarchical_models.csv")
     conf_pred = pd.read_csv(RQ_DIR / "data" / "step06_individual_predictors.csv")
-    log("[LOADED] Confidence prediction data loaded")
+    log("Confidence prediction data loaded")
     
     # Try to load accuracy prediction results (RQ 7.1.1)
     accuracy_path = Path(__file__).resolve().parents[2] / "7.1.1" / "data"
-    log(f"[CHECK] Looking for RQ 7.1.1 data in: {accuracy_path}")
+    log(f"Looking for RQ 7.1.1 data in: {accuracy_path}")
     
     comparison_results = []
     
@@ -72,7 +71,7 @@ try:
         for filename in possible_files:
             filepath = accuracy_path / filename
             if filepath.exists():
-                log(f"[FOUND] RQ 7.1.1 data: {filename}")
+                log(f"RQ 7.1.1 data: {filename}")
                 
                 if "effect_sizes" in filename:
                     acc_effects = pd.read_csv(filepath)
@@ -86,18 +85,18 @@ try:
                         # Estimate from effect sizes
                         acc_r2 = 0.226  # From rq_status.tsv notes
                     
-                    log(f"[DATA] Accuracy model R² = {acc_r2:.4f}")
+                    log(f"Accuracy model R² = {acc_r2:.4f}")
                     break
         
         if not accuracy_data_found:
-            log("[WARNING] RQ 7.1.1 effect size data not found - using estimates from documentation")
+            log("RQ 7.1.1 effect size data not found - using estimates from documentation")
             # Use values from rq_status.tsv and prior reports
             acc_r2 = 0.226
             acc_rpm_sr2 = 0.080  # From step08_effect_sizes.csv we saw earlier
             acc_ravlt_sr2 = 0.017
             acc_bvmt_sr2 = 0.011
     else:
-        log("[WARNING] RQ 7.1.1 directory not found - using documented values")
+        log("RQ 7.1.1 directory not found - using documented values")
         acc_r2 = 0.226
         acc_rpm_sr2 = 0.080
         acc_ravlt_sr2 = 0.017
@@ -115,20 +114,20 @@ try:
     conf_ravlt_pct = conf_pred[conf_pred['predictor'] == 'RAVLT_Pct_Ret_T']
     conf_bvmt_pct = conf_pred[conf_pred['predictor'] == 'BVMT_Pct_Ret_T']
     
-    log("[COMPARE] Overall model comparison:")
-    log(f"[COMPARE] Confidence R² = {conf_r2:.4f}")
-    log(f"[COMPARE] Accuracy R² = {acc_r2:.4f}")
+    log("Overall model comparison:")
+    log(f"Confidence R² = {conf_r2:.4f}")
+    log(f"Accuracy R² = {acc_r2:.4f}")
     
     r2_diff = conf_r2 - acc_r2
-    log(f"[DIFFERENCE] R²(confidence) - R²(accuracy) = {r2_diff:.4f}")
+    log(f"R²(confidence) - R²(accuracy) = {r2_diff:.4f}")
     
     if r2_diff < 0:
-        log("[PATTERN] Confidence predicted MORE WEAKLY than accuracy (supports dissociation)")
+        log("Confidence predicted MORE WEAKLY than accuracy (supports dissociation)")
     else:
-        log("[PATTERN] Confidence predicted MORE STRONGLY than accuracy")
+        log("Confidence predicted MORE STRONGLY than accuracy")
     
     # Individual predictor comparisons
-    log("[COMPARE] Individual predictor patterns:")
+    log("Individual predictor patterns:")
     
     # RAVLT comparison
     comparison_results.append({
@@ -184,14 +183,14 @@ try:
     # Log individual comparisons
     for _, row in comparison_df.iterrows():
         if row['predictor'] != 'Overall_Model':
-            log(f"[PREDICTOR] {row['predictor']}:")
+            log(f"{row['predictor']}:")
             log(f"  Confidence sr² = {row['sr2_confidence']:.4f}")
             log(f"  Accuracy sr² = {row['sr2_accuracy']:.4f}")
             log(f"  Difference = {row['difference']:.4f}")
             log(f"  Pattern = {row['pattern']}")
     
     # Theoretical interpretation
-    log("[INTERPRET] Metacognitive dissociation evidence:")
+    log("Metacognitive dissociation evidence:")
     
     supporting_evidence = []
     contradicting_evidence = []
@@ -210,41 +209,41 @@ try:
     if conf_bvmt['sr2'] > 0.011:
         supporting_evidence.append("BVMT shows different pattern for confidence (0.048 vs 0.011)")
     
-    log(f"[EVIDENCE] Supporting dissociation ({len(supporting_evidence)} points):")
+    log(f"Supporting dissociation ({len(supporting_evidence)} points):")
     for evidence in supporting_evidence:
         log(f"  - {evidence}")
     
     if contradicting_evidence:
-        log(f"[EVIDENCE] Against dissociation ({len(contradicting_evidence)} points):")
+        log(f"Against dissociation ({len(contradicting_evidence)} points):")
         for evidence in contradicting_evidence:
             log(f"  - {evidence}")
     
     # Overall conclusion
     if len(supporting_evidence) > len(contradicting_evidence):
-        log("[CONCLUSION] Evidence SUPPORTS metacognitive dissociation hypothesis")
-        log("[CONCLUSION] Confidence relies on different cognitive processes than accuracy")
+        log("Evidence SUPPORTS metacognitive dissociation hypothesis")
+        log("Confidence relies on different cognitive processes than accuracy")
     else:
-        log("[CONCLUSION] Evidence does not clearly support dissociation")
+        log("Evidence does not clearly support dissociation")
     
     # Save comparison results
     output_path = RQ_DIR / "data" / "step10_accuracy_comparison.csv"
     comparison_df.to_csv(output_path, index=False)
-    log(f"[SAVED] Comparison results: {output_path}")
+    log(f"Comparison results: {output_path}")
     
     # Validation
-    log("[VALIDATION] Checking comparison validity...")
+    log("Checking comparison validity...")
     all_sr2_valid = all((0 <= sr2 <= 1) for sr2 in comparison_df['sr2_confidence'])
     pattern_consistent = comparison_df['pattern'].notna().all()
     
     if all_sr2_valid and pattern_consistent:
-        log("[VALIDATION] Comparison analysis PASSED")
+        log("Comparison analysis PASSED")
     else:
-        log("[VALIDATION] Some issues detected but analysis complete")
+        log("Some issues detected but analysis complete")
     
-    log("[SUCCESS] Step 10 complete")
+    log("Step 10 complete")
     
 except Exception as e:
-    log(f"[ERROR] Critical error in comparison analysis: {str(e)}")
+    log(f"Critical error in comparison analysis: {str(e)}")
     import traceback
-    log(f"[TRACEBACK] {traceback.format_exc()}")
+    log(f"{traceback.format_exc()}")
     raise

@@ -2,7 +2,6 @@
 """
 Step 07: Recognition vs Free Recall Slope Comparison
 RQ 6.9.7 - Paradigm-Specific Calibration Trajectory
-Generated: 2026-01-19
 
 PURPOSE: Test Recognition advantage hypothesis by comparing calibration trajectory slopes
 """
@@ -29,12 +28,12 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 7: slope_comparison")
+        log("Step 7: slope_comparison")
 
         # Load LMM fixed effects
         fixed_path = RQ_DIR / "data" / "step03_lmm_fixed_effects.csv"
         fixed_effects = pd.read_csv(fixed_path, encoding='utf-8')
-        log(f"[LOADED] {fixed_path.name}")
+        log(f"{fixed_path.name}")
 
         # Validate format
         validation_result = validate_data_format(
@@ -43,19 +42,19 @@ if __name__ == "__main__":
         )
 
         if not validation_result.get('valid', False):
-            log(f"[ERROR] Data format validation failed")
+            log(f"Data format validation failed")
             sys.exit(1)
 
         # Extract slopes
         # Free Recall slope = TSVR_hours coefficient (reference level)
         # Recognition slope = TSVR_hours + paradigm[T.recognition]:TSVR_hours interaction
 
-        log("[EXTRACT] Extracting paradigm-specific slopes...")
+        log("Extracting paradigm-specific slopes...")
 
         # Find TSVR_hours main effect (Free Recall slope)
         tsvr_row = fixed_effects[fixed_effects['term'] == 'TSVR_hours']
         if len(tsvr_row) == 0:
-            log("[ERROR] TSVR_hours term not found in fixed effects")
+            log("TSVR_hours term not found in fixed effects")
             sys.exit(1)
 
         slope_free = tsvr_row['coef'].values[0]
@@ -64,7 +63,7 @@ if __name__ == "__main__":
         # Find Recognition×TSVR interaction
         recog_int_row = fixed_effects[fixed_effects['term'].str.contains('recognition.*TSVR', case=False, na=False)]
         if len(recog_int_row) == 0:
-            log("[WARNING] Recognition×TSVR interaction term not found")
+            log("Recognition×TSVR interaction term not found")
             slope_recognition = slope_free
             se_recognition = se_free
         else:
@@ -113,13 +112,13 @@ if __name__ == "__main__":
 
         out_path = RQ_DIR / "data" / "step07_slope_comparison.csv"
         result.to_csv(out_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {out_path.name}")
+        log(f"{out_path.name}")
 
-        log("[SUCCESS] Step 7 complete")
+        log("Step 7 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

@@ -14,7 +14,6 @@ Input:
 Output:
   - step00_calibration_by_schema.csv (1200 rows: 100 UID × 4 tests × 3 schema levels)
 
-Author: Claude Code
 Date: 2026-04-07
 """
 

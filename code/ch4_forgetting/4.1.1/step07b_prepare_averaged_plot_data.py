@@ -13,7 +13,6 @@ INPUT:
 OUTPUT:
 - plots/step07b_averaged_trajectory_data.csv (observed + averaged predictions)
 
-Author: g_code
 Date: 2025-12-08
 RQ: ch5/5.1.1
 Step: 07b
@@ -38,11 +37,11 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 07b: Prepare Averaged Plot Data")
+        log("Step 07b: Prepare Averaged Plot Data")
         log("=" * 80)
 
         # Load data
-        log("[LOAD] Loading observed data and averaged predictions...")
+        log("Loading observed data and averaged predictions...")
         lmm_input = pd.read_csv(RQ_DIR / "data" / "step04_lmm_input.csv")
         averaged = pd.read_csv(RQ_DIR / "data" / "step05c_averaged_predictions.csv")
         
@@ -61,7 +60,7 @@ if __name__ == "__main__":
         predicted['data_type'] = 'predicted'
         
         # Combine
-        log("[COMBINE] Creating combined plot dataset...")
+        log("Creating combined plot dataset...")
         plot_data = pd.concat([observed, predicted], ignore_index=True)
         
         # Add confidence intervals for predictions
@@ -77,24 +76,24 @@ if __name__ == "__main__":
         )
         
         # Save
-        log("[SAVE] Saving plot data...")
+        log("Saving plot data...")
         plot_path = RQ_DIR / "plots" / "step07b_averaged_trajectory_data.csv"
         plot_data.to_csv(plot_path, index=False, encoding='utf-8')
         log(f"  ✓ {plot_path.name} ({len(plot_data)} rows)")
         
-        log("\n[SUMMARY]")
+        log("\n")
         log(f"  Observed: {len(observed)} participant-level points")
         log(f"  Predicted: {len(predicted)} averaged trajectory points")
         log(f"  Confidence bands: ±1.96 SE (95% CI)")
         log(f"  Functional form: Power law (α_eff=0.410)")
         
         log("=" * 80)
-        log("[SUCCESS] Step 07b Complete")
+        log("Step 07b Complete")
         log(f"  Output: {plot_path.name}")
         log("=" * 80)
         
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         import traceback
         log(traceback.format_exc())
         raise

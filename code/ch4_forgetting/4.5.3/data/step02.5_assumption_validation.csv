@@ -1,0 +1,8 @@
+assumption,test,statistic,p_value,criterion,result
+Residual Normality,Shapiro-Wilk,0.992314011779038,0.0003694640009111539,p > 0.05 (or visual Q-Q acceptable),FAIL
+Homoscedasticity,Correlation of |residuals| with fitted,0.10648493889851324,0.0025637184803218483,|r| < 0.2,PASS
+Random Effects Normality,Shapiro-Wilk on intercepts,0.9815470781954686,0.17514482703567047,p > 0.05,PASS
+Independence,Durbin-Watson,2.064747923635399,,1.5 < DW < 2.5,PASS
+Linearity,Quadratic correlation check,0.014802360454010066,0.6759162397606777,|r_quad| < 0.1,PASS
+No Multicollinearity,Model convergence (Age grand-mean centered),,,Model converged + centered predictors,PASS
+Convergence,Model convergence status,1.0,,Model converged,PASS

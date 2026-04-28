@@ -40,26 +40,26 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 06: Prepare Plot Data")
+        log("Step 06: Prepare Plot Data")
 
         # Load standardized features
-        log(f"[LOAD] Reading {INPUT_FEATURES_FILE}")
+        log(f"Reading {INPUT_FEATURES_FILE}")
         df_features = pd.read_csv(INPUT_FEATURES_FILE)
 
         # Load cluster assignments
-        log(f"[LOAD] Reading {INPUT_ASSIGNMENTS_FILE}")
+        log(f"Reading {INPUT_ASSIGNMENTS_FILE}")
         df_assignments = pd.read_csv(INPUT_ASSIGNMENTS_FILE)
 
         # Load cluster centers (z-scored)
-        log(f"[LOAD] Reading {INPUT_CENTERS_FILE}")
+        log(f"Reading {INPUT_CENTERS_FILE}")
         df_centers = pd.read_csv(INPUT_CENTERS_FILE)
 
         # Load cluster labels
-        log(f"[LOAD] Reading {INPUT_LABELS_FILE}")
+        log(f"Reading {INPUT_LABELS_FILE}")
         df_labels = pd.read_csv(INPUT_LABELS_FILE)
 
         # Merge features + assignments
-        log("[MERGE] Combining features and cluster assignments")
+        log("Combining features and cluster assignments")
         df_participants = pd.merge(df_features, df_assignments, on='UID')
 
         # Add cluster labels
@@ -97,46 +97,46 @@ if __name__ == "__main__":
         df_centers_plot = df_centers_plot.rename(columns={'label': 'cluster_label'})
 
         # Combine participant data + cluster centers
-        log("[COMBINE] Merging participant data with cluster centers")
+        log("Merging participant data with cluster centers")
         df_plot_data = pd.concat([df_participants, df_centers_plot], ignore_index=True)
 
-        log(f"[INFO] Plot data shape: {df_plot_data.shape}")
+        log(f"Plot data shape: {df_plot_data.shape}")
         log(f"  Participant rows: {(df_plot_data['data_type'] == 'participant').sum()}")
         log(f"  Center rows: {(df_plot_data['data_type'] == 'center').sum()}")
 
         # Save plot data
-        log(f"[SAVE] Writing to {OUTPUT_FILE}")
+        log(f"Writing to {OUTPUT_FILE}")
         df_plot_data.to_csv(OUTPUT_FILE, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_FILE}")
+        log(f"{OUTPUT_FILE}")
 
         # Validation checks
-        log("[VALIDATION] Checking plot data completeness")
+        log("Checking plot data completeness")
 
         # Check all clusters present in participant data
         participant_clusters = df_plot_data[df_plot_data['data_type'] == 'participant']['cluster'].unique()
         center_clusters = df_plot_data[df_plot_data['data_type'] == 'center']['cluster'].unique()
 
         if not set(participant_clusters) == set(center_clusters):
-            log("[WARNING] Cluster mismatch between participants and centers")
+            log("Cluster mismatch between participants and centers")
 
         # Check for NaN values
         nan_count = df_plot_data.isna().sum().sum()
         if nan_count > 0:
-            log(f"[WARNING] {nan_count} NaN values in plot data")
+            log(f"{nan_count} NaN values in plot data")
 
         # Check no duplicate UIDs in participant data
         participant_uids = df_plot_data[df_plot_data['data_type'] == 'participant']['UID']
         if len(participant_uids) != len(participant_uids.unique()):
-            log("[WARNING] Duplicate UIDs in participant data")
+            log("Duplicate UIDs in participant data")
 
         log("[VALIDATION PASS] Plot data ready")
-        log("[SUCCESS] Step 06 complete")
+        log("Step 06 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

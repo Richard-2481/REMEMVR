@@ -204,10 +204,7 @@ if __name__ == "__main__":
         log("=" * 70)
         log("§6.5 SELF-REPORT MEASURES — UNIFIED REANALYSIS")
         log("=" * 70)
-
-        # =================================================================
-        # STEP 1: LOAD AND MERGE DATA
-        # =================================================================
+        # LOAD AND MERGE DATA
         log("\n[STEP 1] Loading and merging data sources...")
 
         # Theta scores (N=100, mean theta_all)
@@ -246,10 +243,7 @@ if __name__ == "__main__":
         # Save merged dataset
         df.to_csv(RQ_DIR / "data" / "step10_merged_dataset.csv", index=False)
         log(f"  Saved: step10_merged_dataset.csv")
-
-        # =================================================================
-        # STEP 2: DASS DESCRIPTIVE STATISTICS
-        # =================================================================
+        # DASS DESCRIPTIVE STATISTICS
         log("\n[STEP 2] DASS descriptive statistics...")
 
         dass_vars = ['dass_dep', 'dass_anx', 'dass_str']
@@ -292,10 +286,7 @@ if __name__ == "__main__":
                            ('sleep_hours_typical', 'Typical Sleep Hours')]:
             vals = df[var]
             log(f"  {label}: M={vals.mean():.2f}, SD={vals.std():.2f}, range=[{vals.min()}, {vals.max()}]")
-
-        # =================================================================
-        # STEP 3: MODEL 1 — LIFESTYLE FACTORS
-        # =================================================================
+        # MODEL 1 — LIFESTYLE FACTORS
         log("\n" + "=" * 70)
         log("[MODEL 1] LIFESTYLE FACTORS")
         log("=" * 70)
@@ -356,10 +347,7 @@ if __name__ == "__main__":
         log(f"    Mean test R²  = {mean_test:.4f}")
         log(f"    Gap = {mean_train - mean_test:.4f}")
         cv1_df.to_csv(RQ_DIR / "data" / "step10_model1_cv.csv", index=False)
-
-        # =================================================================
-        # STEP 4: MODEL 2 — PSYCHOLOGICAL DISTRESS (DASS)
-        # =================================================================
+        # MODEL 2 — PSYCHOLOGICAL DISTRESS (DASS)
         log("\n" + "=" * 70)
         log("[MODEL 2] PSYCHOLOGICAL DISTRESS (DASS)")
         log("=" * 70)
@@ -414,10 +402,7 @@ if __name__ == "__main__":
         log(f"    Mean test R²  = {mean_test2:.4f}")
         log(f"    Gap = {mean_train2 - mean_test2:.4f}")
         cv2_df.to_csv(RQ_DIR / "data" / "step10_model2_cv.csv", index=False)
-
-        # =================================================================
-        # STEP 5: MODEL 3 — WITHIN-PERSON SLEEP (MLM)
-        # =================================================================
+        # MODEL 3 — WITHIN-PERSON SLEEP (MLM)
         log("\n" + "=" * 70)
         log("[MODEL 3] WITHIN-PERSON SLEEP (MLM)")
         log("=" * 70)
@@ -554,10 +539,7 @@ if __name__ == "__main__":
             'd_sleep_hours_wp': d_sleep if len(sleep_wp_row) > 0 else np.nan,
         }])
         mlm_summary.to_csv(RQ_DIR / "data" / "step10_model3_summary.csv", index=False)
-
-        # =================================================================
-        # STEP 6: COMPREHENSIVE SUMMARY
-        # =================================================================
+        # COMPREHENSIVE SUMMARY
         log("\n" + "=" * 70)
         log("COMPREHENSIVE SUMMARY")
         log("=" * 70)
@@ -599,13 +581,13 @@ if __name__ == "__main__":
             f"F-change({res2['df_num_change']},{res2['df_den_change']})")
         log(f"    Model 3: {int(mlm_model.nobs)} obs, {len(mlm_model.model.group_labels)} groups")
 
-        log("\n[SUCCESS] §6.5 reanalysis complete")
+        log("\n§6.5 reanalysis complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         with open(LOG_FILE, 'a') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

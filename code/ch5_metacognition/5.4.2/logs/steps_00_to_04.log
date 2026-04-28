@@ -1,0 +1,300 @@
+[2025-12-11 23:41:30] ======================================================================
+[2025-12-11 23:41:30] RQ 6.4.2: Paradigm Confidence Calibration
+[2025-12-11 23:41:30] ======================================================================
+[2025-12-11 23:41:30] Started: 2025-12-11 23:41:30.996141
+[2025-12-11 23:41:30] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.4.2
+[2025-12-11 23:41:30] ======================================================================
+[2025-12-11 23:41:30] STEP 00: Load and Merge Accuracy/Confidence Data
+[2025-12-11 23:41:30] ======================================================================
+[2025-12-11 23:41:30] Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+[2025-12-11 23:41:30]   Loaded accuracy data: 1200 rows (long format)
+[2025-12-11 23:41:30]   Columns: ['composite_ID', 'domain_name', 'theta']
+[2025-12-11 23:41:31]   Accuracy data (processed): 1200 rows
+[2025-12-11 23:41:31]   Paradigms: ['IFR', 'ICR', 'IRE']
+[2025-12-11 23:41:31] Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.4.1/data/step03_theta_confidence.csv
+[2025-12-11 23:41:31]   Loaded confidence data: 400 rows (wide format)
+[2025-12-11 23:41:31]   Columns: ['composite_ID', 'theta_IFR', 'theta_ICR', 'theta_IRE']
+[2025-12-11 23:41:31]   Confidence data (long format): 1200 rows
+[2025-12-11 23:41:31]   Paradigms: ['IFR', 'ICR', 'IRE']
+[2025-12-11 23:41:31] Loading TSVR mapping from: /home/etai/projects/REMEMVR/results/ch6/6.4.1/data/step00_tsvr_mapping.csv
+[2025-12-11 23:41:31]   TSVR mapping: 400 rows
+[2025-12-11 23:41:31] Merging accuracy and confidence data...
+[2025-12-11 23:41:31]   After merge (accuracy + confidence): 1200 rows
+[2025-12-11 23:41:31]   After TSVR merge: 1200 rows
+[2025-12-11 23:41:31] Computing z-standardized theta values...
+[2025-12-11 23:41:31]   theta_accuracy: mean=0.0454, SD=0.9273
+[2025-12-11 23:41:31]   theta_accuracy_z: mean=-0.0000, SD=1.0000
+[2025-12-11 23:41:31]   theta_confidence: mean=-0.7712, SD=0.6005
+[2025-12-11 23:41:31]   theta_confidence_z: mean=-0.0000, SD=1.0000
+[2025-12-11 23:41:31] Computing calibration metrics...
+[2025-12-11 23:41:31]   Calibration range: [-3.934, 2.479]
+[2025-12-11 23:41:31]   Mean calibration: -0.0000
+[2025-12-11 23:41:31]   Mean |calibration|: 0.7258
+[2025-12-11 23:41:31] Validating merged data...
+[2025-12-11 23:41:31]   Paradigms in merged data: ['IFR', 'ICR', 'IRE']
+[2025-12-11 23:41:31]   Unique participants: 100
+[2025-12-11 23:41:31]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2025-12-11 23:41:31] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step00_calibration_by_paradigm.csv (1200 rows)
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] STEP 01: Fit LMM with Paradigm × Time Interaction
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] TSVR centering: mean = 64.95 hours
+[2025-12-11 23:41:31] Fitting LMM: calibration ~ Paradigm * TSVR_centered + (TSVR_centered | UID)
+[2025-12-11 23:41:31]   Model with random slopes converged successfully
+[2025-12-11 23:41:31] Extracting fixed effects...
+[2025-12-11 23:41:31] 
+Fixed Effects:
+[2025-12-11 23:41:31]   Intercept: β=0.0195, SE=0.0761, z=0.26, p=0.7976
+[2025-12-11 23:41:31]   C(Paradigm)[T.ICR]: β=-0.0837, SE=0.0396, z=-2.11, p=0.0345
+[2025-12-11 23:41:31]   C(Paradigm)[T.IRE]: β=0.0187, SE=0.0396, z=0.47, p=0.6374
+[2025-12-11 23:41:31]   TSVR_centered: β=0.0009, SE=0.0007, z=1.43, p=0.1540
+[2025-12-11 23:41:31]   C(Paradigm)[T.ICR]:TSVR_centered: β=0.0000, SE=0.0007, z=0.03, p=0.9794
+[2025-12-11 23:41:31]   C(Paradigm)[T.IRE]:TSVR_centered: β=0.0003, SE=0.0007, z=0.47, p=0.6404
+[2025-12-11 23:41:31] 
+Testing Paradigm main effect (LRT)...
+[2025-12-11 23:41:31]   Paradigm main effect: χ²(2)=7.83, p_uncorrected=0.0200, p_bonferroni=0.0399
+[2025-12-11 23:41:31] 
+Testing Paradigm × Time interaction (LRT)...
+[2025-12-11 23:41:31]   Paradigm × Time interaction: χ²(2)=0.28, p_uncorrected=0.8712, p_bonferroni=1.0000
+[2025-12-11 23:41:31] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_paradigm_effects.csv
+[2025-12-11 23:41:31] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_lmm_fixed_effects.csv
+[2025-12-11 23:41:31] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_lmm_model_summary.txt
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] STEP 02: Post-Hoc Paradigm Contrasts
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] Paradigm-level calibration statistics:
+[2025-12-11 23:41:31]   ICR: mean=-0.0620 (underconfidence), SD=0.9479, N=400
+[2025-12-11 23:41:31]   IFR: mean=0.0217 (overconfidence), SD=0.9084, N=400
+[2025-12-11 23:41:31]   IRE: mean=0.0404 (overconfidence), SD=0.9615, N=400
+[2025-12-11 23:41:31]   IRE vs IFR: Δ=0.0187, z=0.28, p_uncorr=0.7777, p_bonf=1.0000, d=0.020
+[2025-12-11 23:41:31]   ICR vs IFR: Δ=-0.0837, z=-1.28, p_uncorr=0.2022, p_bonf=0.6065, d=-0.090
+[2025-12-11 23:41:31]   IRE vs ICR: Δ=0.1024, z=1.52, p_uncorr=0.1293, p_bonf=0.3880, d=0.107
+[2025-12-11 23:41:31] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step02_post_hoc_contrasts.csv
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] STEP 03: Rank Paradigms by Calibration Quality
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] Paradigm ranking by calibration quality:
+[2025-12-11 23:41:31]   Rank 1: IFR - mean |calibration|=0.7000 (Best calibrated)
+[2025-12-11 23:41:31]   Rank 2: ICR - mean |calibration|=0.7281 (Middle)
+[2025-12-11 23:41:31]   Rank 3: IRE - mean |calibration|=0.7494 (Worst calibrated)
+[2025-12-11 23:41:31] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step03_paradigm_ranking.csv
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] STEP 04: Prepare Calibration Trajectory Plot Data
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] Plot data summary:
+[2025-12-11 23:41:31]   Rows: 12
+[2025-12-11 23:41:31]   Paradigms: ['ICR', 'IFR', 'IRE']
+[2025-12-11 23:41:31]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2025-12-11 23:41:31]   ICR: T1=-0.127 → T4=0.006 (Δ=0.133)
+[2025-12-11 23:41:31]   IFR: T1=-0.080 → T4=0.077 (Δ=0.157)
+[2025-12-11 23:41:31]   IRE: T1=-0.050 → T4=0.131 (Δ=0.182)
+[2025-12-11 23:41:31] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step04_calibration_trajectory_data.csv
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] EXECUTION COMPLETE
+[2025-12-11 23:41:31] ======================================================================
+[2025-12-11 23:41:31] All steps completed successfully
+[2025-12-11 23:41:31] Ended: 2025-12-11 23:41:31.818827
+[2026-01-17 14:15:39] ======================================================================
+[2026-01-17 14:15:39] RQ 6.4.2: Paradigm Confidence Calibration
+[2026-01-17 14:15:39] ======================================================================
+[2026-01-17 14:15:39] Started: 2026-01-17 14:15:39.263169
+[2026-01-17 14:15:39] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.4.2
+[2026-01-17 14:15:39] ======================================================================
+[2026-01-17 14:15:39] STEP 00: Load and Merge Accuracy/Confidence Data
+[2026-01-17 14:15:39] ======================================================================
+[2026-01-17 14:15:39] Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+[2026-01-17 14:15:39]   Loaded accuracy data: 1200 rows (long format)
+[2026-01-17 14:15:39]   Columns: ['composite_ID', 'domain_name', 'theta']
+[2026-01-17 14:15:39]   Accuracy data (processed): 1200 rows
+[2026-01-17 14:15:39]   Paradigms: ['IFR', 'ICR', 'IRE']
+[2026-01-17 14:15:39] Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.4.1/data/step03_theta_confidence.csv
+[2026-01-17 14:15:39]   Loaded confidence data: 400 rows (wide format)
+[2026-01-17 14:15:39]   Columns: ['composite_ID', 'theta_IFR', 'theta_ICR', 'theta_IRE']
+[2026-01-17 14:15:39]   Confidence data (long format): 1200 rows
+[2026-01-17 14:15:39]   Paradigms: ['IFR', 'ICR', 'IRE']
+[2026-01-17 14:15:39] Loading TSVR mapping from: /home/etai/projects/REMEMVR/results/ch6/6.4.1/data/step00_tsvr_mapping.csv
+[2026-01-17 14:15:39]   TSVR mapping: 400 rows
+[2026-01-17 14:15:39] Merging accuracy and confidence data...
+[2026-01-17 14:15:39]   After merge (accuracy + confidence): 1200 rows
+[2026-01-17 14:15:39]   After TSVR merge: 1200 rows
+[2026-01-17 14:15:39] Computing z-standardized theta values...
+[2026-01-17 14:15:39]   theta_accuracy: mean=0.0454, SD=0.9273
+[2026-01-17 14:15:39]   theta_accuracy_z: mean=-0.0000, SD=1.0000
+[2026-01-17 14:15:39]   theta_confidence: mean=-0.7712, SD=0.6005
+[2026-01-17 14:15:39]   theta_confidence_z: mean=-0.0000, SD=1.0000
+[2026-01-17 14:15:39] Computing calibration metrics...
+[2026-01-17 14:15:39]   Calibration range: [-3.934, 2.479]
+[2026-01-17 14:15:39]   Mean calibration: -0.0000
+[2026-01-17 14:15:39]   Mean |calibration|: 0.7258
+[2026-01-17 14:15:39] Validating merged data...
+[2026-01-17 14:15:39]   Paradigms in merged data: ['IFR', 'ICR', 'IRE']
+[2026-01-17 14:15:39]   Unique participants: 100
+[2026-01-17 14:15:39]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:15:39] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step00_calibration_by_paradigm.csv (1200 rows)
+[2026-01-17 14:15:39] ======================================================================
+[2026-01-17 14:15:39] STEP 01: Fit LMM with Paradigm × Time Interaction
+[2026-01-17 14:15:39] ======================================================================
+[2026-01-17 14:15:39] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:15:39] Fitting LMM: calibration ~ Paradigm * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:15:39]   Model with random slopes converged successfully
+[2026-01-17 14:15:39] Extracting fixed effects...
+[2026-01-17 14:15:39] 
+Fixed Effects:
+[2026-01-17 14:15:39]   Intercept: β=0.0195, SE=0.0761, z=0.26, p=0.7976
+[2026-01-17 14:15:39]   C(Paradigm)[T.ICR]: β=-0.0837, SE=0.0396, z=-2.11, p=0.0345
+[2026-01-17 14:15:39]   C(Paradigm)[T.IRE]: β=0.0187, SE=0.0396, z=0.47, p=0.6374
+[2026-01-17 14:15:39]   TSVR_centered: β=0.0009, SE=0.0007, z=1.43, p=0.1540
+[2026-01-17 14:15:39]   C(Paradigm)[T.ICR]:TSVR_centered: β=0.0000, SE=0.0007, z=0.03, p=0.9794
+[2026-01-17 14:15:39]   C(Paradigm)[T.IRE]:TSVR_centered: β=0.0003, SE=0.0007, z=0.47, p=0.6404
+[2026-01-17 14:15:39] 
+Testing Paradigm main effect (LRT)...
+[2026-01-17 14:15:39]   Paradigm main effect: χ²(2)=7.83, p_uncorrected=0.0200, p_bonferroni=0.0399
+[2026-01-17 14:15:39] 
+Testing Paradigm × Time interaction (LRT)...
+[2026-01-17 14:15:40]   Paradigm × Time interaction: χ²(2)=0.28, p_uncorrected=0.8712, p_bonferroni=1.0000
+[2026-01-17 14:15:40] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_paradigm_effects.csv
+[2026-01-17 14:15:40] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_lmm_fixed_effects.csv
+[2026-01-17 14:15:40] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:15:40] ======================================================================
+[2026-01-17 14:15:40] STEP 02: Post-Hoc Paradigm Contrasts
+[2026-01-17 14:15:40] ======================================================================
+[2026-01-17 14:15:40] Paradigm-level calibration statistics:
+[2026-01-17 14:15:40]   ICR: mean=-0.0620 (underconfidence), SD=0.9479, N=400
+[2026-01-17 14:15:40]   IFR: mean=0.0217 (overconfidence), SD=0.9084, N=400
+[2026-01-17 14:15:40]   IRE: mean=0.0404 (overconfidence), SD=0.9615, N=400
+[2026-01-17 14:15:40]   IRE vs IFR: Δ=0.0187, z=0.28, p_uncorr=0.7777, p_bonf=1.0000, d=0.020
+[2026-01-17 14:15:40]   ICR vs IFR: Δ=-0.0837, z=-1.28, p_uncorr=0.2022, p_bonf=0.6065, d=-0.090
+[2026-01-17 14:15:40]   IRE vs ICR: Δ=0.1024, z=1.52, p_uncorr=0.1293, p_bonf=0.3880, d=0.107
+[2026-01-17 14:15:40] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:15:40] ======================================================================
+[2026-01-17 14:15:40] STEP 03: Rank Paradigms by Calibration Quality
+[2026-01-17 14:15:40] ======================================================================
+[2026-01-17 14:15:40] Paradigm ranking by calibration quality:
+[2026-01-17 14:15:40]   Rank 1: IFR - mean |calibration|=0.7000 (Best calibrated)
+[2026-01-17 14:15:40]   Rank 2: ICR - mean |calibration|=0.7281 (Middle)
+[2026-01-17 14:15:40]   Rank 3: IRE - mean |calibration|=0.7494 (Worst calibrated)
+[2026-01-17 14:15:40] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step03_paradigm_ranking.csv
+[2026-01-17 14:15:40] ======================================================================
+[2026-01-17 14:15:40] STEP 04: Prepare Calibration Trajectory Plot Data
+[2026-01-17 14:15:40] ======================================================================
+[2026-01-17 14:15:40] Plot data summary:
+[2026-01-17 14:15:40]   Rows: 12
+[2026-01-17 14:15:40]   Paradigms: ['ICR', 'IFR', 'IRE']
+[2026-01-17 14:15:40]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:15:40]   ICR: T1=-0.127 → T4=0.006 (Δ=0.133)
+[2026-01-17 14:15:40]   IFR: T1=-0.080 → T4=0.077 (Δ=0.157)
+[2026-01-17 14:15:40]   IRE: T1=-0.050 → T4=0.131 (Δ=0.182)
+[2026-01-17 14:15:40] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step04_calibration_trajectory_data.csv
+[2026-01-17 14:15:40] ======================================================================
+[2026-01-17 14:15:40] EXECUTION COMPLETE
+[2026-01-17 14:15:40] ======================================================================
+[2026-01-17 14:15:40] All steps completed successfully
+[2026-01-17 14:15:40] Ended: 2026-01-17 14:15:40.217328
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] RQ 6.4.2: Paradigm Confidence Calibration
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] Started: 2026-01-17 14:30:12.189374
+[2026-01-17 14:30:12] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.4.2
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] STEP 00: Load and Merge Accuracy/Confidence Data
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+[2026-01-17 14:30:12]   Loaded accuracy data: 1200 rows (long format)
+[2026-01-17 14:30:12]   Columns: ['composite_ID', 'domain_name', 'theta']
+[2026-01-17 14:30:12]   Accuracy data (processed): 1200 rows
+[2026-01-17 14:30:12]   Paradigms: ['IFR', 'ICR', 'IRE']
+[2026-01-17 14:30:12] Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.4.1/data/step03_theta_confidence.csv
+[2026-01-17 14:30:12]   Loaded confidence data: 400 rows (wide format)
+[2026-01-17 14:30:12]   Columns: ['composite_ID', 'theta_IFR', 'theta_ICR', 'theta_IRE']
+[2026-01-17 14:30:12]   Confidence data (long format): 1200 rows
+[2026-01-17 14:30:12]   Paradigms: ['IFR', 'ICR', 'IRE']
+[2026-01-17 14:30:12] Loading TSVR mapping from: /home/etai/projects/REMEMVR/results/ch6/6.4.1/data/step00_tsvr_mapping.csv
+[2026-01-17 14:30:12]   TSVR mapping: 400 rows
+[2026-01-17 14:30:12] Merging accuracy and confidence data...
+[2026-01-17 14:30:12]   After merge (accuracy + confidence): 1200 rows
+[2026-01-17 14:30:12]   After TSVR merge: 1200 rows
+[2026-01-17 14:30:12] Computing z-standardized theta values...
+[2026-01-17 14:30:12]   theta_accuracy: mean=0.0454, SD=0.9273
+[2026-01-17 14:30:12]   theta_accuracy_z: mean=-0.0000, SD=1.0000
+[2026-01-17 14:30:12]   theta_confidence: mean=-0.7712, SD=0.6005
+[2026-01-17 14:30:12]   theta_confidence_z: mean=-0.0000, SD=1.0000
+[2026-01-17 14:30:12] Computing calibration metrics...
+[2026-01-17 14:30:12]   Calibration range: [-3.934, 2.479]
+[2026-01-17 14:30:12]   Mean calibration: -0.0000
+[2026-01-17 14:30:12]   Mean |calibration|: 0.7258
+[2026-01-17 14:30:12] Validating merged data...
+[2026-01-17 14:30:12]   Paradigms in merged data: ['IFR', 'ICR', 'IRE']
+[2026-01-17 14:30:12]   Unique participants: 100
+[2026-01-17 14:30:12]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:30:12] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step00_calibration_by_paradigm.csv (1200 rows)
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] STEP 01: Fit LMM with Paradigm × Time Interaction
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:30:12] Fitting LMM: calibration ~ Paradigm * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:30:12]   Model with random slopes converged successfully
+[2026-01-17 14:30:12] Extracting fixed effects...
+[2026-01-17 14:30:12] 
+Fixed Effects:
+[2026-01-17 14:30:12]   Intercept: β=0.0195, SE=0.0761, z=0.26, p=0.7976
+[2026-01-17 14:30:12]   C(Paradigm)[T.ICR]: β=-0.0837, SE=0.0396, z=-2.11, p=0.0345
+[2026-01-17 14:30:12]   C(Paradigm)[T.IRE]: β=0.0187, SE=0.0396, z=0.47, p=0.6374
+[2026-01-17 14:30:12]   TSVR_centered: β=0.0009, SE=0.0007, z=1.43, p=0.1540
+[2026-01-17 14:30:12]   C(Paradigm)[T.ICR]:TSVR_centered: β=0.0000, SE=0.0007, z=0.03, p=0.9794
+[2026-01-17 14:30:12]   C(Paradigm)[T.IRE]:TSVR_centered: β=0.0003, SE=0.0007, z=0.47, p=0.6404
+[2026-01-17 14:30:12] 
+Testing Paradigm main effect (LRT)...
+[2026-01-17 14:30:12]   Paradigm main effect: χ²(2)=7.83, p_uncorrected=0.0200, p_bonferroni=0.0399
+[2026-01-17 14:30:12] 
+Testing Paradigm × Time interaction (LRT)...
+[2026-01-17 14:30:13]   Paradigm × Time interaction: χ²(2)=0.28, p_uncorrected=0.8712, p_bonferroni=1.0000
+[2026-01-17 14:30:13] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_paradigm_effects.csv
+[2026-01-17 14:30:13] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_lmm_fixed_effects.csv
+[2026-01-17 14:30:13] Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:30:13] ======================================================================
+[2026-01-17 14:30:13] STEP 02: Post-Hoc Paradigm Contrasts
+[2026-01-17 14:30:13] ======================================================================
+[2026-01-17 14:30:13] Paradigm-level calibration statistics:
+[2026-01-17 14:30:13]   ICR: mean=-0.0620 (underconfidence), SD=0.9479, N=400
+[2026-01-17 14:30:13]   IFR: mean=0.0217 (overconfidence), SD=0.9084, N=400
+[2026-01-17 14:30:13]   IRE: mean=0.0404 (overconfidence), SD=0.9615, N=400
+[2026-01-17 14:30:13]   IRE vs IFR: Δ=0.0187, z=0.28, p_uncorr=0.7777, p_bonf=1.0000, d=0.020
+[2026-01-17 14:30:13]   ICR vs IFR: Δ=-0.0837, z=-1.28, p_uncorr=0.2022, p_bonf=0.6065, d=-0.090
+[2026-01-17 14:30:13]   IRE vs ICR: Δ=0.1024, z=1.52, p_uncorr=0.1293, p_bonf=0.3880, d=0.107
+[2026-01-17 14:30:13] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:30:13] ======================================================================
+[2026-01-17 14:30:13] STEP 03: Rank Paradigms by Calibration Quality
+[2026-01-17 14:30:13] ======================================================================
+[2026-01-17 14:30:13] Paradigm ranking by calibration quality:
+[2026-01-17 14:30:13]   Rank 1: IFR - mean |calibration|=0.7000 (Best calibrated)
+[2026-01-17 14:30:13]   Rank 2: ICR - mean |calibration|=0.7281 (Middle)
+[2026-01-17 14:30:13]   Rank 3: IRE - mean |calibration|=0.7494 (Worst calibrated)
+[2026-01-17 14:30:13] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step03_paradigm_ranking.csv
+[2026-01-17 14:30:13] ======================================================================
+[2026-01-17 14:30:13] STEP 04: Prepare Calibration Trajectory Plot Data
+[2026-01-17 14:30:13] ======================================================================
+[2026-01-17 14:30:13] Plot data summary:
+[2026-01-17 14:30:13]   Rows: 12
+[2026-01-17 14:30:13]   Paradigms: ['ICR', 'IFR', 'IRE']
+[2026-01-17 14:30:13]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:30:13]   ICR: T1=-0.127 → T4=0.006 (Δ=0.133)
+[2026-01-17 14:30:13]   IFR: T1=-0.080 → T4=0.077 (Δ=0.157)
+[2026-01-17 14:30:13]   IRE: T1=-0.050 → T4=0.131 (Δ=0.182)
+[2026-01-17 14:30:13] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step04_calibration_trajectory_data.csv
+[2026-01-17 14:30:13] ======================================================================
+[2026-01-17 14:30:13] EXECUTION COMPLETE
+[2026-01-17 14:30:13] ======================================================================
+[2026-01-17 14:30:13] All steps completed successfully
+[2026-01-17 14:30:13] Ended: 2026-01-17 14:30:13.217379

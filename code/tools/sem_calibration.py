@@ -5,8 +5,7 @@ Purpose: Replace unreliable difference scores (calibration = confidence - accura
          with latent variable approach that accounts for measurement error.
 
 Created: 2025-12-28
-Author: Claude Code (rq_platinum agent)
-Context: PLATINUM certification requirement for Ch6 calibration RQs
+Context: quality validation requirement for Ch6 calibration RQs
 
 Background:
 -----------

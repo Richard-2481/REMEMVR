@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PLATINUM FINALIZATION: Confidence Response Patterns (MANDATORY - Section 1.4)
+VALIDATION: Confidence Response Patterns (MANDATORY - Section 1.4)
 
 PURPOSE:
 Document confidence rating response patterns to validate GRM assumptions and detect
@@ -36,7 +36,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step08_confidence_response_patterns.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -45,21 +44,21 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("PLATINUM FINALIZATION: Confidence Response Patterns (Section 1.4)")
+        log("VALIDATION: Confidence Response Patterns (Section 1.4)")
         log("=" * 80)
 
         # Load raw IRT input
-        log("\n[LOAD] Loading raw confidence ratings...")
+        log("\nLoading raw confidence ratings...")
         input_path = RQ_DIR / "data" / "step00_irt_input.csv"
         if not input_path.exists():
             raise FileNotFoundError(f"Input file not found: {input_path}")
 
         irt_input = pd.read_csv(input_path, encoding='utf-8')
-        log(f"[LOADED] {len(irt_input)} rows (composite_IDs)")
+        log(f"{len(irt_input)} rows (composite_IDs)")
 
         # Extract item columns (all columns except composite_ID)
         item_cols = [col for col in irt_input.columns if col != 'composite_ID']
-        log(f"[INFO] {len(item_cols)} TC_* confidence items identified")
+        log(f"{len(item_cols)} TC_* confidence items identified")
 
         # Valid confidence scale values (allowing both decimal and fractional representations)
         # Standard: 0, 0.25, 0.5, 0.75, 1.0
@@ -89,12 +88,9 @@ if __name__ == "__main__":
         # Parse UID from composite_ID
         irt_input['UID'] = irt_input['composite_ID'].str.split('_').str[0]
         n_participants = irt_input['UID'].nunique()
-        log(f"[INFO] {n_participants} unique participants")
-
-        # =====================================================================
+        log(f"{n_participants} unique participants")
         # Participant-Level Response Patterns
-        # =====================================================================
-        log("\n[ANALYSIS] Computing participant-level response patterns...")
+        log("\nComputing participant-level response patterns...")
 
         participant_patterns = []
 
@@ -142,11 +138,8 @@ if __name__ == "__main__":
             })
 
         patterns_df = pd.DataFrame(participant_patterns)
-
-        # =====================================================================
         # Aggregate Statistics
-        # =====================================================================
-        log("\n[SUMMARY] Aggregate response pattern statistics...")
+        log("\nAggregate response pattern statistics...")
 
         n_full_scale = patterns_df['uses_full_scale'].sum()
         pct_full_scale = (n_full_scale / len(patterns_df)) * 100
@@ -160,42 +153,39 @@ if __name__ == "__main__":
         mean_rating = patterns_df['rating_mean'].mean()
         median_unique = patterns_df['n_unique_values'].median()
 
-        log(f"[RESULT] Full scale usage (all 5 values): {n_full_scale}/{len(patterns_df)} ({pct_full_scale:.1f}%)")
-        log(f"[RESULT] Extremes only (0 and 1): {n_extremes_only}/{len(patterns_df)} ({pct_extremes_only:.1f}%)")
-        log(f"[RESULT] Mean rating SD: {mean_sd:.3f} (median: {median_sd:.3f})")
-        log(f"[RESULT] Mean rating: {mean_rating:.3f}")
-        log(f"[RESULT] Median unique values per participant: {median_unique:.0f}")
+        log(f"Full scale usage (all 5 values): {n_full_scale}/{len(patterns_df)} ({pct_full_scale:.1f}%)")
+        log(f"Extremes only (0 and 1): {n_extremes_only}/{len(patterns_df)} ({pct_extremes_only:.1f}%)")
+        log(f"Mean rating SD: {mean_sd:.3f} (median: {median_sd:.3f})")
+        log(f"Mean rating: {mean_rating:.3f}")
+        log(f"Median unique values per participant: {median_unique:.0f}")
 
         # Warnings
-        log("\n[INTERPRETATION] GRM assumption validation...")
+        log("\nGRM assumption validation...")
 
         if pct_full_scale < 50:
-            log(f"[WARNING] Only {pct_full_scale:.1f}% of participants use full 5-point scale")
-            log("[WARNING] GRM assumes ordinal scale usage - restricted range may violate assumptions")
+            log(f"Only {pct_full_scale:.1f}% of participants use full 5-point scale")
+            log("GRM assumes ordinal scale usage - restricted range may violate assumptions")
         else:
-            log(f"[PASS] {pct_full_scale:.1f}% of participants use full scale (acceptable)")
+            log(f"{pct_full_scale:.1f}% of participants use full scale (acceptable)")
 
         if pct_extremes_only > 10:
-            log(f"[WARNING] {pct_extremes_only:.1f}% of participants use only extremes (0 and 1)")
-            log("[WARNING] Extreme response style may bias IRT estimates")
+            log(f"{pct_extremes_only:.1f}% of participants use only extremes (0 and 1)")
+            log("Extreme response style may bias IRT estimates")
         else:
-            log(f"[PASS] Only {pct_extremes_only:.1f}% use extremes only (acceptable)")
+            log(f"Only {pct_extremes_only:.1f}% use extremes only (acceptable)")
 
         if mean_sd < 0.20:
-            log(f"[WARNING] Mean rating SD = {mean_sd:.3f} (low variability)")
-            log("[WARNING] Restricted range limits IRT discrimination")
+            log(f"Mean rating SD = {mean_sd:.3f} (low variability)")
+            log("Restricted range limits IRT discrimination")
         else:
-            log(f"[PASS] Mean rating SD = {mean_sd:.3f} (acceptable variability)")
-
-        # =====================================================================
+            log(f"Mean rating SD = {mean_sd:.3f} (acceptable variability)")
         # Save Outputs
-        # =====================================================================
-        log("\n[SAVE] Saving response pattern results...")
+        log("\nSaving response pattern results...")
 
         # Participant-level patterns
         output_patterns = RQ_DIR / "data" / "step08_response_patterns.csv"
         patterns_df.to_csv(output_patterns, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_patterns.name} ({len(patterns_df)} participants)")
+        log(f"{output_patterns.name} ({len(patterns_df)} participants)")
 
         # Summary report
         output_summary = RQ_DIR / "data" / "step08_response_patterns_summary.txt"
@@ -284,16 +274,16 @@ if __name__ == "__main__":
             f.write("  for confidence RQs to ensure IRT validity. This analysis fulfills that\n")
             f.write("  requirement.\n")
 
-        log(f"[SAVED] {output_summary.name}")
+        log(f"{output_summary.name}")
 
-        log("\n[SUCCESS] Confidence response patterns documented")
-        log(f"[RECOMMENDATION] GRM assumptions {'satisfied' if pct_full_scale >= 50 and pct_extremes_only <= 10 else 'moderately satisfied'}")
+        log("\nConfidence response patterns documented")
+        log(f"GRM assumptions {'satisfied' if pct_full_scale >= 50 and pct_extremes_only <= 10 else 'moderately satisfied'}")
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"\n{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

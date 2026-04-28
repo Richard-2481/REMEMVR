@@ -1,0 +1,4 @@
+test,statistic,p_value,interpretation
+Shapiro-Wilk,0.9919836415277828,4.152429687510572e-06,"Non-normal (but N large, robust)"
+Breusch-Pagan,5.3501982132843295,0.37465184720070777,Homoscedastic
+Cook_D_influential,1194.0,,1194 influential observations (99.5%)

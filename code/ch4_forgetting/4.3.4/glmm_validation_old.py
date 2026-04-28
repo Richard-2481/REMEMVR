@@ -17,9 +17,7 @@ print("=" * 80)
 print("GLMM VALIDATION: RQ 5.3.4 - Age × Paradigm Interaction")
 print("=" * 80)
 
-# ============================================================================
-# STEP 1: Load item-level accuracy data
-# ============================================================================
+# Load item-level accuracy data
 
 print("\n[1] Loading item-level accuracy responses...")
 
@@ -179,9 +177,7 @@ print(f"   Age range: {item_data["Age"].min():.0f}-{item_data["Age"].max():.0f} 
 item_data["Age_c"] = item_data["Age"] - item_data["Age"].mean()
 print(f"   Age centered: mean(Age_c) = {item_data["Age_c"].mean():.4f}")
 
-# ============================================================================
-# STEP 2: Create paradigm coding and time transformations
-# ============================================================================
+# Create paradigm coding and time transformations
 
 print("\n[2] Preparing model variables...")
 
@@ -201,9 +197,7 @@ for p in ['IFR', 'ICR', 'IRE']:
 item_data['log_test'] = np.log(item_data['test'])
 print(f"   Time variable: log(test) range [{item_data['log_test'].min():.2f}, {item_data['log_test'].max():.2f}]")
 
-# ============================================================================
-# STEP 3: Fit Binomial GLMM
-# ============================================================================
+# Fit Binomial GLMM
 
 print("\n[3] Fitting binomial GLMM...")
 print("   Model: Correct ~ Age_c * Paradigm + log_test + Age_c:Paradigm:log_test")
@@ -252,9 +246,7 @@ except Exception as e:
     result_glmm = model_glmm.fit(method='lbfgs', maxiter=200)
     print(f"   Simplified GLMM complete! Converged: {result_glmm.converged}")
 
-# ============================================================================
-# STEP 4: Extract Age × Paradigm interaction effects
-# ============================================================================
+# Extract Age × Paradigm interaction effects
 
 print("\n[4] Extracting Age × Paradigm interaction effects...")
 
@@ -300,9 +292,7 @@ if not np.isnan(age_icr_time_p):
     print(f"{'  Age × ICR × log_test:':<40} {irt_lmm_age_icr_time_p:<15.3f} {age_icr_time_p:<15.3f} {age_icr_time_beta:<15.3f}")
     print(f"{'  Age × IRE × log_test:':<40} {irt_lmm_age_ire_time_p:<15.3f} {age_ire_time_p:<15.3f} {age_ire_time_beta:<15.3f}")
 
-# ============================================================================
-# STEP 5: Interpret results
-# ============================================================================
+# Interpret results
 
 print("\n[5] Interpretation...")
 
@@ -339,9 +329,7 @@ else:
     print(f"      GLMM validation confirms: Age does NOT modulate paradigm effects")
     outcome = "ROBUST"
 
-# ============================================================================
-# STEP 6: Save results
-# ============================================================================
+# Save results
 
 print("\n[6] Saving GLMM validation results...")
 
@@ -403,9 +391,7 @@ with open('../data/glmm_summary.txt', 'w') as f:
 
 print(f"   Saved: data/glmm_summary.txt")
 
-# ============================================================================
 # FINAL SUMMARY
-# ============================================================================
 
 print("\n" + "=" * 80)
 print("GLMM VALIDATION COMPLETE")
@@ -419,14 +405,14 @@ if outcome == "ROBUST":
     print("\n   ✅ NULL findings ROBUST (IRT→LMM and GLMM agree)")
     print("   ✅ Age × Paradigm interaction non-significant at item level")
     print("   ✅ No thesis narrative revision needed")
-    print("   ✅ PLATINUM certification can proceed")
+    print("   ✅ quality validation can proceed")
 elif outcome == "CHANGED_BASELINE":
     print("\n   ⚠️ BASELINE INTERACTION CHANGED (NULL → SIGNIFICANT)")
-    print("   ⚠️ BLOCKER for PLATINUM certification")
+    print("   ⚠️ blocks quality validation")
     print("   ⚠️ Thesis narrative revision required")
 else:
     print("\n   ⚠️ 3-WAY INTERACTION CHANGED (NULL → SIGNIFICANT)")
-    print("   ⚠️ BLOCKER for PLATINUM certification")
+    print("   ⚠️ blocks quality validation")
     print("   ⚠️ Thesis narrative revision required")
 
 print("\nFiles created:")

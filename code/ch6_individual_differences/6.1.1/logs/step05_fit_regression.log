@@ -1,0 +1,126 @@
+Step 05: Fit Multiple Regression Model
+Loading merged analysis dataset...
+step03_merged_analysis.csv (97 rows, 6 cols)
+Participants: 97
+Variables: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T', 'theta_mean']
+theta_mean range: [-1.326, 1.559]
+Predictors: ['RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T']
+Outcome: theta_mean
+Final sample size: 97 participants
+Fitting multiple regression model...
+'numpy.ndarray' object has no attribute 'iloc'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.1.1/code/step05_fit_regression.py", line 300, in <module>
+    regression_results = fit_multiple_regression_custom(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.1.1/code/step05_fit_regression.py", line 170, in fit_multiple_regression_custom
+    'ci_lower': model.conf_int().iloc[i, 0],
+                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'iloc'
+Step 05: Fit Multiple Regression Model
+Loading merged analysis dataset...
+step03_merged_analysis.csv (97 rows, 6 cols)
+Participants: 97
+Variables: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T', 'theta_mean']
+theta_mean range: [-1.326, 1.559]
+Predictors: ['RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T']
+Outcome: theta_mean
+Final sample size: 97 participants
+Fitting multiple regression model...
+index 2 is out of bounds for axis 0 with size 2
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.1.1/code/step05_fit_regression.py", line 301, in <module>
+    regression_results = fit_multiple_regression_custom(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.1.1/code/step05_fit_regression.py", line 171, in fit_multiple_regression_custom
+    'ci_lower': conf_int[0][i],
+                ~~~~~~~~~~~^^^
+IndexError: index 2 is out of bounds for axis 0 with size 2
+Step 05: Fit Multiple Regression Model
+Loading merged analysis dataset...
+step03_merged_analysis.csv (97 rows, 6 cols)
+Participants: 97
+Variables: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T', 'theta_mean']
+theta_mean range: [-1.326, 1.559]
+Predictors: ['RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T']
+Outcome: theta_mean
+Final sample size: 97 participants
+Fitting multiple regression model...
+R² = 0.2262
+Adjusted R² = 0.1926
+F(4, 92) = 6.7238, p = 0.000086
+AIC = 176.60
+RAVLT_T: β = 0.0096, SE = 0.0067, t = 1.432, p = 0.155410
+BVMT_T: β = 0.0081, SE = 0.0071, t = 1.132, p = 0.260563
+NART_T: β = 0.0029, SE = 0.0061, t = 0.466, p = 0.642202
+RPM_T: β = 0.0213, SE = 0.0069, t = 3.086, p = 0.002678
+Computing semi-partial correlations (unique variance)...
+Semi-partial correlations:
+RAVLT_T: sr = 0.1314, unique R² = 0.0173 (1.73%)
+BVMT_T: sr = 0.1038, unique R² = 0.0108 (1.08%)
+NART_T: sr = 0.0428, unique R² = 0.0018 (0.18%)
+RPM_T: sr = 0.2830, unique R² = 0.0801 (8.01%)
+Saving regression results...
+step05_regression_results.csv (5 rows, 7 cols)
+step05_model_summary.csv (model summary statistics)
+step05_semi_partial_correlations.csv (unique variance contributions)
+Running validate_data_columns...
+Beta coefficients in range [-2, 2]: False
+Standard errors positive: True
+Confidence intervals valid: True
+R² in expected range [0.15, 0.45]: True (R² = 0.2262)
+All predictors represented: True
+Some validation checks failed - results may need review
+valid: True
+missing_columns: []
+existing_columns: ['se', 'beta', 'ci_upper', 'ci_lower', 'predictor', 'p_value', 't_stat']
+n_required: 7
+n_missing: 0
+Step 05 complete - Multiple regression model fitted successfully
+Step 05: Fit Multiple Regression Model
+Loading merged analysis dataset...
+step03_merged_analysis.csv (97 rows, 9 cols)
+Participants: 97
+Variables: ['UID', 'RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T', 'theta_mean']
+theta_mean range: [-1.326, 1.559]
+Predictors: ['RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T']
+Outcome: theta_mean
+Final sample size: 97 participants
+Fitting multiple regression model...
+R² = 0.2724
+Adjusted R² = 0.2239
+F(6, 90) = 5.6171, p = 0.000055
+AIC = 174.62
+RAVLT_T: β = 0.0095, SE = 0.0068, t = 1.397, p = 0.165700
+RAVLT_Pct_Ret_T: β = 0.0119, SE = 0.0063, t = 1.900, p = 0.060669
+BVMT_T: β = 0.0043, SE = 0.0072, t = 0.591, p = 0.555929
+BVMT_Pct_Ret_T: β = 0.0078, SE = 0.0061, t = 1.285, p = 0.202161
+NART_T: β = 0.0029, SE = 0.0062, t = 0.478, p = 0.633749
+RPM_T: β = 0.0178, SE = 0.0069, t = 2.578, p = 0.011550
+Computing semi-partial correlations (unique variance)...
+Semi-partial correlations:
+RAVLT_T: sr = 0.1256, unique R² = 0.0158 (1.58%)
+RAVLT_Pct_Ret_T: sr = 0.1708, unique R² = 0.0292 (2.92%)
+BVMT_T: sr = 0.0531, unique R² = 0.0028 (0.28%)
+BVMT_Pct_Ret_T: sr = 0.1155, unique R² = 0.0133 (1.33%)
+NART_T: sr = 0.0430, unique R² = 0.0018 (0.18%)
+RPM_T: sr = 0.2318, unique R² = 0.0537 (5.37%)
+Saving regression results...
+step05_regression_results.csv (7 rows, 7 cols)
+step05_model_summary.csv (model summary statistics)
+step05_semi_partial_correlations.csv (unique variance contributions)
+Running validate_data_columns...
+Beta coefficients in range [-2, 2]: False
+Standard errors positive: True
+Confidence intervals valid: True
+R² in expected range [0.15, 0.45]: True (R² = 0.2724)
+All predictors represented: True
+Some validation checks failed - results may need review
+valid: True
+missing_columns: []
+existing_columns: ['se', 'beta', 'predictor', 'p_value', 'ci_upper', 't_stat', 'ci_lower']
+n_required: 7
+n_missing: 0
+Step 05 complete - Multiple regression model fitted successfully

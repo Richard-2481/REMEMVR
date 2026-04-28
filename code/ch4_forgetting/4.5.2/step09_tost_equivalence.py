@@ -1,5 +1,5 @@
 """
-Step 9: TOST Equivalence Testing (PLATINUM Requirement)
+Step 9: TOST Equivalence Testing (Validation Requirement)
 
 Purpose: Establish if interaction effect is significantly SMALLER than meaningful threshold
 

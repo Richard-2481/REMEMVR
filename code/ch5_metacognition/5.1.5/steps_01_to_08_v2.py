@@ -23,7 +23,6 @@ Dependencies:
   - RQ 6.1.4: results/ch6/6.1.4/data/step03_random_effects.csv
   - Ch5 5.1.5: results/ch5/5.1.5/data/step03_cluster_assignments.csv
 
-Author: Claude Code (g_code agent)
 Date: 2025-12-11
 """
 
@@ -35,9 +34,7 @@ from scipy.stats import zscore, chi2_contingency
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score, davies_bouldin_score
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.1.5
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR root
@@ -65,9 +62,7 @@ MIN_CLUSTER_SIZE = 10  # 10% of N=100
 # (BIC monotonically decreases for this data - not a reliable selector)
 FORCED_K = 3  # Match Ch5 5.1.5
 
-# =============================================================================
 # LOGGING
-# =============================================================================
 
 def log(msg: str):
     """Log message to file and stdout."""
@@ -76,9 +71,7 @@ def log(msg: str):
         f.flush()
     print(msg, flush=True)
 
-# =============================================================================
-# STEP 01: Load Random Effects from RQ 6.1.4
-# =============================================================================
+# Load Random Effects from RQ 6.1.4
 
 def step01_load_random_effects() -> pd.DataFrame:
     """Load random effects (intercept, slope) from RQ 6.1.4."""
@@ -124,9 +117,7 @@ def step01_load_random_effects() -> pd.DataFrame:
 
     return df
 
-# =============================================================================
-# STEP 02: Standardize Features to Z-Scores
-# =============================================================================
+# Standardize Features to Z-Scores
 
 def step02_standardize_features(df: pd.DataFrame) -> pd.DataFrame:
     """Standardize intercept and slope to z-scores for equal feature weighting."""
@@ -170,9 +161,7 @@ def step02_standardize_features(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-# =============================================================================
-# STEP 03: K-Means Clustering for K=2-6 with BIC Selection
-# =============================================================================
+# K-Means Clustering for K=2-6 with BIC Selection
 
 def step03_cluster_selection(df: pd.DataFrame) -> int:
     """Fit K-means for K=2-6, compute BIC, but use FORCED_K for comparability."""
@@ -241,9 +230,7 @@ def step03_cluster_selection(df: pd.DataFrame) -> int:
 
     return FORCED_K
 
-# =============================================================================
-# STEP 04: Fit Final K-Means Model with Optimal K
-# =============================================================================
+# Fit Final K-Means Model with Optimal K
 
 def step04_fit_final_kmeans(df: pd.DataFrame, optimal_k: int) -> pd.DataFrame:
     """Fit final K-means model with optimal K."""
@@ -298,9 +285,7 @@ def step04_fit_final_kmeans(df: pd.DataFrame, optimal_k: int) -> pd.DataFrame:
 
     return df
 
-# =============================================================================
-# STEP 05: Validate Cluster Quality
-# =============================================================================
+# Validate Cluster Quality
 
 def step05_validate_cluster_quality(df: pd.DataFrame, optimal_k: int) -> pd.DataFrame:
     """Compute silhouette, Davies-Bouldin, and Jaccard bootstrap stability."""
@@ -383,9 +368,7 @@ def step05_validate_cluster_quality(df: pd.DataFrame, optimal_k: int) -> pd.Data
 
     return metrics_df
 
-# =============================================================================
-# STEP 06: Characterize Clusters
-# =============================================================================
+# Characterize Clusters
 
 def step06_characterize_clusters(df: pd.DataFrame) -> pd.DataFrame:
     """Compute mean intercept/slope per cluster and assign phenotype labels."""
@@ -466,9 +449,7 @@ def step06_characterize_clusters(df: pd.DataFrame) -> pd.DataFrame:
 
     return cluster_stats
 
-# =============================================================================
-# STEP 07: Cross-Tabulate with Ch5 5.1.5 Accuracy Clusters
-# =============================================================================
+# Cross-Tabulate with Ch5 5.1.5 Accuracy Clusters
 
 def step07_crosstab_clusters(df: pd.DataFrame) -> pd.DataFrame:
     """Cross-tabulate confidence clusters with accuracy clusters from Ch5 5.1.5."""
@@ -534,9 +515,7 @@ def step07_crosstab_clusters(df: pd.DataFrame) -> pd.DataFrame:
 
     return crosstab
 
-# =============================================================================
-# STEP 08: Chi-Square Test of Association
-# =============================================================================
+# Chi-Square Test of Association
 
 def step08_chi_square_test(crosstab: pd.DataFrame):
     """Chi-square test of independence (integration vs dissociation hypothesis)."""
@@ -613,9 +592,7 @@ def step08_chi_square_test(crosstab: pd.DataFrame):
 
     log("\nVALIDATION PASS: Association test complete")
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all 8 steps of RQ 6.1.5 analysis."""

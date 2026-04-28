@@ -30,9 +30,7 @@ from scipy import stats
 # Suppress convergence warnings for cleaner output
 warnings.filterwarnings('ignore', category=sm.tools.sm_exceptions.ConvergenceWarning)
 
-# =============================================================================
 # PATHS AND CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.5.3
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR
@@ -67,9 +65,7 @@ def log(msg: str):
         f.flush()
     print(log_msg, flush=True)
 
-# =============================================================================
-# STEP 00: EXTRACT ITEM-LEVEL ACCURACY AND CONFIDENCE DATA
-# =============================================================================
+# EXTRACT ITEM-LEVEL ACCURACY AND CONFIDENCE DATA
 
 def step00_extract_item_level():
     """Extract item-level accuracy and confidence for congruence-tagged items."""
@@ -170,9 +166,7 @@ def step00_extract_item_level():
 
     return df_items
 
-# =============================================================================
-# STEP 01: IDENTIFY HIGH-CONFIDENCE ERRORS
-# =============================================================================
+# IDENTIFY HIGH-CONFIDENCE ERRORS
 
 def step01_identify_hce(df_items: pd.DataFrame) -> pd.DataFrame:
     """Flag high-confidence errors (HCE)."""
@@ -226,9 +220,7 @@ def step01_identify_hce(df_items: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-# =============================================================================
-# STEP 02: COMPUTE HCE RATES BY CONGRUENCE × TEST
-# =============================================================================
+# COMPUTE HCE RATES BY CONGRUENCE × TEST
 
 def step02_compute_hce_rates(df_hce: pd.DataFrame) -> pd.DataFrame:
     """Aggregate HCE rates by Congruence × Test (12 cells)."""
@@ -282,9 +274,7 @@ def step02_compute_hce_rates(df_hce: pd.DataFrame) -> pd.DataFrame:
 
     return agg
 
-# =============================================================================
-# STEP 03: FIT GLMM FOR CONGRUENCE × TIME EFFECT
-# =============================================================================
+# FIT GLMM FOR CONGRUENCE × TIME EFFECT
 
 def step03_fit_glmm(df_hce: pd.DataFrame) -> dict:
     """Fit GLMM with Congruence × Time interaction and crossed random effects."""
@@ -438,9 +428,7 @@ def step03_fit_glmm(df_hce: pd.DataFrame) -> dict:
         'df': df
     }
 
-# =============================================================================
-# STEP 04: POST-HOC CONTRASTS
-# =============================================================================
+# POST-HOC CONTRASTS
 
 def step04_post_hoc_contrasts(model_info: dict):
     """Compute pairwise contrasts with Bonferroni correction."""
@@ -586,9 +574,7 @@ def step04_post_hoc_contrasts(model_info: dict):
 
     return df_contrasts
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all steps."""

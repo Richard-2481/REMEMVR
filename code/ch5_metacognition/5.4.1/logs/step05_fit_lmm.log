@@ -1,0 +1,80 @@
+Step 05: Fit LMM with Domain x Time Interaction
+Loading LMM input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+Domains: ['ICR', 'IFR', 'IRE']
+Participants: 100
+Observations: 1200
+Fitting LMM with formula: theta ~ C(domain) * log_TSVR
+Random effects: (1 | UID) - random intercept only
+Error evaluating factor: NameError: name 'domain' is not defined
+    theta ~ C(domain) * log_TSVR
+            ^^^^^^^^^
+Full error details:
+Step 05: Fit LMM with Domain x Time Interaction
+Loading LMM input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+Domains: ['ICR', 'IFR', 'IRE']
+Participants: 100
+Observations: 1200
+Fitting LMM with formula: theta ~ C(paradigm) * log_TSVR
+Random effects: (1 | UID) - random intercept only
+LMM fitting complete
+Converged: True
+AIC: 470.30
+BIC: 511.02
+Extracting fixed effects coefficients...
+Number of fixed effects: 6
+Fixed effect terms: ['Intercept', 'C(paradigm)[T.IFR]', 'C(paradigm)[T.IRE]', 'log_TSVR', 'C(paradigm)[T.IFR]:log_TSVR', 'C(paradigm)[T.IRE]:log_TSVR']
+Fixed effects table created (6 rows)
+Fixed Effects:
+  Intercept: coef=-0.3770, p=0.0000 ***
+  C(paradigm)[T.IFR]: coef=0.0147, p=0.7130 
+  C(paradigm)[T.IRE]: coef=0.0660, p=0.0993 
+  log_TSVR: coef=-0.1235, p=0.0000 ***
+  C(paradigm)[T.IFR]:log_TSVR: coef=0.0077, p=0.4704 
+  C(paradigm)[T.IRE]:log_TSVR: coef=-0.0172, p=0.1069 
+Domain x Time interaction terms found: ['C(paradigm)[T.IFR]:log_TSVR', 'C(paradigm)[T.IRE]:log_TSVR']
+C(paradigm)[T.IFR]:log_TSVR: p=0.4704 -> NULL (p >= 0.05)
+C(paradigm)[T.IRE]:log_TSVR: p=0.1069 -> NULL (p >= 0.05)
+Saving fixed effects table...
+step05_lmm_coefficients.csv (6 rows, 5 cols)
+Saving full LMM summary...
+step05_lmm_summary.txt
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Step 05 complete - Domain x Time interaction tested
+Step 05: Fit LMM with Domain x Time Interaction
+Loading LMM input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+Domains: ['ICR', 'IFR', 'IRE']
+Participants: 100
+Observations: 1200
+Fitting LMM with formula: theta ~ C(paradigm) * log_TSVR
+Random effects: (1 | UID) - random intercept only
+LMM fitting complete
+Converged: True
+AIC: 2114.92
+BIC: 2155.64
+Extracting fixed effects coefficients...
+Number of fixed effects: 6
+Fixed effect terms: ['Intercept', 'C(paradigm)[T.IFR]', 'C(paradigm)[T.IRE]', 'log_TSVR', 'C(paradigm)[T.IFR]:log_TSVR', 'C(paradigm)[T.IRE]:log_TSVR']
+Fixed effects table created (6 rows)
+Fixed Effects:
+  Intercept: coef=0.9017, p=0.0000 ***
+  C(paradigm)[T.IFR]: coef=-0.1786, p=0.0276 *
+  C(paradigm)[T.IRE]: coef=0.0451, p=0.5782 
+  log_TSVR: coef=-0.2554, p=0.0000 ***
+  C(paradigm)[T.IFR]:log_TSVR: coef=0.0490, p=0.0236 *
+  C(paradigm)[T.IRE]:log_TSVR: coef=-0.0137, p=0.5254 
+Domain x Time interaction terms found: ['C(paradigm)[T.IFR]:log_TSVR', 'C(paradigm)[T.IRE]:log_TSVR']
+C(paradigm)[T.IFR]:log_TSVR: p=0.0236 -> SIGNIFICANT (p < 0.05)
+C(paradigm)[T.IRE]:log_TSVR: p=0.5254 -> NULL (p >= 0.05)
+Saving fixed effects table...
+step05_lmm_coefficients.csv (6 rows, 5 cols)
+Saving full LMM summary...
+step05_lmm_summary.txt
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Step 05 complete - Domain x Time interaction tested

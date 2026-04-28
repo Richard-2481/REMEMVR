@@ -1,0 +1,72 @@
+RQ 6.3.3: GLMM Validation
+======================================================================
+
+======================================================================
+STEP 1: RESHAPE DATA TO LONG FORMAT
+======================================================================
+
+Loading item-level confidence data: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_irt_input.csv
+Loaded: 400 rows, 73 columns
+
+Loading Q-matrix: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_q_matrix.csv
+Found 72 confidence items
+
+Loading Age from: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+Loading TSVR from: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_tsvr_mapping.csv
+
+Final dataset: 28800 rows
+✓ Long-format data saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/glmm_long_format.csv
+
+======================================================================
+STEP 2: FIT GLMM
+======================================================================
+
+Model formula: confidence ~ TSVR_hours * Age_c * C(Domain, Treatment('What'))
+Random effects: (1 | UID) + (1 | Item)
+
+Fitting GLMM (this may take several minutes)...
+✓ Model converged successfully
+✓ Full summary saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/glmm_model_summary.txt
+
+Extracted 12 fixed effects
+✓ Fixed effects saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/glmm_fixed_effects.csv
+
+======================================================================
+STEP 3: COMPARE IRT→LMM VS GLMM
+======================================================================
+
+GLMM 3-way interaction terms: 2
+
+--- Comparison Results ---
+Contrast             IRT→LMM β    IRT→LMM p    GLMM β       GLMM p       Change              
+----------------------------------------------------------------------------------------------------
+When                    0.000014      0.5396    0.000000      0.0140 NULL → SIGNIFICANT ⚠️
+Where                   0.000025      0.2644    0.000000      0.0060 NULL → SIGNIFICANT ⚠️
+
+======================================================================
+INTERPRETATION
+======================================================================
+
+🔴 CRITICAL: GLMM reveals hidden effects
+
+  When: IRT→LMM p=0.540 → GLMM p=0.014
+  Where: IRT→LMM p=0.264 → GLMM p=0.006
+
+IMPACT: IRT→LMM aggregation masked baseline Age × Domain effects
+ACTION: Thesis narrative revision required (user decision)
+
+✓ Comparison saved: /home/etai/projects/REMEMVR/results/ch6/6.3.3/data/glmm_comparison.csv
+
+======================================================================
+GLMM VALIDATION COMPLETE
+======================================================================
+
+🔴 BLOCKER: Critical changes detected
+   IRT→LMM findings NOT robust to GLMM validation
+   Thesis narrative revision required
+
+Output files:
+  - glmm_long_format.csv
+  - glmm_model_summary.txt
+  - glmm_fixed_effects.csv
+  - glmm_comparison.csv

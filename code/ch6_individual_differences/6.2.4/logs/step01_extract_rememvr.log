@@ -1,0 +1,54 @@
+============================================================
+Step 1: Extract REMEMVR Theta Data
+============================================================
+Reading Ch5 theta scores from: results/ch5/5.1.1/data/step03_theta_scores.csv
+Loaded 400 rows with columns: ['UID', 'test', 'Theta_All']
+Renamed Theta_All to theta_all
+Aggregating theta scores by participant (mean across 4 tests)
+
+RESULTS:
+REMEMVR theta extracted: 100 participants
+Theta descriptives: mean=0.006, sd=0.677
+Range: min=-1.954, max=1.559
+Extreme values (|z|>2): 3 (3.0%)
+Range restriction check: PASS
+
+Standardization verification: z_mean=0.000000, z_std=1.000000
+
+Saved to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step01_rememvr_theta_data.csv
+Output shape: (100, 3)
+
+Final data check:
+  - Participants: 100
+  - Columns: ['UID', 'theta_all', 'theta_all_z']
+  - No missing values: True
+  - All finite values: True
+
+Step 1 completed successfully
+============================================================
+Step 1: Extract REMEMVR Theta Data
+============================================================
+Reading Ch5 theta scores from: results/ch5/5.1.1/data/step03_theta_scores.csv
+Loaded 400 rows with columns: ['UID', 'test', 'Theta_All']
+Renamed Theta_All to theta_all
+Aggregating theta scores by participant (mean across 4 tests)
+
+RESULTS:
+REMEMVR theta extracted: 100 participants
+Theta descriptives: mean=0.006, sd=0.677
+Range: min=-1.954, max=1.559
+Extreme values (|z|>2): 3 (3.0%)
+Range restriction check: PASS
+
+Standardization verification: z_mean=0.000000, z_std=1.000000
+
+Saved to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step01_rememvr_theta_data.csv
+Output shape: (100, 3)
+
+Final data check:
+  - Participants: 100
+  - Columns: ['UID', 'theta_all', 'theta_all_z']
+  - No missing values: True
+  - All finite values: True
+
+Step 1 completed successfully

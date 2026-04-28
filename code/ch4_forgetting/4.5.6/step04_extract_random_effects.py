@@ -19,7 +19,6 @@ Output:
 CRITICAL: This file is REQUIRED INPUT for RQ 5.5.7 (location-based clustering).
 RQ 5.5.7 cannot proceed without this file.
 
-Author: Claude (g_code agent)
 Date: 2025-12-05
 """
 

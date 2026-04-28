@@ -1,0 +1,59 @@
+Step 05: Prepare Age Effects Plot Data by Tertiles
+
+[STEP 1] Load Data
+----------------------------------------------------------------------
+LMM input: 1200 rows
+Columns: ['UID', 'composite_ID', 'test', 'congruence', 'theta', 'se_theta', 'Age', 'Age_c', 'TSVR_hours', 'recip_TSVR', 'log_TSVR']
+
+[STEP 2] Create Age Tertiles
+----------------------------------------------------------------------
+Unique participants: 100
+Tertile cutpoints:
+  33rd percentile (Young/Middle boundary): 37.0 years
+  67th percentile (Middle/Older boundary): 52.0 years
+
+Participants per tertile:
+  Young: N=33 (Age range: 20-36)
+  Middle: N=34 (Age range: 37-52)
+  Older: N=33 (Age range: 53-70)
+
+Age tertiles assigned to all 1200 observations
+
+[STEP 3] Compute Marginal Means
+----------------------------------------------------------------------
+Marginal means: 36 cells
+Expected: 36 cells (3 tertiles x 3 congruence x 4 tests)
+
+[STEP 4] Validate Plot Data
+----------------------------------------------------------------------
+Row count: 36
+age_tertile levels: ['Middle', 'Older', 'Young']
+congruence levels: ['Common', 'Congruent', 'Incongruent']
+test levels: ['T1', 'T2', 'T3', 'T4']
+CI_upper > CI_lower for all rows
+No NaN values
+
+[STEP 5] Report Summary Statistics
+----------------------------------------------------------------------
+Mean Theta by Age Tertile (collapsed across congruence and test):
+  Young: 0.1963
+  Middle: -0.1423
+  Older: -0.0306
+
+Mean Theta by Congruence (collapsed across tertile and test):
+  Common: -0.0036
+  Congruent: 0.0170
+  Incongruent: 0.0100
+
+TSVR_hours range by test:
+  T1: 1.00 hours
+  T2: 28.76 hours
+  T3: 78.67 hours
+  T4: 151.38 hours
+
+[STEP 6] Save Output
+----------------------------------------------------------------------
+/home/etai/projects/REMEMVR/results/ch5/5.4.3/data/step05_age_effects_plot_data.csv
+  36 rows, 9 columns
+
+Step 05 complete - Plot data prepared

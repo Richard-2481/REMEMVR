@@ -1,0 +1,54 @@
+Step 04: Bootstrap Stability Validation
+Loading standardized features...
+Feature matrix shape: (100, 2)
+Loading original cluster assignments...
+Original cluster labels shape: (100,)
+Reading K_final from Step 2...
+K_final = 2
+N = 100 participants
+Running 100 bootstrap iterations...
+Completed 20/100 iterations (current Jaccard: 1.0000)
+Completed 40/100 iterations (current Jaccard: 0.8632)
+Completed 60/100 iterations (current Jaccard: 1.0000)
+Completed 80/100 iterations (current Jaccard: 1.0000)
+Completed 100/100 iterations (current Jaccard: 0.8283)
+Bootstrap resampling complete
+Mean Jaccard: 0.9289
+95% CI: [0.7853, 1.0000]
+Stability: Stable (Proceed with confidence)
+Saving bootstrap Jaccard coefficients...
+step04_bootstrap_jaccard.csv (100 rows)
+Saving stability summary...
+step04_stability_summary.txt
+Running validate_bootstrap_stability...
+PASS - Stable clustering: mean Jaccard=0.929 (≥0.75)
+Mean Jaccard: 0.9289
+95% CI: [0.7853, 1.0000]
+Step 04 complete
+Step 04: Bootstrap Stability Validation
+Loading standardized features...
+Feature matrix shape: (100, 2)
+Loading original cluster assignments...
+Original cluster labels shape: (100,)
+Reading K_final from Step 2...
+K_final = 3
+N = 100 participants
+Running 100 bootstrap iterations...
+Completed 20/100 iterations (current Jaccard: 0.0202)
+Completed 40/100 iterations (current Jaccard: 0.2444)
+Completed 60/100 iterations (current Jaccard: 0.0000)
+Completed 80/100 iterations (current Jaccard: 0.8844)
+Completed 100/100 iterations (current Jaccard: 0.2667)
+Bootstrap resampling complete
+Mean Jaccard: 0.2929
+95% CI: [0.0000, 0.9755]
+Stability: Unstable (Consider reducing K)
+Saving bootstrap Jaccard coefficients...
+step04_bootstrap_jaccard.csv (100 rows)
+Saving stability summary...
+step04_stability_summary.txt
+Running validate_bootstrap_stability...
+WARNING - Unstable clustering: mean Jaccard=0.293 (<0.75)
+Mean Jaccard: 0.2929
+95% CI: [0.0000, 0.9755]
+Step 04 complete

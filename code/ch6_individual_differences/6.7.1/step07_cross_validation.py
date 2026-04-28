@@ -21,7 +21,7 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 07: Cross-Validation")
+        log("Step 07: Cross-Validation")
 
         # Load data
         data_path = RQ_DIR / 'data' / 'step02_standardized_data.csv'
@@ -78,13 +78,13 @@ if __name__ == "__main__":
         df_cv = pd.DataFrame(cv_results)
         output_path = RQ_DIR / 'data' / 'step07_cross_validation.csv'
         df_cv.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_path}")
+        log(f"{output_path}")
 
-        log("[SUCCESS] Step 07 complete")
+        log("Step 07 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

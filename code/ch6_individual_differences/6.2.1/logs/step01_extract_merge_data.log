@@ -1,0 +1,83 @@
+Step 01: Extract and Merge Data
+Loading Ch5 5.1.1 theta scores...
+step03_theta_scores.csv (400 rows, 3 cols)
+Theta columns: ['UID', 'test', 'Theta_All']
+Aggregating theta scores by UID (mean across test sessions)...
+100 participants (expected: 100)
+Loading cognitive test data from dfnonvr.csv...
+dfnonvr.csv (100 rows, 101 cols)
+Extracting cognitive measures with column adaptations...
+Calculating RAVLT total from trials 1-5...
+Cognitive measures with T-scores calculated
+RAVLT raw range: 26.0 - 68.0
+BVMT raw range: 12.0 - 36.0
+RPM raw range: 4.0 - 12.0
+Merging theta scores with cognitive measures...
+100 participants after merge (expected: 100)
+No missing data - complete case analysis dataset
+Creating standardized predictor variables...
+Standardized variables created (mean=0, SD=1)
+Final dataset summary:
+  N participants: 100
+  Age range: 20.0 - 70.0 years
+  Theta_all range: -1.95 - 1.56
+  RAVLT_T range: 20.8 - 70.7
+  BVMT_T range: 17.9 - 65.4
+  RPM_T range: 19.5 - 61.1
+Saving analysis dataset...
+step01_analysis_dataset.csv (100 rows, 10 cols)
+Running validate_dataframe_structure...
+valid: True
+message: DataFrame structure valid: 100 rows, 10 columns (required: 10).
+checks: {'row_count_valid': True, 'actual_rows': 100, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+Step 01 complete - analysis dataset ready for hierarchical regression
+Step 01: Extract and Merge Data
+Loading Ch5 5.1.1 theta scores...
+step03_theta_scores.csv (400 rows, 3 cols)
+Theta columns: ['UID', 'test', 'Theta_All']
+Aggregating theta scores by UID (mean across test sessions)...
+100 participants (expected: 100)
+Loading cognitive test data from dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+Extracting cognitive measures with column adaptations...
+Applying RAVLT ceiling fix...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+Calculating RAVLT total from trials 1-5 (post ceiling fix)...
+Computing BVMT total from sum(trials 1-3)...
+Computing RAVLT Percent Retention...
+RAVLT Percent Retention: 100/100 valid
+Extracting BVMT Percent Retained...
+Cognitive measures with T-scores calculated
+RAVLT raw range: 28.0 - 71.0
+BVMT raw range: 12.0 - 36.0
+RPM raw range: 4.0 - 12.0
+RAVLT Pct Ret raw range: 44.4 - 130.0
+BVMT Pct Ret raw range: 55.6 - 114.3
+Merging theta scores with cognitive measures...
+100 participants after merge (expected: 100)
+No missing data - complete case analysis dataset
+Creating standardized predictor variables...
+Standardized variables created (mean=0, SD=1)
+Final dataset summary:
+  N participants: 100
+  Age range: 20.0 - 70.0 years
+  Theta_all range: -1.95 - 1.56
+  RAVLT_T range: 22.1 - 72.8
+  BVMT_T range: 17.9 - 65.4
+  RPM_T range: 19.5 - 61.1
+  RAVLT_Pct_Ret_T range: 23.7 - 77.7
+  BVMT_Pct_Ret_T range: 4.5 - 69.4
+Saving analysis dataset...
+step01_analysis_dataset.csv (100 rows, 14 cols)
+Running validate_dataframe_structure...
+valid: True
+message: DataFrame structure valid: 100 rows, 14 columns (required: 14).
+checks: {'row_count_valid': True, 'actual_rows': 100, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+Step 01 complete - analysis dataset ready for hierarchical regression

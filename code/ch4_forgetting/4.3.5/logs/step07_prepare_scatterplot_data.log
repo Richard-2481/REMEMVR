@@ -1,0 +1,31 @@
+2025-12-03 18:56:59,194 - INFO - ============================================================
+2025-12-03 18:56:59,194 - INFO - STEP 07: PREPARE SCATTERPLOT DATA
+2025-12-03 18:56:59,194 - INFO - ============================================================
+2025-12-03 18:56:59,194 - INFO - 
+1. Loading data and models...
+2025-12-03 18:56:59,196 - INFO - Loaded merged data: 400 rows
+2025-12-03 18:56:59,199 - INFO - Loaded IRT input: 1200 rows
+2025-12-03 18:56:59,199 - INFO - Loaded CTT input: 1200 rows
+2025-12-03 18:56:59,420 - INFO - Loaded IRT and CTT models
+2025-12-03 18:56:59,420 - INFO - 
+2. Reshaping to long format...
+2025-12-03 18:56:59,427 - INFO - Reshaped to long format: 1200 rows
+2025-12-03 18:56:59,427 - INFO - 
+3. Adding fitted values...
+2025-12-03 18:56:59,440 - INFO - Added fitted values from both models
+2025-12-03 18:56:59,440 - INFO - 
+4. Validating data...
+2025-12-03 18:56:59,440 - INFO - IRT_theta range: [-2.406, 2.799]
+2025-12-03 18:56:59,441 - INFO - CTT_mean range: [0.146, 1.000]
+2025-12-03 18:56:59,441 - INFO - Paradigm counts: {'IFR': 400, 'ICR': 400, 'IRE': 400}
+2025-12-03 18:56:59,441 - INFO - Scatterplot data validation: PASS
+2025-12-03 18:56:59,441 - INFO - 
+5. Saving output...
+2025-12-03 18:56:59,445 - INFO -    Saved: step07_scatterplot_data.csv (1200 rows)
+2025-12-03 18:56:59,445 - INFO - 
+============================================================
+2025-12-03 18:56:59,445 - INFO - STEP 07 COMPLETE: Scatterplot data prepared
+2025-12-03 18:56:59,445 - INFO - Scatterplot data prepared: 1200 rows (400 x 3 paradigms)
+2025-12-03 18:56:59,445 - INFO - All paradigms represented: IFR, ICR, IRE
+2025-12-03 18:56:59,445 - INFO - Fitted values generated for both IRT and CTT models
+2025-12-03 18:56:59,445 - INFO - ============================================================

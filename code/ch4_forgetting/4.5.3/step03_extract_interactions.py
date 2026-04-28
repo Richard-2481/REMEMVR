@@ -40,25 +40,25 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    logger.info("[START] Step 03: Extract 3-Way Interaction Terms")
+    logger.info("Step 03: Extract 3-Way Interaction Terms")
 
     # -------------------------------------------------------------------------
     # 1. Load fixed effects
     # -------------------------------------------------------------------------
-    logger.info("[LOAD] Loading fixed effects from Step 02...")
+    logger.info("Loading fixed effects from Step 02...")
 
     fixed_effects = pd.read_csv(DATA_DIR / "step02_fixed_effects.csv")
-    logger.info(f"[LOADED] {len(fixed_effects)} fixed effects")
+    logger.info(f"{len(fixed_effects)} fixed effects")
 
     # Display all fixed effects
-    logger.info("[INFO] All fixed effects:")
+    logger.info("All fixed effects:")
     for _, row in fixed_effects.iterrows():
         logger.info(f"  {row['term']}: coef={row['coef']:.6f}, p={row['p']:.6f}")
 
     # -------------------------------------------------------------------------
     # 2. Extract 3-way interaction terms
     # -------------------------------------------------------------------------
-    logger.info("[EXTRACT] Extracting 3-way interaction terms...")
+    logger.info("Extracting 3-way interaction terms...")
 
     # Define interaction terms to extract (Age_c x LocationType x Time)
     # Note: statsmodels uses T.Source because Destination is reference (alphabetical)
@@ -97,9 +97,9 @@ def main():
                 'ci_lower': row['ci_lower'],
                 'ci_upper': row['ci_upper']
             })
-            logger.info(f"[FOUND] {row['term']}: coef={row['coef']:.6f}, p={row['p']:.6f}")
+            logger.info(f"{row['term']}: coef={row['coef']:.6f}, p={row['p']:.6f}")
         else:
-            logger.info(f"[WARNING] No match found for pattern: {pattern}")
+            logger.info(f"No match found for pattern: {pattern}")
 
     if len(interactions) != 2:
         raise ValueError(f"Expected 2 interaction terms, found {len(interactions)}")
@@ -107,7 +107,7 @@ def main():
     # -------------------------------------------------------------------------
     # 3. Apply Bonferroni correction (Decision D068)
     # -------------------------------------------------------------------------
-    logger.info("[CORRECT] Applying Bonferroni correction (2 tests, alpha=0.025)...")
+    logger.info("Applying Bonferroni correction (2 tests, alpha=0.025)...")
 
     n_tests = 2
     alpha_corrected = 0.05 / n_tests  # 0.025
@@ -118,7 +118,7 @@ def main():
         interaction['p_bonferroni'] = p_bonf
         interaction['significant_at_0025'] = p_bonf < alpha_corrected
 
-        logger.info(f"[BONFERRONI] {interaction['term']}")
+        logger.info(f"{interaction['term']}")
         logger.info(f"  p_uncorrected: {interaction['p_uncorrected']:.6f}")
         logger.info(f"  p_bonferroni: {p_bonf:.6f}")
         logger.info(f"  significant at 0.025: {interaction['significant_at_0025']}")
@@ -136,37 +136,37 @@ def main():
     # -------------------------------------------------------------------------
     # 5. Validation
     # -------------------------------------------------------------------------
-    logger.info("[VALIDATION] Running validation checks...")
+    logger.info("Running validation checks...")
 
     all_pass = True
 
     # Check 1: 2 rows
     if len(interaction_df) == 2:
-        logger.info("[PASS] 2 interaction terms present")
+        logger.info("2 interaction terms present")
     else:
-        logger.info(f"[FAIL] Expected 2 terms, found {len(interaction_df)}")
+        logger.info(f"Expected 2 terms, found {len(interaction_df)}")
         all_pass = False
 
     # Check 2: Both p-value columns present (Decision D068)
     if 'p_uncorrected' in interaction_df.columns and 'p_bonferroni' in interaction_df.columns:
-        logger.info("[PASS] Dual p-values present (Decision D068)")
+        logger.info("Dual p-values present (Decision D068)")
     else:
-        logger.info("[FAIL] Missing p-value columns")
+        logger.info("Missing p-value columns")
         all_pass = False
 
     # Check 3: p_bonferroni >= p_uncorrected
     if all(interaction_df['p_bonferroni'] >= interaction_df['p_uncorrected']):
-        logger.info("[PASS] Bonferroni correction applied correctly")
+        logger.info("Bonferroni correction applied correctly")
     else:
-        logger.info("[FAIL] Bonferroni correction error")
+        logger.info("Bonferroni correction error")
         all_pass = False
 
     # Check 4: p-values in [0, 1]
     if all(0 <= p <= 1 for p in interaction_df['p_uncorrected']) and \
        all(0 <= p <= 1 for p in interaction_df['p_bonferroni']):
-        logger.info("[PASS] All p-values in [0, 1]")
+        logger.info("All p-values in [0, 1]")
     else:
-        logger.info("[FAIL] Invalid p-values")
+        logger.info("Invalid p-values")
         all_pass = False
 
     if not all_pass:
@@ -175,16 +175,16 @@ def main():
     # -------------------------------------------------------------------------
     # 6. Save output
     # -------------------------------------------------------------------------
-    logger.info("[SAVE] Saving interaction terms...")
+    logger.info("Saving interaction terms...")
 
     output_path = DATA_DIR / "step03_interaction_terms.csv"
     interaction_df.to_csv(output_path, index=False)
-    logger.info(f"[SAVED] {output_path.name} ({len(interaction_df)} rows)")
+    logger.info(f"{output_path.name} ({len(interaction_df)} rows)")
 
     # -------------------------------------------------------------------------
     # 7. Summary
     # -------------------------------------------------------------------------
-    logger.info("[SUMMARY] Primary Hypothesis Test Results:")
+    logger.info("Primary Hypothesis Test Results:")
     logger.info("  Null Hypothesis: Age does NOT moderate source-destination forgetting")
     logger.info("  3-way interactions (Age_c x LocationType x Time):")
 
@@ -195,11 +195,11 @@ def main():
 
     any_significant = interaction_df['significant_at_0025'].any()
     if any_significant:
-        logger.info("[RESULT] PRIMARY HYPOTHESIS REJECTED - Age moderates source-destination effect")
+        logger.info("PRIMARY HYPOTHESIS REJECTED - Age moderates source-destination effect")
     else:
-        logger.info("[RESULT] PRIMARY HYPOTHESIS SUPPORTED (NULL) - Age does NOT moderate effect")
+        logger.info("PRIMARY HYPOTHESIS SUPPORTED (NULL) - Age does NOT moderate effect")
 
-    logger.info("[SUCCESS] Step 03 complete - Interaction terms extracted")
+    logger.info("Step 03 complete - Interaction terms extracted")
 
 
 if __name__ == "__main__":

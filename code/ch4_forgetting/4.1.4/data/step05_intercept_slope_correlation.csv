@@ -1,0 +1,2 @@
+r,p_uncorrected,p_bonferroni,df,alpha_corrected,significant_uncorrected,significant_bonferroni
+-0.972684259920925,5.741921477013572e-64,8.612882215520359e-63,98.0,0.0033333333333333335,True,True

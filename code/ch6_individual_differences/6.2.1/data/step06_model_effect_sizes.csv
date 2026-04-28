@@ -1,0 +1,4 @@
+model,cohens_f2,interpretation,r2,variance_explained
+Model_1_Age_Only,0.03881072325063067,small,0.0373607264364626,3.7%
+Model_2_Age_Plus_Cognitive,0.4194403406001624,large,0.2954969846938521,29.5%
+Model_Comparison_Cognitive_Addition,0.3664090183421205,large,0.2581362582573895,25.8%

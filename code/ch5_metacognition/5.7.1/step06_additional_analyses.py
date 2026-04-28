@@ -22,9 +22,7 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.7.1
 LOG_FILE = RQ_DIR / "logs" / "step06_additional_analyses.log"
@@ -47,9 +45,7 @@ def init_log():
         f.write("RQ 6.7.1: Additional Analyses for ROOT RQ Standards\n")
         f.write("=" * 70 + "\n\n")
 
-# =============================================================================
 # Step 6A: Simple Linear Regression with Diagnostics
-# =============================================================================
 
 def step06a_regression_with_diagnostics():
     """Fit simple linear regression and compute full diagnostics."""
@@ -190,9 +186,7 @@ def step06a_regression_with_diagnostics():
 
     return model, cooks_d, influential_points
 
-# =============================================================================
 # Step 6B: Partial Correlation (CRITICAL - disentangle metacognition from baseline)
-# =============================================================================
 
 def step06b_partial_correlation():
     """
@@ -314,9 +308,7 @@ def step06b_partial_correlation():
 
     return partial_rho, p_partial, interpretation
 
-# =============================================================================
 # Step 6C: Sensitivity Analysis (exclude influential points)
-# =============================================================================
 
 def step06c_sensitivity_analysis(influential_points):
     """Test if results robust to excluding influential observations."""
@@ -375,9 +367,7 @@ def step06c_sensitivity_analysis(influential_points):
 
     return robust
 
-# =============================================================================
 # Main Execution
-# =============================================================================
 
 def main():
     """Execute all additional analyses."""

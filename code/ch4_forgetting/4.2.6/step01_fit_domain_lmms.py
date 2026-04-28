@@ -24,7 +24,6 @@ CRITICAL: Random slopes on log_TSVR not TSVR_hours
     the dominant fixed effects time transformation. RQ 5.2.1 established Log model
     as best fit (AIC weight 61.9%), so random slopes should be on log_TSVR.
 
-Author: Claude (g_code agent)
 Date: 2025-12-03
 """
 

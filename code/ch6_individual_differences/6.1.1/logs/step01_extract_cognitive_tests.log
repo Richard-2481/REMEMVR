@@ -1,0 +1,400 @@
+Step 01: Extract and Prepare Cognitive Test Data
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.1
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+Loading participant data from dfnonvr.csv...
+Data file not found: /home/etai/projects/REMEMVR/results/data/dfnonvr.csv
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.1.1/code/step01_extract_cognitive_tests.py", line 55, in <module>
+    raise FileNotFoundError(f"Data file not found: {data_path}")
+FileNotFoundError: Data file not found: /home/etai/projects/REMEMVR/results/data/dfnonvr.csv
+Step 01: Extract and Prepare Cognitive Test Data
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.1
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+Loading participant data from dfnonvr.csv...
+"None of [Index(['uid'], dtype='object')] are in the [columns]"
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.1.1/code/step01_extract_cognitive_tests.py", line 59, in <module>
+    cognitive_df = extract_cognitive_tests(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/data.py", line 104, in extract_cognitive_tests
+    df_cognitive = df[cognitive_cols].copy()
+                   ~~^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4119, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6261, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['uid'], dtype='object')] are in the [columns]"
+Step 01: Extract and Prepare Cognitive Test Data
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.1
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+Loading participant data from dfnonvr.csv...
+Loaded cognitive test data for 100 participants
+Columns extracted: ['UID', 'NART Score', 'RPM Score', 'RPM Tr01 answer', 'RPM Tr02 answer', 'RPM Tr03 answer', 'RPM Tr04 answer', 'RPM Tr05 answer', 'RPM Tr06 answer', 'RPM Tr07 answer', 'RPM Tr08 answer', 'RPM Tr09 answer', 'RPM Tr10 answer', 'RPM Tr11 answer', 'RPM Tr12 answer', 'BVMT Form Number', 'BVMT trial 1 score', 'BVMT trial 2 score', 'BVMT trial 3 score', 'BVMT delayed recall delay period', 'BVMT delayed recall score', 'BVMT total recall', 'BVMT learning', 'BVMT percent retained', 'BVMT recognition hits', 'BVMT recognition falsealarms', 'BVMT recognition discrimination index', 'BVMT recognition response bias', 'RAVLT trial 1 score', 'RAVLT trial 2 score', 'RAVLT trial 3 score', 'RAVLT trial 4 score', 'RAVLT trial 5 score', 'RAVLT distraction trial score', 'RAVLT free recall score', 'RAVLT delayed recall delay period', 'RAVLT delayed recall score', 'RAVLT recognition hits ', 'RAVLT recognition semantic misses', 'RAVLT recognition phonetic misses', 'RAVLT recognition semantic phonetic misses', 'RAVLT recognition distraction misses', 'RAVLT recognition distract phonetic misses', 'RAVLT recognition distract semantic misses', 'RAVLT recognition distract smenaitc and pohonetic misses', 'REMEMVR bathroom task 01 duration', 'REMEMVR bathroom task 02 duration', 'REMEMVR bathroom task 03 duration', 'REMEMVR bathroom task 04 duration', 'REMEMVR bathroom task 05 duration', 'REMEMVR bathroom task 06 duration', 'REMEMVR bathroom task 07 duration', 'REMEMVR bathroom task 08 duration', 'REMEMVR bathroom task 09 duration', 'REMEMVR bathroom task 10 duration', 'REMEMVR bathroom task 11 duration', 'REMEMVR bathroom task 12 duration', 'REMEMVR bedroom task 01 duration', 'REMEMVR bedroom task 02 duration', 'REMEMVR bedroom task 03 duration', 'REMEMVR bedroom task 04 duration', 'REMEMVR bedroom task 05 duration', 'REMEMVR bedroom task 06 duration', 'REMEMVR bedroom task 07 duration', 'REMEMVR bedroom task 08 duration', 'REMEMVR bedroom task 09 duration', 'REMEMVR bedroom task 10 duration', 'REMEMVR bedroom task 11 duration', 'REMEMVR bedroom task 12 duration', 'REMEMVR kitchen task 01 duration', 'REMEMVR kitchen task 02 duration', 'REMEMVR kitchen task 03 duration', 'REMEMVR kitchen task 04 duration', 'REMEMVR kitchen task 05 duration', 'REMEMVR kitchen task 06 duration', 'REMEMVR kitchen task 07 duration', 'REMEMVR kitchen task 08 duration', 'REMEMVR kitchen task 09 duration', 'REMEMVR kitchen task 10 duration', 'REMEMVR kitchen task 11 duration', 'REMEMVR kitchen task 12 duration', 'REMEMVR livingroom task 01 duration', 'REMEMVR livingroom task 02 duration', 'REMEMVR livingroom task 03 duration', 'REMEMVR livingroom task 04 duration', 'REMEMVR livingroom task 05 duration', 'REMEMVR livingroom task 06 duration', 'REMEMVR livingroom task 07 duration', 'REMEMVR livingroom task 08 duration', 'REMEMVR livingroom task 09 duration', 'REMEMVR livingroom task 10 duration', 'REMEMVR livingroom task 11 duration', 'REMEMVR livingroom task 12 duration', 'Age in years', 'Sex 0=female 1=male', 'Education level ( High school (Year 9 or lower)\n High school (Year 10)\n High school (Year 12)\n Certificate 1 & 2\n Certificate 3 & 4\n Diploma / Advanced Diploma\n Bachelors Degree\n Graduate Certificate / Diploma\n Masters Degree\n Doctoral Degree)', 'VR Usage (Never\n Less than 1 hour\n 1 - 10 hours\n 10 - 50 hours\n More than 50 hours)', 'Typical sleep hours', 'Total DASS Anxiety Items', 'Total DASS Stress Items', 'Describe your technique here']
+Computing derived scores...
+Computing RAVLT_Total from trial scores...
+Summing RAVLT trials: ['RAVLT distraction trial score', 'RAVLT trial 1 score', 'RAVLT trial 2 score', 'RAVLT trial 3 score', 'RAVLT trial 4 score']
+Found RAVLT columns: ['RAVLT trial 1 score', 'RAVLT trial 2 score', 'RAVLT trial 3 score', 'RAVLT trial 4 score', 'RAVLT trial 5 score', 'RAVLT distraction trial score', 'RAVLT free recall score', 'RAVLT delayed recall delay period', 'RAVLT delayed recall score', 'RAVLT recognition hits ', 'RAVLT recognition semantic misses', 'RAVLT recognition phonetic misses', 'RAVLT recognition semantic phonetic misses', 'RAVLT recognition distraction misses', 'RAVLT recognition distract phonetic misses', 'RAVLT recognition distract semantic misses', 'RAVLT recognition distract smenaitc and pohonetic misses', 'RAVLT_Total']
+Found BVMT columns: ['BVMT Form Number', 'BVMT trial 1 score', 'BVMT trial 2 score', 'BVMT trial 3 score', 'BVMT delayed recall delay period', 'BVMT delayed recall score', 'BVMT total recall', 'BVMT learning', 'BVMT percent retained', 'BVMT recognition hits', 'BVMT recognition falsealarms', 'BVMT recognition discrimination index', 'BVMT recognition response bias']
+Found NART columns: ['NART Score']
+Found RPM columns: ['RPM Score', 'RPM Tr01 answer', 'RPM Tr02 answer', 'RPM Tr03 answer', 'RPM Tr04 answer', 'RPM Tr05 answer', 'RPM Tr06 answer', 'RPM Tr07 answer', 'RPM Tr08 answer', 'RPM Tr09 answer', 'RPM Tr10 answer', 'RPM Tr11 answer', 'RPM Tr12 answer']
+Selecting and renaming cognitive test columns...
+Using BVMT total recall for BVMT
+Using NART Score for NART
+Using RPM Score for RPM
+Converting raw scores to T-scores (M=50, SD=10)...
+RAVLT: Mean=44.14, SD=7.86, N=100
+RAVLT_T: Mean=50.00, SD=10.00
+BVMT: Mean=28.22, SD=5.06, N=100
+BVMT_T: Mean=50.00, SD=10.00
+NART: Mean=31.90, SD=8.57, N=97
+NART_T: Mean=50.00, SD=10.00
+RPM: Mean=9.87, SD=1.93, N=100
+RPM_T: Mean=50.00, SD=10.00
+Checking for missing data...
+NART_Raw: 3 missing values (3.0%)
+NART_T: 3 missing values (3.0%)
+Complete cases (all 4 T-scores): 97/100
+Saving cognitive test T-scores to /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv...
+100 participants x 5 columns
+Verifying output file...
+Output file has 100 rows, 5 columns
+Columns: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T']
+RAVLT_T: Mean=50.00 (target=50), SD=10.00 (target=10)
+BVMT_T: Mean=50.00 (target=50), SD=10.00 (target=10)
+NART_T: Mean=50.00 (target=50), SD=10.00 (target=10)
+RPM_T: Mean=50.00 (target=50), SD=10.00 (target=10)
+Step 01 complete - Cognitive test T-scores extracted and saved
+Step 01: Extract and Prepare Cognitive Test Data
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.1
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+Loading participant data from dfnonvr.csv...
+Loaded cognitive test data for 100 participants
+Columns extracted: ['UID', 'NART Score', 'RPM Score', 'RPM Tr01 answer', 'RPM Tr02 answer', 'RPM Tr03 answer', 'RPM Tr04 answer', 'RPM Tr05 answer', 'RPM Tr06 answer', 'RPM Tr07 answer', 'RPM Tr08 answer', 'RPM Tr09 answer', 'RPM Tr10 answer', 'RPM Tr11 answer', 'RPM Tr12 answer', 'BVMT Form Number', 'BVMT trial 1 score', 'BVMT trial 2 score', 'BVMT trial 3 score', 'BVMT delayed recall delay period', 'BVMT delayed recall score', 'BVMT total recall', 'BVMT learning', 'BVMT percent retained', 'BVMT recognition hits', 'BVMT recognition falsealarms', 'BVMT recognition discrimination index', 'BVMT recognition response bias', 'RAVLT trial 1 score', 'RAVLT trial 2 score', 'RAVLT trial 3 score', 'RAVLT trial 4 score', 'RAVLT trial 5 score', 'RAVLT distraction trial score', 'RAVLT free recall score', 'RAVLT delayed recall delay period', 'RAVLT delayed recall score', 'RAVLT recognition hits ', 'RAVLT recognition semantic misses', 'RAVLT recognition phonetic misses', 'RAVLT recognition semantic phonetic misses', 'RAVLT recognition distraction misses', 'RAVLT recognition distract phonetic misses', 'RAVLT recognition distract semantic misses', 'RAVLT recognition distract smenaitc and pohonetic misses', 'REMEMVR bathroom task 01 duration', 'REMEMVR bathroom task 02 duration', 'REMEMVR bathroom task 03 duration', 'REMEMVR bathroom task 04 duration', 'REMEMVR bathroom task 05 duration', 'REMEMVR bathroom task 06 duration', 'REMEMVR bathroom task 07 duration', 'REMEMVR bathroom task 08 duration', 'REMEMVR bathroom task 09 duration', 'REMEMVR bathroom task 10 duration', 'REMEMVR bathroom task 11 duration', 'REMEMVR bathroom task 12 duration', 'REMEMVR bedroom task 01 duration', 'REMEMVR bedroom task 02 duration', 'REMEMVR bedroom task 03 duration', 'REMEMVR bedroom task 04 duration', 'REMEMVR bedroom task 05 duration', 'REMEMVR bedroom task 06 duration', 'REMEMVR bedroom task 07 duration', 'REMEMVR bedroom task 08 duration', 'REMEMVR bedroom task 09 duration', 'REMEMVR bedroom task 10 duration', 'REMEMVR bedroom task 11 duration', 'REMEMVR bedroom task 12 duration', 'REMEMVR kitchen task 01 duration', 'REMEMVR kitchen task 02 duration', 'REMEMVR kitchen task 03 duration', 'REMEMVR kitchen task 04 duration', 'REMEMVR kitchen task 05 duration', 'REMEMVR kitchen task 06 duration', 'REMEMVR kitchen task 07 duration', 'REMEMVR kitchen task 08 duration', 'REMEMVR kitchen task 09 duration', 'REMEMVR kitchen task 10 duration', 'REMEMVR kitchen task 11 duration', 'REMEMVR kitchen task 12 duration', 'REMEMVR livingroom task 01 duration', 'REMEMVR livingroom task 02 duration', 'REMEMVR livingroom task 03 duration', 'REMEMVR livingroom task 04 duration', 'REMEMVR livingroom task 05 duration', 'REMEMVR livingroom task 06 duration', 'REMEMVR livingroom task 07 duration', 'REMEMVR livingroom task 08 duration', 'REMEMVR livingroom task 09 duration', 'REMEMVR livingroom task 10 duration', 'REMEMVR livingroom task 11 duration', 'REMEMVR livingroom task 12 duration', 'Age in years', 'Sex 0=female 1=male', 'Education level ( High school (Year 9 or lower)\n High school (Year 10)\n High school (Year 12)\n Certificate 1 & 2\n Certificate 3 & 4\n Diploma / Advanced Diploma\n Bachelors Degree\n Graduate Certificate / Diploma\n Masters Degree\n Doctoral Degree)', 'VR Usage (Never\n Less than 1 hour\n 1 - 10 hours\n 10 - 50 hours\n More than 50 hours)', 'Typical sleep hours', 'Total DASS Anxiety Items', 'Total DASS Stress Items', 'Describe your technique here']
+Computing derived scores...
+Computing RAVLT_Total from trial scores...
+Summing RAVLT trials 1-5: ['RAVLT trial 1 score', 'RAVLT trial 2 score', 'RAVLT trial 3 score', 'RAVLT trial 4 score', 'RAVLT trial 5 score']
+Found RAVLT columns: ['RAVLT trial 1 score', 'RAVLT trial 2 score', 'RAVLT trial 3 score', 'RAVLT trial 4 score', 'RAVLT trial 5 score', 'RAVLT distraction trial score', 'RAVLT free recall score', 'RAVLT delayed recall delay period', 'RAVLT delayed recall score', 'RAVLT recognition hits ', 'RAVLT recognition semantic misses', 'RAVLT recognition phonetic misses', 'RAVLT recognition semantic phonetic misses', 'RAVLT recognition distraction misses', 'RAVLT recognition distract phonetic misses', 'RAVLT recognition distract semantic misses', 'RAVLT recognition distract smenaitc and pohonetic misses', 'RAVLT_Total']
+Found BVMT columns: ['BVMT Form Number', 'BVMT trial 1 score', 'BVMT trial 2 score', 'BVMT trial 3 score', 'BVMT delayed recall delay period', 'BVMT delayed recall score', 'BVMT total recall', 'BVMT learning', 'BVMT percent retained', 'BVMT recognition hits', 'BVMT recognition falsealarms', 'BVMT recognition discrimination index', 'BVMT recognition response bias']
+Found NART columns: ['NART Score']
+Found RPM columns: ['RPM Score', 'RPM Tr01 answer', 'RPM Tr02 answer', 'RPM Tr03 answer', 'RPM Tr04 answer', 'RPM Tr05 answer', 'RPM Tr06 answer', 'RPM Tr07 answer', 'RPM Tr08 answer', 'RPM Tr09 answer', 'RPM Tr10 answer', 'RPM Tr11 answer', 'RPM Tr12 answer']
+Selecting and renaming cognitive test columns...
+Using BVMT total recall for BVMT
+Using NART Score for NART
+Using RPM Score for RPM
+Converting raw scores to T-scores (M=50, SD=10)...
+RAVLT: Mean=50.60, SD=8.42, N=100
+RAVLT_T: Mean=50.00, SD=10.00
+BVMT: Mean=28.22, SD=5.06, N=100
+BVMT_T: Mean=50.00, SD=10.00
+NART: Mean=31.90, SD=8.57, N=97
+NART_T: Mean=50.00, SD=10.00
+RPM: Mean=9.87, SD=1.93, N=100
+RPM_T: Mean=50.00, SD=10.00
+Checking for missing data...
+NART_Raw: 3 missing values (3.0%)
+NART_T: 3 missing values (3.0%)
+Complete cases (all 4 T-scores): 97/100
+Saving cognitive test T-scores to /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv...
+100 participants x 5 columns
+Verifying output file...
+Output file has 100 rows, 5 columns
+Columns: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T']
+RAVLT_T: Mean=50.00 (target=50), SD=10.00 (target=10)
+BVMT_T: Mean=50.00 (target=50), SD=10.00 (target=10)
+NART_T: Mean=50.00 (target=50), SD=10.00 (target=10)
+RPM_T: Mean=50.00 (target=50), SD=10.00 (target=10)
+Step 01 complete - Cognitive test T-scores extracted and saved
+Step 01: Extract and Prepare Cognitive Test Data - FIXED VERSION
+Using correct column names from DATA_DICTIONARY.md
+Adding proper missing data analysis
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.1
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+
+Loading participant data from dfnonvr.csv...
+Loaded data for 100 participants
+
+Extracting cognitive test scores with correct column names...
+Found all 5 RAVLT trial columns
+  RAVLT Total: M=50.6, SD=8.4
+RAVLT delayed recall extracted
+BVMT total recall extracted
+NART score extracted
+RPM score extracted
+
+[MISSING DATA] Analyzing missing data patterns...
+
+============================================================
+MISSING DATA ANALYSIS REPORT
+============================================================
+
+OVERALL SUMMARY
+----------------------------------------
+Total participants: 100
+Complete cases: 97 (97.0%)
+Incomplete cases: 3 (3.0%)
+
+MISSING DATA BY VARIABLE
+----------------------------------------
+NART_Score                       3 missing (3.0%)
+
+MISSING COMPLETELY AT RANDOM (MCAR) TEST
+----------------------------------------
+Test statistic: 1.25
+p-value: 0.9961
+Result: Data appears to be MCAR
+
+Note: This is a simplified test. For publication, use
+      specialized packages for full Little's MCAR test.
+
+RECOMMENDATIONS
+----------------------------------------
+• Complete case analysis is reasonable (>95% complete)
+
+============================================================
+
+Missing data report saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_missing_data_report.txt
+
+3 participants will be excluded due to missing data
+
+Comparison of included vs excluded participants:
+    Variable  Included_Mean  Included_SD  Excluded_Mean  Excluded_SD  Difference  p_value
+0        age          44.81        14.67          36.67         9.61       -8.15    0.343
+1        sex           0.30         0.46           0.33         0.58        0.03    0.899
+2  education           6.10         1.67           6.00         0.00       -0.10    0.915
+Exclusion comparison saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_exclusion_comparison.csv
+
+Converting raw scores to T-scores (M=50, SD=10)...
+
+[T-SCORES] Summary statistics:
+  RAVLT_Total_T   M=50.0, SD=10.1
+  RAVLT_DR_T      M=50.0, SD=10.1
+  BVMT_Total_T    M=50.0, SD=10.1
+  NART_T          M=50.0, SD=10.1
+  RPM_T           M=50.0, SD=10.1
+
+Saved cognitive test T-scores to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+Final dataset: 97 participants, 6 columns
+
+============================================================
+SUMMARY
+============================================================
+Total participants loaded: 100
+Participants with complete data: 97
+Participants excluded: 3
+Exclusion rate: 3.0%
+
+Column name fixes applied:
+  NART Score                     → nart-score
+  RPM Score                      → rpm-score
+  BVMT total recall              → bvmt-total-recall
+  RAVLT trial 1 score            → ravlt-trial-1-score
+  RAVLT trial 2 score            → ravlt-trial-2-score
+  RAVLT trial 3 score            → ravlt-trial-3-score
+  RAVLT trial 4 score            → ravlt-trial-4-score
+  RAVLT trial 5 score            → ravlt-trial-5-score
+  RAVLT delayed recall score     → ravlt-delayed-recall-score
+  RAVLT distraction trial score  → ravlt-distraction-trial-score
+  RAVLT free recall score        → ravlt-free-recall-score
+  BVMT trial 1 score             → bvmt-trial-1-score
+  BVMT trial 2 score             → bvmt-trial-2-score
+  BVMT trial 3 score             → bvmt-trial-3-score
+  BVMT delayed recall score      → bvmt-delayed-recall-score
+
+Step 01 complete - All column names correct, missing data documented
+Step 01: Extract and Prepare Cognitive Test Data - v2 (Percent Retention)
+Includes RAVLT ceiling fix + percent retention predictors
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.1
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+
+Loading participant data from dfnonvr.csv...
+Loaded data for 100 participants
+
+Applying RAVLT ceiling fix (0 -> 15 for unadministered trials)...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+
+Extracting cognitive test scores...
+RAVLT Total (ceiling-fixed): M=51.6, SD=8.5
+RAVLT Delayed Recall extracted
+RAVLT Percent Retention: 100/100 valid, M=86.1%, SD=15.7%
+BVMT Total (sum trials 1-3): M=28.2, SD=5.1
+BVMT Percent Retained: M=96.7%, SD=9.0%
+NART score extracted
+RPM score extracted
+
+[MISSING DATA] Analyzing missing data patterns...
+
+============================================================
+MISSING DATA ANALYSIS REPORT
+============================================================
+
+OVERALL SUMMARY
+----------------------------------------
+Total participants: 100
+Complete cases: 97 (97.0%)
+Incomplete cases: 3 (3.0%)
+
+MISSING DATA BY VARIABLE
+----------------------------------------
+NART_Score                       3 missing (3.0%)
+
+MISSING COMPLETELY AT RANDOM (MCAR) TEST
+----------------------------------------
+Test statistic: 4.32
+p-value: 0.9770
+Result: Data appears to be MCAR
+
+Note: This is a simplified test. For publication, use
+      specialized packages for full Little's MCAR test.
+
+RECOMMENDATIONS
+----------------------------------------
+• Complete case analysis is reasonable (>95% complete)
+
+============================================================
+
+Missing data report saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_missing_data_report.txt
+
+3 participants excluded due to missing data
+
+Comparison of included vs excluded participants:
+    Variable  Included_Mean  Included_SD  Excluded_Mean  Excluded_SD  Difference  p_value
+0        age          44.81        14.67          36.67         9.61       -8.15    0.343
+1        sex           0.30         0.46           0.33         0.58        0.03    0.899
+2  education           6.10         1.67           6.00         0.00       -0.10    0.915
+Exclusion comparison saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_exclusion_comparison.csv
+
+Converting raw scores to T-scores (M=50, SD=10)...
+
+[T-SCORES] Summary statistics:
+  RAVLT_T              M=50.0, SD=10.1
+  RAVLT_DR_T           M=50.0, SD=10.1
+  RAVLT_Pct_Ret_T      M=50.0, SD=10.1
+  BVMT_T               M=50.0, SD=10.1
+  BVMT_Pct_Ret_T       M=50.0, SD=10.1
+  NART_T               M=50.0, SD=10.1
+  RPM_T                M=50.0, SD=10.1
+
+Saved cognitive test T-scores to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+Final dataset: 97 participants, 8 columns
+Columns: ['UID', 'RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T']
+
+============================================================
+SUMMARY
+============================================================
+Total participants loaded: 100
+Participants with complete data: 97
+Participants excluded: 3
+Exclusion rate: 3.0%
+
+Ceiling fixes: A103 (trials 4,5 -> 15), A064 (trial 5 -> 15)
+New predictors: RAVLT_Pct_Ret_T, BVMT_Pct_Ret_T
+
+Step 01 complete - v2 with ceiling fix + percent retention
+Step 01: Extract and Prepare Cognitive Test Data - v2 (Percent Retention)
+Includes RAVLT ceiling fix + percent retention predictors
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.1
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+
+Loading participant data from dfnonvr.csv...
+Loaded data for 100 participants
+
+Applying RAVLT ceiling fix (0 -> 15 for unadministered trials)...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+
+Extracting cognitive test scores...
+RAVLT Total (ceiling-fixed): M=51.6, SD=8.5
+RAVLT Delayed Recall extracted
+RAVLT Percent Retention: 100/100 valid, M=86.1%, SD=15.7%
+BVMT Total (sum trials 1-3): M=28.2, SD=5.1
+BVMT Percent Retained: M=96.7%, SD=9.0%
+NART score extracted
+RPM score extracted
+
+[MISSING DATA] Analyzing missing data patterns...
+
+============================================================
+MISSING DATA ANALYSIS REPORT
+============================================================
+
+OVERALL SUMMARY
+----------------------------------------
+Total participants: 100
+Complete cases: 97 (97.0%)
+Incomplete cases: 3 (3.0%)
+
+MISSING DATA BY VARIABLE
+----------------------------------------
+NART_Score                       3 missing (3.0%)
+
+MISSING COMPLETELY AT RANDOM (MCAR) TEST
+----------------------------------------
+Test statistic: 4.32
+p-value: 0.9770
+Result: Data appears to be MCAR
+
+Note: This is a simplified test. For publication, use
+      specialized packages for full Little's MCAR test.
+
+RECOMMENDATIONS
+----------------------------------------
+• Complete case analysis is reasonable (>95% complete)
+
+============================================================
+
+Missing data report saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_missing_data_report.txt
+
+3 participants excluded due to missing data
+
+Comparison of included vs excluded participants:
+    Variable  Included_Mean  Included_SD  Excluded_Mean  Excluded_SD  Difference  p_value
+0        age          44.81        14.67          36.67         9.61       -8.15    0.343
+1        sex           0.30         0.46           0.33         0.58        0.03    0.899
+2  education           6.10         1.67           6.00         0.00       -0.10    0.915
+Exclusion comparison saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_exclusion_comparison.csv
+
+Converting raw scores to T-scores (M=50, SD=10)...
+
+[T-SCORES] Summary statistics:
+  RAVLT_T              M=50.0, SD=10.1
+  RAVLT_DR_T           M=50.0, SD=10.1
+  RAVLT_Pct_Ret_T      M=50.0, SD=10.1
+  BVMT_T               M=50.0, SD=10.1
+  BVMT_Pct_Ret_T       M=50.0, SD=10.1
+  NART_T               M=50.0, SD=10.1
+  RPM_T                M=50.0, SD=10.1
+
+Saved cognitive test T-scores to: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step01_cognitive_tests.csv
+Final dataset: 97 participants, 8 columns
+Columns: ['UID', 'RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T']
+
+============================================================
+SUMMARY
+============================================================
+Total participants loaded: 100
+Participants with complete data: 97
+Participants excluded: 3
+Exclusion rate: 3.0%
+
+Ceiling fixes: A103 (trials 4,5 -> 15), A064 (trial 5 -> 15)
+New predictors: RAVLT_Pct_Ret_T, BVMT_Pct_Ret_T
+
+Step 01 complete - v2 with ceiling fix + percent retention

@@ -4,7 +4,6 @@
 Step 06: Test LocationType x Phase Interaction
 ==============================================================================
 RQ: 5.5.2 - Source-Destination Consolidation (Two-Phase)
-Generated: 2025-12-05
 
 Purpose:
     Extract the 3-way interaction term (Days_within:Segment:LocationType) from
@@ -35,13 +34,11 @@ import pandas as pd
 import numpy as np
 import statsmodels.formula.api as smf
 
-# ==============================================================================
 # PATH SETUP
-# ==============================================================================
 
 RQ_DIR = Path(__file__).resolve().parent.parent  # results/ch5/5.5.2
 
-# Folder conventions (MANDATORY)
+# Folder conventions 
 DATA_DIR = RQ_DIR / "data"
 LOGS_DIR = RQ_DIR / "logs"
 
@@ -56,9 +53,7 @@ LOG_FILE = LOGS_DIR / "step06_test_interaction.log"
 # Create directories if needed
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
-# ==============================================================================
 # LOGGING
-# ==============================================================================
 
 def log(msg: str) -> None:
     """Log message to console and file."""
@@ -69,29 +64,24 @@ def log(msg: str) -> None:
 # Clear log file
 LOG_FILE.write_text("", encoding="utf-8")
 
-# ==============================================================================
 # MAIN EXECUTION
-# ==============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 06: Test LocationType x Phase Interaction")
+        log("Step 06: Test LocationType x Phase Interaction")
+        # Load Coefficients from Step 3
 
-        # ==============================================================
-        # STEP 1: Load Coefficients from Step 3
-        # ==============================================================
-
-        log("[LOAD] Loading coefficients from Step 3...")
+        log("Loading coefficients from Step 3...")
         df_coeffs = pd.read_csv(INPUT_COEFFS)
-        log(f"[LOADED] {INPUT_COEFFS.name} ({len(df_coeffs)} rows)")
+        log(f"{INPUT_COEFFS.name} ({len(df_coeffs)} rows)")
 
         # Find the 3-way interaction term
         interaction_term = "Days_within:Segment[T.Late]:LocationType[T.Destination]"
 
         row = df_coeffs[df_coeffs['term'] == interaction_term]
         if len(row) == 0:
-            log(f"[ERROR] 3-way interaction term not found: {interaction_term}")
-            log(f"[INFO] Available terms: {df_coeffs['term'].tolist()}")
+            log(f"3-way interaction term not found: {interaction_term}")
+            log(f"Available terms: {df_coeffs['term'].tolist()}")
             raise ValueError(f"Interaction term '{interaction_term}' not in coefficients")
 
         row = row.iloc[0]
@@ -100,33 +90,27 @@ if __name__ == "__main__":
         z_score = row['z_score']
         p_uncorrected = row['p_value']
 
-        log(f"[EXTRACTED] 3-way interaction term: {interaction_term}")
+        log(f"3-way interaction term: {interaction_term}")
         log(f"  Estimate: {estimate:.4f}")
         log(f"  SE: {se:.4f}")
         log(f"  z-score: {z_score:.2f}")
         log(f"  p_uncorrected: {p_uncorrected:.4f}")
+        # Apply Bonferroni Correction (Decision D068)
 
-        # ==============================================================
-        # STEP 2: Apply Bonferroni Correction (Decision D068)
-        # ==============================================================
-
-        log("[BONFERRONI] Applying Bonferroni correction (2 main tests)...")
+        log("Applying Bonferroni correction (2 main tests)...")
         n_tests = 2  # Source consolidation + Destination consolidation
         p_bonferroni = min(p_uncorrected * n_tests, 1.0)
         significant_bonferroni = p_bonferroni < 0.025  # alpha/2 = 0.025
 
         log(f"  p_bonferroni: {p_bonferroni:.4f}")
         log(f"  Significant at alpha=0.025: {significant_bonferroni}")
-
-        # ==============================================================
-        # STEP 3: Compute Cohen's f² Effect Size
-        # ==============================================================
+        # Compute Cohen's f² Effect Size
         # Need to fit full and reduced models to compare R²
 
         log("[EFFECT SIZE] Computing Cohen's f² via model comparison...")
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         df = pd.read_csv(INPUT_DATA)
-        log(f"[LOADED] {INPUT_DATA.name} ({len(df)} rows)")
+        log(f"{INPUT_DATA.name} ({len(df)} rows)")
 
         # Set up treatment coding
         df['LocationType'] = pd.Categorical(df['LocationType'],
@@ -135,7 +119,7 @@ if __name__ == "__main__":
                                        categories=['Early', 'Late'])
 
         # Fit full model
-        log("[FIT] Fitting full model (with 3-way interaction)...")
+        log("Fitting full model (with 3-way interaction)...")
         formula_full = "theta ~ Days_within * Segment * LocationType"
         try:
             model_full = smf.mixedlm(formula_full, data=df, groups=df['UID'],
@@ -143,16 +127,16 @@ if __name__ == "__main__":
             result_full = model_full.fit(reml=False, method='lbfgs', maxiter=200)
             random_structure = "~Days_within"
         except:
-            log("[WARNING] Random slopes failed, using intercept-only")
+            log("Random slopes failed, using intercept-only")
             model_full = smf.mixedlm(formula_full, data=df, groups=df['UID'],
                                      re_formula="~1")
             result_full = model_full.fit(reml=False, method='lbfgs', maxiter=200)
             random_structure = "~1"
 
-        log(f"[FIT] Full model converged: {result_full.converged}")
+        log(f"Full model converged: {result_full.converged}")
 
         # Fit reduced model (without 3-way interaction)
-        log("[FIT] Fitting reduced model (without 3-way interaction)...")
+        log("Fitting reduced model (without 3-way interaction)...")
         # Remove 3-way interaction but keep 2-way interactions
         formula_reduced = "theta ~ Days_within + Segment + LocationType + Days_within:Segment + Days_within:LocationType + Segment:LocationType"
 
@@ -166,12 +150,12 @@ if __name__ == "__main__":
                                             re_formula="~1")
                 result_reduced = model_reduced.fit(reml=False, method='lbfgs', maxiter=200)
         except:
-            log("[WARNING] Reduced model with random slopes failed, using intercept-only")
+            log("Reduced model with random slopes failed, using intercept-only")
             model_reduced = smf.mixedlm(formula_reduced, data=df, groups=df['UID'],
                                         re_formula="~1")
             result_reduced = model_reduced.fit(reml=False, method='lbfgs', maxiter=200)
 
-        log(f"[FIT] Reduced model converged: {result_reduced.converged}")
+        log(f"Reduced model converged: {result_reduced.converged}")
 
         # Compute pseudo-R² for LMM (using variance reduction)
         # R² = 1 - (residual variance / total variance)
@@ -216,13 +200,10 @@ if __name__ == "__main__":
         else:
             effect_interpretation = "large"
 
-        log(f"[INTERPRETATION] Effect size: {effect_interpretation}")
+        log(f"Effect size: {effect_interpretation}")
+        # Save Results
 
-        # ==============================================================
-        # STEP 4: Save Results
-        # ==============================================================
-
-        log(f"[SAVE] Saving interaction test results to {OUTPUT_FILE.name}...")
+        log(f"Saving interaction test results to {OUTPUT_FILE.name}...")
 
         result_df = pd.DataFrame({
             'Term': [interaction_term],
@@ -237,18 +218,15 @@ if __name__ == "__main__":
         })
 
         result_df.to_csv(OUTPUT_FILE, index=False)
-        log(f"[SAVED] {OUTPUT_FILE.name} ({len(result_df)} rows, {len(result_df.columns)} cols)")
+        log(f"{OUTPUT_FILE.name} ({len(result_df)} rows, {len(result_df.columns)} cols)")
+        # Validation
 
-        # ==============================================================
-        # STEP 5: Validation
-        # ==============================================================
-
-        log("[VALIDATION] Checking output structure...")
+        log("Checking output structure...")
 
         # Check row count
         if len(result_df) != 1:
             raise ValueError(f"Expected 1 row, got {len(result_df)}")
-        log("[PASS] Row count: 1")
+        log("Row count: 1")
 
         # Check column count
         expected_cols = ['Term', 'Estimate', 'SE', 'z_score', 'p_uncorrected',
@@ -256,42 +234,39 @@ if __name__ == "__main__":
                         'Effect_interpretation']
         if list(result_df.columns) != expected_cols:
             raise ValueError(f"Column mismatch: {list(result_df.columns)}")
-        log("[PASS] Column count: 9")
+        log("Column count: 9")
 
         # Check p-value relationship (Bonferroni >= uncorrected)
         if p_bonferroni < p_uncorrected:
             raise ValueError("Bonferroni correction decreased p-value - logic error")
-        log("[PASS] Bonferroni p >= uncorrected p")
+        log("Bonferroni p >= uncorrected p")
 
         # Check Decision D068 compliance
-        log("[PASS] Decision D068: Both p_uncorrected and p_bonferroni columns present")
+        log("Decision D068: Both p_uncorrected and p_bonferroni columns present")
 
         # Check effect size non-negative
         if cohens_f2 < 0:
             raise ValueError(f"Negative Cohen's f²: {cohens_f2}")
-        log(f"[PASS] Cohen's f² non-negative: {cohens_f2:.4f}")
-
-        # ==============================================================
+        log(f"Cohen's f² non-negative: {cohens_f2:.4f}")
         # SUCCESS
-        # ==============================================================
 
-        log("[SUCCESS] Step 06 complete")
+        log("Step 06 complete")
         log(f"[KEY RESULT] 3-way interaction: beta={estimate:.4f}, p_uncorrected={p_uncorrected:.4f}, p_bonferroni={p_bonferroni:.4f}")
         log(f"[KEY RESULT] Significant at Bonferroni alpha=0.025: {significant_bonferroni}")
         log(f"[KEY RESULT] Effect size: Cohen's f²={cohens_f2:.4f} ({effect_interpretation})")
 
         if significant_bonferroni:
-            log("[CONCLUSION] LocationType x Phase interaction IS significant")
-            log("[CONCLUSION] Source and Destination show DIFFERENT consolidation patterns")
+            log("LocationType x Phase interaction IS significant")
+            log("Source and Destination show DIFFERENT consolidation patterns")
         else:
-            log("[CONCLUSION] LocationType x Phase interaction NOT significant")
-            log("[CONCLUSION] Source and Destination show SIMILAR consolidation patterns")
+            log("LocationType x Phase interaction NOT significant")
+            log("Source and Destination show SIMILAR consolidation patterns")
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         import traceback
         log(traceback.format_exc())
         sys.exit(1)

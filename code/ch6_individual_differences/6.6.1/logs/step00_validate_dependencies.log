@@ -1,0 +1,36 @@
+Step 00: Validate Dependencies
+
+Checking ch5_status: Ch5 5.1.4 completion status
+ch5_status: File exists (4031 bytes)
+ch5_status: Status = success
+
+Checking ch5_slopes: Individual slope estimates from Ch5 5.1.4
+ch5_slopes: File exists (8649 bytes)
+ch5_slopes: Columns validated (5 total)
+
+Checking dfnonvr: Cognitive test data
+dfnonvr: File exists (60164 bytes)
+dfnonvr: Columns validated (235 total)
+
+All dependencies validated successfully
+Writing validation report to /home/etai/projects/REMEMVR/results/ch7/7.6.1/data/step00_dependency_validation.txt
+Validation report written
+Step 00 complete
+Step 00: Validate Dependencies
+
+Checking ch5_status: Ch5 5.1.4 completion status
+ch5_status: File exists (4031 bytes)
+ch5_status: Status = success
+
+Checking ch5_slopes: Individual slope estimates from Ch5 5.1.4
+ch5_slopes: File exists (8649 bytes)
+ch5_slopes: Columns validated (5 total)
+
+Checking dfnonvr: Cognitive test data
+dfnonvr: File exists (60164 bytes)
+dfnonvr: Columns validated (235 total)
+
+All dependencies validated successfully
+Writing validation report to /home/etai/projects/REMEMVR/results/ch7/7.6.1/data/step00_dependency_validation.txt
+Validation report written
+Step 00 complete

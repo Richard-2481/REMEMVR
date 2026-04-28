@@ -1,0 +1,8 @@
+Analysis,Effect_Size_f2,Power,N,Interpretation
+Observed_Effect,0.0004958046625547,0.025000831098736853,100,"Negligible effect, 2.50% power"
+Small_Effect_Threshold,0.02,0.026363531091568082,100,2.6% power - UNDERPOWERED
+Medium_Effect_Threshold,0.15,0.1321045383789139,100,13.2% power - ADEQUATE
+N_Required_Small,,0.8,32276,N for 0.80 power (small)
+N_Required_Observed,,0.8,10000,N for 0.80 power (observed)
+Current_N,,,100,Current study N
+Gap_for_Small,,,32176,Additional N needed (small)

@@ -1,0 +1,5 @@
+comparison_type,univariate_value,multivariate_value,delta,interpretation
+AIC_sum,388.9792785586153,,,Cannot compute (multivariate AIC not available)
+CV_R2_what,0.0707273904745815,0.07072739047458151,1.3877787807814457e-17,Negligible difference
+CV_R2_where,0.0322642239260543,0.03226422392605438,8.326672684688674e-17,Negligible difference
+CV_R2_when,0.0270612822193817,0.027061282219381765,6.591949208711867e-17,Negligible difference

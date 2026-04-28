@@ -1,0 +1,3 @@
+variable,outlier_method,outlier_count,cooks_d_threshold,excluded_uids
+multivariate,cooks_distance,5,0.04,"['A017', 'A019', 'A036', 'A061', 'A063']"
+multivariate,mahalanobis,5,,"['A011', 'A047', 'A051', 'A076', 'A101']"

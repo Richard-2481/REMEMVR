@@ -1,0 +1,25 @@
+Step 00: Load Participant Data
+Loading dfnonvr.csv from data/ directory...
+dfnonvr.csv (100 rows, 235 cols)
+Selecting all RAVLT trial columns (trials 1-5 + delayed recall)...
+Subset created (100 rows, 7 cols)
+Verifying data quality...
+No missing values in RAVLT columns
+Participant count: 100
+All UIDs match expected format (A###)
+RAVLT Trial 1 score: mean=6.62, std=1.86, range=[3, 12]
+RAVLT Trial 2 score: mean=9.59, std=2.17, range=[5, 15]
+RAVLT Trial 3 score: mean=10.84, std=2.42, range=[0, 15]
+RAVLT Trial 4 score: mean=11.55, std=2.80, range=[0, 15]
+RAVLT Trial 5 score: mean=12.00, std=3.10, range=[0, 15]
+RAVLT Delayed Recall score: mean=10.85, std=2.54, range=[4, 15]
+Saving participant data to: /home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step00_participant_data.csv
+step00_participant_data.csv (100 rows, 7 cols)
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['ravlt-delayed-recall-score', 'ravlt-trial-3-score', 'ravlt-trial-2-score', 'UID', 'ravlt-trial-4-score', 'ravlt-trial-5-score', 'ravlt-trial-1-score']
+n_required: 7
+n_missing: 0
+PASS - All required columns present
+Step 00 complete

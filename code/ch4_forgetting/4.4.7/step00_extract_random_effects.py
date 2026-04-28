@@ -39,13 +39,13 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 00: Extract and Reshape Random Effects")
+        log("Step 00: Extract and Reshape Random Effects")
 
         # Load long-format random effects
-        log(f"[LOAD] Reading {INPUT_FILE}")
+        log(f"Reading {INPUT_FILE}")
         df_long = pd.read_csv(INPUT_FILE)
-        log(f"[LOADED] {len(df_long)} rows, {len(df_long.columns)} columns")
-        log(f"[INFO] Columns: {list(df_long.columns)}")
+        log(f"{len(df_long)} rows, {len(df_long.columns)} columns")
+        log(f"Columns: {list(df_long.columns)}")
 
         # Verify expected structure (300 rows = 100 UID × 3 congruence)
         if len(df_long) != 300:
@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
         unique_uids = df_long['UID'].nunique()
         unique_congruence = df_long['congruence'].nunique()
-        log(f"[INFO] Unique UIDs: {unique_uids}, Unique congruence levels: {unique_congruence}")
+        log(f"Unique UIDs: {unique_uids}, Unique congruence levels: {unique_congruence}")
 
         if unique_uids != 100:
             raise ValueError(f"Expected 100 unique UIDs, got {unique_uids}")
@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
         # Pivot from long to wide format
         # UPDATED: Use 'intercept_avg' and 'slope_avg' (model-averaged columns)
-        log("[RESHAPE] Pivoting from long to wide format")
+        log("Pivoting from long to wide format")
         df_wide = df_long.pivot(index='UID', columns='congruence', values=['intercept_avg', 'slope_avg'])
 
         # Flatten multi-level column names
@@ -81,7 +81,7 @@ if __name__ == "__main__":
 
         # Check if all expected columns exist
         actual_cols = list(df_wide.columns)
-        log(f"[INFO] Actual columns after pivot: {actual_cols}")
+        log(f"Actual columns after pivot: {actual_cols}")
 
         # Verify expected columns are present
         missing_cols = [col for col in expected_cols if col not in actual_cols]
@@ -91,8 +91,8 @@ if __name__ == "__main__":
         # Reorder to match expected format
         df_wide = df_wide[expected_cols]
 
-        log(f"[RESHAPED] {len(df_wide)} rows, {len(df_wide.columns)} columns")
-        log(f"[INFO] Final columns: {list(df_wide.columns)}")
+        log(f"{len(df_wide)} rows, {len(df_wide.columns)} columns")
+        log(f"Final columns: {list(df_wide.columns)}")
 
         # Verify no NaN values
         nan_count = df_wide.isna().sum().sum()
@@ -104,13 +104,13 @@ if __name__ == "__main__":
             raise ValueError(f"Expected 100 participants, got {len(df_wide)}")
 
         # Save to CSV
-        log(f"[SAVE] Writing to {OUTPUT_FILE}")
+        log(f"Writing to {OUTPUT_FILE}")
         OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
         df_wide.to_csv(OUTPUT_FILE, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_FILE}")
+        log(f"{OUTPUT_FILE}")
 
         # Validate output structure (column_types expects tuples)
-        log("[VALIDATION] Validating output structure")
+        log("Validating output structure")
         validation_result = validate_dataframe_structure(
             df=df_wide,
             expected_rows=100,
@@ -130,13 +130,13 @@ if __name__ == "__main__":
             raise ValueError(f"Validation failed: {validation_result['message']}")
 
         log(f"[VALIDATION PASS] {validation_result['message']}")
-        log("[SUCCESS] Step 00 complete")
+        log("Step 00 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

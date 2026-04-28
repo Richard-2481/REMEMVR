@@ -1,0 +1,51 @@
+Step 07: Prepare Plot Data
+
+Loading profile characteristics...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step04_profile_characteristics.csv
+1 profiles
+['Profile', 'N', 'What_Mean', 'What_SD', 'What_CI_Low', 'What_CI_High', 'Where_Mean', 'Where_SD', 'Where_CI_Low', 'Where_CI_High']
+
+Input validation
+All required columns present
+
+Profile characteristics:
+ Profile   N    What_Mean  What_SD  What_CI_Low  What_CI_High    Where_Mean  Where_SD  Where_CI_Low  Where_CI_High
+       0 100 4.440892e-18      1.0    -0.199958      0.184402 -4.218847e-17       1.0     -0.201668        0.18079
+
+Converting 95% CIs to standard errors...
+Standard errors from bootstrap CIs
+What SE range: [0.0981, 0.0981]
+Where SE range: [0.0976, 0.0976]
+
+SE computation validation
+All SEs are positive
+
+Creating plot-ready dataset...
+Plot data with 1 profiles
+['Profile', 'N', 'What_Mean', 'What_SE', 'Where_Mean', 'Where_SE']
+
+Saving plot data to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/lpa_plot_data.csv
+1 rows, 6 columns
+
+[PLOT DATA TABLE]
+ Profile   N    What_Mean  What_SE    Where_Mean  Where_SE
+       0 100 4.440892e-18 0.098051 -4.218847e-17  0.097566
+
+Final output validation...
+Row count preserved (1 profiles)
+No missing values
+Profile IDs are sequential
+SE values in reasonable range
+
+Plot data ready for plotting pipeline
+Profiles: 1
+Domains: What, Where (2 dimensions)
+Error bars: Bootstrap-derived standard errors
+Sample sizes included for each profile
+
+This file can be used by plotting pipeline to create:
+  1. Profile centroid plot (What vs Where means)
+  2. Error bar plot (means ± SE)
+  3. Profile size comparison (N per profile)
+
+Step 07 complete

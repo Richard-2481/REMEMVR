@@ -1,0 +1,74 @@
+Step 00: Load Dependency Data from RQ 5.5.1
+Verifying RQ 5.5.1 completion status...
+RQ 5.5.1 results analysis.status = 'success'
+RQ 5.5.1 completed successfully
+Verifying dependency files exist...
+Theta scores file exists (14846 bytes)
+TSVR mapping file exists (7914 bytes)
+Loading theta scores from RQ 5.5.1...
+step03_theta_scores.csv (400 rows, 5 cols)
+['composite_ID', 'theta_source', 'theta_destination', 'se_source', 'se_destination']
+Loading TSVR mapping from RQ 5.5.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+['composite_ID', 'UID', 'test', 'TSVR_hours']
+Checking column structures...
+Theta file has all expected columns
+TSVR file has all expected columns
+Checking row counts...
+Theta file has 400 rows
+TSVR file has 400 rows
+Merging theta scores with TSVR mapping on composite_ID...
+400 rows after merge
+All 400 theta rows successfully matched with TSVR
+Reordered to ['composite_ID', 'UID', 'test', 'theta_source', 'theta_destination', 'se_source', 'se_destination', 'TSVR_hours']
+Checking data ranges...
+theta_source in [-1.868, 1.703]
+theta_destination in [-1.494, 2.251]
+se_source in [0.500, 0.500]
+se_destination in [0.500, 0.500]
+TSVR_hours out of expected range [0.0, 168.0]
+Actual range: [1.000, 246.240]
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.2/code/step00_load_dependency_data.py", line 362, in <module>
+    raise ValueError(
+ValueError: TSVR_hours out of expected range [0.0, 168.0]
+Actual range: [1.000, 246.240]
+Step 00: Load Dependency Data from RQ 5.5.1
+Verifying RQ 5.5.1 completion status...
+RQ 5.5.1 results analysis.status = 'success'
+RQ 5.5.1 completed successfully
+Verifying dependency files exist...
+Theta scores file exists (14846 bytes)
+TSVR mapping file exists (7914 bytes)
+Loading theta scores from RQ 5.5.1...
+step03_theta_scores.csv (400 rows, 5 cols)
+['composite_ID', 'theta_source', 'theta_destination', 'se_source', 'se_destination']
+Loading TSVR mapping from RQ 5.5.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+['composite_ID', 'UID', 'test', 'TSVR_hours']
+Checking column structures...
+Theta file has all expected columns
+TSVR file has all expected columns
+Checking row counts...
+Theta file has 400 rows
+TSVR file has 400 rows
+Merging theta scores with TSVR mapping on composite_ID...
+400 rows after merge
+All 400 theta rows successfully matched with TSVR
+Reordered to ['composite_ID', 'UID', 'test', 'theta_source', 'theta_destination', 'se_source', 'se_destination', 'TSVR_hours']
+Checking data ranges...
+theta_source in [-1.868, 1.703]
+theta_destination in [-1.494, 2.251]
+se_source in [0.500, 0.500]
+se_destination in [0.500, 0.500]
+TSVR_hours in [1.000, 246.240]
+Saving merged data to step00_theta_from_rq551.csv...
+step00_theta_from_rq551.csv (400 rows, 8 cols)
+Verifying output file exists...
+Output file exists (19947 bytes)
+Step 00 complete
+Loaded 400 theta scores from RQ 5.5.1
+Merged with TSVR mapping (0 unmatched rows)
+Output: results/ch5/5.5.2/data/step00_theta_from_rq551.csv
+Run step01_create_piecewise_time_variables.py

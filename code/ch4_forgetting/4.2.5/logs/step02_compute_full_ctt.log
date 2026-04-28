@@ -1,0 +1,50 @@
+Step 2: Compute Full CTT Scores
+Loading input data...
+step00_raw_scores.csv (400 rows, 215 cols)
+step01_item_mapping.csv (105 items)
+Found 105 TQ_* item columns in raw data
+Computing full CTT scores using ALL items per domain...
+Processing domain: what
+  - Domain 'what' has 29 items (full item set)
+  - Computed CTT_full_what: 400/400 non-NaN scores
+  - Score range: [0.345, 1.000], mean = 0.772
+Processing domain: where
+  - Domain 'where' has 50 items (full item set)
+  - Computed CTT_full_where: 400/400 non-NaN scores
+  - Score range: [0.300, 0.925], mean = 0.598
+Processing domain: when
+  - Domain 'when' has 26 items (full item set)
+  - Computed CTT_full_when: 400/400 non-NaN scores
+  - Score range: [0.154, 0.865], mean = 0.460
+All domain CTT scores computed
+Saving CTT full scores...
+step02_ctt_full_scores.csv (400 rows, 6 cols)
+Running validate_numeric_range on CTT scores...
+CTT_full_what: PASS (all values in [0, 1])
+CTT_full_where: PASS (all values in [0, 1])
+CTT_full_when: PASS (all values in [0, 1])
+All CTT scores validated successfully
+Step 2 complete
+Step 2: Compute Full CTT Scores
+Loading input data...
+step00_raw_scores.csv (400 rows, 215 cols)
+step01_item_mapping.csv (79 items)
+Found 105 TQ_* item columns in raw data
+Computing full CTT scores using ALL items per domain...
+When domain EXCLUDED per RQ 5.2.1 floor effect
+Processing domain: what
+  - Domain 'what' has 29 items (full item set)
+  - Computed CTT_full_what: 400/400 non-NaN scores
+  - Score range: [0.345, 1.000], mean = 0.772
+Processing domain: where
+  - Domain 'where' has 50 items (full item set)
+  - Computed CTT_full_where: 400/400 non-NaN scores
+  - Score range: [0.300, 0.925], mean = 0.598
+All domain CTT scores computed
+Saving CTT full scores...
+step02_ctt_full_scores.csv (400 rows, 5 cols)
+Running validate_numeric_range on CTT scores...
+CTT_full_what: PASS (all values in [0, 1])
+CTT_full_where: PASS (all values in [0, 1])
+All CTT scores validated successfully
+Step 2 complete

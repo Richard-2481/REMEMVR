@@ -1,0 +1,42 @@
+Step 01: Compute CTT Mean Scores
+Loading input data...
+step00_raw_data_filtered.csv (400 rows, 71 cols)
+step00_purified_items.csv (69 items)
+Parsing domain assignments from item tags...
+Domain assignments match RQ 5.1 'factor' column (69 items)
+Computing domain-wise CTT mean scores...
+Domain item counts:
+  - what: 19 items
+  - where: 45 items
+  - when: 5 items
+Computed CTT scores: 1200 rows (UID x test x domain)
+Score range: [0.000, 1.000]
+step01_ctt_scores.csv (1200 rows, 6 cols)
+Running validate_data_format...
+Column check: All required columns present (6 columns). DataFrame has 1200 rows.
+Row count check: 1200 rows (expected 1200)
+Domain check: ['what', 'when', 'where'] (expected ['what', 'when', 'where'])
+CTT_score range: [0.000, 1.000] (expected [0, 1])
+n_items range: [5, 45] (all > 0)
+Step 01 complete
+Step 01: Compute CTT Mean Scores
+Loading input data...
+step00_raw_data_filtered.csv (400 rows, 66 cols)
+step00_purified_items.csv (64 items)
+Parsing domain assignments from item tags...
+Domain assignments match RQ 5.1 'factor' column (64 items)
+Computing domain-wise CTT mean scores...
+NOTE: When domain EXCLUDED due to floor effects
+Domain item counts (When excluded):
+  - what: 19 items
+  - where: 45 items
+Computed CTT scores: 800 rows (UID x test x 2 domains)
+Score range: [0.105, 1.000]
+step01_ctt_scores.csv (800 rows, 6 cols)
+Running validate_data_format...
+Column check: All required columns present (6 columns). DataFrame has 800 rows.
+Row count check: 800 rows (expected 800)
+Domain check: ['what', 'where'] (expected ['what', 'where'] - When excluded)
+CTT_score range: [0.105, 1.000] (expected [0, 1])
+n_items range: [19, 45] (all > 0)
+Step 01 complete

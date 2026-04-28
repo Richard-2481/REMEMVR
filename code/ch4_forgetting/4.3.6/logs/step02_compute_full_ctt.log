@@ -1,0 +1,28 @@
+Step 02: Compute Full CTT Scores (All Items Pre-Purification)
+Loading raw response data from dfData.csv...
+dfData.csv (400 rows, 214 cols)
+Found UID and TEST columns
+Verifying all 72 paradigm items exist in dfData.csv...
+All 72 paradigm items found (24 IFR + 24 ICR + 24 IRE)
+Computing Full CTT scores using all items per paradigm...
+CTT_full_IFR (24 items)...
+CTT_full_IFR: mean=0.413, range=[0.083, 0.875]
+CTT_full_ICR (24 items)...
+CTT_full_ICR: mean=0.517, range=[0.083, 0.917]
+CTT_full_IRE (24 items)...
+CTT_full_IRE: mean=0.537, range=[0.125, 0.917]
+Validating CTT scores...
+CTT_full_IFR in range [0, 1]
+CTT_full_ICR in range [0, 1]
+CTT_full_IRE in range [0, 1]
+No NaN values in CTT columns
+No duplicate UID × test combinations
+400 rows present (100 participants × 4 tests)
+All 4 test sessions present: ['T1', 'T2', 'T3', 'T4']
+Saving Full CTT scores to step02_ctt_full_scores.csv...
+step02_ctt_full_scores.csv (400 rows, 5 cols)
+Full CTT Score Statistics:
+  CTT_full_IFR: mean=0.4131, SD=0.1346, range=[0.0833, 0.8750]
+  CTT_full_ICR: mean=0.5166, SD=0.1431, range=[0.0833, 0.9167]
+  CTT_full_IRE: mean=0.5370, SD=0.1316, range=[0.1250, 0.9167]
+Step 02 complete

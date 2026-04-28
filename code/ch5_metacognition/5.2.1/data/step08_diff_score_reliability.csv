@@ -1,0 +1,2 @@
+r_accuracy,r_confidence,r_xy,r_diff,interpretation,recommendation
+0.85,0.9946134939724476,0.6561931980044539,0.7740206052852245,ACCEPTABLE (r_diff >= 0.70),Difference scores reliable. Calibration metric valid.

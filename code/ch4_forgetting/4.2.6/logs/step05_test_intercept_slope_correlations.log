@@ -1,0 +1,61 @@
+2025-12-03 15:10:05,604 - INFO - ============================================================
+2025-12-03 15:10:05,604 - INFO - RQ 5.2.6 Step 05: Test Intercept-Slope Correlations per Domain
+2025-12-03 15:10:05,604 - INFO - ============================================================
+2025-12-03 15:10:05,606 - INFO - Loaded random effects: 200 rows from results/ch5/5.2.6/data/step04_random_effects.csv
+2025-12-03 15:10:05,606 - INFO - 
+Bonferroni correction:
+2025-12-03 15:10:05,606 - INFO -   Number of tests: 2
+2025-12-03 15:10:05,606 - INFO -   Family-wise alpha: 0.01
+2025-12-03 15:10:05,606 - INFO -   Per-test alpha: 0.0050
+2025-12-03 15:10:05,606 - INFO - 
+============================================================
+2025-12-03 15:10:05,606 - INFO - INTERCEPT-SLOPE CORRELATION TESTS
+2025-12-03 15:10:05,606 - INFO - ============================================================
+2025-12-03 15:10:05,606 - INFO - 
+What Domain:
+2025-12-03 15:10:05,610 - INFO -   n = 100
+2025-12-03 15:10:05,610 - INFO -   r = 0.2717
+2025-12-03 15:10:05,610 - INFO -   p_uncorrected = 0.0062
+2025-12-03 15:10:05,610 - INFO -   p_bonferroni = 0.0125
+2025-12-03 15:10:05,610 - INFO -   Interpretation: Not significant: no reliable relationship between baseline and forgetting rate
+2025-12-03 15:10:05,610 - INFO -   Decision D068: Dual p-values reported (uncorrected + Bonferroni)
+2025-12-03 15:10:05,610 - INFO - 
+Where Domain:
+2025-12-03 15:10:05,611 - INFO -   n = 100
+2025-12-03 15:10:05,611 - INFO -   r = -0.3161
+2025-12-03 15:10:05,611 - INFO -   p_uncorrected = 0.0014
+2025-12-03 15:10:05,611 - INFO -   p_bonferroni = 0.0027
+2025-12-03 15:10:05,611 - INFO -   Interpretation: Significant negative: high performers maintain advantage over time
+2025-12-03 15:10:05,611 - INFO -   Decision D068: Dual p-values reported (uncorrected + Bonferroni)
+2025-12-03 15:10:05,612 - INFO - 
+============================================================
+2025-12-03 15:10:05,612 - INFO - VALIDATION: Checking correlation results
+2025-12-03 15:10:05,612 - INFO - ============================================================
+2025-12-03 15:10:05,612 - INFO -   Row count: 2: PASS
+2025-12-03 15:10:05,612 - INFO -   Decision D068 columns present: PASS
+2025-12-03 15:10:05,612 - INFO -   All r in [-1, 1]: PASS
+2025-12-03 15:10:05,612 - INFO -   All p-values in [0, 1]: PASS
+2025-12-03 15:10:05,613 - INFO - 
+Saved correlation results to: results/ch5/5.2.6/data/step05_intercept_slope_correlations.csv
+2025-12-03 15:10:05,613 - INFO - 
+============================================================
+2025-12-03 15:10:05,613 - INFO - KEY FINDINGS
+2025-12-03 15:10:05,613 - INFO - ============================================================
+2025-12-03 15:10:05,614 - INFO -   Where: SIGNIFICANT NEGATIVE (r=-0.316, p_bonf=0.0027)
+2025-12-03 15:10:05,614 - INFO -     -> High baseline performers maintain advantage over time
+2025-12-03 15:10:05,614 - INFO - 
+------------------------------------------------------------
+2025-12-03 15:10:05,614 - INFO - THEORETICAL NOTE:
+2025-12-03 15:10:05,614 - INFO - ------------------------------------------------------------
+2025-12-03 15:10:05,614 - INFO - Negative intercept-slope correlation is expected in learning/memory research.
+2025-12-03 15:10:05,614 - INFO - It reflects the 'Fan Effect': high performers start high and forget slowly,
+2025-12-03 15:10:05,614 - INFO - while low performers start low and may forget more quickly.
+2025-12-03 15:10:05,614 - INFO - However, with only 4 timepoints, slope estimates are unreliable (ICC_slope ~0.01).
+2025-12-03 15:10:05,614 - INFO - Interpret with caution - correlation may be attenuated by measurement error.
+2025-12-03 15:10:05,614 - INFO - 
+============================================================
+2025-12-03 15:10:05,614 - INFO - STEP 05 COMPLETE
+2025-12-03 15:10:05,614 - INFO - ============================================================
+2025-12-03 15:10:05,614 - INFO - Tested intercept-slope correlations for 2 domains
+2025-12-03 15:10:05,614 - INFO - Decision D068 compliance: Both p_uncorrected and p_bonferroni reported
+2025-12-03 15:10:05,614 - INFO - Ready for Step 06: Compare ICC Across Domains

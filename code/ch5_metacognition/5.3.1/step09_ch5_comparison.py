@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PLATINUM FINALIZATION: Ch5 5.2.1 Comparison (H1 Blocker Resolution)
+VALIDATION: Ch5 5.2.1 Comparison (H1 Blocker Resolution)
 
 PURPOSE:
 Formally compare confidence domain trajectories (this RQ 6.3.1) to accuracy domain
@@ -34,7 +34,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step09_ch5_comparison.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -43,20 +42,17 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("PLATINUM FINALIZATION: Ch5 5.2.1 Confidence-Accuracy Comparison (H1)")
+        log("VALIDATION: Ch5 5.2.1 Confidence-Accuracy Comparison (H1)")
         log("=" * 80)
-
-        # =====================================================================
         # Load RQ 6.3.1 Confidence Findings
-        # =====================================================================
-        log("\n[LOAD] Loading RQ 6.3.1 confidence results...")
+        log("\nLoading RQ 6.3.1 confidence results...")
         confidence_path = RQ_DIR / "data" / "step05_lmm_coefficients.csv"
 
         if not confidence_path.exists():
             raise FileNotFoundError(f"Confidence results not found: {confidence_path}")
 
         confidence_df = pd.read_csv(confidence_path, encoding='utf-8')
-        log(f"[LOADED] {confidence_path.name} ({len(confidence_df)} coefficients)")
+        log(f"{confidence_path.name} ({len(confidence_df)} coefficients)")
 
         # Extract Domain × Time interaction terms
         interaction_terms = confidence_df[
@@ -64,7 +60,7 @@ if __name__ == "__main__":
             (confidence_df['term'].str.contains('log_TSVR'))
         ]
 
-        log("\n[INFO] RQ 6.3.1 Confidence - Domain × Time Interactions:")
+        log("\nRQ 6.3.1 Confidence - Domain × Time Interactions:")
         for idx, row in interaction_terms.iterrows():
             log(f"  {row['term']}: coef={row['coef']:.4f}, p={row['p_value']:.4f}")
 
@@ -73,24 +69,21 @@ if __name__ == "__main__":
         confidence_result = "SIGNIFICANT" if len(confidence_sig) > 0 else "NULL"
 
         if len(confidence_sig) > 0:
-            log(f"\n[FINDING] Confidence shows SIGNIFICANT Domain × Time interaction (p < 0.05)")
-            log(f"[DETAIL] Significant terms: {confidence_sig['term'].tolist()}")
+            log(f"\nConfidence shows SIGNIFICANT Domain × Time interaction (p < 0.05)")
+            log(f"Significant terms: {confidence_sig['term'].tolist()}")
         else:
-            log(f"\n[FINDING] Confidence shows NULL Domain × Time interaction (p >= 0.05)")
-
-        # =====================================================================
+            log(f"\nConfidence shows NULL Domain × Time interaction (p >= 0.05)")
         # Extract Ch5 5.2.1 Accuracy Findings
-        # =====================================================================
-        log("\n[LOAD] Loading Ch5 5.2.1 accuracy results...")
+        log("\nLoading Ch5 5.2.1 accuracy results...")
 
         ch5_summary_path = PROJECT_ROOT / "results" / "ch5" / "5.2.1" / "results" / "summary.md"
 
         if not ch5_summary_path.exists():
-            log("[WARNING] Ch5 5.2.1 summary.md not found")
-            log("[ACTION] Will document comparison as pending")
+            log("Ch5 5.2.1 summary.md not found")
+            log("Will document comparison as pending")
             ch5_available = False
         else:
-            log(f"[LOADED] {ch5_summary_path.name}")
+            log(f"{ch5_summary_path.name}")
             ch5_available = True
 
             # Parse Ch5 summary for key findings
@@ -102,24 +95,21 @@ if __name__ == "__main__":
             # Domain trajectories in probability scale show When floor effect (19% -> 5%)
             # But theta space (lines 196-200) shows identical trajectories (0.86 SD decline)
 
-            log("\n[INFO] Ch5 5.2.1 Accuracy - Key Findings (from summary.md):")
+            log("\nCh5 5.2.1 Accuracy - Key Findings (from summary.md):")
             log("  Theta space: All domains show identical decline (~0.86 SD over 6 days)")
             log("  Probability space:")
             log("    - What: 87% -> 72% (15 pp decline)")
             log("    - Where: 59% -> 41% (18 pp decline)")
             log("    - When: 19% -> 5% (14 pp decline, FLOOR EFFECT)")
-            log("\n[INTERPRETATION] Ch5 conclusion:")
+            log("\nCh5 conclusion:")
             log("  Domain × Time interaction: NULL in theta space (domain-invariant forgetting rates)")
             log("  Domain differences are in BASELINE encoding, not forgetting rate")
 
             # For comparison purposes:
             ch5_result = "NULL (theta space)"  # Domain-invariant forgetting rates
             ch5_note = "Floor effects in When domain (probability scale)"
-
-        # =====================================================================
         # Create Comparison Table
-        # =====================================================================
-        log("\n[ANALYSIS] Creating confidence-accuracy comparison...")
+        log("\nCreating confidence-accuracy comparison...")
 
         comparison_data = []
 
@@ -165,11 +155,8 @@ if __name__ == "__main__":
             })
 
         comparison_df = pd.DataFrame(comparison_data)
-
-        # =====================================================================
         # Interpret Divergence
-        # =====================================================================
-        log("\n[COMPARISON] Confidence-Accuracy Divergence Analysis:")
+        log("\nConfidence-Accuracy Divergence Analysis:")
 
         if ch5_available:
             if confidence_result == "SIGNIFICANT" and ch5_result.startswith("NULL"):
@@ -179,11 +166,11 @@ if __name__ == "__main__":
                     "while accuracy shows domain-invariant decline. This suggests "
                     "metacognitive monitoring does NOT perfectly track objective performance."
                 )
-                log(f"[FINDING] {divergence}")
-                log(f"[INTERPRETATION] {interpretation}")
+                log(f"{divergence}")
+                log(f"{interpretation}")
 
                 # Theoretical implications
-                log("\n[IMPLICATIONS]")
+                log("\n")
                 log("  1. Metacognitive Monitoring Dissociation:")
                 log("     - Confidence judgments operate INDEPENDENTLY of accuracy patterns")
                 log("     - When domain shows DUAL deficit: poor accuracy + poor confidence calibration")
@@ -195,21 +182,18 @@ if __name__ == "__main__":
             else:
                 divergence = "CONVERGENCE"
                 interpretation = "Confidence and accuracy show similar domain patterns"
-                log(f"[FINDING] {divergence}")
+                log(f"{divergence}")
         else:
             divergence = "COMPARISON PENDING"
             interpretation = "Ch5 5.2.1 data not available for formal comparison"
-            log(f"[STATUS] {divergence}")
-
-        # =====================================================================
+            log(f"{divergence}")
         # Save Outputs
-        # =====================================================================
-        log("\n[SAVE] Saving comparison results...")
+        log("\nSaving comparison results...")
 
         # Comparison table
         output_comparison = RQ_DIR / "data" / "step09_ch5_comparison.csv"
         comparison_df.to_csv(output_comparison, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_comparison.name}")
+        log(f"{output_comparison.name}")
 
         # Detailed summary
         output_summary = RQ_DIR / "data" / "step09_ch5_comparison_summary.txt"
@@ -282,16 +266,16 @@ if __name__ == "__main__":
             f.write("Formal statistical comparison quantifies the confidence-accuracy divergence\n")
             f.write("identified qualitatively in summary.md Section 3.\n")
 
-        log(f"[SAVED] {output_summary.name}")
+        log(f"{output_summary.name}")
 
-        log("\n[SUCCESS] Ch5 comparison complete (H1 RESOLVED)")
-        log(f"[FINDING] {divergence}")
+        log("\nCh5 comparison complete (H1 RESOLVED)")
+        log(f"{divergence}")
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"\n{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

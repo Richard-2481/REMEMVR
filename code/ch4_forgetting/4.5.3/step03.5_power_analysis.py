@@ -112,31 +112,31 @@ def simulate_and_test(data, effect_size, residual_var, random_intercept_var, n_s
 
 
 def main():
-    logger.info("[START] Step 03.5: Power Analysis for Null Hypothesis Testing")
+    logger.info("Step 03.5: Power Analysis for Null Hypothesis Testing")
 
     # -------------------------------------------------------------------------
     # 1. Load model and data
     # -------------------------------------------------------------------------
-    logger.info("[LOAD] Loading model and data...")
+    logger.info("Loading model and data...")
 
     with open(DATA_DIR / "step02_lmm_model.pkl", 'rb') as f:
         lmm_model = pickle.load(f)
 
     lmm_input = pd.read_csv(DATA_DIR / "step01_lmm_input.csv")
 
-    logger.info(f"[LOADED] Model and data ({len(lmm_input)} observations)")
+    logger.info(f"Model and data ({len(lmm_input)} observations)")
 
     # -------------------------------------------------------------------------
     # 2. Extract variance components for simulation
     # -------------------------------------------------------------------------
-    logger.info("[EXTRACT] Extracting variance components...")
+    logger.info("Extracting variance components...")
 
     # Random effects variance (intercept)
     random_var = lmm_model.cov_re.iloc[0, 0]  # Intercept variance
     residual_var = lmm_model.scale  # Residual variance
 
-    logger.info(f"[VARIANCE] Random intercept var: {random_var:.4f}")
-    logger.info(f"[VARIANCE] Residual var: {residual_var:.4f}")
+    logger.info(f"Random intercept var: {random_var:.4f}")
+    logger.info(f"Residual var: {residual_var:.4f}")
 
     # -------------------------------------------------------------------------
     # 3. Run power analysis
@@ -145,7 +145,7 @@ def main():
     n_simulations = 100  # Reduced from 1000 for speed (still reasonable estimate)
     alpha_bonferroni = 0.025
 
-    logger.info(f"[POWER] Running power analysis...")
+    logger.info(f"Running power analysis...")
     logger.info(f"  Effect size: {effect_size}")
     logger.info(f"  N simulations: {n_simulations}")
     logger.info(f"  Alpha (Bonferroni): {alpha_bonferroni}")
@@ -174,13 +174,13 @@ def main():
 
     target_met = power >= 0.80
 
-    logger.info(f"[RESULT] Power = {power:.3f} (95% CI: [{ci_lower:.3f}, {ci_upper:.3f}])")
-    logger.info(f"[RESULT] Target (0.80): {'MET' if target_met else 'NOT MET'}")
+    logger.info(f"Power = {power:.3f} (95% CI: [{ci_lower:.3f}, {ci_upper:.3f}])")
+    logger.info(f"Target (0.80): {'MET' if target_met else 'NOT MET'}")
 
     # -------------------------------------------------------------------------
     # 4. Save power analysis results
     # -------------------------------------------------------------------------
-    logger.info("[SAVE] Saving power analysis results...")
+    logger.info("Saving power analysis results...")
 
     power_df = pd.DataFrame([{
         'effect_size': effect_size,
@@ -193,13 +193,13 @@ def main():
     }])
 
     power_df.to_csv(DATA_DIR / "step03.5_power_analysis.csv", index=False)
-    logger.info("[SAVED] step03.5_power_analysis.csv")
+    logger.info("step03.5_power_analysis.csv")
 
     # -------------------------------------------------------------------------
     # 5. Compute MDE if power < 0.80
     # -------------------------------------------------------------------------
     if not target_met:
-        logger.info("[MDE] Computing minimum detectable effect at 80% power...")
+        logger.info("Computing minimum detectable effect at 80% power...")
 
         # Binary search for MDE
         low_effect = 0.01
@@ -230,28 +230,28 @@ def main():
             'n_simulations': 50
         }])
         mde_df.to_csv(DATA_DIR / "step03.5_minimum_detectable_effect.csv", index=False)
-        logger.info(f"[MDE] Minimum detectable effect at 80% power: {mde:.4f}")
-        logger.info("[SAVED] step03.5_minimum_detectable_effect.csv")
+        logger.info(f"Minimum detectable effect at 80% power: {mde:.4f}")
+        logger.info("step03.5_minimum_detectable_effect.csv")
 
     # -------------------------------------------------------------------------
     # 6. Validation
     # -------------------------------------------------------------------------
-    logger.info("[VALIDATION] Validating results...")
+    logger.info("Validating results...")
 
     if 0 <= power <= 1:
-        logger.info("[PASS] Power in valid range [0, 1]")
+        logger.info("Power in valid range [0, 1]")
     else:
         raise ValueError(f"Invalid power estimate: {power}")
 
     if n_detected <= n_simulations:
-        logger.info("[PASS] n_detected <= n_simulations")
+        logger.info("n_detected <= n_simulations")
     else:
         raise ValueError(f"n_detected ({n_detected}) > n_simulations ({n_simulations})")
 
     # -------------------------------------------------------------------------
     # 7. Interpretation
     # -------------------------------------------------------------------------
-    logger.info("[INTERPRETATION]")
+    logger.info("")
     if target_met:
         logger.info("  Power >= 0.80: Study adequately powered to detect small effects")
         logger.info("  Null finding is INTERPRETABLE: Age truly does not moderate effect")
@@ -262,14 +262,14 @@ def main():
         logger.info("  a true null effect even if power is limited for small effects")
 
     # Additional context
-    logger.info("[CONTEXT] Effect size interpretation:")
+    logger.info("Effect size interpretation:")
     logger.info("  The observed 3-way interaction coefficients are:")
     logger.info("    TSVR_hours:Age_c:LocationType: -0.000185 (essentially zero)")
     logger.info("    log_TSVR:Age_c:LocationType: 0.005151 (very small)")
     logger.info("  Even with limited power, coefficients this close to zero")
     logger.info("  suggest the null hypothesis is substantively supported.")
 
-    logger.info("[SUCCESS] Step 03.5 complete - Power analysis finished")
+    logger.info("Step 03.5 complete - Power analysis finished")
 
 
 if __name__ == "__main__":

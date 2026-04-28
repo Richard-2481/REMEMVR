@@ -24,7 +24,6 @@ OUTPUT:
 - data/step06_reliability_check.csv
 - Added section to results/sensitivity_analysis.md
 
-Author: Claude Code
 Date: 2025-12-14
 RQ: ch6/6.4.2
 Task: T1.4 from rq_rework.md
@@ -113,10 +112,7 @@ def main():
     log("RQ 6.4.2 - Step 06: Difference Score Reliability Check")
     log(f"Started: {datetime.now().isoformat()}")
     log("=" * 80)
-
-    # =========================================================================
-    # STEP 1: Load Data
-    # =========================================================================
+    # Load Data
     log("\n[STEP 1] Load Calibration Data")
     log("-" * 60)
 
@@ -137,19 +133,13 @@ def main():
     log(f"    theta_accuracy: M={person_level['theta_accuracy'].mean():.3f}, SD={person_level['theta_accuracy'].std():.3f}")
     log(f"    theta_confidence: M={person_level['theta_confidence'].mean():.3f}, SD={person_level['theta_confidence'].std():.3f}")
     log(f"    calibration: M={person_level['calibration'].mean():.3f}, SD={person_level['calibration'].std():.3f}")
-
-    # =========================================================================
-    # STEP 2: Compute Correlation Between Accuracy and Confidence
-    # =========================================================================
+    # Compute Correlation Between Accuracy and Confidence
     log("\n[STEP 2] Compute Accuracy-Confidence Correlation")
     log("-" * 60)
 
     r_xy, p_xy = stats.pearsonr(person_level['theta_accuracy'], person_level['theta_confidence'])
     log(f"  r(accuracy, confidence) = {r_xy:.4f}, p = {p_xy:.4f}")
-
-    # =========================================================================
-    # STEP 3: Estimate Component Reliabilities
-    # =========================================================================
+    # Estimate Component Reliabilities
     log("\n[STEP 3] Estimate Component Reliabilities")
     log("-" * 60)
 
@@ -189,10 +179,7 @@ def main():
     # Accuracy: Binary (2PL) - lower information per item
     r_yy_accuracy = 0.83  # Conservative estimate for 2PL with 24 items
     log(f"    r_yy (accuracy): {r_yy_accuracy:.2f} (estimated: 2PL binary, ~24 items)")
-
-    # =========================================================================
-    # STEP 4: Compute Difference Score Reliability
-    # =========================================================================
+    # Compute Difference Score Reliability
     log("\n[STEP 4] Compute Difference Score Reliability")
     log("-" * 60)
 
@@ -203,10 +190,7 @@ def main():
     log(f"  = ({r_xx_confidence + r_yy_accuracy:.4f} - {2*r_xy:.4f}) / ({2 - 2*r_xy:.4f})")
     log(f"  = {r_xx_confidence + r_yy_accuracy - 2*r_xy:.4f} / {2 - 2*r_xy:.4f}")
     log(f"  = {r_diff:.4f}")
-
-    # =========================================================================
-    # STEP 5: Sensitivity Analysis with Different Reliability Estimates
-    # =========================================================================
+    # Sensitivity Analysis with Different Reliability Estimates
     log("\n[STEP 5] Sensitivity Analysis")
     log("-" * 60)
 
@@ -236,10 +220,7 @@ def main():
             'r_diff': r_d,
             'adequate': r_d >= 0.70
         })
-
-    # =========================================================================
-    # STEP 6: Interpret Results
-    # =========================================================================
+    # Interpret Results
     log("\n[STEP 6] Interpret Results")
     log("-" * 60)
 
@@ -275,10 +256,7 @@ def main():
         robustness = "SENSITIVE TO ASSUMPTIONS"
 
     log(f"  Robustness: {robustness}")
-
-    # =========================================================================
-    # STEP 7: Save Results
-    # =========================================================================
+    # Save Results
     log("\n[STEP 7] Save Results")
     log("-" * 60)
 
@@ -377,7 +355,7 @@ if __name__ == "__main__":
     try:
         results = main()
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

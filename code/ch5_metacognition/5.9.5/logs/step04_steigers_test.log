@@ -1,0 +1,39 @@
+Step 4: Steiger's Z-Test for Dependent Correlations
+
+[STEP 4.1] Load merged data from Step 3
+1600 rows
+
+[STEP 4.2] Create location x time interaction proxy
+location: source=0, destination=1
+interaction_proxy = location_numeric * TSVR_hours
+
+[STEP 4.3] Pivot to wide format by measure
+1600 -> 800 rows (should be 800)
+
+[STEP 4.4] Compute required correlations
+[r12] accuracy vs confidence: r=0.3926, p=0.0000
+[r13] accuracy vs interaction_proxy: r=-0.1434, p=0.0000
+[r23] confidence vs interaction_proxy: r=-0.2399, p=0.0000
+[n] Sample size: 800
+
+[STEP 4.5] Run Steiger's Z-test
+z-statistic: -10.5496
+p-value: 0.0000
+r_difference: -0.5360
+Significant: True
+Interpretation: r13 (-0.14) significantly lower than r12 (0.39), z=-10.55, p=0.000
+
+[STEP 4.6] Apply Bonferroni correction (Decision D068)
+[D068] p_uncorrected: 0.0000
+[D068] p_bonferroni: 0.0000 (n_tests=2)
+
+[STEP 4.8] Validate Decision D068 compliance
+Decision D068 compliant
+
+[STEP 4.9] Check convergent evidence with Step 3
+Mixed model and Steiger's test converge
+
+[STEP 4.10] Save outputs
+step04_steigers_test_results.csv
+step04_convergent_evidence.txt
+Step 4 complete

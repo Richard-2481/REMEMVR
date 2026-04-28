@@ -22,7 +22,6 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 RQ_DIR = SCRIPT_DIR.parent
 PROJECT_ROOT = RQ_DIR.parents[2]
 
-# Add project root to path for imports
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Setup logging
@@ -51,12 +50,8 @@ def extract_slopes_from_piecewise_lmm(result):
     To get each slope, we need to sum the appropriate coefficients:
 
     Early IFR slope = Days_within
-    Early ICR slope = Days_within + Days_within:paradigm[ICR]
-    Early IRE slope = Days_within + Days_within:paradigm[IRE]
-    Late IFR slope = Days_within + Days_within:Segment[Late]
-    Late ICR slope = Days_within + Days_within:Segment[Late] + Days_within:paradigm[ICR] + Days_within:Segment[Late]:paradigm[ICR]
-    Late IRE slope = Days_within + Days_within:Segment[Late] + Days_within:paradigm[IRE] + Days_within:Segment[Late]:paradigm[IRE]
-    """
+    Early ICR slope = Days_within + Days_within:paradigmEarly IRE slope = Days_within + Days_within:paradigmLate IFR slope = Days_within + Days_within:Segment[Late]
+    Late ICR slope = Days_within + Days_within:Segment[Late] + Days_within:paradigm+ Days_within:Segment[Late]:paradigmLate IRE slope = Days_within + Days_within:Segment[Late] + Days_within:paradigm+ Days_within:Segment[Late]:paradigm"""
     # Get fixed effects
     fe_params = result.fe_params
     fe_cov = result.cov_params()
@@ -65,10 +60,10 @@ def extract_slopes_from_piecewise_lmm(result):
     coef_names = {
         'Days_within': 'Days_within',
         'Days_within:Segment[Late]': 'Days_within:Segment[T.Late]',
-        'Days_within:paradigm[ICR]': 'Days_within:paradigm_code[T.ICR]',
-        'Days_within:paradigm[IRE]': 'Days_within:paradigm_code[T.IRE]',
-        'Days_within:Segment[Late]:paradigm[ICR]': 'Days_within:Segment[T.Late]:paradigm_code[T.ICR]',
-        'Days_within:Segment[Late]:paradigm[IRE]': 'Days_within:Segment[T.Late]:paradigm_code[T.IRE]'
+        'Days_within:paradigm': 'Days_within:paradigm_code[T.ICR]',
+        'Days_within:paradigm': 'Days_within:paradigm_code[T.IRE]',
+        'Days_within:Segment[Late]:paradigm': 'Days_within:Segment[T.Late]:paradigm_code[T.ICR]',
+        'Days_within:Segment[Late]:paradigm': 'Days_within:Segment[T.Late]:paradigm_code[T.IRE]'
     }
 
     # Check what coefficients exist

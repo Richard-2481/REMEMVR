@@ -25,9 +25,7 @@ import warnings
 # Suppress convergence warnings
 warnings.filterwarnings('ignore')
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.7.1
 LOG_FILE = RQ_DIR / "logs" / "steps_01_to_05.log"
@@ -55,9 +53,7 @@ def init_log():
         f.write("RQ 6.7.1: Initial Confidence Predicting Forgetting Rates\n")
         f.write("=" * 70 + "\n\n")
 
-# =============================================================================
 # Step 1: Load Day 0 Confidence Data
-# =============================================================================
 
 def step01_load_day0_confidence() -> pd.DataFrame:
     """Load Day 0 confidence estimates from RQ 6.1.1."""
@@ -118,9 +114,7 @@ def step01_load_day0_confidence() -> pd.DataFrame:
 
     return df_out
 
-# =============================================================================
 # Step 2: Load Forgetting Slopes Data
-# =============================================================================
 
 def step02_load_forgetting_slopes() -> pd.DataFrame:
     """Load forgetting slopes from Ch5 5.1.4."""
@@ -191,9 +185,7 @@ def step02_load_forgetting_slopes() -> pd.DataFrame:
 
     return df_save
 
-# =============================================================================
 # Step 3: Merge Confidence and Slopes Data
-# =============================================================================
 
 def step03_merge_data(df_confidence: pd.DataFrame, df_slopes: pd.DataFrame) -> pd.DataFrame:
     """Merge confidence and slopes data."""
@@ -239,9 +231,7 @@ def step03_merge_data(df_confidence: pd.DataFrame, df_slopes: pd.DataFrame) -> p
 
     return df_merged
 
-# =============================================================================
 # Step 4: Compute Correlation and Tertile Analysis
-# =============================================================================
 
 def step04_correlation_and_tertile(df: pd.DataFrame) -> tuple:
     """Compute correlation and tertile analysis with D068 dual p-values."""
@@ -466,9 +456,7 @@ def step04_correlation_and_tertile(df: pd.DataFrame) -> tuple:
 
     return corr_results, tertile_stats, df
 
-# =============================================================================
 # Step 5: Prepare Plot Data
-# =============================================================================
 
 def step05_prepare_plot_data(df: pd.DataFrame, tertile_stats: pd.DataFrame):
     """Prepare plot data for scatterplot with tertile overlays."""
@@ -516,9 +504,7 @@ def step05_prepare_plot_data(df: pd.DataFrame, tertile_stats: pd.DataFrame):
 
     return df_plot
 
-# =============================================================================
 # Main Execution
-# =============================================================================
 
 def main():
     """Execute all steps."""

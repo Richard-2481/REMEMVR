@@ -1,0 +1,236 @@
+Step 02: Fit Congruence-Stratified LMMs
+Loading LMM input data...
+step01_loaded_lmm_input.csv (1200 rows, 9 columns)
+Congruence levels: ['Common', 'Congruent', 'Incongruent']
+Fitting stratified LMMs (one per congruence level)...
+
+Fitting LMM for Common congruence...
+Common: 400 observations, 100 participants
+Common model converged: True
+Common variance components:
+  var_intercept: 0.173612
+  var_slope: 0.000000
+  cov_int_slope: 0.000111
+  var_residual: 0.453404
+  var_total: 0.627016
+
+Fitting LMM for Congruent congruence...
+Congruent: 400 observations, 100 participants
+Congruent model converged: False
+Congruent model did NOT converge - results may be unreliable
+Congruent variance components:
+  var_intercept: 0.294267
+  var_slope: 0.000008
+  cov_int_slope: -0.001081
+  var_residual: 0.512041
+  var_total: 0.806308
+
+Fitting LMM for Incongruent congruence...
+Incongruent: 400 observations, 100 participants
+Incongruent model converged: True
+Incongruent variance components:
+  var_intercept: 0.159153
+  var_slope: 0.000000
+  cov_int_slope: 0.000235
+  var_residual: 0.438034
+  var_total: 0.597187
+
+Saving fitted models...
+step02_fitted_model_common.pkl
+step02_fitted_model_congruent.pkl
+step02_fitted_model_incongruent.pkl
+Saving variance components...
+step02_variance_components.csv (15 rows)
+Saving model metadata...
+step02_model_metadata_common.yaml
+step02_model_metadata_congruent.yaml
+step02_model_metadata_incongruent.yaml
+
+Validating model convergence...
+'valid'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step02_fit_stratified_lmms.py", line 214, in <module>
+    if validation['valid']:
+       ~~~~~~~~~~^^^^^^^^^
+KeyError: 'valid'
+Step 02: Fit Congruence-Stratified LMMs
+Loading LMM input data...
+step01_loaded_lmm_input.csv (1200 rows, 9 columns)
+Congruence levels: ['Common', 'Congruent', 'Incongruent']
+Fitting stratified LMMs (one per congruence level)...
+
+Fitting LMM for Common congruence...
+Common: 400 observations, 100 participants
+Common model converged: True
+Common variance components:
+  var_intercept: 0.173612
+  var_slope: 0.000000
+  cov_int_slope: 0.000111
+  var_residual: 0.453404
+  var_total: 0.627016
+
+Fitting LMM for Congruent congruence...
+Congruent: 400 observations, 100 participants
+Congruent model converged: False
+Congruent model did NOT converge - results may be unreliable
+Congruent variance components:
+  var_intercept: 0.294267
+  var_slope: 0.000008
+  cov_int_slope: -0.001081
+  var_residual: 0.512041
+  var_total: 0.806308
+
+Fitting LMM for Incongruent congruence...
+Incongruent: 400 observations, 100 participants
+Incongruent model converged: True
+Incongruent variance components:
+  var_intercept: 0.159153
+  var_slope: 0.000000
+  cov_int_slope: 0.000235
+  var_residual: 0.438034
+  var_total: 0.597187
+
+Saving fitted models...
+step02_fitted_model_common.pkl
+step02_fitted_model_congruent.pkl
+step02_fitted_model_incongruent.pkl
+Saving variance components...
+step02_variance_components.csv (15 rows)
+Saving model metadata...
+step02_model_metadata_common.yaml
+step02_model_metadata_congruent.yaml
+step02_model_metadata_incongruent.yaml
+
+Validating model convergence...
+Common model validation passed
+Congruent model validation failed: LMM did not converge
+Incongruent model validation passed
+Model convergence validation failed for: Congruent
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step02_fit_stratified_lmms.py", line 221, in <module>
+    raise ValueError(f"Model convergence validation failed for: {', '.join(convergence_failures)}")
+ValueError: Model convergence validation failed for: Congruent
+Step 02: Fit Congruence-Stratified LMMs
+Loading LMM input data...
+step01_loaded_lmm_input.csv (1200 rows, 9 columns)
+Congruence levels: ['Common', 'Congruent', 'Incongruent']
+Fitting stratified LMMs (one per congruence level)...
+
+Fitting LMM for Common congruence...
+Common: 400 observations, 100 participants
+Common model converged: True
+Common variance components:
+  var_intercept: 0.173612
+  var_slope: 0.000000
+  cov_int_slope: 0.000111
+  var_residual: 0.453404
+  var_total: 0.627016
+
+Fitting LMM for Congruent congruence...
+Congruent: 400 observations, 100 participants
+Congruent model converged: False
+Congruent model did NOT converge - results may be unreliable
+Congruent variance components:
+  var_intercept: 0.294267
+  var_slope: 0.000008
+  cov_int_slope: -0.001081
+  var_residual: 0.512041
+  var_total: 0.806308
+
+Fitting LMM for Incongruent congruence...
+Incongruent: 400 observations, 100 participants
+Incongruent model converged: True
+Incongruent variance components:
+  var_intercept: 0.159153
+  var_slope: 0.000000
+  cov_int_slope: 0.000235
+  var_residual: 0.438034
+  var_total: 0.597187
+
+Saving fitted models...
+step02_fitted_model_common.pkl
+step02_fitted_model_congruent.pkl
+step02_fitted_model_incongruent.pkl
+Saving variance components...
+step02_variance_components.csv (15 rows)
+Saving model metadata...
+step02_model_metadata_common.yaml
+step02_model_metadata_congruent.yaml
+step02_model_metadata_incongruent.yaml
+
+Validating model convergence...
+Common model converged successfully
+Congruent model did not converge: LMM did not converge
+  -> Results may be unreliable but proceeding with analysis
+Incongruent model converged successfully
+1 model(s) did not converge: Congruent
+Non-convergence often indicates near-zero random slope variance (singular fit)
+Validating variance component positivity...
+Variance validation failed: Found 1 component(s) with zero or negative variance: cov_int_slope. This indicates estimation issues (collinearity, convergence failure, or model misspecification).
+Found 1 component(s) with zero or negative variance: cov_int_slope. This indicates estimation issues (collinearity, convergence failure, or model misspecification).
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step02_fit_stratified_lmms.py", line 243, in <module>
+    raise ValueError(variance_validation['message'])
+ValueError: Found 1 component(s) with zero or negative variance: cov_int_slope. This indicates estimation issues (collinearity, convergence failure, or model misspecification).
+Step 02: Fit Congruence-Stratified LMMs
+Loading LMM input data...
+step01_loaded_lmm_input.csv (1200 rows, 9 columns)
+Congruence levels: ['Common', 'Congruent', 'Incongruent']
+Fitting stratified LMMs (one per congruence level)...
+
+Fitting LMM for Common congruence...
+Common: 400 observations, 100 participants
+Common model converged: True
+Common variance components:
+  var_intercept: 0.173612
+  var_slope: 0.000000
+  cov_int_slope: 0.000111
+  var_residual: 0.453404
+  var_total: 0.627016
+
+Fitting LMM for Congruent congruence...
+Congruent: 400 observations, 100 participants
+Congruent model converged: False
+Congruent model did NOT converge - results may be unreliable
+Congruent variance components:
+  var_intercept: 0.294267
+  var_slope: 0.000008
+  cov_int_slope: -0.001081
+  var_residual: 0.512041
+  var_total: 0.806308
+
+Fitting LMM for Incongruent congruence...
+Incongruent: 400 observations, 100 participants
+Incongruent model converged: True
+Incongruent variance components:
+  var_intercept: 0.159153
+  var_slope: 0.000000
+  cov_int_slope: 0.000235
+  var_residual: 0.438034
+  var_total: 0.597187
+
+Saving fitted models...
+step02_fitted_model_common.pkl
+step02_fitted_model_congruent.pkl
+step02_fitted_model_incongruent.pkl
+Saving variance components...
+step02_variance_components.csv (15 rows)
+Saving model metadata...
+step02_model_metadata_common.yaml
+step02_model_metadata_congruent.yaml
+step02_model_metadata_incongruent.yaml
+
+Validating model convergence...
+Common model converged successfully
+Congruent model did not converge: LMM did not converge
+  -> Results may be unreliable but proceeding with analysis
+Incongruent model converged successfully
+1 model(s) did not converge: Congruent
+Non-convergence often indicates near-zero random slope variance (singular fit)
+Validating variance component positivity...
+All variance components are positive
+
+Step 02 complete - All models fitted and validated

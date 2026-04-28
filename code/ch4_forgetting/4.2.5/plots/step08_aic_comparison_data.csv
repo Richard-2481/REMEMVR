@@ -1,0 +1,4 @@
+measurement,AIC,delta_AIC,interpretation
+Full CTT,1780.056230823452,124.99837885323724,Substantial support for lower AIC (|delta_AIC| >= 7)
+Purified CTT,1812.262889251052,157.20503728083713,Substantial support for lower AIC (|delta_AIC| >= 7)
+IRT theta,1655.0578519702149,0.0,Equivalent fit (|delta_AIC| < 2)

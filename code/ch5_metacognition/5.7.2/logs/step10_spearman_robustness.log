@@ -1,0 +1,192 @@
+======================================================================
+RQ 6.7.2: Spearman Rank-Based Partial Correlation
+======================================================================
+
+Loaded step03_person_level.csv: 100 participants
+
+======================================================================
+ZERO-ORDER SPEARMAN CORRELATIONS
+======================================================================
+
+rho(SD_conf, SD_acc) = 0.0175, p = 0.8625
+rho(SD_conf, mean_acc) = 0.2540, p = 0.0108
+rho(SD_acc, mean_acc) = -0.6419, p = 0.0000
+
+======================================================================
+SPEARMAN PARTIAL CORRELATION
+======================================================================
+
+rho(SD_conf, SD_acc | mean_acc) :
+  Partial rho = 0.2302
+  p-value = 0.0212
+  df = 97
+
+======================================================================
+COMPARISON: PEARSON vs SPEARMAN
+======================================================================
+
+Parametric (Pearson):
+  Partial r = 0.2135
+  p-value = 0.0338
+
+Non-parametric (Spearman):
+  Partial rho = 0.2302
+  p-value = 0.0212
+
+======================================================================
+ROBUSTNESS ASSESSMENT
+======================================================================
+
+Sign agreement: Yes
+Pearson significant: Yes (p = 0.0338)
+Spearman significant: Yes (p = 0.0212)
+
+CONCLUSION: ROBUST
+  Both methods agree on direction AND significance
+  Parametric result defensible despite normality violation
+  Relationship present regardless of distributional assumptions
+
+Saved: data/step10_spearman_robustness.csv
+
+======================================================================
+SUMMARY
+======================================================================
+
+Robustness status: ROBUST
+
+RECOMMENDATION:
+  Report both Pearson and Spearman results
+  Emphasize agreement despite normality violation
+  Primary conclusion stands (partial r/rho ≈ 0.21, p ≈ .03)
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+======================================================================
+RQ 6.7.2: Spearman Rank-Based Partial Correlation
+======================================================================
+
+Loaded step03_person_level.csv: 100 participants
+
+======================================================================
+ZERO-ORDER SPEARMAN CORRELATIONS
+======================================================================
+
+rho(SD_conf, SD_acc) = 0.0175, p = 0.8625
+rho(SD_conf, mean_acc) = 0.2540, p = 0.0108
+rho(SD_acc, mean_acc) = -0.6419, p = 0.0000
+
+======================================================================
+SPEARMAN PARTIAL CORRELATION
+======================================================================
+
+rho(SD_conf, SD_acc | mean_acc) :
+  Partial rho = 0.2302
+  p-value = 0.0212
+  df = 97
+
+======================================================================
+COMPARISON: PEARSON vs SPEARMAN
+======================================================================
+
+Parametric (Pearson):
+  Partial r = 0.2135
+  p-value = 0.0338
+
+Non-parametric (Spearman):
+  Partial rho = 0.2302
+  p-value = 0.0212
+
+======================================================================
+ROBUSTNESS ASSESSMENT
+======================================================================
+
+Sign agreement: Yes
+Pearson significant: Yes (p = 0.0338)
+Spearman significant: Yes (p = 0.0212)
+
+CONCLUSION: ROBUST
+  Both methods agree on direction AND significance
+  Parametric result defensible despite normality violation
+  Relationship present regardless of distributional assumptions
+
+Saved: data/step10_spearman_robustness.csv
+
+======================================================================
+SUMMARY
+======================================================================
+
+Robustness status: ROBUST
+
+RECOMMENDATION:
+  Report both Pearson and Spearman results
+  Emphasize agreement despite normality violation
+  Primary conclusion stands (partial r/rho ≈ 0.21, p ≈ .03)
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+======================================================================
+RQ 6.7.2: Spearman Rank-Based Partial Correlation
+======================================================================
+
+Loaded step03_person_level.csv: 100 participants
+
+======================================================================
+ZERO-ORDER SPEARMAN CORRELATIONS
+======================================================================
+
+rho(SD_conf, SD_acc) = 0.0175, p = 0.8625
+rho(SD_conf, mean_acc) = 0.2540, p = 0.0108
+rho(SD_acc, mean_acc) = -0.6419, p = 0.0000
+
+======================================================================
+SPEARMAN PARTIAL CORRELATION
+======================================================================
+
+rho(SD_conf, SD_acc | mean_acc) :
+  Partial rho = 0.2302
+  p-value = 0.0212
+  df = 97
+
+======================================================================
+COMPARISON: PEARSON vs SPEARMAN
+======================================================================
+
+Parametric (Pearson):
+  Partial r = 0.2135
+  p-value = 0.0338
+
+Non-parametric (Spearman):
+  Partial rho = 0.2302
+  p-value = 0.0212
+
+======================================================================
+ROBUSTNESS ASSESSMENT
+======================================================================
+
+Sign agreement: Yes
+Pearson significant: Yes (p = 0.0338)
+Spearman significant: Yes (p = 0.0212)
+
+CONCLUSION: ROBUST
+  Both methods agree on direction AND significance
+  Parametric result defensible despite normality violation
+  Relationship present regardless of distributional assumptions
+
+Saved: data/step10_spearman_robustness.csv
+
+======================================================================
+SUMMARY
+======================================================================
+
+Robustness status: ROBUST
+
+RECOMMENDATION:
+  Report both Pearson and Spearman results
+  Emphasize agreement despite normality violation
+  Primary conclusion stands (partial r/rho ≈ 0.21, p ≈ .03)
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================

@@ -1,0 +1,174 @@
+2025-12-28 11:38:58,654 - INFO - === RQ 6.4.2: Post-Hoc Power Analysis ===
+2025-12-28 11:38:58,655 - INFO - Loaded 3 pairwise contrasts
+2025-12-28 11:38:58,655 - INFO - 
+Study Design:
+2025-12-28 11:38:58,655 - INFO -   N participants: 100
+2025-12-28 11:38:58,655 - INFO -   N paradigms: 3
+2025-12-28 11:38:58,655 - INFO -   N tests: 4
+2025-12-28 11:38:58,655 - INFO -   Total observations: 1200
+2025-12-28 11:38:58,655 - INFO -   Paired observations per contrast: 400
+2025-12-28 11:38:58,655 - INFO - 
+Alpha levels:
+2025-12-28 11:38:58,655 - INFO -   Uncorrected: 0.05
+2025-12-28 11:38:58,655 - INFO -   Bonferroni: 0.0167
+2025-12-28 11:38:58,655 - INFO - 
+=== Observed Effect Sizes ===
+2025-12-28 11:38:58,655 - INFO - 
+IRE vs IFR:
+2025-12-28 11:38:58,655 - INFO -   Observed Cohen's d: 0.0200
+2025-12-28 11:38:58,656 - INFO -   Post-hoc power (α=0.05): 0.0684
+2025-12-28 11:38:58,656 - INFO -   Post-hoc power (Bonferroni): 0.0256
+2025-12-28 11:38:58,656 - INFO - 
+ICR vs IFR:
+2025-12-28 11:38:58,657 - INFO -   Observed Cohen's d: -0.0902
+2025-12-28 11:38:58,657 - INFO -   Post-hoc power (α=0.05): 0.4363
+2025-12-28 11:38:58,657 - INFO -   Post-hoc power (Bonferroni): 0.2754
+2025-12-28 11:38:58,657 - INFO - 
+IRE vs ICR:
+2025-12-28 11:38:58,657 - INFO -   Observed Cohen's d: 0.1073
+2025-12-28 11:38:58,657 - INFO -   Post-hoc power (α=0.05): 0.5714
+2025-12-28 11:38:58,657 - INFO -   Post-hoc power (Bonferroni): 0.3987
+2025-12-28 11:38:58,657 - INFO - 
+=== Minimum Detectable Effect Sizes (80% Power) ===
+2025-12-28 11:38:58,659 - INFO - 
+Minimum detectable d (α=0.05, 80% power): 0.1401
+2025-12-28 11:38:58,659 - INFO - Minimum detectable d (Bonferroni, 80% power): 0.1625
+2025-12-28 11:38:58,659 - INFO - 
+=== Power Interpretation ===
+2025-12-28 11:38:58,659 - WARNING - ⚠ ALL observed effects (|d| < 0.1073) below detectable threshold (d ≥ 0.1625)
+2025-12-28 11:38:58,659 - INFO -   Study underpowered for Bonferroni-corrected contrasts
+2025-12-28 11:38:58,659 - INFO -   Cannot distinguish 'true null' from 'underpowered'
+2025-12-28 11:38:58,659 - INFO - 
+=== Required Sample Size ===
+2025-12-28 11:38:58,660 - INFO - IRE vs IFR:
+2025-12-28 11:38:58,660 - INFO -   Observed d=0.0200 requires N=10000 pairs (80% power, Bonferroni)
+2025-12-28 11:38:58,660 - INFO -   Current N=400 pairs → Need 25.0x larger sample
+2025-12-28 11:38:58,661 - INFO - ICR vs IFR:
+2025-12-28 11:38:58,661 - INFO -   Observed d=0.0902 requires N=1290 pairs (80% power, Bonferroni)
+2025-12-28 11:38:58,661 - INFO -   Current N=400 pairs → Need 3.2x larger sample
+2025-12-28 11:38:58,662 - INFO - IRE vs ICR:
+2025-12-28 11:38:58,662 - INFO -   Observed d=0.1073 requires N=913 pairs (80% power, Bonferroni)
+2025-12-28 11:38:58,662 - INFO -   Current N=400 pairs → Need 2.3x larger sample
+2025-12-28 11:38:58,665 - INFO - 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step08_power_analysis.csv
+2025-12-28 11:38:58,665 - INFO - 
+=== Power Analysis Complete ===
+2025-12-28 11:38:58,665 - INFO - Conclusion: Study has ~23.3% average power
+2025-12-28 11:38:58,665 - INFO - Detectable effects: d ≥ 0.1625 (Bonferroni-corrected)
+2025-12-28 11:38:58,665 - INFO - Observed effects: d = 0.0200 to 0.1073
+2026-01-17 14:16:03,196 - INFO - === RQ 6.4.2: Post-Hoc Power Analysis ===
+2026-01-17 14:16:03,198 - INFO - Loaded 3 pairwise contrasts
+2026-01-17 14:16:03,198 - INFO - 
+Study Design:
+2026-01-17 14:16:03,198 - INFO -   N participants: 100
+2026-01-17 14:16:03,198 - INFO -   N paradigms: 3
+2026-01-17 14:16:03,198 - INFO -   N tests: 4
+2026-01-17 14:16:03,198 - INFO -   Total observations: 1200
+2026-01-17 14:16:03,198 - INFO -   Paired observations per contrast: 400
+2026-01-17 14:16:03,198 - INFO - 
+Alpha levels:
+2026-01-17 14:16:03,199 - INFO -   Uncorrected: 0.05
+2026-01-17 14:16:03,199 - INFO -   Bonferroni: 0.0167
+2026-01-17 14:16:03,199 - INFO - 
+=== Observed Effect Sizes ===
+2026-01-17 14:16:03,199 - INFO - 
+IRE vs IFR:
+2026-01-17 14:16:03,199 - INFO -   Observed Cohen's d: 0.0200
+2026-01-17 14:16:03,200 - INFO -   Post-hoc power (α=0.05): 0.0684
+2026-01-17 14:16:03,200 - INFO -   Post-hoc power (Bonferroni): 0.0256
+2026-01-17 14:16:03,200 - INFO - 
+ICR vs IFR:
+2026-01-17 14:16:03,200 - INFO -   Observed Cohen's d: -0.0902
+2026-01-17 14:16:03,200 - INFO -   Post-hoc power (α=0.05): 0.4363
+2026-01-17 14:16:03,200 - INFO -   Post-hoc power (Bonferroni): 0.2754
+2026-01-17 14:16:03,201 - INFO - 
+IRE vs ICR:
+2026-01-17 14:16:03,201 - INFO -   Observed Cohen's d: 0.1073
+2026-01-17 14:16:03,201 - INFO -   Post-hoc power (α=0.05): 0.5714
+2026-01-17 14:16:03,201 - INFO -   Post-hoc power (Bonferroni): 0.3987
+2026-01-17 14:16:03,201 - INFO - 
+=== Minimum Detectable Effect Sizes (80% Power) ===
+2026-01-17 14:16:03,203 - INFO - 
+Minimum detectable d (α=0.05, 80% power): 0.1401
+2026-01-17 14:16:03,204 - INFO - Minimum detectable d (Bonferroni, 80% power): 0.1625
+2026-01-17 14:16:03,204 - INFO - 
+=== Power Interpretation ===
+2026-01-17 14:16:03,204 - WARNING - ⚠ ALL observed effects (|d| < 0.1073) below detectable threshold (d ≥ 0.1625)
+2026-01-17 14:16:03,204 - INFO -   Study underpowered for Bonferroni-corrected contrasts
+2026-01-17 14:16:03,204 - INFO -   Cannot distinguish 'true null' from 'underpowered'
+2026-01-17 14:16:03,204 - INFO - 
+=== Required Sample Size ===
+2026-01-17 14:16:03,207 - INFO - IRE vs IFR:
+2026-01-17 14:16:03,207 - INFO -   Observed d=0.0200 requires N=10000 pairs (80% power, Bonferroni)
+2026-01-17 14:16:03,207 - INFO -   Current N=400 pairs → Need 25.0x larger sample
+2026-01-17 14:16:03,208 - INFO - ICR vs IFR:
+2026-01-17 14:16:03,208 - INFO -   Observed d=0.0902 requires N=1290 pairs (80% power, Bonferroni)
+2026-01-17 14:16:03,208 - INFO -   Current N=400 pairs → Need 3.2x larger sample
+2026-01-17 14:16:03,209 - INFO - IRE vs ICR:
+2026-01-17 14:16:03,209 - INFO -   Observed d=0.1073 requires N=913 pairs (80% power, Bonferroni)
+2026-01-17 14:16:03,209 - INFO -   Current N=400 pairs → Need 2.3x larger sample
+2026-01-17 14:16:03,213 - INFO - 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step08_power_analysis.csv
+2026-01-17 14:16:03,213 - INFO - 
+=== Power Analysis Complete ===
+2026-01-17 14:16:03,213 - INFO - Conclusion: Study has ~23.3% average power
+2026-01-17 14:16:03,213 - INFO - Detectable effects: d ≥ 0.1625 (Bonferroni-corrected)
+2026-01-17 14:16:03,213 - INFO - Observed effects: d = 0.0200 to 0.1073
+2026-01-17 14:30:36,026 - INFO - === RQ 6.4.2: Post-Hoc Power Analysis ===
+2026-01-17 14:30:36,028 - INFO - Loaded 3 pairwise contrasts
+2026-01-17 14:30:36,028 - INFO - 
+Study Design:
+2026-01-17 14:30:36,028 - INFO -   N participants: 100
+2026-01-17 14:30:36,028 - INFO -   N paradigms: 3
+2026-01-17 14:30:36,028 - INFO -   N tests: 4
+2026-01-17 14:30:36,028 - INFO -   Total observations: 1200
+2026-01-17 14:30:36,028 - INFO -   Paired observations per contrast: 400
+2026-01-17 14:30:36,028 - INFO - 
+Alpha levels:
+2026-01-17 14:30:36,028 - INFO -   Uncorrected: 0.05
+2026-01-17 14:30:36,028 - INFO -   Bonferroni: 0.0167
+2026-01-17 14:30:36,028 - INFO - 
+=== Observed Effect Sizes ===
+2026-01-17 14:30:36,028 - INFO - 
+IRE vs IFR:
+2026-01-17 14:30:36,028 - INFO -   Observed Cohen's d: 0.0200
+2026-01-17 14:30:36,029 - INFO -   Post-hoc power (α=0.05): 0.0684
+2026-01-17 14:30:36,029 - INFO -   Post-hoc power (Bonferroni): 0.0256
+2026-01-17 14:30:36,029 - INFO - 
+ICR vs IFR:
+2026-01-17 14:30:36,029 - INFO -   Observed Cohen's d: -0.0902
+2026-01-17 14:30:36,029 - INFO -   Post-hoc power (α=0.05): 0.4363
+2026-01-17 14:30:36,029 - INFO -   Post-hoc power (Bonferroni): 0.2754
+2026-01-17 14:30:36,029 - INFO - 
+IRE vs ICR:
+2026-01-17 14:30:36,029 - INFO -   Observed Cohen's d: 0.1073
+2026-01-17 14:30:36,030 - INFO -   Post-hoc power (α=0.05): 0.5714
+2026-01-17 14:30:36,030 - INFO -   Post-hoc power (Bonferroni): 0.3987
+2026-01-17 14:30:36,030 - INFO - 
+=== Minimum Detectable Effect Sizes (80% Power) ===
+2026-01-17 14:30:36,031 - INFO - 
+Minimum detectable d (α=0.05, 80% power): 0.1401
+2026-01-17 14:30:36,031 - INFO - Minimum detectable d (Bonferroni, 80% power): 0.1625
+2026-01-17 14:30:36,031 - INFO - 
+=== Power Interpretation ===
+2026-01-17 14:30:36,032 - WARNING - ⚠ ALL observed effects (|d| < 0.1073) below detectable threshold (d ≥ 0.1625)
+2026-01-17 14:30:36,032 - INFO -   Study underpowered for Bonferroni-corrected contrasts
+2026-01-17 14:30:36,032 - INFO -   Cannot distinguish 'true null' from 'underpowered'
+2026-01-17 14:30:36,032 - INFO - 
+=== Required Sample Size ===
+2026-01-17 14:30:36,033 - INFO - IRE vs IFR:
+2026-01-17 14:30:36,033 - INFO -   Observed d=0.0200 requires N=10000 pairs (80% power, Bonferroni)
+2026-01-17 14:30:36,033 - INFO -   Current N=400 pairs → Need 25.0x larger sample
+2026-01-17 14:30:36,034 - INFO - ICR vs IFR:
+2026-01-17 14:30:36,034 - INFO -   Observed d=0.0902 requires N=1290 pairs (80% power, Bonferroni)
+2026-01-17 14:30:36,034 - INFO -   Current N=400 pairs → Need 3.2x larger sample
+2026-01-17 14:30:36,035 - INFO - IRE vs ICR:
+2026-01-17 14:30:36,035 - INFO -   Observed d=0.1073 requires N=913 pairs (80% power, Bonferroni)
+2026-01-17 14:30:36,035 - INFO -   Current N=400 pairs → Need 2.3x larger sample
+2026-01-17 14:30:36,038 - INFO - 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step08_power_analysis.csv
+2026-01-17 14:30:36,038 - INFO - 
+=== Power Analysis Complete ===
+2026-01-17 14:30:36,038 - INFO - Conclusion: Study has ~23.3% average power
+2026-01-17 14:30:36,038 - INFO - Detectable effects: d ≥ 0.1625 (Bonferroni-corrected)
+2026-01-17 14:30:36,038 - INFO - Observed effects: d = 0.0200 to 0.1073

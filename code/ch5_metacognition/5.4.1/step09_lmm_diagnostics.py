@@ -22,7 +22,6 @@ OUTPUT:
 - plots/diagnostics/cooks_distance.png
 - data/step09_diagnostics_tests.csv (Shapiro-Wilk, Breusch-Pagan results)
 
-Author: rq_platinum finalization
 Date: 2025-12-28
 RQ: ch6/6.4.1
 """
@@ -54,7 +53,7 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 09: LMM Diagnostics")
+        log("Step 09: LMM Diagnostics")
         log("=" * 80)
 
         # Import statsmodels
@@ -62,19 +61,19 @@ if __name__ == "__main__":
         from scipy import stats
         from statsmodels.stats.diagnostic import het_breuschpagan
 
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         lmm_input = pd.read_csv(DATA_DIR / "step04_lmm_input.csv", encoding='utf-8')
         log(f"  ✓ Loaded {len(lmm_input)} observations")
 
         # Identify best model from kitchen sink
-        log("[LOAD] Loading model comparison to identify best model...")
+        log("Loading model comparison to identify best model...")
         model_comparison = pd.read_csv(DATA_DIR / "step05_model_comparison.csv", encoding='utf-8')
         best_model = model_comparison.sort_values('AIC').iloc[0]
         best_model_name = best_model['model_name']
         log(f"  ✓ Best model: {best_model_name} (AIC={best_model['AIC']:.2f})")
 
         # Refit best model (Linear per validation.md)
-        log(f"\n[REFIT] Refitting {best_model_name} model for diagnostics...")
+        log(f"\nRefitting {best_model_name} model for diagnostics...")
 
         # Prepare data
         lmm_input['paradigm'] = pd.Categorical(lmm_input['paradigm'], categories=['IFR', 'ICR', 'IRE'])
@@ -103,7 +102,7 @@ if __name__ == "__main__":
         residuals = result.resid
         fitted = result.fittedvalues
 
-        log(f"\n[DIAGNOSTICS] Running assumption checks...")
+        log(f"\nRunning assumption checks...")
         log(f"  N observations: {len(residuals)}")
         log(f"  Residuals: mean={np.mean(residuals):.6f}, SD={np.std(residuals):.3f}")
 
@@ -217,7 +216,7 @@ if __name__ == "__main__":
         log(f"\n  ✓ Saved diagnostic test results to step09_diagnostics_tests.csv")
 
         # CONCLUSION
-        log("\n[CONCLUSION] Diagnostic summary:")
+        log("\nDiagnostic summary:")
 
         passes = 0
         concerns = 0
@@ -249,11 +248,11 @@ if __name__ == "__main__":
         log(f"  → Results valid for inference")
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] Step 09: LMM Diagnostics Complete")
+        log("Step 09: LMM Diagnostics Complete")
         log("=" * 80)
 
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         import traceback
         log(traceback.format_exc())
         raise

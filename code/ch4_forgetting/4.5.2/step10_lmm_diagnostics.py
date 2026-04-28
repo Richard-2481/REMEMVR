@@ -1,9 +1,9 @@
 """
-Step 10: LMM Diagnostics (PLATINUM Requirement)
+Step 10: LMM Diagnostics (Validation Requirement)
 
 Purpose: Validate LMM assumptions (normality, homoscedasticity, independence)
 
-Taxonomy: Section 5.1 (MANDATORY)
+Taxonomy: Section 5.1 
 """
 
 import pandas as pd

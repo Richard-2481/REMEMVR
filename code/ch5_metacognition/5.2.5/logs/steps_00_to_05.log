@@ -1,0 +1,239 @@
+RQ 6.2.5: Calibration Age Effects
+======================================================================
+Analysis execution log
+
+Starting RQ 6.2.5 analysis pipeline...
+Output directory: /home/etai/projects/REMEMVR/results/ch6/6.2.5
+======================================================================
+STEP 0: Load Calibration Scores from RQ 6.2.1 and Merge with Age
+======================================================================
+
+Loading calibration from: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+Calibration loaded: 400 rows, columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'z_theta_accuracy', 'z_theta_confidence', 'calibration']
+
+Loading Age from: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+Age data: 100 unique participants
+
+Merged with Age: 400 rows
+
+--- Step 0 Validation ---
+✓ Row count: 400 (expected 400)
+✓ Column count: 6 (expected 6)
+✓ No missing values
+✓ Calibration range: [-3.73, 2.98] (expected [-5, 5])
+✓ TSVR range: [1.0, 246.2] hours
+✓ Age range: [20, 70] years
+✓ Unique UIDs: 100
+✓ No duplicate composite_IDs
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step00_calibration_age.csv
+Data loading complete: 400 rows x 6 columns
+
+======================================================================
+STEP 1: Center Age Variable
+======================================================================
+
+Age statistics:
+  Mean Age: 44.57 years
+  SD Age: 14.58 years
+  Range: [20, 70] years
+
+--- Step 1 Validation ---
+✓ Age_c mean: 0.000000 (expected ~0)
+✓ Age_c SD: 14.52 (matches original SD: False)
+✓ No missing Age_c values
+✓ Row count: 400
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step01_calibration_age_centered.csv
+Age centered: mean(Age_c) = 0.000000
+
+======================================================================
+STEP 2: Fit LMM with Age x Time Interaction
+======================================================================
+
+Model formula: calibration ~ TSVR_hours * Age_c
+Random effects: (1 + TSVR_hours | UID) - random intercept and slope
+
+Model converged successfully
+
+Full summary saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step02_lmm_model_summary.txt
+
+--- Fixed Effects ---
+  Intercept           : β = -0.00605, SE = 0.07627, z =  -0.08, p = 0.9367 
+  TSVR_hours          : β =  0.00009, SE = 0.00046, z =   0.20, p = 0.8421 
+  Age_c               : β =  0.00085, SE = 0.00526, z =   0.16, p = 0.8710 
+  TSVR_hours:Age_c    : β = -0.00002, SE = 0.00003, z =  -0.67, p = 0.5058 
+
+--- Random Effects ---
+Random effects covariance matrix:
+               Group    TSVR_hours
+Group       0.422676 -6.528390e-05
+TSVR_hours -0.000065  1.011155e-08
+
+--- Model Fit ---
+Log-likelihood: -431.25
+AIC: 876.50
+BIC: 904.44
+
+--- Step 2 Validation ---
+✓ Model converged: True
+✓ All fixed effects finite
+✓ Age_c term present
+✓ TSVR_hours:Age_c interaction term present
+✓ Fixed effects count: 4
+
+✓ Fixed effects saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step02_lmm_fixed_effects.csv
+✓ Random effects saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step02_lmm_random_effects.csv
+
+======================================================================
+STEP 3: Extract Age Effects with Dual P-Values (Decision D068)
+======================================================================
+
+Age-related terms extracted: 2 rows
+
+Bonferroni alpha = 0.0167 (0.05 / 3 comparisons)
+
+--- Age Effect Results ---
+
+Age_c:
+  Estimate: 0.000854
+  SE: 0.005255
+  z: 0.16
+  p_uncorrected: 0.8710 (sig @ 0.05: NO)
+  p_bonferroni: 1.0000 (sig @ 0.05: NO)
+
+TSVR_hours:Age_c:
+  Estimate: -0.000021
+  SE: 0.000032
+  z: -0.67
+  p_uncorrected: 0.5058 (sig @ 0.05: NO)
+  p_bonferroni: 1.0000 (sig @ 0.05: NO)
+
+*** PRIMARY HYPOTHESIS TEST ***
+Age x Time interaction: NULL - Age-invariant calibration trajectory (parallels Ch5 accuracy findings)
+
+--- Step 3 Validation ---
+✓ Row count: 2
+✓ Both age-related terms present
+✓ p-values in valid range [0, 1]
+✓ p_bonferroni >= p_uncorrected (Bonferroni correction correct)
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step03_age_effects.csv
+Dual p-values created per Decision D068
+
+======================================================================
+STEP 4: Create Age Tertile Trajectories
+======================================================================
+
+Age tertile cutoffs:
+  33rd percentile: 36.7 years
+  67th percentile: 52.3 years
+
+Participants per tertile:
+  Young: N = 33
+  Middle: N = 34
+  Older: N = 33
+
+Aggregated tertile data (12 rows):
+
+  Young tertile:
+    T1: cal = -0.162 [-0.418, 0.093] (N=33)
+    T2: cal = 0.029 [-0.256, 0.314] (N=33)
+    T3: cal = -0.017 [-0.285, 0.251] (N=33)
+    T4: cal = 0.046 [-0.252, 0.343] (N=33)
+
+  Middle tertile:
+    T1: cal = 0.158 [-0.109, 0.424] (N=34)
+    T2: cal = 0.004 [-0.275, 0.283] (N=34)
+    T3: cal = -0.021 [-0.293, 0.251] (N=34)
+    T4: cal = -0.064 [-0.318, 0.190] (N=34)
+
+  Older tertile:
+    T1: cal = -0.025 [-0.373, 0.324] (N=33)
+    T2: cal = -0.066 [-0.369, 0.238] (N=33)
+    T3: cal = 0.083 [-0.191, 0.357] (N=33)
+    T4: cal = 0.034 [-0.264, 0.331] (N=33)
+
+--- Step 4 Validation ---
+✓ Row count: 12 (expected 12)
+✓ All tertiles present: Young, Middle, Older
+✓ All tests present: T1, T2, T3, T4
+✓ CI ordering correct: CI_upper > CI_lower
+✓ mean_calibration in valid range [-3, 3]
+✓ No duplicate combinations
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step04_age_tertile_trajectories.csv
+Aggregated means: 12 rows (3 tertiles x 4 tests)
+
+======================================================================
+STEP 5: Compare to Chapter 5 Age Null Findings
+======================================================================
+
+RQ 6.2.5 Age x Time interaction:
+  p_uncorrected: 0.5058
+  p_bonferroni: 1.0000
+  Significant (uncorrected): False
+  Significant (Bonferroni): False
+
+--- Comparison Table ---
+RQ       Analysis                 p_uncorr     p_corr      Pattern
+-----------------------------------------------------------------
+5.1.3    General Accuracy           0.3230     0.9690         NULL
+5.2.3    Domain Accuracy            0.4120     1.0000         NULL
+5.3.4    Paradigm Accuracy          0.5670     1.0000         NULL
+5.4.3    Congruence Accuracy        0.3890     1.0000         NULL
+6.2.5    Calibration                0.5058     1.0000         NULL
+
+*** PATTERN CONSISTENCY ***
+NULL interactions: 5/5 RQs
+
+CONCLUSION: RQ 6.2.5 REPLICATES Chapter 5 universal age null pattern
+Metacognitive calibration shows age-invariant trajectories, paralleling memory accuracy
+This supports the VR ecological encoding hypothesis: age-invariant forgetting and metacognition
+
+--- Step 5 Validation ---
+✓ Row count: 5 (expected 5)
+✓ All 5 RQs present
+✓ All p-values in valid range [0, 1]
+✓ Pattern values valid (NULL or SIGNIFICANT)
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step05_ch5_comparison.csv
+Comparison documented: 5/5 NULL patterns
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+*** KEY FINDING: Age x Time Interaction ***
+  Estimate: -0.000021
+  p_uncorrected: 0.5058
+  p_bonferroni: 1.0000
+  Significant (Bonferroni): NO
+
+  CONCLUSION: NULL - Age does NOT moderate calibration trajectory
+  This PARALLELS Chapter 5 accuracy findings (age-invariant forgetting)
+  Validates VR ecological encoding framework for metacognitive monitoring
+
+*** Age Main Effect (Baseline Differences) ***
+  Estimate: 0.000854
+  p_uncorrected: 0.8710
+  Significant: NO
+
+*** OUTPUT FILES CREATED ***
+  step00_calibration_age.csv
+  step01_calibration_age_centered.csv
+  step02_lmm_fixed_effects.csv
+  step02_lmm_random_effects.csv
+  step03_age_effects.csv
+  step04_age_tertile_trajectories.csv
+  step05_ch5_comparison.csv
+  step12c_model_decision.csv
+  step12c_random_slopes_comparison.csv
+  step12d_corrected_age_effects.csv
+  step12d_corrected_fixed_effects.csv
+  step12e_power_analysis.csv
+  step12e_tost_equivalence.csv
+  step02_lmm_model_summary.txt
+  step12d_corrected_lmm_summary.txt
+
+✅ RQ 6.2.5 analysis complete - all validations passed

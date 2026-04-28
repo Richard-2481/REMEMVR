@@ -1,0 +1,58 @@
+Step 03: Fit Reverse Regression Models
+Loading T-scored variables...
+100 participants
+[MODEL 1] Fitting RAVLT_T ~ REMEMVR_T...
+R²=0.0710, adj_R²=0.0615
+Beta=0.2664, p=0.0074
+Computing 95% CIs for RAVLT model...
+Beta 95% CI: [0.0966, 0.4822]
+[MODEL 2] Fitting BVMT_T ~ REMEMVR_T...
+R²=0.1322, adj_R²=0.1233
+Beta=0.3635, p=0.0002
+Computing 95% CIs for BVMT model...
+Beta 95% CI: [0.1891, 0.5345]
+Applying Bonferroni correction (alpha=0.05/2=0.025)...
+[MODEL 1] p_uncorrected=0.0074, p_bonferroni=0.0148
+[MODEL 2] p_uncorrected=0.0002, p_bonferroni=0.0004
+Compiling model results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step03_reverse_models.csv
+Reverse prediction results:
+  RAVLT: R²=0.071, p=0.0148
+  BVMT: R²=0.132, p=0.0004
+Step 03 complete
+Step 03: Fit Reverse Regression Models
+Loading T-scored variables...
+100 participants
+Fitting 4 reverse models (Bonferroni alpha=0.05/4=0.0125)
+[MODEL 1] Fitting RAVLT_T ~ REMEMVR_T...
+R²=0.0776, adj_R²=0.0682
+Beta=0.2786, p=0.0050
+Computing 95% CIs for RAVLT_reverse...
+Beta 95% CI: [0.0967, 0.4855]
+p_uncorrected=0.0050, p_bonferroni=0.0200
+[MODEL 2] Fitting BVMT_T ~ REMEMVR_T...
+R²=0.1322, adj_R²=0.1233
+Beta=0.3635, p=0.0002
+Computing 95% CIs for BVMT_reverse...
+Beta 95% CI: [0.1891, 0.5345]
+p_uncorrected=0.0002, p_bonferroni=0.0008
+[MODEL 3] Fitting RAVLT_PctRet_T ~ REMEMVR_T...
+R²=0.1077, adj_R²=0.0986
+Beta=0.3282, p=0.0009
+Computing 95% CIs for RAVLT_PctRet_reverse...
+Beta 95% CI: [0.1230, 0.5209]
+p_uncorrected=0.0009, p_bonferroni=0.0034
+[MODEL 4] Fitting BVMT_PctRet_T ~ REMEMVR_T...
+R²=0.0382, adj_R²=0.0284
+Beta=0.1955, p=0.0513
+Computing 95% CIs for BVMT_PctRet_reverse...
+Beta 95% CI: [-0.0101, 0.4741]
+p_uncorrected=0.0513, p_bonferroni=0.2052
+Compiling model results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step03_reverse_models.csv
+Reverse prediction results:
+  RAVLT_reverse: R²=0.078, p_bonf=0.0200
+  BVMT_reverse: R²=0.132, p_bonf=0.0008
+  RAVLT_PctRet_reverse: R²=0.108, p_bonf=0.0034
+  BVMT_PctRet_reverse: R²=0.038, p_bonf=0.2052
+Step 03 complete

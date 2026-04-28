@@ -1,0 +1,94 @@
+Step 10: Final Validation and Archive
+Step 1: Checking file completeness...
+Checking file completeness...
+  results/ch7/7.2.1/data/step00_dependency_validation.txt (4866 bytes)
+  results/ch7/7.2.1/data/step01_analysis_dataset.csv (15789 bytes)
+  results/ch7/7.2.1/data/step02_correlations.csv (1456 bytes)
+  results/ch7/7.2.1/data/step03_hierarchical_models.csv (367 bytes)
+  results/ch7/7.2.1/data/step03_model_diagnostics.csv (456 bytes)
+  results/ch7/7.2.1/data/step04_mediation_analysis.csv (210 bytes)
+  results/ch7/7.2.1/data/step05_cross_validation.csv (642 bytes)
+  results/ch7/7.2.1/data/step06_effect_sizes.csv (562 bytes)
+  results/ch7/7.2.1/data/step07_power_analysis.csv (772 bytes)
+  results/ch7/7.2.1/data/step08_correlation_plot_data.csv (1126 bytes)
+  results/ch7/7.2.1/data/step08_diagnostic_plot_data.csv (20353 bytes)
+  results/ch7/7.2.1/data/step08_mediation_plot_data.csv (317 bytes)
+  results/ch7/7.2.1/data/step08_cv_plot_data.csv (1058 bytes)
+  results/ch7/7.2.1/data/step08_age_effect_plot_data.csv (10098 bytes)
+  results/ch7/7.2.1/data/step09_analysis_summary.txt (6884 bytes)
+
+Checking log file completeness...
+  results/ch7/7.2.1/logs/step00_validate_dependencies.log (4882 bytes)
+  results/ch7/7.2.1/logs/step01_extract_merge_data.log (1638 bytes)
+  results/ch7/7.2.1/logs/step02_bivariate_correlations.log (4362 bytes)
+  results/ch7/7.2.1/logs/step03_hierarchical_regression.log (1507 bytes)
+  results/ch7/7.2.1/logs/step04_mediation_analysis.log (4751 bytes)
+  results/ch7/7.2.1/logs/step05_cross_validation.log (556270 bytes)
+  results/ch7/7.2.1/logs/step06_effect_sizes.log (1935 bytes)
+  results/ch7/7.2.1/logs/step07_power_analysis.log (5714 bytes)
+  results/ch7/7.2.1/logs/step08_generate_plot_data.log (1823 bytes)
+  results/ch7/7.2.1/logs/step09_create_summary.log (3164 bytes)
+All 25 expected files present
+
+Step 2: Checking data integrity...
+
+Checking data integrity...
+  Analysis dataset: 100 rows (within 95-105)
+  Analysis dataset: No missing data
+  Correlations: r in [-0.545, 0.488] (valid range)
+  R-squared: R² in [0.037, 0.247] (valid range)
+  Mediation: proportion in [1.198, 1.198] (reasonable range)
+Data integrity checks passed
+
+Step 3: Checking statistical consistency...
+
+Checking statistical consistency...
+  Age-theta correlation consistent: r=-0.193, R²=0.037 (expected 0.037)
+  Cross-validation reasonable: fitted R²=0.247, CV R²=0.021 (penalty=0.226)
+Statistical consistency checks passed
+
+Step 4: Verifying reproducibility markers...
+
+Checking reproducibility markers...
+  Bootstrap correlation CIs: Confidence intervals present (bootstrap likely used)
+  Bootstrap mediation analysis: Confidence intervals present (bootstrap likely used)
+  Cross-validation: Confidence intervals present (bootstrap likely used)
+  Few seed mentions: 4/10 log files
+1 reproducibility issues:
+  - Few seed mentions: 4/10 log files
+
+Step 5: Generating execution report...
+
+Generating execution report...
+  Step 00: SUCCESS (2/2 files)
+  Step 01: SUCCESS (2/2 files)
+  Step 02: SUCCESS (2/2 files)
+  Step 03: SUCCESS (3/3 files)
+  Step 04: SUCCESS (2/2 files)
+  Step 05: SUCCESS (2/2 files)
+  Step 06: SUCCESS (2/2 files)
+  Step 07: SUCCESS (2/2 files)
+  Step 08: SUCCESS (6/6 files)
+  Step 09: SUCCESS (2/2 files)
+Execution summary: 10/10 steps successful
+
+Step 6: Creating archive manifest...
+
+Creating archive manifest...
+Archive manifest created (198 lines)
+
+Saving validation results...
+Validation report: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step10_final_validation.json
+Validation summary: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step10_final_validation.txt
+Archive manifest: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step10_archive_manifest.txt (6855 characters)
+
+Creating status summary...
+Overall validation status: COMPLETE_WITH_WARNINGS
+Core analysis complete but some validation warnings detected
+Files validated: 25/25
+Ready for archive: True
+Ready for plots: True
+Ready for results: True
+
+Step 10: Final validation and archive preparation complete
+Final status: /home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step10_final_status.json

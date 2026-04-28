@@ -1,0 +1,259 @@
+Step 03: Fit Parallel LMMs (IRT + CTT)
+Loading input data...
+IRT theta (400 rows, 4 cols)
+CTT scores (1200 rows, 6 cols)
+TSVR data (400 rows, 4 cols)
+Reshaping IRT theta to long format...
+IRT long format (1200 rows)
+Extracting UID and test from composite_ID...
+Merging with TSVR time variable...
+You are trying to merge on object and int64 columns for key 'test'. If you wish to proceed you should use pd.concat
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step03_fit_lmm.py", line 238, in <module>
+    irt_lmm_input = pd.merge(
+                    ^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 807, in __init__
+    self._maybe_coerce_merge_keys()
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 1509, in _maybe_coerce_merge_keys
+    raise ValueError(msg)
+ValueError: You are trying to merge on object and int64 columns for key 'test'. If you wish to proceed you should use pd.concat
+Step 03: Fit Parallel LMMs (IRT + CTT)
+Loading input data...
+IRT theta (400 rows, 4 cols)
+CTT scores (1200 rows, 6 cols)
+TSVR data (400 rows, 4 cols)
+Reshaping IRT theta to long format...
+IRT long format (1200 rows)
+Extracting UID and test from composite_ID...
+Merging with TSVR time variable...
+IRT LMM input (1200 rows)
+CTT LMM input (1200 rows)
+Saving LMM input datasets...
+data/step03_irt_lmm_input.csv (1200 rows, 6 cols)
+data/step03_ctt_lmm_input.csv (1200 rows, 6 cols)
+Creating log-transformed time variable...
+Log-transformed TSVR created
+Fitting LMM models...
+Convergence: Attempt random slopes, simplify if either model fails
+[PHASE 1] Attempting random slopes: TSVR_hours | UID
+IRT model with random slopes...
+[IRT SLOPES] Converged: True
+[IRT SLOPES] Warnings: ['Maximum Likelihood optimization failed to converge. Check mle_retvals', 'Retrying MixedLM optimization with lbfgs', 'The MLE may be on the boundary of the parameter space.']
+CTT model with random slopes...
+[CTT SLOPES] Converged: True
+[CTT SLOPES] Warnings: ['Maximum Likelihood optimization failed to converge. Check mle_retvals', 'Retrying MixedLM optimization with lbfgs', 'The MLE may be on the boundary of the parameter space.', 'The Hessian matrix at the estimated parameter values is not positive definite.']
+BOTH models converged with random slopes -> Use random slopes
+Analysis complete with random slopes (TSVR_hours | UID)
+Saving model summaries...
+results/step03_irt_lmm_summary.txt
+results/step03_ctt_lmm_summary.txt
+Extracting fixed effects...
+All arrays must be of the same length
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step03_fit_lmm.py", line 474, in <module>
+    irt_fe = pd.DataFrame({
+             ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 782, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 503, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 114, in arrays_to_mgr
+    index = _extract_index(arrays)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 677, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+Step 03: Fit Parallel LMMs (IRT + CTT)
+Loading input data...
+IRT theta (400 rows, 4 cols)
+CTT scores (1200 rows, 6 cols)
+TSVR data (400 rows, 4 cols)
+Reshaping IRT theta to long format...
+IRT long format (1200 rows)
+Extracting UID and test from composite_ID...
+Merging with TSVR time variable...
+IRT LMM input (1200 rows)
+CTT LMM input (1200 rows)
+Saving LMM input datasets...
+data/step03_irt_lmm_input.csv (1200 rows, 6 cols)
+data/step03_ctt_lmm_input.csv (1200 rows, 6 cols)
+Creating log-transformed time variable...
+Log-transformed TSVR created
+Fitting LMM models...
+Convergence: Attempt random slopes, simplify if either model fails
+[PHASE 1] Attempting random slopes: TSVR_hours | UID
+IRT model with random slopes...
+[IRT SLOPES] Converged: True
+[IRT SLOPES] Warnings: ['Maximum Likelihood optimization failed to converge. Check mle_retvals', 'Retrying MixedLM optimization with lbfgs', 'The MLE may be on the boundary of the parameter space.']
+CTT model with random slopes...
+[CTT SLOPES] Converged: True
+[CTT SLOPES] Warnings: ['Maximum Likelihood optimization failed to converge. Check mle_retvals', 'Retrying MixedLM optimization with lbfgs', 'The MLE may be on the boundary of the parameter space.', 'The Hessian matrix at the estimated parameter values is not positive definite.']
+BOTH models converged with random slopes -> Use random slopes
+Analysis complete with random slopes (TSVR_hours | UID)
+Saving model summaries...
+results/step03_irt_lmm_summary.txt
+results/step03_ctt_lmm_summary.txt
+Extracting fixed effects...
+'DataFrame' object has no attribute 'data'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step03_fit_lmm.py", line 475, in <module>
+    irt_fe = pd.DataFrame(irt_summary.data[1:], columns=irt_summary.data[0])
+                          ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 6321, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'data'. Did you mean: '_data'?
+Step 03: Fit Parallel LMMs (IRT + CTT)
+Loading input data...
+IRT theta (400 rows, 4 cols)
+CTT scores (1200 rows, 6 cols)
+TSVR data (400 rows, 4 cols)
+Reshaping IRT theta to long format...
+IRT long format (1200 rows)
+Extracting UID and test from composite_ID...
+Merging with TSVR time variable...
+IRT LMM input (1200 rows)
+CTT LMM input (1200 rows)
+Saving LMM input datasets...
+data/step03_irt_lmm_input.csv (1200 rows, 6 cols)
+data/step03_ctt_lmm_input.csv (1200 rows, 6 cols)
+Creating log-transformed time variable...
+Log-transformed TSVR created
+Fitting LMM models...
+Convergence: Attempt random slopes, simplify if either model fails
+[PHASE 1] Attempting random slopes: TSVR_hours | UID
+IRT model with random slopes...
+[IRT SLOPES] Converged: True
+[IRT SLOPES] Warnings: ['Maximum Likelihood optimization failed to converge. Check mle_retvals', 'Retrying MixedLM optimization with lbfgs', 'The MLE may be on the boundary of the parameter space.']
+CTT model with random slopes...
+[CTT SLOPES] Converged: True
+[CTT SLOPES] Warnings: ['Maximum Likelihood optimization failed to converge. Check mle_retvals', 'Retrying MixedLM optimization with lbfgs', 'The MLE may be on the boundary of the parameter space.', 'The Hessian matrix at the estimated parameter values is not positive definite.']
+BOTH models converged with random slopes -> Use random slopes
+Analysis complete with random slopes (TSVR_hours | UID)
+Saving model summaries...
+results/step03_irt_lmm_summary.txt
+results/step03_ctt_lmm_summary.txt
+Extracting fixed effects...
+results/step03_irt_lmm_fixed_effects.csv (9 coefficients)
+results/step03_ctt_lmm_fixed_effects.csv (9 coefficients)
+Saving convergence report...
+logs/step03_convergence_report.txt
+Saving model objects for assumption validation...
+data/step03_irt_lmm_model.pkl
+data/step03_ctt_lmm_model.pkl
+Running validate_lmm_convergence...
+[VALIDATION IRT] Converged: True
+[VALIDATION IRT] Message: LMM converged successfully
+[VALIDATION CTT] Converged: True
+[VALIDATION CTT] Message: LMM converged successfully
+Parallel structure: random slopes (TSVR_hours | UID)
+CRITICAL: Both models use identical random structure (parallelism requirement satisfied)
+Step 03 complete
+Final models use: random slopes (TSVR_hours | UID)
+IRT: 9 fixed effects, AIC=nan
+CTT: 9 fixed effects, AIC=nan
+Step 03: Fit Parallel LMMs (IRT + CTT)
+Loading input data...
+IRT theta (400 rows, 3 cols)
+CTT scores (800 rows, 6 cols)
+TSVR data (400 rows, 4 cols)
+Reshaping IRT theta to long format (When excluded)...
+IRT long format (800 rows - When excluded)
+Extracting UID and test from composite_ID...
+Merging with TSVR time variable...
+IRT LMM input (800 rows)
+CTT LMM input (800 rows)
+Saving LMM input datasets...
+data/step03_irt_lmm_input.csv (800 rows, 6 cols)
+data/step03_ctt_lmm_input.csv (800 rows, 6 cols)
+Creating log-transformed time variable...
+Log-transformed TSVR created
+Fitting LMM models...
+Convergence: Attempt random slopes, simplify if either model fails
+[PHASE 1] Attempting random slopes: TSVR_hours | UID
+IRT model with random slopes...
+[IRT SLOPES] Converged: True
+[IRT SLOPES] Warnings: ['The MLE may be on the boundary of the parameter space.']
+CTT model with random slopes...
+[CTT SLOPES] Converged: True
+[CTT SLOPES] Warnings: ['The MLE may be on the boundary of the parameter space.']
+BOTH models converged with random slopes -> Use random slopes
+Analysis complete with random slopes (TSVR_hours | UID)
+Saving model summaries...
+results/step03_irt_lmm_summary.txt
+results/step03_ctt_lmm_summary.txt
+Extracting fixed effects...
+results/step03_irt_lmm_fixed_effects.csv (6 coefficients)
+results/step03_ctt_lmm_fixed_effects.csv (6 coefficients)
+Saving convergence report...
+logs/step03_convergence_report.txt
+Saving model objects for assumption validation...
+data/step03_irt_lmm_model.pkl
+data/step03_ctt_lmm_model.pkl
+Running validate_lmm_convergence...
+[VALIDATION IRT] Converged: True
+[VALIDATION IRT] Message: LMM converged successfully
+[VALIDATION CTT] Converged: True
+[VALIDATION CTT] Message: LMM converged successfully
+Parallel structure: random slopes (TSVR_hours | UID)
+CRITICAL: Both models use identical random structure (parallelism requirement satisfied)
+Step 03 complete
+Final models use: random slopes (TSVR_hours | UID)
+IRT: 6 fixed effects, AIC=nan
+CTT: 6 fixed effects, AIC=nan
+Step 03: Fit Parallel LMMs (IRT + CTT)
+Loading input data...
+IRT theta (400 rows, 3 cols)
+CTT scores (800 rows, 6 cols)
+TSVR data (400 rows, 4 cols)
+Reshaping IRT theta to long format (When excluded)...
+IRT long format (800 rows - When excluded)
+Extracting UID and test from composite_ID...
+Merging with TSVR time variable...
+IRT LMM input (800 rows)
+CTT LMM input (800 rows)
+Saving LMM input datasets...
+data/step03_irt_lmm_input.csv (800 rows, 6 cols)
+data/step03_ctt_lmm_input.csv (800 rows, 6 cols)
+Creating log-transformed time variable...
+Log-transformed TSVR created
+Fitting LMM models...
+Convergence: Attempt random slopes, simplify if either model fails
+[PHASE 1] Attempting random slopes: TSVR_hours | UID
+IRT model with random slopes...
+[IRT SLOPES] Converged: True
+CTT model with random slopes...
+[CTT SLOPES] Converged: True
+[CTT SLOPES] Warnings: ['The MLE may be on the boundary of the parameter space.']
+BOTH models converged with random slopes -> Use random slopes
+Analysis complete with random slopes (TSVR_hours | UID)
+Saving model summaries...
+results/step03_irt_lmm_summary.txt
+results/step03_ctt_lmm_summary.txt
+Extracting fixed effects...
+results/step03_irt_lmm_fixed_effects.csv (4 coefficients)
+results/step03_ctt_lmm_fixed_effects.csv (4 coefficients)
+Saving convergence report...
+logs/step03_convergence_report.txt
+Saving model objects for assumption validation...
+data/step03_irt_lmm_model.pkl
+data/step03_ctt_lmm_model.pkl
+Running validate_lmm_convergence...
+[VALIDATION IRT] Converged: True
+[VALIDATION IRT] Message: LMM converged successfully
+[VALIDATION CTT] Converged: True
+[VALIDATION CTT] Message: LMM converged successfully
+Parallel structure: random slopes (TSVR_hours | UID)
+CRITICAL: Both models use identical random structure (parallelism requirement satisfied)
+Step 03 complete
+Final models use: random slopes (TSVR_hours | UID)
+IRT: 4 fixed effects, AIC=nan
+CTT: 4 fixed effects, AIC=nan

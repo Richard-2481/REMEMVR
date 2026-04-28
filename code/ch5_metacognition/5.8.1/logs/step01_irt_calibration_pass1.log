@@ -1,0 +1,156 @@
+Step 01: IRT Calibration Pass 1 (2-factor GRM on all TC_* items)
+Model: 2-factor GRM, 5 categories
+Fitting: batch_size=2048, mc_samples=1 (FAST mode), iw_samples=1
+Scoring: mc_samples=1 (ACCURATE mode), iw_samples=1
+Loading input data...
+step00_irt_input.csv (400 rows, 37 cols)
+step00_q_matrix.csv (36 items)
+Q-matrix specifies 36 items across 3 factors
+All 36 Q-matrix items found in data
+Converting wide format to long format...
+Long format created: 14400 observations (400 participants x 36 items)
+Creating factor groups from Q-matrix...
+Source: 18 items
+Destination: 18 items
+Preparing IRT tensors via prepare_irt_input_from_long...
+Tensors prepared:
+  - response_matrix: torch.Size([400, 36]) (participants x items)
+  - missing_mask: torch.Size([400, 36])
+  - Q_matrix: torch.Size([36, 2]) (items x factors)
+  - composite_ids: 400 IDs
+  - item_list: 36 items
+Configuring 2-factor GRM model via configure_irt_model...
+Model configured: 36 items, 2 factors, 5 categories, correlated=True
+Fitting GRM model via fit_irt_grm...
+Using mc_samples=1 during fit (avoids timeout per RQ 6.1.1)
+Model fitting complete
+Extracting theta scores via extract_theta_from_irt...
+Using mc_samples=100 during scoring (accurate theta estimates per RQ 6.1.1)
+Theta extraction complete: 400 participants x 2 factors
+Reconstructing composite_ID from UID and test...
+Wide format: 400 rows, 3 columns
+Extracting item parameters via extract_parameters_from_irt...
+Parameter extraction complete: 36 items
+Parameter columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+Saving Pass 1 outputs...
+step01_pass1_item_params.csv (36 items, 5 cols)
+step01_pass1_theta.csv (400 rows, 3 cols)
+Running validation checks...
+Checking parameter bounds...
+Discrimination: min=1.965, max=4.176
+Difficulty (b): min=0.445, max=1.113
+Parameter bounds valid
+Checking for NaN parameters...
+No NaN parameters
+Checking theta estimates...
+Theta: min=-2.184, max=0.929
+Theta estimates valid
+Checking output row counts...
+Output row counts correct (items=36, theta=400)
+Step 01 complete - All validations passed
+Pass 1 calibrated 36 items for 400 participants
+Run Step 02 to purify items using quality thresholds (a >= 0.4, |b| <= 3.0)
+Step 01: IRT Calibration Pass 1 (2-factor GRM on all TC_* items)
+Model: 2-factor GRM, 5 categories
+Fitting: batch_size=2048, mc_samples=1 (FAST mode), iw_samples=100
+Scoring: mc_samples=100 (ACCURATE mode), iw_samples=100
+Loading input data...
+step00_irt_input.csv (400 rows, 37 cols)
+step00_q_matrix.csv (36 items)
+Q-matrix specifies 36 items across 3 factors
+All 36 Q-matrix items found in data
+Converting wide format to long format...
+Long format created: 14400 observations (400 participants x 36 items)
+Creating factor groups from Q-matrix...
+Source: 18 items
+Destination: 18 items
+Preparing IRT tensors via prepare_irt_input_from_long...
+Tensors prepared:
+  - response_matrix: torch.Size([400, 36]) (participants x items)
+  - missing_mask: torch.Size([400, 36])
+  - Q_matrix: torch.Size([36, 2]) (items x factors)
+  - composite_ids: 400 IDs
+  - item_list: 36 items
+Configuring 2-factor GRM model via configure_irt_model...
+Model configured: 36 items, 2 factors, 5 categories, correlated=True
+Fitting GRM model via fit_irt_grm...
+Using mc_samples=1 during fit (avoids timeout per RQ 6.1.1)
+Model fitting complete
+Extracting theta scores via extract_theta_from_irt...
+Using mc_samples=100 during scoring (accurate theta estimates per RQ 6.1.1)
+Theta extraction complete: 400 participants x 2 factors
+Reconstructing composite_ID from UID and test...
+Wide format: 400 rows, 3 columns
+Extracting item parameters via extract_parameters_from_irt...
+Parameter extraction complete: 36 items
+Parameter columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+Saving Pass 1 outputs...
+step01_pass1_item_params.csv (36 items, 5 cols)
+step01_pass1_theta.csv (400 rows, 3 cols)
+Running validation checks...
+Checking parameter bounds...
+Discrimination: min=2.461, max=4.519
+Difficulty (b): min=0.064, max=0.560
+Parameter bounds valid
+Checking for NaN parameters...
+No NaN parameters
+Checking theta estimates...
+Theta: min=-2.362, max=0.550
+Theta estimates valid
+Checking output row counts...
+Output row counts correct (items=36, theta=400)
+Step 01 complete - All validations passed
+Pass 1 calibrated 36 items for 400 participants
+Run Step 02 to purify items using quality thresholds (a >= 0.4, |b| <= 3.0)
+Step 01: IRT Calibration Pass 1 (2-factor GRM on all TC_* items)
+Model: 2-factor GRM, 5 categories
+Fitting: batch_size=2048, mc_samples=1 (FAST mode), iw_samples=100
+Scoring: mc_samples=100 (ACCURATE mode), iw_samples=100
+Loading input data...
+step00_irt_input.csv (400 rows, 37 cols)
+step00_q_matrix.csv (36 items)
+Q-matrix specifies 36 items across 3 factors
+All 36 Q-matrix items found in data
+Converting wide format to long format...
+Long format created: 14400 observations (400 participants x 36 items)
+Creating factor groups from Q-matrix...
+Source: 18 items
+Destination: 18 items
+Preparing IRT tensors via prepare_irt_input_from_long...
+Tensors prepared:
+  - response_matrix: torch.Size([400, 36]) (participants x items)
+  - missing_mask: torch.Size([400, 36])
+  - Q_matrix: torch.Size([36, 2]) (items x factors)
+  - composite_ids: 400 IDs
+  - item_list: 36 items
+Configuring 2-factor GRM model via configure_irt_model...
+Model configured: 36 items, 2 factors, 5 categories, correlated=True
+Fitting GRM model via fit_irt_grm...
+Using mc_samples=1 during fit (avoids timeout per RQ 6.1.1)
+Model fitting complete
+Extracting theta scores via extract_theta_from_irt...
+Using mc_samples=100 during scoring (accurate theta estimates per RQ 6.1.1)
+Theta extraction complete: 400 participants x 2 factors
+Reconstructing composite_ID from UID and test...
+Wide format: 400 rows, 3 columns
+Extracting item parameters via extract_parameters_from_irt...
+Parameter extraction complete: 36 items
+Parameter columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+Saving Pass 1 outputs...
+step01_pass1_item_params.csv (36 items, 5 cols)
+step01_pass1_theta.csv (400 rows, 3 cols)
+Running validation checks...
+Checking parameter bounds...
+Discrimination: min=0.948, max=2.196
+Difficulty (b): min=-0.689, max=1.914
+Parameter bounds valid
+Checking for NaN parameters...
+No NaN parameters
+Checking theta estimates...
+Theta: min=-2.921, max=2.616
+Theta estimates valid
+Checking output row counts...
+Output row counts correct (items=36, theta=400)
+Step 01 complete - All validations passed
+Pass 1 calibrated 36 items for 400 participants
+Run Step 02 to purify items using quality thresholds (a >= 0.4, |b| <= 3.0)

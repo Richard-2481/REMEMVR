@@ -1,0 +1,4 @@
+analysis,original_result,outliers_excluded,tertile_method,effect_size_change,robustness
+education,,10,0.0005541201839946063,,unknown
+rpm,,10,0.04181486920542087,,unknown
+age,,10,0.0018481906583379124,,unknown

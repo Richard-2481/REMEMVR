@@ -1,0 +1,3 @@
+model,AIC,BIC,delta_AIC,delta_BIC,interpretation_AIC,interpretation_BIC
+IRT,1499.1264,1513.1802351830038,-2535.4852,-2535.4852,Substantial difference (favors IRT),Substantial difference (favors IRT)
+CTT,-1036.3588,-1022.3049648169962,-2535.4852,-2535.4852,Substantial difference (favors IRT),Substantial difference (favors IRT)

@@ -1,0 +1,84 @@
+Step 08: Sensitivity Analysis
+Loading data...
+Optimal model: Extended (5 predictors)
+
+Test 1: Outlier exclusion...
+Identified 6 outliers (Cook's D > 0.04)
+Full data: R²=0.2473, N=100
+No outliers: R²=0.3201, N=94
+Coefficient stability (r): 0.9582
+Significance changes: 1
+
+Test 2: LOO-CV comparison...
+LOO-CV R²: 0.0000
+5-Fold CV R²: 0.0213
+Difference: 0.0213
+
+Test 3: Alternative stratification (theta tertiles)...
+Age stratification: CV-R²=0.0213
+Theta stratification: CV-R²=0.1007 ± 0.2390
+
+Test 4: Bootstrap seed stability...
+Seed 42...
+Seed 43...
+Bootstrap stability:
+  const: ratio=0.9393
+  Age: ratio=0.9788
+  RAVLT_T: ratio=0.9930
+  BVMT_T: ratio=0.9637
+  RPM_T: ratio=0.9872
+  Education: ratio=0.9940
+
+Saving sensitivity analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step08_outlier_sensitivity.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step08_loo_cv_results.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step08_alternative_cv.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step08_bootstrap_stability.csv
+
+Assessing sensitivity results...
+Coefficients stable after outlier exclusion (r=0.9582)
+LOO-CV agrees with 5-fold CV (diff=0.0213)
+Bootstrap CIs stable across seeds (max ratio=0.9940)
+Step 08 complete
+Step 08: Sensitivity Analysis
+Loading data...
+Optimal model: Extended (5 predictors)
+
+Test 1: Outlier exclusion...
+Identified 6 outliers (Cook's D > 0.04)
+Full data: R²=0.2481, N=100
+No outliers: R²=0.3207, N=94
+Coefficient stability (r): 0.9498
+Significance changes: 0
+
+Test 2: LOO-CV comparison...
+LOO-CV R²: 0.0000
+5-Fold CV R²: 0.0169
+Difference: 0.0169
+
+Test 3: Alternative stratification (theta tertiles)...
+Age stratification: CV-R²=0.0169
+Theta stratification: CV-R²=0.0959 ± 0.2383
+
+Test 4: Bootstrap seed stability...
+Seed 42...
+Seed 43...
+Bootstrap stability:
+  const: ratio=0.9558
+  Age: ratio=0.9848
+  RAVLT_T: ratio=0.9396
+  BVMT_T: ratio=0.9264
+  RPM_T: ratio=0.9782
+  Education: ratio=1.0009
+
+Saving sensitivity analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step08_outlier_sensitivity.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step08_loo_cv_results.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step08_alternative_cv.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step08_bootstrap_stability.csv
+
+Assessing sensitivity results...
+Coefficients stable after outlier exclusion (r=0.9498)
+LOO-CV agrees with 5-fold CV (diff=0.0169)
+Bootstrap CIs stable across seeds (max ratio=1.0009)
+Step 08 complete

@@ -17,12 +17,12 @@ def log(msg):
     print(msg)
 
 try:
-    log("[START] Step 8: Location-Specific Correlations")
+    log("Step 8: Location-Specific Correlations")
 
     # Load merged data
     df = pd.read_csv(RQ_DIR / "data" / "step03_merged_data_long.csv")
-    log(f"[LOADED] {len(df)} rows")
-    log(f"[DEBUG] Test values: {sorted(df['test'].unique())}")
+    log(f"{len(df)} rows")
+    log(f"Test values: {sorted(df['test'].unique())}")
 
     # Pivot to wide by measure
     df_wide = df.pivot_table(
@@ -68,12 +68,12 @@ try:
                 })
 
     df_corr = pd.DataFrame(results)
-    log(f"[CORRELATIONS] Computed {len(df_corr)} correlations (should be 8)")
+    log(f"Computed {len(df_corr)} correlations (should be 8)")
 
     # Save
     output_path = RQ_DIR / "data" / "step08_location_correlations.csv"
     df_corr.to_csv(output_path, index=False, encoding='utf-8')
-    log(f"[SAVE] {output_path.name} ({len(df_corr)} rows)")
+    log(f"{output_path.name} ({len(df_corr)} rows)")
 
     # Scatterplot data (with outlier detection placeholder)
     df_wide['cooks_d'] = 0.0  # Placeholder
@@ -82,7 +82,7 @@ try:
     df_wide[['location', 'test', 'accuracy', 'confidence', 'cooks_d', 'outlier_flag']].to_csv(
         scatter_path, index=False, encoding='utf-8'
     )
-    log(f"[SAVE] {scatter_path.name}")
+    log(f"{scatter_path.name}")
 
     # Correlation differences (placeholder)
     df_diff = pd.DataFrame([{
@@ -96,12 +96,12 @@ try:
 
     diff_path = RQ_DIR / "data" / "step08_correlation_differences.csv"
     df_diff.to_csv(diff_path, index=False, encoding='utf-8')
-    log(f"[SAVE] {diff_path.name}")
+    log(f"{diff_path.name}")
 
-    log("[SUCCESS] Step 8 complete")
+    log("Step 8 complete")
     sys.exit(0)
 except Exception as e:
-    log(f"[ERROR] {str(e)}")
+    log(f"{str(e)}")
     import traceback
     traceback.print_exc()
     sys.exit(1)

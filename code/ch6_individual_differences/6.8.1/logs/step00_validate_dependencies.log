@@ -1,0 +1,22 @@
+Step 00: Validate Dependencies
+
+Validating: Ch5 5.2.1 domain theta scores (What/Where/When)
+/home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+File exists
+File size OK: 16072 bytes
+Required columns present: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Row count OK: 400 rows (expected ~400)
+Ch5 5.2.1 domain theta scores (What/Where/When) validated successfully
+
+Validating: Participant cognitive test data
+/home/etai/projects/REMEMVR/data/dfnonvr.csv
+File exists
+File size OK: 60164 bytes
+Required columns present: ['UID', 'age', 'nart-score', 'rpm-score']
+Row count OK: 100 rows (expected ~100)
+Participant cognitive test data validated successfully
+
+Writing validation results to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step00_dependency_validation.txt
+Validation report written
+
+Step 00 complete - All dependencies validated

@@ -1,0 +1,47 @@
+2025-12-03 15:04:29,975 - INFO - ============================================================
+2025-12-03 15:04:29,975 - INFO - RQ 5.2.6 Step 00: Load and Filter Data (Exclude When Domain)
+2025-12-03 15:04:29,975 - INFO - ============================================================
+2025-12-03 15:04:29,978 - INFO - Loaded source data: 1200 rows from results/ch5/5.2.1/data/step04_lmm_input.csv
+2025-12-03 15:04:29,978 - INFO - Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'domain', 'theta']
+2025-12-03 15:04:29,981 - INFO - 
+Domain distribution BEFORE filtering:
+2025-12-03 15:04:29,981 - INFO -   what: 400 rows
+2025-12-03 15:04:29,981 - INFO -   where: 400 rows
+2025-12-03 15:04:29,981 - INFO -   when: 400 rows
+2025-12-03 15:04:29,981 - INFO - Unique domains: {'what', 'where', 'when'}
+2025-12-03 15:04:29,982 - INFO - 
+============================================================
+2025-12-03 15:04:29,982 - INFO - WHEN DOMAIN EXCLUSION
+2025-12-03 15:04:29,982 - INFO - Reason: Floor effect in RQ 5.2.1 (77% item attrition, 6-9% floor)
+2025-12-03 15:04:29,982 - INFO - ============================================================
+2025-12-03 15:04:29,985 - INFO - 
+Filtering results:
+2025-12-03 15:04:29,985 - INFO -   Original rows: 1200
+2025-12-03 15:04:29,985 - INFO -   Rows removed (When domain): 400
+2025-12-03 15:04:29,985 - INFO -   Remaining rows: 800
+2025-12-03 15:04:29,985 - INFO - 
+Domain distribution AFTER filtering:
+2025-12-03 15:04:29,985 - INFO -   what: 400 rows
+2025-12-03 15:04:29,985 - INFO -   where: 400 rows
+2025-12-03 15:04:29,986 - INFO - 
+Data structure:
+2025-12-03 15:04:29,986 - INFO -   Unique participants (UID): 100
+2025-12-03 15:04:29,986 - INFO -   Unique tests: 4
+2025-12-03 15:04:29,986 - INFO -   Unique domains: 2
+2025-12-03 15:04:29,986 - INFO -   Expected rows (N×T×D): 800
+2025-12-03 15:04:29,986 - INFO -   Actual rows: 800
+2025-12-03 15:04:29,987 - INFO - No missing theta values - data complete
+2025-12-03 15:04:29,987 - INFO - TSVR_hours range: [1.0, 246.2] hours
+2025-12-03 15:04:29,987 - INFO - Theta range: [-2.472, 2.535]
+2025-12-03 15:04:29,988 - INFO - Theta mean: 0.015, SD: 0.915
+2025-12-03 15:04:29,990 - INFO - 
+Saved filtered data to: results/ch5/5.2.6/data/step00_lmm_input_filtered.csv
+2025-12-03 15:04:29,990 - INFO - Output: 800 rows, 6 columns
+2025-12-03 15:04:29,990 - INFO - 
+============================================================
+2025-12-03 15:04:29,990 - INFO - STEP 00 COMPLETE
+2025-12-03 15:04:29,990 - INFO - ============================================================
+2025-12-03 15:04:29,990 - INFO - Input:  1200 rows (What + Where + When)
+2025-12-03 15:04:29,990 - INFO - Output: 800 rows (What + Where only)
+2025-12-03 15:04:29,990 - INFO - When domain excluded due to floor effect
+2025-12-03 15:04:29,990 - INFO - Ready for Step 01: Fit Domain-Stratified LMMs

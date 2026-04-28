@@ -1,0 +1,86 @@
+================================================================================
+Step 00: Validate Dependencies and Merge Accuracy/Confidence Data
+================================================================================
+
+Step 0: Validate Dependencies and Merge Data
+Checking dependency file existence...
+Found: Ch5 5.2.1 accuracy theta
+Found: Ch6 6.3.1 confidence theta
+Found: Ch5 5.2.1 TSVR mapping
+All dependency files exist
+Loading Ch5 5.2.1 accuracy theta scores...
+Accuracy data: 400 rows, 4 cols
+Accuracy columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Sample composite_IDs (Ch5 format): ['A010_1', 'A010_2', 'A010_3']
+Loading Ch6 6.3.1 confidence theta scores...
+Confidence data: 400 rows, 4 cols
+Confidence columns: ['composite_ID', 'theta_What', 'theta_Where', 'theta_When']
+Sample composite_IDs (Ch6 format BEFORE harmonization): ['A010_T1', 'A010_T2', 'A010_T3']
+Converting Ch6 composite_ID format to Ch5 format...
+Ch6 format: 'A010_T1' -> Ch5 format: 'A010_1'
+Sample composite_IDs (Ch6 AFTER harmonization): ['A010_1', 'A010_2', 'A010_3']
+composite_ID harmonization successful - all IDs match
+Adding unique suffixes to domain columns...
+Accuracy columns after rename: ['composite_ID', 'theta_what_acc', 'theta_where_acc', 'theta_when_acc']
+Confidence columns after rename: ['composite_ID', 'theta_What_conf', 'theta_Where_conf', 'theta_When_conf']
+Domain column standardization complete
+Extracting UID and test_num from composite_ID...
+Extracted UID and test_num for 400 observations
+Unique UIDs: 100
+Test numbers: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Loading TSVR mapping from Ch5 5.2.1...
+TSVR mapping: 400 rows, 4 cols
+TSVR columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+TSVR_hours range: [1.00, 246.24] hours
+TSVR_hours > 200 detected (late participants): 246.24
+Allowing up to 200 hours for late participants (per TSVR validation guidelines)
+TSVR data loaded successfully
+Merging accuracy and confidence data...
+Merged shape: 400 rows, 9 cols
+Merge successful - exactly 400 observations
+Adding TSVR_hours time variable...
+Final merged shape: 400 rows, 10 cols
+All 400 observations have TSVR_hours
+Checking missing data...
+Missing in theta_what_acc: 0 (0.0%)
+Missing in theta_where_acc: 0 (0.0%)
+Missing in theta_when_acc: 0 (0.0%)
+Missing in theta_What_conf: 0 (0.0%)
+Missing in theta_Where_conf: 0 (0.0%)
+Missing in theta_When_conf: 0 (0.0%)
+Missing data check complete
+Checking theta value ranges...
+theta_what_acc range: [-2.47, 2.53]
+theta_where_acc range: [-2.31, 2.49]
+theta_when_acc range: [-0.89, 2.07]
+theta_What_conf range: [-2.51, 0.35]
+theta_Where_conf range: [-2.70, 0.28]
+theta_When_conf range: [-2.37, 0.55]
+Theta value range check complete
+Checking unique UIDs...
+Unique UIDs: 100
+UID check complete
+Checking for duplicate composite_IDs...
+No duplicate composite_IDs
+Reordering columns for output...
+Final columns: ['composite_ID', 'UID', 'test_num', 'TSVR_hours', 'theta_what_acc', 'theta_where_acc', 'theta_when_acc', 'theta_What_conf', 'theta_Where_conf', 'theta_When_conf']
+Writing validation log...
+Validation log: /home/etai/projects/REMEMVR/results/ch6/6.9.3/data/step00_dependency_validation.txt
+Saving merged data...
+/home/etai/projects/REMEMVR/results/ch6/6.9.3/data/step00_merged_accuracy_confidence.csv (400 rows, 10 cols)
+Running validation tool...
+valid: True
+file_path: /home/etai/projects/REMEMVR/results/ch6/6.9.3/data/step00_merged_accuracy_confidence.csv
+size_bytes: 34846
+message: File exists and meets minimum size: 34846 bytes (>= 10000 bytes)
+Step 0 complete
+
+================================================================================
+NEXT STEP: Step 0b - When Domain Matched-Item IRT
+================================================================================
+
+Measurement equivalence issue detected:
+- Ch5 accuracy used 48 When items
+- Ch6 confidence retained only ~18 When items after purification
+-> Step 0b will re-run Ch5 accuracy IRT with matched 18 items
+-> Ensures valid comparison (same items for accuracy vs confidence)

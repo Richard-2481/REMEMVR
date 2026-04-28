@@ -1,0 +1,36 @@
+
+============================================================
+Step 06: Compute Post-Hoc Contrasts (Decision D068)
+============================================================
+
+Loading Step 05 fixed effects coefficients...
+step05_lmm_coefficients.csv (4 rows)
+
+Checking Domain × Time interaction significance...
+1 interaction terms:
+
+  - C(location)[T.Source]:log_TSVR: p=0.8396
+
+Minimum interaction p-value: 0.8396
+Threshold: 0.05
+Result: NOT SIGNIFICANT (p >= 0.05)
+
+Domain × Time interaction is NOT significant
+       Post-hoc contrasts not appropriate (NULL hypothesis supported)
+
+step06_post_hoc_contrasts.csv (0 rows - empty as expected)
+
+step06_contrast_decision.txt
+
+============================================================
+Checking outputs...
+============================================================
+
+Required files exist
+Contrasts CSV has correct columns
+Empty contrasts file (expected for non-significant interaction)
+
+============================================================
+Step 06 Complete
+============================================================
+

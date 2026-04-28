@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-RQ 6.6.2: PLATINUM Certification - Robust Regression Sensitivity Analysis
+RQ 6.6.2: Quality Validation - Robust Regression Sensitivity Analysis
 
 This script addresses residual non-normality (Shapiro-Wilk p<0.001) by comparing:
 1. Original OLS regression
@@ -9,7 +9,6 @@ This script addresses residual non-normality (Shapiro-Wilk p<0.001) by comparing
 
 If robust methods yield similar coefficients, findings are robust to non-normality.
 
-Author: rq_platinum agent
 Date: 2025-12-28
 """
 
@@ -20,9 +19,7 @@ from scipy import stats
 import warnings
 warnings.filterwarnings('ignore')
 
-# ==============================================================================
 # LOAD DATA
-# ==============================================================================
 
 print("=" * 80)
 print("ROBUST REGRESSION SENSITIVITY ANALYSIS")
@@ -43,9 +40,7 @@ print(f"  N = {len(data)}")
 print(f"  Predictors: {predictor_cols}")
 print(f"  Outcome: HCE_rate_mean")
 
-# ==============================================================================
 # METHOD 1: ORIGINAL OLS REGRESSION
-# ==============================================================================
 
 print("\n" + "-" * 80)
 print("METHOD 1: ORIGINAL OLS REGRESSION")
@@ -77,9 +72,7 @@ print(f"\nResidual Diagnostics:")
 print(f"  Shapiro-Wilk W = {shapiro_w:.4f}, p = {shapiro_p:.6f}")
 print(f"  → {'Non-normal (p<0.05)' if shapiro_p < 0.05 else 'Approximately normal'}")
 
-# ==============================================================================
 # METHOD 2: ROBUST REGRESSION (HUBER M-ESTIMATOR)
-# ==============================================================================
 
 print("\n" + "-" * 80)
 print("METHOD 2: ROBUST REGRESSION (HUBER M-ESTIMATOR)")
@@ -100,9 +93,7 @@ rlm_coeffs = pd.DataFrame({
     'rlm_p': rlm_results.pvalues.values
 })
 
-# ==============================================================================
 # METHOD 3: BOOTSTRAP CONFIDENCE INTERVALS
-# ==============================================================================
 
 print("\n" + "-" * 80)
 print("METHOD 3: BOOTSTRAP CONFIDENCE INTERVALS (1000 ITERATIONS)")
@@ -140,9 +131,7 @@ print(f"\nBootstrap Results (1000 iterations):")
 print(f"  Mean coefficients computed from bootstrap distribution")
 print(f"  95% CI from percentile method")
 
-# ==============================================================================
 # COMPARISON TABLE
-# ==============================================================================
 
 print("\n" + "=" * 80)
 print("COMPARISON: OLS vs ROBUST vs BOOTSTRAP")
@@ -173,9 +162,7 @@ print(comparison[['predictor', 'ols_coef', 'rlm_coef', 'boot_mean', 'ols_rlm_pct
 comparison.to_csv(f'{BASE_DIR}/data/step06_robust_vs_ols_comparison.csv', index=False)
 print("\n✓ Full comparison saved to data/step06_robust_vs_ols_comparison.csv")
 
-# ==============================================================================
 # SIGNIFICANCE COMPARISON
-# ==============================================================================
 
 print("\n" + "-" * 80)
 print("SIGNIFICANCE COMPARISON (α = 0.05, Bonferroni α = 0.0125)")
@@ -209,9 +196,7 @@ for idx, row in comparison.iterrows():
     else:
         print(f"  → DISAGREEMENT: Methods do not agree on significance")
 
-# ==============================================================================
 # CONCLUSION
-# ==============================================================================
 
 print("\n" + "=" * 80)
 print("CONCLUSION")

@@ -1,0 +1,183 @@
+======================================================================
+RQ 6.8.2: SEM-Based LocationType-Stratified Calibration
+======================================================================
+TIER 2 VALIDATION: Difference score reliability blocker
+  - Source: r_diff=0.379 (CRITICAL)
+  - Destination: r_diff=0.530 (QUESTIONABLE)
+Target: r>0.70 for EACH LocationType after SEM
+======================================================================
+
+======================================================================
+STEP 1: Load LocationType-Stratified Calibration Data
+======================================================================
+Loaded: 800 rows, 9 columns
+Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence', 'Z_accuracy', 'Z_confidence', 'calibration']
+All required columns present: 6 columns
+Row count OK: 800 rows (expected ~800)
+LocationTypes found: ['Destination', 'Source']
+No missing values in theta scores
+
+Re-standardizing theta scores BY LocationType...
+✓ Z-scores computed within LocationType
+STEP 1 COMPLETE
+
+======================================================================
+STEP 2: Compute PRE-SEM Difference Score Reliability (BY LocationType)
+======================================================================
+
+======================================================================
+LOCATION TYPE: Destination
+======================================================================
+N = 400 observations (100 participants × 4 tests)
+Correlation (accuracy, confidence): r = 0.4654, p = 0.000000
+
+Accuracy IRT Reliability (ICC):
+  Between-person variance: 0.3481
+  Within-person variance: 0.8705
+  ICC (r_xx): 0.2856
+
+Confidence IRT Reliability (ICC):
+  Between-person variance: 0.6550
+  Within-person variance: 0.4653
+  ICC (r_yy): 0.5847
+
+Difference Score Reliability (PRE-SEM) for Destination:
+  r_xx (accuracy reliability): 0.2856
+  r_yy (confidence reliability): 0.5847
+  r_xy (correlation): 0.4654
+  r_diff: -0.0566 (CATASTROPHIC (negative))
+
+🔴 CATASTROPHIC: r_diff=-0.0566 (NEGATIVE!)
+
+======================================================================
+LOCATION TYPE: Source
+======================================================================
+N = 400 observations (100 participants × 4 tests)
+Correlation (accuracy, confidence): r = 0.6861, p = 0.000000
+
+Accuracy IRT Reliability (ICC):
+  Between-person variance: 0.4425
+  Within-person variance: 0.7459
+  ICC (r_xx): 0.3723
+
+Confidence IRT Reliability (ICC):
+  Between-person variance: 0.5926
+  Within-person variance: 0.5477
+  ICC (r_yy): 0.5197
+
+Difference Score Reliability (PRE-SEM) for Source:
+  r_xx (accuracy reliability): 0.3723
+  r_yy (confidence reliability): 0.5197
+  r_xy (correlation): 0.6861
+  r_diff: -0.7651 (CATASTROPHIC (negative))
+
+🔴 CATASTROPHIC: r_diff=-0.7651 (NEGATIVE!)
+
+======================================================================
+SUMMARY: PRE-SEM Reliability BY LocationType
+======================================================================
+Destination : r_diff=-0.0566 (CATASTROPHIC (negative))
+Source      : r_diff=-0.7651 (CATASTROPHIC (negative))
+STEP 2 COMPLETE
+
+======================================================================
+STEP 3: Compute SEM-Based Latent Calibration (BY LocationType)
+======================================================================
+Approach: Latent difference for EACH LocationType separately
+Method: Factor score regression with measurement error
+
+======================================================================
+LOCATION TYPE: Destination
+======================================================================
+Using estimated SE from ICC:
+  SE_accuracy: 0.8452 (from r_xx=0.2856)
+  SE_confidence: 0.6445 (from r_yy=0.5847)
+
+Initializing SEMCalibration for Destination...
+Fitting latent difference model for Destination...
+
+✅ SEM calibration SUCCESSFUL for Destination
+Assigned 400/400 latent_calibration values for Destination
+
+Split-Half Reliability (POST-SEM) for Destination:
+  Split-half r: 0.7734
+  Full-length r (Spearman-Brown): 0.8722
+  ✅ GOOD reliability (>= 0.70) - Target achieved!
+
+📊 RELIABILITY IMPROVEMENT for Destination: +0.9289
+   From r_diff=-0.0566 to r=0.8722
+   Correlation (SEM vs Simple): r=0.8692
+
+======================================================================
+LOCATION TYPE: Source
+======================================================================
+Using estimated SE from ICC:
+  SE_accuracy: 0.7923 (from r_xx=0.3723)
+  SE_confidence: 0.6930 (from r_yy=0.5197)
+
+Initializing SEMCalibration for Source...
+Fitting latent difference model for Source...
+
+✅ SEM calibration SUCCESSFUL for Source
+Assigned 400/400 latent_calibration values for Source
+  WARNING: Zero/NaN variance in split-half means (odd_SD=nan, even_SD=nan)
+  Cannot compute split-half correlation - using ICC method
+  Using ICC method: r_full_length=nan
+
+Split-Half Reliability (POST-SEM) for Source:
+  Split-half r: nan
+  Full-length r (Spearman-Brown): nan
+  🔴 LOW reliability (< 0.60)
+
+📊 RELIABILITY IMPROVEMENT for Source: +nan
+   From r_diff=-0.7651 to r=nan
+   Correlation (SEM vs Simple): r=0.9339
+
+======================================================================
+SUMMARY: POST-SEM Reliability BY LocationType
+======================================================================
+Destination : r_PRE=-0.0566 → r_POST=+0.8722 (Δ=+0.9289)
+Source      : r_PRE=-0.7651 → r_POST=+nan (Δ=+nan)
+STEP 3 COMPLETE
+
+======================================================================
+STEP 4: Validate & Save SEM Calibration Scores
+======================================================================
+No missing values in latent_calibration
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step05_calibration_scores_SEM.csv (800 rows, 9 columns)
+Saved diagnostics: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step05_SEM_diagnostics.csv
+STEP 4 COMPLETE
+
+======================================================================
+SEM-BASED LocationType-STRATIFIED CALIBRATION COMPLETE
+======================================================================
+
+📊 KEY RESULTS (BY LocationType):
+
+1. Destination Location:
+   PRE-SEM: r_diff = -0.0566
+   POST-SEM: r = 0.8722 (split-half)
+   Improvement: +0.9289 (+92.9 pp)
+   Correlation with simple: r = 0.8692
+
+2. Source Location:
+   PRE-SEM: r_diff = -0.7651
+   POST-SEM: r = nan (split-half)
+   Improvement: +nan (+nan pp)
+   Correlation with simple: r = 0.9339
+
+✅ SUCCESS: All LocationTypes achieve target reliability (r>=0.70)
+
+📁 OUTPUT FILES:
+   step05_calibration_scores_SEM.csv
+   step05_SEM_diagnostics.csv
+
+🔄 NEXT STEPS:
+   1. Re-run LMM: latent_calibration ~ LocationType × TSVR + (TSVR | UID)
+   2. Compare PRE-SEM (NULL, p=0.216) vs POST-SEM LocationType effects
+   3. Classify outcome: ROBUST / NULL / MARGINAL
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================

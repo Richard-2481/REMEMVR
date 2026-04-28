@@ -1,0 +1,3 @@
+interaction,original_term,original_beta,original_p,recip_log_term,recip_log_beta,recip_log_p,p_change,both_null
+Linear Time × Age × Domain,TSVR_hours:Age_c:domain[T.Where],-6.181251672686914e-05,0.4949020273602835,recip_TSVR:Age_c:domain[T.Where],-0.026346360145054412,0.43235410308545796,-0.06254792427482553,True
+Log Time × Age × Domain,log_TSVR:Age_c:domain[T.Where],0.0024606579210731,0.4377461229992635,log_TSVR:Age_c:domain[T.Where],-0.0025636580679197765,0.5454844173886495,0.10773829438938598,True

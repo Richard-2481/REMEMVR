@@ -1,0 +1,7 @@
+metric,value
+point_estimate,0.04140238145052111
+percentile_ci_lower,-0.04198886057247153
+percentile_ci_upper,0.12435517762090041
+bca_ci_lower,-0.024560826627201864
+bca_ci_upper,0.1438018252671545
+proportion_positive,0.8428

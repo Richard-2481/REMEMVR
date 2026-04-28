@@ -1,0 +1,4 @@
+metric,value,threshold,pass_fail
+all_percentages_non_negative,0.0,0.0,PASS
+components_sum_to_100,100.0,100.0,PASS
+genuine_variance_reasonable,0.03264588677949781,-0.1,PASS

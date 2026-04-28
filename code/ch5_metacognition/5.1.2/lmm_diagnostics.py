@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 LMM Diagnostics for RQ 6.1.2
-PLATINUM Certification - Section 5 (Assumption Validation)
+Quality Validation - Section 5 (Assumption Validation)
 
 Generates:
 1. Q-Q plot (residual normality)
@@ -37,9 +37,7 @@ def log(msg):
 
 log("[LMM DIAGNOSTICS] Starting assumption validation...")
 
-# =============================================================================
 # 1. Refit Quadratic Model (to get residuals)
-# =============================================================================
 log("[1] Refitting quadratic model for diagnostics...")
 
 df = pd.read_csv(DATA_DIR / "step00_lmm_input.csv")
@@ -58,9 +56,7 @@ fitted = result.fittedvalues
 log(f"[1] Residuals range: [{residuals.min():.3f}, {residuals.max():.3f}]")
 log(f"[1] Fitted range: [{fitted.min():.3f}, {fitted.max():.3f}]")
 
-# =============================================================================
 # 2. Q-Q Plot (Normality)
-# =============================================================================
 log("[2] Generating Q-Q plot...")
 
 fig, ax = plt.subplots(figsize=(8, 6))
@@ -87,9 +83,7 @@ if len(residuals) <= 5000:  # Shapiro-Wilk max sample size
 else:
     log("[2] Shapiro-Wilk skipped (N>5000)")
 
-# =============================================================================
 # 3. Residuals vs Fitted (Homoscedasticity)
-# =============================================================================
 log("[3] Generating residuals vs fitted plot...")
 
 fig, ax = plt.subplots(figsize=(8, 6))
@@ -107,9 +101,7 @@ plt.close()
 
 log("[3] Residuals vs fitted plot saved to plots/diagnostics/residuals_vs_fitted.png")
 
-# =============================================================================
 # 4. Breusch-Pagan Test (Heteroscedasticity)
-# =============================================================================
 log("[4] Running Breusch-Pagan test...")
 
 # Construct exog matrix (predictors)
@@ -130,9 +122,7 @@ except Exception as e:
     log(f"[4] ERROR in Breusch-Pagan test: {e}")
     bp_stat, bp_p = np.nan, np.nan
 
-# =============================================================================
 # 5. Generate Diagnostic Summary Report
-# =============================================================================
 log("[5] Generating diagnostic summary report...")
 
 summary_lines = [
@@ -140,7 +130,7 @@ summary_lines = [
     "",
     "**Model:** theta_confidence ~ TSVR_hours + TSVR_hours² + (1 + TSVR_hours | UID)",
     "**Date:** 2025-12-28",
-    "**Purpose:** PLATINUM certification - Section 5 assumption validation",
+    "**Purpose:** quality validation - Section 5 assumption validation",
     "",
     "---",
     "",
@@ -237,7 +227,7 @@ summary_lines.extend([
     "",
     "**Conclusion:** LMM specification appropriate. Findings robust.",
     "",
-    "**PLATINUM Status:** Section 5 (Assumption Validation) COMPLETE",
+    "**validation Status:** Section 5 (Assumption Validation) COMPLETE",
     "",
     "---",
     "",
@@ -252,9 +242,7 @@ with open(DATA_DIR / "lmm_diagnostic_report.md", 'w') as f:
 
 log("[5] Diagnostic report saved to data/lmm_diagnostic_report.md")
 
-# =============================================================================
 # 6. Save Diagnostic Data
-# =============================================================================
 log("[6] Saving diagnostic data...")
 
 diag_data = pd.DataFrame({
@@ -267,12 +255,10 @@ diag_data = pd.DataFrame({
 diag_data.to_csv(DATA_DIR / "lmm_diagnostics_data.csv", index=False)
 log("[6] Diagnostic data saved to data/lmm_diagnostics_data.csv")
 
-# =============================================================================
 # Summary
-# =============================================================================
 log("")
 log("="*60)
-log("[SUCCESS] LMM diagnostics complete")
+log("LMM diagnostics complete")
 log("="*60)
 log("Outputs:")
 log("  - plots/diagnostics/qq_plot.png")

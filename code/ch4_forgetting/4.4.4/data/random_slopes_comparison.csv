@@ -1,0 +1,3 @@
+model,aic_intercepts_only,aic_intercepts_slopes,delta_aic,slope_var,slope_sd,outcome,recommendation
+IRT,2599.0016738213308,2529.9793033447404,69.02237047659037,1.366115062940108,1.1688092500233338,Option A: Slopes improve fit (ΔAIC = 69.02 > 2),Use slopes model (individual differences in forgetting rates)
+CTT,-1075.4766610071729,-1077.4542236637599,1.977562656586997,0.0,0.0,Option C: Slopes converge but don't improve (|ΔAIC| = 1.98 < 2),"Keep intercepts-only (negligible slope variance, homogeneous effects CONFIRMED)"

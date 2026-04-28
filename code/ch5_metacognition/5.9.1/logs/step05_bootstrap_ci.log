@@ -1,0 +1,165 @@
+Step 5: Bootstrap 95% CI for decline rate difference
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running 1000 iterations (seed=42)...
+Iteration 100/1000
+Iteration 200/1000
+Iteration 300/1000
+Iteration 400/1000
+Iteration 500/1000
+Iteration 600/1000
+Iteration 700/1000
+Iteration 800/1000
+Iteration 900/1000
+Iteration 1000/1000
+Complete: 1000 bootstrap statistics
+[CI] Computing 95% percentile CI...
+[CI] Bootstrap mean: 0.001958
+[CI] 95% CI: [0.000317, 0.003570]
+Comparing to parametric approach...
+Observed mean: 0.001954
+Bootstrap mean consistent with observed (within 10%)
+Bootstrap CI robust to non-normality
+Use bootstrap CI as primary if normality violated (checked in Step 7)
+Saving analysis outputs...
+step05_bootstrap_ci.csv (1 rows, 5 cols)
+step05_bootstrap_distribution.csv (1000 rows, 2 cols)
+Running inline validation...
+boot_statistic range: [-0.000974, 0.004760]
+Bootstrap complete: 1000 iterations
+Seed: 42
+95% CI: [0.000317, 0.003570]
+Bootstrap mean = 0.001958
+Step 5 complete
+Step 5: Bootstrap 95% CI for decline rate difference
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running 1000 iterations (seed=42)...
+Iteration 100/1000
+Iteration 200/1000
+Iteration 300/1000
+Iteration 400/1000
+Iteration 500/1000
+Iteration 600/1000
+Iteration 700/1000
+Iteration 800/1000
+Iteration 900/1000
+Iteration 1000/1000
+Complete: 1000 bootstrap statistics
+[CI] Computing 95% percentile CI...
+[CI] Bootstrap mean: -0.000039
+[CI] 95% CI: [-0.001254, 0.001217]
+Comparing to parametric approach...
+Observed mean: -0.000037
+Bootstrap mean consistent with observed (within 10%)
+Bootstrap CI robust to non-normality
+Use bootstrap CI as primary if normality violated (checked in Step 7)
+Saving analysis outputs...
+step05_bootstrap_ci.csv (1 rows, 5 cols)
+step05_bootstrap_distribution.csv (1000 rows, 2 cols)
+Running inline validation...
+boot_statistic range: [-0.002011, 0.002187]
+Bootstrap complete: 1000 iterations
+Seed: 42
+95% CI: [-0.001254, 0.001217]
+Bootstrap mean = -0.000039
+Step 5 complete
+Step 5: Bootstrap 95% CI for decline rate difference
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running 1000 iterations (seed=42)...
+Iteration 100/1000
+Iteration 200/1000
+Iteration 300/1000
+Iteration 400/1000
+Iteration 500/1000
+Iteration 600/1000
+Iteration 700/1000
+Iteration 800/1000
+Iteration 900/1000
+Iteration 1000/1000
+Complete: 1000 bootstrap statistics
+[CI] Computing 95% percentile CI...
+[CI] Bootstrap mean: -0.000715
+[CI] 95% CI: [-0.001888, 0.000448]
+Comparing to parametric approach...
+Observed mean: -0.000714
+Bootstrap mean consistent with observed (within 10%)
+Bootstrap CI robust to non-normality
+Use bootstrap CI as primary if normality violated (checked in Step 7)
+Saving analysis outputs...
+step05_bootstrap_ci.csv (1 rows, 5 cols)
+step05_bootstrap_distribution.csv (1000 rows, 2 cols)
+Running inline validation...
+boot_statistic range: [-0.002428, 0.001478]
+Bootstrap complete: 1000 iterations
+Seed: 42
+95% CI: [-0.001888, 0.000448]
+Bootstrap mean = -0.000715
+Step 5 complete
+Step 5: Bootstrap 95% CI for decline rate difference
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running 1000 iterations (seed=42)...
+Iteration 100/1000
+Iteration 200/1000
+Iteration 300/1000
+Iteration 400/1000
+Iteration 500/1000
+Iteration 600/1000
+Iteration 700/1000
+Iteration 800/1000
+Iteration 900/1000
+Iteration 1000/1000
+Complete: 1000 bootstrap statistics
+[CI] Computing 95% percentile CI...
+[CI] Bootstrap mean: -0.000715
+[CI] 95% CI: [-0.001888, 0.000448]
+Comparing to parametric approach...
+Observed mean: -0.000714
+Bootstrap mean consistent with observed (within 10%)
+Bootstrap CI robust to non-normality
+Use bootstrap CI as primary if normality violated (checked in Step 7)
+Saving analysis outputs...
+step05_bootstrap_ci.csv (1 rows, 5 cols)
+step05_bootstrap_distribution.csv (1000 rows, 2 cols)
+Running inline validation...
+boot_statistic range: [-0.002428, 0.001478]
+Bootstrap complete: 1000 iterations
+Seed: 42
+95% CI: [-0.001888, 0.000448]
+Bootstrap mean = -0.000715
+Step 5 complete
+Step 5: Bootstrap 95% CI for decline rate difference
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Running 1000 iterations (seed=42)...
+Iteration 100/1000
+Iteration 200/1000
+Iteration 300/1000
+Iteration 400/1000
+Iteration 500/1000
+Iteration 600/1000
+Iteration 700/1000
+Iteration 800/1000
+Iteration 900/1000
+Iteration 1000/1000
+Complete: 1000 bootstrap statistics
+[CI] Computing 95% percentile CI...
+[CI] Bootstrap mean: -0.000715
+[CI] 95% CI: [-0.001888, 0.000448]
+Comparing to parametric approach...
+Observed mean: -0.000714
+Bootstrap mean consistent with observed (within 10%)
+Bootstrap CI robust to non-normality
+Use bootstrap CI as primary if normality violated (checked in Step 7)
+Saving analysis outputs...
+step05_bootstrap_ci.csv (1 rows, 5 cols)
+step05_bootstrap_distribution.csv (1000 rows, 2 cols)
+Running inline validation...
+boot_statistic range: [-0.002428, 0.001478]
+Bootstrap complete: 1000 iterations
+Seed: 42
+95% CI: [-0.001888, 0.000448]
+Bootstrap mean = -0.000715
+Step 5 complete

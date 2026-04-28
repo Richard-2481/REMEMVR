@@ -151,7 +151,7 @@ def main():
         logger.info(f"ΔAIC (Intercepts - Slopes): {delta_aic:.2f}")
         logger.info(f"ΔBIC: {delta_bic:.2f}")
 
-        # Interpret (from rq_platinum Step 12C)
+        # Interpret (from validation Step 12C)
         logger.info("\n" + "=" * 60)
         logger.info("INTERPRETATION")
         logger.info("=" * 60)

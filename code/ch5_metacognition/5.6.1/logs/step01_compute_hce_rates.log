@@ -1,0 +1,78 @@
+Step 01: Compute HCE Rate Per Participant Per Timepoint
+Loading input data...
+step00_item_level.csv (28800 rows, 6 cols)
+Input columns: ['UID', 'TEST', 'TSVR', 'item_code', 'confidence', 'accuracy']
+Confidence scale: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+Accuracy values: [np.float64(0.0), np.float64(0.25), np.float64(0.5), np.float64(1.0)]
+Computing HCE rates...
+Valid rows after NaN filter: 28800 (dropped 0 rows)
+Computed HCE rates for 400 observations
+Unique participants: 100
+Unique tests: 4 ([np.int64(1), np.int64(2), np.int64(3), np.int64(4)])
+HCE_rate range: [0.0000, 0.2778]
+Mean HCE_rate: 0.0418
+n_HCE range: [0, 20]
+n_total range: [72, 72]
+Saving output data...
+step01_hce_rates.csv (400 rows, 6 cols)
+Running validate_probability_range...
+Probability range validation: All probability values valid (n=1 columns, 400 total values in [0, 1]).
+Running additional logical checks...
+All rows satisfy n_HCE <= n_total
+Row count matches expected: 400
+All 100 participants present
+All participants have 4 test sessions
+No NaN values in HCE_rate
+Step 01 complete - All validations passed
+Step 01: Compute HCE Rate Per Participant Per Timepoint
+Loading input data...
+step00_item_level.csv (28800 rows, 6 cols)
+Input columns: ['UID', 'TEST', 'TSVR', 'item_code', 'confidence', 'accuracy']
+Confidence scale: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+Accuracy values: [np.float64(0.0), np.float64(0.25), np.float64(0.5), np.float64(1.0)]
+Computing HCE rates...
+Valid rows after NaN filter: 28800 (dropped 0 rows)
+Computed HCE rates for 400 observations
+Unique participants: 100
+Unique tests: 4 ([np.int64(1), np.int64(2), np.int64(3), np.int64(4)])
+HCE_rate range: [0.0000, 0.2778]
+Mean HCE_rate: 0.0418
+n_HCE range: [0, 20]
+n_total range: [72, 72]
+Saving output data...
+step01_hce_rates.csv (400 rows, 6 cols)
+Running validate_probability_range...
+Probability range validation: All probability values valid (n=1 columns, 400 total values in [0, 1]).
+Running additional logical checks...
+All rows satisfy n_HCE <= n_total
+Row count matches expected: 400
+All 100 participants present
+All participants have 4 test sessions
+No NaN values in HCE_rate
+Step 01 complete - All validations passed
+Step 01: Compute HCE Rate Per Participant Per Timepoint
+Loading input data...
+step00_item_level.csv (28800 rows, 6 cols)
+Input columns: ['UID', 'TEST', 'TSVR', 'item_code', 'confidence', 'accuracy']
+Confidence scale: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+Accuracy values: [np.float64(0.0), np.float64(0.25), np.float64(0.5), np.float64(1.0)]
+Computing HCE rates...
+Valid rows after NaN filter: 28800 (dropped 0 rows)
+Computed HCE rates for 400 observations
+Unique participants: 100
+Unique tests: 4 ([np.int64(1), np.int64(2), np.int64(3), np.int64(4)])
+HCE_rate range: [0.0000, 0.2778]
+Mean HCE_rate: 0.0418
+n_HCE range: [0, 20]
+n_total range: [72, 72]
+Saving output data...
+step01_hce_rates.csv (400 rows, 6 cols)
+Running validate_probability_range...
+Probability range validation: All probability values valid (n=1 columns, 400 total values in [0, 1]).
+Running additional logical checks...
+All rows satisfy n_HCE <= n_total
+Row count matches expected: 400
+All 100 participants present
+All participants have 4 test sessions
+No NaN values in HCE_rate
+Step 01 complete - All validations passed

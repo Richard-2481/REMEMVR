@@ -40,19 +40,15 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step04_extract_random_effects.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 04: Extract Random Effects")
-
-        # =====================================================================
-        # STEP 1: Load Fitted Models (using MixedLMResults.load())
-        # =====================================================================
-        log("[LOAD] Loading fitted LMM models...")
+        log("Step 04: Extract Random Effects")
+        # Load Fitted Models (using MixedLMResults.load())
+        log("Loading fitted LMM models...")
 
         model_files = {
             'Common': RQ_DIR / "data" / "step02_fitted_model_common.pkl",
@@ -64,17 +60,14 @@ if __name__ == "__main__":
         for congruence, model_path in model_files.items():
             # Use MixedLMResults.load() to avoid pickle issues
             models[congruence] = MixedLMResults.load(str(model_path))
-            log(f"[LOADED] {model_path.name}")
-
-        # =====================================================================
-        # STEP 2: Extract Random Effects for Each Congruence Level
-        # =====================================================================
-        log("\n[ANALYSIS] Extracting random effects from each model...")
+            log(f"{model_path.name}")
+        # Extract Random Effects for Each Congruence Level
+        log("\nExtracting random effects from each model...")
 
         all_random_effects = []
 
         for congruence, model in models.items():
-            log(f"\n[EXTRACT] Extracting random effects for {congruence}...")
+            log(f"\nExtracting random effects for {congruence}...")
 
             # Access random effects from model
             # model.random_effects is a dict: {UID: Series with 'Group' (intercept) and 'TSVR_hours' (slope)}
@@ -94,33 +87,24 @@ if __name__ == "__main__":
 
             all_random_effects.append(df_re)
 
-            log(f"[EXTRACTED] {len(df_re)} participants for {congruence}")
+            log(f"{len(df_re)} participants for {congruence}")
             log(f"  Intercept: mean={df_re['Total_Intercept'].mean():.4f}, std={df_re['Total_Intercept'].std():.4f}")
             log(f"  Slope: mean={df_re['Total_Slope'].mean():.4f}, std={df_re['Total_Slope'].std():.4f}")
-
-        # =====================================================================
-        # STEP 3: Combine Random Effects
-        # =====================================================================
-        log("\n[COMBINE] Combining random effects across congruence levels...")
+        # Combine Random Effects
+        log("\nCombining random effects across congruence levels...")
 
         df_random_effects = pd.concat(all_random_effects, ignore_index=True)
 
-        log(f"[COMBINED] {len(df_random_effects)} total rows ({df_random_effects['UID'].nunique()} unique participants x {df_random_effects['congruence'].nunique()} congruence levels)")
-
-        # =====================================================================
-        # STEP 4: Save Random Effects
-        # =====================================================================
-        log("[SAVE] Saving random effects...")
+        log(f"{len(df_random_effects)} total rows ({df_random_effects['UID'].nunique()} unique participants x {df_random_effects['congruence'].nunique()} congruence levels)")
+        # Save Random Effects
+        log("Saving random effects...")
 
         output_file = RQ_DIR / "data" / "step04_random_effects.csv"
         df_random_effects.to_csv(output_file, index=False, encoding='utf-8')
 
-        log(f"[SAVED] {output_file.name} ({len(df_random_effects)} rows)")
-
-        # =====================================================================
-        # STEP 5: Create Descriptive Statistics Report
-        # =====================================================================
-        log("[REPORT] Creating descriptive statistics report...")
+        log(f"{output_file.name} ({len(df_random_effects)} rows)")
+        # Create Descriptive Statistics Report
+        log("Creating descriptive statistics report...")
 
         report_path = RQ_DIR / "data" / "step04_random_slopes_descriptives.txt"
 
@@ -180,12 +164,9 @@ if __name__ == "__main__":
                 f.write(f"  Median: {df_cong['Total_Slope'].median():8.4f}\n")
                 f.write(f"  Max:    {df_cong['Total_Slope'].max():8.4f}\n")
 
-        log(f"[SAVED] {report_path.name}")
-
-        # =====================================================================
-        # STEP 6: Validate Random Effects Structure
-        # =====================================================================
-        log("\n[VALIDATION] Validating random effects structure...")
+        log(f"{report_path.name}")
+        # Validate Random Effects Structure
+        log("\nValidating random effects structure...")
 
         validation = validate_dataframe_structure(
             df_random_effects,
@@ -194,9 +175,9 @@ if __name__ == "__main__":
         )
 
         if validation['valid']:
-            log("[PASS] Random effects structure validated")
+            log("Random effects structure validated")
         else:
-            log(f"[FAIL] Structure validation failed: {validation['message']}")
+            log(f"Structure validation failed: {validation['message']}")
             raise ValueError(validation['message'])
 
         # Additional validation: Check each UID appears 3 times
@@ -205,26 +186,26 @@ if __name__ == "__main__":
             incorrect_uids = uid_counts[uid_counts != 3]
             raise ValueError(f"Found {len(incorrect_uids)} UIDs that don't appear exactly 3 times")
 
-        log("[PASS] Each UID appears exactly 3 times (once per congruence)")
+        log("Each UID appears exactly 3 times (once per congruence)")
 
         # Check for NaN
         if df_random_effects[['Total_Intercept', 'Total_Slope']].isna().any().any():
             raise ValueError("Found NaN values in random effects")
 
-        log("[PASS] No NaN values in random effects")
+        log("No NaN values in random effects")
 
         # Check all congruence levels present
         if len(df_random_effects['congruence'].unique()) != 3:
             raise ValueError(f"Expected 3 congruence levels, found {len(df_random_effects['congruence'].unique())}")
 
-        log("[PASS] All 3 congruence levels present")
+        log("All 3 congruence levels present")
 
-        log("\n[SUCCESS] Step 04 complete - Random effects extracted and validated")
+        log("\nStep 04 complete - Random effects extracted and validated")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

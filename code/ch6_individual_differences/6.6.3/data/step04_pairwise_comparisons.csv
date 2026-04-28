@@ -1,0 +1,2 @@
+comparison,diff_mean,diff_ci_lower,diff_ci_upper,cohens_d,p_uncorrected,p_bonferroni,p_fdr
+What-Where,0.0,0.0,0.0,0,1.0,1.0,1.0

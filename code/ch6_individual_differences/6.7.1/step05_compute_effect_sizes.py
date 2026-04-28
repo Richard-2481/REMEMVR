@@ -22,7 +22,7 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 05: Compute Effect Sizes")
+        log("Step 05: Compute Effect Sizes")
 
         # Load regression results
         results_path = RQ_DIR / 'data' / 'step03_reverse_models.csv'
@@ -79,13 +79,13 @@ if __name__ == "__main__":
         df_effect_sizes = pd.DataFrame(effect_sizes)
         output_path = RQ_DIR / 'data' / 'step05_effect_sizes.csv'
         df_effect_sizes.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_path}")
+        log(f"{output_path}")
 
-        log("[SUCCESS] Step 05 complete")
+        log("Step 05 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

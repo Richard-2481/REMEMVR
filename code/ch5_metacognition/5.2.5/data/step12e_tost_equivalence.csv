@@ -1,0 +1,2 @@
+observed_beta,observed_se,equiv_lower,equiv_upper,ci_90_lower,ci_90_upper,t1_statistic,t1_p_value,t2_statistic,t2_p_value,tost_p_value,conclusion,ci_inside_bounds
+1.9e-05,4.5e-05,-0.002,0.002,-5.519241749318794e-05,9.319241749318794e-05,44.86666666666666,0.0,-44.022222222222226,1.0204144984982467e-154,1.0204144984982467e-154,EQUIVALENT (p < 0.05),True

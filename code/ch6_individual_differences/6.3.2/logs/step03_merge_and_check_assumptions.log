@@ -1,0 +1,166 @@
+Step 03: merge_and_check_assumptions
+Loading calibration metrics from step01...
+step01_calibration_metrics.csv (100 rows, 2 cols)
+Calibration metrics columns: ['UID', 'calibration_quality']
+Loading cognitive test data from step02...
+step02_cognitive_tests.csv (100 rows, 7 cols)
+Cognitive test columns: ['UID', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'age', 'sex', 'education']
+Merging calibration and cognitive data on UID...
+Calibration UIDs: 100
+Cognitive test UIDs: 100
+Overlapping UIDs: 100
+Analysis dataset created (100 rows, 8 cols)
+Final columns: ['UID', 'calibration_quality', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'age', 'sex', 'education']
+No missing data in merged dataset
+Saving analysis dataset to /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step03_analysis_dataset.csv...
+step03_analysis_dataset.csv (100 rows, 8 cols)
+Running preliminary assumption checks...
+Checking normality of calibration_quality...
+Shapiro_Wilk_calibration_quality: NORMAL (p=0.0793)
+Checking normality of RAVLT_T...
+Shapiro_Wilk_RAVLT_T: NORMAL (p=0.0538)
+Checking normality of BVMT_T...
+Shapiro_Wilk_BVMT_T: NON_NORMAL (p=0.0001)
+Checking normality of RPM_T...
+Shapiro_Wilk_RPM_T: NON_NORMAL (p=0.0000)
+Checking normality of age...
+Shapiro_Wilk_age: NON_NORMAL (p=0.0019)
+Checking linearity: RAVLT_T vs calibration_quality...
+Linearity_RAVLT_T_vs_calibration_quality: NON_SIGNIFICANT (r=-0.0765, p=0.4494)
+Checking linearity: BVMT_T vs calibration_quality...
+Linearity_BVMT_T_vs_calibration_quality: NON_SIGNIFICANT (r=0.0203, p=0.8413)
+Checking linearity: RPM_T vs calibration_quality...
+Linearity_RPM_T_vs_calibration_quality: NON_SIGNIFICANT (r=-0.0822, p=0.4164)
+Saving assumption check results to /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step03_assumption_checks.csv...
+step03_assumption_checks.csv (8 rows, 4 cols)
+Running validate_data_columns...
+Column validation result:
+  valid: True
+  missing_columns: []
+  existing_columns: ['education', 'RAVLT_T', 'RPM_T', 'age', 'sex', 'BVMT_T', 'calibration_quality', 'UID']
+  n_required: 8
+  n_missing: 0
+PASS - All required columns present
+Additional data quality checks:
+All UIDs are unique
+RAVLT_T range reasonable: 20.8 to 70.7 (M=50.0, SD=10.0)
+BVMT_T range reasonable: 17.9 to 65.4 (M=50.0, SD=10.0)
+RPM_T range reasonable: 19.5 to 61.1 (M=50.0, SD=10.0)
+Step 03 complete
+Created analysis dataset with 100 participants
+Ran 8 assumption tests
+Ready for hierarchical regression analysis in step04
+Step 03: merge_and_check_assumptions
+Loading calibration metrics from step01...
+step01_calibration_metrics.csv (100 rows, 2 cols)
+Calibration metrics columns: ['UID', 'calibration_quality']
+Loading cognitive test data from step02...
+step02_cognitive_tests.csv (100 rows, 7 cols)
+Cognitive test columns: ['UID', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'age', 'sex', 'education']
+Merging calibration and cognitive data on UID...
+Calibration UIDs: 100
+Cognitive test UIDs: 100
+Overlapping UIDs: 100
+Analysis dataset created (100 rows, 8 cols)
+Final columns: ['UID', 'calibration_quality', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'age', 'sex', 'education']
+No missing data in merged dataset
+Saving analysis dataset to /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step03_analysis_dataset.csv...
+step03_analysis_dataset.csv (100 rows, 8 cols)
+Running preliminary assumption checks...
+Checking normality of calibration_quality...
+Shapiro_Wilk_calibration_quality: NORMAL (p=0.2592)
+Checking normality of RAVLT_T...
+Shapiro_Wilk_RAVLT_T: NORMAL (p=0.0538)
+Checking normality of BVMT_T...
+Shapiro_Wilk_BVMT_T: NON_NORMAL (p=0.0001)
+Checking normality of RPM_T...
+Shapiro_Wilk_RPM_T: NON_NORMAL (p=0.0000)
+Checking normality of age...
+Shapiro_Wilk_age: NON_NORMAL (p=0.0019)
+Checking linearity: RAVLT_T vs calibration_quality...
+Linearity_RAVLT_T_vs_calibration_quality: NON_SIGNIFICANT (r=0.0655, p=0.5173)
+Checking linearity: BVMT_T vs calibration_quality...
+Linearity_BVMT_T_vs_calibration_quality: NON_SIGNIFICANT (r=-0.0702, p=0.4877)
+Checking linearity: RPM_T vs calibration_quality...
+Linearity_RPM_T_vs_calibration_quality: SIGNIFICANT (r=-0.1992, p=0.0470)
+Saving assumption check results to /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step03_assumption_checks.csv...
+step03_assumption_checks.csv (8 rows, 4 cols)
+Running validate_data_columns...
+Column validation result:
+  valid: True
+  missing_columns: []
+  existing_columns: ['education', 'BVMT_T', 'calibration_quality', 'RAVLT_T', 'UID', 'sex', 'age', 'RPM_T']
+  n_required: 8
+  n_missing: 0
+PASS - All required columns present
+Additional data quality checks:
+All UIDs are unique
+RAVLT_T range reasonable: 20.8 to 70.7 (M=50.0, SD=10.0)
+BVMT_T range reasonable: 17.9 to 65.4 (M=50.0, SD=10.0)
+RPM_T range reasonable: 19.5 to 61.1 (M=50.0, SD=10.0)
+Step 03 complete
+Created analysis dataset with 100 participants
+Ran 8 assumption tests
+Ready for hierarchical regression analysis in step04
+Step 03: merge_and_check_assumptions
+Loading calibration metrics from step01...
+step01_calibration_metrics.csv (100 rows, 2 cols)
+Calibration metrics columns: ['UID', 'calibration_quality']
+Loading cognitive test data from step02...
+step02_cognitive_tests.csv (100 rows, 9 cols)
+Cognitive test columns: ['UID', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'age', 'sex', 'education']
+Merging calibration and cognitive data on UID...
+Calibration UIDs: 100
+Cognitive test UIDs: 100
+Overlapping UIDs: 100
+Analysis dataset created (100 rows, 10 cols)
+Final columns: ['UID', 'calibration_quality', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'age', 'sex', 'education']
+No missing data in merged dataset
+Saving analysis dataset to /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step03_analysis_dataset.csv...
+step03_analysis_dataset.csv (100 rows, 10 cols)
+Running preliminary assumption checks...
+Checking normality of calibration_quality...
+Shapiro_Wilk_calibration_quality: NORMAL (p=0.2592)
+Checking normality of RAVLT_T...
+Shapiro_Wilk_RAVLT_T: NORMAL (p=0.5121)
+Checking normality of BVMT_T...
+Shapiro_Wilk_BVMT_T: NON_NORMAL (p=0.0001)
+Checking normality of RPM_T...
+Shapiro_Wilk_RPM_T: NON_NORMAL (p=0.0000)
+Checking normality of RAVLT_Pct_Ret_T...
+Shapiro_Wilk_RAVLT_Pct_Ret_T: NORMAL (p=0.3927)
+Checking normality of BVMT_Pct_Ret_T...
+Shapiro_Wilk_BVMT_Pct_Ret_T: NON_NORMAL (p=0.0000)
+Checking normality of age...
+Shapiro_Wilk_age: NON_NORMAL (p=0.0019)
+Checking linearity: RAVLT_T vs calibration_quality...
+Linearity_RAVLT_T_vs_calibration_quality: NON_SIGNIFICANT (r=-0.0892, p=0.3773)
+Checking linearity: BVMT_T vs calibration_quality...
+Linearity_BVMT_T_vs_calibration_quality: NON_SIGNIFICANT (r=-0.0702, p=0.4877)
+Checking linearity: RPM_T vs calibration_quality...
+Linearity_RPM_T_vs_calibration_quality: SIGNIFICANT (r=-0.1992, p=0.0470)
+Checking linearity: RAVLT_Pct_Ret_T vs calibration_quality...
+Linearity_RAVLT_Pct_Ret_T_vs_calibration_quality: NON_SIGNIFICANT (r=-0.0329, p=0.7450)
+Checking linearity: BVMT_Pct_Ret_T vs calibration_quality...
+Linearity_BVMT_Pct_Ret_T_vs_calibration_quality: NON_SIGNIFICANT (r=-0.1650, p=0.1009)
+Saving assumption check results to /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step03_assumption_checks.csv...
+step03_assumption_checks.csv (12 rows, 4 cols)
+Running validate_data_columns...
+Column validation result:
+  valid: True
+  missing_columns: []
+  existing_columns: ['RAVLT_T', 'UID', 'RPM_T', 'education', 'sex', 'calibration_quality', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RAVLT_Pct_Ret_T', 'age']
+  n_required: 10
+  n_missing: 0
+PASS - All required columns present
+Additional data quality checks:
+All UIDs are unique
+RAVLT_T range reasonable: 22.1 to 72.8 (M=50.0, SD=10.0)
+BVMT_T range reasonable: 17.9 to 65.4 (M=50.0, SD=10.0)
+RPM_T range reasonable: 19.5 to 61.1 (M=50.0, SD=10.0)
+RAVLT_Pct_Ret_T range reasonable: 23.7 to 77.7 (M=50.0, SD=10.0)
+BVMT_Pct_Ret_T range unusual: 4.5 to 69.4
+Step 03 complete
+Created analysis dataset with 100 participants
+Ran 12 assumption tests
+Ready for hierarchical regression analysis in step04

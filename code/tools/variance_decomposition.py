@@ -41,9 +41,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from tools.model_selection import compare_lmm_models_kitchen_sink
 
 
-# =============================================================================
 # MAIN FUNCTION: MODEL-AVERAGED VARIANCE DECOMPOSITION
-# =============================================================================
 
 def compute_model_averaged_variance_decomposition(
     data: pd.DataFrame,
@@ -223,10 +221,7 @@ def compute_model_averaged_variance_decomposition(
     log("=" * 80)
     log("Model-Averaged Variance Decomposition")
     log("=" * 80)
-
-    # =========================================================================
-    # STEP 1: Validate Inputs
-    # =========================================================================
+    # Validate Inputs
 
     log("\n[STEP 1] Validating inputs...")
 
@@ -260,10 +255,7 @@ def compute_model_averaged_variance_decomposition(
     log(f"  Stratify levels: {stratify_levels}")
     log(f"  N observations: {len(data)}")
     log(f"  Random effects: intercept={re_intercept}, slope={re_slope}")
-
-    # =========================================================================
-    # STEP 2: Run Kitchen Sink Model Comparison (Full Dataset)
-    # =========================================================================
+    # Run Kitchen Sink Model Comparison (Full Dataset)
 
     log("\n[STEP 2] Running kitchen sink model comparison (unstratified)...")
     log("  This identifies competitive functional forms across ALL data")
@@ -301,10 +293,7 @@ def compute_model_averaged_variance_decomposition(
 
     log(f"  ✓ Kitchen sink complete: {len(comparison_df)} models converged")
     log(f"  Best model: {best_model['name']} (weight={best_model['weight']:.1%})")
-
-    # =========================================================================
-    # STEP 3: Select Competitive Models for Averaging
-    # =========================================================================
+    # Select Competitive Models for Averaging
 
     log(f"\n[STEP 3] Selecting competitive models (ΔAIC < {delta_aic_threshold})...")
 
@@ -338,10 +327,7 @@ def compute_model_averaged_variance_decomposition(
 
     competitive_models = competitive['model_name'].tolist()
     log(f"  Models to average: {competitive_models}")
-
-    # =========================================================================
-    # STEP 4: Fit Stratified LMMs for Each Level × Model
-    # =========================================================================
+    # Fit Stratified LMMs for Each Level × Model
 
     log(f"\n[STEP 4] Fitting stratified LMMs...")
     log(f"  Total LMMs to fit: {len(competitive_models)} models × {len(stratify_levels)} levels = {len(competitive_models) * len(stratify_levels)}")
@@ -420,10 +406,7 @@ def compute_model_averaged_variance_decomposition(
         # Convert lists to DataFrames
         variance_df = pd.DataFrame(variance_components_list)
         iccs_df = pd.DataFrame(iccs_list)
-
-        # =====================================================================
-        # STEP 5: Model-Average Variance Components for This Level
-        # =====================================================================
+        # Model-Average Variance Components for This Level
 
         log(f"    Computing model-averaged variance components...")
 
@@ -468,10 +451,7 @@ def compute_model_averaged_variance_decomposition(
 
         log(f"      ICC_int (avg) = {iccs_averaged['ICC_intercept']:.3f}")
         log(f"      ICC_slope_simple (avg) = {iccs_averaged['ICC_slope_simple']:.6f}")
-
-        # =====================================================================
-        # STEP 6: Model-Average Random Effects for This Level
-        # =====================================================================
+        # Model-Average Random Effects for This Level
 
         log(f"    Computing model-averaged random effects...")
 
@@ -501,10 +481,7 @@ def compute_model_averaged_variance_decomposition(
 
         log(f"      Random effects averaged across {n_converged} models")
         log(f"      N participants: {len(re_averaged)}")
-
-        # =====================================================================
         # Store Results for This Level
-        # =====================================================================
 
         stratified_results[level] = {
             'variance_components_by_model': variance_df,
@@ -519,10 +496,7 @@ def compute_model_averaged_variance_decomposition(
 
         if return_fitted_models:
             stratified_results[level]['fitted_models'] = fitted_models_dict
-
-    # =========================================================================
-    # STEP 7: Aggregate Results Across Levels
-    # =========================================================================
+    # Aggregate Results Across Levels
 
     log(f"\n[STEP 7] Aggregating results across levels...")
 
@@ -574,10 +548,7 @@ def compute_model_averaged_variance_decomposition(
     log(f"  ✓ Averaged ICCs: {len(averaged_ICCs)} levels")
     log(f"  ✓ Averaged random effects: {len(averaged_random_effects)} rows "
         f"({data[groups_var].nunique()} UID × {len(stratify_levels)} levels)")
-
-    # =========================================================================
-    # STEP 8: Compute Summary Statistics
-    # =========================================================================
+    # Compute Summary Statistics
 
     log(f"\n[STEP 8] Computing summary statistics...")
 
@@ -606,10 +577,7 @@ def compute_model_averaged_variance_decomposition(
 
     log(f"  Effective N models: {effective_n_models:.2f}")
     log(f"  Convergence rate: {summary_stats['convergence_rate']:.1%}")
-
-    # =========================================================================
-    # STEP 9: Save Outputs (if requested)
-    # =========================================================================
+    # Save Outputs (if requested)
 
     if save_dir is not None:
         log(f"\n[STEP 9] Saving outputs to {save_dir}...")
@@ -672,10 +640,7 @@ def compute_model_averaged_variance_decomposition(
     log("\n" + "=" * 80)
     log("Model-averaged variance decomposition COMPLETE")
     log("=" * 80)
-
-    # =========================================================================
     # Return Results
-    # =========================================================================
 
     results = {
         'model_comparison': comparison_df,
@@ -690,9 +655,7 @@ def compute_model_averaged_variance_decomposition(
     return results
 
 
-# =============================================================================
 # HELPER FUNCTIONS
-# =============================================================================
 
 def _fit_single_model_and_extract(
     data: pd.DataFrame,

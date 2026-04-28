@@ -1,0 +1,4 @@
+test_type,statistic,p_value,conclusion
+Multivariate Normality,,,Not tested (requires specialized multivariate test)
+Box M Test (Homogeneity),,,Not tested (requires grouping variable)
+MANOVA Convergence,1.0,,Model converged successfully

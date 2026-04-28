@@ -1,0 +1,80 @@
+Step 02: create_person_centered_variables
+Loading sleep data from step01...
+sleep_data.csv (400 rows, 4 cols)
+Computing person means...
+Person means for 100 participants
+Sleep_Hours_PM range: 5.0 - 10.2
+Sleep_Quality_PM range: -0.6 - 0.5
+Creating within-person centered variables...
+Within-person variables for 400 observations
+[WP] Sleep_Hours_WP range: -4.50 - 4.00
+[WP] Sleep_Quality_WP range: -1.12 - 1.00
+Average within-person mean for Sleep_Hours_WP: 0.000000 (should be ~0)
+Average within-person mean for Sleep_Quality_WP: 0.000000 (should be ~0)
+Person-centered variables created
+Saving centered sleep data...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step02_sleep_centered.csv (400 rows, 8 cols)
+Running centering validation...
+Sleep_Hours_WP centering: PASS
+Sleep_Hours_WP overall mean: 0.000000 (tolerance: ±0.01)
+Sleep_Hours_WP max deviation: 0.000000 (tolerance: ≤0.01)
+Sleep_Quality_WP centering: PASS
+Sleep_Quality_WP overall mean: 0.000000 (tolerance: ±0.01)
+Sleep_Quality_WP max deviation: 0.000000 (tolerance: ≤0.01)
+Standardization validation failed: validate_standardization() got an unexpected keyword argument 'group_var'
+Continuing with manual centering validation
+Person centering: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Can we separate between-person and within-person sleep effects?
+2. What did we find?
+   -> Person means computed, within-person centering valid: True
+   -> Sleep_Hours_WP range: -4.50 to 4.00
+3. What does it mean?
+   -> We can now model how deviations from personal sleep patterns affect memory
+4. What should we do next?
+   -> Proceed to step03: extract VR memory performance scores
+=========================
+
+Step 02 complete
+Step 02: create_person_centered_variables
+Loading sleep data from step01...
+sleep_data.csv (400 rows, 4 cols)
+Computing person means...
+Person means for 100 participants
+Sleep_Hours_PM range: 5.0 - 10.2
+Sleep_Quality_PM range: -0.6 - 0.5
+Creating within-person centered variables...
+Within-person variables for 400 observations
+[WP] Sleep_Hours_WP range: -4.50 - 4.00
+[WP] Sleep_Quality_WP range: -1.12 - 1.00
+Average within-person mean for Sleep_Hours_WP: 0.000000 (should be ~0)
+Average within-person mean for Sleep_Quality_WP: 0.000000 (should be ~0)
+Person-centered variables created
+Saving centered sleep data...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step02_sleep_centered.csv (400 rows, 8 cols)
+Running centering validation...
+Sleep_Hours_WP centering: PASS
+Sleep_Hours_WP overall mean: 0.000000 (tolerance: ±0.01)
+Sleep_Hours_WP max deviation: 0.000000 (tolerance: ≤0.01)
+Sleep_Quality_WP centering: PASS
+Sleep_Quality_WP overall mean: 0.000000 (tolerance: ±0.01)
+Sleep_Quality_WP max deviation: 0.000000 (tolerance: ≤0.01)
+Standardization validation failed: validate_standardization() got an unexpected keyword argument 'group_var'
+Continuing with manual centering validation
+Person centering: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Can we separate between-person and within-person sleep effects?
+2. What did we find?
+   -> Person means computed, within-person centering valid: True
+   -> Sleep_Hours_WP range: -4.50 to 4.00
+3. What does it mean?
+   -> We can now model how deviations from personal sleep patterns affect memory
+4. What should we do next?
+   -> Proceed to step03: extract VR memory performance scores
+=========================
+
+Step 02 complete

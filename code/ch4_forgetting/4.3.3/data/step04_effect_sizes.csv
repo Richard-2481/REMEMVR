@@ -1,0 +1,7 @@
+contrast_name,effect_size,effect_type,interpretation
+IFR_consolidation_benefit,1.9816097443006533,cohens_d_approx,large
+ICR_consolidation_benefit,2.2171510830585905,cohens_d_approx,large
+IRE_consolidation_benefit,1.4954103895097877,cohens_d_approx,large
+IFR_vs_ICR_benefit_difference,0.17274113724608783,cohens_d_approx,negligible
+IFR_vs_IRE_benefit_difference,0.35656853237640795,cohens_d_approx,small
+ICR_vs_IRE_benefit_difference,0.5293096696225132,cohens_d_approx,medium

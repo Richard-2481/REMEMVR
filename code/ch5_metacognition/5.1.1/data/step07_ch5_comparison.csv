@@ -1,0 +1,6 @@
+model_name,confidence_weight,best_in_confidence,accuracy_weight,weight_difference,best_in_accuracy
+Linear+Logarithmic,0.6417819004450616,True,,,
+Quadratic+Logarithmic,0.2916905623423776,False,,,
+Logarithmic,0.0657678533452624,False,,,
+Quadratic,0.0007596838672981,False,,,
+Linear,1.203100800360888e-16,False,,,

@@ -1,0 +1,28 @@
+Step 03: merge_analysis_dataset
+Loading input data...
+step01_self_report_data.csv (100 rows, 5 cols)
+step02_theta_scores.csv (100 rows, 3 cols)
+Merging datasets...
+Inner join complete: 100 complete cases from 100 + 100
+Standardizing predictors...
+Education -> Education_z (mean=0, std=1)
+VR_Experience -> VR_Experience_z (mean=0, std=1)
+Typical_Sleep -> Typical_Sleep_z (mean=0, std=1)
+Age -> Age_z (mean=0, std=1)
+Creating correlation matrix...
+Maximum absolute correlation: 0.337
+Analysis complete
+Saving analysis outputs...
+step03_analysis_dataset.csv (100 rows, 6 cols)
+step03_correlation_matrix.csv (4 rows, 4 cols)
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['Education_z', 'Typical_Sleep_z', 'UID', 'theta_all', 'Age_z', 'VR_Experience_z']
+n_required: 6
+n_missing: 0
+PASS - All required columns present
+Additional data quality checks...
+Sample size check: 100 >= 95 complete cases
+Multicollinearity check: max r=0.337 < 0.90
+Step 03 complete

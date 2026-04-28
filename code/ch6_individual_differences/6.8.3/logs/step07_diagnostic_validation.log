@@ -1,0 +1,119 @@
+Step 07: Diagnostic Validation
+Loading data and refitting optimal model...
+Optimal model: Extended (5 predictors)
+R²=0.2473, N=100
+
+Shapiro-Wilk test for normality of residuals...
+Residuals approximately normal (W=0.9917, p=0.8008)
+Breusch-Pagan test for homoscedasticity...
+Homoscedasticity assumption met (LM=4.9640, p=0.4203)
+Computing variance inflation factors...
+Age: 1.4492 (LOW)
+RAVLT_T: 1.1864 (LOW)
+BVMT_T: 1.7508 (LOW)
+RPM_T: 1.3590 (LOW)
+Education: 1.0362 (LOW)
+No severe multicollinearity (max VIF=1.7508)
+
+Identifying influential cases...
+Cook's D > 0.0400: 6 cases
+Leverage > 0.2000: 0 cases
+|Studentized| > 3.0: 1 cases
+6 influential cases:
+  A015: Cook's D=0.0415
+  A061: Cook's D=0.1021
+  A065: Cook's D=0.0778
+  A088: Cook's D=0.0522
+  A100: Cook's D=0.0814
+  A101: Cook's D=0.0807
+
+Saving diagnostic results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_assumption_tests.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_vif_results.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_outlier_analysis.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_diagnostic_data.csv
+
+Running validation tool...
+name 'validate_regression_assumptions' is not defined
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step07_diagnostic_validation.py", line 268, in <module>
+    validation_result = validate_regression_assumptions(model, X, return_plots=False)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'validate_regression_assumptions' is not defined
+Step 07: Diagnostic Validation
+Loading data and refitting optimal model...
+Optimal model: Extended (5 predictors)
+R²=0.2473, N=100
+
+Shapiro-Wilk test for normality of residuals...
+Residuals approximately normal (W=0.9917, p=0.8008)
+Breusch-Pagan test for homoscedasticity...
+Homoscedasticity assumption met (LM=4.9640, p=0.4203)
+Computing variance inflation factors...
+Age: 1.4492 (LOW)
+RAVLT_T: 1.1864 (LOW)
+BVMT_T: 1.7508 (LOW)
+RPM_T: 1.3590 (LOW)
+Education: 1.0362 (LOW)
+No severe multicollinearity (max VIF=1.7508)
+
+Identifying influential cases...
+Cook's D > 0.0400: 6 cases
+Leverage > 0.2000: 0 cases
+|Studentized| > 3.0: 1 cases
+6 influential cases:
+  A015: Cook's D=0.0415
+  A061: Cook's D=0.1021
+  A065: Cook's D=0.0778
+  A088: Cook's D=0.0522
+  A100: Cook's D=0.0814
+  A101: Cook's D=0.0807
+
+Saving diagnostic results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_assumption_tests.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_vif_results.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_outlier_analysis.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_diagnostic_data.csv
+
+Running validation tool...
+Manual diagnostics complete - comprehensive validation tool not available
+Step 07 complete
+Step 07: Diagnostic Validation
+Loading data and refitting optimal model...
+Optimal model: Extended (5 predictors)
+R²=0.2481, N=100
+
+Shapiro-Wilk test for normality of residuals...
+Residuals approximately normal (W=0.9927, p=0.8679)
+Breusch-Pagan test for homoscedasticity...
+Homoscedasticity assumption met (LM=4.5964, p=0.4671)
+Computing variance inflation factors...
+Age: 1.4278 (LOW)
+RAVLT_T: 1.1986 (LOW)
+BVMT_T: 1.8470 (LOW)
+RPM_T: 1.3519 (LOW)
+Education: 1.0325 (LOW)
+No severe multicollinearity (max VIF=1.8470)
+
+Identifying influential cases...
+Cook's D > 0.0400: 6 cases
+Leverage > 0.2000: 0 cases
+|Studentized| > 3.0: 1 cases
+6 influential cases:
+  A015: Cook's D=0.0401
+  A061: Cook's D=0.0949
+  A065: Cook's D=0.0810
+  A088: Cook's D=0.0533
+  A100: Cook's D=0.0805
+  A101: Cook's D=0.0882
+
+Saving diagnostic results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_assumption_tests.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_vif_results.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_outlier_analysis.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step07_diagnostic_data.csv
+
+Running validation tool...
+Manual diagnostics complete - comprehensive validation tool not available
+Step 07 complete

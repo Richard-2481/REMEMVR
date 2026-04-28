@@ -1,0 +1,76 @@
+Step 07: Cross-Validation Analysis
+Purpose: Assess model generalizability using 5-fold CV
+Loading analysis dataset...
+Dataset: 100 rows, 8 columns
+Sample size: N=100
+Predictors: ['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+Outcome: confidence_theta (M=-0.633, SD=0.324)
+[CV] Initializing 5-fold cross-validation (seed=42)
+[CV] Starting cross-validation...
+[FOLD 1] Processing fold 1/5...
+[FOLD 1] Train R²=0.1987, Test R²=0.0805
+[FOLD 1] RMSE=0.3206, MAE=0.2585
+[FOLD 2] Processing fold 2/5...
+[FOLD 2] Train R²=0.1987, Test R²=0.0836
+[FOLD 2] RMSE=0.3373, MAE=0.1998
+[FOLD 3] Processing fold 3/5...
+[FOLD 3] Train R²=0.2608, Test R²=-0.3755
+[FOLD 3] RMSE=0.3565, MAE=0.2839
+[FOLD 4] Processing fold 4/5...
+[FOLD 4] Train R²=0.1519, Test R²=0.2202
+[FOLD 4] RMSE=0.2514, MAE=0.2197
+[FOLD 5] Processing fold 5/5...
+[FOLD 5] Train R²=0.2063, Test R²=-0.1149
+[FOLD 5] RMSE=0.3260, MAE=0.2298
+Cross-validation results:
+Train R²: 0.2033 ± 0.0387
+Test R²: -0.0212 ± 0.2312
+Mean RMSE: 0.3184
+Mean MAE: 0.2384
+Train-Test R² gap: 0.2245
+Potential overfitting detected (gap > 0.10)
+Checking for outlier folds...
+Cross-validation results: /home/etai/projects/REMEMVR/results/ch7/7.3.1/data/step07_cross_validation.csv
+Checking cross-validation quality...
+Some criteria not met:
+  - Test R² outside valid range
+  - Train-test gap exceeds 15% tolerance
+Step 07 complete
+Step 07: Cross-Validation Analysis
+Purpose: Assess model generalizability using 5-fold CV
+Loading analysis dataset...
+Dataset: 100 rows, 10 columns
+Sample size: N=100
+Predictors: ['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+Outcome: confidence_theta (M=-0.633, SD=0.324)
+[CV] Initializing 5-fold cross-validation (seed=42)
+[CV] Starting cross-validation...
+[FOLD 1] Processing fold 1/5...
+[FOLD 1] Train R²=0.2575, Test R²=-0.0232
+[FOLD 1] RMSE=0.3382, MAE=0.2765
+[FOLD 2] Processing fold 2/5...
+[FOLD 2] Train R²=0.2626, Test R²=-0.0268
+[FOLD 2] RMSE=0.3571, MAE=0.2300
+[FOLD 3] Processing fold 3/5...
+[FOLD 3] Train R²=0.2729, Test R²=-0.2571
+[FOLD 3] RMSE=0.3409, MAE=0.2771
+[FOLD 4] Processing fold 4/5...
+[FOLD 4] Train R²=0.1638, Test R²=0.3684
+[FOLD 4] RMSE=0.2262, MAE=0.1984
+[FOLD 5] Processing fold 5/5...
+[FOLD 5] Train R²=0.2566, Test R²=-0.2691
+[FOLD 5] RMSE=0.3478, MAE=0.2527
+Cross-validation results:
+Train R²: 0.2427 ± 0.0446
+Test R²: -0.0416 ± 0.2583
+Mean RMSE: 0.3220
+Mean MAE: 0.2469
+Train-Test R² gap: 0.2842
+Potential overfitting detected (gap > 0.10)
+Checking for outlier folds...
+Cross-validation results: /home/etai/projects/REMEMVR/results/ch7/7.3.1/data/step07_cross_validation.csv
+Checking cross-validation quality...
+Some criteria not met:
+  - Test R² outside valid range
+  - Train-test gap exceeds 15% tolerance
+Step 07 complete

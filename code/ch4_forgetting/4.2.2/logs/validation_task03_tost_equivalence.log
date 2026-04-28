@@ -1,0 +1,65 @@
+======================================================================
+validation TASK 3: TOST Equivalence Testing
+======================================================================
+
+Loading planned contrasts from step03...
+3 contrasts
+
+Loading piecewise LMM input for SD calculation...
+Pooled SD of theta: 0.9151
+
+Equivalence bound:
+            Cohen's d < 0.2
+            Beta < 0.1830 (theta units)
+            Rationale: d < 0.20 considered 'negligible' per Cohen (1988)
+
+======================================================================
+TOST EQUIVALENCE TESTS
+======================================================================
+
+[TEST 1] where-what_early
+  Description: Spatial consolidation advantage (Early)
+  Beta: 0.0233 ± 0.0839
+  Cohen's d: 0.0254 ± 0.0917
+  Test 1 (d < +0.2): t = -1.9043, p = 0.0300
+  Test 2 (d > -0.2): t = 2.4586, p = 0.0079
+  TOST p-value: 0.0300
+  ✓ EQUIVALENCE ESTABLISHED (p = 0.0300 < 0.05)
+    Effect IS negligible (d < 0.2)
+
+[TEST 2] where-what_late
+  Description: Spatial decay comparison (Late)
+  Beta: -0.0138 ± 0.0357
+  Cohen's d: -0.0151 ± 0.0391
+  Test 1 (d < +0.2): t = -5.5068, p = 0.0000
+  Test 2 (d > -0.2): t = 4.7339, p = 0.0000
+  TOST p-value: 0.0000
+  ✓ EQUIVALENCE ESTABLISHED (p = 0.0000 < 0.05)
+    Effect IS negligible (d < 0.2)
+
+[TEST 3] where_slope_change-what_slope_change
+  Description: Spatial consolidation benefit
+  Beta: -0.0371 ± 0.0912
+  Cohen's d: -0.0405 ± 0.0997
+  Test 1 (d < +0.2): t = -2.4133, p = 0.0089
+  Test 2 (d > -0.2): t = 1.6004, p = 0.0565
+  TOST p-value: 0.0565
+  ? INCONCLUSIVE (p = 0.0565 >= 0.05)
+    Cannot rule out small but meaningful effect
+
+/home/etai/projects/REMEMVR/results/ch5/5.2.2/results/platinum_task03_tost_equivalence.csv
+
+======================================================================
+SUMMARY
+======================================================================
+
+Total contrasts tested: 3
+  - Equivalence established: 2
+  - Inconclusive: 1
+
+MIXED results
+             Interpret null findings cautiously
+
+======================================================================
+TASK 3 COMPLETE
+======================================================================

@@ -1,7 +1,6 @@
 """
 PCA Sphericity Check for RQ 5.3.8 Clustering
 Purpose: Quantify variance explained by principal components to validate K-means sphericity assumption
-Author: PLATINUM certification (2025-12-31)
 """
 
 import pandas as pd

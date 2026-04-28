@@ -1,0 +1,49 @@
+2025-12-05 14:36:02,865 - INFO - ============================================================
+2025-12-05 14:36:02,865 - INFO - RQ 5.5.7 Step 05: Characterize Clusters
+2025-12-05 14:36:02,865 - INFO - ============================================================
+2025-12-05 14:36:02,867 - INFO - Loaded 100 rows (original scale)
+2025-12-05 14:36:02,867 - INFO - Loaded 100 cluster assignments
+2025-12-05 14:36:02,871 - INFO - Merged data: 100 rows
+2025-12-05 14:36:02,872 - INFO - Grand means (all near 0 for random effects):
+2025-12-05 14:36:02,872 - INFO -   Source_intercept: 0.0000
+2025-12-05 14:36:02,872 - INFO -   Source_slope: 0.0000
+2025-12-05 14:36:02,872 - INFO -   Destination_intercept: 0.0000
+2025-12-05 14:36:02,872 - INFO -   Destination_slope: -0.0000
+2025-12-05 14:36:02,873 - INFO - 
+Computing cluster statistics...
+2025-12-05 14:36:02,875 - INFO - 
+Assigning interpretive labels...
+2025-12-05 14:36:02,875 - INFO -   Cluster 0: Dual High: Source declines, Destination maintains
+2025-12-05 14:36:02,875 - INFO -   Cluster 1: Dual Low: Source maintains, Destination declines
+2025-12-05 14:36:02,875 - INFO -   Cluster 2: Source > Destination: Both decline
+2025-12-05 14:36:02,875 - INFO -   Cluster 3: Destination > Source: Both maintain
+2025-12-05 14:36:02,876 - INFO - 
+Validating cluster characterization...
+2025-12-05 14:36:02,876 - INFO - All SDs >= 0: PASS
+2025-12-05 14:36:02,877 - INFO - All N > 0: PASS
+2025-12-05 14:36:02,877 - INFO - Sum of N = 100: PASS
+2025-12-05 14:36:02,877 - INFO - All clusters labeled: PASS
+2025-12-05 14:36:02,877 - INFO - 
+Creating human-readable descriptions...
+2025-12-05 14:36:02,878 - INFO - 
+Saved characterization to /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step05_cluster_characterization.csv
+2025-12-05 14:36:02,878 - INFO - Saved descriptions to /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step05_cluster_descriptions.txt
+2025-12-05 14:36:02,878 - INFO - 
+Cluster Characterization Summary:
+2025-12-05 14:36:02,879 - INFO - --------------------------------------------------------------------------------
+2025-12-05 14:36:02,879 - INFO - Cluster  N     S_int      S_slope    D_int      D_slope    Label
+2025-12-05 14:36:02,879 - INFO - --------------------------------------------------------------------------------
+2025-12-05 14:36:02,879 - INFO - 0        20    0.2982     0.0305     0.5309     -0.0631    Dual High: Source declines, De
+2025-12-05 14:36:02,879 - INFO - 1        26    -0.3684    -0.0375    -0.4598    0.0546     Dual Low: Source maintains, De
+2025-12-05 14:36:02,879 - INFO - 2        35    0.1574     0.0177     -0.0808    0.0203     Source > Destination: Both dec
+2025-12-05 14:36:02,879 - INFO - 3        19    -0.0997    -0.0134    0.2192     -0.0457    Destination > Source: Both mai
+2025-12-05 14:36:02,879 - INFO - --------------------------------------------------------------------------------
+2025-12-05 14:36:02,879 - INFO - 
+============================================================
+2025-12-05 14:36:02,879 - INFO - Step 05 COMPLETE
+2025-12-05 14:36:02,880 - INFO -   Characterized 4 clusters
+2025-12-05 14:36:02,880 - INFO -   Cluster sizes: [20, 26, 35, 19]
+2025-12-05 14:36:02,880 - INFO -   All clusters labeled
+2025-12-05 14:36:02,880 - INFO -   Output: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step05_cluster_characterization.csv
+2025-12-05 14:36:02,880 - INFO -   Output: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step05_cluster_descriptions.txt
+2025-12-05 14:36:02,880 - INFO - ============================================================

@@ -1,0 +1,113 @@
+Step 04: Assess Reliability
+Loading input data...
+step00_raw_scores.csv (400 rows, 215 cols)
+step01_item_mapping.csv (105 items)
+Found 105 TQ_* item columns in raw data
+Computing Cronbach's alpha for full vs purified item sets...
+Processing domain: what
+  [FULL SET] 29 items for domain what
+  [FULL SET] Running bootstrap (n=1000)...
+  [FULL SET] alpha = 0.712 [0.661, 0.753]
+  [PURIFIED SET] 19 items for domain what
+  [PURIFIED SET] Running bootstrap (n=1000)...
+  [PURIFIED SET] alpha = 0.702 [0.649, 0.744]
+  delta_alpha = -0.010 (reduction)
+Processing domain: where
+  [FULL SET] 50 items for domain where
+  [FULL SET] Running bootstrap (n=1000)...
+  [FULL SET] alpha = 0.821 [0.798, 0.843]
+  [PURIFIED SET] 45 items for domain where
+  [PURIFIED SET] Running bootstrap (n=1000)...
+  [PURIFIED SET] alpha = 0.829 [0.804, 0.849]
+  delta_alpha = +0.007 (improvement)
+Processing domain: when
+  [FULL SET] 26 items for domain when
+  [FULL SET] Running bootstrap (n=1000)...
+  [FULL SET] alpha = 0.575 [0.502, 0.630]
+  [PURIFIED SET] 5 items for domain when
+  [PURIFIED SET] Running bootstrap (n=1000)...
+  [PURIFIED SET] alpha = 0.616 [0.551, 0.674]
+  delta_alpha = +0.041 (improvement)
+Cronbach's alpha computation complete for all domains
+Saving reliability assessment results...
+step04_reliability_assessment.csv (3 rows, 10 cols)
+Reliability Assessment Results:
+  Domain: what
+    Full Set:     alpha = 0.712 [0.661, 0.753] (29 items)
+    Purified Set: alpha = 0.702 [0.649, 0.744] (19 items)
+    Delta:        -0.010
+  Domain: where
+    Full Set:     alpha = 0.821 [0.798, 0.843] (50 items)
+    Purified Set: alpha = 0.829 [0.804, 0.849] (45 items)
+    Delta:        +0.007
+  Domain: when
+    Full Set:     alpha = 0.575 [0.502, 0.630] (26 items)
+    Purified Set: alpha = 0.616 [0.551, 0.674] (5 items)
+    Delta:        +0.041
+Running validate_numeric_range...
+alpha_full: PASS (all values in [0, 1])
+CI_lower_full: PASS (all values in [0, 1])
+CI_upper_full: PASS (all values in [0, 1])
+alpha_purified: PASS (all values in [0, 1])
+CI_lower_purified: PASS (all values in [0, 1])
+CI_upper_purified: PASS (all values in [0, 1])
+Checking CI bounds...
+CI bounds check: PASS (alpha within CIs for all domains)
+Checking typical alpha range...
+Domain what full set alpha = 0.712 in typical range [0.70, 0.95]
+Domain what purified set alpha = 0.702 in typical range [0.70, 0.95]
+Domain where full set alpha = 0.821 in typical range [0.70, 0.95]
+Domain where purified set alpha = 0.829 in typical range [0.70, 0.95]
+Domain when full set alpha = 0.575 < 0.70 (below acceptable)
+Domain when purified set alpha = 0.616 < 0.70 (below acceptable)
+Step 04 complete - Reliability assessment validated
+Step 04: Assess Reliability
+Loading input data...
+step00_raw_scores.csv (400 rows, 215 cols)
+step01_item_mapping.csv (79 items)
+Found 105 TQ_* item columns in raw data
+Computing Cronbach's alpha for full vs purified item sets...
+When domain EXCLUDED per RQ 5.2.1 floor effect
+Processing domain: what
+  [FULL SET] 29 items for domain what
+  [FULL SET] Running bootstrap (n=1000)...
+  [FULL SET] alpha = 0.712 [0.657, 0.748]
+  [PURIFIED SET] 19 items for domain what
+  [PURIFIED SET] Running bootstrap (n=1000)...
+  [PURIFIED SET] alpha = 0.702 [0.649, 0.744]
+  delta_alpha = -0.010 (reduction)
+Processing domain: where
+  [FULL SET] 50 items for domain where
+  [FULL SET] Running bootstrap (n=1000)...
+  [FULL SET] alpha = 0.821 [0.797, 0.841]
+  [PURIFIED SET] 45 items for domain where
+  [PURIFIED SET] Running bootstrap (n=1000)...
+  [PURIFIED SET] alpha = 0.829 [0.804, 0.848]
+  delta_alpha = +0.007 (improvement)
+Cronbach's alpha computation complete for all domains
+Saving reliability assessment results...
+step04_reliability_assessment.csv (2 rows, 10 cols)
+Reliability Assessment Results:
+  Domain: what
+    Full Set:     alpha = 0.712 [0.657, 0.748] (29 items)
+    Purified Set: alpha = 0.702 [0.649, 0.744] (19 items)
+    Delta:        -0.010
+  Domain: where
+    Full Set:     alpha = 0.821 [0.797, 0.841] (50 items)
+    Purified Set: alpha = 0.829 [0.804, 0.848] (45 items)
+    Delta:        +0.007
+Running validate_numeric_range...
+alpha_full: PASS (all values in [0, 1])
+CI_lower_full: PASS (all values in [0, 1])
+CI_upper_full: PASS (all values in [0, 1])
+alpha_purified: PASS (all values in [0, 1])
+CI_lower_purified: PASS (all values in [0, 1])
+CI_upper_purified: PASS (all values in [0, 1])
+Checking CI bounds...
+CI bounds check: PASS (alpha within CIs for all domains)
+Checking typical alpha range...
+Domain what full set alpha = 0.712 in typical range [0.70, 0.95]
+Domain what purified set alpha = 0.702 in typical range [0.70, 0.95]
+Domain where full set alpha = 0.821 in typical range [0.70, 0.95]
+Domain where purified set alpha = 0.829 in typical range [0.70, 0.95]
+Step 04 complete - Reliability assessment validated

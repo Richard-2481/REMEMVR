@@ -1,0 +1,82 @@
+Step 02: Center Difficulty and Merge TSVR
+Loading step01_analysis_ready.csv...
+18000 rows, 7 columns
+Columns: ['composite_ID', 'UID', 'Test', 'Item', 'Response', 'paradigm', 'Difficulty']
+Centering Difficulty variable...
+Grand mean of Difficulty: 0.175566
+Mean of Difficulty_c: 0.000000
+Centering successful: mean(Difficulty_c) ≈ 0
+Loading TSVR mapping...
+400 TSVR rows
+TSVR columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Merging TSVR_hours by composite_ID...
+Merge successful: row count unchanged (18000 rows)
+No missing TSVR_hours values
+Created Time variable (Time = TSVR_hours)
+Saving LMM input data...
+/home/etai/projects/REMEMVR/results/ch5/5.3.9/data/step02_lmm_input.csv
+Output shape: 18000 rows, 10 columns
+Columns: ['composite_ID', 'UID', 'Test', 'Item', 'Response', 'paradigm', 'Difficulty', 'Difficulty_c', 'TSVR_hours', 'Time']
+Running validate_standardization...
+Standardization result: {'valid': False, 'message': 'Standardization validation failed for 1 check(s): Difficulty_c: SD=1.5010 (expected ~1, tolerance=0.01)', 'mean_values': {'Difficulty_c': np.float64(3.434289889507151e-17)}, 'sd_values': {'Difficulty_c': np.float64(1.501049661985682)}}
+Standardization validation failed: {'valid': False, 'message': 'Standardization validation failed for 1 check(s): Difficulty_c: SD=1.5010 (expected ~1, tolerance=0.01)', 'mean_values': {'Difficulty_c': np.float64(3.434289889507151e-17)}, 'sd_values': {'Difficulty_c': np.float64(1.501049661985682)}}
+Standardization validation failed: Standardization validation failed for 1 check(s): Difficulty_c: SD=1.5010 (expected ~1, tolerance=0.01)
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.9/code/step02_center_merge.py", line 133, in main
+    raise ValueError(f"Standardization validation failed: {validation_result.get('message', 'Unknown error')}")
+ValueError: Standardization validation failed: Standardization validation failed for 1 check(s): Difficulty_c: SD=1.5010 (expected ~1, tolerance=0.01)
+Step 02: Center Difficulty and Merge TSVR
+Loading step01_analysis_ready.csv...
+18000 rows, 7 columns
+Columns: ['composite_ID', 'UID', 'Test', 'Item', 'Response', 'paradigm', 'Difficulty']
+Centering Difficulty variable...
+Grand mean of Difficulty: 0.175566
+Mean of Difficulty_c: 0.000000
+SD of Difficulty_c: 1.5010
+Centering successful: mean(Difficulty_c) = 0.000000 (within ±0.01)
+Loading TSVR mapping...
+400 TSVR rows
+TSVR columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Merging TSVR_hours by composite_ID...
+Merge successful: row count unchanged (18000 rows)
+No missing TSVR_hours values
+Created Time variable (Time = TSVR_hours)
+Saving LMM input data...
+/home/etai/projects/REMEMVR/results/ch5/5.3.9/data/step02_lmm_input.csv
+Output shape: 18000 rows, 10 columns
+Columns: ['composite_ID', 'UID', 'Test', 'Item', 'Response', 'paradigm', 'Difficulty', 'Difficulty_c', 'TSVR_hours', 'Time']
+Validating centering (mean ≈ 0)...
+Centering validated: mean(Difficulty_c) = 0.000000
+Running check_missing_data...
+check_missing_data() got an unexpected keyword argument 'acceptable_missing_cols'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.9/code/step02_center_merge.py", line 139, in main
+    missing_result = check_missing_data(
+                     ^^^^^^^^^^^^^^^^^^^
+TypeError: check_missing_data() got an unexpected keyword argument 'acceptable_missing_cols'
+Step 02: Center Difficulty and Merge TSVR
+Loading step01_analysis_ready.csv...
+18000 rows, 7 columns
+Columns: ['composite_ID', 'UID', 'Test', 'Item', 'Response', 'paradigm', 'Difficulty']
+Centering Difficulty variable...
+Grand mean of Difficulty: 0.175566
+Mean of Difficulty_c: 0.000000
+SD of Difficulty_c: 1.5010
+Centering successful: mean(Difficulty_c) = 0.000000 (within ±0.01)
+Loading TSVR mapping...
+400 TSVR rows
+TSVR columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Merging TSVR_hours by composite_ID...
+Merge successful: row count unchanged (18000 rows)
+No missing TSVR_hours values
+Created Time variable (Time = TSVR_hours)
+Saving LMM input data...
+/home/etai/projects/REMEMVR/results/ch5/5.3.9/data/step02_lmm_input.csv
+Output shape: 18000 rows, 10 columns
+Columns: ['composite_ID', 'UID', 'Test', 'Item', 'Response', 'paradigm', 'Difficulty', 'Difficulty_c', 'TSVR_hours', 'Time']
+Validating centering (mean ≈ 0)...
+Centering validated: mean(Difficulty_c) = 0.000000
+Running check_missing_data...
+Missing data result: {'has_missing': False, 'total_missing': 0, 'total_cells': 180000, 'percent_missing': 0.0, 'missing_by_column': {}}
+No missing values in Difficulty_c and Time
+Step 02 complete

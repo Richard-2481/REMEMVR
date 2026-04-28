@@ -1,0 +1,57 @@
+Step 3: ANOVA Comparisons
+Loading calibration groups data...
+step02_calibration_groups.csv (100 rows, 9 cols)
+Group sizes: {'Well-calibrated': np.int64(41), 'Overconfident': np.int64(33), 'Underconfident': np.int64(26)}
+Running ANOVA for education...
+Checking assumptions for education...
+'bool' object has no attribute 'lower'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.5/code/step03_anova_comparisons.py", line 242, in <module>
+    result = run_anova_d068_wrapper(df, 'group', dv, n_comparisons)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.5/code/step03_anova_comparisons.py", line 137, in run_anova_d068_wrapper
+    result = one_way_anova_d068(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_stats.py", line 105, in one_way_anova_d068
+    if post_hoc.lower() == 'tukey':
+       ^^^^^^^^^^^^^^
+AttributeError: 'bool' object has no attribute 'lower'
+Step 3: ANOVA Comparisons
+Loading calibration groups data...
+step02_calibration_groups.csv (100 rows, 9 cols)
+Group sizes: {'Well-calibrated': np.int64(41), 'Overconfident': np.int64(33), 'Underconfident': np.int64(26)}
+Running ANOVA for education...
+Checking assumptions for education...
+Unknown format code 'f' for object of type 'str'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.5/code/step03_anova_comparisons.py", line 281, in <module>
+    log(f"ANOVA for {dv}: F = {result.get('f_statistic', 'N/A'):.3f}, p = {result.get('p_uncorrected', 'N/A'):.3f}")
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'str'
+Step 3: ANOVA Comparisons
+Loading calibration groups data...
+step02_calibration_groups.csv (100 rows, 9 cols)
+Group sizes: {'Well-calibrated': np.int64(41), 'Overconfident': np.int64(33), 'Underconfident': np.int64(26)}
+Running ANOVA for education...
+Checking assumptions for education...
+Running ANOVA for rpm...
+Checking assumptions for rpm...
+Running ANOVA for age...
+Checking assumptions for age...
+ANOVA for age: F = N/A, p = 0.969970892464024
+Saving ANOVA results...
+step03_anova_results.csv (3 rows, 7 cols)
+step03_assumption_checks.csv (6 rows, 6 cols)
+step03_posthoc_comparisons.csv (0 rows, 9 cols)
+Running validate_hypothesis_test_dual_pvalues...
+valid: True
+missing_terms: []
+d068_compliant: True
+message: Decision D068 compliant: All 3 required terms present with both p_uncorrected and p_bonferroni.
+ANOVA Results Summary:
+  education: F = nan, p_uncorr = 0.993, p_bonf = 1.000
+  rpm: F = nan, p_uncorr = 0.041, p_bonf = 0.246
+  age: F = nan, p_uncorr = 0.970, p_bonf = 1.000
+Step 3 complete

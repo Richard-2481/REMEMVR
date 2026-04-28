@@ -1,0 +1,66 @@
+Step 02b: Validate LMM Assumptions
+Loading fitted LMM model from Step 2...
+[Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/rq10/results/step02_lmm_model.pkl'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step02b_validate_assumptions.py", line 145, in <module>
+    lmm_model = MixedLMResults.load(str(model_path))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 2289, in load
+    return load_pickle(fname)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/iolib/smpickle.py", line 41, in load_pickle
+    with get_file_obj(fname, "rb") as fin:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/iolib/openfile.py", line 65, in get_file_obj
+    return fname.open(mode=mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/rq10/results/step02_lmm_model.pkl'
+Step 02b: Validate LMM Assumptions
+Loading fitted LMM model from Step 2...
+LMM model from /home/etai/projects/REMEMVR/results/ch5/rq10/data/step02_lmm_model.pkl
+Loading LMM input data from Step 1...
+LMM input data: 1200 rows, 10 columns
+All expected columns present in LMM input
+Running comprehensive LMM assumption checks...
+This includes 7 diagnostics:
+  (1) Residual normality (Shapiro-Wilk + Q-Q plot)
+  (2) Homoscedasticity (Breusch-Pagan + residuals vs fitted)
+  (3) Random effects normality (Shapiro-Wilk + Q-Q plots)
+  (4) Independence (ACF plot + Lag-1 autocorrelation)
+  (5) Linearity (partial residual plots)
+  (6) Outliers (Cook's distance)
+  (7) Convergence (model status)
+Assumption validation complete
+Saving assumption diagnostics report...
+Assumption diagnostics report: /home/etai/projects/REMEMVR/results/ch5/rq10/results/step02b_assumption_diagnostics.txt
+Checking diagnostic plots...
+6 diagnostic plots generated:
+  [OK] qq_plot_residuals.png
+  [OK] residuals_vs_fitted.png
+  [OK] qq_plot_random_intercepts.png
+  [OK] qq_plot_random_slopes.png
+  [OK] acf_plot.png
+  [OK] studentized_residuals.png
+[VALIDATION SUMMARY]
+  Overall valid: False
+  Message: LMM assumption violations detected (2/7 checks failed):
+  - Residual normality violated (Shapiro-Wilk p < 0.05)
+  - Homoscedasticity violated (Breusch-Pagan p < 0.05)
+
+Recommended remedial actions:
+  1. Consider using robust standard errors or transforming the outcome variable
+  2. Model variance structure explicitly or use weighted least squares
+
+[DIAGNOSTIC STATUSES]
+  residual_normality: {'test': 'Shapiro-Wilk', 'statistic': 0.9892124026659598, 'p_value': 1.0079376475627796e-07, 'pass': np.False_, 'threshold': 0.05}
+  homoscedasticity: {'test': 'Breusch-Pagan', 'statistic': 41.682776849298705, 'p_value': 0.0007451384408769282, 'pass': np.False_, 'threshold': 0.05}
+  random_effects_normality: {'intercepts': {'test': 'Shapiro-Wilk', 'statistic': 0.9913305551628523, 'p_value': 0.7708868956343606, 'pass': np.True_, 'threshold': 0.05}, 'slopes': {'test': 'Shapiro-Wilk', 'statistic': 0.9849738422112672, 'p_value': 0.31621588064162065, 'pass': np.True_, 'threshold': 0.05}}
+  autocorrelation: {'lag1_acf': -0.04038117717383625, 'pass': True, 'threshold': 0.1}
+  outliers: {'method': 'Studentized Residuals', 'threshold': 3.0, 'n_outliers': 6, 'outlier_percentage': 0.5, 'pass': True, 'outlier_indices': [922, 942, 951, 961, 1038, 1067]}
+  convergence: {'converged': True, 'pass': True}
+[CONDITIONAL SUCCESS] Step 02b complete - Some violations flagged
+Assumption violations logged but not blocking (proceed with caution)

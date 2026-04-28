@@ -1,0 +1,40 @@
+Step 0: Load Dependency Data from RQ 5.5.1
+Verifying RQ 5.5.1 completion status...
+RQ 5.5.1 status: success
+RQ 5.5.1 completed successfully
+Loading theta scores from RQ 5.5.1...
+step03_theta_scores.csv (400 rows, 5 cols)
+Theta ranges: source [-1.868, 1.703], destination [-1.494, 2.251]
+SE ranges: source [0.500, 0.500], destination [0.500, 0.500]
+Loading TSVR mapping from RQ 5.5.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+TSVR range: [1.00, 246.24] hours
+Loading Age variable from dfData.csv...
+dfData.csv (extracted 2 columns from 214 total)
+100 unique participants
+Age range: [20.0, 70.0] years
+Age mean=44.6, SD=14.6
+Saving dependency data copies...
+step00_theta_from_rq551.csv (400 rows, 5 cols)
+step00_tsvr_from_rq551.csv (400 rows, 4 cols)
+step00_age_from_dfdata.csv (100 rows, 2 cols)
+Final validation summary:
+RQ 5.5.1 completion status
+Theta scores row count
+TSVR mapping row count
+Age data row count
+Theta scores columns
+TSVR mapping columns
+Age data columns
+No NaN in theta_source
+No NaN in theta_destination
+No NaN in TSVR_hours
+No NaN in Age
+Theta source range [-4, 4]
+Theta destination range [-4, 4]
+SE source range [0.1, 1.5]
+SE destination range [0.1, 1.5]
+TSVR range [0, 360]
+Age range [20, 70]
+All 17 checks passed
+Step 0 complete - All dependency data loaded and validated

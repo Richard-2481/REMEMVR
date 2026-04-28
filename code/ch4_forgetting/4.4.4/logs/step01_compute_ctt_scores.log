@@ -1,0 +1,46 @@
+2025-12-03 20:03:20,184 - INFO - ============================================================
+2025-12-03 20:03:20,184 - INFO - Step 01: Compute CTT Mean Scores per Congruence Level
+2025-12-03 20:03:20,184 - INFO - ============================================================
+2025-12-03 20:03:20,184 - INFO - Loading purified items...
+2025-12-03 20:03:20,185 - INFO - Loaded 50 purified items
+2025-12-03 20:03:20,185 - INFO - Loading TSVR mapping...
+2025-12-03 20:03:20,186 - INFO - Loaded 400 TSVR mappings
+2025-12-03 20:03:20,186 - INFO - Loading raw response data...
+2025-12-03 20:03:20,192 - INFO - Loaded raw data: 400 rows
+2025-12-03 20:03:20,192 - INFO - Purified items: 50
+2025-12-03 20:03:20,192 - INFO - Available items in raw data: 50
+2025-12-03 20:03:20,194 - INFO - Filtered to 400 rows matching TSVR mapping
+2025-12-03 20:03:20,194 - INFO - Computing CTT mean scores by congruence level...
+2025-12-03 20:03:20,234 - INFO - CTT scores computed: 1200 rows
+2025-12-03 20:03:20,234 - INFO - CTT columns: ['composite_ID', 'UID', 'test', 'factor', 'CTT_score', 'n_items']
+2025-12-03 20:03:20,235 - INFO - Validating CTT scores...
+2025-12-03 20:03:20,235 - INFO - CTT score range: [0.1538, 1.0000]
+2025-12-03 20:03:20,236 - INFO - Saving outputs...
+2025-12-03 20:03:20,238 - INFO - Saved: data/step01_ctt_scores.csv (1200 rows)
+2025-12-03 20:03:20,238 - INFO - Saved: data/step01_ctt_computation_report.txt
+2025-12-03 20:03:20,238 - INFO - ============================================================
+2025-12-03 20:03:20,238 - INFO - Step 01 COMPLETE: CTT scores computed successfully
+2025-12-03 20:03:20,238 - INFO - ============================================================
+2025-12-09 20:37:38,941 - INFO - ============================================================
+2025-12-09 20:37:38,942 - INFO - Step 01: Compute CTT Mean Scores per Congruence Level
+2025-12-09 20:37:38,942 - INFO - ============================================================
+2025-12-09 20:37:38,942 - INFO - Loading purified items...
+2025-12-09 20:37:38,944 - INFO - Loaded 50 purified items
+2025-12-09 20:37:38,944 - INFO - Loading TSVR mapping...
+2025-12-09 20:37:38,945 - INFO - Loaded 400 TSVR mappings
+2025-12-09 20:37:38,946 - INFO - Loading raw response data...
+2025-12-09 20:37:38,952 - INFO - Loaded raw data: 400 rows
+2025-12-09 20:37:38,952 - INFO - Purified items: 50
+2025-12-09 20:37:38,952 - INFO - Available items in raw data: 50
+2025-12-09 20:37:38,954 - INFO - Filtered to 400 rows matching TSVR mapping
+2025-12-09 20:37:38,954 - INFO - Computing CTT mean scores by congruence level...
+2025-12-09 20:37:39,082 - INFO - CTT scores computed: 1200 rows
+2025-12-09 20:37:39,083 - INFO - CTT columns: ['composite_ID', 'UID', 'test', 'factor', 'CTT_score', 'n_items']
+2025-12-09 20:37:39,084 - INFO - Validating CTT scores...
+2025-12-09 20:37:39,085 - INFO - CTT score range: [0.1538, 1.0000]
+2025-12-09 20:37:39,087 - INFO - Saving outputs...
+2025-12-09 20:37:39,091 - INFO - Saved: data/step01_ctt_scores.csv (1200 rows)
+2025-12-09 20:37:39,091 - INFO - Saved: data/step01_ctt_computation_report.txt
+2025-12-09 20:37:39,092 - INFO - ============================================================
+2025-12-09 20:37:39,092 - INFO - Step 01 COMPLETE: CTT scores computed successfully
+2025-12-09 20:37:39,092 - INFO - ============================================================

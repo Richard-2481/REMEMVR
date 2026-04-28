@@ -1,0 +1,31 @@
+Step 03: Compute Intraclass Correlation Coefficients (ICC) Per Paradigm
+Loading variance components from step02...
+15 variance components from 3 paradigms
+All 3 paradigms present: ['cued_recall', 'free_recall', 'recognition']
+Computing ICC estimates (timepoint: Day 6, log_TSVR=4.977)...
+Computing ICC for cued_recall...
+  intercept           : 0.437 (Substantial)
+  slope_simple        : 0.000 (Low)
+  slope_conditional   : 0.410 (Substantial)
+Computing ICC for free_recall...
+  intercept           : 0.501 (Substantial)
+  slope_simple        : 0.022 (Low)
+  slope_conditional   : 0.451 (Substantial)
+Computing ICC for recognition...
+  intercept           : 0.515 (Substantial)
+  slope_simple        : 0.014 (Low)
+  slope_conditional   : 0.462 (Substantial)
+ICC computation complete
+Saving ICC estimates...
+/home/etai/projects/REMEMVR/results/ch5/5.3.7/data/step03_icc_estimates.csv (9 rows, 4 cols)
+Generating ICC interpretation report...
+/home/etai/projects/REMEMVR/results/ch5/5.3.7/data/step03_icc_summary.txt
+Validating ICC estimates...
+PASSED - All criteria met:
+  Row count: 9 rows (3 paradigms x 3 ICC types)
+  ICC bounds: All values in [0, 1] (range: 0.000 to 0.515)
+  No NaN values: 0 NaN found
+  All paradigms present: ['cued_recall', 'free_recall', 'recognition']
+  All ICC types present per paradigm
+  Interpretation labels match thresholds
+Step 03 complete

@@ -1,7 +1,7 @@
 """
 Random Slopes Comparison for RQ 5.3.9
 Purpose: Test intercepts-only vs intercepts+slopes random effects structure
-Required for PLATINUM certification (Section 4.4)
+Required for quality validation (Section 4.4)
 """
 
 import sys
@@ -23,18 +23,17 @@ OUTPUT_FILE = RQ_DIR / "data" / "random_slopes_comparison.csv"
 LOG_FILE = RQ_DIR / "logs" / "random_slopes_comparison.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'w', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 def main():
-    log("[START] Random Slopes Comparison")
+    log("Random Slopes Comparison")
     
     # Load data
-    log(f"[INFO] Loading data from {DATA_FILE}")
+    log(f"Loading data from {DATA_FILE}")
     data = pd.read_csv(DATA_FILE)
-    log(f"[INFO] Loaded {len(data)} observations")
+    log(f"Loaded {len(data)} observations")
     
     # Define formula (same fixed effects for both models)
     formula = "Response ~ Time * Difficulty_c * C(paradigm)"
@@ -85,24 +84,24 @@ def main():
     
     # Compute ΔAIC (positive = slopes preferred, negative = intercepts preferred)
     delta_aic = result_intercepts.aic - result_slopes.aic
-    log(f"\n[COMPARISON] ΔAIC (Intercepts - Slopes): {delta_aic:.2f}")
+    log(f"\nΔAIC (Intercepts - Slopes): {delta_aic:.2f}")
     
     # Interpret outcome
     if delta_aic > 2:
         outcome = "Option A: Slopes improve fit (ΔAIC > 2)"
         recommendation = "Use slopes model - individual differences confirmed"
-        log(f"[OUTCOME] {outcome}")
-        log(f"[RECOMMENDATION] {recommendation}")
+        log(f"{outcome}")
+        log(f"{recommendation}")
     elif not result_slopes.converged or slope_var < 1e-10:
         outcome = "Option B: Slopes don't converge / overfit"
         recommendation = "Keep intercepts-only - insufficient data for stable slope estimation"
-        log(f"[OUTCOME] {outcome}")
-        log(f"[RECOMMENDATION] {recommendation}")
+        log(f"{outcome}")
+        log(f"{recommendation}")
     else:
         outcome = "Option C: Slopes converge but don't improve (|ΔAIC| < 2)"
         recommendation = "Keep intercepts-only (homogeneous effects CONFIRMED via test)"
-        log(f"[OUTCOME] {outcome}")
-        log(f"[RECOMMENDATION] {recommendation}")
+        log(f"{outcome}")
+        log(f"{recommendation}")
     
     # Save comparison results
     comparison = pd.DataFrame({
@@ -118,8 +117,8 @@ def main():
     })
     
     comparison.to_csv(OUTPUT_FILE, index=False)
-    log(f"\n[SAVED] Comparison results to {OUTPUT_FILE}")
-    log("[COMPLETE] Random slopes comparison finished")
+    log(f"\nComparison results to {OUTPUT_FILE}")
+    log("Random slopes comparison finished")
     
     return comparison
 

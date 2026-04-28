@@ -1,0 +1,152 @@
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['Common', 'Congruent', 'Incongruent']
+Tests per domain: {'Common': 4, 'Congruent': 4, 'Incongruent': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for Common: 3.6370 (24 items)
+Mean discrimination for Congruent: 3.4480 (24 items)
+Mean discrimination for Incongruent: 3.7999 (24 items)
+Transforming theta to probability scale...
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0911, -0.4550]
+Probability range: [0.0156, 0.1644]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['Common', 'Congruent', 'Incongruent']
+Tests per domain: {'Common': 4, 'Congruent': 4, 'Incongruent': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for Common: 3.6370 (24 items)
+Mean discrimination for Congruent: 3.4480 (24 items)
+Mean discrimination for Incongruent: 3.7999 (24 items)
+Transforming theta to probability scale...
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0911, -0.4550]
+Probability range: [0.0156, 0.1644]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['Common', 'Congruent', 'Incongruent']
+Tests per domain: {'Common': 4, 'Congruent': 4, 'Incongruent': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for Common: 3.6370 (24 items)
+Mean discrimination for Congruent: 3.4480 (24 items)
+Mean discrimination for Incongruent: 3.7999 (24 items)
+Transforming theta to probability scale...
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0911, -0.4550]
+Probability range: [0.0156, 0.1644]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['Common', 'Congruent', 'Incongruent']
+Tests per domain: {'Common': 4, 'Congruent': 4, 'Incongruent': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for Common: 3.6370 (24 items)
+Mean discrimination for Congruent: 3.4480 (24 items)
+Mean discrimination for Incongruent: 3.7999 (24 items)
+Transforming theta to probability scale...
+Sample mean theta: -0.7805 (used for probability centering)
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0911, -0.4550]
+Probability range: [0.2350, 0.7660]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['Common', 'Congruent', 'Incongruent']
+Tests per domain: {'Common': 4, 'Congruent': 4, 'Incongruent': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for Common: 1.5158 (24 items)
+Mean discrimination for Congruent: 1.4830 (24 items)
+Mean discrimination for Incongruent: 1.5039 (24 items)
+Transforming theta to probability scale...
+Sample mean theta: -0.0700 (used for probability centering)
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-0.6128, 0.5322]
+Probability range: [0.3065, 0.7119]
+Step 07 complete

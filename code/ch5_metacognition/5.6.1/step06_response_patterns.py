@@ -12,7 +12,6 @@ Input: data/step00_item_level.csv (~28,800 item-responses)
 Output: data/step06_response_patterns.csv (100 rows, 1 per participant)
 Log: logs/step06_response_patterns.log
 
-Author: rq_platinum agent (Section 1.4 compliance)
 Date: 2025-12-27
 """
 

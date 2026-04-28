@@ -1,0 +1,99 @@
+Step 08: Power Analysis and Effect Size Assessment
+Loading regression results...
+step04_regression_results.csv (10 rows, 11 cols)
+Extracting R² values from regression results...
+Model 1 (Demographics) R²: 0.0494
+Model 2 (Full) R²: 0.2952
+Incremental R² (Cognitive): 0.2458
+[EFFECT SIZE] Converting R² to Cohen's f²...
+[EFFECT SIZE] Full model f²: 0.4188 (large (f² >= 0.35))
+[EFFECT SIZE] Incremental cognitive f²: 0.3487 (medium (0.15 <= f² < 0.35))
+Computing post-hoc power (achieved power given observed effects)...
+--- Overall Model (R² = 0.2952, f² = 0.4188) ---
+FTestAnovaPower.solve_power() got an unexpected keyword argument 'df_num'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.6.1/code/step08_power_analysis.py", line 210, in <module>
+    power_full_standard = power_test.solve_power(
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: FTestAnovaPower.solve_power() got an unexpected keyword argument 'df_num'
+Step 08: Power Analysis and Effect Size Assessment
+Loading regression results...
+step04_regression_results.csv (10 rows, 11 cols)
+Extracting R² values from regression results...
+Model 1 (Demographics) R²: 0.0494
+Model 2 (Full) R²: 0.2952
+Incremental R² (Cognitive): 0.2458
+[EFFECT SIZE] Converting R² to Cohen's f²...
+[EFFECT SIZE] Full model f²: 0.4188 (large (f² >= 0.35))
+[EFFECT SIZE] Incremental cognitive f²: 0.3487 (medium (0.15 <= f² < 0.35))
+Computing post-hoc power (achieved power given observed effects)...
+--- Overall Model (R² = 0.2952, f² = 0.4188) ---
+Power at alpha = 0.0500: 0.9856
+Power at alpha = 0.00179: 0.8315
+Adequate power (>= 0.80) at alpha=0.05: YES
+Adequate power (>= 0.80) at alpha=0.00179: YES
+--- Incremental Cognitive (ΔR² = 0.2458, f² = 0.3487) ---
+Power at alpha = 0.0500: 0.9323
+Power at alpha = 0.00179: 0.6093
+Adequate power (>= 0.80) at alpha=0.05: YES
+Adequate power (>= 0.80) at alpha=0.00179: NO
+Computing a priori sensitivity (minimum detectable f² for power = 0.80)...
+--- Overall Model (n=100, k=6) ---
+Min detectable f² at alpha = 0.0500: 0.2829 (medium (0.15 <= f² < 0.35))
+Min detectable f² at alpha = 0.00179: 0.4066 (large (f² >= 0.35))
+--- Incremental Cognitive (n=100, k=3) ---
+Min detectable f² at alpha = 0.0500: 0.2829 (medium (0.15 <= f² < 0.35))
+Min detectable f² at alpha = 0.00179: 0.4066 (large (f² >= 0.35))
+Saving power analysis results...
+step08_power_analysis.csv (2 rows, 12 cols)
+Power analysis validation checks:
+Power values in [0, 1]: PASS
+Effect sizes (f²) >= 0: PASS
+Min detectable f² >= 0: PASS
+Overall model adequate power at alpha=0.05: YES
+Overall model adequate power at alpha=0.00179: YES
+Incremental cognitive adequate power at alpha=0.05: YES
+Incremental cognitive adequate power at alpha=0.00179: NO
+Overall validation: PASS
+Step 08 complete
+Step 08: Power Analysis and Effect Size Assessment
+Loading regression results...
+step04_regression_results.csv (12 rows, 11 cols)
+Extracting R² values from regression results...
+Model 1 (Demographics) R²: 0.0494
+Model 2 (Full) R²: 0.3358
+Incremental R² (Cognitive): 0.2864
+[EFFECT SIZE] Converting R² to Cohen's f²...
+[EFFECT SIZE] Full model f²: 0.5056 (large (f² >= 0.35))
+[EFFECT SIZE] Incremental cognitive f²: 0.4313 (large (f² >= 0.35))
+Computing post-hoc power (achieved power given observed effects)...
+--- Overall Model (R² = 0.3358, f² = 0.5056) ---
+Power at alpha = 0.0500: 0.9988
+Power at alpha = 0.00179: 0.9646
+Adequate power (>= 0.80) at alpha=0.05: YES
+Adequate power (>= 0.80) at alpha=0.00179: YES
+--- Incremental Cognitive (ΔR² = 0.2864, f² = 0.4313) ---
+Power at alpha = 0.0500: 0.9896
+Power at alpha = 0.00179: 0.8604
+Adequate power (>= 0.80) at alpha=0.05: YES
+Adequate power (>= 0.80) at alpha=0.00179: YES
+Computing a priori sensitivity (minimum detectable f² for power = 0.80)...
+--- Overall Model (n=100, k=8) ---
+Min detectable f² at alpha = 0.0500: 0.2829 (medium (0.15 <= f² < 0.35))
+Min detectable f² at alpha = 0.00179: 0.4066 (large (f² >= 0.35))
+--- Incremental Cognitive (n=100, k=5) ---
+Min detectable f² at alpha = 0.0500: 0.2829 (medium (0.15 <= f² < 0.35))
+Min detectable f² at alpha = 0.00179: 0.4066 (large (f² >= 0.35))
+Saving power analysis results...
+step08_power_analysis.csv (2 rows, 12 cols)
+Power analysis validation checks:
+Power values in [0, 1]: PASS
+Effect sizes (f²) >= 0: PASS
+Min detectable f² >= 0: PASS
+Overall model adequate power at alpha=0.05: YES
+Overall model adequate power at alpha=0.00179: YES
+Incremental cognitive adequate power at alpha=0.05: YES
+Incremental cognitive adequate power at alpha=0.00179: YES
+Overall validation: PASS
+Step 08 complete

@@ -1,0 +1,38 @@
+Step 1: Prepare LMM Input Data
+Loading Step 0 outputs...
+theta: 400 rows, 5 cols
+tsvr: 400 rows, 4 cols
+age: 100 rows, 2 cols
+Merging theta with TSVR on composite_ID...
+theta + TSVR: 400 rows
+Merging with Age on UID...
++ Age: 400 rows
+No data loss during merges
+Grand-mean centering Age...
+Age mean: 44.57
+Age_c mean: 0.000000
+Age_c grand-mean centered correctly
+Creating log_TSVR...
+log_TSVR range: [0.693, 5.510]
+Converting wide to long format...
+Long format: 800 rows x 10 cols
+Running validation checks...
+Results:
+  Row count = 800
+  All 10 columns present
+  LocationType balanced: 400 Source, 400 Destination
+  No NaN values
+  theta in [-4, 4]: [-1.868, 2.251]
+  log_TSVR in [0, 6]: [0.693, 5.510]
+  Age_c centered: mean = 0.000000
+Saving LMM input data...
+step01_lmm_input.csv (800 rows, 10 cols)
+Data summary:
+  Participants: 100
+  Tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+  Location types: ['Destination', 'Source']
+  Age range: [20, 70]
+  Age_c range: [-24.57, 25.43]
+  TSVR range: [1.0, 246.2] hours
+  theta range: [-1.868, 2.251]
+Step 1 complete - LMM input data prepared

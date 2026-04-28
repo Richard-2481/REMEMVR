@@ -1,0 +1,156 @@
+Step 00: Extract Confidence Item Data
+Loading dfData.csv...
+dfData.csv (400 rows, 214 cols)
+Required columns present: ['UID', 'TEST', 'TSVR']
+Filtering to TC_* confidence items with -U- or -D- tags...
+Found 18 source items (-U- tags)
+Found 18 destination items (-D- tags)
+Total confidence items: 36
+400 rows with 36 confidence items
+Creating composite_ID...
+composite_ID for 400 unique participant-test combinations
+Checking confidence item value categories...
+Item TC_IFR-U-i1 has unexpected values: {np.float64(0.8), np.float64(0.6), np.float64(0.2), np.float64(0.4)}
+Item TC_IFR-U-i2 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_IFR-U-i3 has unexpected values: {np.float64(0.6), np.float64(0.8), np.float64(0.2), np.float64(0.4)}
+Item TC_IFR-U-i4 has unexpected values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+Item TC_IFR-U-i5 has unexpected values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+Item TC_IFR-U-i6 has unexpected values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+Item TC_ICR-U-i1 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_ICR-U-i2 has unexpected values: {np.float64(0.8), np.float64(0.6), np.float64(0.2), np.float64(0.4)}
+Item TC_ICR-U-i3 has unexpected values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+Item TC_ICR-U-i4 has unexpected values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+Item TC_ICR-U-i5 has unexpected values: {np.float64(0.6), np.float64(0.8), np.float64(0.2), np.float64(0.4)}
+Item TC_ICR-U-i6 has unexpected values: {np.float64(0.4), np.float64(0.8), np.float64(0.6), np.float64(0.2)}
+Item TC_IRE-U-i1 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_IRE-U-i2 has unexpected values: {np.float64(0.6), np.float64(0.4), np.float64(0.8), np.float64(0.2)}
+Item TC_IRE-U-i3 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_IRE-U-i4 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_IRE-U-i5 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_IRE-U-i6 has unexpected values: {np.float64(0.6), np.float64(0.4), np.float64(0.8), np.float64(0.2)}
+Item TC_IFR-D-i1 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_IFR-D-i2 has unexpected values: {np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8)}
+Item TC_IFR-D-i3 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_IFR-D-i4 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_IFR-D-i5 has unexpected values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+Item TC_IFR-D-i6 has unexpected values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+Item TC_ICR-D-i1 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_ICR-D-i2 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Item TC_ICR-D-i3 has unexpected values: {np.float64(0.8), np.float64(0.6), np.float64(0.2), np.float64(0.4)}
+Item TC_ICR-D-i4 has unexpected values: {np.float64(0.4), np.float64(0.8), np.float64(0.6), np.float64(0.2)}
+Item TC_ICR-D-i5 has unexpected values: {np.float64(0.6), np.float64(0.8), np.float64(0.2), np.float64(0.4)}
+Item TC_ICR-D-i6 has unexpected values: {np.float64(0.4), np.float64(0.8), np.float64(0.6), np.float64(0.2)}
+Item TC_IRE-D-i1 has unexpected values: {np.float64(0.6), np.float64(0.8), np.float64(0.2), np.float64(0.4)}
+Item TC_IRE-D-i2 has unexpected values: {np.float64(0.6), np.float64(0.4), np.float64(0.8), np.float64(0.2)}
+Item TC_IRE-D-i3 has unexpected values: {np.float64(0.8), np.float64(0.6), np.float64(0.2), np.float64(0.4)}
+Item TC_IRE-D-i4 has unexpected values: {np.float64(0.6), np.float64(0.4), np.float64(0.8), np.float64(0.2)}
+Item TC_IRE-D-i5 has unexpected values: {np.float64(0.6), np.float64(0.8), np.float64(0.2), np.float64(0.4)}
+Item TC_IRE-D-i6 has unexpected values: {np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(0.2)}
+Confidence items are 5-category ordinal (0, 0.25, 0.5, 0.75, 1.0)
+Creating wide-format IRT input...
+IRT input: 400 rows x 37 cols
+Saving IRT input to /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step00_irt_input.csv...
+step00_irt_input.csv (400 rows, 37 cols)
+Building Q-matrix for 2-factor structure...
+Q-matrix: 36 items, 2 dimensions (Source, Destination)
+Source dimension: 18 items
+Destination dimension: 18 items
+Q-matrix has simple structure (no items load on both dimensions)
+Saving Q-matrix to /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step00_q_matrix.csv...
+step00_q_matrix.csv (36 rows, 3 cols)
+Extracting TSVR time mapping...
+TSVR mapping: 400 observations
+TSVR_hours range: [1.0, 246.2] hours
+TSVR_hours outside expected range [0, 168]: [1.0, 246.24]
+Saving TSVR mapping to /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step00_tsvr_mapping.csv...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Running validate_data_columns...
+PASS - 1 required columns present
+Step 00 complete
+Extracted 18 source items, 18 destination items
+Created Q-matrix: 2 dimensions (Source, Destination)
+TSVR mapping: 400 observations
+Step 00: Extract Confidence Item Data
+Loading dfData.csv...
+dfData.csv (400 rows, 478 cols)
+Required columns present: ['UID', 'TEST', 'TSVR']
+Filtering to TC_* confidence items with -U- or -D- tags...
+Found 18 source items (-U- tags)
+Found 18 destination items (-D- tags)
+Total confidence items: 36
+400 rows with 36 confidence items
+Creating composite_ID...
+composite_ID for 400 unique participant-test combinations
+Checking confidence item value categories...
+Confidence items are 5-category ordinal (0.2, 0.4, 0.6, 0.8, 1.0)
+Creating wide-format IRT input...
+IRT input: 400 rows x 37 cols
+Converting fractional confidence values to integers for IRT...
+Values mapped: 0.2→0, 0.4→1, 0.6→2, 0.8→3, 1.0→4
+Saving IRT input to /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step00_irt_input.csv...
+step00_irt_input.csv (400 rows, 37 cols)
+Building Q-matrix for 2-factor structure...
+Q-matrix: 36 items, 2 dimensions (Source, Destination)
+Source dimension: 18 items
+Destination dimension: 18 items
+('Source', 'Destination')
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: ('Source', 'Destination')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.8.1/code/step00_extract_confidence_data.py", line 305, in <module>
+    double_loading = df_q_matrix["Source", "Destination"]
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: ('Source', 'Destination')
+Step 00: Extract Confidence Item Data
+Loading dfData.csv...
+dfData.csv (400 rows, 478 cols)
+Required columns present: ['UID', 'TEST', 'TSVR']
+Filtering to TC_* confidence items with -U- or -D- tags...
+Found 18 source items (-U- tags)
+Found 18 destination items (-D- tags)
+Total confidence items: 36
+400 rows with 36 confidence items
+Creating composite_ID...
+composite_ID for 400 unique participant-test combinations
+Checking confidence item value categories...
+Confidence items are 5-category ordinal (0.2, 0.4, 0.6, 0.8, 1.0)
+Creating wide-format IRT input...
+IRT input: 400 rows x 37 cols
+Converting fractional confidence values to integers for IRT...
+Values mapped: 0.2→0, 0.4→1, 0.6→2, 0.8→3, 1.0→4
+Saving IRT input to /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step00_irt_input.csv...
+step00_irt_input.csv (400 rows, 37 cols)
+Building Q-matrix for 2-factor structure...
+Q-matrix: 36 items, 2 dimensions (Source, Destination)
+Source dimension: 18 items
+Destination dimension: 18 items
+Q-matrix has simple structure (no items load on both dimensions)
+Saving Q-matrix to /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step00_q_matrix.csv...
+step00_q_matrix.csv (36 rows, 3 cols)
+Extracting TSVR time mapping...
+TSVR mapping: 400 observations
+TSVR_hours range: [1.0, 246.2] hours
+Saving TSVR mapping to /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step00_tsvr_mapping.csv...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Running validate_data_columns...
+PASS - 1 required columns present
+Step 00 complete
+Extracted 18 source items, 18 destination items
+Created Q-matrix: 2 dimensions (Source, Destination)
+TSVR mapping: 400 observations

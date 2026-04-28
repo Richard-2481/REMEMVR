@@ -1,0 +1,80 @@
+Step 00: Extract Item-Level Response Data
+Loading RQ 5.3.1 item parameters...
+step03_item_parameters.csv (45 rows, 4 cols)
+Columns: ['item', 'domain', 'Discrimination', 'Difficulty_1']
+Purified items from RQ 5.3.1: 45 items
+Loading dfData.csv (wide format)...
+dfData.csv (400 rows, 214 cols)
+Identifying item-level response columns (TQ_IFR, TQ_ICR, TQ_IRE)...
+Total TQ columns: 105
+Item-level paradigm columns (IFR/ICR/IRE): 72
+Converting dfData from wide to long format...
+Wide format (400 rows) -> Long format (28800 rows)
+Extracting paradigm codes from item names...
+Paradigm distribution:
+  IFR: 9600 observations
+  ICR: 9600 observations
+  IRE: 9600 observations
+After paradigm filter (IFR/ICR/IRE): 28800 rows
+Filtering to purified items from RQ 5.3.1...
+Items before purification filter: 72 unique items
+After purification filter: 18000 rows, 45 unique items
+Merging item difficulty (b parameter) from RQ 5.3.1...
+All items successfully merged with difficulty parameters
+Saving response-level data...
+step00_response_level_data.csv (18000 rows, 6 cols)
+Copying TSVR mapping from RQ 5.3.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Running validate_data_format...
+Data format: All required columns present (6 columns). DataFrame has 18000 rows.
+Running check_missing_data...
+check_missing_data() got an unexpected keyword argument 'acceptable_missing_cols'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.9/code/step00_extract_response_data.py", line 307, in <module>
+    validation_result_missing = check_missing_data(
+                                ^^^^^^^^^^^^^^^^^^^
+TypeError: check_missing_data() got an unexpected keyword argument 'acceptable_missing_cols'
+Step 00: Extract Item-Level Response Data
+Loading RQ 5.3.1 item parameters...
+step03_item_parameters.csv (45 rows, 4 cols)
+Columns: ['item', 'domain', 'Discrimination', 'Difficulty_1']
+Purified items from RQ 5.3.1: 45 items
+Loading dfData.csv (wide format)...
+dfData.csv (400 rows, 214 cols)
+Identifying item-level response columns (TQ_IFR, TQ_ICR, TQ_IRE)...
+Total TQ columns: 105
+Item-level paradigm columns (IFR/ICR/IRE): 72
+Converting dfData from wide to long format...
+Wide format (400 rows) -> Long format (28800 rows)
+Extracting paradigm codes from item names...
+Paradigm distribution:
+  IFR: 9600 observations
+  ICR: 9600 observations
+  IRE: 9600 observations
+After paradigm filter (IFR/ICR/IRE): 28800 rows
+Filtering to purified items from RQ 5.3.1...
+Items before purification filter: 72 unique items
+After purification filter: 18000 rows, 45 unique items
+Merging item difficulty (b parameter) from RQ 5.3.1...
+All items successfully merged with difficulty parameters
+Saving response-level data...
+step00_response_level_data.csv (18000 rows, 6 cols)
+Copying TSVR mapping from RQ 5.3.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Running validate_data_format...
+Data format: All required columns present (6 columns). DataFrame has 18000 rows.
+Running check_missing_data...
+Missing data summary:
+  Total missing: 0 / 108000 cells (0.00%)
+  Missing by column:
+Forbidden columns (Difficulty, paradigm) have zero NaN - PASS
+Step 00 extraction complete:
+  Input: 400 rows (wide format)
+  Output: 18000 rows (long format)
+  Participants: 100
+  Tests: 4
+  Items: 45
+  Paradigms: 3 (ICR, IFR, IRE)
+  Response rate: 100.0%
+Step 00 complete

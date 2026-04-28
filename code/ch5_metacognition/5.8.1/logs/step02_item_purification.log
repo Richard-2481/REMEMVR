@@ -1,0 +1,123 @@
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 36 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+  Difficulty range: [0.44, 1.11]
+  Overall_Discrimination range: [1.97, 4.18]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 36 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 36 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 36 / 36
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 36
+Retained (Pass 2): 36 (100.0%)
+Excluded: 0 (0.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 36 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+  Difficulty range: [0.06, 0.56]
+  Overall_Discrimination range: [2.46, 4.52]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 36 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 36 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 36 / 36
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 36
+Retained (Pass 2): 36 (100.0%)
+Excluded: 0 (0.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 36 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+  Difficulty range: [-0.69, 1.91]
+  Overall_Discrimination range: [0.95, 2.20]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 36 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 36 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Source', 'Discrim_Destination']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 36 / 36
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 36
+Retained (Pass 2): 36 (100.0%)
+Excluded: 0 (0.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================

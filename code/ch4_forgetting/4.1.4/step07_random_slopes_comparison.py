@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Step 07: Random Slopes Comparison (MANDATORY PLATINUM REQUIREMENT)
+Step 07: Random Slopes Comparison (MANDATORY VALIDATION REQUIREMENT)
 
 PURPOSE:
 Test whether random slopes improve model fit over intercepts-only models.
-This resolves the PLATINUM blocker identified by rq_platinum agent (2025-12-31).
+This resolves the validation blocker identified by validation process (2025-12-31).
 
 CRITICAL CONTEXT:
 - Current analysis uses random intercepts + slopes: `~ 1 + Days | UID`
@@ -50,9 +50,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from tools.model_selection import compare_lmm_models_kitchen_sink
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step07_random_slopes_comparison.log"
@@ -68,9 +66,7 @@ COMPARISON_CSV = RQ_DIR / "data" / "step07_random_slopes_comparison.csv"
 
 COMPARISON_CSV.parent.mkdir(parents=True, exist_ok=True)
 
-# =============================================================================
 # Logging Function
-# =============================================================================
 
 def log(msg: str) -> None:
     """Write message to both console and log file (UTF-8 encoding)."""
@@ -81,73 +77,62 @@ def log(msg: str) -> None:
         f.write(formatted_msg + "\n")
 
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 07: Random Slopes Comparison")
+        log("Step 07: Random Slopes Comparison")
         log("=" * 70)
-        log("[CONTEXT] PLATINUM blocker resolution - testing if random slopes needed")
-        log("[TAXONOMY] Section 4.4 (added 2025-12-11) mandates random slopes testing")
+        log("validation blocker resolution - testing if random slopes needed")
+        log("Section 4.4 (added 2025-12-11) mandates random slopes testing")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Inputs
-        # =====================================================================
-        log("[LOAD] Loading LMM input data from RQ 5.1.1...")
+        # Load Inputs
+        log("Loading LMM input data from RQ 5.1.1...")
         if not LMM_INPUT.exists():
-            log(f"[ERROR] LMM input file not found: {LMM_INPUT}")
+            log(f"LMM input file not found: {LMM_INPUT}")
             sys.exit(1)
 
         lmm_input = pd.read_csv(LMM_INPUT, encoding='utf-8')
-        log(f"[LOADED] {len(lmm_input)} rows, {lmm_input['UID'].nunique()} participants")
+        log(f"{len(lmm_input)} rows, {lmm_input['UID'].nunique()} participants")
 
-        log("[LOAD] Loading competitive models metadata...")
+        log("Loading competitive models metadata...")
         if not COMPETITIVE_MODELS_YAML.exists():
-            log(f"[ERROR] Competitive models YAML not found: {COMPETITIVE_MODELS_YAML}")
+            log(f"Competitive models YAML not found: {COMPETITIVE_MODELS_YAML}")
             sys.exit(1)
 
         with open(COMPETITIVE_MODELS_YAML, 'r', encoding='utf-8') as f:
             competitive_meta = yaml.safe_load(f)
 
         competitive_models = competitive_meta['competitive_models']
-        log(f"[LOADED] {len(competitive_models)} competitive models")
+        log(f"{len(competitive_models)} competitive models")
         for model_name in competitive_models:
             log(f"  - {model_name}")
 
-        log("[LOAD] Loading existing model comparison (with slopes)...")
+        log("Loading existing model comparison (with slopes)...")
         if not MODEL_COMPARISON_CSV.exists():
-            log(f"[ERROR] Model comparison CSV not found: {MODEL_COMPARISON_CSV}")
+            log(f"Model comparison CSV not found: {MODEL_COMPARISON_CSV}")
             sys.exit(1)
 
         model_comparison = pd.read_csv(MODEL_COMPARISON_CSV, encoding='utf-8')
-        log(f"[LOADED] {len(model_comparison)} models in comparison table")
+        log(f"{len(model_comparison)} models in comparison table")
         log("")
-
-        # =====================================================================
-        # STEP 2: Extract Existing AICs (With Slopes)
-        # =====================================================================
-        log("[EXTRACT] Extracting AIC values for competitive models (with slopes)...")
+        # Extract Existing AICs (With Slopes)
+        log("Extracting AIC values for competitive models (with slopes)...")
 
         aic_with_slopes = {}
         for model_name in competitive_models:
             model_row = model_comparison[model_comparison['model_name'] == model_name]
             if len(model_row) == 0:
-                log(f"[WARNING] Model {model_name} not found in comparison table")
+                log(f"Model {model_name} not found in comparison table")
                 continue
             aic_with_slopes[model_name] = model_row.iloc[0]['AIC']
             log(f"  {model_name}: AIC = {aic_with_slopes[model_name]:.2f}")
 
-        log(f"[INFO] Extracted {len(aic_with_slopes)} AIC values")
+        log(f"Extracted {len(aic_with_slopes)} AIC values")
         log("")
-
-        # =====================================================================
-        # STEP 3: Fit Intercepts-Only Models Using Kitchen Sink
-        # =====================================================================
-        log("[FIT] Fitting intercepts-only models (re_formula='~1')...")
-        log("[INFO] This will take ~2-3 minutes...")
+        # Fit Intercepts-Only Models Using Kitchen Sink
+        log("Fitting intercepts-only models (re_formula='~1')...")
+        log("This will take ~2-3 minutes...")
         log("")
 
         # Use kitchen sink with intercepts-only
@@ -164,48 +149,42 @@ if __name__ == "__main__":
                 log_file=None,
             )
         except Exception as e:
-            log(f"[ERROR] Kitchen sink (intercepts-only) failed: {e}")
+            log(f"Kitchen sink (intercepts-only) failed: {e}")
             sys.exit(1)
 
         comparison_intercepts = intercepts_only_results['comparison']
-        log(f"[SUCCESS] {len(comparison_intercepts)} intercepts-only models fitted")
+        log(f"{len(comparison_intercepts)} intercepts-only models fitted")
         log("")
-
-        # =====================================================================
-        # STEP 4: Extract AICs for Competitive Models (Intercepts-Only)
-        # =====================================================================
-        log("[EXTRACT] Extracting AIC values (intercepts-only)...")
+        # Extract AICs for Competitive Models (Intercepts-Only)
+        log("Extracting AIC values (intercepts-only)...")
 
         aic_intercepts_only = {}
         for model_name in competitive_models:
             model_row = comparison_intercepts[comparison_intercepts['model_name'] == model_name]
             if len(model_row) == 0:
-                log(f"[WARNING] Model {model_name} failed to converge (intercepts-only)")
+                log(f"Model {model_name} failed to converge (intercepts-only)")
                 aic_intercepts_only[model_name] = np.nan
                 continue
             aic_intercepts_only[model_name] = model_row.iloc[0]['AIC']
             log(f"  {model_name}: AIC = {aic_intercepts_only[model_name]:.2f}")
 
-        log(f"[INFO] Extracted {sum(~pd.isna(list(aic_intercepts_only.values())))}/{len(competitive_models)} AIC values")
+        log(f"Extracted {sum(~pd.isna(list(aic_intercepts_only.values())))}/{len(competitive_models)} AIC values")
         log("")
-
-        # =====================================================================
-        # STEP 5: Compute ΔAIC and Decision
-        # =====================================================================
-        log("[COMPARE] Computing ΔAIC = AIC(intercepts_only) - AIC(with_slopes)...")
+        # Compute ΔAIC and Decision
+        log("Computing ΔAIC = AIC(intercepts_only) - AIC(with_slopes)...")
         log("")
 
         comparison_results = []
         for model_name in competitive_models:
             if model_name not in aic_with_slopes or model_name not in aic_intercepts_only:
-                log(f"[WARNING] Skipping {model_name} (missing AIC values)")
+                log(f"Skipping {model_name} (missing AIC values)")
                 continue
 
             aic_slopes = aic_with_slopes[model_name]
             aic_intcpt = aic_intercepts_only[model_name]
 
             if pd.isna(aic_intcpt):
-                log(f"[WARNING] Skipping {model_name} (intercepts-only failed)")
+                log(f"Skipping {model_name} (intercepts-only failed)")
                 continue
 
             delta_aic = aic_intcpt - aic_slopes
@@ -229,7 +208,7 @@ if __name__ == "__main__":
 
         log("")
         log("=" * 70)
-        log("[SUMMARY] Random Slopes Comparison Results")
+        log("Random Slopes Comparison Results")
         log("=" * 70)
 
         # Overall statistics
@@ -247,52 +226,46 @@ if __name__ == "__main__":
 
         # Decision criteria
         if n_improved >= n_models * 0.7:  # 70% threshold
-            log("[DECISION] ✓ RANDOM SLOPES JUSTIFIED")
+            log("✓ RANDOM SLOPES JUSTIFIED")
             log(f"  Rationale: {n_improved}/{n_models} models ({pct_improved:.1f}%) show ΔAIC > 2.0")
             log(f"  Interpretation: Individual heterogeneity in forgetting rates EXISTS")
             log(f"  var_slope = 0.098 and ICC_slope = 21.6% interpretations VALID")
             log("")
-            log("[BLOCKER] ✓ RESOLVED - PLATINUM criterion met")
+            log("✓ RESOLVED - validation criterion met")
             decision = "SLOPES_JUSTIFIED"
         else:
-            log("[DECISION] ✗ RANDOM SLOPES NOT JUSTIFIED")
+            log("✗ RANDOM SLOPES NOT JUSTIFIED")
             log(f"  Rationale: Only {n_improved}/{n_models} models ({pct_improved:.1f}%) show ΔAIC > 2.0")
             log(f"  Interpretation: Individual differences in slopes may be artifact")
             log(f"  var_slope = 0.098 interpretation QUESTIONABLE")
             log("")
-            log("[BLOCKER] ✗ NOT RESOLVED - Need to reconsider ICC interpretation")
+            log("✗ NOT RESOLVED - Need to reconsider ICC interpretation")
             decision = "SLOPES_NOT_JUSTIFIED"
 
         log("=" * 70)
         log("")
-
-        # =====================================================================
-        # STEP 6: Save Results
-        # =====================================================================
-        log("[SAVE] Saving comparison results to CSV...")
+        # Save Results
+        log("Saving comparison results to CSV...")
 
         comparison_df.to_csv(COMPARISON_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {COMPARISON_CSV}")
+        log(f"{COMPARISON_CSV}")
         log("")
-
-        # =====================================================================
         # VALIDATION
-        # =====================================================================
-        log("[VALIDATE] Running output validation...")
+        log("Running output validation...")
 
         if comparison_df.isna().sum().sum() > 0:
-            log(f"[FAIL] Comparison table contains NaN values")
+            log(f"Comparison table contains NaN values")
             sys.exit(1)
-        log(f"[PASS] No NaN values in comparison table")
+        log(f"No NaN values in comparison table")
 
         if len(comparison_df) < 10:
-            log(f"[WARNING] Expected 10 models, got {len(comparison_df)}")
+            log(f"Expected 10 models, got {len(comparison_df)}")
         else:
-            log(f"[PASS] All 10 competitive models compared")
+            log(f"All 10 competitive models compared")
 
         log("")
         log("=" * 70)
-        log("[SUCCESS] Step 07 complete: Random slopes comparison")
+        log("Step 07 complete: Random slopes comparison")
         log(f"  Decision: {decision}")
         log(f"  Models improved by slopes: {n_improved}/{n_models} ({pct_improved:.1f}%)")
         log(f"  Median ΔAIC: {median_delta_aic:+.2f}")
@@ -306,8 +279,8 @@ if __name__ == "__main__":
             sys.exit(2)  # Slopes not justified (non-zero exit for caller awareness)
 
     except Exception as e:
-        log(f"[ERROR] Unexpected error: {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"Unexpected error: {str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

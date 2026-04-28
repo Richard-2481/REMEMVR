@@ -1,0 +1,57 @@
+Step 9: Create Analysis Summary
+Loading all analysis results...
+step02_correlations.csv (10 correlations)
+step03_hierarchical_models.csv (2 models)
+step04_mediation_analysis.csv (1 results)
+step05_cross_validation.csv (2 models)
+step06_effect_sizes.csv (4 predictors)
+step07_power_analysis.csv (7 tests)
+Extracting key statistical findings...
+single positional indexer is out-of-bounds
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step09_create_summary.py", line 193, in <module>
+    age_effect = effects_df[effects_df['predictor'] == 'Age_std'].iloc[0]
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1192, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1753, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1686, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Step 9: Create Analysis Summary
+Loading all analysis results...
+step02_correlations.csv (10 correlations)
+step03_hierarchical_models.csv (2 models)
+step04_mediation_analysis.csv (1 results)
+step05_cross_validation.csv (2 models)
+step06_effect_sizes.csv (4 predictors)
+step07_power_analysis.csv (7 tests)
+Extracting key statistical findings...
+Creating comprehensive analysis summary...
+Unknown format code 'f' for object of type 'str'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step09_create_summary.py", line 255, in <module>
+    - **Mediation Significance:** p = {mediation_result['p_mediation']:.4f}
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'str'
+Step 9: Create Analysis Summary
+Loading all analysis results...
+step02_correlations.csv (10 correlations)
+step03_hierarchical_models.csv (2 models)
+step04_mediation_analysis.csv (1 results)
+step05_cross_validation.csv (2 models)
+step06_effect_sizes.csv (4 predictors)
+step07_power_analysis.csv (7 tests)
+Extracting key statistical findings...
+Creating comprehensive analysis summary...
+step09_analysis_summary.txt (6859 characters)
+Running validate_data_format...
+valid: True
+message: All required columns present (3 columns). DataFrame has 1 rows.
+missing_cols: []
+Summary file size adequate: 6884 bytes
+Step 9 complete

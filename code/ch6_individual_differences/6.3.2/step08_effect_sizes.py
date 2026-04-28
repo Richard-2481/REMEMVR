@@ -22,15 +22,15 @@ def log(msg):
     print(msg, flush=True)
 
 if __name__ == "__main__":
-    log("[START] Step 08: Effect Sizes")
+    log("Step 08: Effect Sizes")
     
     # Load regression results
-    log("[LOAD] Loading regression results...")
+    log("Loading regression results...")
     reg_df = pd.read_csv(DATA_DIR / "step04_regression_results.csv")
     model_df = pd.read_csv(DATA_DIR / "step04_model_comparison.csv")
     
     # Extract effect sizes
-    log("[ANALYSIS] Computing effect sizes...")
+    log("Computing effect sizes...")
     full_model = model_df[model_df['model'] == 'Full_Model'].iloc[0]
     r2 = full_model['r2']
     adj_r2 = full_model['adj_r2']
@@ -69,9 +69,9 @@ if __name__ == "__main__":
     effect_df = pd.DataFrame(effect_data)
     
     # Save results
-    log("[SAVE] Saving effect size results...")
+    log("Saving effect size results...")
     effect_df.to_csv(DATA_DIR / "step08_effect_sizes.csv", index=False)
-    log(f"[SAVED] step08_effect_sizes.csv ({len(effect_df)} predictors)")
+    log(f"step08_effect_sizes.csv ({len(effect_df)} predictors)")
     
     # Summary statistics
     summary_df = pd.DataFrame([{
@@ -84,9 +84,9 @@ if __name__ == "__main__":
     }])
     
     summary_df.to_csv(DATA_DIR / "step08_effect_summary.csv", index=False)
-    log(f"[SAVED] step08_effect_summary.csv")
+    log(f"step08_effect_summary.csv")
     
-    log(f"[INFO] Overall R² = {r2:.4f}, f² = {f2:.4f}")
-    log(f"[INFO] Predictors with at least small effect: {summary_df['n_significant'].iloc[0]}/{summary_df['n_predictors'].iloc[0]}")
+    log(f"Overall R² = {r2:.4f}, f² = {f2:.4f}")
+    log(f"Predictors with at least small effect: {summary_df['n_significant'].iloc[0]}/{summary_df['n_predictors'].iloc[0]}")
     
-    log("[SUCCESS] Step 08 complete")
+    log("Step 08 complete")

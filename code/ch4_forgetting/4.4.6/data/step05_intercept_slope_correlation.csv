@@ -1,0 +1,4 @@
+r,p_uncorrected,p_bonferroni,significant_uncorrected,significant_bonferroni,interpretation,congruence,CI_lower,CI_upper
+0.99999999924599,0.0,0.0,True,True,Strong positive correlation (r=1.000) between random intercepts and slopes. Significant after Bonferroni correction (p=0.0000 < 0.05).,Common,0.9999999988773873,0.9999999994935643
+-0.7917379070148943,1.0627712824279594e-22,3.188313847283878e-22,True,True,Strong negative correlation (r=-0.792) between random intercepts and slopes. Significant after Bonferroni correction (p=0.0000 < 0.05).,Congruent,-0.8551674992738925,-0.7049473246186991
+0.9999999998993513,0.0,0.0,True,True,Strong positive correlation (r=1.000) between random intercepts and slopes. Significant after Bonferroni correction (p=0.0000 < 0.05).,Incongruent,0.9999999998501484,0.9999999999323986

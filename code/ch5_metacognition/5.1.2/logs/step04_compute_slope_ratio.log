@@ -1,0 +1,24 @@
+Step 04: Compute Slope Ratio
+Loading piecewise data from step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows)
+Time_Early_Days range: [0.00, 1.99]
+Time_Late_Days range: [0.00, 8.26]
+Re-fitting piecewise model for slope extraction...
+Formula: theta_confidence ~ Time_Early_Days + Time_Late_Days
+Piecewise model re-fitted
+Extracting Early and Late slopes from model coefficients...
+Early slope: beta=-0.242824, SE=0.057847
+Late slope: beta=-0.233001, SE=0.015691
+Computing slope ratio...
+Slope ratio: 0.9595 (|Late| / |Early|)
+Threshold: 0.5
+Ratio >= 0.5 -> Two-phase pattern NOT supported by slope ratio test
+Slope ratio DataFrame created
+Saving slope ratio results to step04_slope_ratio.csv...
+step04_slope_ratio.csv (3 rows)
+Running custom slope ratio checks...
+PASS - Early slope is negative (decline)
+PASS - Late slope is negative (decline)
+PASS - All standard errors positive
+PASS - Ratio is non-negative
+Step 04 complete

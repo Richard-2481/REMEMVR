@@ -27,21 +27,21 @@ def log(msg):
     print(msg)
 
 try:
-    log("[START] Sensitivity Analysis: log_TSVR Time Scale")
+    log("Sensitivity Analysis: log_TSVR Time Scale")
 
     # Load merged data from Step 3
     df = pd.read_csv(RQ_DIR / "data" / "step03_merged_data_long.csv")
-    log(f"[LOAD] {len(df)} rows from step03_merged_data_long.csv")
+    log(f"{len(df)} rows from step03_merged_data_long.csv")
 
     # Create log_TSVR variable (match Ch6 6.8.1 approach)
     # Add small constant to avoid log(0)
     df['log_TSVR'] = np.log(df['TSVR_hours'] + 0.1)
-    log(f"[TRANSFORM] Created log_TSVR from TSVR_hours")
+    log(f"Created log_TSVR from TSVR_hours")
     log(f"  TSVR_hours range: {df['TSVR_hours'].min():.2f} - {df['TSVR_hours'].max():.2f}")
     log(f"  log_TSVR range: {df['log_TSVR'].min():.2f} - {df['log_TSVR'].max():.2f}")
 
     # Fit three-way interaction model with log_TSVR
-    log("\n[FIT] Three-way interaction: theta ~ measure * location * log_TSVR")
+    log("\nThree-way interaction: theta ~ measure * location * log_TSVR")
 
     model = smf.mixedlm(
         formula='theta ~ measure * location * log_TSVR',
@@ -50,7 +50,7 @@ try:
         re_formula='~1'
     ).fit(reml=False)
 
-    log(f"[CONVERGED] Model converged: {model.converged}")
+    log(f"Model converged: {model.converged}")
 
     # Extract fixed effects
     fe_table = model.summary().tables[1]
@@ -88,18 +88,18 @@ try:
         log(f"  Sensitivity (log_TSVR): p_bonf = {row['p_bonferroni']:.6f}")
 
         if row['p_bonferroni'] < 0.05:
-            log("\n[CONCLUSION] ✓ ROBUST: Three-way interaction remains significant with log_TSVR")
+            log("\n✓ ROBUST: Three-way interaction remains significant with log_TSVR")
             log("  The dissociation finding is NOT sensitive to time scale choice.")
         else:
-            log("\n[CONCLUSION] ✗ SENSITIVE: Three-way interaction becomes non-significant with log_TSVR")
+            log("\n✗ SENSITIVE: Three-way interaction becomes non-significant with log_TSVR")
             log("  The dissociation finding IS sensitive to time scale choice.")
     else:
-        log("[ERROR] Could not find three-way interaction term in model results")
+        log("Could not find three-way interaction term in model results")
 
     # Save full results
     output_path = RQ_DIR / "data" / "sensitivity_log_tsvr_results.csv"
     df_fixed.to_csv(output_path, index=False, encoding='utf-8')
-    log(f"\n[SAVE] {output_path.name} ({len(df_fixed)} terms)")
+    log(f"\n{output_path.name} ({len(df_fixed)} terms)")
 
     # Save comparison summary
     summary_path = RQ_DIR / "results" / "sensitivity_log_tsvr_summary.txt"
@@ -141,11 +141,11 @@ try:
             f.write("ERROR: Could not extract three-way interaction results.\n")
         f.write("\n" + "="*80 + "\n")
 
-    log(f"[SAVE] {summary_path.name}")
-    log("[SUCCESS] Sensitivity analysis complete")
+    log(f"{summary_path.name}")
+    log("Sensitivity analysis complete")
 
 except Exception as e:
-    log(f"[ERROR] {str(e)}")
+    log(f"{str(e)}")
     import traceback
     traceback.print_exc()
     with open(LOG_FILE, 'a', encoding='utf-8') as f:

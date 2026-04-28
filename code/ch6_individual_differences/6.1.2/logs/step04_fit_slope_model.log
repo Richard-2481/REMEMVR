@@ -1,0 +1,30 @@
+Step 04: fit_slope_model
+Loading regression input data...
+step02_regression_input.csv (97 rows, 10 cols)
+All required columns present: ['slope', 'RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']
+Running custom fit_multiple_regression for slope prediction...
+Predictors: ['RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']
+Outcome: slope (forgetting rate)
+Sample size: N=97
+Slope prediction analysis complete
+R² = 0.1152, Adjusted R² = 0.0666
+F(5, 91) = 2.369, p = 0.045477
+Saving step04_slope_predictions.csv...
+step04_slope_predictions.csv (6 rows, 9 cols)
+Slope prediction model coefficients:
+  intercept: β = -0.0939, SE = 0.0394, p = 0.019323
+  RAVLT_T: β = 0.0014, SE = 0.0005, p = 0.012367, VIF = 1.229
+  RAVLT_Pct_Ret_T: β = -0.0004, SE = 0.0005, p = 0.478158, VIF = 1.138
+  BVMT_T: β = -0.0000, SE = 0.0006, p = 0.957597, VIF = 1.499
+  BVMT_Pct_Ret_T: β = 0.0002, SE = 0.0005, p = 0.650673, VIF = 1.077
+  RPM_T: β = 0.0007, SE = 0.0006, p = 0.216498, VIF = 1.379
+Running validate_numeric_range...
+valid: True
+message: p_uncorrected: All values within range [0.0, 1.0] (n=6).
+out_of_range_count: 0
+violations: []
+PASS: All standard errors positive
+PASS: Bonferroni correction applied correctly
+PASS: VIF values reasonable (all <= 5)
+PASS: All 6 model terms present (intercept + 5 predictors)
+Step 04 complete

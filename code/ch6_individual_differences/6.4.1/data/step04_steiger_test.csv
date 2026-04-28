@@ -1,0 +1,3 @@
+predictor,z_statistic,p_value,r_difference,significant,interpretation,alpha_threshold
+ravlt_total,-0.3821454889361201,0.6488232738348764,-0.009700428907825687,False,No significant difference in ravlt_total correlation strength between Free Recall and Recognition paradigms,0.00179
+ravlt_pct_ret,0.09037065686629517,0.46399633684436337,0.0022939800616920136,False,No significant difference in ravlt_pct_ret correlation strength between Free Recall and Recognition paradigms,0.00179

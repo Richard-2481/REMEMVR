@@ -84,10 +84,7 @@ def main():
     print("="*70)
     print("POWER ANALYSIS FOR GLMM NULL FINDINGS")
     print("="*70)
-
-    # =========================================================================
     # RQ 5.4.1: Congruence × Time Interactions
-    # =========================================================================
     print("\n" + "="*70)
     print("RQ 5.4.1: Schema Congruence × Time Interactions")
     print("="*70)
@@ -120,10 +117,7 @@ def main():
     print(f"  - Odds ratio: {logit_to_odds_ratio(mdes_cong):.3f}")
     print(f"  - ~{logit_to_probability_difference(mdes_cong)*100:.1f}% probability difference per log-unit time")
     print(f"  - Over 150 hours (log(150)=5), this is ~{logit_to_probability_difference(mdes_cong*5)*100:.1f}% difference")
-
-    # =========================================================================
     # RQ 5.1.3: Age × Time Interaction
-    # =========================================================================
     print("\n" + "="*70)
     print("RQ 5.1.3: Age × Time Interaction")
     print("="*70)
@@ -148,10 +142,7 @@ def main():
     print(f"MDES for Age × Time: β ≥ {mdes_age_time:.5f}")
     print(f"This means: per 1-year age increase, the time slope changes by {mdes_age_time:.5f}")
     print(f"Over 20-year age span: slope difference of {mdes_age_time * 20:.4f}")
-
-    # =========================================================================
     # RQ 5.4.3: Age × Congruence × Time (3-way)
-    # =========================================================================
     print("\n" + "="*70)
     print("RQ 5.4.3: Age × Congruence × Time (3-way Interactions)")
     print("="*70)
@@ -170,10 +161,7 @@ def main():
         power = calculate_observed_power(vals['beta'], vals['se'])
         mdes = calculate_mdes(vals['se'])
         print(f"{name:<30} {vals['beta']:>10.5f} {vals['se']:>10.4f} {vals['p']:>10.3f} {power:>10.1%} {mdes:>10.5f}")
-
-    # =========================================================================
     # Summary: Sample Size Context
-    # =========================================================================
     print("\n" + "="*70)
     print("SAMPLE SIZE CONTEXT")
     print("="*70)
@@ -188,10 +176,7 @@ def main():
     This is a LARGE dataset for item-level GLMM analysis.
     The standard errors are small, giving us good power for detecting effects.
     """)
-
-    # =========================================================================
     # Comparison with Literature
-    # =========================================================================
     print("\n" + "="*70)
     print("COMPARISON WITH EXPECTED EFFECT SIZES")
     print("="*70)
@@ -217,10 +202,7 @@ def main():
        - Our MDES: ~0.003
        - VERDICT: ✓ ADEQUATE POWER for detecting meaningful moderation
     """)
-
-    # =========================================================================
     # Conclusion
-    # =========================================================================
     print("\n" + "="*70)
     print("POWER ANALYSIS CONCLUSION")
     print("="*70)

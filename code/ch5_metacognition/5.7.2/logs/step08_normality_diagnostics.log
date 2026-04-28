@@ -1,0 +1,186 @@
+======================================================================
+RQ 6.7.2: Normality Diagnostics for Partial Correlation
+======================================================================
+
+Loaded step03_person_level.csv: 100 participants
+
+Variables:
+  SD_confidence: N=100, Mean=0.2850, SD=0.0572
+  SD_accuracy: N=100, Mean=0.4285, SD=0.0147
+  mean_accuracy: N=100, Mean=0.5836, SD=0.0745
+
+======================================================================
+RESIDUALIZATION (controlling for mean_accuracy)
+======================================================================
+
+SD_confidence residuals:
+  Mean: 0.000000 (should be ~0)
+  SD: 0.0548
+
+SD_accuracy residuals:
+  Mean: 0.000000 (should be ~0)
+  SD: 0.0116
+
+======================================================================
+SHAPIRO-WILK NORMALITY TESTS
+======================================================================
+
+SD_confidence residuals:
+  Shapiro-Wilk W = 0.9071
+  p-value = 0.0000
+  Result: Non-normal (p ≤ 0.05)
+
+SD_accuracy residuals:
+  Shapiro-Wilk W = 0.9648
+  p-value = 0.0090
+  Result: Non-normal (p ≤ 0.05)
+
+======================================================================
+GENERATING Q-Q PLOTS
+======================================================================
+
+Saved: plots/diagnostics/qq_plot_confidence_residuals.png
+Saved: plots/diagnostics/qq_plot_accuracy_residuals.png
+
+======================================================================
+OVERALL ASSESSMENT
+======================================================================
+
+STATUS: ⚠ ASSUMPTIONS VIOLATED
+  SD_confidence residuals are non-normal (p = 0.0000)
+  SD_accuracy residuals are non-normal (p = 0.0090)
+
+RECOMMENDATION:
+  Use Spearman rank-based partial correlation as robustness check
+  Report both parametric and non-parametric results
+  If conclusions agree, parametric result defensible despite violation
+
+Saved: data/step08_normality_diagnostics.csv
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+======================================================================
+RQ 6.7.2: Normality Diagnostics for Partial Correlation
+======================================================================
+
+Loaded step03_person_level.csv: 100 participants
+
+Variables:
+  SD_confidence: N=100, Mean=0.2850, SD=0.0572
+  SD_accuracy: N=100, Mean=0.4285, SD=0.0147
+  mean_accuracy: N=100, Mean=0.5836, SD=0.0745
+
+======================================================================
+RESIDUALIZATION (controlling for mean_accuracy)
+======================================================================
+
+SD_confidence residuals:
+  Mean: 0.000000 (should be ~0)
+  SD: 0.0548
+
+SD_accuracy residuals:
+  Mean: 0.000000 (should be ~0)
+  SD: 0.0116
+
+======================================================================
+SHAPIRO-WILK NORMALITY TESTS
+======================================================================
+
+SD_confidence residuals:
+  Shapiro-Wilk W = 0.9071
+  p-value = 0.0000
+  Result: Non-normal (p ≤ 0.05)
+
+SD_accuracy residuals:
+  Shapiro-Wilk W = 0.9648
+  p-value = 0.0090
+  Result: Non-normal (p ≤ 0.05)
+
+======================================================================
+GENERATING Q-Q PLOTS
+======================================================================
+
+Saved: plots/diagnostics/qq_plot_confidence_residuals.png
+Saved: plots/diagnostics/qq_plot_accuracy_residuals.png
+
+======================================================================
+OVERALL ASSESSMENT
+======================================================================
+
+STATUS: ⚠ ASSUMPTIONS VIOLATED
+  SD_confidence residuals are non-normal (p = 0.0000)
+  SD_accuracy residuals are non-normal (p = 0.0090)
+
+RECOMMENDATION:
+  Use Spearman rank-based partial correlation as robustness check
+  Report both parametric and non-parametric results
+  If conclusions agree, parametric result defensible despite violation
+
+Saved: data/step08_normality_diagnostics.csv
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+======================================================================
+RQ 6.7.2: Normality Diagnostics for Partial Correlation
+======================================================================
+
+Loaded step03_person_level.csv: 100 participants
+
+Variables:
+  SD_confidence: N=100, Mean=0.2850, SD=0.0572
+  SD_accuracy: N=100, Mean=0.4285, SD=0.0147
+  mean_accuracy: N=100, Mean=0.5836, SD=0.0745
+
+======================================================================
+RESIDUALIZATION (controlling for mean_accuracy)
+======================================================================
+
+SD_confidence residuals:
+  Mean: 0.000000 (should be ~0)
+  SD: 0.0548
+
+SD_accuracy residuals:
+  Mean: 0.000000 (should be ~0)
+  SD: 0.0116
+
+======================================================================
+SHAPIRO-WILK NORMALITY TESTS
+======================================================================
+
+SD_confidence residuals:
+  Shapiro-Wilk W = 0.9071
+  p-value = 0.0000
+  Result: Non-normal (p ≤ 0.05)
+
+SD_accuracy residuals:
+  Shapiro-Wilk W = 0.9648
+  p-value = 0.0090
+  Result: Non-normal (p ≤ 0.05)
+
+======================================================================
+GENERATING Q-Q PLOTS
+======================================================================
+
+Saved: plots/diagnostics/qq_plot_confidence_residuals.png
+Saved: plots/diagnostics/qq_plot_accuracy_residuals.png
+
+======================================================================
+OVERALL ASSESSMENT
+======================================================================
+
+STATUS: ⚠ ASSUMPTIONS VIOLATED
+  SD_confidence residuals are non-normal (p = 0.0000)
+  SD_accuracy residuals are non-normal (p = 0.0090)
+
+RECOMMENDATION:
+  Use Spearman rank-based partial correlation as robustness check
+  Report both parametric and non-parametric results
+  If conclusions agree, parametric result defensible despite violation
+
+Saved: data/step08_normality_diagnostics.csv
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================

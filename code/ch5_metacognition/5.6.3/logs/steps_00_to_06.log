@@ -1,0 +1,547 @@
+============================================================
+RQ 6.6.3: High-Confidence Errors - Domain Specificity
+============================================================
+
+============================================================
+STEP 00: Extract Item-Level Confidence and Accuracy Data
+============================================================
+Loaded dfData.csv: 400 rows, 214 columns
+Found 105 TQ_ (accuracy) columns
+Found 105 TC_ (confidence) columns
+Found 105 matching TQ/TC pairs
+Classified 105 items by domain
+  What: 29 items
+  Where: 50 items
+  When: 26 items
+Created item-level data: 42000 rows
+
+Validation:
+  Unique UIDs: 100
+  Unique TESTs: 4
+  Unique items: 105
+  Domains: ['When', 'Where', 'What']
+  TQ_accuracy values: [np.int64(0), np.int64(1)]
+  TC_confidence values: [np.float64(0.0), np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step00_item_level.csv
+
+============================================================
+STEP 01: Compute High-Confidence Error Flags
+============================================================
+HCE definition: accuracy=0 AND confidence>=0.75
+Total HCEs: 3309 / 42000 = 0.0788 (7.88%)
+
+HCE rates by domain:
+  What: 682 / 11600 = 0.0588 (5.88%)
+  Where: 1864 / 20000 = 0.0932 (9.32%)
+  When: 763 / 10400 = 0.0734 (7.34%)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step01_hce_by_domain.csv
+
+============================================================
+STEP 02: Aggregate HCE Rates by Domain x Test
+============================================================
+Created summary: 12 rows (3 domains x 4 tests)
+
+HCE rates by Domain x Test:
+============================================================
+RQ 6.6.3: High-Confidence Errors - Domain Specificity
+============================================================
+
+============================================================
+STEP 00: Extract Item-Level Confidence and Accuracy Data
+============================================================
+Loaded dfData.csv: 400 rows, 214 columns
+Found 105 TQ_ (accuracy) columns
+Found 105 TC_ (confidence) columns
+Found 105 matching TQ/TC pairs
+Classified 105 items by domain
+  What: 29 items
+  Where: 50 items
+  When: 26 items
+Created item-level data: 42000 rows
+
+Validation:
+  Unique UIDs: 100
+  Unique TESTs: 4
+  Unique items: 105
+  Domains: ['When', 'Where', 'What']
+  TQ_accuracy values: [np.int64(0), np.int64(1)]
+  TC_confidence values: [np.float64(0.0), np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step00_item_level.csv
+
+============================================================
+STEP 01: Compute High-Confidence Error Flags
+============================================================
+HCE definition: accuracy=0 AND confidence>=0.75
+Total HCEs: 3309 / 42000 = 0.0788 (7.88%)
+
+HCE rates by domain:
+  What: 682 / 11600 = 0.0588 (5.88%)
+  Where: 1864 / 20000 = 0.0932 (9.32%)
+  When: 763 / 10400 = 0.0734 (7.34%)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step01_hce_by_domain.csv
+
+============================================================
+STEP 02: Aggregate HCE Rates by Domain x Test
+============================================================
+Created summary: 12 rows (3 domains x 4 tests)
+
+HCE rates by Domain x Test:
+  What: T1: 0.0507, T2: 0.0728, T3: 0.0562, T4: 0.0555
+  Where: T1: 0.1186, T2: 0.0990, T3: 0.0778, T4: 0.0774
+  When: T1: 0.0988, T2: 0.0838, T3: 0.0650, T4: 0.0458
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step02_hce_rates_summary.csv
+
+============================================================
+STEP 03: Fit LMM Testing Domain x Time Interaction
+============================================================
+TSVR by test (Days):
+  1.0: 0.04 days
+  2.0: 1.20 days
+  3.0: 3.28 days
+  4.0: 6.31 days
+
+LMM input data: 1200 rows (100 participants x 3 domains x 4 tests)
+
+Fitting LMM: HCE_rate ~ domain * Days + (1 | UID)
+Model converged successfully
+
+----------------------------------------
+FIXED EFFECTS:
+----------------------------------------
+  Intercept: β=0.060314, SE=0.007453, z=8.093, p=0.000000
+  C(domain, Treatment(reference='What'))[T.When]: β=0.035481, SE=0.007270, z=4.880, p=0.000001
+  C(domain, Treatment(reference='What'))[T.Where]: β=0.049856, SE=0.007270, z=6.858, p=0.000000
+  Days_mean: β=-0.000562, SE=0.001426, z=-0.394, p=0.693622
+  C(domain, Treatment(reference='What'))[T.When]:Days_mean: β=-0.007726, SE=0.002017, z=-3.830, p=0.000128
+  C(domain, Treatment(reference='What'))[T.Where]:Days_mean: β=-0.005708, SE=0.002017, z=-2.830, p=0.004654
+
+----------------------------------------
+RANDOM EFFECTS:
+----------------------------------------
+  Group Var: 0.002912
+  Scale: 0.004611
+
+----------------------------------------
+MODEL FIT:
+----------------------------------------
+  Log-likelihood: 1390.30
+  AIC: -2768.59
+============================================================
+RQ 6.6.3: High-Confidence Errors - Domain Specificity
+============================================================
+
+============================================================
+STEP 00: Extract Item-Level Confidence and Accuracy Data
+============================================================
+Loaded dfData.csv: 400 rows, 214 columns
+Found 105 TQ_ (accuracy) columns
+Found 105 TC_ (confidence) columns
+Found 105 matching TQ/TC pairs
+Classified 105 items by domain
+  What: 29 items
+  Where: 50 items
+  When: 26 items
+Created item-level data: 42000 rows
+
+Validation:
+  Unique UIDs: 100
+  Unique TESTs: 4
+  Unique items: 105
+  Domains: ['When', 'What', 'Where']
+  TQ_accuracy values: [np.int64(0), np.int64(1)]
+  TC_confidence values: [np.float64(0.0), np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step00_item_level.csv
+
+============================================================
+STEP 01: Compute High-Confidence Error Flags
+============================================================
+HCE definition: accuracy=0 AND confidence>=0.75
+Total HCEs: 3309 / 42000 = 0.0788 (7.88%)
+
+HCE rates by domain:
+  What: 682 / 11600 = 0.0588 (5.88%)
+  Where: 1864 / 20000 = 0.0932 (9.32%)
+  When: 763 / 10400 = 0.0734 (7.34%)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step01_hce_by_domain.csv
+
+============================================================
+STEP 02: Aggregate HCE Rates by Domain x Test
+============================================================
+Created summary: 12 rows (3 domains x 4 tests)
+
+HCE rates by Domain x Test:
+  What: T1: 0.0507, T2: 0.0728, T3: 0.0562, T4: 0.0555
+  Where: T1: 0.1186, T2: 0.0990, T3: 0.0778, T4: 0.0774
+  When: T1: 0.0988, T2: 0.0838, T3: 0.0650, T4: 0.0458
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step02_hce_rates_summary.csv
+
+============================================================
+STEP 03: Fit LMM Testing Domain x Time Interaction
+============================================================
+TSVR by test (Days):
+  1.0: 0.04 days
+  2.0: 1.20 days
+  3.0: 3.28 days
+  4.0: 6.31 days
+
+LMM input data: 1200 rows (100 participants x 3 domains x 4 tests)
+
+Fitting LMM: HCE_rate ~ domain * Days + (1 | UID)
+Model converged successfully
+
+----------------------------------------
+FIXED EFFECTS:
+----------------------------------------
+  Intercept: β=0.060314, SE=0.007453, z=8.093, p=0.000000
+  C(domain, Treatment(reference='What'))[T.When]: β=0.035481, SE=0.007270, z=4.880, p=0.000001
+  C(domain, Treatment(reference='What'))[T.Where]: β=0.049856, SE=0.007270, z=6.858, p=0.000000
+  Days_mean: β=-0.000562, SE=0.001426, z=-0.394, p=0.693622
+  C(domain, Treatment(reference='What'))[T.When]:Days_mean: β=-0.007726, SE=0.002017, z=-3.830, p=0.000128
+  C(domain, Treatment(reference='What'))[T.Where]:Days_mean: β=-0.005708, SE=0.002017, z=-2.830, p=0.004654
+
+----------------------------------------
+RANDOM EFFECTS:
+----------------------------------------
+  Group Var: 0.002912
+  Scale: 0.004611
+
+----------------------------------------
+MODEL FIT:
+----------------------------------------
+  Log-likelihood: 1390.30
+  AIC: -2768.59
+  N observations: 1200
+  N participants: 100
+  Converged: True
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step03_domain_hce_lmm.txt
+
+============================================================
+STEP 04: Test Domain Effects (Decision D068 Dual P-Values)
+============================================================
+Domain main effect (min p from contrasts): p = 0.000000
+Domain x Time interaction (min p from contrasts): p = 0.000128
+
+Domain Effects Summary (Decision D068):
+  Domain main effect: p_uncorr=0.000000, p_bonf=0.000000 ***
+  Domain x Time interaction: p_uncorr=0.000128, p_bonf=0.000256 ***
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step04_domain_effects.csv
+
+============================================================
+STEP 05: Rank Domains by Mean HCE Rate
+============================================================
+Domain Ranking (1 = highest HCE rate):
+  Rank 1: Where (9.32%) - Hypothesis: Rank 2 ✗
+  Rank 2: When (7.34%) - Hypothesis: Rank 1 ✗
+  Rank 3: What (5.88%) - Hypothesis: Rank 3 ✓
+
+Hypothesis (When > Where > What): NOT SUPPORTED
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step05_domain_ranking.csv
+
+============================================================
+STEP 06: Prepare Plot Data
+============================================================
+Plot data: 12 rows (3 domains x 4 timepoints)
+
+Plot data preview:
+  What: Day 0.0: 5.07%, Day 1.2: 7.28%, Day 3.3: 5.62%, Day 6.3: 5.55%
+  Where: Day 0.0: 11.86%, Day 1.2: 9.90%, Day 3.3: 7.78%, Day 6.3: 7.74%
+  When: Day 0.0: 9.88%, Day 1.2: 8.38%, Day 3.3: 6.50%, Day 6.3: 4.58%
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step06_hce_by_domain_plot_data.csv
+
+============================================================
+ANALYSIS COMPLETE
+============================================================
+
+KEY FINDINGS:
+  Domain ranking: Where (9.32%) > When (7.34%) > What (5.88%)
+  Hypothesis (When > Where > What): NOT SUPPORTED
+  Domain main effect: p = 0.0000 (SIG)
+  Domain x Time: p = 0.0003 (SIG)
+============================================================
+RQ 6.6.3: High-Confidence Errors - Domain Specificity
+============================================================
+
+============================================================
+STEP 00: Extract Item-Level Confidence and Accuracy Data
+============================================================
+Loaded dfData.csv: 400 rows, 478 columns
+Found 105 TQ_ (accuracy) columns
+Found 105 TC_ (confidence) columns
+Found 105 matching TQ/TC pairs
+Classified 105 items by domain
+  What: 29 items
+  Where: 50 items
+  When: 26 items
+Created item-level data: 42000 rows
+
+Validation:
+  Unique UIDs: 100
+  Unique TESTs: 4
+  Unique items: 105
+  Domains: ['What', 'When', 'Where']
+  TQ_accuracy values: [np.int64(0), np.int64(1)]
+  TC_confidence values: [np.float64(0.0), np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step00_item_level.csv
+
+============================================================
+STEP 01: Compute High-Confidence Error Flags
+============================================================
+HCE definition: accuracy=0 AND confidence>=0.75
+Total HCEs: 3309 / 42000 = 0.0788 (7.88%)
+
+HCE rates by domain:
+  What: 682 / 11600 = 0.0588 (5.88%)
+  Where: 1864 / 20000 = 0.0932 (9.32%)
+  When: 763 / 10400 = 0.0734 (7.34%)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step01_hce_by_domain.csv
+
+============================================================
+STEP 02: Aggregate HCE Rates by Domain x Test
+============================================================
+Created summary: 12 rows (3 domains x 4 tests)
+
+HCE rates by Domain x Test:
+  What: T1: 0.0507, T2: 0.0728, T3: 0.0562, T4: 0.0555
+  Where: T1: 0.1186, T2: 0.0990, T3: 0.0778, T4: 0.0774
+  When: T1: 0.0988, T2: 0.0838, T3: 0.0650, T4: 0.0458
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step02_hce_rates_summary.csv
+
+============================================================
+STEP 03: Fit LMM Testing Domain x Time Interaction
+============================================================
+TSVR by test (Days):
+  1.0: 0.04 days
+  2.0: 1.20 days
+  3.0: 3.28 days
+  4.0: 6.31 days
+
+LMM input data: 1200 rows (100 participants x 3 domains x 4 tests)
+
+Fitting LMM: HCE_rate ~ domain * Days + (1 | UID)
+Model converged successfully
+
+----------------------------------------
+FIXED EFFECTS:
+----------------------------------------
+  Intercept: β=0.060314, SE=0.007453, z=8.093, p=0.000000
+  C(domain, Treatment(reference='What'))[T.When]: β=0.035481, SE=0.007270, z=4.880, p=0.000001
+  C(domain, Treatment(reference='What'))[T.Where]: β=0.049856, SE=0.007270, z=6.858, p=0.000000
+  Days_mean: β=-0.000562, SE=0.001426, z=-0.394, p=0.693622
+  C(domain, Treatment(reference='What'))[T.When]:Days_mean: β=-0.007726, SE=0.002017, z=-3.830, p=0.000128
+  C(domain, Treatment(reference='What'))[T.Where]:Days_mean: β=-0.005708, SE=0.002017, z=-2.830, p=0.004654
+
+----------------------------------------
+RANDOM EFFECTS:
+----------------------------------------
+  Group Var: 0.002912
+  Scale: 0.004611
+
+----------------------------------------
+MODEL FIT:
+----------------------------------------
+  Log-likelihood: 1390.30
+  AIC: -2768.59
+  N observations: 1200
+  N participants: 100
+  Converged: True
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step03_domain_hce_lmm.txt
+
+============================================================
+STEP 04: Test Domain Effects (Decision D068 Dual P-Values)
+============================================================
+Domain main effect (min p from contrasts): p = 0.000000
+Domain x Time interaction (min p from contrasts): p = 0.000128
+
+Domain Effects Summary (Decision D068):
+  Domain main effect: p_uncorr=0.000000, p_bonf=0.000000 ***
+  Domain x Time interaction: p_uncorr=0.000128, p_bonf=0.000256 ***
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step04_domain_effects.csv
+
+============================================================
+STEP 05: Rank Domains by Mean HCE Rate
+============================================================
+Domain Ranking (1 = highest HCE rate):
+  Rank 1: Where (9.32%) - Hypothesis: Rank 2 ✗
+  Rank 2: When (7.34%) - Hypothesis: Rank 1 ✗
+  Rank 3: What (5.88%) - Hypothesis: Rank 3 ✓
+
+Hypothesis (When > Where > What): NOT SUPPORTED
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step05_domain_ranking.csv
+
+============================================================
+STEP 06: Prepare Plot Data
+============================================================
+Plot data: 12 rows (3 domains x 4 timepoints)
+
+Plot data preview:
+  What: Day 0.0: 5.07%, Day 1.2: 7.28%, Day 3.3: 5.62%, Day 6.3: 5.55%
+  Where: Day 0.0: 11.86%, Day 1.2: 9.90%, Day 3.3: 7.78%, Day 6.3: 7.74%
+  When: Day 0.0: 9.88%, Day 1.2: 8.38%, Day 3.3: 6.50%, Day 6.3: 4.58%
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step06_hce_by_domain_plot_data.csv
+
+============================================================
+ANALYSIS COMPLETE
+============================================================
+
+KEY FINDINGS:
+  Domain ranking: Where (9.32%) > When (7.34%) > What (5.88%)
+  Hypothesis (When > Where > What): NOT SUPPORTED
+  Domain main effect: p = 0.0000 (SIG)
+  Domain x Time: p = 0.0003 (SIG)
+============================================================
+RQ 6.6.3: High-Confidence Errors - Domain Specificity
+============================================================
+
+============================================================
+STEP 00: Extract Item-Level Confidence and Accuracy Data
+============================================================
+Loaded dfData.csv: 400 rows, 478 columns
+Found 105 TQ_ (accuracy) columns
+Found 105 TC_ (confidence) columns
+Found 105 matching TQ/TC pairs
+Classified 105 items by domain
+  What: 29 items
+  Where: 50 items
+  When: 26 items
+Created item-level data: 42000 rows
+
+Validation:
+  Unique UIDs: 100
+  Unique TESTs: 4
+  Unique items: 105
+  Domains: ['When', 'What', 'Where']
+  TQ_accuracy values: [np.int64(0), np.int64(1)]
+  TC_confidence values: [np.float64(0.0), np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step00_item_level.csv
+
+============================================================
+STEP 01: Compute High-Confidence Error Flags
+============================================================
+HCE definition: accuracy=0 AND confidence>=0.75
+Total HCEs: 3309 / 42000 = 0.0788 (7.88%)
+
+HCE rates by domain:
+  What: 682 / 11600 = 0.0588 (5.88%)
+  Where: 1864 / 20000 = 0.0932 (9.32%)
+  When: 763 / 10400 = 0.0734 (7.34%)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step01_hce_by_domain.csv
+
+============================================================
+STEP 02: Aggregate HCE Rates by Domain x Test
+============================================================
+Created summary: 12 rows (3 domains x 4 tests)
+
+HCE rates by Domain x Test:
+  What: T1: 0.0507, T2: 0.0728, T3: 0.0562, T4: 0.0555
+  Where: T1: 0.1186, T2: 0.0990, T3: 0.0778, T4: 0.0774
+  When: T1: 0.0988, T2: 0.0838, T3: 0.0650, T4: 0.0458
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step02_hce_rates_summary.csv
+
+============================================================
+STEP 03: Fit LMM Testing Domain x Time Interaction
+============================================================
+TSVR by test (Days):
+  1.0: 0.04 days
+  2.0: 1.20 days
+  3.0: 3.28 days
+  4.0: 6.31 days
+
+LMM input data: 1200 rows (100 participants x 3 domains x 4 tests)
+
+Fitting LMM: HCE_rate ~ domain * Days + (1 | UID)
+Model converged successfully
+
+----------------------------------------
+FIXED EFFECTS:
+----------------------------------------
+  Intercept: β=0.060314, SE=0.007453, z=8.093, p=0.000000
+  C(domain, Treatment(reference='What'))[T.When]: β=0.035481, SE=0.007270, z=4.880, p=0.000001
+  C(domain, Treatment(reference='What'))[T.Where]: β=0.049856, SE=0.007270, z=6.858, p=0.000000
+  Days_mean: β=-0.000562, SE=0.001426, z=-0.394, p=0.693622
+  C(domain, Treatment(reference='What'))[T.When]:Days_mean: β=-0.007726, SE=0.002017, z=-3.830, p=0.000128
+  C(domain, Treatment(reference='What'))[T.Where]:Days_mean: β=-0.005708, SE=0.002017, z=-2.830, p=0.004654
+
+----------------------------------------
+RANDOM EFFECTS:
+----------------------------------------
+  Group Var: 0.002912
+  Scale: 0.004611
+
+----------------------------------------
+MODEL FIT:
+----------------------------------------
+  Log-likelihood: 1390.30
+  AIC: -2768.59
+  N observations: 1200
+  N participants: 100
+  Converged: True
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step03_domain_hce_lmm.txt
+
+============================================================
+STEP 04: Test Domain Effects (Decision D068 Dual P-Values)
+============================================================
+Domain main effect (min p from contrasts): p = 0.000000
+Domain x Time interaction (min p from contrasts): p = 0.000128
+
+Domain Effects Summary (Decision D068):
+  Domain main effect: p_uncorr=0.000000, p_bonf=0.000000 ***
+  Domain x Time interaction: p_uncorr=0.000128, p_bonf=0.000256 ***
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step04_domain_effects.csv
+
+============================================================
+STEP 05: Rank Domains by Mean HCE Rate
+============================================================
+Domain Ranking (1 = highest HCE rate):
+  Rank 1: Where (9.32%) - Hypothesis: Rank 2 ✗
+  Rank 2: When (7.34%) - Hypothesis: Rank 1 ✗
+  Rank 3: What (5.88%) - Hypothesis: Rank 3 ✓
+
+Hypothesis (When > Where > What): NOT SUPPORTED
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step05_domain_ranking.csv
+
+============================================================
+STEP 06: Prepare Plot Data
+============================================================
+Plot data: 12 rows (3 domains x 4 timepoints)
+
+Plot data preview:
+  What: Day 0.0: 5.07%, Day 1.2: 7.28%, Day 3.3: 5.62%, Day 6.3: 5.55%
+  Where: Day 0.0: 11.86%, Day 1.2: 9.90%, Day 3.3: 7.78%, Day 6.3: 7.74%
+  When: Day 0.0: 9.88%, Day 1.2: 8.38%, Day 3.3: 6.50%, Day 6.3: 4.58%
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.6.3/data/step06_hce_by_domain_plot_data.csv
+
+============================================================
+ANALYSIS COMPLETE
+============================================================
+
+KEY FINDINGS:
+  Domain ranking: Where (9.32%) > When (7.34%) > What (5.88%)
+  Hypothesis (When > Where > What): NOT SUPPORTED
+  Domain main effect: p = 0.0000 (SIG)
+  Domain x Time: p = 0.0003 (SIG)

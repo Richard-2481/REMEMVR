@@ -1,0 +1,134 @@
+Step 3: Mixed Model Three-Way Interaction
+
+[STEP 3.1] Load and reshape accuracy data
+Accuracy: 400 rows
+Accuracy: 400 -> 800 rows
+
+[STEP 3.2] Load and reshape confidence data
+Confidence: 400 rows
+Confidence: 400 -> 800 rows
+
+[STEP 3.3] Merge accuracy and confidence
+0 rows (should be 800)
+Expected 800 rows, got 0
+
+[STEP 3.4] Stack measures to create measure factor
+0 -> 0 rows (should be 1600)
+  Unique UIDs: 0
+  Unique measures: []
+  Unique locations: []
+  Unique TSVR: []
+
+[STEP 3.5] Fit mixed model: theta ~ measure*location*TSVR_hours
+'composite_ID'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'composite_ID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.5/code/step03_mixed_model_three_way.py", line 197, in <module>
+    lmm_result = fit_lmm_trajectory_tsvr(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1074, in fit_lmm_trajectory_tsvr
+    theta_scores[['UID', 'Test']] = theta_scores['composite_ID'].str.split('_', n=1, expand=True)
+                                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'composite_ID'
+Step 3: Mixed Model Three-Way Interaction
+
+[STEP 3.1] Load and reshape accuracy data
+Accuracy: 400 rows
+Accuracy: 400 -> 800 rows
+
+[STEP 3.2] Load and reshape confidence data
+Confidence: 400 rows
+Confidence test format: T1/T2/T3/T4 -> 1/2/3/4
+Confidence: 400 -> 800 rows
+
+[STEP 3.3] Merge accuracy and confidence on (UID, test, location)
+Accuracy test values: ['1', '2', '3', '4']
+Confidence test values: ['1', '2', '3', '4']
+800 rows (should be 800)
+
+[STEP 3.4] Stack measures to create measure factor
+800 -> 1600 rows (should be 1600)
+  Unique UIDs: 100
+  Unique measures: ['accuracy' 'confidence']
+  Unique locations: ['source' 'destination']
+  Unique TSVR: [np.float64(1.0), np.float64(26.0), np.float64(74.0), np.float64(148.0)]
+
+[STEP 3.5] Fit mixed model: theta ~ measure*location*TSVR_hours
+Mixed model converged successfully
+
+[STEP 3.6] Extract fixed effects with dual p-values (Decision D068)
+'DataFrame' object has no attribute 'data'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.5/code/step03_mixed_model_three_way.py", line 231, in <module>
+    df_fixed = pd.DataFrame(fe_summary.data[1:], columns=fe_summary.data[0])
+                            ^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 6321, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'data'. Did you mean: '_data'?
+Step 3: Mixed Model Three-Way Interaction
+
+[STEP 3.1] Load and reshape accuracy data
+Accuracy: 400 rows
+Accuracy: 400 -> 800 rows
+
+[STEP 3.2] Load and reshape confidence data
+Confidence: 400 rows
+Confidence test format: T1/T2/T3/T4 -> 1/2/3/4
+Confidence: 400 -> 800 rows
+
+[STEP 3.3] Merge accuracy and confidence on (UID, test, location)
+Accuracy test values: ['1', '2', '3', '4']
+Confidence test values: ['1', '2', '3', '4']
+800 rows (should be 800)
+
+[STEP 3.4] Stack measures to create measure factor
+800 -> 1600 rows (should be 1600)
+  Unique UIDs: 100
+  Unique measures: ['accuracy' 'confidence']
+  Unique locations: ['source' 'destination']
+  Unique TSVR: [np.float64(1.0), np.float64(26.0), np.float64(74.0), np.float64(148.0)]
+
+[STEP 3.5] Fit mixed model: theta ~ measure*location*TSVR_hours
+Mixed model converged successfully
+
+[STEP 3.6] Extract fixed effects with dual p-values (Decision D068)
+9 fixed effects
+[THREE-WAY] measure[T.confidence]:location[T.source]:TSVR_hours: p_uncorr=0.0000, p_bonf=0.0000
+
+[STEP 3.7] Validate Decision D068 compliance
+Decision D068 compliant: both p-values present
+
+[STEP 3.8] Run comprehensive assumption diagnostics
+Some assumption checks failed: LMM assumption violations detected (2/7 checks failed):
+  - Residual normality violated (Shapiro-Wilk p < 0.05)
+  - Homoscedasticity violated (Breusch-Pagan p < 0.05)
+
+Recommended remedial actions:
+  1. Consider using robust standard errors or transforming the outcome variable
+  2. Model variance structure explicitly or use weighted least squares
+
+step03_mixed_model_assumptions.txt
+
+[STEP 3.9] Save outputs
+step03_mixed_model_results.csv (9 rows)
+step03_merged_data_long.csv (1600 rows)
+Step 3 complete

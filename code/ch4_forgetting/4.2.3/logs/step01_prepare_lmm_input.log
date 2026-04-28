@@ -1,0 +1,201 @@
+Step 01: Prepare LMM Input with Age Variable
+Loading theta scores from RQ 5.1...
+Missing input: /home/etai/projects/REMEMVR/results/ch5/rq10/data/step00_theta_from_rq51.csv - Run step00 first
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step01_prepare_lmm_input.py", line 146, in <module>
+    raise FileNotFoundError(f"Missing input: {theta_path} - Run step00 first")
+FileNotFoundError: Missing input: /home/etai/projects/REMEMVR/results/ch5/rq10/data/step00_theta_from_rq51.csv - Run step00 first
+Step 01: Prepare LMM Input with Age Variable
+Loading theta scores from RQ 5.1...
+theta scores: 1200 rows, 4 cols
+Theta columns: ['composite_ID', 'domain', 'test', 'theta']
+Loading TSVR mapping from RQ 5.1...
+TSVR mapping: 400 rows, 4 cols
+TSVR columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Loading age variable from dfData...
+age data: 400 rows, 2 cols
+Age columns: ['UID', 'age']
+Checking input columns...
+All input columns present
+Extracting UID from composite_ID...
+Extracted 100 unique UIDs from theta data
+Merging theta with TSVR mapping...
+theta + TSVR: 1200 rows
+No missing TSVR_hours after merge
+Merging with age data...
+'UID'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step01_prepare_lmm_input.py", line 214, in <module>
+    df_merged = df_merged.merge(
+                ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 10859, in merge
+    return merge(
+           ^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 1311, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1914, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'UID'
+Step 01: Prepare LMM Input with Age Variable
+Loading theta scores from RQ 5.1...
+theta scores: 1200 rows, 4 cols
+Theta columns: ['composite_ID', 'domain', 'test', 'theta']
+Loading TSVR mapping from RQ 5.1...
+TSVR mapping: 400 rows, 4 cols
+TSVR columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Loading age variable from dfData...
+age data: 400 rows, 2 cols
+Age columns: ['UID', 'age']
+Checking input columns...
+All input columns present
+Merging theta with TSVR mapping...
+Merged data now has 100 unique UIDs from TSVR file
+theta + TSVR: 1200 rows
+No missing TSVR_hours after merge
+Merging with age data...
+Merge keys are not unique in right dataset; not a many-to-one merge
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step01_prepare_lmm_input.py", line 211, in <module>
+    df_merged = df_merged.merge(
+                ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 10859, in merge
+    return merge(
+           ^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 813, in __init__
+    self._validate_validate_kwd(validate)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 1670, in _validate_validate_kwd
+    raise MergeError(
+pandas.errors.MergeError: Merge keys are not unique in right dataset; not a many-to-one merge
+Step 01: Prepare LMM Input with Age Variable
+Loading theta scores from RQ 5.1...
+theta scores: 1200 rows, 4 cols
+Theta columns: ['composite_ID', 'domain', 'test', 'theta']
+Loading TSVR mapping from RQ 5.1...
+TSVR mapping: 400 rows, 4 cols
+TSVR columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Loading age variable from dfData...
+age data: 100 rows, 2 cols
+Age columns: ['UID', 'age']
+Checking input columns...
+All input columns present
+Merging theta with TSVR mapping...
+Merged data now has 100 unique UIDs from TSVR file
+theta + TSVR: 1200 rows
+No missing TSVR_hours after merge
+Merging with age data...
+theta + TSVR + age: 1200 rows
+No missing age values after merge
+Grand-mean centering Age variable...
+Grand mean age: 44.57 years
+Age_c range: [-24.57, 25.43]
+Mean Age_c: 0.0000000000 (should be ~0)
+Age_c properly centered (mean approximately 0)
+Creating log-transformed TSVR...
+log_TSVR range: [0.69, 5.51]
+Running 7 validation checks...
+Check 1: Row count = 1200 (100 participants x 4 tests x 3 domains)
+Check 2: No NaN values in any column
+Check 3: Mean Age_c = 1.89e-15 (within 1e-10 tolerance)
+Check 4: Age_c range symmetric (|min|/max = 0.97)
+Check 5: All 100 UIDs have exactly 12 rows
+TSVR_hours out of range: [1.00, 246.24]
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq10/code/step01_prepare_lmm_input.py", line 297, in <module>
+    raise ValueError(f"TSVR_hours out of range: [{tsvr_min:.2f}, {tsvr_max:.2f}]")
+ValueError: TSVR_hours out of range: [1.00, 246.24]
+Step 01: Prepare LMM Input with Age Variable
+Loading theta scores from RQ 5.1...
+theta scores: 1200 rows, 4 cols
+Theta columns: ['composite_ID', 'domain', 'test', 'theta']
+Loading TSVR mapping from RQ 5.1...
+TSVR mapping: 400 rows, 4 cols
+TSVR columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Loading age variable from dfData...
+age data: 100 rows, 2 cols
+Age columns: ['UID', 'age']
+Checking input columns...
+All input columns present
+Merging theta with TSVR mapping...
+Merged data now has 100 unique UIDs from TSVR file
+theta + TSVR: 1200 rows
+No missing TSVR_hours after merge
+Merging with age data...
+theta + TSVR + age: 1200 rows
+No missing age values after merge
+Grand-mean centering Age variable...
+Grand mean age: 44.57 years
+Age_c range: [-24.57, 25.43]
+Mean Age_c: 0.0000000000 (should be ~0)
+Age_c properly centered (mean approximately 0)
+Creating log-transformed TSVR...
+log_TSVR range: [0.69, 5.51]
+Running 7 validation checks...
+Check 1: Row count = 1200 (100 participants x 4 tests x 3 domains)
+Check 2: No NaN values in any column
+Check 3: Mean Age_c = 1.89e-15 (within 1e-10 tolerance)
+Check 4: Age_c range symmetric (|min|/max = 0.97)
+Check 5: All 100 UIDs have exactly 12 rows
+Check 6: TSVR_hours in [0, 300] range (actual: [1.00, 246.24])
+TSVR exceeds nominal 168h (7 days) - scheduling variations present
+Check 7: log_TSVR in [0, 6] range (actual: [0.69, 5.51])
+All 7 validation checks PASSED
+Saving LMM input file...
+/home/etai/projects/REMEMVR/results/ch5/rq10/data/step01_lmm_input.csv (1200 rows, 10 cols)
+Saving preprocessing summary...
+/home/etai/projects/REMEMVR/results/ch5/rq10/data/step01_preprocessing_summary.txt
+Step 01 complete
+Step 01: Prepare LMM Input with Age Variable
+Loading theta scores from RQ 5.1...
+theta scores: 800 rows, 4 cols
+Theta columns: ['composite_ID', 'domain', 'test', 'theta']
+Loading TSVR mapping from RQ 5.1...
+TSVR mapping: 400 rows, 4 cols
+TSVR columns: ['composite_ID', 'test', 'TSVR_hours', 'UID']
+Loading age variable from dfData...
+age data: 100 rows, 2 cols
+Age columns: ['UID', 'age']
+Checking input columns...
+All input columns present
+Merging theta with TSVR mapping...
+Merged data now has 100 unique UIDs from TSVR file
+theta + TSVR: 800 rows
+No missing TSVR_hours after merge
+Merging with age data...
+theta + TSVR + age: 800 rows
+No missing age values after merge
+Grand-mean centering Age variable...
+Grand mean age: 44.57 years
+Age_c range: [-24.57, 25.43]
+Mean Age_c: 0.0000000000 (should be ~0)
+Age_c properly centered (mean approximately 0)
+Creating log-transformed TSVR...
+log_TSVR range: [0.69, 5.51]
+Running 7 validation checks...
+Check 1: Row count = 800 (100 participants x 4 tests x 2 domains - When excluded)
+Check 2: No NaN values in any column
+Check 3: Mean Age_c = 3.41e-15 (within 1e-10 tolerance)
+Check 4: Age_c range symmetric (|min|/max = 0.97)
+Check 5: All 100 UIDs have exactly 8 rows (When excluded)
+Check 6: TSVR_hours in [0, 300] range (actual: [1.00, 246.24])
+TSVR exceeds nominal 168h (7 days) - scheduling variations present
+Check 7: log_TSVR in [0, 6] range (actual: [0.69, 5.51])
+All 7 validation checks PASSED
+Saving LMM input file...
+/home/etai/projects/REMEMVR/results/ch5/5.2.3/data/step01_lmm_input.csv (800 rows, 10 cols)
+Saving preprocessing summary...
+/home/etai/projects/REMEMVR/results/ch5/5.2.3/data/step01_preprocessing_summary.txt
+Step 01 complete

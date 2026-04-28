@@ -1,0 +1,25 @@
+Step 03: merge_analysis_dataset
+Loading input datasets...
+RAVLT scores: 100 rows, 11 cols
+RAVLT columns: ['UID', 'ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score', 'ravlt-delayed-recall-score', 'RAVLT_Forgetting', 'RAVLT_Pct_Ret', 'RAVLT_Forgetting_z', 'RAVLT_Pct_Ret_z']
+REMEMVR slopes: 100 rows, 3 cols
+REMEMVR columns: ['UID', 'REMEMVR_Slope', 'REMEMVR_Intercept']
+Merging datasets on UID...
+Input 1 (RAVLT): 100 rows
+Input 2 (Slopes): 100 rows
+Output (Merged): 100 rows
+No data loss - all participants retained
+Merged dataset columns: ['UID', 'ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score', 'ravlt-delayed-recall-score', 'RAVLT_Forgetting', 'RAVLT_Pct_Ret', 'RAVLT_Forgetting_z', 'RAVLT_Pct_Ret_z', 'REMEMVR_Slope', 'REMEMVR_Intercept']
+RAVLT_Forgetting - Mean: 1.750, SD: 1.930
+RAVLT_Pct_Ret - Mean: 83.282, SD: 14.790
+REMEMVR_Slope - Mean: 0.0000, SD: 0.0045
+Saving merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step03_analysis_input.csv (100 rows, 13 cols)
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['REMEMVR_Intercept', 'ravlt-trial-2-score', 'RAVLT_Pct_Ret', 'RAVLT_Forgetting', 'RAVLT_Forgetting_z', 'RAVLT_Pct_Ret_z', 'ravlt-trial-1-score', 'ravlt-trial-5-score', 'REMEMVR_Slope', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'UID', 'ravlt-delayed-recall-score']
+n_required: 3
+n_missing: 0
+PASS - All required columns present
+Step 03 complete

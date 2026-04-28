@@ -1,0 +1,66 @@
+Step 1: extract_paradigm_theta_scores
+Loading Ch5 theta scores from Ch5 5.3.1...
+Ch5 theta scores (1200 rows, 3 cols)
+Unique domains: ['cued_recall', 'free_recall', 'recognition']
+Filtering to free_recall and recognition paradigms...
+Kept 800 rows with target paradigms
+Both paradigms present: ['free_recall', 'recognition']
+Extracting UID from composite_ID...
+UID extraction examples:
+  A010_1 -> A010
+  A010_2 -> A010
+  A010_3 -> A010
+Found 100 unique participants
+Computing mean theta per participant per paradigm...
+Reduced to 200 participant-paradigm combinations
+Participants with both paradigms: 100
+Participants with only one paradigm: 0
+Converting to wide format...
+Wide format dataset: 100 participants × 3 columns
+Saving to /home/etai/projects/REMEMVR/results/ch7/7.4.1/data/step01_paradigm_theta.csv...
+step01_paradigm_theta.csv (100 rows, 3 cols)
+Free recall theta: mean=0.042, std=0.619
+Recognition theta: mean=0.031, std=0.668
+Running validate_numeric_range...
+valid: True
+message: theta_free_recall: All values within range [-3.0, 3.0] (n=100).
+out_of_range_count: 0
+violations: []
+Additional checks...
+100 participants (expected range)
+No missing values in final dataset
+Both paradigms represented in final dataset
+Step 1 complete
+Step 1: extract_paradigm_theta_scores
+Loading Ch5 theta scores from Ch5 5.3.1...
+Ch5 theta scores (1200 rows, 3 cols)
+Unique domains: ['cued_recall', 'free_recall', 'recognition']
+Filtering to free_recall and recognition paradigms...
+Kept 800 rows with target paradigms
+Both paradigms present: ['free_recall', 'recognition']
+Extracting UID from composite_ID...
+UID extraction examples:
+  A010_1 -> A010
+  A010_2 -> A010
+  A010_3 -> A010
+Found 100 unique participants
+Computing mean theta per participant per paradigm...
+Reduced to 200 participant-paradigm combinations
+Participants with both paradigms: 100
+Participants with only one paradigm: 0
+Converting to wide format...
+Wide format dataset: 100 participants × 3 columns
+Saving to /home/etai/projects/REMEMVR/results/ch7/7.4.1/data/step01_paradigm_theta.csv...
+step01_paradigm_theta.csv (100 rows, 3 cols)
+Free recall theta: mean=0.042, std=0.619
+Recognition theta: mean=0.031, std=0.668
+Running validate_numeric_range...
+valid: True
+message: theta_free_recall: All values within range [-3.0, 3.0] (n=100).
+out_of_range_count: 0
+violations: []
+Additional checks...
+100 participants (expected range)
+No missing values in final dataset
+Both paradigms represented in final dataset
+Step 1 complete

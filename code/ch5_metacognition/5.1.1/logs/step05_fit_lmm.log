@@ -1,0 +1,108 @@
+Step 5: Fit 5 Candidate LMM Models
+Loading LMM input data...
+step04_lmm_input.csv (400 rows, 9 cols)
+Data summary: 100 unique UIDs, 400 observations
+Defining model formulas...
+Testing 5 candidate models
+Fitting 5 LMM models...
+[MODEL 1/5] Fitting Linear: Simple linear decline
+  Formula: theta_All ~ Days
+  Converged: True
+  AIC: 809.43, BIC: 833.38, LogLik: -398.71
+  Num params: 9
+[MODEL 2/5] Fitting Quadratic: Quadratic decline (acceleration/deceleration)
+  Formula: theta_All ~ Days + Days_squared
+  Converged: True
+  AIC: 774.11, BIC: 802.05, LogLik: -380.06
+  Num params: 10
+[MODEL 3/5] Fitting Logarithmic: Logarithmic decline (power law)
+  Formula: theta_All ~ log_Days_plus1
+  Converged: True
+  AIC: 770.29, BIC: 794.24, LogLik: -379.14
+  Num params: 9
+[MODEL 4/5] Fitting Linear+Logarithmic: Hybrid linear + logarithmic
+  Formula: theta_All ~ Days + log_Days_plus1
+  Converged: True
+  AIC: 771.52, BIC: 799.46, LogLik: -378.76
+  Num params: 10
+[MODEL 5/5] Fitting Quadratic+Logarithmic: Full model with quadratic + logarithmic terms
+  Formula: theta_All ~ Days + Days_squared + log_Days_plus1
+  Converged: True
+  AIC: 773.21, BIC: 805.14, LogLik: -378.60
+  Num params: 11
+All models fitted
+Saving model comparison table...
+step05_model_comparison.csv (5 rows, 6 cols)
+Saving fitted model objects...
+step05_model1_linear.pkl (Linear)
+step05_model2_quadratic.pkl (Quadratic)
+step05_model3_logarithmic.pkl (Logarithmic)
+step05_model4_linear_logarithmic.pkl (Linear+Logarithmic)
+step05_model5_quadratic_logarithmic.pkl (Quadratic+Logarithmic)
+Running validation checks...
+Model count: 5 (correct)
+Model names: all expected models present
+Convergence: All models converged successfully
+AIC: All finite values
+BIC: All finite values
+log_likelihood: All finite values
+Linear: Convergence validated
+Quadratic: Convergence validated
+Logarithmic: Convergence validated
+Linear+Logarithmic: Convergence validated
+Quadratic+Logarithmic: Convergence validated
+Step 5 complete - 5 LMM models fitted and saved
+Step 5: Fit 5 Candidate LMM Models
+Loading LMM input data...
+step04_lmm_input.csv (400 rows, 9 cols)
+Data summary: 100 unique UIDs, 400 observations
+Defining model formulas...
+Testing 5 candidate models
+Fitting 5 LMM models...
+[MODEL 1/5] Fitting Linear: Simple linear decline
+  Formula: theta_All ~ Days
+  Converged: True
+  AIC: 765.90, BIC: 789.85, LogLik: -376.95
+  Num params: 9
+[MODEL 2/5] Fitting Quadratic: Quadratic decline (acceleration/deceleration)
+  Formula: theta_All ~ Days + Days_squared
+  Converged: True
+  AIC: 706.95, BIC: 734.89, LogLik: -346.48
+  Num params: 10
+[MODEL 3/5] Fitting Logarithmic: Logarithmic decline (power law)
+  Formula: theta_All ~ log_Days_plus1
+  Converged: True
+  AIC: 698.03, BIC: 721.98, LogLik: -343.01
+  Num params: 9
+[MODEL 4/5] Fitting Linear+Logarithmic: Hybrid linear + logarithmic
+  Formula: theta_All ~ Days + log_Days_plus1
+  Converged: True
+  AIC: 693.47, BIC: 721.41, LogLik: -339.74
+  Num params: 10
+[MODEL 5/5] Fitting Quadratic+Logarithmic: Full model with quadratic + logarithmic terms
+  Formula: theta_All ~ Days + Days_squared + log_Days_plus1
+  Converged: True
+  AIC: 695.05, BIC: 726.98, LogLik: -339.52
+  Num params: 11
+All models fitted
+Saving model comparison table...
+step05_model_comparison.csv (5 rows, 6 cols)
+Saving fitted model objects...
+step05_model1_linear.pkl (Linear)
+step05_model2_quadratic.pkl (Quadratic)
+step05_model3_logarithmic.pkl (Logarithmic)
+step05_model4_linear_logarithmic.pkl (Linear+Logarithmic)
+step05_model5_quadratic_logarithmic.pkl (Quadratic+Logarithmic)
+Running validation checks...
+Model count: 5 (correct)
+Model names: all expected models present
+Convergence: All models converged successfully
+AIC: All finite values
+BIC: All finite values
+log_likelihood: All finite values
+Linear: Convergence validated
+Quadratic: Convergence validated
+Logarithmic: Convergence validated
+Linear+Logarithmic: Convergence validated
+Quadratic+Logarithmic: Convergence validated
+Step 5 complete - 5 LMM models fitted and saved

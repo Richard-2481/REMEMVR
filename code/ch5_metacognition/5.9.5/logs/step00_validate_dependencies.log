@@ -1,0 +1,91 @@
+Step 0: Validate Cross-RQ Dependencies
+
+[CHECK 1] Validating RQ Status Files
+ch5/5.5.1: results analysis = unknown (expected: success)
+mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.8.1/status.yaml", line 59, column 31
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.5/code/step00_validate_dependencies.py", line 164, in <module>
+    status_data = yaml.safe_load(f)
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 133, in compose_mapping_node
+    item_value = self.compose_node(node, item_key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+                         ^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/parser.py", line 428, in parse_block_mapping_key
+    if self.check_token(KeyToken):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/scanner.py", line 116, in check_token
+    self.fetch_more_tokens()
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/scanner.py", line 223, in fetch_more_tokens
+    return self.fetch_value()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/yaml/scanner.py", line 577, in fetch_value
+    raise ScannerError(None, None,
+yaml.scanner.ScannerError: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.8.1/status.yaml", line 59, column 31
+Step 0: Validate Cross-RQ Dependencies
+
+[CHECK 1] Validating RQ Status Files
+ch5/5.5.1: results analysis = success
+ch6/6.8.1: results analysis = success
+
+[CHECK 2] Validating Data File Existence
+step05_lmm_summary.txt: File does not exist: /home/etai/projects/REMEMVR/results/ch5/5.5.1/results/step05_lmm_summary.txt
+step03_theta_scores.csv: 14.5 KB
+summary.md: 37.6 KB
+step03_theta_confidence.csv: 12.0 KB
+
+[CHECK 3] Validating Data Structure
+Accuracy data: Missing required columns: ['UID', 'test']. Present: ['composite_ID', 'theta_source', 'theta_destination', 'se_source', 'se_destination'].
+Confidence data: Missing required columns: ['UID', 'test']. Present: ['composite_ID', 'theta_Source', 'theta_Destination'].
+
+Dependency validation failed - cannot proceed
+Validation report: /home/etai/projects/REMEMVR/results/ch6/6.9.5/data/step00_dependency_validation.txt
+Step 0 failed - dependencies not met
+Step 0: Validate Cross-RQ Dependencies
+
+[CHECK 1] Validating RQ Status Files
+ch5/5.5.1: results analysis = success
+ch6/6.8.1: results analysis = success
+
+[CHECK 2] Validating Data File Existence
+step05_lmm_coefficients.csv: 1.0 KB
+step03_theta_scores.csv: 14.5 KB
+summary.md: 37.6 KB
+step03_theta_confidence.csv: 12.0 KB
+
+[CHECK 3] Validating Data Structure
+Accuracy data: 400 rows, columns OK
+Confidence data: 400 rows, columns OK
+
+All dependencies validated - ready to proceed
+Validation report: /home/etai/projects/REMEMVR/results/ch6/6.9.5/data/step00_dependency_validation.txt
+Step 0 complete

@@ -30,81 +30,81 @@ def log(msg):
 
 def main():
     """Main execution."""
-    log("[START] Step 03: Extract self-report scores - USING REAL DATA")
-    log("[INFO] All column names from DATA_DICTIONARY.md")
+    log("Step 03: Extract self-report scores - USING REAL DATA")
+    log("All column names from DATA_DICTIONARY.md")
     
     # Load participant data
-    log("[LOAD] Reading dfnonvr.csv...")
+    log("Reading dfnonvr.csv...")
     df = pd.read_csv(PROJ_ROOT / "data" / "dfnonvr.csv")
-    log(f"[INFO] Loaded {len(df)} participants with {len(df.columns)} columns")
+    log(f"Loaded {len(df)} participants with {len(df.columns)} columns")
     
     # Initialize output dataframe
     self_report = pd.DataFrame()
     self_report['uid'] = df['UID'].astype(str)
     
     # Extract DASS columns using EXACT names from DATA_DICTIONARY.md
-    log("[EXTRACT] Extracting DASS subscales with correct column names...")
+    log("Extracting DASS subscales with correct column names...")
     
     # DASS Anxiety - exact column name: total-dass-anxiety-items
     if 'total-dass-anxiety-items' in df.columns:
         self_report['DASS_Anx'] = df['total-dass-anxiety-items']
-        log(f"[SUCCESS] DASS Anxiety extracted from 'total-dass-anxiety-items'")
+        log(f"DASS Anxiety extracted from 'total-dass-anxiety-items'")
         log(f"  - Non-null values: {self_report['DASS_Anx'].notna().sum()}")
         log(f"  - Range: [{self_report['DASS_Anx'].min():.1f}, {self_report['DASS_Anx'].max():.1f}]")
     else:
-        log("[ERROR] Column 'total-dass-anxiety-items' not found in dfnonvr.csv")
-        log("[CRITICAL] Cannot proceed without real data - stopping")
+        log("Column 'total-dass-anxiety-items' not found in dfnonvr.csv")
+        log("Cannot proceed without real data - stopping")
         sys.exit(1)
     
     # DASS Stress - exact column name: total-dass-stress-items
     if 'total-dass-stress-items' in df.columns:
         self_report['DASS_Str'] = df['total-dass-stress-items']
-        log(f"[SUCCESS] DASS Stress extracted from 'total-dass-stress-items'")
+        log(f"DASS Stress extracted from 'total-dass-stress-items'")
         log(f"  - Non-null values: {self_report['DASS_Str'].notna().sum()}")
         log(f"  - Range: [{self_report['DASS_Str'].min():.1f}, {self_report['DASS_Str'].max():.1f}]")
     else:
-        log("[ERROR] Column 'total-dass-stress-items' not found in dfnonvr.csv")
-        log("[CRITICAL] Cannot proceed without real data - stopping")
+        log("Column 'total-dass-stress-items' not found in dfnonvr.csv")
+        log("Cannot proceed without real data - stopping")
         sys.exit(1)
     
     # DASS Depression - exact column name: total-dass-depression-items
     if 'total-dass-depression-items' in df.columns:
         self_report['DASS_Dep'] = df['total-dass-depression-items']
-        log(f"[SUCCESS] DASS Depression extracted from 'total-dass-depression-items'")
+        log(f"DASS Depression extracted from 'total-dass-depression-items'")
         log(f"  - Non-null values: {self_report['DASS_Dep'].notna().sum()}")
         log(f"  - Range: [{self_report['DASS_Dep'].min():.1f}, {self_report['DASS_Dep'].max():.1f}]")
     else:
-        log("[ERROR] Column 'total-dass-depression-items' not found in dfnonvr.csv")
-        log("[CRITICAL] Cannot proceed without real data - stopping")
+        log("Column 'total-dass-depression-items' not found in dfnonvr.csv")
+        log("Cannot proceed without real data - stopping")
         sys.exit(1)
     
     # VR Experience - exact column name: vr-exposure
-    log("[EXTRACT] Extracting VR experience...")
+    log("Extracting VR experience...")
     if 'vr-exposure' in df.columns:
         self_report['VR_Exp'] = df['vr-exposure']
-        log(f"[SUCCESS] VR Experience extracted from 'vr-exposure'")
+        log(f"VR Experience extracted from 'vr-exposure'")
         log(f"  - Non-null values: {self_report['VR_Exp'].notna().sum()}")
         log(f"  - Range: [{self_report['VR_Exp'].min():.1f}, {self_report['VR_Exp'].max():.1f}]")
         log(f"  - Scale: 0=Never, 1=<1hr, 2=1-10hrs, 3=10-50hrs, 4=>50hrs")
     else:
-        log("[ERROR] Column 'vr-exposure' not found in dfnonvr.csv")
-        log("[CRITICAL] Cannot proceed without real data - stopping")
+        log("Column 'vr-exposure' not found in dfnonvr.csv")
+        log("Cannot proceed without real data - stopping")
         sys.exit(1)
     
     # Sleep - exact column name: typical-sleep-hours
-    log("[EXTRACT] Extracting sleep data...")
+    log("Extracting sleep data...")
     if 'typical-sleep-hours' in df.columns:
         self_report['Sleep'] = df['typical-sleep-hours']
-        log(f"[SUCCESS] Sleep hours extracted from 'typical-sleep-hours'")
+        log(f"Sleep hours extracted from 'typical-sleep-hours'")
         log(f"  - Non-null values: {self_report['Sleep'].notna().sum()}")
         log(f"  - Range: [{self_report['Sleep'].min():.1f}, {self_report['Sleep'].max():.1f}]")
     else:
-        log("[ERROR] Column 'typical-sleep-hours' not found in dfnonvr.csv")
-        log("[CRITICAL] Cannot proceed without real data - stopping")
+        log("Column 'typical-sleep-hours' not found in dfnonvr.csv")
+        log("Cannot proceed without real data - stopping")
         sys.exit(1)
     
     # Report summary statistics
-    log("\n[SUMMARY] Self-report variables (ALL REAL DATA):")
+    log("\nSelf-report variables (ALL REAL DATA):")
     for col in ['DASS_Dep', 'DASS_Anx', 'DASS_Str', 'VR_Exp', 'Sleep']:
         if col in self_report.columns:
             mean_val = self_report[col].mean()
@@ -117,20 +117,20 @@ def main():
     # Check for any missing data
     total_missing = self_report[['DASS_Dep', 'DASS_Anx', 'DASS_Str', 'VR_Exp', 'Sleep']].isna().sum().sum()
     if total_missing > 0:
-        log(f"[WARNING] Total missing values across all self-report variables: {total_missing}")
-        log("[INFO] Missing data will be handled in subsequent analysis steps")
+        log(f"Total missing values across all self-report variables: {total_missing}")
+        log("Missing data will be handled in subsequent analysis steps")
     else:
-        log("[SUCCESS] No missing data in self-report variables")
+        log("No missing data in self-report variables")
     
     # Save output
     output_path = RQ_DIR / "data" / "step03_self_report.csv"
     output_path.parent.mkdir(exist_ok=True)
     self_report.to_csv(output_path, index=False)
-    log(f"[SAVE] Saved self-report data to {output_path}")
-    log(f"[INFO] Shape: {self_report.shape}")
+    log(f"Saved self-report data to {output_path}")
+    log(f"Shape: {self_report.shape}")
     
-    log("\n[SUCCESS] Step 03 complete - ALL DATA IS REAL from dfnonvr.csv")
-    log("[INFO] No simulated/fake data used")
+    log("\nStep 03 complete - ALL DATA IS REAL from dfnonvr.csv")
+    log("No simulated/fake data used")
     return 0
 
 if __name__ == "__main__":

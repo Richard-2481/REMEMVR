@@ -1,0 +1,3 @@
+term,estimate,SE,z_value,p_uncorrected,p_bonferroni,significant_at_0.0033
+Time:Difficulty_c:C(paradigm)[T.IFR],0.0002555916017917,0.0001457847818756,1.7532118133547294,0.0795656559987647,1.0,False
+Time:Difficulty_c:C(paradigm)[T.IRE],6.266316161684096e-05,7.399013994570233e-05,0.8469123272753143,0.3970439908821718,1.0,False

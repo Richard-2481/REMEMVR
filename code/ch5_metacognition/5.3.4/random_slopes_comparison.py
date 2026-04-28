@@ -1,9 +1,9 @@
 """
-RQ 6.3.4 - Random Slopes Comparison (MANDATORY)
+RQ 6.3.4 - Random Slopes Comparison 
 
 PURPOSE:
 Test intercepts-only vs intercepts+slopes random effects structure to justify
-variance decomposition approach. Per rq_platinum Step 12, cannot claim homogeneous
+variance decomposition approach. Per validation Step 12, cannot claim homogeneous
 vs heterogeneous effects without empirical testing.
 
 COMPARISON:
@@ -15,7 +15,6 @@ DECISION CRITERIA:
 - ΔAIC < 2: Slopes don't improve → Keep intercepts (homogeneous OK)
 - Convergence failure: Document attempt, keep intercepts
 
-Author: Claude Code (rq_platinum agent)
 Date: 2025-12-30
 """
 
@@ -50,7 +49,7 @@ def main():
     import statsmodels.formula.api as smf
     
     log("=" * 80)
-    log("RQ 6.3.4 - Random Slopes Comparison (MANDATORY PLATINUM CHECK)")
+    log("RQ 6.3.4 - Random Slopes Comparison (MANDATORY validation CHECK)")
     log(f"Started: {datetime.now().isoformat()}")
     log("=" * 80)
     
@@ -58,7 +57,7 @@ def main():
     theta_path = PROJECT_ROOT / "results" / "ch6" / "6.3.1" / "data" / "step03_theta_confidence.csv"
     tsvr_path = PROJECT_ROOT / "results" / "ch6" / "6.3.1" / "data" / "step00_tsvr_mapping.csv"
     
-    log(f"\n[LOAD] Loading data:")
+    log(f"\nLoading data:")
     log(f"  Theta: {theta_path}")
     log(f"  TSVR: {tsvr_path}")
     
@@ -110,7 +109,7 @@ def main():
             log(f"  var_residual: {var_res_int:.6f}")
             
         except Exception as e:
-            log(f"  [ERROR] Intercepts-only failed: {e}")
+            log(f"  Intercepts-only failed: {e}")
             aic_int = np.nan
             converged_int = False
         
@@ -140,13 +139,13 @@ def main():
             log(f"  var_residual: {var_res_slope:.6f}")
             
         except Exception as e:
-            log(f"  [ERROR] Slopes model failed: {e}")
+            log(f"  Slopes model failed: {e}")
             aic_slope = np.nan
             converged_slope = False
             var_slope = np.nan
         
         # COMPARISON
-        log(f"\n[COMPARISON]")
+        log(f"\n")
         if not np.isnan(aic_int) and not np.isnan(aic_slope):
             delta_aic = aic_int - aic_slope
             log(f"  Intercepts-only AIC: {aic_int:.4f}")
@@ -204,7 +203,7 @@ def main():
     results_df.to_csv(output_path, index=False)
     
     log(f"\n{'=' * 80}")
-    log(f"[SUMMARY] Random Slopes Comparison Complete")
+    log(f"Random Slopes Comparison Complete")
     log(f"{'=' * 80}")
     log(f"\nSaved: {output_path}")
     
@@ -221,7 +220,7 @@ if __name__ == "__main__":
     try:
         results = main()
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

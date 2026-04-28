@@ -1,0 +1,116 @@
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+Step 01: Fit Piecewise LMM with 3-Way Interaction
+======================================================================
+Loading input data from step00...
+step00_piecewise_lmm_input.csv (1200 rows, 8 cols)
+All required columns present: ['UID', 'domain', 'theta', 'Segment', 'Days_within']
+Unique UIDs: 100
+Segments: ['Early', 'Late']
+Domains: ['what', 'where', 'when']
+Days_within range: [0.00, 7.71]
+
+Running fit_lmm_trajectory...
+----------------------------------------------------------------------
+Formula: theta ~ Days_within * C(Segment, Treatment('Early')) * C(domain, Treatment('what'))
+Groups: UID
+RE Formula: ~Days_within
+REML: False
+Model fitting complete
+
+Saving model outputs...
+----------------------------------------------------------------------
+data/step01_piecewise_lmm_model.pkl
+results/step01_piecewise_lmm_summary.txt
+
+Model Statistics:
+  - Number of observations: 1200
+  - Number of groups (UIDs): 100
+  - Log-likelihood: -1252.1475
+  - AIC: 2536.2950
+  - BIC: 2617.7362
+
+Running validate_lmm_convergence...
+----------------------------------------------------------------------
+converged: True
+message: LMM converged successfully
+
+Verifying fixed effect structure...
+Fixed effects (12 terms):
+  1. Intercept: 0.6064 (p=0.0000)
+  2. C(Segment, Treatment('Early'))[T.Late]: -0.7994 (p=0.0000)
+  3. C(domain, Treatment('what'))[T.when]: -0.2575 (p=0.0032)
+  4. C(domain, Treatment('what'))[T.where]: 0.0526 (p=0.5466)
+  5. C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.when]: 0.5164 (p=0.0002)
+  6. C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.where]: -0.0007 (p=0.9962)
+  7. Days_within: -0.4455 (p=0.0000)
+  8. Days_within:C(Segment, Treatment('Early'))[T.Late]: 0.3769 (p=0.0000)
+  9. Days_within:C(domain, Treatment('what'))[T.when]: 0.1440 (p=0.1439)
+  10. Days_within:C(domain, Treatment('what'))[T.where]: 0.0233 (p=0.8135)
+  11. Days_within:C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.when]: -0.0810 (p=0.4431)
+  12. Days_within:C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.where]: -0.0371 (p=0.7256)
+Model has 12 fixed effects (expected >= 7)
+
+Random effects structure...
+Random effects covariance matrix shape: (2, 2)
+Random effect variances: [0.22531407 0.00759248]
+No singular fit detected (all RE variances > 0)
+
+======================================================================
+Step 01 complete: Piecewise LMM fitted successfully
+======================================================================
+Step 01: Fit Piecewise LMM with 3-Way Interaction
+======================================================================
+Loading input data from step00...
+step00_piecewise_lmm_input.csv (800 rows, 8 cols)
+All required columns present: ['UID', 'domain', 'theta', 'Segment', 'Days_within']
+Unique UIDs: 100
+Segments: ['Early', 'Late']
+Domains: ['what', 'where']
+Days_within range: [0.00, 7.71]
+
+Running fit_lmm_trajectory...
+----------------------------------------------------------------------
+Formula: theta ~ Days_within * C(Segment, Treatment('Early')) * C(domain, Treatment('what'))
+Groups: UID
+RE Formula: ~Days_within
+REML: False
+Model fitting complete
+
+Saving model outputs...
+----------------------------------------------------------------------
+data/step01_piecewise_lmm_model.pkl
+results/step01_piecewise_lmm_summary.txt
+
+Model Statistics:
+  - Number of observations: 800
+  - Number of groups (UIDs): 100
+  - Log-likelihood: -756.8167
+  - AIC: 1537.6334
+  - BIC: 1593.8487
+
+Running validate_lmm_convergence...
+----------------------------------------------------------------------
+converged: True
+message: LMM converged successfully
+
+Verifying fixed effect structure...
+Fixed effects (8 terms):
+  1. Intercept: 0.6121 (p=0.0000)
+  2. C(Segment, Treatment('Early'))[T.Late]: -0.8002 (p=0.0000)
+  3. C(domain, Treatment('what'))[T.where]: 0.0526 (p=0.4652)
+  4. C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.where]: -0.0007 (p=0.9954)
+  5. Days_within: -0.4564 (p=0.0000)
+  6. Days_within:C(Segment, Treatment('Early'))[T.Late]: 0.3854 (p=0.0000)
+  7. Days_within:C(domain, Treatment('what'))[T.where]: 0.0233 (p=0.7750)
+  8. Days_within:C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.where]: -0.0371 (p=0.6707)
+Model has 8 fixed effects (expected >= 5)
+
+Random effects structure...
+Random effects covariance matrix shape: (2, 2)
+Random effect variances: [0.3939302  0.01156469]
+No singular fit detected (all RE variances > 0)
+
+======================================================================
+Step 01 complete: Piecewise LMM fitted successfully
+======================================================================

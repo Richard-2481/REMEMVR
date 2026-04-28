@@ -1,0 +1,44 @@
+2025-12-05 14:32:33,481 - INFO - ============================================================
+2025-12-05 14:32:33,481 - INFO - RQ 5.5.7 Step 02: K-Means Model Selection (K=1 to K=6)
+2025-12-05 14:32:33,481 - INFO - ============================================================
+2025-12-05 14:32:33,482 - INFO - Loaded 100 rows from Step 01
+2025-12-05 14:32:33,484 - INFO - Feature matrix: 100 samples x 4 features
+2025-12-05 14:32:33,484 - INFO - Fitting K-means for K=1 to K=6...
+2025-12-05 14:32:33,505 - INFO -   K=1: inertia=400.00, BIC=418.42
+2025-12-05 14:32:33,528 - INFO -   K=2: inertia=194.75, BIC=231.59
+2025-12-05 14:32:33,557 - INFO -   K=3: inertia=128.34, BIC=183.60
+2025-12-05 14:32:33,571 - INFO -   K=4: inertia=91.08, BIC=164.76
+2025-12-05 14:32:33,591 - INFO -   K=5: inertia=76.24, BIC=168.34
+2025-12-05 14:32:33,611 - INFO -   K=6: inertia=63.76, BIC=174.28
+2025-12-05 14:32:33,611 - INFO - 
+Validating results...
+2025-12-05 14:32:33,611 - INFO - Inertia decreases monotonically: PASS
+2025-12-05 14:32:33,612 - INFO - All inertia and BIC values non-negative: PASS
+2025-12-05 14:32:33,612 - INFO - K values consecutive {1,2,3,4,5,6}: PASS
+2025-12-05 14:32:33,612 - INFO - 
+BIC minimum at K=4.0 (BIC=164.76)
+2025-12-05 14:32:33,612 - INFO - Optimal K selected: 4
+2025-12-05 14:32:33,612 - INFO - Justification: K=4 selected as BIC minimum (BIC=164.76)
+2025-12-05 14:32:33,613 - INFO - Saved cluster selection to /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step02_cluster_selection.csv
+2025-12-05 14:32:33,614 - INFO - Saved optimal K to /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step02_optimal_k.txt
+2025-12-05 14:32:33,614 - INFO - 
+BIC Summary Table:
+2025-12-05 14:32:33,614 - INFO - ----------------------------------------
+2025-12-05 14:32:33,614 - INFO - K     Inertia      BIC          Selected
+2025-12-05 14:32:33,614 - INFO - ----------------------------------------
+2025-12-05 14:32:33,614 - INFO - 1     400.00       418.42       
+2025-12-05 14:32:33,614 - INFO - 2     194.75       231.59       
+2025-12-05 14:32:33,614 - INFO - 3     128.34       183.60       
+2025-12-05 14:32:33,614 - INFO - 4     91.08        164.76       *
+2025-12-05 14:32:33,615 - INFO - 5     76.24        168.34       
+2025-12-05 14:32:33,615 - INFO - 6     63.76        174.28       
+2025-12-05 14:32:33,615 - INFO - ----------------------------------------
+2025-12-05 14:32:33,615 - INFO - 
+============================================================
+2025-12-05 14:32:33,615 - INFO - Step 02 COMPLETE
+2025-12-05 14:32:33,615 - INFO -   Tested K=1 to K=6
+2025-12-05 14:32:33,615 - INFO -   BIC minimum at K=4.0
+2025-12-05 14:32:33,615 - INFO -   Selected optimal K=4
+2025-12-05 14:32:33,615 - INFO -   Output: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step02_cluster_selection.csv
+2025-12-05 14:32:33,615 - INFO -   Output: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step02_optimal_k.txt
+2025-12-05 14:32:33,615 - INFO - ============================================================

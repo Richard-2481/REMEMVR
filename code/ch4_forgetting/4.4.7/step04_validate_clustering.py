@@ -84,10 +84,10 @@ def compute_bootstrap_jaccard(X, labels, K, n_iterations=100, sample_frac=0.8):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 04: Validate Clustering Quality")
+        log("Step 04: Validate Clustering Quality")
 
         # Load standardized features
-        log(f"[LOAD] Reading {INPUT_FEATURES_FILE}")
+        log(f"Reading {INPUT_FEATURES_FILE}")
         df_features = pd.read_csv(INPUT_FEATURES_FILE)
 
         feature_cols = [
@@ -98,25 +98,25 @@ if __name__ == "__main__":
         X = df_features[feature_cols].values
 
         # Load cluster assignments
-        log(f"[LOAD] Reading {INPUT_ASSIGNMENTS_FILE}")
+        log(f"Reading {INPUT_ASSIGNMENTS_FILE}")
         df_assignments = pd.read_csv(INPUT_ASSIGNMENTS_FILE)
         labels = df_assignments['cluster'].values
         K = len(np.unique(labels))
 
-        log(f"[INFO] {len(X)} samples, {K} clusters")
+        log(f"{len(X)} samples, {K} clusters")
 
         # Compute silhouette score
-        log("[METRIC] Computing silhouette score...")
+        log("Computing silhouette score...")
         silhouette = silhouette_score(X, labels)
         log(f"  Silhouette score = {silhouette:.4f}")
 
         # Compute Davies-Bouldin index
-        log("[METRIC] Computing Davies-Bouldin index...")
+        log("Computing Davies-Bouldin index...")
         davies_bouldin = davies_bouldin_score(X, labels)
         log(f"  Davies-Bouldin index = {davies_bouldin:.4f}")
 
         # Compute bootstrap Jaccard coefficient
-        log("[METRIC] Computing bootstrap Jaccard (100 iterations, 80% sample)...")
+        log("Computing bootstrap Jaccard (100 iterations, 80% sample)...")
         jaccard_values = compute_bootstrap_jaccard(X, labels, K, n_iterations=100, sample_frac=0.8)
         jaccard_mean = np.mean(jaccard_values)
         jaccard_median = np.median(jaccard_values)
@@ -137,9 +137,9 @@ if __name__ == "__main__":
         df_quality = pd.DataFrame(metrics)
 
         # Save metrics
-        log(f"[SAVE] Writing to {OUTPUT_FILE}")
+        log(f"Writing to {OUTPUT_FILE}")
         df_quality.to_csv(OUTPUT_FILE, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_FILE}")
+        log(f"{OUTPUT_FILE}")
 
         # Report findings
         log("[QUALITY SUMMARY]")
@@ -147,13 +147,13 @@ if __name__ == "__main__":
             status = "PASS" if row['pass'] else "FAIL"
             log(f"  {row['metric']}: {row['value']:.4f} (threshold={row['threshold']:.2f}) [{status}]")
 
-        log("[SUCCESS] Step 04 complete")
+        log("Step 04 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

@@ -1,0 +1,33 @@
+======================================================================
+STEP 01: Bootstrap sr² Difference CI
+======================================================================
+Accuracy data: (97, 9) from RQ 7.1.1
+  Columns: ['UID', 'RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T', 'theta_mean']
+Confidence data: (100, 10) from RQ 7.3.1
+  Columns: ['UID', 'confidence_theta', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'age', 'sex', 'education']
+Merged dataset: N=97 participants (inner join)
+
+Point Estimates:
+  RPM sr² (accuracy):   0.085199
+  RPM sr² (confidence): 0.043797
+  Delta (acc - conf):   0.041402
+
+Running bootstrap with B=5000 iterations...
+  Progress: 1000/5000 iterations completed
+  Progress: 2000/5000 iterations completed
+  Progress: 3000/5000 iterations completed
+  Progress: 4000/5000 iterations completed
+  Progress: 5000/5000 iterations completed
+Bootstrap completed: 5000 iterations (0 failed)
+Saved: step01_bootstrap_sr2_deltas.csv (5000 rows)
+
+Percentile CI: [-0.041989, 0.124355]
+BCa CI: [-0.024561, 0.143802]
+Proportion positive: 0.8428
+Saved: step01_bootstrap_summary.csv (6 rows)
+
+Interpretation: NON-SIGNIFICANT: CI includes zero; dissociation is numerical trend only
+Validation PASSED: All bootstrap checks OK
+======================================================================
+SUB-ANALYSIS 1 COMPLETE
+======================================================================

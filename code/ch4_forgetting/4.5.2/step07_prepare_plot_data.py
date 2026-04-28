@@ -4,7 +4,6 @@
 Step 07: Prepare Dual-Scale Plot Data
 ==============================================================================
 RQ: 5.5.2 - Source-Destination Consolidation (Two-Phase)
-Generated: 2025-12-05
 
 Purpose:
     Create plot source data for trajectory visualization with both theta
@@ -27,9 +26,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-# ==============================================================================
 # PATH SETUP
-# ==============================================================================
 
 RQ_DIR = Path(__file__).resolve().parent.parent  # results/ch5/5.5.2
 
@@ -49,9 +46,7 @@ LOG_FILE = LOGS_DIR / "step07_prepare_plot_data.log"
 # Create directories
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
-# ==============================================================================
 # LOGGING
-# ==============================================================================
 
 def log(msg: str) -> None:
     """Log message to console and file."""
@@ -68,31 +63,23 @@ def logistic(theta):
     return 1.0 / (1.0 + np.exp(-theta))
 
 
-# ==============================================================================
 # MAIN EXECUTION
-# ==============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 7: Prepare Dual-Scale Plot Data")
+        log("Step 7: Prepare Dual-Scale Plot Data")
+        # Load Input Data
 
-        # ==============================================================
-        # STEP 1: Load Input Data
-        # ==============================================================
-
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         df = pd.read_csv(INPUT_DATA)
-        log(f"[LOADED] {INPUT_DATA.name} ({len(df)} rows)")
+        log(f"{INPUT_DATA.name} ({len(df)} rows)")
 
-        log("[LOAD] Loading segment-location slopes...")
+        log("Loading segment-location slopes...")
         df_slopes = pd.read_csv(INPUT_SLOPES)
-        log(f"[LOADED] {INPUT_SLOPES.name} ({len(df_slopes)} rows)")
+        log(f"{INPUT_SLOPES.name} ({len(df_slopes)} rows)")
+        # Compute Observed Means per Segment x LocationType
 
-        # ==============================================================
-        # STEP 2: Compute Observed Means per Segment x LocationType
-        # ==============================================================
-
-        log("[AGGREGATE] Computing observed means per Segment x LocationType...")
+        log("Computing observed means per Segment x LocationType...")
 
         observed_list = []
 
@@ -128,13 +115,10 @@ if __name__ == "__main__":
                 log(f"  {segment}-{location}: n={n_obs}, theta={mean_theta:.3f} [{ci_lower:.3f}, {ci_upper:.3f}]")
 
         df_observed = pd.DataFrame(observed_list)
-        log(f"[AGGREGATED] 4 observed means computed")
+        log(f"4 observed means computed")
+        # Generate Model Predictions
 
-        # ==============================================================
-        # STEP 3: Generate Model Predictions
-        # ==============================================================
-
-        log("[PREDICT] Generating model-predicted trajectories...")
+        log("Generating model-predicted trajectories...")
 
         # Create prediction grid
         # Early: 0 to 2 days
@@ -232,25 +216,19 @@ if __name__ == "__main__":
                 })
 
         df_predicted = pd.DataFrame(prediction_list)
-        log(f"[PREDICTED] {len(df_predicted)} prediction points generated")
+        log(f"{len(df_predicted)} prediction points generated")
+        # Combine and Save Theta Scale Data
 
-        # ==============================================================
-        # STEP 4: Combine and Save Theta Scale Data
-        # ==============================================================
-
-        log("[COMBINE] Combining observed and predicted data (theta scale)...")
+        log("Combining observed and predicted data (theta scale)...")
         df_theta = pd.concat([df_observed, df_predicted], ignore_index=True)
-        log(f"[COMBINED] {len(df_theta)} total rows")
+        log(f"{len(df_theta)} total rows")
 
-        log(f"[SAVE] Saving to {OUTPUT_THETA.name}...")
+        log(f"Saving to {OUTPUT_THETA.name}...")
         df_theta.to_csv(OUTPUT_THETA, index=False)
-        log(f"[SAVED] {OUTPUT_THETA.name}")
+        log(f"{OUTPUT_THETA.name}")
+        # Convert to Probability Scale
 
-        # ==============================================================
-        # STEP 5: Convert to Probability Scale
-        # ==============================================================
-
-        log("[TRANSFORM] Converting theta to probability scale...")
+        log("Converting theta to probability scale...")
 
         df_prob = df_theta.copy()
         df_prob['probability'] = logistic(df_prob['theta'])
@@ -271,20 +249,17 @@ if __name__ == "__main__":
         df_prob = df_prob[['Segment', 'LocationType', 'Days_within', 'theta',
                           'CI_lower', 'CI_upper', 'n_obs', 'Data_Type']]
 
-        log(f"[SAVE] Saving to {OUTPUT_PROB.name}...")
+        log(f"Saving to {OUTPUT_PROB.name}...")
         df_prob.to_csv(OUTPUT_PROB, index=False)
-        log(f"[SAVED] {OUTPUT_PROB.name}")
+        log(f"{OUTPUT_PROB.name}")
+        # Validation
 
-        # ==============================================================
-        # STEP 6: Validation
-        # ==============================================================
-
-        log("[VALIDATION] Checking output data quality...")
+        log("Checking output data quality...")
 
         # Check theta scale data
         if len(df_theta) < 4:
             raise ValueError(f"Expected at least 4 rows in theta data, got {len(df_theta)}")
-        log(f"[PASS] Theta scale: {len(df_theta)} rows")
+        log(f"Theta scale: {len(df_theta)} rows")
 
         # Check all Segment x LocationType combinations present
         observed_theta = df_theta[df_theta['Data_Type'] == 'observed']
@@ -293,41 +268,38 @@ if __name__ == "__main__":
         actual_combos = set(zip(observed_theta['Segment'], observed_theta['LocationType']))
         if actual_combos != expected_combos:
             raise ValueError(f"Missing segment-location combinations: {expected_combos - actual_combos}")
-        log("[PASS] All 4 Segment x LocationType combinations present")
+        log("All 4 Segment x LocationType combinations present")
 
         # Check probability scale data
         if len(df_prob) != len(df_theta):
             raise ValueError("Probability scale row count mismatch")
-        log(f"[PASS] Probability scale: {len(df_prob)} rows")
+        log(f"Probability scale: {len(df_prob)} rows")
 
         # Check probability values in [0, 1]
         observed_prob = df_prob[df_prob['Data_Type'] == 'observed']
         if observed_prob['theta'].min() < 0 or observed_prob['theta'].max() > 1:
             raise ValueError(f"Probability values out of range [0, 1]")
-        log(f"[PASS] Probability values in valid range [0, 1]")
+        log(f"Probability values in valid range [0, 1]")
 
         # Check CI ordering for observed values
         valid_ci = observed_theta['CI_lower'] <= observed_theta['CI_upper']
         if not valid_ci.all():
             raise ValueError("CI_lower > CI_upper detected")
-        log("[PASS] CI ordering valid (lower <= upper)")
-
-        # ==============================================================
+        log("CI ordering valid (lower <= upper)")
         # SUCCESS
-        # ==============================================================
 
-        log("[SUCCESS] Step 07 complete")
-        log(f"[SUCCESS] Theta scale data: {OUTPUT_THETA}")
-        log(f"[SUCCESS] Probability scale data: {OUTPUT_PROB}")
-        log("[SUCCESS] Decision D069 compliance: Dual-scale plot data prepared")
+        log("Step 07 complete")
+        log(f"Theta scale data: {OUTPUT_THETA}")
+        log(f"Probability scale data: {OUTPUT_PROB}")
+        log("Decision D069 compliance: Dual-scale plot data prepared")
 
         # Summary statistics
-        log("[SUMMARY] Observed means (theta scale):")
+        log("Observed means (theta scale):")
         for _, row in observed_theta.iterrows():
             log(f"  {row['Segment']}-{row['LocationType']}: "
                 f"theta={row['theta']:.3f} [{row['CI_lower']:.3f}, {row['CI_upper']:.3f}]")
 
-        log("[SUMMARY] Observed means (probability scale):")
+        log("Observed means (probability scale):")
         for _, row in observed_prob[observed_prob['Data_Type'] == 'observed'].iterrows():
             log(f"  {row['Segment']}-{row['LocationType']}: "
                 f"p={row['theta']:.3f} [{row['CI_lower']:.3f}, {row['CI_upper']:.3f}]")
@@ -335,8 +307,8 @@ if __name__ == "__main__":
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         import traceback
         log(traceback.format_exc())
         sys.exit(1)

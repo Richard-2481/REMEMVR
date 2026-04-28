@@ -1,0 +1,11 @@
+predictor,outcome,beta,p_uncorrected,p_bonferroni,term,sig_uncorrected,sig_bonferroni,effect_interpretation
+RAVLT_T,intercept,0.0083975666838788,0.1204464304285343,0.6022321521426716,RAVLT_T,0,0,negligible positive effect on intercept (non-significant)
+RAVLT_Pct_Ret_T,intercept,0.0094122145544863,0.0711266100017055,0.3556330500085276,RAVLT_Pct_Ret_T,0,0,negligible positive effect on intercept (non-significant)
+BVMT_T,intercept,0.0031123388035408,0.6000691973647087,1.0,BVMT_T,0,0,negligible positive effect on intercept (non-significant)
+BVMT_Pct_Ret_T,intercept,0.0061994707567239,0.2195345952116631,1.0,BVMT_Pct_Ret_T,0,0,negligible positive effect on intercept (non-significant)
+RPM_T,intercept,0.0150447499777589,0.0094485443170288,0.0472427215851442,RPM_T,1,0,negligible positive effect on intercept (significant (uncorrected only))
+RAVLT_T,slope,0.0013645339427681,0.0123673528027465,0.074204116816479,RAVLT_T,1,0,negligible positive effect on slope (significant (uncorrected only))
+RAVLT_Pct_Ret_T,slope,-0.0003663730227282,0.4781583023030171,2.868949813818103,RAVLT_Pct_Ret_T,0,0,negligible negative effect on slope (non-significant)
+BVMT_T,slope,-3.147557760052098e-05,0.9575968243504456,5.745580946102673,BVMT_T,0,0,negligible negative effect on slope (non-significant)
+BVMT_Pct_Ret_T,slope,0.0002273732163382,0.6506726969557978,3.904036181734787,BVMT_Pct_Ret_T,0,0,negligible positive effect on slope (non-significant)
+RPM_T,slope,0.000704701970119,0.2164977298371488,1.2989863790228928,RPM_T,0,0,negligible positive effect on slope (non-significant)

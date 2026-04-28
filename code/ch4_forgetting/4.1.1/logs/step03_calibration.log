@@ -1,0 +1,121 @@
+Step 3: IRT Calibration Pass 2 (Purified Items)
+Loading raw VR item responses...
+step00_irt_input.csv (400 rows, 106 cols)
+Loading purified item list...
+step02_purified_items.csv (68 items retained)
+  Purified items: ['TQ_ICR-D-i1', 'TQ_ICR-D-i2', 'TQ_ICR-D-i3', 'TQ_ICR-D-i4', 'TQ_ICR-D-i5']... (68 total)
+Running Pass 2 IRT calibration (purified items only)...
+Missing required columns: ['UID', 'test', 'item_name', 'score']
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step03_irt_calibration_pass2_MINIMAL_TEST.py", line 202, in <module>
+    theta_scores, item_params = calibrate_irt(
+                                ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 472, in calibrate_irt
+    response_matrix, Q_matrix, missing_mask, item_list, composite_ids = prepare_irt_input_from_long(
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 67, in prepare_irt_input_from_long
+    raise ValueError(f"Missing required columns: {missing_cols}")
+ValueError: Missing required columns: ['UID', 'test', 'item_name', 'score']
+Step 3: IRT Calibration Pass 2 (Purified Items)
+Loading raw VR item responses...
+step00_irt_input.csv (400 rows, 106 cols)
+Loading purified item list...
+step02_purified_items.csv (68 items retained)
+  Purified items: ['TQ_ICR-D-i1', 'TQ_ICR-D-i2', 'TQ_ICR-D-i3', 'TQ_ICR-D-i4', 'TQ_ICR-D-i5']... (68 total)
+Converting wide format to long format for IRT...
+Long format: 27200 observations (0 missing values dropped)
+Split composite_ID into UID and test columns
+Running Pass 2 IRT calibration (purified items only)...
+Missing required columns: ['UID', 'test', 'item_name', 'score']
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step03_irt_calibration_pass2_MINIMAL_TEST.py", line 230, in <module>
+    theta_scores, item_params = calibrate_irt(
+                                ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 472, in calibrate_irt
+    response_matrix, Q_matrix, missing_mask, item_list, composite_ids = prepare_irt_input_from_long(
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 67, in prepare_irt_input_from_long
+    raise ValueError(f"Missing required columns: {missing_cols}")
+ValueError: Missing required columns: ['UID', 'test', 'item_name', 'score']
+Step 3: IRT Calibration Pass 2 (Purified Items)
+Loading raw VR item responses...
+step00_irt_input.csv (400 rows, 106 cols)
+Loading purified item list...
+step02_purified_items.csv (68 items retained)
+  Purified items: ['TQ_ICR-D-i1', 'TQ_ICR-D-i2', 'TQ_ICR-D-i3', 'TQ_ICR-D-i4', 'TQ_ICR-D-i5']... (68 total)
+Converting wide format to long format for IRT...
+Long format: 27200 observations (0 missing values dropped)
+Split composite_ID into UID and test columns
+Running Pass 2 IRT calibration (purified items only)...
+Pass 2 calibration complete
+  Theta scores: 400 rows
+  Item parameters: 68 items
+Saving Pass 2 theta scores to step03_theta_scores.csv...
+step03_theta_scores.csv (400 rows, 3 cols)
+  Theta_All range: [-2.367, 2.629]
+'SE_All'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'SE_All'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step03_irt_calibration_pass2_MINIMAL_TEST.py", line 251, in <module>
+    log(f"  SE_All range: [{theta_scores['SE_All'].min():.3f}, {theta_scores['SE_All'].max():.3f}]")
+                            ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'SE_All'
+Step 3: IRT Calibration Pass 2 (Purified Items)
+Loading raw VR item responses...
+step00_irt_input.csv (400 rows, 106 cols)
+Loading purified item list...
+step02_purified_items.csv (68 items retained)
+  Purified items: ['TQ_ICR-D-i1', 'TQ_ICR-D-i2', 'TQ_ICR-D-i3', 'TQ_ICR-D-i4', 'TQ_ICR-D-i5']... (68 total)
+Converting wide format to long format for IRT...
+Long format: 27200 observations (0 missing values dropped)
+Split composite_ID into UID and test columns
+Running Pass 2 IRT calibration (purified items only)...
+Pass 2 calibration complete
+  Theta scores: 400 rows
+  Item parameters: 68 items
+Saving Pass 2 theta scores to step03_theta_scores.csv...
+step03_theta_scores.csv (400 rows, 3 cols)
+  Theta_All range: [-2.516, 2.728]
+'SE_All'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'SE_All'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step03_irt_calibration_pass2.py", line 251, in <module>
+    log(f"  SE_All range: [{theta_scores['SE_All'].min():.3f}, {theta_scores['SE_All'].max():.3f}]")
+                            ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'SE_All'

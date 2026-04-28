@@ -1,0 +1,235 @@
+Step 05d: Random Slopes Comparison
+============================================================
+
+PURPOSE: Test intercepts-only vs intercepts+slopes for top 10 models
+REQUIREMENT: improvement_taxonomy.md Section 4.4 MANDATORY
+BLOCKER: Cannot claim heterogeneous effects without testing slopes
+
+Loading LMM input data...
+  Loaded: 1200 rows, 6 cols
+
+Creating time transformations...
+  Created: Days, log_Days, sqrt_Days, cbrt_Days, recip_Days, etc.
+
+============================================================
+Model: Recip+Log
+============================================================
+Formula: Ability ~ recip_Days + log_Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2589.20
+  Converged: True
+
+Intercepts+slopes (re_formula='~log_Days')...
+  AIC: 2575.01
+  Converged: True
+  Slope variance: 0.0485
+
+ΔAIC (intercepts - slopes): 14.19
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=14.19)
+  → Use slopes model, report slope variance = 0.0485
+
+============================================================
+Model: PowerLaw_Log
+============================================================
+Formula: Ability ~ Days_pow_neg05 + log_Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2589.38
+  Converged: True
+
+Intercepts+slopes (re_formula='~log_Days')...
+  AIC: 2575.16
+  Converged: True
+  Slope variance: 0.0485
+
+ΔAIC (intercepts - slopes): 14.22
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=14.22)
+  → Use slopes model, report slope variance = 0.0485
+
+============================================================
+Model: CubeRoot+Log
+============================================================
+Formula: Ability ~ cbrt_Days + log_Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2589.52
+  Converged: True
+
+Intercepts+slopes (re_formula='~log_Days')...
+  AIC: 2575.53
+  Converged: True
+  Slope variance: 0.0482
+
+ΔAIC (intercepts - slopes): 14.00
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=14.00)
+  → Use slopes model, report slope variance = 0.0482
+
+============================================================
+Model: Tanh+Log
+============================================================
+Formula: Ability ~ tanh_Days + log_Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2589.54
+  Converged: True
+
+Intercepts+slopes (re_formula='~log_Days')...
+  AIC: 2575.36
+  Converged: True
+  Slope variance: 0.0485
+
+ΔAIC (intercepts - slopes): 14.18
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=14.18)
+  → Use slopes model, report slope variance = 0.0485
+
+============================================================
+Model: SquareRoot+Lin
+============================================================
+Formula: Ability ~ sqrt_Days + Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2588.85
+  Converged: True
+
+Intercepts+slopes (re_formula='~Days')...
+  AIC: 2583.77
+  Converged: True
+  Slope variance: 0.0033
+
+ΔAIC (intercepts - slopes): 5.08
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=5.08)
+  → Use slopes model, report slope variance = 0.0033
+
+============================================================
+Model: Lin+Log
+============================================================
+Formula: Ability ~ Days + log_Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2590.42
+  Converged: True
+
+Intercepts+slopes (re_formula='~Days')...
+  AIC: 2585.28
+  Converged: True
+  Slope variance: 0.0033
+
+ΔAIC (intercepts - slopes): 5.14
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=5.14)
+  → Use slopes model, report slope variance = 0.0033
+
+============================================================
+Model: Exp+Log
+============================================================
+Formula: Ability ~ neg_Days + log_Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2590.42
+  Converged: True
+
+Intercepts+slopes (re_formula='~log_Days')...
+  AIC: 2576.06
+  Converged: True
+  Slope variance: 0.0487
+
+ΔAIC (intercepts - slopes): 14.36
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=14.36)
+  → Use slopes model, report slope variance = 0.0487
+
+============================================================
+Model: Recip+Lin
+============================================================
+Formula: Ability ~ recip_Days + Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2589.20
+  Converged: True
+
+Intercepts+slopes (re_formula='~Days')...
+  AIC: 2584.11
+  Converged: True
+  Slope variance: 0.0034
+
+ΔAIC (intercepts - slopes): 5.08
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=5.08)
+  → Use slopes model, report slope variance = 0.0034
+
+============================================================
+Model: PowerLaw+Recip+Log
+============================================================
+Formula: Ability ~ Days_pow_neg05 + recip_Days + log_Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2591.13
+  Converged: True
+
+Intercepts+slopes (re_formula='~log_Days')...
+  AIC: 2576.97
+  Converged: True
+  Slope variance: 0.0485
+
+ΔAIC (intercepts - slopes): 14.15
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=14.15)
+  → Use slopes model, report slope variance = 0.0485
+
+============================================================
+Model: PowerLaw_Lin
+============================================================
+Formula: Ability ~ Days_pow_neg05 + Days + C(Factor, Treatment("What"))
+
+Intercepts-only (re_formula='1')...
+  AIC: 2589.49
+  Converged: True
+
+Intercepts+slopes (re_formula='~Days')...
+  AIC: 2584.40
+  Converged: True
+  Slope variance: 0.0033
+
+ΔAIC (intercepts - slopes): 5.08
+  Slopes improve fit (ΔAIC > 2): True
+  Slopes improve fit substantially (ΔAIC=5.08)
+  → Use slopes model, report slope variance = 0.0033
+
+Saved results: /home/etai/projects/REMEMVR/results/ch5/5.2.1/results/step05d_random_slopes_comparison.csv
+
+============================================================
+SUMMARY REPORT
+============================================================
+
+Convergence:
+  Both structures converged: 10/10
+  Slopes failed to converge: 0/10
+
+Model Selection:
+  Slopes improve fit (ΔAIC > 2): 10/10
+  Intercepts-only preferred (ΔAIC < 2): 0/10
+
+Slope Variance (for models where slopes converged):
+  Mean slope variance: 0.0304
+  Range: [0.0033, 0.0487]
+
+============================================================
+RECOMMENDATION
+============================================================
+
+✅ SLOPES WIN (≥7/10 models)
+   → Use random slopes models
+   → Report: 'Individual differences in forgetting rates confirmed'
+   → Document: Mean slope variance = 0.0304
+
+Saved summary: /home/etai/projects/REMEMVR/results/ch5/5.2.1/results/step05d_slopes_summary.txt
+
+============================================================
+Step 05d complete
+============================================================

@@ -3,7 +3,6 @@
 Step ID: step02b
 Step Name: Model-Averaged ROOT Verification for RQ 5.5.3
 RQ: results/ch5/5.5.3
-Generated: 2025-12-10
 
 PURPOSE:
 Verify that Source-Destination age interaction NULL findings (RQ 5.5.3) remain
@@ -46,7 +45,6 @@ RQ_551_DIR = RQ_DIR.parent / "5.5.1"
 LOG_FILE = RQ_DIR / "logs" / "step02b_model_averaged_verification.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -63,10 +61,7 @@ if __name__ == "__main__":
         log("ORIGINAL: Log-only model (RQ 5.5.1 weight=63.5%)")
         log("UPDATED:  13-model averaging (extreme uncertainty, N_eff=12.32)")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Model-Averaged Predictions from RQ 5.5.1
-        # =====================================================================
+        # Load Model-Averaged Predictions from RQ 5.5.1
         log("[STEP 1] Loading 13-model averaged predictions from RQ 5.5.1...")
         log("")
 
@@ -80,10 +75,7 @@ if __name__ == "__main__":
         log(f"  Columns: {list(averaged_preds.columns)}")
         log(f"  LocationTypes: {averaged_preds['LocationType'].unique()}")
         log("")
-
-        # =====================================================================
-        # STEP 2: Load Original LMM Input (Log-based)
-        # =====================================================================
+        # Load Original LMM Input (Log-based)
         log("[STEP 2] Loading original LMM input data...")
         log("")
 
@@ -95,10 +87,7 @@ if __name__ == "__main__":
         log(f"  UIDs: {original_data['UID'].nunique()}")
         log(f"  LocationTypes: {original_data['LocationType'].unique()}")
         log("")
-
-        # =====================================================================
-        # STEP 3: Interpolate Model-Averaged Predictions to Observed TSVR
-        # =====================================================================
+        # Interpolate Model-Averaged Predictions to Observed TSVR
         log("[STEP 3] Interpolating model-averaged predictions to observed TSVR_hours...")
         log("")
 
@@ -148,10 +137,7 @@ if __name__ == "__main__":
         model_averaged_data.to_csv(output_file, index=False, encoding='utf-8')
         log(f"  Saved: {output_file.name}")
         log("")
-
-        # =====================================================================
-        # STEP 4: Fit LMM with Model-Averaged Predictions
-        # =====================================================================
+        # Fit LMM with Model-Averaged Predictions
         log("[STEP 4] Fitting LMM with model-averaged predictions...")
         log("")
 
@@ -189,10 +175,7 @@ if __name__ == "__main__":
         model_averaged_lmm.save(str(model_path))
         log(f"  Saved model: {model_path.name}")
         log("")
-
-        # =====================================================================
-        # STEP 5: Extract 3-Way Interaction Terms
-        # =====================================================================
+        # Extract 3-Way Interaction Terms
         log("[STEP 5] Extracting 3-way interaction terms...")
         log("")
 
@@ -274,10 +257,7 @@ if __name__ == "__main__":
                 else:
                     log(f"    ⚠️  Significant interaction (p_bonf ≤ 0.025)")
                 log("")
-
-        # =====================================================================
-        # STEP 6: Load Original Log-Based Results for Comparison
-        # =====================================================================
+        # Load Original Log-Based Results for Comparison
         log("[STEP 6] Loading original Log-based interaction results...")
         log("")
 
@@ -287,10 +267,7 @@ if __name__ == "__main__":
         log(f"  Loaded: {original_interaction_file.name}")
         log(f"  Original interactions: {len(original_interactions)} terms")
         log("")
-
-        # =====================================================================
-        # STEP 7: Compare Original vs Model-Averaged Results
-        # =====================================================================
+        # Compare Original vs Model-Averaged Results
         log("[STEP 7] Comparing original (Log) vs model-averaged results...")
         log("")
 
@@ -355,10 +332,7 @@ if __name__ == "__main__":
                 log(f"      p = {row['p_uncorrected']:.6f}, p_bonf = {row['p_bonferroni']:.6f}")
                 log(f"      NULL: {row['null_robust']}")
             log("")
-
-        # =====================================================================
-        # STEP 8: Verification Summary
-        # =====================================================================
+        # Verification Summary
         log("[STEP 8] Verification Summary")
         log("=" * 80)
         log("")
@@ -391,19 +365,19 @@ if __name__ == "__main__":
 
         log("")
         log("=" * 80)
-        log("[SUCCESS] Step 02b verification complete")
+        log("Step 02b verification complete")
         log("=" * 80)
         sys.exit(0)
 
     except Exception as e:
         log("")
         log("=" * 80)
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         log("=" * 80)
         log("")
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         traceback.print_exc()
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
-            f.write("\n[TRACEBACK]\n")
+            f.write("\n\n")
             traceback.print_exc(file=f)
         sys.exit(1)

@@ -16,7 +16,6 @@ Output:
     plots/diagnostics_source.png (2x2 grid)
     plots/diagnostics_destination.png (2x2 grid)
 
-Author: Claude (rq_platinum agent)
 Date: 2025-12-30
 """
 

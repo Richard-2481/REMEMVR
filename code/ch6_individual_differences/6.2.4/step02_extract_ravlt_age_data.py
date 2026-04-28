@@ -66,7 +66,7 @@ def compute_ravlt_percent_retention(df, log_fn):
         if denom > 0:
             pct_ret[i] = (dr / denom) * 100
     n_valid = np.sum(~np.isnan(pct_ret))
-    log_fn(f"[COMPUTED] RAVLT Percent Retention: {n_valid}/{len(df)} valid")
+    log_fn(f"RAVLT Percent Retention: {n_valid}/{len(df)} valid")
     return pct_ret
 
 

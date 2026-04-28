@@ -1,0 +1,209 @@
+Step 07: Fit Parallel LMMs and Compare AIC
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step06_standardized_scores.csv
+400 rows
+UID column (e.g., A010)
+Fitting 9 LMMs (3 dimensions x 3 score types)
+
+Common
+  IRT (z_theta_common)
+Singular matrix
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.5/code/step07_fit_lmms.py", line 86, in <module>
+    result = model.fit(reml=False, method='lbfgs')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 2257, in fit
+    pcov = np.linalg.inv(-hess)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py", line 669, in inv
+    ainv = _umath_linalg.inv(a, signature=signature)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py", line 163, in _raise_linalgerror_singular
+    raise LinAlgError("Singular matrix")
+numpy.linalg.LinAlgError: Singular matrix
+Step 07: Fit Parallel LMMs and Compare AIC
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step06_standardized_scores.csv
+400 rows
+UID column (e.g., A010)
+Fitting 9 LMMs (3 dimensions x 3 score types)
+Formula: score ~ TSVR_hours with random intercept only by UID
+
+Common
+  IRT (z_theta_common)
+    AIC = 1047.62
+    Converged: True
+    Log-likelihood: -519.81
+  Full (z_ctt_full_common)
+    AIC = 1058.03
+    Converged: True
+    Log-likelihood: -525.02
+  Purified (z_ctt_purified_common)
+    AIC = 1075.23
+    Converged: True
+    Log-likelihood: -533.62
+  AIC comparison:
+    IRT:      1047.62
+    Full:     1058.03
+    Purified: 1075.23
+    Delta (Purified - Full): +17.20
+    Improvement (|delta| > 2): Yes
+
+Congruent
+  IRT (z_theta_congruent)
+    AIC = 1080.99
+    Converged: True
+    Log-likelihood: -536.49
+  Full (z_ctt_full_congruent)
+    AIC = 1047.44
+    Converged: True
+    Log-likelihood: -519.72
+  Purified (z_ctt_purified_congruent)
+    AIC = 1082.64
+    Converged: True
+    Log-likelihood: -537.32
+  AIC comparison:
+    IRT:      1080.99
+    Full:     1047.44
+    Purified: 1082.64
+    Delta (Purified - Full): +35.19
+    Improvement (|delta| > 2): Yes
+
+Incongruent
+  IRT (z_theta_incongruent)
+    AIC = 1040.48
+    Converged: True
+    Log-likelihood: -516.24
+  Full (z_ctt_full_incongruent)
+    AIC = 1067.96
+    Converged: True
+    Log-likelihood: -529.98
+  Purified (z_ctt_purified_incongruent)
+    AIC = 1065.93
+    Converged: True
+    Log-likelihood: -528.96
+  AIC comparison:
+    IRT:      1040.48
+    Full:     1067.96
+    Purified: 1065.93
+    Delta (Purified - Full): -2.03
+    Improvement (|delta| > 2): Yes
+
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_model_comparison.csv
+3 rows, 7 columns
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_summaries_theta.txt
+theta model summaries
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_summaries_full.txt
+full model summaries
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_summaries_purified.txt
+purified model summaries
+
+Step 07 complete
+Step 07: Fit Parallel LMMs and Compare AIC
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step06_standardized_scores.csv
+400 rows
+UID column (e.g., A010)
+Creating recip_TSVR and log_TSVR transformations
+recip_TSVR (rapid): 1/(t+1), range [0.004, 0.500]
+log_TSVR (slow): log(t+1), range [0.693, 5.510]
+Fitting 9 LMMs (3 dimensions x 3 score types)
+Formula: score ~ recip_TSVR + log_TSVR + (recip_TSVR | UID)
+Recip+Log two-process forgetting per RQ 5.4.1 ROOT cascade
+Will attempt ~recip_TSVR random slopes, fallback to ~1 if singular
+
+Common
+  IRT (z_theta_common)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1040.42
+    Converged: True
+    Log-likelihood: -515.21
+  Full (z_ctt_full_common)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1055.16
+    Converged: True
+    Log-likelihood: -522.58
+  Purified (z_ctt_purified_common)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1074.15
+    Converged: True
+    Log-likelihood: -532.08
+  AIC comparison:
+    IRT:      1040.42
+    Full:     1055.16
+    Purified: 1074.15
+    Delta (Purified - Full): +18.99
+    Improvement (|delta| > 2): Yes
+
+Congruent
+  IRT (z_theta_congruent)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1080.05
+    Converged: True
+    Log-likelihood: -535.02
+  Full (z_ctt_full_congruent)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1043.91
+    Converged: True
+    Log-likelihood: -516.95
+  Purified (z_ctt_purified_congruent)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1082.06
+    Converged: True
+    Log-likelihood: -536.03
+  AIC comparison:
+    IRT:      1080.05
+    Full:     1043.91
+    Purified: 1082.06
+    Delta (Purified - Full): +38.15
+    Improvement (|delta| > 2): Yes
+
+Incongruent
+  IRT (z_theta_incongruent)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1029.90
+    Converged: True
+    Log-likelihood: -509.95
+  Full (z_ctt_full_incongruent)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1056.98
+    Converged: True
+    Log-likelihood: -523.49
+  Purified (z_ctt_purified_incongruent)
+    [ATTEMPT 1] Fitting with ~recip_TSVR random slopes...
+    Random slopes failed ('MixedLMResults' object has no attribute 'warnings...), trying ~1
+    Random intercepts model converged
+    AIC = 1057.34
+    Converged: True
+    Log-likelihood: -523.67
+  AIC comparison:
+    IRT:      1029.90
+    Full:     1056.98
+    Purified: 1057.34
+    Delta (Purified - Full): +0.35
+    Improvement (|delta| > 2): No
+
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_model_comparison.csv
+3 rows, 7 columns
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_summaries_theta.txt
+theta model summaries
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_summaries_full.txt
+full model summaries
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step07_lmm_summaries_purified.txt
+purified model summaries
+
+Step 07 complete

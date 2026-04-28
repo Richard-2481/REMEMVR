@@ -1,0 +1,9 @@
+Analysis,Value,Interpretation
+Post-hoc power (observed d=0.021),0.0526,Power=5.3% (very low)
+Power for small effect (d=0.20),0.2879,Power=28.8% (low)
+Power for medium effect (d=0.50),0.9380,Power=93.8% (excellent)
+Power for large effect (d=0.80),0.9999,Power=100.0% (excellent)
+N required for 0.80 power (observed d),10000,Need N=10000 for observed effect
+N required for 0.80 power (small d=0.20),395,Need N=395 for small effect
+N required for 0.80 power (medium d=0.50),66,Need N=66 for medium effect
+TOST equivalence test (bound=0.20 SD),p=0.002602,Equivalent (negligible effect)

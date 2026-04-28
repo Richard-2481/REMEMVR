@@ -3,7 +3,6 @@
 Step ID: step11
 Step Name: accuracy_merge
 RQ: results/ch7/7.3.1
-Generated: 2026-02-26
 
 PURPOSE:
 Merge accuracy theta scores (from RQ 7.1.1) with the same predictor set used
@@ -42,42 +41,42 @@ if __name__ == "__main__":
         # Clear log
         LOG_FILE.write_text("")
 
-        log("[START] Step 11: Merge accuracy theta with predictors")
+        log("Step 11: Merge accuracy theta with predictors")
 
         # Load accuracy theta from RQ 7.1.1
         theta_path = PROJECT_ROOT / "results" / "ch7" / "7.1.1" / "data" / "step02_theta_means.csv"
         theta_df = pd.read_csv(theta_path)
-        log(f"[LOADED] {theta_path.name}: {len(theta_df)} rows, columns={list(theta_df.columns)}")
+        log(f"{theta_path.name}: {len(theta_df)} rows, columns={list(theta_df.columns)}")
         theta_df = theta_df.rename(columns={'theta_mean': 'accuracy_theta'})
 
         # Load predictors from RQ 7.3.1 step02
         pred_path = RQ_DIR / "data" / "step02_cognitive_tests.csv"
         pred_df = pd.read_csv(pred_path)
-        log(f"[LOADED] {pred_path.name}: {len(pred_df)} rows, columns={list(pred_df.columns)}")
+        log(f"{pred_path.name}: {len(pred_df)} rows, columns={list(pred_df.columns)}")
 
         # Inner merge on UID
         merged = pd.merge(theta_df, pred_df, on='UID', how='inner')
-        log(f"[MERGED] N={len(merged)} participants (inner join on UID)")
+        log(f"N={len(merged)} participants (inner join on UID)")
 
         # Verify completeness
         n_missing = merged.isna().sum().sum()
-        log(f"[CHECK] Missing values: {n_missing}")
+        log(f"Missing values: {n_missing}")
 
         if len(merged) != 100:
-            log(f"[WARNING] Expected N=100, got N={len(merged)}")
+            log(f"Expected N=100, got N={len(merged)}")
 
         # Save
         out_path = RQ_DIR / "data" / "step11_accuracy_analysis_dataset.csv"
         merged.to_csv(out_path, index=False)
-        log(f"[SAVED] {out_path.name} ({len(merged)} rows, {len(merged.columns)} cols)")
-        log(f"[COLUMNS] {list(merged.columns)}")
-        log(f"[SUMMARY] accuracy_theta: mean={merged['accuracy_theta'].mean():.4f}, sd={merged['accuracy_theta'].std():.4f}")
+        log(f"{out_path.name} ({len(merged)} rows, {len(merged.columns)} cols)")
+        log(f"{list(merged.columns)}")
+        log(f"accuracy_theta: mean={merged['accuracy_theta'].mean():.4f}, sd={merged['accuracy_theta'].std():.4f}")
 
-        log("[SUCCESS] Step 11: Accuracy merge complete")
+        log("Step 11: Accuracy merge complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

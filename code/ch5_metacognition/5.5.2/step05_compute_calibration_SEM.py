@@ -9,7 +9,7 @@ Original analysis reported Congruence main effect χ²(2)=?, p=0.487 Bonferroni 
 BUT difference score reliability r_diff=0.536 (QUESTIONABLE, below 0.70 threshold).
 Effect directionally consistent (β=+0.152 overconfidence trend) but NS.
 
-BLOCKER: r_diff=0.536 prevents FULL PLATINUM certification.
+BLOCKER: r_diff=0.536 prevents FULL quality validation.
 
 GOAL:
 -----
@@ -37,7 +37,6 @@ EXPECTED OUTCOME:
 r_diff=0.536 (QUESTIONABLE) → r≥0.70 (ACCEPTABLE) or r≥0.80 (EXCELLENT)
 NULL finding may be TRUE NULL (like 6.8.2) or ROBUST-NULL (marginal effect emerges).
 
-Author: Claude Code (via Happy)
 Date: 2025-12-29
 Version: v4.X
 """

@@ -1,0 +1,106 @@
+2025-12-02 15:32:18,338 - INFO - ============================================================
+2025-12-02 15:32:18,338 - INFO - Step 02: Fit Piecewise LMM
+2025-12-02 15:32:18,338 - INFO - ============================================================
+2025-12-02 15:32:18,338 - INFO - Loading data from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step01_piecewise_lmm_input.csv
+2025-12-02 15:32:18,341 - INFO - Data loaded: 1200 rows
+2025-12-02 15:32:18,342 - INFO - 
+Design summary:
+2025-12-02 15:32:18,342 - INFO -   Participants (UID): 100
+2025-12-02 15:32:18,342 - INFO -   Observations: 1200
+2025-12-02 15:32:18,342 - INFO -   Segment levels: ['Early', 'Late']
+2025-12-02 15:32:18,342 - INFO -   Paradigm levels: ['IFR', 'ICR', 'IRE']
+2025-12-02 15:32:18,342 - INFO - 
+Fitting piecewise LMM...
+2025-12-02 15:32:18,342 - INFO - Formula: theta ~ Days_within * Segment * paradigm_code
+2025-12-02 15:32:18,343 - INFO - Random effects: (1 + Days_within | UID)
+2025-12-02 15:32:18,343 - INFO - Estimation: REML=False (ML for model comparison)
+2025-12-02 15:32:18,605 - INFO - Model fit complete
+2025-12-02 15:32:18,605 - INFO - 
+Convergence check:
+2025-12-02 15:32:18,605 - INFO -   Converged: True
+2025-12-02 15:32:18,605 - INFO - 
+============================================================
+2025-12-02 15:32:18,605 - INFO - MODEL SUMMARY
+2025-12-02 15:32:18,605 - INFO - ============================================================
+2025-12-02 15:32:18,612 - INFO - 
+                           Mixed Linear Model Regression Results
+===========================================================================================
+Model:                         MixedLM            Dependent Variable:            theta     
+No. Observations:              1200               Method:                        ML        
+No. Groups:                    100                Scale:                         0.2548    
+Min. group size:               12                 Log-Likelihood:                -1107.8931
+Max. group size:               12                 Converged:                     Yes       
+Mean group size:               12.0                                                        
+-------------------------------------------------------------------------------------------
+                                                 Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-------------------------------------------------------------------------------------------
+Intercept                                         0.569    0.084  6.758 0.000  0.404  0.734
+Segment[T.Late]                                  -0.439    0.074 -5.926 0.000 -0.584 -0.294
+paradigm_code[T.ICR]                              0.083    0.075  1.107 0.268 -0.064  0.230
+paradigm_code[T.IRE]                              0.069    0.075  0.917 0.359 -0.078  0.216
+Segment[T.Late]:paradigm_code[T.ICR]             -0.029    0.104 -0.280 0.779 -0.232  0.174
+Segment[T.Late]:paradigm_code[T.IRE]             -0.057    0.104 -0.551 0.582 -0.261  0.146
+Days_within                                      -0.368    0.135 -2.733 0.006 -0.632 -0.104
+Days_within:Segment[T.Late]                       0.266    0.134  1.982 0.048  0.003  0.529
+Days_within:paradigm_code[T.ICR]                 -0.052    0.182 -0.285 0.776 -0.408  0.305
+Days_within:paradigm_code[T.IRE]                  0.043    0.182  0.236 0.813 -0.313  0.399
+Days_within:Segment[T.Late]:paradigm_code[T.ICR]  0.032    0.183  0.173 0.863 -0.327  0.390
+Days_within:Segment[T.Late]:paradigm_code[T.IRE] -0.065    0.183 -0.357 0.721 -0.424  0.293
+Group Var                                         0.427    0.138                           
+Group x Days_within Cov                          -0.032    0.023                           
+Days_within Var                                   0.019    0.007                           
+===========================================================================================
+
+2025-12-02 15:32:18,612 - INFO - 
+============================================================
+2025-12-02 15:32:18,612 - INFO - FIXED EFFECTS
+2025-12-02 15:32:18,612 - INFO - ============================================================
+2025-12-02 15:32:18,615 - INFO - 
+                                                  Coefficient  ...         P>|z|
+Days_within                                         -0.368001  ...  6.276270e-03
+Days_within Var                                           NaN  ...  2.161024e-07
+Days_within:Segment[T.Late]                          0.265955  ...  4.752294e-02
+Days_within:Segment[T.Late]:paradigm_code[T.ICR]     0.031612  ...  8.628549e-01
+Days_within:Segment[T.Late]:paradigm_code[T.IRE]    -0.065254  ...  7.214148e-01
+Days_within:paradigm_code[T.ICR]                    -0.051787  ...  7.758314e-01
+Days_within:paradigm_code[T.IRE]                     0.042960  ...  8.132639e-01
+Group Var                                                 NaN  ...  7.915903e-10
+Group x Days_within Cov                                   NaN  ...  5.547403e-03
+Intercept                                            0.568629  ...  1.399944e-11
+Segment[T.Late]                                     -0.438548  ...  3.095473e-09
+Segment[T.Late]:paradigm_code[T.ICR]                -0.029092  ...  7.792236e-01
+Segment[T.Late]:paradigm_code[T.IRE]                -0.057199  ...  5.815098e-01
+paradigm_code[T.ICR]                                 0.082971  ...  2.683652e-01
+paradigm_code[T.IRE]                                 0.068705  ...  3.593931e-01
+
+[15 rows x 4 columns]
+2025-12-02 15:32:18,615 - INFO - 
+============================================================
+2025-12-02 15:32:18,616 - INFO - RANDOM EFFECTS
+2025-12-02 15:32:18,616 - INFO - ============================================================
+2025-12-02 15:32:18,617 - INFO - Random effects covariance matrix:
+                Group  Days_within
+Group        0.426734    -0.032358
+Days_within -0.032358     0.019090
+2025-12-02 15:32:18,617 - INFO - 
+============================================================
+2025-12-02 15:32:18,617 - INFO - MODEL FIT STATISTICS
+2025-12-02 15:32:18,617 - INFO - ============================================================
+2025-12-02 15:32:18,617 - INFO -   Log-likelihood: -1107.8931
+2025-12-02 15:32:18,617 - INFO -   AIC: 2247.7862
+2025-12-02 15:32:18,617 - INFO -   BIC: 2329.2274
+2025-12-02 15:32:18,617 - INFO -   N groups (participants): 1200
+2025-12-02 15:32:18,619 - INFO - 
+Model saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step02_piecewise_lmm_model.pkl
+2025-12-02 15:32:18,620 - INFO - Summary saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step02_lmm_model_summary.txt
+2025-12-02 15:32:18,620 - INFO - 
+============================================================
+2025-12-02 15:32:18,620 - INFO - VALIDATION CHECKS
+2025-12-02 15:32:18,620 - INFO - ============================================================
+2025-12-02 15:32:18,621 - INFO - VALIDATION - PASS: No NaN in fixed effects
+2025-12-02 15:32:18,621 - INFO - VALIDATION - PASS: Standard errors in reasonable range
+2025-12-02 15:32:18,621 - INFO - VALIDATION - PASS: LMM convergence = True
+2025-12-02 15:32:18,621 - INFO - 
+============================================================
+2025-12-02 15:32:18,621 - INFO - STEP 02 COMPLETE
+2025-12-02 15:32:18,621 - INFO - ============================================================

@@ -1,0 +1,10 @@
+effect_type,value,interpretation,reference
+Cohens_f2_Full_Model,0.37447213922612954,large,Cohen (1988)
+Cohens_f2_Without_NART,0.3709903452924471,large,Cohen (1988)
+Cohens_f2_Episodic_Only,0.272812981581385,medium,Cohen (1988)
+Semi_partial_r2_RAVLT_T,0.01578786364844298,negligible,Unique variance contribution
+Semi_partial_r2_RAVLT_Pct_Ret_T,0.029175035559985796,small,Unique variance contribution
+Semi_partial_r2_BVMT_T,0.00282459703598803,negligible,Unique variance contribution
+Semi_partial_r2_BVMT_Pct_Ret_T,0.013344068249117269,negligible,Unique variance contribution
+Semi_partial_r2_NART_T,0.0018477053946244215,negligible,Unique variance contribution
+Semi_partial_r2_RPM_T,0.05374266257772908,small,Unique variance contribution

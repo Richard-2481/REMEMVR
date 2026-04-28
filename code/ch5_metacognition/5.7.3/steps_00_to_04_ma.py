@@ -25,7 +25,6 @@ Steps:
 - Step 03: Compute correlation with dual p-values (D068)
 - Step 04: Prepare scatterplot data
 
-Author: Claude Code
 Created: 2025-12-13
 Updated: Uses model-averaged residuals (ΔAIC < 7, effective N = 40.09)
 """
@@ -36,9 +35,7 @@ from pathlib import Path
 from scipy import stats
 from datetime import datetime
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.7.3
 LOG_FILE = RQ_DIR / "logs" / "steps_00_to_04_ma.log"
@@ -59,9 +56,7 @@ def log(msg):
     print(log_msg, flush=True)
 
 
-# =============================================================================
-# STEP 00: Extract Calibration and Load MA Residuals
-# =============================================================================
+# Extract Calibration and Load MA Residuals
 
 def step00_extract_data():
     """
@@ -146,9 +141,7 @@ def step00_extract_data():
     return df_calib_day0, df_residuals
 
 
-# =============================================================================
-# STEP 01: Compute Trajectory Variability (SD of Residuals per Participant)
-# =============================================================================
+# Compute Trajectory Variability (SD of Residuals per Participant)
 
 def step01_compute_variability(df_residuals):
     """
@@ -198,9 +191,7 @@ def step01_compute_variability(df_residuals):
     return df_variability
 
 
-# =============================================================================
-# STEP 02: Merge Calibration and Variability
-# =============================================================================
+# Merge Calibration and Variability
 
 def step02_merge_data(df_calib_day0, df_variability):
     """
@@ -241,9 +232,7 @@ def step02_merge_data(df_calib_day0, df_variability):
     return df_merged
 
 
-# =============================================================================
-# STEP 03: Compute Correlation with Dual P-Values (D068)
-# =============================================================================
+# Compute Correlation with Dual P-Values (D068)
 
 def step03_compute_correlation(df_merged):
     """
@@ -316,9 +305,7 @@ def step03_compute_correlation(df_merged):
     return result
 
 
-# =============================================================================
-# STEP 04: Prepare Scatterplot Data
-# =============================================================================
+# Prepare Scatterplot Data
 
 def step04_prepare_plot_data(df_merged):
     """
@@ -361,9 +348,7 @@ def step04_prepare_plot_data(df_merged):
     return df_plot
 
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all steps for RQ 6.7.3 with model-averaged residuals."""

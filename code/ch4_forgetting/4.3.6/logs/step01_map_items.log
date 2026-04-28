@@ -1,0 +1,19 @@
+Step 01: Map Items by Paradigm (Retained vs Removed)
+Loading purified items...
+step00_purified_items.csv (45 rows, 4 cols)
+Mapping domains to paradigms...
+Mapped 45 items to paradigms
+Paradigm distribution: {'ICR': 19, 'IRE': 14, 'IFR': 12}
+Creating item mapping table...
+step01_item_mapping.csv (45 rows, 6 cols)
+Creating retention summary...
+step01_retention_summary.csv (3 rows, 5 cols)
+IFR: 12/24 retained (50.0%)
+ICR: 19/24 retained (79.2%)
+IRE: 14/24 retained (58.3%)
+Validating outputs...
+[VALIDATION PASS] All 3 paradigms present
+[VALIDATION PASS] All retention rates in [0, 1]
+[VALIDATION PASS] retained + removed = total for all paradigms
+[VALIDATION PASS] No NaN values in outputs
+Step 01 complete

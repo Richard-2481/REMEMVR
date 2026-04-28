@@ -39,7 +39,7 @@ def fit_lmm(df, theta_col, model_name):
 
     Returns model object and extracted coefficients
     """
-    log(f"\n[FIT] Fitting {model_name} LMM...")
+    log(f"\nFitting {model_name} LMM...")
 
     # Prepare data
     model_df = df[['UID', 'TSVR_hours', theta_col]].copy()
@@ -82,7 +82,7 @@ def test_slope_difference(acc_stats, conf_stats):
 
     z = (b1 - b2) / sqrt(SE1^2 + SE2^2)
     """
-    log("\n[TEST] Testing slope difference...")
+    log("\nTesting slope difference...")
 
     acc_slope = acc_stats['slope']
     conf_slope = conf_stats['slope']
@@ -103,7 +103,7 @@ def test_slope_difference(acc_stats, conf_stats):
     log(f"  p-value: {p_value:.4f}")
 
     if p_value < 0.05:
-        log(f"  [SIGNIFICANT] Slopes differ significantly between measures")
+        log(f"  Slopes differ significantly between measures")
     else:
         log(f"  [NOT SIGNIFICANT] No significant slope difference")
 
@@ -119,7 +119,7 @@ def load_item_parameters():
 
     Returns mean discrimination and difficulty for each measure.
     """
-    log("\n[LOAD] Loading item parameters...")
+    log("\nLoading item parameters...")
 
     MIN_DISCRIM = 0.25
     MAX_DISCRIM = 4.0
@@ -161,17 +161,14 @@ def load_item_parameters():
 
 def main():
     """Execute METHOD B analysis."""
-    log("[START] METHOD B: LMM Slope Comparison Analysis")
+    log("METHOD B: LMM Slope Comparison Analysis")
     log("="*60)
-
-    # ==========================================================================
-    # STEP 9: Fit separate LMMs
-    # ==========================================================================
+    # Fit separate LMMs
     log("\n[STEP 9] Fitting separate LMMs for accuracy and confidence...")
 
     # Load merged data from Step 1
     df = pd.read_csv(RQ_DIR / "data" / "step01_merged_trajectories.csv")
-    log(f"[LOADED] Data: {len(df)} observations")
+    log(f"Data: {len(df)} observations")
 
     # Fit accuracy model
     acc_model, acc_stats = fit_lmm(df, 'theta_acc', 'Accuracy')
@@ -182,11 +179,8 @@ def main():
     # Save model summaries
     model_df = pd.DataFrame([acc_stats, conf_stats])
     model_df.to_csv(RQ_DIR / "data" / "step09_lmm_models.csv", index=False)
-    log(f"[SAVED] step09_lmm_models.csv")
-
-    # ==========================================================================
-    # STEP 10: Compare slopes on theta scale
-    # ==========================================================================
+    log(f"step09_lmm_models.csv")
+    # Compare slopes on theta scale
     log("\n[STEP 10] Comparing slopes on theta scale...")
 
     acc_slope = acc_stats['slope']
@@ -225,11 +219,8 @@ def main():
         'interpretation': interpretation
     }])
     slope_comparison.to_csv(RQ_DIR / "data" / "step10_slope_comparison_theta.csv", index=False)
-    log(f"[SAVED] step10_slope_comparison_theta.csv")
-
-    # ==========================================================================
-    # STEP 11: Transform LMM slopes to probability scale
-    # ==========================================================================
+    log(f"step10_slope_comparison_theta.csv")
+    # Transform LMM slopes to probability scale
     log("\n[STEP 11] Transforming LMM slopes to probability scale...")
 
     # Load calibrated item parameters
@@ -301,11 +292,8 @@ def main():
         'interpretation': prob_interpretation
     }])
     prob_comparison.to_csv(RQ_DIR / "data" / "step11_slope_comparison_probability.csv", index=False)
-    log(f"[SAVED] step11_slope_comparison_probability.csv")
-
-    # ==========================================================================
-    # STEP 12: Method comparison
-    # ==========================================================================
+    log(f"step11_slope_comparison_probability.csv")
+    # Method comparison
     log("\n[STEP 12] Comparing METHOD A vs METHOD B...")
 
     # Load METHOD A results
@@ -364,11 +352,8 @@ def main():
         'correlation': corr
     }])
     comparison.to_csv(RQ_DIR / "data" / "step12_method_comparison.csv", index=False)
-    log(f"[SAVED] step12_method_comparison.csv")
-
-    # ==========================================================================
-    # STEP 13: Extended trajectory analysis
-    # ==========================================================================
+    log(f"step12_method_comparison.csv")
+    # Extended trajectory analysis
     log("\n[STEP 13] Extended trajectory analysis...")
 
     # Note: Ch5 5.1.1 found Logarithmic best, Ch6 6.1.1 found Sin+Cos best
@@ -406,13 +391,10 @@ def main():
         'interpretation': 'Different functional forms suggest linear comparison oversimplifies'
     }])
     traj_analysis.to_csv(RQ_DIR / "data" / "step13_trajectory_analysis.csv", index=False)
-    log(f"[SAVED] step13_trajectory_analysis.csv")
-
-    # ==========================================================================
+    log(f"step13_trajectory_analysis.csv")
     # SUMMARY
-    # ==========================================================================
     log("\n" + "="*60)
-    log("[SUMMARY] METHOD B Analysis Complete")
+    log("METHOD B Analysis Complete")
     log(f"\nTheta scale (LMM slopes):")
     log(f"  Accuracy slope: {acc_slope:.6f} theta/hour")
     log(f"  Confidence slope: {conf_slope:.6f} theta/hour")
@@ -433,10 +415,10 @@ def main():
     log(f"  Methods {significance_agreement} on significance")
 
     if agreement == "DIVERGE on direction":
-        log("\n[WARNING] METHOD A and METHOD B produce opposite conclusions!")
+        log("\nMETHOD A and METHOD B produce opposite conclusions!")
         log("This demonstrates how excluding half the data (T2, T3) can be misleading")
 
-    log("\n[SUCCESS] Extended analysis complete")
+    log("\nExtended analysis complete")
 
 if __name__ == "__main__":
     # Clear log file
@@ -448,7 +430,7 @@ if __name__ == "__main__":
         main()
         sys.exit(0)
     except Exception as e:
-        log(f"\n[ERROR] Analysis failed: {e}")
+        log(f"\nAnalysis failed: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

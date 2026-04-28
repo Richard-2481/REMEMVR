@@ -1,0 +1,79 @@
+RQ 6.7.2: Suppression Effect Analysis
+======================================================================
+
+Loaded person-level data: 100 participants
+======================================================================
+PAIRWISE CORRELATIONS (Person-Level, N=100)
+======================================================================
+
+Variables:
+  X = SD_confidence (confidence variability)
+  Y = SD_accuracy (accuracy variability)
+  Z = mean_accuracy (covariate / potential suppressor)
+
+Correlations:
+  r(X, Y) = -0.0146, p = 0.8851  [Target: SD_conf vs SD_acc]
+  r(X, Z) = 0.2882, p = 0.0036  [SD_conf vs mean_acc]
+  r(Y, Z) = -0.6119, p = 0.0000  [SD_acc vs mean_acc]
+
+======================================================================
+PARTIAL CORRELATION DECOMPOSITION
+======================================================================
+
+Formula: r(X,Y|Z) = [r(X,Y) - r(X,Z)*r(Y,Z)] / sqrt[(1-r(X,Z)²)(1-r(Y,Z)²)]
+
+Numerator: r_xy - r_xz*r_yz = -0.0146 - (0.2882)*(-0.6119) = 0.1617
+Denominator: sqrt[(1-0.2882²)(1--0.6119²)] = 0.7574
+Partial r(X,Y|Z) = 0.2135
+
+======================================================================
+SUPPRESSION EFFECT ANALYSIS
+======================================================================
+
+SUPPRESSION DETECTED:
+  |Partial r| (0.2135) > |Zero-order r| (0.0146)
+
+INTERPRETATION:
+
+  1. WHAT HAPPENED:
+     - Zero-order correlation r(SD_conf, SD_acc) = -0.0146 (NULL)
+     - BUT controlling for mean accuracy reveals r_partial = 0.2135 (SIGNIFICANT)
+
+  2. WHY (SUPPRESSION MECHANISM):
+     - SD_confidence and mean_accuracy are positively correlated (r = 0.2882)
+     - SD_accuracy and mean_accuracy are negatively correlated (r = -0.6119)
+
+  3. MATHEMATICAL EXPLANATION:
+     - Binary SD_accuracy is constrained: SD = sqrt[p*(1-p)]
+     - This constraint creates NEGATIVE r(SD_acc, mean_acc) near extremes
+     - r(SD_acc, mean_acc) = -0.6119
+
+     - Meanwhile, high-ability participants have CONSISTENT confidence
+     - r(SD_conf, mean_acc) = 0.2882
+
+     - These opposing paths CANCEL OUT in zero-order correlation
+     - Removing mean_accuracy reveals the TRUE metacognitive relationship
+
+======================================================================
+THEORETICAL INTERPRETATION
+======================================================================
+
+FINDING: After controlling for ability (mean accuracy):
+  - Partial r = 0.2135, p < .05
+  - Within ability levels, people with variable confidence also have variable accuracy
+
+IMPLICATION:
+  - Metacognitive variability DOES track encoding variability
+  - BUT this relationship is MASKED by ability-related confounds
+  - People with similar ability show correlated confidence-accuracy variability
+
+THESIS SIGNIFICANCE:
+  - Supports metacognitive monitoring hypothesis (confidence tracks memory state)
+  - But zero-order null means variability relationship only emerges within ability bands
+  - This is a PARTIAL SUPPORT finding, not full support
+
+Saved: data/step05_suppression_analysis.csv
+
+======================================================================
+EXECUTION COMPLETE
+======================================================================

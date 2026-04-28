@@ -1,0 +1,27 @@
+================================================================================
+Step 05b: Model Averaging for RQ 6.4.1 (Paradigm)
+================================================================================
+
+LMM input: 1200 rows, 3 paradigms
+  Best model: Linear (weight=50.0%)
+======================================================================
+MODEL AVERAGING WITH PARADIGM INTERACTION
+======================================================================
+
+[STEP 1] Identifying competitive models (ΔAIC < 7.0)...
+  ✓ 2 competitive models identified
+
+[STEP 2] Creating time transformations...
+
+[STEP 3] Fitting 2 models with paradigm interaction...
+  [ 1/2] Linear                    w=0.5000 ✓
+  [ 2/2] Exponential_proxy         w=0.5000 ✓
+
+[STEP 4] Computing model-averaged predictions...
+  ✓ Predictions: mean=-0.7759, SD=0.2062
+  ✓ Uncond. variance: mean=0.000000, max=0.000000
+  ✓ Effective N models: 2.00
+
+Saving output files...
+
+Model averaging complete: 2 models, effective N = 2.00

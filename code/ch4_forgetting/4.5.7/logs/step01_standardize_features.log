@@ -1,0 +1,28 @@
+2025-12-05 14:31:34,404 - INFO - ============================================================
+2025-12-05 14:31:34,404 - INFO - RQ 5.5.7 Step 01: Standardize Features to Z-Scores
+2025-12-05 14:31:34,404 - INFO - ============================================================
+2025-12-05 14:31:34,406 - INFO - Loaded 100 rows from Step 00
+2025-12-05 14:31:34,407 - INFO - Input validation PASSED
+2025-12-05 14:31:34,407 - INFO - Standardizing 4 features to z-scores...
+2025-12-05 14:31:34,408 - INFO -   Source_intercept: original mean=0.000000, SD=0.288600
+2025-12-05 14:31:34,409 - INFO -   Source_slope: original mean=0.000000, SD=0.030740
+2025-12-05 14:31:34,409 - INFO -   Destination_intercept: original mean=0.000000, SD=0.390522
+2025-12-05 14:31:34,409 - INFO -   Destination_slope: original mean=-0.000000, SD=0.051892
+2025-12-05 14:31:34,409 - INFO - Standardized 4 features to z-scores
+2025-12-05 14:31:34,409 - INFO - Validating z-score transformation...
+2025-12-05 14:31:34,409 - INFO -   Source_intercept: mean=-0.000000 , SD=1.000000 2025-12-05 14:31:34,410 - INFO -   Source_slope: mean=-0.000000 , SD=1.000000 2025-12-05 14:31:34,410 - INFO -   Destination_intercept: mean=-0.000000 , SD=1.000000 2025-12-05 14:31:34,410 - INFO -   Destination_slope: mean=0.000000 , SD=1.000000 2025-12-05 14:31:34,410 - INFO - Mean check: all features in [-0.01, 0.01] - PASS
+2025-12-05 14:31:34,410 - INFO - SD check: all features in [0.99, 1.01] - PASS
+2025-12-05 14:31:34,410 - INFO - No NaN after standardization - PASS
+2025-12-05 14:31:34,412 - INFO - Saved to /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step01_standardized_features.csv
+2025-12-05 14:31:34,412 - INFO - 
+Z-scored feature summary:
+2025-12-05 14:31:34,412 - INFO -   Source_intercept: z_min=-1.959, z_max=2.367
+2025-12-05 14:31:34,412 - INFO -   Source_slope: z_min=-1.923, z_max=2.397
+2025-12-05 14:31:34,413 - INFO -   Destination_intercept: z_min=-2.006, z_max=2.379
+2025-12-05 14:31:34,413 - INFO -   Destination_slope: z_min=-2.193, z_max=1.809
+2025-12-05 14:31:34,413 - INFO - ============================================================
+2025-12-05 14:31:34,413 - INFO - Step 01 COMPLETE
+2025-12-05 14:31:34,413 - INFO -   Input:  /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step00_random_effects_from_rq556.csv (100 rows, original scale)
+2025-12-05 14:31:34,413 - INFO -   Output: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step01_standardized_features.csv (100 rows, z-scored)
+2025-12-05 14:31:34,413 - INFO -   All 4 features standardized: mean ~ 0, SD ~ 1
+2025-12-05 14:31:34,413 - INFO - ============================================================

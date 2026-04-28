@@ -1,0 +1,40 @@
+Step 01: Standardize Clustering Features
+Loading random effects from Step 0...
+step00_random_effects_from_rq514.csv (100 rows, 3 cols)
+Columns: ['UID', 'Total_Intercept', 'Total_Slope']
+Pre-standardization stats:
+  Total_Intercept: mean=0.6851, SD=0.5920
+  Total_Slope: mean=0.0767, SD=0.0045
+Computing z-scores for Total_Intercept and Total_Slope...
+Z-score computation complete
+Post-standardization stats:
+  Intercept_z: mean=-0.000000, SD=1.000000
+  Slope_z: mean=-0.000000, SD=1.000000
+Creating standardized features DataFrame...
+step01_standardized_features.csv (100 rows, 3 cols)
+Columns: ['UID', 'Intercept_z', 'Slope_z']
+Running validate_standardization...
+Standardization quality PASS
+Mean values: {'Intercept_z': np.float64(-2.597921877622866e-16), 'Slope_z': np.float64(-5.706546346573304e-16)}
+SD values: {'Intercept_z': np.float64(1.005037815259212), 'Slope_z': np.float64(1.005037815259212)}
+Step 01 complete
+Step 01: Standardize Clustering Features
+Loading random effects from Step 0...
+step00_random_effects_from_rq514.csv (100 rows, 3 cols)
+Columns: ['UID', 'Total_Intercept', 'Total_Slope']
+Pre-standardization stats:
+  Total_Intercept: mean=0.0000, SD=0.5582
+  Total_Slope: mean=-0.0000, SD=0.0489
+Computing z-scores for Total_Intercept and Total_Slope...
+Z-score computation complete
+Post-standardization stats:
+  Intercept_z: mean=0.000000, SD=1.000000
+  Slope_z: mean=0.000000, SD=1.000000
+Creating standardized features DataFrame...
+step01_standardized_features.csv (100 rows, 3 cols)
+Columns: ['UID', 'Intercept_z', 'Slope_z']
+Running validate_standardization...
+Standardization quality PASS
+Mean values: {'Intercept_z': np.float64(2.4424906541753444e-17), 'Slope_z': np.float64(1.4432899320127036e-17)}
+SD values: {'Intercept_z': np.float64(1.005037815259212), 'Slope_z': np.float64(1.005037815259212)}
+Step 01 complete

@@ -1,0 +1,8 @@
+Variable,F_stat,p_uncorrected,p_bonferroni,p_fdr,eta_squared,Test_Type
+age,,1.0,1.0,1.0,0.0,One-Way ANOVA
+nart-score,,1.0,1.0,1.0,0.0,One-Way ANOVA
+rpm-score,,1.0,1.0,1.0,0.0,One-Way ANOVA
+RAVLT_Total,,1.0,1.0,1.0,0.0,One-Way ANOVA
+BVMT_Total,,1.0,1.0,1.0,0.0,One-Way ANOVA
+RAVLT_Pct_Ret,,1.0,1.0,1.0,0.0,One-Way ANOVA
+BVMT_Pct_Ret,,1.0,1.0,1.0,0.0,One-Way ANOVA

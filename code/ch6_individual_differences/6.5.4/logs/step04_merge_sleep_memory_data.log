@@ -1,0 +1,94 @@
+Step 04: merge_sleep_memory_data
+Loading sleep-centered data from step02...
+sleep_centered.csv (400 rows, 8 cols)
+Loading memory scores from step03...
+memory_scores.csv (400 rows, 3 cols)
+Validating input data structure...
+Input data structure validated
+Merging sleep and memory data...
+Analysis dataset: 400 rows, 9 cols
+Sleep data: 400 → 400 (100.0% retained)
+Memory data: 400 → 400 (100.0% retained)
+Checking participant coverage...
+Participants: 100
+Total observations: 400
+Tests per participant - Min: 4, Max: 4, Mean: 4.0
+Participants with <3 tests: 0
+Test session distribution: {1: 100, 2: 100, 3: 100, 4: 100}
+Data merge and coverage check complete
+Preparing final analysis dataset...
+Missing data summary:
+UID: 0/400 (0.0%)
+TEST: 0/400 (0.0%)
+Memory_Score: 0/400 (0.0%)
+Sleep_Hours_WP: 0/400 (0.0%)
+Sleep_Quality_WP: 0/400 (0.0%)
+Sleep_Hours_PM: 0/400 (0.0%)
+Sleep_Quality_PM: 0/400 (0.0%)
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step04_analysis_dataset.csv (400 rows, 7 cols)
+Running final dataset validation...
+Data completeness: 400/400 (100.0%)
+Completeness threshold (95%): PASS
+Column validation: PASS
+Data completeness: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Can we create a complete dataset linking sleep and memory performance?
+2. What did we find?
+   -> 400 complete observations from 100 participants
+   -> Data completeness: 100.0%, validation passed: True
+3. What does it mean?
+   -> We have sufficient data for multilevel modeling of sleep effects
+4. What should we do next?
+   -> Proceed to step05: fit multilevel models for within-person sleep effects
+=========================
+
+Step 04 complete
+Step 04: merge_sleep_memory_data
+Loading sleep-centered data from step02...
+sleep_centered.csv (400 rows, 8 cols)
+Loading memory scores from step03...
+memory_scores.csv (400 rows, 3 cols)
+Validating input data structure...
+Input data structure validated
+Merging sleep and memory data...
+Analysis dataset: 400 rows, 9 cols
+Sleep data: 400 → 400 (100.0% retained)
+Memory data: 400 → 400 (100.0% retained)
+Checking participant coverage...
+Participants: 100
+Total observations: 400
+Tests per participant - Min: 4, Max: 4, Mean: 4.0
+Participants with <3 tests: 0
+Test session distribution: {1: 100, 2: 100, 3: 100, 4: 100}
+Data merge and coverage check complete
+Preparing final analysis dataset...
+Missing data summary:
+UID: 0/400 (0.0%)
+TEST: 0/400 (0.0%)
+Memory_Score: 0/400 (0.0%)
+Sleep_Hours_WP: 0/400 (0.0%)
+Sleep_Quality_WP: 0/400 (0.0%)
+Sleep_Hours_PM: 0/400 (0.0%)
+Sleep_Quality_PM: 0/400 (0.0%)
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step04_analysis_dataset.csv (400 rows, 7 cols)
+Running final dataset validation...
+Data completeness: 400/400 (100.0%)
+Completeness threshold (95%): PASS
+Column validation: PASS
+Data completeness: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Can we create a complete dataset linking sleep and memory performance?
+2. What did we find?
+   -> 400 complete observations from 100 participants
+   -> Data completeness: 100.0%, validation passed: True
+3. What does it mean?
+   -> We have sufficient data for multilevel modeling of sleep effects
+4. What should we do next?
+   -> Proceed to step05: fit multilevel models for within-person sleep effects
+=========================
+
+Step 04 complete

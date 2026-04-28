@@ -1,0 +1,42 @@
+Step 01: Extract and Merge Domain Slopes
+Reading Ch5 5.2.6 random effects...
+200 rows, 6 columns
+Found: ['What', 'Where']
+Pivoting to wide format...
+100 participants, 3 columns
+['UID', 'slope_what', 'slope_where']
+Checking data quality...
+No missing values
+No duplicate UIDs
+Exactly 100 participants with complete data
+Checking slope value ranges...
+Range: [-0.0381, 0.0374], Mean: -0.0000
+Range: [-0.0442, 0.0433], Mean: -0.0000
+Writing domain slopes...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step01_domain_slopes.csv (100 rows, 3 cols)
+Running validate_data_columns...
+All required columns present
+Step 01 complete
+100 participants with complete slope data for What + Where domains
+Proceed to step02 (compute ICC for each domain)
+Step 01: Extract and Merge Domain Slopes
+Reading Ch5 5.2.6 random effects...
+200 rows, 6 columns
+Found: ['What', 'Where']
+Pivoting to wide format...
+100 participants, 3 columns
+['UID', 'slope_what', 'slope_where']
+Checking data quality...
+No missing values
+No duplicate UIDs
+Exactly 100 participants with complete data
+Checking slope value ranges...
+Range: [-0.0381, 0.0374], Mean: -0.0000
+Range: [-0.0442, 0.0433], Mean: -0.0000
+Writing domain slopes...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step01_domain_slopes.csv (100 rows, 3 cols)
+Running validate_data_columns...
+All required columns present
+Step 01 complete
+100 participants with complete slope data for What + Where domains
+Proceed to step02 (compute ICC for each domain)

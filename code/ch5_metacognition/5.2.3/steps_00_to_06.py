@@ -27,9 +27,7 @@ from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.2.3
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR root
@@ -48,9 +46,7 @@ def log(msg):
         f.flush()
     print(log_msg, flush=True)
 
-# =============================================================================
-# STEP 00: Extract Item-Level Data
-# =============================================================================
+# Extract Item-Level Data
 
 def step00_extract_item_level():
     """Extract item-level data with paired accuracy (TQ_*) and confidence (TC_*)."""
@@ -123,9 +119,7 @@ def step00_extract_item_level():
 
     return df_items
 
-# =============================================================================
-# STEP 01: Compute Goodman-Kruskal Gamma
-# =============================================================================
+# Compute Goodman-Kruskal Gamma
 
 def compute_gamma(accuracy, confidence):
     """
@@ -217,9 +211,7 @@ def step01_compute_gamma(df_items):
 
     return df_gamma
 
-# =============================================================================
-# STEP 02: Fit Linear Mixed Model
-# =============================================================================
+# Fit Linear Mixed Model
 
 def step02_fit_lmm(df_gamma):
     """Fit LMM: gamma ~ TSVR_days + (TSVR_days | UID)."""
@@ -282,9 +274,7 @@ def step02_fit_lmm(df_gamma):
 
     return result, df_lmm
 
-# =============================================================================
-# STEP 03: Extract Time Effect Statistics
-# =============================================================================
+# Extract Time Effect Statistics
 
 def step03_extract_time_effect(result):
     """Extract Time effect with dual p-values (Decision D068)."""
@@ -331,9 +321,7 @@ def step03_extract_time_effect(result):
 
     return df_time_effect
 
-# =============================================================================
-# STEP 04: Compute Mean Gamma by Timepoint
-# =============================================================================
+# Compute Mean Gamma by Timepoint
 
 def step04_mean_gamma_by_timepoint(df_gamma):
     """Compute descriptive statistics for gamma at each timepoint."""
@@ -381,9 +369,7 @@ def step04_mean_gamma_by_timepoint(df_gamma):
 
     return df_mean_gamma
 
-# =============================================================================
-# STEP 05: Test Gamma > 0.50 Threshold
-# =============================================================================
+# Test Gamma > 0.50 Threshold
 
 def step05_test_gamma_threshold(df_gamma):
     """Test whether gamma exceeds 0.50 threshold at each timepoint."""
@@ -443,9 +429,7 @@ def step05_test_gamma_threshold(df_gamma):
 
     return df_threshold
 
-# =============================================================================
-# STEP 06: Prepare Plot Data
-# =============================================================================
+# Prepare Plot Data
 
 def step06_prepare_plot_data(df_mean_gamma, lmm_result, df_lmm):
     """Prepare plot source data for resolution trajectory visualization."""
@@ -498,9 +482,7 @@ def step06_prepare_plot_data(df_mean_gamma, lmm_result, df_lmm):
 
     return df_plot
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all steps."""

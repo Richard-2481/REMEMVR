@@ -1,0 +1,18 @@
+Step 08: prepare_plot_data
+Loading regression analysis results...
+step03_intercept_predictions.csv (6 rows, 8 cols)
+step04_slope_predictions.csv (6 rows, 9 cols)
+step05_r_squared_comparison.csv (3 rows, 9 cols)
+step06_predictor_significance.csv (10 rows, 9 cols)
+step07_model_diagnostics.csv (16 rows, 6 cols)
+Creating intercept vs slope comparison dataset...
+Intercept vs slope comparison data created
+Creating regression diagnostics dataset...
+Regression diagnostics data created
+Saving plot data files...
+intercept_vs_slope_comparison_data.csv (2 rows, 11 cols)
+regression_diagnostics_data.csv (16 rows, 8 cols)
+Running validate_data_columns on outputs...
+Comparison data columns: PASS
+Diagnostics data columns: PASS
+Step 08 complete - Plot data prepared

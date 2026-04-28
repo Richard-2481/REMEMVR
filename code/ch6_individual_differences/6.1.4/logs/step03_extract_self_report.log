@@ -1,0 +1,72 @@
+Step 03: Extract self-report scores - USING REAL DATA
+All column names from DATA_DICTIONARY.md
+Reading dfnonvr.csv...
+Loaded 100 participants with 235 columns
+Extracting DASS subscales with correct column names...
+DASS Anxiety extracted from 'total-dass-anxiety-items'
+  - Non-null values: 100
+  - Range: [0.0, 12.0]
+DASS Stress extracted from 'total-dass-stress-items'
+  - Non-null values: 100
+  - Range: [0.0, 16.0]
+DASS Depression extracted from 'total-dass-depression-items'
+  - Non-null values: 100
+  - Range: [0.0, 17.0]
+Extracting VR experience...
+VR Experience extracted from 'vr-exposure'
+  - Non-null values: 100
+  - Range: [0.0, 4.0]
+  - Scale: 0=Never, 1=<1hr, 2=1-10hrs, 3=10-50hrs, 4=>50hrs
+Extracting sleep data...
+Sleep hours extracted from 'typical-sleep-hours'
+  - Non-null values: 100
+  - Range: [4.0, 10.0]
+
+Self-report variables (ALL REAL DATA):
+  - DASS_Dep: M=2.32, SD=3.27, Range=[0.0, 17.0], Missing=0
+  - DASS_Anx: M=1.44, SD=2.38, Range=[0.0, 12.0], Missing=0
+  - DASS_Str: M=3.34, SD=3.60, Range=[0.0, 16.0], Missing=0
+  - VR_Exp: M=1.18, SD=1.08, Range=[0.0, 4.0], Missing=0
+  - Sleep: M=7.07, SD=0.99, Range=[4.0, 10.0], Missing=0
+No missing data in self-report variables
+Saved self-report data to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step03_self_report.csv
+Shape: (100, 6)
+
+Step 03 complete - ALL DATA IS REAL from dfnonvr.csv
+No simulated/fake data used
+Step 03: Extract self-report scores - USING REAL DATA
+All column names from DATA_DICTIONARY.md
+Reading dfnonvr.csv...
+Loaded 100 participants with 235 columns
+Extracting DASS subscales with correct column names...
+DASS Anxiety extracted from 'total-dass-anxiety-items'
+  - Non-null values: 100
+  - Range: [0.0, 12.0]
+DASS Stress extracted from 'total-dass-stress-items'
+  - Non-null values: 100
+  - Range: [0.0, 16.0]
+DASS Depression extracted from 'total-dass-depression-items'
+  - Non-null values: 100
+  - Range: [0.0, 17.0]
+Extracting VR experience...
+VR Experience extracted from 'vr-exposure'
+  - Non-null values: 100
+  - Range: [0.0, 4.0]
+  - Scale: 0=Never, 1=<1hr, 2=1-10hrs, 3=10-50hrs, 4=>50hrs
+Extracting sleep data...
+Sleep hours extracted from 'typical-sleep-hours'
+  - Non-null values: 100
+  - Range: [4.0, 10.0]
+
+Self-report variables (ALL REAL DATA):
+  - DASS_Dep: M=2.32, SD=3.27, Range=[0.0, 17.0], Missing=0
+  - DASS_Anx: M=1.44, SD=2.38, Range=[0.0, 12.0], Missing=0
+  - DASS_Str: M=3.34, SD=3.60, Range=[0.0, 16.0], Missing=0
+  - VR_Exp: M=1.18, SD=1.08, Range=[0.0, 4.0], Missing=0
+  - Sleep: M=7.07, SD=0.99, Range=[4.0, 10.0], Missing=0
+No missing data in self-report variables
+Saved self-report data to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step03_self_report.csv
+Shape: (100, 6)
+
+Step 03 complete - ALL DATA IS REAL from dfnonvr.csv
+No simulated/fake data used

@@ -1,0 +1,174 @@
+Step 01: Load RQ 5.7 Dependencies
+Circuit breaker: Verifying RQ 5.7 dependency files...
+EXPECTATIONS ERROR: To perform Step 1 (Load RQ 5.7 Dependencies) I expect:
+  - results/ch5/rq7/data/lmm_Log.pkl (best-fitting LMM model)
+  - results/ch5/rq7/data/step03_theta_scores.csv (theta scores)
+  - results/ch5/rq7/data/step04_lmm_input.csv (LMM input with TSVR_hours)
+
+But missing: ['results/ch5/rq7/data/lmm_Log.pkl', 'results/ch5/rq7/data/step03_theta_scores.csv', 'results/ch5/rq7/data/step04_lmm_input.csv']
+
+Action: RQ 5.7 must complete Steps 1-5 before RQ 5.13 can execute.
+Run RQ 5.7 workflow first, then retry RQ 5.13.
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq13/code/step01_load_rq57_dependencies.py", line 173, in <module>
+    check_dependencies()
+  File "/home/etai/projects/REMEMVR/results/ch5/rq13/code/step01_load_rq57_dependencies.py", line 159, in check_dependencies
+    raise ValueError(error_msg)
+ValueError: EXPECTATIONS ERROR: To perform Step 1 (Load RQ 5.7 Dependencies) I expect:
+  - results/ch5/rq7/data/lmm_Log.pkl (best-fitting LMM model)
+  - results/ch5/rq7/data/step03_theta_scores.csv (theta scores)
+  - results/ch5/rq7/data/step04_lmm_input.csv (LMM input with TSVR_hours)
+
+But missing: ['results/ch5/rq7/data/lmm_Log.pkl', 'results/ch5/rq7/data/step03_theta_scores.csv', 'results/ch5/rq7/data/step04_lmm_input.csv']
+
+Action: RQ 5.7 must complete Steps 1-5 before RQ 5.13 can execute.
+Run RQ 5.7 workflow first, then retry RQ 5.13.
+[2025-11-30 13:28:12] Step 01: Load RQ 5.7 Dependencies
+[2025-11-30 13:28:12] ======================================================================
+[2025-11-30 13:28:12] Validating RQ 5.7 dependency files...
+[2025-11-30 13:28:12] All three RQ 5.7 dependency files exist
+[2025-11-30 13:28:12] Loading LMM model from pickle file...
+[2025-11-30 13:28:12]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/lmm_Log.pkl
+[2025-11-30 13:28:12]   Size: 110.9 KB
+[2025-11-30 13:28:12] Failed to load pickle file: 'NoneType' object has no attribute 'f_locals'
+[2025-11-30 13:28:12] Step 1 cannot proceed without valid model object
+[2025-11-30 13:29:46] Step 01: Load RQ 5.7 Dependencies
+[2025-11-30 13:29:46] ======================================================================
+[2025-11-30 13:29:46] Validating RQ 5.7 dependency files...
+[2025-11-30 13:29:46] All three RQ 5.7 dependency files exist
+[2025-11-30 13:29:46] Loading LMM model from pickle file...
+[2025-11-30 13:29:46]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/lmm_Log.pkl
+[2025-11-30 13:29:46]   Size: 110.9 KB
+[2025-11-30 13:29:46] Failed to load pickle file: 'NoneType' object has no attribute 'f_locals'
+[2025-11-30 13:29:46] This may be a patsy/statsmodels version mismatch
+[2025-11-30 13:29:46] Attempting fallback: load model attributes directly from pickle internals
+[2025-11-30 13:29:46] Patsy eval_env error occurred but attempting to use model anyway
+[2025-11-30 13:29:46] Model may have limited functionality but variance components should be accessible
+[2025-11-30 13:29:46] Unexpected error: name 'lmm_model' is not defined
+[2025-11-30 13:29:46] Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq13/code/step01_load_rq57_dependencies.py", line 341, in <module>
+    if not validate_model_object(lmm_model):
+                                 ^^^^^^^^^
+NameError: name 'lmm_model' is not defined
+[2025-11-30 13:30:31] Step 01: Load RQ 5.7 Dependencies
+[2025-11-30 13:30:31] ======================================================================
+[2025-11-30 13:30:31] Validating RQ 5.7 dependency files...
+[2025-11-30 13:30:31] All three RQ 5.7 dependency files exist
+[2025-11-30 13:30:31] Loading LMM model from pickle file...
+[2025-11-30 13:30:31]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/lmm_Log.pkl
+[2025-11-30 13:30:31]   Size: 110.9 KB
+[2025-11-30 13:30:31] Using statsmodels pickle workaround for patsy compatibility
+[2025-11-30 13:30:31] LMM model loaded successfully with patsy workaround
+[2025-11-30 13:30:31] Successfully loaded model from pickle file
+[2025-11-30 13:30:31]   Model type: MixedLMResultsWrapper
+[2025-11-30 13:30:31] Loading theta scores from CSV...
+[2025-11-30 13:30:31]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/step03_theta_scores.csv
+[2025-11-30 13:30:31] Successfully loaded theta scores: 400 rows, 3 columns
+[2025-11-30 13:30:31] Loading LMM input with TSVR mapping from CSV...
+[2025-11-30 13:30:31]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/step04_lmm_input.csv
+[2025-11-30 13:30:31] Successfully loaded LMM input: 400 rows, 9 columns
+[2025-11-30 13:30:31] Extracting model metadata...
+[2025-11-30 13:30:31] Model metadata extracted:
+[2025-11-30 13:30:31]   model_source: results/ch5/rq7/data/lmm_Log.pkl
+[2025-11-30 13:30:31]   model_formula: Logarithmic (Theta ~ log(Days+1))
+[2025-11-30 13:30:31]   model_type: MixedLMResultsWrapper
+[2025-11-30 13:30:31]   n_participants: 100
+[2025-11-30 13:30:31]   n_observations: 400
+[2025-11-30 13:30:31]   random_effects: ['Group', 'log_Days']
+[2025-11-30 13:30:31]   converged: True
+[2025-11-30 13:30:31]   loaded_timestamp: 2025-11-30T13:30:31.834232
+[2025-11-30 13:30:31] Saving model metadata to /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml...
+[2025-11-30 13:30:31] Successfully saved metadata.yaml
+[2025-11-30 13:30:31] Running model convergence validation...
+[2025-11-30 13:30:31] valid: True
+[2025-11-30 13:30:31] message: Model converged successfully.
+[2025-11-30 13:30:31] converged: True
+[2025-11-30 13:30:31] ======================================================================
+[2025-11-30 13:30:31] Step 01 complete: Successfully loaded RQ 5.7 dependencies
+[2025-11-30 13:30:31]   Model: 100 participants, 400 observations, converged=True
+[2025-11-30 13:30:31]   Theta scores: 400 rows
+[2025-11-30 13:30:31]   LMM input: 400 rows
+[2025-11-30 13:30:31]   Metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+[2025-11-30 13:30:31] ======================================================================
+[2025-11-30 15:06:46] Step 01: Load RQ 5.7 Dependencies
+[2025-11-30 15:06:46] ======================================================================
+[2025-11-30 15:06:46] Validating RQ 5.7 dependency files...
+[2025-11-30 15:06:46] All three RQ 5.7 dependency files exist
+[2025-11-30 15:06:46] Loading LMM model from pickle file...
+[2025-11-30 15:06:46]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/lmm_Lin+Log.pkl
+[2025-11-30 15:06:46]   Size: 124.4 KB
+[2025-11-30 15:06:46] Using statsmodels pickle workaround for patsy compatibility
+[2025-11-30 15:06:46] LMM model loaded successfully with patsy workaround
+[2025-11-30 15:06:46] Successfully loaded model from pickle file
+[2025-11-30 15:06:46]   Model type: MixedLMResultsWrapper
+[2025-11-30 15:06:46] Loading theta scores from CSV...
+[2025-11-30 15:06:46]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/step03_theta_scores.csv
+[2025-11-30 15:06:46] Successfully loaded theta scores: 400 rows, 3 columns
+[2025-11-30 15:06:46] Loading LMM input with TSVR mapping from CSV...
+[2025-11-30 15:06:46]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/step04_lmm_input.csv
+[2025-11-30 15:06:46] Successfully loaded LMM input: 400 rows, 9 columns
+[2025-11-30 15:06:46] Extracting model metadata...
+[2025-11-30 15:06:46] Model metadata extracted:
+[2025-11-30 15:06:46]   model_source: results/ch5/rq7/data/lmm_Log.pkl
+[2025-11-30 15:06:46]   model_formula: Logarithmic (Theta ~ log(Days+1))
+[2025-11-30 15:06:46]   model_type: MixedLMResultsWrapper
+[2025-11-30 15:06:46]   n_participants: 100
+[2025-11-30 15:06:46]   n_observations: 400
+[2025-11-30 15:06:46]   random_effects: ['Group', 'Days']
+[2025-11-30 15:06:46]   converged: True
+[2025-11-30 15:06:46]   loaded_timestamp: 2025-11-30T15:06:46.770299
+[2025-11-30 15:06:46] Saving model metadata to /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml...
+[2025-11-30 15:06:46] Successfully saved metadata.yaml
+[2025-11-30 15:06:46] Running model convergence validation...
+[2025-11-30 15:06:46] valid: True
+[2025-11-30 15:06:46] message: Model converged successfully.
+[2025-11-30 15:06:46] converged: True
+[2025-11-30 15:06:46] ======================================================================
+[2025-11-30 15:06:46] Step 01 complete: Successfully loaded RQ 5.7 dependencies
+[2025-11-30 15:06:46]   Model: 100 participants, 400 observations, converged=True
+[2025-11-30 15:06:46]   Theta scores: 400 rows
+[2025-11-30 15:06:46]   LMM input: 400 rows
+[2025-11-30 15:06:46]   Metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+[2025-11-30 15:06:46] ======================================================================
+[2025-11-30 15:07:29] Step 01: Load RQ 5.7 Dependencies
+[2025-11-30 15:07:29] ======================================================================
+[2025-11-30 15:07:29] Validating RQ 5.7 dependency files...
+[2025-11-30 15:07:29] All three RQ 5.7 dependency files exist
+[2025-11-30 15:07:29] Loading LMM model from pickle file...
+[2025-11-30 15:07:29]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/lmm_Lin+Log.pkl
+[2025-11-30 15:07:29]   Size: 124.4 KB
+[2025-11-30 15:07:29] Using statsmodels pickle workaround for patsy compatibility
+[2025-11-30 15:07:29] LMM model loaded successfully with patsy workaround
+[2025-11-30 15:07:29] Successfully loaded model from pickle file
+[2025-11-30 15:07:29]   Model type: MixedLMResultsWrapper
+[2025-11-30 15:07:29] Loading theta scores from CSV...
+[2025-11-30 15:07:29]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/step03_theta_scores.csv
+[2025-11-30 15:07:29] Successfully loaded theta scores: 400 rows, 3 columns
+[2025-11-30 15:07:29] Loading LMM input with TSVR mapping from CSV...
+[2025-11-30 15:07:29]   File: /home/etai/projects/REMEMVR/results/ch5/rq13/../rq7/data/step04_lmm_input.csv
+[2025-11-30 15:07:29] Successfully loaded LMM input: 400 rows, 9 columns
+[2025-11-30 15:07:29] Extracting model metadata...
+[2025-11-30 15:07:29] Model metadata extracted:
+[2025-11-30 15:07:29]   model_source: results/ch5/rq7/data/lmm_Lin+Log.pkl
+[2025-11-30 15:07:29]   model_formula: Lin+Log (Theta ~ Days + log(Days+1))
+[2025-11-30 15:07:29]   model_type: MixedLMResultsWrapper
+[2025-11-30 15:07:29]   n_participants: 100
+[2025-11-30 15:07:29]   n_observations: 400
+[2025-11-30 15:07:29]   random_effects: ['Group', 'Days']
+[2025-11-30 15:07:29]   converged: True
+[2025-11-30 15:07:29]   loaded_timestamp: 2025-11-30T15:07:29.534658
+[2025-11-30 15:07:29] Saving model metadata to /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml...
+[2025-11-30 15:07:29] Successfully saved metadata.yaml
+[2025-11-30 15:07:29] Running model convergence validation...
+[2025-11-30 15:07:29] valid: True
+[2025-11-30 15:07:29] message: Model converged successfully.
+[2025-11-30 15:07:29] converged: True
+[2025-11-30 15:07:29] ======================================================================
+[2025-11-30 15:07:29] Step 01 complete: Successfully loaded RQ 5.7 dependencies
+[2025-11-30 15:07:29]   Model: 100 participants, 400 observations, converged=True
+[2025-11-30 15:07:29]   Theta scores: 400 rows
+[2025-11-30 15:07:29]   LMM input: 400 rows
+[2025-11-30 15:07:29]   Metadata: /home/etai/projects/REMEMVR/results/ch5/rq13/data/step01_model_metadata.yaml
+[2025-11-30 15:07:29] ======================================================================

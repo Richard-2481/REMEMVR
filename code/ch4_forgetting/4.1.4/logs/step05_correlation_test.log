@@ -1,0 +1,95 @@
+Step 5: Test Intercept-Slope Correlation and Visualize Distribution
+Loading random effects from Step 4...
+step04_random_effects.csv (100 rows, 5 cols)
+Columns present: ['UID', 'random_intercept', 'random_slope', 'total_intercept', 'total_slope']
+Random intercepts: mean=-0.0000, SD=0.5567
+Random slopes: mean=0.0000, SD=0.0003
+Running test_intercept_slope_correlation_d068...
+Parameters: family_alpha=0.05, n_tests=15 (Chapter 5 family size)
+Correlation test complete
+Correlation r = -1.0000
+p_uncorrected = 0.000000
+p_bonferroni = 0.000000
+Significant (uncorrected): True
+Significant (Bonferroni): True
+Interpretation: Strong negative correlation (r=-1.000) between random intercepts and slopes. Significant after Bonferroni correction (p=0.0000 < 0.05).
+Saving correlation test results...
+step05_intercept_slope_correlation.csv (5 rows)
+step05_correlation_interpretation.txt
+Creating random slopes distribution visualizations...
+step05_random_slopes_histogram.png
+step05_random_slopes_qqplot.png
+Visualization complete
+Running validate_correlation_test_d068...
+FAIL - Missing D068 required columns: ['p_uncorrected', 'p_bonferroni'].
+Missing columns: ['p_uncorrected', 'p_bonferroni']
+Validation failed: Missing D068 required columns: ['p_uncorrected', 'p_bonferroni'].
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq13/code/step05_test_correlation.py", line 353, in <module>
+    raise ValueError(f"Validation failed: {validation_result['message']}")
+ValueError: Validation failed: Missing D068 required columns: ['p_uncorrected', 'p_bonferroni'].
+Step 5: Test Intercept-Slope Correlation and Visualize Distribution
+Loading random effects from Step 4...
+step04_random_effects.csv (100 rows, 5 cols)
+Columns present: ['UID', 'random_intercept', 'random_slope', 'total_intercept', 'total_slope']
+Random intercepts: mean=-0.0000, SD=0.5567
+Random slopes: mean=0.0000, SD=0.0003
+Running test_intercept_slope_correlation_d068...
+Parameters: family_alpha=0.05, n_tests=15 (Chapter 5 family size)
+Correlation test complete
+Correlation r = -1.0000
+p_uncorrected = 0.000000
+p_bonferroni = 0.000000
+Significant (uncorrected): True
+Significant (Bonferroni): True
+Interpretation: Strong negative correlation (r=-1.000) between random intercepts and slopes. Significant after Bonferroni correction (p=0.0000 < 0.05).
+Saving correlation test results...
+step05_intercept_slope_correlation.csv (1 row, 7 columns)
+step05_correlation_interpretation.txt
+Creating random slopes distribution visualizations...
+step05_random_slopes_histogram.png
+step05_random_slopes_qqplot.png
+Visualization complete
+Running validate_correlation_test_d068...
+PASS - Decision D068 compliant: Correlation test results (1 rows) have both p_uncorrected and p_bonferroni.
+D068 compliant: True
+Step 5 complete
+
+Summary:
+  Correlation: r = -1.0000
+  Uncorrected p = 0.000000 (sig)
+  Bonferroni p = 0.000000 (sig)
+  Interpretation: Strong negative correlation (r=-1.000) between random intercepts and slopes. Significant after Bonferroni correction (p=0.0000 < 0.05).
+Step 5: Test Intercept-Slope Correlation and Visualize Distribution
+Loading random effects from Step 4...
+step04_random_effects.csv (100 rows, 5 cols)
+Columns present: ['UID', 'random_intercept', 'random_slope', 'total_intercept', 'total_slope']
+Random intercepts: mean=0.0000, SD=0.5920
+Random slopes: mean=0.0000, SD=0.0045
+Running test_intercept_slope_correlation_d068...
+Parameters: family_alpha=0.05, n_tests=15 (Chapter 5 family size)
+Correlation test complete
+Correlation r = -0.9727
+p_uncorrected = 0.000000
+p_bonferroni = 0.000000
+Significant (uncorrected): True
+Significant (Bonferroni): True
+Interpretation: Strong negative correlation (r=-0.973) between random intercepts and slopes. Significant after Bonferroni correction (p=0.0000 < 0.05).
+Saving correlation test results...
+step05_intercept_slope_correlation.csv (1 row, 7 columns)
+step05_correlation_interpretation.txt
+Creating random slopes distribution visualizations...
+step05_random_slopes_histogram.png
+step05_random_slopes_qqplot.png
+Visualization complete
+Running validate_correlation_test_d068...
+PASS - Decision D068 compliant: Correlation test results (1 rows) have both p_uncorrected and p_bonferroni.
+D068 compliant: True
+Step 5 complete
+
+Summary:
+  Correlation: r = -0.9727
+  Uncorrected p = 0.000000 (sig)
+  Bonferroni p = 0.000000 (sig)
+  Interpretation: Strong negative correlation (r=-0.973) between random intercepts and slopes. Significant after Bonferroni correction (p=0.0000 < 0.05).

@@ -1,0 +1,9 @@
+Step 11: Merge accuracy theta with predictors
+step02_theta_means.csv: 100 rows, columns=['UID', 'theta_mean']
+step02_cognitive_tests.csv: 100 rows, columns=['UID', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'age', 'sex', 'education']
+N=100 participants (inner join on UID)
+Missing values: 0
+step11_accuracy_analysis_dataset.csv (100 rows, 10 cols)
+['UID', 'accuracy_theta', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'age', 'sex', 'education']
+accuracy_theta: mean=0.0062, sd=0.6769
+Step 11: Accuracy merge complete

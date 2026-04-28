@@ -1,0 +1,48 @@
+Step 12: Accuracy Hierarchical Regression (6-predictor model)
+step11_accuracy_analysis_dataset.csv (100 rows, 10 cols)
+All required columns present
+Block 1 (Demographics): ['age', 'sex_dummy', 'education']
+Block 2 (Demographics + Cognitive): ['age', 'sex_dummy', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+Outcome variable: accuracy_theta (N=100, mean=0.0062, sd=0.6769)
+Running hierarchical regression...
+Model 1: R²=0.0437, Adj R²=0.0138, F(3,96)=1.462, p=0.229698
+Model 2: R²=0.3007, Adj R²=0.2392, F(8,91)=4.891, p=0.000048
+ΔR² = 0.2570
+F-change(5,91) = 6.688
+p-change = 0.000024
+Computing bootstrap 95% CIs (n=1000, seed=42)...
+Demographics 95% CI: [0.0070, 0.1764]
+Full model 95% CI: [0.2205, 0.5045]
+Demographics Cohen's f² = 0.0457
+Full model Cohen's f² = 0.4299
+step12_accuracy_hierarchical_models.csv
+Computing individual predictor statistics...
+age: β=0.0018, sr²=0.000989, p_uncorr=0.7206, p_bonf=0.7206, VIF=1.446
+sex: β=-0.1090, sr²=0.005172, p_uncorr=0.4141, p_bonf=0.4141, VIF=1.063
+education: β=-0.0031, sr²=0.000054, p_uncorr=0.9332, p_bonf=0.9332, VIF=1.044
+RAVLT_T: β=0.0071, sr²=0.009073, p_uncorr=0.2801, p_bonf=1.0000, VIF=1.223
+BVMT_T: β=0.0084, sr²=0.008240, p_uncorr=0.3032, p_bonf=1.0000, VIF=1.885
+RPM_T: β=0.0201, sr²=0.061101, p_uncorr=0.0059, p_bonf=0.0295, VIF=1.441
+RAVLT_Pct_Ret_T: β=0.0148, sr²=0.040176, p_uncorr=0.0245, p_bonf=0.1227, VIF=1.185
+BVMT_Pct_Ret_T: β=0.0070, sr²=0.009782, p_uncorr=0.2622, p_bonf=1.0000, VIF=1.089
+step12_accuracy_individual_predictors.csv (8 rows)
+
+============================================================
+ACCURACY vs CONFIDENCE MODEL COMPARISON
+============================================================
+Metric                         Accuracy        Confidence     
+------------------------------------------------------------
+R²                             0.3007          0.1875         
+Adj R²                         0.2392          0.1351         
+F(6,93)                        4.891           3.578          
+p                              0.000048        0.003105       
+ΔR² (cognitive)                0.2570          0.1673         
+Cohens f-squared               0.4299          0.2308         
+------------------------------------------------------------
+sr² RAVLT_T                    0.009073       
+sr² BVMT_T                     0.008240       
+sr² RPM_T                      0.061101       
+sr² RAVLT_Pct_Ret_T            0.040176       
+sr² BVMT_Pct_Ret_T             0.009782       
+
+Step 12: Accuracy hierarchical regression complete

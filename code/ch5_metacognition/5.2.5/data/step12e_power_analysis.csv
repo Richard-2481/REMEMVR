@@ -1,0 +1,5 @@
+effect_size_label,effect_size_beta,noncentrality,power,adequate
+Observed,1.9e-05,0.4222222222222222,0.07055963862351339,False
+Small,0.0005,11.11111111111111,,False
+Medium,0.001,22.22222222222222,1.0,True
+Large,0.002,44.44444444444444,1.0,True

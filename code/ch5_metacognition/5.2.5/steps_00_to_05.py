@@ -22,9 +22,7 @@ import statsmodels.formula.api as smf
 from scipy import stats
 import warnings
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.2.5
 LOG_FILE = RQ_DIR / "logs" / "steps_00_to_05.log"
@@ -82,7 +80,7 @@ def step00_load_data():
     # Select and order columns
     df_final = df_final[['UID', 'test', 'composite_ID', 'calibration', 'TSVR_hours', 'Age']]
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 0 Validation ---")
 
     # Expected row count
@@ -157,7 +155,7 @@ def step01_center_age(df_input: pd.DataFrame) -> pd.DataFrame:
     df_input['Age_c'] = df_input['Age'] - mean_age
     df_input['mean_Age'] = mean_age  # Store for reference
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 1 Validation ---")
 
     # Age_c mean approximately 0
@@ -284,7 +282,7 @@ def step02_fit_lmm(df_input: pd.DataFrame):
     log(f"AIC: {aic:.2f}")
     log(f"BIC: {bic:.2f}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 2 Validation ---")
 
     # Check convergence
@@ -371,7 +369,7 @@ def step03_extract_age_effects(fixed_effects: pd.DataFrame) -> pd.DataFrame:
     log(f"\n*** PRIMARY HYPOTHESIS TEST ***")
     log(f"Age x Time interaction: {conclusion}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 3 Validation ---")
 
     # Expected row count
@@ -468,7 +466,7 @@ def step04_create_tertile_trajectories(df_input: pd.DataFrame) -> pd.DataFrame:
         for _, row in tertile_data.iterrows():
             log(f"    {row['test']}: cal = {row['mean_calibration']:.3f} [{row['CI_lower']:.3f}, {row['CI_upper']:.3f}] (N={row['N']})")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 4 Validation ---")
 
     # Expected row count
@@ -584,7 +582,7 @@ def step05_compare_ch5(age_effects: pd.DataFrame) -> pd.DataFrame:
         log("Metacognitive calibration shows differential aging effects unlike memory accuracy")
         log("This suggests dissociation between memory and metacognition age trajectories")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 5 Validation ---")
 
     # Expected row count

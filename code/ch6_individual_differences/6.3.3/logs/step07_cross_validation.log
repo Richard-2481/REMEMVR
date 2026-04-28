@@ -1,0 +1,58 @@
+Step 07: Cross-validation
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 17 cols)
+Setting up 5-fold cross-validation...
+Final dataset: 100 observations, 8 predictors
+Running cross-validation...
+Processing fold 1/5...
+Fold 1: train=80, test=20
+Fold 1 results:
+Train R²: 0.1824
+Test R²: 0.0947
+RMSE: 0.0387
+MAE: 0.0289
+Gap: 0.0878
+Processing fold 2/5...
+Fold 2: train=80, test=20
+Fold 2 results:
+Train R²: 0.2375
+Test R²: -0.5600
+RMSE: 0.0352
+MAE: 0.0279
+Gap: 0.7976
+Processing fold 3/5...
+Fold 3: train=80, test=20
+Fold 3 results:
+Train R²: 0.2459
+Test R²: -0.5151
+RMSE: 0.0370
+MAE: 0.0297
+Gap: 0.7610
+Processing fold 4/5...
+Fold 4: train=80, test=20
+Fold 4 results:
+Train R²: 0.2019
+Test R²: -0.3354
+RMSE: 0.0297
+MAE: 0.0252
+Gap: 0.5373
+Processing fold 5/5...
+Fold 5: train=80, test=20
+Fold 5 results:
+Train R²: 0.1506
+Test R²: 0.0615
+RMSE: 0.0440
+MAE: 0.0325
+Gap: 0.0891
+Cross-validation complete: 5/5 folds successful
+Computing aggregated statistics...
+OVERFITTING DETECTED: Gap > 0.10
+Saving cross-validation results...
+step07_cross_validation.csv (5 rows, 7 cols)
+step07_cv_summary.csv (5 rows, 6 cols)
+Cross-validation results:
+- Mean train R²: 0.2037
+- Mean test R²: -0.2509
+- Mean generalization gap: 0.4545
+- WARNING: Negative test R² indicates model performs worse than mean baseline
+Step 07 complete

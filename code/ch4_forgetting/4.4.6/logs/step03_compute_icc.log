@@ -1,0 +1,154 @@
+Step 03: Compute ICC Estimates
+Loading variance components...
+step02_variance_components.csv (15 rows)
+Computing ICC estimates for each congruence level...
+compute_icc_from_variance_components() got an unexpected keyword argument 'timepoint'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step03_compute_icc.py", line 65, in <module>
+    df_icc = compute_icc_from_variance_components(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: compute_icc_from_variance_components() got an unexpected keyword argument 'timepoint'
+Step 03: Compute ICC Estimates
+Loading variance components...
+step02_variance_components.csv (15 rows)
+Computing ICC estimates for each congruence level...
+'variance'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'variance'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step03_compute_icc.py", line 65, in <module>
+    df_icc = compute_icc_from_variance_components(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1593, in compute_icc_from_variance_components
+    components = {row['component']: row['variance']
+                                    ~~~^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'variance'
+Step 03: Compute ICC Estimates
+Loading variance components...
+step02_variance_components.csv (15 rows)
+Computing ICC estimates for each congruence level...
+1 ICC estimates
+
+[ICC ESTIMATES]
+'congruence'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'congruence'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step03_compute_icc.py", line 79, in <module>
+    log(f"  {row['congruence']:12s} | {row['icc_type']:20s} | {row['value']:.4f} ({row['magnitude']})")
+             ~~~^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'congruence'
+Step 03: Compute ICC Estimates
+Loading variance components...
+step02_variance_components.csv (15 rows)
+Computing ICC estimates for each congruence level...
+
+Computing ICC for Common...
+  Computed 3 ICC estimates for Common
+
+Computing ICC for Congruent...
+  Computed 3 ICC estimates for Congruent
+
+Computing ICC for Incongruent...
+  Computed 3 ICC estimates for Incongruent
+
+9 total ICC estimates
+
+[ICC ESTIMATES]
+  Common       | intercept            | 0.2769 (Moderate clustering (0.10-0.30))
+  Common       | slope_conditional    | 0.3135 (High clustering (0.30-0.75))
+  Common       | slope_simple         | 0.0000 (Low clustering (<0.10))
+  Congruent    | intercept            | 0.3650 (High clustering (0.30-0.75))
+  Congruent    | slope_conditional    | 0.2294 (Moderate clustering (0.10-0.30))
+  Congruent    | slope_simple         | 0.0000 (Low clustering (<0.10))
+  Incongruent  | intercept            | 0.2665 (Moderate clustering (0.10-0.30))
+  Incongruent  | slope_conditional    | 0.3481 (High clustering (0.30-0.75))
+  Incongruent  | slope_simple         | 0.0000 (Low clustering (<0.10))
+
+Saving ICC estimates...
+step03_icc_estimates.csv (9 rows)
+Creating ICC interpretation report...
+index 0 is out of bounds for axis 0 with size 0
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step03_compute_icc.py", line 161, in <module>
+    icc_intercept = df_cong[df_cong['icc_type'] == 'icc_intercept']['value'].values[0]
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: index 0 is out of bounds for axis 0 with size 0
+Step 03: Compute ICC Estimates
+Loading variance components...
+step02_variance_components.csv (15 rows)
+Computing ICC estimates for each congruence level...
+
+Computing ICC for Common...
+  Computed 3 ICC estimates for Common
+
+Computing ICC for Congruent...
+  Computed 3 ICC estimates for Congruent
+
+Computing ICC for Incongruent...
+  Computed 3 ICC estimates for Incongruent
+
+9 total ICC estimates
+
+[ICC ESTIMATES]
+  Common       | intercept            | 0.2769 (Moderate clustering (0.10-0.30))
+  Common       | slope_conditional    | 0.3135 (High clustering (0.30-0.75))
+  Common       | slope_simple         | 0.0000 (Low clustering (<0.10))
+  Congruent    | intercept            | 0.3650 (High clustering (0.30-0.75))
+  Congruent    | slope_conditional    | 0.2294 (Moderate clustering (0.10-0.30))
+  Congruent    | slope_simple         | 0.0000 (Low clustering (<0.10))
+  Incongruent  | intercept            | 0.2665 (Moderate clustering (0.10-0.30))
+  Incongruent  | slope_conditional    | 0.3481 (High clustering (0.30-0.75))
+  Incongruent  | slope_simple         | 0.0000 (Low clustering (<0.10))
+
+Saving ICC estimates...
+step03_icc_estimates.csv (9 rows)
+Creating ICC interpretation report...
+step03_icc_summary.txt
+
+Validating ICC bounds...
+All ICC values within valid bounds [0, 1]
+ICC estimate count validated (9 estimates)
+No NaN values in ICC estimates
+
+Step 03 complete - ICC estimates computed and validated

@@ -1,0 +1,70 @@
+2025-12-03 15:06:39,356 - INFO - ============================================================
+2025-12-03 15:06:39,356 - INFO - RQ 5.2.6 Step 02: Extract Variance Components per Domain
+2025-12-03 15:06:39,356 - INFO - ============================================================
+2025-12-03 15:06:39,842 - INFO - Loaded fitted models: ['What', 'Where']
+2025-12-03 15:06:39,843 - INFO - Loaded metadata for What: Full structure
+2025-12-03 15:06:39,843 - INFO - Loaded metadata for Where: Full structure
+2025-12-03 15:06:39,843 - INFO - 
+Extracting variance components for What domain
+2025-12-03 15:06:39,843 - INFO -   Random structure: Full
+2025-12-03 15:06:39,844 - INFO -   var_intercept: 0.330125
+2025-12-03 15:06:39,844 - INFO -   var_slope: 0.002609
+2025-12-03 15:06:39,844 - INFO -   cov_int_slope: -0.005239
+2025-12-03 15:06:39,844 - INFO -   var_residual: 0.318300
+2025-12-03 15:06:39,844 - INFO -   total_variance: 0.651034
+2025-12-03 15:06:39,845 - INFO - 
+Extracting variance components for Where domain
+2025-12-03 15:06:39,845 - INFO -   Random structure: Full
+2025-12-03 15:06:39,845 - INFO -   var_intercept: 0.424859
+2025-12-03 15:06:39,845 - INFO -   var_slope: 0.003615
+2025-12-03 15:06:39,845 - INFO -   cov_int_slope: -0.014815
+2025-12-03 15:06:39,845 - INFO -   var_residual: 0.324638
+2025-12-03 15:06:39,845 - INFO -   total_variance: 0.753111
+2025-12-03 15:06:39,846 - INFO - 
+============================================================
+2025-12-03 15:06:39,846 - INFO - VALIDATION: Checking variance component constraints
+2025-12-03 15:06:39,846 - INFO - ============================================================
+2025-12-03 15:06:39,848 - INFO -   All variance components non-negative: PASS
+2025-12-03 15:06:39,848 - INFO -   All domains have 5 components: PASS
+2025-12-03 15:06:39,848 - INFO -   Total rows: 10 (expected 10)
+2025-12-03 15:06:39,849 - INFO - 
+Saved variance components to: results/ch5/5.2.6/data/step02_variance_components.csv
+2025-12-03 15:06:39,849 - INFO - 
+============================================================
+2025-12-03 15:06:39,849 - INFO - VARIANCE COMPONENTS SUMMARY
+2025-12-03 15:06:39,849 - INFO - ============================================================
+2025-12-03 15:06:39,849 - INFO - 
+What Domain:
+2025-12-03 15:06:39,850 - INFO -   var_intercept: 0.330125
+2025-12-03 15:06:39,850 - INFO -   var_slope: 0.002609
+2025-12-03 15:06:39,850 - INFO -   cov_int_slope: -0.005239
+2025-12-03 15:06:39,850 - INFO -   var_residual: 0.318300
+2025-12-03 15:06:39,850 - INFO -   total_variance: 0.651034
+2025-12-03 15:06:39,850 - INFO - 
+Where Domain:
+2025-12-03 15:06:39,850 - INFO -   var_intercept: 0.424859
+2025-12-03 15:06:39,851 - INFO -   var_slope: 0.003615
+2025-12-03 15:06:39,851 - INFO -   cov_int_slope: -0.014815
+2025-12-03 15:06:39,851 - INFO -   var_residual: 0.324638
+2025-12-03 15:06:39,851 - INFO -   total_variance: 0.753111
+2025-12-03 15:06:39,851 - INFO - 
+============================================================
+2025-12-03 15:06:39,851 - INFO - VARIANCE DECOMPOSITION PREVIEW (for ICC computation)
+2025-12-03 15:06:39,851 - INFO - ============================================================
+2025-12-03 15:06:39,851 - INFO - 
+What Domain:
+2025-12-03 15:06:39,852 - INFO -   var_intercept:  0.3301 (50.9% of simple total)
+2025-12-03 15:06:39,852 - INFO -   var_slope:      0.0026 (0.8% of simple total)
+2025-12-03 15:06:39,852 - INFO -   var_residual:   0.3183
+2025-12-03 15:06:39,852 - INFO - 
+Where Domain:
+2025-12-03 15:06:39,852 - INFO -   var_intercept:  0.4249 (56.7% of simple total)
+2025-12-03 15:06:39,852 - INFO -   var_slope:      0.0036 (1.1% of simple total)
+2025-12-03 15:06:39,852 - INFO -   var_residual:   0.3246
+2025-12-03 15:06:39,852 - INFO - 
+============================================================
+2025-12-03 15:06:39,852 - INFO - STEP 02 COMPLETE
+2025-12-03 15:06:39,853 - INFO - ============================================================
+2025-12-03 15:06:39,853 - INFO - Extracted variance components for 2 domains
+2025-12-03 15:06:39,853 - INFO - Output: 10 rows (5 components x 2 domains)
+2025-12-03 15:06:39,853 - INFO - Ready for Step 03: Compute ICC Estimates

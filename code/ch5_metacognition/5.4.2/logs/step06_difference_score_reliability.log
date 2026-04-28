@@ -1,0 +1,68 @@
+================================================================================
+RQ 6.4.2 - Step 06: Difference Score Reliability Check
+Started: 2026-01-17T14:30:25.281157
+================================================================================
+
+[STEP 1] Load Calibration Data
+------------------------------------------------------------
+  ✓ Loaded 1200 observations
+  ✓ N participants: 100
+  ✓ N test sessions: 4
+  ✓ N paradigms: 3
+
+  Person-level aggregation (N=100):
+    theta_accuracy: M=0.045, SD=0.631
+    theta_confidence: M=-0.771, SD=0.501
+    calibration: M=-0.000, SD=0.727
+
+[STEP 2] Compute Accuracy-Confidence Correlation
+------------------------------------------------------------
+  r(accuracy, confidence) = 0.5554, p = 0.0000
+
+[STEP 3] Estimate Component Reliabilities
+------------------------------------------------------------
+  Looking for SE estimates...
+    Confidence theta files found: 5
+    Accuracy theta files found: 2
+
+  Using estimated reliabilities based on IRT specifications:
+    r_xx (confidence): 0.87 (estimated: 5-level GRM, ~24 items)
+    r_yy (accuracy): 0.83 (estimated: 2PL binary, ~24 items)
+
+[STEP 4] Compute Difference Score Reliability
+------------------------------------------------------------
+
+  Formula: r_diff = (r_xx + r_yy - 2*r_xy) / (2 - 2*r_xy)
+  = (0.87 + 0.83 - 2*0.5554) / (2 - 2*0.5554)
+  = (1.7000 - 1.1109) / (0.8891)
+  = 0.5891 / 0.8891
+  = 0.6626
+
+[STEP 5] Sensitivity Analysis
+------------------------------------------------------------
+
+  Reliability scenarios (r_xx = confidence, r_yy = accuracy):
+  Scenario                         r_xx   r_yy   r_diff  Adequate?
+  ------------------------------------------------------------------
+  Conservative (0.80, 0.75)        0.80   0.75   0.4939       No ✗
+  Moderate (0.85, 0.80)            0.85   0.80   0.6064       No ✗
+  Best estimate (0.87, 0.83)       0.87   0.83   0.6626       No ✗
+  Optimistic (0.90, 0.85)          0.90   0.85   0.7188      Yes ✓
+  High (0.92, 0.88)                0.92   0.88   0.7751      Yes ✓
+
+[STEP 6] Interpret Results
+------------------------------------------------------------
+
+  Interpretation: MARGINAL
+  Difference score reliability (0.66) is moderate (0.50-0.70). Calibration effects may be attenuated by measurement error. Effect sizes should be interpreted with caution.
+
+  Sensitivity check: 2/5 scenarios show adequate reliability
+  Robustness: SENSITIVE TO ASSUMPTIONS
+
+[STEP 7] Save Results
+------------------------------------------------------------
+  ✓ Saved: step06_reliability_check.csv
+  ✓ Saved: step06_reliability_sensitivity.csv
+  ✓ Appended to: results/sensitivity_analysis.md
+
+Completed: 2026-01-17T14:30:25.288755

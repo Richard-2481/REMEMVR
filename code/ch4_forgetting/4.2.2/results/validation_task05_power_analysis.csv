@@ -1,0 +1,4 @@
+comparison,cohens_d,current_n,post_hoc_power,n_for_80pct_power
+where-what_early,0.025411707927958,100,0.01755708762555782,>10000
+where-what_late,-0.0150935199904179,100,0.01700167693694618,>10000
+where_slope_change-what_slope_change,-0.040505227918376,100,0.018889441052035834,>10000

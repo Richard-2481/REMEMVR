@@ -1,0 +1,4 @@
+metric,value,threshold,pass
+silhouette,0.36730933055130505,>= 0.4,False
+davies_bouldin,0.9808876803296616,< 1.5,True
+dunn,0.06443568147348522,> 0,True

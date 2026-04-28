@@ -1,0 +1,72 @@
+Step 09: Power Analysis
+Purpose: Post-hoc power and sensitivity analysis
+Loading effect size results...
+Effect sizes: 4 effects
+Loading analysis dataset for sample size...
+Sample size: N=100
+Number of predictors: k=6
+Degrees of freedom: (6, 93)
+Alpha (uncorrected): 0.0500
+Alpha (Bonferroni): 0.000597
+Target power: 0.80
+Computing post-hoc power for observed effects...
+Overall model: f²=0.2308, power=0.957
+RAVLT_T: f²=0.0030, power=0.002 (alpha=0.000597)
+BVMT_T: f²=0.0589, power=0.140 (alpha=0.000597)
+RPM_T: f²=0.0521, power=0.112 (alpha=0.000597)
+Computing minimum detectable effects at 80% power...
+Overall model: min f²=0.1456 at 80% power (alpha=0.0500)
+RAVLT_T: min f²=0.1943 at 80% power (alpha=0.000597)
+BVMT_T: min f²=0.1943 at 80% power (alpha=0.000597)
+RPM_T: min f²=0.1943 at 80% power (alpha=0.000597)
+Checking power adequacy...
+Overall_Model: power=0.957 ≥ 0.80
+RAVLT_T: power=0.002 < 0.80
+BVMT_T: power=0.140 < 0.80
+RPM_T: power=0.112 < 0.80
+[SAMPLE SIZE] Computing required N for 80% power...
+[SAMPLE SIZE] Overall model: N≈63 needed for 80% power
+[SAMPLE SIZE] BVMT_T: N≈329 needed for 80% power at α=0.000597
+Power analysis: /home/etai/projects/REMEMVR/results/ch7/7.3.1/data/step09_power_analysis.csv
+Checking power analysis validity...
+Power analysis PASSED all checks
+Step 09 complete
+Step 09: Power Analysis
+Purpose: Post-hoc power and sensitivity analysis
+Loading effect size results...
+Effect sizes: 6 effects
+Loading analysis dataset for sample size...
+Sample size: N=100
+Number of predictors: k=8
+Degrees of freedom: (8, 91)
+Alpha (uncorrected): 0.0500
+Alpha (Bonferroni): 0.000358
+Target power: 0.80
+Computing post-hoc power for observed effects...
+Overall model: f²=0.2828, power=0.974
+RAVLT_T: f²=0.0010, power=0.001 (alpha=0.000358)
+BVMT_T: f²=0.0471, power=0.071 (alpha=0.000358)
+RPM_T: f²=0.0338, power=0.037 (alpha=0.000358)
+RAVLT_Pct_Ret_T: f²=0.0406, power=0.053 (alpha=0.000358)
+BVMT_Pct_Ret_T: f²=0.0020, power=0.001 (alpha=0.000358)
+Computing minimum detectable effects at 80% power...
+Overall model: min f²=0.1633 at 80% power (alpha=0.0500)
+RAVLT_T: min f²=0.2079 at 80% power (alpha=0.000358)
+BVMT_T: min f²=0.2079 at 80% power (alpha=0.000358)
+RPM_T: min f²=0.2079 at 80% power (alpha=0.000358)
+RAVLT_Pct_Ret_T: min f²=0.2079 at 80% power (alpha=0.000358)
+BVMT_Pct_Ret_T: min f²=0.2079 at 80% power (alpha=0.000358)
+Checking power adequacy...
+Overall_Model: power=0.974 ≥ 0.80
+RAVLT_T: power=0.001 < 0.80
+BVMT_T: power=0.071 < 0.80
+RPM_T: power=0.037 < 0.80
+RAVLT_Pct_Ret_T: power=0.053 < 0.80
+BVMT_Pct_Ret_T: power=0.001 < 0.80
+[SAMPLE SIZE] Computing required N for 80% power...
+[SAMPLE SIZE] Overall model: N≈57 needed for 80% power
+[SAMPLE SIZE] BVMT_T: N≈441 needed for 80% power at α=0.000358
+Power analysis: /home/etai/projects/REMEMVR/results/ch7/7.3.1/data/step09_power_analysis.csv
+Checking power analysis validity...
+Power analysis PASSED all checks
+Step 09 complete

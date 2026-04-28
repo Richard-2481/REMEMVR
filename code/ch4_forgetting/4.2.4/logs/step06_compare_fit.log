@@ -1,0 +1,125 @@
+Step 6: Compare Model Fit (AIC/BIC)
+Loading LMM summary files...
+Reading summary file: step03_irt_lmm_summary.txt
+AIC value not found in step03_irt_lmm_summary.txt
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step06_compare_fit.py", line 206, in <module>
+    irt_stats = parse_aic_bic_from_summary(irt_summary_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step06_compare_fit.py", line 145, in parse_aic_bic_from_summary
+    raise ValueError(f"AIC value not found in {summary_path.name}")
+ValueError: AIC value not found in step03_irt_lmm_summary.txt
+Step 6: Compare Model Fit (AIC/BIC)
+Loading LMM summary files...
+Reading summary file: step03_irt_lmm_summary.txt
+AIC/BIC not in summary (REML model), computing from log-likelihood...
+LL=-1284.25, n=1200, k=4 -> AIC=2576.50, BIC=2596.86
+Reading summary file: step03_ctt_lmm_summary.txt
+AIC/BIC not in summary (REML model), computing from log-likelihood...
+LL=-188.30, n=1200, k=4 -> AIC=384.60, BIC=404.96
+IRT model - AIC: 2576.50, BIC: 2596.86
+CTT model - AIC: 384.60, BIC: 404.96
+Computing delta AIC and delta BIC...
+Delta AIC (CTT-IRT): -2191.90
+Delta BIC (CTT-IRT): -2191.90
+Interpreting delta magnitudes...
+AIC: Substantial difference (favors IRT)
+BIC: Substantial difference (favors IRT)
+Building model fit comparison table...
+Comparison table with 2 rows
+Saving step06_model_fit_comparison.csv...
+step06_model_fit_comparison.csv (2 rows, 7 cols)
+Running validate_dataframe_structure...
+PASS - DataFrame structure valid: 2 rows, 7 columns (required: 7).
+AIC/BIC values are positive (valid)
+Delta AIC computed correctly (CTT - IRT)
+Delta BIC computed correctly (CTT - IRT)
+Interpretation matches delta magnitude per thresholds
+Step 6 complete
+Step 6: Compare Model Fit (AIC/BIC)
+Loading LMM summary files...
+Reading summary file: step03_irt_lmm_summary.txt
+AIC/BIC not in summary (REML model), computing from log-likelihood...
+LL=-769.46, n=800, k=4 -> AIC=1546.92, BIC=1565.66
+Reading summary file: step03_ctt_lmm_summary.txt
+AIC/BIC not in summary (REML model), computing from log-likelihood...
+LL=508.08, n=800, k=4 -> AIC=-1008.16, BIC=-989.42
+IRT model - AIC: 1546.92, BIC: 1565.66
+CTT model - AIC: -1008.16, BIC: -989.42
+Computing delta AIC and delta BIC...
+Delta AIC (CTT-IRT): -2555.09
+Delta BIC (CTT-IRT): -2555.09
+Interpreting delta magnitudes...
+AIC: Substantial difference (favors IRT)
+BIC: Substantial difference (favors IRT)
+Building model fit comparison table...
+Comparison table with 2 rows
+Saving step06_model_fit_comparison.csv...
+step06_model_fit_comparison.csv (2 rows, 7 cols)
+Running validate_dataframe_structure...
+PASS - DataFrame structure valid: 2 rows, 7 columns (required: 7).
+Invalid AIC values: IRT=1546.9242, CTT=-1008.1632 (should be > 0)
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.2.4/code/step06_compare_fit.py", line 335, in <module>
+    raise ValueError(f"Invalid AIC values: IRT={irt_stats['AIC']}, CTT={ctt_stats['AIC']} (should be > 0)")
+ValueError: Invalid AIC values: IRT=1546.9242, CTT=-1008.1632 (should be > 0)
+Step 6: Compare Model Fit (AIC/BIC)
+Loading LMM summary files...
+Reading summary file: step03_irt_lmm_summary.txt
+AIC/BIC not in summary (REML model), computing from log-likelihood...
+LL=-769.46, n=800, k=4 -> AIC=1546.92, BIC=1565.66
+Reading summary file: step03_ctt_lmm_summary.txt
+AIC/BIC not in summary (REML model), computing from log-likelihood...
+LL=508.08, n=800, k=4 -> AIC=-1008.16, BIC=-989.42
+IRT model - AIC: 1546.92, BIC: 1565.66
+CTT model - AIC: -1008.16, BIC: -989.42
+Computing delta AIC and delta BIC...
+Delta AIC (CTT-IRT): -2555.09
+Delta BIC (CTT-IRT): -2555.09
+Interpreting delta magnitudes...
+AIC: Substantial difference (favors IRT)
+BIC: Substantial difference (favors IRT)
+Building model fit comparison table...
+Comparison table with 2 rows
+Saving step06_model_fit_comparison.csv...
+step06_model_fit_comparison.csv (2 rows, 7 cols)
+Running validate_dataframe_structure...
+PASS - DataFrame structure valid: 2 rows, 7 columns (required: 7).
+AIC/BIC values: IRT AIC=1546.92, CTT AIC=-1008.16
+CTT model has negative AIC - valid when LL > k (common for bounded scores)
+AIC/BIC values are finite (valid)
+Delta AIC computed correctly (CTT - IRT)
+Delta BIC computed correctly (CTT - IRT)
+Interpretation matches delta magnitude per thresholds
+Step 6 complete
+Step 6: Compare Model Fit (AIC/BIC)
+Loading LMM summary files...
+Reading summary file: step03_irt_lmm_summary.txt
+AIC/BIC not in summary (REML model), computing from log-likelihood...
+LL=-746.56, n=800, k=3 -> AIC=1499.13, BIC=1513.18
+Reading summary file: step03_ctt_lmm_summary.txt
+AIC/BIC not in summary (REML model), computing from log-likelihood...
+LL=521.18, n=800, k=3 -> AIC=-1036.36, BIC=-1022.30
+IRT model - AIC: 1499.13, BIC: 1513.18
+CTT model - AIC: -1036.36, BIC: -1022.30
+Computing delta AIC and delta BIC...
+Delta AIC (CTT-IRT): -2535.49
+Delta BIC (CTT-IRT): -2535.49
+Interpreting delta magnitudes...
+AIC: Substantial difference (favors IRT)
+BIC: Substantial difference (favors IRT)
+Building model fit comparison table...
+Comparison table with 2 rows
+Saving step06_model_fit_comparison.csv...
+step06_model_fit_comparison.csv (2 rows, 7 cols)
+Running validate_dataframe_structure...
+PASS - DataFrame structure valid: 2 rows, 7 columns (required: 7).
+AIC/BIC values: IRT AIC=1499.13, CTT AIC=-1036.36
+CTT model has negative AIC - valid when LL > k (common for bounded scores)
+AIC/BIC values are finite (valid)
+Delta AIC computed correctly (CTT - IRT)
+Delta BIC computed correctly (CTT - IRT)
+Interpretation matches delta magnitude per thresholds
+Step 6 complete

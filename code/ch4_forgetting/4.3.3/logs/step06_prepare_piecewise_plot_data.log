@@ -1,0 +1,33 @@
+2025-12-02 15:38:30,101 - INFO - ============================================================
+2025-12-02 15:38:30,101 - INFO - Step 06: Prepare Piecewise Plot Data
+2025-12-02 15:38:30,101 - INFO - ============================================================
+2025-12-02 15:38:30,101 - INFO - Loading data from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step01_piecewise_lmm_input.csv
+2025-12-02 15:38:30,104 - INFO - Loading model from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step02_piecewise_lmm_model.pkl
+2025-12-02 15:38:30,119 - INFO - Loading slopes from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step03_segment_paradigm_slopes.csv
+2025-12-02 15:38:30,120 - INFO - 
+Aggregating observed data...
+2025-12-02 15:38:30,125 - INFO - Observed data: 15 segment-paradigm-test combinations
+2025-12-02 15:38:30,125 - INFO - 
+Generating model predictions...
+2025-12-02 15:38:30,127 - INFO - Prediction grid: 240 points
+2025-12-02 15:38:30,127 - INFO - 
+Merging observed and predicted data...
+2025-12-02 15:38:30,134 - INFO - 
+Converting to probability scale (Decision D069)...
+2025-12-02 15:38:30,135 - INFO - 
+============================================================
+2025-12-02 15:38:30,135 - INFO - VALIDATION CHECKS
+2025-12-02 15:38:30,135 - INFO - ============================================================
+2025-12-02 15:38:30,135 - INFO - Plot data preparation complete: theta scale + probability scale
+2025-12-02 15:38:30,135 - INFO - Observed data: 15 segment-paradigm-test combinations
+2025-12-02 15:38:30,136 - INFO - Predicted data: 240 timepoints across 6 segment-paradigm combinations
+2025-12-02 15:38:30,136 - INFO - VALIDATION - PASS: All 6 segment-paradigm combinations present
+2025-12-02 15:38:30,136 - INFO - VALIDATION - PASS: Probability values in [0, 1] range [0.267, 0.653]
+2025-12-02 15:38:30,136 - INFO - VALIDATION - PASS: Dual-scale plot data created (Decision D069)
+2025-12-02 15:38:30,138 - INFO - 
+Theta-scale data saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step06_piecewise_theta_data.csv
+2025-12-02 15:38:30,139 - INFO - Probability-scale data saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step06_piecewise_probability_data.csv
+2025-12-02 15:38:30,139 - INFO - 
+============================================================
+2025-12-02 15:38:30,139 - INFO - STEP 06 COMPLETE
+2025-12-02 15:38:30,139 - INFO - ============================================================

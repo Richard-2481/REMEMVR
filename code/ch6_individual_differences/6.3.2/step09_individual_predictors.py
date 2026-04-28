@@ -23,10 +23,10 @@ def log(msg):
     print(msg, flush=True)
 
 if __name__ == "__main__":
-    log("[START] Step 09: Individual Predictors Analysis")
+    log("Step 09: Individual Predictors Analysis")
     
     # Load data
-    log("[LOAD] Loading regression results and analysis data...")
+    log("Loading regression results and analysis data...")
     reg_df = pd.read_csv(DATA_DIR / "step04_regression_results.csv")
     data_df = pd.read_csv(DATA_DIR / "step03_analysis_dataset.csv")
     
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     cognitive_predictors = ['RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
     
     # Analyze each cognitive predictor
-    log("[ANALYSIS] Analyzing individual cognitive predictors...")
+    log("Analyzing individual cognitive predictors...")
     predictor_results = []
     
     for predictor in cognitive_predictors:
@@ -78,9 +78,9 @@ if __name__ == "__main__":
     results_df = pd.DataFrame(predictor_results)
     
     # Identify strongest predictor
-    log("[ANALYSIS] Identifying strongest predictor...")
+    log("Identifying strongest predictor...")
     strongest = results_df.loc[results_df['sr_squared'].abs().idxmax()]
-    log(f"[INFO] Strongest predictor: {strongest['predictor']} (sr² = {strongest['sr_squared']:.4f})")
+    log(f"Strongest predictor: {strongest['predictor']} (sr² = {strongest['sr_squared']:.4f})")
     
     # Test hypothesis: RPM > RAVLT, BVMT (learning totals)
     rpm_sr2 = results_df[results_df['predictor'] == 'RPM_T']['sr_squared'].iloc[0]
@@ -90,14 +90,14 @@ if __name__ == "__main__":
     bvmt_pct_sr2 = results_df[results_df['predictor'] == 'BVMT_Pct_Ret_T']['sr_squared'].iloc[0]
 
     hypothesis_supported = (rpm_sr2 > ravlt_sr2) and (rpm_sr2 > bvmt_sr2)
-    log(f"[HYPOTHESIS] RPM > RAVLT & BVMT (learning): {hypothesis_supported}")
-    log(f"[INFO] RPM sr² = {rpm_sr2:.4f}, RAVLT sr² = {ravlt_sr2:.4f}, BVMT sr² = {bvmt_sr2:.4f}")
-    log(f"[INFO] RAVLT_Pct_Ret sr² = {ravlt_pct_sr2:.4f}, BVMT_Pct_Ret sr² = {bvmt_pct_sr2:.4f}")
+    log(f"RPM > RAVLT & BVMT (learning): {hypothesis_supported}")
+    log(f"RPM sr² = {rpm_sr2:.4f}, RAVLT sr² = {ravlt_sr2:.4f}, BVMT sr² = {bvmt_sr2:.4f}")
+    log(f"RAVLT_Pct_Ret sr² = {ravlt_pct_sr2:.4f}, BVMT_Pct_Ret sr² = {bvmt_pct_sr2:.4f}")
     
     # Save results
-    log("[SAVE] Saving individual predictor results...")
+    log("Saving individual predictor results...")
     results_df.to_csv(DATA_DIR / "step09_individual_predictors.csv", index=False)
-    log(f"[SAVED] step09_individual_predictors.csv ({len(results_df)} cognitive predictors)")
+    log(f"step09_individual_predictors.csv ({len(results_df)} cognitive predictors)")
     
     # Summary
     summary_df = pd.DataFrame([{
@@ -109,6 +109,6 @@ if __name__ == "__main__":
     }])
     
     summary_df.to_csv(DATA_DIR / "step09_predictor_summary.csv", index=False)
-    log(f"[SAVED] step09_predictor_summary.csv")
+    log(f"step09_predictor_summary.csv")
     
-    log("[SUCCESS] Step 09 complete")
+    log("Step 09 complete")

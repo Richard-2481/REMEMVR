@@ -1,0 +1,12 @@
+metric,value
+R_squared,0.33806049534650784
+Adj_R_squared,0.33130601060514575
+F_statistic,50.049782965137304
+F_pvalue,2.2526208352019372e-10
+Shapiro_W_residuals,0.9820235859861429
+Shapiro_p_residuals,0.19051768093008642
+BP_LM_statistic,3.737673007256659
+BP_p_value,0.05319848390894963
+Max_Cooks_D,0.17820613221363715
+Cooks_D_threshold,0.04
+N_influential,7.0

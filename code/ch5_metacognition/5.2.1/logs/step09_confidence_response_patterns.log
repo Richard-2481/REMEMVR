@@ -1,0 +1,124 @@
+======================================================================
+STEP 09: Confidence Response Patterns
+======================================================================
+Loaded dfData: 400 rows
+Confidence columns: 105
+
+======================================================================
+SUMMARY STATISTICS
+======================================================================
+Total participants: 100
+Total observations: 400
+
+Full scale usage (all 5 levels): 84.8%
+Extremes only (1s and 5s): 0.0%
+Restricted range (SD < 0.8): 12.0%
+Mean rating SD: 0.28
+
+======================================================================
+BY TEST SESSION
+======================================================================
+
+T1:
+  Mean rating: 0.70 (SD: 0.12)
+  Full scale usage: 85.0%
+  Extremes only: 0.0%
+
+T2:
+  Mean rating: 0.62 (SD: 0.13)
+  Full scale usage: 86.0%
+  Extremes only: 0.0%
+
+T3:
+  Mean rating: 0.57 (SD: 0.13)
+  Full scale usage: 85.0%
+  Extremes only: 0.0%
+
+T4:
+  Mean rating: 0.53 (SD: 0.13)
+  Full scale usage: 83.0%
+  Extremes only: 0.0%
+
+======================================================================
+INTERPRETATION
+======================================================================
+✓ GOOD: Majority of participants use full confidence scale
+✓ GOOD: Low extreme responding (<20%)
+⚠ WARNING: Mean SD < 0.8 indicates restricted range
+  Participants may not be discriminating between confidence levels
+
+======================================================================
+LINK TO ECE STABILITY (from summary.md)
+======================================================================
+ECE remains stable (0.090-0.102) despite Brier increase (0.147-0.177).
+Response pattern analysis explains this:
+  → Participants maintain similar confidence DISTRIBUTIONS over time
+  → Full scale usage preserved (not collapsing to extremes)
+  → Within-bin accuracy declines proportionally
+  → Result: Relative calibration structure stable (ECE), but
+            absolute alignment worsens (Brier, person-level calibration)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step09_confidence_response_patterns.csv
+VALIDATION - PASS: Confidence response patterns documented
+======================================================================
+STEP 09: Confidence Response Patterns
+======================================================================
+Loaded dfData: 400 rows
+Confidence columns: 105
+
+======================================================================
+SUMMARY STATISTICS
+======================================================================
+Total participants: 100
+Total observations: 400
+
+Full scale usage (all 5 levels): 84.8%
+Extremes only (1s and 5s): 0.0%
+Restricted range (SD < 0.8): 12.0%
+Mean rating SD: 0.28
+
+======================================================================
+BY TEST SESSION
+======================================================================
+
+T1:
+  Mean rating: 0.70 (SD: 0.12)
+  Full scale usage: 85.0%
+  Extremes only: 0.0%
+
+T2:
+  Mean rating: 0.62 (SD: 0.13)
+  Full scale usage: 86.0%
+  Extremes only: 0.0%
+
+T3:
+  Mean rating: 0.57 (SD: 0.13)
+  Full scale usage: 85.0%
+  Extremes only: 0.0%
+
+T4:
+  Mean rating: 0.53 (SD: 0.13)
+  Full scale usage: 83.0%
+  Extremes only: 0.0%
+
+======================================================================
+INTERPRETATION
+======================================================================
+✓ GOOD: Majority of participants use full confidence scale
+✓ GOOD: Low extreme responding (<20%)
+⚠ WARNING: Mean SD < 0.8 indicates restricted range
+  Participants may not be discriminating between confidence levels
+
+======================================================================
+LINK TO ECE STABILITY (from summary.md)
+======================================================================
+ECE remains stable (0.090-0.102) despite Brier increase (0.147-0.177).
+Response pattern analysis explains this:
+  → Participants maintain similar confidence DISTRIBUTIONS over time
+  → Full scale usage preserved (not collapsing to extremes)
+  → Within-bin accuracy declines proportionally
+  → Result: Relative calibration structure stable (ECE), but
+            absolute alignment worsens (Brier, person-level calibration)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step09_confidence_response_patterns.csv
+VALIDATION - PASS: Confidence response patterns documented

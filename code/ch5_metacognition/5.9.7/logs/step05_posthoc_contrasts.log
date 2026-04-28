@@ -1,0 +1,10 @@
+Step 5: posthoc_contrasts
+step03_lmm_fixed_effects.csv
+Paradigm×Time interaction max p-value: 0.8598
+Interaction not significant (p >= 0.05), skipping post-hoc tests
+step05_posthoc_contrasts.csv (placeholder - no contrasts computed)
+Step 5: posthoc_contrasts
+step03_lmm_fixed_effects.csv
+Paradigm×Time interaction max p-value: 0.8822
+Interaction not significant (p >= 0.05), skipping post-hoc tests
+step05_posthoc_contrasts.csv (placeholder - no contrasts computed)

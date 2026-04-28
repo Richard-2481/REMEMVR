@@ -1,0 +1,32 @@
+Step 04: Validate Clustering Quality
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+100 samples, 6 clusters
+Computing silhouette score...
+  Silhouette score = 0.2539
+Computing Davies-Bouldin index...
+  Davies-Bouldin index = 1.0880
+Computing bootstrap Jaccard (100 iterations, 80% sample)...
+  Bootstrap Jaccard mean = 0.5922
+  Bootstrap Jaccard median = 0.5860
+  Bootstrap Jaccard min = 0.3056
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step04_cluster_quality_metrics.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step04_cluster_quality_metrics.csv
+[QUALITY SUMMARY]
+  silhouette: 0.2539 (threshold=0.40) davies_bouldin: 1.0880 (threshold=1.50) jaccard_mean: 0.5922 (threshold=0.75) jaccard_median: 0.5860 (threshold=0.75) jaccard_min: 0.3056 (threshold=0.75) Step 04 complete
+Step 04: Validate Clustering Quality
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+100 samples, 6 clusters
+Computing silhouette score...
+  Silhouette score = 0.2364
+Computing Davies-Bouldin index...
+  Davies-Bouldin index = 1.2574
+Computing bootstrap Jaccard (100 iterations, 80% sample)...
+  Bootstrap Jaccard mean = 0.5869
+  Bootstrap Jaccard median = 0.5813
+  Bootstrap Jaccard min = 0.3982
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step04_cluster_quality_metrics.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step04_cluster_quality_metrics.csv
+[QUALITY SUMMARY]
+  silhouette: 0.2364 (threshold=0.40) davies_bouldin: 1.2574 (threshold=1.50) jaccard_mean: 0.5869 (threshold=0.75) jaccard_median: 0.5813 (threshold=0.75) jaccard_min: 0.3982 (threshold=0.75) Step 04 complete

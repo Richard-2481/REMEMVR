@@ -1,0 +1,104 @@
+Step 08: Power analysis
+Loading model comparison results...
+step04_model_comparison.csv (2 rows, 8 cols)
+Loading effect sizes...
+step06_effect_sizes.csv (8 rows, 5 cols)
+Setting up power analysis parameters...
+Sample size: 100
+Full model df: 6, denominator df: 93
+Incremental df: 3
+Alpha uncorrected: 0.05
+Alpha corrected: 0.000448
+Analyzing overall model power...
+F-statistic: 0.4914
+R²: 0.0307
+Power (α=0.05): 0.1909 (inadequate)
+Power (α=0.000448): 0.0066 (inadequate)
+Analyzing incremental F-change power...
+F-change: 0.2113
+Power (α=0.05): 0.0883 (inadequate)
+Power (α=0.000448): 0.0015 (inadequate)
+Analyzing individual predictor power...
+ravlt_c: f²=0.0085
+ravlt_c: Power (α=0.05)=0.1499 (inadequate)
+ravlt_c: Power (α=0.000448)=0.0045 (inadequate)
+bvmt_c: f²=0.0044
+bvmt_c: Power (α=0.05)=0.1004 (inadequate)
+bvmt_c: Power (α=0.000448)=0.0021 (inadequate)
+rpm_c: f²=0.0014
+rpm_c: Power (α=0.05)=0.0661 (inadequate)
+rpm_c: Power (α=0.000448)=0.0009 (inadequate)
+Calculating minimum detectable effects...
+overall_model_uncorrected: Min f²=0.0199, Min R²=0.0195
+overall_model_corrected: Min f²=0.0252, Min R²=0.0246
+incremental_cognitive_uncorrected: Min f²=0.0295, Min R²=0.0287
+incremental_cognitive_corrected: Min f²=0.0474, Min R²=0.0452
+Analyzing RPM hypothesis power...
+Effect size f²: 0.0014
+Power assessment: INADEQUATE_POWER
+Minimum detectable individual f²: 0.2051
+Observed effect below minimum detectable threshold
+Saving power analysis results...
+step08_power_analysis.csv (10 rows, 5 cols)
+step08_sensitivity.csv (4 rows, 4 cols)
+Running validate_numeric_range...
+validate_numeric_range() got an unexpected keyword argument 'values'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.3/code/step08_power_analysis.py", line 560, in <module>
+    validation_result = validate_numeric_range(
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_numeric_range() got an unexpected keyword argument 'values'
+Step 08: Power analysis
+Loading model comparison results...
+step04_model_comparison.csv (2 rows, 8 cols)
+Loading effect sizes...
+step06_effect_sizes.csv (12 rows, 5 cols)
+Setting up power analysis parameters...
+Sample size: 100
+Full model df: 8, denominator df: 91
+Incremental df: 5
+Alpha uncorrected: 0.05
+Alpha corrected: 0.000448
+Analyzing overall model power...
+F-statistic: 2.4761
+R²: 0.1788
+Power (α=0.05): 0.8833 (adequate)
+Power (α=0.000448): 0.3339 (inadequate)
+Analyzing incremental F-change power...
+F-change: 2.1658
+Power (α=0.05): 0.6873 (moderate)
+Power (α=0.000448): 0.1339 (inadequate)
+Analyzing individual predictor power...
+ravlt_c: f²=0.0010
+ravlt_c: Power (α=0.05)=0.0611 (inadequate)
+ravlt_c: Power (α=0.000448)=0.0007 (inadequate)
+bvmt_c: f²=0.0005
+bvmt_c: Power (α=0.05)=0.0553 (inadequate)
+bvmt_c: Power (α=0.000448)=0.0006 (inadequate)
+rpm_c: f²=0.0093
+rpm_c: Power (α=0.05)=0.1594 (inadequate)
+rpm_c: Power (α=0.000448)=0.0050 (inadequate)
+ravlt_pct_ret_c: f²=0.0795
+ravlt_pct_ret_c: Power (α=0.05)=0.7971 (moderate)
+ravlt_pct_ret_c: Power (α=0.000448)=0.2180 (inadequate)
+bvmt_pct_ret_c: f²=0.1192
+bvmt_pct_ret_c: Power (α=0.05)=0.9276 (adequate)
+bvmt_pct_ret_c: Power (α=0.000448)=0.4341 (inadequate)
+Calculating minimum detectable effects...
+overall_model_uncorrected: Min f²=0.0177, Min R²=0.0174
+overall_model_corrected: Min f²=0.0210, Min R²=0.0206
+incremental_cognitive_uncorrected: Min f²=0.0217, Min R²=0.0212
+incremental_cognitive_corrected: Min f²=0.0290, Min R²=0.0282
+Analyzing RPM hypothesis power...
+Effect size f²: 0.0093
+Power assessment: INADEQUATE_POWER
+Minimum detectable individual f²: 0.2051
+Observed effect below minimum detectable threshold
+Saving power analysis results...
+step08_power_analysis.csv (14 rows, 5 cols)
+step08_sensitivity.csv (4 rows, 4 cols)
+Running validate_numeric_range...
+- RPM hypothesis power: inadequate
+- Recommendation: Generally underpowered - focus on effect size interpretation
+Step 08 complete

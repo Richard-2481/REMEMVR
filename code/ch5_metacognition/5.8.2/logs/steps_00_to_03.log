@@ -1,0 +1,684 @@
+
+======================================================================
+RQ 6.8.2: Source-Destination Calibration
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.2
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Merge Accuracy and Confidence by Location Type
+======================================================================
+
+Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.5.1/data/step04_lmm_input.csv
+  Accuracy data: 800 rows, columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'Days', 'log_Days_plus1', 'Days_squared', 'LocationType', 'LocationType_coded', 'theta', 'se']
+  After cleanup: 800 rows
+
+Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step04_lmm_input.csv
+  Confidence data: 800 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'log_TSVR', 'location', 'theta']
+  After cleanup: 800 rows
+
+Merging accuracy + confidence on UID x TEST x LocationType...
+  Merged data: 800 rows (expected: 800)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step00_accuracy_confidence_merged.csv
+  Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence']
+
+Descriptive Statistics:
+  Source:
+    theta_accuracy:   mean=-0.023, SD=0.861
+    theta_confidence: mean=-0.523, SD=0.679
+  Destination:
+    theta_accuracy:   mean=0.022, SD=0.821
+    theta_confidence: mean=-0.532, SD=0.664
+
+Merge complete: 800 rows created
+
+======================================================================
+STEP 01: Compute Calibration per Location Type
+======================================================================
+
+Z-standardizing within each LocationType...
+
+  Source:
+    Accuracy:   mean=-0.023, SD=0.861
+    Confidence: mean=-0.523, SD=0.679
+    Z_accuracy:   mean=0.0000, SD=1.0000
+    Z_confidence: mean=-0.0000, SD=1.0000
+
+  Destination:
+    Accuracy:   mean=0.022, SD=0.821
+    Confidence: mean=-0.532, SD=0.664
+    Z_accuracy:   mean=0.0000, SD=1.0000
+    Z_confidence: mean=-0.0000, SD=1.0000
+
+Calibration computed:
+  calibration = Z_confidence - Z_accuracy
+  Positive = overconfidence, Negative = underconfidence, Zero = well-calibrated
+
+Calibration by LocationType:
+  Source: mean=-0.000, SD=0.851
+    -> WELL-CALIBRATED (|mean| < 0.1)
+  Destination: mean=-0.000, SD=0.979
+    -> WELL-CALIBRATED (|mean| < 0.1)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step01_calibration_by_location.csv
+  Rows: 800
+  Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence', 'Z_accuracy', 'Z_confidence', 'calibration']
+
+Calibration computed: 800 observations
+
+======================================================================
+STEP 02: Fit LMM Testing Location Effects on Calibration
+======================================================================
+
+Time variable: log_TSVR = log(TSVR_hours + 1)
+  Range: 0.69 to 5.51
+
+Fitting LMM: calibration ~ C(LocationType) * log_TSVR
+  Random effects: (1 | UID) - random intercepts only
+
+======================================================================
+RQ 6.8.2: Source-Destination Calibration
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.2
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Merge Accuracy and Confidence by Location Type
+======================================================================
+
+Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.5.1/data/step04_lmm_input.csv
+  Accuracy data: 800 rows, columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'Days', 'log_Days_plus1', 'Days_squared', 'LocationType', 'LocationType_coded', 'theta', 'se']
+  After cleanup: 800 rows
+
+Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step04_lmm_input.csv
+  Confidence data: 800 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'log_TSVR', 'location', 'theta']
+  After cleanup: 800 rows
+
+Merging accuracy + confidence on UID x TEST x LocationType...
+  Merged data: 800 rows (expected: 800)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step00_accuracy_confidence_merged.csv
+  Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence']
+
+Descriptive Statistics:
+  Source:
+    theta_accuracy:   mean=-0.023, SD=0.861
+    theta_confidence: mean=-0.523, SD=0.679
+  Destination:
+    theta_accuracy:   mean=0.022, SD=0.821
+    theta_confidence: mean=-0.532, SD=0.664
+
+Merge complete: 800 rows created
+
+======================================================================
+STEP 01: Compute Calibration per Location Type
+======================================================================
+
+Z-standardizing within each LocationType...
+
+  Source:
+    Accuracy:   mean=-0.023, SD=0.861
+    Confidence: mean=-0.523, SD=0.679
+    Z_accuracy:   mean=0.0000, SD=1.0000
+    Z_confidence: mean=-0.0000, SD=1.0000
+
+  Destination:
+    Accuracy:   mean=0.022, SD=0.821
+    Confidence: mean=-0.532, SD=0.664
+    Z_accuracy:   mean=0.0000, SD=1.0000
+    Z_confidence: mean=-0.0000, SD=1.0000
+
+Calibration computed:
+  calibration = Z_confidence - Z_accuracy
+  Positive = overconfidence, Negative = underconfidence, Zero = well-calibrated
+
+Calibration by LocationType:
+  Source: mean=-0.000, SD=0.851
+    -> WELL-CALIBRATED (|mean| < 0.1)
+  Destination: mean=-0.000, SD=0.979
+    -> WELL-CALIBRATED (|mean| < 0.1)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step01_calibration_by_location.csv
+  Rows: 800
+  Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence', 'Z_accuracy', 'Z_confidence', 'calibration']
+
+Calibration computed: 800 observations
+
+======================================================================
+STEP 02: Fit LMM Testing Location Effects on Calibration
+======================================================================
+
+Time variable: log_TSVR = log(TSVR_hours + 1)
+  Range: 0.69 to 5.51
+
+Fitting LMM: calibration ~ C(LocationType) * log_TSVR
+  Random effects: (1 | UID) - random intercepts only
+
+==================================================
+LMM Results
+==================================================
+                 Mixed Linear Model Regression Results
+=======================================================================
+Model:                  MixedLM     Dependent Variable:     calibration
+No. Observations:       800         Method:                 REML       
+No. Groups:             100         Scale:                  0.5550     
+Min. group size:        8           Log-Likelihood:         -989.2960  
+Max. group size:        8           Converged:              Yes        
+Mean group size:        8.0                                            
+-----------------------------------------------------------------------
+                             Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-----------------------------------------------------------------------
+Intercept                     0.078    0.100  0.778 0.436 -0.118  0.274
+LocationType_Source          -0.138    0.119 -1.156 0.248 -0.371  0.096
+log_TSVR                     -0.023    0.023 -1.029 0.304 -0.067  0.021
+LocationType_Source:log_TSVR  0.041    0.032  1.288 0.198 -0.021  0.103
+Group Var                     0.288    0.073                           
+=======================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_lmm_calibration_summary.txt
+
+Fixed Effects:
+                      Effect  Estimate       SE         t  p_uncorrected  p_bonferroni  CI_lower  CI_upper
+                   Intercept  0.077814 0.099959  0.778460       0.436298      1.000000 -0.118106  0.273735
+         LocationType_Source -0.137767 0.119202 -1.155746       0.247785      0.991140 -0.371403  0.095869
+                    log_TSVR -0.023151 0.022506 -1.028659       0.303640      1.000000 -0.067262  0.020960
+LocationType_Source:log_TSVR  0.040987 0.031813  1.288381       0.197613      0.790454 -0.021366  0.103341
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_location_effects.csv
+
+==================================================
+KEY HYPOTHESIS TESTS
+==================================================
+
+LocationType Main Effect (Source vs Destination):
+  Estimate: -0.1378
+  SE: 0.1192
+  t = -1.16
+  p_uncorrected = 0.2478
+  p_bonferroni = 0.9911
+  -> NOT SIGNIFICANT (p >= 0.05)
+
+LocationType x Time Interaction:
+  Estimate: 0.0410
+  SE: 0.0318
+  t = 1.29
+  p_uncorrected = 0.1976
+  p_bonferroni = 0.7905
+  -> NOT SIGNIFICANT: Calibration trajectories PARALLEL
+
+Model Fit Indices:
+  AIC: nan
+  BIC: nan
+  Log-Likelihood: -989.30
+
+Variance Components:
+  Participant intercept variance: 0.2882
+  Residual variance: 0.5550
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_effect_sizes.csv
+
+Effect Sizes (Cohen's f²):
+  Small: f² = 0.02, Medium: f² = 0.15, Large: f² = 0.35
+  LocationType_Source: f² = 0.0017 (negligible)
+  log_TSVR: f² = 0.0013 (negligible)
+  LocationType_Source:log_TSVR: f² = 0.0021 (negligible)
+
+LMM fitting complete
+
+======================================================================
+STEP 03: Prepare Calibration Plot Data
+======================================================================
+
+Mean TSVR by test: {'T1': 1.0, 'T2': 28.769699999999997, 'T3': 78.6681, 'T4': 151.3752}
+
+Plot Data:
+LocationType TEST  TSVR_hours  mean_calibration  CI_lower  CI_upper   n
+ Destination   T1      1.0000          0.077708 -0.121070  0.276487 100
+ Destination   T2     28.7697         -0.022522 -0.208308  0.163264 100
+ Destination   T3     78.6681         -0.066778 -0.247532  0.113976 100
+ Destination   T4    151.3752          0.011592 -0.191178  0.214362 100
+      Source   T1      1.0000         -0.001680 -0.158022  0.154662 100
+      Source   T2     28.7697         -0.090727 -0.280673  0.099220 100
+      Source   T3     78.6681         -0.023297 -0.185193  0.138598 100
+      Source   T4    151.3752          0.115704 -0.040886  0.272295 100
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step03_calibration_plot_data.csv
+  Rows: 8 (expected: 8 = 2 LocationTypes x 4 tests)
+
+==================================================
+CALIBRATION PATTERN INTERPRETATION
+==================================================
+
+Source:
+  T1 calibration: -0.002
+  T4 calibration: 0.116
+  Change (T4 - T1): 0.117
+  -> Initially WELL-CALIBRATED
+  -> Overconfidence INCREASES over time
+
+Destination:
+  T1 calibration: 0.078
+  T4 calibration: 0.012
+  Change (T4 - T1): -0.066
+  -> Initially WELL-CALIBRATED
+  -> Calibration STABLE over time
+
+Plot data preparation complete: 8 rows
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_accuracy_confidence_merged.csv
+  data/step01_calibration_by_location.csv
+  data/step02_lmm_calibration_summary.txt
+  data/step02_location_effects.csv
+  data/step02_effect_sizes.csv
+  data/step03_calibration_plot_data.csv
+
+======================================================================
+RQ 6.8.2: Source-Destination Calibration
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.2
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Merge Accuracy and Confidence by Location Type
+======================================================================
+
+Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.5.1/data/step04_lmm_input.csv
+  Accuracy data: 800 rows, columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'Days', 'log_Days_plus1', 'Days_squared', 'LocationType', 'LocationType_coded', 'theta', 'se']
+  After cleanup: 800 rows
+
+Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step04_lmm_input.csv
+  Confidence data: 800 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'log_TSVR', 'location', 'theta']
+  After cleanup: 800 rows
+
+Merging accuracy + confidence on UID x TEST x LocationType...
+  Merged data: 800 rows (expected: 800)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step00_accuracy_confidence_merged.csv
+  Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence']
+
+Descriptive Statistics:
+  Source:
+    theta_accuracy:   mean=-0.023, SD=0.861
+    theta_confidence: mean=-0.014, SD=0.938
+  Destination:
+    theta_accuracy:   mean=0.022, SD=0.821
+    theta_confidence: mean=-0.007, SD=0.949
+
+Merge complete: 800 rows created
+
+======================================================================
+STEP 01: Compute Calibration per Location Type
+======================================================================
+
+Z-standardizing within each LocationType...
+
+  Source:
+    Accuracy:   mean=-0.023, SD=0.861
+    Confidence: mean=-0.014, SD=0.938
+    Z_accuracy:   mean=0.0000, SD=1.0000
+    Z_confidence: mean=-0.0000, SD=1.0000
+
+  Destination:
+    Accuracy:   mean=0.022, SD=0.821
+    Confidence: mean=-0.007, SD=0.949
+    Z_accuracy:   mean=0.0000, SD=1.0000
+    Z_confidence: mean=-0.0000, SD=1.0000
+
+Calibration computed:
+  calibration = Z_confidence - Z_accuracy
+  Positive = overconfidence, Negative = underconfidence, Zero = well-calibrated
+
+Calibration by LocationType:
+  Source: mean=-0.000, SD=0.792
+    -> WELL-CALIBRATED (|mean| < 0.1)
+  Destination: mean=-0.000, SD=1.034
+    -> WELL-CALIBRATED (|mean| < 0.1)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step01_calibration_by_location.csv
+  Rows: 800
+  Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence', 'Z_accuracy', 'Z_confidence', 'calibration']
+
+Calibration computed: 800 observations
+
+======================================================================
+STEP 02: Fit LMM Testing Location Effects on Calibration
+======================================================================
+
+Time variable: log_TSVR = log(TSVR_hours + 1)
+  Range: 0.69 to 5.51
+
+Fitting LMM: calibration ~ C(LocationType) * log_TSVR
+  Random effects: (1 | UID) - random intercepts only
+
+==================================================
+LMM Results
+==================================================
+                 Mixed Linear Model Regression Results
+=======================================================================
+Model:                  MixedLM     Dependent Variable:     calibration
+No. Observations:       800         Method:                 REML       
+No. Groups:             100         Scale:                  0.5629     
+Min. group size:        8           Log-Likelihood:         -994.0296  
+Max. group size:        8           Converged:              Yes        
+Mean group size:        8.0                                            
+-----------------------------------------------------------------------
+                             Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-----------------------------------------------------------------------
+Intercept                     0.156    0.100  1.557 0.119 -0.040  0.353
+LocationType_Source          -0.141    0.120 -1.174 0.240 -0.376  0.094
+log_TSVR                     -0.046    0.023 -2.051 0.040 -0.091 -0.002
+LocationType_Source:log_TSVR  0.042    0.032  1.309 0.191 -0.021  0.105
+Group Var                     0.286    0.072                           
+=======================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_lmm_calibration_summary.txt
+
+Fixed Effects:
+                      Effect  Estimate       SE         t  p_uncorrected  p_bonferroni  CI_lower  CI_upper
+                   Intercept  0.156240 0.100348  1.556973       0.119477      0.477907 -0.040443  0.352923
+         LocationType_Source -0.140960 0.120046 -1.174221       0.240306      0.961226 -0.376251  0.094330
+                    log_TSVR -0.046483 0.022665 -2.050874       0.040279      0.161117 -0.090907 -0.002060
+LocationType_Source:log_TSVR  0.041937 0.032038  1.308976       0.190543      0.762170 -0.020858  0.104733
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_location_effects.csv
+
+==================================================
+KEY HYPOTHESIS TESTS
+==================================================
+
+LocationType Main Effect (Source vs Destination):
+  Estimate: -0.1410
+  SE: 0.1200
+  t = -1.17
+  p_uncorrected = 0.2403
+  p_bonferroni = 0.9612
+  -> NOT SIGNIFICANT (p >= 0.05)
+
+LocationType x Time Interaction:
+  Estimate: 0.0419
+  SE: 0.0320
+  t = 1.31
+  p_uncorrected = 0.1905
+  p_bonferroni = 0.7622
+  -> NOT SIGNIFICANT: Calibration trajectories PARALLEL
+
+Model Fit Indices:
+  AIC: nan
+  BIC: nan
+  Log-Likelihood: -994.03
+
+Variance Components:
+  Participant intercept variance: 0.2859
+  Residual variance: 0.5629
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_effect_sizes.csv
+
+Effect Sizes (Cohen's f²):
+  Small: f² = 0.02, Medium: f² = 0.15, Large: f² = 0.35
+  LocationType_Source: f² = 0.0017 (negligible)
+  log_TSVR: f² = 0.0053 (negligible)
+  LocationType_Source:log_TSVR: f² = 0.0022 (negligible)
+
+LMM fitting complete
+
+======================================================================
+STEP 03: Prepare Calibration Plot Data
+======================================================================
+
+Mean TSVR by test: {'T1': 1.0, 'T2': 28.769699999999997, 'T3': 78.6681, 'T4': 151.3752}
+
+Plot Data:
+LocationType TEST  TSVR_hours  mean_calibration  CI_lower  CI_upper   n
+ Destination   T1      1.0000          0.126286 -0.069861  0.322433 100
+ Destination   T2     28.7697         -0.004048 -0.197262  0.189166 100
+ Destination   T3     78.6681         -0.085557 -0.302733  0.131619 100
+ Destination   T4    151.3752         -0.036681 -0.240661  0.167300 100
+      Source   T1      1.0000          0.027173 -0.121066  0.175412 100
+      Source   T2     28.7697         -0.026220 -0.183607  0.131167 100
+      Source   T3     78.6681         -0.036857 -0.195614  0.121899 100
+      Source   T4    151.3752          0.035904 -0.122461  0.194270 100
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step03_calibration_plot_data.csv
+  Rows: 8 (expected: 8 = 2 LocationTypes x 4 tests)
+
+==================================================
+CALIBRATION PATTERN INTERPRETATION
+==================================================
+
+Source:
+  T1 calibration: 0.027
+  T4 calibration: 0.036
+  Change (T4 - T1): 0.009
+  -> Initially WELL-CALIBRATED
+  -> Calibration STABLE over time
+
+Destination:
+  T1 calibration: 0.126
+  T4 calibration: -0.037
+  Change (T4 - T1): -0.163
+  -> Initially OVERCONFIDENT
+  -> Overconfidence DECREASES over time (calibration improves)
+
+Plot data preparation complete: 8 rows
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_accuracy_confidence_merged.csv
+  data/step01_calibration_by_location.csv
+  data/step02_lmm_calibration_summary.txt
+  data/step02_location_effects.csv
+  data/step02_effect_sizes.csv
+  data/step03_calibration_plot_data.csv
+
+======================================================================
+RQ 6.8.2: Source-Destination Calibration
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.2
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Merge Accuracy and Confidence by Location Type
+======================================================================
+
+Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.5.1/data/step04_lmm_input.csv
+  Accuracy data: 800 rows, columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'Days', 'log_Days_plus1', 'Days_squared', 'LocationType', 'LocationType_coded', 'theta', 'se']
+  After cleanup: 800 rows
+
+Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step04_lmm_input.csv
+  Confidence data: 800 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'log_TSVR', 'location', 'theta']
+  After cleanup: 800 rows
+
+Merging accuracy + confidence on UID x TEST x LocationType...
+  Merged data: 800 rows (expected: 800)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step00_accuracy_confidence_merged.csv
+  Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence']
+
+Descriptive Statistics:
+  Source:
+    theta_accuracy:   mean=-0.023, SD=0.861
+    theta_confidence: mean=-0.014, SD=0.938
+  Destination:
+    theta_accuracy:   mean=0.022, SD=0.821
+    theta_confidence: mean=-0.007, SD=0.949
+
+Merge complete: 800 rows created
+
+======================================================================
+STEP 01: Compute Calibration per Location Type
+======================================================================
+
+Z-standardizing within each LocationType...
+
+  Source:
+    Accuracy:   mean=-0.023, SD=0.861
+    Confidence: mean=-0.014, SD=0.938
+    Z_accuracy:   mean=0.0000, SD=1.0000
+    Z_confidence: mean=-0.0000, SD=1.0000
+
+  Destination:
+    Accuracy:   mean=0.022, SD=0.821
+    Confidence: mean=-0.007, SD=0.949
+    Z_accuracy:   mean=0.0000, SD=1.0000
+    Z_confidence: mean=-0.0000, SD=1.0000
+
+Calibration computed:
+  calibration = Z_confidence - Z_accuracy
+  Positive = overconfidence, Negative = underconfidence, Zero = well-calibrated
+
+Calibration by LocationType:
+  Source: mean=-0.000, SD=0.792
+    -> WELL-CALIBRATED (|mean| < 0.1)
+  Destination: mean=-0.000, SD=1.034
+    -> WELL-CALIBRATED (|mean| < 0.1)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step01_calibration_by_location.csv
+  Rows: 800
+  Columns: ['UID', 'TEST', 'LocationType', 'theta_accuracy', 'TSVR_hours', 'theta_confidence', 'Z_accuracy', 'Z_confidence', 'calibration']
+
+Calibration computed: 800 observations
+
+======================================================================
+STEP 02: Fit LMM Testing Location Effects on Calibration
+======================================================================
+
+Time variable: log_TSVR = log(TSVR_hours + 1)
+  Range: 0.69 to 5.51
+
+Fitting LMM: calibration ~ C(LocationType) * log_TSVR
+  Random effects: (1 | UID) - random intercepts only
+
+==================================================
+LMM Results
+==================================================
+                 Mixed Linear Model Regression Results
+=======================================================================
+Model:                  MixedLM     Dependent Variable:     calibration
+No. Observations:       800         Method:                 REML       
+No. Groups:             100         Scale:                  0.5629     
+Min. group size:        8           Log-Likelihood:         -994.0296  
+Max. group size:        8           Converged:              Yes        
+Mean group size:        8.0                                            
+-----------------------------------------------------------------------
+                             Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+-----------------------------------------------------------------------
+Intercept                     0.156    0.100  1.557 0.119 -0.040  0.353
+LocationType_Source          -0.141    0.120 -1.174 0.240 -0.376  0.094
+log_TSVR                     -0.046    0.023 -2.051 0.040 -0.091 -0.002
+LocationType_Source:log_TSVR  0.042    0.032  1.309 0.191 -0.021  0.105
+Group Var                     0.286    0.072                           
+=======================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_lmm_calibration_summary.txt
+
+Fixed Effects:
+                      Effect  Estimate       SE         t  p_uncorrected  p_bonferroni  CI_lower  CI_upper
+                   Intercept  0.156240 0.100348  1.556973       0.119477      0.477907 -0.040443  0.352923
+         LocationType_Source -0.140960 0.120046 -1.174221       0.240306      0.961226 -0.376251  0.094330
+                    log_TSVR -0.046483 0.022665 -2.050874       0.040279      0.161117 -0.090907 -0.002060
+LocationType_Source:log_TSVR  0.041937 0.032038  1.308976       0.190543      0.762170 -0.020858  0.104733
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_location_effects.csv
+
+==================================================
+KEY HYPOTHESIS TESTS
+==================================================
+
+LocationType Main Effect (Source vs Destination):
+  Estimate: -0.1410
+  SE: 0.1200
+  t = -1.17
+  p_uncorrected = 0.2403
+  p_bonferroni = 0.9612
+  -> NOT SIGNIFICANT (p >= 0.05)
+
+LocationType x Time Interaction:
+  Estimate: 0.0419
+  SE: 0.0320
+  t = 1.31
+  p_uncorrected = 0.1905
+  p_bonferroni = 0.7622
+  -> NOT SIGNIFICANT: Calibration trajectories PARALLEL
+
+Model Fit Indices:
+  AIC: nan
+  BIC: nan
+  Log-Likelihood: -994.03
+
+Variance Components:
+  Participant intercept variance: 0.2859
+  Residual variance: 0.5629
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step02_effect_sizes.csv
+
+Effect Sizes (Cohen's f²):
+  Small: f² = 0.02, Medium: f² = 0.15, Large: f² = 0.35
+  LocationType_Source: f² = 0.0017 (negligible)
+  log_TSVR: f² = 0.0053 (negligible)
+  LocationType_Source:log_TSVR: f² = 0.0022 (negligible)
+
+LMM fitting complete
+
+======================================================================
+STEP 03: Prepare Calibration Plot Data
+======================================================================
+
+Mean TSVR by test: {'T1': 1.0, 'T2': 28.769699999999997, 'T3': 78.6681, 'T4': 151.3752}
+
+Plot Data:
+LocationType TEST  TSVR_hours  mean_calibration  CI_lower  CI_upper   n
+ Destination   T1      1.0000          0.126286 -0.069861  0.322433 100
+ Destination   T2     28.7697         -0.004048 -0.197262  0.189166 100
+ Destination   T3     78.6681         -0.085557 -0.302733  0.131619 100
+ Destination   T4    151.3752         -0.036681 -0.240661  0.167300 100
+      Source   T1      1.0000          0.027173 -0.121066  0.175412 100
+      Source   T2     28.7697         -0.026220 -0.183607  0.131167 100
+      Source   T3     78.6681         -0.036857 -0.195614  0.121899 100
+      Source   T4    151.3752          0.035904 -0.122461  0.194270 100
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.2/data/step03_calibration_plot_data.csv
+  Rows: 8 (expected: 8 = 2 LocationTypes x 4 tests)
+
+==================================================
+CALIBRATION PATTERN INTERPRETATION
+==================================================
+
+Source:
+  T1 calibration: 0.027
+  T4 calibration: 0.036
+  Change (T4 - T1): 0.009
+  -> Initially WELL-CALIBRATED
+  -> Calibration STABLE over time
+
+Destination:
+  T1 calibration: 0.126
+  T4 calibration: -0.037
+  Change (T4 - T1): -0.163
+  -> Initially OVERCONFIDENT
+  -> Overconfidence DECREASES over time (calibration improves)
+
+Plot data preparation complete: 8 rows
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_accuracy_confidence_merged.csv
+  data/step01_calibration_by_location.csv
+  data/step02_lmm_calibration_summary.txt
+  data/step02_location_effects.csv
+  data/step02_effect_sizes.csv
+  data/step03_calibration_plot_data.csv

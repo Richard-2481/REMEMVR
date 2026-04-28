@@ -1,0 +1,150 @@
+Step 03: Extract 3-Way Interaction Terms
+Loading LMM model from Step 2...
+LMM model from /home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_lmm_model.pkl
+Model has 18 fixed effects parameters
+Extracting fixed effects table...
+Extracted 21 fixed effects
+Identifying 3-way interaction terms...
+Found 0 three-way interaction terms
+Missing interaction terms: {"log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]", "log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]", "TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]", "TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]"}
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.4/code/step03_extract_interactions.py", line 193, in <module>
+    raise ValueError(f"Missing interaction terms: {missing}")
+ValueError: Missing interaction terms: {"log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]", "log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]", "TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]", "TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]"}
+Step 03: Extract 3-Way Interaction Terms
+Loading LMM model from Step 2...
+'NoneType' object has no attribute 'f_locals'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.4/code/step03_extract_interactions.py", line 74, in <module>
+    lmm_model = pickle.load(f)
+                ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 112, in __setstate__
+    _, design = dmatrices(d['formula'], data, eval_env=depth,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/highlevel.py", line 316, in dmatrices
+    eval_env = EvalEnvironment.capture(eval_env, reference=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/eval.py", line 242, in capture
+    [frame.f_locals, frame.f_globals],
+     ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'f_locals'
+Step 03: Extract 3-Way Interaction Terms
+Loading fixed effects from Step 2...
+18 fixed effects from /home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_fixed_effects.csv
+All fixed effect terms:
+  Intercept
+  C(paradigm, Treatment('IFR'))[T.ICR]
+  C(paradigm, Treatment('IFR'))[T.IRE]
+  TSVR_hours
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.ICR]
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.IRE]
+  log_TSVR
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.ICR]
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.IRE]
+  Age_c
+  Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+  TSVR_hours:Age_c
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+  log_TSVR:Age_c
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+Identifying 3-way interaction terms...
+Found 4 three-way interaction terms
+  Found: TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  Found: TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+  Found: log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  Found: log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+Applying Bonferroni correction for 2 time transformations...
+Bonferroni multiplier: 2
+Family-wise alpha: 0.025
+3-Way Interaction Terms:
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+    coef=0.000031, SE=0.000080, z=0.386
+    p_uncorrected=0.6997, p_bonferroni=1.0000
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+    coef=-0.000018, SE=0.000080, z=-0.232
+    p_uncorrected=0.8169, p_bonferroni=1.0000
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+    coef=-0.001044, SE=0.002788, z=-0.374
+    p_uncorrected=0.7081, p_bonferroni=1.0000
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+    coef=0.000743, SE=0.002788, z=0.266
+    p_uncorrected=0.7900, p_bonferroni=1.0000
+Saving interaction terms...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step03_interaction_terms.csv
+Saved 4 interaction terms with 7 columns
+Checking output format...
+Row count: 4 three-way interaction terms
+Column count: 7 columns
+Dual p-values present (Decision D068 compliance)
+No NaN values
+Significant at Bonferroni alpha=0.025: 0 of 4 terms
+Step 03 complete
+Extracted: 4 three-way interaction terms
+  Bonferroni correction: × 2
+  Significant (p_bonferroni < 0.025): 0
+  Output: data/step03_interaction_terms.csv
+  Ready for Step 4 (compute age effects and post-hoc contrasts)
+Step 03: Extract 3-Way Interaction Terms
+Loading fixed effects from Step 2...
+18 fixed effects from /home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step02_fixed_effects.csv
+All fixed effect terms:
+  Intercept
+  C(paradigm, Treatment('IFR'))[T.ICR]
+  C(paradigm, Treatment('IFR'))[T.IRE]
+  TSVR_hours
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.ICR]
+  TSVR_hours:C(paradigm, Treatment('IFR'))[T.IRE]
+  log_TSVR
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.ICR]
+  log_TSVR:C(paradigm, Treatment('IFR'))[T.IRE]
+  Age_c
+  Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+  TSVR_hours:Age_c
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+  log_TSVR:Age_c
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+Identifying 3-way interaction terms...
+Found 4 three-way interaction terms
+  Found: TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  Found: TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+  Found: log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+  Found: log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+Applying Bonferroni correction for 2 time transformations...
+Bonferroni multiplier: 2
+Family-wise alpha: 0.025
+3-Way Interaction Terms:
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+    coef=0.000031, SE=0.000083, z=0.371
+    p_uncorrected=0.7105, p_bonferroni=1.0000
+  TSVR_hours:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+    coef=-0.000018, SE=0.000083, z=-0.223
+    p_uncorrected=0.8237, p_bonferroni=1.0000
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.ICR]
+    coef=-0.001044, SE=0.002898, z=-0.360
+    p_uncorrected=0.7187, p_bonferroni=1.0000
+  log_TSVR:Age_c:C(paradigm, Treatment('IFR'))[T.IRE]
+    coef=0.000743, SE=0.002898, z=0.256
+    p_uncorrected=0.7977, p_bonferroni=1.0000
+Saving interaction terms...
+/home/etai/projects/REMEMVR/results/ch5/5.3.4/data/step03_interaction_terms.csv
+Saved 4 interaction terms with 7 columns
+Checking output format...
+Row count: 4 three-way interaction terms
+Column count: 7 columns
+Dual p-values present (Decision D068 compliance)
+No NaN values
+Significant at Bonferroni alpha=0.025: 0 of 4 terms
+Step 03 complete
+Extracted: 4 three-way interaction terms
+  Bonferroni correction: × 2
+  Significant (p_bonferroni < 0.025): 0
+  Output: data/step03_interaction_terms.csv
+  Ready for Step 4 (compute age effects and post-hoc contrasts)

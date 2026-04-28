@@ -1,0 +1,204 @@
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] RQ 6.7.3: Calibration Predicts Trajectory Stability
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] 
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] STEP 00: Extract Calibration and Compute Residuals
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] Loading calibration scores from /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+[2025-12-12 14:41:26] Loaded 400 calibration scores from RQ 6.2.1
+[2025-12-12 14:41:26] Filtered to 100 Day 0 (T1) calibration scores
+[2025-12-12 14:41:26] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step00_calibration_day0.csv (100 rows)
+[2025-12-12 14:41:26] Loading LMM input from /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step04_lmm_input.csv
+[2025-12-12 14:41:26] Loaded 400 observations from Ch5 5.1.1
+[2025-12-12 14:41:26] Refitting best model: theta ~ time_powerlaw + (1 | UID), alpha=0.4
+[2025-12-12 14:41:26] Model converged: True
+[2025-12-12 14:41:26] Fixed effects: intercept=-0.5403, slope=1.6456
+[2025-12-12 14:41:26] Residuals computed: mean=0.0000, SD=0.5321
+[2025-12-12 14:41:26] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step00_trajectory_residuals.csv (400 rows)
+[2025-12-12 14:41:26] Step 00 COMPLETE: Extracted 100 Day 0 calibration scores and 400 residuals
+[2025-12-12 14:41:26] All 100 participants have complete data
+[2025-12-12 14:41:26] 
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] STEP 01: Compute Trajectory Variability
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] Computed trajectory variability for 100 participants
+[2025-12-12 14:41:26] Mean variability: 0.5575, SD variability: 0.2086
+[2025-12-12 14:41:26] Range: [0.1642, 1.0857]
+[2025-12-12 14:41:26] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step01_trajectory_variability.csv (100 rows)
+[2025-12-12 14:41:26] Step 01 COMPLETE: Computed trajectory variability for 100 participants
+[2025-12-12 14:41:26] 
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] STEP 02: Merge Calibration and Variability
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] Merged calibration and variability: 100 participants with complete data
+[2025-12-12 14:41:26] Calibration: mean=-0.1160, SD=0.8901
+[2025-12-12 14:41:26] Variability: mean=0.5575, SD=0.2086
+[2025-12-12 14:41:26] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step02_calibration_variability.csv (100 rows)
+[2025-12-12 14:41:26] Step 02 COMPLETE: Merged calibration and variability (100 participants)
+[2025-12-12 14:41:26] 
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] STEP 03: Compute Correlation with Dual P-Values (D068)
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] Pearson r = 0.0195, p (one-tailed) = 0.4235, p (two-tailed) = 0.8470
+[2025-12-12 14:41:26] Effect size: negligible
+[2025-12-12 14:41:26] Direction: null
+[2025-12-12 14:41:26] Sample size: N = 100
+[2025-12-12 14:41:26] NOT significant at alpha=0.05 (two-tailed)
+[2025-12-12 14:41:26] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step03_correlation.csv (1 row)
+[2025-12-12 14:41:26] Step 03 COMPLETE: Correlation computed with D068 dual p-values
+[2025-12-12 14:41:26] 
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] STEP 04: Prepare Scatterplot Data
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] Regression line: y = 0.0046x + 0.5580
+[2025-12-12 14:41:26] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step04_scatterplot_data.csv (100 rows)
+[2025-12-12 14:41:26] Step 04 COMPLETE: Plot data prepared with regression line
+[2025-12-12 14:41:26] 
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] ALL STEPS COMPLETE
+[2025-12-12 14:41:26] ======================================================================
+[2025-12-12 14:41:26] 
+[2025-12-12 14:41:26] SUMMARY:
+[2025-12-12 14:41:26]   Pearson r = 0.0195
+[2025-12-12 14:41:26]   p (two-tailed) = 0.8470
+[2025-12-12 14:41:26]   Effect size: negligible
+[2025-12-12 14:41:26]   Direction: null
+[2025-12-12 14:41:26] 
+[2025-12-12 14:41:26] HYPOTHESIS STATUS: NOT SUPPORTED - No significant relationship found
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] RQ 6.7.3: Calibration Predicts Trajectory Stability
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] 
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] STEP 00: Extract Calibration and Compute Residuals
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] Loading calibration scores from /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+[2026-01-17 14:16:43] Loaded 400 calibration scores from RQ 6.2.1
+[2026-01-17 14:16:43] Filtered to 100 Day 0 (T1) calibration scores
+[2026-01-17 14:16:43] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step00_calibration_day0.csv (100 rows)
+[2026-01-17 14:16:43] Loading LMM input from /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step04_lmm_input.csv
+[2026-01-17 14:16:43] Loaded 400 observations from Ch5 5.1.1
+[2026-01-17 14:16:43] Refitting best model: theta ~ time_powerlaw + (1 | UID), alpha=0.4
+[2026-01-17 14:16:43] Model converged: True
+[2026-01-17 14:16:43] Fixed effects: intercept=-0.5403, slope=1.6456
+[2026-01-17 14:16:43] Residuals computed: mean=0.0000, SD=0.5321
+[2026-01-17 14:16:43] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step00_trajectory_residuals.csv (400 rows)
+[2026-01-17 14:16:43] Step 00 COMPLETE: Extracted 100 Day 0 calibration scores and 400 residuals
+[2026-01-17 14:16:43] All 100 participants have complete data
+[2026-01-17 14:16:43] 
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] STEP 01: Compute Trajectory Variability
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] Computed trajectory variability for 100 participants
+[2026-01-17 14:16:43] Mean variability: 0.5575, SD variability: 0.2086
+[2026-01-17 14:16:43] Range: [0.1642, 1.0857]
+[2026-01-17 14:16:43] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step01_trajectory_variability.csv (100 rows)
+[2026-01-17 14:16:43] Step 01 COMPLETE: Computed trajectory variability for 100 participants
+[2026-01-17 14:16:43] 
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] STEP 02: Merge Calibration and Variability
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] Merged calibration and variability: 100 participants with complete data
+[2026-01-17 14:16:43] Calibration: mean=-0.0081, SD=0.8632
+[2026-01-17 14:16:43] Variability: mean=0.5575, SD=0.2086
+[2026-01-17 14:16:43] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step02_calibration_variability.csv (100 rows)
+[2026-01-17 14:16:43] Step 02 COMPLETE: Merged calibration and variability (100 participants)
+[2026-01-17 14:16:43] 
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] STEP 03: Compute Correlation with Dual P-Values (D068)
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] Pearson r = -0.0954, p (one-tailed) = 0.1725, p (two-tailed) = 0.3449
+[2026-01-17 14:16:43] Effect size: negligible
+[2026-01-17 14:16:43] Direction: null
+[2026-01-17 14:16:43] Sample size: N = 100
+[2026-01-17 14:16:43] NOT significant at alpha=0.05 (two-tailed)
+[2026-01-17 14:16:43] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step03_correlation.csv (1 row)
+[2026-01-17 14:16:43] Step 03 COMPLETE: Correlation computed with D068 dual p-values
+[2026-01-17 14:16:43] 
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] STEP 04: Prepare Scatterplot Data
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] Regression line: y = -0.0231x + 0.5573
+[2026-01-17 14:16:43] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step04_scatterplot_data.csv (100 rows)
+[2026-01-17 14:16:43] Step 04 COMPLETE: Plot data prepared with regression line
+[2026-01-17 14:16:43] 
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] ALL STEPS COMPLETE
+[2026-01-17 14:16:43] ======================================================================
+[2026-01-17 14:16:43] 
+[2026-01-17 14:16:43] SUMMARY:
+[2026-01-17 14:16:43]   Pearson r = -0.0954
+[2026-01-17 14:16:43]   p (two-tailed) = 0.3449
+[2026-01-17 14:16:43]   Effect size: negligible
+[2026-01-17 14:16:43]   Direction: null
+[2026-01-17 14:16:43] 
+[2026-01-17 14:16:43] HYPOTHESIS STATUS: NOT SUPPORTED - No significant relationship found
+[2026-01-17 14:31:18] ======================================================================
+[2026-01-17 14:31:18] RQ 6.7.3: Calibration Predicts Trajectory Stability
+[2026-01-17 14:31:18] ======================================================================
+[2026-01-17 14:31:18] 
+[2026-01-17 14:31:18] ======================================================================
+[2026-01-17 14:31:18] STEP 00: Extract Calibration and Compute Residuals
+[2026-01-17 14:31:18] ======================================================================
+[2026-01-17 14:31:18] Loading calibration scores from /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+[2026-01-17 14:31:18] Loaded 400 calibration scores from RQ 6.2.1
+[2026-01-17 14:31:18] Filtered to 100 Day 0 (T1) calibration scores
+[2026-01-17 14:31:18] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step00_calibration_day0.csv (100 rows)
+[2026-01-17 14:31:18] Loading LMM input from /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step04_lmm_input.csv
+[2026-01-17 14:31:18] Loaded 400 observations from Ch5 5.1.1
+[2026-01-17 14:31:18] Refitting best model: theta ~ time_powerlaw + (1 | UID), alpha=0.4
+[2026-01-17 14:31:18] Model converged: True
+[2026-01-17 14:31:18] Fixed effects: intercept=-0.5403, slope=1.6456
+[2026-01-17 14:31:19] Residuals computed: mean=0.0000, SD=0.5321
+[2026-01-17 14:31:19] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step00_trajectory_residuals.csv (400 rows)
+[2026-01-17 14:31:19] Step 00 COMPLETE: Extracted 100 Day 0 calibration scores and 400 residuals
+[2026-01-17 14:31:19] All 100 participants have complete data
+[2026-01-17 14:31:19] 
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] STEP 01: Compute Trajectory Variability
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] Computed trajectory variability for 100 participants
+[2026-01-17 14:31:19] Mean variability: 0.5575, SD variability: 0.2086
+[2026-01-17 14:31:19] Range: [0.1642, 1.0857]
+[2026-01-17 14:31:19] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step01_trajectory_variability.csv (100 rows)
+[2026-01-17 14:31:19] Step 01 COMPLETE: Computed trajectory variability for 100 participants
+[2026-01-17 14:31:19] 
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] STEP 02: Merge Calibration and Variability
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] Merged calibration and variability: 100 participants with complete data
+[2026-01-17 14:31:19] Calibration: mean=-0.0081, SD=0.8632
+[2026-01-17 14:31:19] Variability: mean=0.5575, SD=0.2086
+[2026-01-17 14:31:19] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step02_calibration_variability.csv (100 rows)
+[2026-01-17 14:31:19] Step 02 COMPLETE: Merged calibration and variability (100 participants)
+[2026-01-17 14:31:19] 
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] STEP 03: Compute Correlation with Dual P-Values (D068)
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] Pearson r = -0.0954, p (one-tailed) = 0.1725, p (two-tailed) = 0.3449
+[2026-01-17 14:31:19] Effect size: negligible
+[2026-01-17 14:31:19] Direction: null
+[2026-01-17 14:31:19] Sample size: N = 100
+[2026-01-17 14:31:19] NOT significant at alpha=0.05 (two-tailed)
+[2026-01-17 14:31:19] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step03_correlation.csv (1 row)
+[2026-01-17 14:31:19] Step 03 COMPLETE: Correlation computed with D068 dual p-values
+[2026-01-17 14:31:19] 
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] STEP 04: Prepare Scatterplot Data
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] Regression line: y = -0.0231x + 0.5573
+[2026-01-17 14:31:19] Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.3/data/step04_scatterplot_data.csv (100 rows)
+[2026-01-17 14:31:19] Step 04 COMPLETE: Plot data prepared with regression line
+[2026-01-17 14:31:19] 
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] ALL STEPS COMPLETE
+[2026-01-17 14:31:19] ======================================================================
+[2026-01-17 14:31:19] 
+[2026-01-17 14:31:19] SUMMARY:
+[2026-01-17 14:31:19]   Pearson r = -0.0954
+[2026-01-17 14:31:19]   p (two-tailed) = 0.3449
+[2026-01-17 14:31:19]   Effect size: negligible
+[2026-01-17 14:31:19]   Direction: null
+[2026-01-17 14:31:19] 
+[2026-01-17 14:31:19] HYPOTHESIS STATUS: NOT SUPPORTED - No significant relationship found

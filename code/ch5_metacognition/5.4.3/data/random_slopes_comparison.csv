@@ -1,0 +1,3 @@
+model,converged,aic,bic,loglik,delta_aic,delta_bic,random_intercept_var,random_slope_var,outcome,action
+Intercepts_Only,True,475.44315977209226,546.7042354729575,-223.72157988604613,0.0,0.0,0.2029028575918289,0.0,Option A: Slopes improve fit (ΔAIC > 2),Should use slopes model for downstream analyses (heterogeneous effects confirmed)
+Intercepts_Slopes,True,260.1833030478756,341.62453242029306,-114.0916515239378,215.25985672421666,205.07970305266446,0.22083992706623565,0.006290712838176586,Option A: Slopes improve fit (ΔAIC > 2),Should use slopes model for downstream analyses (heterogeneous effects confirmed)

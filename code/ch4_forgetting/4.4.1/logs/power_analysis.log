@@ -1,0 +1,95 @@
+======================================================================
+POST-HOC POWER ANALYSIS - NULL FINDINGS
+======================================================================
+Date: 2025-12-27
+Purpose: Determine if null schema effects are conclusive vs underpowered
+
+Loading effect sizes from step06...
+  Loaded 5 effect sizes
+
+Observed Effect Sizes (Cohen's f²):
+----------------------------------------
+
+'cohens_f2'
+======================================================================
+POST-HOC POWER ANALYSIS - NULL FINDINGS
+======================================================================
+Date: 2025-12-27
+Purpose: Determine if null schema effects are conclusive vs underpowered
+
+Loading effect sizes from step06...
+  Loaded 5 effect sizes
+
+Observed Effect Sizes (Cohen's f²):
+----------------------------------------
+  C(congruence, Treatment('common'))[T.congruent]: f² = 0.000284
+  C(congruence, Treatment('common'))[T.incongruent]: f² = 0.000501
+  TSVR_log                      : f² = 0.053088
+  TSVR_log:C(congruence, Treatment('common'))[T.congruent]: f² = 0.000389
+  TSVR_log:C(congruence, Treatment('common'))[T.incongruent]: f² = 0.000481
+
+======================================================================
+POWER ANALYSIS: INTERACTION EFFECTS (PRIMARY HYPOTHESIS)
+======================================================================
+
+Study Design:
+  N participants: 100
+  N observations: 1200
+  Predictors tested: 2 interaction terms
+  Alpha: 0.05
+
+Effect: TSVR_log:C(congruence, Treatment('common'))[T.congruent]
+  Observed f² = 0.000389
+  Post-hoc power = 0.0867
+  Power for small effect (f²=0.02) = 0.9952
+  Power for medium effect (f²=0.15) = 1.0000
+  N for 0.80 power at observed f² = 24767
+  N for 0.80 power at f²=0.02 = 485
+
+Effect: TSVR_log:C(congruence, Treatment('common'))[T.incongruent]
+  Observed f² = 0.000481
+  Post-hoc power = 0.0959
+  Power for small effect (f²=0.02) = 0.9952
+  Power for medium effect (f²=0.15) = 1.0000
+  N for 0.80 power at observed f² = 20050
+  N for 0.80 power at f²=0.02 = 485
+
+======================================================================
+EQUIVALENCE TESTING (TOST)
+======================================================================
+
+Purpose: Test if effects are statistically equivalent to zero
+H0: |effect| >= equivalence bound (NOT equivalent to zero)
+H1: |effect| < equivalence bound (equivalent to zero)
+
+Equivalence bound: f² < 0.02 (smaller than small effect)
+
+TOST Results:
+------------------------------------------------------------
+  TSVR_log:C(congruence, Treatment('common'))[T.congruent]: f² = 0.000389
+    Observed f² < 0.02 (smaller than small effect)
+    Preliminary conclusion: Effect likely equivalent to zero
+
+  TSVR_log:C(congruence, Treatment('common'))[T.incongruent]: f² = 0.000481
+    Observed f² < 0.02 (smaller than small effect)
+    Preliminary conclusion: Effect likely equivalent to zero
+
+======================================================================
+INTERPRETATION
+======================================================================
+
+WELL-POWERED FOR SMALL EFFECTS
+
+The study is WELL-POWERED (>0.80) to detect small effects.
+Null findings are CONCLUSIVE - schema effects are absent or negligible.
+
+RECOMMENDATION:
+  - Null findings are robust
+  - If true effects exist, they are smaller than f² = 0.02 (very small)
+  - Claim "no meaningful schema effects" is justified
+
+
+Writing power analysis report...
+power_analysis.txt
+
+Power analysis complete

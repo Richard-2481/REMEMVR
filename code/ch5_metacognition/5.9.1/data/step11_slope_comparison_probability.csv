@@ -1,0 +1,2 @@
+acc_a,acc_b,conf_a,conf_b,baseline_theta_acc,baseline_theta_conf,prob_baseline_acc,prob_baseline_conf,dP_dtheta_acc,dP_dtheta_conf,prob_slope_acc,prob_slope_conf,prob_slope_diff,prob_slope_ratio,interpretation
+0.7754908076136363,-0.39073535622182215,1.311857106857143,0.002351225737393612,0.66065131715,0.7092756315699998,0.693246406030971,0.7165442151103643,0.1649126386797455,0.26644946418112403,-0.0011466837396806198,-0.0019227417945410022,-0.0007760580548603823,1.6767847384637493,Confidence declines FASTER than accuracy on probability scale

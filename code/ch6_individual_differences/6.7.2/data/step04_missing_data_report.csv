@@ -1,0 +1,6 @@
+variable,n_missing,percent_missing,pattern
+Age,0,0.0,complete
+Education,0,0.0,complete
+VR_Experience,0,0.0,complete
+NART,3,3.0,random
+BVMT,0,0.0,complete

@@ -1,0 +1,471 @@
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 178.897466
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 139.036436
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 139.033784
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 178.897466
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 159.118417
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 168.654786
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 148.362331
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 138.206003
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+================================================================================
+Step 05: Kitchen Sink LMM - Congruence Interaction
+================================================================================
+Loading LMM input data...
+  ✓ Loaded 1200 rows (100 participants × 3 congruence levels)
+  ✓ Congruence: ['Common', 'Congruent', 'Incongruent']
+Running kitchen sink with congruence interaction...
+[2025-12-10 15:13:07] ================================================================================
+[2025-12-10 15:13:07] LMM Model Selection: Kitchen Sink Suite
+[2025-12-10 15:13:07] ================================================================================
+[2025-12-10 15:13:07] Checking inputs...
+[2025-12-10 15:13:07]   TSVR variable: TSVR_hours
+[2025-12-10 15:13:07]   TSVR range: [1.00, 246.24] hours
+[2025-12-10 15:13:07]   TSVR unique values: 295
+[2025-12-10 15:13:07]   Outcome: theta
+[2025-12-10 15:13:07]   Groups: UID (N=100)
+[2025-12-10 15:13:07]   N observations: 1200
+[2025-12-10 15:13:07]   Factor 1: congruence (categorical, ref=Common)
+[2025-12-10 15:13:07]   Interaction: 1-way (time × factor1)
+[2025-12-10 15:13:07]   Random effects: ~TSVR_hours
+[2025-12-10 15:13:07]   REML: False
+[2025-12-10 15:13:07] Creating time transformations...
+[2025-12-10 15:13:07]   Polynomial family...
+[2025-12-10 15:13:07]   Logarithmic family...
+[2025-12-10 15:13:07]   Power law family...
+[2025-12-10 15:13:07]   Root family...
+[2025-12-10 15:13:07]   Reciprocal family...
+[2025-12-10 15:13:07]   Exponential family...
+[2025-12-10 15:13:07]   Trigonometric family...
+[2025-12-10 15:13:07]   Hyperbolic family...
+[2025-12-10 15:13:07]   Total transformations created: 32
+[2025-12-10 15:13:07] Defining model suite...
+[2025-12-10 15:13:07]   Total models defined: 66
+[2025-12-10 15:13:07] Building model formulas...
+[2025-12-10 15:13:07]   Example formula (Linear): theta ~ TSVR * C(congruence, Treatment('Common'))
+[2025-12-10 15:13:07]   Example formula (Log): theta ~ log_TSVR * C(congruence, Treatment('Common'))
+[2025-12-10 15:13:07] Fitting all models...
+[2025-12-10 15:13:07]   This may take 5-10 minutes for 66 models...
+[2025-12-10 15:13:07]   [1/66] Fitting Linear...
+[2025-12-10 15:13:08]     ✓ AIC=1107.65, converged=False
+[2025-12-10 15:13:08]   [2/66] Fitting Quadratic...
+[2025-12-10 15:13:09]     ✓ AIC=1080.44, converged=False
+[2025-12-10 15:13:09]   [3/66] Fitting Cubic...
+[2025-12-10 15:13:09]     ✓ AIC=1079.12, converged=False
+[2025-12-10 15:13:09]   [4/66] Fitting Quartic...
+[2025-12-10 15:13:09]     ✓ AIC=339.70, converged=True
+[2025-12-10 15:13:09]   [5/66] Fitting Quadratic_pure...
+[2025-12-10 15:13:09]     ✓ AIC=536.33, converged=True
+[2025-12-10 15:13:09]   [6/66] Fitting Cubic_pure...
+[2025-12-10 15:13:10]     ✓ AIC=524.74, converged=True
+[2025-12-10 15:13:10]   [7/66] Fitting Log...
+[2025-12-10 15:13:10]     ✓ AIC=342.57, converged=True
+[2025-12-10 15:13:10]   [8/66] Fitting Log2...
+[2025-12-10 15:13:10]     ✓ AIC=342.57, converged=True
+[2025-12-10 15:13:10]   [9/66] Fitting Log10...
+[2025-12-10 15:13:10]     ✓ AIC=342.57, converged=True
+[2025-12-10 15:13:10]   [10/66] Fitting LogLog...
+[2025-12-10 15:13:10]     ✓ AIC=347.80, converged=True
+[2025-12-10 15:13:10]   [11/66] Fitting Lin+Log...
+[2025-12-10 15:13:10]     ✓ AIC=344.23, converged=True
+[2025-12-10 15:13:10]   [12/66] Fitting Quad+Log...
+[2025-12-10 15:13:10]     ✓ AIC=345.20, converged=True
+[2025-12-10 15:13:10]   [13/66] Fitting Log+LogLog...
+[2025-12-10 15:13:10]     ✓ AIC=342.92, converged=True
+[2025-12-10 15:13:10]   [14/66] Fitting Lin+Quad+Log...
+[2025-12-10 15:13:11]     ✓ AIC=345.20, converged=True
+[2025-12-10 15:13:11]   [15/66] Fitting PowerLaw_01...
+[2025-12-10 15:13:11]     ✓ AIC=341.69, converged=True
+[2025-12-10 15:13:11]   [16/66] Fitting PowerLaw_02...
+[2025-12-10 15:13:11]     ✓ AIC=342.01, converged=True
+[2025-12-10 15:13:11]   [17/66] Fitting PowerLaw_03...
+[2025-12-10 15:13:11]     ✓ AIC=343.31, converged=True
+[2025-12-10 15:13:11]   [18/66] Fitting PowerLaw_04...
+[2025-12-10 15:13:11]     ✓ AIC=345.36, converged=True
+[2025-12-10 15:13:11]   [19/66] Fitting PowerLaw_05...
+[2025-12-10 15:13:11]     ✓ AIC=347.96, converged=True
+[2025-12-10 15:13:11]   [20/66] Fitting PowerLaw_06...
+[2025-12-10 15:13:11]     ✓ AIC=350.91, converged=True
+[2025-12-10 15:13:11]   [21/66] Fitting PowerLaw_07...
+[2025-12-10 15:13:11]     ✓ AIC=354.06, converged=True
+[2025-12-10 15:13:11]   [22/66] Fitting PowerLaw_08...
+[2025-12-10 15:13:12]     ✓ AIC=357.29, converged=True
+[2025-12-10 15:13:12]   [23/66] Fitting PowerLaw_09...
+[2025-12-10 15:13:12]     ✓ AIC=360.49, converged=True
+[2025-12-10 15:13:12]   [24/66] Fitting PowerLaw_10...
+[2025-12-10 15:13:12]     ✓ AIC=363.60, converged=True
+[2025-12-10 15:13:12]   [25/66] Fitting PowerLaw_Log...
+[2025-12-10 15:13:12]     ✓ AIC=343.37, converged=True
+[2025-12-10 15:13:12]   [26/66] Fitting PowerLaw_Lin...
+[2025-12-10 15:13:12]     ✓ AIC=341.60, converged=True
+[2025-12-10 15:13:12]   [27/66] Fitting SquareRoot...
+[2025-12-10 15:13:12]     ✓ AIC=338.83, converged=True
+[2025-12-10 15:13:12]   [28/66] Fitting CubeRoot...
+[2025-12-10 15:13:12]     ✓ AIC=338.88, converged=True
+[2025-12-10 15:13:12]   [29/66] Fitting FourthRoot...
+[2025-12-10 15:13:13]     ✓ AIC=344.38, converged=True
+[2025-12-10 15:13:13]   [30/66] Fitting Root_033...
+[2025-12-10 15:13:13]     ✓ AIC=338.90, converged=True
+[2025-12-10 15:13:13]   [31/66] Fitting Root_067...
+[2025-12-10 15:13:13]     ✓ AIC=358.45, converged=True
+[2025-12-10 15:13:13]   [32/66] Fitting SquareRoot+Log...
+[2025-12-10 15:13:13]     ✓ AIC=339.96, converged=True
+[2025-12-10 15:13:13]   [33/66] Fitting CubeRoot+Log...
+[2025-12-10 15:13:13]     ✓ AIC=340.03, converged=True
+[2025-12-10 15:13:13]   [34/66] Fitting SquareRoot+Lin...
+[2025-12-10 15:13:13]     ✓ AIC=339.17, converged=True
+[2025-12-10 15:13:13]   [35/66] Fitting Root_Multi...
+[2025-12-10 15:13:13]     ✓ AIC=338.56, converged=True
+[2025-12-10 15:13:13]   [36/66] Fitting Reciprocal...
+[2025-12-10 15:13:13]     ✓ AIC=363.60, converged=True
+[2025-12-10 15:13:13]   [37/66] Fitting Recip+Log...
+[2025-12-10 15:13:14]     ✓ AIC=342.95, converged=True
+[2025-12-10 15:13:14]   [38/66] Fitting Recip+Lin...
+[2025-12-10 15:13:14]     ✓ AIC=339.88, converged=True
+[2025-12-10 15:13:14]   [39/66] Fitting Recip+Quad...
+[2025-12-10 15:13:14]     ✓ AIC=342.01, converged=True
+[2025-12-10 15:13:14]   [40/66] Fitting Recip_sq...
+[2025-12-10 15:13:14]     ✓ AIC=385.49, converged=True
+[2025-12-10 15:13:14]   [41/66] Fitting Recip+PowerLaw...
+[2025-12-10 15:13:14]     ✓ AIC=345.59, converged=True
+[2025-12-10 15:13:14]   [42/66] Fitting Exponential_proxy...
+[2025-12-10 15:13:15]     ✓ AIC=1107.65, converged=False
+[2025-12-10 15:13:15]   [43/66] Fitting Exp+Log...
+[2025-12-10 15:13:15]     ✓ AIC=344.23, converged=True
+[2025-12-10 15:13:15]   [44/66] Fitting Exp+Lin...
+[2025-12-10 15:13:15]     ✗ FAILED: Singular matrix
+[2025-12-10 15:13:15]   [45/66] Fitting Exp_fast...
+[2025-12-10 15:13:15]     ✓ AIC=536.33, converged=True
+[2025-12-10 15:13:15]   [46/66] Fitting Exp_slow...
+[2025-12-10 15:13:14]     ✓ AIC=338.83, converged=True
+[2025-12-10 15:13:14]   [47/66] Fitting Exp+PowerLaw...
+[2025-12-10 15:13:14]     ✓ AIC=341.67, converged=True
+[2025-12-10 15:13:14]   [48/66] Fitting Exp+Recip...
+[2025-12-10 15:13:14]     ✓ AIC=340.02, converged=True
+[2025-12-10 15:13:14]   [49/66] Fitting Sin...
+[2025-12-10 15:13:15]     ✓ AIC=1060.85, converged=False
+[2025-12-10 15:13:15]   [50/66] Fitting Cos...
+[2025-12-10 15:13:16]     ✓ AIC=1102.16, converged=False
+[2025-12-10 15:13:16]   [51/66] Fitting Sin+Cos...
+[2025-12-10 15:13:16]     ✓ AIC=1073.52, converged=False
+[2025-12-10 15:13:16]   [52/66] Fitting Sin+Log...
+[2025-12-10 15:13:16]     ✓ AIC=344.30, converged=True
+[2025-12-10 15:13:16]   [53/66] Fitting Tanh...
+[2025-12-10 15:13:17]     ✓ AIC=1087.38, converged=False
+[2025-12-10 15:13:17]   [54/66] Fitting Tanh+Log...
+[2025-12-10 15:13:17]     ✓ AIC=344.12, converged=True
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 155.371280
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with lbfgs
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2200: ConvergenceWarning: Retrying MixedLM optimization with cg
+  warnings.warn(
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2206: ConvergenceWarning: MixedLM optimization failed, trying a different optimizer may help.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2218: ConvergenceWarning: Gradient optimization failed, |grad| = 297.209150
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+[2025-12-10 15:13:17]   [55/66] Fitting Arctanh...
+[2025-12-10 15:13:18]     ✓ AIC=1093.18, converged=False
+[2025-12-10 15:13:18]   [56/66] Fitting Sinh...
+[2025-12-10 15:13:18]     ✓ AIC=916.93, converged=False
+[2025-12-10 15:13:18]   [57/66] Fitting Log+PowerLaw05...
+[2025-12-10 15:13:19]     ✓ AIC=343.42, converged=True
+[2025-12-10 15:13:19]   [58/66] Fitting Log+SquareRoot...
+[2025-12-10 15:13:19]     ✓ AIC=339.94, converged=True
+[2025-12-10 15:13:19]   [59/66] Fitting Log+Recip...
+[2025-12-10 15:13:19]     ✓ AIC=343.06, converged=True
+[2025-12-10 15:13:19]   [60/66] Fitting SquareRoot+PowerLaw...
+[2025-12-10 15:13:19]     ✓ AIC=340.01, converged=True
+[2025-12-10 15:13:19]   [61/66] Fitting SquareRoot+Recip...
+[2025-12-10 15:13:19]     ✓ AIC=339.47, converged=True
+[2025-12-10 15:13:19]   [62/66] Fitting Recip+PowerLaw05...
+[2025-12-10 15:13:19]     ✓ AIC=345.59, converged=True
+[2025-12-10 15:13:19]   [63/66] Fitting Lin+Log+PowerLaw...
+[2025-12-10 15:13:19]     ✓ AIC=341.94, converged=True
+[2025-12-10 15:13:19]   [64/66] Fitting Quad+Log+SquareRoot...
+[2025-12-10 15:13:19]     ✓ AIC=330.18, converged=True
+[2025-12-10 15:13:19]   [65/66] Fitting PowerLaw+Recip+Log...
+[2025-12-10 15:13:20]     ✓ AIC=339.62, converged=True
+[2025-12-10 15:13:20]   [66/66] Fitting Ultimate...
+[2025-12-10 15:13:20]     ✓ AIC=332.33, converged=True
+[2025-12-10 15:13:20]   Successful fits: 65/66
+[2025-12-10 15:13:20]   Failed fits: 1
+[2025-12-10 15:13:20] Computing AIC comparison metrics...
+[2025-12-10 15:13:20]   Minimum AIC: 330.18
+[2025-12-10 15:13:20]   delta_AIC range: [0.00, 777.47]
+[2025-12-10 15:13:20]   Akaike weight sum: 1.000000 (should be 1.0)
+[2025-12-10 15:13:20] Identifying best model...
+[2025-12-10 15:13:20]   Best model: Quad+Log+SquareRoot
+[2025-12-10 15:13:20]   AIC: 330.18
+[2025-12-10 15:13:20]   Akaike weight: 0.6526 (65.3%)
+[2025-12-10 15:13:20]   Uncertainty: Strong (60-90% probability this is the best model)
+[2025-12-10 15:13:20]   Log model (benchmark): Rank #25, AIC=342.57, Δ=12.38, weight=0.0013
+[2025-12-10 15:13:20] Validating AIC comparison metrics...
+[2025-12-10 15:13:20]   ✓ Akaike weights sum to 1.0 (1.000000)
+[2025-12-10 15:13:20]   ✓ All Akaike weights in (0, 1)
+[2025-12-10 15:13:20]   ✓ Best model has delta_AIC = 0
+[2025-12-10 15:13:20]   ✓ cumulative_weight monotonic increasing
+[2025-12-10 15:13:20]   ✓ cumulative_weight ends at 1.0 (1.000000)
+[2025-12-10 15:13:20] Preparing output dictionary...
+[2025-12-10 15:13:20]   Competitive models (ΔAIC < 2): 1
+[2025-12-10 15:13:20] Saving outputs to /home/etai/projects/REMEMVR/results/ch6/6.5.1/data...
+[2025-12-10 15:13:20]   ✓ model_comparison.csv
+[2025-12-10 15:13:20]   ✓ best_model_summary.txt
+[2025-12-10 15:13:20]   ✓ Log saved to step05_kitchen_sink.log
+[2025-12-10 15:13:20] ================================================================================
+[2025-12-10 15:13:20] Model selection complete!
+[2025-12-10 15:13:20] ================================================================================
+Best model: Quad+Log+SquareRoot (AIC=330.18)
+================================================================================

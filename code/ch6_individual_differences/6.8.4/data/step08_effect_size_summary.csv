@@ -1,0 +1,10 @@
+effect_type,value,interpretation,cohen_category
+Univariate_What_R2,0.272509999449006,"R² = 0.273, f² = 0.375",Large
+Univariate_Where_R2,0.2654311593869448,"R² = 0.265, f² = 0.361",Large
+Univariate_When_R2,0.0966087891833303,"R² = 0.097, f² = 0.107",Small
+Multivariate_R2,0.04335096554000584,"R² = 0.043, f² = 0.045",Small
+Predictor_ravlt,0.00499470252773315,Mean f² across contexts = 0.005,Negligible
+Predictor_bvmt,0.01666758479477595,Mean f² across contexts = 0.017,Negligible
+Predictor_rpm,0.07564604147285882,Mean f² across contexts = 0.076,Small
+Predictor_age,0.002081685317384989,Mean f² across contexts = 0.002,Negligible
+Predictor_pctret,0.0340419732377258,Mean f² across contexts = 0.034,Small

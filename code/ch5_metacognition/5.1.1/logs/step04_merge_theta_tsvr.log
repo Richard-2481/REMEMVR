@@ -1,0 +1,93 @@
+Step 04: Merge Theta with TSVR
+Loading theta scores from step03...
+step03_theta_confidence.csv (400 rows, 3 cols)
+Theta columns: ['composite_ID', 'theta_All', 'se_All']
+Theta composite_ID format example: A010_T1
+Loading TSVR mapping from step00...
+step00_tsvr_mapping.csv (400 rows, 3 cols)
+TSVR columns: ['composite_ID', 'TSVR_hours', 'test']
+TSVR composite_ID format example: A010_1
+Standardizing composite_ID formats...
+TSVR standardized composite_ID example: A010_T1
+Merging theta scores with TSVR mapping...
+Result: 400 rows, 5 cols
+No data loss from merge (all theta rows matched)
+Extracting UID and creating time transformations...
+UID count: 100 unique participants
+TSVR_hours range: [1.00, 246.24]
+Days range: [0.04, 10.26]
+Days_squared range: [0.00, 105.27]
+log_Days_plus1 range: [0.04, 2.42]
+Saving LMM input data...
+/home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step04_lmm_input.csv (400 rows, 9 cols)
+Running data quality checks...
+Row count: 400 (expected)
+No NaN values in any column
+TSVR_hours range: [1.00, 246.24] (within [0, 250])
+Days range: [0.04, 10.26] (within [0, 11])
+UID count: 100 unique participants (expected)
+Column count: 9 (expected)
+All validation checks passed
+Step 04 complete
+Step 04: Merge Theta with TSVR
+Loading theta scores from step03...
+step03_theta_confidence.csv (400 rows, 3 cols)
+Theta columns: ['composite_ID', 'theta_All', 'se_All']
+Theta composite_ID format example: A010_T1
+Loading TSVR mapping from step00...
+step00_tsvr_mapping.csv (400 rows, 3 cols)
+TSVR columns: ['composite_ID', 'TSVR_hours', 'test']
+TSVR composite_ID format example: A010_1
+Standardizing composite_ID formats...
+TSVR standardized composite_ID example: A010_T1
+Merging theta scores with TSVR mapping...
+Result: 400 rows, 5 cols
+No data loss from merge (all theta rows matched)
+Extracting UID and creating time transformations...
+UID count: 100 unique participants
+TSVR_hours range: [1.00, 246.24]
+Days range: [0.04, 10.26]
+Days_squared range: [0.00, 105.27]
+log_Days_plus1 range: [0.04, 2.42]
+Saving LMM input data...
+/home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step04_lmm_input.csv (400 rows, 9 cols)
+Running data quality checks...
+Row count: 400 (expected)
+No NaN values in any column
+TSVR_hours range: [1.00, 246.24] (within [0, 250])
+Days range: [0.04, 10.26] (within [0, 11])
+UID count: 100 unique participants (expected)
+Column count: 9 (expected)
+All validation checks passed
+Step 04 complete
+Step 04: Merge Theta with TSVR
+Loading theta scores from step03...
+step03_theta_confidence.csv (400 rows, 3 cols)
+Theta columns: ['composite_ID', 'theta_All', 'se_All']
+Theta composite_ID format example: A010_T1
+Loading TSVR mapping from step00...
+step00_tsvr_mapping.csv (400 rows, 3 cols)
+TSVR columns: ['composite_ID', 'TSVR_hours', 'test']
+TSVR composite_ID format example: A010_1
+Standardizing composite_ID formats...
+TSVR standardized composite_ID example: A010_T1
+Merging theta scores with TSVR mapping...
+Result: 400 rows, 5 cols
+No data loss from merge (all theta rows matched)
+Extracting UID and creating time transformations...
+UID count: 100 unique participants
+TSVR_hours range: [1.00, 246.24]
+Days range: [0.04, 10.26]
+Days_squared range: [0.00, 105.27]
+log_Days_plus1 range: [0.04, 2.42]
+Saving LMM input data...
+/home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step04_lmm_input.csv (400 rows, 9 cols)
+Running data quality checks...
+Row count: 400 (expected)
+No NaN values in any column
+TSVR_hours range: [1.00, 246.24] (within [0, 250])
+Days range: [0.04, 10.26] (within [0, 11])
+UID count: 100 unique participants (expected)
+Column count: 9 (expected)
+All validation checks passed
+Step 04 complete

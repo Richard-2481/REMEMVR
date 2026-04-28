@@ -1,0 +1,3 @@
+comparison_name,functional_form_accuracy,functional_form_confidence,N_models_accuracy,N_models_confidence,ICC_accuracy,ICC_confidence,ratio,confounds_present
+824x_comparison,PowerLaw_lambda_0.41,Recip_sq,9.84,1,0.007463065445604469,0.2640976039075434,35.38728232151432,"functional_form, model_averaging, scaling"
+221x_comparison,PowerLaw_lambda_0.41,mixed_48_models,9.84,48,0.007463065445604469,0.0401089522251023,5.374326745148052,"functional_form, scaling"

@@ -17,7 +17,7 @@ def log(msg):
     print(msg)
 
 try:
-    log("[START] Step 7: Main Effects")
+    log("Step 7: Main Effects")
 
     # Load data
     df = pd.read_csv(RQ_DIR / "data" / "step03_merged_data_long.csv")
@@ -34,7 +34,7 @@ try:
     df_acc = df[df['measure'] == 'accuracy']
     df_conf = df[df['measure'] == 'confidence']
 
-    log("[FIT] Accuracy-only model")
+    log("Accuracy-only model")
     acc_model = smf.mixedlm(
         formula='theta ~ location + TSVR_hours',
         data=df_acc,
@@ -42,7 +42,7 @@ try:
         re_formula='~1'
     ).fit(reml=False)
 
-    log("[FIT] Confidence-only model")
+    log("Confidence-only model")
     conf_model = smf.mixedlm(
         formula='theta ~ location + TSVR_hours',
         data=df_conf,
@@ -68,12 +68,12 @@ try:
     main_effects[['effect', 'beta', 'se', 't_stat', 'p_uncorrected', 'p_bonferroni', 'interpretation']].to_csv(
         output_path, index=False, encoding='utf-8'
     )
-    log(f"[SAVE] {output_path.name}")
+    log(f"{output_path.name}")
     
-    log("[SUCCESS] Step 7 complete")
+    log("Step 7 complete")
     sys.exit(0)
 except Exception as e:
-    log(f"[ERROR] {str(e)}")
+    log(f"{str(e)}")
     import traceback
     traceback.print_exc()
     sys.exit(1)

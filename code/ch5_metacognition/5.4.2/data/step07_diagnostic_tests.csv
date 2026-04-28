@@ -1,0 +1,3 @@
+test,statistic,p_value,interpretation
+Shapiro-Wilk,0.9957675834682205,0.002092950783027567,Non-normal
+Breusch-Pagan,27.11447157113218,5.418780008634273e-05,Heteroscedastic

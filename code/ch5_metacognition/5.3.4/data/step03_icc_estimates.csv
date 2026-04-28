@@ -1,0 +1,4 @@
+domain,ICC_intercept,ICC_slope_simple,ICC_slope_conditional,interpretation_intercept,interpretation_slope
+What,0.8580342861773461,0.5895447252627264,0.9998364798092619,high,high
+Where,0.8659057980496305,0.5895931035089618,0.9998594585936355,high,high
+When,0.5374353670769461,1.2246127179421651e-05,0.1763530562983381,high,negligible

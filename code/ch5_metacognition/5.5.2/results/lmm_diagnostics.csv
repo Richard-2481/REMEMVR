@@ -1,0 +1,3 @@
+test,p_value,assumption_met
+Shapiro-Wilk (normality),0.03363544535007599,No
+Breusch-Pagan (homoscedasticity),0.011989736354585896,No

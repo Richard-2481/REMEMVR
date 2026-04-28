@@ -1,0 +1,48 @@
+Step 08: Significance and Power Analysis
+[RAVLT_reverse]
+  p_uncorrected: 0.0074
+  p_bonferroni: 0.0148
+  p_chapter: 0.2069
+  p_fdr: 0.0074
+  Achieved power (alpha=0.05): 0.7813
+  Min detectable f² (80% power): 0.2829
+[BVMT_reverse]
+  p_uncorrected: 0.0002
+  p_bonferroni: 0.0004
+  p_chapter: 0.0056
+  p_fdr: 0.0004
+  Achieved power (alpha=0.05): 0.9715
+  Min detectable f² (80% power): 0.2829
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step08_significance_power.csv
+Step 08 complete
+Step 08: Significance and Power Analysis
+[RAVLT_reverse]
+  p_uncorrected: 0.0050
+  p_bonferroni: 0.0200
+  p_chapter: 0.1399
+  p_fdr: 0.0067
+  Achieved power (alpha=0.05): 0.8193
+  Min detectable f² (80% power): 0.2829
+[BVMT_reverse]
+  p_uncorrected: 0.0002
+  p_bonferroni: 0.0008
+  p_chapter: 0.0056
+  p_fdr: 0.0008
+  Achieved power (alpha=0.05): 0.9715
+  Min detectable f² (80% power): 0.2829
+[RAVLT_PctRet_reverse]
+  p_uncorrected: 0.0009
+  p_bonferroni: 0.0034
+  p_chapter: 0.0240
+  p_fdr: 0.0017
+  Achieved power (alpha=0.05): 0.9306
+  Min detectable f² (80% power): 0.2829
+[BVMT_PctRet_reverse]
+  p_uncorrected: 0.0513
+  p_bonferroni: 0.2052
+  p_chapter: 1.0000
+  p_fdr: 0.0513
+  Achieved power (alpha=0.05): 0.5055
+  Min detectable f² (80% power): 0.2829
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step08_significance_power.csv
+Step 08 complete

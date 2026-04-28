@@ -1,0 +1,7 @@
+location,icc_type,value,interpretation
+Source,ICC_intercept,0.23996003740647529,Poor
+Source,ICC_slope_simple,0.00505313076449175,Poor
+Source,ICC_slope_conditional,0.4079842141828957,Fair
+Destination,ICC_intercept,0.42110142763180497,Fair
+Destination,ICC_slope_simple,0.021580033076426502,Poor
+Destination,ICC_slope_conditional,0.16689433468995474,Poor

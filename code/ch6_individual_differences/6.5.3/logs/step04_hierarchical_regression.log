@@ -1,0 +1,198 @@
+Step 04: Hierarchical regression
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants with complete data
+Theta scores - Mean: -0.500, SD: 0.820
+[BLOCK 1] Demographics: ['age', 'education_numeric']
+[BLOCK 1] Age - Mean: 44.6, SD: 14.6
+[BLOCK 1] Education - Mean: 11.0, SD: 0.0
+[BLOCK 2] Strategy variables: ['rehearsal_frequency', 'mnemonic_use']
+[BLOCK 2] Rehearsal - Mean: 0.02, SD: 0.20
+[BLOCK 2] Mnemonic use - Proportion: 0.020
+Fitting hierarchical regression models...
+Hierarchical regression completed via tools function
+[EFFECT SIZES] Calculating Cohen's f² for each predictor...
+Hierarchical regression results: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_hierarchical_regression.csv
+name 'coefficients_data' is not defined
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.3/code/step04_hierarchical_regression.py", line 367, in <module>
+    coef_df = pd.DataFrame(coefficients_data)
+                           ^^^^^^^^^^^^^^^^^
+NameError: name 'coefficients_data' is not defined
+Step 04: Hierarchical regression
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants with complete data
+Theta scores - Mean: -0.500, SD: 0.820
+[BLOCK 1] Demographics: ['age', 'education_numeric']
+[BLOCK 1] Age - Mean: 44.6, SD: 14.6
+[BLOCK 1] Education - Mean: 11.0, SD: 0.0
+[BLOCK 2] Strategy variables: ['rehearsal_frequency', 'mnemonic_use']
+[BLOCK 2] Rehearsal - Mean: 0.02, SD: 0.20
+[BLOCK 2] Mnemonic use - Proportion: 0.020
+Fitting hierarchical regression models...
+Hierarchical regression completed via tools function
+[EFFECT SIZES] Calculating Cohen's f² for each predictor...
+Hierarchical regression results: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_hierarchical_regression.csv
+name 'coefficients_data' is not defined
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.3/code/step04_hierarchical_regression.py", line 370, in <module>
+    coef_df = pd.DataFrame(coefficients_data)
+                           ^^^^^^^^^^^^^^^^^
+NameError: name 'coefficients_data' is not defined
+Step 04: Hierarchical regression
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants with complete data
+Theta scores - Mean: -0.500, SD: 0.820
+[BLOCK 1] Demographics: ['age', 'education_numeric']
+[BLOCK 1] Age - Mean: 44.6, SD: 14.6
+[BLOCK 1] Education - Mean: 11.0, SD: 0.0
+[BLOCK 2] Strategy variables: ['rehearsal_frequency', 'mnemonic_use']
+[BLOCK 2] Rehearsal - Mean: 0.02, SD: 0.20
+[BLOCK 2] Mnemonic use - Proportion: 0.020
+Fitting hierarchical regression models...
+Hierarchical regression completed via tools function
+[EFFECT SIZES] Calculating Cohen's f² for each predictor...
+Hierarchical regression results: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_hierarchical_regression.csv
+Final model coefficients: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_final_coefficients.csv
+Checking regression assumptions...
+Custom validation due to function limitations: name 'final_coefficients' is not defined
+name 'final_model' is not defined
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.3/code/step04_hierarchical_regression.py", line 391, in <module>
+    df=final_coefficients,
+       ^^^^^^^^^^^^^^^^^^
+NameError: name 'final_coefficients' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.3/code/step04_hierarchical_regression.py", line 403, in <module>
+    residuals = final_model.resid
+                ^^^^^^^^^^^
+NameError: name 'final_model' is not defined
+Step 04: Hierarchical regression
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants with complete data
+Theta scores - Mean: -0.500, SD: 0.820
+[BLOCK 1] Demographics: ['age', 'education_numeric']
+[BLOCK 1] Age - Mean: 44.6, SD: 14.6
+[BLOCK 1] Education - Mean: 11.0, SD: 0.0
+[BLOCK 2] Strategy variables: ['rehearsal_frequency', 'mnemonic_use']
+[BLOCK 2] Rehearsal - Mean: 0.02, SD: 0.20
+[BLOCK 2] Mnemonic use - Proportion: 0.020
+Fitting hierarchical regression models...
+Hierarchical regression completed via tools function
+[EFFECT SIZES] Calculating Cohen's f² for each predictor...
+Hierarchical regression results: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_hierarchical_regression.csv
+Final model coefficients: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_final_coefficients.csv
+Checking regression assumptions...
+Custom validation due to function limitations: name 'final_coefficients' is not defined
+name 'final_model' is not defined
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.3/code/step04_hierarchical_regression.py", line 391, in <module>
+    df=final_coefficients,
+       ^^^^^^^^^^^^^^^^^^
+NameError: name 'final_coefficients' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.3/code/step04_hierarchical_regression.py", line 403, in <module>
+    residuals = final_model.resid
+                ^^^^^^^^^^^
+NameError: name 'final_model' is not defined
+Step 04: Hierarchical regression
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants with complete data
+Theta scores - Mean: -0.500, SD: 0.820
+[BLOCK 1] Demographics: ['age', 'education_numeric']
+[BLOCK 1] Age - Mean: 44.6, SD: 14.6
+[BLOCK 1] Education - Mean: 11.0, SD: 0.0
+[BLOCK 2] Strategy variables: ['rehearsal_frequency', 'mnemonic_use']
+[BLOCK 2] Rehearsal - Mean: 0.02, SD: 0.20
+[BLOCK 2] Mnemonic use - Proportion: 0.020
+Fitting hierarchical regression models...
+Hierarchical regression completed via tools function
+[EFFECT SIZES] Calculating Cohen's f² for each predictor...
+Hierarchical regression results: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_hierarchical_regression.csv
+Final model coefficients: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_final_coefficients.csv
+Checking regression assumptions...
+Custom validation due to function limitations: validate_data_format() got an unexpected keyword argument 'expected_columns'
+Skipping assumption checks - final_model not available
+Hierarchical regression completed:
+Final model coefficients:
+Step 04 complete - hierarchical regression with effect sizes
+Step 04: Hierarchical regression
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants with complete data
+Theta scores - Mean: -0.500, SD: 0.820
+[BLOCK 1] Demographics: ['age', 'education_numeric']
+[BLOCK 1] Age - Mean: 44.6, SD: 14.6
+[BLOCK 1] Education - Mean: 11.0, SD: 0.0
+[BLOCK 2] Strategy variables: ['rehearsal_frequency', 'mnemonic_use']
+[BLOCK 2] Rehearsal - Mean: 0.02, SD: 0.20
+[BLOCK 2] Mnemonic use - Proportion: 0.020
+Fitting hierarchical regression models...
+Hierarchical regression completed via tools function
+Tools function failed: 'numpy.ndarray' object has no attribute 'iloc', using custom implementation
+Implementing hierarchical regression manually...
+[MODEL 1] Fitting demographics model...
+[MODEL 1] R² = 0.0044
+[MODEL 2] Fitting full model (demographics + strategy)...
+[MODEL 2] R² = 0.0402
+ΔR² = 0.0358, F(2, 96.0) = 1.791, p = 0.172345
+'numpy.ndarray' object has no attribute 'iloc'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.3/code/step04_hierarchical_regression.py", line 261, in <module>
+    'coefficient': params.iloc[param_idx],
+                   ^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'iloc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.3/code/step04_hierarchical_regression.py", line 343, in <module>
+    'coefficient': params.iloc[param_idx],
+                   ^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'iloc'
+Step 04: Hierarchical regression
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+[COMPLETE CASES] n=100 participants with complete data
+Theta scores - Mean: -0.500, SD: 0.820
+[BLOCK 1] Demographics: ['age', 'education_numeric']
+[BLOCK 1] Age - Mean: 44.6, SD: 14.6
+[BLOCK 1] Education - Mean: 11.0, SD: 0.0
+[BLOCK 2] Strategy variables: ['rehearsal_frequency', 'mnemonic_use']
+[BLOCK 2] Rehearsal - Mean: 0.02, SD: 0.20
+[BLOCK 2] Mnemonic use - Proportion: 0.020
+Fitting hierarchical regression models...
+Hierarchical regression completed via tools function
+[EFFECT SIZES] Calculating Cohen's f² for each predictor...
+[EFFECT SIZE] Strategy variables block: f² = 0.0373
+Hierarchical regression results: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_hierarchical_regression.csv
+Final model coefficients: /home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step04_final_coefficients.csv
+Checking regression assumptions...
+Custom validation due to function limitations: validate_data_format() got an unexpected keyword argument 'expected_columns'
+normality: True
+homoscedasticity: True
+linearity: True
+overall_valid: True
+Hierarchical regression completed:
+  Demographics: R² = 0.0044, ΔR² = 0.0044, p = 1.000000
+  Strategy_Variables: R² = 0.0402, ΔR² = 0.0358, p = 0.351062
+Final model coefficients:
+  age: β = -0.0336, p = 0.679376
+  education_numeric: β = 0.6008, p = 0.599637
+  rehearsal_frequency: β = 0.7195, p = 0.894736
+Step 04 complete - hierarchical regression with effect sizes

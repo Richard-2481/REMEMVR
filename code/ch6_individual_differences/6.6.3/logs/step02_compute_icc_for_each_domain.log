@@ -1,0 +1,56 @@
+Step 02: Compute ICC for Each Domain
+Reading domain slopes...
+100 rows, 3 columns
+Calculating ICC(1,1) for each domain...
+For WHAT: Need to incorporate slope SE for proper ICC
+ICC = 1.0000
+Variance (between) = 0.000243
+Variance (total) = 0.000243
+For WHERE: Need to incorporate slope SE for proper ICC
+ICC = 1.0000
+Variance (between) = 0.000409
+Variance (total) = 0.000409
+ICC estimates table: 2 rows
+Variance components table: 2 rows
+Checking ICC value ranges...
+All ICC values in range [0, 1]
+All variance components valid
+No NaN ICC values
+Writing ICC estimates...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step02_icc_estimates.csv (2 rows)
+Writing variance components...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step02_variance_components.csv (2 rows)
+ICC Estimates:
+  What: ICC = 1.0000
+  Where: ICC = 1.0000
+Step 02 complete
+ICC values close to 1.0 expected (single slope estimate per person)
+Proceed to step03 (bootstrap confidence intervals)
+Step 02: Compute ICC for Each Domain
+Reading domain slopes...
+100 rows, 3 columns
+Calculating ICC(1,1) for each domain...
+For WHAT: Need to incorporate slope SE for proper ICC
+ICC = 1.0000
+Variance (between) = 0.000243
+Variance (total) = 0.000243
+For WHERE: Need to incorporate slope SE for proper ICC
+ICC = 1.0000
+Variance (between) = 0.000409
+Variance (total) = 0.000409
+ICC estimates table: 2 rows
+Variance components table: 2 rows
+Checking ICC value ranges...
+All ICC values in range [0, 1]
+All variance components valid
+No NaN ICC values
+Writing ICC estimates...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step02_icc_estimates.csv (2 rows)
+Writing variance components...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step02_variance_components.csv (2 rows)
+ICC Estimates:
+  What: ICC = 1.0000
+  Where: ICC = 1.0000
+Step 02 complete
+ICC values close to 1.0 expected (single slope estimate per person)
+Proceed to step03 (bootstrap confidence intervals)

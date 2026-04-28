@@ -1,0 +1,99 @@
+================================================================================
+Step 05b: Model Averaging for RQ 6.8.1
+================================================================================
+
+Loading input data...
+  ✓ LMM input: 800 rows
+  ✓ Model comparison: 65 models
+  ✓ Best model: SquareRoot (weight=4.2%)
+======================================================================
+MODEL AVERAGING WITH LOCATION INTERACTION
+======================================================================
+
+[STEP 1] Identifying competitive models (ΔAIC < 7.0)...
+  ✓ 51 competitive models identified
+  ✓ Total original weight: 99.6%
+
+[STEP 2] Creating time transformations...
+  ✓ 34 time transformations created
+
+[STEP 3] Fitting 51 models with location interaction...
+  [ 1/51] SquareRoot                w=0.0424 ✓
+  [ 2/51] Exp_slow                  w=0.0424 ✓
+  [ 3/51] CubeRoot                  w=0.0403 ✓
+  [ 4/51] Root_033                  w=0.0403 ✓
+  [ 5/51] Root_067                  w=0.0381 ✓
+  [ 6/51] FourthRoot                w=0.0375 ✓
+  [ 7/51] LogLog                    w=0.0319 ✓
+  [ 8/51] PowerLaw_10               w=0.0307 ✓
+  [ 9/51] Reciprocal                w=0.0307 ✓
+  [10/51] PowerLaw_09               w=0.0306 ✓
+  [11/51] PowerLaw_08               w=0.0304 ✓
+  [12/51] PowerLaw_07               w=0.0299 ✓
+  [13/51] PowerLaw_06               w=0.0292 ✓
+  [14/51] PowerLaw_05               w=0.0282 ✓
+  [15/51] PowerLaw_04               w=0.0270 ✓
+  [16/51] PowerLaw_03               w=0.0255 ✓
+  [17/51] PowerLaw_02               w=0.0239 ✓
+  [18/51] Recip_sq                  w=0.0234 ✓
+  [19/51] PowerLaw_01               w=0.0221 ✓
+  [20/51] SquareRoot+Lin            w=0.0206 ✓
+  [21/51] Log2                      w=0.0202 ✓
+  [22/51] Log                       w=0.0202 ✓
+  [23/51] Log10                     w=0.0202 ✓
+  [24/51] Recip+Lin                 w=0.0195 ✓
+  [25/51] Log+SquareRoot            w=0.0170 ✓
+  [26/51] SquareRoot+Log            w=0.0166 ✓
+  [27/51] CubeRoot+Log              w=0.0163 ✓
+  [28/51] PowerLaw_Lin              w=0.0161 ✓
+  [29/51] SquareRoot+PowerLaw       w=0.0158 ✓
+  [30/51] Root_Multi                w=0.0149 ✓
+  [31/51] Recip+Log                 w=0.0146 ✓
+  [32/51] PowerLaw_Log              w=0.0142 ✓
+  [33/51] Log+LogLog                w=0.0128 ✓
+  [34/51] Recip+PowerLaw            w=0.0127 ✓
+  [35/51] Recip+PowerLaw05          w=0.0127 ✓
+  [36/51] Log+PowerLaw05            w=0.0123 ✓
+  [37/51] Sin+Log                   w=0.0123 ✓
+  [38/51] SquareRoot+Recip          w=0.0121 ✓
+  [39/51] Log+Recip                 w=0.0114 ✓
+  [40/51] Exp+Recip                 w=0.0113 ✓
+  [41/51] Tanh+Log                  w=0.0113 ✓
+  [42/51] Exp+PowerLaw              w=0.0104 ✓
+  [43/51] Recip+Quad                w=0.0094 ✓
+  [44/51] Lin+Log                   w=0.0074 ✓
+  [45/51] Exp+Log                   w=0.0074 ✓
+  [46/51] PowerLaw+Recip+Log        w=0.0072 ✓
+  [47/51] Lin+Log+PowerLaw          w=0.0045 ✓
+  [48/51] Lin+Quad+Log              w=0.0043 ✓
+  [49/51] Quad+Log                  w=0.0043 ✓
+  [50/51] Quad+Log+SquareRoot       w=0.0028 ✓
+  [51/51] Quartic                   w=0.0026 ✓
+
+[STEP 4] Computing model-averaged predictions...
+  ✓ Predictions: mean=-0.5275, SD=0.2368
+  ✓ Uncond. variance: mean=0.000610, max=0.007062
+
+[STEP 5] Computing model-averaged random effects...
+  ✓ Random intercepts: mean=0.0000, SD=0.5103
+  ✓ Effective N models: 43.41
+
+[STEP 6] Preparing output files...
+
+Saving output files...
+  ✓ step05b_competitive_models.csv (51 models)
+  ✓ step05b_model_averaged_predictions.csv (800 rows)
+  ✓ step05b_model_averaged_theta.csv (800 rows)
+  ✓ step05b_model_averaged_random_effects.csv (100 UIDs)
+  ✓ step05b_metadata.csv
+
+================================================================================
+Model Averaging Complete
+================================================================================
+  Models in competitive set: 51
+  Effective N models: 43.41
+  Top 3 models by renormalized weight:
+    1. SquareRoot: 0.042
+    2. Exp_slow: 0.042
+    3. CubeRoot: 0.040
+================================================================================

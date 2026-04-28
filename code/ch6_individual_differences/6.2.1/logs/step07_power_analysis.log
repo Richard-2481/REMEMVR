@@ -1,0 +1,135 @@
+Step 7: Power Analysis
+Loading effect sizes from Step 6...
+step06_effect_sizes.csv (4 rows, 8 cols)
+N=100, k=4 predictors, alpha=0.0125 (Bonferroni corrected)
+Running power analysis for model comparison...
+Estimated Model 2 R² = 0.1213 (sum of sr²)
+_parse_args() got an unexpected keyword argument 'nc'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step07_power_analysis.py", line 230, in <module>
+    power_overall = compute_post_hoc_power_custom(n, k, estimated_r2_model2, alpha)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step07_power_analysis.py", line 146, in compute_post_hoc_power_custom
+    power = 1 - f.cdf(f_critical, df_numerator, df_denominator, nc=ncp)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/stats/_distn_infrastructure.py", line 2143, in cdf
+    args, loc, scale = self._parse_args(*args, **kwds)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _parse_args() got an unexpected keyword argument 'nc'
+Step 7: Power Analysis
+Loading effect sizes from Step 6...
+step06_effect_sizes.csv (4 rows, 8 cols)
+N=100, k=4 predictors, alpha=0.0125 (Bonferroni corrected)
+Running power analysis for model comparison...
+Estimated Model 2 R² = 0.1213 (sum of sr²)
+_parse_args() got an unexpected keyword argument 'nc'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step07_power_analysis.py", line 232, in <module>
+    min_detectable_f2_overall = compute_sensitivity_effect_size(n, k, 0.80, alpha)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step07_power_analysis.py", line 176, in compute_sensitivity_effect_size
+    min_f2 = brentq(power_function, 0.001, 2.0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 846, in brentq
+    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 94, in f_raise
+    fx = f(x, *args)
+         ^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.2.1/code/step07_power_analysis.py", line 173, in power_function
+    return 1 - f.cdf(f_critical, df_numerator, df_denominator, nc=ncp) - power
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/stats/_distn_infrastructure.py", line 2143, in cdf
+    args, loc, scale = self._parse_args(*args, **kwds)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _parse_args() got an unexpected keyword argument 'nc'
+Step 7: Power Analysis
+Loading effect sizes from Step 6...
+step06_effect_sizes.csv (4 rows, 8 cols)
+N=100, k=4 predictors, alpha=0.0125 (Bonferroni corrected)
+Running power analysis for model comparison...
+Estimated Model 2 R² = 0.1213 (sum of sr²)
+Overall F-test: 0.672
+Model comparison (ΔR²): 0.724
+Running power analysis for individual predictors...
+RPM_T: 0.730 (f² = 0.1034)
+BVMT_T: 0.117 (f² = 0.0197)
+RAVLT_T: 0.080 (f² = 0.0139)
+Age: 0.017 (f² = 0.0011)
+Assessing mediation power limitations...
+Mediation analysis: 0.500 (limited by N=100)
+Fritz & MacKinnon (2007): N=200+ recommended for mediation, current N=100
+Compiling power analysis results...
+Power analysis complete: 0/7 tests with adequate power
+7 tests flagged with low power (< 0.80)
+Saving power analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step07_power_analysis.csv (7 rows, 6 cols)
+Key power analysis results:
+  - Overall_F_Test_Model2: Power = 0.672, Adequate = False, Flag = Low_Power
+  - Model_Comparison_Delta_R2: Power = 0.724, Adequate = False, Flag = Low_Power
+  - Mediation_Analysis_Bootstrap: Power = 0.500, Adequate = False, Flag = Insufficient_N_for_Mediation
+  - Individual_Predictor_RPM_T: Power = 0.730, Adequate = False, Flag = Low_Power
+  - Individual_Predictor_BVMT_T: Power = 0.117, Adequate = False, Flag = Low_Power
+  - Individual_Predictor_RAVLT_T: Power = 0.080, Adequate = False, Flag = Low_Power
+  - Individual_Predictor_Age: Power = 0.017, Adequate = False, Flag = Low_Power
+Running validate_numeric_range on power values...
+Power values: {'valid': True, 'message': 'power_achieved: All values within range [0.0, 1.0] (n=7).', 'out_of_range_count': 0, 'violations': []}
+Effect sizes: {'valid': True, 'message': 'effect_size: All values within range [0.0, 3.0] (n=6).', 'out_of_range_count': 0, 'violations': []}
+7 tests have critical power limitations
+  - Overall_F_Test_Model2: Low_Power
+  - Model_Comparison_Delta_R2: Low_Power
+  - Mediation_Analysis_Bootstrap: Insufficient_N_for_Mediation
+  - Individual_Predictor_RPM_T: Low_Power
+  - Individual_Predictor_BVMT_T: Low_Power
+  - Individual_Predictor_RAVLT_T: Low_Power
+  - Individual_Predictor_Age: Low_Power
+Step 7: Power Analysis complete
+Step 7: Power Analysis
+Loading effect sizes from Step 6...
+step06_effect_sizes.csv (6 rows, 8 cols)
+N=100, k=6 predictors, alpha=0.008333333333333333 (Bonferroni corrected)
+Running power analysis for model comparison...
+Estimated Model 2 R² = 0.1249 (sum of sr²)
+Overall F-test: 0.541
+Model comparison (ΔR²): 0.581
+Running power analysis for individual predictors...
+RPM_T: 0.431 (f² = 0.0677)
+RAVLT_Pct_Ret_T: 0.240 (f² = 0.0426)
+BVMT_T: 0.039 (f² = 0.0089)
+RAVLT_T: 0.053 (f² = 0.0123)
+BVMT_Pct_Ret_T: 0.044 (f² = 0.0101)
+Age: 0.012 (f² = 0.0012)
+Assessing mediation power limitations...
+Mediation analysis: 0.500 (limited by N=100)
+Fritz & MacKinnon (2007): N=200+ recommended for mediation, current N=100
+Compiling power analysis results...
+Power analysis complete: 0/9 tests with adequate power
+9 tests flagged with low power (< 0.80)
+Saving power analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.2.1/data/step07_power_analysis.csv (9 rows, 6 cols)
+Key power analysis results:
+  - Overall_F_Test_Model2: Power = 0.541, Adequate = False, Flag = Low_Power
+  - Model_Comparison_Delta_R2: Power = 0.581, Adequate = False, Flag = Low_Power
+  - Mediation_Analysis_Bootstrap: Power = 0.500, Adequate = False, Flag = Insufficient_N_for_Mediation
+  - Individual_Predictor_RPM_T: Power = 0.431, Adequate = False, Flag = Low_Power
+  - Individual_Predictor_RAVLT_Pct_Ret_T: Power = 0.240, Adequate = False, Flag = Low_Power
+  - Individual_Predictor_BVMT_T: Power = 0.039, Adequate = False, Flag = Low_Power
+  - Individual_Predictor_RAVLT_T: Power = 0.053, Adequate = False, Flag = Low_Power
+  - Individual_Predictor_BVMT_Pct_Ret_T: Power = 0.044, Adequate = False, Flag = Low_Power
+  - Individual_Predictor_Age: Power = 0.012, Adequate = False, Flag = Low_Power
+Running validate_numeric_range on power values...
+Power values: {'valid': True, 'message': 'power_achieved: All values within range [0.0, 1.0] (n=9).', 'out_of_range_count': 0, 'violations': []}
+Effect sizes: {'valid': True, 'message': 'effect_size: All values within range [0.0, 3.0] (n=8).', 'out_of_range_count': 0, 'violations': []}
+9 tests have critical power limitations
+  - Overall_F_Test_Model2: Low_Power
+  - Model_Comparison_Delta_R2: Low_Power
+  - Mediation_Analysis_Bootstrap: Insufficient_N_for_Mediation
+  - Individual_Predictor_RPM_T: Low_Power
+  - Individual_Predictor_RAVLT_Pct_Ret_T: Low_Power
+  - Individual_Predictor_BVMT_T: Low_Power
+  - Individual_Predictor_RAVLT_T: Low_Power
+  - Individual_Predictor_BVMT_Pct_Ret_T: Low_Power
+  - Individual_Predictor_Age: Low_Power
+Step 7: Power Analysis complete

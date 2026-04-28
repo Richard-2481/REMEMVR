@@ -1,0 +1,5 @@
+sensitivity_test,correlation_difference,p_value,robust_result,interpretation
+outlier_exclusion,0.01163750712646805,0.4992566408335035,True,Robust to outliers (diff change: 0.000)
+spearman_correlations,0.005903884512663438,0.9608765794905201,True,Robust across correlation methods (diff change: 0.006)
+cross_validation_stability,0.012150658683383785,,True,"Stable across folds (SD=0.009, mean diff=0.012)"
+bootstrap_stability_alt_seed,0.01163750712646805,,True,"Bootstrap stable (CI: [-0.019, 0.043], diff change: 0.000)"

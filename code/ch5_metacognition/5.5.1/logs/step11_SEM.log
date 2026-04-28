@@ -1,0 +1,133 @@
+======================================================================
+RQ 6.5.1: SEM-Based Schema-Stratified Calibration
+======================================================================
+Using tools/sem_calibration.py (SEMCalibration class)
+Same methodology as RQ 6.2.1, 6.3.2, 6.4.2, 6.8.2
+======================================================================
+
+======================================================================
+STEP 1: Load Schema-Stratified Calibration Data
+======================================================================
+Loaded: 1200 rows, 9 columns
+Columns: ['UID', 'TEST', 'Schema', 'TSVR_hours', 'theta_accuracy', 'theta_confidence', 'theta_accuracy_z', 'theta_confidence_z', 'calibration']
+All required columns present
+Schema levels found: ['Common', 'Congruent', 'Incongruent']
+No missing values in theta scores
+STEP 1 COMPLETE
+
+======================================================================
+STEP 2: Compute PRE-SEM Difference Score Reliability (BY SCHEMA)
+======================================================================
+
+======================================================================
+SCHEMA: Common
+======================================================================
+N = 400 observations (100 participants x 4 tests)
+Correlation (accuracy, confidence): r = 0.7106, p = 0.000000
+
+Accuracy ICC (r_xx): 0.5485
+Confidence ICC (r_yy): 0.6404
+Difference Score Reliability: r_diff = -0.4013 (CATASTROPHIC (negative))
+
+======================================================================
+SCHEMA: Congruent
+======================================================================
+N = 400 observations (100 participants x 4 tests)
+Correlation (accuracy, confidence): r = 0.7504, p = 0.000000
+
+Accuracy ICC (r_xx): 0.5201
+Confidence ICC (r_yy): 0.5772
+Difference Score Reliability: r_diff = -0.8084 (CATASTROPHIC (negative))
+
+======================================================================
+SCHEMA: Incongruent
+======================================================================
+N = 400 observations (100 participants x 4 tests)
+Correlation (accuracy, confidence): r = 0.6844, p = 0.000000
+
+Accuracy ICC (r_xx): 0.5339
+Confidence ICC (r_yy): 0.6382
+Difference Score Reliability: r_diff = -0.3116 (CATASTROPHIC (negative))
+
+SUMMARY: PRE-SEM Reliability BY SCHEMA
+  Common        : r_diff=-0.4013 (CATASTROPHIC (negative))
+  Congruent     : r_diff=-0.8084 (CATASTROPHIC (negative))
+  Incongruent   : r_diff=-0.3116 (CATASTROPHIC (negative))
+STEP 2 COMPLETE
+
+======================================================================
+STEP 3: Compute SEM-Based Latent Calibration (BY SCHEMA)
+======================================================================
+
+======================================================================
+SCHEMA: Common
+======================================================================
+SE_accuracy: 0.6719 (from r_xx=0.5485)
+SE_confidence: 0.5997 (from r_yy=0.6404)
+
+Initializing SEMCalibration for Common...
+Fitting latent difference model for Common...
+
+SEM calibration SUCCESSFUL for Common
+Assigned 400/400 latent_calibration values for Common
+
+POST-SEM Reliability for Common:
+  Split-half r: nan
+  Full-length r: 0.7267
+  Improvement: -0.4013 -> 0.7267 (+1.1281)
+  Correlation (SEM vs Simple): r=0.9828
+
+======================================================================
+SCHEMA: Congruent
+======================================================================
+SE_accuracy: 0.6927 (from r_xx=0.5201)
+SE_confidence: 0.6502 (from r_yy=0.5772)
+
+Initializing SEMCalibration for Congruent...
+Fitting latent difference model for Congruent...
+
+SEM calibration SUCCESSFUL for Congruent
+Assigned 400/400 latent_calibration values for Congruent
+
+POST-SEM Reliability for Congruent:
+  Split-half r: nan
+  Full-length r: 0.4890
+  Improvement: -0.8084 -> 0.4890 (+1.2974)
+  Correlation (SEM vs Simple): r=0.9906
+
+======================================================================
+SCHEMA: Incongruent
+======================================================================
+SE_accuracy: 0.6827 (from r_xx=0.5339)
+SE_confidence: 0.6015 (from r_yy=0.6382)
+
+Initializing SEMCalibration for Incongruent...
+Fitting latent difference model for Incongruent...
+
+SEM calibration SUCCESSFUL for Incongruent
+Assigned 400/400 latent_calibration values for Incongruent
+
+POST-SEM Reliability for Incongruent:
+  Split-half r: nan
+  Full-length r: 0.7379
+  Improvement: -0.3116 -> 0.7379 (+1.0496)
+  Correlation (SEM vs Simple): r=0.9795
+
+======================================================================
+SUMMARY: POST-SEM Reliability BY SCHEMA
+======================================================================
+  Common        : r_PRE=-0.4013 -> r_POST=+0.7267 (+1.1281)
+  Congruent     : r_PRE=-0.8084 -> r_POST=+0.4890 (+1.2974)
+  Incongruent   : r_PRE=-0.3116 -> r_POST=+0.7379 (+1.0496)
+STEP 3 COMPLETE
+
+======================================================================
+STEP 4: Save SEM Calibration Scores
+======================================================================
+No missing values in latent_calibration
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.1/data/step11_calibration_scores_SEM.csv (1200 rows)
+Saved diagnostics: /home/etai/projects/REMEMVR/results/ch6/6.5.1/data/step11_SEM_diagnostics.csv
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================

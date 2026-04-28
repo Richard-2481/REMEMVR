@@ -1,0 +1,22 @@
+2025-12-03 18:56:57,198 - INFO - ============================================================
+2025-12-03 18:56:57,198 - INFO - STEP 06: COMPARE MODEL FIT (AIC/BIC)
+2025-12-03 18:56:57,198 - INFO - ============================================================
+2025-12-03 18:56:57,198 - INFO - 
+1. Loading models...
+2025-12-03 18:56:57,217 - INFO - IRT model: AIC=2229.53, BIC=2280.43
+2025-12-03 18:56:57,219 - INFO - CTT model: AIC=-1488.83, BIC=-1437.93
+2025-12-03 18:56:57,219 - INFO - 
+2. Comparing model fit...
+2025-12-03 18:56:57,219 - INFO - Model fit comparison computed: 2 rows
+2025-12-03 18:56:57,219 - INFO - 
+3. Saving comparison...
+2025-12-03 18:56:57,220 - INFO -    Saved: step06_model_fit_comparison.csv (2 rows)
+2025-12-03 18:56:57,220 - INFO - 
+4. Writing interpretation...
+2025-12-03 18:56:57,220 - INFO - Interpretation written to /home/etai/projects/REMEMVR/results/ch5/5.3.5/data/step06_fit_interpretation.txt
+2025-12-03 18:56:57,220 - INFO - 
+============================================================
+2025-12-03 18:56:57,220 - INFO - STEP 06 COMPLETE: Model fit compared
+2025-12-03 18:56:57,221 - INFO - Model fit comparison: ΔAIC = 3718.37, ΔBIC = 3718.37
+2025-12-03 18:56:57,221 - INFO - Interpretation: CTT model shows better fit
+2025-12-03 18:56:57,221 - INFO - ============================================================

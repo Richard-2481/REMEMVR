@@ -1,0 +1,13 @@
+analysis_type,method,result,confidence_interval,n_used,notes
+outlier_detection_total,standardized_residuals,"n_outliers=1, n_clean=99",N/A,99,"Threshold=3.29, Where_change=0.031, What_change=0.042"
+outlier_robust_correlation_total,pearson_no_outliers,"r_Where=0.379, r_What=0.415",N/A,99,"Original: Where=0.348, What=0.373"
+outlier_detection_pct_ret,standardized_residuals,"n_outliers=3, n_clean=97",N/A,97,"Threshold=3.29, Where_change=-0.102, What_change=-0.115"
+outlier_robust_correlation_pct_ret,pearson_no_outliers,"r_Where=0.080, r_What=0.116",N/A,97,"Original: Where=0.182, What=0.231"
+alternative_correlation_total,spearman,"r_Where=0.360, r_What=0.387",N/A,100,"p_Where=0.0002, p_What=0.0001"
+alternative_correlation_total,kendall_tau,"tau_Where=0.254, tau_What=0.270",N/A,100,"p_Where=0.0003, p_What=0.0001"
+alternative_correlation_pct_ret,spearman,"r_Where=0.106, r_What=0.123",N/A,100,"p_Where=0.2957, p_What=0.2224"
+alternative_correlation_pct_ret,kendall_tau,"tau_Where=0.085, tau_What=0.099",N/A,100,"p_Where=0.2807, p_What=0.2107"
+cross_validation_total,5_fold_cv,"mean_r_Where=0.344, mean_r_What=0.378","Where_SD=0.228, What_SD=0.250",100,"Stability_ratio_Where=0.664, Stability_ratio_What=0.662"
+cross_validation_pct_ret,5_fold_cv,"mean_r_Where=0.161, mean_r_What=0.187","Where_SD=0.234, What_SD=0.291",100,"Stability_ratio_Where=1.455, Stability_ratio_What=1.555"
+power_analysis_total,post_hoc_power,"Power_Where=0.676, Power_What=0.771",Min_detectable_r=0.382,100,"Alpha=0.00179, Adequate_power_Where=False, Adequate_power_What=False"
+power_analysis_pct_ret,post_hoc_power,"Power_Where=0.095, Power_What=0.209",Min_detectable_r=0.382,100,"Alpha=0.00179, Adequate_power_Where=False, Adequate_power_What=False"

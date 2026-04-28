@@ -1,0 +1,37 @@
+Step 06: Test LocationType x Phase Interaction
+Loading coefficients from Step 3...
+step03_lmm_coefficients.csv (8 rows)
+3-way interaction term: Days_within:Segment[T.Late]:LocationType[T.Destination]
+  Estimate: 0.0607
+  SE: 0.1189
+  z-score: 0.51
+  p_uncorrected: 0.6099
+Applying Bonferroni correction (2 main tests)...
+  p_bonferroni: 1.0000
+  Significant at alpha=0.025: False
+[EFFECT SIZE] Computing Cohen's f² via model comparison...
+Loading LMM input data...
+step02_lmm_input_long.csv (800 rows)
+Fitting full model (with 3-way interaction)...
+Full model converged: True
+Fitting reduced model (without 3-way interaction)...
+Reduced model converged: True
+[R²] Full model R²: 0.5066
+[R²] Reduced model R²: 0.5064
+[R²] R² difference: 0.0002
+[EFFECT SIZE] Cohen's f²: 0.0005
+Effect size: negligible
+Saving interaction test results to step06_interaction_tests.csv...
+step06_interaction_tests.csv (1 rows, 9 cols)
+Checking output structure...
+Row count: 1
+Column count: 9
+Bonferroni p >= uncorrected p
+Decision D068: Both p_uncorrected and p_bonferroni columns present
+Cohen's f² non-negative: 0.0005
+Step 06 complete
+[KEY RESULT] 3-way interaction: beta=0.0607, p_uncorrected=0.6099, p_bonferroni=1.0000
+[KEY RESULT] Significant at Bonferroni alpha=0.025: False
+[KEY RESULT] Effect size: Cohen's f²=0.0005 (negligible)
+LocationType x Phase interaction NOT significant
+Source and Destination show SIMILAR consolidation patterns

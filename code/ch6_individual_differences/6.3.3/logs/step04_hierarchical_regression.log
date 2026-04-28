@@ -1,0 +1,103 @@
+Step 04: Hierarchical Regression
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 13 cols)
+All required columns present: ['hce_rate', 'age_c', 'sex', 'education', 'ravlt_c', 'bvmt_c', 'rpm_c']
+HCE rate range: 0.000 to 0.215
+Setting up hierarchical regression blocks...
+Demographics block: 3 predictors
+Full model block: 6 predictors
+Sample size: N = 100
+Running fit_hierarchical_regression...
+Hierarchical regression complete
+Demographics model R² = 0.0171
+Full model R² = 0.0307
+Incremental R² (cognitive) = 0.0137
+F-change = 0.211, p = 0.972374
+Extracting coefficients with dual p-value reporting...
+'numpy.ndarray' object has no attribute 'iloc'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.3/code/step04_hierarchical_regression.py", line 222, in <module>
+    'ci_lower': model_demo.conf_int().iloc[i, 0],
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'iloc'
+Step 04: Hierarchical Regression
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 13 cols)
+All required columns present: ['hce_rate', 'age_c', 'sex', 'education', 'ravlt_c', 'bvmt_c', 'rpm_c']
+HCE rate range: 0.000 to 0.215
+Setting up hierarchical regression blocks...
+Demographics block: 3 predictors
+Full model block: 6 predictors
+Sample size: N = 100
+Running fit_hierarchical_regression...
+Hierarchical regression complete
+Demographics model R² = 0.0171
+Full model R² = 0.0307
+Incremental R² (cognitive) = 0.0137
+F-change = 0.211, p = 0.972374
+Extracting coefficients with dual p-value reporting...
+Applying multiple comparison corrections...
+Bonferroni correction (α = 0.000448)
+FDR correction (α = 0.05)
+Computing bootstrap confidence intervals...
+Bootstrap CI computation failed: bootstrap_regression_ci() got an unexpected keyword argument 'confidence_level'
+Using OLS confidence intervals for all models
+Creating model comparison table...
+Model comparison table
+Saving regression results...
+step04_regression_results.csv (11 rows, 10 cols)
+step04_model_comparison.csv (2 rows, 8 cols)
+[KEY FINDINGS]
+  Demographics R² = 0.0171
+  Full model R² = 0.0307
+  Incremental R² (cognitive) = 0.0137
+  F-change = 0.211
+  p-value (uncorrected) = 0.972374
+  p-value significant at α = 0.000448? False
+Running validate_regression_assumptions...
+normality: PASS (stat=N/A, p=2.4787318728329263e-07)
+homoscedasticity: PASS (stat=N/A, p=0.23445994543622828)
+linearity: PASS (stat=N/A, p=N/A)
+independence: PASS (stat=N/A, p=N/A)
+Step 04 complete
+Step 04: Hierarchical Regression
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 17 cols)
+All required columns present: ['hce_rate', 'age_c', 'sex', 'education', 'ravlt_c', 'bvmt_c', 'rpm_c', 'ravlt_pct_ret_c', 'bvmt_pct_ret_c']
+HCE rate range: 0.000 to 0.215
+Setting up hierarchical regression blocks...
+Demographics block: 3 predictors
+Full model block: 8 predictors
+Sample size: N = 100
+Running fit_hierarchical_regression...
+Hierarchical regression complete
+Demographics model R² = 0.0171
+Full model R² = 0.1788
+Incremental R² (cognitive) = 0.1617
+F-change = 2.166, p = 0.037737
+Extracting coefficients with dual p-value reporting...
+Applying multiple comparison corrections...
+Bonferroni correction (α = 0.000448)
+FDR correction (α = 0.05)
+Computing bootstrap confidence intervals...
+Bootstrap CI computation failed: bootstrap_regression_ci() got an unexpected keyword argument 'confidence_level'
+Using OLS confidence intervals for all models
+Creating model comparison table...
+Model comparison table
+Saving regression results...
+step04_regression_results.csv (13 rows, 10 cols)
+step04_model_comparison.csv (2 rows, 8 cols)
+[KEY FINDINGS]
+  Demographics R² = 0.0171
+  Full model R² = 0.1788
+  Incremental R² (cognitive) = 0.1617
+  F-change = 2.166
+  p-value (uncorrected) = 0.037737
+  p-value significant at α = 0.000448? False
+Running validate_regression_assumptions...
+normality: PASS (stat=N/A, p=0.002699817508921355)
+homoscedasticity: PASS (stat=N/A, p=0.00010846348969684172)
+linearity: PASS (stat=N/A, p=N/A)
+independence: PASS (stat=N/A, p=N/A)
+Step 04 complete

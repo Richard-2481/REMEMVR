@@ -1,0 +1,137 @@
+Step 03: Merge Analysis Dataset
+Loading cognitive test data...
+step01_cognitive_tests.csv (100 rows, 8 cols)
+Cognitive columns: ['uid', 'ravlt_total', 'bvmt_total', 'rpm_score', 'age', 'sex', 'education', 'nart_iq']
+Loading HCE rate data...
+step02_hce_rates.csv (100 rows, 2 cols)
+HCE columns: ['UID', 'hce_rate']
+Standardizing UID column names...
+Cognitive data now has UID column (was uid)
+Running merge_theta_cognitive...
+'uid'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.3/code/step03_merge_analysis_dataset.py", line 158, in <module>
+    merged_df = merge_theta_cognitive(
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/data.py", line 225, in merge_theta_cognitive
+    return pd.merge(theta_df, cognitive_df, on='uid', how=how)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 1298, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1914, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'uid'
+Step 03: Merge Analysis Dataset
+Loading cognitive test data...
+step01_cognitive_tests.csv (100 rows, 8 cols)
+Cognitive columns: ['uid', 'ravlt_total', 'bvmt_total', 'rpm_score', 'age', 'sex', 'education', 'nart_iq']
+Loading HCE rate data...
+step02_hce_rates.csv (100 rows, 2 cols)
+HCE columns: ['UID', 'hce_rate']
+Standardizing UID column names...
+HCE data now has uid column (was UID)
+Running merge_theta_cognitive...
+Merge complete
+Merged dataset: 100 rows, 9 cols
+Merged columns: ['uid', 'hce_rate', 'ravlt_total', 'bvmt_total', 'rpm_score', 'age', 'sex', 'education', 'nart_iq']
+Creating centered predictors...
+age -> age_c (mean=44.570)
+ravlt_total -> ravlt_c (mean=50.600)
+bvmt_total -> bvmt_c (mean=39.110)
+rpm_score -> rpm_c (mean=9.870)
+Standardizing final column names...
+Final columns: ['uid', 'hce_rate', 'ravlt_total', 'bvmt_total', 'rpm_score', 'age', 'sex', 'education', 'nart_iq', 'age_c', 'ravlt_c', 'bvmt_c', 'rpm_c']
+Saving step03_analysis_dataset.csv...
+step03_analysis_dataset.csv (100 rows, 13 cols)
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['age', 'nart_iq', 'uid', 'age_c', 'hce_rate', 'sex', 'ravlt_c', 'education', 'rpm_score', 'ravlt_total', 'rpm_c', 'bvmt_total', 'bvmt_c']
+n_required: 7
+n_missing: 0
+Additional quality checks...
+Missing data summary:
+uid: 0 missing
+hce_rate: 0 missing
+ravlt_total: 0 missing
+bvmt_total: 0 missing
+rpm_score: 0 missing
+age: 0 missing
+sex: 0 missing
+education: 0 missing
+nart_iq: 3 missing (3.0%)
+age_c: 0 missing
+ravlt_c: 0 missing
+bvmt_c: 0 missing
+rpm_c: 0 missing
+Centered variable means (should be ~0):
+age_c: mean=0.000000
+ravlt_c: mean=-0.000000
+bvmt_c: mean=0.000000
+rpm_c: mean=0.000000
+Step 03 complete
+Step 03: Merge Analysis Dataset
+Loading cognitive test data...
+step01_cognitive_tests.csv (100 rows, 10 cols)
+Cognitive columns: ['uid', 'ravlt_total', 'bvmt_total', 'rpm_score', 'ravlt_pct_ret', 'bvmt_pct_ret', 'age', 'sex', 'education', 'nart_iq']
+Loading HCE rate data...
+step02_hce_rates.csv (100 rows, 2 cols)
+HCE columns: ['UID', 'hce_rate']
+Standardizing UID column names...
+HCE data now has uid column (was UID)
+Running merge_theta_cognitive...
+Merge complete
+Merged dataset: 100 rows, 11 cols
+Merged columns: ['uid', 'hce_rate', 'ravlt_total', 'bvmt_total', 'rpm_score', 'ravlt_pct_ret', 'bvmt_pct_ret', 'age', 'sex', 'education', 'nart_iq']
+Creating centered predictors...
+age -> age_c (mean=44.570)
+ravlt_total -> ravlt_c (mean=51.650)
+bvmt_total -> bvmt_c (mean=28.220)
+rpm_score -> rpm_c (mean=9.870)
+ravlt_pct_ret -> ravlt_pct_ret_c (mean=86.119)
+bvmt_pct_ret -> bvmt_pct_ret_c (mean=96.699)
+Standardizing final column names...
+Final columns: ['uid', 'hce_rate', 'ravlt_total', 'bvmt_total', 'rpm_score', 'ravlt_pct_ret', 'bvmt_pct_ret', 'age', 'sex', 'education', 'nart_iq', 'age_c', 'ravlt_c', 'bvmt_c', 'rpm_c', 'ravlt_pct_ret_c', 'bvmt_pct_ret_c']
+Saving step03_analysis_dataset.csv...
+step03_analysis_dataset.csv (100 rows, 17 cols)
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['rpm_c', 'bvmt_total', 'age', 'bvmt_pct_ret_c', 'uid', 'ravlt_total', 'bvmt_pct_ret', 'sex', 'education', 'bvmt_c', 'hce_rate', 'ravlt_pct_ret', 'age_c', 'nart_iq', 'ravlt_pct_ret_c', 'ravlt_c', 'rpm_score']
+n_required: 9
+n_missing: 0
+Additional quality checks...
+Missing data summary:
+uid: 0 missing
+hce_rate: 0 missing
+ravlt_total: 0 missing
+bvmt_total: 0 missing
+rpm_score: 0 missing
+ravlt_pct_ret: 0 missing
+bvmt_pct_ret: 0 missing
+age: 0 missing
+sex: 0 missing
+education: 0 missing
+nart_iq: 3 missing (3.0%)
+age_c: 0 missing
+ravlt_c: 0 missing
+bvmt_c: 0 missing
+rpm_c: 0 missing
+ravlt_pct_ret_c: 0 missing
+bvmt_pct_ret_c: 0 missing
+Centered variable means (should be ~0):
+age_c: mean=0.000000
+ravlt_c: mean=0.000000
+bvmt_c: mean=0.000000
+rpm_c: mean=0.000000
+ravlt_pct_ret_c: mean=0.000000
+bvmt_pct_ret_c: mean=-0.000000
+Step 03 complete

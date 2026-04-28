@@ -1,0 +1,90 @@
+Step 2: Compute Effect Sizes (f-squared)
+
+[LOAD 1] Accuracy data
+step03_theta_scores.csv (400 rows)
+Converting accuracy from WIDE to LONG format...
+accuracy: 400 rows -> 800 rows
+  Unique UIDs: 100
+  Unique locations: ['source' 'destination']
+  Unique TSVR values: [np.float64(nan)]
+
+[LOAD 2] Confidence data
+step03_theta_confidence.csv (400 rows)
+Converting confidence from WIDE to LONG format...
+confidence: 400 rows -> 800 rows
+  Unique UIDs: 100
+  Unique locations: ['source' 'destination']
+  Unique TSVR values: [np.float64(1.0), np.float64(26.0), np.float64(74.0), np.float64(148.0)]
+
+[FIT 1] Accuracy FULL model (location * TSVR_hours)
+Error evaluating factor: NameError: name 'theta' is not defined
+    theta ~ location * TSVR_hours
+    ^^^^^
+Full error details:
+Step 2: Compute Effect Sizes (f-squared)
+
+[LOAD 1] Accuracy data
+step03_theta_scores.csv (400 rows)
+Converting accuracy from WIDE to LONG format...
+accuracy: 400 rows -> 800 rows
+  Unique UIDs: 100
+  Unique locations: ['source' 'destination']
+  Unique TSVR values: [np.float64(1.0), np.float64(26.0), np.float64(74.0), np.float64(148.0)]
+
+[LOAD 2] Confidence data
+step03_theta_confidence.csv (400 rows)
+Converting confidence from WIDE to LONG format...
+confidence: 400 rows -> 800 rows
+  Unique UIDs: 100
+  Unique locations: ['source' 'destination']
+  Unique TSVR values: [np.float64(1.0), np.float64(26.0), np.float64(74.0), np.float64(148.0)]
+
+[FIT 1] Accuracy FULL model (location * TSVR_hours)
+Error evaluating factor: NameError: name 'theta' is not defined
+    theta ~ location * TSVR_hours
+    ^^^^^
+Full error details:
+Step 2: Compute Effect Sizes (f-squared)
+
+[LOAD 1] Accuracy data
+step03_theta_scores.csv (400 rows)
+Converting accuracy from WIDE to LONG format...
+accuracy: 400 rows -> 800 rows
+  Unique UIDs: 100
+  Unique locations: ['source' 'destination']
+  Unique TSVR values: [np.float64(1.0), np.float64(26.0), np.float64(74.0), np.float64(148.0)]
+
+[LOAD 2] Confidence data
+step03_theta_confidence.csv (400 rows)
+Converting confidence from WIDE to LONG format...
+confidence: 400 rows -> 800 rows
+  Unique UIDs: 100
+  Unique locations: ['source' 'destination']
+  Unique TSVR values: [np.float64(1.0), np.float64(26.0), np.float64(74.0), np.float64(148.0)]
+
+[FIT 1] Accuracy FULL model (location * TSVR_hours)
+Accuracy FULL model
+
+[FIT 2] Accuracy REDUCED model (location + TSVR_hours)
+Accuracy REDUCED model
+
+[FIT 3] Confidence FULL model (location * TSVR_hours)
+Confidence FULL model
+
+[FIT 4] Confidence REDUCED model (location + TSVR_hours)
+Confidence REDUCED model
+
+[R2] Computing marginal R-squared values
+[R2] Accuracy: R2_full=0.2735, R2_reduced=0.2694
+[R2] Confidence: R2_full=0.2414, R2_reduced=0.2325
+
+[f2] Computing Cohen's f-squared effect sizes
+[f2] Accuracy: 0.0056
+[f2] Confidence: 0.0117
+[f2] Delta (accuracy - confidence): -0.0061
+
+Checking f-squared results
+Unexpected pattern: f2_accuracy (0.0056) <= f2_confidence (0.0117)
+
+step02_effect_sizes.csv (3 rows)
+Step 2 complete

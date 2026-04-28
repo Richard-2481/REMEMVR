@@ -1,0 +1,150 @@
+============================================================
+Step 4: Steiger's Z-test for Dependent Correlations
+============================================================
+Input correlations:
+  r(Age, RAVLT) = -0.292
+  r(Age, REMEMVR) = -0.193
+  r(RAVLT, REMEMVR) = 0.310
+  N = 100
+
+========================================
+STEIGER'S Z-TEST
+========================================
+
+Results:
+  Z statistic = -0.768
+  p-value (one-tailed) = 0.2211
+  → NON-SIGNIFICANT: No significant difference in age correlations
+
+========================================
+EFFECT SIZE CALCULATIONS
+========================================
+
+Correlation difference (|r_RAVLT| - |r_REMEMVR|): 0.099
+Bootstrap 95% CI: [-0.139, 0.300]
+  → CI includes zero: Difference not robust
+
+Post-hoc power: 0.190
+Minimum detectable correlation difference (80% power): 0.244
+Effect size category: Small
+
+========================================
+VR SCAFFOLDING HYPOTHESIS EVALUATION
+========================================
+Criteria met:
+  ravlt_decline: ✓
+  rememvr_invariant: ✓
+  difference_exists: ✓
+  significant_test: ✗
+  ci_excludes_zero: ✗
+
+Overall VR Scaffolding Support: MODERATE
+
+Saved Steiger test results to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step04_steiger_test.csv
+Saved effect sizes to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step04_effect_sizes.csv
+
+Step 4 completed successfully
+============================================================
+Step 4: Steiger's Z-test for Dependent Correlations
+============================================================
+Input correlations:
+  r(Age, RAVLT) = -0.292
+  r(Age, REMEMVR) = -0.193
+  r(RAVLT, REMEMVR) = 0.310
+  N = 100
+
+========================================
+STEIGER'S Z-TEST
+========================================
+
+Results:
+  Z statistic = -0.768
+  p-value (one-tailed) = 0.2211
+  → NON-SIGNIFICANT: No significant difference in age correlations
+
+========================================
+EFFECT SIZE CALCULATIONS
+========================================
+
+Correlation difference (|r_RAVLT| - |r_REMEMVR|): 0.099
+Bootstrap 95% CI: [-0.139, 0.300]
+  → CI includes zero: Difference not robust
+
+Post-hoc power: 0.190
+Minimum detectable correlation difference (80% power): 0.244
+Effect size category: Small
+
+========================================
+VR SCAFFOLDING HYPOTHESIS EVALUATION
+========================================
+Criteria met:
+  ravlt_decline: ✓
+  rememvr_invariant: ✓
+  difference_exists: ✓
+  significant_test: ✗
+  ci_excludes_zero: ✗
+
+Overall VR Scaffolding Support: MODERATE
+
+Saved Steiger test results to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step04_steiger_test.csv
+Saved effect sizes to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step04_effect_sizes.csv
+
+Step 4 completed successfully
+============================================================
+Step 4: Steiger's Z-test for Dependent Correlations
+============================================================
+Input correlations:
+  r(Age, RAVLT) = -0.209
+  r(Age, REMEMVR) = -0.193
+  r(RAVLT, REMEMVR) = 0.318
+  N = 100
+
+========================================
+STEIGER'S Z-TEST
+========================================
+
+Results:
+  Z statistic = -0.120
+  p-value (one-tailed) = 0.4522
+  → NON-SIGNIFICANT: No significant difference in age correlations
+
+========================================
+EFFECT SIZE CALCULATIONS
+========================================
+
+Correlation difference (|r_RAVLT| - |r_REMEMVR|): 0.016
+Bootstrap 95% CI: [-0.216, 0.235]
+  → CI includes zero: Difference not robust
+
+Post-hoc power: 0.064
+Minimum detectable correlation difference (80% power): 0.244
+Effect size category: Negligible
+
+========================================
+STEIGER'S Z-TEST: RAVLT Pct Ret vs REMEMVR
+========================================
+  r(Age, RAVLT_Pct_Ret) = -0.188
+  r(Age, REMEMVR) = -0.193
+  r(RAVLT_Pct_Ret, REMEMVR) = 0.365
+  N = 100
+
+  Z statistic = 0.040
+  p-value (one-tailed) = 0.5159
+  Interpretation: Non-significant difference
+
+========================================
+VR SCAFFOLDING HYPOTHESIS EVALUATION
+========================================
+Criteria met:
+  ravlt_decline: ✓
+  rememvr_invariant: ✓
+  difference_exists: ✓
+  significant_test: ✗
+  ci_excludes_zero: ✗
+
+Overall VR Scaffolding Support: MODERATE
+
+Saved Steiger test results to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step04_steiger_test.csv
+Saved effect sizes to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step04_effect_sizes.csv
+
+Step 4 completed successfully

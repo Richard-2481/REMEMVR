@@ -1,0 +1,2 @@
+equivalence_bound,tost_p_value,p_greater_than_lower,p_less_than_upper,equivalent,interpretation
+0.2,0.060839692008852975,0.060839692008852975,0.0072304614766107115,False,Correlation IS NOT EQUIVALENT TO zero (|r| < 0.2)

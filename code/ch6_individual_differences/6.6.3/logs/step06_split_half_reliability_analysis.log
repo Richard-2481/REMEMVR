@@ -1,0 +1,52 @@
+Step 06: Split-Half Reliability Analysis
+Reading domain slopes...
+100 rows
+[SPLIT-HALF] Parameters: 100 splits, size=50, seed=42
+Running split-half reliability (100 splits)...
+Reliability r: nan (p=nan)
+95% CI: [nan, nan]
+Mean half1-half2 diff: 0.0000
+SD(ICC): 0.0000
+Running split-half reliability (100 splits)...
+Reliability r: nan (p=nan)
+95% CI: [nan, nan]
+Mean half1-half2 diff: 0.0000
+SD(ICC): 0.0000
+Split-half reliability table: 2 rows
+Checking reliability results...
+Both domains analyzed
+All reliability_r in [-1, 1]
+What: reliability_r = nan <= 0.50 (low reliability)
+Where: reliability_r = nan <= 0.50 (low reliability)
+All CI bounds in [-1, 1]
+Writing split-half reliability...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step06_split_half_reliability.csv (2 rows)
+Step 06 complete
+Reliability estimates: What=nan, Where=nan
+Proceed to step07 (power analysis)
+Step 06: Split-Half Reliability Analysis
+Reading domain slopes...
+100 rows
+[SPLIT-HALF] Parameters: 100 splits, size=50, seed=42
+Running split-half reliability (100 splits)...
+Reliability r: nan (p=nan)
+95% CI: [nan, nan]
+Mean half1-half2 diff: 0.0000
+SD(ICC): 0.0000
+Running split-half reliability (100 splits)...
+Reliability r: nan (p=nan)
+95% CI: [nan, nan]
+Mean half1-half2 diff: 0.0000
+SD(ICC): 0.0000
+Split-half reliability table: 2 rows
+Checking reliability results...
+Both domains analyzed
+All reliability_r in [-1, 1]
+What: reliability_r = nan <= 0.50 (low reliability)
+Where: reliability_r = nan <= 0.50 (low reliability)
+All CI bounds in [-1, 1]
+Writing split-half reliability...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step06_split_half_reliability.csv (2 rows)
+Step 06 complete
+Reliability estimates: What=nan, Where=nan
+Proceed to step07 (power analysis)

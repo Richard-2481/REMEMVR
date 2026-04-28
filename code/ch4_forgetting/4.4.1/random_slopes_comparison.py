@@ -49,7 +49,7 @@ if __name__ == "__main__":
         log("")
 
         # Load data
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         df = pd.read_csv(INPUT_LMM)
         log(f"  Loaded {len(df)} rows, {len(df.columns)} columns")
         log(f"  N participants: {df['UID'].nunique()}")
@@ -63,11 +63,8 @@ if __name__ == "__main__":
 
         # Use Log model (best from step05)
         formula = "theta ~ TSVR_log * C(congruence, Treatment('common'))"
-
-        # =====================================================================
         # MODEL 1: Intercepts-only (current assumption in step05)
-        # =====================================================================
-        log("\n[FIT] Model 1: Intercepts-only")
+        log("\nModel 1: Intercepts-only")
         log(f"  Formula: {formula}")
         log(f"  Random effects: ~1 (intercepts only)")
 
@@ -81,22 +78,19 @@ if __name__ == "__main__":
             result_intercepts = model_intercepts.fit(method=['lbfgs'], reml=False)
 
             if result_intercepts.converged:
-                log(f"  [CONVERGED] Yes")
+                log(f"  Yes")
             else:
-                log(f"  [CONVERGED] No (WARNING)")
+                log(f"  No (WARNING)")
 
             log(f"  AIC: {result_intercepts.aic:.2f}")
             log(f"  BIC: {result_intercepts.bic:.2f}")
             log(f"  Random intercept variance: {result_intercepts.cov_re.iloc[0,0]:.4f}")
 
         except Exception as e:
-            log(f"  [ERROR] Intercepts-only model failed: {str(e)}")
+            log(f"  Intercepts-only model failed: {str(e)}")
             raise
-
-        # =====================================================================
         # MODEL 2: Intercepts + Slopes
-        # =====================================================================
-        log("\n[FIT] Model 2: Intercepts + Slopes")
+        log("\nModel 2: Intercepts + Slopes")
         log(f"  Formula: {formula}")
         log(f"  Random effects: ~TSVR_log (intercepts + slopes)")
 
@@ -110,10 +104,10 @@ if __name__ == "__main__":
             result_slopes = model_slopes.fit(method=['lbfgs'], reml=False)
 
             if result_slopes.converged:
-                log(f"  [CONVERGED] Yes")
+                log(f"  Yes")
                 convergence_status = "SUCCESS"
             else:
-                log(f"  [CONVERGED] No (WARNING)")
+                log(f"  No (WARNING)")
                 convergence_status = "FAILED"
 
             log(f"  AIC: {result_slopes.aic:.2f}")
@@ -135,17 +129,14 @@ if __name__ == "__main__":
 
             # Check for boundary warnings (variance near zero)
             if slope_var < 0.001:
-                log(f"  [WARNING] Random slope variance very small ({slope_var:.6f})")
+                log(f"  Random slope variance very small ({slope_var:.6f})")
                 log(f"           This suggests slopes may not be needed.")
 
         except Exception as e:
-            log(f"  [ERROR] Intercepts+slopes model failed: {str(e)}")
+            log(f"  Intercepts+slopes model failed: {str(e)}")
             convergence_status = "ERROR"
             result_slopes = None
-
-        # =====================================================================
         # COMPARISON
-        # =====================================================================
         log("\n" + "="*70)
         log("MODEL COMPARISON")
         log("="*70)
@@ -164,12 +155,12 @@ if __name__ == "__main__":
             if delta_aic > 2:
                 decision = "SLOPES IMPROVE FIT"
                 recommendation = "Use random slopes model. Individual differences in forgetting rates exist."
-                log(f"[DECISION] {decision}")
+                log(f"{decision}")
                 log(f"  Slopes model AIC is {delta_aic:.2f} points LOWER (better).")
                 log(f"  ΔAIC > 2 indicates strong evidence for random slopes.")
                 log(f"  Random slope variance = {slope_var:.4f} (non-negligible)")
                 log("")
-                log(f"[RECOMMENDATION] {recommendation}")
+                log(f"{recommendation}")
                 log(f"  - Update step05 to use random slopes explicitly")
                 log(f"  - Report in summary.md: Individual differences in forgetting rates")
                 log(f"  - Document slope variance in results")
@@ -177,12 +168,12 @@ if __name__ == "__main__":
             elif delta_aic < -2:
                 decision = "INTERCEPTS-ONLY PREFERRED"
                 recommendation = "Random slopes overfit. Use intercepts-only model (homogeneous effects confirmed)."
-                log(f"[DECISION] {decision}")
+                log(f"{decision}")
                 log(f"  Intercepts-only AIC is {abs(delta_aic):.2f} points LOWER (better).")
                 log(f"  Slopes model is MORE complex but WORSE fit.")
                 log(f"  Random slope variance = {slope_var:.4f}")
                 log("")
-                log(f"[RECOMMENDATION] {recommendation}")
+                log(f"{recommendation}")
                 log(f"  - Keep current intercepts-only specification")
                 log(f"  - Document that random slopes were tested and rejected")
                 log(f"  - Homogeneous forgetting rates across participants confirmed")
@@ -190,12 +181,12 @@ if __name__ == "__main__":
             else:  # -2 <= delta_aic <= 2
                 decision = "AMBIGUOUS (ΔAIC < 2)"
                 recommendation = "Use simpler model (intercepts-only) per parsimony principle."
-                log(f"[DECISION] {decision}")
+                log(f"{decision}")
                 log(f"  ΔAIC = {delta_aic:.2f} (within [-2, 2] range)")
                 log(f"  Models essentially equivalent in fit.")
                 log(f"  Random slope variance = {slope_var:.4f}")
                 log("")
-                log(f"[RECOMMENDATION] {recommendation}")
+                log(f"{recommendation}")
                 log(f"  - Use intercepts-only per parsimony (simpler model)")
                 log(f"  - Document that slopes were tested but provided negligible improvement")
                 log(f"  - Individual differences in forgetting rates are minimal")
@@ -203,11 +194,11 @@ if __name__ == "__main__":
         elif convergence_status == "FAILED":
             decision = "SLOPES CONVERGENCE FAILURE"
             recommendation = "Use intercepts-only. Document convergence failure."
-            log(f"[DECISION] {decision}")
+            log(f"{decision}")
             log(f"  Random slopes model did not converge.")
             log(f"  Likely reason: Only 4 timepoints insufficient for stable slope estimation.")
             log("")
-            log(f"[RECOMMENDATION] {recommendation}")
+            log(f"{recommendation}")
             log(f"  - Use intercepts-only model")
             log(f"  - Document in summary.md: Random slopes attempted but convergence failed")
             log(f"  - Note: 4 timepoints (T1-T4) may be insufficient for random slopes")
@@ -215,17 +206,14 @@ if __name__ == "__main__":
         else:  # ERROR
             decision = "SLOPES MODEL ERROR"
             recommendation = "Use intercepts-only. Document error."
-            log(f"[DECISION] {decision}")
+            log(f"{decision}")
             log(f"  Random slopes model threw error during fitting.")
             log("")
-            log(f"[RECOMMENDATION] {recommendation}")
+            log(f"{recommendation}")
             log(f"  - Use intercepts-only model")
             log(f"  - Document error in validation.md")
-
-        # =====================================================================
         # SAVE REPORT
-        # =====================================================================
-        log("\n[SAVE] Writing comparison report...")
+        log("\nWriting comparison report...")
 
         OUTPUT_REPORT.parent.mkdir(parents=True, exist_ok=True)
         with open(OUTPUT_REPORT, 'w', encoding='utf-8') as f:
@@ -281,14 +269,14 @@ if __name__ == "__main__":
                 f.write("Random slopes model failed to converge, likely due to limited timepoints (N=4).\n")
                 f.write("With only 4 observations per participant, slope estimation is unstable.\n")
 
-        log(f"[SAVED] {OUTPUT_REPORT.name}")
-        log("\n[SUCCESS] Random slopes comparison complete")
+        log(f"{OUTPUT_REPORT.name}")
+        log("\nRandom slopes comparison complete")
         log(f"[ACTION REQUIRED] Update validation.md with findings")
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

@@ -1,0 +1,54 @@
+2025-12-03 20:02:39,498 - INFO - ============================================================
+2025-12-03 20:02:39,498 - INFO - Step 00: Load Dependencies from RQ 5.4.1
+2025-12-03 20:02:39,498 - INFO - ============================================================
+2025-12-03 20:02:39,498 - INFO - Checking RQ 5.4.1 completion status...
+2025-12-03 20:02:39,500 - INFO - RQ 5.4.1 results analysis status: success
+2025-12-03 20:02:39,500 - INFO - Loading theta scores from RQ 5.4.1...
+2025-12-03 20:02:39,502 - INFO - Loaded theta scores: 400 rows x 7 columns
+2025-12-03 20:02:39,504 - INFO - Loading TSVR mapping from RQ 5.4.1...
+2025-12-03 20:02:39,504 - INFO - Loaded TSVR mapping: 400 rows x 4 columns
+2025-12-03 20:02:39,506 - INFO - Loading purified items from RQ 5.4.1...
+2025-12-03 20:02:39,507 - INFO - Loaded purified items: 50 rows x 5 columns
+2025-12-03 20:02:39,509 - INFO - Items per congruence level:
+dimension
+common         19
+congruent      18
+incongruent    13
+Name: count, dtype: int64
+2025-12-03 20:02:39,509 - INFO - Verifying composite_ID consistency...
+2025-12-03 20:02:39,509 - INFO - Common composite_IDs: 400
+2025-12-03 20:02:39,509 - INFO - Copying files to RQ 5.4.4 data folder...
+2025-12-03 20:02:39,511 - INFO - Saved: data/step00_irt_theta.csv (400 rows)
+2025-12-03 20:02:39,512 - INFO - Saved: data/step00_tsvr_mapping.csv (400 rows)
+2025-12-03 20:02:39,513 - INFO - Saved: data/step00_purified_items.csv (50 rows)
+2025-12-03 20:02:39,513 - INFO - Saved verification report: /home/etai/projects/REMEMVR/results/ch5/5.4.4/data/step00_dependency_verification.txt
+2025-12-03 20:02:39,513 - INFO - ============================================================
+2025-12-03 20:02:39,513 - INFO - Step 00 COMPLETE: All dependencies loaded successfully
+2025-12-03 20:02:39,513 - INFO - ============================================================
+2025-12-09 20:37:22,646 - INFO - ============================================================
+2025-12-09 20:37:22,646 - INFO - Step 00: Load Dependencies from RQ 5.4.1
+2025-12-09 20:37:22,646 - INFO - ============================================================
+2025-12-09 20:37:22,646 - INFO - Checking RQ 5.4.1 completion status...
+2025-12-09 20:37:22,651 - INFO - RQ 5.4.1 results analysis status: success
+2025-12-09 20:37:22,651 - INFO - Loading theta scores from RQ 5.4.1...
+2025-12-09 20:37:22,653 - INFO - Loaded theta scores: 400 rows x 7 columns
+2025-12-09 20:37:22,653 - INFO - Loading TSVR mapping from RQ 5.4.1...
+2025-12-09 20:37:22,654 - INFO - Loaded TSVR mapping: 400 rows x 4 columns
+2025-12-09 20:37:22,655 - INFO - Loading purified items from RQ 5.4.1...
+2025-12-09 20:37:22,656 - INFO - Loaded purified items: 50 rows x 5 columns
+2025-12-09 20:37:22,657 - INFO - Items per congruence level:
+dimension
+common         19
+congruent      18
+incongruent    13
+Name: count, dtype: int64
+2025-12-09 20:37:22,657 - INFO - Verifying composite_ID consistency...
+2025-12-09 20:37:22,657 - INFO - Common composite_IDs: 400
+2025-12-09 20:37:22,657 - INFO - Copying files to RQ 5.4.4 data folder...
+2025-12-09 20:37:22,660 - INFO - Saved: data/step00_irt_theta.csv (400 rows)
+2025-12-09 20:37:22,662 - INFO - Saved: data/step00_tsvr_mapping.csv (400 rows)
+2025-12-09 20:37:22,662 - INFO - Saved: data/step00_purified_items.csv (50 rows)
+2025-12-09 20:37:22,663 - INFO - Saved verification report: /home/etai/projects/REMEMVR/results/ch5/5.4.4/data/step00_dependency_verification.txt
+2025-12-09 20:37:22,663 - INFO - ============================================================
+2025-12-09 20:37:22,663 - INFO - Step 00 COMPLETE: All dependencies loaded successfully
+2025-12-09 20:37:22,664 - INFO - ============================================================

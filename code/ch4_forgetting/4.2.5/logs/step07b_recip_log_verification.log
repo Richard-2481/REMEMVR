@@ -1,0 +1,71 @@
+================================================================================
+STEP 07B: RECIP+LOG ROOT MODEL VERIFICATION
+================================================================================
+
+MOTIVATION:
+  RQ 5.2.1 ROOT model changed from Log-only to Recip+Log
+  Testing if Purification-Trajectory Paradox robust to functional form
+
+[STEP 1] Loading standardized outcomes...
+
+  Loaded: step06_standardized_outcomes.csv (800 rows)
+
+  Added recip_TSVR transformation: 1 / (TSVR_hours + 1)
+  Added log_TSVR transformation: log(TSVR_hours + 1)
+
+  Data: 100 participants, 2 domains
+
+[STEP 2] Fitting parallel LMMs with Recip+Log functional form...
+
+  Formula: outcome ~ recip_TSVR + log_TSVR + C(domain) + recip_TSVR:C(domain) + log_TSVR:C(domain)
+  Random effects: ~1 (intercepts only, matching original)
+
+  Fitting z_full_ctt...
+    ✅ Converged: True
+    AIC: 1789.15
+
+  Fitting z_purified_ctt...
+    ⚠️  Failed to converge: Singular matrix
+
+  Fitting z_irt_theta...
+    ✅ Converged: True
+    AIC: 1683.32
+
+[STEP 3] Loading original Log-only results...
+
+  Loaded: step07_lmm_model_comparison.csv
+
+  AIC Comparison (Log vs Recip+Log):
+
+  Measurement          AIC (Log)       ΔAIC (Log)      AIC (Recip+Log)    ΔAIC (Recip+Log)   Paradox?
+  ---------------------------------------------------------------------------------------------------------
+  Full Ctt             1780.06                 +125.00 nan                              +nan False
+  Irt Theta            1655.06                   +0.00 nan                              +nan False
+  Purified Ctt         1812.26                 +157.21 nan                              +nan False
+  Full Ctt             nan                        +nan 1789.15                       +105.83 False
+  Irt Theta            nan                        +nan 1683.32                         +0.00 False
+  Purified Ctt         nan                        +nan nan                              +nan False
+
+  Saved: step07b_lmm_model_comparison_recip_log.csv
+
+[STEP 4] Saving model objects...
+
+  Saved: step07b_full_ctt_model_recip_log.pkl
+  Saved: step07b_irt_theta_model_recip_log.pkl
+
+[STEP 5] VERIFICATION SUMMARY
+================================================================================
+
+⚠️ VERIFICATION ALERT: Paradox pattern changed with Recip+Log
+
+FINDINGS:
+  Log-only paradox: 0/3 measurements show expected pattern
+  Recip+Log paradox: 0/3 measurements show expected pattern
+
+RECOMMENDATION:
+  Review why Recip+Log changed AIC ordering. May indicate functional form
+  affects purification bias more than expected.
+
+================================================================================
+Step 07b complete
+All outputs saved to /home/etai/projects/REMEMVR/results/ch5/5.2.5/data

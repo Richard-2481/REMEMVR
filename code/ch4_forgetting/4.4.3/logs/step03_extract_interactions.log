@@ -1,0 +1,54 @@
+Step 03: Extract 3-Way Interaction Terms with Dual P-Values
+
+[STEP 1] Load Fixed Effects
+----------------------------------------------------------------------
+Fixed effects: 18 rows
+Columns: ['term', 'coef', 'se', 'z', 'p']
+Terms: ['Intercept', 'recip_TSVR', 'log_TSVR', 'Age_c', 'Congruent', 'Incongruent', 'Age_c:recip_TSVR', 'Age_c:log_TSVR', 'Congruent:recip_TSVR', 'Congruent:log_TSVR', 'Incongruent:recip_TSVR', 'Incongruent:log_TSVR', 'Age_c:Congruent', 'Age_c:Incongruent', 'Age_c:Congruent:recip_TSVR', 'Age_c:Congruent:log_TSVR', 'Age_c:Incongruent:recip_TSVR', 'Age_c:Incongruent:log_TSVR']
+
+[STEP 2] Identify 3-Way Interaction Terms
+----------------------------------------------------------------------
+Required 3-way interaction terms (Recip+Log two-process):
+  - Age_c:Congruent:recip_TSVR
+  - Age_c:Congruent:log_TSVR
+  - Age_c:Incongruent:recip_TSVR
+  - Age_c:Incongruent:log_TSVR
+
+Found 4 matching terms
+All 4 three-way interaction terms found
+
+[STEP 3] Apply Bonferroni Correction
+----------------------------------------------------------------------
+Bonferroni correction for 2 time terms
+Corrected alpha = 0.05 / 2 = 0.025
+
+Bonferroni correction: p_bonferroni = min(p_uncorrected * 2, 1.0)
+Significance threshold: p_bonferroni < 0.025
+
+[STEP 4] Validate Dual P-Values
+----------------------------------------------------------------------
+Dual p-values present (p_uncorrected + p_bonferroni)
+Bonferroni correction verified correct
+No NaN values in any column
+
+[STEP 5] Report Results
+----------------------------------------------------------------------
+3-Way Interaction Terms (Decision D068 Dual P-Values):
+
+Term                                           Coef       SE        z    p_uncor     p_bonf   Sig
+-----------------------------------------------------------------------------------------------
+Age_c:Congruent:recip_TSVR                  -0.0671   0.0437    -1.54     0.1243     0.2486      
+Age_c:Congruent:log_TSVR                    -0.0074   0.0055    -1.34     0.1788     0.3575      
+Age_c:Incongruent:recip_TSVR                 0.0223   0.0437     0.51     0.6091     1.0000      
+Age_c:Incongruent:log_TSVR                   0.0035   0.0055     0.63     0.5259     1.0000      
+
+Significant 3-way interactions: 0 / 4
+NULL RESULT: No significant Age x Congruence x Time interactions
+Age effects on forgetting rate do NOT differ by schema congruence level
+
+[STEP 6] Save Output
+----------------------------------------------------------------------
+/home/etai/projects/REMEMVR/results/ch5/5.4.3/data/step03_interaction_terms.csv
+  4 rows, 7 columns
+
+Step 03 complete - 3-way interaction terms extracted with dual p-values

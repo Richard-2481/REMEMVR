@@ -1,0 +1,60 @@
+Step 06: Characterize Clusters
+Loading raw-scale random effects from Step 0...
+random_effects (100 rows)
+Columns: ['UID', 'Total_Intercept', 'Total_Slope']
+Loading cluster assignments from Step 3...
+cluster_assignments (100 rows)
+Merging random effects with cluster assignments on UID...
+100 participants with cluster + raw intercept/slope
+Computing cluster summary statistics...
+[CLUSTER 0] N=69
+  Intercept: mean=1.0112, SD=0.3380, range=[0.4644, 2.0263]
+  Slope: mean=0.0743, SD=0.0026, range=[0.0664, 0.0784]
+[CLUSTER 1] N=31
+  Intercept: mean=-0.0405, SD=0.3303, range=[-0.9883, 0.5209]
+  Slope: mean=0.0821, SD=0.0028, range=[0.0778, 0.0895]
+Assigning interpretive labels based on profile patterns...
+Overall intercept median: 0.7716
+Overall slope median: 0.0760
+Cluster 0.0: High baseline, slower change
+Cluster 1.0: Low baseline, faster change
+Saving cluster characterization...
+step06_cluster_characterization.csv (2 rows)
+Saving cluster labels...
+step06_cluster_labels.txt
+Running validate_cluster_summary_stats...
+Sum of N = 100 (expected 100): PASS
+PASS - All 2 cluster summaries mathematically consistent
+Step 06 complete
+Step 06: Characterize Clusters
+Loading raw-scale random effects from Step 0...
+random_effects (100 rows)
+Columns: ['UID', 'Total_Intercept', 'Total_Slope']
+Loading cluster assignments from Step 3...
+cluster_assignments (100 rows)
+Merging random effects with cluster assignments on UID...
+100 participants with cluster + raw intercept/slope
+Computing cluster summary statistics...
+[CLUSTER 0] N=25
+  Intercept: mean=-0.7752, SD=0.2530, range=[-1.5333, -0.3665]
+  Slope: mean=-0.0139, SD=0.0385, range=[-0.0753, 0.0470]
+[CLUSTER 1] N=44
+  Intercept: mean=0.3728, SD=0.3362, range=[-0.1237, 1.2647]
+  Slope: mean=-0.0300, SD=0.0305, range=[-0.1062, 0.0265]
+[CLUSTER 2] N=31
+  Intercept: mean=0.0960, SD=0.3175, range=[-0.4705, 0.7389]
+  Slope: mean=0.0538, SD=0.0303, range=[0.0170, 0.1156]
+Assigning interpretive labels based on profile patterns...
+Overall intercept median: 0.0679
+Overall slope median: -0.0034
+Cluster 0.0: Low baseline, slower change
+Cluster 1.0: High baseline, slower change
+Cluster 2.0: High baseline, faster change
+Saving cluster characterization...
+step06_cluster_characterization.csv (3 rows)
+Saving cluster labels...
+step06_cluster_labels.txt
+Running validate_cluster_summary_stats...
+Sum of N = 100 (expected 100): PASS
+PASS - All 3 cluster summaries mathematically consistent
+Step 06 complete

@@ -1,0 +1,54 @@
+Step 05: partial_correlation (Forgetting + Pct Retention)
+Loading merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step03_analysis_input.csv (100 rows, 13 cols)
+
+=== Partial correlation: RAVLT_Forgetting ~ REMEMVR_Slope ===
+RAVLT_Forgetting - N=100, Mean=1.750, SD=1.920
+REMEMVR_Slope - N=100, Mean=0.0000, SD=0.0045
+Control 1: ravlt-trial-5-score - Mean=12.600, SD=1.939
+Control 2: REMEMVR_Intercept - Mean=0.000, SD=0.589
+Residualizing RAVLT_Forgetting on control variables...
+RAVLT_Forgetting residuals - Mean=0.000000, SD=1.766
+R^2 for RAVLT_Forgetting ~ Controls: 0.1540
+Residualizing REMEMVR_Slope on control variables...
+Slope residuals - Mean=-0.000000, SD=0.0010
+R^2 for Slope ~ Controls: 0.9464
+Computing partial correlation (correlation of residuals)...
+Partial r = 0.0196, p_uncorrected = 0.846207
+Computing bootstrap confidence intervals...
+Bootstrap 95% CI: [-0.1657, 0.2064]
+[D068] p_bonferroni = 1.000000 (factor = 28)
+
+=== Partial correlation: RAVLT_Pct_Ret ~ REMEMVR_Slope ===
+RAVLT_Pct_Ret - N=100, Mean=83.282, SD=14.716
+REMEMVR_Slope - N=100, Mean=0.0000, SD=0.0045
+Control 1: ravlt-trial-5-score - Mean=12.600, SD=1.939
+Control 2: REMEMVR_Intercept - Mean=0.000, SD=0.589
+Residualizing RAVLT_Pct_Ret on control variables...
+RAVLT_Pct_Ret residuals - Mean=0.000000, SD=13.724
+R^2 for RAVLT_Pct_Ret ~ Controls: 0.1303
+Residualizing REMEMVR_Slope on control variables...
+Slope residuals - Mean=-0.000000, SD=0.0010
+R^2 for Slope ~ Controls: 0.9464
+Computing partial correlation (correlation of residuals)...
+Partial r = 0.0116, p_uncorrected = 0.909060
+Computing bootstrap confidence intervals...
+Bootstrap 95% CI: [-0.1911, 0.2072]
+[D068] p_bonferroni = 1.000000 (factor = 28)
+
+Saving partial correlation results...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step05_partial_correlation.csv (2 rows, 7 cols)
+Running validate_correlation_test_d068...
+PASS - RAVLT_Forgetting partial correlation meets D068 requirements
+PASS - RAVLT_Pct_Ret partial correlation meets D068 requirements
+
+Partial Correlation Results:
+======================================================================
+  RAVLT_Forgetting:
+    partial r = 0.0196, 95% CI [-0.1657, 0.2064]
+    p_uncorrected = 0.846207, p_bonferroni = 1.000000
+  RAVLT_Pct_Ret:
+    partial r = 0.0116, 95% CI [-0.1911, 0.2072]
+    p_uncorrected = 0.909060, p_bonferroni = 1.000000
+======================================================================
+Step 05 complete

@@ -1,0 +1,15 @@
+======================================================================
+STEP 08: Day 0 RPM Dominance Test
+======================================================================
+Merged Day 0 + cognitive tests: N=100
+Day 0 regression completed: R² = 0.288550
+  RAVLT_T sr² (day0) = 0.032053
+  BVMT_T sr² (day0) = 0.006465
+  RPM_T sr² (day0) = 0.111410
+Aggregated regression (3-pred recomputed): R² = 0.226563
+  RAVLT_T sr² (aggregated) = 0.022369
+  BVMT_T sr² (aggregated) = 0.007417
+  RPM_T sr² (aggregated) = 0.085199
+Saved: step08_day0_rpm_dominance.csv (6 rows)
+RPM rank: Day 0 = 1, Aggregated = 1
+Validation PASSED

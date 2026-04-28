@@ -19,7 +19,6 @@ Functions:
     convert_theta_to_probability() - IRT response function
     save_plot_with_data() - Save PNG + CSV simultaneously
 
-Author: Claude (REMEMVR Project)
 Date: 2025-01-08
 """
 
@@ -34,9 +33,7 @@ from typing import List, Optional, Dict, Tuple, Any
 from tools.config import load_config_from_file
 
 
-# =============================================================================
 # Style Setup
-# =============================================================================
 
 def set_plot_style_defaults(config_path: Optional[Path] = None) -> None:
     """
@@ -86,9 +83,7 @@ def set_plot_style_defaults(config_path: Optional[Path] = None) -> None:
     plt.rcParams['legend.fontsize'] = config.get('legend_fontsize', 10)
 
 
-# =============================================================================
 # Trajectory Plotting
-# =============================================================================
 
 def plot_trajectory(
     time_pred: np.ndarray,
@@ -209,9 +204,7 @@ def plot_trajectory(
     return fig, ax
 
 
-# =============================================================================
 # Diagnostic Plotting
-# =============================================================================
 
 def plot_diagnostics(
     df: pd.DataFrame,
@@ -333,9 +326,7 @@ def plot_diagnostics(
     return fig, axes
 
 
-# =============================================================================
 # Histogram Plotting
-# =============================================================================
 
 def plot_histogram_by_group(
     df: pd.DataFrame,
@@ -418,9 +409,7 @@ def plot_histogram_by_group(
     return fig, ax
 
 
-# =============================================================================
 # IRT Utilities
-# =============================================================================
 
 def convert_theta_to_probability(
     theta: np.ndarray,
@@ -465,9 +454,7 @@ def convert_theta_to_probability(
     return prob
 
 
-# =============================================================================
 # Save Utilities
-# =============================================================================
 
 def save_plot_with_data(
     fig: plt.Figure,
@@ -838,9 +825,7 @@ def prepare_piecewise_plot_data(
     return result
 
 
-# =============================================================================
 # Piecewise Trajectory Plotting
-# =============================================================================
 
 def plot_comparison_bars(
     df: pd.DataFrame,

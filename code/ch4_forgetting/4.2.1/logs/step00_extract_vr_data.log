@@ -1,0 +1,60 @@
+================================================================================
+Step 00: Extract VR Data for IRT Analysis
+================================================================================
+
+Step 00: Extract VR Data for IRT Analysis
+Loading input data from dfData.csv...
+dfData.csv (400 rows, 213 cols)
+Identifying columns...
+Found 105 item columns (TQ_*)
+Domain breakdown:
+       - what: 29 items
+       - where: 50 items
+       - when: 26 items
+       - unknown: 0 items
+Creating composite_ID...
+Created 400 unique composite_IDs
+Dichotomizing item responses (threshold=1.0)...
+Dichotomization results:
+       - Total valid responses: 42000
+       - Correct (1): 22288 (53.1%)
+       - Incorrect (0): 19712 (46.9%)
+       - Missing (NaN): 0
+Creating IRT input file (wide format)...
+IRT input shape: (400, 106)
+Creating TSVR mapping file...
+TSVR mapping shape: (400, 4)
+TSVR_hours range: [1.00, 246.24]
+Creating Q-matrix...
+Q-matrix shape: (105, 4)
+Q-matrix domain counts:
+       - what: 29
+       - where: 50
+       - when: 26
+Running validation checks...
+Row counts: IRT input=400, TSVR mapping=400, Q-matrix=105
+Checking item values are binary...
+Checking TSVR_hours range...
+TSVR_hours range: [1.00, 246.24]
+Checking Q-matrix row sums...
+Checking unique UIDs...
+Unique UIDs: 100
+Checking composite_ID format...
+All validation checks PASSED
+Saving output files...
+/home/etai/projects/REMEMVR/results/ch5/rq1/data/step00_irt_input.csv (400 rows, 106 cols)
+/home/etai/projects/REMEMVR/results/ch5/rq1/data/step00_tsvr_mapping.csv (400 rows, 4 cols)
+/home/etai/projects/REMEMVR/results/ch5/rq1/data/step00_q_matrix.csv (105 rows, 4 cols)
+
+================================================================================
+Step 00 complete
+================================================================================
+Outputs created:
+  1. IRT input: /home/etai/projects/REMEMVR/results/ch5/rq1/data/step00_irt_input.csv
+     -> 400 observations, 105 items
+  2. TSVR mapping: /home/etai/projects/REMEMVR/results/ch5/rq1/data/step00_tsvr_mapping.csv
+     -> 400 observations, TSVR_hours for Decision D070
+  3. Q-matrix: /home/etai/projects/REMEMVR/results/ch5/rq1/data/step00_q_matrix.csv
+     -> 105 items, 3 domains (what/where/when)
+
+Ready for Step 01: IRT Calibration Pass 1

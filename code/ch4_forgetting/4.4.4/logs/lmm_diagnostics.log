@@ -1,0 +1,26 @@
+2025-12-31 15:27:35,161 - INFO - ============================================================
+2025-12-31 15:27:35,161 - INFO - RQ 5.4.4: LMM Assumption Diagnostics
+2025-12-31 15:27:35,161 - INFO - ============================================================
+2025-12-31 15:27:35,161 - INFO - Investigating delta-AIC = -3607 (CTT >> IRT)
+
+2025-12-31 15:27:35,161 - INFO - Processing IRT Model (Theta)...
+2025-12-31 15:27:35,161 - INFO - Loading model: step03_irt_lmm_model.pkl
+2025-12-31 15:27:35,171 - INFO - Loading data: step03_irt_lmm_input.csv
+2025-12-31 15:27:35,173 - INFO - DV: theta, N=1200 observations
+2025-12-31 15:27:35,829 - INFO - Saved: /home/etai/projects/REMEMVR/results/ch5/5.4.4/plots/irt_diagnostics.png
+2025-12-31 15:27:35,831 - INFO - Breusch-Pagan test: stat=33.7638, p=0.0000
+2025-12-31 15:27:35,831 - WARNING - Heteroscedasticity detected (p < 0.05)
+2025-12-31 15:27:35,831 - WARNING - Could not extract random effects for Q-Q plot: 'Group'
+2025-12-31 15:27:35,832 - INFO - 
+Processing CTT Model (Proportion Correct)...
+2025-12-31 15:27:35,832 - INFO - Loading model: step03_ctt_lmm_model.pkl
+2025-12-31 15:27:35,838 - INFO - Loading data: step03_ctt_lmm_input.csv
+2025-12-31 15:27:35,839 - INFO - DV: CTT_mean, N=1200 observations
+2025-12-31 15:27:36,468 - INFO - Saved: /home/etai/projects/REMEMVR/results/ch5/5.4.4/plots/ctt_diagnostics.png
+2025-12-31 15:27:36,469 - INFO - Breusch-Pagan test: stat=6.8281, p=0.0329
+2025-12-31 15:27:36,470 - WARNING - Heteroscedasticity detected (p < 0.05)
+2025-12-31 15:27:36,470 - WARNING - Could not extract random effects for Q-Q plot: 'Group'
+2025-12-31 15:27:36,470 - INFO - Saved summary: /home/etai/projects/REMEMVR/results/ch5/5.4.4/data/lmm_diagnostics_summary.txt
+2025-12-31 15:27:36,470 - INFO - 
+LMM diagnostics COMPLETE
+2025-12-31 15:27:36,470 - INFO - HIGH PRIORITY RESOLVED: Section 5.1 assumption validation performed

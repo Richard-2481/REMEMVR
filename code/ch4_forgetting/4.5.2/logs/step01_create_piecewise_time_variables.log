@@ -1,0 +1,57 @@
+Step 01: Create Piecewise Time Variables
+Loading input data from step00_theta_from_rq551.csv...
+step00_theta_from_rq551.csv (400 rows, 8 cols)
+Input columns verified: 8 columns match expected
+TSVR_hours range: [1.0, 246.2]
+Running assign_piecewise_segments with 48h cutoff...
+Segment assignment complete
+Segment distribution:
+Late: 204 observations (51.0%)
+Early: 196 observations (49.0%)
+Early Days_within range: [0.04, 1.99]
+Late Days_within range: [0.00, 8.02]
+Saving step01_piecewise_time_variables.csv...
+step01_piecewise_time_variables.csv (400 rows, 10 cols)
+Output columns (10): ['composite_ID', 'UID', 'test', 'theta_source', 'theta_destination', 'se_source', 'se_destination', 'TSVR_hours', 'Segment', 'Days_within']
+Running validate_dataframe_structure...
+DataFrame structure validation passed
+message: DataFrame structure valid: 400 rows, 10 columns (required: 10).
+checks: {'row_count_valid': True, 'actual_rows': 400, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+Running additional checks...
+Segment values: {'Early', 'Late'}
+Days_within out of expected range
+Expected: [0, 5]
+Actual: [0.00, 8.02]
+Days_within out of range
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.2/code/step01_create_piecewise_time_variables.py", line 249, in <module>
+    raise ValueError("Days_within out of range")
+ValueError: Days_within out of range
+Step 01: Create Piecewise Time Variables
+Loading input data from step00_theta_from_rq551.csv...
+step00_theta_from_rq551.csv (400 rows, 8 cols)
+Input columns verified: 8 columns match expected
+TSVR_hours range: [1.0, 246.2]
+Running assign_piecewise_segments with 48h cutoff...
+Segment assignment complete
+Segment distribution:
+Late: 204 observations (51.0%)
+Early: 196 observations (49.0%)
+Early Days_within range: [0.04, 1.99]
+Late Days_within range: [0.00, 8.02]
+Saving step01_piecewise_time_variables.csv...
+step01_piecewise_time_variables.csv (400 rows, 10 cols)
+Output columns (10): ['composite_ID', 'UID', 'test', 'theta_source', 'theta_destination', 'se_source', 'se_destination', 'TSVR_hours', 'Segment', 'Days_within']
+Running validate_dataframe_structure...
+DataFrame structure validation passed
+message: DataFrame structure valid: 400 rows, 10 columns (required: 10).
+checks: {'row_count_valid': True, 'actual_rows': 400, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+Running additional checks...
+Segment values: {'Late', 'Early'}
+Days_within range: [0.00, 8.02]
+No NaN values in Segment or Days_within
+Distribution: 196 Early (49.0%), 204 Late (51.0%)
+Step 01 complete
+Output: /home/etai/projects/REMEMVR/results/ch5/5.5.2/data/step01_piecewise_time_variables.csv
+Created piecewise time variables: Segment (Early/Late), Days_within (recentered time)

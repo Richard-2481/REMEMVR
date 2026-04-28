@@ -1,0 +1,4 @@
+comparison,delta_ICC,interpretation
+What vs Where,-4.8378246235381006e-05,Negligible difference
+What vs When,0.589532479135547,Meaningful difference
+Where vs When,0.5895808573817823,Meaningful difference

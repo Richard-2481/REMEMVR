@@ -1,0 +1,102 @@
+Step 03: Compare Piecewise Models
+Loading input data from step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows, 9 cols)
+Theta range: [-2.241, 0.491]
+Segment distribution: Early=196, Late=204
+Fitting continuous model...
+Formula: theta_confidence ~ TSVR_hours
+Random effects: ~TSVR_hours
+"['Theta'] not in index"
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.2/code/step03_compare_piecewise_models.py", line 125, in <module>
+    continuous_model = fit_lmm_trajectory_tsvr(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1139, in fit_lmm_trajectory_tsvr
+    lmm_data = merged[['UID', 'Test', 'Domain', 'Theta', 'Days']].copy()
+               ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4119, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6264, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Theta'] not in index"
+Step 03: Compare Piecewise Models
+Loading input data from step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows, 9 cols)
+Theta range: [-2.993, 3.035]
+Segment distribution: Early=196, Late=204
+Fitting continuous model...
+Formula: theta_confidence ~ TSVR_hours
+Random effects: ~TSVR_hours
+"['Theta'] not in index"
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.2/code/step03_compare_piecewise_models.py", line 125, in <module>
+    continuous_model = fit_lmm_trajectory_tsvr(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1139, in fit_lmm_trajectory_tsvr
+    lmm_data = merged[['UID', 'Test', 'Domain', 'Theta', 'Days']].copy()
+               ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4119, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6264, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Theta'] not in index"
+Step 03: Compare Piecewise Models
+Loading input data from step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows, 9 cols)
+Theta range: [-2.993, 3.035]
+Segment distribution: Early=196, Late=204
+Fitting continuous model...
+Formula: theta_confidence ~ TSVR_hours
+Random effects: ~TSVR_hours
+Continuous model fitted
+Continuous AIC: 1008.47
+Checking continuous model convergence...
+FAIL - Continuous model did not converge: LMM did not converge
+Continuous model convergence failed: LMM did not converge
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.2/code/step03_compare_piecewise_models.py", line 143, in <module>
+    raise ValueError(f"Continuous model convergence failed: {val_continuous['message']}")
+ValueError: Continuous model convergence failed: LMM did not converge
+Step 03: Compare Piecewise Models
+Loading input data from step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows, 9 cols)
+Theta range: [-2.993, 3.035]
+Segment distribution: Early=196, Late=204
+Days range: [0.04, 10.26]
+Fitting continuous model...
+Formula: theta_confidence ~ Days
+Random effects: ~Days
+Continuous model fitted
+Continuous AIC: 765.90
+Checking continuous model convergence...
+PASS - Continuous model converged
+Fitting piecewise model...
+Formula: theta_confidence ~ Time_Early_Days + Time_Late_Days
+Random effects: ~Days
+Piecewise model fitted
+Piecewise AIC: 826.12
+Checking piecewise model convergence...
+PASS - Piecewise model converged
+Computing AIC comparison...
+Delta AIC: -60.22 (AIC_continuous - AIC_piecewise)
+Threshold: 2.0 (Burnham & Anderson)
+Continuous model NOT substantially worse (delta AIC <= 2.0) -> Two-phase pattern NOT supported by AIC test
+AIC comparison computed
+Saving AIC comparison to step03_piecewise_comparison.csv...
+step03_piecewise_comparison.csv (3 rows)
+Running custom comparison checks...
+PASS - AIC values non-negative
+PASS - AIC values in reasonable range
+PASS - Delta AIC computed correctly
+PASS - No unexpected NaN values
+PASS - piecewise_preferred is boolean
+Step 03 complete

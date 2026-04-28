@@ -1,0 +1,4 @@
+Variable,Included_Mean,Included_SD,Excluded_Mean,Excluded_SD,Difference,p_value
+age,44.81,14.67,36.67,9.61,-8.15,0.343
+sex,0.3,0.46,0.33,0.58,0.03,0.899
+education,6.1,1.67,6.0,0.0,-0.1,0.915

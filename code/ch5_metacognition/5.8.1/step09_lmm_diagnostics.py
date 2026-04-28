@@ -1,5 +1,5 @@
 """
-Step 9: LMM Diagnostic Checks (MANDATORY for PLATINUM)
+Step 9: LMM Diagnostic Checks (MANDATORY for validation)
 
 Purpose: Validate LMM assumptions per taxonomy Section 5.1
          - Residual normality (Q-Q plots, Shapiro-Wilk)
@@ -7,7 +7,6 @@ Purpose: Validate LMM assumptions per taxonomy Section 5.1
          - Leverage/influence (Cook's D)
          - Random effects normality
 
-Author: rq_platinum agent
 Date: 2025-12-27
 """
 
@@ -238,7 +237,7 @@ def main():
     print("="*80)
     print("LMM DIAGNOSTIC CHECKS - RQ 6.8.1")
     print("="*80)
-    print("\n🔴 MANDATORY for PLATINUM (Taxonomy Section 5.1)")
+    print("\n🔴 MANDATORY for validation (Taxonomy Section 5.1)")
     print("   - Residual normality")
     print("   - Homoscedasticity")
     print("   - Influential observations")
@@ -299,7 +298,7 @@ def main():
             f.write(f"  Result: Some outliers present (inspect if >5%)\n")
         f.write("\n")
 
-        f.write("✅ PLATINUM REQUIREMENT MET: LMM diagnostics completed\n")
+        f.write("✅ VALIDATION REQUIREMENT MET: LMM diagnostics completed\n")
 
     print(f"✅ Saved: {summary_path}")
 

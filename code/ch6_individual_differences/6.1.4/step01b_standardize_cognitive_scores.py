@@ -49,13 +49,13 @@ def standardize_to_t_score(scores, t_mean=50.0, t_sd=10.0):
 
 def main():
     """Main execution."""
-    log("[START] Step 01b: Standardize cognitive scores to T-scores")
+    log("Step 01b: Standardize cognitive scores to T-scores")
     
     # Load cognitive test data from Step 01
     input_path = RQ_DIR / "data" / "step01_cognitive_tests.csv"
-    log(f"[LOAD] Reading {input_path}...")
+    log(f"Reading {input_path}...")
     df = pd.read_csv(input_path)
-    log(f"[INFO] Loaded {len(df)} participants")
+    log(f"Loaded {len(df)} participants")
     
     # Create output dataframe
     output_df = pd.DataFrame()
@@ -64,7 +64,7 @@ def main():
     # List of columns to standardize
     test_columns = ['RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret', 'BVMT_T', 'BVMT_Pct_Ret', 'NART_T', 'RPM_T']
     
-    log("[STANDARDIZE] Converting to T-scores (M=50, SD=10)...")
+    log("Converting to T-scores (M=50, SD=10)...")
     for col in test_columns:
         if col in df.columns:
             # Calculate T-scores
@@ -87,7 +87,7 @@ def main():
                     log(f"    Missing: {n_missing} values")
     
     # Verify T-score properties
-    log("[VERIFY] Checking T-score properties...")
+    log("Checking T-score properties...")
     for col in test_columns:
         if col in output_df.columns:
             valid = output_df[col].dropna()
@@ -101,10 +101,10 @@ def main():
     output_path = RQ_DIR / "data" / "step01b_cognitive_t_scores.csv"
     output_path.parent.mkdir(exist_ok=True)
     output_df.to_csv(output_path, index=False)
-    log(f"[SAVE] Saved T-scores to {output_path}")
-    log(f"[INFO] Shape: {output_df.shape}")
+    log(f"Saved T-scores to {output_path}")
+    log(f"Shape: {output_df.shape}")
     
-    log("[SUCCESS] Step 01b complete")
+    log("Step 01b complete")
     return 0
 
 if __name__ == "__main__":

@@ -22,9 +22,7 @@ import statsmodels.formula.api as smf
 from scipy import stats
 import warnings
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.3.3
 LOG_FILE = RQ_DIR / "logs" / "steps_00_to_04.log"
@@ -100,7 +98,7 @@ def step00_load_theta_with_age() -> pd.DataFrame:
     if missing_tsvr > 0:
         raise ValueError(f"Missing TSVR for {missing_tsvr} rows!")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 0 Validation ---")
 
     # Expected row count
@@ -201,7 +199,7 @@ def step01_center_age_reshape_long(df_input: pd.DataFrame) -> pd.DataFrame:
 
     log(f"Reshaped: {len(df_long)} rows (400 observations x 3 domains)")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 1 Validation ---")
 
     # Expected row count
@@ -321,7 +319,7 @@ def step02_fit_lmm_3way_interaction(df_input: pd.DataFrame):
     log(f"AIC: {aic:.2f}")
     log(f"BIC: {bic:.2f}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 2 Validation ---")
 
     # Check convergence
@@ -412,7 +410,7 @@ def step03_extract_interaction_dual_pvalues(fixed_effects: pd.DataFrame) -> pd.D
             sig = "YES" if row['p_value'] < 0.05 else "NO"
             log(f"{row['term']}: beta = {row['estimate']:.6f}, p = {row['p_value']:.4f} (sig: {sig})")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 3 Validation ---")
 
     # Expected row count
@@ -512,7 +510,7 @@ def step04_create_tertile_domain_trajectories(df_input: pd.DataFrame) -> pd.Data
             change = t4_val - t1_val if not np.isnan(t1_val) and not np.isnan(t4_val) else np.nan
             log(f"  {domain}: T1={t1_val:.3f}, T4={t4_val:.3f}, change={change:+.3f}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 4 Validation ---")
 
     # Expected row count

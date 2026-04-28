@@ -1,0 +1,6 @@
+effect,f_squared,interpretation
+"C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]",0.00010259169445049271,negligible
+"C(Factor, Treatment('Free_Recall'))[T.Recognition]",0.008286866758331816,negligible
+log_Days,0.06663661438823967,small
+"log_Days:C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]",0.000804642700156226,negligible
+"log_Days:C(Factor, Treatment('Free_Recall'))[T.Recognition]",0.0051013283641211885,negligible

@@ -1,0 +1,51 @@
+Step 00: validate_dependencies
+Checking Ch5 5.1.1 status.yaml...
+Ch5 status file exists: /home/etai/projects/REMEMVR/results/ch5/5.1.1/status.yaml
+Ch5 5.1.1 status: success
+Checking Ch5 theta scores file...
+Theta file exists: /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+Theta file has required columns: ['UID', 'Theta_All']
+Theta file shape: (400, 3)
+Unique participants in theta file: 100
+Checking dfnonvr.csv accessibility...
+dfnonvr.csv exists: /home/etai/projects/REMEMVR/data/dfnonvr.csv
+dfnonvr.csv has required RAVLT columns
+dfnonvr.csv shape: (100, 235)
+Unique participants in dfnonvr.csv: 100
+Writing validation report...
+Validation report: /home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step00_dependency_validation.txt
+Step 00 complete - all dependencies valid
+Step 00: validate_dependencies
+Checking Ch5 5.1.1 status.yaml...
+Ch5 status file exists: /home/etai/projects/REMEMVR/results/ch5/5.1.1/status.yaml
+Ch5 5.1.1 status: success
+Checking Ch5 theta scores file...
+Theta file exists: /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+Theta file has required columns: ['UID', 'Theta_All']
+Theta file shape: (400, 3)
+Unique participants in theta file: 100
+Checking dfnonvr.csv accessibility...
+dfnonvr.csv exists: /home/etai/projects/REMEMVR/data/dfnonvr.csv
+dfnonvr.csv has required RAVLT columns
+dfnonvr.csv shape: (100, 235)
+Unique participants in dfnonvr.csv: 100
+Writing validation report...
+Validation report: /home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step00_dependency_validation.txt
+Step 00 complete - all dependencies valid
+Step 00: validate_dependencies
+Checking Ch5 5.1.1 status.yaml...
+Ch5 status file exists: /home/etai/projects/REMEMVR/results/ch5/5.1.1/status.yaml
+Ch5 5.1.1 status: success
+Checking Ch5 theta scores file...
+Theta file exists: /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+Theta file has required columns: ['UID', 'Theta_All']
+Theta file shape: (400, 3)
+Unique participants in theta file: 100
+Checking dfnonvr.csv accessibility...
+dfnonvr.csv exists: /home/etai/projects/REMEMVR/data/dfnonvr.csv
+dfnonvr.csv has required RAVLT columns
+dfnonvr.csv shape: (100, 235)
+Unique participants in dfnonvr.csv: 100
+Writing validation report...
+Validation report: /home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step00_dependency_validation.txt
+Step 00 complete - all dependencies valid

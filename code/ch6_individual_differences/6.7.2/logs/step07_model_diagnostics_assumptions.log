@@ -1,0 +1,132 @@
+Step 07: Model Diagnostics and Assumptions
+Loading ANOVA results and demographic data...
+5 ANOVA results, 100 participants
+Testing ANOVA assumptions...
+Age - VR-favored: Shapiro W=0.8710, p=0.0673
+Age - RAVLT-favored: Shapiro W=0.9380, p=0.2951
+Age - Concordant: Shapiro W=0.9575, p=0.0171
+Age: Levene F=0.2167, p=0.8056
+Education - VR-favored: Shapiro W=0.9030, p=0.1732
+Education - RAVLT-favored: Shapiro W=0.8378, p=0.0070
+Education - Concordant: Shapiro W=0.8747, p=0.0000
+Education: Levene F=0.5475, p=0.5802
+VR_Experience - VR-favored: Shapiro W=0.8655, p=0.0573
+VR_Experience - RAVLT-favored: Shapiro W=0.7978, p=0.0019
+VR_Experience - Concordant: Shapiro W=0.8603, p=0.0000
+VR_Experience: Levene F=0.7638, p=0.4687
+NART - VR-favored: Shapiro W=0.8655, p=0.0679
+NART - RAVLT-favored: Shapiro W=0.8752, p=0.0327
+NART - Concordant: Shapiro W=0.9826, p=0.4407
+NART: Levene F=0.0512, p=0.9501
+BVMT - VR-favored: Shapiro W=0.8691, p=0.0637
+BVMT - RAVLT-favored: Shapiro W=0.9771, p=0.9267
+BVMT - Concordant: Shapiro W=0.9335, p=0.0010
+BVMT: Levene F=0.3139, p=0.7314
+Identifying outliers using IQR method...
+Age: 0 outliers detected (IQR method)
+Education: 10 outliers detected (IQR method)
+VR_Experience: 0 outliers detected (IQR method)
+NART: 1 outliers detected (IQR method)
+BVMT: 3 outliers detected (IQR method)
+Computing power analysis for sample adequacy...
+Age: n=100, f2=0.0318, power=0.0615
+Education: n=100, f2=0.0437, power=0.0717
+VR_Experience: n=100, f2=0.0011, power=0.0500
+NART: n=97, f2=0.0287, power=0.0590
+BVMT: n=100, f2=0.0092, power=0.0509
+Running Kruskal-Wallis tests (non-parametric alternative)...
+Age: H=2.8910, p=0.2356
+Education: H=6.9139, p=0.0315
+VR_Experience: H=0.0394, p=0.9805
+NART: H=1.1457, p=0.5639
+BVMT: H=0.8407, p=0.6568
+Saving diagnostic results...
+step07_assumption_checks.csv (15 rows)
+step07_outlier_analysis.csv (14 rows)
+step07_power_analysis.csv (5 rows)
+step07_robustness_tests.csv (5 rows)
+step07_remedial_actions.txt
+Step 07 complete
+Step 07: Model Diagnostics and Assumptions
+Loading ANOVA results and demographic data...
+10 ANOVA results, 100 participants
+Testing ANOVA assumptions...
+
+=== RAVLT_Total ===
+RAVLT_Total/Age - VR-favored: Shapiro W=0.8729, p=0.0460
+RAVLT_Total/Age - RAVLT-favored: Shapiro W=0.9404, p=0.2680
+RAVLT_Total/Age - Concordant: Shapiro W=0.9545, p=0.0155
+RAVLT_Total/Age: Levene F=0.3886, p=0.6791
+RAVLT_Total/Education - VR-favored: Shapiro W=0.9325, p=0.3307
+RAVLT_Total/Education - RAVLT-favored: Shapiro W=0.8275, p=0.0029
+RAVLT_Total/Education - Concordant: Shapiro W=0.8532, p=0.0000
+RAVLT_Total/Education: Levene F=0.7678, p=0.4668
+RAVLT_Total/VR_Experience - VR-favored: Shapiro W=0.8996, p=0.1111
+RAVLT_Total/VR_Experience - RAVLT-favored: Shapiro W=0.8207, p=0.0023
+RAVLT_Total/VR_Experience - Concordant: Shapiro W=0.8512, p=0.0000
+RAVLT_Total/VR_Experience: Levene F=0.9492, p=0.3906
+RAVLT_Total/NART - VR-favored: Shapiro W=0.8483, p=0.0271
+RAVLT_Total/NART - RAVLT-favored: Shapiro W=0.7738, p=0.0007
+RAVLT_Total/NART - Concordant: Shapiro W=0.9787, p=0.3131
+RAVLT_Total/NART: Levene F=0.5805, p=0.5616
+RAVLT_Total/BVMT - VR-favored: Shapiro W=0.8948, p=0.0949
+RAVLT_Total/BVMT - RAVLT-favored: Shapiro W=0.9510, p=0.4115
+RAVLT_Total/BVMT - Concordant: Shapiro W=0.9351, p=0.0017
+RAVLT_Total/BVMT: Levene F=0.4618, p=0.6315
+
+=== RAVLT_Pct_Ret ===
+RAVLT_Pct_Ret/Age - VR-favored: Shapiro W=0.8588, p=0.0371
+RAVLT_Pct_Ret/Age - Concordant: Shapiro W=0.9435, p=0.0037
+RAVLT_Pct_Ret/Age - RAVLT-favored: Shapiro W=0.9487, p=0.4048
+RAVLT_Pct_Ret/Age: Levene F=3.2532, p=0.0429
+RAVLT_Pct_Ret/Education - VR-favored: Shapiro W=0.8553, p=0.0334
+RAVLT_Pct_Ret/Education - Concordant: Shapiro W=0.8789, p=0.0000
+RAVLT_Pct_Ret/Education - RAVLT-favored: Shapiro W=0.9066, p=0.0751
+RAVLT_Pct_Ret/Education: Levene F=0.8099, p=0.4479
+RAVLT_Pct_Ret/VR_Experience - VR-favored: Shapiro W=0.8583, p=0.0366
+RAVLT_Pct_Ret/VR_Experience - Concordant: Shapiro W=0.8498, p=0.0000
+RAVLT_Pct_Ret/VR_Experience - RAVLT-favored: Shapiro W=0.8292, p=0.0041
+RAVLT_Pct_Ret/VR_Experience: Levene F=0.0018, p=0.9982
+RAVLT_Pct_Ret/NART - VR-favored: Shapiro W=0.9691, p=0.8838
+RAVLT_Pct_Ret/NART - Concordant: Shapiro W=0.9760, p=0.2294
+RAVLT_Pct_Ret/NART - RAVLT-favored: Shapiro W=0.9614, p=0.6285
+RAVLT_Pct_Ret/NART: Levene F=0.3678, p=0.6933
+RAVLT_Pct_Ret/BVMT - VR-favored: Shapiro W=0.9420, p=0.4835
+RAVLT_Pct_Ret/BVMT - Concordant: Shapiro W=0.9242, p=0.0004
+RAVLT_Pct_Ret/BVMT - RAVLT-favored: Shapiro W=0.9416, p=0.3090
+RAVLT_Pct_Ret/BVMT: Levene F=2.8755, p=0.0612
+Identifying outliers using IQR method...
+Age: 0 outliers detected (IQR method)
+Education: 10 outliers detected (IQR method)
+VR_Experience: 0 outliers detected (IQR method)
+NART: 1 outliers detected (IQR method)
+BVMT: 3 outliers detected (IQR method)
+Computing power analysis for sample adequacy...
+RAVLT_Total/Age: n=100, f2=0.0173, power=0.0534
+RAVLT_Total/Education: n=100, f2=0.0579, power=0.0884
+RAVLT_Total/VR_Experience: n=100, f2=0.0091, power=0.0509
+RAVLT_Total/NART: n=97, f2=0.0272, power=0.0581
+RAVLT_Total/BVMT: n=100, f2=0.0045, power=0.0502
+RAVLT_Pct_Ret/Age: n=100, f2=0.0021, power=0.0501
+RAVLT_Pct_Ret/Education: n=100, f2=0.0024, power=0.0501
+RAVLT_Pct_Ret/VR_Experience: n=100, f2=0.0184, power=0.0538
+RAVLT_Pct_Ret/NART: n=97, f2=0.0319, power=0.0612
+RAVLT_Pct_Ret/BVMT: n=100, f2=0.0159, power=0.0528
+Running Kruskal-Wallis tests (non-parametric alternative)...
+RAVLT_Total/Age: H=1.6409, p=0.4402
+RAVLT_Total/Education: H=9.5783, p=0.0083
+RAVLT_Total/VR_Experience: H=0.5730, p=0.7509
+RAVLT_Total/NART: H=2.9273, p=0.2314
+RAVLT_Total/BVMT: H=0.4703, p=0.7905
+RAVLT_Pct_Ret/Age: H=0.2034, p=0.9033
+RAVLT_Pct_Ret/Education: H=0.2467, p=0.8840
+RAVLT_Pct_Ret/VR_Experience: H=1.2592, p=0.5328
+RAVLT_Pct_Ret/NART: H=3.0107, p=0.2219
+RAVLT_Pct_Ret/BVMT: H=1.3918, p=0.4986
+Saving diagnostic results...
+step07_assumption_checks.csv (30 rows)
+step07_outlier_analysis.csv (14 rows)
+step07_power_analysis.csv (10 rows)
+step07_robustness_tests.csv (10 rows)
+step07_remedial_actions.txt
+Step 07 complete

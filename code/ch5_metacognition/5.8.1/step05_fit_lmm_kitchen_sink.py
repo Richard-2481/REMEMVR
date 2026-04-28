@@ -38,15 +38,15 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05: Kitchen Sink LMM - Location Interaction")
+        log("Step 05: Kitchen Sink LMM - Location Interaction")
         log("=" * 80)
 
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         lmm_input = pd.read_csv(DATA_DIR / "step04_lmm_input.csv", encoding='utf-8')
         log(f"  ✓ Loaded {len(lmm_input)} rows ({lmm_input['UID'].nunique()} participants × {lmm_input['location'].nunique()} locations)")
         log(f"  ✓ Locations: {sorted(lmm_input['location'].unique())}")
 
-        log("[ANALYSIS] Running kitchen sink with location interaction...")
+        log("Running kitchen sink with location interaction...")
         results = compare_lmm_models_kitchen_sink(
             data=lmm_input,
             outcome_var='theta',
@@ -63,13 +63,13 @@ if __name__ == "__main__":
         )
 
         best_model = results['best_model']
-        log(f"[SUCCESS] Best model: {best_model['name']} (AIC={best_model['AIC']:.2f})")
+        log(f"Best model: {best_model['name']} (AIC={best_model['AIC']:.2f})")
         (DATA_DIR / "model_comparison.csv").rename(DATA_DIR / "step05_model_comparison.csv")
         (DATA_DIR / "best_model_summary.txt").rename(DATA_DIR / "step05_best_model_summary.txt")
         log("=" * 80)
 
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         import traceback
         log(traceback.format_exc())
         raise

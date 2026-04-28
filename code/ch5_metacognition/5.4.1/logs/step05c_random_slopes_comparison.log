@@ -1,0 +1,41 @@
+================================================================================
+Step 05c: Random Slopes Comparison
+================================================================================
+Loading LMM input data...
+  ✓ Loaded 1200 rows (100 participants)
+  ✓ Variables: theta (outcome), TSVR_hours (time), paradigm (IFR/ICR/IRE)
+
+[MODEL A] Fitting intercepts-only model...
+  Formula: theta ~ C(paradigm) * TSVR_hours + (1 | UID)
+  ✓ Intercepts-only: AIC=517.32, BIC=558.05, Converged=True
+  ✓ Variance components:
+    - Random intercept variance: 0.2178 (SD=0.4667)
+    - Residual variance: 0.0652 (SD=0.2554)
+
+[MODEL B] Fitting intercepts + slopes model...
+  Formula: theta ~ C(paradigm) * TSVR_hours + (TSVR_hours | UID)
+  ✓ Intercepts+slopes: AIC=298.37, BIC=349.27, Converged=True
+  ✓ Variance components:
+    - Random intercept variance: 0.2156 (SD=0.4644)
+    - Random slope variance: 0.0000 (SD=0.0024)
+    - Intercept-slope covariance: -0.0002
+    - Residual variance: 0.0454 (SD=0.2131)
+  ✓ Saved slopes model summary to step05c_slopes_model_summary.txt
+
+Intercepts-only vs Intercepts+Slopes
+  ΔAIC = 218.95 (positive = slopes better)
+  ΔBIC = 208.77 (positive = slopes better)
+
+SLOPES IMPROVE FIT
+  Recommendation: Use random slopes model. Individual participants have different confidence decline rates.
+  Random slope variance SD = 0.0024 (individual differences confirmed)
+
+  ✓ Saved comparison to step05c_random_slopes_comparison.csv
+
+For summary.md:
+  → Random slopes IMPROVE fit: Individual differences in confidence decline rates exist
+  → Report: 'Participants varied in forgetting rates (slope SD = 0.002)'
+
+================================================================================
+Step 05c: Random Slopes Comparison Complete
+================================================================================

@@ -1,0 +1,11 @@
+domain,component,value,interpretation
+What,var_intercept,0.330125178955421,Between-person variance in baseline ability (Day 0)
+What,var_slope,0.002609039536245108,Between-person variance in forgetting rate (per log-hour)
+What,cov_int_slope,-0.005239182264060109,Covariance between baseline and forgetting rate
+What,var_residual,0.318299884038652,Within-person variance (measurement error + unexplained)
+What,total_variance,0.6510341025303181,Sum of all variance components
+Where,var_intercept,0.4248586724305972,Between-person variance in baseline ability (Day 0)
+Where,var_slope,0.0036149930752905957,Between-person variance in forgetting rate (per log-hour)
+Where,cov_int_slope,-0.014815001007838155,Covariance between baseline and forgetting rate
+Where,var_residual,0.32463772329357615,Within-person variance (measurement error + unexplained)
+Where,total_variance,0.753111388799464,Sum of all variance components

@@ -1,0 +1,162 @@
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['ICR', 'IFR', 'IRE']
+Tests per domain: {'ICR': 4, 'IFR': 4, 'IRE': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Discrim_What column not found in item parameters
+Discrim_Where column not found in item parameters
+Discrim_When column not found in item parameters
+No domain discriminations computed - check item parameters structure
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.4.1/code/step07_prepare_trajectory_plot_data.py", line 245, in <module>
+    raise ValueError("No domain discriminations computed - check item parameters structure")
+ValueError: No domain discriminations computed - check item parameters structure
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['ICR', 'IFR', 'IRE']
+Tests per domain: {'ICR': 4, 'IFR': 4, 'IRE': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Discrim_What column not found in item parameters
+Discrim_Where column not found in item parameters
+Discrim_When column not found in item parameters
+No domain discriminations computed - check item parameters structure
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.4.1/code/step07_prepare_trajectory_plot_data.py", line 245, in <module>
+    raise ValueError("No domain discriminations computed - check item parameters structure")
+ValueError: No domain discriminations computed - check item parameters structure
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['ICR', 'IFR', 'IRE']
+Tests per domain: {'ICR': 4, 'IFR': 4, 'IRE': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for IFR: 3.5286 (24 items)
+Mean discrimination for ICR: 3.8592 (24 items)
+Mean discrimination for IRE: 3.1818 (24 items)
+Transforming theta to probability scale...
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0792, -0.4347]
+Probability range: [0.0160, 0.2005]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['ICR', 'IFR', 'IRE']
+Tests per domain: {'ICR': 4, 'IFR': 4, 'IRE': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for IFR: 3.5286 (24 items)
+Mean discrimination for ICR: 3.8592 (24 items)
+Mean discrimination for IRE: 3.1818 (24 items)
+Transforming theta to probability scale...
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0792, -0.4347]
+Probability range: [0.0160, 0.2005]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['ICR', 'IFR', 'IRE']
+Tests per domain: {'ICR': 4, 'IFR': 4, 'IRE': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for IFR: 3.5286 (24 items)
+Mean discrimination for ICR: 3.8592 (24 items)
+Mean discrimination for IRE: 3.1818 (24 items)
+Transforming theta to probability scale...
+Sample mean theta: -0.7759 (used for probability centering)
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0792, -0.4347]
+Probability range: [0.2450, 0.7505]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['ICR', 'IFR', 'IRE']
+Tests per domain: {'ICR': 4, 'IFR': 4, 'IRE': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for IFR: 1.5075 (24 items)
+Mean discrimination for ICR: 1.5622 (24 items)
+Mean discrimination for IRE: 1.3798 (24 items)
+Transforming theta to probability scale...
+Sample mean theta: 0.0381 (used for probability centering)
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-0.4930, 0.7095]
+Probability range: [0.3065, 0.7303]
+Step 07 complete

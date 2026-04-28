@@ -1,0 +1,4 @@
+test,statistic,p_value,threshold,result,remedial_action
+Normality (Shapiro-Wilk),0.9741155953814168,0.04601699702277021,0.05,FAIL,Consider robust regression or transformation
+Independence (Durbin-Watson),2.15237171263706,,"Range [1.5, 2.5]",PASS,None needed
+Multicollinearity (VIF),1.8846923360204104,,5.0,PASS,None needed

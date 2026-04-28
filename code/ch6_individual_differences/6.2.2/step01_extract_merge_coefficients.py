@@ -90,10 +90,7 @@ def main():
     log("Reads betas dynamically from RQ 7.2.1 + computes domain models")
     log("Includes retention predictors (RAVLT/BVMT Pct Ret)")
     log("=" * 60)
-
-    # =========================================================================
     # 1. Read overall age coefficients from RQ 7.2.1 mediation output
-    # =========================================================================
     log("\n1. Reading age coefficients from RQ 7.2.1 mediation analysis...")
 
     mediation_path = RESULTS_DIR / "ch7" / "7.2.1" / "data" / "step04_mediation_analysis.csv"
@@ -114,10 +111,7 @@ def main():
     log(f"  Beta (age + cognitive, direct):      {beta_age_controlled:.4f}")
     log(f"  Mediation effect:                    {mediation_df['mediation_effect'].iloc[0]:.4f}")
     log(f"  Proportion mediated:                 {mediation_df['proportion_mediated'].iloc[0]:.4f}")
-
-    # =========================================================================
     # 2. Load 7.2.1 analysis dataset (has all predictors + theta_all)
-    # =========================================================================
     log("\n2. Loading RQ 7.2.1 analysis dataset...")
 
     analysis_path = RESULTS_DIR / "ch7" / "7.2.1" / "data" / "step01_analysis_dataset.csv"
@@ -132,10 +126,7 @@ def main():
     # Identify cognitive predictor columns (standardized)
     cognitive_cols = [c for c in analysis_df.columns if c.endswith('_std') and c != 'Age_std']
     log(f"  Cognitive predictors (standardized): {cognitive_cols}")
-
-    # =========================================================================
     # 3. Verify overall coefficients by re-fitting from raw data
-    # =========================================================================
     log("\n3. Verifying overall coefficients by re-fitting from raw data...")
 
     overall_results = fit_age_models(analysis_df, 'theta_all', 'Age_std', cognitive_cols)
@@ -153,10 +144,7 @@ def main():
     log(f"\n  Using verified values (with retention predictors in controlled model):")
     log(f"    beta_bivariate:  {beta_age_bivariate_verified:.4f}")
     log(f"    beta_controlled: {beta_age_controlled_verified:.4f}")
-
-    # =========================================================================
     # 4. Extract domain theta scores from Ch5 and compute domain-specific betas
-    # =========================================================================
     log("\n4. Extracting theta scores from Ch5...")
 
     # OVERALL theta from 5.1.1
@@ -196,10 +184,7 @@ def main():
     else:
         log(f"  ERROR: Cannot find domain theta at {ch5_domain_path}")
         return 1
-
-    # =========================================================================
     # 5. Merge domain theta with 7.2.1 analysis dataset for domain regressions
-    # =========================================================================
     log("\n5. Merging domain theta with analysis dataset for domain-specific regressions...")
 
     # Start with 7.2.1 analysis data (has Age_std, cognitive predictors)
@@ -229,10 +214,7 @@ def main():
         else:
             log(f"\n  Skipping {domain} domain: insufficient data (n={valid_n})")
             domain_betas[domain] = None
-
-    # =========================================================================
     # 6. Merge all data for output
-    # =========================================================================
     log("\n6. Creating merged output dataset...")
 
     merged_df = overall_by_uid.copy()
@@ -255,10 +237,7 @@ def main():
 
     log(f"\n  Merged dataset: {len(merged_df)} rows, {len(merged_df.columns)} cols")
     log(f"  Columns: {list(merged_df.columns)}")
-
-    # =========================================================================
     # 7. Save outputs
-    # =========================================================================
     log("\n7. Saving outputs...")
 
     # Save merged coefficients

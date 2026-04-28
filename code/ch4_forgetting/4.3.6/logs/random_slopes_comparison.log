@@ -1,0 +1,79 @@
+================================================================================
+RANDOM SLOPES COMPARISON - VALIDATION
+================================================================================
+
+Testing: Intercepts-only vs Intercepts+Slopes
+Paradigm: IFR (Item Free Recall)
+Measurement types: IRT theta, Full CTT, Purified CTT
+
+Loading standardized scores...
+400 rows
+
+IRT (z_theta_IFR)
+--------------------------------------------------------------------------------
+  Model 1: z_theta_IFR ~ TSVR_hours + (1|UID)
+    AIC: 1008.33
+    Converged: True
+  Model 2: z_theta_IFR ~ TSVR_hours + (1 + TSVR_hours | UID)
+    AIC: 1011.99
+    Converged: True
+    Random slope variance: 0.000000
+    Random slope SD: 0.000414
+  ΔAIC (Intercepts - Slopes): -3.66
+  Outcome: Option C: Slopes converge but don't improve (ΔAIC < 2, favors intercepts)
+  Interpretation: Homogeneous forgetting rates CONFIRMED (slope variance ≈ 0.000000)
+  Recommendation: Keep intercepts-only model (validated choice, not assumption)
+
+Full_CTT (z_CTT_full_IFR)
+--------------------------------------------------------------------------------
+  Model 1: z_CTT_full_IFR ~ TSVR_hours + (1|UID)
+    AIC: 1056.34
+    Converged: True
+  Model 2: z_CTT_full_IFR ~ TSVR_hours + (1 + TSVR_hours | UID)
+    AIC: 1056.64
+    Converged: True
+    Random slope variance: 0.000008
+    Random slope SD: 0.002843
+  ΔAIC (Intercepts - Slopes): -0.30
+  Outcome: Option C: Slopes converge but don't improve (|ΔAIC| < 2)
+  Interpretation: Negligible slope variance (0.000008) - effects homogeneous
+  Recommendation: Keep intercepts-only model (validated choice, not assumption)
+
+Purified_CTT (z_CTT_purified_IFR)
+--------------------------------------------------------------------------------
+  Model 1: z_CTT_purified_IFR ~ TSVR_hours + (1|UID)
+    AIC: 1089.69
+    Converged: True
+  Model 2: z_CTT_purified_IFR ~ TSVR_hours + (1 + TSVR_hours | UID)
+    AIC: 1093.68
+    Converged: True
+    Random slope variance: 0.000000
+    Random slope SD: 0.000088
+  ΔAIC (Intercepts - Slopes): -3.99
+  Outcome: Option C: Slopes converge but don't improve (ΔAIC < 2, favors intercepts)
+  Interpretation: Homogeneous forgetting rates CONFIRMED (slope variance ≈ 0.000000)
+  Recommendation: Keep intercepts-only model (validated choice, not assumption)
+
+Saving comparison results...
+/home/etai/projects/REMEMVR/results/ch5/5.3.6/data/random_slopes_comparison.csv
+
+================================================================================
+SUMMARY
+================================================================================
+
+Paradigm tested: IFR (Item Free Recall)
+Measurement types: 3
+
+  Option C: Slopes converge but don't improve (ΔAIC < 2, favors intercepts): 2 measurement type(s)
+  Option C: Slopes converge but don't improve (|ΔAIC| < 2): 1 measurement type(s)
+
+RECOMMENDATION:
+  3/3 measurement types support intercepts-only model
+  CONCLUSION: Original step07 implementation was appropriate
+  Homogeneous forgetting rates VALIDATED via empirical test
+
+================================================================================
+RANDOM SLOPES COMPARISON COMPLETE
+================================================================================
+
+Random slopes comparison completed

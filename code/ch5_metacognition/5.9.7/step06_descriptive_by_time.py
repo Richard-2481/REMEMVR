@@ -2,7 +2,6 @@
 """
 Step 06: Descriptive Statistics by Paradigm × Time
 RQ 6.9.7 - Paradigm-Specific Calibration Trajectory
-Generated: 2026-01-19
 
 PURPOSE: Compute mean calibration by paradigm × timepoint with rankings
 """
@@ -29,15 +28,15 @@ def log(msg):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 6: descriptive_by_time")
+        log("Step 6: descriptive_by_time")
 
         # Load calibration scores
         data_path = RQ_DIR / "data" / "step02_calibration_scores.csv"
         df = pd.read_csv(data_path, encoding='utf-8')
-        log(f"[LOADED] {data_path.name} ({len(df)} rows)")
+        log(f"{data_path.name} ({len(df)} rows)")
 
         # Compute descriptive statistics by paradigm × test
-        log("[COMPUTE] Computing descriptive statistics by paradigm × timepoint...")
+        log("Computing descriptive statistics by paradigm × timepoint...")
 
         desc = df.groupby(['paradigm', 'test']).agg(
             TSVR_hours_mean=('TSVR_hours', 'mean'),
@@ -57,10 +56,10 @@ if __name__ == "__main__":
         # Rank paradigms within each timepoint (1=best calibrated, closest to 0)
         desc['rank'] = desc.groupby('test')['abs_mean_calibration'].rank(method='min').astype(int)
 
-        log(f"[COMPUTED] {len(desc)} cells (3 paradigms × 4 timepoints)")
+        log(f"{len(desc)} cells (3 paradigms × 4 timepoints)")
 
         # Display results
-        log("[INFO] Descriptive statistics by paradigm × time:")
+        log("Descriptive statistics by paradigm × time:")
         for _, row in desc.sort_values(['test', 'rank']).iterrows():
             log(f"  {row['test']}, {row['paradigm']}: n={row['n']}, mean={row['mean_calibration']:.3f}, SD={row['sd_calibration']:.3f}, rank={row['rank']}")
 
@@ -72,25 +71,25 @@ if __name__ == "__main__":
         )
 
         if not validation_result.get('valid', False):
-            log(f"[ERROR] Validation failed: {validation_result.get('message', 'Unknown')}")
+            log(f"Validation failed: {validation_result.get('message', 'Unknown')}")
             sys.exit(1)
 
-        log("[PASS] Structure validation successful")
+        log("Structure validation successful")
 
         # Check balanced cell sizes
         if (desc['n'] != 100).any():
-            log("[WARNING] Unequal cell sizes detected (expected n=100 per cell)")
+            log("Unequal cell sizes detected (expected n=100 per cell)")
 
         # Save results
         out_path = RQ_DIR / "data" / "step06_paradigm_by_time.csv"
         desc.to_csv(out_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {out_path.name} ({len(desc)} rows)")
+        log(f"{out_path.name} ({len(desc)} rows)")
 
-        log("[SUCCESS] Step 6 complete")
+        log("Step 6 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

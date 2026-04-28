@@ -1,0 +1,96 @@
+Step 08: Power Analysis
+Loading effect sizes...
+step05_effect_sizes.csv (5 models)
+Loading model results...
+step04_model_results.csv (5 models)
+Computing achieved power for observed effects...
+[Model_1_Total] f²=0.0764, k=1, N=100
+  Achieved power: 0.0023
+[Model_2_Learning] f²=0.0115, k=1, N=100
+  Achieved power: 0.0004
+[Model_3_LearningSlope] f²=0.0492, k=1, N=100
+  Achieved power: 0.0010
+[Model_4_Recognition] f²=0.0289, k=1, N=100
+  Achieved power: 0.0006
+[Model_5_Combined] f²=0.1205, k=2, N=100
+  Achieved power: 0.0081
+Achieved power for all models
+Computing minimum detectable effects and required N...
+Small effect (f²=0.02)...
+  Required N for 80% power: 48660
+  Power at current N=100: 0.0005
+Medium effect (f²=0.15)...
+  Required N for 80% power: 871
+  Power at current N=100: 0.0171
+Large effect (f²=0.35)...
+  Required N for 80% power: 165
+  Power at current N=100: 0.4273
+Sensitivity analysis complete
+Saving power analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step08_power_analysis.csv (5 models)
+Saving sensitivity analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step08_sensitivity.csv (3 effect sizes)
+Power analysis results:
+  Model_1_Total: power=0.0023 (Low)
+  Model_2_Learning: power=0.0004 (Low)
+  Model_3_LearningSlope: power=0.0010 (Low)
+  Model_4_Recognition: power=0.0006 (Low)
+  Model_5_Combined: power=0.0081 (Low)
+Models with adequate power: 0/5
+Sensitivity analysis:
+  At N=100 with alpha=0.000357:
+    Small effect (f²=0.02): power=0.0005, requires N=48660 for 80% power
+    Medium effect (f²=0.15): power=0.0171, requires N=871 for 80% power
+    Large effect (f²=0.35): power=0.4273, requires N=165 for 80% power
+Step 08 complete
+Step 08: Power Analysis
+Loading effect sizes...
+step05_effect_sizes.csv (7 models)
+Loading model results...
+step04_model_results.csv (7 models)
+Computing achieved power for observed effects...
+[Model_1_Total] f²=0.0842, k=1, N=100
+  Achieved power: 0.0029
+[Model_2_Learning] f²=0.0323, k=1, N=100
+  Achieved power: 0.0006
+[Model_3_LearningSlope] f²=0.0766, k=1, N=100
+  Achieved power: 0.0023
+[Model_4_Forgetting] f²=0.1355, k=1, N=100
+  Achieved power: 0.0120
+[Model_5_Recognition] f²=0.0289, k=1, N=100
+  Achieved power: 0.0006
+[Model_6_PctRet] f²=0.1207, k=1, N=100
+  Achieved power: 0.0082
+[Model_7_Combined] f²=0.1376, k=2, N=100
+  Achieved power: 0.0126
+Achieved power for all models
+Computing minimum detectable effects and required N...
+Small effect (f²=0.02)...
+  Required N for 80% power: 48660
+  Power at current N=100: 0.0005
+Medium effect (f²=0.15)...
+  Required N for 80% power: 871
+  Power at current N=100: 0.0171
+Large effect (f²=0.35)...
+  Required N for 80% power: 165
+  Power at current N=100: 0.4273
+Sensitivity analysis complete
+Saving power analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step08_power_analysis.csv (7 models)
+Saving sensitivity analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step08_sensitivity.csv (3 effect sizes)
+Power analysis results:
+  Model_1_Total: power=0.0029 (Low)
+  Model_2_Learning: power=0.0006 (Low)
+  Model_3_LearningSlope: power=0.0023 (Low)
+  Model_4_Forgetting: power=0.0120 (Low)
+  Model_5_Recognition: power=0.0006 (Low)
+  Model_6_PctRet: power=0.0082 (Low)
+  Model_7_Combined: power=0.0126 (Low)
+Models with adequate power: 0/7
+Sensitivity analysis:
+  At N=100 with alpha=0.000357:
+    Small effect (f²=0.02): power=0.0005, requires N=48660 for 80% power
+    Medium effect (f²=0.15): power=0.0171, requires N=871 for 80% power
+    Large effect (f²=0.35): power=0.4273, requires N=165 for 80% power
+Step 08 complete

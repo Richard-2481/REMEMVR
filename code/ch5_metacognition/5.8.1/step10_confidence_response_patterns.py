@@ -7,7 +7,6 @@ Purpose: MANDATORY analysis per taxonomy Section 8.3
          - SD of ratings per participant
          - Flag restricted range (limits calibration)
 
-Author: rq_platinum agent
 Date: 2025-12-27
 """
 
@@ -307,7 +306,7 @@ def main():
         if summary['mean_sd'] < 0.25:
             f.write(f"WARNING: Low variability (mean SD = {summary['mean_sd']:.3f})\n")
 
-        f.write("\n✅ PLATINUM REQUIREMENT MET: Response patterns documented\n")
+        f.write("\n✅ VALIDATION REQUIREMENT MET: Response patterns documented\n")
 
     print(f"✅ Saved: {summary_path}")
 

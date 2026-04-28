@@ -1,0 +1,31 @@
+Step 2c: Model Selection for Random Effects
+Loading LMM input data...
+step01_lmm_input.csv (1200 rows, 10 cols)
+Data shape: (1200, 10)
+Domains: ['What', 'When', 'Where']
+N participants: 100
+Running random effects model selection...
+Fixed effects formula: theta ~ TSVR_hours + log_TSVR + Age_c + domain + TSVR_hours:Age_c + log_TSVR:Age_c + TSVR_hours:domain + log_TSVR:domain + Age_c:domain + TSVR_hours:Age_c:domain + log_TSVR:Age_c:domain
+Comparing 3 random structures:
+  1. Full: random intercepts + slopes with correlation
+  2. Uncorrelated: random intercepts + slopes without correlation
+  3. Intercept-only: random intercepts only
+Using ML estimation (REML=False) for valid LRT comparison
+Parsimonious selection: prefer simpler if LRT p >= 0.05
+Model selection complete
+Selected model: Full
+Saving model selection report...
+step02c_model_selection.txt
+Updating Step 2 outputs with selected model...
+step02_lmm_model.pkl (selected model: Full)
+step02_fixed_effects.csv (21 terms)
+Running validate_model_convergence...
+Valid: True
+Converged: True
+Message: Model converged successfully.
+Checking LRT comparisons...
+Number of LRT comparisons: 3
+Checking selected model is refit with REML=False...
+Selected model correctly fit with REML=False
+Step 2c complete
+Selected random effects structure: Full

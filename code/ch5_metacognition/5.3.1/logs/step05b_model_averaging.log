@@ -1,0 +1,29 @@
+================================================================================
+Step 05b: Model Averaging for RQ 6.3.1 (Domain)
+================================================================================
+
+LMM input: 1200 rows, 3 domains
+  Best model: Ultimate (weight=55.6%)
+======================================================================
+MODEL AVERAGING WITH DOMAIN INTERACTION
+======================================================================
+
+[STEP 1] Identifying competitive models (ΔAIC < 7.0)...
+  ✓ 4 competitive models identified
+
+[STEP 2] Creating time transformations...
+
+[STEP 3] Fitting 4 models with domain interaction...
+  [ 1/4] Ultimate                  w=0.6047 ✓
+  [ 2/4] Quad+Log+SquareRoot       w=0.3326 ✓
+  [ 3/4] CubeRoot                  w=0.0314 ✓
+  [ 4/4] Root_033                  w=0.0314 ✓
+
+[STEP 4] Computing model-averaged predictions...
+  ✓ Predictions: mean=-0.7666, SD=0.2156
+  ✓ Uncond. variance: mean=0.000078, max=0.002781
+  ✓ Effective N models: 2.43
+
+Saving output files...
+
+Model averaging complete: 4 models, effective N = 2.43

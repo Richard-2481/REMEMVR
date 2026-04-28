@@ -19,7 +19,6 @@ Theoretical Prediction (from 1_concept.md):
 Note: With When domain excluded due to floor effect, comparison is limited to
 What vs Where domains only.
 
-Author: Claude (g_code agent)
 Date: 2025-12-03
 """
 

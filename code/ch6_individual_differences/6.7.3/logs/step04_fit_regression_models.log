@@ -1,0 +1,119 @@
+Step 04: Fit Regression Models
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 participants, 6 columns)
+Defining 5 regression models...
+Fitting 5 models
+Model_1_Total: Total_z
+R²=0.0710, adj_R²=0.0615, F=7.48, p=0.007388
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0094, 0.2094]
+(1, 0)
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.3/code/step04_fit_regression_models.py", line 220, in <module>
+    ci_lower = conf_int[i, 0]
+               ~~~~~~~~^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: (1, 0)
+Step 04: Fit Regression Models
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 participants, 6 columns)
+Defining 5 regression models...
+Fitting 5 models
+Model_1_Total: Total_z
+R²=0.0710, adj_R²=0.0615, F=7.48, p=0.007388
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0094, 0.2094]
+Model_1_Total
+Model_2_Learning: Learning_z
+R²=0.0113, adj_R²=0.0012, F=1.12, p=0.291998
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0000, 0.0677]
+Model_2_Learning
+Model_3_LearningSlope: LearningSlope_z
+R²=0.0469, adj_R²=0.0372, F=4.82, p=0.030490
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0019, 0.1403]
+Model_3_LearningSlope
+Model_4_Recognition: Recognition_z
+R²=0.0281, adj_R²=0.0182, F=2.84, p=0.095375
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0001, 0.1189]
+Model_4_Recognition
+Model_5_Combined: Total_z, Learning_z
+R²=0.1075, adj_R²=0.0891, F=5.84, p=0.004013
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0348, 0.2500]
+Model_5_Combined
+All 5 models complete
+Saving model results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step04_model_results.csv (5 models)
+Saving coefficient results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step04_regression_coefficients.csv (6 coefficients)
+Model comparison:
+  Model_1_Total: R²=0.0710 [0.0094, 0.2094], F(1,98)=7.48, p=1.000000
+  Model_2_Learning: R²=0.0113 [0.0000, 0.0677], F(1,98)=1.12, p=1.000000
+  Model_3_LearningSlope: R²=0.0469 [0.0019, 0.1403], F(1,98)=4.82, p=1.000000
+  Model_4_Recognition: R²=0.0281 [0.0001, 0.1189], F(1,98)=2.84, p=1.000000
+  Model_5_Combined: R²=0.1075 [0.0348, 0.2500], F(2,97)=5.84, p=0.561786
+Bonferroni alpha threshold: 0.000357
+Step 04 complete
+Step 04: Fit Regression Models
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 participants, 8 columns)
+Defining 5 regression models...
+Fitting 7 models
+Model_1_Total: Total_z
+R²=0.0776, adj_R²=0.0682, F=8.25, p=0.004998
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0107, 0.1991]
+Model_1_Total
+Model_2_Learning: Learning_z
+R²=0.0313, adj_R²=0.0214, F=3.17, p=0.078107
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0001, 0.1407]
+Model_2_Learning
+Model_3_LearningSlope: LearningSlope_z
+R²=0.0712, adj_R²=0.0617, F=7.51, p=0.007304
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0078, 0.1880]
+Model_3_LearningSlope
+Model_4_Forgetting: Forgetting_z
+R²=0.1194, adj_R²=0.1104, F=13.28, p=0.000431
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0256, 0.2590]
+Model_4_Forgetting
+Model_5_Recognition: Recognition_z
+R²=0.0281, adj_R²=0.0182, F=2.84, p=0.095375
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0001, 0.1189]
+Model_5_Recognition
+Model_6_PctRet: PctRet_z
+R²=0.1077, adj_R²=0.0986, F=11.83, p=0.000857
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0173, 0.2394]
+Model_6_PctRet
+Model_7_Combined: Total_z, Learning_z
+R²=0.1210, adj_R²=0.1028, F=6.67, p=0.001924
+Computing R² CI (1000 iterations)...
+R² 95% CI: [0.0459, 0.2538]
+Model_7_Combined
+All 7 models complete
+Saving model results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step04_model_results.csv (7 models)
+Saving coefficient results...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step04_regression_coefficients.csv (8 coefficients)
+Model comparison:
+  Model_1_Total: R²=0.0776 [0.0107, 0.1991], F=8.25, p=0.699747
+  Model_2_Learning: R²=0.0313 [0.0001, 0.1407], F=3.17, p=1.000000
+  Model_3_LearningSlope: R²=0.0712 [0.0078, 0.1880], F=7.51, p=1.000000
+  Model_4_Forgetting: R²=0.1194 [0.0256, 0.2590], F=13.28, p=0.060304
+  Model_5_Recognition: R²=0.0281 [0.0001, 0.1189], F=2.84, p=1.000000
+  Model_6_PctRet: R²=0.1077 [0.0173, 0.2394], F=11.83, p=0.120027
+  Model_7_Combined: R²=0.1210 [0.0459, 0.2538], F=6.67, p=0.269310
+Bonferroni alpha threshold: 0.000357
+Step 04 complete

@@ -1,0 +1,47 @@
+Step 6: Compare Model Fit (AIC, BIC)
+Loading model metadata from step03_model_metadata.yaml...
+IRT model: AIC=1764.26, BIC=1801.73
+CTT model: AIC=-685.18, BIC=-647.71
+Running compare_lmm_fit_aic_bic...
+AIC/BIC comparison complete
+Delta AIC (CTT - IRT): -2449.44
+Delta BIC (CTT - IRT): -2449.44
+Saving model fit comparison to step06_model_fit_comparison.csv...
+step06_model_fit_comparison.csv (2 rows, 5 cols)
+Running validate_dataframe_structure...
+Structure validation FAILED
+DataFrame structure validation failed: Expected 1 rows, found 2; Missing columns: irt_aic, irt_bic, ctt_aic, ctt_bic, delta_aic, delta_bic, aic_interpretation, bic_interpretation
+Validation failed: DataFrame structure validation failed: Expected 1 rows, found 2; Missing columns: irt_aic, irt_bic, ctt_aic, ctt_bic, delta_aic, delta_bic, aic_interpretation, bic_interpretation
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.4/code/step06_compare_model_fit.py", line 224, in <module>
+    raise ValueError(f"Validation failed: {validation_result['message']}")
+ValueError: Validation failed: DataFrame structure validation failed: Expected 1 rows, found 2; Missing columns: irt_aic, irt_bic, ctt_aic, ctt_bic, delta_aic, delta_bic, aic_interpretation, bic_interpretation
+Step 6: Compare Model Fit (AIC, BIC)
+Loading model metadata from step03_model_metadata.yaml...
+IRT model: AIC=1764.26, BIC=1801.73
+CTT model: AIC=-685.18, BIC=-647.71
+Running compare_lmm_fit_aic_bic...
+AIC/BIC comparison complete
+Delta AIC (CTT - IRT): -2449.44
+Delta BIC (CTT - IRT): -2449.44
+AIC interpretation: Strong evidence for CTT
+BIC interpretation: Strong evidence for CTT
+Saving model fit comparison to step06_model_fit_comparison.csv...
+step06_model_fit_comparison.csv (1 rows, 8 cols)
+Running validate_dataframe_structure...
+Structure validation PASSED
+row_count_valid: actual_rows: columns_valid: missing_columns: types_valid: Checking AIC/BIC values are finite...
+All AIC/BIC values are finite
+Delta computations verified (CTT - IRT)
+Step 6 complete
+
+Model Fit Comparison Results:
+  IRT Model: AIC=1764.26, BIC=1801.73
+  CTT Model: AIC=-685.18, BIC=-647.71
+  Delta AIC: -2449.44 (Strong evidence for CTT)
+  Delta BIC: -2449.44 (Strong evidence for CTT)
+
+CTT has bounded outcome [0,1], IRT has unbounded scale.
+Direct AIC/BIC comparison NOT about which model is 'better',
+but whether models converge on similar structural conclusions.

@@ -1,0 +1,172 @@
+[2025-12-11 19:48:11] ================================================================================
+[2025-12-11 19:48:11] RQ 6.2.3: Resolution Over Time - Metacognitive Discrimination Analysis
+[2025-12-11 19:48:11] ================================================================================
+[2025-12-11 19:48:11] RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.2.3
+[2025-12-11 19:48:11] Project Root: /home/etai/projects/REMEMVR
+[2025-12-11 19:48:11] ============================================================
+[2025-12-11 19:48:11] STEP 00: Extract Item-Level Data
+[2025-12-11 19:48:11] ============================================================
+[2025-12-11 19:48:11] Loaded dfData.csv: 400 rows, 214 columns
+[2025-12-11 19:48:11] Found 105 TQ_ columns, 105 TC_ columns
+[2025-12-11 19:48:11] Interactive paradigm columns: 72 TQ_, 72 TC_
+[2025-12-11 19:48:11] Created item-level data: 28800 rows
+[2025-12-11 19:48:11] Participants: 100
+[2025-12-11 19:48:11] Tests: ['T1', 'T2', 'T3', 'T4']
+[2025-12-11 19:48:11] Unique items: 72
+[2025-12-11 19:48:11] Accuracy values: [np.int64(0), np.int64(1)]
+[2025-12-11 19:48:11] Confidence values: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+[2025-12-11 19:48:11] Items per participant-test: mean=72.0, min=72, max=72
+[2025-12-11 19:48:11] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step00_item_level.csv
+[2025-12-11 19:48:11] ============================================================
+[2025-12-11 19:48:11] STEP 01: Compute Goodman-Kruskal Gamma
+[2025-12-11 19:48:11] ============================================================
+[2025-12-11 19:48:11] Computed gamma for 400 participant-timepoints
+[2025-12-11 19:48:11] Mean gamma: 0.6920
+[2025-12-11 19:48:11] SD gamma: 0.1698
+[2025-12-11 19:48:11] Range gamma: [-0.0128, 1.0000]
+[2025-12-11 19:48:11] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step01_gamma_scores.csv
+[2025-12-11 19:48:11] ============================================================
+[2025-12-11 19:48:11] STEP 02: Fit Linear Mixed Model
+[2025-12-11 19:48:11] ============================================================
+[2025-12-11 19:48:11] LMM input: 400 rows (after dropping NaN gamma)
+[2025-12-11 19:48:11] Saved LMM input: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step02_gamma_lmm_input.csv
+[2025-12-11 19:48:11] Fitting LMM: gamma ~ TSVR_days + (1 + TSVR_days | UID)
+[2025-12-11 19:48:12] Model converged: True
+[2025-12-11 19:48:12] Saved LMM summary: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step02_gamma_lmm_summary.txt
+[2025-12-11 19:48:12] Fixed Effects:
+[2025-12-11 19:48:12]   Intercept: β=0.715119, SE=0.011798, p=0.000000
+[2025-12-11 19:48:12]   TSVR_days: β=-0.008493, SE=0.003356, p=0.011374
+[2025-12-11 19:48:12] ============================================================
+[2025-12-11 19:48:12] STEP 03: Extract Time Effect Statistics
+[2025-12-11 19:48:12] ============================================================
+[2025-12-11 19:48:12] Time effect (TSVR_days):
+[2025-12-11 19:48:12]   Coefficient: -0.008493
+[2025-12-11 19:48:12]   SE: 0.003356
+[2025-12-11 19:48:12]   z-statistic: -2.5310
+[2025-12-11 19:48:12]   p-value (uncorrected): 0.011374
+[2025-12-11 19:48:12]   p-value (Bonferroni): 0.011374
+[2025-12-11 19:48:12] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step03_time_effect.csv
+[2025-12-11 19:48:12] ============================================================
+[2025-12-11 19:48:12] STEP 04: Compute Mean Gamma by Timepoint
+[2025-12-11 19:48:12] ============================================================
+[2025-12-11 19:48:12] T1: mean=0.7285, SD=0.1203, 95% CI=[0.7046, 0.7523], N=100
+[2025-12-11 19:48:12] T2: mean=0.6851, SD=0.1752, 95% CI=[0.6503, 0.7199], N=100
+[2025-12-11 19:48:12] T3: mean=0.6919, SD=0.1703, 95% CI=[0.6581, 0.7257], N=100
+[2025-12-11 19:48:12] T4: mean=0.6624, SD=0.1992, 95% CI=[0.6229, 0.7019], N=100
+[2025-12-11 19:48:12] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step04_mean_gamma.csv
+[2025-12-11 19:48:12] ============================================================
+[2025-12-11 19:48:12] STEP 05: Test Gamma > 0.50 Threshold
+[2025-12-11 19:48:12] ============================================================
+[2025-12-11 19:48:12] T1: mean=0.7285 vs threshold=0.5, t=18.9897, p_bonf=0.000000 ***
+[2025-12-11 19:48:12] T2: mean=0.6851 vs threshold=0.5, t=10.5625, p_bonf=0.000000 ***
+[2025-12-11 19:48:12] T3: mean=0.6919 vs threshold=0.5, t=11.2668, p_bonf=0.000000 ***
+[2025-12-11 19:48:12] T4: mean=0.6624 vs threshold=0.5, t=8.1522, p_bonf=0.000000 ***
+[2025-12-11 19:48:12] All timepoints exceed 0.50 threshold: True
+[2025-12-11 19:48:12] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step05_gamma_threshold_tests.csv
+[2025-12-11 19:48:12] ============================================================
+[2025-12-11 19:48:12] STEP 06: Prepare Plot Data
+[2025-12-11 19:48:12] ============================================================
+[2025-12-11 19:48:12] Model: gamma = 0.7151 + -0.008493 * TSVR_days
+[2025-12-11 19:48:12] Resolution trajectory:
+[2025-12-11 19:48:12]   T1: Day 0.0, observed=0.7285, predicted=0.7148
+[2025-12-11 19:48:12]   T2: Day 1.2, observed=0.6851, predicted=0.7049
+[2025-12-11 19:48:12]   T3: Day 3.3, observed=0.6919, predicted=0.6873
+[2025-12-11 19:48:12]   T4: Day 6.3, observed=0.6624, predicted=0.6615
+[2025-12-11 19:48:12] Observed decline: T1=0.7285 → T4=0.6624 (9.1% decrease)
+[2025-12-11 19:48:12] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step06_resolution_trajectory_data.csv
+[2025-12-11 19:48:12] ================================================================================
+[2025-12-11 19:48:12] ANALYSIS COMPLETE
+[2025-12-11 19:48:12] ================================================================================
+[2025-12-11 19:48:12] PRIMARY FINDING: Resolution DECLINES significantly over time
+[2025-12-11 19:48:12]   Time effect: β=-0.008493, p=0.011374
+[2025-12-11 19:48:12]   SUPPORTS dual-process hypothesis: discrimination degrades with memory fading
+[2025-12-11 19:48:12] 
+Threshold tests: 4/4 timepoints exceed gamma > 0.50
+[2025-12-11 19:48:12] 
+All outputs saved to: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data
+[2026-01-17 14:30:56] ================================================================================
+[2026-01-17 14:30:56] RQ 6.2.3: Resolution Over Time - Metacognitive Discrimination Analysis
+[2026-01-17 14:30:56] ================================================================================
+[2026-01-17 14:30:56] RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.2.3
+[2026-01-17 14:30:56] Project Root: /home/etai/projects/REMEMVR
+[2026-01-17 14:30:56] ============================================================
+[2026-01-17 14:30:56] STEP 00: Extract Item-Level Data
+[2026-01-17 14:30:56] ============================================================
+[2026-01-17 14:30:56] Loaded dfData.csv: 400 rows, 478 columns
+[2026-01-17 14:30:56] Found 105 TQ_ columns, 105 TC_ columns
+[2026-01-17 14:30:56] Interactive paradigm columns: 72 TQ_, 72 TC_
+[2026-01-17 14:30:56] Created item-level data: 28800 rows
+[2026-01-17 14:30:56] Participants: 100
+[2026-01-17 14:30:56] Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:30:56] Unique items: 72
+[2026-01-17 14:30:56] Accuracy values: [np.int64(0), np.int64(1)]
+[2026-01-17 14:30:56] Confidence values: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+[2026-01-17 14:30:56] Items per participant-test: mean=72.0, min=72, max=72
+[2026-01-17 14:30:56] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step00_item_level.csv
+[2026-01-17 14:30:56] ============================================================
+[2026-01-17 14:30:56] STEP 01: Compute Goodman-Kruskal Gamma
+[2026-01-17 14:30:56] ============================================================
+[2026-01-17 14:30:57] Computed gamma for 400 participant-timepoints
+[2026-01-17 14:30:57] Mean gamma: 0.6920
+[2026-01-17 14:30:57] SD gamma: 0.1698
+[2026-01-17 14:30:57] Range gamma: [-0.0128, 1.0000]
+[2026-01-17 14:30:57] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step01_gamma_scores.csv
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] STEP 02: Fit Linear Mixed Model
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] LMM input: 400 rows (after dropping NaN gamma)
+[2026-01-17 14:30:57] Saved LMM input: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step02_gamma_lmm_input.csv
+[2026-01-17 14:30:57] Fitting LMM: gamma ~ TSVR_days + (1 + TSVR_days | UID)
+[2026-01-17 14:30:57] Model converged: True
+[2026-01-17 14:30:57] Saved LMM summary: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step02_gamma_lmm_summary.txt
+[2026-01-17 14:30:57] Fixed Effects:
+[2026-01-17 14:30:57]   Intercept: β=0.715119, SE=0.011798, p=0.000000
+[2026-01-17 14:30:57]   TSVR_days: β=-0.008493, SE=0.003356, p=0.011374
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] STEP 03: Extract Time Effect Statistics
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] Time effect (TSVR_days):
+[2026-01-17 14:30:57]   Coefficient: -0.008493
+[2026-01-17 14:30:57]   SE: 0.003356
+[2026-01-17 14:30:57]   z-statistic: -2.5310
+[2026-01-17 14:30:57]   p-value (uncorrected): 0.011374
+[2026-01-17 14:30:57]   p-value (Bonferroni): 0.011374
+[2026-01-17 14:30:57] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step03_time_effect.csv
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] STEP 04: Compute Mean Gamma by Timepoint
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] T1: mean=0.7285, SD=0.1203, 95% CI=[0.7046, 0.7523], N=100
+[2026-01-17 14:30:57] T2: mean=0.6851, SD=0.1752, 95% CI=[0.6503, 0.7199], N=100
+[2026-01-17 14:30:57] T3: mean=0.6919, SD=0.1703, 95% CI=[0.6581, 0.7257], N=100
+[2026-01-17 14:30:57] T4: mean=0.6624, SD=0.1992, 95% CI=[0.6229, 0.7019], N=100
+[2026-01-17 14:30:57] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step04_mean_gamma.csv
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] STEP 05: Test Gamma > 0.50 Threshold
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] T1: mean=0.7285 vs threshold=0.5, t=18.9897, p_bonf=0.000000 ***
+[2026-01-17 14:30:57] T2: mean=0.6851 vs threshold=0.5, t=10.5625, p_bonf=0.000000 ***
+[2026-01-17 14:30:57] T3: mean=0.6919 vs threshold=0.5, t=11.2668, p_bonf=0.000000 ***
+[2026-01-17 14:30:57] T4: mean=0.6624 vs threshold=0.5, t=8.1522, p_bonf=0.000000 ***
+[2026-01-17 14:30:57] All timepoints exceed 0.50 threshold: True
+[2026-01-17 14:30:57] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step05_gamma_threshold_tests.csv
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] STEP 06: Prepare Plot Data
+[2026-01-17 14:30:57] ============================================================
+[2026-01-17 14:30:57] Model: gamma = 0.7151 + -0.008493 * TSVR_days
+[2026-01-17 14:30:57] Resolution trajectory:
+[2026-01-17 14:30:57]   T1: Day 0.0, observed=0.7285, predicted=0.7148
+[2026-01-17 14:30:57]   T2: Day 1.2, observed=0.6851, predicted=0.7049
+[2026-01-17 14:30:57]   T3: Day 3.3, observed=0.6919, predicted=0.6873
+[2026-01-17 14:30:57]   T4: Day 6.3, observed=0.6624, predicted=0.6615
+[2026-01-17 14:30:57] Observed decline: T1=0.7285 → T4=0.6624 (9.1% decrease)
+[2026-01-17 14:30:57] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step06_resolution_trajectory_data.csv
+[2026-01-17 14:30:57] ================================================================================
+[2026-01-17 14:30:57] ANALYSIS COMPLETE
+[2026-01-17 14:30:57] ================================================================================
+[2026-01-17 14:30:57] PRIMARY FINDING: Resolution DECLINES significantly over time
+[2026-01-17 14:30:57]   Time effect: β=-0.008493, p=0.011374
+[2026-01-17 14:30:57]   SUPPORTS dual-process hypothesis: discrimination degrades with memory fading
+[2026-01-17 14:30:57] 
+Threshold tests: 4/4 timepoints exceed gamma > 0.50
+[2026-01-17 14:30:57] 
+All outputs saved to: /home/etai/projects/REMEMVR/results/ch6/6.2.3/data

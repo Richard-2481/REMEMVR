@@ -1,0 +1,82 @@
+======================================================================
+RANDOM SLOPES COMPARISON - RQ 5.2.3
+======================================================================
+
+PURPOSE: Test if individual differences in forgetting rate (random
+         slopes on TSVR_hours) justify added model complexity.
+
+TAXONOMY REQUIREMENT: Section 4.4 - Cannot claim homogeneous
+                      effects without testing for heterogeneity
+
+CONTEXT: Original analysis plan (2_plan.md) specified random slopes
+         model but executed with intercepts-only due to convergence
+         failure (summary.md lines 36-43). This script formally
+         documents and validates that decision.
+
+[STEP 1] Load LMM Input Data
+----------------------------------------------------------------------
+Loaded: 800 rows, 10 columns
+Unique UIDs: 100
+Domains: ['What', 'Where']
+Tests per participant: 8.0
+
+Model formula: Full 3-way Age × Domain × Time interaction
+       (13 fixed effects terms with Linear+Log time effects)
+       TSVR_hours (linear) + log_TSVR (logarithmic)
+
+[STEP 2] Fit Model A: Random Intercepts Only (Current Implementation)
+----------------------------------------------------------------------
+This is the model currently used in results/summary.md
+
+Model A converged: True
+  Log-Likelihood: -760.64
+  AIC: 1549.27
+  BIC: 1614.86
+  Random intercept variance: 0.3653
+  Residual variance: 0.2903
+  Observations: 800
+  Groups: 100
+
+[STEP 3] Fit Model B: Random Intercepts + Slopes for TSVR_hours
+----------------------------------------------------------------------
+Testing if individual differences in linear forgetting rate exist
+This was the ORIGINAL plan specification (2_plan.md line 316)
+
+Model B converged: False
+  Log-Likelihood: -1154.88
+  AIC: 2341.76
+  BIC: 2416.71
+  Random intercept variance: 0.7143
+  Random slope variance: 0.1545
+  Random slope SD: 0.3931
+  Intercept-slope covariance: -0.0023
+  Intercept-slope correlation: -0.007
+  Residual variance: 0.1976
+  Observations: 800
+  Groups: 100
+
+[STEP 4] Model Comparison via AIC
+----------------------------------------------------------------------
+Model A (Intercepts only):  AIC = 1549.27
+Model B (Intercepts+Slopes): AIC = 2341.76
+ΔAIC (A - B) = -792.49
+
+ΔAIC = -792.49 < -2 → Model A (intercepts) preferred
+         Slopes add complexity without improving fit
+
+[STEP 5] Save Comparison Results
+----------------------------------------------------------------------
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.3/data/step02_random_slopes_comparison.csv
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.3/results/step02_random_slopes_validation.md
+
+======================================================================
+Outcome: OPTION C SLOPES DONT IMPROVE
+Interpretation: Random slope variance negligible, simpler model preferred
+Recommendation: Use Model A (intercepts only). Homogeneous effects CONFIRMED.
+
+Random slopes comparison complete
+
+[TAXONOMY 4.4] Homogeneity hypothesis tested (convergence failure)
+Intercepts-only model JUSTIFIED (data insufficient for slopes)
+Documented in validation report
+======================================================================

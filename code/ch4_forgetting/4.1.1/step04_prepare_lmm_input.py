@@ -20,56 +20,42 @@ DESIGN PHILOSOPHY:
 Minimal data preparation - only merge theta with TSVR. Let downstream tools
 handle transformations to ensure consistency with tool requirements.
 
-Author: g_code
 Date: 2025-12-08
 RQ: ch5/5.1.1
 Step: 04
 """
 
-# =============================================================================
 # IMPORTS
-# =============================================================================
 
 import sys
 from pathlib import Path
 import pandas as pd
 import numpy as np
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch5/5.1.1
 LOG_FILE = RQ_DIR / "logs" / "step04_prepare_lmm_input.log"
 
-# =============================================================================
 # LOGGING
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # MAIN ANALYSIS
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 04: Prepare LMM Input Data")
+        log("Step 04: Prepare LMM Input Data")
         log("=" * 80)
+        # Load Theta Scores from IRT Pass 2
 
-        # =====================================================================
-        # STEP 1: Load Theta Scores from IRT Pass 2
-        # =====================================================================
-
-        log("[LOAD] Loading theta scores from IRT Pass 2...")
+        log("Loading theta scores from IRT Pass 2...")
         theta_path = RQ_DIR / "data" / "step03_theta_scores.csv"
 
         if not theta_path.exists():
@@ -102,12 +88,9 @@ if __name__ == "__main__":
         # Add SE placeholder (fixed SE=0.3 for all, typical IRT uncertainty)
         theta_data['SE'] = 0.3
         log(f"  ✓ Added SE=0.3 (fixed standard error)")
+        # Load TSVR Time Variable
 
-        # =====================================================================
-        # STEP 2: Load TSVR Time Variable
-        # =====================================================================
-
-        log("[LOAD] Loading TSVR time variable...")
+        log("Loading TSVR time variable...")
         tsvr_path = PROJECT_ROOT / "results" / "ch5" / "5.2.1" / "data" / "step00_tsvr_mapping.csv"
 
         if not tsvr_path.exists():
@@ -139,12 +122,9 @@ if __name__ == "__main__":
 
         log(f"    TSVR range: [{tsvr_data['TSVR_hours'].min():.2f}, "
             f"{tsvr_data['TSVR_hours'].max():.2f}] hours")
+        # Merge Theta with TSVR
 
-        # =====================================================================
-        # STEP 3: Merge Theta with TSVR
-        # =====================================================================
-
-        log("[MERGE] Merging theta scores with TSVR on composite_ID...")
+        log("Merging theta scores with TSVR on composite_ID...")
 
         lmm_input = theta_data.merge(
             tsvr_data[['composite_ID', 'TSVR_hours']],
@@ -163,12 +143,9 @@ if __name__ == "__main__":
         log(f"  ✓ Merge successful: {len(lmm_input)} rows")
         log(f"  ✓ UIDs: {lmm_input['UID'].nunique()} unique")
         log(f"  ✓ Tests: {lmm_input['test'].nunique()} unique")
+        # Validate Output Data
 
-        # =====================================================================
-        # STEP 5: Validate Output Data
-        # =====================================================================
-
-        log("[VALIDATE] Checking output data quality...")
+        log("Checking output data quality...")
 
         # Expected structure: 100 participants × 4 tests = 400 rows
         expected_rows = 400
@@ -223,12 +200,9 @@ if __name__ == "__main__":
             raise ValueError(
                 f"SE range [{se_min:.3f}, {se_max:.3f}] outside typical bounds [0.05, 3.0]"
             )
+        # Reorder Columns and Save
 
-        # =====================================================================
-        # STEP 6: Reorder Columns and Save
-        # =====================================================================
-
-        log("[SAVE] Saving LMM input data...")
+        log("Saving LMM input data...")
 
         # Column order: identifiers, outcome, time
         output_columns = ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
@@ -242,13 +216,10 @@ if __name__ == "__main__":
         log(f"    Columns: {len(lmm_input.columns)}")
         log(f"    Column names: {lmm_input.columns.tolist()}")
         log(f"    File size: {output_path.stat().st_size:,} bytes")
-
-        # =====================================================================
         # SUMMARY
-        # =====================================================================
 
         log("=" * 80)
-        log("[SUCCESS] Step 04 Complete")
+        log("Step 04 Complete")
         log(f"  Output: {output_path.name} ({len(lmm_input)} rows × {len(lmm_input.columns)} cols)")
         log(f"  Time variable: TSVR_hours (continuous, {tsvr_unique} unique values)")
         log(f"  Outcome: theta (IRT ability estimates)")
@@ -256,7 +227,7 @@ if __name__ == "__main__":
         log("=" * 80)
 
     except Exception as e:
-        log(f"\n[ERROR] Step 04 Failed: {e}")
+        log(f"\nStep 04 Failed: {e}")
         import traceback
         log(traceback.format_exc())
         raise

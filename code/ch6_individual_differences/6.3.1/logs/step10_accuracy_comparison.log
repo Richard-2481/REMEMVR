@@ -1,0 +1,78 @@
+Step 10: Accuracy Comparison
+Purpose: Compare confidence vs accuracy prediction patterns
+Loading confidence prediction results...
+Confidence prediction data loaded
+Looking for RQ 7.1.1 data in: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data
+RQ 7.1.1 data: step08_effect_sizes.csv
+Accuracy model R² = 0.2260
+Overall model comparison:
+Confidence R² = 0.1875
+Accuracy R² = 0.2260
+R²(confidence) - R²(accuracy) = -0.0385
+Confidence predicted MORE WEAKLY than accuracy (supports dissociation)
+Individual predictor patterns:
+RAVLT_T:
+  Confidence sr² = 0.0024
+  Accuracy sr² = 0.0170
+  Difference = -0.0146
+  Pattern = weaker
+BVMT_T:
+  Confidence sr² = 0.0479
+  Accuracy sr² = 0.0110
+  Difference = 0.0369
+  Pattern = stronger
+RPM_T:
+  Confidence sr² = 0.0424
+  Accuracy sr² = 0.0800
+  Difference = -0.0376
+  Pattern = weaker
+Metacognitive dissociation evidence:
+Supporting dissociation (3 points):
+  - Overall R² lower for confidence (0.188 vs 0.226)
+  - RPM predicts confidence more weakly (0.042 vs 0.080)
+  - BVMT shows different pattern for confidence (0.048 vs 0.011)
+Evidence SUPPORTS metacognitive dissociation hypothesis
+Confidence relies on different cognitive processes than accuracy
+Comparison results: /home/etai/projects/REMEMVR/results/ch7/7.3.1/data/step10_accuracy_comparison.csv
+Checking comparison validity...
+Comparison analysis PASSED
+Step 10 complete
+Step 10: Accuracy Comparison
+Purpose: Compare confidence vs accuracy prediction patterns
+Loading confidence prediction results...
+Confidence prediction data loaded
+Looking for RQ 7.1.1 data in: /home/etai/projects/REMEMVR/results/ch7/7.1.1/data
+RQ 7.1.1 data: step08_effect_sizes.csv
+Accuracy model R² = 0.2260
+Overall model comparison:
+Confidence R² = 0.2205
+Accuracy R² = 0.2260
+R²(confidence) - R²(accuracy) = -0.0055
+Confidence predicted MORE WEAKLY than accuracy (supports dissociation)
+Individual predictor patterns:
+RAVLT_T:
+  Confidence sr² = 0.0008
+  Accuracy sr² = 0.0170
+  Difference = -0.0162
+  Pattern = weaker
+BVMT_T:
+  Confidence sr² = 0.0367
+  Accuracy sr² = 0.0110
+  Difference = 0.0257
+  Pattern = stronger
+RPM_T:
+  Confidence sr² = 0.0264
+  Accuracy sr² = 0.0800
+  Difference = -0.0536
+  Pattern = weaker
+Metacognitive dissociation evidence:
+Supporting dissociation (3 points):
+  - Overall R² lower for confidence (0.188 vs 0.226)
+  - RPM predicts confidence more weakly (0.042 vs 0.080)
+  - BVMT shows different pattern for confidence (0.048 vs 0.011)
+Evidence SUPPORTS metacognitive dissociation hypothesis
+Confidence relies on different cognitive processes than accuracy
+Comparison results: /home/etai/projects/REMEMVR/results/ch7/7.3.1/data/step10_accuracy_comparison.csv
+Checking comparison validity...
+Comparison analysis PASSED
+Step 10 complete

@@ -1,0 +1,83 @@
+Step 06: Compare ICC Across Locations
+Loading ICC estimates from Step 3...
+step03_icc_estimates.csv (6 rows, 4 cols)
+Separating Source and Destination ICC estimates...
+Source: 3 rows, Destination: 3 rows
+Merging Source and Destination on icc_type...
+Combined table: 3 rows
+Computing difference (source_value - destination_value)...
+Difference column added
+Generating interpretation strings...
+Interpretation column added
+Selecting output columns...
+Final output: 3 rows, 5 cols
+Saving ICC comparison table...
+step06_location_icc_comparison.csv (3 rows, 5 cols)
+Running validate_dataframe_structure...
+data type 'o' not understood
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.6/code/step06_compare_icc_across_locations.py", line 274, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in <genexpr>
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/_core/numerictypes.py", line 536, in issubdtype
+    arg2 = dtype(arg2).type
+           ^^^^^^^^^^^
+TypeError: data type 'o' not understood
+Step 06: Compare ICC Across Locations
+Loading ICC estimates from Step 3...
+step03_icc_estimates.csv (6 rows, 4 cols)
+Separating Source and Destination ICC estimates...
+Source: 3 rows, Destination: 3 rows
+Merging Source and Destination on icc_type...
+Combined table: 3 rows
+Computing difference (source_value - destination_value)...
+Difference column added
+Generating interpretation strings...
+Interpretation column added
+Selecting output columns...
+Final output: 3 rows, 5 cols
+Saving ICC comparison table...
+step06_location_icc_comparison.csv (3 rows, 5 cols)
+Checking output structure...
+PASS - Row count: 3
+PASS - All expected columns present
+Checking ICC value bounds...
+PASS - source_value in [0, 1]
+PASS - destination_value in [0, 1]
+PASS - difference correctly computed
+PASS - No NaN values
+
+ICC Comparison Results:
+============================================================
+ICC_intercept:
+  Source:      0.2400
+  Destination: 0.4211
+  Difference:  -0.1811
+  Destination shows substantially higher baseline stability than Source
+
+ICC_slope_conditional:
+  Source:      0.4080
+  Destination: 0.1669
+  Difference:  +0.2411
+  Difference in slope variance: 0.2411 (both near zero)
+
+ICC_slope_simple:
+  Source:      0.0051
+  Destination: 0.0216
+  Difference:  -0.0165
+  Difference in slope variance: -0.0165 (both near zero)
+
+[PRIMARY COMPARISON] ICC_intercept (baseline stability):
+  Source:      0.2400
+  Destination: 0.4211
+  Difference:  -0.1811
+  -> Destination shows HIGHER baseline stability (contradicts hypothesis)
+
+Step 06 complete

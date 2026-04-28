@@ -179,13 +179,13 @@ def run_model_averaging_with_factor(
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05b: Model Averaging for RQ 6.3.1 (Domain)")
+        log("Step 05b: Model Averaging for RQ 6.3.1 (Domain)")
         log("=" * 80)
 
         lmm_input = pd.read_csv(DATA_DIR / "step04_lmm_input.csv")
         comparison = pd.read_csv(DATA_DIR / "step05_model_comparison.csv")
 
-        log(f"\n[LOAD] LMM input: {len(lmm_input)} rows, {lmm_input['domain'].nunique()} domains")
+        log(f"\nLMM input: {len(lmm_input)} rows, {lmm_input['domain'].nunique()} domains")
         log(f"  Best model: {comparison.iloc[0]['model_name']} (weight={comparison.iloc[0]['akaike_weight']:.1%})")
 
         results = run_model_averaging_with_factor(
@@ -195,16 +195,16 @@ if __name__ == "__main__":
             delta_aic_threshold=7.0,
         )
 
-        log("\n[SAVE] Saving output files...")
+        log("\nSaving output files...")
         results['competitive_models'].to_csv(DATA_DIR / "step05b_competitive_models.csv", index=False)
         results['predictions'].to_csv(DATA_DIR / "step05b_model_averaged_predictions.csv", index=False)
         results['theta'].to_csv(DATA_DIR / "step05b_model_averaged_theta.csv", index=False)
         results['metadata'].to_csv(DATA_DIR / "step05b_metadata.csv", index=False)
 
-        log(f"\n[SUCCESS] Model averaging complete: {len(results['competitive_models'])} models, effective N = {results['effective_n_models']:.2f}")
+        log(f"\nModel averaging complete: {len(results['competitive_models'])} models, effective N = {results['effective_n_models']:.2f}")
 
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

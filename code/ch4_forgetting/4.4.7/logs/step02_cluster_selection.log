@@ -1,0 +1,52 @@
+Step 02: Cluster Model Selection (BIC)
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+100 rows, 7 columns
+Clustering on 100 samples, 6 features
+Testing K=1 to K=6
+  Fitting K=1...
+    K=1: inertia=600.0000, BIC=183.7811
+  Fitting K=2...
+    K=2: inertia=264.1438, BIC=106.3427
+  Fitting K=3...
+    K=3: inertia=189.3398, BIC=77.6528
+  Fitting K=4...
+    K=4: inertia=160.9991, BIC=66.0435
+  Fitting K=5...
+    K=5: inertia=137.0241, BIC=54.5245
+  Fitting K=6...
+    K=6: inertia=118.6476, BIC=44.7298
+Optimal K = 6 (BIC = 44.7298)
+Writing BIC table to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_cluster_selection.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_cluster_selection.csv
+Writing optimal K to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_optimal_k.txt
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_optimal_k.txt
+Validating BIC model selection
+Optimal K at boundary (K=1 or K=6) - may need wider search range
+[VALIDATION PASS] BIC model selection valid
+Step 02 complete - Optimal K = 6
+Step 02: Cluster Model Selection (BIC)
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+100 rows, 7 columns
+Clustering on 100 samples, 6 features
+Testing K=1 to K=6
+  Fitting K=1...
+    K=1: inertia=600.0000, BIC=183.7811
+  Fitting K=2...
+    K=2: inertia=264.3237, BIC=106.4108
+  Fitting K=3...
+    K=3: inertia=183.8331, BIC=74.7013
+  Fitting K=4...
+    K=4: inertia=154.7457, BIC=62.0820
+  Fitting K=5...
+    K=5: inertia=137.1606, BIC=54.6241
+  Fitting K=6...
+    K=6: inertia=122.4338, BIC=47.8711
+Optimal K = 6 (BIC = 47.8711)
+Writing BIC table to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_cluster_selection.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_cluster_selection.csv
+Writing optimal K to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_optimal_k.txt
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_optimal_k.txt
+Validating BIC model selection
+Optimal K at boundary (K=1 or K=6) - may need wider search range
+[VALIDATION PASS] BIC model selection valid
+Step 02 complete - Optimal K = 6

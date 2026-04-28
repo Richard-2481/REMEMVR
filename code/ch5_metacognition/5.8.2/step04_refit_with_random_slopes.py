@@ -2,12 +2,11 @@
 """
 RQ 6.8.2: Refit LMM with Random Slopes
 =======================================
-Based on PLATINUM validation finding that random slopes significantly
+Based on validation validation finding that random slopes significantly
 improve model fit (ΔAIC = 21.00), refit primary model with slopes.
 
 Updated model: calibration ~ LocationType * log_TSVR + (log_TSVR | UID)
 
-Author: rq_platinum agent
 Date: 2025-12-28
 """
 
@@ -18,9 +17,7 @@ from scipy import stats
 import statsmodels.formula.api as smf
 import warnings
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step04_random_slopes.log"
@@ -32,9 +29,7 @@ def log(msg):
         f.flush()
     print(msg, flush=True)
 
-# =============================================================================
-# STEP 04: Refit LMM with Random Slopes
-# =============================================================================
+# Refit LMM with Random Slopes
 
 def step04_refit_with_random_slopes():
     """
@@ -45,7 +40,7 @@ def step04_refit_with_random_slopes():
     This is the PREFERRED model based on ΔAIC = 21.00 favoring slopes.
     """
     log("\n" + "="*70)
-    log("STEP 04: Refit LMM with Random Slopes (PLATINUM UPDATE)")
+    log("STEP 04: Refit LMM with Random Slopes (validation UPDATE)")
     log("="*70)
 
     # Load calibration data
@@ -174,14 +169,12 @@ def step04_refit_with_random_slopes():
 
     return result, fe_df
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute random slopes refitting."""
     log("\n" + "="*70)
-    log("RQ 6.8.2: Random Slopes Model (PLATINUM UPDATE)")
+    log("RQ 6.8.2: Random Slopes Model (validation UPDATE)")
     log("="*70)
 
     # Clear log
@@ -199,7 +192,7 @@ def main():
     log("RECOMMENDATION")
     log("="*70)
 
-    log("\nBased on PLATINUM validation (ΔAIC = 21.00):")
+    log("\nBased on validation validation (ΔAIC = 21.00):")
     log("  ✓ Random slopes model is PREFERRED")
     log("  ✓ Individual differences in calibration trajectories CONFIRMED")
     log("  ✓ Update summary.md with slopes model results")

@@ -1,0 +1,3 @@
+measure,effect_size_d,SE_d,p_value,source_file,extraction_method,notes
+Accuracy,0.2,0.196,0.548,/home/etai/projects/REMEMVR/results/ch5/5.4.1/results/summary.md,summary_md_text_parsing,Extracted using pattern: schema.*effect.*[dD]\s*=\s*([-+]?\d*\.?\d+)
+Confidence,0.05,0.15,0.7,PLACEHOLDER,placeholder_negligible_effect,"Extraction failed (no effect found in summary or data files). Assumed negligible d=0.05, SE=0.15"

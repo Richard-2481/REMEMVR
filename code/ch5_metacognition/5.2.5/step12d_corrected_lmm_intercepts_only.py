@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-RQ 6.2.5: Corrected LMM with Intercepts Only (PLATINUM Fix)
+RQ 6.2.5: Corrected LMM with Intercepts Only (Validation Fix)
 ===========================================================
 
 Per step12c random slopes comparison: ΔAIC = +0.47 (slopes NOT justified)
@@ -17,9 +17,7 @@ import numpy as np
 from pathlib import Path
 import statsmodels.formula.api as smf
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step12d_corrected_lmm.log"
@@ -170,7 +168,7 @@ def main():
     with open(LOG_FILE, 'w') as f:
         f.write("RQ 6.2.5: Corrected LMM (Intercepts Only)\n")
         f.write("=" * 70 + "\n")
-        f.write("PLATINUM Fix: Random slopes NOT justified (ΔAIC = +0.47)\n\n")
+        f.write("Validation Fix: Random slopes NOT justified (ΔAIC = +0.47)\n\n")
 
     log("Starting corrected LMM analysis...")
     log(f"Data file: {DATA_FILE}")

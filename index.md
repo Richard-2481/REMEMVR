@@ -2,15 +2,16 @@
 layout: default
 title: Home
 nav_order: 1
+has_toc: false
 ---
+
+![REMEMVR](assets/images/REMEMVR-logo.png){: width="300px" }
 
 # REMEMVR Supplementary Materials
 
 This repository contains the supplementary materials for the doctoral thesis:
 
-> **Remembering in Virtual Reality: A Longitudinal Investigation of Episodic Memory Encoding, Retention, and Retrieval Using Immersive Technology**
-
-The REMEMVR study assessed episodic memory in 100 participants across 4 sessions using an immersive virtual reality paradigm, generating 185,400 item-level measurements.
+> **Measuring Episodic Memory with Virtual Reality**
 
 ---
 
@@ -34,7 +35,3 @@ The REMEMVR study assessed episodic memory in 100 participants across 4 sessions
 ## Study Website
 
 Additional information about the REMEMVR project is available at [rememvr.com.au](https://rememvr.com.au).
-
-## Citation
-
-If referencing these materials, please cite the doctoral thesis (full citation to be added upon completion).

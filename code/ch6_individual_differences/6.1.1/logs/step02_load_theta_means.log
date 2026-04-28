@@ -1,0 +1,21 @@
+Step 02: Load Theta Means from Ch5
+Loading theta scores from Ch5 5.1.1...
+/home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv (400 rows, 3 cols)
+Columns: ['UID', 'test', 'Theta_All']
+Unique UIDs: 100
+Test sessions: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Computing mean theta per participant...
+Sessions per participant - Min: 4, Max: 4, Mean: 4.0
+Participants with >=3 sessions: 100 of 100
+Computed theta means for 100 participants
+Theta mean stats - Mean: 0.006, Std: 0.677
+Theta range: [-1.954, 1.559]
+Saving /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step02_theta_means.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step02_theta_means.csv (100 rows, 2 cols)
+Running validate_data_columns...
+Theta range check PASSED: [-1.954, 1.559] within [-3, 3]
+Theta mean check PASSED: 0.006 within tolerance 0.5 of 0
+Participant count check PASSED: 100 >= 90
+Missing values check PASSED: No missing theta_mean values
+All checks PASSED
+Step 02 complete

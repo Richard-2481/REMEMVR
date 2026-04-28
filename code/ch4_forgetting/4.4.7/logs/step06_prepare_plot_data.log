@@ -1,0 +1,30 @@
+Step 06: Prepare Plot Data
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step05_cluster_centers_original_scale.csv
+Combining features and cluster assignments
+Merging participant data with cluster centers
+Plot data shape: (106, 10)
+  Participant rows: 100
+  Center rows: 6
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step06_scatter_matrix_plot_data.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step06_scatter_matrix_plot_data.csv
+Checking plot data completeness
+[VALIDATION PASS] Plot data ready
+Step 06 complete
+Step 06: Prepare Plot Data
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step05_cluster_centers_original_scale.csv
+Combining features and cluster assignments
+Merging participant data with cluster centers
+Plot data shape: (106, 10)
+  Participant rows: 100
+  Center rows: 6
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step06_scatter_matrix_plot_data.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step06_scatter_matrix_plot_data.csv
+Checking plot data completeness
+[VALIDATION PASS] Plot data ready
+Step 06 complete

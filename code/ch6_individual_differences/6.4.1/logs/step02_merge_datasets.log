@@ -1,0 +1,90 @@
+Step 02: merge_datasets
+Loading input datasets...
+step00_cognitive_tests.csv (100 rows, 2 cols)
+Columns: ['uid', 'ravlt_total']
+step01_paradigm_theta.csv (100 rows, 3 cols)
+Columns: ['uid', 'theta_free_recall', 'theta_recognition']
+Running inner join on 'uid'...
+Merge complete: 100 rows retained
+Final columns: ['uid', 'ravlt_total', 'theta_free_recall', 'theta_recognition']
+No data loss - 100 participants maintained
+Saving merged correlation input dataset...
+step02_correlation_input.csv (100 rows, 4 cols)
+Running validate_dataframe_structure...
+data type 'o' not understood
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.4.1/code/step02_merge_datasets.py", line 201, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in <genexpr>
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/_core/numerictypes.py", line 536, in issubdtype
+    arg2 = dtype(arg2).type
+           ^^^^^^^^^^^
+TypeError: data type 'o' not understood
+Step 02: merge_datasets
+Loading input datasets...
+step00_cognitive_tests.csv (100 rows, 2 cols)
+Columns: ['uid', 'ravlt_total']
+step01_paradigm_theta.csv (100 rows, 3 cols)
+Columns: ['uid', 'theta_free_recall', 'theta_recognition']
+Running inner join on 'uid'...
+Merge complete: 100 rows retained
+Final columns: ['uid', 'ravlt_total', 'theta_free_recall', 'theta_recognition']
+No data loss - 100 participants maintained
+Saving merged correlation input dataset...
+step02_correlation_input.csv (100 rows, 4 cols)
+Running validate_dataframe_structure...
+'type' object is not iterable
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.4.1/code/step02_merge_datasets.py", line 202, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'type' object is not iterable
+Step 02: merge_datasets
+Loading input datasets...
+step00_cognitive_tests.csv (100 rows, 2 cols)
+Columns: ['uid', 'ravlt_total']
+step01_paradigm_theta.csv (100 rows, 3 cols)
+Columns: ['uid', 'theta_free_recall', 'theta_recognition']
+Running inner join on 'uid'...
+Merge complete: 100 rows retained
+Final columns: ['uid', 'ravlt_total', 'theta_free_recall', 'theta_recognition']
+No data loss - 100 participants maintained
+Saving merged correlation input dataset...
+step02_correlation_input.csv (100 rows, 4 cols)
+Running validate_dataframe_structure...
+Results:
+valid: True
+message: DataFrame structure valid: 100 rows, 4 columns (required: 4).
+checks: {'row_count_valid': True, 'actual_rows': 100, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+PASSED - Dataset structure meets all requirements
+Step 02 complete
+Step 02: merge_datasets
+Loading input datasets...
+step00_cognitive_tests.csv (100 rows, 3 cols)
+Columns: ['uid', 'ravlt_total', 'ravlt_pct_ret']
+step01_paradigm_theta.csv (100 rows, 3 cols)
+Columns: ['uid', 'theta_free_recall', 'theta_recognition']
+Running inner join on 'uid'...
+Merge complete: 100 rows retained
+Final columns: ['uid', 'ravlt_total', 'ravlt_pct_ret', 'theta_free_recall', 'theta_recognition']
+No data loss - 100 participants maintained
+Saving merged correlation input dataset...
+step02_correlation_input.csv (100 rows, 5 cols)
+Running validate_dataframe_structure...
+Results:
+valid: True
+message: DataFrame structure valid: 100 rows, 5 columns (required: 5).
+checks: {'row_count_valid': True, 'actual_rows': 100, 'columns_valid': True, 'missing_columns': [], 'types_valid': True}
+PASSED - Dataset structure meets all requirements
+Step 02 complete

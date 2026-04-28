@@ -1,0 +1,168 @@
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and timepoint...
+Aggregated to 885 rows (domains × timepoints)
+Domains present: ['What', 'When', 'Where']
+Timepoints per domain: {'What': 295, 'When': 295, 'Where': 295}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (885 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for What: 3.7934 (18 items)
+Mean discrimination for Where: 3.9577 (36 items)
+Mean discrimination for When: 3.5168 (18 items)
+Transforming theta to probability scale...
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (885 rows, 6 cols)
+Running validation checks...
+Both datasets have 885 rows
+Row count matches expected: 885 rows (3 domains × 295 timepoints)
+NaN values found in theta_data
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.1/code/step07_prepare_trajectory_plot_data.py", line 341, in <module>
+    raise ValueError("NaN values found in theta_data")
+ValueError: NaN values found in theta_data
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['What', 'When', 'Where']
+'Column not found: test'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.3.1/code/step07_prepare_trajectory_plot_data.py", line 198, in <module>
+    log(f"Tests per domain: {theta_data.groupby('domain')['test'].count().to_dict()}")
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/groupby/generic.py", line 1951, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/base.py", line 245, in __getitem__
+    raise KeyError(f"Column not found: {key}")
+KeyError: 'Column not found: test'
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['What', 'When', 'Where']
+Tests per domain: {'What': 4, 'When': 4, 'Where': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for What: 3.7934 (18 items)
+Mean discrimination for Where: 3.9577 (36 items)
+Mean discrimination for When: 3.5168 (18 items)
+Transforming theta to probability scale...
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0414, -0.3861]
+Probability range: [0.0160, 0.2046]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['What', 'When', 'Where']
+Tests per domain: {'What': 4, 'When': 4, 'Where': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for What: 3.7934 (18 items)
+Mean discrimination for Where: 3.9577 (36 items)
+Mean discrimination for When: 3.5168 (18 items)
+Transforming theta to probability scale...
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0414, -0.3861]
+Probability range: [0.0160, 0.2046]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (72 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['What', 'When', 'Where']
+Tests per domain: {'What': 4, 'When': 4, 'Where': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for What: 3.7934 (18 items)
+Mean discrimination for Where: 3.9577 (36 items)
+Mean discrimination for When: 3.5168 (18 items)
+Transforming theta to probability scale...
+Sample mean theta: -0.7666 (used for probability centering)
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-1.0414, -0.3861]
+Probability range: [0.2521, 0.7922]
+Step 07 complete
+Step 07: Prepare Trajectory Plot Data
+Loading input data...
+step04_lmm_input.csv (1200 rows, 7 cols)
+step03_pass2_item_params.csv (104 rows, 6 cols)
+Aggregating theta scores by domain and test...
+Aggregated to 12 rows (domains × tests)
+Domains present: ['What', 'When', 'Where']
+Tests per domain: {'What': 4, 'When': 4, 'Where': 4}
+Saving theta-scale plot data...
+step07_trajectory_theta_data.csv (12 rows, 6 cols)
+Computing mean discrimination per domain...
+Mean discrimination for What: 1.5069 (29 items)
+Mean discrimination for Where: 1.4376 (50 items)
+Mean discrimination for When: 1.7012 (25 items)
+Transforming theta to probability scale...
+Sample mean theta: 0.0194 (used for probability centering)
+Probability transformation complete
+Saving probability-scale plot data...
+step07_trajectory_probability_data.csv (12 rows, 6 cols)
+Running validation checks...
+Both datasets have 12 rows
+Row count matches expected: 12 rows (3 domains × 4 timepoints)
+No NaN values in theta_data
+No NaN values in probability_data
+All theta CI bounds valid (CI_lower < CI_upper)
+All probability CI bounds valid (CI_lower < CI_upper)
+All probability values valid (n=3 columns, 36 total values in [0, 1]).
+All validation checks passed
+Theta range: [-0.4794, 0.6786]
+Probability range: [0.3230, 0.7271]
+Step 07 complete

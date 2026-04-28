@@ -8,7 +8,6 @@ CRITICAL: Original analysis used intercepts-only. Random slopes comparison
          showed ΔAIC = 60.82 improvement - this is a MAJOR model misspecification.
          We must refit with proper random structure.
 
-Author: rq_platinum agent
 Date: 2025-12-27
 """
 

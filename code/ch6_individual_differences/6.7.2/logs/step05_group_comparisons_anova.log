@@ -1,0 +1,79 @@
+Step 05: Group Comparisons ANOVA
+Loading demographic data...
+100 participants
+Demographic variables for ANOVA: ['Age', 'Education', 'VR_Experience', 'NART', 'BVMT']
+Running one-way ANOVA for each demographic variable...
+Bonferroni correction: alpha = 0.05/15 = 0.0033
+Age: F(2,97)=1.545, p_uncorr=0.2186, p_bonf=1.0000
+Education: F(2,97)=2.119, p_uncorr=0.1257, p_bonf=1.0000
+VR_Experience: F(2,97)=0.053, p_uncorr=0.9483, p_bonf=1.0000
+NART: 3 participants excluded due to missing data
+NART: F(2,94)=1.349, p_uncorr=0.2644, p_bonf=1.0000
+BVMT: F(2,97)=0.444, p_uncorr=0.6427, p_bonf=1.0000
+Computing post-hoc power analysis...
+Saving ANOVA results...
+step05_anova_results.csv (5 rows)
+No significant ANOVA results - no post-hoc comparisons
+step05_assumption_checks.csv (15 rows)
+step05_power_analysis.csv (5 rows)
+Running validate_hypothesis_test_dual_pvalues...
+validate_hypothesis_test_dual_pvalues() got an unexpected keyword argument 'results_df'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.2/code/step05_group_comparisons_anova.py", line 191, in <module>
+    validation_result = validate_hypothesis_test_dual_pvalues(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_hypothesis_test_dual_pvalues() got an unexpected keyword argument 'results_df'
+Step 05: Group Comparisons ANOVA
+Loading demographic data...
+100 participants
+Demographic variables for ANOVA: ['Age', 'Education', 'VR_Experience', 'NART', 'BVMT']
+Running one-way ANOVA for each demographic variable...
+Bonferroni correction: alpha = 0.05/15 = 0.0033
+Age: F(2,97)=1.545, p_uncorr=0.2186, p_bonf=1.0000
+Education: F(2,97)=2.119, p_uncorr=0.1257, p_bonf=1.0000
+VR_Experience: F(2,97)=0.053, p_uncorr=0.9483, p_bonf=1.0000
+NART: 3 participants excluded due to missing data
+NART: F(2,94)=1.349, p_uncorr=0.2644, p_bonf=1.0000
+BVMT: F(2,97)=0.444, p_uncorr=0.6427, p_bonf=1.0000
+Computing post-hoc power analysis...
+Saving ANOVA results...
+step05_anova_results.csv (5 rows)
+No significant ANOVA results - no post-hoc comparisons
+step05_assumption_checks.csv (15 rows)
+step05_power_analysis.csv (5 rows)
+Checking dual p-value reporting...
+Dual p-value reporting validated
+Step 05 complete
+Step 05: Group Comparisons ANOVA
+Loading demographic data...
+100 participants
+Demographic variables for ANOVA: ['Age', 'Education', 'VR_Experience', 'NART', 'BVMT']
+Grouping schemes: {'RAVLT_Total': 'Group_RAVLT_Total', 'RAVLT_Pct_Ret': 'Group_RAVLT_Pct_Ret'}
+Running one-way ANOVA for each demographic variable and grouping scheme...
+
+=== RAVLT_Total (column: Group_RAVLT_Total) ===
+Bonferroni correction: alpha = 0.05/15 = 0.0033
+RAVLT_Total/Age: F(2,97)=0.841, p_uncorr=0.4346, p_bonf=1.0000
+RAVLT_Total/Education: F(2,97)=2.807, p_uncorr=0.0653, p_bonf=0.9793
+RAVLT_Total/VR_Experience: F(2,97)=0.441, p_uncorr=0.6446, p_bonf=1.0000
+NART: 3 participants excluded due to missing data
+RAVLT_Total/NART: F(2,94)=1.280, p_uncorr=0.2829, p_bonf=1.0000
+RAVLT_Total/BVMT: F(2,97)=0.219, p_uncorr=0.8036, p_bonf=1.0000
+
+=== RAVLT_Pct_Ret (column: Group_RAVLT_Pct_Ret) ===
+Bonferroni correction: alpha = 0.05/15 = 0.0033
+RAVLT_Pct_Ret/Age: F(2,97)=0.103, p_uncorr=0.9021, p_bonf=1.0000
+RAVLT_Pct_Ret/Education: F(2,97)=0.118, p_uncorr=0.8887, p_bonf=1.0000
+RAVLT_Pct_Ret/VR_Experience: F(2,97)=0.890, p_uncorr=0.4140, p_bonf=1.0000
+NART: 3 participants excluded due to missing data
+RAVLT_Pct_Ret/NART: F(2,94)=1.499, p_uncorr=0.2286, p_bonf=1.0000
+RAVLT_Pct_Ret/BVMT: F(2,97)=0.769, p_uncorr=0.4664, p_bonf=1.0000
+Computing post-hoc power analysis...
+Saving ANOVA results...
+step05_anova_results.csv (10 rows)
+No significant ANOVA results - no post-hoc comparisons
+step05_assumption_checks.csv (30 rows)
+step05_power_analysis.csv (10 rows)
+Checking dual p-value reporting...
+Dual p-value reporting validated
+Step 05 complete

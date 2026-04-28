@@ -33,24 +33,18 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from tools.validation import validate_cluster_summary_stats
 
-# ============================================================================
 # Configuration
-# ============================================================================
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step06_characterize_clusters.log"
 
-# ============================================================================
 # Logging
-# ============================================================================
 def log(msg):
     """Write to log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# ============================================================================
 # Cluster Interpretation Helper
-# ============================================================================
 def interpret_cluster_pattern(cluster_id, cluster_data):
     """
     Generate interpretive label and description for cluster based on feature patterns.
@@ -129,46 +123,35 @@ def interpret_cluster_pattern(cluster_id, cluster_data):
 
     return label, "\n".join(description)
 
-# ============================================================================
 # Main Analysis
-# ============================================================================
 if __name__ == "__main__":
     try:
         log("="*80)
         log("STEP 06: Characterize Clusters")
         log("="*80)
-
-        # ====================================================================
-        # STEP 1: Load Data
-        # ====================================================================
-        log("\n[LOAD] Loading random effects and cluster assignments...")
+        # Load Data
+        log("\nLoading random effects and cluster assignments...")
 
         # Load original-scale random effects
         df_original = pd.read_csv(RQ_DIR / "data" / "step00_random_effects_wide.csv")
-        log(f"[LOADED] Original-scale random effects: {df_original.shape}")
+        log(f"Original-scale random effects: {df_original.shape}")
 
         # Load cluster assignments
         df_clusters = pd.read_csv(RQ_DIR / "data" / "step03_cluster_assignments.csv")
-        log(f"[LOADED] Cluster assignments: {df_clusters.shape}")
-
-        # ====================================================================
-        # STEP 2: Merge Data
-        # ====================================================================
-        log("\n[MERGE] Merging features with cluster labels...")
+        log(f"Cluster assignments: {df_clusters.shape}")
+        # Merge Data
+        log("\nMerging features with cluster labels...")
 
         df_merged = df_original.merge(df_clusters, on='UID', how='inner')
-        log(f"[MERGED] Combined dataset: {df_merged.shape}")
+        log(f"Combined dataset: {df_merged.shape}")
         log(f"         {len(df_merged)} participants, {df_merged['cluster'].nunique()} clusters")
-
-        # ====================================================================
-        # STEP 3: Compute Cluster Summary Statistics
-        # ====================================================================
-        log("\n[COMPUTE] Computing summary statistics per cluster...")
+        # Compute Cluster Summary Statistics
+        log("\nComputing summary statistics per cluster...")
 
         feature_cols = [col for col in df_original.columns if col != 'UID']
         n_clusters = df_merged['cluster'].nunique()
-        log(f"[FEATURES] {len(feature_cols)} features to characterize")
-        log(f"[CLUSTERS] {n_clusters} clusters to profile")
+        log(f"{len(feature_cols)} features to characterize")
+        log(f"{n_clusters} clusters to profile")
 
         # Initialize results list
         characterization_rows = []
@@ -202,22 +185,16 @@ if __name__ == "__main__":
 
         # Create characterization DataFrame
         df_characterization = pd.DataFrame(characterization_rows)
-        log(f"\n[DONE] Computed statistics for {len(df_characterization)} cluster-feature combinations")
-
-        # ====================================================================
-        # STEP 4: Save Characterization Table
-        # ====================================================================
-        log("\n[SAVE] Saving cluster characterization table...")
+        log(f"\nComputed statistics for {len(df_characterization)} cluster-feature combinations")
+        # Save Characterization Table
+        log("\nSaving cluster characterization table...")
 
         char_path = RQ_DIR / "data" / "step06_cluster_characterization.csv"
         df_characterization.to_csv(char_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {char_path}")
+        log(f"{char_path}")
         log(f"        {len(df_characterization)} rows (long format: {n_clusters} clusters x {len(feature_cols)} features)")
-
-        # ====================================================================
-        # STEP 5: Generate Cluster Profiles (Interpretive Labels)
-        # ====================================================================
-        log("\n[INTERPRET] Generating cluster profile descriptions...")
+        # Generate Cluster Profiles (Interpretive Labels)
+        log("\nGenerating cluster profile descriptions...")
 
         profiles = []
         profiles.append("CLUSTER PROFILES")
@@ -251,12 +228,9 @@ if __name__ == "__main__":
         profiles_path = RQ_DIR / "data" / "step06_cluster_profiles.txt"
         with open(profiles_path, 'w', encoding='utf-8') as f:
             f.write(profiles_text)
-        log(f"[SAVED] {profiles_path}")
-
-        # ====================================================================
-        # STEP 6: Validate Summary Statistics
-        # ====================================================================
-        log("\n[VALIDATION] Validating cluster summary statistics...")
+        log(f"{profiles_path}")
+        # Validate Summary Statistics
+        log("\nValidating cluster summary statistics...")
 
         # Manual validation: check min <= mean <= max, SD >= 0, N > 0
         validation_passed = True
@@ -287,19 +261,16 @@ if __name__ == "__main__":
                 validation_passed = False
         
         if validation_passed:
-            log("[PASS] Cluster summary statistics validation successful")
+            log("Cluster summary statistics validation successful")
             log(f"       All {len(df_characterization)} rows satisfy: min <= mean <= max, SD >= 0, N > 0")
         else:
-            log("[FAIL] Validation errors:")
+            log("Validation errors:")
             for error in validation_errors:
                 log(f"       {error}")
             raise ValueError(f"Found {len(validation_errors)} validation errors in cluster summary statistics")
-
-        # ====================================================================
         # SUCCESS
-        # ====================================================================
         log("\n" + "="*80)
-        log("[SUCCESS] Step 06 complete")
+        log("Step 06 complete")
         log("="*80)
         log("\nOutputs:")
         log(f"  - {char_path}")
@@ -312,8 +283,8 @@ if __name__ == "__main__":
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
-        log("\n[TRACEBACK]")
+        log(f"\n{str(e)}")
+        log("\n")
         import traceback
         traceback.print_exc(file=open(LOG_FILE, 'a'))
         traceback.print_exc()

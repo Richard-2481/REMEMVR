@@ -1,0 +1,58 @@
+============================================================
+RQ 5.2.7 Step 03: Fit Final K-Means Model
+============================================================
+
+Reading optimal K from: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step02_optimal_k_selection.txt
+Optimal K = 5
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step01_standardized_features.csv
+Loaded 100 rows
+Clustering matrix shape: (100, 4)
+
+Fitting K-means with K=5...
+  n_init=50, random_state=42, max_iter=300
+  Inertia: 98.01
+  Iterations: 9
+
+Cluster assignments extracted
+  Unique cluster IDs: [np.int32(0), np.int32(1), np.int32(2), np.int32(3), np.int32(4)]
+  Cluster IDs consecutive: [0, 1, ..., 4]
+
+Cluster sizes:
+-----------------------------------
+ Cluster        N    Percent
+-----------------------------------
+       0       22      22.0%
+       1       26      26.0%
+       2       17      17.0%
+       3       21      21.0%
+       4       14      14.0%
+-----------------------------------
+   Total      100     100.0%
+
+Cluster balance validation:
+  Smallest cluster: N=14 (14.0%)
+  PASS: All clusters >= 10% of sample
+  Cluster sizes balanced: min(N)=14 >= 10
+
+Cluster centers (z-scored):
+----------------------------------------------------------------------
+ Cluster Intercept_What Intercept_Where   Slope_What  Slope_Where
+----------------------------------------------------------------------
+       0       -0.392       -0.377       -0.680       -0.572
+       1        0.311        0.246        1.117        0.927
+       2       -1.616       -1.629       -0.133        0.854
+       3        0.993        0.977        0.317       -0.176
+       4        0.512        0.649       -1.320       -1.594
+----------------------------------------------------------------------
+
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step03_cluster_assignments.csv
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step03_cluster_centers.csv
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step03_cluster_sizes.csv
+
+Fitted K-means with K=5 clusters
+All clusters assigned: 100 participants
+
+============================================================
+Step 03 COMPLETE: K=5 clusters fitted successfully
+============================================================

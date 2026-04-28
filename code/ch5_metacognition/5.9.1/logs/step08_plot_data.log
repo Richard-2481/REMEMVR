@@ -1,0 +1,99 @@
+Step 8: Generate plot data sources
+Loading input data...
+step01_merged_trajectories.csv (400 rows)
+step02_individual_decline_rates.csv (100 rows)
+Computing mean and SE per test...
+Computed statistics for 4 timepoints
+Reshaping to long format...
+Reshaped to long format: 800 observations
+Extracting decline rates for histogram...
+Extracted 100 individual decline rates
+Computing histogram bins for ratio distribution...
+Created 20 bins
+Saving plot data sources...
+step08_aggregate_trajectories_plot_data.csv (4 rows)
+step08_individual_trajectories_plot_data.csv (800 rows)
+step08_decline_rates_histogram_data.csv (100 rows)
+step08_ratio_histogram_data.csv (20 rows)
+Running inline validation...
+theta_value range: [-2.52, 2.73]
+SE range: [0.0811, 0.0881]
+Aggregate trajectories: 4 timepoints
+Individual trajectories: 800 observations
+Plot data sources saved
+Step 8 complete
+Step 8: Generate plot data sources
+Loading input data...
+step01_merged_trajectories.csv (400 rows)
+step02_individual_decline_rates.csv (100 rows)
+Computing mean and SE per test...
+Computed statistics for 4 timepoints
+Reshaping to long format...
+Reshaped to long format: 800 observations
+Extracting decline rates for histogram...
+Extracted 100 individual decline rates
+Computing histogram bins for ratio distribution...
+Created 20 bins
+Saving plot data sources...
+step08_aggregate_trajectories_plot_data.csv (4 rows)
+step08_individual_trajectories_plot_data.csv (800 rows)
+step08_decline_rates_histogram_data.csv (100 rows)
+step08_ratio_histogram_data.csv (20 rows)
+Running inline validation...
+theta_value range: [-2.99, 3.04]
+Theta values outside expected range [-3, 3]
+SE range: [0.0811, 0.0881]
+Aggregate trajectories: 4 timepoints
+Individual trajectories: 800 observations
+Plot data sources saved
+Step 8 complete
+Step 8: Generate plot data sources
+Loading input data...
+step01_merged_trajectories.csv (400 rows)
+step02_individual_decline_rates.csv (100 rows)
+Computing mean and SE per test...
+Computed statistics for 4 timepoints
+Reshaping to long format...
+Reshaped to long format: 800 observations
+Extracting decline rates for histogram...
+Extracted 100 individual decline rates
+Computing histogram bins for ratio distribution...
+Created 20 bins
+Saving plot data sources...
+step08_aggregate_trajectories_plot_data.csv (4 rows)
+step08_individual_trajectories_plot_data.csv (800 rows)
+step08_decline_rates_histogram_data.csv (100 rows)
+step08_ratio_histogram_data.csv (20 rows)
+Running inline validation...
+theta_value range: [-2.99, 3.04]
+Theta values outside expected range [-3, 3]
+SE range: [0.0811, 0.0881]
+Aggregate trajectories: 4 timepoints
+Individual trajectories: 800 observations
+Plot data sources saved
+Step 8 complete
+Step 8: Generate plot data sources
+Loading input data...
+step01_merged_trajectories.csv (400 rows)
+step02_individual_decline_rates.csv (100 rows)
+Computing mean and SE per test...
+Computed statistics for 4 timepoints
+Reshaping to long format...
+Reshaped to long format: 800 observations
+Extracting decline rates for histogram...
+Extracted 100 individual decline rates
+Computing histogram bins for ratio distribution...
+Created 20 bins
+Saving plot data sources...
+step08_aggregate_trajectories_plot_data.csv (4 rows)
+step08_individual_trajectories_plot_data.csv (800 rows)
+step08_decline_rates_histogram_data.csv (100 rows)
+step08_ratio_histogram_data.csv (20 rows)
+Running inline validation...
+theta_value range: [-2.99, 3.04]
+Theta values outside expected range [-3, 3]
+SE range: [0.0811, 0.0881]
+Aggregate trajectories: 4 timepoints
+Individual trajectories: 800 observations
+Plot data sources saved
+Step 8 complete

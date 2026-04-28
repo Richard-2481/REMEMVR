@@ -1,0 +1,3 @@
+measure,rq_id,domain_time_interaction,when_interaction_p,when_interaction_coef,interpretation
+Confidence,6.3.1,NULL,,,When domain declines FASTER than What/Where
+Accuracy,5.2.1,NULL (theta space),,,All domains show similar forgetting rates (theta space)

@@ -1,0 +1,4 @@
+comparison,description,beta,se,z,p_uncorrected,alpha_corrected,p_corrected,sig_uncorrected,sig_corrected
+where-what_early,Spatial consolidation advantage (Early),0.02325383659898539,0.08389794495930741,0.27716813099848964,0.7816510091162017,0.016666666666666666,1.0,False,False
+where-what_late,Spatial decay comparison (Late),-0.013811832268642896,0.03574306784107805,-0.3864198879081532,0.6991857233936096,0.016666666666666666,1.0,False,False
+where_slope_change-what_slope_change,Spatial consolidation benefit,-0.03706566886762824,0.09119447388458846,-0.4064464357186473,0.6844146063818501,0.016666666666666666,1.0,False,False

@@ -1,0 +1,92 @@
+Step 4: Extract Individual Random Effects Per Paradigm
+Loading fitted models from Step 2...
+Loading free_recall model from step02_lmm_free_recall_model.pkl...
+free_recall model loaded successfully
+Loading cued_recall model from step02_lmm_cued_recall_model.pkl...
+cued_recall model loaded successfully
+Loading recognition model from step02_lmm_recognition_model.pkl...
+recognition model loaded successfully
+Extracting random effects from models...
+Processing free_recall...
+free_recall: 100 participants
+  - Intercept range: [-1.088, 1.096]
+  - Slope range: [-0.103, 0.091]
+Processing cued_recall...
+cued_recall: 100 participants
+  - Intercept range: [-1.138, 1.376]
+  - Slope range: [-0.015, 0.012]
+Processing recognition...
+recognition: 100 participants
+  - Intercept range: [-1.453, 1.362]
+  - Slope range: [-0.070, 0.050]
+Concatenating all paradigms...
+Total rows: 300
+  - Expected: 300 (100 participants × 3 paradigms)
+  - IFR rows: 100
+  - ICR rows: 100
+  - IRE rows: 100
+Saving step04_random_effects.csv...
+step04_random_effects.csv (300 rows, 4 cols)
+Generating step04_random_effects_descriptives.txt...
+step04_random_effects_descriptives.txt
+Running validate_dataframe_structure...
+data type 'o' not understood
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.7/code/step04_extract_random_effects.py", line 279, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in <genexpr>
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/_core/numerictypes.py", line 536, in issubdtype
+    arg2 = dtype(arg2).type
+           ^^^^^^^^^^^
+TypeError: data type 'o' not understood
+Step 4: Extract Individual Random Effects Per Paradigm
+Loading fitted models from Step 2...
+Loading free_recall model from step02_lmm_free_recall_model.pkl...
+free_recall model loaded successfully
+Loading cued_recall model from step02_lmm_cued_recall_model.pkl...
+cued_recall model loaded successfully
+Loading recognition model from step02_lmm_recognition_model.pkl...
+recognition model loaded successfully
+Extracting random effects from models...
+Processing free_recall...
+free_recall: 100 participants
+  - Intercept range: [-1.088, 1.096]
+  - Slope range: [-0.103, 0.091]
+Processing cued_recall...
+cued_recall: 100 participants
+  - Intercept range: [-1.138, 1.376]
+  - Slope range: [-0.015, 0.012]
+Processing recognition...
+recognition: 100 participants
+  - Intercept range: [-1.453, 1.362]
+  - Slope range: [-0.070, 0.050]
+Concatenating all paradigms...
+Total rows: 300
+  - Expected: 300 (100 participants × 3 paradigms)
+  - IFR rows: 100
+  - ICR rows: 100
+  - IRE rows: 100
+Saving step04_random_effects.csv...
+step04_random_effects.csv (300 rows, 4 cols)
+Generating step04_random_effects_descriptives.txt...
+step04_random_effects_descriptives.txt
+Running validate_dataframe_structure...
+All validation checks passed
+row_count_valid
+actual_rows
+columns_valid
+missing_columns
+types_valid
+Running additional checks...
+No duplicate UID × paradigm combinations
+IFR has 100 unique UIDs
+ICR has 100 unique UIDs
+IRE has 100 unique UIDs
+Step 4 complete

@@ -1,0 +1,11 @@
+location,component,value
+Source,var_intercept,0.126829412626859
+Source,var_slope,0.002040225330842018
+Source,cov_int_slope,0.009994277670860223
+Source,var_residual,0.4017144815884056
+Source,correlation_int_slope,0.6213014297602617
+Destination,var_intercept,0.3382626367043632
+Destination,var_slope,0.010256438817216787
+Destination,cov_int_slope,-0.050147023616448086
+Destination,var_residual,0.4650180327692324
+Destination,correlation_int_slope,-0.8513729540705707

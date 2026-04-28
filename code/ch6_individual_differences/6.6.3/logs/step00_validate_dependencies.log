@@ -1,0 +1,38 @@
+Step 00: Validate Dependencies
+Checking Ch5 5.2.6 random effects file...
+/home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step04_random_effects.csv
+File exists: /home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step04_random_effects.csv
+18299 bytes
+Reading random effects data...
+200 rows, 6 columns
+Columns match expected format
+[DOMAIN COUNTS] {'What': 100, 'Where': 100}
+What domain: 100 participants
+Where domain: 100 participants
+When domain not present
+When domain excluded from Ch5 5.2.6 analysis due to floor effects
+Ch5 5.2.3 purification excluded 77% of When items (poor quality)
+Insufficient valid items for reliable slope estimation
+Writing validation report...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step00_dependency_validation.txt
+Step 00 complete - Dependencies validated
+Proceed to step01 with 2-domain analysis (What + Where)
+Step 00: Validate Dependencies
+Checking Ch5 5.2.6 random effects file...
+/home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step04_random_effects.csv
+File exists: /home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step04_random_effects.csv
+18299 bytes
+Reading random effects data...
+200 rows, 6 columns
+Columns match expected format
+[DOMAIN COUNTS] {'What': 100, 'Where': 100}
+What domain: 100 participants
+Where domain: 100 participants
+When domain not present
+When domain excluded from Ch5 5.2.6 analysis due to floor effects
+Ch5 5.2.3 purification excluded 77% of When items (poor quality)
+Insufficient valid items for reliable slope estimation
+Writing validation report...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step00_dependency_validation.txt
+Step 00 complete - Dependencies validated
+Proceed to step01 with 2-domain analysis (What + Where)

@@ -1,0 +1,39 @@
+Step 06: Individual Predictors Analysis
+Loading analysis dataset...
+Analysis dataset (100 rows, 8 cols)
+Sample size: 100 participants
+Predictors: ['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T']
+Outcome variable: confidence_theta (mean=-0.633, sd=0.326)
+Predictor matrix: (100, 6)
+Running multiple regression analysis...
+fit_multiple_regression() got an unexpected keyword argument 'add_constant'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.3.1/code/step06_individual_predictors.py", line 159, in <module>
+    regression_result = fit_multiple_regression(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: fit_multiple_regression() got an unexpected keyword argument 'add_constant'
+Step 06: Individual Predictors (Simplified)
+Analysis dataset: 100 rows
+R² = 0.1875, F = 3.578, p = 0.003105
+age: β=0.0025, p=0.3238, sig_bonf=False
+sex: β=-0.0059, p=0.9299, sig_bonf=False
+education: β=-0.0015, p=0.9355, sig_bonf=False
+RAVLT_T: β=0.0017, p=0.6011, sig_bonf=False
+BVMT_T: β=0.0094, p=0.0214, sig_bonf=False
+RPM_T: β=0.0079, p=0.0301, sig_bonf=False
+Individual predictors results: 6 predictors
+Step 06 complete
+Step 06: Individual Predictors (Simplified)
+Analysis dataset: 100 rows
+R² = 0.2205, F = 3.217, p = 0.002900
+age: β=0.0026, p=0.3001, sig_bonf=False
+sex: β=-0.0257, p=0.7048, sig_bonf=False
+education: β=-0.0040, p=0.8307, sig_bonf=False
+RAVLT_T: β=0.0010, p=0.7622, sig_bonf=False
+BVMT_T: β=0.0086, p=0.0413, sig_bonf=False
+RPM_T: β=0.0064, p=0.0828, sig_bonf=False
+RAVLT_Pct_Ret_T: β=0.0063, p=0.0577, sig_bonf=False
+BVMT_Pct_Ret_T: β=0.0013, p=0.6710, sig_bonf=False
+Individual predictors results: 8 predictors
+Step 06 complete

@@ -1,0 +1,104 @@
+Step 03: Compute ICC
+Loading variance components from Step 2...
+step02_variance_components.csv (5 rows, 2 cols)
+[INPUT VALIDATION] Variance components format validated
+Running compute_icc_from_variance_components...
+time_point=None (simple ICC, no conditional adjustment)
+slope_name='TSVR_hours' (matches LMM time variable from RQ 5.7)
+'variance'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'variance'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq13/code/step03_compute_icc.py", line 163, in <module>
+    icc_estimates = compute_icc_from_variance_components(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1593, in compute_icc_from_variance_components
+    components = {row['component']: row['variance']
+                                    ~~~^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'variance'
+Step 03: Compute ICC
+Loading variance components from Step 2...
+step02_variance_components.csv (5 rows, 2 cols)
+[INPUT VALIDATION] Variance components format validated
+Running compute_icc_from_variance_components...
+time_point=None (simple ICC, no conditional adjustment)
+slope_name='TSVR_hours' (matches LMM time variable from RQ 5.7)
+Renamed 'estimate' → 'variance' for function compatibility
+ICC computation complete
+Computed 1 ICC estimates
+Saving data/step03_icc_estimates.csv...
+step03_icc_estimates.csv (1 rows, 3 cols)
+Saving results/step03_icc_summary.txt...
+results/step03_icc_summary.txt
+Running validate_icc_bounds...
+valid: True
+message: All 1 ICC values within valid bounds [0,1] (range: 0.000 to 0.000).
+out_of_bounds: []
+Step 03 complete
+Step 03: Compute ICC
+Loading variance components from Step 2...
+step02_variance_components.csv (5 rows, 2 cols)
+[INPUT VALIDATION] Variance components format validated
+Running compute_icc_from_variance_components...
+time_point=None (simple ICC, no conditional adjustment)
+slope_name='TSVR_hours' (matches LMM time variable from RQ 5.7)
+Mapped component names for function compatibility:
+  var_intercept → Intercept
+  var_residual → Residual
+  var_slope → TSVR_hours
+  cov_int_slope → Intercept:TSVR_hours
+Renamed 'estimate' → 'variance'
+ICC computation complete
+Computed 3 ICC estimates
+Saving data/step03_icc_estimates.csv...
+step03_icc_estimates.csv (3 rows, 3 cols)
+Saving results/step03_icc_summary.txt...
+results/step03_icc_summary.txt
+Running validate_icc_bounds...
+valid: True
+message: All 3 ICC values within valid bounds [0,1] (range: 0.000 to 0.532).
+out_of_bounds: []
+Step 03 complete
+Step 03: Compute ICC
+Loading variance components from Step 2...
+step02_variance_components.csv (5 rows, 2 cols)
+[INPUT VALIDATION] Variance components format validated
+Running compute_icc_from_variance_components...
+time_point=None (simple ICC, no conditional adjustment)
+slope_name='TSVR_hours' (matches LMM time variable from RQ 5.7)
+Mapped component names for function compatibility:
+  var_intercept → Intercept
+  var_residual → Residual
+  var_slope → TSVR_hours
+  cov_int_slope → Intercept:TSVR_hours
+Renamed 'estimate' → 'variance'
+ICC computation complete
+Computed 3 ICC estimates
+Saving data/step03_icc_estimates.csv...
+step03_icc_estimates.csv (3 rows, 3 cols)
+Saving results/step03_icc_summary.txt...
+results/step03_icc_summary.txt
+Running validate_icc_bounds...
+valid: True
+message: All 3 ICC values within valid bounds [0,1] (range: 0.001 to 0.606).
+out_of_bounds: []
+Step 03 complete

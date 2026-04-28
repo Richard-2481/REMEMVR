@@ -43,25 +43,25 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    logger.info("[START] Step 02.5: Validate LMM Assumptions")
+    logger.info("Step 02.5: Validate LMM Assumptions")
 
     # -------------------------------------------------------------------------
     # 1. Load fitted model and input data
     # -------------------------------------------------------------------------
-    logger.info("[LOAD] Loading fitted LMM model and input data...")
+    logger.info("Loading fitted LMM model and input data...")
 
     with open(DATA_DIR / "step02_lmm_model.pkl", 'rb') as f:
         lmm_model = pickle.load(f)
 
     lmm_input = pd.read_csv(DATA_DIR / "step01_lmm_input.csv")
 
-    logger.info(f"[LOADED] Model from step02_lmm_model.pkl")
-    logger.info(f"[LOADED] Input data: {len(lmm_input)} rows")
+    logger.info(f"Model from step02_lmm_model.pkl")
+    logger.info(f"Input data: {len(lmm_input)} rows")
 
     # -------------------------------------------------------------------------
     # 2. Run manual assumption validation (7 checks)
     # -------------------------------------------------------------------------
-    logger.info("[ANALYSIS] Running manual assumption validation (7 checks)...")
+    logger.info("Running manual assumption validation (7 checks)...")
 
     validation_results = []
 
@@ -70,7 +70,7 @@ def main():
     fitted = lmm_model.fittedvalues
 
     # 1. Residual normality check (Shapiro-Wilk)
-    logger.info("[CHECK] 1/7 - Residual normality (Shapiro-Wilk)...")
+    logger.info("1/7 - Residual normality (Shapiro-Wilk)...")
     if len(residuals) > 5000:
         sample = np.random.choice(residuals, size=5000, replace=False)
         stat, p = stats.shapiro(sample)
@@ -88,7 +88,7 @@ def main():
     logger.info(f"[{result}] Residual normality: W={stat:.4f}, p={p:.4f}")
 
     # 2. Homoscedasticity (variance of residuals by fitted values)
-    logger.info("[CHECK] 2/7 - Homoscedasticity...")
+    logger.info("2/7 - Homoscedasticity...")
     # Simple check: correlation between |residuals| and fitted
     abs_resid = np.abs(residuals)
     corr_coef, corr_p = stats.pearsonr(abs_resid, fitted)
@@ -104,7 +104,7 @@ def main():
     logger.info(f"[{result}] Homoscedasticity: r={corr_coef:.4f}, p={corr_p:.4f}")
 
     # 3. Random effects normality
-    logger.info("[CHECK] 3/7 - Random effects normality...")
+    logger.info("3/7 - Random effects normality...")
     try:
         random_effects = lmm_model.random_effects
         # Extract intercepts (first random effect)
@@ -129,10 +129,10 @@ def main():
             'criterion': 'p > 0.05',
             'result': 'PASS'  # Assume pass if can't test
         })
-        logger.info(f"[PASS] Random effects normality: assumed pass (extraction issue)")
+        logger.info(f"Random effects normality: assumed pass (extraction issue)")
 
     # 4. Independence (Durbin-Watson)
-    logger.info("[CHECK] 4/7 - Independence (Durbin-Watson)...")
+    logger.info("4/7 - Independence (Durbin-Watson)...")
     dw = durbin_watson(residuals)
     result = 'PASS' if 1.5 < dw < 2.5 else 'FAIL'
     validation_results.append({
@@ -146,7 +146,7 @@ def main():
     logger.info(f"[{result}] Independence: DW={dw:.4f} (target: 1.5-2.5)")
 
     # 5. Linearity (residuals vs fitted pattern)
-    logger.info("[CHECK] 5/7 - Linearity...")
+    logger.info("5/7 - Linearity...")
     # Simple check: no U-shape in residuals vs fitted (check quadratic term)
     try:
         fitted_centered = fitted - np.mean(fitted)
@@ -171,10 +171,10 @@ def main():
             'criterion': 'No systematic patterns',
             'result': 'PASS'
         })
-        logger.info("[PASS] Linearity: assumed pass")
+        logger.info("Linearity: assumed pass")
 
     # 6. No multicollinearity (based on model fitting success)
-    logger.info("[CHECK] 6/7 - No multicollinearity...")
+    logger.info("6/7 - No multicollinearity...")
     # If model converged without warnings about collinearity, assume pass
     # Grand-mean centered Age helps reduce multicollinearity
     validation_results.append({
@@ -185,10 +185,10 @@ def main():
         'criterion': 'Model converged + centered predictors',
         'result': 'PASS'
     })
-    logger.info("[PASS] No multicollinearity: Age_c grand-mean centered")
+    logger.info("No multicollinearity: Age_c grand-mean centered")
 
     # 7. Convergence
-    logger.info("[CHECK] 7/7 - Convergence...")
+    logger.info("7/7 - Convergence...")
     converged = getattr(lmm_model, 'converged', True)
     result = 'PASS' if converged else 'FAIL'
     validation_results.append({
@@ -207,7 +207,7 @@ def main():
     n_total = len(validation_df)
     pass_rate = n_passed / n_total
 
-    logger.info(f"[SUMMARY] Passed: {n_passed}/{n_total} assumptions ({pass_rate*100:.0f}%)")
+    logger.info(f"Passed: {n_passed}/{n_total} assumptions ({pass_rate*100:.0f}%)")
 
     # -------------------------------------------------------------------------
     # 3. Create diagnostics report
@@ -244,26 +244,26 @@ REMEDIAL ACTIONS:
     # -------------------------------------------------------------------------
     # 4. Save outputs
     # -------------------------------------------------------------------------
-    logger.info("[SAVE] Saving validation outputs...")
+    logger.info("Saving validation outputs...")
 
     validation_df.to_csv(DATA_DIR / "step02.5_assumption_validation.csv", index=False)
-    logger.info(f"[SAVED] step02.5_assumption_validation.csv ({len(validation_df)} rows)")
+    logger.info(f"step02.5_assumption_validation.csv ({len(validation_df)} rows)")
 
     with open(DATA_DIR / "step02.5_assumption_diagnostics.txt", 'w', encoding='utf-8') as f:
         f.write(diagnostics_text)
-    logger.info("[SAVED] step02.5_assumption_diagnostics.txt")
+    logger.info("step02.5_assumption_diagnostics.txt")
 
     # -------------------------------------------------------------------------
     # 5. Final validation
     # -------------------------------------------------------------------------
-    logger.info("[VALIDATION] Final validation checks...")
+    logger.info("Final validation checks...")
 
     if pass_rate >= 0.71:
-        logger.info(f"[PASS] Pass rate {pass_rate*100:.0f}% >= 71% threshold")
+        logger.info(f"Pass rate {pass_rate*100:.0f}% >= 71% threshold")
     else:
-        logger.info(f"[WARNING] Pass rate {pass_rate*100:.0f}% < 71% threshold - check diagnostics")
+        logger.info(f"Pass rate {pass_rate*100:.0f}% < 71% threshold - check diagnostics")
 
-    logger.info("[SUCCESS] Step 02.5 complete - Assumption validation finished")
+    logger.info("Step 02.5 complete - Assumption validation finished")
 
 
 if __name__ == "__main__":

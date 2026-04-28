@@ -1,0 +1,74 @@
+2025-12-03 15:07:48,141 - INFO - ============================================================
+2025-12-03 15:07:48,141 - INFO - RQ 5.2.6 Step 03: Compute ICC Estimates per Domain
+2025-12-03 15:07:48,141 - INFO - ============================================================
+2025-12-03 15:07:48,144 - INFO - Loaded variance components: 10 rows from results/ch5/5.2.6/data/step02_variance_components.csv
+2025-12-03 15:07:48,144 - INFO - Conditional ICC timepoint: log(145) = 4.977 (Day 6)
+2025-12-03 15:07:48,144 - INFO - 
+Computing ICC for What domain
+2025-12-03 15:07:48,147 - INFO -   var_intercept: 0.330125
+2025-12-03 15:07:48,148 - INFO -   var_slope: 0.002609
+2025-12-03 15:07:48,148 - INFO -   cov_int_slope: -0.005239
+2025-12-03 15:07:48,148 - INFO -   var_residual: 0.318300
+2025-12-03 15:07:48,148 - INFO -   ICC_intercept: 0.5091 (Substantial)
+2025-12-03 15:08:03,277 - INFO - ============================================================
+2025-12-03 15:08:03,277 - INFO - RQ 5.2.6 Step 03: Compute ICC Estimates per Domain
+2025-12-03 15:08:03,277 - INFO - ============================================================
+2025-12-03 15:08:03,278 - INFO - Loaded variance components: 10 rows from results/ch5/5.2.6/data/step02_variance_components.csv
+2025-12-03 15:08:03,278 - INFO - Conditional ICC timepoint: log(145) = 4.977 (Day 6)
+2025-12-03 15:08:03,278 - INFO - 
+Computing ICC for What domain
+2025-12-03 15:08:03,279 - INFO -   var_intercept: 0.330125
+2025-12-03 15:08:03,279 - INFO -   var_slope: 0.002609
+2025-12-03 15:08:03,279 - INFO -   cov_int_slope: -0.005239
+2025-12-03 15:08:03,280 - INFO -   var_residual: 0.318300
+2025-12-03 15:08:03,280 - INFO -   ICC_intercept: 0.5091 (Substantial)
+2025-12-03 15:08:03,280 - INFO -   ICC_slope_simple: 0.0081 (Low)
+2025-12-03 15:08:03,280 - INFO -   ICC_slope_conditional (Day 6): 0.5184 (Substantial)
+2025-12-03 15:08:03,280 - INFO - 
+Computing ICC for Where domain
+2025-12-03 15:08:03,280 - INFO -   var_intercept: 0.424859
+2025-12-03 15:08:03,280 - INFO -   var_slope: 0.003615
+2025-12-03 15:08:03,280 - INFO -   cov_int_slope: -0.014815
+2025-12-03 15:08:03,280 - INFO -   var_residual: 0.324638
+2025-12-03 15:08:03,280 - INFO -   ICC_intercept: 0.5669 (Substantial)
+2025-12-03 15:08:03,280 - INFO -   ICC_slope_simple: 0.0110 (Low)
+2025-12-03 15:08:03,280 - INFO -   ICC_slope_conditional (Day 6): 0.5306 (Substantial)
+2025-12-03 15:08:03,281 - INFO - 
+============================================================
+2025-12-03 15:08:03,281 - INFO - VALIDATION: Checking ICC constraints
+2025-12-03 15:08:03,281 - INFO - ============================================================
+2025-12-03 15:08:03,281 - INFO -   All ICC values in [0, 1]: PASS
+2025-12-03 15:08:03,281 - INFO -   Total rows: 6 (expected 6)
+2025-12-03 15:08:03,281 - INFO -   Row count correct: PASS
+2025-12-03 15:08:03,282 - INFO - 
+Saved ICC estimates to: results/ch5/5.2.6/data/step03_icc_estimates.csv
+2025-12-03 15:08:03,282 - INFO - 
+============================================================
+2025-12-03 15:08:03,282 - INFO - ICC ESTIMATES SUMMARY
+2025-12-03 15:08:03,282 - INFO - ============================================================
+2025-12-03 15:08:03,283 - INFO - 
+What Domain:
+2025-12-03 15:08:03,283 - INFO -   intercept: 0.5091 (Substantial)
+2025-12-03 15:08:03,283 - INFO -   slope_simple: 0.0081 (Low)
+2025-12-03 15:08:03,283 - INFO -   slope_conditional: 0.5184 (Substantial)
+2025-12-03 15:08:03,283 - INFO - 
+Where Domain:
+2025-12-03 15:08:03,283 - INFO -   intercept: 0.5669 (Substantial)
+2025-12-03 15:08:03,284 - INFO -   slope_simple: 0.0110 (Low)
+2025-12-03 15:08:03,284 - INFO -   slope_conditional: 0.5306 (Substantial)
+2025-12-03 15:08:03,284 - INFO - 
+============================================================
+2025-12-03 15:08:03,284 - INFO - KEY FINDINGS
+2025-12-03 15:08:03,284 - INFO - ============================================================
+2025-12-03 15:08:03,284 - INFO - ICC_intercept: What=0.509, Where=0.567
+2025-12-03 15:08:03,284 - INFO -   -> SUBSTANTIAL between-person variance in baseline for BOTH domains
+2025-12-03 15:08:03,285 - INFO - ICC_slope_simple: What=0.0081, Where=0.0110
+2025-12-03 15:08:03,285 - INFO -   -> LOW ICC_slope in both domains
+2025-12-03 15:08:03,285 - INFO -   -> CAUTION: May reflect 4-timepoint design limitation (see ICC investigation)
+2025-12-03 15:08:03,285 - INFO -   -> Cannot reliably claim absence of individual slope differences
+2025-12-03 15:08:03,285 - INFO - 
+============================================================
+2025-12-03 15:08:03,285 - INFO - STEP 03 COMPLETE
+2025-12-03 15:08:03,285 - INFO - ============================================================
+2025-12-03 15:08:03,285 - INFO - Computed 6 ICC estimates (3 types x 2 domains)
+2025-12-03 15:08:03,285 - INFO - Ready for Step 04: Extract Individual Random Effects

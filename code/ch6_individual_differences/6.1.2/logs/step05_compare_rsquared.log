@@ -1,0 +1,34 @@
+Step 5: Compare R² Values with Bootstrap
+Loading input data...
+step02_regression_input.csv (97 rows, 10 cols)
+step03_intercept_predictions.csv (6 rows, 8 cols)
+step04_slope_predictions.csv (6 rows, 9 cols)
+Running custom bootstrap R² comparison...
+Starting 1000 bootstrap iterations...
+Completed 100/1000 iterations
+Completed 200/1000 iterations
+Completed 300/1000 iterations
+Completed 400/1000 iterations
+Completed 500/1000 iterations
+Completed 600/1000 iterations
+Completed 700/1000 iterations
+Completed 800/1000 iterations
+Completed 900/1000 iterations
+Completed 1000/1000 iterations
+Completed 1000 successful iterations
+Bootstrap analysis complete
+Creating results DataFrame...
+step05_r_squared_comparison.csv (3 rows, 9 cols)
+Intercept model R² = 0.2651 (95% CI: 0.1521-0.4666)
+Slope model R² = 0.1152 (95% CI: 0.0583-0.2882)
+R² difference = 0.1500 (95% CI: -0.0658-0.3583)
+One-tailed p-value = 0.0890 (H1: intercept R² > slope R²)
+Bootstrap iterations successful: 1000/1000
+Running validate_numeric_range...
+valid: True
+message: r_squared: All values within range [0.0, 1.0] (n=3).
+out_of_range_count: 0
+violations: []
+Checking bootstrap CI validity...
+All checks passed!
+Step 5 complete

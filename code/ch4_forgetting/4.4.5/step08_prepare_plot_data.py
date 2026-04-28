@@ -22,30 +22,26 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step08_prepare_plot_data.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 08: Prepare Plot Data for Visualization")
+        log("Step 08: Prepare Plot Data for Visualization")
 
         # Load correlation analysis results
         corr_path = RQ_DIR / "data" / "step05_correlation_analysis.csv"
-        log(f"[LOAD] Reading {corr_path}")
+        log(f"Reading {corr_path}")
         correlation_analysis = pd.read_csv(corr_path, encoding='utf-8')
-        log(f"[LOADED] {len(correlation_analysis)} rows")
+        log(f"{len(correlation_analysis)} rows")
 
         # Load LMM model comparison results
         lmm_path = RQ_DIR / "data" / "step07_lmm_model_comparison.csv"
-        log(f"[LOAD] Reading {lmm_path}")
+        log(f"Reading {lmm_path}")
         lmm_model_comparison = pd.read_csv(lmm_path, encoding='utf-8')
-        log(f"[LOADED] {len(lmm_model_comparison)} rows")
-
-        # =========================================================================
+        log(f"{len(lmm_model_comparison)} rows")
         # PLOT 1: Correlation Comparison
-        # =========================================================================
         log("\n[PLOT 1] Preparing correlation comparison data")
 
         # Reshape from wide to long format
@@ -69,24 +65,21 @@ if __name__ == "__main__":
             })
 
         correlation_comparison_data = pd.DataFrame(corr_data_long)
-        log(f"[CREATED] {len(correlation_comparison_data)} rows (3 dimensions x 2 CTT types)")
+        log(f"{len(correlation_comparison_data)} rows (3 dimensions x 2 CTT types)")
 
         # Validation: Check expected structure
         if len(correlation_comparison_data) != 6:
             raise ValueError(f"Expected 6 rows, got {len(correlation_comparison_data)}")
 
-        log(f"[VALIDATION] Dimensions: {correlation_comparison_data['dimension'].unique().tolist()}")
-        log(f"[VALIDATION] CTT types: {correlation_comparison_data['CTT_type'].unique().tolist()}")
+        log(f"Dimensions: {correlation_comparison_data['dimension'].unique().tolist()}")
+        log(f"CTT types: {correlation_comparison_data['CTT_type'].unique().tolist()}")
 
         # Save Plot 1 data
         output_path_1 = RQ_DIR / "data" / "step08_correlation_comparison_data.csv"
-        log(f"[SAVE] Writing {output_path_1}")
+        log(f"Writing {output_path_1}")
         correlation_comparison_data.to_csv(output_path_1, index=False, encoding='utf-8')
-        log(f"[SAVED] {len(correlation_comparison_data)} rows")
-
-        # =========================================================================
+        log(f"{len(correlation_comparison_data)} rows")
         # PLOT 2: AIC Comparison
-        # =========================================================================
         log("\n[PLOT 2] Preparing AIC comparison data")
 
         # Reshape from wide to long format
@@ -110,25 +103,22 @@ if __name__ == "__main__":
             })
 
         aic_comparison_data = pd.DataFrame(aic_data_long)
-        log(f"[CREATED] {len(aic_comparison_data)} rows (3 dimensions x 2 CTT types)")
+        log(f"{len(aic_comparison_data)} rows (3 dimensions x 2 CTT types)")
 
         # Validation: Check expected structure
         if len(aic_comparison_data) != 6:
             raise ValueError(f"Expected 6 rows, got {len(aic_comparison_data)}")
 
-        log(f"[VALIDATION] Dimensions: {aic_comparison_data['dimension'].unique().tolist()}")
-        log(f"[VALIDATION] CTT types: {aic_comparison_data['CTT_type'].unique().tolist()}")
+        log(f"Dimensions: {aic_comparison_data['dimension'].unique().tolist()}")
+        log(f"CTT types: {aic_comparison_data['CTT_type'].unique().tolist()}")
 
         # Save Plot 2 data
         output_path_2 = RQ_DIR / "data" / "step08_aic_comparison_data.csv"
-        log(f"[SAVE] Writing {output_path_2}")
+        log(f"Writing {output_path_2}")
         aic_comparison_data.to_csv(output_path_2, index=False, encoding='utf-8')
-        log(f"[SAVED] {len(aic_comparison_data)} rows")
-
-        # =========================================================================
+        log(f"{len(aic_comparison_data)} rows")
         # Validation: Check no NaN values
-        # =========================================================================
-        log("\n[VALIDATION] Checking for NaN values")
+        log("\nChecking for NaN values")
 
         nan_count_1 = correlation_comparison_data.isna().sum().sum()
         nan_count_2 = aic_comparison_data.isna().sum().sum()
@@ -136,12 +126,9 @@ if __name__ == "__main__":
         if nan_count_1 > 0 or nan_count_2 > 0:
             raise ValueError(f"Found NaN values: Plot 1 = {nan_count_1}, Plot 2 = {nan_count_2}")
 
-        log("[PASS] No NaN values in either plot dataset")
-
-        # =========================================================================
+        log("No NaN values in either plot dataset")
         # Validation: Check complete factorial design (3 dimensions x 2 CTT types)
-        # =========================================================================
-        log("\n[VALIDATION] Checking complete factorial design")
+        log("\nChecking complete factorial design")
 
         expected_dimensions = ['Common', 'Congruent', 'Incongruent']
         expected_ctt_types = ['Full', 'Purified']
@@ -162,15 +149,15 @@ if __name__ == "__main__":
                 if len(dim_data) != 2:
                     raise ValueError(f"{name} plot: Dimension {dim} has {len(dim_data)} rows (expected 2)")
 
-        log("[PASS] Complete factorial design verified for both plots")
+        log("Complete factorial design verified for both plots")
 
-        log("\n[SUCCESS] Step 08 complete")
+        log("\nStep 08 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

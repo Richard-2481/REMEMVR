@@ -36,43 +36,33 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # Import tools
 from tools.analysis_lmm import fit_lmm_trajectory
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step05b_extended_lmm_fitting.log"
 
-# =============================================================================
 # Logging
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 5b: Extended Model Comparison")
+        log("Step 5b: Extended Model Comparison")
+        # Load LMM Input Data
 
-        # =====================================================================
-        # STEP 1: Load LMM Input Data
-        # =====================================================================
-
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         input_path = RQ_DIR / "data" / "step04_lmm_input.csv"
 
         if not input_path.exists():
             raise FileNotFoundError(f"LMM input data missing: {input_path}")
 
         lmm_input = pd.read_csv(input_path, encoding='utf-8')
-        log(f"[LOADED] {len(lmm_input)} rows, {len(lmm_input.columns)} cols")
+        log(f"{len(lmm_input)} rows, {len(lmm_input.columns)} cols")
 
         # Rename for compatibility
         lmm_input = lmm_input.rename(columns={
@@ -80,12 +70,9 @@ if __name__ == "__main__":
             'Days_squared': 'Days_sq',
             'log_Days_plus1': 'log_Days'
         })
+        # Add New Time Transformations
 
-        # =====================================================================
-        # STEP 2: Add New Time Transformations
-        # =====================================================================
-
-        log("[TRANSFORM] Adding new time transformations...")
+        log("Adding new time transformations...")
 
         # Power law variants (log-log transformation)
         # Power law: y = a * t^(-α) <=> log(y_shifted) ~ -α * log(t+1)
@@ -121,12 +108,9 @@ if __name__ == "__main__":
         log("    - Days_pow_neg03: (Days+1)^(-0.3)")
         log("    - Days_pow_neg07: (Days+1)^(-0.7)")
         log("    - neg_Days: -Days (exponential proxy)")
+        # Define Extended Model Set
 
-        # =====================================================================
-        # STEP 3: Define Extended Model Set
-        # =====================================================================
-
-        log("[CONFIG] Defining extended model set...")
+        log("Defining extended model set...")
 
         # Original 5 models (for comparison)
         models = {
@@ -159,12 +143,9 @@ if __name__ == "__main__":
         }
 
         log(f"  Total models to fit: {len(models)}")
+        # Fit All Models
 
-        # =====================================================================
-        # STEP 4: Fit All Models
-        # =====================================================================
-
-        log("[ANALYSIS] Fitting all models...")
+        log("Fitting all models...")
 
         fitted_models = {}
         model_stats = []
@@ -209,12 +190,9 @@ if __name__ == "__main__":
                     'n_params': np.nan,
                     'converged': False
                 })
+        # Compute AIC Comparison Metrics
 
-        # =====================================================================
-        # STEP 5: Compute AIC Comparison Metrics
-        # =====================================================================
-
-        log("[COMPUTE] Computing AIC comparison metrics...")
+        log("Computing AIC comparison metrics...")
 
         comparison_df = pd.DataFrame(model_stats)
 
@@ -236,14 +214,11 @@ if __name__ == "__main__":
         # Compute cumulative weights
         comparison_df['cumulative_weight'] = comparison_df['akaike_weight'].cumsum()
 
-        log("[RESULTS] Extended Model Comparison:")
+        log("Extended Model Comparison:")
         log("")
         log(comparison_df[['model_name', 'AIC', 'delta_AIC', 'akaike_weight']].to_string(index=False))
         log("")
-
-        # =====================================================================
-        # STEP 6: Identify Best Model
-        # =====================================================================
+        # Identify Best Model
 
         best_model_name = comparison_df.iloc[0]['model_name']
         best_model_aic = comparison_df.iloc[0]['AIC']
@@ -262,7 +237,7 @@ if __name__ == "__main__":
             log_delta = log_model_row.iloc[0]['delta_AIC']
 
             log("")
-            log(f"[COMPARISON] Original 'Log' model:")
+            log(f"Original 'Log' model:")
             log(f"  Rank: #{log_rank} of {len(comparison_df)}")
             log(f"  AIC: {log_aic:.2f} (Δ = {log_delta:.2f})")
             log(f"  Weight: {log_weight:.4f} ({log_weight*100:.1f}%)")
@@ -276,12 +251,9 @@ if __name__ == "__main__":
                 rank = idx + 1
                 log(f"  #{rank}: {row['model_name']}")
                 log(f"       AIC={row['AIC']:.2f}, Δ={row['delta_AIC']:.2f}, weight={row['akaike_weight']:.4f}")
+        # Save Results
 
-        # =====================================================================
-        # STEP 7: Save Results
-        # =====================================================================
-
-        log("[SAVE] Saving results...")
+        log("Saving results...")
 
         # Save comparison table
         comparison_output = RQ_DIR / "results" / "step05b_extended_model_comparison.csv"
@@ -293,13 +265,10 @@ if __name__ == "__main__":
         with open(pickle_path, 'wb') as f:
             pickle.dump(fitted_models, f)
         log(f"  ✓ {pickle_path.name}")
-
-        # =====================================================================
-        # STEP 8: Summary Statistics
-        # =====================================================================
+        # Summary Statistics
 
         log("")
-        log("[SUMMARY]")
+        log("")
         log(f"  Total models tested: {len(models)}")
         log(f"  Successful fits: {len(comparison_df)}")
         log(f"  Failed fits: {len(models) - len(comparison_df)}")
@@ -315,12 +284,12 @@ if __name__ == "__main__":
             else:
                 log(f"  ✗ LOG WINS: Log (#{log_rank}) beats best power law (#{best_power_law_rank})")
 
-        log("[SUCCESS] Step 5b complete")
+        log("Step 5b complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

@@ -22,9 +22,7 @@ import statsmodels.formula.api as smf
 from scipy import stats
 import warnings
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.4.3
 LOG_FILE = RQ_DIR / "logs" / "steps_00_to_04.log"
@@ -95,7 +93,7 @@ def step00_prepare_lmm_input():
     log(f"  SD Age: {sd_age:.2f} years")
     log(f"  Range: [{age_per_participant.min():.0f}, {age_per_participant.max():.0f}] years")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 0 Validation ---")
 
     # Expected row count
@@ -221,7 +219,7 @@ def step01_fit_lmm_3way(df_input: pd.DataFrame):
     log(f"N observations: {n_obs}")
     log(f"N groups (UIDs): {df_input['UID'].nunique()}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 1 Validation ---")
 
     # Check convergence
@@ -378,7 +376,7 @@ def step02_extract_interaction_terms(lmm_result, fixed_effects: pd.DataFrame, df
         log(f"\n*** PRIMARY HYPOTHESIS TEST: Age × Paradigm × Time ***")
         log(f"Result: {conclusion}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 2 Validation ---")
 
     # Expected 3 terms
@@ -490,7 +488,7 @@ def step03_compute_effect_sizes(fixed_effects: pd.DataFrame, df_input: pd.DataFr
         log(f"  f² = {row['f_squared']:.6f}")
         log(f"  Interpretation: {row['interpretation']}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 3 Validation ---")
 
     # Expected 3 terms
@@ -605,7 +603,7 @@ def step04_compare_to_ch5(interaction_df: pd.DataFrame) -> pd.DataFrame:
             interp = term_data['interpretation'].iloc[0]
             log(f"  Interpretation: {interp}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 4 Validation ---")
 
     # Expected row count

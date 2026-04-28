@@ -1,0 +1,122 @@
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/deepirtools/data.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Step 2: Item Purification
+Loading Pass 1 item parameters...
+step01_item_parameters.csv (105 items)
+  Columns: ['item_name', 'b', 'a', 'Discrim_All', 'factor']
+  Discrimination range: [0.007, 1.738]
+  Difficulty range: [-6.308, 190.288]
+Applying Decision D039 thresholds (a>=0.4, |b|<=3.0)...
+
+============================================================
+ITEM PURIFICATION (Decision D039)
+============================================================
+Thresholds: a >= 0.4, |b| <= 3.0
+Format: Univariate IRT (simple format)
+
+Total items: 105
+Excluded: 37 (35.2%)
+Purified: 68 (64.8%)
+
+Excluded items:
+  - TQ_ICR-N-i3: |b| > 3.0 on All (b=-3.24)
+  - TQ_ICR-O-i1: a < 0.4 on All
+  - TQ_ICR-O-i3: a < 0.4 on All
+  - TQ_ICR-O-i5: a < 0.4 on All
+  - TQ_ICR-O-i6: a < 0.4 on All
+  - TQ_IFR-D-i1: a < 0.4 on All
+  - TQ_IFR-D-i4: a < 0.4 on All
+  - TQ_IFR-D-i5: a < 0.4 on All
+  - TQ_IFR-D-i6: a < 0.4 on All
+  - TQ_IFR-O-i1: a < 0.4 on All
+  - TQ_IFR-O-i2: a < 0.4 on All
+  - TQ_IFR-O-i3: a < 0.4 on All
+  - TQ_IFR-O-i4: a < 0.4 on All
+  - TQ_IFR-O-i5: a < 0.4 on All
+  - TQ_IFR-O-i6: a < 0.4 on All
+  - TQ_IRE-D-i5: a < 0.4 on All
+  - TQ_IRE-N-i2: |b| > 3.0 on All (b=-6.18)
+  - TQ_IRE-N-i3: |b| > 3.0 on All (b=-4.21)
+  - TQ_IRE-N-i4: |b| > 3.0 on All (b=-3.08)
+  - TQ_IRE-N-i5: a < 0.4 on All
+  - TQ_IRE-N-i6: |b| > 3.0 on All (b=-4.17)
+  - TQ_IRE-O-i1: a < 0.4 on All
+  - TQ_IRE-O-i2: a < 0.4 on All
+  - TQ_IRE-O-i3: a < 0.4 on All
+  - TQ_IRE-O-i4: a < 0.4 on All
+  - TQ_IRE-O-i5: a < 0.4 on All
+  - TQ_IRE-O-i6: a < 0.4 on All
+  - TQ_RFR-N-OBJ1: |b| > 3.0 on All (b=-4.24)
+  - TQ_RFR-N-OBJ2: |b| > 3.0 on All (b=-3.06)
+  - TQ_RFR-N-WEAT: a < 0.4 on All
+  - TQ_RRE-N-STRA: a < 0.4 on All
+  - TQ_TCR-O-TSK1: a < 0.4 on All
+  - TQ_TCR-O-TSK2: a < 0.4 on All
+  - TQ_TCR-O-TSK3: a < 0.4 on All
+  - TQ_TCR-O-TSK4: a < 0.4 on All
+  - TQ_TCR-O-TSK5: a < 0.4 on All
+  - TQ_TCR-O-TSK6: |b| > 3.0 on All (b=-3.86)
+============================================================
+
+Purification complete
+  Retained: 68 items (64.8%)
+  Removed: 37 items (35.2%)
+Saving purified items to step02_purified_items.csv...
+step02_purified_items.csv (68 items, 5 cols)
+Saving exclusion report to step02_purification_report.txt...
+
+================================================================================
+EXCLUSION REPORT - Items Removed from Analysis
+================================================================================
+
+Total items removed: 37
+
+Removed items by reason:
+    item_name factor        a          b           exclusion_reason
+  TQ_ICR-N-i3    All 0.929009  -3.237066 |b| > 3.0 on All (b=-3.24)
+  TQ_ICR-O-i1    All 0.314494   4.066750             a < 0.4 on All
+  TQ_ICR-O-i3    All 0.234380   2.442401             a < 0.4 on All
+  TQ_ICR-O-i5    All 0.202507   4.526729             a < 0.4 on All
+  TQ_ICR-O-i6    All 0.174038   6.435748             a < 0.4 on All
+  TQ_IFR-D-i1    All 0.358784   1.779022             a < 0.4 on All
+  TQ_IFR-D-i4    All 0.274111   2.715560             a < 0.4 on All
+  TQ_IFR-D-i5    All 0.226094   3.021574             a < 0.4 on All
+  TQ_IFR-D-i6    All 0.207364   5.223160             a < 0.4 on All
+  TQ_IFR-O-i1    All 0.006924 132.850372             a < 0.4 on All
+  TQ_IFR-O-i2    All 0.208179   5.076366             a < 0.4 on All
+  TQ_IFR-O-i3    All 0.244360   1.728545             a < 0.4 on All
+  TQ_IFR-O-i4    All 0.008170  83.918312             a < 0.4 on All
+  TQ_IFR-O-i5    All 0.090480   6.010217             a < 0.4 on All
+  TQ_IFR-O-i6    All 0.215202   4.146288             a < 0.4 on All
+  TQ_IRE-D-i5    All 0.384308   1.846855             a < 0.4 on All
+  TQ_IRE-N-i2    All 0.431022  -6.178279 |b| > 3.0 on All (b=-6.18)
+  TQ_IRE-N-i3    All 0.513464  -4.211312 |b| > 3.0 on All (b=-4.21)
+  TQ_IRE-N-i4    All 0.684734  -3.080379 |b| > 3.0 on All (b=-3.08)
+  TQ_IRE-N-i5    All 0.351419  -6.308079             a < 0.4 on All
+  TQ_IRE-N-i6    All 0.696953  -4.170762 |b| > 3.0 on All (b=-4.17)
+  TQ_IRE-O-i1    All 0.344752   3.312958             a < 0.4 on All
+  TQ_IRE-O-i2    All 0.393485   4.865671             a < 0.4 on All
+  TQ_IRE-O-i3    All 0.205266   2.674260             a < 0.4 on All
+  TQ_IRE-O-i4    All 0.087067  11.739813             a < 0.4 on All
+  TQ_IRE-O-i5    All 0.230469   4.259873             a < 0.4 on All
+  TQ_IRE-O-i6    All 0.383313   4.079227             a < 0.4 on All
+TQ_RFR-N-OBJ1    All 1.108314  -4.237798 |b| > 3.0 on All (b=-4.24)
+TQ_RFR-N-OBJ2    All 0.998834  -3.060477 |b| > 3.0 on All (b=-3.06)
+TQ_RFR-N-WEAT    All 0.361347  -0.949508             a < 0.4 on All
+TQ_RRE-N-STRA    All 0.281653  -5.231513             a < 0.4 on All
+TQ_TCR-O-TSK1    All 0.290791   4.235240             a < 0.4 on All
+TQ_TCR-O-TSK2    All 0.296510   2.596496             a < 0.4 on All
+TQ_TCR-O-TSK3    All 0.122227  10.391975             a < 0.4 on All
+TQ_TCR-O-TSK4    All 0.006884 190.287796             a < 0.4 on All
+TQ_TCR-O-TSK5    All 0.101712  13.657248             a < 0.4 on All
+TQ_TCR-O-TSK6    All 1.307409  -3.859015 |b| > 3.0 on All (b=-3.86)
+
+================================================================================
+Exclusion report appended to step02_purification_report.txt
+Validating purified item parameters...
+valid: True
+n_flagged: 0
+flagged_items: []
+total_items: 68
+Retention rate within expected range (64.8%)
+Step 2 complete

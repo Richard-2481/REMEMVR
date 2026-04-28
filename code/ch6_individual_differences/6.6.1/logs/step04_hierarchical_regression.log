@@ -1,0 +1,94 @@
+Step 04: Hierarchical Regression Analysis
+Loading step03 merged and standardized data...
+step03_analysis_input.csv (100 rows, 8 cols)
+All required columns present
+Sample size: 100 participants
+Preparing regression data...
+Response variable (slope): mean=0.000000, std=0.004461
+Model 1 (Demographics): ['age_std', 'sex', 'education_std']
+Model 2 (Full): ['age_std', 'sex', 'education_std', 'RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std']
+Fitting Model 1 (Demographics)...
+[MODEL1] R² = 0.0494
+[MODEL1] Adjusted R² = 0.0197
+[MODEL1] F-statistic = 1.6620, p = 0.180346
+[MODEL1] df_model = 3.0, df_resid = 96.0
+Fitting Model 2 (Full Model)...
+[MODEL2] R² = 0.2952
+[MODEL2] Adjusted R² = 0.2497
+[MODEL2] F-statistic = 6.4911, p = 0.000010
+[MODEL2] df_model = 6.0, df_resid = 93.0
+Computing incremental R² (Model 2 vs Model 1)...
+Delta R² = 0.2458
+F(3.0, 93.0) = 10.8106, p = 0.000004
+Extracting Model 2 coefficients...
+const: beta=-0.000109, SE=0.000467, t=-0.233, p=0.816383, sr²=0.000411
+age_std: beta=-0.000154, SE=0.000470, t=-0.328, p=0.743598, sr²=0.000815
+sex: beta=0.000362, SE=0.000864, t=0.420, p=0.675738, sr²=0.001332
+education_std: beta=0.000136, SE=0.000398, t=0.340, p=0.734291, sr²=0.000877
+RAVLT_T_std: beta=-0.000791, SE=0.000427, t=-1.851, p=0.067358, sr²=0.025041
+BVMT_T_std: beta=-0.000811, SE=0.000517, t=-1.569, p=0.120015, sr²=0.018179
+RPM_T_std: beta=-0.001635, SE=0.000458, t=-3.570, p=0.000566, sr²=0.084966
+Saving regression results...
+step04_regression_results.csv (10 rows, 11 cols)
+Checking regression assumptions...
+Shapiro-Wilk normality test: W=0.9831, p=0.230101
+Residuals are approximately normal (p > 0.05)
+Breusch-Pagan test: LM=8.4931, p=0.204153
+Homoscedasticity assumption met (p > 0.05)
+VIF for age_std: 1.45
+VIF for sex: 1.03
+VIF for education_std: 1.04
+VIF for RAVLT_T_std: 1.19
+VIF for BVMT_T_std: 1.75
+VIF for RPM_T_std: 1.37
+No multicollinearity issues (max VIF=1.75 < 10)
+Step 04 complete - Hierarchical regression analysis finished
+Step 04: Hierarchical Regression Analysis
+Loading step03 merged and standardized data...
+step03_analysis_input.csv (100 rows, 10 cols)
+All required columns present
+Sample size: 100 participants
+Preparing regression data...
+Response variable (slope): mean=0.000000, std=0.004461
+Model 1 (Demographics): ['age_std', 'sex', 'education_std']
+Model 2 (Full): ['age_std', 'sex', 'education_std', 'RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std', 'RAVLT_Pct_Ret_T_std', 'BVMT_Pct_Ret_T_std']
+Fitting Model 1 (Demographics)...
+[MODEL1] R² = 0.0494
+[MODEL1] Adjusted R² = 0.0197
+[MODEL1] F-statistic = 1.6620, p = 0.180346
+[MODEL1] df_model = 3.0, df_resid = 96.0
+Fitting Model 2 (Full Model)...
+[MODEL2] R² = 0.3358
+[MODEL2] Adjusted R² = 0.2774
+[MODEL2] F-statistic = 5.7513, p = 0.000006
+[MODEL2] df_model = 8.0, df_resid = 91.0
+Computing incremental R² (Model 2 vs Model 1)...
+Delta R² = 0.2864
+F(5.0, 91.0) = 7.8491, p = 0.000004
+Extracting Model 2 coefficients...
+const: beta=-0.000195, SE=0.000460, t=-0.425, p=0.672050, sr²=0.001314
+age_std: beta=-0.000101, SE=0.000461, t=-0.220, p=0.826386, sr²=0.000353
+sex: beta=0.000651, SE=0.000860, t=0.758, p=0.450437, sr²=0.004167
+education_std: beta=0.000224, SE=0.000393, t=0.570, p=0.569953, sr²=0.002365
+RAVLT_T_std: beta=-0.000761, SE=0.000429, t=-1.773, p=0.079555, sr²=0.022181
+BVMT_T_std: beta=-0.000529, SE=0.000526, t=-1.006, p=0.316980, sr²=0.007308
+RPM_T_std: beta=-0.001528, SE=0.000451, t=-3.383, p=0.001058, sr²=0.074215
+RAVLT_Pct_Ret_T_std: beta=-0.000737, SE=0.000414, t=-1.779, p=0.078538, sr²=0.022329
+BVMT_Pct_Ret_T_std: beta=-0.000486, SE=0.000400, t=-1.215, p=0.227610, sr²=0.010598
+Saving regression results...
+step04_regression_results.csv (12 rows, 11 cols)
+Checking regression assumptions...
+Shapiro-Wilk normality test: W=0.9831, p=0.230020
+Residuals are approximately normal (p > 0.05)
+Breusch-Pagan test: LM=9.0988, p=0.334032
+Homoscedasticity assumption met (p > 0.05)
+VIF for age_std: 1.45
+VIF for sex: 1.05
+VIF for education_std: 1.05
+VIF for RAVLT_T_std: 1.25
+VIF for BVMT_T_std: 1.88
+VIF for RPM_T_std: 1.39
+VIF for RAVLT_Pct_Ret_T_std: 1.16
+VIF for BVMT_Pct_Ret_T_std: 1.09
+No multicollinearity issues (max VIF=1.88 < 10)
+Step 04 complete - Hierarchical regression analysis finished

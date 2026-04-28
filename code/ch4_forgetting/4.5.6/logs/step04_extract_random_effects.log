@@ -1,0 +1,57 @@
+2025-12-05 13:56:27,082 - INFO - ============================================================
+2025-12-05 13:56:27,082 - INFO - RQ 5.5.6 Step 04: Extract Individual Random Effects per Location
+2025-12-05 13:56:27,082 - INFO - ============================================================
+2025-12-05 13:56:27,089 - INFO - Loaded fitted models: ['source', 'destination']
+2025-12-05 13:56:27,090 - INFO - Loaded metadata for source: Full structure
+2025-12-05 13:56:27,090 - INFO - Loaded metadata for destination: Full structure
+2025-12-05 13:56:27,090 - INFO - 
+Extracting random effects for Source location
+2025-12-05 13:56:27,090 - INFO -   Random structure: Full
+2025-12-05 13:56:27,090 - INFO -   Expected n_groups: 100
+2025-12-05 13:56:27,095 - INFO -   Extracted 100 participants
+2025-12-05 13:56:27,095 - INFO -   random_intercept range: [-0.5655, 0.6831]
+2025-12-05 13:56:27,096 - INFO -   random_slope range: [-0.0591, 0.0737]
+2025-12-05 13:56:27,096 - INFO - 
+Extracting random effects for Destination location
+2025-12-05 13:56:27,096 - INFO -   Random structure: Full
+2025-12-05 13:56:27,096 - INFO -   Expected n_groups: 100
+2025-12-05 13:56:27,099 - INFO -   Extracted 100 participants
+2025-12-05 13:56:27,099 - INFO -   random_intercept range: [-0.7833, 0.9292]
+2025-12-05 13:56:27,099 - INFO -   random_slope range: [-0.1138, 0.0939]
+2025-12-05 13:56:27,100 - INFO - 
+============================================================
+2025-12-05 13:56:27,100 - INFO - VALIDATION: Checking random effects structure
+2025-12-05 13:56:27,100 - INFO - ============================================================
+2025-12-05 13:56:27,100 - INFO -   Row count: 200 (expected 200): PASS
+2025-12-05 13:56:27,101 - INFO -   Unique UIDs: 100: PASS
+2025-12-05 13:56:27,101 - INFO -   Locations present: {'Destination', 'Source'}: PASS
+2025-12-05 13:56:27,102 - INFO -   All UIDs have both locations: PASS
+2025-12-05 13:56:27,102 - INFO -   No missing random_intercept values: PASS
+2025-12-05 13:56:27,102 - INFO -   No missing random_slope values: PASS
+2025-12-05 13:56:27,104 - INFO -   No duplicate UID-location pairs: PASS
+2025-12-05 13:56:27,105 - INFO -   No infinite values: PASS
+2025-12-05 13:56:27,106 - INFO - 
+Saved random effects to: results/ch5/5.5.6/data/step04_random_effects.csv
+2025-12-05 13:56:27,106 - INFO - 
+============================================================
+2025-12-05 13:56:27,106 - INFO - RANDOM EFFECTS SUMMARY
+2025-12-05 13:56:27,106 - INFO - ============================================================
+2025-12-05 13:56:27,106 - INFO - 
+Source Location (n=100):
+2025-12-05 13:56:27,107 - INFO -   random_intercept: mean=0.0000, SD=0.2901
+2025-12-05 13:56:27,107 - INFO -   random_slope: mean=0.0000, SD=0.0309
+2025-12-05 13:56:27,107 - INFO - 
+Destination Location (n=100):
+2025-12-05 13:56:27,107 - INFO -   random_intercept: mean=0.0000, SD=0.3925
+2025-12-05 13:56:27,107 - INFO -   random_slope: mean=-0.0000, SD=0.0522
+2025-12-05 13:56:27,108 - INFO - 
+Cross-location intercept correlation (Source-Destination): r=0.664
+2025-12-05 13:56:27,109 - INFO - Cross-location slope correlation (Source-Destination): r=-0.436
+2025-12-05 13:56:27,109 - INFO - 
+============================================================
+2025-12-05 13:56:27,109 - INFO - STEP 04 COMPLETE
+2025-12-05 13:56:27,109 - INFO - ============================================================
+2025-12-05 13:56:27,109 - INFO - Extracted random effects for 200 observations
+2025-12-05 13:56:27,109 - INFO -   100 participants x 2 locations = 200 rows
+2025-12-05 13:56:27,109 - INFO - CRITICAL: Output file ready for RQ 5.5.7 (location-based clustering)
+2025-12-05 13:56:27,109 - INFO - Ready for Step 05: Test Intercept-Slope Correlations

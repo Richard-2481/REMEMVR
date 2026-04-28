@@ -1,0 +1,46 @@
+Step 8: Prepare Plot Data (Methodological Comparison Visualization)
+Loading input data...
+step05_correlation_analysis.csv (3 rows, 9 cols)
+  Columns: ['domain', 'r_full_irt', 'r_purified_irt', 'r_full_purified', 'delta_r', 'steiger_z', 'p_uncorrected', 'p_bonferroni', 'interpretation']
+step07_lmm_model_comparison.csv (3 rows, 6 cols)
+  Columns: ['measurement', 'AIC', 'BIC', 'logLik', 'delta_AIC', 'interpretation']
+[PLOT1] Preparing correlation comparison data...
+[PLOT1] Created correlation comparison data (6 rows)
+  Domains: ['what', 'when', 'where']
+  Measurement types: ['Full CTT', 'Purified CTT']
+[PLOT2] Preparing AIC comparison data...
+[PLOT2] Created AIC comparison data (3 rows)
+  Measurements: ['Full CTT', 'IRT theta', 'Purified CTT']
+  AIC range: [2954.08, 3108.50]
+  Delta AIC range: [-53.13, 101.29]
+Saving plot data CSVs...
+step08_correlation_comparison_data.csv (6 rows, 4 cols)
+step08_aic_comparison_data.csv (3 rows, 4 cols)
+Running validate_plot_data_completeness...
+Plot 1 result: Plot data complete: 3 domains, 2 groups.
+Plot 2 result: All measurements present (Full CTT, Purified CTT, IRT theta)
+No NaN values detected in plot data
+Step 8 complete
+Step 8: Prepare Plot Data (Methodological Comparison Visualization)
+Loading input data...
+step05_correlation_analysis.csv (2 rows, 9 cols)
+  Columns: ['domain', 'r_full_irt', 'r_purified_irt', 'r_full_purified', 'delta_r', 'steiger_z', 'p_uncorrected', 'p_bonferroni', 'interpretation']
+step07_lmm_model_comparison.csv (3 rows, 6 cols)
+  Columns: ['measurement', 'AIC', 'BIC', 'logLik', 'delta_AIC', 'interpretation']
+[PLOT1] Preparing correlation comparison data...
+[PLOT1] Created correlation comparison data (4 rows)
+  Domains: ['what', 'where']
+  Measurement types: ['Full CTT', 'Purified CTT']
+[PLOT2] Preparing AIC comparison data...
+[PLOT2] Created AIC comparison data (3 rows)
+  Measurements: ['Full CTT', 'IRT theta', 'Purified CTT']
+  AIC range: [1655.06, 1812.26]
+  Delta AIC range: [0.00, 157.21]
+Saving plot data CSVs...
+step08_correlation_comparison_data.csv (4 rows, 4 cols)
+step08_aic_comparison_data.csv (3 rows, 4 cols)
+Running validate_plot_data_completeness...
+Plot 1 result: Plot data complete: 2 domains, 2 groups.
+Plot 2 result: All measurements present (Full CTT, Purified CTT, IRT theta)
+No NaN values detected in plot data
+Step 8 complete

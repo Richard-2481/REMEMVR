@@ -6,7 +6,6 @@ Purpose: Visualize high-confidence error rate decline over 6-day retention inter
 Input: data/step04_hce_trajectory_data.csv (4 timepoints with 95% CIs)
 Output: plots/hce_trajectory.png (publication-quality 300 DPI)
 
-Author: rq_platinum agent
 Date: 2025-12-27
 """
 

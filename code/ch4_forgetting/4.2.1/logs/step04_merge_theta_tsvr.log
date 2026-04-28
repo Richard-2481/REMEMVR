@@ -1,0 +1,44 @@
+Step 04: Merge Theta Scores with TSVR (Decision D070)
+Loading input data...
+step03_theta_scores.csv (400 rows, 4 cols)
+         Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+         Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Merging theta scores with TSVR mapping on composite_ID...
+Result has 400 rows
+No composite_IDs lost in merge
+Melting to long format (one row per composite_ID x domain)...
+Result has 1200 rows (expected: 400 x 3 = 1200)
+Cleaning domain column (theta_what -> what, etc.)...
+Domain values: ['what', 'where', 'when']
+/home/etai/projects/REMEMVR/results/ch5/rq1/data/step04_lmm_input.csv
+        1200 rows, 6 cols
+        Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'domain', 'theta']
+Running inline validation criteria...
+Output file exists
+Row count correct (1200 = 400 x 3)
+No merge loss
+Each composite_ID appears exactly 3 times (once per domain)
+No NaN in TSVR_hours
+No NaN in theta
+Domain values correct (what, where, when)
+TSVR_hours range outside [0, 200]: [1.00, 246.24]
+[VALIDATION PASSED] All criteria met
+
+Output Data Statistics:
+  - Total rows: 1200
+  - Unique composite_IDs: 400
+  - Unique UIDs: 100
+  - Test sessions: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+  - Domains: ['what', 'when', 'where']
+  - TSVR_hours range: [1.00, 246.24]
+  - theta range: [-2.4718, 2.5349]
+  - theta mean: 0.0461
+  - theta std: 0.8469
+
+Per-Domain Statistics:
+  - what: n=400, mean_theta=-0.0072, std=0.8986
+  - where: n=400, mean_theta=0.0368, std=0.9319
+  - when: n=400, mean_theta=0.1087, std=0.6876
+
+Step 04 complete

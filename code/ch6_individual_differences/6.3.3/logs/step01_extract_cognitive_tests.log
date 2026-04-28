@@ -1,0 +1,45 @@
+Step 01: extract_cognitive_tests
+Loading dfnonvr.csv...
+Data path: /home/etai/projects/REMEMVR/data/dfnonvr.csv
+Loaded 100 participants, 235 columns
+UID column copied
+[CEILING FIX] Applying RAVLT ceiling fix...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+RAVLT total calculated from 5 trials
+RAVLT total range: 28.0 to 71.0
+BVMT total calculated from 3 learning trials (delayed recall excluded)
+BVMT total range: 12.0 to 36.0
+RPM score copied from rpm-score column
+RPM score range: 4.0 to 12.0
+RAVLT Percent Retention: 100/100 valid
+RAVLT percent retention range: 44.4 to 130.0
+BVMT percent retention copied from bvmt-percent-retained
+BVMT percent retention range: 55.6 to 114.3
+Age copied (range: 20 to 70)
+Sex copied (values: [1 0])
+Education copied (range: 1 to 9)
+NART IQ copied from nart-score column
+NART IQ range: 6 to 50
+Running data quality checks...
+Missing value summary:
+  nart_iq: 3 missing (3.0%)
+Running validate_data_columns...
+Data validation successful
+Saving extracted cognitive test data to /home/etai/projects/REMEMVR/results/ch7/7.3.3/data/step01_cognitive_tests.csv
+Output shape: (100, 10)
+Output columns: ['uid', 'ravlt_total', 'bvmt_total', 'rpm_score', 'ravlt_pct_ret', 'bvmt_pct_ret', 'age', 'sex', 'education', 'nart_iq']
+Cognitive test statistics:
+  ravlt_total: Mean = 51.65, SD = 8.48
+  bvmt_total: Mean = 28.22, SD = 5.06
+  rpm_score: Mean = 9.87, SD = 1.93
+  ravlt_pct_ret: Mean = 86.12, SD = 15.82
+  bvmt_pct_ret: Mean = 96.70, SD = 9.05
+  age: Mean = 44.57, SD = 14.58
+Step 01 complete - cognitive tests extracted

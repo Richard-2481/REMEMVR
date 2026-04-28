@@ -1,0 +1,4 @@
+domain,mean_HCE_rate,rank,hypothesis_rank,matches_hypothesis
+What,0.05879310344827586,3,3,True
+When,0.07336538461538461,2,1,False
+Where,0.0932,1,2,False

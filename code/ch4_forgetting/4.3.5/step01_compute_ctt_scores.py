@@ -116,7 +116,6 @@ def compute_ctt_scores_manual(df_data, tsvr_mapping, purified_items):
 
         # Rename columns to match expected format
         # Tool returns: CTT_score, factor, test (lowercase)
-        # Expected: CTT_mean, paradigm, TEST
         ctt_scores = ctt_scores.rename(columns={
             'CTT_score': 'CTT_mean',
             'factor': 'paradigm',

@@ -1,0 +1,126 @@
+[2025-12-31 13:12:24] Step 07: Random Slopes Comparison
+[2025-12-31 13:12:24] ======================================================================
+[2025-12-31 13:12:24] validation blocker resolution - testing if random slopes needed
+[2025-12-31 13:12:24] Section 4.4 (added 2025-12-11) mandates random slopes testing
+[2025-12-31 13:12:24] 
+[2025-12-31 13:12:24] Loading LMM input data from RQ 5.1.1...
+[2025-12-31 13:12:24] 400 rows, 100 participants
+[2025-12-31 13:12:24] Loading competitive models metadata...
+[2025-12-31 13:12:24] 10 competitive models
+[2025-12-31 13:12:24]   - PowerLaw_04
+[2025-12-31 13:12:24]   - PowerLaw_05
+[2025-12-31 13:12:24]   - PowerLaw_03
+[2025-12-31 13:12:24]   - LogLog
+[2025-12-31 13:12:24]   - Root_033
+[2025-12-31 13:12:24]   - CubeRoot
+[2025-12-31 13:12:24]   - PowerLaw_06
+[2025-12-31 13:12:24]   - FourthRoot
+[2025-12-31 13:12:24]   - PowerLaw_02
+[2025-12-31 13:12:24]   - PowerLaw_07
+[2025-12-31 13:12:24] Loading existing model comparison (with slopes)...
+[2025-12-31 13:12:24] 65 models in comparison table
+[2025-12-31 13:12:24] 
+[2025-12-31 13:12:24] Extracting AIC values for competitive models (with slopes)...
+[2025-12-31 13:12:24]   PowerLaw_04: AIC = 871.29
+[2025-12-31 13:12:24]   PowerLaw_05: AIC = 871.43
+[2025-12-31 13:12:24]   PowerLaw_03: AIC = 871.52
+[2025-12-31 13:12:24]   LogLog: AIC = 871.58
+[2025-12-31 13:12:24]   Root_033: AIC = 871.74
+[2025-12-31 13:12:24]   CubeRoot: AIC = 871.74
+[2025-12-31 13:12:24]   PowerLaw_06: AIC = 871.90
+[2025-12-31 13:12:24]   FourthRoot: AIC = 871.99
+[2025-12-31 13:12:24]   PowerLaw_02: AIC = 872.13
+[2025-12-31 13:12:24]   PowerLaw_07: AIC = 872.67
+[2025-12-31 13:12:24] Extracted 10 AIC values
+[2025-12-31 13:12:24] 
+[2025-12-31 13:12:24] Fitting intercepts-only models (re_formula='~1')...
+[2025-12-31 13:12:24] This will take ~2-3 minutes...
+[2025-12-31 13:12:24] 
+[2025-12-31 13:12:26] 65 intercepts-only models fitted
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26] Extracting AIC values (intercepts-only)...
+[2025-12-31 13:12:26]   PowerLaw_04: AIC = 866.61
+[2025-12-31 13:12:26]   PowerLaw_05: AIC = 866.74
+[2025-12-31 13:12:26]   PowerLaw_03: AIC = 866.83
+[2025-12-31 13:12:26]   LogLog: AIC = 866.89
+[2025-12-31 13:12:26]   Root_033: AIC = 867.09
+[2025-12-31 13:12:26]   CubeRoot: AIC = 867.09
+[2025-12-31 13:12:26]   PowerLaw_06: AIC = 867.19
+[2025-12-31 13:12:26]   FourthRoot: AIC = 867.32
+[2025-12-31 13:12:26]   PowerLaw_02: AIC = 867.41
+[2025-12-31 13:12:26]   PowerLaw_07: AIC = 867.94
+[2025-12-31 13:12:26] Extracted 10/10 AIC values
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26] Computing ΔAIC = AIC(intercepts_only) - AIC(with_slopes)...
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26]   ✗ PowerLaw_04:
+[2025-12-31 13:12:26]       AIC (slopes):    871.29
+[2025-12-31 13:12:26]       AIC (int-only):  866.61
+[2025-12-31 13:12:26]       ΔAIC:            -4.68 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ PowerLaw_05:
+[2025-12-31 13:12:26]       AIC (slopes):    871.43
+[2025-12-31 13:12:26]       AIC (int-only):  866.74
+[2025-12-31 13:12:26]       ΔAIC:            -4.69 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ PowerLaw_03:
+[2025-12-31 13:12:26]       AIC (slopes):    871.52
+[2025-12-31 13:12:26]       AIC (int-only):  866.83
+[2025-12-31 13:12:26]       ΔAIC:            -4.69 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ LogLog:
+[2025-12-31 13:12:26]       AIC (slopes):    871.58
+[2025-12-31 13:12:26]       AIC (int-only):  866.89
+[2025-12-31 13:12:26]       ΔAIC:            -4.69 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ Root_033:
+[2025-12-31 13:12:26]       AIC (slopes):    871.74
+[2025-12-31 13:12:26]       AIC (int-only):  867.09
+[2025-12-31 13:12:26]       ΔAIC:            -4.65 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ CubeRoot:
+[2025-12-31 13:12:26]       AIC (slopes):    871.74
+[2025-12-31 13:12:26]       AIC (int-only):  867.09
+[2025-12-31 13:12:26]       ΔAIC:            -4.65 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ PowerLaw_06:
+[2025-12-31 13:12:26]       AIC (slopes):    871.90
+[2025-12-31 13:12:26]       AIC (int-only):  867.19
+[2025-12-31 13:12:26]       ΔAIC:            -4.71 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ FourthRoot:
+[2025-12-31 13:12:26]       AIC (slopes):    871.99
+[2025-12-31 13:12:26]       AIC (int-only):  867.32
+[2025-12-31 13:12:26]       ΔAIC:            -4.66 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ PowerLaw_02:
+[2025-12-31 13:12:26]       AIC (slopes):    872.13
+[2025-12-31 13:12:26]       AIC (int-only):  867.41
+[2025-12-31 13:12:26]       ΔAIC:            -4.71 (slopes NOT needed)
+[2025-12-31 13:12:26]   ✗ PowerLaw_07:
+[2025-12-31 13:12:26]       AIC (slopes):    872.67
+[2025-12-31 13:12:26]       AIC (int-only):  867.94
+[2025-12-31 13:12:26]       ΔAIC:            -4.74 (slopes NOT needed)
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26] ======================================================================
+[2025-12-31 13:12:26] Random Slopes Comparison Results
+[2025-12-31 13:12:26] ======================================================================
+[2025-12-31 13:12:26]   Models tested: 10
+[2025-12-31 13:12:26]   Models where slopes improve fit (ΔAIC > 2.0): 0/10 (0.0%)
+[2025-12-31 13:12:26]   Median ΔAIC: -4.69
+[2025-12-31 13:12:26]   Mean ΔAIC:   -4.69
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26] ✗ RANDOM SLOPES NOT JUSTIFIED
+[2025-12-31 13:12:26]   Rationale: Only 0/10 models (0.0%) show ΔAIC > 2.0
+[2025-12-31 13:12:26]   Interpretation: Individual differences in slopes may be artifact
+[2025-12-31 13:12:26]   var_slope = 0.098 interpretation QUESTIONABLE
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26] ✗ NOT RESOLVED - Need to reconsider ICC interpretation
+[2025-12-31 13:12:26] ======================================================================
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26] Saving comparison results to CSV...
+[2025-12-31 13:12:26] /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step07_random_slopes_comparison.csv
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26] Running output validation...
+[2025-12-31 13:12:26] No NaN values in comparison table
+[2025-12-31 13:12:26] All 10 competitive models compared
+[2025-12-31 13:12:26] 
+[2025-12-31 13:12:26] ======================================================================
+[2025-12-31 13:12:26] Step 07 complete: Random slopes comparison
+[2025-12-31 13:12:26]   Decision: SLOPES_NOT_JUSTIFIED
+[2025-12-31 13:12:26]   Models improved by slopes: 0/10 (0.0%)
+[2025-12-31 13:12:26]   Median ΔAIC: -4.69
+[2025-12-31 13:12:26]   Output: /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step07_random_slopes_comparison.csv
+[2025-12-31 13:12:26] ======================================================================

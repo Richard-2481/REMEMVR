@@ -1,0 +1,83 @@
+Step 00: Get Data from RQ 5.1
+Loading theta scores from RQ 5.1 (WIDE format)...
+RQ 5.1 theta scores: 400 rows (WIDE format)
+Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Reshaping WIDE -> LONG format...
+WIDE -> LONG: 400 rows -> 1200 rows
+Expected: 400 x 3 domains = 1200 rows
+Actual: 1200 rows
+PASS - All 3 domains present, row count correct
+Loading TSVR mapping from RQ 5.1...
+TSVR mapping: 400 rows
+Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Loading age variable from dfData.csv...
+Age data: 400 rows
+Saving data/step00_theta_from_rq51.csv (LONG format)...
+step00_theta_from_rq51.csv (1200 rows, 4 cols)
+Saving data/step00_tsvr_from_rq51.csv...
+step00_tsvr_from_rq51.csv (400 rows, 4 cols)
+Saving data/step00_age_from_dfdata.csv...
+step00_age_from_dfdata.csv (400 rows, 2 cols)
+Running final checks...
+PASS - All files created successfully
+Step 00 complete
+LONG format theta ready: 1200 rows (3 domains)
+Step 00: Get Data from RQ 5.1
+Loading theta scores from RQ 5.1 (WIDE format)...
+RQ 5.1 theta scores: 400 rows (WIDE format)
+Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Reshaping WIDE -> LONG format...
+WIDE -> LONG: 400 rows -> 1200 rows
+Expected: 400 x 3 domains = 1200 rows
+Actual: 1200 rows
+PASS - All 3 domains present, row count correct
+Loading TSVR mapping from RQ 5.1...
+TSVR mapping: 400 rows
+Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Loading age variable from dfData.csv...
+Age data: 100 unique participants
+Saving data/step00_theta_from_rq51.csv (LONG format)...
+step00_theta_from_rq51.csv (1200 rows, 4 cols)
+Saving data/step00_tsvr_from_rq51.csv...
+step00_tsvr_from_rq51.csv (400 rows, 4 cols)
+Saving data/step00_age_from_dfdata.csv...
+step00_age_from_dfdata.csv (100 rows, 2 cols)
+Running final checks...
+PASS - All files created successfully
+Step 00 complete
+LONG format theta ready: 1200 rows (3 domains)
+Step 00: Get Data from RQ 5.1
+Loading theta scores from RQ 5.1 (WIDE format)...
+RQ 5.1 theta scores: 400 rows (WIDE format)
+Columns: ['UID', 'test', 'Theta_All']
+Expected WIDE format columns ['composite_ID', 'theta_what', 'theta_where', 'theta_when'], got ['UID', 'test', 'Theta_All']
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.2.3/code/step00_get_data_from_rq51.py", line 127, in <module>
+    raise ValueError(f"Expected WIDE format columns {expected_cols}, got {list(theta_wide.columns)}")
+ValueError: Expected WIDE format columns ['composite_ID', 'theta_what', 'theta_where', 'theta_when'], got ['UID', 'test', 'Theta_All']
+Step 00: Get Data from RQ 5.2.1
+Loading theta scores from RQ 5.2.1 (LONG format)...
+RQ 5.2.1 lmm_input: 1200 rows (LONG format)
+Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'domain', 'theta']
+Domains in input: ['what', 'where', 'when']
+Rows per domain before filter: {'what': 400, 'when': 400, 'where': 400}
+Excluding When domain due to floor effect (RQ 5.2.1)...
+1200 rows -> 800 rows (When excluded)
+Remaining domains: ['what', 'where']
+PASS - When excluded, 2 domains present
+Creating TSVR mapping...
+TSVR mapping: 400 rows
+Loading age variable from dfData.csv...
+Age data: 100 unique participants
+Saving data/step00_theta_from_rq51.csv (LONG format, When excluded)...
+step00_theta_from_rq51.csv (800 rows, 4 cols)
+Saving data/step00_tsvr_from_rq51.csv...
+step00_tsvr_from_rq51.csv (400 rows, 4 cols)
+Saving data/step00_age_from_dfdata.csv...
+step00_age_from_dfdata.csv (100 rows, 2 cols)
+Running final checks...
+PASS - All files created successfully
+Step 00 complete
+Data sourced from RQ 5.2.1 (domain-specific theta)
+LONG format theta ready: 800 rows (2 domains - When excluded)

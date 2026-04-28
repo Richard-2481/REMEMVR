@@ -1,0 +1,79 @@
+Step 01: Extract Cognitive Test Data
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+Computing RAVLT composite score...
+RAVLT composite from 5 trials
+RAVLT_raw: mean=50.60, SD=8.42, range=[26, 68]
+Computing BVMT composite score...
+BVMT composite from 3 trials
+BVMT_raw: mean=28.22, SD=5.06, range=[12, 36]
+Extracting RPM score...
+RPM score
+RPM_raw: mean=9.87, SD=1.93, range=[4, 12]
+Converting raw scores to T-scores...
+All scores to T-scores (mean=50, SD=10)
+RAVLT_T: mean=50.00, SD=10.00, range=[20.8, 70.7]
+BVMT_T: mean=50.00, SD=10.00, range=[17.9, 65.4]
+RPM_T: mean=50.00, SD=10.00, range=[19.5, 61.1]
+Extracting demographic variables...
+Demographics: age, sex, education
+Creating output dataset...
+Output dataset (100 rows, 7 cols)
+/home/etai/projects/REMEMVR/results/ch7/7.6.1/data/step01_cognitive_tests.csv
+100 participants with 3 T-scores + demographics
+Validating T-score ranges...
+RAVLT_T: All values within [20, 80] range
+BVMT_T: 1 values outside [20, 80] range
+RPM_T: 1 values outside [20, 80] range
+Participant count: 100 (expected 100)
+No missing values in output dataset
+Step 01 complete
+Step 01: Extract Cognitive Test Data
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+[CEILING FIX] Applying RAVLT ceiling fix...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+Computing RAVLT composite score (post-ceiling fix)...
+RAVLT composite from 5 trials
+RAVLT_raw: mean=51.65, SD=8.48, range=[28, 71]
+Computing RAVLT percent retention...
+RAVLT Percent Retention: 100/100 valid
+RAVLT_Pct_Ret_raw: mean=83.28, SD=14.79, range=[44.4, 115.4]
+Computing BVMT composite score...
+BVMT composite from 3 trials
+BVMT_raw: mean=28.22, SD=5.06, range=[12, 36]
+Extracting BVMT percent retention...
+BVMT Percent Retention: 100/100 valid
+BVMT_Pct_Ret_raw: mean=96.70, SD=9.05, range=[55.6, 114.3]
+Extracting RPM score...
+RPM score
+RPM_raw: mean=9.87, SD=1.93, range=[4, 12]
+Converting raw scores to T-scores...
+All scores to T-scores (mean=50, SD=10)
+RAVLT_T: mean=50.00, SD=10.00, range=[22.1, 72.8]
+BVMT_T: mean=50.00, SD=10.00, range=[17.9, 65.4]
+RPM_T: mean=50.00, SD=10.00, range=[19.5, 61.1]
+RAVLT_Pct_Ret_T: mean=50.00, SD=10.00, range=[23.7, 71.7]
+BVMT_Pct_Ret_T: mean=50.00, SD=10.00, range=[4.5, 69.4]
+Extracting demographic variables...
+Demographics: age, sex, education
+Creating output dataset...
+Output dataset (100 rows, 9 cols)
+/home/etai/projects/REMEMVR/results/ch7/7.6.1/data/step01_cognitive_tests.csv
+100 participants with 5 T-scores + demographics
+Validating T-score ranges...
+RAVLT_T: All values within [20, 80] range
+BVMT_T: 1 values outside [20, 80] range
+RPM_T: 1 values outside [20, 80] range
+RAVLT_Pct_Ret_T: All values within [20, 80] range
+BVMT_Pct_Ret_T: 4 values outside [20, 80] range
+Participant count: 100 (expected 100)
+No missing values in output dataset
+Step 01 complete

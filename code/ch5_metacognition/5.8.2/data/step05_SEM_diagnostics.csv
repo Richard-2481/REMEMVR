@@ -1,0 +1,3 @@
+LocationType,r_xx_accuracy,r_yy_confidence,r_xy_correlation,r_diff_PRE_SEM,r_split_half_POST_SEM,r_full_length_POST_SEM,reliability_improvement,r_sem_vs_simple,method,n_observations
+Destination,0.2856380858087604,0.5846604630625346,0.46542462370999277,-0.056634387996803086,0.7733917191672777,0.8722175826223382,0.9288519706191413,0.8691996784349398,fallback_factor_score_regression,400
+Source,0.37231877464537777,0.5197003965125956,0.6861461099287266,-0.7651220263518387,,,,0.9338627088228915,fallback_factor_score_regression,400

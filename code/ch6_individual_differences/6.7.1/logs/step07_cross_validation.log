@@ -1,0 +1,48 @@
+Step 07: Cross-Validation
+[CV] 5-fold cross-validation for RAVLT_T model...
+  Train R²: 0.0710
+  Test R² (mean): -0.1170 (SD=0.2187)
+  Generalization gap: 0.1880
+  RMSE (mean): 9.8325
+  MAE (mean): 7.8633
+  Overfitting: YES
+[CV] 5-fold cross-validation for BVMT_T model...
+  Train R²: 0.1322
+  Test R² (mean): 0.0138 (SD=0.1707)
+  Generalization gap: 0.1184
+  RMSE (mean): 9.4460
+  MAE (mean): 7.3046
+  Overfitting: YES
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step07_cross_validation.csv
+Step 07 complete
+Step 07: Cross-Validation
+[CV] 5-fold cross-validation for RAVLT_T model...
+  Train R²: 0.0776
+  Test R² (mean): -0.0539 (SD=0.1458)
+  Generalization gap: 0.1316
+  RMSE (mean): 9.7200
+  MAE (mean): 7.8866
+  Overfitting: YES
+[CV] 5-fold cross-validation for BVMT_T model...
+  Train R²: 0.1322
+  Test R² (mean): 0.0138 (SD=0.1707)
+  Generalization gap: 0.1184
+  RMSE (mean): 9.4460
+  MAE (mean): 7.3046
+  Overfitting: YES
+[CV] 5-fold cross-validation for RAVLT_PctRet_T model...
+  Train R²: 0.1077
+  Test R² (mean): 0.0650 (SD=0.0698)
+  Generalization gap: 0.0427
+  RMSE (mean): 9.4399
+  MAE (mean): 7.8162
+  Overfitting: NO
+[CV] 5-fold cross-validation for BVMT_PctRet_T model...
+  Train R²: 0.0382
+  Test R² (mean): -0.0406 (SD=0.0669)
+  Generalization gap: 0.0788
+  RMSE (mean): 9.9236
+  MAE (mean): 6.3754
+  Overfitting: NO
+/home/etai/projects/REMEMVR/results/ch7/7.7.1/data/step07_cross_validation.csv
+Step 07 complete

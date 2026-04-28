@@ -1,0 +1,89 @@
+RQ 6.2.5: Power Analysis and TOST
+======================================================================
+validation Requirement: Section 3 (NULL findings)
+
+Starting power analysis and equivalence testing...
+
+======================================================================
+POWER ANALYSIS
+======================================================================
+
+Study parameters:
+  N observations: 400
+  N parameters: 5
+  df: 395
+  alpha: 0.05
+  Observed SE: 0.000045
+  Critical t-value (two-tailed): 1.966
+
+--- Power for Observed Effect ---
+Observed β: 0.000019
+Noncentrality parameter: 0.422
+Power: 0.071
+
+--- Power for Hypothetical Effects ---
+
+Small effect (β = 0.0005):
+  Noncentrality: 11.111
+  Power: nan ✗ (<0.80)
+
+Medium effect (β = 0.0010):
+  Noncentrality: 22.222
+  Power: 1.000 ✓ (>0.80)
+
+Large effect (β = 0.0020):
+  Noncentrality: 44.444
+  Power: 1.000 ✓ (>0.80)
+
+======================================================================
+POWER INTERPRETATION
+======================================================================
+
+⚠️  Study underpowered:
+  - Only 2/4 effect sizes have power ≥ 0.80
+  - May miss small/medium Age × Time interactions
+  - NULL finding could be due to inadequate power
+
+======================================================================
+TOST EQUIVALENCE TESTING
+======================================================================
+
+Equivalence bounds:
+  Lower: -0.0020
+  Upper: 0.0020
+
+Observed effect:
+  β: 0.000019
+  SE: 0.000045
+
+90% Confidence Interval:
+  [-0.000055, 0.000093]
+
+--- TOST Test 1: β > -0.0020 ---
+  t-statistic: 44.867
+  p-value (one-sided): 0.0000
+
+--- TOST Test 2: β < 0.0020 ---
+  t-statistic: -44.022
+  p-value (one-sided): 0.0000
+
+--- TOST Result ---
+  TOST p-value: 0.0000
+  Conclusion: EQUIVALENT (p < 0.05)
+  Interpretation: Effect is statistically equivalent to zero
+
+--- Equivalence Region Check ---
+  90% CI: [-0.000055, 0.000093]
+  Equiv bounds: [-0.0020, 0.0020]
+  CI entirely inside bounds: True
+
+✓ Power analysis saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step12e_power_analysis.csv
+✓ TOST results saved: /home/etai/projects/REMEMVR/results/ch6/6.2.5/data/step12e_tost_equivalence.csv
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+✅ Power analysis and TOST complete
+Power for medium effects: 1.000
+TOST p-value: 0.0000

@@ -30,7 +30,6 @@ OUTPUT:
 - data/step08_response_patterns.csv (participant-level statistics)
 - data/step08_response_patterns_summary.txt (aggregate statistics + interpretation)
 
-Author: rq_platinum finalization
 Date: 2025-12-28
 RQ: ch6/6.4.1
 """
@@ -55,10 +54,10 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 08: Confidence Response Patterns")
+        log("Step 08: Confidence Response Patterns")
         log("=" * 80)
 
-        log("[LOAD] Loading raw confidence ratings...")
+        log("Loading raw confidence ratings...")
         irt_input = pd.read_csv(DATA_DIR / "step00_irt_input.csv", encoding='utf-8')
 
         # Extract composite_ID and TC_* items
@@ -73,7 +72,7 @@ if __name__ == "__main__":
         log(f"  ✓ Unique participants: {len(unique_uids)}")
 
         # ANALYSIS: Per-participant response patterns
-        log("\n[ANALYSIS] Computing per-participant response patterns...")
+        log("\nComputing per-participant response patterns...")
 
         results = []
         for uid in unique_uids:
@@ -124,7 +123,7 @@ if __name__ == "__main__":
         log(f"  ✓ Computed patterns for {len(patterns_df)} participants")
 
         # AGGREGATES
-        log("\n[AGGREGATES] Summary statistics:")
+        log("\nSummary statistics:")
 
         n_participants = len(patterns_df)
         pct_full_range = (patterns_df['full_range_usage'].sum() / n_participants) * 100
@@ -149,7 +148,7 @@ if __name__ == "__main__":
             log(f"  Value {val_str}: {patterns_df[col].sum()} participants ({pct:.1f}%)")
 
         # INTERPRETATION
-        log("\n[INTERPRETATION] Response pattern quality:")
+        log("\nResponse pattern quality:")
 
         # Flag 1: Full-range usage
         if pct_full_range > 60:
@@ -191,7 +190,7 @@ if __name__ == "__main__":
         log(f"  Rating SD: {sd_flag} - {sd_msg}")
 
         # CONCLUSION
-        log("\n[CONCLUSION] Overall assessment:")
+        log("\nOverall assessment:")
 
         if pct_full_range > 60 and pct_extremes_only < 10 and mean_rating_sd > 0.25:
             overall = "EXCELLENT"
@@ -241,11 +240,11 @@ if __name__ == "__main__":
         log(f"  ✓ Saved summary report to step08_response_patterns_summary.txt")
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] Step 08: Response Patterns Complete")
+        log("Step 08: Response Patterns Complete")
         log("=" * 80)
 
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         import traceback
         log(traceback.format_exc())
         raise

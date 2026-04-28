@@ -1,0 +1,49 @@
+============================================================
+RQ 5.2.7 Step 02: K-Means Model Selection
+============================================================
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step01_standardized_features.csv
+Loaded 100 rows
+Clustering matrix shape: 100 samples × 4 features
+
+Testing K=1 to K=6 models...
+  n_init=50, random_state=42, max_iter=300
+
+  K=1: inertia=396.00, BIC=156.05
+
+  K=2: inertia=255.44, BIC=130.62
+
+  K=3: inertia=152.33, BIC=97.35
+
+  K=4: inertia=121.88, BIC=93.47
+
+  K=5: inertia=98.01, BIC=90.09
+
+  K=6: inertia=84.58, BIC=93.78
+
+
+Validation:
+  - PASS: Inertia decreases monotonically with K
+
+BIC minimum at K=5, BIC=90.09
+
+Clear BIC minimum at K=5
+
+BIC Comparison Table:
+----------------------------------------
+   K      Inertia          BIC       ΔBIC
+----------------------------------------
+ 1.0       396.00       156.05      65.95
+ 2.0       255.44       130.62      40.53
+ 3.0       152.33        97.35       7.25
+ 4.0       121.88        93.47       3.38
+ 5.0        98.01        90.09       0.00 ***
+ 6.0        84.58        93.78       3.69
+----------------------------------------
+
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step02_cluster_selection.csv
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step02_optimal_k_selection.txt
+
+============================================================
+Step 02 COMPLETE: Optimal K selected: K=5
+============================================================

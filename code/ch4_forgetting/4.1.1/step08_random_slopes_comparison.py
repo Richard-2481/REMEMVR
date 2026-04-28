@@ -1,5 +1,5 @@
 """
-RQ 5.1.1 - Step 8: Random Slopes Comparison (MANDATORY)
+RQ 5.1.1 - Step 8: Random Slopes Comparison 
 
 PURPOSE: Test intercepts-only vs intercepts+slopes random effects structure
          per improvement_taxonomy.md Section 4.4 (NON-NEGOTIABLE for modeling RQs)
@@ -13,13 +13,12 @@ METHODOLOGY:
 4. Compare via AIC (ΔAIC > 2 = slopes improve fit)
 5. Report random slope variance + interpretation
 
-OUTCOMES (per agent prompt):
+OUTCOMES (per protocol):
 - Option A: Slopes improve fit (ΔAIC > 2) → Individual differences confirmed
 - Option B: Slopes don't converge → Insufficient data for stable estimation
 - Option C: Slopes converge but don't improve (ΔAIC < 2) → Homogeneous effects confirmed
 
 Date: 2025-12-27
-Agent: rq_platinum
 """
 
 import pandas as pd
@@ -28,9 +27,7 @@ import statsmodels.formula.api as smf
 import warnings
 warnings.filterwarnings('ignore')
 
-# ============================================================================
-# STEP 1: LOAD DATA
-# ============================================================================
+# LOAD DATA
 
 print("="*80)
 print("RQ 5.1.1 - RANDOM SLOPES COMPARISON (MANDATORY BLOCKER RESOLUTION)")
@@ -53,9 +50,7 @@ print(f"  Transformation: (TSVR_hours + 1)^(-0.4)")
 print(f"  Range: [{lmm_data['TSVR_hours_pow_neg04'].min():.4f}, {lmm_data['TSVR_hours_pow_neg04'].max():.4f}]")
 print()
 
-# ============================================================================
-# STEP 2: FIT MODEL A (INTERCEPTS-ONLY)
-# ============================================================================
+# FIT MODEL A (INTERCEPTS-ONLY)
 
 print("[3/5] Fitting Model A: Random intercepts only (current implementation)...")
 print("  Formula: Theta ~ TSVR_hours_pow_neg04 + (1 | UID)")
@@ -81,9 +76,7 @@ except Exception as e:
 
 print()
 
-# ============================================================================
-# STEP 3: FIT MODEL B (INTERCEPTS + SLOPES)
-# ============================================================================
+# FIT MODEL B (INTERCEPTS + SLOPES)
 
 print("[4/5] Fitting Model B: Random intercepts + random slopes...")
 print("  Formula: Theta ~ TSVR_hours_pow_neg04 + (TSVR_hours_pow_neg04 | UID)")
@@ -126,9 +119,7 @@ except Exception as e:
 
 print()
 
-# ============================================================================
-# STEP 4: COMPARE MODELS VIA AIC
-# ============================================================================
+# COMPARE MODELS VIA AIC
 
 print("[5/5] Model Comparison & Interpretation")
 print("="*80)
@@ -201,9 +192,7 @@ else:
 
 print()
 
-# ============================================================================
-# STEP 5: SAVE RESULTS
-# ============================================================================
+# SAVE RESULTS
 
 print("="*80)
 print("SAVING RESULTS")
@@ -271,9 +260,7 @@ print("COMPARISON TABLE:")
 print(comparison_df.to_string(index=False))
 print()
 
-# ============================================================================
 # FINAL SUMMARY FOR DOCUMENTATION
-# ============================================================================
 
 print("="*80)
 print("DOCUMENTATION SUMMARY (Add to summary.md)")

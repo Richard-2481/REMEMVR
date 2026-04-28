@@ -22,7 +22,6 @@ Variance Components:
     - var_residual: Within-person variance (measurement error + unexplained)
     - correlation_int_slope: Correlation between intercepts and slopes
 
-Author: Claude (g_code agent)
 Date: 2025-12-05
 """
 
@@ -213,7 +212,7 @@ def main():
                 logger.error(f"HEYWOOD CASE: {row['location']} {component} = {row['value']:.6f} (negative variance)")
                 sys.exit(1)
 
-    logger.info("  [PASS] All variance components non-negative")
+    logger.info("  All variance components non-negative")
 
     # Check var_intercept > 0 (strictly positive, required)
     intercept_data = variance_components[variance_components['component'] == 'var_intercept']
@@ -222,7 +221,7 @@ def main():
             logger.error(f"VALIDATION ERROR: {row['location']} var_intercept = {row['value']:.6f} (must be > 0)")
             sys.exit(1)
 
-    logger.info("  [PASS] var_intercept > 0 for both locations")
+    logger.info("  var_intercept > 0 for both locations")
 
     # Check var_residual > 0 (strictly positive, required)
     residual_data = variance_components[variance_components['component'] == 'var_residual']
@@ -231,7 +230,7 @@ def main():
             logger.error(f"VALIDATION ERROR: {row['location']} var_residual = {row['value']:.6f} (must be > 0)")
             sys.exit(1)
 
-    logger.info("  [PASS] var_residual > 0 for both locations")
+    logger.info("  var_residual > 0 for both locations")
 
     # Check correlation_int_slope in [-1, 1]
     corr_data = variance_components[variance_components['component'] == 'correlation_int_slope']
@@ -240,7 +239,7 @@ def main():
             logger.error(f"VALIDATION ERROR: {row['location']} correlation_int_slope = {row['value']:.6f} (must be in [-1, 1])")
             sys.exit(1)
 
-    logger.info("  [PASS] correlation_int_slope in [-1, 1] for all locations")
+    logger.info("  correlation_int_slope in [-1, 1] for all locations")
 
     # Check for missing critical components
     for location in ['Source', 'Destination']:
@@ -249,7 +248,7 @@ def main():
             logger.error(f"Missing components for {location}: expected 5, got {len(location_data)}")
             sys.exit(1)
 
-    logger.info("  [PASS] All locations have 5 components")
+    logger.info("  All locations have 5 components")
     logger.info(f"  Total rows: {len(variance_components)} (expected 10)")
 
     # Check for NaN or inf values
@@ -263,7 +262,7 @@ def main():
         logger.error("VALIDATION ERROR: Infinite values detected in variance components")
         sys.exit(1)
 
-    logger.info("  [PASS] No infinite values")
+    logger.info("  No infinite values")
 
     # ---------------------------------------------------------------------
     # 5. Save variance components

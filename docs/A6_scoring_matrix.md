@@ -2,7 +2,7 @@
 layout: default
 title: "A6. Scoring Matrix"
 parent: Home
-nav_order: 6
+nav_order: 7
 ---
 
 # A6. Scoring Matrix

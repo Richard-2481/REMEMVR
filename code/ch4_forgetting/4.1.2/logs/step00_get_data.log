@@ -1,0 +1,74 @@
+Step 0: Get Data (Load RQ 5.7 Outputs)
+Checking RQ 5.7 dependency files exist...
+EXPECTATIONS ERROR: RQ 5.7 dependency missing: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step02_theta_long.csv
+RQ 5.7 must complete successfully before RQ 5.8 can proceed.
+Run RQ 5.7 analysis pipeline first.
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step00_get_data.py", line 166, in <module>
+    raise FileNotFoundError(
+FileNotFoundError: EXPECTATIONS ERROR: RQ 5.7 dependency missing: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step02_theta_long.csv
+RQ 5.7 must complete successfully before RQ 5.8 can proceed.
+Run RQ 5.7 analysis pipeline first.
+Step 0: Get Data (Load RQ 5.7 Outputs)
+Checking RQ 5.7 dependency files exist...
+EXPECTATIONS ERROR: RQ 5.7 dependency missing: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step04_lmm_input.csv
+RQ 5.7 must complete successfully before RQ 5.8 can proceed.
+Run RQ 5.7 analysis pipeline first.
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step00_get_data.py", line 158, in <module>
+    raise FileNotFoundError(
+FileNotFoundError: EXPECTATIONS ERROR: RQ 5.7 dependency missing: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step04_lmm_input.csv
+RQ 5.7 must complete successfully before RQ 5.8 can proceed.
+Run RQ 5.7 analysis pipeline first.
+Step 0: Get Data (Load RQ 5.7 Outputs)
+Checking RQ 5.7 dependency files exist...
+Dependency exists: step04_lmm_input.csv (35587 bytes)
+Loading RQ 5.7 LMM input data...
+step04_lmm_input.csv (400 rows, 9 cols)
+Columns: ['composite_ID', 'UID', 'test', 'Theta', 'SE', 'TSVR_hours', 'Days', 'Days_squared', 'log_Days_plus1']
+Loading RQ 5.7 model comparison...
+step05_model_comparison.csv (5 models)
+RQ 5.7 best model: Log (AIC = 873.71)
+Selecting columns (UID, test, Theta, TSVR_hours) and renaming...
+Extracted shape: (400, 4)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours']
+Row count reasonable: 400 rows
+No NaN values in theta or TSVR_hours
+Saving merged theta + TSVR to step00_theta_tsvr.csv...
+step00_theta_tsvr.csv (400 rows, 4 cols)
+Saving RQ 5.7 AIC to step00_best_continuous_aic.txt...
+step00_best_continuous_aic.txt (AIC = 873.71)
+Saving RQ 5.7 model info to step00_rq57_convergence.txt...
+step00_rq57_convergence.txt
+Step 0 complete
+Outputs:
+  - step00_theta_tsvr.csv: 400 rows (merged theta + TSVR)
+  - step00_best_continuous_aic.txt: AIC = 873.71 (for Step 3 comparison)
+  - step00_rq57_convergence.txt: Convergence status (CRITICAL for interpretation)
+Step 0: Get Data (Load RQ 5.7 Outputs)
+Checking RQ 5.7 dependency files exist...
+Dependency exists: step04_lmm_input.csv (35587 bytes)
+Loading RQ 5.7 LMM input data...
+step04_lmm_input.csv (400 rows, 9 cols)
+Columns: ['composite_ID', 'UID', 'test', 'Theta', 'SE', 'TSVR_hours', 'Days', 'Days_squared', 'log_Days_plus1']
+Loading RQ 5.7 model comparison...
+step05_model_comparison.csv (5 models)
+RQ 5.7 best model: Log (AIC = 873.71)
+Selecting columns (UID, test, Theta, TSVR_hours) and renaming...
+Extracted shape: (400, 4)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours']
+Row count reasonable: 400 rows
+No NaN values in theta or TSVR_hours
+Saving merged theta + TSVR to step00_theta_tsvr.csv...
+step00_theta_tsvr.csv (400 rows, 4 cols)
+Saving RQ 5.7 AIC to step00_best_continuous_aic.txt...
+step00_best_continuous_aic.txt (AIC = 873.71)
+Saving RQ 5.7 model info to step00_rq57_convergence.txt...
+step00_rq57_convergence.txt
+Step 0 complete
+Outputs:
+  - step00_theta_tsvr.csv: 400 rows (merged theta + TSVR)
+  - step00_best_continuous_aic.txt: AIC = 873.71 (for Step 3 comparison)
+  - step00_rq57_convergence.txt: Convergence status (CRITICAL for interpretation)

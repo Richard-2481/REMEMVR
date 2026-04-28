@@ -1,0 +1,38 @@
+Step 01: Standardize Features
+Loading wide-format random effects...
+100 rows, 7 columns
+Feature columns: ['Total_Intercept_Cued', 'Total_Intercept_Free', 'Total_Intercept_Recognition', 'Total_Slope_Cued', 'Total_Slope_Free', 'Total_Slope_Recognition']
+Computing pre-standardization statistics...
+Pre-standardization statistics:
+Total_Intercept_Cued: mean=0.000000, SD=0.482179
+Total_Intercept_Free: mean=0.000000, SD=0.484731
+Total_Intercept_Recognition: mean=-0.000000, SD=0.542880
+Total_Slope_Cued: mean=-0.000000, SD=0.005169
+Total_Slope_Free: mean=-0.000000, SD=0.041301
+Total_Slope_Recognition: mean=0.000000, SD=0.027954
+Standardizing features to z-scores...
+Standardized Total_Intercept_Cued -> Total_Intercept_Cued_z
+Standardized Total_Intercept_Free -> Total_Intercept_Free_z
+Standardized Total_Intercept_Recognition -> Total_Intercept_Recognition_z
+Standardized Total_Slope_Cued -> Total_Slope_Cued_z
+Standardized Total_Slope_Free -> Total_Slope_Free_z
+Standardized Total_Slope_Recognition -> Total_Slope_Recognition_z
+Standardization complete: 7 columns
+Computing post-standardization statistics...
+Post-standardization statistics:
+Total_Intercept_Cued_z: mean=-0.000000, SD=1.000000
+Total_Intercept_Free_z: mean=0.000000, SD=1.000000
+Total_Intercept_Recognition_z: mean=-0.000000, SD=1.000000
+Total_Slope_Cued_z: mean=0.000000, SD=1.000000
+Total_Slope_Free_z: mean=0.000000, SD=1.000000
+Total_Slope_Recognition_z: mean=0.000000, SD=1.000000
+Saving standardized features...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step01_standardized_features.csv (100 rows, 7 cols)
+Saving standardization summary...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step01_standardization_summary.txt
+Running validate_standardization...
+valid: True
+message: All 6 columns properly standardized (mean ≈ 0, SD ≈ 1 within tolerance=0.01).
+mean_values: {'Total_Intercept_Cued_z': np.float64(-1.1102230246251566e-17), 'Total_Intercept_Free_z': np.float64(1.7763568394002505e-17), 'Total_Intercept_Recognition_z': np.float64(-2.2204460492503132e-17), 'Total_Slope_Cued_z': np.float64(1.1102230246251566e-17), 'Total_Slope_Free_z': np.float64(5.655198531684391e-18), 'Total_Slope_Recognition_z': np.float64(2.220446049250313e-18)}
+sd_values: {'Total_Intercept_Cued_z': np.float64(1.0), 'Total_Intercept_Free_z': np.float64(1.0), 'Total_Intercept_Recognition_z': np.float64(1.0), 'Total_Slope_Cued_z': np.float64(1.0), 'Total_Slope_Free_z': np.float64(1.0), 'Total_Slope_Recognition_z': np.float64(0.9999999999999999)}
+Step 01 complete

@@ -1,0 +1,224 @@
+Step 2: Fit Quadratic Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours', 'Segment', 'Days_within', 'Time', 'Time_squared', 'Time_log']
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Time', 'Time_squared']
+Fitting quadratic model: theta ~ Time + Time_squared + (Time | UID)...
+Using ML estimation (REML=False) for valid AIC comparison
+Bonferroni alpha = 0.0033 (15 planned comparisons)
+'composite_ID'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'composite_ID'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq8/code/step02_fit_quadratic_model.py", line 174, in <module>
+    quadratic_model = fit_lmm_trajectory_tsvr(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1074, in fit_lmm_trajectory_tsvr
+    theta_scores[['UID', 'Test']] = theta_scores['composite_ID'].str.split('_', n=1, expand=True)
+                                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'composite_ID'
+Step 2: Fit Quadratic Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours', 'Segment', 'Days_within', 'Time', 'Time_squared', 'Time_log']
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Time', 'Time_squared']
+Fitting quadratic model: theta ~ Time + Time_squared + (Time | UID)...
+Using ML estimation (REML=False) for valid AIC comparison
+Bonferroni alpha = 0.0033 (15 planned comparisons)
+Created composite_ID column
+Error evaluating factor: NameError: name 'Time' is not defined
+    ~Time
+     ^^^^
+Full error details:
+Step 2: Fit Quadratic Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours', 'Segment', 'Days_within', 'Time', 'Time_squared', 'Time_log']
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Time', 'Time_squared']
+Fitting quadratic model: theta ~ Time + Time_squared + (Time | UID)...
+Using ML estimation (REML=False) for valid AIC comparison
+Bonferroni alpha = 0.0033 (15 planned comparisons)
+Quadratic model fitted
+Convergence: False
+AIC: 940.32
+BIC: 968.26
+Extracting fixed effects and significance tests...
+Fixed Effects:
+                   Coef. Std.Err.       z  P>|z|  [0.025  0.975]
+Intercept          0.627    0.078   8.062  0.000   0.475   0.780
+Time              -0.017    0.002  -9.231  0.000  -0.020  -0.013
+Time_squared       0.000    0.000   6.106  0.000   0.000   0.000
+Group Var          0.385    0.167                               
+Group x Time Cov  -0.001    0.002                               
+Time Var           0.000                                        
+Time_squared coefficient: 0.000063
+Time_squared p-value: 0.000000
+Time_squared is SIGNIFICANT (p=0.000000 < 0.0033)
+Non-linear trajectory detected -> supports two-phase forgetting
+Generating predictions on grid [0, 24, 48, ..., 240] hours...
+Generated 11 predictions
+Saving model summary...
+step02_quadratic_model_summary.txt
+step02_quadratic_predictions.csv (11 rows)
+step02_quadratic_model.pkl (for Step 3 AIC comparison)
+Running validate_lmm_convergence...
+converged: False
+message: LMM did not converge
+warning: Results may be unreliable
+Additional checks:
+  - Predictions count: 11 (expected 11)
+  - Time_squared p-value finite: True
+  - AIC positive: True
+Some checks FAILED - review results carefully
+Step 2 complete
+Step 2: Fit Quadratic Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours', 'Segment', 'Days_within', 'Time', 'Time_squared', 'Time_log']
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Time', 'Time_squared']
+Fitting quadratic model: theta ~ Time + Time_squared + (Time | UID)...
+Using ML estimation (REML=False) for valid AIC comparison
+Bonferroni alpha = 0.0033 (15 planned comparisons)
+Fallback strategy: (Time | UID) -> (1 | UID) if convergence fails
+Maximal random structure did not converge
+Maximal random structure failed: Non-convergence detected, trying fallback
+Attempting intercept-only random structure: (1 | UID)...
+Quadratic model converged with intercept-only random structure
+Random slopes removed - model assumes uniform forgetting rate across individuals
+Quadratic model fitted
+Random structure used: (1 | UID)
+Convergence: True
+AIC: 873.24
+BIC: 893.19
+Extracting fixed effects and significance tests...
+Fixed Effects:
+               Coef. Std.Err.       z  P>|z|  [0.025  0.975]
+Intercept      0.612    0.080   7.650  0.000   0.455   0.769
+Time          -0.016    0.002  -9.292  0.000  -0.019  -0.012
+Time_squared   0.000    0.000   5.415  0.000   0.000   0.000
+Group Var      0.373    0.129                               
+Time_squared coefficient: 0.000054
+Time_squared p-value: 0.000000
+Time_squared is SIGNIFICANT (p=0.000000 < 0.0033)
+Non-linear trajectory detected -> supports two-phase forgetting
+Generating predictions on grid [0, 24, 48, ..., 240] hours...
+Generated 11 predictions
+Saving model summary...
+step02_quadratic_model_summary.txt
+step02_quadratic_predictions.csv (11 rows)
+step02_quadratic_model.pkl (for Step 3 AIC comparison)
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Additional checks:
+  - Predictions count: 11 (expected 11)
+  - Time_squared p-value finite: True
+  - AIC positive: True
+All checks PASSED
+Step 2 complete
+Step 2: Fit Quadratic Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours', 'Segment', 'Days_within', 'Time', 'Time_squared', 'Time_log']
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Time', 'Time_squared']
+Fitting quadratic model: theta ~ Time + Time_squared + (Time | UID)...
+Using ML estimation (REML=False) for valid AIC comparison
+Bonferroni alpha = 0.0033 (15 planned comparisons)
+Fallback strategy: (Time | UID) -> (1 | UID) if convergence fails
+Maximal random structure did not converge
+Maximal random structure failed: Non-convergence detected, trying fallback
+Attempting intercept-only random structure: (1 | UID)...
+Quadratic model converged with intercept-only random structure
+Random slopes removed - model assumes uniform forgetting rate across individuals
+Quadratic model fitted
+Random structure used: (1 | UID)
+Convergence: True
+AIC: 873.24
+BIC: 893.19
+Extracting fixed effects and significance tests...
+Fixed Effects:
+               Coef. Std.Err.       z  P>|z|  [0.025  0.975]
+Intercept      0.612    0.080   7.650  0.000   0.455   0.769
+Time          -0.016    0.002  -9.292  0.000  -0.019  -0.012
+Time_squared   0.000    0.000   5.415  0.000   0.000   0.000
+Group Var      0.373    0.129                               
+Time_squared coefficient: 0.000054
+Time_squared p-value: 0.000000
+Time_squared is SIGNIFICANT (p=0.000000 < 0.0033)
+Non-linear trajectory detected -> supports two-phase forgetting
+Generating predictions on grid [0, 24, 48, ..., 240] hours...
+Generated 11 predictions
+Saving model summary...
+step02_quadratic_model_summary.txt
+step02_quadratic_predictions.csv (11 rows)
+step02_quadratic_model.pkl (for Step 3 AIC comparison)
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Additional checks:
+  - Predictions count: 11 (expected 11)
+  - Time_squared p-value finite: True
+  - AIC positive: True
+All checks PASSED
+Step 2 complete
+Step 2: Fit Quadratic Model
+Loading time-transformed data from Step 1...
+step01_time_transformed.csv (400 rows, 9 cols)
+Columns: ['UID', 'test', 'theta', 'TSVR_hours', 'Segment', 'Days_within', 'Time', 'Time_squared', 'Time_log']
+All required columns present: ['UID', 'test', 'TSVR_hours', 'theta', 'Time', 'Time_squared']
+Fitting quadratic model: theta ~ Time + Time_squared + (Time | UID)...
+Using ML estimation (REML=False) for valid AIC comparison
+Bonferroni alpha = 0.0033 (15 planned comparisons)
+Fallback strategy: (Time | UID) -> (1 | UID) if convergence fails
+Maximal random structure did not converge
+Maximal random structure failed: Non-convergence detected, trying fallback
+Attempting intercept-only random structure: (1 | UID)...
+Quadratic model converged with intercept-only random structure
+Random slopes removed - model assumes uniform forgetting rate across individuals
+Quadratic model fitted
+Random structure used: (1 | UID)
+Convergence: True
+AIC: 873.24
+BIC: 893.19
+Extracting fixed effects and significance tests...
+Fixed Effects:
+               Coef. Std.Err.       z  P>|z|  [0.025  0.975]
+Intercept      0.612    0.080   7.650  0.000   0.455   0.769
+Time          -0.016    0.002  -9.292  0.000  -0.019  -0.012
+Time_squared   0.000    0.000   5.415  0.000   0.000   0.000
+Group Var      0.373    0.129                               
+Time_squared coefficient: 0.000054
+Time_squared p-value: 0.000000
+Time_squared is SIGNIFICANT (p=0.000000 < 0.0033)
+Non-linear trajectory detected -> supports two-phase forgetting
+Generating predictions on grid [0, 24, 48, ..., 240] hours...
+Generated 11 predictions
+Saving model summary...
+step02_quadratic_model_summary.txt
+step02_quadratic_predictions.csv (11 rows)
+step02_quadratic_model.pkl (for Step 3 AIC comparison)
+Running validate_lmm_convergence...
+converged: True
+message: LMM converged successfully
+Additional checks:
+  - Predictions count: 11 (expected 11)
+  - Time_squared p-value finite: True
+  - AIC positive: True
+All checks PASSED
+Step 2 complete

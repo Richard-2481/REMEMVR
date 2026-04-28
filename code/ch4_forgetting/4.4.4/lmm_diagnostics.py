@@ -13,7 +13,7 @@ Diagnostics Performed (per improvement_taxonomy.md Section 5.1):
 Expected Insight: If IRT shows heteroscedasticity or non-normality, this explains
                   why CTT (bounded [0,1] scale) fits better than unbounded IRT theta.
 
-Date: 2025-12-31 (PLATINUM certification)
+Date: 2025-12-31 (quality validation)
 """
 
 import pandas as pd
@@ -328,7 +328,7 @@ def main():
     logger.info("="*60)
     logger.info("Investigating delta-AIC = -3607 (CTT >> IRT)\n")
 
-    # ===== IRT Model Diagnostics =====
+    # IRT Model Diagnostics
     logger.info("Processing IRT Model (Theta)...")
     irt_model, irt_data = load_model_and_data(
         DATA_DIR / 'step03_irt_lmm_model.pkl',
@@ -358,7 +358,7 @@ def main():
         're_shapiro_p': irt_re_shapiro_p
     }
 
-    # ===== CTT Model Diagnostics =====
+    # CTT Model Diagnostics
     logger.info("\nProcessing CTT Model (Proportion Correct)...")
     ctt_model, ctt_data = load_model_and_data(
         DATA_DIR / 'step03_ctt_lmm_model.pkl',
@@ -388,7 +388,7 @@ def main():
         're_shapiro_p': ctt_re_shapiro_p
     }
 
-    # ===== Generate Comparative Summary =====
+    # Generate Comparative Summary
     generate_summary_report(irt_results, ctt_results)
 
     logger.info("\nLMM diagnostics COMPLETE")

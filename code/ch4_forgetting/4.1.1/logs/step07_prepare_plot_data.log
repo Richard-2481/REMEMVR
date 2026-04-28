@@ -1,0 +1,151 @@
+Step 7: Prepare Functional Form Plot Data
+Loading observed theta scores...
+step04_lmm_input.csv (400 rows)
+Loading fitted model objects...
+Model fits pickle missing: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step05_model_fits.pkl
+Run step05_fit_5_candidate_lmms.py first
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step07_prepare_functional_form_plots.py", line 188, in <module>
+    raise FileNotFoundError(f"Model fits pickle missing: {pickle_path}\n"
+FileNotFoundError: Model fits pickle missing: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step05_model_fits.pkl
+Run step05_fit_5_candidate_lmms.py first
+Step 7: Prepare Functional Form Plot Data
+Loading observed theta scores...
+step04_lmm_input.csv (400 rows)
+Loading best model identification...
+step05_model_comparison.csv
+  Best model: Log
+Computing observed means per test session...
+  Computed means for 4 test sessions
+
+Observed Means (Theta Scale):
+ test     Days  observed_theta  CI_lower_theta  CI_upper_theta
+    1 0.041667        0.660651        0.487984        0.833319
+    2 1.198738        0.105340       -0.060492        0.271172
+    3 3.277837       -0.241440       -0.400322       -0.082558
+    4 6.307300       -0.499833       -0.661378       -0.338288
+
+Generating prediction grid...
+  Grid: 50 points from 0.0 to 7.0 days
+Generating predictions for all 5 models...
+name 'model_fits' is not defined
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step07_prepare_functional_form_plots.py", line 252, in <module>
+    for model_name, model_result in model_fits.items():
+                                    ^^^^^^^^^^
+NameError: name 'model_fits' is not defined
+Step 7: Prepare Functional Form Plot Data
+Loading observed theta scores...
+step04_lmm_input.csv (400 rows)
+Loading best model identification...
+step05_model_comparison.csv
+  Best model: Log
+Loading all 5 fitted models for predictions...
+'NoneType' object has no attribute 'f_locals'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step07_prepare_functional_form_plots.py", line 203, in <module>
+    model_fits[model_name] = pickle.load(f)
+                             ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 112, in __setstate__
+    _, design = dmatrices(d['formula'], data, eval_env=depth,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/highlevel.py", line 316, in dmatrices
+    eval_env = EvalEnvironment.capture(eval_env, reference=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/eval.py", line 242, in capture
+    [frame.f_locals, frame.f_globals],
+     ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'f_locals'
+Step 7: Prepare Functional Form Plot Data
+Loading observed theta scores...
+step04_lmm_input.csv (400 rows)
+Loading best model identification...
+step05_model_comparison.csv
+  Best model: Log
+Loading all 5 fitted models for predictions...
+'NoneType' object has no attribute 'f_locals'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.1/code/step07_prepare_functional_form_plots.py", line 203, in <module>
+    model_fits[model_name] = pickle.load(f)
+                             ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 112, in __setstate__
+    _, design = dmatrices(d['formula'], data, eval_env=depth,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/highlevel.py", line 316, in dmatrices
+    eval_env = EvalEnvironment.capture(eval_env, reference=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/eval.py", line 242, in capture
+    [frame.f_locals, frame.f_globals],
+     ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'f_locals'
+Step 7: Prepare Functional Form Plot Data
+Loading observed theta scores...
+step04_lmm_input.csv (400 rows)
+Loading best model identification...
+step05_model_comparison.csv
+  Best model: Log
+Skipping pickle loading (patsy unpickling issue)
+Refitting best model for predictions...
+  Refitting Log model...
+Unknown best model: Log
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.1/code/step07_prepare_functional_form_plots.py", line 217, in <module>
+    raise ValueError(f"Unknown best model: {best_model_name}")
+ValueError: Unknown best model: Log
+Step 7: Prepare Functional Form Plot Data
+Loading observed theta scores...
+step04_lmm_input.csv (400 rows)
+Loading best model identification...
+step05_model_comparison.csv
+  Best model: Log
+Skipping pickle loading (patsy unpickling issue)
+Refitting best model for predictions...
+  Refitting Log model...
+Log model
+Computing observed means per test session...
+  Computed means for 4 test sessions
+
+Observed Means (Theta Scale):
+ test     Days  observed_theta  CI_lower_theta  CI_upper_theta
+    1 0.041667        0.660651        0.487984        0.833319
+    2 1.198738        0.105340       -0.060492        0.271172
+    3 3.277837       -0.241440       -0.400322       -0.082558
+    4 6.307300       -0.499833       -0.661378       -0.338288
+
+Generating prediction grid...
+  Grid: 50 points from 0.0 to 7.0 days
+Generating predictions for Log model...
+  Predicting Log...
+Predictions generated for best model
+Combining observed + predictions (theta scale)...
+  Combined dataset: 54 rows
+    4 observed points
+    50 prediction points
+Converting to probability scale (Decision D069)...
+Probability transformation complete
+  Observed prob range: [0.299, 0.755]
+  Note: Only Log predictions generated (pickle unpickling workaround)
+Saving theta-scale plot data to step07_functional_form_theta_data.csv...
+step07_functional_form_theta_data.csv (54 rows)
+Saving probability-scale plot data to step07_functional_form_probability_data.csv...
+step07_functional_form_probability_data.csv (54 rows)
+Validating plot data...
+observed_prob in [0, 1] bounds
+CI_lower_prob in [0, 1] bounds
+CI_upper_prob in [0, 1] bounds
+pred_Log_prob in [0, 1] bounds
+Theta CI bounds valid (CI_upper > CI_lower)
+Probability CI bounds valid (CI_upper > CI_lower)
+No NaN in Days column
+Row count correct (54 rows)
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Step 7 complete

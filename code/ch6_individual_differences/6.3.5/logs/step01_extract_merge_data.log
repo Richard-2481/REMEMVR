@@ -1,0 +1,66 @@
+Step 01: Extract and merge theta scores, confidence, and cognitive reserve data
+Loading Ch5 theta scores...
+Ch5 data (400 rows, 3 cols)
+Ch5 columns: ['UID', 'test', 'Theta_All']
+Ch5 aggregated to 100 participants
+Loading Ch6 confidence scores...
+Ch6 data (400 rows, 3 cols)
+Ch6 columns: ['composite_ID', 'theta_All', 'se_All']
+Ch6 UIDs extracted, 400 participants
+Loading cognitive reserve data...
+dfnonvr data (100 rows, 235 cols)
+Cognitive reserve data extracted, 100 participants
+Merging datasets on UID...
+After Ch6 merge: 400 participants
+Final merge: 400 participants
+Merge complete
+Saving merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.3.5/data/step01_merged_data.csv (400 rows, 6 cols)
+Final dataset summary:
+  Participants: 400
+  Theta range: -1.95 to 1.56
+  Confidence range: -2.24 to 0.49
+  Age range: 20 to 70
+  Education range: 1 to 9
+  RPM range: 4 to 12
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['age', 'UID', 'theta_all', 'confidence_theta', 'rpm', 'education']
+n_required: 6
+n_missing: 0
+No missing data in merged dataset
+Step 01 complete
+Step 01: Extract and merge theta scores, confidence, and cognitive reserve data
+Loading Ch5 theta scores...
+Ch5 data (400 rows, 3 cols)
+Ch5 columns: ['UID', 'test', 'Theta_All']
+Ch5 aggregated to 100 participants
+Loading Ch6 confidence scores...
+Ch6 data (400 rows, 3 cols)
+Ch6 columns: ['composite_ID', 'theta_All', 'se_All']
+Ch6 UIDs extracted and aggregated, 100 participants
+Loading cognitive reserve data...
+dfnonvr data (100 rows, 235 cols)
+Cognitive reserve data extracted, 100 participants
+Merging datasets on UID...
+After Ch6 merge: 100 participants
+Final merge: 100 participants
+Merge complete
+Saving merged dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.3.5/data/step01_merged_data.csv (100 rows, 6 cols)
+Final dataset summary:
+  Participants: 100
+  Theta range: -1.95 to 1.56
+  Confidence range: -1.79 to 0.09
+  Age range: 20 to 70
+  Education range: 1 to 9
+  RPM range: 4 to 12
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['age', 'confidence_theta', 'UID', 'rpm', 'education', 'theta_all']
+n_required: 6
+n_missing: 0
+No missing data in merged dataset
+Step 01 complete

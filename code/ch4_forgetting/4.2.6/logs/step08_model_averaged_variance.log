@@ -1,0 +1,113 @@
+=== Step 08: Model-Averaged Variance Decomposition (Stratified) ===
+Started: 2025-12-09T17:17:53.660197
+
+Model-averaged variance decomposition (stratified by domain)
+RQ 5.2.6 upgrade: Log-only → Model-averaged (v4.X)
+
+Loading LMM input from RQ 5.2.1...
+1200 rows, 6 columns
+Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'domain', 'theta']
+Unique participants: 100
+Unique domains: 3
+Domain value counts:
+domain
+what     400
+where    400
+when     400
+Name: count, dtype: int64
+
+Excluding 'when' domain (floor effect from RQ 5.2.1)
+800 rows (what + where only)
+Observations per domain: 400
+
+Running STRATIFIED model-averaged variance decomposition...
+  Outcome variable: theta
+  Time variable: TSVR_hours
+  Groups variable: UID
+  Stratify variable: domain (2 levels: what, where)
+  Delta AIC threshold: 2.0 (competitive models)
+  Random effects: Intercepts + Slopes
+
+This will take ~4-8 minutes (2 domains × ~65 models each)...
+
+Model-averaged variance decomposition complete
+
+Extracting results from variance decomposition...
+Kitchen sink comparison: 65 models tested
+Best model (pooled): PowerLaw_04 (AIC=1506.47)
+Competitive models (pooled, ΔAIC < 2.0): 10
+  - PowerLaw_04: AIC=1506.47, ΔAIC=0.00, weight=0.064
+  - PowerLaw_05: AIC=1506.56, ΔAIC=0.09, weight=0.061
+  - LogLog: AIC=1506.74, ΔAIC=0.26, weight=0.056
+  - PowerLaw_03: AIC=1507.05, ΔAIC=0.58, weight=0.048
+  - Root_033: AIC=1507.15, ΔAIC=0.68, weight=0.046
+  - CubeRoot: AIC=1507.16, ΔAIC=0.68, weight=0.046
+  - PowerLaw_06: AIC=1507.24, ΔAIC=0.76, weight=0.044
+  - FourthRoot: AIC=1507.42, ΔAIC=0.95, weight=0.040
+  - SquareRoot+Lin: AIC=1508.08, ΔAIC=1.61, weight=0.029
+  - PowerLaw_02: AIC=1508.37, ΔAIC=1.89, weight=0.025
+
+Model-averaged variance components (2 domains):
+  Columns available: ['domain', 'var_intercept', 'var_slope', 'cov_intercept_slope', 'var_residual']
+  Domain: what
+    var_intercept = 0.371624
+    var_slope = 0.070780
+    var_residual = 0.320307
+  Domain: where
+    var_intercept = 0.416830
+    var_slope = 0.107637
+    var_residual = 0.320866
+
+Model-averaged ICCs (2 domains):
+  Columns available: ['domain', 'ICC_intercept', 'ICC_slope_simple', 'ICC_slope_conditional']
+  Domain: what
+    ICC_intercept = 0.533866 (53.39%)
+    ICC_slope_simple = 0.165015 (16.5015%)
+    ICC_slope_conditional = 0.896618 (89.6618%)
+  Domain: where
+    ICC_intercept = 0.564825 (56.48%)
+    ICC_slope_simple = 0.228385 (22.8385%)
+    ICC_slope_conditional = 0.928076 (92.8076%)
+
+Model-averaged random effects: 200 rows
+  Columns available: ['UID', 'domain', 'intercept_avg', 'slope_avg']
+  Expected: 200 rows (100 UID × 2 domains)
+  Intercept column: intercept_avg
+  Slope column: slope_avg
+  Intercept range: [-1.512, 1.239]
+  Slope range: [-0.096, 0.091]
+
+Extracting model-specific variance per domain...
+  Domain: what
+    Variance by model: 10 rows
+    ICC by model: 10 rows
+  Domain: where
+    Variance by model: 10 rows
+    ICC by model: 10 rows
+
+Extracted 20 model-specific entries
+
+Saving results to CSV/YAML files...
+/home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step08_model_comparison.csv
+/home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step08_competitive_models_metadata.yaml
+/home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step08_averaged_variance_components.csv
+/home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step08_averaged_iccs.csv
+/home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step08_model_specific_variance.csv
+/home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step08_averaged_random_effects.csv
+
+Running output validation...
+Variance components validated: 2 domains, no NaN values
+ICCs validated: 2 domains, no NaN values
+Random effects validated: 200 rows, no NaN values
+All variance components positive
+
+======================================================================
+Step 08: Model-Averaged Variance Decomposition (Stratified)
+======================================================================
+Kitchen sink: 65 models tested (pooled AIC)
+Competitive: 10 models (ΔAIC < 2.0)
+Domains analyzed: 2 (what, where)
+Random effects: 200 rows → RQ 5.2.7 input
+
+Run RQ 5.2.7 with model-averaged random effects from step08
+

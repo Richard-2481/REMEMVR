@@ -1,0 +1,5 @@
+model,normality_p,bp_test_p,max_cooks_d,outlier_count,assumptions_met,remedial_action
+RAVLT_T_reverse,0.32855945562070565,0.47237902283962385,0.11671817993171446,5,False,Sensitivity analysis: rerun without 5 outliers
+BVMT_T_reverse,0.00018785534534835583,0.8340175738406362,0.11397652822396036,6,False,Use bootstrap CIs (already computed in step03)
+RAVLT_PctRet_T_reverse,0.4089967857789232,0.07782316400003736,0.10794015705629206,5,False,Sensitivity analysis: rerun without 5 outliers
+BVMT_PctRet_T_reverse,3.2612402762639384e-13,0.01677797508622094,0.2986716143791784,9,False,Use bootstrap CIs (already computed in step03)

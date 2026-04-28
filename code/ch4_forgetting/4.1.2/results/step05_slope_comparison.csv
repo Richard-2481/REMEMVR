@@ -1,0 +1,5 @@
+metric,value,SE,CI_lower,CI_upper,interpretation
+Early_slope,-0.4325481059495818,0.07259039638934563,-0.5748252828726992,-0.2902709290264644,Forgetting (-0.433/day). SE=0.073.
+Late_slope,-0.06896963912115728,0.024849993609942365,-0.11767562659664431,-0.020263651645670247,Forgetting (-0.069/day). SE=0.025.
+Ratio_Late_Early,0.15944963848528892,0.06311207727819715,0.03574996702002252,0.2831493099505553,Ratio < 0.5 (0.159): Robust two-phase forgetting pattern. Late forgetting substantially slower than Early.
+Interaction_p,1.989120848124865e-06,,,,Interaction highly significant (p=0.0000 < 0.001). Strong evidence for different forgetting rates across segments.

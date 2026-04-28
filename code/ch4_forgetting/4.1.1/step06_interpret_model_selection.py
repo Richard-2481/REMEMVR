@@ -12,7 +12,6 @@ OUTPUT:
 - results/step06_model_selection_summary.txt (interpretation)
 - results/step06_competitive_models.csv (ΔAIC < 2)
 
-Author: g_code
 Date: 2025-12-08
 RQ: ch5/5.1.1
 Step: 06
@@ -36,7 +35,7 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 06: Interpret Model Selection")
+        log("Step 06: Interpret Model Selection")
         log("=" * 80)
 
         comparison_path = RQ_DIR / "data" / "step05_model_comparison.csv"
@@ -49,7 +48,7 @@ if __name__ == "__main__":
         log(f"  Akaike weight: {best['akaike_weight']:.4f}")
         
         competitive = comparison[comparison['delta_AIC'] < 2.0]
-        log(f"\n[COMPETITIVE] {len(competitive)} models with ΔAIC < 2")
+        log(f"\n{len(competitive)} models with ΔAIC < 2")
         
         log_row = comparison[comparison['model_name'] == 'Log']
         if len(log_row) > 0:
@@ -67,9 +66,9 @@ if __name__ == "__main__":
             f.write(f"Competitive models: {len(competitive)}\n")
         
         log("=" * 80)
-        log("[SUCCESS] Step 06 Complete")
+        log("Step 06 Complete")
         log("=" * 80)
         
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         raise

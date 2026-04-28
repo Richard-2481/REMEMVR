@@ -23,9 +23,7 @@ from scipy import stats
 import statsmodels.formula.api as smf
 import warnings
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = RQ_DIR / "data"
@@ -55,9 +53,7 @@ with open(LOG_FILE, 'w') as f:
     f.write("RQ 6.6.2: Individual Difference Predictors of HCE\n")
     f.write("=" * 60 + "\n\n")
 
-# =============================================================================
-# STEP 00: Merge Predictor Data Sources
-# =============================================================================
+# Merge Predictor Data Sources
 
 log("STEP 00: Merge Predictor Data Sources")
 log("-" * 40)
@@ -148,9 +144,7 @@ log(f"  Columns: {list(merged.columns)}")
 log("  Data merge complete: 100 participants with complete predictors")
 log("  All source files merged successfully")
 
-# =============================================================================
-# STEP 01: Standardize Predictors
-# =============================================================================
+# Standardize Predictors
 
 log("\n" + "=" * 60)
 log("STEP 01: Standardize Predictors")
@@ -184,9 +178,7 @@ df_std = df[standardized_cols].copy()
 df_std.to_csv(DATA_DIR / "step01_standardized_predictors.csv", index=False)
 log(f"\nStep 01 OUTPUT: {DATA_DIR / 'step01_standardized_predictors.csv'}")
 
-# =============================================================================
-# STEP 02: Fit Multiple Regression Model
-# =============================================================================
+# Fit Multiple Regression Model
 
 log("\n" + "=" * 60)
 log("STEP 02: Fit Multiple Regression Model")
@@ -230,9 +222,7 @@ log(f"\nStep 02 OUTPUT: {DATA_DIR / 'step02_regression_model_summary.txt'}")
 log("Regression model fitted successfully")
 log(f"R-squared: {model.rsquared:.4f}")
 
-# =============================================================================
-# STEP 03: Extract Coefficients with Dual P-Values (Decision D068)
-# =============================================================================
+# Extract Coefficients with Dual P-Values (Decision D068)
 
 log("\n" + "=" * 60)
 log("STEP 03: Extract Coefficients with Dual P-Values")
@@ -289,9 +279,7 @@ log("Bonferroni correction applied: 4 predictors")
 df_coef.to_csv(DATA_DIR / "step03_regression_coefficients.csv", index=False)
 log(f"\nStep 03 OUTPUT: {DATA_DIR / 'step03_regression_coefficients.csv'}")
 
-# =============================================================================
-# STEP 04: Compute Effect Sizes
-# =============================================================================
+# Compute Effect Sizes
 
 log("\n" + "=" * 60)
 log("STEP 04: Compute Effect Sizes")
@@ -338,9 +326,7 @@ log(f"Overall R-squared: {model.rsquared:.4f}")
 df_effect.to_csv(DATA_DIR / "step04_effect_sizes.csv", index=False)
 log(f"\nStep 04 OUTPUT: {DATA_DIR / 'step04_effect_sizes.csv'}")
 
-# =============================================================================
 # SUMMARY
-# =============================================================================
 
 log("\n" + "=" * 60)
 log("ANALYSIS COMPLETE: RQ 6.6.2")

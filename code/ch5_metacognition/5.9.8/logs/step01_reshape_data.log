@@ -1,0 +1,68 @@
+Step 01: Reshape Data from Wide to Long Format
+Loading accuracy data...
+Accuracy: 400 rows, 7 columns
+Columns: composite_ID, theta_common, theta_congruent, theta_incongruent, se_common, se_congruent, se_incongruent
+Extracting UID and test from composite_ID...
+Unique UIDs: 0, Tests: [nan]
+Melting accuracy data to long format...
+Accuracy reshaped: 1200 rows
+Schema conditions: ['Common', 'Congruent', 'Incongruent']
+Loading confidence data...
+Confidence: 400 rows, 4 columns
+Columns: composite_ID, theta_Common, theta_Congruent, theta_Incongruent
+Extracting UID and test from composite_ID...
+Melting confidence data to long format...
+Confidence reshaped: 1200 rows
+Joining accuracy and confidence datasets...
+Result: 0 rows, 6 columns
+Checking data quality...
+No missing values
+Accuracy range: [nan, nan]
+Confidence range: [nan, nan]
+Accuracy theta in range [-3, 3]
+Confidence theta in range [-3, 3]
+Balanced design: each UID has 12 rows (4 tests x 3 conditions)
+FAIL - Errors detected:
+  - Expected 1200 rows, got 0
+  - Column mismatch. Expected ['UID', 'test', 'schema_condition', 'theta_accuracy', 'theta_confidence'], got ['composite_ID', 'UID', 'test', 'schema_condition', 'theta_accuracy', 'theta_confidence']
+  - Schema condition mismatch. Expected {'Congruent', 'Common', 'Incongruent'}, got set()
+  - Test value mismatch. Expected {'T4', 'T1', 'T2', 'T3'}, got set()
+  - Expected 100 unique UIDs, got 0
+Validation failed with 5 error(s)
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.8/code/step01_reshape_data.py", line 231, in <module>
+    raise ValueError(f"Validation failed with {len(errors)} error(s)")
+ValueError: Validation failed with 5 error(s)
+Step 01: Reshape Data from Wide to Long Format
+Loading accuracy data...
+Accuracy: 400 rows, 7 columns
+Columns: composite_ID, theta_common, theta_congruent, theta_incongruent, se_common, se_congruent, se_incongruent
+Extracting UID and test from composite_ID...
+Unique UIDs: 100, Tests: ['T1', 'T2', 'T3', 'T4']
+Melting accuracy data to long format...
+Accuracy reshaped: 1200 rows
+Schema conditions: ['Common', 'Congruent', 'Incongruent']
+Loading confidence data...
+Confidence: 400 rows, 4 columns
+Columns: composite_ID, theta_Common, theta_Congruent, theta_Incongruent
+Extracting UID and test from composite_ID...
+Melting confidence data to long format...
+Confidence reshaped: 1200 rows
+Joining accuracy and confidence datasets...
+Result: 1200 rows, 6 columns
+Checking data quality...
+Row count: 1200
+Columns: UID, test, schema_condition, theta_accuracy, theta_confidence
+No missing values
+Accuracy range: [-2.151, 2.335]
+Confidence range: [-2.687, 0.452]
+Accuracy theta in range [-3, 3]
+Confidence theta in range [-3, 3]
+Schema conditions: Common, Congruent, Incongruent
+Test values: T1, T2, T3, T4
+100 unique UIDs
+Balanced design: each UID has 12 rows (4 tests x 3 conditions)
+PASS - All checks passed
+Output: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step01_reshaped_long.csv
+Step 01 complete

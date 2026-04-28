@@ -1,0 +1,127 @@
+Step 04: Extract 3-Way Interaction and Prepare Plot Data
+Loading fixed effects...
+15 fixed effect terms
+Columns: ['term', 'estimate', 'SE', 'z_value', 'p_uncorrected', 'p_bonferroni']
+Filtering for 3-way interaction terms...
+Found 2 3-way interaction terms:
+  - Time:Difficulty_c:C(paradigm)[T.IFR]
+  - Time:Difficulty_c:C(paradigm)[T.IRE]
+Bonferroni alpha: 0.0033
+  Time:Difficulty_c:C(paradigm)[T.IFR]: p_bonf = 1.0000 (NOT SIGNIFICANT)
+  Time:Difficulty_c:C(paradigm)[T.IRE]: p_bonf = 1.0000 (NOT SIGNIFICANT)
+/home/etai/projects/REMEMVR/results/ch5/5.3.9/data/step04_3way_interaction_summary.csv
+Loading LMM input data for plot preparation...
+18000 rows
+18000 rows after dropping missing Response
+Loading fitted LMM model...
+LMM model
+Defining difficulty levels and timepoints...
+Difficulty_c SD: 1.5010
+Difficulty levels:
+  Easy (-1SD): Difficulty_c = -1.5010
+  Hard (+1SD): Difficulty_c = 1.5010
+Timepoints:
+  Day 0: ~0 hours
+  Day 1: ~24 hours
+  Day 3: ~72 hours
+  Day 6: ~144 hours
+Computing predicted and observed values...
+  IFR/Easy (-1SD)/Day0: pred=0.758, obs=nan
+  IFR/Easy (-1SD)/Day1: pred=0.727, obs=nan
+  IFR/Easy (-1SD)/Day3: pred=0.665, obs=nan
+  IFR/Easy (-1SD)/Day6: pred=0.572, obs=nan
+  IFR/Hard (+1SD)/Day0: pred=0.456, obs=0.530
+  IFR/Hard (+1SD)/Day1: pred=0.448, obs=0.474
+  IFR/Hard (+1SD)/Day3: pred=0.432, obs=0.408
+  IFR/Hard (+1SD)/Day6: pred=0.409, obs=0.451
+  ICR/Easy (-1SD)/Day0: pred=0.845, obs=0.867
+  ICR/Easy (-1SD)/Day1: pred=0.817, obs=0.832
+  ICR/Easy (-1SD)/Day3: pred=0.760, obs=0.754
+  ICR/Easy (-1SD)/Day6: pred=0.675, obs=0.702
+  ICR/Hard (+1SD)/Day0: pred=0.511, obs=0.529
+  ICR/Hard (+1SD)/Day1: pred=0.488, obs=0.416
+  ICR/Hard (+1SD)/Day3: pred=0.441, obs=0.415
+  ICR/Hard (+1SD)/Day6: pred=0.370, obs=0.407
+  IRE/Easy (-1SD)/Day0: pred=0.865, obs=0.849
+  IRE/Easy (-1SD)/Day1: pred=0.836, obs=0.776
+  IRE/Easy (-1SD)/Day3: pred=0.777, obs=0.718
+  IRE/Easy (-1SD)/Day6: pred=0.689, obs=0.642
+  IRE/Hard (+1SD)/Day0: pred=0.499, obs=0.509
+  IRE/Hard (+1SD)/Day1: pred=0.479, obs=0.442
+  IRE/Hard (+1SD)/Day3: pred=0.440, obs=0.396
+  IRE/Hard (+1SD)/Day6: pred=0.380, obs=0.409
+Plot data shape: (24, 7)
+Expected: 24 rows (3 paradigms × 2 difficulty levels × 4 timepoints)
+Saving plot data...
+/home/etai/projects/REMEMVR/results/ch5/5.3.9/data/step04_difficulty_trajectories_data.csv
+Running validate_hypothesis_test_dual_pvalues...
+Hypothesis test result: {'valid': True, 'missing_terms': [], 'd068_compliant': True, 'message': 'Decision D068 compliant: All 2 required terms present with both p_uncorrected and p_bonferroni.'}
+Running validate_plot_data_completeness...
+Plot data result: {'valid': True, 'message': 'Plot data complete: 3 domains, 2 groups.', 'missing_domains': [], 'missing_groups': []}
+Plot data validation failed: {'valid': True, 'message': 'Plot data complete: 3 domains, 2 groups.', 'missing_domains': [], 'missing_groups': []}
+Plot data validation failed: Plot data complete: 3 domains, 2 groups.
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.9/code/step04_extract_interaction.py", line 246, in main
+    raise ValueError(f"Plot data validation failed: {plot_validation_result.get('message', 'Unknown error')}")
+ValueError: Plot data validation failed: Plot data complete: 3 domains, 2 groups.
+Step 04: Extract 3-Way Interaction and Prepare Plot Data
+Loading fixed effects...
+15 fixed effect terms
+Columns: ['term', 'estimate', 'SE', 'z_value', 'p_uncorrected', 'p_bonferroni']
+Filtering for 3-way interaction terms...
+Found 2 3-way interaction terms:
+  - Time:Difficulty_c:C(paradigm)[T.IFR]
+  - Time:Difficulty_c:C(paradigm)[T.IRE]
+Bonferroni alpha: 0.0033
+  Time:Difficulty_c:C(paradigm)[T.IFR]: p_bonf = 1.0000 (NOT SIGNIFICANT)
+  Time:Difficulty_c:C(paradigm)[T.IRE]: p_bonf = 1.0000 (NOT SIGNIFICANT)
+/home/etai/projects/REMEMVR/results/ch5/5.3.9/data/step04_3way_interaction_summary.csv
+Loading LMM input data for plot preparation...
+18000 rows
+18000 rows after dropping missing Response
+Loading fitted LMM model...
+LMM model
+Defining difficulty levels and timepoints...
+Difficulty_c SD: 1.5010
+Difficulty levels:
+  Easy (-1SD): Difficulty_c = -1.5010
+  Hard (+1SD): Difficulty_c = 1.5010
+Timepoints:
+  Day 0: ~0 hours
+  Day 1: ~24 hours
+  Day 3: ~72 hours
+  Day 6: ~144 hours
+Computing predicted and observed values...
+  IFR/Easy (-1SD)/Day0: pred=0.758, obs=nan
+  IFR/Easy (-1SD)/Day1: pred=0.727, obs=nan
+  IFR/Easy (-1SD)/Day3: pred=0.665, obs=nan
+  IFR/Easy (-1SD)/Day6: pred=0.572, obs=nan
+  IFR/Hard (+1SD)/Day0: pred=0.456, obs=0.530
+  IFR/Hard (+1SD)/Day1: pred=0.448, obs=0.474
+  IFR/Hard (+1SD)/Day3: pred=0.432, obs=0.408
+  IFR/Hard (+1SD)/Day6: pred=0.409, obs=0.451
+  ICR/Easy (-1SD)/Day0: pred=0.845, obs=0.867
+  ICR/Easy (-1SD)/Day1: pred=0.817, obs=0.832
+  ICR/Easy (-1SD)/Day3: pred=0.760, obs=0.754
+  ICR/Easy (-1SD)/Day6: pred=0.675, obs=0.702
+  ICR/Hard (+1SD)/Day0: pred=0.511, obs=0.529
+  ICR/Hard (+1SD)/Day1: pred=0.488, obs=0.416
+  ICR/Hard (+1SD)/Day3: pred=0.441, obs=0.415
+  ICR/Hard (+1SD)/Day6: pred=0.370, obs=0.407
+  IRE/Easy (-1SD)/Day0: pred=0.865, obs=0.849
+  IRE/Easy (-1SD)/Day1: pred=0.836, obs=0.776
+  IRE/Easy (-1SD)/Day3: pred=0.777, obs=0.718
+  IRE/Easy (-1SD)/Day6: pred=0.689, obs=0.642
+  IRE/Hard (+1SD)/Day0: pred=0.499, obs=0.509
+  IRE/Hard (+1SD)/Day1: pred=0.479, obs=0.442
+  IRE/Hard (+1SD)/Day3: pred=0.440, obs=0.396
+  IRE/Hard (+1SD)/Day6: pred=0.380, obs=0.409
+Plot data shape: (24, 7)
+Expected: 24 rows (3 paradigms × 2 difficulty levels × 4 timepoints)
+Saving plot data...
+/home/etai/projects/REMEMVR/results/ch5/5.3.9/data/step04_difficulty_trajectories_data.csv
+Running validate_hypothesis_test_dual_pvalues...
+Hypothesis test result: {'valid': True, 'missing_terms': [], 'd068_compliant': True, 'message': 'Decision D068 compliant: All 2 required terms present with both p_uncorrected and p_bonferroni.'}
+Running validate_plot_data_completeness...
+Plot data result: {'valid': True, 'message': 'Plot data complete: 3 domains, 2 groups.', 'missing_domains': [], 'missing_groups': []}
+Step 04 complete

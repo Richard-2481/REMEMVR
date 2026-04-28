@@ -1,0 +1,2 @@
+beta_total,beta_direct,mediation_effect,proportion_mediated,ci_lower,ci_upper,p_mediation,effect_size_category
+-0.1302,0.0258,-0.156,1.1981566820276497,-0.2653291505163178,-0.06901682715731598,significant,large

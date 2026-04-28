@@ -1,0 +1,99 @@
+Step 00: extract_merge_data
+Checking cross-RQ dependencies...
+Cross-RQ dependency error: File does not exist: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step03_theta_all.csv
+File: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step03_theta_all.csv
+Required: RQ 5.7 must complete successfully before running RQ 5.9
+Action: Execute RQ 5.7 first to generate theta scores
+Cross-RQ dependency error: File does not exist: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step03_theta_all.csv
+File: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step03_theta_all.csv
+Required: RQ 5.7 must complete successfully before running RQ 5.9
+Action: Execute RQ 5.7 first to generate theta scores
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq9/code/step00_extract_merge_data.py", line 168, in <module>
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Cross-RQ dependency error: File does not exist: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step03_theta_all.csv
+File: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step03_theta_all.csv
+Required: RQ 5.7 must complete successfully before running RQ 5.9
+Action: Execute RQ 5.7 first to generate theta scores
+Step 00: extract_merge_data
+Checking cross-RQ dependencies...
+Theta file exists: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step03_theta_scores.csv (7186 bytes)
+TSVR file exists: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step04_lmm_input.csv (35587 bytes)
+Age file exists: /home/etai/projects/REMEMVR/data/cache/dfData.csv (346845 bytes)
+All 3 source files exist and are not empty
+Loading theta scores + TSVR from RQ 5.7 step04...
+LMM data: 400 rows, 9 columns
+Columns: ['composite_ID', 'UID', 'test', 'Theta', 'SE', 'TSVR_hours', 'Days', 'Days_squared', 'log_Days_plus1']
+Extracting UID and TEST from composite_ID...
+UID range: A010 - A109
+TEST values: ['1', '2', '3', '4']
+TSVR range: 1.00 - 246.24 hours
+Theta range: -2.52 - 2.73
+Loading Age from dfData.csv...
+Demographics: 400 rows, 214 columns
+Demographics columns: ['UID', 'TEST', 'TSVR', 'TQ_RFR-N-OBJ1', 'TQ_RFR-N-OBJ2', 'TQ_RFR-N-OBJ3', 'TQ_RFR-N-OBJ4', 'TQ_RFR-N-STRA', 'TQ_RFR-N-PORT', 'TQ_RFR-N-LAND', 'TQ_IFR-N-i1', 'TQ_IFR-N-i2', 'TQ_IFR-N-i3', 'TQ_IFR-N-i4', 'TQ_IFR-N-i5', 'TQ_IFR-N-i6', 'TQ_RFR-O-RORD', 'TQ_RFR-O-TMOD', 'TQ_RFR-N-WEAT', 'TQ_RFR-L-OBJ1', 'TQ_RFR-L-OBJ2', 'TQ_RFR-L-OBJ3', 'TQ_RFR-L-OBJ4', 'TQ_RFR-L-DOOR', 'TQ_RFR-L-WIND', 'TQ_RFR-L-PORT', 'TQ_RFR-L-LAND', 'TQ_RFR-L-STRA', 'TQ_IFR-U-i1', 'TQ_IFR-U-i2', 'TQ_IFR-U-i3', 'TQ_IFR-U-i4', 'TQ_IFR-U-i5', 'TQ_IFR-U-i6', 'TQ_IFR-D-i1', 'TQ_IFR-D-i2', 'TQ_IFR-D-i3', 'TQ_IFR-D-i4', 'TQ_IFR-D-i5', 'TQ_IFR-D-i6', 'TQ_IFR-O-i1', 'TQ_IFR-O-i2', 'TQ_IFR-O-i3', 'TQ_IFR-O-i4', 'TQ_IFR-O-i5', 'TQ_IFR-O-i6', 'TQ_TCR-O-TSK1', 'TQ_TCR-O-TSK2', 'TQ_TCR-O-TSK3', 'TQ_TCR-O-TSK4', 'TQ_TCR-O-TSK5', 'TQ_TCR-O-TSK6', 'TQ_ICR-N-i1', 'TQ_ICR-N-i2', 'TQ_ICR-N-i3', 'TQ_ICR-N-i4', 'TQ_ICR-N-i5', 'TQ_ICR-N-i6', 'TQ_ICR-U-i1', 'TQ_ICR-U-i2', 'TQ_ICR-U-i3', 'TQ_ICR-U-i4', 'TQ_ICR-U-i5', 'TQ_ICR-U-i6', 'TQ_ICR-D-i1', 'TQ_ICR-D-i2', 'TQ_ICR-D-i3', 'TQ_ICR-D-i4', 'TQ_ICR-D-i5', 'TQ_ICR-D-i6', 'TQ_ICR-O-i1', 'TQ_ICR-O-i2', 'TQ_ICR-O-i3', 'TQ_ICR-O-i4', 'TQ_ICR-O-i5', 'TQ_ICR-O-i6', 'TQ_RRE-L-DOOR', 'TQ_RRE-L-WIND', 'TQ_RRE-N-LAND', 'TQ_RRE-L-LAND', 'TQ_RRE-N-PORT', 'TQ_RRE-L-PORT', 'TQ_RRE-N-STRA', 'TQ_RRE-L-STRA', 'TQ_IRE-N-i1', 'TQ_IRE-N-i2', 'TQ_IRE-N-i3', 'TQ_IRE-N-i4', 'TQ_IRE-N-i5', 'TQ_IRE-N-i6', 'TQ_IRE-U-i1', 'TQ_IRE-U-i2', 'TQ_IRE-U-i3', 'TQ_IRE-U-i4', 'TQ_IRE-U-i5', 'TQ_IRE-U-i6', 'TQ_IRE-D-i1', 'TQ_IRE-D-i2', 'TQ_IRE-D-i3', 'TQ_IRE-D-i4', 'TQ_IRE-D-i5', 'TQ_IRE-D-i6', 'TQ_IRE-O-i1', 'TQ_IRE-O-i2', 'TQ_IRE-O-i3', 'TQ_IRE-O-i4', 'TQ_IRE-O-i5', 'TQ_IRE-O-i6', 'TC_RFR-N-OBJ1', 'TC_RFR-N-OBJ2', 'TC_RFR-N-OBJ3', 'TC_RFR-N-OBJ4', 'TC_RFR-N-STRA', 'TC_RFR-N-PORT', 'TC_RFR-N-LAND', 'TC_IFR-N-i1', 'TC_IFR-N-i2', 'TC_IFR-N-i3', 'TC_IFR-N-i4', 'TC_IFR-N-i5', 'TC_IFR-N-i6', 'TC_RFR-O-RORD', 'TC_RFR-O-TMOD', 'TC_RFR-N-WEAT', 'TC_RFR-L-OBJ1', 'TC_RFR-L-OBJ2', 'TC_RFR-L-OBJ3', 'TC_RFR-L-OBJ4', 'TC_RFR-L-DOOR', 'TC_RFR-L-WIND', 'TC_RFR-L-PORT', 'TC_RFR-L-LAND', 'TC_RFR-L-STRA', 'TC_IFR-U-i1', 'TC_IFR-U-i2', 'TC_IFR-U-i3', 'TC_IFR-U-i4', 'TC_IFR-U-i5', 'TC_IFR-U-i6', 'TC_IFR-D-i1', 'TC_IFR-D-i2', 'TC_IFR-D-i3', 'TC_IFR-D-i4', 'TC_IFR-D-i5', 'TC_IFR-D-i6', 'TC_IFR-O-i1', 'TC_IFR-O-i2', 'TC_IFR-O-i3', 'TC_IFR-O-i4', 'TC_IFR-O-i5', 'TC_IFR-O-i6', 'TC_TCR-O-TSK1', 'TC_TCR-O-TSK2', 'TC_TCR-O-TSK3', 'TC_TCR-O-TSK4', 'TC_TCR-O-TSK5', 'TC_TCR-O-TSK6', 'TC_ICR-N-i1', 'TC_ICR-N-i2', 'TC_ICR-N-i3', 'TC_ICR-N-i4', 'TC_ICR-N-i5', 'TC_ICR-N-i6', 'TC_ICR-U-i1', 'TC_ICR-U-i2', 'TC_ICR-U-i3', 'TC_ICR-U-i4', 'TC_ICR-U-i5', 'TC_ICR-U-i6', 'TC_ICR-D-i1', 'TC_ICR-D-i2', 'TC_ICR-D-i3', 'TC_ICR-D-i4', 'TC_ICR-D-i5', 'TC_ICR-D-i6', 'TC_ICR-O-i1', 'TC_ICR-O-i2', 'TC_ICR-O-i3', 'TC_ICR-O-i4', 'TC_ICR-O-i5', 'TC_ICR-O-i6', 'TC_RRE-L-DOOR', 'TC_RRE-L-WIND', 'TC_RRE-N-LAND', 'TC_RRE-L-LAND', 'TC_RRE-N-PORT', 'TC_RRE-L-PORT', 'TC_RRE-N-STRA', 'TC_RRE-L-STRA', 'TC_IRE-N-i1', 'TC_IRE-N-i2', 'TC_IRE-N-i3', 'TC_IRE-N-i4', 'TC_IRE-N-i5', 'TC_IRE-N-i6', 'TC_IRE-U-i1', 'TC_IRE-U-i2', 'TC_IRE-U-i3', 'TC_IRE-U-i4', 'TC_IRE-U-i5', 'TC_IRE-U-i6', 'TC_IRE-D-i1', 'TC_IRE-D-i2', 'TC_IRE-D-i3', 'TC_IRE-D-i4', 'TC_IRE-D-i5', 'TC_IRE-D-i6', 'TC_IRE-O-i1', 'TC_IRE-O-i2', 'TC_IRE-O-i3', 'TC_IRE-O-i4', 'TC_IRE-O-i5', 'TC_IRE-O-i6', 'age']
+Age range: 20.0 - 70.0 years
+Merging combined data with Age on UID...
+Final data: 1600 rows, 7 columns
+No missing Age values - all participants have demographics
+Renaming columns for analysis clarity...
+Column renames applied: theta_all -> theta, TSVR -> TSVR_hours
+Selecting final columns...
+Final columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'se_all', 'age']
+Final dimensions: 1600 rows × 7 columns
+Saving merged data to /home/etai/projects/REMEMVR/results/ch5/rq9/data/step00_lmm_input_raw.csv...
+step00_lmm_input_raw.csv (1600 rows, 7 columns)
+Dataset overview:
+  N participants: 100
+  N tests per participant: 4
+  Total observations: 1600
+  Age range: 20.0 - 70.0 years
+  TSVR range: 1.00 - 246.24 hours
+  Theta range: -2.516 - 2.728
+Validating merged data format...
+All required columns present (7 columns). DataFrame has 1600 rows.
+Checking for missing data...
+No missing data - all 11200 cells complete
+Step 00 complete
+Step 00: extract_merge_data
+Checking cross-RQ dependencies...
+Theta file exists: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step03_theta_scores.csv (7186 bytes)
+TSVR file exists: /home/etai/projects/REMEMVR/results/ch5/rq7/data/step04_lmm_input.csv (35587 bytes)
+Age file exists: /home/etai/projects/REMEMVR/data/cache/dfData.csv (346845 bytes)
+All 3 source files exist and are not empty
+Loading theta scores + TSVR from RQ 5.7 step04...
+LMM data: 400 rows, 9 columns
+Columns: ['composite_ID', 'UID', 'test', 'Theta', 'SE', 'TSVR_hours', 'Days', 'Days_squared', 'log_Days_plus1']
+Extracting UID and TEST from composite_ID...
+UID range: A010 - A109
+TEST values: ['1', '2', '3', '4']
+TSVR range: 1.00 - 246.24 hours
+Theta range: -2.52 - 2.73
+Loading Age from dfData.csv...
+Demographics: 400 rows, 214 columns
+Demographics columns: ['UID', 'TEST', 'TSVR', 'TQ_RFR-N-OBJ1', 'TQ_RFR-N-OBJ2', 'TQ_RFR-N-OBJ3', 'TQ_RFR-N-OBJ4', 'TQ_RFR-N-STRA', 'TQ_RFR-N-PORT', 'TQ_RFR-N-LAND', 'TQ_IFR-N-i1', 'TQ_IFR-N-i2', 'TQ_IFR-N-i3', 'TQ_IFR-N-i4', 'TQ_IFR-N-i5', 'TQ_IFR-N-i6', 'TQ_RFR-O-RORD', 'TQ_RFR-O-TMOD', 'TQ_RFR-N-WEAT', 'TQ_RFR-L-OBJ1', 'TQ_RFR-L-OBJ2', 'TQ_RFR-L-OBJ3', 'TQ_RFR-L-OBJ4', 'TQ_RFR-L-DOOR', 'TQ_RFR-L-WIND', 'TQ_RFR-L-PORT', 'TQ_RFR-L-LAND', 'TQ_RFR-L-STRA', 'TQ_IFR-U-i1', 'TQ_IFR-U-i2', 'TQ_IFR-U-i3', 'TQ_IFR-U-i4', 'TQ_IFR-U-i5', 'TQ_IFR-U-i6', 'TQ_IFR-D-i1', 'TQ_IFR-D-i2', 'TQ_IFR-D-i3', 'TQ_IFR-D-i4', 'TQ_IFR-D-i5', 'TQ_IFR-D-i6', 'TQ_IFR-O-i1', 'TQ_IFR-O-i2', 'TQ_IFR-O-i3', 'TQ_IFR-O-i4', 'TQ_IFR-O-i5', 'TQ_IFR-O-i6', 'TQ_TCR-O-TSK1', 'TQ_TCR-O-TSK2', 'TQ_TCR-O-TSK3', 'TQ_TCR-O-TSK4', 'TQ_TCR-O-TSK5', 'TQ_TCR-O-TSK6', 'TQ_ICR-N-i1', 'TQ_ICR-N-i2', 'TQ_ICR-N-i3', 'TQ_ICR-N-i4', 'TQ_ICR-N-i5', 'TQ_ICR-N-i6', 'TQ_ICR-U-i1', 'TQ_ICR-U-i2', 'TQ_ICR-U-i3', 'TQ_ICR-U-i4', 'TQ_ICR-U-i5', 'TQ_ICR-U-i6', 'TQ_ICR-D-i1', 'TQ_ICR-D-i2', 'TQ_ICR-D-i3', 'TQ_ICR-D-i4', 'TQ_ICR-D-i5', 'TQ_ICR-D-i6', 'TQ_ICR-O-i1', 'TQ_ICR-O-i2', 'TQ_ICR-O-i3', 'TQ_ICR-O-i4', 'TQ_ICR-O-i5', 'TQ_ICR-O-i6', 'TQ_RRE-L-DOOR', 'TQ_RRE-L-WIND', 'TQ_RRE-N-LAND', 'TQ_RRE-L-LAND', 'TQ_RRE-N-PORT', 'TQ_RRE-L-PORT', 'TQ_RRE-N-STRA', 'TQ_RRE-L-STRA', 'TQ_IRE-N-i1', 'TQ_IRE-N-i2', 'TQ_IRE-N-i3', 'TQ_IRE-N-i4', 'TQ_IRE-N-i5', 'TQ_IRE-N-i6', 'TQ_IRE-U-i1', 'TQ_IRE-U-i2', 'TQ_IRE-U-i3', 'TQ_IRE-U-i4', 'TQ_IRE-U-i5', 'TQ_IRE-U-i6', 'TQ_IRE-D-i1', 'TQ_IRE-D-i2', 'TQ_IRE-D-i3', 'TQ_IRE-D-i4', 'TQ_IRE-D-i5', 'TQ_IRE-D-i6', 'TQ_IRE-O-i1', 'TQ_IRE-O-i2', 'TQ_IRE-O-i3', 'TQ_IRE-O-i4', 'TQ_IRE-O-i5', 'TQ_IRE-O-i6', 'TC_RFR-N-OBJ1', 'TC_RFR-N-OBJ2', 'TC_RFR-N-OBJ3', 'TC_RFR-N-OBJ4', 'TC_RFR-N-STRA', 'TC_RFR-N-PORT', 'TC_RFR-N-LAND', 'TC_IFR-N-i1', 'TC_IFR-N-i2', 'TC_IFR-N-i3', 'TC_IFR-N-i4', 'TC_IFR-N-i5', 'TC_IFR-N-i6', 'TC_RFR-O-RORD', 'TC_RFR-O-TMOD', 'TC_RFR-N-WEAT', 'TC_RFR-L-OBJ1', 'TC_RFR-L-OBJ2', 'TC_RFR-L-OBJ3', 'TC_RFR-L-OBJ4', 'TC_RFR-L-DOOR', 'TC_RFR-L-WIND', 'TC_RFR-L-PORT', 'TC_RFR-L-LAND', 'TC_RFR-L-STRA', 'TC_IFR-U-i1', 'TC_IFR-U-i2', 'TC_IFR-U-i3', 'TC_IFR-U-i4', 'TC_IFR-U-i5', 'TC_IFR-U-i6', 'TC_IFR-D-i1', 'TC_IFR-D-i2', 'TC_IFR-D-i3', 'TC_IFR-D-i4', 'TC_IFR-D-i5', 'TC_IFR-D-i6', 'TC_IFR-O-i1', 'TC_IFR-O-i2', 'TC_IFR-O-i3', 'TC_IFR-O-i4', 'TC_IFR-O-i5', 'TC_IFR-O-i6', 'TC_TCR-O-TSK1', 'TC_TCR-O-TSK2', 'TC_TCR-O-TSK3', 'TC_TCR-O-TSK4', 'TC_TCR-O-TSK5', 'TC_TCR-O-TSK6', 'TC_ICR-N-i1', 'TC_ICR-N-i2', 'TC_ICR-N-i3', 'TC_ICR-N-i4', 'TC_ICR-N-i5', 'TC_ICR-N-i6', 'TC_ICR-U-i1', 'TC_ICR-U-i2', 'TC_ICR-U-i3', 'TC_ICR-U-i4', 'TC_ICR-U-i5', 'TC_ICR-U-i6', 'TC_ICR-D-i1', 'TC_ICR-D-i2', 'TC_ICR-D-i3', 'TC_ICR-D-i4', 'TC_ICR-D-i5', 'TC_ICR-D-i6', 'TC_ICR-O-i1', 'TC_ICR-O-i2', 'TC_ICR-O-i3', 'TC_ICR-O-i4', 'TC_ICR-O-i5', 'TC_ICR-O-i6', 'TC_RRE-L-DOOR', 'TC_RRE-L-WIND', 'TC_RRE-N-LAND', 'TC_RRE-L-LAND', 'TC_RRE-N-PORT', 'TC_RRE-L-PORT', 'TC_RRE-N-STRA', 'TC_RRE-L-STRA', 'TC_IRE-N-i1', 'TC_IRE-N-i2', 'TC_IRE-N-i3', 'TC_IRE-N-i4', 'TC_IRE-N-i5', 'TC_IRE-N-i6', 'TC_IRE-U-i1', 'TC_IRE-U-i2', 'TC_IRE-U-i3', 'TC_IRE-U-i4', 'TC_IRE-U-i5', 'TC_IRE-U-i6', 'TC_IRE-D-i1', 'TC_IRE-D-i2', 'TC_IRE-D-i3', 'TC_IRE-D-i4', 'TC_IRE-D-i5', 'TC_IRE-D-i6', 'TC_IRE-O-i1', 'TC_IRE-O-i2', 'TC_IRE-O-i3', 'TC_IRE-O-i4', 'TC_IRE-O-i5', 'TC_IRE-O-i6', 'age']
+Unique participants with age: 100
+Age range: 20.0 - 70.0 years
+Merging combined data with Age on UID...
+Final data: 400 rows, 7 columns
+No missing Age values - all participants have demographics
+Renaming columns for analysis clarity...
+Column renames applied: theta_all -> theta, TSVR -> TSVR_hours
+Selecting final columns...
+Final columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'se_all', 'age']
+Final dimensions: 400 rows × 7 columns
+Saving merged data to /home/etai/projects/REMEMVR/results/ch5/rq9/data/step00_lmm_input_raw.csv...
+step00_lmm_input_raw.csv (400 rows, 7 columns)
+Dataset overview:
+  N participants: 100
+  N tests per participant: 4
+  Total observations: 400
+  Age range: 20.0 - 70.0 years
+  TSVR range: 1.00 - 246.24 hours
+  Theta range: -2.516 - 2.728
+Validating merged data format...
+All required columns present (7 columns). DataFrame has 400 rows.
+Checking for missing data...
+No missing data - all 2800 cells complete
+Step 00 complete

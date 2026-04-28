@@ -1,0 +1,259 @@
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/deepirtools/data.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Step 01: IRT Calibration Pass 1 (3-factor GRM on all TC_* items)
+Model: 3-factor GRM, 5 categories
+Fitting: batch_size=2048, mc_samples=1 (FAST mode), iw_samples=100
+Scoring: mc_samples=100 (ACCURATE mode), iw_samples=100
+Loading input data...
+step00_irt_input.csv (400 rows, 73 cols)
+step00_q_matrix.csv (72 items)
+Q-matrix specifies 72 items across 3 factors
+All 72 Q-matrix items found in data
+Converting wide format to long format...
+Long format created: 28800 observations (400 participants x 72 items)
+Creating factor groups from Q-matrix...
+IFR: 24 items
+ICR: 24 items
+IRE: 24 items
+Preparing IRT tensors via prepare_irt_input_from_long...
+Tensors prepared:
+  - response_matrix: torch.Size([400, 72]) (participants x items)
+  - missing_mask: torch.Size([400, 72])
+  - Q_matrix: torch.Size([72, 3]) (items x factors)
+  - composite_ids: 400 IDs
+  - item_list: 72 items
+Configuring 3-factor GRM model via configure_irt_model...
+
+Initializing model parameters
+Initialization ended in  0.0  seconds
+Model configured: 72 items, 3 factors, 5 categories, correlated=True
+Fitting GRM model via fit_irt_grm...
+Using mc_samples=1 during fit (avoids timeout per RQ 6.1.1)
+Fitting IRT model on cpu...
+
+Fitting started
+
+Epoch =        0 Iter. =        1 Cur. loss =  101.64   Intervals no change =    0
+Epoch =      100 Iter. =      101 Cur. loss =   99.11   Intervals no change =    0
+Epoch =      200 Iter. =      201 Cur. loss =   97.09   Intervals no change =    0
+Epoch =      300 Iter. =      301 Cur. loss =   95.22   Intervals no change =    0
+Epoch =      400 Iter. =      401 Cur. loss =   93.60   Intervals no change =    0
+Epoch =      500 Iter. =      501 Cur. loss =   92.17   Intervals no change =    0
+Epoch =      600 Iter. =      601 Cur. loss =   90.99   Intervals no change =    0
+Epoch =      700 Iter. =      701 Cur. loss =   90.02   Intervals no change =    0
+Epoch =      800 Iter. =      801 Cur. loss =   89.23   Intervals no change =    0
+Epoch =      900 Iter. =      901 Cur. loss =   88.59   Intervals no change =    0
+Epoch =     1000 Iter. =     1001 Cur. loss =   88.04   Intervals no change =    0
+Epoch =     1100 Iter. =     1101 Cur. loss =   87.59   Intervals no change =    0
+Epoch =     1200 Iter. =     1201 Cur. loss =   87.19   Intervals no change =    0
+Epoch =     1300 Iter. =     1301 Cur. loss =   86.86   Intervals no change =    0
+Epoch =     1400 Iter. =     1401 Cur. loss =   86.55   Intervals no change =    0
+Epoch =     1500 Iter. =     1501 Cur. loss =   86.29   Intervals no change =    0
+Epoch =     1600 Iter. =     1601 Cur. loss =   86.08   Intervals no change =    0
+Epoch =     1700 Iter. =     1701 Cur. loss =   85.85   Intervals no change =    0
+Epoch =     1800 Iter. =     1801 Cur. loss =   85.68   Intervals no change =    0
+Epoch =     1900 Iter. =     1901 Cur. loss =   85.52   Intervals no change =    0
+Epoch =     2000 Iter. =     2001 Cur. loss =   85.37   Intervals no change =    0
+Epoch =     2100 Iter. =     2101 Cur. loss =   85.23   Intervals no change =    0
+Epoch =     2200 Iter. =     2201 Cur. loss =   85.11   Intervals no change =    0
+Epoch =     2300 Iter. =     2301 Cur. loss =   85.00   Intervals no change =    0
+Epoch =     2400 Iter. =     2401 Cur. loss =   84.89   Intervals no change =    0
+Epoch =     2500 Iter. =     2501 Cur. loss =   84.80   Intervals no change =    0
+Epoch =     2600 Iter. =     2601 Cur. loss =   84.71   Intervals no change =    0
+Epoch =     2700 Iter. =     2701 Cur. loss =   84.63   Intervals no change =    0
+Epoch =     2800 Iter. =     2801 Cur. loss =   84.55   Intervals no change =    0
+Epoch =     2900 Iter. =     2901 Cur. loss =   84.49   Intervals no change =    0
+Epoch =     3000 Iter. =     3001 Cur. loss =   84.43   Intervals no change =    0
+Epoch =     3100 Iter. =     3101 Cur. loss =   84.37   Intervals no change =    0
+Epoch =     3200 Iter. =     3201 Cur. loss =   84.29   Intervals no change =    0
+Epoch =     3300 Iter. =     3301 Cur. loss =   84.25   Intervals no change =    0
+Epoch =     3400 Iter. =     3401 Cur. loss =   84.19   Intervals no change =    0
+Epoch =     3500 Iter. =     3501 Cur. loss =   84.16   Intervals no change =    0
+Epoch =     3600 Iter. =     3601 Cur. loss =   84.12   Intervals no change =    0
+Epoch =     3700 Iter. =     3701 Cur. loss =   84.06   Intervals no change =    0
+Epoch =     3800 Iter. =     3801 Cur. loss =   84.02   Intervals no change =    0
+Epoch =     3900 Iter. =     3901 Cur. loss =   83.98   Intervals no change =    0
+Epoch =     4000 Iter. =     4001 Cur. loss =   83.95   Intervals no change =    0
+Epoch =     4100 Iter. =     4101 Cur. loss =   83.91   Intervals no change =    0
+Epoch =     4200 Iter. =     4201 Cur. loss =   83.87   Intervals no change =    0
+Epoch =     4300 Iter. =     4301 Cur. loss =   83.84   Intervals no change =    0
+Epoch =     4400 Iter. =     4401 Cur. loss =   83.80   Intervals no change =    0
+Epoch =     4500 Iter. =     4501 Cur. loss =   83.76   Intervals no change =    0
+Epoch =     4600 Iter. =     4601 Cur. loss =   83.74   Intervals no change =    0
+Epoch =     4700 Iter. =     4701 Cur. loss =   83.70   Intervals no change =    0
+Epoch =     4800 Iter. =     4801 Cur. loss =   83.68   Intervals no change =    0
+Epoch =     4900 Iter. =     4901 Cur. loss =   83.64   Intervals no change =    0
+Epoch =     5000 Iter. =     5001 Cur. loss =   83.61   Intervals no change =    0
+Epoch =     5100 Iter. =     5101 Cur. loss =   83.58   Intervals no change =    0
+Epoch =     5200 Iter. =     5201 Cur. loss =   83.56   Intervals no change =    0
+Epoch =     5300 Iter. =     5301 Cur. loss =   83.53   Intervals no change =    0
+Epoch =     5400 Iter. =     5401 Cur. loss =   83.51   Intervals no change =    0
+Epoch =     5500 Iter. =     5501 Cur. loss =   83.49   Intervals no change =    0
+Epoch =     5600 Iter. =     5601 Cur. loss =   83.46   Intervals no change =    0
+Epoch =     5700 Iter. =     5701 Cur. loss =   83.44   Intervals no change =    0
+Epoch =     5800 Iter. =     5801 Cur. loss =   83.42   Intervals no change =    0
+Epoch =     5900 Iter. =     5901 Cur. loss =   83.39   Intervals no change =    0
+Epoch =     6000 Iter. =     6001 Cur. loss =   83.37   Intervals no change =    0
+Epoch =     6100 Iter. =     6101 Cur. loss =   83.35   Intervals no change =    0
+Epoch =     6200 Iter. =     6201 Cur. loss =   83.32   Intervals no change =    0
+Epoch =     6300 Iter. =     6301 Cur. loss =   83.24   Intervals no change =    0
+Epoch =     6400 Iter. =     6401 Cur. loss =   83.28   Intervals no change =    0
+Epoch =     6500 Iter. =     6501 Cur. loss =   83.26   Intervals no change =    0
+Epoch =     6600 Iter. =     6601 Cur. loss =   83.25   Intervals no change =    0
+Epoch =     6700 Iter. =     6701 Cur. loss =   83.23   Intervals no change =    0
+Epoch =     6800 Iter. =     6801 Cur. loss =   83.22   Intervals no change =    0
+Epoch =     6900 Iter. =     6901 Cur. loss =   83.19   Intervals no change =    0
+Epoch =     7000 Iter. =     7001 Cur. loss =   83.18   Intervals no change =    0
+Epoch =     7100 Iter. =     7101 Cur. loss =   83.17   Intervals no change =    0
+Epoch =     7200 Iter. =     7201 Cur. loss =   83.15   Intervals no change =    0
+Epoch =     7300 Iter. =     7301 Cur. loss =   83.14   Intervals no change =    0
+Epoch =     7400 Iter. =     7401 Cur. loss =   83.11   Intervals no change =    0
+Epoch =     7500 Iter. =     7501 Cur. loss =   83.11   Intervals no change =    0
+Epoch =     7600 Iter. =     7601 Cur. loss =   83.09   Intervals no change =    0
+Epoch =     7700 Iter. =     7701 Cur. loss =   83.08   Intervals no change =    0
+Epoch =     7800 Iter. =     7801 Cur. loss =   83.06   Intervals no change =    0
+Epoch =     7900 Iter. =     7901 Cur. loss =   83.05   Intervals no change =    0
+Epoch =     8000 Iter. =     8001 Cur. loss =   83.03   Intervals no change =    0
+Epoch =     8100 Iter. =     8101 Cur. loss =   83.03   Intervals no change =    0
+Epoch =     8200 Iter. =     8201 Cur. loss =   83.02   Intervals no change =    0
+Epoch =     8300 Iter. =     8301 Cur. loss =   83.01   Intervals no change =    0
+Epoch =     8400 Iter. =     8401 Cur. loss =   83.01   Intervals no change =    0
+Epoch =     8500 Iter. =     8501 Cur. loss =   82.99   Intervals no change =    0
+Epoch =     8600 Iter. =     8601 Cur. loss =   82.97   Intervals no change =    0
+Epoch =     8700 Iter. =     8701 Cur. loss =   82.97   Intervals no change =    0
+Epoch =     8800 Iter. =     8801 Cur. loss =   82.98   Intervals no change =    0
+Epoch =     8900 Iter. =     8901 Cur. loss =   82.95   Intervals no change =    0
+Epoch =     9000 Iter. =     9001 Cur. loss =   82.96   Intervals no change =    0
+Epoch =     9100 Iter. =     9101 Cur. loss =   82.94   Intervals no change =    0
+Epoch =     9200 Iter. =     9201 Cur. loss =   82.95   Intervals no change =    0
+Epoch =     9300 Iter. =     9301 Cur. loss =   82.93   Intervals no change =    0
+Epoch =     9400 Iter. =     9401 Cur. loss =   82.84   Intervals no change =    0
+Epoch =     9500 Iter. =     9501 Cur. loss =   82.88   Intervals no change =    1
+Epoch =     9600 Iter. =     9601 Cur. loss =   82.89   Intervals no change =    2
+Epoch =     9700 Iter. =     9701 Cur. loss =   82.90   Intervals no change =    3
+Epoch =     9800 Iter. =     9801 Cur. loss =   82.89   Intervals no change =    4
+Epoch =     9900 Iter. =     9901 Cur. loss =   82.90   Intervals no change =    5
+Epoch =    10000 Iter. =    10001 Cur. loss =   82.89   Intervals no change =    6
+Epoch =    10100 Iter. =    10101 Cur. loss =   82.89   Intervals no change =    7
+Epoch =    10200 Iter. =    10201 Cur. loss =   82.90   Intervals no change =    8
+Epoch =    10300 Iter. =    10301 Cur. loss =   82.89   Intervals no change =    9
+Epoch =    10400 Iter. =    10401 Cur. loss =   82.88   Intervals no change =   10
+Epoch =    10500 Iter. =    10501 Cur. loss =   82.88   Intervals no change =   11
+Epoch =    10600 Iter. =    10601 Cur. loss =   82.88   Intervals no change =   12
+Epoch =    10700 Iter. =    10701 Cur. loss =   82.88   Intervals no change =   13
+Epoch =    10800 Iter. =    10801 Cur. loss =   82.87   Intervals no change =   14
+Epoch =    10900 Iter. =    10901 Cur. loss =   82.88   Intervals no change =   15
+Epoch =    11000 Iter. =    11001 Cur. loss =   82.88   Intervals no change =   16
+Epoch =    11100 Iter. =    11101 Cur. loss =   82.88   Intervals no change =   17
+Epoch =    11200 Iter. =    11201 Cur. loss =   82.88   Intervals no change =   18
+Epoch =    11300 Iter. =    11301 Cur. loss =   82.88   Intervals no change =   19
+Epoch =    11400 Iter. =    11401 Cur. loss =   82.87   Intervals no change =   20
+Epoch =    11500 Iter. =    11501 Cur. loss =   82.88   Intervals no change =   21
+Epoch =    11600 Iter. =    11601 Cur. loss =   82.87   Intervals no change =   22
+Epoch =    11700 Iter. =    11701 Cur. loss =   82.87   Intervals no change =   23
+Epoch =    11800 Iter. =    11801 Cur. loss =   82.87   Intervals no change =   24
+Epoch =    11900 Iter. =    11901 Cur. loss =   82.88   Intervals no change =   25
+Epoch =    12000 Iter. =    12001 Cur. loss =   82.88   Intervals no change =   26
+Epoch =    12100 Iter. =    12101 Cur. loss =   82.87   Intervals no change =   27
+Epoch =    12200 Iter. =    12201 Cur. loss =   82.87   Intervals no change =   28
+Epoch =    12300 Iter. =    12301 Cur. loss =   82.87   Intervals no change =   29
+Epoch =    12400 Iter. =    12401 Cur. loss =   82.87   Intervals no change =   30
+Epoch =    12500 Iter. =    12501 Cur. loss =   82.88   Intervals no change =   31
+Epoch =    12600 Iter. =    12601 Cur. loss =   82.88   Intervals no change =   32
+Epoch =    12700 Iter. =    12701 Cur. loss =   82.88   Intervals no change =   33
+Epoch =    12800 Iter. =    12801 Cur. loss =   82.87   Intervals no change =   34
+Epoch =    12900 Iter. =    12901 Cur. loss =   82.87   Intervals no change =   35
+Epoch =    13000 Iter. =    13001 Cur. loss =   82.88   Intervals no change =   36
+Epoch =    13100 Iter. =    13101 Cur. loss =   82.88   Intervals no change =   37
+Epoch =    13200 Iter. =    13201 Cur. loss =   82.88   Intervals no change =   38
+Epoch =    13300 Iter. =    13301 Cur. loss =   82.88   Intervals no change =   39
+Epoch =    13400 Iter. =    13401 Cur. loss =   82.88   Intervals no change =   40
+Epoch =    13500 Iter. =    13501 Cur. loss =   82.88   Intervals no change =   41
+Epoch =    13600 Iter. =    13601 Cur. loss =   82.88   Intervals no change =   42
+Epoch =    13700 Iter. =    13701 Cur. loss =   82.88   Intervals no change =   43
+Epoch =    13800 Iter. =    13801 Cur. loss =   82.88   Intervals no change =   44
+Epoch =    13900 Iter. =    13901 Cur. loss =   82.89   Intervals no change =   45
+Epoch =    14000 Iter. =    14001 Cur. loss =   82.88   Intervals no change =   46
+Epoch =    14100 Iter. =    14101 Cur. loss =   82.89   Intervals no change =   47
+Epoch =    14200 Iter. =    14201 Cur. loss =   82.89   Intervals no change =   48
+Epoch =    14300 Iter. =    14301 Cur. loss =   82.89   Intervals no change =   49
+Epoch =    14400 Iter. =    14401 Cur. loss =   82.88   Intervals no change =   50
+Epoch =    14500 Iter. =    14501 Cur. loss =   82.88   Intervals no change =   51
+Epoch =    14600 Iter. =    14601 Cur. loss =   82.89   Intervals no change =   52
+Epoch =    14700 Iter. =    14701 Cur. loss =   82.89   Intervals no change =   53
+Epoch =    14800 Iter. =    14801 Cur. loss =   82.89   Intervals no change =   54
+Epoch =    14900 Iter. =    14901 Cur. loss =   82.89   Intervals no change =   55
+Epoch =    15000 Iter. =    15001 Cur. loss =   82.88   Intervals no change =   56
+Epoch =    15100 Iter. =    15101 Cur. loss =   82.89   Intervals no change =   57
+Epoch =    15200 Iter. =    15201 Cur. loss =   82.89   Intervals no change =   58
+Epoch =    15300 Iter. =    15301 Cur. loss =   82.89   Intervals no change =   59
+Epoch =    15400 Iter. =    15401 Cur. loss =   82.88   Intervals no change =   60
+Epoch =    15500 Iter. =    15501 Cur. loss =   82.89   Intervals no change =   61
+Epoch =    15600 Iter. =    15601 Cur. loss =   82.89   Intervals no change =   62
+Epoch =    15700 Iter. =    15701 Cur. loss =   82.89   Intervals no change =   63
+Epoch =    15800 Iter. =    15801 Cur. loss =   82.89   Intervals no change =   64
+Epoch =    15900 Iter. =    15901 Cur. loss =   82.89   Intervals no change =   65
+Epoch =    16000 Iter. =    16001 Cur. loss =   82.90   Intervals no change =   66
+Epoch =    16100 Iter. =    16101 Cur. loss =   82.89   Intervals no change =   67
+Epoch =    16200 Iter. =    16201 Cur. loss =   82.90   Intervals no change =   68
+Epoch =    16300 Iter. =    16301 Cur. loss =   82.90   Intervals no change =   69
+Epoch =    16400 Iter. =    16401 Cur. loss =   82.90   Intervals no change =   70
+Epoch =    16500 Iter. =    16501 Cur. loss =   82.90   Intervals no change =   71
+Epoch =    16600 Iter. =    16601 Cur. loss =   82.89   Intervals no change =   72
+Epoch =    16700 Iter. =    16701 Cur. loss =   82.90   Intervals no change =   73
+Epoch =    16800 Iter. =    16801 Cur. loss =   82.89   Intervals no change =   74
+Epoch =    16900 Iter. =    16901 Cur. loss =   82.90   Intervals no change =   75
+Epoch =    17000 Iter. =    17001 Cur. loss =   82.90   Intervals no change =   76
+Epoch =    17100 Iter. =    17101 Cur. loss =   82.90   Intervals no change =   77
+Epoch =    17200 Iter. =    17201 Cur. loss =   82.90   Intervals no change =   78
+Epoch =    17300 Iter. =    17301 Cur. loss =   82.90   Intervals no change =   79
+Epoch =    17400 Iter. =    17401 Cur. loss =   82.90   Intervals no change =   80
+Epoch =    17500 Iter. =    17501 Cur. loss =   82.90   Intervals no change =   81
+Epoch =    17600 Iter. =    17601 Cur. loss =   82.90   Intervals no change =   82
+Epoch =    17700 Iter. =    17701 Cur. loss =   82.90   Intervals no change =   83
+Epoch =    17800 Iter. =    17801 Cur. loss =   82.90   Intervals no change =   84
+Epoch =    17900 Iter. =    17901 Cur. loss =   82.90   Intervals no change =   85
+Epoch =    18000 Iter. =    18001 Cur. loss =   82.90   Intervals no change =   86
+Epoch =    18100 Iter. =    18101 Cur. loss =   82.90   Intervals no change =   87
+Epoch =    18200 Iter. =    18201 Cur. loss =   82.90   Intervals no change =   88
+Epoch =    18300 Iter. =    18301 Cur. loss =   82.90   Intervals no change =   89
+Epoch =    18400 Iter. =    18401 Cur. loss =   82.90   Intervals no change =   90
+Epoch =    18500 Iter. =    18501 Cur. loss =   82.90   Intervals no change =   91
+Epoch =    18600 Iter. =    18601 Cur. loss =   82.90   Intervals no change =   92
+Epoch =    18700 Iter. =    18701 Cur. loss =   82.90   Intervals no change =   93
+Epoch =    18800 Iter. =    18801 Cur. loss =   82.90   Intervals no change =   94
+Epoch =    18900 Iter. =    18901 Cur. loss =   82.91   Intervals no change =   95
+Epoch =    19000 Iter. =    19001 Cur. loss =   82.90   Intervals no change =   96
+Epoch =    19100 Iter. =    19101 Cur. loss =   82.90   Intervals no change =   97
+Epoch =    19200 Iter. =    19201 Cur. loss =   82.90   Intervals no change =   98
+Epoch =    19300 Iter. =    19301 Cur. loss =   82.91   Intervals no change =   99
+Epoch =    19400 Iter. =    19401 Cur. loss =   82.91   Intervals no change =  100
+Fitting ended in  6509.52  seconds
+IRT model fitting complete.
+Model fitting complete
+Extracting theta scores via extract_theta_from_irt...
+Using mc_samples=100 during scoring (accurate theta estimates per RQ 6.1.1)
+Theta extraction complete: 400 participants x 3 factors
+Reconstructing composite_ID from UID and test...
+Wide format: 400 rows, 4 columns
+Extracting item parameters via extract_parameters_from_irt...
+Parameter extraction complete: 72 items
+Parameter columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_IFR', 'Discrim_ICR', 'Discrim_IRE']
+Saving Pass 1 outputs...
+step01_pass1_item_params.csv (72 items, 6 cols)
+step01_pass1_theta.csv (400 rows, 4 cols)
+Running validation checks...
+Checking parameter bounds...
+Discrimination: min=0.758, max=1.914
+Difficulty (b): min=-2.484, max=1.976
+Parameter bounds valid
+Checking for NaN parameters...
+No NaN parameters
+Checking theta estimates...
+Theta: min=-3.147, max=3.606
+Theta estimates valid
+Checking output row counts...
+Output row counts correct (items=72, theta=400)
+Step 01 complete - All validations passed
+Pass 1 calibrated 72 items for 400 participants
+Run Step 02 to purify items using quality thresholds (a >= 0.4, |b| <= 3.0)

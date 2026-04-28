@@ -1,0 +1,2 @@
+ICC_slope_confidence,ICC_slope_accuracy,delta_ICC,ratio_ICC,hypothesis_supported,interpretation
+0.26409760390754344,0.0005,0.26359760390754344,528.1952078150869,Measurement Artifact,"ICC_slope_confidence (0.2641) > 0.10 threshold. Ordinal data reveals 528x more slope variance than dichotomous data. Chapter 5 finding of near-zero slope variance was a measurement limitation, not a substantive finding about forgetting dynamics."

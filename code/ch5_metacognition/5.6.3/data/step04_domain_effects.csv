@@ -1,0 +1,3 @@
+effect,p_uncorrected,p_bonferroni,significant_uncorr,significant_bonf
+Domain main effect,6.997895581164505e-12,1.399579116232901e-11,True,True
+Domain x Time interaction,0.00012801850953118122,0.00025603701906236245,True,True

@@ -45,7 +45,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step02_fit_stratified_lmms.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -77,36 +76,30 @@ def extract_variance_components(model):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 02: Fit Congruence-Stratified LMMs")
-
-        # =====================================================================
-        # STEP 1: Load LMM Input Data
-        # =====================================================================
-        log("[LOAD] Loading LMM input data...")
+        log("Step 02: Fit Congruence-Stratified LMMs")
+        # Load LMM Input Data
+        log("Loading LMM input data...")
 
         input_file = RQ_DIR / "data" / "step01_loaded_lmm_input.csv"
         df_lmm = pd.read_csv(input_file, encoding='utf-8')
 
-        log(f"[LOADED] {input_file.name} ({len(df_lmm)} rows, {len(df_lmm.columns)} columns)")
+        log(f"{input_file.name} ({len(df_lmm)} rows, {len(df_lmm.columns)} columns)")
 
         # Get congruence levels
         congruence_levels = sorted(df_lmm['congruence'].unique())
-        log(f"[INFO] Congruence levels: {congruence_levels}")
-
-        # =====================================================================
-        # STEP 2: Fit LMMs for Each Congruence Level
-        # =====================================================================
-        log("[ANALYSIS] Fitting stratified LMMs (one per congruence level)...")
+        log(f"Congruence levels: {congruence_levels}")
+        # Fit LMMs for Each Congruence Level
+        log("Fitting stratified LMMs (one per congruence level)...")
 
         models = {}
         variance_components = []
 
         for congruence in congruence_levels:
-            log(f"\n[FIT] Fitting LMM for {congruence} congruence...")
+            log(f"\nFitting LMM for {congruence} congruence...")
 
             # Filter data for this congruence level
             df_subset = df_lmm[df_lmm['congruence'] == congruence].copy()
-            log(f"[INFO] {congruence}: {len(df_subset)} observations, {df_subset['UID'].nunique()} participants")
+            log(f"{congruence}: {len(df_subset)} observations, {df_subset['UID'].nunique()} participants")
 
             # Fit LMM with random intercept and slope
             # Formula: theta ~ TSVR_hours (fixed effects)
@@ -117,10 +110,10 @@ if __name__ == "__main__":
                 model = smf.mixedlm(formula, df_subset, groups=df_subset['UID'],
                                    re_formula="~TSVR_hours").fit(reml=True)
 
-                log(f"[CONVERGED] {congruence} model converged: {model.converged}")
+                log(f"{congruence} model converged: {model.converged}")
 
                 if not model.converged:
-                    log(f"[WARNING] {congruence} model did NOT converge - results may be unreliable")
+                    log(f"{congruence} model did NOT converge - results may be unreliable")
 
                 models[congruence] = model
 
@@ -135,18 +128,15 @@ if __name__ == "__main__":
                         'value': comp_value
                     })
 
-                log(f"[VARIANCE] {congruence} variance components:")
+                log(f"{congruence} variance components:")
                 for comp_name, comp_value in components.items():
                     log(f"  {comp_name}: {comp_value:.6f}")
 
             except Exception as e:
-                log(f"[ERROR] Failed to fit {congruence} model: {str(e)}")
+                log(f"Failed to fit {congruence} model: {str(e)}")
                 raise
-
-        # =====================================================================
-        # STEP 3: Save Fitted Models
-        # =====================================================================
-        log("\n[SAVE] Saving fitted models...")
+        # Save Fitted Models
+        log("\nSaving fitted models...")
 
         model_files = {
             'Common': RQ_DIR / "data" / "step02_fitted_model_common.pkl",
@@ -157,23 +147,17 @@ if __name__ == "__main__":
         for congruence, model_path in model_files.items():
             with open(model_path, 'wb') as f:
                 pickle.dump(models[congruence], f)
-            log(f"[SAVED] {model_path.name}")
-
-        # =====================================================================
-        # STEP 4: Save Variance Components
-        # =====================================================================
-        log("[SAVE] Saving variance components...")
+            log(f"{model_path.name}")
+        # Save Variance Components
+        log("Saving variance components...")
 
         df_variance = pd.DataFrame(variance_components)
         variance_output = RQ_DIR / "data" / "step02_variance_components.csv"
         df_variance.to_csv(variance_output, index=False, encoding='utf-8')
 
-        log(f"[SAVED] {variance_output.name} ({len(df_variance)} rows)")
-
-        # =====================================================================
-        # STEP 5: Save Model Metadata
-        # =====================================================================
-        log("[SAVE] Saving model metadata...")
+        log(f"{variance_output.name} ({len(df_variance)} rows)")
+        # Save Model Metadata
+        log("Saving model metadata...")
 
         metadata_files = {
             'Common': RQ_DIR / "data" / "step02_model_metadata_common.yaml",
@@ -200,35 +184,28 @@ if __name__ == "__main__":
             with open(metadata_path, 'w', encoding='utf-8') as f:
                 yaml.dump(metadata, f, default_flow_style=False)
 
-            log(f"[SAVED] {metadata_path.name}")
-
-        # =====================================================================
-        # STEP 6: Validate Model Convergence (log warnings but don't fail)
-        # =====================================================================
-        log("\n[VALIDATION] Validating model convergence...")
+            log(f"{metadata_path.name}")
+        # Validate Model Convergence (log warnings but don't fail)
+        log("\nValidating model convergence...")
 
         convergence_warnings = []
         for congruence, model in models.items():
             validation = validate_lmm_convergence(model)
 
             if validation['converged']:
-                log(f"[PASS] {congruence} model converged successfully")
+                log(f"{congruence} model converged successfully")
             else:
-                log(f"[WARNING] {congruence} model did not converge: {validation['message']}")
+                log(f"{congruence} model did not converge: {validation['message']}")
                 log(f"  -> Results may be unreliable but proceeding with analysis")
                 convergence_warnings.append(congruence)
 
         if convergence_warnings:
-            log(f"[WARNING] {len(convergence_warnings)} model(s) did not converge: {', '.join(convergence_warnings)}")
-            log("[INFO] Non-convergence often indicates near-zero random slope variance (singular fit)")
+            log(f"{len(convergence_warnings)} model(s) did not converge: {', '.join(convergence_warnings)}")
+            log("Non-convergence often indicates near-zero random slope variance (singular fit)")
         else:
-            log("[PASS] All models converged successfully")
-
-
-        # =====================================================================
-        # STEP 7: Validate Variance Positivity
-        # =====================================================================
-        log("[VALIDATION] Validating variance component positivity...")
+            log("All models converged successfully")
+        # Validate Variance Positivity
+        log("Validating variance component positivity...")
 
         # Filter out covariances (can be negative) - only check actual variances
         df_variance_only = df_variance[~df_variance['component'].str.contains('cov')].copy()
@@ -240,17 +217,17 @@ if __name__ == "__main__":
         )
 
         if variance_validation['valid']:
-            log("[PASS] All variance components are positive")
+            log("All variance components are positive")
         else:
-            log(f"[FAIL] Variance validation failed: {variance_validation['message']}")
+            log(f"Variance validation failed: {variance_validation['message']}")
             raise ValueError(variance_validation['message'])
 
-        log("\n[SUCCESS] Step 02 complete - All models fitted and validated")
+        log("\nStep 02 complete - All models fitted and validated")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

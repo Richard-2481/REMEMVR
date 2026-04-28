@@ -1,0 +1,5 @@
+predictor,analysis_type,effect_size,power,min_detectable_r,interpretation
+RAVLT_Forgetting,bivariate_correlation,0.3324203371483775,0.86,0.28,medium
+RAVLT_Pct_Ret,bivariate_correlation,-0.3182814565920929,0.86,0.28,medium
+RAVLT_Forgetting,partial_correlation,0.0196411142836699,0.08,0.28,negligible
+RAVLT_Pct_Ret,partial_correlation,0.0115674185762988,0.08,0.28,negligible

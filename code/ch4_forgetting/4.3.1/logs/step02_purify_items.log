@@ -1,0 +1,78 @@
+Step 02: Item Purification
+============================================================
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv (72 rows, 4 cols)
+Columns: ['item', 'domain', 'Discrimination', 'Difficulty_1']
+Discrimination range: 0.058 - 1.769
+Difficulty range: -4.669 - 15.385
+[INFOStep 02: Item Purification
+============================================================
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv (72 rows, 4 cols)
+Columns: ['item', 'domain', 'Discrimination', 'Difficulty_1']
+Discrimination range: 0.058 - 1.769
+Difficulty range: -4.669 - 15.385
+Items by paradigm (before): {'cued_recall': 24, 'free_recall': 24, 'recognition': 24}
+Running filter_items_by_quality...
+a_threshold=0.4, b_threshold=3.0 (Decision D039)
+Reformatted columns for univariate path: ['item_name', 'factor', 'a', 'b']
+
+============================================================
+ITEM PURIFICATION (Decision D039)
+============================================================
+Thresholds: a >= 0.4, |b| <= 3.0
+Format: Univariate IRT (simple format)
+
+Total items: 72
+Excluded: 27 (37.5%)
+Purified: 45 (62.5%)
+
+Excluded items:
+  - TQ_ICR-N-i3: |b| > 3.0 on cued_recall (b=-3.31)
+  - TQ_ICR-O-i3: a < 0.4 on cued_recall
+  - TQ_ICR-O-i4: a < 0.4 on cued_recall
+  - TQ_ICR-O-i5: a < 0.4 on cued_recall
+  - TQ_ICR-O-i6: a < 0.4 on cued_recall
+  - TQ_IFR-D-i1: a < 0.4 on free_recall
+  - TQ_IFR-D-i4: a < 0.4 on free_recall
+  - TQ_IFR-D-i5: a < 0.4 on free_recall
+  - TQ_IFR-D-i6: a < 0.4 on free_recall
+  - TQ_IFR-N-i4: a < 0.4 on free_recall
+  - TQ_IFR-O-i1: a < 0.4 on free_recall
+  - TQ_IFR-O-i2: a < 0.4 on free_recall
+  - TQ_IFR-O-i3: a < 0.4 on free_recall
+  - TQ_IFR-O-i4: a < 0.4 on free_recall
+  - TQ_IFR-O-i5: a < 0.4 on free_recall
+  - TQ_IFR-O-i6: a < 0.4 on free_recall
+  - TQ_IFR-U-i4: a < 0.4 on free_recall
+  - TQ_IRE-N-i2: |b| > 3.0 on recognition (b=-4.67)
+  - TQ_IRE-N-i3: |b| > 3.0 on recognition (b=-4.16)
+  - TQ_IRE-N-i4: |b| > 3.0 on recognition (b=-3.17)
+  - TQ_IRE-N-i5: |b| > 3.0 on recognition (b=-4.23)
+  - TQ_IRE-N-i6: |b| > 3.0 on recognition (b=-4.29)
+  - TQ_IRE-O-i2: a < 0.4 on recognition
+  - TQ_IRE-O-i3: a < 0.4 on recognition
+  - TQ_IRE-O-i4: a < 0.4 on recognition
+  - TQ_IRE-O-i5: a < 0.4 on recognition
+  - TQ_IRE-O-i6: |b| > 3.0 on recognition (b=3.75)
+============================================================
+
+Analysis complete
+Retained: 45 items, Removed: 27 items
+Saving step02_purified_items.csv...
+step02_purified_items.csv (45 rows, 4 cols)
+Saving step02_removed_items.csv...
+step02_removed_items.csv (27 rows)
+Running validate_irt_parameters...
+Valid: True
+Total items: 45
+Flagged items: 0
+Items by paradigm (after): {'cued_recall': 19, 'recognition': 14, 'free_recall': 12}
+============================================================
+Item Purification Results:
+  - Original items: 72
+  - Retained items: 45
+  - Removed items: 27
+  - Retention rate: 62.5%
+============================================================
+Step 02 complete

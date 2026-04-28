@@ -1,0 +1,2 @@
+location_type,r_full,r_purified,delta_r_observed,headroom,pct_headroom_used,n,alpha_bonferroni,power_observed,n_required_80pct,power_meaningful_05,steiger_z,p_uncorrected,p_bonferroni,interpretation
+source,0.9336671190470756,0.9439063385608528,0.0102392195137772,0.06633288095292444,15.43611458854597,400,0.025,0.40908583388147934,1050,0.9999999999565867,1.7169404897606717,0.0859900458695266,0.1719800917390532,Ceiling effect - not underpowered

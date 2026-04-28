@@ -23,9 +23,7 @@ import statsmodels.formula.api as smf
 from scipy import stats
 import warnings
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.1.3
 LOG_FILE = RQ_DIR / "logs" / "steps_00_to_06.log"
@@ -113,7 +111,7 @@ def step00_load_data():
     df_final = df_final[['composite_ID', 'UID', 'test', 'theta_confidence',
                          'se_confidence', 'TSVR_hours', 'Age']]
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 0 Validation ---")
 
     # Expected row count
@@ -190,7 +188,7 @@ def step01_center_age(df_input: pd.DataFrame) -> pd.DataFrame:
     # Center Age
     df_input['Age_c'] = df_input['Age'] - mean_age
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 1 Validation ---")
 
     # Age_c mean approximately 0
@@ -247,7 +245,7 @@ def step02_create_time_predictors(df_input: pd.DataFrame) -> pd.DataFrame:
     df_input['Time_recip'] = 1.0 / (df_input['TSVR_hours'] + 1)  # Reciprocal
     df_input['Time_log'] = np.log(df_input['TSVR_hours'] + 1)  # Log for comparison
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 2 Validation ---")
 
     # Time predictor created
@@ -354,7 +352,7 @@ def step03_fit_lmm(df_input: pd.DataFrame):
     log(f"AIC: {-2*result.llf + 2*len(result.params):.2f}")
     log(f"BIC: {-2*result.llf + np.log(len(df_input))*len(result.params):.2f}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 3 Validation ---")
 
     # Check convergence
@@ -434,7 +432,7 @@ def step04_extract_age_effects(fixed_effects: pd.DataFrame) -> pd.DataFrame:
     log(f"\n*** PRIMARY HYPOTHESIS TEST ***")
     log(f"Age x Time interaction: {conclusion}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 4 Validation ---")
 
     # Expected row count
@@ -548,7 +546,7 @@ def step05_compute_effect_size(fixed_effects: pd.DataFrame, df_input: pd.DataFra
         interpretation = "Moderate age effect at Day 6"
     log(f"\nInterpretation: {interpretation}")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 5 Validation ---")
 
     # Expected row count
@@ -642,7 +640,7 @@ def step06_prepare_tertile_data(df_input: pd.DataFrame) -> pd.DataFrame:
         for _, row in tertile_data.iterrows():
             log(f"    {row['test']}: θ = {row['mean_theta']:.3f} ± {row['se_theta']:.3f} (N={row['N']})")
 
-    # ==================== VALIDATION ====================
+    # VALIDATION
     log("\n--- Step 6 Validation ---")
 
     # Expected row count

@@ -1,0 +1,16 @@
+paradigm,component,estimate
+free_recall,var_intercept,0.38050527941341655
+free_recall,var_slope,0.008530973930556573
+free_recall,cov_int_slope,-0.028263908884581534
+free_recall,corr_int_slope,-0.49608097686057334
+free_recall,var_residual,0.37834006194441955
+cued_recall,var_intercept,0.3100494138779533
+cued_recall,var_slope,3.5684226174889e-05
+cued_recall,cov_int_slope,-0.0033241777048672915
+cued_recall,corr_int_slope,-0.9993799526725661
+cued_recall,var_residual,0.400053319414604
+recognition,var_intercept,0.4296750216025831
+recognition,var_slope,0.005672732103659249
+recognition,cov_int_slope,-0.022407412551349072
+recognition,corr_int_slope,-0.4538637731445778
+recognition,var_residual,0.4046043025557669

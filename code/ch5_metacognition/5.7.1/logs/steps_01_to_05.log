@@ -1,0 +1,157 @@
+======================================================================
+RQ 6.7.1: Initial Confidence Predicting Forgetting Rates
+======================================================================
+
+Starting RQ 6.7.1 Analysis Pipeline
+Output directory: /home/etai/projects/REMEMVR/results/ch6/6.7.1
+
+======================================================================
+STEP 1: Load Day 0 Confidence Data
+======================================================================
+Loaded 400 rows from RQ 6.1.1
+Columns: ['composite_ID', 'theta_All', 'se_All']
+Unique tests: ['T1' 'T2' 'T3' 'T4']
+Filtered to T1 only: 100 rows retained
+
+Validation:
+  Rows: 100 (expected: 100)
+  Columns: ['UID', 'Day0_confidence', 'se_confidence']
+  NaN count: 0
+  Day0_confidence range: [-1.818, 3.035]
+  se_confidence range: [0.073, 0.073]
+  Unique UIDs: 100
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step01_day0_confidence.csv
+Loaded 100 Day 0 confidence estimates
+
+======================================================================
+STEP 2: Load Forgetting Slopes Data
+======================================================================
+Loaded 100 rows from Ch5 5.1.4
+Columns: ['UID', 'random_intercept', 'random_slope', 'total_intercept', 'total_slope']
+Data source: Ch5 RQ 5.1.4
+
+Validation:
+  Rows: 100 (expected: 100)
+  Columns: ['UID', 'forgetting_slope', 'random_slope', 'se_slope']
+  NaN count: 0
+  forgetting_slope range: [0.0664, 0.0895]
+  Mean forgetting_slope: 0.0767
+  Unique UIDs: 100
+
+Slope direction:
+  Positive (improvement): 100
+  Negative (forgetting): 0
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step02_forgetting_slopes.csv
+Loaded 100 forgetting slopes
+
+======================================================================
+STEP 3: Merge Confidence and Slopes Data
+======================================================================
+Merged 100 participants successfully
+Columns: ['UID', 'Day0_confidence', 'se_confidence', 'forgetting_slope', 'se_slope']
+
+Merge statistics:
+  Input confidence: 100
+  Input slopes: 100
+  Merged output: 100
+  No data loss: True
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step03_predictive_data.csv
+No data loss: 100 participants with both measures
+
+======================================================================
+STEP 4: Correlation and Tertile Analysis
+======================================================================
+
+--- 4A: Normality Tests (Shapiro-Wilk) ---
+Day0_confidence: W = 0.9891, p = 0.5953
+forgetting_slope: W = 0.9755, p = 0.0592
+
+Normality acceptable: Using Pearson as primary, Spearman as robustness check
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step04_normality_tests.csv
+
+--- 4B: Correlation Analysis ---
+Pearson r = -0.5814, p = 0.000000
+Spearman rho = -0.6348, p = 0.000000
+
+Bootstrap 95% CI (10000 resamples): [-0.7036, -0.4519]
+
+Primary correlation (Pearson): r = -0.5814
+Effect direction: negative
+95% CI excludes zero: True
+
+Dual p-values reported per Decision D068
+  p_uncorrected = 0.000000
+  p_bonferroni = 0.000000
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step04_correlation.csv
+Correlation computed: r = -0.58, p_uncorrected = 0.0000, p_bonferroni = 0.0000
+
+--- 4C: Tertile Analysis ---
+
+Tertile analysis complete: 3 groups created (Low/Med/High)
+  Low: N=33, mean_conf=-0.214, mean_slope=0.0796 (SE=0.0008)
+  Med: N=33, mean_conf=0.743, mean_slope=0.0767 (SE=0.0006)
+  High: N=34, mean_conf=1.573, mean_slope=0.0740 (SE=0.0006)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step04_tertile_analysis.csv
+
+--- 4D: High vs Low Tertile Comparison ---
+High tertile mean slope: 0.0740
+Low tertile mean slope: 0.0796
+Difference: -0.0056
+t-test: t = -5.590, p = 0.000000
+Cohen's d: -1.366
+Interpretation: High confidence -> faster forgetting (more negative slope)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step04_tertile_test.csv
+
+--- 4E: One-way ANOVA (all tertiles) ---
+ANOVA: F = 17.475, p = 0.000000
+Eta-squared: 0.2649
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step04_anova.csv
+
+======================================================================
+STEP 5: Prepare Plot Data
+======================================================================
+Plot data preparation complete: 103 rows created (100 individuals + 3 tertile means)
+Columns: ['UID', 'Day0_confidence', 'forgetting_slope', 'tertile', 'is_mean', 'se_slope']
+All tertiles represented: ['High', 'Low', 'Med']
+
+Validation:
+  Individual points: 100 (expected: 100)
+  Tertile means: 3 (expected: 3)
+  Total rows: 103 (expected: 103)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.7.1/data/step05_confidence_predicts_forgetting_data.csv
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+PRIMARY FINDING:
+  Pearson correlation: r = -0.5814
+  95% Bootstrap CI: [-0.7036, -0.4519]
+  p-value: 0.000000
+  Direction: negative
+
+  HYPOTHESIS REFUTED: High Day 0 confidence predicts FASTER forgetting (opposite direction)
+
+Files created:
+  data/step01_day0_confidence.csv
+  data/step02_forgetting_slopes.csv
+  data/step03_predictive_data.csv
+  data/step04_normality_tests.csv
+  data/step04_correlation.csv
+  data/step04_tertile_analysis.csv
+  data/step04_tertile_test.csv
+  data/step04_anova.csv
+  data/step05_confidence_predicts_forgetting_data.csv
+
+======================================================================
+RQ 6.7.1 Pipeline Complete
+======================================================================

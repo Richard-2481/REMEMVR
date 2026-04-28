@@ -23,9 +23,7 @@ from scipy import stats
 import statsmodels.formula.api as smf
 import warnings
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.8.2
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR project root
@@ -42,9 +40,7 @@ def log(msg):
         f.flush()
     print(msg, flush=True)
 
-# =============================================================================
-# STEP 00: Merge Accuracy and Confidence by Location Type
-# =============================================================================
+# Merge Accuracy and Confidence by Location Type
 
 def step00_merge_accuracy_confidence():
     """
@@ -140,9 +136,7 @@ def step00_merge_accuracy_confidence():
     log(f"\nMerge complete: {len(df_merged)} rows created")
     return df_merged
 
-# =============================================================================
-# STEP 01: Compute Calibration per Location Type
-# =============================================================================
+# Compute Calibration per Location Type
 
 def step01_compute_calibration(df_merged):
     """
@@ -215,9 +209,7 @@ def step01_compute_calibration(df_merged):
     log(f"\nCalibration computed: {len(df)} observations")
     return df
 
-# =============================================================================
-# STEP 02: Fit LMM Testing Location Effects on Calibration
-# =============================================================================
+# Fit LMM Testing Location Effects on Calibration
 
 def step02_fit_lmm_calibration(df_calibration):
     """
@@ -383,9 +375,7 @@ def step02_fit_lmm_calibration(df_calibration):
     log(f"\nLMM fitting complete")
     return result, fe_df
 
-# =============================================================================
-# STEP 03: Prepare Calibration Plot Data
-# =============================================================================
+# Prepare Calibration Plot Data
 
 def step03_prepare_plot_data(df_calibration):
     """
@@ -460,9 +450,7 @@ def step03_prepare_plot_data(df_calibration):
     log(f"\nPlot data preparation complete: {len(plot_data)} rows")
     return plot_data
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all steps."""

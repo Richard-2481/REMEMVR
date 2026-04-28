@@ -1,0 +1,80 @@
+Step 06: Classification Quality
+
+Loading fitted models...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step02_lpa_fitted_models.pkl
+4 models
+
+Loading profile assignments...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step03_optimal_profiles.csv
+100 participants
+Optimal K=1 profiles
+
+Loading theta scores...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step01_domain_theta_scores.csv
+100 participants
+
+Input validation
+Data loaded successfully
+
+Computing classification quality metrics...
+
+[METRIC 1] Entropy (classification certainty)
+Entropy: 1.0000 (threshold: >0.8)
+Excellent
+
+[METRIC 2] Silhouette Coefficient (cluster separation)
+Silhouette not applicable for K=1
+
+[METRIC 3] Davies-Bouldin Index (cluster compactness)
+Davies-Bouldin not applicable for K=1
+
+[METRIC 4] Calinski-Harabasz Index (variance ratio)
+Calinski-Harabasz not applicable for K=1
+
+[METRIC 5] Average Posterior Probability
+Mean max posterior: 1.0000
+
+[METRIC 6] High Confidence Assignments (>80%)
+High confidence: 100/100 (100.0%)
+Excellent
+
+Metric computation validation
+All metrics computed
+
+Assessing classification stability...
+n_bootstrap=100, random_state=42
+Iteration 25/100...
+Iteration 50/100...
+Iteration 75/100...
+Iteration 100/100...
+
+Stability results:
+Mean Jaccard: 1.0000
+Median Jaccard: 1.0000
+Min Jaccard: 1.0000
+Stable
+
+Bootstrap validation
+Bootstrap stability assessed (100 iterations)
+
+Saving classification quality metrics to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step06_classification_quality.csv
+7 metrics
+
+[QUALITY TABLE]
+                   Metric  Value   Interpretation
+                  Entropy    1.0        Excellent
+   Silhouette_Coefficient    NaN              N/A
+     Davies_Bouldin_Index    NaN              N/A
+  Calinski_Harabasz_Index    NaN              N/A
+Avg_Posterior_Probability    1.0 100.0% certainty
+      High_Confidence_Pct  100.0        Excellent
+   Bootstrap_Jaccard_Mean    1.0           Stable
+
+Saving model diagnostics to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step06_model_diagnostics.txt
+Model diagnostics written
+
+Final validation...
+Entropy in valid range [0, 1]
+Jaccard index in valid range [0, 1]
+
+Step 06 complete

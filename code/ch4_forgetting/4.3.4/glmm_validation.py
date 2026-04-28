@@ -180,10 +180,10 @@ if outcome == "ROBUST":
     print("\n   ✅ NULL findings ROBUST (IRT→LMM and item-level model agree)")
     print("   ✅ Age × Paradigm interaction non-significant at item level")
     print("   ✅ No thesis narrative revision needed")
-    print("   ✅ PLATINUM certification can proceed")
+    print("   ✅ quality validation can proceed")
 elif outcome == "CHANGED":
     print("\n   ⚠️ BASELINE INTERACTION CHANGED (NULL → SIGNIFICANT)")
-    print("   ⚠️ BLOCKER for PLATINUM certification")
+    print("   ⚠️ blocks quality validation")
     print("   ⚠️ Thesis narrative revision required")
 
 print("\nFiles created:")

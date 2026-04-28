@@ -122,10 +122,7 @@ def fit_glmm_ordinal(df):
 
     # Sort by participant for GEE
     df_sorted = df.sort_values(['UID', 'test', 'item'])
-
-    # =========================================================================
     # Model 1: Quasi-continuous GEE (treat ordinal as interval)
-    # =========================================================================
     print("\n### Model 1: Quasi-Continuous GEE ###")
     print("Treating ordinal confidence (0.2-1.0) as continuous")
 
@@ -158,10 +155,7 @@ def fit_glmm_ordinal(df):
     except Exception as e:
         print(f"Error fitting continuous GEE: {e}")
         results['continuous'] = None
-
-    # =========================================================================
     # Model 2: Binomial GEE (collapse to high/low confidence)
-    # =========================================================================
     print("\n### Model 2: Binomial GEE (High vs Low Confidence) ###")
     print("Dichotomizing: High confidence (≥0.6) vs Low confidence (<0.6)")
 
@@ -198,10 +192,7 @@ def fit_glmm_ordinal(df):
     except Exception as e:
         print(f"Error fitting binomial GEE: {e}")
         results['binomial'] = None
-
-    # =========================================================================
     # Model 3: Proportional Odds (via multiple binary models)
-    # =========================================================================
     print("\n### Model 3: Pseudo-Proportional Odds ###")
     print("Fitting binary GEE at each confidence threshold")
 

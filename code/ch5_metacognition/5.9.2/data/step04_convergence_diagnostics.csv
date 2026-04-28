@@ -1,0 +1,2 @@
+model_name,converged,n_iterations,convergence_criterion,warnings,fallback_used
+PowerLaw_lambda_0.41,True,0,default,None,False

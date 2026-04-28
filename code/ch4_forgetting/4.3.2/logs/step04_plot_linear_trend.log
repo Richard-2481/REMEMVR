@@ -1,0 +1,25 @@
+Starting plotting for RQ 5.4...
+RQ root: /home/etai/projects/REMEMVR/results/ch5/rq4
+
+Generating Plot 1: Paradigm forgetting rates bar chart...
+  Loaded 3 rows from step03_paradigm_forgetting_rates_data.csv
+  Columns: ['paradigm', 'paradigm_code', 'marginal_mean', 'SE', 'CI_lower', 'CI_upper', 'trend_line']
+  Annotation: Linear trend: b = -0.127, z = -2.47, p = 0.01
+  Saved: plots/paradigm_forgetting_rates.png
+
+======================================================================
+PLOTTING COMPLETE
+======================================================================
+Total plots generated: 1
+  - plots/paradigm_forgetting_rates.png
+
+Decision D069 (dual-scale trajectory): NOT APPLICABLE
+  -> This RQ uses bar charts for paradigm comparison, not trajectories
+
+Linear Trend Results:
+  - Estimate: b = -0.127
+  - z = -2.47, p = 0.01 (uncorrected)
+  - p = 0.20 (Bonferroni corrected)
+
+All plots saved with 300 DPI publication quality.
+======================================================================

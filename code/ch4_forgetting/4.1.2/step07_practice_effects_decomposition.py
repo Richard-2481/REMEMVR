@@ -54,19 +54,14 @@ from scipy import stats
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step07_practice_effects_decomposition.log"
 
-# =============================================================================
 # Logging
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -76,9 +71,7 @@ LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 with open(LOG_FILE, 'w', encoding='utf-8') as f:
     f.write("")
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
@@ -87,10 +80,7 @@ if __name__ == "__main__":
         log("=" * 80)
         log(f"Date: {pd.Timestamp.now()}")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Data and Define Phases
-        # =====================================================================
+        # Load Data and Define Phases
 
         log("[STEP 1] Loading data and defining practice vs forgetting phases...")
 
@@ -130,10 +120,7 @@ if __name__ == "__main__":
         log(f"  Practice phase: {len(time_data[time_data['Phase']=='Practice'])} observations (T1→T2)")
         log(f"  Forgetting phase: {len(time_data[time_data['Phase']=='Forgetting'])} observations (T2→T4)")
         log("")
-
-        # =====================================================================
-        # STEP 2: Fit Dual-Phase Model
-        # =====================================================================
+        # Fit Dual-Phase Model
 
         log("[STEP 2] Fitting dual-phase model: theta ~ Time_within_phase * Phase...")
         log("  This tests if Practice phase slope differs from Forgetting phase slope")
@@ -152,10 +139,7 @@ if __name__ == "__main__":
         log(f"  Converged: {practice_model.converged}")
         log(f"  AIC: {practice_model.aic:.2f}")
         log("")
-
-        # =====================================================================
-        # STEP 3: Extract Phase-Specific Slopes
-        # =====================================================================
+        # Extract Phase-Specific Slopes
 
         log("[STEP 3] Extracting practice vs forgetting slopes...")
 
@@ -180,7 +164,7 @@ if __name__ == "__main__":
             forgetting_se = np.sqrt(practice_se**2 + bse[interaction_term]**2)
             interaction_p = pvalues[interaction_term]
         else:
-            log("  [WARNING] Interaction term not found - phases may not differ")
+            log("  Interaction term not found - phases may not differ")
             forgetting_slope = practice_slope
             forgetting_se = practice_se
             interaction_p = 1.0
@@ -189,10 +173,7 @@ if __name__ == "__main__":
         log(f"    β = {forgetting_slope:.6f} ± {forgetting_se:.6f}")
         log(f"  Interaction p-value: {interaction_p:.6f}")
         log("")
-
-        # =====================================================================
-        # STEP 4: Test for Practice Effect
-        # =====================================================================
+        # Test for Practice Effect
 
         log("[STEP 4] Testing for practice effect...")
 
@@ -228,10 +209,7 @@ if __name__ == "__main__":
             log("  INTERPRETATION: Forgetting rate similar across phases")
             log("                  (Practice effects negligible or saturated by T1)")
         log("")
-
-        # =====================================================================
-        # STEP 5: Compare to Original Two-Phase Model
-        # =====================================================================
+        # Compare to Original Two-Phase Model
 
         log("[STEP 5] Comparing practice decomposition to original piecewise model...")
 
@@ -260,10 +238,7 @@ if __name__ == "__main__":
             log("              Original piecewise model interpretation valid")
             log("              Two-phase pattern likely reflects genuine consolidation")
         log("")
-
-        # =====================================================================
-        # STEP 6: Save Outputs
-        # =====================================================================
+        # Save Outputs
 
         log("[STEP 6] Saving practice decomposition results...")
 
@@ -322,13 +297,10 @@ if __name__ == "__main__":
 
         log(f"  Saved: {summary_path.name}")
         log("")
-
-        # =====================================================================
-        # STEP 7: Summary
-        # =====================================================================
+        # Summary
 
         log("=" * 80)
-        log("[SUCCESS] Practice effects decomposition complete!")
+        log("Practice effects decomposition complete!")
         log("=" * 80)
         log("")
         log("KEY FINDINGS:")
@@ -350,7 +322,7 @@ if __name__ == "__main__":
     except Exception as e:
         log("")
         log("=" * 80)
-        log("[ERROR] Practice decomposition failed!")
+        log("Practice decomposition failed!")
         log("=" * 80)
         log(f"Error: {str(e)}")
         import traceback

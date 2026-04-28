@@ -42,19 +42,14 @@ from scipy import stats
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step03_practice_decomposition.log"
 
-# =============================================================================
 # Logging
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -64,9 +59,7 @@ LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 with open(LOG_FILE, 'w', encoding='utf-8') as f:
     f.write("")
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
@@ -75,10 +68,7 @@ if __name__ == "__main__":
         log("="*70)
         log(f"Date: {pd.Timestamp.now()}")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Data and Create Phase Variable
-        # =====================================================================
+        # Load Data and Create Phase Variable
 
         log("[STEP 1] Loading data and defining practice vs forgetting phases...")
         input_path = RQ_DIR / "data" / "step01_lmm_input_prepared.csv"
@@ -127,10 +117,7 @@ if __name__ == "__main__":
         log(f"    Practice: T1→T2 (N={len(df[df['Phase']=='Practice'])} obs)")
         log(f"    Forgetting: T3→T4 (N={len(df[df['Phase']=='Forgetting'])} obs)")
         log("")
-
-        # =====================================================================
-        # STEP 2: Fit Dual-Phase Model with Age Interactions
-        # =====================================================================
+        # Fit Dual-Phase Model with Age Interactions
 
         log("[STEP 2] Fitting dual-phase model: theta ~ Phase × Time × Age_c...")
         log("  Formula: theta ~ (Time_within_phase_log * Phase) * Age_c")
@@ -147,10 +134,7 @@ if __name__ == "__main__":
         log(f"  AIC: {mdf.aic:.2f}")
         log(f"  N observations: {len(df)}")
         log("")
-
-        # =====================================================================
-        # STEP 3: Extract Key Effects
-        # =====================================================================
+        # Extract Key Effects
 
         log("[STEP 3] Extracting practice vs forgetting age effects...")
         log("")
@@ -184,10 +168,7 @@ if __name__ == "__main__":
             else:
                 log(f"  {effect:50s}: NOT IN MODEL")
         log("")
-
-        # =====================================================================
-        # STEP 4: Test Age-Invariance of Practice Effects
-        # =====================================================================
+        # Test Age-Invariance of Practice Effects
 
         log("[STEP 4] Testing age-invariance of practice effects...")
 
@@ -220,10 +201,7 @@ if __name__ == "__main__":
         else:
             log("  WARNING: Age × Practice interaction not in model")
         log("")
-
-        # =====================================================================
-        # STEP 5: Compare Practice vs Forgetting Age Effects
-        # =====================================================================
+        # Compare Practice vs Forgetting Age Effects
 
         log("[STEP 5] Comparing practice phase vs forgetting phase age effects...")
 
@@ -260,10 +238,7 @@ if __name__ == "__main__":
             else:
                 log("  PATTERN: Age effects similar across phases")
         log("")
-
-        # =====================================================================
-        # STEP 6: Save Outputs
-        # =====================================================================
+        # Save Outputs
 
         log("[STEP 6] Saving outputs...")
 
@@ -329,7 +304,7 @@ if __name__ == "__main__":
 
         log("")
         log("="*70)
-        log("[SUCCESS] Practice effects decomposition complete!")
+        log("Practice effects decomposition complete!")
         log("="*70)
         log("Key findings:")
         if 'Time_within_phase_log:Phase[T.Practice]:Age_c' in params.index:
@@ -345,7 +320,7 @@ if __name__ == "__main__":
     except Exception as e:
         log("")
         log("="*70)
-        log("[ERROR] Practice decomposition failed!")
+        log("Practice decomposition failed!")
         log("="*70)
         log(f"Error: {str(e)}")
         import traceback

@@ -1,0 +1,143 @@
+============================================================
+Step 3: Merge and Compute Correlations
+KEY ANALYSIS: Testing VR Scaffolding Hypothesis
+============================================================
+Loading REMEMVR data from: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step01_rememvr_theta_data.csv
+  Loaded 100 participants
+Loading RAVLT/Age data from: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step02_ravlt_age_data.csv
+  Loaded 100 participants
+
+Merging datasets on UID (inner join)
+Final dataset: 100 participants with complete data
+
+========================================
+COMPUTING AGE CORRELATIONS
+========================================
+
+Age-RAVLT Correlation:
+  r = -0.292, p = 0.0032
+  95% CI: [-0.454, -0.098]
+  → UNEXPECTED: RAVLT should show r < -0.30, got r = -0.292
+
+Age-REMEMVR Correlation:
+  r = -0.193, p = 0.0540
+  95% CI: [-0.375, -0.015]
+  → Pattern: Age-invariant
+
+RAVLT-REMEMVR Correlation (for Steiger's test):
+  r = 0.310, p = 0.0017
+
+========================================
+HYPOTHESIS TEST SUMMARY
+========================================
+✓ Primary pattern observed: RAVLT shows more age decline than REMEMVR
+  - RAVLT age correlation: r = -0.292
+  - REMEMVR age correlation: r = -0.193
+  - Difference: 0.099
+
+Decision D068 Compliance (Dual p-values):
+  Age_RAVLT: p_uncorrected=0.0032, p_bonferroni=0.0064
+  Age_REMEMVR: p_uncorrected=0.0540, p_bonferroni=0.1080
+
+Saved correlations to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step03_correlations.csv
+Saved merged data to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step03_merged_data.csv
+
+Step 3 completed successfully
+Ready for Step 4: Steiger's Z-test for formal comparison
+============================================================
+Step 3: Merge and Compute Correlations
+KEY ANALYSIS: Testing VR Scaffolding Hypothesis
+============================================================
+Loading REMEMVR data from: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step01_rememvr_theta_data.csv
+  Loaded 100 participants
+Loading RAVLT/Age data from: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step02_ravlt_age_data.csv
+  Loaded 100 participants
+
+Merging datasets on UID (inner join)
+Final dataset: 100 participants with complete data
+
+========================================
+COMPUTING AGE CORRELATIONS
+========================================
+
+Age-RAVLT Correlation:
+  r = -0.292, p = 0.0032
+  95% CI: [-0.454, -0.098]
+  → UNEXPECTED: RAVLT should show r < -0.30, got r = -0.292
+
+Age-REMEMVR Correlation:
+  r = -0.193, p = 0.0540
+  95% CI: [-0.375, -0.015]
+  → Pattern: Age-invariant
+
+RAVLT-REMEMVR Correlation (for Steiger's test):
+  r = 0.310, p = 0.0017
+
+========================================
+HYPOTHESIS TEST SUMMARY
+========================================
+✓ Primary pattern observed: RAVLT shows more age decline than REMEMVR
+  - RAVLT age correlation: r = -0.292
+  - REMEMVR age correlation: r = -0.193
+  - Difference: 0.099
+
+Decision D068 Compliance (Dual p-values):
+  Age_RAVLT: p_uncorrected=0.0032, p_bonferroni=0.0064
+  Age_REMEMVR: p_uncorrected=0.0540, p_bonferroni=0.1080
+
+Saved correlations to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step03_correlations.csv
+Saved merged data to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step03_merged_data.csv
+
+Step 3 completed successfully
+Ready for Step 4: Steiger's Z-test for formal comparison
+============================================================
+Step 3: Merge and Compute Correlations
+KEY ANALYSIS: Testing VR Scaffolding Hypothesis
+============================================================
+Loading REMEMVR data from: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step01_rememvr_theta_data.csv
+  Loaded 100 participants
+Loading RAVLT/Age data from: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step02_ravlt_age_data.csv
+  Loaded 100 participants
+
+Merging datasets on UID (inner join)
+Final dataset: 100 participants with complete data
+
+========================================
+COMPUTING AGE CORRELATIONS
+========================================
+
+Age-RAVLT Correlation:
+  r = -0.209, p = 0.0369
+  95% CI: [-0.400, -0.000]
+  → UNEXPECTED: RAVLT should show r < -0.30, got r = -0.209
+
+Age-REMEMVR Correlation:
+  r = -0.193, p = 0.0540
+  95% CI: [-0.375, -0.015]
+  → Pattern: Age-invariant
+
+Age-RAVLT Percent Retention Correlation:
+  r = -0.188, p = 0.0608 (N = 100)
+  95% CI: [-0.366, -0.001]
+
+RAVLT-REMEMVR Correlation (for Steiger's test):
+  r = 0.318, p = 0.0013
+
+========================================
+HYPOTHESIS TEST SUMMARY
+========================================
+✓ Primary pattern observed: RAVLT shows more age decline than REMEMVR
+  - RAVLT age correlation: r = -0.209
+  - REMEMVR age correlation: r = -0.193
+  - Difference: 0.016
+
+Decision D068 Compliance (Dual p-values):
+  Age_RAVLT: p_uncorrected=0.0369, p_bonferroni=0.1108
+  Age_REMEMVR: p_uncorrected=0.0540, p_bonferroni=0.1620
+  Age_RAVLT_Pct_Ret: p_uncorrected=0.0608, p_bonferroni=0.1825
+
+Saved correlations to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step03_correlations.csv
+Saved merged data to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step03_merged_data.csv
+
+Step 3 completed successfully
+Ready for Step 4: Steiger's Z-test for formal comparison

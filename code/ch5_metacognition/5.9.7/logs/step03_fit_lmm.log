@@ -1,0 +1,33 @@
+Step 3: fit_lmm
+Loading calibration scores from Step 2...
+step02_calibration_scores.csv (1200 rows, 10 cols)
+All required columns present
+  N observations: 1200
+  N participants: 100
+  Paradigms: ['cued_recall', 'free_recall', 'recognition']
+Fitting LMM with Paradigm × Time interaction...
+  Formula: calibration ~ paradigm + TSVR_hours + paradigm:TSVR_hours
+  Using random intercepts only: re_formula='~1' (calibration data typically requires simpler random structure)
+LMM fitted with random intercepts only
+Extracting fixed effects...
+7 fixed effects
+Fixed effects summary:
+  Intercept: coef=-0.0671, SE=0.0838, t=-0.80, p=0.4232 
+  paradigm[T.cued_recall]: coef=-0.0071, SE=0.0649, t=-0.11, p=0.9130 
+  paradigm[T.recognition]: coef=0.0148, SE=0.0649, t=0.23, p=0.8192 
+  TSVR_hours: coef=0.0011, SE=0.0006, t=1.98, p=0.0472 *
+  paradigm[T.cued_recall]:TSVR_hours: coef=0.0001, SE=0.0008, t=0.15, p=0.8822 
+  paradigm[T.recognition]:TSVR_hours: coef=-0.0002, SE=0.0008, t=-0.31, p=0.7565 
+  Group Var: coef=1.2793, SE=0.2013, t=6.36, p=0.0000 ***
+Extracting random effects variance components...
+2 variance components
+Extracting model fit statistics...
+Model fit: AIC=2554.82, BIC=2595.54, ICC=0.561
+Validating LMM convergence...
+Convergence validation: LMM converged successfully
+Saving LMM results...
+step03_lmm_fixed_effects.csv (7 rows)
+step03_lmm_random_effects.csv (2 rows)
+step03_lmm_model_fit.csv
+step03_lmm_convergence_report.txt
+Step 3 complete

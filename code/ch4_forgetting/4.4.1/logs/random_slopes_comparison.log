@@ -1,0 +1,16 @@
+======================================================================
+RANDOM SLOPES COMPARISON - MANDATORY CHECK
+======================================================================
+Date: 2025-12-27
+Purpose: Test intercepts-only vs intercepts+slopes
+
+Loading LMM input data...
+  Loaded 1200 rows, 9 columns
+  N participants: 100
+
+Model 1: Intercepts-only
+  Formula: theta ~ TSVR_log * C(congruence, Treatment('common'))
+  Random effects: ~1 (intercepts only)
+  Intercepts-only model failed: Singular matrix
+
+Singular matrix

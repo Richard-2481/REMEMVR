@@ -1,0 +1,354 @@
+================================================================================
+RQ 6.3.4 - ICC by Domain Analysis
+Started: 2025-12-11T22:41:47.889771
+================================================================================
+================================================================================
+[STEP 01] Fit Domain-Stratified LMMs with Random Slopes
+================================================================================
+
+Loading data from RQ 6.3.1:
+  Theta file: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step03_theta_confidence.csv
+  TSVR file: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_tsvr_mapping.csv
+  ✓ Theta data: 400 rows × 4 columns
+  ✓ TSVR data: 400 rows
+  ✓ Merged: 400 rows
+  ✓ N participants: 100
+  ✓ TSVR range: [1.00, 246.24] hours
+
+[DOMAIN: What]
+  N observations: 400
+  Theta range: [-2.513, 0.348]
+  Fitting LMM: theta_confidence ~ TSVR_hours + (~TSVR_hours | UID)
+  ✓ Converged: False
+  ✓ AIC: 1166.7067
+  ✓ Saved summary: step01_lmm_what_model_summary.txt
+  var_intercept: 0.239054
+  var_slope: 0.056810188
+  cov_int_slope: 0.000578202
+  var_residual: 0.039553
+
+[DOMAIN: Where]
+  N observations: 400
+  Theta range: [-2.701, 0.283]
+  Fitting LMM: theta_confidence ~ TSVR_hours + (~TSVR_hours | UID)
+  ✓ Converged: False
+  ✓ AIC: 1191.4754
+  ✓ Saved summary: step01_lmm_where_model_summary.txt
+  var_intercept: 0.267623
+  var_slope: 0.059538910
+  cov_int_slope: 0.000402800
+  var_residual: 0.041444
+
+[DOMAIN: When]
+  N observations: 400
+  Theta range: [-2.375, 0.552]
+  Fitting LMM: theta_confidence ~ TSVR_hours + (~TSVR_hours | UID)
+  ✓ Converged: True
+  ✓ AIC: 549.5900
+  ✓ Saved summary: step01_lmm_when_model_summary.txt
+  var_intercept: 0.156185
+  var_slope: 0.000001646
+  cov_int_slope: 0.000356523
+  var_residual: 0.134427
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step01_variance_components_by_domain.csv
+
+:
+  ✓ All 3 domain LMMs fitted successfully
+  ✓ Variance components extracted for all domains
+
+================================================================================
+[STEP 02] Extract Variance Components Per Domain
+================================================================================
+
+[TOTAL VARIANCE BY DOMAIN]:
+  What: 0.335417
+  Where: 0.368606
+  When: 0.290613
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step02_variance_components.csv
+
+================================================================================
+[STEP 03] Compute ICC Per Domain
+================================================================================
+
+:
+  Max TSVR_hours (Day 6): 246.24
+
+[DOMAIN: What]
+  ICC_intercept: 0.8580
+  ICC_slope_simple: 0.589545
+  ICC_slope_conditional: 0.999836
+
+[DOMAIN: Where]
+  ICC_intercept: 0.8659
+  ICC_slope_simple: 0.589593
+  ICC_slope_conditional: 0.999859
+
+[DOMAIN: When]
+  ICC_intercept: 0.5374
+  ICC_slope_simple: 0.000012
+  ICC_slope_conditional: 0.176353
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step03_icc_estimates.csv
+
+================================================================================
+[STEP 04] Extract Random Effects Per Domain
+================================================================================
+
+[DOMAIN: What]
+  N groups: 100
+
+[DOMAIN: Where]
+  N groups: 100
+
+[DOMAIN: When]
+  N groups: 100
+
+:
+  ✓ Total rows: 300 (expected 300)
+  ✓ N unique UIDs: 100
+  ✓ N unique domains: 3
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step04_random_effects.csv
+
+================================================================================
+[STEP 05] Compare ICC_slope Across Domains
+================================================================================
+
+[DOMAIN RANKING BY ICC_slope]:
+  Rank 1: Where - ICC_slope=0.589593 (High trait variance)
+  Rank 2: What - ICC_slope=0.589545 (High trait variance)
+  Rank 3: When - ICC_slope=0.000012 (Low trait variance)
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step05_domain_icc_comparison.csv
+
+[PAIRWISE DIFFERENCES]:
+  What vs Where: Δ = -0.000048 (Negligible difference)
+  What vs When: Δ = 0.589532 (Meaningful difference)
+  Where vs When: Δ = 0.589581 (Meaningful difference)
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step05_pairwise_icc_differences.csv
+
+================================================================================
+[STEP 06] Compare to Ch5 5.2.6 Accuracy ICC
+================================================================================
+
+Found Ch5 5.2.6 ICC estimates: /home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step03_icc_estimates.csv
+  ✓ Loaded 6 rows
+
+[Ch5 5.2.6 ICC_slope_accuracy by domain]:
+  What: 0.008130
+  Where: 0.011013
+  When: NOT FOUND
+
+[COMPARISON RESULTS]:
+  What:
+    Confidence ICC: 0.589545
+    Accuracy ICC:   0.008130
+    Delta:          0.581415
+    → Confidence reveals MORE trait variance
+  Where:
+    Confidence ICC: 0.589593
+    Accuracy ICC:   0.011013
+    Delta:          0.578580
+    → Confidence reveals MORE trait variance
+  When:
+    Confidence ICC: 0.000012
+    Accuracy ICC:   nan
+    Delta:          nan
+    → comparison pending (accuracy data missing)
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step06_ch5_comparison.csv
+
+================================================================================
+RQ 6.3.4 Complete
+================================================================================
+
+[SUMMARY - ICC by Domain]:
+  What: ICC_int=0.8580, ICC_slope=0.589545 (high)
+  Where: ICC_int=0.8659, ICC_slope=0.589593 (high)
+  When: ICC_int=0.5374, ICC_slope=0.000012 (negligible)
+
+[KEY FINDING]:
+  ✓ TRAIT VARIANCE DETECTED: Max ICC_slope = 0.5896
+  → Some domains show trait-like confidence decline patterns
+
+  Completed: 2025-12-11T22:41:50.032970
+================================================================================
+RQ 6.3.4 - ICC by Domain Analysis
+Started: 2026-01-17T14:30:41.400171
+================================================================================
+================================================================================
+[STEP 01] Fit Domain-Stratified LMMs with Random Slopes
+================================================================================
+
+Loading data from RQ 6.3.1:
+  Theta file: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step03_theta_confidence.csv
+  TSVR file: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_tsvr_mapping.csv
+  ✓ Theta data: 400 rows × 4 columns
+  ✓ TSVR data: 400 rows
+  ✓ Merged: 400 rows
+  ✓ N participants: 100
+  ✓ TSVR range: [1.00, 246.24] hours
+
+[DOMAIN: What]
+  N observations: 400
+  Theta range: [-2.513, 0.348]
+  Fitting LMM: theta_confidence ~ TSVR_hours + (~TSVR_hours | UID)
+  ✓ Converged: False
+  ✓ AIC: 1166.7067
+  ✓ Saved summary: step01_lmm_what_model_summary.txt
+  var_intercept: 0.239054
+  var_slope: 0.056810188
+  cov_int_slope: 0.000578202
+  var_residual: 0.039553
+
+[DOMAIN: Where]
+  N observations: 400
+  Theta range: [-2.701, 0.283]
+  Fitting LMM: theta_confidence ~ TSVR_hours + (~TSVR_hours | UID)
+  ✓ Converged: False
+  ✓ AIC: 1191.4754
+  ✓ Saved summary: step01_lmm_where_model_summary.txt
+  var_intercept: 0.267623
+  var_slope: 0.059538910
+  cov_int_slope: 0.000402800
+  var_residual: 0.041444
+
+[DOMAIN: When]
+  N observations: 400
+  Theta range: [-2.375, 0.552]
+  Fitting LMM: theta_confidence ~ TSVR_hours + (~TSVR_hours | UID)
+  ✓ Converged: True
+  ✓ AIC: 549.5900
+  ✓ Saved summary: step01_lmm_when_model_summary.txt
+  var_intercept: 0.156185
+  var_slope: 0.000001646
+  cov_int_slope: 0.000356523
+  var_residual: 0.134427
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step01_variance_components_by_domain.csv
+
+:
+  ✓ All 3 domain LMMs fitted successfully
+  ✓ Variance components extracted for all domains
+
+================================================================================
+[STEP 02] Extract Variance Components Per Domain
+================================================================================
+
+[TOTAL VARIANCE BY DOMAIN]:
+  What: 0.335417
+  Where: 0.368606
+  When: 0.290613
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step02_variance_components.csv
+
+================================================================================
+[STEP 03] Compute ICC Per Domain
+================================================================================
+
+:
+  Max TSVR_hours (Day 6): 246.24
+
+[DOMAIN: What]
+  ICC_intercept: 0.8580
+  ICC_slope_simple: 0.589545
+  ICC_slope_conditional: 0.999836
+
+[DOMAIN: Where]
+  ICC_intercept: 0.8659
+  ICC_slope_simple: 0.589593
+  ICC_slope_conditional: 0.999859
+
+[DOMAIN: When]
+  ICC_intercept: 0.5374
+  ICC_slope_simple: 0.000012
+  ICC_slope_conditional: 0.176353
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step03_icc_estimates.csv
+
+================================================================================
+[STEP 04] Extract Random Effects Per Domain
+================================================================================
+
+[DOMAIN: What]
+  N groups: 100
+
+[DOMAIN: Where]
+  N groups: 100
+
+[DOMAIN: When]
+  N groups: 100
+
+:
+  ✓ Total rows: 300 (expected 300)
+  ✓ N unique UIDs: 100
+  ✓ N unique domains: 3
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step04_random_effects.csv
+
+================================================================================
+[STEP 05] Compare ICC_slope Across Domains
+================================================================================
+
+[DOMAIN RANKING BY ICC_slope]:
+  Rank 1: Where - ICC_slope=0.589593 (High trait variance)
+  Rank 2: What - ICC_slope=0.589545 (High trait variance)
+  Rank 3: When - ICC_slope=0.000012 (Low trait variance)
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step05_domain_icc_comparison.csv
+
+[PAIRWISE DIFFERENCES]:
+  What vs Where: Δ = -0.000048 (Negligible difference)
+  What vs When: Δ = 0.589532 (Meaningful difference)
+  Where vs When: Δ = 0.589581 (Meaningful difference)
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step05_pairwise_icc_differences.csv
+
+================================================================================
+[STEP 06] Compare to Ch5 5.2.6 Accuracy ICC
+================================================================================
+
+Found Ch5 5.2.6 ICC estimates: /home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step03_icc_estimates.csv
+  ✓ Loaded 6 rows
+
+[Ch5 5.2.6 ICC_slope_accuracy by domain]:
+  What: 0.008130
+  Where: 0.011013
+  When: NOT FOUND
+
+[COMPARISON RESULTS]:
+  What:
+    Confidence ICC: 0.589545
+    Accuracy ICC:   0.008130
+    Delta:          0.581415
+    → Confidence reveals MORE trait variance
+  Where:
+    Confidence ICC: 0.589593
+    Accuracy ICC:   0.011013
+    Delta:          0.578580
+    → Confidence reveals MORE trait variance
+  When:
+    Confidence ICC: 0.000012
+    Accuracy ICC:   nan
+    Delta:          nan
+    → comparison pending (accuracy data missing)
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/step06_ch5_comparison.csv
+
+================================================================================
+RQ 6.3.4 Complete
+================================================================================
+
+[SUMMARY - ICC by Domain]:
+  What: ICC_int=0.8580, ICC_slope=0.589545 (high)
+  Where: ICC_int=0.8659, ICC_slope=0.589593 (high)
+  When: ICC_int=0.5374, ICC_slope=0.000012 (negligible)
+
+[KEY FINDING]:
+  ✓ TRAIT VARIANCE DETECTED: Max ICC_slope = 0.5896
+  → Some domains show trait-like confidence decline patterns
+
+  Completed: 2026-01-17T14:30:43.818450

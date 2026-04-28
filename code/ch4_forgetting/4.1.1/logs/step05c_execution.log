@@ -1,0 +1,59 @@
+================================================================================
+Step 05c: Model Averaging
+================================================================================
+Loading input data and model comparison...
+  Training data: 400 observations
+  Models compared: 65
+  Best single model: PowerLaw_04 (weight=0.0560)
+  Competitive models (ΔAIC<2): 16
+  Cumulative weight: 57.1%
+
+Creating prediction grid...
+  Grid points: 100
+
+Computing model-averaged predictions...
+[MODEL AVERAGING] Starting multi-model inference...
+  Competitive models (ΔAIC < 2.0): 16
+  Total weight of competitive set: 57.1%
+  Renormalized to 100% across 16 models
+    [1/16] PowerLaw_04          w=0.0980 ✓
+    [2/16] PowerLaw_05          w=0.0919 ✓
+    [3/16] PowerLaw_03          w=0.0879 ✓
+    [4/16] LogLog               w=0.0852 ✓
+    [5/16] Root_033             w=0.0773 ✓
+    [6/16] CubeRoot             w=0.0772 ✓
+    [7/16] PowerLaw_06          w=0.0733 ✓
+    [8/16] FourthRoot           w=0.0687 ✓
+    [9/16] PowerLaw_02          w=0.0656 ✓
+    [10/16] PowerLaw_07          w=0.0506 ✓
+    [11/16] PowerLaw_01          w=0.0406 ✓
+    [12/16] SquareRoot+Lin       w=0.0382 ✓
+    [13/16] Exp+Log              w=0.0367 ✓
+    [14/16] Lin+Log              w=0.0367 ✓
+    [15/16] Recip+PowerLaw05     w=0.0361 ✓
+    [16/16] Recip+PowerLaw       w=0.0361 ✓
+
+Model averaging complete:
+  Models used: 16/16
+  Effective N models: 15.01
+  Prediction variance range: [0.0001, 0.0046]
+
+Model averaging complete:
+  Models used: 16
+  Effective N models: 15.01
+  Prediction variance: [0.0001, 0.0046]
+
+[POWER LAW] Effective alpha:
+  Weighted mean: α=0.410
+  Range: [0.1, 0.7]
+  Power-law models: 9/16
+
+Saving model-averaged predictions...
+  ✓ step05c_averaged_predictions.csv (100 rows)
+  ✓ step05c_averaging_summary.txt
+================================================================================
+Step 05c Complete
+  Effective α: 0.410
+  Models averaged: 16
+  Output: step05c_averaged_predictions.csv
+================================================================================

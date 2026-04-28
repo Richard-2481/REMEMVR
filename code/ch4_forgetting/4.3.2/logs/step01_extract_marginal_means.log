@@ -1,0 +1,49 @@
+Step 01: Extract Marginal Means at Day 3 Midpoint
+Verifying Step 0 completed...
+Step 0 confirmation file exists
+Loading fitted LMM model...
+Model with 9 parameters
+All parameters:
+Intercept                                                      0.528806
+C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]             0.023352
+C(Factor, Treatment('Free_Recall'))[T.Recognition]             0.209877
+log_Days                                                      -0.469684
+log_Days:C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]   -0.050616
+log_Days:C(Factor, Treatment('Free_Recall'))[T.Recognition]   -0.127447
+Group Var                                                      1.741095
+Group x log_Days Cov                                          -0.501994
+log_Days Var                                                   0.497321
+dtype: float64
+Covariance matrix shape: (9, 9)
+Identifying coefficient names (exact matching)...
+Intercept: Intercept
+log_Days: log_Days
+Cued_Recall effect: C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]
+Recognition effect: C(Factor, Treatment('Free_Recall'))[T.Recognition]
+Cued interaction: log_Days:C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]
+Recognition interaction: log_Days:C(Factor, Treatment('Free_Recall'))[T.Recognition]
+Computing marginal means at log(Day 3) = 1.0986...
+b_intercept = 0.5288
+b_log_days = -0.4697 (this is the Free_Recall slope)
+b_cued = 0.0234
+b_recog = 0.2099
+b_cued_int = -0.0506
+b_recog_int = -0.1274
+Free_Recall marginal mean = 0.0128
+Cued_Recall marginal mean = -0.0194
+Recognition marginal mean = 0.0827
+Computing standard errors...
+Free_Recall SE = 0.0654
+Cued_Recall SE = 0.0654
+Recognition SE = 0.0654
+Computing 95% confidence intervals...
+Building marginal means DataFrame...
+Marginal means DataFrame:
+      paradigm  marginal_mean        SE  CI_lower  CI_upper
+0  free_recall       0.012806  0.065365 -0.115310  0.140922
+1  cued_recall      -0.019450  0.065365 -0.147566  0.108666
+2  recognition       0.082667  0.065365 -0.045449  0.210783
+Checking output validity...
+All validation checks passed
+/home/etai/projects/REMEMVR/results/ch5/rq4/data/step01_marginal_means.csv (3 rows)
+Step 01 complete - Marginal means extracted

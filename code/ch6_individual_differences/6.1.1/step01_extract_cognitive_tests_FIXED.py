@@ -19,7 +19,6 @@ import numpy as np
 from pathlib import Path
 import sys
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
@@ -44,7 +43,6 @@ LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -107,39 +105,30 @@ def compute_ravlt_percent_retention(df, log_fn):
             pct_ret[i] = (dr / denom) * 100
 
     n_valid = np.sum(~np.isnan(pct_ret))
-    log_fn(f"[COMPUTED] RAVLT Percent Retention: {n_valid}/{len(df)} valid, "
+    log_fn(f"RAVLT Percent Retention: {n_valid}/{len(df)} valid, "
            f"M={np.nanmean(pct_ret):.1f}%, SD={np.nanstd(pct_ret):.1f}%")
     return pct_ret
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 01: Extract and Prepare Cognitive Test Data - v2 (Percent Retention)")
-        log("[INFO] Includes RAVLT ceiling fix + percent retention predictors")
-        log(f"[SETUP] RQ Directory: {RQ_DIR}")
-        log(f"[SETUP] Output will be saved to: {OUTPUT_FILE}")
-
-        # =========================================================================
-        # STEP 1: Load participant data
-        # =========================================================================
-        log("\n[DATA] Loading participant data from dfnonvr.csv...")
+        log("Step 01: Extract and Prepare Cognitive Test Data - v2 (Percent Retention)")
+        log("Includes RAVLT ceiling fix + percent retention predictors")
+        log(f"RQ Directory: {RQ_DIR}")
+        log(f"Output will be saved to: {OUTPUT_FILE}")
+        # Load participant data
+        log("\nLoading participant data from dfnonvr.csv...")
 
         data_path = PROJECT_ROOT / "data" / "dfnonvr.csv"
         if not data_path.exists():
             raise FileNotFoundError(f"Data file not found: {data_path}")
 
         cognitive_df = pd.read_csv(data_path)
-        log(f"[DATA] Loaded data for {len(cognitive_df)} participants")
-
-        # =========================================================================
-        # STEP 2: Apply RAVLT ceiling fix BEFORE computing totals
-        # =========================================================================
-        log("\n[CEILING] Applying RAVLT ceiling fix (0 -> 15 for unadministered trials)...")
+        log(f"Loaded data for {len(cognitive_df)} participants")
+        # Apply RAVLT ceiling fix BEFORE computing totals
+        log("\nApplying RAVLT ceiling fix (0 -> 15 for unadministered trials)...")
         cognitive_df = fix_ravlt_ceiling(cognitive_df, log)
-
-        # =========================================================================
-        # STEP 3: Extract and compute cognitive test scores
-        # =========================================================================
-        log("\n[PROCESS] Extracting cognitive test scores...")
+        # Extract and compute cognitive test scores
+        log("\nExtracting cognitive test scores...")
 
         extracted_data = pd.DataFrame()
         extracted_data['UID'] = cognitive_df['UID'].astype(str)
@@ -151,12 +140,12 @@ if __name__ == "__main__":
             raise ValueError(f"Missing RAVLT trial columns: {missing_cols}")
 
         extracted_data['RAVLT_Total'] = cognitive_df[ravlt_trial_cols].sum(axis=1)
-        log(f"[SUCCESS] RAVLT Total (ceiling-fixed): "
+        log(f"RAVLT Total (ceiling-fixed): "
             f"M={extracted_data['RAVLT_Total'].mean():.1f}, SD={extracted_data['RAVLT_Total'].std():.1f}")
 
         # RAVLT Delayed Recall
         extracted_data['RAVLT_DR'] = cognitive_df['ravlt-delayed-recall-score']
-        log(f"[SUCCESS] RAVLT Delayed Recall extracted")
+        log(f"RAVLT Delayed Recall extracted")
 
         # RAVLT Percent Retention (new predictor)
         extracted_data['RAVLT_Pct_Ret'] = compute_ravlt_percent_retention(cognitive_df, log)
@@ -168,35 +157,32 @@ if __name__ == "__main__":
             raise ValueError(f"Missing BVMT trial columns: {missing_cols}")
 
         extracted_data['BVMT_Total'] = cognitive_df[bvmt_trial_cols].sum(axis=1)
-        log(f"[SUCCESS] BVMT Total (sum trials 1-3): "
+        log(f"BVMT Total (sum trials 1-3): "
             f"M={extracted_data['BVMT_Total'].mean():.1f}, SD={extracted_data['BVMT_Total'].std():.1f}")
 
         # BVMT Percent Retained (new predictor, pre-computed in CSV)
         if 'bvmt-percent-retained' not in cognitive_df.columns:
             raise ValueError("Column 'bvmt-percent-retained' not found in dfnonvr.csv")
         extracted_data['BVMT_Pct_Ret'] = cognitive_df['bvmt-percent-retained']
-        log(f"[SUCCESS] BVMT Percent Retained: "
+        log(f"BVMT Percent Retained: "
             f"M={extracted_data['BVMT_Pct_Ret'].mean():.1f}%, SD={extracted_data['BVMT_Pct_Ret'].std():.1f}%")
 
         # NART
         if 'nart-score' in cognitive_df.columns:
             extracted_data['NART_Score'] = cognitive_df['nart-score']
-            log(f"[SUCCESS] NART score extracted")
+            log(f"NART score extracted")
         else:
-            log("[ERROR] NART score column not found")
+            log("NART score column not found")
             extracted_data['NART_Score'] = np.nan
 
         # RPM
         if 'rpm-score' in cognitive_df.columns:
             extracted_data['RPM_Score'] = cognitive_df['rpm-score']
-            log(f"[SUCCESS] RPM score extracted")
+            log(f"RPM score extracted")
         else:
-            log("[ERROR] RPM score column not found")
+            log("RPM score column not found")
             extracted_data['RPM_Score'] = np.nan
-
-        # =========================================================================
-        # STEP 4: Analyze missing data BEFORE processing
-        # =========================================================================
+        # Analyze missing data BEFORE processing
         log("\n[MISSING DATA] Analyzing missing data patterns...")
 
         key_columns = ['RAVLT_Total', 'RAVLT_DR', 'RAVLT_Pct_Ret',
@@ -207,13 +193,13 @@ if __name__ == "__main__":
 
         with open(MISSING_REPORT_FILE, 'w') as f:
             f.write(missing_report)
-        log(f"\n[SAVE] Missing data report saved to: {MISSING_REPORT_FILE}")
+        log(f"\nMissing data report saved to: {MISSING_REPORT_FILE}")
 
         complete_data = extracted_data.dropna(subset=key_columns)
         n_excluded = len(extracted_data) - len(complete_data)
 
         if n_excluded > 0:
-            log(f"\n[EXCLUSION] {n_excluded} participants excluded due to missing data")
+            log(f"\n{n_excluded} participants excluded due to missing data")
 
             demo_cols = ['age', 'sex', 'education']
             for col in demo_cols:
@@ -225,16 +211,13 @@ if __name__ == "__main__":
             )
 
             if not comparison.empty:
-                log("\n[EXCLUSION] Comparison of included vs excluded participants:")
+                log("\nComparison of included vs excluded participants:")
                 log(comparison.to_string())
                 comparison_file = RQ_DIR / "data" / "step01_exclusion_comparison.csv"
                 comparison.to_csv(comparison_file, index=False)
-                log(f"[SAVE] Exclusion comparison saved to: {comparison_file}")
-
-        # =========================================================================
-        # STEP 5: Convert to T-scores
-        # =========================================================================
-        log("\n[PROCESS] Converting raw scores to T-scores (M=50, SD=10)...")
+                log(f"Exclusion comparison saved to: {comparison_file}")
+        # Convert to T-scores
+        log("\nConverting raw scores to T-scores (M=50, SD=10)...")
 
         t_score_df = complete_data.copy()
 
@@ -258,10 +241,7 @@ if __name__ == "__main__":
             mean = t_score_df[t_col].mean()
             std = t_score_df[t_col].std()
             log(f"  {t_col:20} M={mean:.1f}, SD={std:.1f}")
-
-        # =========================================================================
-        # STEP 6: Save final dataset
-        # =========================================================================
+        # Save final dataset
 
         # Output columns: names match downstream expectations
         final_columns = ['UID', 'RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret_T',
@@ -269,13 +249,10 @@ if __name__ == "__main__":
         final_df = t_score_df[final_columns]
 
         final_df.to_csv(OUTPUT_FILE, index=False)
-        log(f"\n[SAVE] Saved cognitive test T-scores to: {OUTPUT_FILE}")
-        log(f"[INFO] Final dataset: {final_df.shape[0]} participants, {final_df.shape[1]} columns")
-        log(f"[INFO] Columns: {final_df.columns.tolist()}")
-
-        # =========================================================================
-        # STEP 7: Summary
-        # =========================================================================
+        log(f"\nSaved cognitive test T-scores to: {OUTPUT_FILE}")
+        log(f"Final dataset: {final_df.shape[0]} participants, {final_df.shape[1]} columns")
+        log(f"Columns: {final_df.columns.tolist()}")
+        # Summary
         log("\n" + "=" * 60)
         log("SUMMARY")
         log("=" * 60)
@@ -285,10 +262,10 @@ if __name__ == "__main__":
         log(f"Exclusion rate: {(n_excluded / len(cognitive_df) * 100):.1f}%")
         log("\nCeiling fixes: A103 (trials 4,5 -> 15), A064 (trial 5 -> 15)")
         log("New predictors: RAVLT_Pct_Ret_T, BVMT_Pct_Ret_T")
-        log("\n[SUCCESS] Step 01 complete - v2 with ceiling fix + percent retention")
+        log("\nStep 01 complete - v2 with ceiling fix + percent retention")
 
     except Exception as e:
-        log(f"\n[ERROR] Script failed: {str(e)}")
+        log(f"\nScript failed: {str(e)}")
         import traceback
-        log(f"[TRACEBACK]\n{traceback.format_exc()}")
+        log(f"\n{traceback.format_exc()}")
         sys.exit(1)

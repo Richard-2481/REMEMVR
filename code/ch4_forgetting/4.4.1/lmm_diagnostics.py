@@ -55,11 +55,8 @@ if __name__ == "__main__":
         log(f"Date: 2025-12-27")
         log(f"Purpose: Validate LMM assumptions")
         log("")
-
-        # =====================================================================
         # Load Model and Data
-        # =====================================================================
-        log("[LOAD] Loading fitted model and data...")
+        log("Loading fitted model and data...")
 
         result = MixedLMResults.load(str(INPUT_MODEL))
         df = pd.read_csv(INPUT_LMM_DATA)
@@ -75,15 +72,9 @@ if __name__ == "__main__":
         log(f"  Residuals: N={len(residuals)}, mean={residuals.mean():.6f}, SD={residuals.std():.4f}")
         log(f"  Fitted values: range [{fitted.min():.2f}, {fitted.max():.2f}]")
         log("")
-
-        # =====================================================================
         # Create Output Directory
-        # =====================================================================
         OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-        # =====================================================================
         # DIAGNOSTIC 1: Q-Q Plot (Normality of Residuals)
-        # =====================================================================
         log("="*70)
         log("DIAGNOSTIC 1: NORMALITY OF RESIDUALS")
         log("="*70)
@@ -102,7 +93,7 @@ if __name__ == "__main__":
         plt.savefig(qq_plot_path, dpi=300, bbox_inches='tight')
         plt.close()
 
-        log(f"[SAVED] {qq_plot_path.name}")
+        log(f"{qq_plot_path.name}")
 
         # Shapiro-Wilk test (normality test)
         # Note: With N=1200, test is very sensitive - visual more important
@@ -111,20 +102,17 @@ if __name__ == "__main__":
             log(f"  Shapiro-Wilk test: W={shapiro_stat:.4f}, p={shapiro_p:.6f}")
 
             if shapiro_p < 0.001:
-                log(f"  [WARNING] Residuals significantly deviate from normality (p<0.001)")
+                log(f"  Residuals significantly deviate from normality (p<0.001)")
                 log(f"            However, LMM robust to moderate non-normality with N>100")
                 log(f"            Visual assessment (Q-Q plot) is more informative")
             else:
-                log(f"  [PASS] Residuals approximately normally distributed")
+                log(f"  Residuals approximately normally distributed")
         else:
-            log(f"  [SKIP] Shapiro-Wilk test (N>5000, too sensitive)")
+            log(f"  Shapiro-Wilk test (N>5000, too sensitive)")
             log(f"         Using visual Q-Q plot assessment only")
 
         log("")
-
-        # =====================================================================
         # DIAGNOSTIC 2: Residuals vs Fitted (Homoscedasticity)
-        # =====================================================================
         log("="*70)
         log("DIAGNOSTIC 2: HOMOSCEDASTICITY (CONSTANT VARIANCE)")
         log("="*70)
@@ -145,7 +133,7 @@ if __name__ == "__main__":
         plt.savefig(resid_fitted_path, dpi=300, bbox_inches='tight')
         plt.close()
 
-        log(f"[SAVED] {resid_fitted_path.name}")
+        log(f"{resid_fitted_path.name}")
 
         # Breusch-Pagan test (heteroscedasticity test)
         # Need design matrix (exog) for BP test
@@ -157,20 +145,17 @@ if __name__ == "__main__":
             log(f"  Breusch-Pagan test: LM={bp_stat:.4f}, p={bp_p:.6f}")
 
             if bp_p < 0.05:
-                log(f"  [WARNING] Significant heteroscedasticity detected (p<0.05)")
+                log(f"  Significant heteroscedasticity detected (p<0.05)")
                 log(f"            Variance not constant across fitted values")
                 log(f"            Consider: robust standard errors, weighted LMM")
             else:
-                log(f"  [PASS] No significant heteroscedasticity detected")
+                log(f"  No significant heteroscedasticity detected")
         except Exception as e:
-            log(f"  [ERROR] Breusch-Pagan test failed: {str(e)}")
+            log(f"  Breusch-Pagan test failed: {str(e)}")
             log(f"          Using visual assessment only")
 
         log("")
-
-        # =====================================================================
         # DIAGNOSTIC 3: Scale-Location Plot (Spread-Location)
-        # =====================================================================
         log("="*70)
         log("DIAGNOSTIC 3: SCALE-LOCATION (SQRT STANDARDIZED RESIDUALS)")
         log("="*70)
@@ -198,14 +183,11 @@ if __name__ == "__main__":
         plt.savefig(scale_loc_path, dpi=300, bbox_inches='tight')
         plt.close()
 
-        log(f"[SAVED] {scale_loc_path.name}")
+        log(f"{scale_loc_path.name}")
         log("  Purpose: Check if variance increases with fitted values")
         log("  Ideal: Horizontal red line (constant variance)")
         log("")
-
-        # =====================================================================
         # DIAGNOSTIC 4: Outliers and Influential Points
-        # =====================================================================
         log("="*70)
         log("DIAGNOSTIC 4: OUTLIERS AND INFLUENTIAL POINTS")
         log("="*70)
@@ -219,10 +201,10 @@ if __name__ == "__main__":
         log(f"  Outliers (|std residual| > 3): N={n_outliers_3sd} ({pct_outliers:.2f}%)")
 
         if pct_outliers > 1.0:
-            log(f"  [WARNING] {pct_outliers:.2f}% outliers (expected <1% for normal)")
+            log(f"  {pct_outliers:.2f}% outliers (expected <1% for normal)")
             log(f"            May indicate model misspecification or data quality issues")
         else:
-            log(f"  [PASS] Outlier rate within expected range (<1%)")
+            log(f"  Outlier rate within expected range (<1%)")
 
         # Histogram of standardized residuals
         fig, ax = plt.subplots(figsize=(10, 6))
@@ -240,12 +222,9 @@ if __name__ == "__main__":
         plt.savefig(hist_path, dpi=300, bbox_inches='tight')
         plt.close()
 
-        log(f"[SAVED] {hist_path.name}")
+        log(f"{hist_path.name}")
         log("")
-
-        # =====================================================================
         # SUMMARY AND INTERPRETATION
-        # =====================================================================
         log("="*70)
         log("SUMMARY")
         log("="*70)
@@ -287,11 +266,8 @@ if __name__ == "__main__":
             log("  - Consider: robust standard errors, sensitivity analyses")
 
         log("")
-
-        # =====================================================================
         # SAVE REPORT
-        # =====================================================================
-        log("[SAVE] Writing diagnostics report...")
+        log("Writing diagnostics report...")
 
         OUTPUT_REPORT.parent.mkdir(parents=True, exist_ok=True)
         with open(OUTPUT_REPORT, 'w', encoding='utf-8') as f:
@@ -345,14 +321,14 @@ if __name__ == "__main__":
             f.write("2. Update validation.md with diagnostic results\n")
             f.write("3. Document any violations in summary.md Limitations\n")
 
-        log(f"[SAVED] {OUTPUT_REPORT.name}")
-        log("\n[SUCCESS] LMM diagnostics complete")
+        log(f"{OUTPUT_REPORT.name}")
+        log("\nLMM diagnostics complete")
         log(f"\nDiagnostic plots saved to: {OUTPUT_DIR}")
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

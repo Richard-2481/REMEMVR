@@ -1,0 +1,2 @@
+slope_free,slope_recognition,difference,se_difference,z_statistic,p_uncorrected,interpretation,hypothesis_supported
+0.0011190546432277,0.0008717463105331,-0.00024730833269460007,0.0011280304945806303,-0.21923904884020204,0.8264638387392154,No significant difference between Recognition and Free Recall slopes,False

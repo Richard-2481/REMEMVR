@@ -1,0 +1,92 @@
+Step 05: Merge all predictors
+Loading data from previous steps...
+  - Cognitive tests: (100, 6)
+  - Demographics: (100, 5)
+  - Self-report: (100, 6)
+  - Theta scores: (100, 3)
+Merging all datasets on uid...
+  - After adding cognitive: (100, 8)
+  - After adding demographics: (100, 12)
+  - After adding self-report: (100, 17)
+Missing values per column:
+  - NART_T: 3 missing (3.0%)
+Converting predictors to z-scores...
+  - RAVLT_T: M=50.00, SD=10.00
+  - RAVLT_DR_T: M=50.00, SD=10.00
+  - BVMT_T: M=50.00, SD=10.00
+  - NART_T: M=50.00, SD=10.00
+  - RPM_T: M=50.00, SD=10.00
+  - age: M=44.57, SD=14.58
+  - education: M=6.10, SD=1.64
+  - DASS_Dep: M=2.32, SD=3.27
+  - DASS_Anx: M=1.44, SD=2.38
+  - DASS_Str: M=3.34, SD=3.60
+  - VR_Exp: M=1.18, SD=1.08
+  - Sleep: M=7.07, SD=0.99
+Predictor correlations with theta:
+  - RAVLT_T_z: r=0.266
+  - RAVLT_DR_T_z: r=0.365
+  - BVMT_T_z: r=0.364
+  - NART_T_z: r=0.091
+  - RPM_T_z: r=0.457
+  - age_z: r=-0.193
+  - education_z: r=0.092
+  - DASS_Dep_z: r=0.047
+  - DASS_Anx_z: r=0.208
+  - DASS_Str_z: r=0.176
+  - VR_Exp_z: r=0.184
+  - Sleep_z: r=-0.073
+Final merged dataset:
+  - N participants: 100
+  - N columns: 29
+  - Complete cases: 97
+Saved merged data to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step05_merged_predictors.csv
+Step 05 complete
+Step 05: Merge all predictors
+Loading data from previous steps...
+  - Cognitive tests: (100, 8)
+  - Demographics: (100, 5)
+  - Self-report: (100, 6)
+  - Theta scores: (100, 3)
+Merging all datasets on uid...
+  - After adding cognitive: (100, 10)
+  - After adding demographics: (100, 14)
+  - After adding self-report: (100, 19)
+Missing values per column:
+  - NART_T: 3 missing (3.0%)
+Converting predictors to z-scores...
+  - RAVLT_T: M=50.00, SD=10.00
+  - RAVLT_DR_T: M=50.00, SD=10.00
+  - RAVLT_Pct_Ret: M=50.00, SD=10.00
+  - BVMT_T: M=50.00, SD=10.00
+  - BVMT_Pct_Ret: M=50.00, SD=10.00
+  - NART_T: M=50.00, SD=10.00
+  - RPM_T: M=50.00, SD=10.00
+  - age: M=44.57, SD=14.58
+  - education: M=6.10, SD=1.64
+  - DASS_Dep: M=2.32, SD=3.27
+  - DASS_Anx: M=1.44, SD=2.38
+  - DASS_Str: M=3.34, SD=3.60
+  - VR_Exp: M=1.18, SD=1.08
+  - Sleep: M=7.07, SD=0.99
+Predictor correlations with theta:
+  - RAVLT_T_z: r=0.279
+  - RAVLT_DR_T_z: r=0.365
+  - RAVLT_Pct_Ret_z: r=0.365
+  - BVMT_T_z: r=0.364
+  - BVMT_Pct_Ret_z: r=0.195
+  - NART_T_z: r=0.091
+  - RPM_T_z: r=0.457
+  - age_z: r=-0.193
+  - education_z: r=0.092
+  - DASS_Dep_z: r=0.047
+  - DASS_Anx_z: r=0.208
+  - DASS_Str_z: r=0.176
+  - VR_Exp_z: r=0.184
+  - Sleep_z: r=-0.073
+Final merged dataset:
+  - N participants: 100
+  - N columns: 33
+  - Complete cases: 97
+Saved merged data to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step05_merged_predictors.csv
+Step 05 complete

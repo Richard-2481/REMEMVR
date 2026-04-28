@@ -1,0 +1,78 @@
+================================================================================
+STEP 02D: RECIP+LOG ROOT MODEL VERIFICATION
+================================================================================
+Date: 2025-12-09 23:29:33.362215
+
+[STEP 1] Loading original LMM input and adding recip_TSVR...
+  Loaded: 800 rows, 100 participants
+  Columns: ['UID', 'composite_ID', 'test', 'domain', 'theta', 'TSVR_hours', 'log_TSVR', 'age', 'Age_c', 'mean_age']
+  Added recip_TSVR transformation: 1 / (TSVR_hours + 1)
+  recip_TSVR range: [0.0040, 0.5000]
+  Saved: step02d_lmm_input_recip_log.csv
+
+[STEP 2] Fitting Recip+Log model with 3-way Age × Domain × Time interactions...
+  Formula: theta ~ recip_TSVR + log_TSVR + Age_c + domain + recip_TSVR:Age_c + log_TSVR:Age_c + recip_TSVR:domain + log_TSVR:domain + Age_c:domain + recip_TSVR:Age_c:domain + log_TSVR:Age_c:domain
+  Random effects: Attempting (recip_TSVR | UID) - matches ROOT random structure
+  REML=False (ML estimation for model comparison)
+
+  [ATTEMPT 1] Fitting with random slopes: ~recip_TSVR...
+  Model converged with random slopes
+
+  Model converged: True
+  Random structure used: ~recip_TSVR (random slopes)
+  N observations: 800
+  N groups: 100
+  Log-likelihood: -717.10
+  AIC: 1466.20
+  BIC: 1541.15
+
+[STEP 3] Extracting fixed effects and 3-way interaction terms...
+  Found 2 three-way interaction terms:
+    recip_TSVR:Age_c:domain[T.Where]: β=-0.026346, SE=0.033555, p=0.432354
+    log_TSVR:Age_c:domain[T.Where]: β=-0.002564, SE=0.004241, p=0.545484
+
+  Bonferroni-corrected p-values (α = 0.025):
+    recip_TSVR:Age_c:domain[T.Where]: p_bonf=0.864708 log_TSVR:Age_c:domain[T.Where]: p_bonf=1.090969 [STEP 4] Comparing Recip+Log to original Log model...
+  Original Log model 3-way interactions:
+    TSVR_hours:Age_c:domain[T.Where]: β=-0.000062, p=0.494902
+    log_TSVR:Age_c:domain[T.Where]: β=0.002461, p=0.437746
+
+  Comparison Summary:
+  ----------------------------------------------------------------------------
+  Linear Time × Age × Domain:
+    Original (Log): β=-0.000062, p=0.494902
+    Recip+Log:      β=-0.026346, p=0.432354
+    Change in p:    Δp=-0.062548
+    Both NULL:      True
+  Log Time × Age × Domain:
+    Original (Log): β=0.002461, p=0.437746
+    Recip+Log:      β=-0.002564, p=0.545484
+    Change in p:    Δp=+0.107738
+    Both NULL:      True
+
+[STEP 5] Saving verification outputs...
+  Saved: step02d_lmm_model_recip_log.pkl
+  Saved: step02d_fixed_effects_recip_log.csv
+  Saved: step02d_comparison_log_vs_recip_log.csv
+
+================================================================================
+[VERIFICATION SUMMARY]
+================================================================================
+
+✅ VERIFICATION PASSED: NULL age effects ROBUST to ROOT model update
+
+Key Findings:
+  1. All 3-way Age × Domain × Time interactions remain NULL (p_bonf > 0.025)
+  2. Age effects on forgetting do NOT vary by domain (What vs Where)
+  3. Original Log-only finding ROBUST to Recip+Log functional form
+
+Interpretation:
+  - VR episodic memory shows domain-GENERAL age effects
+  - Hippocampal aging hypothesis NOT supported (spatial memory not more vulnerable)
+  - Functional form (Log vs Recip+Log) does NOT change conclusion
+
+Status: RQ 5.2.3 NULL findings verified, ready for GOLD status
+
+================================================================================
+Step 02d Recip+Log verification complete
+================================================================================

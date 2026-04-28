@@ -1,0 +1,240 @@
+======================================================================
+RQ 6.3.2: SEM-Based Domain-Stratified Calibration
+======================================================================
+TIER 1 VALIDATION: Crossover interaction at risk (χ²=59.60, p<0.0001)
+Difference score reliability: CATASTROPHIC across all domains
+  - What: r_diff=0.083
+  - Where: r_diff=0.037 (WORST)
+  - When: r_diff=0.336
+Target: r>0.70 for EACH domain after SEM
+======================================================================
+
+======================================================================
+STEP 1: Load Domain-Stratified Calibration Data
+======================================================================
+Loaded: 1200 rows, 10 columns
+Columns: ['UID', 'TEST', 'theta_accuracy', 'Domain', 'theta_confidence', 'TSVR_hours', 'theta_accuracy_z', 'theta_confidence_z', 'calibration', 'abs_calibration']
+All required columns present: 10 columns
+Row count OK: 1200 rows (expected ~1200)
+Domains found: ['What', 'When', 'Where']
+No missing values in theta scores
+STEP 1 COMPLETE
+
+======================================================================
+STEP 2: Compute PRE-SEM Difference Score Reliability (BY DOMAIN)
+======================================================================
+
+======================================================================
+DOMAIN: What
+======================================================================
+N = 400 observations (100 participants × 4 tests)
+Correlation (accuracy, confidence): r = 0.5707, p = 0.000000
+
+Accuracy IRT Reliability (ICC):
+  Between-person variance: 0.5672
+  Within-person variance: 0.7484
+  ICC (r_xx): 0.4311
+
+Confidence IRT Reliability (ICC):
+  Between-person variance: 0.6664
+  Within-person variance: 0.3706
+  ICC (r_yy): 0.6426
+
+Difference Score Reliability (PRE-SEM) for What:
+  r_xx (accuracy reliability): 0.4311
+  r_yy (confidence reliability): 0.6426
+  r_xy (correlation): 0.5707
+  r_diff: -0.0787 (CATASTROPHIC (negative))
+
+🔴 CATASTROPHIC: r_diff=-0.0787 (NEGATIVE!)
+
+======================================================================
+DOMAIN: When
+======================================================================
+N = 400 observations (100 participants × 4 tests)
+Correlation (accuracy, confidence): r = 0.0872, p = 0.081553
+
+Accuracy IRT Reliability (ICC):
+  Between-person variance: 0.1112
+  Within-person variance: 0.7297
+  ICC (r_xx): 0.1323
+
+Confidence IRT Reliability (ICC):
+  Between-person variance: 0.6885
+  Within-person variance: 0.5692
+  ICC (r_yy): 0.5474
+
+Difference Score Reliability (PRE-SEM) for When:
+  r_xx (accuracy reliability): 0.1323
+  r_yy (confidence reliability): 0.5474
+  r_xy (correlation): 0.0872
+  r_diff: 0.2768 (LOW (< 0.60))
+
+⚠️  CRITICAL/LOW: r_diff=0.2768
+
+======================================================================
+DOMAIN: Where
+======================================================================
+N = 400 observations (100 participants × 4 tests)
+Correlation (accuracy, confidence): r = 0.6020, p = 0.000000
+
+Accuracy IRT Reliability (ICC):
+  Between-person variance: 0.6276
+  Within-person variance: 0.7817
+  ICC (r_xx): 0.4454
+
+Confidence IRT Reliability (ICC):
+  Between-person variance: 0.6731
+  Within-person variance: 0.3639
+  ICC (r_yy): 0.6491
+
+Difference Score Reliability (PRE-SEM) for Where:
+  r_xx (accuracy reliability): 0.4454
+  r_yy (confidence reliability): 0.6491
+  r_xy (correlation): 0.6020
+  r_diff: -0.1377 (CATASTROPHIC (negative))
+
+🔴 CATASTROPHIC: r_diff=-0.1377 (NEGATIVE!)
+
+======================================================================
+SUMMARY: PRE-SEM Reliability BY DOMAIN
+======================================================================
+What    : r_diff=-0.0787 (CATASTROPHIC (negative))
+When    : r_diff=+0.2768 (LOW (< 0.60))
+Where   : r_diff=-0.1377 (CATASTROPHIC (negative))
+STEP 2 COMPLETE
+
+======================================================================
+STEP 3: Compute SEM-Based Latent Calibration (BY DOMAIN)
+======================================================================
+Approach: Latent difference for EACH domain separately
+Method: Factor score regression with measurement error
+
+======================================================================
+DOMAIN: What
+======================================================================
+Using estimated SE from ICC:
+  SE_accuracy: 0.7542 (from r_xx=0.4311)
+  SE_confidence: 0.5978 (from r_yy=0.6426)
+
+Initializing SEMCalibration for What...
+Fitting latent difference model for What...
+
+✅ SEM calibration SUCCESSFUL for What
+Assigned 400/400 latent_calibration values for What
+
+Split-Half Reliability (POST-SEM) for What:
+  Split-half r: 0.7816
+  Full-length r (Spearman-Brown): 0.8774
+  ✅ GOOD reliability (>= 0.70) - Target achieved!
+
+📊 RELIABILITY IMPROVEMENT for What: +0.9561
+   From r_diff=-0.0787 to r=0.8774
+   Correlation (SEM vs Simple): r=0.9319
+
+======================================================================
+DOMAIN: When
+======================================================================
+Using estimated SE from ICC:
+  SE_accuracy: 0.9315 (from r_xx=0.1323)
+  SE_confidence: 0.6727 (from r_yy=0.5474)
+
+Initializing SEMCalibration for When...
+Fitting latent difference model for When...
+
+✅ SEM calibration SUCCESSFUL for When
+Assigned 400/400 latent_calibration values for When
+  WARNING: Zero/NaN variance in split-half means (odd_SD=nan, even_SD=nan)
+  Cannot compute split-half correlation - using ICC method
+  Using ICC method: r_full_length=nan
+
+Split-Half Reliability (POST-SEM) for When:
+  Split-half r: nan
+  Full-length r (Spearman-Brown): nan
+  🔴 LOW reliability (< 0.60)
+
+📊 RELIABILITY IMPROVEMENT for When: +nan
+   From r_diff=0.2768 to r=nan
+   Correlation (SEM vs Simple): r=0.8766
+
+======================================================================
+DOMAIN: Where
+======================================================================
+Using estimated SE from ICC:
+  SE_accuracy: 0.7447 (from r_xx=0.4454)
+  SE_confidence: 0.5924 (from r_yy=0.6491)
+
+Initializing SEMCalibration for Where...
+Fitting latent difference model for Where...
+
+✅ SEM calibration SUCCESSFUL for Where
+Assigned 400/400 latent_calibration values for Where
+  WARNING: Zero/NaN variance in split-half means (odd_SD=nan, even_SD=nan)
+  Cannot compute split-half correlation - using ICC method
+  Using ICC method: r_full_length=nan
+
+Split-Half Reliability (POST-SEM) for Where:
+  Split-half r: nan
+  Full-length r (Spearman-Brown): nan
+  🔴 LOW reliability (< 0.60)
+
+📊 RELIABILITY IMPROVEMENT for Where: +nan
+   From r_diff=-0.1377 to r=nan
+   Correlation (SEM vs Simple): r=0.9321
+
+======================================================================
+SUMMARY: POST-SEM Reliability BY DOMAIN
+======================================================================
+What    : r_PRE=-0.0787 → r_POST=+0.8774 (Δ=+0.9561)
+When    : r_PRE=+0.2768 → r_POST=+nan (Δ=+nan)
+Where   : r_PRE=-0.1377 → r_POST=+nan (Δ=+nan)
+STEP 3 COMPLETE
+
+======================================================================
+STEP 4: Validate & Save SEM Calibration Scores
+======================================================================
+No missing values in latent_calibration
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_calibration_scores_SEM.csv (1200 rows, 9 columns)
+Saved diagnostics: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step05_SEM_diagnostics.csv
+STEP 4 COMPLETE
+
+======================================================================
+SEM-BASED DOMAIN-STRATIFIED CALIBRATION COMPLETE
+======================================================================
+
+📊 KEY RESULTS (BY DOMAIN):
+
+1. What Domain:
+   PRE-SEM: r_diff = -0.0787
+   POST-SEM: r = 0.8774 (split-half)
+   Improvement: +0.9561 (+95.6 pp)
+   Correlation with simple: r = 0.9319
+
+2. When Domain:
+   PRE-SEM: r_diff = 0.2768
+   POST-SEM: r = nan (split-half)
+   Improvement: +nan (+nan pp)
+   Correlation with simple: r = 0.8766
+
+3. Where Domain:
+   PRE-SEM: r_diff = -0.1377
+   POST-SEM: r = nan (split-half)
+   Improvement: +nan (+nan pp)
+   Correlation with simple: r = 0.9321
+
+🔴 WARNING: Some domains remain low reliability (<0.60)
+
+📁 OUTPUT FILES:
+   step05_calibration_scores_SEM.csv
+   step05_SEM_diagnostics.csv
+
+🔄 NEXT STEPS:
+   1. Create steps_00_to_04_SEM.py (modified to use latent_calibration)
+   2. Re-run LMM: calibration ~ Domain × TSVR + (TSVR | UID)
+   3. Compare PRE-SEM (χ²=59.60) vs POST-SEM crossover interaction
+   4. Classify outcome: ROBUST / NULL / MARGINAL
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================

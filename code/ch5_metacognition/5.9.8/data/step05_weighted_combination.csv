@@ -1,0 +1,2 @@
+d_pooled,SE_pooled,CI_lower,CI_upper,w_accuracy,w_confidence,d_accuracy,d_confidence,interpretation,limitation_note
+0.1054041631098562,0.11911916526538278,-0.12806940081029405,0.33887772703000646,0.36936108739904133,0.6306389126009587,0.2,0.05,"Negligible effect (|d| < 0.20), convergent NULL confirmed",K=2 effect sizes insufficient for formal meta-analysis. No heterogeneity assessment performed. Simple inverse-variance weighting only.

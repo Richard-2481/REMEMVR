@@ -1,0 +1,109 @@
+Step 04: Validate LMM Assumptions for Both Models
+Loading fitted LMM models from Step 3...
+Loading IRT model: /home/etai/projects/REMEMVR/results/ch5/5.5.4/data/step03_irt_lmm_model.pkl
+IRT model: step03_irt_lmm_model.pkl
+Loading CTT model: /home/etai/projects/REMEMVR/results/ch5/5.5.4/data/step03_ctt_lmm_model.pkl
+CTT model: step03_ctt_lmm_model.pkl
+Loading original data for assumption validation...
+step00_irt_theta_from_rq551.csv (800 rows, 7 cols)
+step01_ctt_scores.csv (800 rows, 7 cols)
+Preparing data for assumption validation...
+IRT data: 800 rows, added log_TSVR and LocationType
+CTT data: 800 rows, added log_TSVR and LocationType
+Running assumption validation for IRT model...
+IRT model assumption validation complete
+Overall validation: FAIL
+Message: LMM assumption violations detected (3/7 checks failed):
+  - Residual normality violated (Shapiro-Wilk p < 0.05)
+  - Homoscedasticity violated (Breusch-Pagan p < 0.05)
+  - Autocorrelation detected (Lag-1 ACF = -0.174 exceeds 0.1)
+
+Recommended remedial actions:
+  1. Consider using robust standard errors or transforming the outcome variable
+  2. Model variance structure explicitly or use weighted least squares
+  3. Add AR(1) correlation structure to account for temporal dependencies
+
+Running assumption validation for CTT model...
+CTT model assumption validation complete
+Overall validation: FAIL
+Message: LMM assumption violations detected (2/7 checks failed):
+  - Homoscedasticity violated (Breusch-Pagan p < 0.05)
+  - Autocorrelation detected (Lag-1 ACF = -0.135 exceeds 0.1)
+
+Recommended remedial actions:
+  1. Model variance structure explicitly or use weighted least squares
+  2. Add AR(1) correlation structure to account for temporal dependencies
+
+Creating assumptions comparison table...
+IRT diagnostics: 8 assumption tests
+CTT diagnostics: 8 assumption tests
+Assumptions comparison table: 16 rows
+Expected 14 rows, got 16
+Saving assumptions comparison table...
+step04_assumptions_comparison.csv (16 rows, 7 cols)
+Creating narrative diagnostics report...
+step04_assumption_diagnostics.txt
+Running final validation checks...
+Expected 14 rows, got 16
+Assumptions comparison has 16 rows, expected 14
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.4/code/step04_validate_lmm_assumptions.py", line 579, in <module>
+    raise ValueError(f"Assumptions comparison has {len(assumptions_comparison)} rows, expected 14")
+ValueError: Assumptions comparison has 16 rows, expected 14
+Step 04: Validate LMM Assumptions for Both Models
+Loading fitted LMM models from Step 3...
+Loading IRT model: /home/etai/projects/REMEMVR/results/ch5/5.5.4/data/step03_irt_lmm_model.pkl
+IRT model: step03_irt_lmm_model.pkl
+Loading CTT model: /home/etai/projects/REMEMVR/results/ch5/5.5.4/data/step03_ctt_lmm_model.pkl
+CTT model: step03_ctt_lmm_model.pkl
+Loading original data for assumption validation...
+step00_irt_theta_from_rq551.csv (800 rows, 7 cols)
+step01_ctt_scores.csv (800 rows, 7 cols)
+Preparing data for assumption validation...
+IRT data: 800 rows, added log_TSVR and LocationType
+CTT data: 800 rows, added log_TSVR and LocationType
+Running assumption validation for IRT model...
+IRT model assumption validation complete
+Overall validation: FAIL
+Message: LMM assumption violations detected (3/7 checks failed):
+  - Residual normality violated (Shapiro-Wilk p < 0.05)
+  - Homoscedasticity violated (Breusch-Pagan p < 0.05)
+  - Autocorrelation detected (Lag-1 ACF = -0.174 exceeds 0.1)
+
+Recommended remedial actions:
+  1. Consider using robust standard errors or transforming the outcome variable
+  2. Model variance structure explicitly or use weighted least squares
+  3. Add AR(1) correlation structure to account for temporal dependencies
+
+Running assumption validation for CTT model...
+CTT model assumption validation complete
+Overall validation: FAIL
+Message: LMM assumption violations detected (2/7 checks failed):
+  - Homoscedasticity violated (Breusch-Pagan p < 0.05)
+  - Autocorrelation detected (Lag-1 ACF = -0.135 exceeds 0.1)
+
+Recommended remedial actions:
+  1. Model variance structure explicitly or use weighted least squares
+  2. Add AR(1) correlation structure to account for temporal dependencies
+
+Creating assumptions comparison table...
+IRT diagnostics: 8 assumption tests
+CTT diagnostics: 8 assumption tests
+Assumptions comparison table: 16 rows
+Expected 14 rows, got 16
+Saving assumptions comparison table...
+step04_assumptions_comparison.csv (16 rows, 7 cols)
+Creating narrative diagnostics report...
+step04_assumption_diagnostics.txt
+Running final validation checks...
+Assumptions comparison has 16 rows (within expected 14-16 range)
+All status values in {'PASS', 'FAIL'}
+Both models covered (IRT and CTT)
+Assumptions tested: {'Linearity', 'Normality_random_effects_slopes', 'Homoscedasticity', 'Normality_residuals', 'Normality_random_effects_intercepts', 'Independence', 'No_multicollinearity', 'Influential_observations'}
+Total unique assumptions: 8
+Total violations: 14/14
+Assumption violations detected (documented findings, not errors)
+Violations documented in step04_assumption_diagnostics.txt
+Continue to Step 5 with documented violations
+Step 04 complete

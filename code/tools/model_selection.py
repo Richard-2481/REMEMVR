@@ -34,9 +34,7 @@ import traceback
 from datetime import datetime
 
 
-# =============================================================================
 # MAIN FUNCTION
-# =============================================================================
 
 def compare_lmm_models_kitchen_sink(
     data: pd.DataFrame,
@@ -193,12 +191,9 @@ def compare_lmm_models_kitchen_sink(
     log("=" * 80)
     log("LMM Model Selection: Kitchen Sink Suite")
     log("=" * 80)
+    # Validate Inputs
 
-    # =========================================================================
-    # STEP 1: Validate Inputs
-    # =========================================================================
-
-    log("[VALIDATION] Checking inputs...")
+    log("Checking inputs...")
 
     # Copy data to avoid modifying original
     df = data.copy()
@@ -291,12 +286,9 @@ def compare_lmm_models_kitchen_sink(
 
     log(f"  Random effects: {re_formula}")
     log(f"  REML: {reml}")
+    # Create Time Transformations
 
-    # =========================================================================
-    # STEP 2: Create Time Transformations
-    # =========================================================================
-
-    log("[TRANSFORM] Creating time transformations...")
+    log("Creating time transformations...")
 
     # Convert TSVR to days
     df['TSVR'] = df[tsvr_var] / 24.0  # Internal standard: TSVR in days
@@ -402,12 +394,9 @@ def compare_lmm_models_kitchen_sink(
             factor['var_formula'] = factor['var']  # Use original for categorical
 
     log(f"  Total transformations created: {len(transformations)}")
+    # Define Model Suite
 
-    # =========================================================================
-    # STEP 3: Define Model Suite
-    # =========================================================================
-
-    log("[CONFIG] Defining model suite...")
+    log("Defining model suite...")
 
     models = {}
 
@@ -514,12 +503,9 @@ def compare_lmm_models_kitchen_sink(
     })
 
     log(f"  Total models defined: {len(models)}")
+    # Build Formulas with Interactions
 
-    # =========================================================================
-    # STEP 4: Build Formulas with Interactions
-    # =========================================================================
-
-    log("[FORMULA] Building model formulas...")
+    log("Building model formulas...")
 
     def build_formula(time_expr: str, outcome: str, factors: List[dict]) -> str:
         """
@@ -558,12 +544,9 @@ def compare_lmm_models_kitchen_sink(
 
     log(f"  Example formula (Linear): {formulas['Linear']}")
     log(f"  Example formula (Log): {formulas['Log']}")
+    # Fit All Models
 
-    # =========================================================================
-    # STEP 5: Fit All Models
-    # =========================================================================
-
-    log("[ANALYSIS] Fitting all models...")
+    log("Fitting all models...")
     log(f"  This may take 5-10 minutes for {len(models)} models...")
 
     fitted_models = {}
@@ -620,12 +603,9 @@ def compare_lmm_models_kitchen_sink(
             f"Only {len(fitted_models)} models converged (minimum {min_converged_models} recommended). "
             f"Proceeding with available models, but results may be unreliable."
         )
+    # Compute AIC Comparison Metrics
 
-    # =========================================================================
-    # STEP 6: Compute AIC Comparison Metrics
-    # =========================================================================
-
-    log("[COMPUTE] Computing AIC comparison metrics...")
+    log("Computing AIC comparison metrics...")
 
     comparison_df = pd.DataFrame(model_stats)
 
@@ -653,12 +633,9 @@ def compare_lmm_models_kitchen_sink(
     log(f"  Minimum AIC: {aic_min:.2f}")
     log(f"  delta_AIC range: [{comparison_df['delta_AIC'].min():.2f}, {comparison_df['delta_AIC'].max():.2f}]")
     log(f"  Akaike weight sum: {comparison_df['akaike_weight'].sum():.6f} (should be 1.0)")
+    # Identify Best Model
 
-    # =========================================================================
-    # STEP 7: Identify Best Model
-    # =========================================================================
-
-    log("[RESULTS] Identifying best model...")
+    log("Identifying best model...")
 
     best_model_name = comparison_df.iloc[0]['model_name']
     best_model_aic = comparison_df.iloc[0]['AIC']
@@ -714,12 +691,9 @@ def compare_lmm_models_kitchen_sink(
     else:
         log_model_info = {'error': 'Log model failed to converge'}
         log("  Log model: FAILED TO CONVERGE")
+    # Validate AIC Comparison
 
-    # =========================================================================
-    # STEP 8: Validate AIC Comparison
-    # =========================================================================
-
-    log("[VALIDATION] Validating AIC comparison metrics...")
+    log("Validating AIC comparison metrics...")
 
     # Check weights sum to 1.0
     weight_sum = comparison_df['akaike_weight'].sum()
@@ -752,12 +726,9 @@ def compare_lmm_models_kitchen_sink(
         warnings.warn(f"cumulative_weight final = {cum_weight_final:.6f} (expected 1.0)")
     else:
         log(f"  ✓ cumulative_weight ends at 1.0 ({cum_weight_final:.6f})")
+    # Prepare Outputs
 
-    # =========================================================================
-    # STEP 9: Prepare Outputs
-    # =========================================================================
-
-    log("[OUTPUT] Preparing output dictionary...")
+    log("Preparing output dictionary...")
 
     # Top 10 models
     top_10 = comparison_df.head(10)[['model_name', 'AIC', 'delta_AIC', 'akaike_weight', 'cumulative_weight']]
@@ -774,13 +745,10 @@ def compare_lmm_models_kitchen_sink(
     }
 
     log(f"  Competitive models (ΔAIC < 2): {summary_stats['n_competitive_models']}")
-
-    # =========================================================================
-    # STEP 10: Save Outputs (if requested)
-    # =========================================================================
+    # Save Outputs (if requested)
 
     if save_dir is not None:
-        log(f"[SAVE] Saving outputs to {save_dir}...")
+        log(f"Saving outputs to {save_dir}...")
         save_dir = Path(save_dir)
         save_dir.mkdir(parents=True, exist_ok=True)
 
@@ -826,10 +794,7 @@ def compare_lmm_models_kitchen_sink(
     log("=" * 80)
     log("Model selection complete!")
     log("=" * 80)
-
-    # =========================================================================
     # Return Results
-    # =========================================================================
 
     results = {
         'comparison': comparison_df,

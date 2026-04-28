@@ -1,0 +1,61 @@
+2025-12-05 13:53:40,296 - INFO - ============================================================
+2025-12-05 13:53:40,296 - INFO - RQ 5.5.6 Step 03: Compute ICC Estimates per Location
+2025-12-05 13:53:40,296 - INFO - ============================================================
+2025-12-05 13:53:40,298 - INFO - Loaded variance components: 10 rows from results/ch5/5.5.6/data/step02_variance_components.csv
+2025-12-05 13:53:40,298 - INFO - Conditional ICC timepoint: log(145) = 4.977 (Day 6)
+2025-12-05 13:53:40,298 - INFO - 
+Computing ICC for Source location
+2025-12-05 13:53:40,303 - INFO -   var_intercept: 0.126829
+2025-12-05 13:53:40,303 - INFO -   var_slope: 0.002040
+2025-12-05 13:53:40,303 - INFO -   cov_int_slope: 0.009994
+2025-12-05 13:53:40,303 - INFO -   var_residual: 0.401714
+2025-12-05 13:53:40,303 - INFO -   ICC_intercept: 0.2400 (Poor)
+2025-12-05 13:53:40,303 - INFO -   ICC_slope_simple: 0.0051 (Poor)
+2025-12-05 13:53:40,303 - INFO -   ICC_slope_conditional (Day 6): 0.4080 (Fair)
+2025-12-05 13:53:40,303 - INFO - 
+Computing ICC for Destination location
+2025-12-05 13:53:40,303 - INFO -   var_intercept: 0.338263
+2025-12-05 13:53:40,303 - INFO -   var_slope: 0.010256
+2025-12-05 13:53:40,303 - INFO -   cov_int_slope: -0.050147
+2025-12-05 13:53:40,304 - INFO -   var_residual: 0.465018
+2025-12-05 13:53:40,304 - INFO -   ICC_intercept: 0.4211 (Fair)
+2025-12-05 13:53:40,304 - INFO -   ICC_slope_simple: 0.0216 (Poor)
+2025-12-05 13:53:40,304 - INFO -   ICC_slope_conditional (Day 6): 0.1669 (Poor)
+2025-12-05 13:53:40,304 - INFO - 
+============================================================
+2025-12-05 13:53:40,304 - INFO - VALIDATION: Checking ICC constraints
+2025-12-05 13:53:40,304 - INFO - ============================================================
+2025-12-05 13:53:40,305 - INFO -   All ICC values in [0, 1]: PASS
+2025-12-05 13:53:40,305 - INFO -   Total rows: 6 (expected 6)
+2025-12-05 13:53:40,305 - INFO -   Row count correct: PASS
+2025-12-05 13:53:40,306 - INFO -   No NaN values: PASS
+2025-12-05 13:53:40,307 - INFO - 
+Saved ICC estimates to: results/ch5/5.5.6/data/step03_icc_estimates.csv
+2025-12-05 13:53:40,307 - INFO - 
+============================================================
+2025-12-05 13:53:40,307 - INFO - ICC ESTIMATES SUMMARY
+2025-12-05 13:53:40,307 - INFO - ============================================================
+2025-12-05 13:53:40,308 - INFO - 
+Source Location:
+2025-12-05 13:53:40,308 - INFO -   ICC_intercept: 0.2400 (Poor)
+2025-12-05 13:53:40,308 - INFO -   ICC_slope_simple: 0.0051 (Poor)
+2025-12-05 13:53:40,308 - INFO -   ICC_slope_conditional: 0.4080 (Fair)
+2025-12-05 13:53:40,308 - INFO - 
+Destination Location:
+2025-12-05 13:53:40,308 - INFO -   ICC_intercept: 0.4211 (Fair)
+2025-12-05 13:53:40,309 - INFO -   ICC_slope_simple: 0.0216 (Poor)
+2025-12-05 13:53:40,309 - INFO -   ICC_slope_conditional: 0.1669 (Poor)
+2025-12-05 13:53:40,309 - INFO - 
+============================================================
+2025-12-05 13:53:40,309 - INFO - KEY FINDINGS
+2025-12-05 13:53:40,309 - INFO - ============================================================
+2025-12-05 13:53:40,309 - INFO - ICC_intercept: Source=0.240, Destination=0.421
+2025-12-05 13:53:40,309 - INFO -   -> Fair or better reliability for at least one location
+2025-12-05 13:53:40,310 - INFO - ICC_slope_simple: Source=0.0051, Destination=0.0216
+2025-12-05 13:53:40,310 - INFO -   -> LOW ICC_slope in both locations (near-zero variance)
+2025-12-05 13:53:40,310 - INFO - 
+============================================================
+2025-12-05 13:53:40,310 - INFO - STEP 03 COMPLETE
+2025-12-05 13:53:40,310 - INFO - ============================================================
+2025-12-05 13:53:40,310 - INFO - Computed 6 ICC estimates (3 types x 2 locations)
+2025-12-05 13:53:40,310 - INFO - Ready for Step 04: Extract Individual Random Effects

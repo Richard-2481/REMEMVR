@@ -12,7 +12,6 @@ INPUT:
 OUTPUT:
 - plots/step07_functional_form_data.csv (observed + predicted trajectory)
 
-Author: g_code
 Date: 2025-12-08
 RQ: ch5/5.1.1
 Step: 07
@@ -38,11 +37,11 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 07: Prepare Plot Data")
+        log("Step 07: Prepare Plot Data")
         log("=" * 80)
 
         # Load data
-        log("[LOAD] Loading input data...")
+        log("Loading input data...")
         lmm_input = pd.read_csv(RQ_DIR / "data" / "step04_lmm_input.csv")
         comparison = pd.read_csv(RQ_DIR / "data" / "step05_model_comparison.csv")
         
@@ -50,20 +49,20 @@ if __name__ == "__main__":
         log(f"  Best model: {best_model_name}")
         
         # Create time transformations
-        log("[TRANSFORM] Creating time transformations...")
+        log("Creating time transformations...")
         lmm_input['TSVR_days'] = lmm_input['TSVR_hours'] / 24.0
         lmm_input['log_TSVR'] = np.log(lmm_input['TSVR_days'] + 1)
         lmm_input['PowerLaw_04'] = (lmm_input['TSVR_days'] + 1) ** (-0.4)
         
         # Fit best model
-        log(f"[FIT] Fitting {best_model_name} model...")
+        log(f"Fitting {best_model_name} model...")
         formula = 'theta ~ PowerLaw_04'
         model = smf.mixedlm(formula, lmm_input, groups=lmm_input['UID']).fit(reml=False)
         log(f"  ✓ Model converged")
         log(f"  AIC: {model.aic:.2f}")
         
         # Create prediction grid
-        log("[PREDICT] Creating prediction grid...")
+        log("Creating prediction grid...")
         tsvr_grid = np.linspace(1, 246, 100)
         pred_data = pd.DataFrame({
             'TSVR_hours': tsvr_grid,
@@ -73,7 +72,7 @@ if __name__ == "__main__":
         pred_data['predicted_theta'] = model.predict(pred_data)
         
         # Combine with observed data
-        log("[COMBINE] Creating plot dataset...")
+        log("Creating plot dataset...")
         observed = lmm_input[['TSVR_hours', 'theta', 'UID']].copy()
         observed['data_type'] = 'observed'
         
@@ -85,20 +84,20 @@ if __name__ == "__main__":
         plot_data = pd.concat([observed, predicted], ignore_index=True)
         
         # Save
-        log("[SAVE] Saving plot data...")
+        log("Saving plot data...")
         plot_path = RQ_DIR / "plots" / "step07_functional_form_data.csv"
         plot_data.to_csv(plot_path, index=False, encoding='utf-8')
         log(f"  ✓ {plot_path.name} ({len(plot_data)} rows)")
         
         log("=" * 80)
-        log("[SUCCESS] Step 07 Complete")
+        log("Step 07 Complete")
         log(f"  Model: {best_model_name}")
         log(f"  Observed: {len(observed)} points")
         log(f"  Predicted: {len(predicted)} points")
         log("=" * 80)
         
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         import traceback
         log(traceback.format_exc())
         raise

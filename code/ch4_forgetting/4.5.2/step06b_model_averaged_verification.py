@@ -1,80 +1,5 @@
 #!/usr/bin/env python3
-# =============================================================================
-# SCRIPT METADATA
-# =============================================================================
-"""
-Step ID: step06b
-Step Name: Model-Averaged ROOT Verification for RQ 5.5.2
-RQ: results/ch5/5.5.2
-Generated: 2025-12-10
-
-PURPOSE:
-Verify that Source-Destination consolidation NULL findings (RQ 5.5.2) remain
-robust when using 13-model averaged predictions from ROOT RQ 5.5.1 instead of
-single Logarithmic model.
-
-KEY QUESTION:
-Does the NULL LocationType × Phase interaction (p=0.610) persist when using
-model-averaged trajectories that account for extreme model uncertainty
-(N_eff=12.32)?
-
-**Original Analysis (Log-only):**
-- Model: Piecewise LMM with 48h breakpoint, Log-only trajectories
-- Finding: NULL 3-way interaction (p=0.610, f²=0.0005 negligible)
-- Conclusion: Source and destination show similar consolidation patterns
-
-**ROOT Update (RQ 5.5.1, 2025-12-08):**
-- Extended 66-model comparison revealed EXTREME uncertainty
-- Best model (Quadratic) weight = 6.7%, Log weight = 6.5% (ΔAIC=0.34, tied)
-- 13 competitive models (ΔAIC<2), cumulative weight = 54.3%
-- Model averaging MANDATORY (Burnham & Anderson, 2002)
-
-EXPECTED INPUTS:
-  - ../5.5.1/data/step05c_averaged_predictions.csv
-    Columns: ['TSVR_hours', 'LocationType', 'theta_averaged', 'prediction_variance', 'prediction_se']
-    Format: Model-averaged predictions across 13 competitive models
-    Expected rows: 200 (100 timepoints × 2 location types)
-
-  - data/step02_lmm_input_long.csv
-    Columns: ['composite_ID', 'UID', 'TSVR_hours', 'theta', 'LocationType', 'Days_within', 'Segment']
-    Format: Original piecewise LMM input (from step02)
-    Expected rows: 800 (100 participants × 4 sessions × 2 location types)
-
-EXPECTED OUTPUTS:
-  - data/step06b_model_averaged_lmm_input.csv
-    Format: Piecewise LMM input with model-averaged theta values
-    Expected rows: 800 (same structure as original)
-
-  - data/step06b_piecewise_lmm_model_averaged.pkl
-    Format: Fitted piecewise LMM using model-averaged predictions
-
-  - data/step06b_interaction_test_comparison.csv
-    Columns: ['approach', 'interaction_beta', 'interaction_se', 'p_uncorrected', 'p_bonf', 'f2', 'null_robust']
-    Format: Comparison of Log vs Model-Averaged interaction results
-    Expected: Both approaches yield NULL interaction
-
-  - logs/step06b_model_averaged_verification.log
-    Format: Execution log with model fit comparison
-
-VALIDATION CRITERIA:
-  - Model-averaged LMM converges with full random structure
-  - Interaction p-value remains >0.025 (NULL robust)
-  - Effect size remains negligible (f²<0.02)
-  - Comparison shows NULL findings model-invariant
-
-g_code REASONING:
-- Approach: Merge model-averaged predictions with original piecewise structure
-- Why this approach: Piecewise spec (48h breakpoint, Days_within) orthogonal to
-  functional form (Log vs model-averaged), so interaction test should be robust
-- Precedent: RQ 5.2.3, 5.2.4, 5.2.5 showed NULL interaction/convergence findings
-  robust across functional forms (Log vs Recip+Log)
-- Expected outcome: NULL interaction persists (p~0.6), confirming consolidation
-  patterns similar for source/destination regardless of trajectory model
-- Data flow: Load model-averaged predictions → Interpolate to observed TSVR_hours
-  → Replace theta in piecewise input → Fit piecewise LMM → Test interaction
-  → Compare to original Log-based result
-"""
-# =============================================================================
+"""Model-Averaged ROOT Verification for RQ 5.5.2: Verify that Source-Destination consolidation NULL findings (RQ 5.5.2) remain"""
 
 import sys
 from pathlib import Path
@@ -93,7 +18,6 @@ RQ_551_DIR = RQ_DIR.parent / "5.5.1"
 LOG_FILE = RQ_DIR / "logs" / "step06b_model_averaged_verification.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -108,10 +32,7 @@ if __name__ == "__main__":
         log("  RQ 5.5.1 ROOT model changed from Log-only to 13-model averaging")
         log("  Testing if NULL LocationType × Phase interaction robust to model averaging")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Model-Averaged Predictions from RQ 5.5.1
-        # =====================================================================
+        # Load Model-Averaged Predictions from RQ 5.5.1
         log("[STEP 1] Loading 13-model averaged predictions from RQ 5.5.1...")
         log("")
 
@@ -124,10 +45,7 @@ if __name__ == "__main__":
         log(f"  Location types: {sorted(averaged_preds['LocationType'].unique())}")
         log(f"  TSVR range: {averaged_preds['TSVR_hours'].min():.1f} - {averaged_preds['TSVR_hours'].max():.1f} hours")
         log("")
-
-        # =====================================================================
-        # STEP 2: Load Original Piecewise LMM Input
-        # =====================================================================
+        # Load Original Piecewise LMM Input
         log("[STEP 2] Loading original piecewise LMM input...")
         log("")
 
@@ -137,10 +55,7 @@ if __name__ == "__main__":
         log(f"  Participants: {original_data['UID'].nunique()}")
         log(f"  Location types: {sorted(original_data['LocationType'].unique())}")
         log("")
-
-        # =====================================================================
-        # STEP 3: Interpolate Model-Averaged Predictions to Observed TSVR
-        # =====================================================================
+        # Interpolate Model-Averaged Predictions to Observed TSVR
         log("[STEP 3] Interpolating model-averaged predictions to observed TSVR_hours...")
         log("")
 
@@ -190,10 +105,7 @@ if __name__ == "__main__":
         model_averaged_data.to_csv(output_file, index=False, encoding='utf-8')
         log(f"  Saved: {output_file.name}")
         log("")
-
-        # =====================================================================
-        # STEP 4: Fit Piecewise LMM with Model-Averaged Predictions
-        # =====================================================================
+        # Fit Piecewise LMM with Model-Averaged Predictions
         log("[STEP 4] Fitting piecewise LMM with model-averaged predictions...")
         log("")
 
@@ -221,10 +133,7 @@ if __name__ == "__main__":
         model_averaged_lmm.save(str(model_file))
         log(f"  Saved: {model_file.name}")
         log("")
-
-        # =====================================================================
-        # STEP 5: Extract 3-Way Interaction Term
-        # =====================================================================
+        # Extract 3-Way Interaction Term
         log("[STEP 5] Extracting 3-way interaction term...")
         log("")
 
@@ -289,10 +198,7 @@ if __name__ == "__main__":
             else:
                 log("  ⚠️  Significant interaction (p_bonf ≤ 0.025)")
             log("")
-
-        # =====================================================================
-        # STEP 6: Load Original Log-Based Results for Comparison
-        # =====================================================================
+        # Load Original Log-Based Results for Comparison
         log("[STEP 6] Loading original Log-based interaction results...")
         log("")
 
@@ -314,10 +220,7 @@ if __name__ == "__main__":
         log(f"    p (Bonferroni) = {original_p_bonf:.6f}")
         log(f"    Cohen's f² = {original_f2:.6f}")
         log("")
-
-        # =====================================================================
-        # STEP 7: Compare Log vs Model-Averaged Results
-        # =====================================================================
+        # Compare Log vs Model-Averaged Results
         log("[STEP 7] COMPARISON: Log vs Model-Averaged")
         log("=" * 80)
         log("")
@@ -348,10 +251,7 @@ if __name__ == "__main__":
         comparison.to_csv(comparison_file, index=False, encoding='utf-8')
         log(f"  Saved: {comparison_file.name}")
         log("")
-
-        # =====================================================================
-        # STEP 8: Verification Summary
-        # =====================================================================
+        # Verification Summary
         log("[STEP 8] VERIFICATION SUMMARY")
         log("=" * 80)
         log("")
@@ -399,16 +299,16 @@ if __name__ == "__main__":
 
         log("")
         log("=" * 80)
-        log("[SUCCESS] Step 06b complete")
-        log(f"[INFO] All outputs saved to {RQ_DIR / 'data'}")
+        log("Step 06b complete")
+        log(f"All outputs saved to {RQ_DIR / 'data'}")
         sys.exit(0)
 
     except Exception as e:
         log("")
         log("=" * 80)
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         log("")
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

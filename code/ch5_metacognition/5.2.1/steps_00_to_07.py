@@ -16,7 +16,6 @@ Steps:
   06:  Test time effect with dual p-values (Decision D068)
   07:  Prepare trajectory plot data (Decision D069)
 
-Author: Claude Code (RQ 6.2.1 execution)
 Date: 2025-12-11
 """
 
@@ -29,9 +28,7 @@ from statsmodels.stats.anova import anova_lm
 import warnings
 warnings.filterwarnings('ignore')
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.2.1
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR root
@@ -77,9 +74,7 @@ def validate_dataframe(df, name, expected_rows=None, required_columns=None):
     return True
 
 
-# =============================================================================
 # STEP 00a: Load Accuracy Theta Scores
-# =============================================================================
 
 def step00a_load_accuracy_theta():
     """Load accuracy theta scores from RQ 5.1.1."""
@@ -119,9 +114,7 @@ def step00a_load_accuracy_theta():
     return df_out
 
 
-# =============================================================================
 # STEP 00b: Load Confidence Theta Scores
-# =============================================================================
 
 def step00b_load_confidence_theta():
     """Load confidence theta scores from RQ 6.1.1."""
@@ -166,9 +159,7 @@ def step00b_load_confidence_theta():
     return df
 
 
-# =============================================================================
 # STEP 00c: Load TSVR Mapping
-# =============================================================================
 
 def step00c_load_tsvr_mapping():
     """Load TSVR time variable mapping from RQ 6.1.1."""
@@ -211,9 +202,7 @@ def step00c_load_tsvr_mapping():
     return df
 
 
-# =============================================================================
-# STEP 01: Merge Theta Scores with TSVR and Z-Standardize
-# =============================================================================
+# Merge Theta Scores with TSVR and Z-Standardize
 
 def step01_merge_theta(df_acc, df_conf, df_tsvr):
     """Merge all theta scores and z-standardize."""
@@ -264,9 +253,7 @@ def step01_merge_theta(df_acc, df_conf, df_tsvr):
     return df
 
 
-# =============================================================================
-# STEP 02: Compute Calibration Metric
-# =============================================================================
+# Compute Calibration Metric
 
 def step02_compute_calibration(df_merged):
     """Compute calibration = z_theta_confidence - z_theta_accuracy."""
@@ -317,9 +304,7 @@ def step02_compute_calibration(df_merged):
     return df_out
 
 
-# =============================================================================
-# STEP 03: Compute Brier Score
-# =============================================================================
+# Compute Brier Score
 
 def step03_compute_brier():
     """Compute item-level Brier scores for calibration assessment."""
@@ -417,9 +402,7 @@ def step03_compute_brier():
     return df_brier
 
 
-# =============================================================================
-# STEP 04: Compute Expected Calibration Error (ECE)
-# =============================================================================
+# Compute Expected Calibration Error (ECE)
 
 def step04_compute_ece():
     """Compute ECE per timepoint by binning confidence levels."""
@@ -532,9 +515,7 @@ def step04_compute_ece():
     return df_ece
 
 
-# =============================================================================
-# STEP 05: Fit LMM for Calibration Trajectory
-# =============================================================================
+# Fit LMM for Calibration Trajectory
 
 def step05_fit_lmm(df_calibration):
     """Fit LMM: calibration ~ TSVR_hours + (TSVR_hours | UID)."""
@@ -609,9 +590,7 @@ def step05_fit_lmm(df_calibration):
     return result, df
 
 
-# =============================================================================
-# STEP 06: Test Time Effect with Dual P-Values
-# =============================================================================
+# Test Time Effect with Dual P-Values
 
 def step06_test_time_effect(lmm_result, df_with_time):
     """Extract Time effect with dual p-value reporting (Decision D068)."""
@@ -711,9 +690,7 @@ def step06_test_time_effect(lmm_result, df_with_time):
     return df_result
 
 
-# =============================================================================
-# STEP 07: Prepare Calibration Trajectory Plot Data
-# =============================================================================
+# Prepare Calibration Trajectory Plot Data
 
 def step07_prepare_trajectory_plot(df_calibration, lmm_result):
     """Create plot source CSV for calibration trajectory."""
@@ -762,9 +739,7 @@ def step07_prepare_trajectory_plot(df_calibration, lmm_result):
     return df_plot
 
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all analysis steps."""

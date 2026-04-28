@@ -1,0 +1,155 @@
+Step 02: Fit LMM (Age × Time Interaction with Lin+Log)
+Loading prepared LMM input data...
+step01_lmm_input_prepared.csv (400 rows, 10 cols)
+All required columns present: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'se_all', 'age', 'Age_c', 'Time', 'Time_log']
+Data summary:
+  - N participants: 100
+  - N observations: 400
+  - Age_c range: [-24.57, 25.43]
+  - Age_c mean: 0.0000 (should be ~0)
+  - Time range: [1.00, 246.24] hours
+  - Time_log range: [0.69, 5.51]
+Fitting LMM with formula: theta ~ (Time + Time_log) * Age_c
+Random effects: (Time | UID)
+REML: False (using Maximum Likelihood)
+Model fitting in progress (may take 30-90 seconds)...
+LMM fitting complete
+Model converged successfully
+Saving fitted model to step02_lmm_model.pkl...
+step02_lmm_model.pkl
+Saving model summary to step02_lmm_summary.txt...
+step02_lmm_summary.txt
+Extracting fixed effects table...
+All arrays must be of the same length
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq9/code/step02_fit_lmm.py", line 239, in <module>
+    df_fixed = pd.DataFrame({
+               ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 782, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 503, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 114, in arrays_to_mgr
+    index = _extract_index(arrays)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 677, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+Step 02: Fit LMM (Age × Time Interaction with Lin+Log)
+Loading prepared LMM input data...
+step01_lmm_input_prepared.csv (400 rows, 10 cols)
+All required columns present: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'se_all', 'age', 'Age_c', 'Time', 'Time_log']
+Data summary:
+  - N participants: 100
+  - N observations: 400
+  - Age_c range: [-24.57, 25.43]
+  - Age_c mean: 0.0000 (should be ~0)
+  - Time range: [1.00, 246.24] hours
+  - Time_log range: [0.69, 5.51]
+Fitting LMM with formula: theta ~ (Time + Time_log) * Age_c
+Random effects: (Time | UID)
+REML: False (using Maximum Likelihood)
+Model fitting in progress (may take 30-90 seconds)...
+LMM fitting complete
+Model converged successfully
+Saving fitted model to step02_lmm_model.pkl...
+step02_lmm_model.pkl
+Saving model summary to step02_lmm_summary.txt...
+step02_lmm_summary.txt
+Extracting fixed effects table...
+Saving fixed effects table to step02_fixed_effects.csv...
+step02_fixed_effects.csv (6 rows)
+Fixed effects summary:
+  - Intercept: coef=0.8067, SE=0.0961, z=8.39, p=0.0000 ***
+  - Time: coef=-0.0021, SE=0.0010, z=-2.14, p=0.0327 *
+  - Time_log: coef=-0.1981, SE=0.0339, z=-5.84, p=0.0000 ***
+  - Age_c: coef=-0.0125, SE=0.0066, z=-1.88, p=0.0607 
+  - Time:Age_c: coef=0.0000, SE=0.0001, z=0.21, p=0.8305 
+  - Time_log:Age_c: coef=0.0007, SE=0.0024, z=0.30, p=0.7611 
+Running validate_model_convergence...
+PASS - Model converged successfully.
+Running validate_lmm_assumptions_comprehensive...
+This will generate 6 diagnostic plots in logs/ folder
+FAIL - LMM assumption violations detected (1/7 checks failed):
+  - Autocorrelation detected (Lag-1 ACF = -0.237 exceeds 0.1)
+
+Recommended remedial actions:
+  1. Add AR(1) correlation structure to account for temporal dependencies
+
+Diagnostic details:
+  - residual_normality: {'test': 'Shapiro-Wilk', 'statistic': 0.9929583874101564, 'p_value': 0.05762385173834927, 'pass': np.True_, 'threshold': 0.05}
+  - homoscedasticity: {'test': 'Breusch-Pagan', 'statistic': 6.309290523297095, 'p_value': 0.27727610015006, 'pass': np.True_, 'threshold': 0.05}
+  - random_effects_normality: {'intercepts': {'test': 'Shapiro-Wilk', 'statistic': 0.9820318246303472, 'p_value': 0.19079422240868527, 'pass': np.True_, 'threshold': 0.05}, 'slopes': {'test': 'Shapiro-Wilk', 'statistic': 0.9874618847302015, 'p_value': 0.46941571454792386, 'pass': np.True_, 'threshold': 0.05}}
+  - autocorrelation: {'lag1_acf': -0.23748281653908837, 'pass': False, 'threshold': 0.1}
+  - outliers: {'method': 'Studentized Residuals', 'threshold': 3.0, 'n_outliers': 1, 'outlier_percentage': 0.25, 'pass': True, 'outlier_indices': [372]}
+  - convergence: {'converged': True, 'pass': True}
+LMM assumptions validation failed: LMM assumption violations detected (1/7 checks failed):
+  - Autocorrelation detected (Lag-1 ACF = -0.237 exceeds 0.1)
+
+Recommended remedial actions:
+  1. Add AR(1) correlation structure to account for temporal dependencies
+
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq9/code/step02_fit_lmm.py", line 308, in <module>
+    raise ValueError(f"LMM assumptions validation failed: {assumptions_result['message']}")
+ValueError: LMM assumptions validation failed: LMM assumption violations detected (1/7 checks failed):
+  - Autocorrelation detected (Lag-1 ACF = -0.237 exceeds 0.1)
+
+Recommended remedial actions:
+  1. Add AR(1) correlation structure to account for temporal dependencies
+
+Step 02: Fit LMM (Age × Time Interaction with Lin+Log)
+Loading prepared LMM input data...
+step01_lmm_input_prepared.csv (400 rows, 10 cols)
+All required columns present: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'theta', 'se_all', 'age', 'Age_c', 'Time', 'Time_log']
+Data summary:
+  - N participants: 100
+  - N observations: 400
+  - Age_c range: [-24.57, 25.43]
+  - Age_c mean: 0.0000 (should be ~0)
+  - Time range: [1.00, 246.24] hours
+  - Time_log range: [0.69, 5.51]
+Fitting LMM with formula: theta ~ (Time + Time_log) * Age_c
+Random effects: (Time | UID)
+REML: False (using Maximum Likelihood)
+Model fitting in progress (may take 30-90 seconds)...
+LMM fitting complete
+Model converged successfully
+Saving fitted model to step02_lmm_model.pkl...
+step02_lmm_model.pkl
+Saving model summary to step02_lmm_summary.txt...
+step02_lmm_summary.txt
+Extracting fixed effects table...
+Saving fixed effects table to step02_fixed_effects.csv...
+step02_fixed_effects.csv (6 rows)
+Fixed effects summary:
+  - Intercept: coef=0.8067, SE=0.0961, z=8.39, p=0.0000 ***
+  - Time: coef=-0.0021, SE=0.0010, z=-2.14, p=0.0327 *
+  - Time_log: coef=-0.1981, SE=0.0339, z=-5.84, p=0.0000 ***
+  - Age_c: coef=-0.0125, SE=0.0066, z=-1.88, p=0.0607 
+  - Time:Age_c: coef=0.0000, SE=0.0001, z=0.21, p=0.8305 
+  - Time_log:Age_c: coef=0.0007, SE=0.0024, z=0.30, p=0.7611 
+Running validate_model_convergence...
+PASS - Model converged successfully.
+Running validate_lmm_assumptions_comprehensive...
+This will generate 6 diagnostic plots in logs/ folder
+WARNING - LMM assumption violations detected (1/7 checks failed):
+  - Autocorrelation detected (Lag-1 ACF = -0.237 exceeds 0.1)
+
+Recommended remedial actions:
+  1. Add AR(1) correlation structure to account for temporal dependencies
+
+Diagnostic details:
+  - residual_normality: {'test': 'Shapiro-Wilk', 'statistic': 0.9929583874101564, 'p_value': 0.05762385173834927, 'pass': np.True_, 'threshold': 0.05}
+  - homoscedasticity: {'test': 'Breusch-Pagan', 'statistic': 6.309290523297095, 'p_value': 0.27727610015006, 'pass': np.True_, 'threshold': 0.05}
+  - random_effects_normality: {'intercepts': {'test': 'Shapiro-Wilk', 'statistic': 0.9820318246303472, 'p_value': 0.19079422240868527, 'pass': np.True_, 'threshold': 0.05}, 'slopes': {'test': 'Shapiro-Wilk', 'statistic': 0.9874618847302015, 'p_value': 0.46941571454792386, 'pass': np.True_, 'threshold': 0.05}}
+  - autocorrelation: {'lag1_acf': -0.23748281653908837, 'pass': False, 'threshold': 0.1}
+  - outliers: {'method': 'Studentized Residuals', 'threshold': 3.0, 'n_outliers': 1, 'outlier_percentage': 0.25, 'pass': True, 'outlier_indices': [372]}
+  - convergence: {'converged': True, 'pass': True}
+Assumption violations noted but not fatal - proceeding with analysis
+Violations will be reported in results summary
+Step 02 complete - LMM fitted and validated

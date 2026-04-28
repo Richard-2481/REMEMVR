@@ -17,8 +17,8 @@ CRITICAL CONTEXT (from glmm_candidates.md):
 EXPECTED OUTCOME:
     - Age main effect: Likely NULL (p > 0.05) based on IRT→LMM p=0.156
     - Age × Where interaction: Likely NULL (p > 0.05) based on IRT→LMM p=0.713
-    - If significant: BLOCKER for PLATINUM (narrative revision required)
-    - If null: ROBUST finding (PLATINUM can proceed)
+    - If significant: blocks validation (narrative revision required)
+    - If null: ROBUST finding (validation can proceed)
 """
 
 import sys
@@ -27,9 +27,7 @@ import pandas as pd
 import numpy as np
 import statsmodels.formula.api as smf
 
-# ==============================================================================
 # PATHS
-# ==============================================================================
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 RQ_DIR = PROJECT_ROOT / "results" / "ch5" / "5.2.3"
 PARENT_RQ = PROJECT_ROOT / "results" / "ch5" / "5.2.1"  # Source of IRT data
@@ -47,9 +45,7 @@ print("=" * 80)
 print("GLMM VALIDATION: RQ 5.2.3 - Age × Domain Interaction")
 print("=" * 80)
 
-# ==============================================================================
-# STEP 1: Extract Item-Level Data from RQ 5.2.1
-# ==============================================================================
+# Extract Item-Level Data from RQ 5.2.1
 print("\n[STEP 1] Extracting item-level data from parent RQ 5.2.1...")
 print("-" * 80)
 
@@ -57,23 +53,23 @@ irt_input_path = PARENT_RQ / "data" / "step00_irt_input.csv"
 print(f"Loading IRT input: {irt_input_path}")
 
 if not irt_input_path.exists():
-    print(f"[ERROR] Parent RQ data not found: {irt_input_path}")
+    print(f"Parent RQ data not found: {irt_input_path}")
     print("   RQ 5.2.1 must be complete before validating RQ 5.2.3")
     sys.exit(1)
 
 irt_data = pd.read_csv(irt_input_path)
-print(f"[SUCCESS] Loaded {irt_data.shape[0]} rows x {irt_data.shape[1]} columns")
+print(f"Loaded {irt_data.shape[0]} rows x {irt_data.shape[1]} columns")
 
 # Parse composite_ID to extract UID and test
 irt_data[['UID', 'test']] = irt_data['composite_ID'].str.split('_', expand=True)
 irt_data['test'] = irt_data['test'].str.replace('T', '').astype(int)
-print(f"[INFO] Parsed UID and test from composite_ID")
+print(f"Parsed UID and test from composite_ID")
 print(f"   Unique UIDs: {irt_data['UID'].nunique()}")
 print(f"   Test sessions: {sorted(irt_data['test'].unique())}")
 
 # Find item columns (format: TQ_IFR-O-i1, TQ_ICR-N-i2, etc.)
 item_cols = [col for col in irt_data.columns if col.startswith('TQ_')]
-print(f"[INFO] Found {len(item_cols)} item columns")
+print(f"Found {len(item_cols)} item columns")
 
 # Melt to long format
 long_data = irt_data.melt(
@@ -82,7 +78,7 @@ long_data = irt_data.melt(
     var_name='item',
     value_name='Correct'
 )
-print(f"[SUCCESS] Melted to long format: {len(long_data):,} observations")
+print(f"Melted to long format: {len(long_data):,} observations")
 
 # Parse item name to extract domain
 # Format: TQ_IFR-O-i1 → Paradigm=IFR, Domain=O (What), Item=i1
@@ -100,14 +96,14 @@ def parse_item(item_str):
 item_info = long_data['item'].apply(parse_item).apply(pd.Series)
 long_data = pd.concat([long_data, item_info], axis=1)
 
-print(f"[INFO] Parsed item metadata")
+print(f"Parsed item metadata")
 print(f"   Paradigms: {sorted(long_data['Paradigm'].unique())}")
 print(f"   Domains: {sorted(long_data['Domain'].unique())}")
 
 # Filter to What and Where only (When excluded due to floor effect)
 domains = ['What', 'Where']
 long_data = long_data[long_data['Domain'].isin(domains)].copy()
-print(f"[INFO] Filtered to domains {domains}: {len(long_data):,} observations")
+print(f"Filtered to domains {domains}: {len(long_data):,} observations")
 print(f"   (When domain excluded due to floor effect)")
 
 # Create Item identifier
@@ -118,26 +114,24 @@ n_before = len(long_data)
 long_data = long_data.dropna(subset=['Correct'])
 n_after = len(long_data)
 if n_before > n_after:
-    print(f"[INFO] Dropped {n_before - n_after:,} rows with missing responses")
+    print(f"Dropped {n_before - n_after:,} rows with missing responses")
 
-print(f"\n[INFO] Item-level data extracted:")
+print(f"\nItem-level data extracted:")
 print(f"   Total observations: {len(long_data):,}")
 print(f"   Participants: {long_data['UID'].nunique()}")
 print(f"   Items: {long_data['Item'].nunique()}")
 print(f"   Domains: {long_data['Domain'].nunique()}")
 
-# ==============================================================================
-# STEP 2: Add Age from dfData.csv
-# ==============================================================================
+# Add Age from dfData.csv
 print("\n[STEP 2] Adding Age variable from dfData.csv...")
 print("-" * 80)
 
 if not DFDATA_PATH.exists():
-    print(f"[ERROR] dfData.csv not found: {DFDATA_PATH}")
+    print(f"dfData.csv not found: {DFDATA_PATH}")
     sys.exit(1)
 
 dfdata = pd.read_csv(DFDATA_PATH)
-print(f"[INFO] Loaded dfData.csv: {len(dfdata)} participants")
+print(f"Loaded dfData.csv: {len(dfdata)} participants")
 
 # Extract Age
 age_data = dfdata[['UID', 'age']].copy()
@@ -148,11 +142,11 @@ long_data = long_data.merge(age_data, on='UID', how='left')
 
 if long_data['Age'].isna().any():
     n_missing = long_data['Age'].isna().sum()
-    print(f"[WARNING] {n_missing} observations missing Age data")
+    print(f"{n_missing} observations missing Age data")
     long_data = long_data.dropna(subset=['Age'])
-    print(f"[INFO] Dropped missing Age rows, remaining: {len(long_data):,}")
+    print(f"Dropped missing Age rows, remaining: {len(long_data):,}")
 
-print(f"[SUCCESS] Age added to item-level data")
+print(f"Age added to item-level data")
 print(f"   Age range: {long_data['Age'].min():.0f}-{long_data['Age'].max():.0f} years")
 print(f"   Age mean: {long_data['Age'].mean():.1f} years")
 
@@ -165,28 +159,24 @@ item_data_path = DATA_DIR / "item_level_responses_with_age.csv"
 long_data[['composite_ID', 'UID', 'test', 'Domain', 'Item', 'Correct', 'Age', 'Age_c']].to_csv(
     item_data_path, index=False
 )
-print(f"[INFO] Saved: {item_data_path}")
+print(f"Saved: {item_data_path}")
 
-# ==============================================================================
-# STEP 3: Prepare GLMM Variables
-# ==============================================================================
+# Prepare GLMM Variables
 print("\n[STEP 3] Preparing model variables...")
 print("-" * 80)
 
 # Treatment coding: What as reference (least hippocampal-dependent)
 long_data['Domain_Where'] = (long_data['Domain'] == 'Where').astype(int)
 
-print(f"[INFO] Domain distribution:")
+print(f"Domain distribution:")
 for domain in ['What', 'Where']:
     n = (long_data['Domain'] == domain).sum()
     print(f"   {domain}: {n:,} ({100*n/len(long_data):.1f}%)")
 
-# ==============================================================================
-# STEP 4: Fit Item-Level Mixed Model (GLMM)
-# ==============================================================================
+# Fit Item-Level Mixed Model (GLMM)
 print("\n[STEP 4] Fitting item-level mixed model...")
 print("-" * 80)
-print("[INFO] Model: Correct ~ Age_c * Domain")
+print("Model: Correct ~ Age_c * Domain")
 print("       Random effects: (1 | UID)")
 print("       Approximation: Gaussian (valid for binary with large N)")
 print("")
@@ -200,13 +190,11 @@ model_glmm = smf.mixedlm(
     re_formula="~1"  # Random intercepts only
 )
 
-print(f"[INFO] Fitting... (may take 2-3 minutes with {len(long_data):,} observations)")
+print(f"Fitting... (may take 2-3 minutes with {len(long_data):,} observations)")
 result_glmm = model_glmm.fit(reml=False, method='lbfgs', maxiter=500)
-print(f"[SUCCESS] Complete! Converged: {result_glmm.converged}")
+print(f"Complete! Converged: {result_glmm.converged}")
 
-# ==============================================================================
-# STEP 5: Extract Results
-# ==============================================================================
+# Extract Results
 print("\n[STEP 5] Extracting Age × Domain interaction effects...")
 print("-" * 80)
 
@@ -234,9 +222,7 @@ print(f"{'  Domain Where vs What (baseline):':<45} {where_p:<15.3f} {where_beta:
 print("\nAGE × DOMAIN INTERACTION (Baseline):")
 print(f"{'  Age × Where (baseline difference):':<45} {age_where_p:<15.3f} {age_where_beta:<15.6f} {age_where_se:<15.6f}")
 
-# ==============================================================================
-# STEP 6: Compare to IRT→LMM
-# ==============================================================================
+# Compare to IRT→LMM
 print("\n[STEP 6] Comparison to IRT→LMM...")
 print("-" * 80)
 
@@ -248,9 +234,7 @@ print("\nGLMM findings (item-level, N={:,}):".format(len(long_data)))
 print(f"  Age main effect: p={age_main_p:.3f}")
 print(f"  Age × Where (baseline): p={age_where_p:.3f}")
 
-# ==============================================================================
-# STEP 7: Interpret
-# ==============================================================================
+# Interpret
 print("\n[STEP 7] Interpretation...")
 print("-" * 80)
 
@@ -281,9 +265,7 @@ else:
     print("      Hippocampal aging hypothesis NOT supported in VR context")
     outcome = "ROBUST_NULL_CONFIRMED"
 
-# ==============================================================================
-# STEP 8: Save Results
-# ==============================================================================
+# Save Results
 print("\n[STEP 8] Saving results...")
 print("-" * 80)
 
@@ -308,7 +290,7 @@ comparison = pd.DataFrame([
 ])
 comparison_path = DATA_DIR / "glmm_comparison.csv"
 comparison.to_csv(comparison_path, index=False)
-print(f"[SUCCESS] Saved: {comparison_path}")
+print(f"Saved: {comparison_path}")
 
 # Full summary
 summary_path = DATA_DIR / "glmm_summary.txt"
@@ -327,7 +309,7 @@ with open(summary_path, 'w') as f:
     f.write("\n\n" + "=" * 80 + "\n")
     f.write(f"OUTCOME: {outcome}\n")
     f.write("=" * 80 + "\n")
-print(f"[SUCCESS] Saved: {summary_path}")
+print(f"Saved: {summary_path}")
 
 # Validation report
 report_path = RESULTS_DIR / "glmm_validation_report.md"
@@ -349,24 +331,22 @@ with open(report_path, 'w') as f:
     f.write(f"## Outcome: {outcome.replace('_', ' ').title()}\n\n")
 
     if outcome == "ROBUST_NULL_CONFIRMED":
-        f.write("✅ **PLATINUM CERTIFICATION CAN PROCEED**\n\n")
+        f.write("✅ **QUALITY VALIDATION CAN PROCEED**\n\n")
         f.write("Item-level GLMM validation confirms IRT→LMM NULL findings:\n")
         f.write(f"- Age main effect: p={age_main_p:.3f} (NULL)\n")
         f.write(f"- Age × Where interaction: p={age_where_p:.3f} (NULL)\n\n")
         f.write("**Interpretation:** Age does NOT modulate domain-specific baseline performance. ")
         f.write("Hippocampal aging hypothesis not supported in VR episodic memory.\n")
     else:
-        f.write("⚠️ **BLOCKER FOR PLATINUM CERTIFICATION**\n\n")
+        f.write("⚠️ **BLOCKS QUALITY VALIDATION**\n\n")
         f.write("Item-level GLMM reveals baseline Age × Domain interaction not detected in IRT→LMM:\n")
         f.write(f"- Age × Where: p={age_where_p:.3f} < 0.05 (SIGNIFICANT)\n")
         f.write(f"- Effect size: β={age_where_beta:.4f} ± {age_where_se:.4f}\n\n")
         f.write("**Action required:** Thesis narrative revision to integrate item-level findings.\n")
 
-print(f"[SUCCESS] Saved: {report_path}")
+print(f"Saved: {report_path}")
 
-# ==============================================================================
 # SUMMARY
-# ==============================================================================
 print("\n" + "=" * 80)
 print("ITEM-LEVEL VALIDATION COMPLETE")
 print("=" * 80)
@@ -380,10 +360,10 @@ if outcome == "ROBUST_NULL_CONFIRMED":
     print("\n   ✅ NULL findings ROBUST (IRT→LMM and item-level model agree)")
     print("   ✅ Age × Domain interaction non-significant at item level")
     print("   ✅ No thesis narrative revision needed")
-    print("   ✅ PLATINUM certification can proceed")
+    print("   ✅ quality validation can proceed")
 elif "CHANGED" in outcome:
     print("\n   ⚠️ BASELINE INTERACTION CHANGED (NULL → SIGNIFICANT)")
-    print("   ⚠️ BLOCKER for PLATINUM certification")
+    print("   ⚠️ blocks quality validation")
     print("   ⚠️ Thesis narrative revision required")
 
 print("\nFiles created:")

@@ -1,0 +1,4 @@
+test_type,statistic,p_uncorrected,p_bonferroni,significant
+What_R2_diff,3.609408002368504e-17,1.0,1.0,False
+Where_R2_diff,2.59733180497193e-16,0.9999999999999998,1.0,False
+When_R2_diff,4.202772654563818e-16,0.9999999999999996,1.0,False

@@ -1,0 +1,60 @@
+Step 03: Hierarchical Multiple Regression
+Loading analysis dataset...
+step01_analysis_dataset.csv (100 rows, 10 cols)
+Response variable: theta_all (n=100)
+Model 1 predictors: Age_std
+Model 2 additional predictors: RAVLT_T_std, BVMT_T_std, RPM_T_std
+Running hierarchical regression...
+Hierarchical regression complete
+Model 1 R² = 0.0374
+Model 2 R² = 0.2472
+ΔR² = 0.2098
+F-change = 8.8255, p = 0.0000
+Age coefficient Model 1: β = -0.1302, p = 0.0540
+Age coefficient Model 2: β = 0.0258, p = 0.7219
+Bonferroni α = 0.0125
+Result: NO MEDIATION: Age not significant in bivariate model
+Saving hierarchical model results...
+step03_hierarchical_models.csv (2 rows, 8 cols)
+Running regression assumption checks...
+Regression assumption checks:
+normality_shapiro_wilk: OK (statistic=0.9920, p=0.8209)
+homoscedasticity_breusch_pagan: OK (statistic=4.1997, p=0.3797)
+multicollinearity_max_vif: OK (statistic=1.7497)
+outliers_max_cooks_d: VIOLATED (statistic=0.1170)
+autocorrelation_durbin_watson: OK (statistic=1.6964)
+Saving regression diagnostics...
+step03_model_diagnostics.csv (5 rows, 6 cols)
+1 assumption violations detected:
+- outliers_max_cooks_d: Investigate high-leverage points
+Step 03 complete
+Step 03: Hierarchical Multiple Regression
+Loading analysis dataset...
+step01_analysis_dataset.csv (100 rows, 14 cols)
+Response variable: theta_all (n=100)
+Model 1 predictors: Age_std
+Model 2 additional predictors: RAVLT_T_std, BVMT_T_std, RPM_T_std, RAVLT_Pct_Ret_T_std, BVMT_Pct_Ret_T_std
+Running hierarchical regression...
+Hierarchical regression complete
+Model 1 R² = 0.0374
+Model 2 R² = 0.2955
+ΔR² = 0.2581
+F-change = 6.8152, p = 0.0000
+Age coefficient Model 1: β = -0.1302, p = 0.0540
+Age coefficient Model 2: β = 0.0267, p = 0.7057
+Bonferroni α = 0.0083
+Result: NO MEDIATION: Age not significant in bivariate model
+Saving hierarchical model results...
+step03_hierarchical_models.csv (2 rows, 8 cols)
+Running regression assumption checks...
+Regression assumption checks:
+normality_shapiro_wilk: OK (statistic=0.9875, p=0.4708)
+homoscedasticity_breusch_pagan: OK (statistic=6.1600, p=0.4055)
+multicollinearity_max_vif: OK (statistic=1.8789)
+outliers_max_cooks_d: VIOLATED (statistic=0.1247)
+autocorrelation_durbin_watson: OK (statistic=1.6160)
+Saving regression diagnostics...
+step03_model_diagnostics.csv (5 rows, 6 cols)
+1 assumption violations detected:
+- outliers_max_cooks_d: Investigate high-leverage points
+Step 03 complete

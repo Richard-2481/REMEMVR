@@ -1,0 +1,7 @@
+model,location,outcome,n_obs,slopes_converged,slopes_aic,slopes_var_intercept,slopes_var_slope,slopes_has_warnings,intercepts_converged,intercepts_aic,intercepts_var_intercept,intercepts_has_warnings,delta_aic,recommendation
+Source_IRT,source,irt_z,400,False,1020.714223419016,,,True,True,1007.106842688248,0.31157310413107103,False,,Use intercepts-only (slopes unstable)
+Source_Full_CTT,source,ctt_full_z,400,True,974.4915690925254,0.23427256294949764,0.0023251829712523675,True,True,979.9730358699549,0.3729989642594018,False,-5.481466777429432,Use slopes despite convergence warnings
+Source_Purified_CTT,source,ctt_purified_z,400,False,979.7527818156213,,,True,True,986.7025794288329,0.35472719656756324,False,,Use intercepts-only (slopes unstable)
+Destination_IRT,destination,irt_z,400,False,1111.0879337246497,,,True,True,1092.7439752808423,0.16061085654895985,False,,Use intercepts-only (slopes unstable)
+Destination_Full_CTT,destination,ctt_full_z,400,True,1097.9999260907853,0.48377608587148957,0.024169431054591926,True,True,1081.8336201165148,0.23482972689783235,False,16.166305974270472,"Use intercepts (better fit, simpler)"
+Destination_Purified_CTT,destination,ctt_purified_z,400,True,1115.92039097085,0.4488289073156827,0.02702344536211363,True,True,1098.5131105068376,0.20220455914143284,False,17.407280464012274,"Use intercepts (better fit, simpler)"

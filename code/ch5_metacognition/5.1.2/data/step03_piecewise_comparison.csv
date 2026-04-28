@@ -1,0 +1,4 @@
+model,AIC,delta_AIC,piecewise_preferred
+Continuous,765.8986968479576,,
+Piecewise,826.1236595946707,,
+Comparison,,-60.22496274671312,False

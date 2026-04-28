@@ -16,7 +16,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step09_power_analysis.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -72,38 +71,38 @@ def compute_minimum_detectable_f2(n, k, alpha=0.05, power=0.80):
     return f2_mid
 
 try:
-    log("[START] Step 09: Power Analysis")
-    log("[INFO] Purpose: Post-hoc power and sensitivity analysis")
+    log("Step 09: Power Analysis")
+    log("Purpose: Post-hoc power and sensitivity analysis")
     
     # Load effect sizes
-    log("[LOAD] Loading effect size results...")
+    log("Loading effect size results...")
     effect_df = pd.read_csv(RQ_DIR / "data" / "step08_effect_sizes.csv")
-    log(f"[LOADED] Effect sizes: {len(effect_df)} effects")
+    log(f"Effect sizes: {len(effect_df)} effects")
     
     # Load sample information
-    log("[LOAD] Loading analysis dataset for sample size...")
+    log("Loading analysis dataset for sample size...")
     df = pd.read_csv(RQ_DIR / "data" / "step04_analysis_dataset.csv")
     n = len(df)
     k = 8  # Number of predictors (age, sex, education, RAVLT_T, BVMT_T, RPM_T, RAVLT_Pct_Ret_T, BVMT_Pct_Ret_T)
     
-    log(f"[INFO] Sample size: N={n}")
-    log(f"[INFO] Number of predictors: k={k}")
-    log(f"[INFO] Degrees of freedom: ({k}, {n-k-1})")
+    log(f"Sample size: N={n}")
+    log(f"Number of predictors: k={k}")
+    log(f"Degrees of freedom: ({k}, {n-k-1})")
     
     # Power analysis parameters
     alpha_uncorrected = 0.05
     alpha_bonferroni = 0.00179 / 5  # 0.000358 for cognitive tests
     power_target = 0.80
     
-    log(f"[PARAMS] Alpha (uncorrected): {alpha_uncorrected:.4f}")
-    log(f"[PARAMS] Alpha (Bonferroni): {alpha_bonferroni:.6f}")
-    log(f"[PARAMS] Target power: {power_target:.2f}")
+    log(f"Alpha (uncorrected): {alpha_uncorrected:.4f}")
+    log(f"Alpha (Bonferroni): {alpha_bonferroni:.6f}")
+    log(f"Target power: {power_target:.2f}")
     
     # Power analysis results storage
     power_results = []
     
     # Overall model power
-    log("[POWER] Computing post-hoc power for observed effects...")
+    log("Computing post-hoc power for observed effects...")
     overall_model = effect_df[effect_df['predictor'] == 'Overall_Model'].iloc[0]
     f2_overall = overall_model['cohens_f2']
     
@@ -120,7 +119,7 @@ try:
         'alpha_used': alpha_uncorrected
     })
     
-    log(f"[POWER] Overall model: f²={f2_overall:.4f}, power={power_overall:.3f}")
+    log(f"Overall model: f²={f2_overall:.4f}, power={power_overall:.3f}")
     
     # Individual cognitive tests (use Bonferroni corrected alpha)
     cognitive_tests = ['RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
@@ -144,37 +143,37 @@ try:
             'alpha_used': alpha_bonferroni
         })
         
-        log(f"[POWER] {test}: f²={f2_test:.4f}, power={power_test:.3f} "
+        log(f"{test}: f²={f2_test:.4f}, power={power_test:.3f} "
             f"(alpha={alpha_bonferroni:.6f})")
     
     # Create power analysis DataFrame
     power_df = pd.DataFrame(power_results)
     
     # Sensitivity analysis
-    log("[SENSITIVITY] Computing minimum detectable effects at 80% power...")
+    log("Computing minimum detectable effects at 80% power...")
     
     for _, row in power_df.iterrows():
         if row['test'] == 'Overall_Model':
-            log(f"[SENSITIVITY] Overall model: min f²={row['min_detectable_f2']:.4f} "
+            log(f"Overall model: min f²={row['min_detectable_f2']:.4f} "
                 f"at 80% power (alpha={row['alpha_used']:.4f})")
         else:
-            log(f"[SENSITIVITY] {row['test']}: min f²={row['min_detectable_f2']:.4f} "
+            log(f"{row['test']}: min f²={row['min_detectable_f2']:.4f} "
                 f"at 80% power (alpha={row['alpha_used']:.6f})")
     
     # Check power adequacy
-    log("[ADEQUACY] Checking power adequacy...")
+    log("Checking power adequacy...")
     adequate_power = []
     
     for _, row in power_df.iterrows():
         if row['power_observed'] >= 0.80:
             adequate_power.append(row['test'])
-            log(f"[ADEQUATE] {row['test']}: power={row['power_observed']:.3f} ≥ 0.80")
+            log(f"{row['test']}: power={row['power_observed']:.3f} ≥ 0.80")
         else:
-            log(f"[UNDERPOWERED] {row['test']}: power={row['power_observed']:.3f} < 0.80")
+            log(f"{row['test']}: power={row['power_observed']:.3f} < 0.80")
     
     if len(adequate_power) == 0:
-        log("[WARNING] All tests are underpowered (power < 0.80)")
-        log("[NOTE] This limits ability to detect true null effects")
+        log("All tests are underpowered (power < 0.80)")
+        log("This limits ability to detect true null effects")
     
     # Sample size for adequate power
     log("[SAMPLE SIZE] Computing required N for 80% power...")
@@ -194,18 +193,18 @@ try:
     # Save results
     output_path = RQ_DIR / "data" / "step09_power_analysis.csv"
     power_df.to_csv(output_path, index=False)
-    log(f"[SAVED] Power analysis: {output_path}")
+    log(f"Power analysis: {output_path}")
     
     # Validation
-    log("[VALIDATION] Checking power analysis validity...")
+    log("Checking power analysis validity...")
     all_power_valid = all((0 <= p <= 1) for p in power_df['power_observed'])
     all_f2_positive = all(f >= 0 for f in power_df['observed_f2'])
     alpha_correct = power_df[power_df['test'] != 'Overall_Model']['alpha_used'].iloc[0] == alpha_bonferroni
     
     if all_power_valid and all_f2_positive and alpha_correct:
-        log("[VALIDATION] Power analysis PASSED all checks")
+        log("Power analysis PASSED all checks")
     else:
-        log("[VALIDATION] Some checks failed:")
+        log("Some checks failed:")
         if not all_power_valid:
             log("  - Power values outside [0,1] range")
         if not all_f2_positive:
@@ -213,10 +212,10 @@ try:
         if not alpha_correct:
             log("  - Bonferroni correction not properly applied")
     
-    log("[SUCCESS] Step 09 complete")
+    log("Step 09 complete")
     
 except Exception as e:
-    log(f"[ERROR] Critical error in power analysis: {str(e)}")
+    log(f"Critical error in power analysis: {str(e)}")
     import traceback
-    log(f"[TRACEBACK] {traceback.format_exc()}")
+    log(f"{traceback.format_exc()}")
     raise

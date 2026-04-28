@@ -1,0 +1,82 @@
+Step 01: Extract Accuracy Variance Components
+
+Loading accuracy random effects from Ch5 5.1.4...
+step06_averaged_random_effects.csv (100 rows, 3 cols)
+  Columns: ['UID', 'intercept_avg', 'slope_avg']
+  N participants: 100
+
+Computing variance components...
+  var_intercept: 0.311549
+  var_slope: 0.002395
+  cov_int_slope: 0.001036
+
+Extracting residual variance from Ch5 5.1.4...
+  Searching for alternative variance files...
+EXPECTATIONS ERROR: Could not extract var_residual from Ch5 5.1.4
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step01_extract_accuracy_variance.py", line 190, in <module>
+    raise ValueError("EXPECTATIONS ERROR: Could not extract var_residual from Ch5 5.1.4")
+ValueError: EXPECTATIONS ERROR: Could not extract var_residual from Ch5 5.1.4
+Step 01: Extract Accuracy Variance Components
+
+Loading accuracy random effects from Ch5 5.1.4...
+step06_averaged_random_effects.csv (100 rows, 3 cols)
+  Columns: ['UID', 'intercept_avg', 'slope_avg']
+  N participants: 100
+
+Computing variance components...
+  var_intercept: 0.311549
+  var_slope: 0.002395
+  cov_int_slope: 0.001036
+
+Extracting residual variance from Ch5 5.1.4...
+step06_averaged_variance_components.csv
+  var_residual: 0.318538
+
+Computing ICC values...
+  ICC_slope: 0.007463
+  ICC_conditional: 0.003787
+
+Creating output files...
+step01_accuracy_variance_components.csv (10 rows)
+step01_accuracy_random_effects.csv (100 rows)
+
+Summary:
+  All variance components >= 0: PASS
+  ICC_slope in [0, 1]: PASS (0.007463)
+  ICC_conditional in [0, 1]: PASS (0.003787)
+  N_participants = 100: PASS
+
+Step 01 complete - Accuracy variance components extracted
+Step 01: Extract Accuracy Variance Components
+
+Loading accuracy random effects from Ch5 5.1.4...
+step06_averaged_random_effects.csv (100 rows, 3 cols)
+  Columns: ['UID', 'intercept_avg', 'slope_avg']
+  N participants: 100
+
+Computing variance components...
+  var_intercept: 0.311549
+  var_slope: 0.002395
+  cov_int_slope: 0.001036
+
+Extracting residual variance from Ch5 5.1.4...
+step06_averaged_variance_components.csv
+  var_residual: 0.318538
+
+Computing ICC values...
+  ICC_slope: 0.007463
+  ICC_conditional: 0.003787
+
+Creating output files...
+step01_accuracy_variance_components.csv (10 rows)
+step01_accuracy_random_effects.csv (100 rows)
+
+Summary:
+  All variance components >= 0: PASS
+  ICC_slope in [0, 1]: PASS (0.007463)
+  ICC_conditional in [0, 1]: PASS (0.003787)
+  N_participants = 100: PASS
+
+Step 01 complete - Accuracy variance components extracted

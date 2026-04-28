@@ -20,41 +20,40 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step06_standardize_scores.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 06: Z-Standardize All Measurements")
+        log("Step 06: Z-Standardize All Measurements")
 
         # Load theta scores from RQ 5.4.1
         theta_path = PROJECT_ROOT / "results" / "ch5" / "5.4.1" / "data" / "step03_theta_scores.csv"
-        log(f"[LOAD] Reading {theta_path}")
+        log(f"Reading {theta_path}")
         theta_scores = pd.read_csv(theta_path, encoding='utf-8')
 
         # Load Full CTT scores
         ctt_full_path = RQ_DIR / "data" / "step02_ctt_full_scores.csv"
-        log(f"[LOAD] Reading {ctt_full_path}")
+        log(f"Reading {ctt_full_path}")
         ctt_full_scores = pd.read_csv(ctt_full_path, encoding='utf-8')
 
         # Load Purified CTT scores
         ctt_purified_path = RQ_DIR / "data" / "step03_ctt_purified_scores.csv"
-        log(f"[LOAD] Reading {ctt_purified_path}")
+        log(f"Reading {ctt_purified_path}")
         ctt_purified_scores = pd.read_csv(ctt_purified_path, encoding='utf-8')
 
         # Load TSVR mapping
         tsvr_path = PROJECT_ROOT / "results" / "ch5" / "5.4.1" / "data" / "step00_tsvr_mapping.csv"
-        log(f"[LOAD] Reading {tsvr_path}")
+        log(f"Reading {tsvr_path}")
         tsvr_mapping = pd.read_csv(tsvr_path, encoding='utf-8')
 
         # Merge all datasets
-        log("[MERGE] Merging all datasets on composite_ID")
+        log("Merging all datasets on composite_ID")
         merged = theta_scores.merge(ctt_full_scores, on='composite_ID', how='inner')
         merged = merged.merge(ctt_purified_scores, on='composite_ID', how='inner')
         merged = merged.merge(tsvr_mapping[['composite_ID', 'TSVR_hours']], on='composite_ID', how='inner')
-        log(f"[MERGED] {len(merged)} rows retained")
+        log(f"{len(merged)} rows retained")
 
         # Identify score columns to standardize (9 total)
         score_columns = [
@@ -63,7 +62,7 @@ if __name__ == "__main__":
             'ctt_purified_common', 'ctt_purified_congruent', 'ctt_purified_incongruent'
         ]
 
-        log(f"[STANDARDIZE] Z-standardizing {len(score_columns)} score columns")
+        log(f"Z-standardizing {len(score_columns)} score columns")
 
         # Z-standardize each column
         tolerance_mean = 0.01
@@ -90,37 +89,37 @@ if __name__ == "__main__":
             if abs(z_sd - 1.0) > tolerance_sd:
                 raise ValueError(f"{z_col} SD {z_sd:.6f} deviates from 1.0 by more than {tolerance_sd}")
 
-        log("[PASS] All z-scores have mean ~0 and SD ~1 within tolerance")
+        log("All z-scores have mean ~0 and SD ~1 within tolerance")
 
         # Select columns for output
         output_columns = ['composite_ID'] + [f'z_{col}' for col in score_columns] + ['TSVR_hours']
         standardized_scores = merged[output_columns]
 
         # Validation: Check for NaN values
-        log("[VALIDATION] Checking for NaN values")
+        log("Checking for NaN values")
         nan_count = standardized_scores.isna().sum().sum()
         if nan_count > 0:
             raise ValueError(f"Found {nan_count} NaN values in standardized scores")
-        log("[PASS] No NaN values found")
+        log("No NaN values found")
 
         # Validation: Check expected N
-        log(f"[VALIDATION] Checking N = 400")
+        log(f"Checking N = 400")
         if len(standardized_scores) != 400:
-            log(f"[WARNING] Expected 400 rows, got {len(standardized_scores)}")
+            log(f"Expected 400 rows, got {len(standardized_scores)}")
 
         # Save results
         output_path = RQ_DIR / "data" / "step06_standardized_scores.csv"
-        log(f"[SAVE] Writing {output_path}")
+        log(f"Writing {output_path}")
         standardized_scores.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {len(standardized_scores)} rows, {len(standardized_scores.columns)} columns")
+        log(f"{len(standardized_scores)} rows, {len(standardized_scores.columns)} columns")
 
-        log("[SUCCESS] Step 06 complete")
+        log("Step 06 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

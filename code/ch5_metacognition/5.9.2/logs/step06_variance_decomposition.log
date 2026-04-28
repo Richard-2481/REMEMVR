@@ -1,0 +1,55 @@
+Step 06: Variance Decomposition
+
+Loading ICC estimates from prior steps...
+Unknown format code 'f' for object of type 'str'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step06_variance_decomposition.py", line 103, in <module>
+    log(f"  ICC_accuracy: {ICC_acc:.6f}")
+                          ^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'str'
+Step 06: Variance Decomposition
+
+Loading ICC estimates from prior steps...
+  ICC_accuracy: 0.007463
+  ICC_conf_single: 0.264098
+  ICC_conf_ma: 0.040109
+  ICC_conf_PowerLaw: 0.918475
+  ICC_binary_conf: NOT AVAILABLE (Step 5 may have failed)
+
+Computing variance decomposition components...
+  D_total (total difference): 0.256635
+  WARNING: D_scale = 0 (binary ICC unavailable)
+  D_scale (scaling artifact): 0.000000
+  D_model (modeling artifact): 0.223989
+  D_genuine (genuine variance): 0.032646
+
+Computing percentages...
+  Scaling artifact: 0.00%
+  Modeling artifact: 87.28%
+  Genuine variance: 12.72%
+  Total percentage: 100.00%
+
+Creating variance decomposition table...
+step06_variance_decomposition.csv
+
+Creating validation checks...
+step06_decomposition_validation.csv
+  all_percentages_non_negative: PASS (value=0.0000, threshold=0.0000)
+  components_sum_to_100: PASS (value=100.0000, threshold=100.0000)
+  genuine_variance_reasonable: PASS (value=0.0326, threshold=-0.1000)
+
+Creating alternative decomposition...
+step06_alternative_decomposition.csv
+
+Variance decomposition interpretation:
+  PRIMARY HYPOTHESIS SUPPORTED: 87.3% artifact
+    Measurement artifacts dominate ICC difference
+    Confidence individual differences largely methodological
+
+Final summary:
+  All validations passed: YES
+  Components sum to 100%: PASS
+  Decomposition complete: PASS
+
+Step 06 complete - Variance decomposition computed

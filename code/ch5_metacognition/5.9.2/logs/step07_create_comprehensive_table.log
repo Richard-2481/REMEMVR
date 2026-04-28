@@ -1,0 +1,49 @@
+Step 07: Create Comprehensive Table and Summary
+
+Loading all prior step outputs...
+  WARNING: Step 5 output not found
+All available files loaded
+
+Extracting key ICC values...
+Unknown format code 'f' for object of type 'str'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step07_create_comprehensive_table.py", line 150, in <module>
+    log(f"  ICC_accuracy: {ICC_acc:.6f}")
+                          ^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'str'
+Step 07: Create Comprehensive Table and Summary
+
+Loading all prior step outputs...
+  WARNING: Step 5 output not found
+All available files loaded
+
+Extracting key ICC values...
+  ICC_accuracy: 0.007463
+  ICC_conf_single: 0.264098
+  ICC_conf_ma: 0.040109
+  ICC_matched: 0.918475
+
+Creating comprehensive ICC comparison table...
+step07_comprehensive_icc_comparison_table.csv (4 rows)
+
+Creating pairwise ratios table...
+step07_all_pairwise_ratios.csv (3 rows)
+
+Extracting variance decomposition results...
+  Scaling artifact: 0.0%
+  Modeling artifact: 87.3%
+  Genuine variance: 12.7%
+  Total artifact: 87.3%
+
+Creating comprehensive summary...
+/home/etai/projects/REMEMVR/results/ch6/6.9.2/results/summary.txt (6653 chars, ~712 words)
+
+Final validation:
+  All ICC values in [0, 1]: PASS
+  Comprehensive table rows: 4 (required >= 6)
+  Pairwise ratios: 3 (required >= 4)
+  Summary word count: 712 (required >= 500)
+  Summary has 6 sections: PASS
+
+Step 07 complete - Comprehensive table and summary created

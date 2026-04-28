@@ -1,0 +1,67 @@
+Step 07: Prepare Trajectory Plot Data (Decision D069)
+============================================================
+
+Loading input data...
+step04_lmm_input.csv (1200 rows)
+step03_item_parameters.csv (69 items)
+Test values mapped: {1,2,3,4} -> {0,1,3,6}
+
+Computing domain-specific IRT parameters...
+  Using columns: factor=factor, disc=a, diff=b
+Domain parameters computed:
+  what: a=1.043, b=-1.244
+  when: a=1.650, b=1.378
+  where: a=0.832, b=0.091
+
+Fitting LMM model for predictions...
+  Model fitted: AIC = 2523.36
+
+Generating predictions for each observation...
+Predictions generated for 1200 observations
+
+Creating theta scale plot data (individual-level)...
+Theta plot data prepared: 1200 rows
+  Domains: ['what', 'when', 'where']
+  TSVR range: 1.0 - 246.2 hours
+
+Transforming to probability scale (Decision D069)...
+Probability conversion complete
+  Probability range: 0.023 - 0.981
+
+Saving plot data files...
+/home/etai/projects/REMEMVR/results/ch5/rq1/plots/step07_trajectory_theta_data.csv
+  Rows: 1200, Columns: ['TSVR_hours', 'domain', 'theta', 'predicted_theta', 'UID']
+/home/etai/projects/REMEMVR/results/ch5/rq1/plots/step07_trajectory_probability_data.csv
+  Rows: 1200, Columns: ['TSVR_hours', 'domain', 'probability', 'predicted_probability', 'UID']
+
+Running validation checks...
+  Both output files exist
+  Individual-level data: 1200 rows
+  All 3 domains present
+  TSVR range valid: 1.0 - 246.2 hours
+  No NaN values in critical columns
+  Probability values in [0, 1] range
+  Prediction columns present
+
+All validation checks passed
+
+============================================================
+Step 07 complete: Trajectory plot data prepared
+============================================================
+
+Outputs created:
+  1. /home/etai/projects/REMEMVR/results/ch5/rq1/plots/step07_trajectory_theta_data.csv
+  2. /home/etai/projects/REMEMVR/results/ch5/rq1/plots/step07_trajectory_probability_data.csv
+
+Decision D069 implemented: Dual-scale trajectory data
+  - Theta scale: IRT ability units for technical audience
+  - Probability scale: 0-1 range for general audience
+
+Continuous TSVR: Individual-level data preserves real time variability
+  - 1200 individual observations
+  - TSVR range: 1.0 - 246.2 hours
+
+Theta by domain:
+  what: n=400, theta mean=-0.007, std=0.899
+  when: n=400, theta mean=0.109, std=0.688
+  where: n=400, theta mean=0.037, std=0.932

@@ -30,7 +30,6 @@ Burnham & Anderson (2002) model averaging:
 4. Compute model-averaged fitted: ŷ_MA = Σ w_i × ŷ_i
 5. Compute residuals: e = y - ŷ_MA
 
-Author: Claude Code
 Date: 2025-12-13
 RQ: ch5/5.1.1
 Step: 05d
@@ -69,7 +68,7 @@ def main():
     log("=" * 70)
 
     # Load data
-    log("\n[LOAD] Loading input data...")
+    log("\nLoading input data...")
     lmm_input = pd.read_csv(RQ_DIR / "data" / "step04_lmm_input.csv")
     comparison = pd.read_csv(RQ_DIR / "data" / "step05_model_comparison.csv")
 

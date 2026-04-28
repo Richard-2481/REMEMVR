@@ -1,0 +1,174 @@
+============================================================
+RQ 6.5.2: QUALITY VALIDATION VALIDATION
+============================================================
+Started: 2025-12-28 11:36:38.332885
+
+============================================================
+RUNNING HIGH-PRIORITY VALIDATIONS
+============================================================
+
+============================================================
+POWER ANALYSIS: NULL Finding (Congruent vs Common)
+============================================================
+Observed effect: β = 0.1522, SE = 0.1089
+Observed Cohen's f² = 0.0500
+============================================================
+RQ 6.5.2: QUALITY VALIDATION VALIDATION
+============================================================
+Started: 2025-12-28 11:39:28.763226
+
+============================================================
+RUNNING HIGH-PRIORITY VALIDATIONS
+============================================================
+
+============================================================
+POWER ANALYSIS: NULL Finding (Congruent vs Common)
+============================================================
+Observed effect: β = 0.1522, SE = 0.1089
+Observed Cohen's f² = 0.0500
+============================================================
+RQ 6.5.2: QUALITY VALIDATION VALIDATION
+============================================================
+Started: 2025-12-28 11:41:22.695707
+
+============================================================
+RUNNING HIGH-PRIORITY VALIDATIONS
+============================================================
+
+============================================================
+POWER ANALYSIS: NULL Finding (Congruent vs Common)
+============================================================
+Observed effect: β = 0.1522, SE = 0.1089
+Observed Cohen's f² = 0.0500
+
+Post-hoc power analysis:
+  N participants: 100
+  N observations: 1200
+  Observed f²: 0.0500
+  Power to detect f²=0.0500: 1.000
+
+  Power for Cohen's benchmarks:
+    Small (f²=0.02): 0.995
+    Medium (f²=0.15): 1.000
+    Large (f²=0.35): 1.000
+
+  N observations for 0.80 power (f²=0.0500): 196
+  N participants required: ~17
+
+INTERPRETATION:
+  Study had ADEQUATE POWER (power=1.000)
+  NULL finding likely represents true null effect
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/results/power_analysis.csv
+
+============================================================
+TOST EQUIVALENCE TESTING
+============================================================
+Congruent - Common:
+  Estimate: 0.1522
+  SE: 0.1089
+
+Equivalence bound: ±0.2
+  Hypothesis: Effect is within [-0.20, 0.20]
+
+TOST Results:
+  Test 1 (estimate > -0.20): t=3.234, p=0.0008
+  Test 2 (estimate < 0.20): t=0.439, p=0.3308
+  TOST p-value: 0.3308
+
+90% CI: [-0.0269, 0.3313]
+
+INTERPRETATION:
+  EQUIVALENCE NOT ESTABLISHED (p=0.3308)
+  Cannot rule out effect as large as d=0.2
+  Inconclusive: Effect may be small but non-zero
+  90% CI OUTSIDE BOUNDS: Cannot establish equivalence
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/results/tost_equivalence.csv
+
+============================================================
+DIFFERENCE SCORE RELIABILITY
+============================================================
+Loaded calibration data: 1200 observations
+
+Common:
+  r(accuracy, confidence) = 0.505
+  r_xx (accuracy reliability) = 0.80 (from IRT)
+  r_yy (confidence reliability) = 0.75 (from IRT)
+  r_diff = 0.545
+  Interpretation: QUESTIONABLE (0.50-0.70)
+
+Congruent:
+  r(accuracy, confidence) = 0.539
+  r_xx (accuracy reliability) = 0.80 (from IRT)
+  r_yy (confidence reliability) = 0.75 (from IRT)
+  r_diff = 0.512
+  Interpretation: QUESTIONABLE (0.50-0.70)
+
+Incongruent:
+  r(accuracy, confidence) = 0.498
+  r_xx (accuracy reliability) = 0.80 (from IRT)
+  r_yy (confidence reliability) = 0.75 (from IRT)
+  r_diff = 0.551
+  Interpretation: QUESTIONABLE (0.50-0.70)
+
+OVERALL RELIABILITY:
+  Average r_diff across congruence levels: 0.536
+  WARNING: Difference score reliability < 0.70
+  RECOMMENDATION: Consider latent variable approach (SEM)
+  Current approach (IRT theta difference) may be unreliable
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/results/difference_score_reliability.csv
+
+============================================================
+LMM ASSUMPTION DIAGNOSTICS
+============================================================
+Re-fitting LMM to extract residuals...
+  Model converged: True
+  Observations: 1200
+  Residual mean: -0.000000 (should be ~0)
+  Residual SD: 0.636
+
+1. NORMALITY (Shapiro-Wilk Test):
+   Statistic: 0.9972, p-value: 0.0336
+   VIOLATION: Residuals NOT normally distributed (p < 0.05)
+   Note: LMM robust to moderate violations with large N
+
+2. Q-Q PLOT:
+   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/plots/diagnostics/qq_plot.png
+
+3. HOMOSCEDASTICITY (Breusch-Pagan Test):
+   Statistic: 6.3124, p-value: 0.0120
+   VIOLATION: Heteroscedasticity detected (p < 0.05)
+   Recommendation: Use robust standard errors
+
+4. RESIDUALS VS FITTED PLOT:
+   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/plots/diagnostics/residuals_vs_fitted.png
+
+5. SCALE-LOCATION PLOT:
+   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/plots/diagnostics/scale_location.png
+
+6. RESIDUAL HISTOGRAM:
+   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/plots/diagnostics/residual_histogram.png
+
+DIAGNOSTIC SUMMARY:
+  VIOLATIONS DETECTED: Normality, Homoscedasticity
+  Recommendation: Interpret parametric p-values cautiously
+  Mitigation: Large N (1200 obs) reduces concern
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.2/results/lmm_diagnostics.csv
+
+============================================================
+validation VALIDATION COMPLETE
+Finished: 2025-12-28 11:41:23.787259
+============================================================
+
+OUTPUTS CREATED:
+  - results/power_analysis.csv
+  - results/tost_equivalence.csv
+  - results/difference_score_reliability.csv
+  - results/lmm_diagnostics.csv
+  - plots/diagnostics/qq_plot.png
+  - plots/diagnostics/residuals_vs_fitted.png
+  - plots/diagnostics/scale_location.png
+  - plots/diagnostics/residual_histogram.png

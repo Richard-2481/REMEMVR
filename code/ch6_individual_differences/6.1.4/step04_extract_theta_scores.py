@@ -30,27 +30,27 @@ def log(msg):
 
 def main():
     """Main execution."""
-    log("[START] Step 04: Extract Ch5 theta scores")
+    log("Step 04: Extract Ch5 theta scores")
     
     # Load Ch5 5.1.1 theta scores
     ch5_path = PROJ_ROOT / "results" / "ch5" / "5.1.1" / "data" / "step03_theta_scores.csv"
-    log(f"[LOAD] Reading Ch5 5.1.1 theta scores from {ch5_path}...")
+    log(f"Reading Ch5 5.1.1 theta scores from {ch5_path}...")
     
     if not ch5_path.exists():
-        log(f"[ERROR] Ch5 theta file not found: {ch5_path}")
+        log(f"Ch5 theta file not found: {ch5_path}")
         return 1
     
     df_theta = pd.read_csv(ch5_path)
-    log(f"[INFO] Loaded {len(df_theta)} theta scores")
+    log(f"Loaded {len(df_theta)} theta scores")
     
     # Check structure
-    log("[CHECK] Ch5 theta data structure:")
+    log("Ch5 theta data structure:")
     log(f"  - Columns: {df_theta.columns.tolist()}")
     log(f"  - Shape: {df_theta.shape}")
     
     # Ch5 5.1.1 has 400 rows (100 participants × 4 tests)
     # We need to aggregate to get mean theta per participant
-    log("[AGGREGATE] Computing mean theta per participant...")
+    log("Computing mean theta per participant...")
     
     # Group by UID and calculate mean theta
     # Use the actual column name from Ch5
@@ -66,10 +66,10 @@ def main():
     # Ensure uid is string
     theta_summary['uid'] = theta_summary['uid'].astype(str)
     
-    log(f"[INFO] Aggregated to {len(theta_summary)} participants")
+    log(f"Aggregated to {len(theta_summary)} participants")
     
     # Report summary statistics
-    log("[SUMMARY] Theta scores (mean across 4 tests):")
+    log("Theta scores (mean across 4 tests):")
     log(f"  - Mean: {theta_summary['theta_mean'].mean():.3f}")
     log(f"  - SD: {theta_summary['theta_mean'].std():.3f}")
     log(f"  - Range: [{theta_summary['theta_mean'].min():.3f}, {theta_summary['theta_mean'].max():.3f}]")
@@ -79,7 +79,7 @@ def main():
     z_scores = np.abs((theta_summary['theta_mean'] - theta_summary['theta_mean'].mean()) / theta_summary['theta_mean'].std())
     n_outliers = (z_scores > 3).sum()
     if n_outliers > 0:
-        log(f"[WARNING] {n_outliers} participants with extreme theta scores (|z| > 3)")
+        log(f"{n_outliers} participants with extreme theta scores (|z| > 3)")
     
     # Rename columns for consistency with other steps
     output_df = pd.DataFrame()
@@ -91,10 +91,10 @@ def main():
     output_path = RQ_DIR / "data" / "step04_theta_scores.csv"
     output_path.parent.mkdir(exist_ok=True)
     output_df.to_csv(output_path, index=False)
-    log(f"[SAVE] Saved theta scores to {output_path}")
-    log(f"[INFO] Shape: {output_df.shape}")
+    log(f"Saved theta scores to {output_path}")
+    log(f"Shape: {output_df.shape}")
     
-    log("[SUCCESS] Step 04 complete")
+    log("Step 04 complete")
     return 0
 
 if __name__ == "__main__":

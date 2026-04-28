@@ -1,0 +1,125 @@
+================================================================================
+STEP 06: Characterize Clusters
+================================================================================
+
+Loading random effects and cluster assignments...
+Original-scale random effects: (100, 7)
+Cluster assignments: (100, 2)
+
+Merging features with cluster labels...
+Combined dataset: (100, 8)
+         100 participants, 3 clusters
+
+Computing summary statistics per cluster...
+6 features to characterize
+3 clusters to profile
+
+[CLUSTER 0] N=33 participants
+  Total_Intercept_Cued          : mean=  0.27, SD= 0.29, range=[ -0.19,   0.92]
+  Total_Intercept_Free          : mean=  0.36, SD= 0.31, range=[ -0.23,   0.97]
+  Total_Intercept_Recognition   : mean=  0.36, SD= 0.35, range=[ -0.13,   1.12]
+  Total_Slope_Cued              : mean= -0.00, SD= 0.00, range=[ -0.01,   0.00]
+  Total_Slope_Free              : mean= -0.04, SD= 0.03, range=[ -0.10,   0.00]
+  Total_Slope_Recognition       : mean= -0.03, SD= 0.02, range=[ -0.07,   0.00]
+
+[CLUSTER 1] N=31 participants
+  Total_Intercept_Cued          : mean= -0.59, SD= 0.24, range=[ -1.14,  -0.14]
+  Total_Intercept_Free          : mean= -0.59, SD= 0.25, range=[ -1.09,  -0.06]
+  Total_Intercept_Recognition   : mean= -0.65, SD= 0.30, range=[ -1.45,  -0.08]
+  Total_Slope_Cued              : mean=  0.01, SD= 0.00, range=[  0.00,   0.01]
+  Total_Slope_Free              : mean=  0.01, SD= 0.03, range=[ -0.05,   0.05]
+  Total_Slope_Recognition       : mean=  0.01, SD= 0.02, range=[ -0.03,   0.04]
+
+[CLUSTER 2] N=36 participants
+  Total_Intercept_Cued          : mean=  0.26, SD= 0.28, range=[ -0.08,   1.38]
+  Total_Intercept_Free          : mean=  0.17, SD= 0.24, range=[ -0.18,   1.10]
+  Total_Intercept_Recognition   : mean=  0.23, SD= 0.29, range=[ -0.22,   1.36]
+  Total_Slope_Cued              : mean= -0.00, SD= 0.00, range=[ -0.01,   0.00]
+  Total_Slope_Free              : mean=  0.03, SD= 0.03, range=[ -0.02,   0.09]
+  Total_Slope_Recognition       : mean=  0.02, SD= 0.02, range=[ -0.02,   0.05]
+
+Computed statistics for 18 cluster-feature combinations
+
+Saving cluster characterization table...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step06_cluster_characterization.csv
+        18 rows (long format: 3 clusters x 6 features)
+
+Generating cluster profile descriptions...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step06_cluster_profiles.txt
+
+Validating cluster summary statistics...
+
+validate_cluster_summary_stats() got an unexpected keyword argument 'min_col'
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.8/code/step06_characterize_clusters.py", line 261, in <module>
+    validation_result = validate_cluster_summary_stats(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_cluster_summary_stats() got an unexpected keyword argument 'min_col'
+================================================================================
+STEP 06: Characterize Clusters
+================================================================================
+
+Loading random effects and cluster assignments...
+Original-scale random effects: (100, 7)
+Cluster assignments: (100, 2)
+
+Merging features with cluster labels...
+Combined dataset: (100, 8)
+         100 participants, 3 clusters
+
+Computing summary statistics per cluster...
+6 features to characterize
+3 clusters to profile
+
+[CLUSTER 0] N=33 participants
+  Total_Intercept_Cued          : mean=  0.27, SD= 0.29, range=[ -0.19,   0.92]
+  Total_Intercept_Free          : mean=  0.36, SD= 0.31, range=[ -0.23,   0.97]
+  Total_Intercept_Recognition   : mean=  0.36, SD= 0.35, range=[ -0.13,   1.12]
+  Total_Slope_Cued              : mean= -0.00, SD= 0.00, range=[ -0.01,   0.00]
+  Total_Slope_Free              : mean= -0.04, SD= 0.03, range=[ -0.10,   0.00]
+  Total_Slope_Recognition       : mean= -0.03, SD= 0.02, range=[ -0.07,   0.00]
+
+[CLUSTER 1] N=31 participants
+  Total_Intercept_Cued          : mean= -0.59, SD= 0.24, range=[ -1.14,  -0.14]
+  Total_Intercept_Free          : mean= -0.59, SD= 0.25, range=[ -1.09,  -0.06]
+  Total_Intercept_Recognition   : mean= -0.65, SD= 0.30, range=[ -1.45,  -0.08]
+  Total_Slope_Cued              : mean=  0.01, SD= 0.00, range=[  0.00,   0.01]
+  Total_Slope_Free              : mean=  0.01, SD= 0.03, range=[ -0.05,   0.05]
+  Total_Slope_Recognition       : mean=  0.01, SD= 0.02, range=[ -0.03,   0.04]
+
+[CLUSTER 2] N=36 participants
+  Total_Intercept_Cued          : mean=  0.26, SD= 0.28, range=[ -0.08,   1.38]
+  Total_Intercept_Free          : mean=  0.17, SD= 0.24, range=[ -0.18,   1.10]
+  Total_Intercept_Recognition   : mean=  0.23, SD= 0.29, range=[ -0.22,   1.36]
+  Total_Slope_Cued              : mean= -0.00, SD= 0.00, range=[ -0.01,   0.00]
+  Total_Slope_Free              : mean=  0.03, SD= 0.03, range=[ -0.02,   0.09]
+  Total_Slope_Recognition       : mean=  0.02, SD= 0.02, range=[ -0.02,   0.05]
+
+Computed statistics for 18 cluster-feature combinations
+
+Saving cluster characterization table...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step06_cluster_characterization.csv
+        18 rows (long format: 3 clusters x 6 features)
+
+Generating cluster profile descriptions...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step06_cluster_profiles.txt
+
+Validating cluster summary statistics...
+Cluster summary statistics validation successful
+       All 18 rows satisfy: min <= mean <= max, SD >= 0, N > 0
+
+================================================================================
+Step 06 complete
+================================================================================
+
+Outputs:
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step06_cluster_characterization.csv
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step06_cluster_profiles.txt
+
+Cluster Labels:
+  Cluster 0: Low performers - Stable retention
+  Cluster 1: Low performers - Stable retention
+  Cluster 2: Low performers - Stable retention
+
+Next: Step 07 (Prepare scatter matrix plot data)

@@ -1,0 +1,86 @@
+======================================================================
+STEP 03: BOOTSTRAP CONFIDENCE INTERVALS FOR ATTENUATION
+Includes retention predictors (RAVLT/BVMT Pct Ret)
+======================================================================
+
+1. Loading raw analysis data from RQ 7.2.1...
+  Loaded 100 participants
+  Columns: ['UID', 'theta_all', 'Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'Age_std', 'RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std', 'RAVLT_Pct_Ret_T_std', 'BVMT_Pct_Ret_T_std']
+  Cognitive predictors: ['RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std', 'RAVLT_Pct_Ret_T_std', 'BVMT_Pct_Ret_T_std']
+
+2. Loading and merging domain theta scores from Ch5...
+  Merged dataset: 100 participants
+  Final columns: ['UID', 'theta_all', 'Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'Age_std', 'RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std', 'RAVLT_Pct_Ret_T_std', 'BVMT_Pct_Ret_T_std', 'theta_what', 'theta_where', 'theta_when']
+
+3. Computing observed attenuation...
+  Observed attenuation:
+    Beta bivariate:  -0.1302
+    Beta controlled: 0.0267
+    Attenuation:     120.5%
+
+4. Bootstrap for overall REMEMVR (1000 iterations, seed=42)...
+  Bootstrap iteration 200/1000
+  Bootstrap iteration 400/1000
+  Bootstrap iteration 600/1000
+  Bootstrap iteration 800/1000
+  Bootstrap iteration 1000/1000
+
+5. Bootstrap for What domain (1000 iterations)...
+  Bootstrap iteration 200/1000
+  Bootstrap iteration 400/1000
+  Bootstrap iteration 600/1000
+  Bootstrap iteration 800/1000
+  Bootstrap iteration 1000/1000
+
+5. Bootstrap for Where domain (1000 iterations)...
+  Bootstrap iteration 200/1000
+  Bootstrap iteration 400/1000
+  Bootstrap iteration 600/1000
+  Bootstrap iteration 800/1000
+  Bootstrap iteration 1000/1000
+
+5. Bootstrap for When domain (1000 iterations)...
+  Bootstrap iteration 200/1000
+  Bootstrap iteration 400/1000
+  Bootstrap iteration 600/1000
+  Bootstrap iteration 800/1000
+  Bootstrap iteration 1000/1000
+
+6. Computing 95% confidence intervals...
+
+  Overall REMEMVR Bootstrap Results:
+    Attenuation: 124.8%
+    95% CI: [43.6%, 623.3%]
+    Significant attenuation (CI excludes 0)
+
+  What Domain Bootstrap Results:
+    Attenuation: 112.6%
+    95% CI: [40.6%, 400.1%]
+
+  Where Domain Bootstrap Results:
+    Attenuation: 139.1%
+    95% CI: [-468.8%, 1026.4%]
+
+  When Domain Bootstrap Results:
+    Attenuation: 57.6%
+    95% CI: [-159.2%, 447.8%]
+
+7. Saving bootstrap distributions...
+  Saved bootstrap distributions to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step03_bootstrap_distributions.csv
+
+8. Saving confidence interval results...
+  Saved confidence intervals to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step03_confidence_intervals.csv
+
+9. Saving bootstrap diagnostics...
+  Saved bootstrap diagnostics to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step03_bootstrap_diagnostics.txt
+
+======================================================================
+BOOTSTRAP COMPLETE
+  Overall: 124.8% [43.6%, 623.3%]
+  What: 112.6% [40.6%, 400.1%]
+  Where: 139.1% [-468.8%, 1026.4%]
+  When: 57.6% [-159.2%, 447.8%]
+SUPPRESSION EFFECT CONFIRMED
+======================================================================
+
+Step 03 complete: Bootstrap confidence intervals computed

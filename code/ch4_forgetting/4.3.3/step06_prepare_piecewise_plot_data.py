@@ -234,8 +234,6 @@ def main():
     # Check observed data count
     n_observed = len(theta_data[theta_data['data_type'] == 'observed'])
     logger.info(f"Observed data: {n_observed} segment-paradigm-test combinations")
-
-    # Expected: 2 segments x 3 paradigms x ~2 tests per segment = ~12
     # But some tests span both segments, so may be different
     if n_observed < 6:
         logger.warning(f"WARNING: Expected at least 6 observed points, got {n_observed}")

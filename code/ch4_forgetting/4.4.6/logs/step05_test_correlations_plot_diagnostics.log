@@ -1,0 +1,67 @@
+Step 05: Test Correlations and Create Diagnostic Plots
+Loading random effects...
+step04_random_effects.csv (300 rows)
+
+Testing intercept-slope correlations with D068 dual p-values...
+If using all scalar values, you must pass an index
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step05_test_correlations_plot_diagnostics.py", line 132, in <module>
+    df_corr = pd.DataFrame(correlation_results)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 782, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 503, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 114, in arrays_to_mgr
+    index = _extract_index(arrays)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 667, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+Step 05: Test Correlations and Create Diagnostic Plots
+Loading random effects...
+step04_random_effects.csv (300 rows)
+
+Testing intercept-slope correlations with D068 dual p-values...
+  Testing Common...
+  Testing Congruent...
+  Testing Incongruent...
+
+3 correlation tests
+
+[CORRELATION RESULTS]
+  Common       | r= 1.0000 | p_raw=0.0000 | p_bonf=0.0000
+  Congruent    | r=-0.7917 | p_raw=0.0000 | p_bonf=0.0000
+  Incongruent  | r= 1.0000 | p_raw=0.0000 | p_bonf=0.0000
+
+Saving correlation results...
+step05_intercept_slope_correlation.csv
+Creating correlation interpretation report...
+step05_correlation_interpretation.txt
+
+Creating histograms with normal distribution overlay...
+  Creating histogram for Common...
+  step05_random_slopes_histogram_common.png
+  Creating histogram for Congruent...
+  step05_random_slopes_histogram_congruent.png
+  Creating histogram for Incongruent...
+  step05_random_slopes_histogram_incongruent.png
+
+Creating Q-Q plots for normality assessment...
+  Creating Q-Q plot for Common...
+  step05_random_slopes_qqplot_common.png
+  Creating Q-Q plot for Congruent...
+  step05_random_slopes_qqplot_congruent.png
+  Creating Q-Q plot for Incongruent...
+  step05_random_slopes_qqplot_incongruent.png
+
+Validating correlation test results (D068 compliance)...
+Correlation test validated (D068 compliant)
+
+Validating plot files...
+All 6 plot files validated (exist and > 10KB)
+
+Step 05 complete - Correlations tested and diagnostic plots created

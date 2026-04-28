@@ -1,0 +1,44 @@
+Step 05: Compute Silhouette Coefficient
+Loading standardized features from Step 1...
+step01_standardized_features.csv (100 rows, 3 cols)
+Columns: ['UID', 'Intercept_z', 'Slope_z']
+Loading cluster assignments from Step 3...
+step03_cluster_assignments.csv (100 rows, 2 cols)
+Columns: ['UID', 'cluster']
+Merging features with cluster assignments on UID...
+100 participants with features + cluster assignments
+Feature matrix X: shape (100, 2) (100 participants x 2 features)
+Cluster labels: 100 participants, 2 unique clusters
+Cluster sizes: {0: 69, 1: 31}
+Computing silhouette coefficient using Euclidean metric...
+Silhouette coefficient: 0.5943
+Reasonable cluster structure found
+Clusters have moderate separation and cohesion (0.50 <= silhouette < 0.70)
+Saving silhouette score and interpretation to step05_silhouette_score.txt...
+step05_silhouette_score.txt
+Running validate_numeric_range on silhouette coefficient...
+PASS: Silhouette coefficient in valid range [-1, 1]
+Message: silhouette: All values within range [-1.0, 1.0] (n=1).
+Step 05 complete - Silhouette coefficient computed and validated
+Step 05: Compute Silhouette Coefficient
+Loading standardized features from Step 1...
+step01_standardized_features.csv (100 rows, 3 cols)
+Columns: ['UID', 'Intercept_z', 'Slope_z']
+Loading cluster assignments from Step 3...
+step03_cluster_assignments.csv (100 rows, 2 cols)
+Columns: ['UID', 'cluster']
+Merging features with cluster assignments on UID...
+100 participants with features + cluster assignments
+Feature matrix X: shape (100, 2) (100 participants x 2 features)
+Cluster labels: 100 participants, 3 unique clusters
+Cluster sizes: {0: 25, 1: 44, 2: 31}
+Computing silhouette coefficient using Euclidean metric...
+Silhouette coefficient: 0.4084
+Weak cluster structure
+Clusters have poor separation, may be artificial (0.25 <= silhouette < 0.50)
+Saving silhouette score and interpretation to step05_silhouette_score.txt...
+step05_silhouette_score.txt
+Running validate_numeric_range on silhouette coefficient...
+PASS: Silhouette coefficient in valid range [-1, 1]
+Message: silhouette: All values within range [-1.0, 1.0] (n=1).
+Step 05 complete - Silhouette coefficient computed and validated

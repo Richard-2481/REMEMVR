@@ -26,7 +26,6 @@ OUTPUT:
 - data/step05_lords_paradox_check.csv
 - results/sensitivity_analysis.md
 
-Author: Claude Code
 Date: 2025-12-14
 RQ: ch6/6.4.2
 Task: T1.3 from rq_rework.md
@@ -71,10 +70,7 @@ def main():
     log("RQ 6.4.2 - Step 05: Lord's Paradox Sensitivity Check")
     log(f"Started: {datetime.now().isoformat()}")
     log("=" * 80)
-
-    # =========================================================================
-    # STEP 1: Load Data
-    # =========================================================================
+    # Load Data
     log("\n[STEP 1] Load Calibration Data")
     log("-" * 60)
 
@@ -82,10 +78,7 @@ def main():
     log(f"  ✓ Loaded {len(df)} observations")
     log(f"  ✓ Paradigms: {df['Paradigm'].unique().tolist()}")
     log(f"  ✓ N per paradigm: {df.groupby('Paradigm').size().to_dict()}")
-
-    # =========================================================================
-    # STEP 2: Document Baseline Accuracy Differences
-    # =========================================================================
+    # Document Baseline Accuracy Differences
     log("\n[STEP 2] Document Baseline Accuracy Differences by Paradigm")
     log("-" * 60)
 
@@ -108,10 +101,7 @@ def main():
         log(f"     This raises Lord's paradox concern for calibration differences")
     else:
         log(f"  ✓ No significant accuracy differences - Lord's paradox less likely")
-
-    # =========================================================================
-    # STEP 3: Original Calibration Analysis (Pooled Z-Standardization)
-    # =========================================================================
+    # Original Calibration Analysis (Pooled Z-Standardization)
     log("\n[STEP 3] Original Calibration (Pooled Z-Standardization)")
     log("-" * 60)
 
@@ -128,10 +118,7 @@ def main():
                     for p in ['IFR', 'ICR', 'IRE']]
     F_orig, p_orig = stats.f_oneway(*calib_groups)
     log(f"\n  ANOVA for calibration ~ paradigm: F={F_orig:.2f}, p={p_orig:.4f}")
-
-    # =========================================================================
-    # STEP 4: Method 1 - ANCOVA (Partial Out Accuracy)
-    # =========================================================================
+    # Method 1 - ANCOVA (Partial Out Accuracy)
     log("\n[STEP 4] Method 1: ANCOVA (Partial Out Accuracy)")
     log("-" * 60)
 
@@ -182,10 +169,7 @@ def main():
     log(f"\n  ANCOVA-Adjusted Calibration Means:")
     for paradigm, mean in adjusted_means.items():
         log(f"    {paradigm}: {mean:+.4f}")
-
-    # =========================================================================
-    # STEP 5: Method 2 - Within-Paradigm Z-Standardization
-    # =========================================================================
+    # Method 2 - Within-Paradigm Z-Standardization
     log("\n[STEP 5] Method 2: Within-Paradigm Z-Standardization")
     log("-" * 60)
 
@@ -214,10 +198,7 @@ def main():
                      for p in ['IFR', 'ICR', 'IRE']]
     F_within, p_within = stats.f_oneway(*within_groups)
     log(f"\n  ANOVA for within-paradigm calibration: F={F_within:.2f}, p={p_within:.4f}")
-
-    # =========================================================================
-    # STEP 6: Compare Methods
-    # =========================================================================
+    # Compare Methods
     log("\n[STEP 6] Compare Methods")
     log("-" * 60)
 
@@ -247,10 +228,7 @@ def main():
     log(f"  {'-'*72}")
     for _, row in comparison.iterrows():
         log(f"  {row['Method']:<25} {row['IFR_mean']:>+8.4f} {row['ICR_mean']:>+8.4f} {row['IRE_mean']:>+8.4f} {row['F_stat']:>8.2f} {row['p_value']:>8.4f}")
-
-    # =========================================================================
-    # STEP 7: Assess Robustness
-    # =========================================================================
+    # Assess Robustness
     log("\n[STEP 7] Assess Robustness to Lord's Paradox")
     log("-" * 60)
 
@@ -290,10 +268,7 @@ def main():
 
     log(f"\n  Robustness Assessment: {robustness}")
     log(f"  Interpretation: {interpretation}")
-
-    # =========================================================================
-    # STEP 8: Save Results
-    # =========================================================================
+    # Save Results
     log("\n[STEP 8] Save Results")
     log("-" * 60)
 
@@ -417,7 +392,7 @@ if __name__ == "__main__":
     try:
         results = main()
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

@@ -1,0 +1,165 @@
+Step 6: Decline rate ratio analysis (SECONDARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Handling near-zero denominators...
+no_decline_flag count: 60
+Valid ratios: 40 participants (excluded 60)
+Computing ratio statistics...
+Mean ratio: 0.5922
+Median ratio: 0.6182
+SD ratio: 0.5697
+IQR ratio: 0.4782
+Quantifying individual patterns...
+Hedging: 4 (10.0%)
+Parallel: 4 (10.0%)
+Overconfidence: 32 (80.0%)
+No decline: 60
+Substantial overconfidence heterogeneity (80.0%) - discussion needed
+Running one-sample t-test (ratio vs 1.0)...
+t(39) = -4.5277, p = 0.999973
+SECONDARY TEST - provides interpretable metric but NOT for hypothesis decision
+Computing 95% CI (1000 iterations, seed=42)...
+95% CI: [0.4168, 0.7559]
+Saving analysis outputs...
+step06_decline_ratio.csv (1 rows, 9 cols)
+step06_individual_heterogeneity.csv (1 rows, 7 cols)
+Running inline validation...
+More than expected near-zero denominators (60)
+Ratio analysis: N=40 (excluded 60 near-zero)
+Mean ratio = 0.5922
+Individual heterogeneity: 10.0% hedging, 10.0% parallel, 80.0% overconfidence
+One-sample t-test: t(39) = -4.5277, p = 0.999973
+Bootstrap 95% CI: [0.4168, 0.7559]
+Step 6 complete
+Step 6: Decline rate ratio analysis (SECONDARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Handling near-zero denominators...
+no_decline_flag count: 60
+Valid ratios: 40 participants (excluded 60)
+Computing ratio statistics...
+Mean ratio: 0.8168
+Median ratio: 0.7402
+SD ratio: 0.4052
+IQR ratio: 0.4332
+Quantifying individual patterns...
+Hedging: 8 (20.0%)
+Parallel: 7 (17.5%)
+Overconfidence: 25 (62.5%)
+No decline: 60
+Substantial overconfidence heterogeneity (62.5%) - discussion needed
+Running one-sample t-test (ratio vs 1.0)...
+t(39) = -2.8601, p = 0.996615
+SECONDARY TEST - provides interpretable metric but NOT for hypothesis decision
+Computing 95% CI (1000 iterations, seed=42)...
+95% CI: [0.6953, 0.9463]
+Saving analysis outputs...
+step06_decline_ratio.csv (1 rows, 9 cols)
+step06_individual_heterogeneity.csv (1 rows, 7 cols)
+Running inline validation...
+More than expected near-zero denominators (60)
+Ratio analysis: N=40 (excluded 60 near-zero)
+Mean ratio = 0.8168
+Individual heterogeneity: 20.0% hedging, 17.5% parallel, 62.5% overconfidence
+One-sample t-test: t(39) = -2.8601, p = 0.996615
+Bootstrap 95% CI: [0.6953, 0.9463]
+Step 6 complete
+Step 6: Decline rate ratio analysis (SECONDARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Handling near-zero denominators...
+no_decline_flag count: 60
+Valid ratios: 40 participants (excluded 60)
+Computing ratio statistics...
+Mean ratio: 0.8392
+Median ratio: 0.7600
+SD ratio: 0.3864
+IQR ratio: 0.4692
+Quantifying individual patterns...
+Hedging: 10 (25.0%)
+Parallel: 5 (12.5%)
+Overconfidence: 25 (62.5%)
+No decline: 60
+Substantial overconfidence heterogeneity (62.5%) - discussion needed
+Running one-sample t-test (ratio vs 1.0)...
+t(39) = -2.6328, p = 0.993963
+SECONDARY TEST - provides interpretable metric but NOT for hypothesis decision
+Computing 95% CI (1000 iterations, seed=42)...
+95% CI: [0.7178, 0.9574]
+Saving analysis outputs...
+step06_decline_ratio.csv (1 rows, 9 cols)
+step06_individual_heterogeneity.csv (1 rows, 7 cols)
+Running inline validation...
+More than expected near-zero denominators (60)
+Ratio analysis: N=40 (excluded 60 near-zero)
+Mean ratio = 0.8392
+Individual heterogeneity: 25.0% hedging, 12.5% parallel, 62.5% overconfidence
+One-sample t-test: t(39) = -2.6328, p = 0.993963
+Bootstrap 95% CI: [0.7178, 0.9574]
+Step 6 complete
+Step 6: Decline rate ratio analysis (SECONDARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Handling near-zero denominators...
+no_decline_flag count: 60
+Valid ratios: 40 participants (excluded 60)
+Computing ratio statistics...
+Mean ratio: 0.8392
+Median ratio: 0.7600
+SD ratio: 0.3864
+IQR ratio: 0.4692
+Quantifying individual patterns...
+Hedging: 10 (25.0%)
+Parallel: 5 (12.5%)
+Overconfidence: 25 (62.5%)
+No decline: 60
+Substantial overconfidence heterogeneity (62.5%) - discussion needed
+Running one-sample t-test (ratio vs 1.0)...
+t(39) = -2.6328, p = 0.993963
+SECONDARY TEST - provides interpretable metric but NOT for hypothesis decision
+Computing 95% CI (1000 iterations, seed=42)...
+95% CI: [0.7178, 0.9574]
+Saving analysis outputs...
+step06_decline_ratio.csv (1 rows, 9 cols)
+step06_individual_heterogeneity.csv (1 rows, 7 cols)
+Running inline validation...
+More than expected near-zero denominators (60)
+Ratio analysis: N=40 (excluded 60 near-zero)
+Mean ratio = 0.8392
+Individual heterogeneity: 25.0% hedging, 12.5% parallel, 62.5% overconfidence
+One-sample t-test: t(39) = -2.6328, p = 0.993963
+Bootstrap 95% CI: [0.7178, 0.9574]
+Step 6 complete
+Step 6: Decline rate ratio analysis (SECONDARY TEST)
+Loading input data...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+Handling near-zero denominators...
+no_decline_flag count: 60
+Valid ratios: 40 participants (excluded 60)
+Computing ratio statistics...
+Mean ratio: 0.8392
+Median ratio: 0.7600
+SD ratio: 0.3864
+IQR ratio: 0.4692
+Quantifying individual patterns...
+Hedging: 10 (25.0%)
+Parallel: 5 (12.5%)
+Overconfidence: 25 (62.5%)
+No decline: 60
+Substantial overconfidence heterogeneity (62.5%) - discussion needed
+Running one-sample t-test (ratio vs 1.0)...
+t(39) = -2.6328, p = 0.993963
+SECONDARY TEST - provides interpretable metric but NOT for hypothesis decision
+Computing 95% CI (1000 iterations, seed=42)...
+95% CI: [0.7178, 0.9574]
+Saving analysis outputs...
+step06_decline_ratio.csv (1 rows, 9 cols)
+step06_individual_heterogeneity.csv (1 rows, 7 cols)
+Running inline validation...
+More than expected near-zero denominators (60)
+Ratio analysis: N=40 (excluded 60 near-zero)
+Mean ratio = 0.8392
+Individual heterogeneity: 25.0% hedging, 12.5% parallel, 62.5% overconfidence
+One-sample t-test: t(39) = -2.6328, p = 0.993963
+Bootstrap 95% CI: [0.7178, 0.9574]
+Step 6 complete

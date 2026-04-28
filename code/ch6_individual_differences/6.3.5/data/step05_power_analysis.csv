@@ -1,0 +1,4 @@
+test_type,effect,alpha_corrected,achieved_power,effect_size,n
+Correlation,residual_vs_education,0.0083,0.008299999999999974,0.0056452842958519,100
+Correlation,residual_vs_rpm,0.0083,0.008299999999999974,0.1084332127020415,100
+Correlation,residual_vs_age,0.0083,0.008299999999999974,0.0177782430007856,100

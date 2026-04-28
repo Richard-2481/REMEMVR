@@ -1,0 +1,22 @@
+Step 02: Extract demographics
+Reading dfnonvr.csv...
+Loaded 100 participants
+Age extracted: M=44.6, SD=14.6, Range=[20, 70]
+Sex extracted: 70 female, 30 male
+Education extracted (1-10 ordinal scale)
+Education: M=6.1, SD=1.6, Range=[1, 9]
+Missing values:
+Saved demographics to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step02_demographics.csv
+Shape: (100, 5)
+Step 02 complete
+Step 02: Extract demographics
+Reading dfnonvr.csv...
+Loaded 100 participants
+Age extracted: M=44.6, SD=14.6, Range=[20, 70]
+Sex extracted: 70 female, 30 male
+Education extracted (1-10 ordinal scale)
+Education: M=6.1, SD=1.6, Range=[1, 9]
+Missing values:
+Saved demographics to /home/etai/projects/REMEMVR/results/ch7/7.1.4/data/step02_demographics.csv
+Shape: (100, 5)
+Step 02 complete

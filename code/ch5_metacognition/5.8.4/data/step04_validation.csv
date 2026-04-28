@@ -1,0 +1,4 @@
+metric,value,threshold,pass
+Silhouette,0.2791380347436009,0.4,False
+Davies_Bouldin,1.1252680835719864,1.0,False
+Jaccard,0.6501794123705235,0.7,False

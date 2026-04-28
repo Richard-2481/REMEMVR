@@ -1,0 +1,6 @@
+assumption,test_statistic,p_value,threshold,status
+linearity_age_ravlt,2.3132092455793813,0.13153214531559598,0.05,PASS
+linearity_age_rememvr,0.08755649907725237,0.7679393894398059,0.05,PASS
+linearity_age_pctret,2.7206220257144946,0.10229431259680488,0.05,PASS
+normality_residuals,0.9824277207839786,0.2045300002948927,0.05,PASS
+homoscedasticity,,,,PASS

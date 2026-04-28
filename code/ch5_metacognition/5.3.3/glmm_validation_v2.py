@@ -14,9 +14,7 @@ from pathlib import Path
 import statsmodels.formula.api as smf
 import re
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 RQ_631_DIR = Path("/home/etai/projects/REMEMVR/results/ch6/6.3.1")

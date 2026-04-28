@@ -1,0 +1,68 @@
+Step 03: Select Optimal Model
+
+Loading fit comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step02_lpa_fit_comparison.csv
+4 models
+
+[FIT TABLE]
+ K        BIC        AIC  Entropy  Converged
+ 1 330.275389 317.249538 1.000000       True
+ 2 349.069632 320.412760 0.741748       True
+ 3 366.820349 322.532455 0.574290       True
+ 4 366.723331 306.804417 0.668753       True
+
+Fit comparison validation
+Fit comparison structure validated
+
+Loading fitted models...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step02_lpa_fitted_models.pkl
+4 models (K=[1, 2, 3, 4])
+
+Loading theta scores...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step01_domain_theta_scores.csv
+100 participants
+Feature matrix shape: (100, 2)
+
+Applying model selection criteria...
+1. BIC minimum (primary)
+2. All profiles N>=20
+3. Entropy >0.8
+
+Minimum BIC at K=1 (BIC=330.28)
+Optimal K=1 properties:
+  - Entropy: 1.0000
+  - Converged: True
+Profile sizes for K=1:
+  - Profile 0: N=100
+All profiles meet size constraint (min N=100)
+Entropy meets threshold (1.0000 > 0.8)
+
+Optimal K selected: K=1
+
+Extracting profile assignments for K=1...
+100 profile assignments
+Posterior probability summary:
+count    100.0
+mean       1.0
+std        0.0
+min        1.0
+25%        1.0
+50%        1.0
+75%        1.0
+max        1.0
+High confidence assignments (>80%): 100/100 (100.0%)
+
+Saving profile assignments to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step03_optimal_profiles.csv
+100 rows
+['UID', 'Profile', 'Max_Posterior_Prob']
+
+Saving model selection summary to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step03_model_selection_summary.txt
+Model selection summary written
+
+Output validation...
+All 100 participants assigned to profiles
+No missing values
+Profile labels in valid range
+
+Step 03 complete
+Optimal solution: K=1 profiles

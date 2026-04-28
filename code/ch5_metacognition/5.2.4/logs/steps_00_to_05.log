@@ -1,0 +1,290 @@
+[2025-12-11 20:29:08] ======================================================================
+[2025-12-11 20:29:08] RQ 6.2.4: Calibration by Accuracy Level (Dunning-Kruger Test)
+[2025-12-11 20:29:08] ======================================================================
+[2025-12-11 20:29:08] Start time: 2025-12-11 20:29:08.937510
+[2025-12-11 20:29:08] RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.2.4
+[2025-12-11 20:29:08] ============================================================
+[2025-12-11 20:29:08] STEP 00: Merge Calibration Metrics from Prior RQs
+[2025-12-11 20:29:08] ============================================================
+[2025-12-11 20:29:08] Source file found: accuracy -> /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+[2025-12-11 20:29:08] Source file found: confidence -> /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+[2025-12-11 20:29:08] Source file found: calibration -> /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+[2025-12-11 20:29:08] Source file found: gamma -> /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step01_gamma_scores.csv
+[2025-12-11 20:29:08] Loaded accuracy: 400 rows, columns: ['UID', 'test', 'Theta_All']
+[2025-12-11 20:29:08] Accuracy baseline (test=1): 100 rows
+[2025-12-11 20:29:08] Loaded confidence: 400 rows, columns: ['composite_ID', 'theta_All', 'se_All']
+[2025-12-11 20:29:08] Confidence baseline (T1): 100 rows
+[2025-12-11 20:29:08] Loaded calibration: 400 rows, columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'z_theta_accuracy', 'z_theta_confidence', 'calibration']
+[2025-12-11 20:29:08] Calibration mean per UID: 100 rows
+[2025-12-11 20:29:08] Loaded gamma: 400 rows, columns: ['UID', 'TEST', 'gamma', 'n_items', 'TSVR_hours']
+[2025-12-11 20:29:08] Gamma mean per UID: 100 rows
+[2025-12-11 20:29:08] After merge accuracy + confidence: 100 rows
+[2025-12-11 20:29:08] After merge + calibration: 100 rows
+[2025-12-11 20:29:08] After merge + gamma: 100 rows
+[2025-12-11 20:29:08] 
+Value ranges:
+[2025-12-11 20:29:08]   baseline_accuracy: [-2.239, 2.728]
+[2025-12-11 20:29:08]   baseline_confidence: [-2.007, 0.491]
+[2025-12-11 20:29:08]   mean_calibration: [-1.969, 1.818]
+[2025-12-11 20:29:08]   mean_gamma: [0.297, 0.872]
+[2025-12-11 20:29:08] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.4/data/step00_merged_metrics.csv
+[2025-12-11 20:29:08] Merged 100 participants successfully
+[2025-12-11 20:29:08] Source: Ch5 5.1.1 (100 rows), RQ 6.1.1 (100 rows), RQ 6.2.1 (100 rows), RQ 6.2.3 (100 rows)
+[2025-12-11 20:29:08] 
+============================================================
+[2025-12-11 20:29:08] STEP 01: Create Accuracy Tertiles
+[2025-12-11 20:29:08] ============================================================
+[2025-12-11 20:29:08] Loaded merged metrics: 100 rows
+[2025-12-11 20:29:08] 
+Tertile boundaries:
+[2025-12-11 20:29:08]   Low:  [-2.2386, 0.3440]
+[2025-12-11 20:29:08]   Med:  [0.3440, 1.0569]
+[2025-12-11 20:29:08]   High: [1.0569, 2.7278]
+[2025-12-11 20:29:08] 
+Tertile assignment complete: Low (33), Med (33), High (34)
+[2025-12-11 20:29:08] 
+Mean accuracy by tertile (sanity check):
+[2025-12-11 20:29:08]   Low:  -0.3146
+[2025-12-11 20:29:08]   Med:  0.6948
+[2025-12-11 20:29:08]   High: 1.5740
+[2025-12-11 20:29:08] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.4/data/step01_accuracy_tertiles.csv
+[2025-12-11 20:29:08] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.4/data/step01_tertile_summary.txt
+[2025-12-11 20:29:08] 
+============================================================
+[2025-12-11 20:29:08] STEP 02: Compare Calibration Metrics Across Tertiles
+[2025-12-11 20:29:08] ============================================================
+[2025-12-11 20:29:08] Merged data: 100 rows
+[2025-12-11 20:29:08] 
+--- Testing: abs_calibration ---
+[2025-12-11 20:29:08]   Shapiro-Wilk (Low): W=0.9206, p=0.0191
+[2025-12-11 20:29:08]   Shapiro-Wilk (Med): W=0.8747, p=0.0013
+[2025-12-11 20:29:08]   Shapiro-Wilk (High): W=0.8631, p=0.0006
+[2025-12-11 20:29:08]   Levene test: F=1.0522, p=0.3531
+[2025-12-11 20:29:08]   Using Kruskal-Wallis: H=1.7441, p=0.418090
+[2025-12-11 20:29:08]     (Normality violated)
+[2025-12-11 20:29:08] 
+--- Testing: mean_gamma ---
+[2025-12-11 20:29:08]   Shapiro-Wilk (Low): W=0.9529, p=0.1615
+[2025-12-11 20:29:08]   Shapiro-Wilk (Med): W=0.9735, p=0.5828
+[2025-12-11 20:29:08]   Shapiro-Wilk (High): W=0.9637, p=0.3116
+[2025-12-11 20:29:08]   Levene test: F=6.3467, p=0.0026
+[2025-12-11 20:29:08]   Using Kruskal-Wallis: H=21.1618, p=0.000025
+[2025-12-11 20:29:08]     (Variance homogeneity violated)
+[2025-12-11 20:29:08] 
+Saved: data/step02_tertile_comparison.csv
+[2025-12-11 20:29:08] Saved: data/step02_normality_tests.csv
+[2025-12-11 20:29:08] Saved: data/step02_variance_tests.csv
+[2025-12-11 20:29:08] 
+Tertile comparison complete:
+[2025-12-11 20:29:08]   abs_calibration (Kruskal-Wallis, p=0.4181)
+[2025-12-11 20:29:08]   mean_gamma (Kruskal-Wallis, p=0.0000)
+[2025-12-11 20:29:08] 
+============================================================
+[2025-12-11 20:29:08] STEP 03: Test Dunning-Kruger Hypothesis (One-Sample t-Tests)
+[2025-12-11 20:29:08] ============================================================
+[2025-12-11 20:29:08] 
+Low tertile (N=33):
+[2025-12-11 20:29:08]   Mean calibration: 0.1421 (OVERCONFIDENT)
+[2025-12-11 20:29:08]   t(32) = 1.133, p_uncorrected = 0.2658, p_bonferroni = 0.7973 
+[2025-12-11 20:29:08]   95% CI: [-0.1135, 0.3977]
+[2025-12-11 20:29:08] 
+Med tertile (N=33):
+[2025-12-11 20:29:08]   Mean calibration: -0.0605 (UNDERCONFIDENT)
+[2025-12-11 20:29:08]   t(32) = -0.513, p_uncorrected = 0.6117, p_bonferroni = 1.0000 
+[2025-12-11 20:29:08]   95% CI: [-0.3009, 0.1799]
+[2025-12-11 20:29:08] 
+High tertile (N=34):
+[2025-12-11 20:29:08]   Mean calibration: -0.0792 (UNDERCONFIDENT)
+[2025-12-11 20:29:08]   t(33) = -0.839, p_uncorrected = 0.4072, p_bonferroni = 1.0000 
+[2025-12-11 20:29:08]   95% CI: [-0.2712, 0.1127]
+[2025-12-11 20:29:08] 
+Saved: data/step03_dunning_kruger_test.csv
+[2025-12-11 20:29:08] 
+Bonferroni correction applied (alpha = 0.05 / 3 = 0.0167)
+[2025-12-11 20:29:08] 
+--- DUNNING-KRUGER HYPOTHESIS TEST ---
+[2025-12-11 20:29:08] PARTIAL: Low performers show overconfidence (mean=0.142) but NOT SIGNIFICANT (p_bonf=0.797)
+[2025-12-11 20:29:08] 
+============================================================
+[2025-12-11 20:29:08] STEP 04: Compute Correlations (Baseline Accuracy vs Calibration)
+[2025-12-11 20:29:08] ============================================================
+[2025-12-11 20:29:08] Shapiro-Wilk (baseline_accuracy): W=0.9899, p=0.6579
+[2025-12-11 20:29:08] Shapiro-Wilk (abs_calibration): W=0.8921, p=0.0000
+[2025-12-11 20:29:08] Shapiro-Wilk (mean_gamma): W=0.9063, p=0.0000
+[2025-12-11 20:29:08] 
+Saved: data/step04_normality_tests.csv
+[2025-12-11 20:29:08] 
+--- baseline_accuracy vs abs_calibration ---
+[2025-12-11 20:29:08]   Using Spearman (normality violated)
+[2025-12-11 20:29:09]   Spearman r/rho = -0.1011, p_uncorrected = 0.3167, p_bonferroni = 0.6335 
+[2025-12-11 20:29:09]   95% CI: [-0.2965, 0.0832]
+[2025-12-11 20:29:09] 
+--- baseline_accuracy vs mean_gamma ---
+[2025-12-11 20:29:09]   Using Spearman (normality violated)
+[2025-12-11 20:29:09]   Spearman r/rho = 0.4612, p_uncorrected = 0.0000, p_bonferroni = 0.0000 ***
+[2025-12-11 20:29:09]   95% CI: [0.2756, 0.6227]
+[2025-12-11 20:29:09] 
+Saved: data/step04_correlation.csv
+[2025-12-11 20:29:09] 
+Bonferroni correction applied (alpha = 0.05 / 2 = 0.025)
+[2025-12-11 20:29:09] 
+============================================================
+[2025-12-11 20:29:09] STEP 05: Prepare Calibration by Accuracy Plot Data
+[2025-12-11 20:29:09] ============================================================
+[2025-12-11 20:29:09] Tertiles represented: Low (33), Med (33), High (34)
+[2025-12-11 20:29:09] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.4/data/step05_calibration_by_accuracy_plot_data.csv
+[2025-12-11 20:29:09] Plot data preparation complete: 100 rows created
+[2025-12-11 20:29:09] All columns validated: UID, baseline_accuracy, abs_calibration, mean_gamma, tertile_label, tertile_color
+[2025-12-11 20:29:09] 
+======================================================================
+[2025-12-11 20:29:09] ALL STEPS COMPLETED SUCCESSFULLY
+[2025-12-11 20:29:09] ======================================================================
+[2025-12-11 20:29:09] End time: 2025-12-11 20:29:09.219536
+[2026-01-17 14:31:03] ======================================================================
+[2026-01-17 14:31:03] RQ 6.2.4: Calibration by Accuracy Level (Dunning-Kruger Test)
+[2026-01-17 14:31:03] ======================================================================
+[2026-01-17 14:31:03] Start time: 2026-01-17 14:31:03.988143
+[2026-01-17 14:31:03] RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.2.4
+[2026-01-17 14:31:03] ============================================================
+[2026-01-17 14:31:03] STEP 00: Merge Calibration Metrics from Prior RQs
+[2026-01-17 14:31:03] ============================================================
+[2026-01-17 14:31:03] Source file found: accuracy -> /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step03_theta_scores.csv
+[2026-01-17 14:31:03] Source file found: confidence -> /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+[2026-01-17 14:31:03] Source file found: calibration -> /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores.csv
+[2026-01-17 14:31:03] Source file found: gamma -> /home/etai/projects/REMEMVR/results/ch6/6.2.3/data/step01_gamma_scores.csv
+[2026-01-17 14:31:03] Loaded accuracy: 400 rows, columns: ['UID', 'test', 'Theta_All']
+[2026-01-17 14:31:03] Accuracy baseline (test=1): 100 rows
+[2026-01-17 14:31:03] Loaded confidence: 400 rows, columns: ['composite_ID', 'theta_All', 'se_All']
+[2026-01-17 14:31:03] Confidence baseline (T1): 100 rows
+[2026-01-17 14:31:03] Loaded calibration: 400 rows, columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'z_theta_accuracy', 'z_theta_confidence', 'calibration']
+[2026-01-17 14:31:03] Calibration mean per UID: 100 rows
+[2026-01-17 14:31:03] Loaded gamma: 400 rows, columns: ['UID', 'TEST', 'gamma', 'n_items', 'TSVR_hours']
+[2026-01-17 14:31:04] Gamma mean per UID: 100 rows
+[2026-01-17 14:31:04] After merge accuracy + confidence: 100 rows
+[2026-01-17 14:31:04] After merge + calibration: 100 rows
+[2026-01-17 14:31:04] After merge + gamma: 100 rows
+[2026-01-17 14:31:04] 
+Value ranges:
+[2026-01-17 14:31:04]   baseline_accuracy: [-2.239, 2.728]
+[2026-01-17 14:31:04]   baseline_confidence: [-1.818, 3.035]
+[2026-01-17 14:31:04]   mean_calibration: [-2.131, 2.234]
+[2026-01-17 14:31:04]   mean_gamma: [0.297, 0.872]
+[2026-01-17 14:31:04] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.4/data/step00_merged_metrics.csv
+[2026-01-17 14:31:04] Merged 100 participants successfully
+[2026-01-17 14:31:04] Source: Ch5 5.1.1 (100 rows), RQ 6.1.1 (100 rows), RQ 6.2.1 (100 rows), RQ 6.2.3 (100 rows)
+[2026-01-17 14:31:04] 
+============================================================
+[2026-01-17 14:31:04] STEP 01: Create Accuracy Tertiles
+[2026-01-17 14:31:04] ============================================================
+[2026-01-17 14:31:04] Loaded merged metrics: 100 rows
+[2026-01-17 14:31:04] 
+Tertile boundaries:
+[2026-01-17 14:31:04]   Low:  [-2.2386, 0.3440]
+[2026-01-17 14:31:04]   Med:  [0.3440, 1.0569]
+[2026-01-17 14:31:04]   High: [1.0569, 2.7278]
+[2026-01-17 14:31:04] 
+Tertile assignment complete: Low (33), Med (33), High (34)
+[2026-01-17 14:31:04] 
+Mean accuracy by tertile (sanity check):
+[2026-01-17 14:31:04]   Low:  -0.3146
+[2026-01-17 14:31:04]   Med:  0.6948
+[2026-01-17 14:31:04]   High: 1.5740
+[2026-01-17 14:31:04] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.4/data/step01_accuracy_tertiles.csv
+[2026-01-17 14:31:04] Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.4/data/step01_tertile_summary.txt
+[2026-01-17 14:31:04] 
+============================================================
+[2026-01-17 14:31:04] STEP 02: Compare Calibration Metrics Across Tertiles
+[2026-01-17 14:31:04] ============================================================
+[2026-01-17 14:31:04] Merged data: 100 rows
+[2026-01-17 14:31:04] 
+--- Testing: abs_calibration ---
+[2026-01-17 14:31:04]   Shapiro-Wilk (Low): W=0.8482, p=0.0003
+[2026-01-17 14:31:04]   Shapiro-Wilk (Med): W=0.9483, p=0.1185
+[2026-01-17 14:31:04]   Shapiro-Wilk (High): W=0.8306, p=0.0001
+[2026-01-17 14:31:04]   Levene test: F=0.5886, p=0.5571
+[2026-01-17 14:31:04]   Using Kruskal-Wallis: H=2.2759, p=0.320475
+[2026-01-17 14:31:04]     (Normality violated)
+[2026-01-17 14:31:04] 
+--- Testing: mean_gamma ---
+[2026-01-17 14:31:04]   Shapiro-Wilk (Low): W=0.9529, p=0.1615
+[2026-01-17 14:31:04]   Shapiro-Wilk (Med): W=0.9735, p=0.5828
+[2026-01-17 14:31:04]   Shapiro-Wilk (High): W=0.9637, p=0.3116
+[2026-01-17 14:31:04]   Levene test: F=6.3467, p=0.0026
+[2026-01-17 14:31:04]   Using Kruskal-Wallis: H=21.1618, p=0.000025
+[2026-01-17 14:31:04]     (Variance homogeneity violated)
+[2026-01-17 14:31:04] 
+Saved: data/step02_tertile_comparison.csv
+[2026-01-17 14:31:04] Saved: data/step02_normality_tests.csv
+[2026-01-17 14:31:04] Saved: data/step02_variance_tests.csv
+[2026-01-17 14:31:04] 
+Tertile comparison complete:
+[2026-01-17 14:31:04]   abs_calibration (Kruskal-Wallis, p=0.3205)
+[2026-01-17 14:31:04]   mean_gamma (Kruskal-Wallis, p=0.0000)
+[2026-01-17 14:31:04] 
+============================================================
+[2026-01-17 14:31:04] STEP 03: Test Dunning-Kruger Hypothesis (One-Sample t-Tests)
+[2026-01-17 14:31:04] ============================================================
+[2026-01-17 14:31:04] 
+Low tertile (N=33):
+[2026-01-17 14:31:04]   Mean calibration: 0.2523 (OVERCONFIDENT)
+[2026-01-17 14:31:04]   t(32) = 1.960, p_uncorrected = 0.0587, p_bonferroni = 0.1762 
+[2026-01-17 14:31:04]   95% CI: [-0.0099, 0.5144]
+[2026-01-17 14:31:04] 
+Med tertile (N=33):
+[2026-01-17 14:31:04]   Mean calibration: -0.0718 (UNDERCONFIDENT)
+[2026-01-17 14:31:04]   t(32) = -0.647, p_uncorrected = 0.5226, p_bonferroni = 1.0000 
+[2026-01-17 14:31:04]   95% CI: [-0.2978, 0.1543]
+[2026-01-17 14:31:04] 
+High tertile (N=34):
+[2026-01-17 14:31:04]   Mean calibration: -0.1752 (UNDERCONFIDENT)
+[2026-01-17 14:31:04]   t(33) = -1.584, p_uncorrected = 0.1227, p_bonferroni = 0.3682 
+[2026-01-17 14:31:04]   95% CI: [-0.4002, 0.0498]
+[2026-01-17 14:31:04] 
+Saved: data/step03_dunning_kruger_test.csv
+[2026-01-17 14:31:04] 
+Bonferroni correction applied (alpha = 0.05 / 3 = 0.0167)
+[2026-01-17 14:31:04] 
+--- DUNNING-KRUGER HYPOTHESIS TEST ---
+[2026-01-17 14:31:04] PARTIAL: Low performers show overconfidence (mean=0.252) but NOT SIGNIFICANT (p_bonf=0.176)
+[2026-01-17 14:31:04] 
+============================================================
+[2026-01-17 14:31:04] STEP 04: Compute Correlations (Baseline Accuracy vs Calibration)
+[2026-01-17 14:31:04] ============================================================
+[2026-01-17 14:31:04] Shapiro-Wilk (baseline_accuracy): W=0.9899, p=0.6579
+[2026-01-17 14:31:04] Shapiro-Wilk (abs_calibration): W=0.8754, p=0.0000
+[2026-01-17 14:31:04] Shapiro-Wilk (mean_gamma): W=0.9063, p=0.0000
+[2026-01-17 14:31:04] 
+Saved: data/step04_normality_tests.csv
+[2026-01-17 14:31:04] 
+--- baseline_accuracy vs abs_calibration ---
+[2026-01-17 14:31:04]   Using Spearman (normality violated)
+[2026-01-17 14:31:04]   Spearman r/rho = -0.0618, p_uncorrected = 0.5413, p_bonferroni = 1.0000 
+[2026-01-17 14:31:04]   95% CI: [-0.2737, 0.1267]
+[2026-01-17 14:31:04] 
+--- baseline_accuracy vs mean_gamma ---
+[2026-01-17 14:31:04]   Using Spearman (normality violated)
+[2026-01-17 14:31:04]   Spearman r/rho = 0.4612, p_uncorrected = 0.0000, p_bonferroni = 0.0000 ***
+[2026-01-17 14:31:04]   95% CI: [0.2756, 0.6227]
+[2026-01-17 14:31:04] 
+Saved: data/step04_correlation.csv
+[2026-01-17 14:31:04] 
+Bonferroni correction applied (alpha = 0.05 / 2 = 0.025)
+[2026-01-17 14:31:04] 
+============================================================
+[2026-01-17 14:31:04] STEP 05: Prepare Calibration by Accuracy Plot Data
+[2026-01-17 14:31:04] ============================================================
+[2026-01-17 14:31:04] Tertiles represented: Low (33), Med (33), High (34)
+[2026-01-17 14:31:04] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.4/data/step05_calibration_by_accuracy_plot_data.csv
+[2026-01-17 14:31:04] Plot data preparation complete: 100 rows created
+[2026-01-17 14:31:04] All columns validated: UID, baseline_accuracy, abs_calibration, mean_gamma, tertile_label, tertile_color
+[2026-01-17 14:31:04] 
+======================================================================
+[2026-01-17 14:31:04] ALL STEPS COMPLETED SUCCESSFULLY
+[2026-01-17 14:31:04] ======================================================================
+[2026-01-17 14:31:04] End time: 2026-01-17 14:31:04.342545

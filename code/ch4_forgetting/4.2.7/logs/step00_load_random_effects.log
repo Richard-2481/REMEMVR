@@ -1,0 +1,32 @@
+============================================================
+RQ 5.2.7 Step 00: Load Random Effects from RQ 5.2.6
+============================================================
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.6/data/step04_random_effects.csv
+Loaded 200 rows from RQ 5.2.6
+Domains found: ['What', 'Where']
+
+Validation:
+  - Total rows: 200 (expected: 200)
+  - Unique UIDs: 100 (expected: 100)
+  - Domains: 2 (expected: 2)
+
+Pivoting from long to wide format...
+Pivoted to wide format: 100 rows x 5 columns
+
+Wide format columns: ['UID', 'Total_Intercept_What', 'Total_Intercept_Where', 'Total_Slope_What', 'Total_Slope_Where']
+No missing values detected
+
+Value ranges:
+  - Total_Intercept_What: [-1.531, 1.130]
+  - Total_Intercept_Where: [-1.621, 1.315]
+  - Total_Slope_What: [-0.038, 0.037]
+  - Total_Slope_Where: [-0.044, 0.043]
+
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step00_random_effects_from_rq526.csv
+  - Rows: 100
+  - Columns: 5
+
+============================================================
+Step 00 COMPLETE: Random effects loaded and pivoted successfully
+============================================================

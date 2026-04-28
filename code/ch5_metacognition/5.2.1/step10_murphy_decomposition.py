@@ -23,7 +23,6 @@ matching the ECE computation in step04.
 Reference: Murphy, A. H. (1973). A new vector partition of the probability
 score. Journal of Applied Meteorology, 12(4), 595-600.
 
-Author: Claude Code (RQ 6.2.1 Murphy decomposition)
 Date: 2026-04-06
 """
 
@@ -35,9 +34,7 @@ from scipy import stats
 import warnings
 warnings.filterwarnings('ignore')
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.2.1
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR root

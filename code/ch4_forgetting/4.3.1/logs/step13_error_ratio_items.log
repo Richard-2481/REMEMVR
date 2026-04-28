@@ -1,0 +1,213 @@
+======================================================================
+STEP 13: Error Ratio (Q2) & Item Analysis (Q3)
+======================================================================
+
+======================================================================
+Q2: AMONG ERRORS ONLY — Does the ratio shift over time?
+======================================================================
+
+Total errors: 206
+  Perceptual: 161
+  Semantic:   45
+
+--- Error composition by test ---
+Test  N err    Perceptual      Semantic
+---------------------------------------------
+  T1     38    37 ( 97.4%)     1 (  2.6%)
+  T2     30    23 ( 76.7%)     7 ( 23.3%)
+  T3     58    43 ( 74.1%)    15 ( 25.9%)
+  T4     80    58 ( 72.5%)    22 ( 27.5%)
+
+Participants with >=1 error: 80 / 100
+Participants with >=2 errors: 49
+Errors per participant: mean=2.6, median=2, max=10
+
+--- GEE: P(perceptual | error) ~ log(Days) ---
+  Independence correlation (many singletons)
+  Intercept: b=1.6635, SE=0.2284, OR=5.278 [3.373, 8.258], p=0.0000
+  log_Days: b=-0.4492, SE=0.1298, OR=0.638 [0.495, 0.823], p=0.0005
+
+--- GEE: P(perceptual | error) ~ Days ---
+  Intercept: b=2.0304, SE=0.3026, OR=7.617 [4.209, 13.783], p=0.0000
+  Days: b=-0.1944, SE=0.0630, OR=0.823 [0.728, 0.931], p=0.0020
+
+--- Simple logistic (no clustering) as robustness check ---
+  Days: b=-0.1944, OR=0.823, p=0.0068
+
+--- Q2 Summary ---
+The proportion of errors that are perceptual DECREASES over time:
+  T1: 97.4% perceptual → T4: 72.5% perceptual
+This means semantic errors are growing as a share of total errors,
+even though both types increase in absolute terms.
+
+======================================================================
+Q3: ITEM-LEVEL ANALYSIS — Do errors cluster by item/room?
+======================================================================
+
+--- Error rates by item (across all tests) ---
+           Item     N    Perc       %    Sem       %  Total       %
+-----------------------------------------------------------------
+        Toaster   100    29  ( 29.0%)    2  (  2.0%)   31  ( 31.0%)
+         Hammer   100    26  ( 26.0%)    1  (  1.0%)   27  ( 27.0%)
+        Cutlery   100    19  ( 19.0%)    1  (  1.0%)   20  ( 20.0%)
+           Duck   100    19  ( 19.0%)    0  (  0.0%)   19  ( 19.0%)
+        Glasses   100     1  (  1.0%)   17  ( 17.0%)   18  ( 18.0%)
+         Laptop   100     4  (  4.0%)    8  (  8.0%)   12  ( 12.0%)
+     Frying Pan   100     9  (  9.0%)    0  (  0.0%)    9  (  9.0%)
+           Lamp   100     6  (  6.0%)    2  (  2.0%)    8  (  8.0%)
+      Newspaper   100     5  (  5.0%)    3  (  3.0%)    8  (  8.0%)
+          Drill   100     7  (  7.0%)    0  (  0.0%)    7  (  7.0%)
+          Knife   100     5  (  5.0%)    1  (  1.0%)    6  (  6.0%)
+     Smartphone   100     4  (  4.0%)    1  (  1.0%)    5  (  5.0%)
+      TV Remote   100     4  (  4.0%)    1  (  1.0%)    5  (  5.0%)
+   Toilet Paper   100     4  (  4.0%)    0  (  0.0%)    4  (  4.0%)
+    Alarm Clock   100     4  (  4.0%)    0  (  0.0%)    4  (  4.0%)
+       Car Keys   100     3  (  3.0%)    1  (  1.0%)    4  (  4.0%)
+        Letters   100     2  (  2.0%)    2  (  2.0%)    4  (  4.0%)
+     Sleep Mask   100     4  (  4.0%)    0  (  0.0%)    4  (  4.0%)
+       Magazine   100     2  (  2.0%)    1  (  1.0%)    3  (  3.0%)
+           Book   100     1  (  1.0%)    1  (  1.0%)    2  (  2.0%)
+  Picture Frame   100     2  (  2.0%)    0  (  0.0%)    2  (  2.0%)
+   Toothbrushes   100     1  (  1.0%)    1  (  1.0%)    2  (  2.0%)
+      Motor Oil   100     0  (  0.0%)    1  (  1.0%)    1  (  1.0%)
+        Handbag   100     0  (  0.0%)    1  (  1.0%)    1  (  1.0%)
+
+--- Perceptual error rate (%) by item × test ---
+test              1     2     3     4  change
+Name                                         
+Hammer         14.3  12.5  25.0  54.2    39.9
+Cutlery        16.7  12.5  11.5  34.6    17.9
+Frying Pan      0.0  10.7   8.3  16.7    16.7
+Duck           10.7   8.3  33.3  25.0    14.3
+Drill           4.2   4.2   7.7  11.5     7.4
+Book            0.0   0.0   0.0   4.2     4.2
+Picture Frame   0.0   0.0   4.2   4.2     4.2
+Glasses         0.0   0.0   0.0   4.2     4.2
+Toothbrushes    0.0   0.0   0.0   4.2     4.2
+Letters         0.0   4.2   0.0   3.8     3.8
+Sleep Mask      0.0   4.2   7.7   3.8     3.8
+Car Keys        4.2   0.0   0.0   7.7     3.5
+Laptop          4.2   4.2   0.0   7.7     3.5
+Knife           8.3   3.6   0.0   8.3     0.0
+Magazine        0.0   3.6   4.2   0.0     0.0
+Handbag         0.0   0.0   0.0   0.0     0.0
+Motor Oil       0.0   0.0   0.0   0.0     0.0
+Toaster        33.3  16.7  34.6  30.8    -2.6
+Alarm Clock     8.3   0.0   4.2   4.2    -4.2
+Toilet Paper    8.3   0.0   3.8   3.8    -4.5
+Newspaper       8.3   0.0   7.7   3.8    -4.5
+TV Remote       7.1   0.0   8.3   0.0    -7.1
+Lamp            8.3   4.2  11.5   0.0    -8.3
+Smartphone     12.5   3.6   0.0   0.0   -12.5
+
+--- Semantic error rate (%) by item × test ---
+test             1     2     3     4  change
+Name                                        
+Glasses        0.0  20.8  16.7  33.3    33.3
+Lamp           0.0   0.0   0.0   7.7     7.7
+Toaster        0.0   0.0   0.0   7.7     7.7
+Laptop         4.2   0.0  15.4  11.5     7.4
+Smartphone     0.0   0.0   0.0   4.2     4.2
+Toothbrushes   0.0   0.0   0.0   4.2     4.2
+TV Remote      0.0   0.0   0.0   4.2     4.2
+Cutlery        0.0   0.0   0.0   3.8     3.8
+Letters        0.0   0.0   3.8   3.8     3.8
+Car Keys       0.0   0.0   0.0   3.8     3.8
+Handbag        0.0   0.0   0.0   3.8     3.8
+Frying Pan     0.0   0.0   0.0   0.0     0.0
+Book           0.0   0.0   4.2   0.0     0.0
+Duck           0.0   0.0   0.0   0.0     0.0
+Drill          0.0   0.0   0.0   0.0     0.0
+Alarm Clock    0.0   0.0   0.0   0.0     0.0
+Motor Oil      0.0   0.0   3.8   0.0     0.0
+Magazine       0.0   0.0   4.2   0.0     0.0
+Hammer         0.0   0.0   4.2   0.0     0.0
+Knife          0.0   3.6   0.0   0.0     0.0
+Sleep Mask     0.0   0.0   0.0   0.0     0.0
+Picture Frame  0.0   0.0   0.0   0.0     0.0
+Newspaper      0.0   4.2   7.7   0.0     0.0
+Toilet Paper   0.0   0.0   0.0   0.0     0.0
+
+--- Error rates by room ---
+ Room     N    Perc       %    Sem       %
+----------------------------------------
+  bat   600    52  (  8.7%)   21  (  3.5%)
+  bed   600    26  (  4.3%)    3  (  0.5%)
+  kit   600    57  (  9.5%)    7  (  1.2%)
+  liv   600    26  (  4.3%)   14  (  2.3%)
+
+--- Chi-square: error type × item (among errors only) ---
+error_type     perceptual  semantic
+Name                               
+Alarm Clock             4         0
+Book                    1         1
+Car Keys                3         1
+Cutlery                19         1
+Drill                   7         0
+Duck                   19         0
+Frying Pan              9         0
+Glasses                 1        17
+Hammer                 26         1
+Handbag                 0         1
+Knife                   5         1
+Lamp                    6         2
+Laptop                  4         8
+Letters                 2         2
+Magazine                2         1
+Motor Oil               0         1
+Newspaper               5         3
+Picture Frame           2         0
+Sleep Mask              4         0
+Smartphone              4         1
+TV Remote               4         1
+Toaster                29         2
+Toilet Paper            4         0
+Toothbrushes            1         1
+
+Chi2(23) = 108.65, p = 0.000000
+
+--- Chi-square: error type × room (among errors only) ---
+error_type  perceptual  semantic
+Room                            
+bat                 52        21
+bed                 26         3
+kit                 57         7
+liv                 26        14
+
+Chi2(3) = 12.81, p = 0.0051
+
+--- KEY ITEM FINDINGS ---
+
+Items with highest PERCEPTUAL error rates:
+          Toaster: 29.0% perceptual errors
+           Hammer: 26.0% perceptual errors
+          Cutlery: 19.0% perceptual errors
+             Duck: 19.0% perceptual errors
+       Frying Pan: 9.0% perceptual errors
+
+Items with highest SEMANTIC error rates:
+          Glasses: 17.0% semantic errors
+           Laptop: 8.0% semantic errors
+        Newspaper: 3.0% semantic errors
+          Toaster: 2.0% semantic errors
+             Lamp: 2.0% semantic errors
+
+--- Item design implications ---
+Toaster (29%), Hammer (26%), Cutlery (19%), Duck (19%):
+  These items may have visually similar foils (hard perceptual discrimination).
+  This is an item DESIGN property, not a memory process per se.
+
+Glasses (17% semantic, only 1% perceptual):
+  This item is anomalous — participants lose category knowledge.
+  Possibly confused with a different object category entirely.
+
+Laptop (8% semantic, 4% perceptual):
+  Second-highest semantic error rate — similar pattern to Glasses.
+
+Concentration: Top 4 items account for 93/161 (58%) of all perceptual errors
+  (Toaster + Hammer + Cutlery + Duck)
+Glasses alone accounts for 17/45 (38%) of all semantic errors
+
+======================================================================
+DONE: step13_error_ratio_items.py
+======================================================================

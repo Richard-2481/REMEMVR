@@ -1,0 +1,188 @@
+Step 00: Validate Dependencies
+Validating 6 cross-RQ dependencies...
+
+Accuracy model-averaged random effects
+  Path: /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_averaged_random_effects.csv
+  File loaded: 100 rows, 3 columns
+  PASS: step06_averaged_random_effects.csv (100 rows, 3 cols)
+
+Confidence single-model variance components
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step01_variance_components.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.4/status.yaml", line 5, column 12
+  File loaded: 4 rows, 3 columns
+  PASS: step01_variance_components.csv (4 rows, 3 cols)
+
+Confidence model-averaged random effects
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step05b_model_averaged_random_effects.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 100 rows, 3 columns
+  PASS: step05b_model_averaged_random_effects.csv (100 rows, 3 cols)
+
+Theta scores for re-fitting Steps 4-5
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 3 columns
+  FAIL: step03_theta_confidence.csv - Missing columns: {'SE_theta', 'UID', 'theta', 'TSVR'}
+
+Time mapping T1-T4 to Days
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step00_tsvr_mapping.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 3 columns
+  FAIL: step00_tsvr_mapping.csv - Missing columns: {'Days', 'TSVR'}
+
+Item-level confidence responses for binary collapse
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step01_confidence_responses.csv
+  FAIL: step01_confidence_responses.csv - File does not exist
+
+Writing validation report to step00_dependency_validation.txt...
+step00_dependency_validation.txt
+
+Dependency validation FAILED
+  1 file(s) missing or invalid
+  Action: Complete prerequisite RQs (Ch5 5.1.4, Ch6 6.1.4, Ch6 6.1.1)
+  Recommendation: Run prerequisite RQs before proceeding with RQ 6.9.2
+Step 00: Validate Dependencies
+Validating 6 cross-RQ dependencies...
+
+Accuracy model-averaged random effects
+  Path: /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_averaged_random_effects.csv
+  File loaded: 100 rows, 3 columns
+  PASS: step06_averaged_random_effects.csv (100 rows, 3 cols)
+
+Confidence single-model variance components
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step01_variance_components.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.4/status.yaml", line 5, column 12
+  File loaded: 4 rows, 3 columns
+  PASS: step01_variance_components.csv (4 rows, 3 cols)
+
+Confidence model-averaged random effects
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step05b_model_averaged_random_effects.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 100 rows, 3 columns
+  PASS: step05b_model_averaged_random_effects.csv (100 rows, 3 cols)
+
+Theta scores for re-fitting Steps 4-5
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 3 columns
+  PASS: step03_theta_confidence.csv (400 rows, 3 cols)
+
+Time mapping composite_ID to test/TSVR_hours
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step00_tsvr_mapping.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 3 columns
+  PASS: step00_tsvr_mapping.csv (400 rows, 3 cols)
+
+Wide-format IRT input for binary collapse (Step 5)
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step00_irt_input.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 106 columns
+  PASS: step00_irt_input.csv (400 rows, 106 cols)
+
+Writing validation report to step00_dependency_validation.txt...
+step00_dependency_validation.txt
+
+Step 00 complete - All 6 dependencies validated
+Step 00: Validate Dependencies
+Validating 6 cross-RQ dependencies...
+
+Accuracy model-averaged random effects
+  Path: /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_averaged_random_effects.csv
+  File loaded: 100 rows, 3 columns
+  PASS: step06_averaged_random_effects.csv (100 rows, 3 cols)
+
+Confidence single-model variance components
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step01_variance_components.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.4/status.yaml", line 5, column 12
+  File loaded: 4 rows, 3 columns
+  PASS: step01_variance_components.csv (4 rows, 3 cols)
+
+Confidence model-averaged random effects
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step05b_model_averaged_random_effects.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 100 rows, 3 columns
+  PASS: step05b_model_averaged_random_effects.csv (100 rows, 3 cols)
+
+Theta scores for re-fitting Steps 4-5
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 3 columns
+  PASS: step03_theta_confidence.csv (400 rows, 3 cols)
+
+Time mapping composite_ID to test/TSVR_hours
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step00_tsvr_mapping.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 3 columns
+  PASS: step00_tsvr_mapping.csv (400 rows, 3 cols)
+
+Wide-format IRT input for binary collapse (Step 5)
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step00_irt_input.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 106 columns
+  PASS: step00_irt_input.csv (400 rows, 106 cols)
+
+Writing validation report to step00_dependency_validation.txt...
+step00_dependency_validation.txt
+
+Step 00 complete - All 6 dependencies validated
+Step 00: Validate Dependencies
+Validating 6 cross-RQ dependencies...
+
+Accuracy model-averaged random effects
+  Path: /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_averaged_random_effects.csv
+  File loaded: 100 rows, 3 columns
+  PASS: step06_averaged_random_effects.csv (100 rows, 3 cols)
+
+Confidence single-model variance components
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step01_variance_components.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.4/status.yaml", line 5, column 12
+  File loaded: 4 rows, 3 columns
+  PASS: step01_variance_components.csv (4 rows, 3 cols)
+
+Confidence model-averaged random effects
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step05b_model_averaged_random_effects.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 100 rows, 3 columns
+  PASS: step05b_model_averaged_random_effects.csv (100 rows, 3 cols)
+
+Theta scores for re-fitting Steps 4-5
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 3 columns
+  PASS: step03_theta_confidence.csv (400 rows, 3 cols)
+
+Time mapping composite_ID to test/TSVR_hours
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step00_tsvr_mapping.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 3 columns
+  PASS: step00_tsvr_mapping.csv (400 rows, 3 cols)
+
+Wide-format IRT input for binary collapse (Step 5)
+  Path: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step00_irt_input.csv
+  WARNING: Could not parse status.yaml: mapping values are not allowed here
+  in "/home/etai/projects/REMEMVR/results/ch6/6.1.1/status.yaml", line 9, column 12
+  File loaded: 400 rows, 106 columns
+  PASS: step00_irt_input.csv (400 rows, 106 cols)
+
+Writing validation report to step00_dependency_validation.txt...
+step00_dependency_validation.txt
+
+Step 00 complete - All 6 dependencies validated

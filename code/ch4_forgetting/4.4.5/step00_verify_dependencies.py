@@ -47,11 +47,11 @@ def main():
     with open(status_file) as f:
         status = yaml.safe_load(f)
 
-    rq_results_status = status.get("rq_results", {}).get("status", "not found")
-    log(f"RQ 5.4.1 status: {rq_results_status}")
+    results analysis_status = status.get("results analysis", {}).get("status", "not found")
+    log(f"RQ 5.4.1 status: {results analysis_status}")
 
-    if rq_results_status != "success":
-        log(f"ERROR: RQ 5.4.1 must be complete (status=success), found: {rq_results_status}")
+    if results analysis_status != "success":
+        log(f"ERROR: RQ 5.4.1 must be complete (status=success), found: {results analysis_status}")
         sys.exit(1)
 
     log("RQ 5.4.1 status: success - VERIFIED")
@@ -158,7 +158,7 @@ def main():
     report = f"""RQ 5.4.5 Dependency Verification Report
 ========================================
 
-RQ 5.4.1 Status: {rq_results_status}
+RQ 5.4.1 Status: {results analysis_status}
 
 Files Loaded:
 - step02_purified_items.csv: {len(purified_items)} items

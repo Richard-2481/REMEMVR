@@ -18,9 +18,7 @@ import warnings
 from scipy import stats
 
 
-# ============================================================================
 # DATA PREPARATION
-# ============================================================================
 
 def assign_piecewise_segments(
     df: pd.DataFrame,
@@ -98,7 +96,6 @@ def assign_piecewise_segments(
     result['Days_within'] = result.apply(compute_days_within, axis=1)
 
     return result
-
 
 
 def prepare_lmm_input_from_theta(
@@ -190,9 +187,7 @@ def prepare_lmm_input_from_theta(
     return df_long
 
 
-# ============================================================================
 # MODEL CONFIGURATION
-# ============================================================================
 
 def configure_candidate_models(
     n_factors: int,
@@ -289,9 +284,7 @@ def configure_candidate_models(
     return models
 
 
-# ============================================================================
 # SINGLE MODEL FITTING
-# ============================================================================
 
 def fit_lmm_trajectory(
     data: pd.DataFrame,
@@ -365,9 +358,7 @@ def fit_lmm_trajectory(
     return result
 
 
-# ============================================================================
 # MODEL COMPARISON
-# ============================================================================
 
 def compare_lmm_models_by_aic(
     data: pd.DataFrame,
@@ -483,9 +474,7 @@ def compare_lmm_models_by_aic(
     }
 
 
-# ============================================================================
 # EXTRACT RESULTS
-# ============================================================================
 
 def extract_fixed_effects_from_lmm(result: MixedLMResults) -> pd.DataFrame:
     """
@@ -571,9 +560,7 @@ def extract_random_effects_from_lmm(result: MixedLMResults) -> Dict:
     }
 
 
-# ============================================================================
 # FULL PIPELINE
-# ============================================================================
 
 def run_lmm_analysis(
     theta_scores: pd.DataFrame,
@@ -1001,9 +988,7 @@ def compute_effect_sizes_cohens(
     return df_effect_sizes
 
 
-# ============================================================================
 # MODULE EXPORTS
-# ============================================================================
 
 def fit_lmm_trajectory_tsvr(
     theta_scores: pd.DataFrame,
@@ -1246,10 +1231,7 @@ def select_lmm_random_structure_via_lrt(
             if candidate in data.columns:
                 time_var = candidate
                 break
-
-    # ========================================================================
     # FIT THREE CANDIDATE MODELS (all with REML=False for valid LRT)
-    # ========================================================================
 
     fitted_models = {}
     results_list = []
@@ -1356,10 +1338,7 @@ def select_lmm_random_structure_via_lrt(
             'aic': np.nan,
             'n_params': np.nan
         })
-
-    # ========================================================================
     # SELECT BEST MODEL (parsimonious selection)
-    # ========================================================================
 
     lrt_results = pd.DataFrame(results_list)
 
@@ -1446,7 +1425,7 @@ def prepare_age_effects_plot_data(
 
     **Output Structure:**
     - 3 domains × 3 tertiles × 4 timepoints = 36 rows
-    - Each row represents one data point for rq_plots multi-panel trajectory plot
+    - Each row represents one data point for plotting pipeline multi-panel trajectory plot
 
     **RQ 5.10 Context:**
     - Tests Age × Domain × Time 3-way interaction (continuous Age in model)
@@ -1471,10 +1450,7 @@ def prepare_age_effects_plot_data(
     """
     # Copy input to avoid modifying original
     df = lmm_input.copy()
-
-    # ========================================================================
-    # STEP 1: Create age tertiles using qcut (equal-sized groups)
-    # ========================================================================
+    # Create age tertiles using qcut (equal-sized groups)
 
     # Create age tertiles at subject level (not observation level)
     # Get unique Age per UID, assign tertiles, then merge back
@@ -1489,10 +1465,7 @@ def prepare_age_effects_plot_data(
 
     # Merge tertiles back to full data
     df = df.merge(subject_ages[['UID', 'age_tertile']], on='UID', how='left')
-
-    # ========================================================================
-    # STEP 2: Aggregate observed data by tertile × timepoint (or domain × tertile × timepoint)
-    # ========================================================================
+    # Aggregate observed data by tertile × timepoint (or domain × tertile × timepoint)
 
     # Group by age tertile and timepoint (add domain if present)
     group_cols = ['age_tertile', 'TSVR_hours']
@@ -1504,19 +1477,13 @@ def prepare_age_effects_plot_data(
         ('se_observed', lambda x: x.sem()),  # Standard error of the mean
         ('n', 'count')
     ]).reset_index()
-
-    # ========================================================================
-    # STEP 3: Compute 95% confidence intervals
-    # ========================================================================
+    # Compute 95% confidence intervals
 
     # CI = mean ± 1.96 * SEM (95% CI for normal distribution)
     z_critical = 1.96
     grouped['ci_lower'] = grouped['theta_observed'] - z_critical * grouped['se_observed']
     grouped['ci_upper'] = grouped['theta_observed'] + z_critical * grouped['se_observed']
-
-    # ========================================================================
-    # STEP 4: Generate model predictions
-    # ========================================================================
+    # Generate model predictions
 
     # Use fitted values from the LMM model
     # Create DataFrame with same structure as grouped data for prediction lookup
@@ -1525,22 +1492,16 @@ def prepare_age_effects_plot_data(
     # Aggregate fitted values by tertile × timepoint (or domain × tertile × timepoint)
     predictions = df.groupby(group_cols)['fitted_theta'].mean().reset_index()
     predictions.rename(columns={'fitted_theta': 'theta_predicted'}, inplace=True)
-
-    # ========================================================================
-    # STEP 5: Merge predictions with observed data
-    # ========================================================================
+    # Merge predictions with observed data
 
     result = grouped.merge(
         predictions,
         on=group_cols,
         how='left'
     )
+    # Select final columns and save to CSV
 
-    # ========================================================================
-    # STEP 6: Select final columns and save to CSV
-    # ========================================================================
-
-    # Select columns for rq_plots (include domain_name only if present)
+    # Select columns for plotting pipeline (include domain_name only if present)
     output_cols = ['age_tertile', 'TSVR_hours', 'theta_observed',
                    'se_observed', 'ci_lower', 'ci_upper', 'theta_predicted']
     if 'domain_name' in result.columns:
@@ -2091,10 +2052,7 @@ def extract_marginal_age_slopes_by_domain(
     log_derivative = 1.0 / (eval_timepoint + 1.0)
 
     results = []
-
-    # =========================================================================
     # Reference Domain (e.g., What)
-    # =========================================================================
     term_linear_age = f'{time_linear}:{age_var}'
     term_log_age = f'{time_log}:{age_var}'
 
@@ -2134,10 +2092,7 @@ def extract_marginal_age_slopes_by_domain(
         'CI_lower': ci_lower_ref,
         'CI_upper': ci_upper_ref
     })
-
-    # =========================================================================
     # Non-Reference Domains (e.g., Where, When)
-    # =========================================================================
     for domain in non_reference:
         term_3way_linear = f'{time_linear}:{age_var}:{domain_var}[T.{domain}]'
         term_3way_log = f'{time_log}:{age_var}:{domain_var}[T.{domain}]'

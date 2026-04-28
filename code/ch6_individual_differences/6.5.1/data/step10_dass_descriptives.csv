@@ -1,0 +1,4 @@
+subscale,variable,mean,sd,median,min,max,mild_threshold,pct_above_mild,mean_as_pct_of_threshold,n
+Depression,dass_dep,2.32,3.2717956025165247,1.0,0,17,10,5.0,23.2,100
+Anxiety,dass_anx,1.44,2.379712231138526,1.0,0,12,8,5.0,18.0,100
+Stress,dass_str,3.34,3.6047667655957207,2.0,0,16,15,2.0,22.266666666666666,100

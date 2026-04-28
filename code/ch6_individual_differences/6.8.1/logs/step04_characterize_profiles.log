@@ -1,0 +1,50 @@
+Step 04: Characterize Profiles
+
+Loading profile assignments...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step03_optimal_profiles.csv
+100 participants
+Profile distribution:
+Profile
+0    100
+
+Loading theta scores...
+/home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step01_domain_theta_scores.csv
+100 participants
+
+Merging profile assignments with theta scores...
+100 rows (expected: 100)
+Merge validation
+All participants matched
+
+Computing profile statistics with bootstrap CIs...
+n_bootstrap=1000, ci_level=0.95
+
+[PROFILE 0] Computing characteristics...
+[PROFILE 0] N=100 participants
+[PROFILE 0] What: M=0.000, SD=1.000, 95% CI=[-0.200, 0.184]
+[PROFILE 0] Where: M=-0.000, SD=1.000, 95% CI=[-0.202, 0.181]
+
+Profile characterization validation
+1 profiles characterized
+
+Assigning interpretable profile labels...
+High: >0.5, Low: <-0.5
+[PROFILE 0] Label: Average
+
+[EFFECT SIZES] Computing Cohen's d for between-profile differences...
+
+Saving profile characteristics to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step04_profile_characteristics.csv
+1 profiles
+
+[CHARACTERISTICS TABLE]
+ Profile   N    What_Mean  What_SD  What_CI_Low  What_CI_High    Where_Mean  Where_SD  Where_CI_Low  Where_CI_High
+       0 100 4.440892e-18      1.0    -0.199958      0.184402 -4.218847e-17       1.0     -0.201668        0.18079
+
+Saving profile interpretation to /home/etai/projects/REMEMVR/results/ch7/7.8.1/data/step04_profile_interpretation.txt
+Profile interpretation written
+
+Output validation...
+All 1 profiles characterized
+Bootstrap CIs validated
+
+Step 04 complete

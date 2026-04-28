@@ -49,13 +49,13 @@ def main():
     with open(status_path, 'r') as f:
         status = yaml.safe_load(f)
 
-    # Check that rq_results is success (full completion)
-    rq_results_status = status.get('rq_results', {}).get('status', 'unknown')
-    if rq_results_status != 'success':
-        raise ValueError(f"RQ 5.4.1 not complete: rq_results status = {rq_results_status}")
+    # Check that results analysis is success (full completion)
+    results analysis_status = status.get('results analysis', {}).get('status', 'unknown')
+    if results analysis_status != 'success':
+        raise ValueError(f"RQ 5.4.1 not complete: results analysis status = {results analysis_status}")
 
-    verification_report.append(f"RQ 5.4.1 status: {rq_results_status}")
-    logger.info(f"RQ 5.4.1 rq_results status: {rq_results_status}")
+    verification_report.append(f"RQ 5.4.1 status: {results analysis_status}")
+    logger.info(f"RQ 5.4.1 results analysis status: {results analysis_status}")
 
     # 2. Load theta scores
     logger.info("Loading theta scores from RQ 5.4.1...")

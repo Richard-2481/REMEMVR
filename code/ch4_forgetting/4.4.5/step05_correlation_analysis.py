@@ -21,7 +21,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step05_correlation_analysis.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -61,31 +60,31 @@ def steiger_z_test(r12, r13, r23, n):
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 05: Correlation Analysis with Steiger's Z-Test")
+        log("Step 05: Correlation Analysis with Steiger's Z-Test")
 
         # Load theta scores from RQ 5.4.1
         theta_path = PROJECT_ROOT / "results" / "ch5" / "5.4.1" / "data" / "step03_theta_scores.csv"
-        log(f"[LOAD] Reading {theta_path}")
+        log(f"Reading {theta_path}")
         theta_scores = pd.read_csv(theta_path, encoding='utf-8')
-        log(f"[LOADED] {len(theta_scores)} rows")
+        log(f"{len(theta_scores)} rows")
 
         # Load Full CTT scores
         ctt_full_path = RQ_DIR / "data" / "step02_ctt_full_scores.csv"
-        log(f"[LOAD] Reading {ctt_full_path}")
+        log(f"Reading {ctt_full_path}")
         ctt_full_scores = pd.read_csv(ctt_full_path, encoding='utf-8')
-        log(f"[LOADED] {len(ctt_full_scores)} rows")
+        log(f"{len(ctt_full_scores)} rows")
 
         # Load Purified CTT scores
         ctt_purified_path = RQ_DIR / "data" / "step03_ctt_purified_scores.csv"
-        log(f"[LOAD] Reading {ctt_purified_path}")
+        log(f"Reading {ctt_purified_path}")
         ctt_purified_scores = pd.read_csv(ctt_purified_path, encoding='utf-8')
-        log(f"[LOADED] {len(ctt_purified_scores)} rows")
+        log(f"{len(ctt_purified_scores)} rows")
 
         # Merge all three datasets
-        log("[MERGE] Merging theta, Full CTT, and Purified CTT on composite_ID")
+        log("Merging theta, Full CTT, and Purified CTT on composite_ID")
         merged = theta_scores.merge(ctt_full_scores, on='composite_ID', how='inner')
         merged = merged.merge(ctt_purified_scores, on='composite_ID', how='inner')
-        log(f"[MERGED] {len(merged)} rows retained after merge")
+        log(f"{len(merged)} rows retained after merge")
 
         # Perform Steiger's z-test for each dimension
         results = []
@@ -93,10 +92,10 @@ if __name__ == "__main__":
         n_tests = 3
         bonferroni_alpha = family_alpha / n_tests
 
-        log(f"[ANALYSIS] Performing Steiger's z-test (Bonferroni alpha = {bonferroni_alpha:.4f})")
+        log(f"Performing Steiger's z-test (Bonferroni alpha = {bonferroni_alpha:.4f})")
 
         for dimension in ['common', 'congruent', 'incongruent']:
-            log(f"\n[DIMENSION] {dimension.capitalize()}")
+            log(f"\n{dimension.capitalize()}")
 
             # Column names
             theta_col = f'theta_{dimension}'
@@ -134,7 +133,7 @@ if __name__ == "__main__":
                 normality_check = "PASS"
             else:
                 normality_check = "FAIL (non-normal distribution detected)"
-                log(f"  [WARNING] Normality assumption violated")
+                log(f"  Normality assumption violated")
 
             results.append({
                 'dimension': dimension.capitalize(),
@@ -152,36 +151,36 @@ if __name__ == "__main__":
         correlation_analysis = pd.DataFrame(results)
 
         # Validation: Check correlations in [-1, 1]
-        log("\n[VALIDATION] Checking correlations in [-1, 1]")
+        log("\nChecking correlations in [-1, 1]")
         corr_cols = ['r_full', 'r_purified']
         for col in corr_cols:
             min_val = correlation_analysis[col].min()
             max_val = correlation_analysis[col].max()
             if min_val < -1.0 or max_val > 1.0:
                 raise ValueError(f"{col} out of range: [{min_val:.3f}, {max_val:.3f}]")
-        log("[PASS] All correlations in valid range")
+        log("All correlations in valid range")
 
         # Validation: Check Bonferroni correction
-        log("[VALIDATION] Checking p_bonferroni = min(p_uncorrected * 3, 1.0)")
+        log("Checking p_bonferroni = min(p_uncorrected * 3, 1.0)")
         for idx, row in correlation_analysis.iterrows():
             expected_p_bonf = min(row['p_uncorrected'] * n_tests, 1.0)
             if not np.isclose(row['p_bonferroni'], expected_p_bonf):
                 raise ValueError(f"Bonferroni correction error for {row['dimension']}: {row['p_bonferroni']} != {expected_p_bonf}")
-        log("[PASS] Bonferroni correction verified")
+        log("Bonferroni correction verified")
 
         # Save results
         output_path = RQ_DIR / "data" / "step05_correlation_analysis.csv"
-        log(f"\n[SAVE] Writing {output_path}")
+        log(f"\nWriting {output_path}")
         correlation_analysis.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {len(correlation_analysis)} rows, {len(correlation_analysis.columns)} columns")
+        log(f"{len(correlation_analysis)} rows, {len(correlation_analysis.columns)} columns")
 
-        log("[SUCCESS] Step 05 complete")
+        log("Step 05 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

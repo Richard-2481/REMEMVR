@@ -1,0 +1,242 @@
+================================================================================
+Step 05c: Population-Level Model-Averaged Predictions
+================================================================================
+
+Loading input data...
+  Training data: 400 observations
+  Competitive models: 48
+  Best model: Sin+Cos (renorm_weight=0.2228)
+  Cumulative weight: 100.0%
+
+Creating population-level prediction grid...
+  Grid points: 100
+  TSVR range: [1, 246.2] hours
+
+Computing model-averaged predictions...
+
+Cannot set a DataFrame with multiple columns to the single column weight_normalized
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.1/code/step05c_population_predictions.py", line 81, in <module>
+    results = compute_model_averaged_predictions(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/model_averaging.py", line 183, in compute_model_averaged_predictions
+    competitive['weight_normalized'] = (
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4312, in __setitem__
+    self._set_item_frame_value(key, value)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4470, in _set_item_frame_value
+    raise ValueError(
+ValueError: Cannot set a DataFrame with multiple columns to the single column weight_normalized
+
+================================================================================
+Step 05c: Population-Level Model-Averaged Predictions
+================================================================================
+
+Loading input data...
+  Training data: 400 observations
+  Competitive models: 48
+  Best model: Sin+Cos (renorm_weight=0.2228)
+  Cumulative weight: 100.0%
+
+Creating population-level prediction grid...
+  Grid points: 100
+  TSVR range: [1, 246.2] hours
+
+Computing model-averaged predictions...
+
+Model averaging complete:
+  Models used: 48
+  Effective N models: 31.12
+  Prediction variance: [0.001000, 0.258130]
+
+Saving population-level predictions...
+  ✓ step05c_population_predictions.csv (100 rows)
+
+Prediction characteristics:
+  Mean theta: -0.2478
+  SD theta: 0.2825
+  Range: [-0.4695, 0.6639]
+
+-1
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py", line 413, in get_loc
+    return self._range.index(new_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: -1 is not in range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.1/code/step05c_population_predictions.py", line 125, in <module>
+    log(f"  Total decline (Day 0 to Day 6): {averaged_preds[0] - averaged_preds[-1]:.4f} theta units")
+                                                                 ~~~~~~~~~~~~~~^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py", line 415, in get_loc
+    raise KeyError(key) from err
+KeyError: -1
+
+================================================================================
+Step 05c: Population-Level Model-Averaged Predictions
+================================================================================
+
+Loading input data...
+  Training data: 400 observations
+  Competitive models: 48
+  Best model: Sin+Cos (renorm_weight=0.2228)
+  Cumulative weight: 100.0%
+
+Creating population-level prediction grid...
+  Grid points: 100
+  TSVR range: [1, 246.2] hours
+
+Computing model-averaged predictions...
+
+Model averaging complete:
+  Models used: 48
+  Effective N models: 31.12
+  Prediction variance: [0.001000, 0.258130]
+
+Saving population-level predictions...
+  ✓ step05c_population_predictions.csv (100 rows)
+
+Prediction characteristics:
+  Mean theta: -0.2478
+  SD theta: 0.2825
+  Range: [-0.4695, 0.6639]
+  Total decline (t=1 to t=246): 1.0594 theta units
+
+================================================================================
+Step 05c Complete
+  Models averaged: 48
+  Output: step05c_population_predictions.csv
+================================================================================
+================================================================================
+Step 05c: Population-Level Model-Averaged Predictions
+================================================================================
+
+Loading input data...
+
+'delta_AIC'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'delta_AIC'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.1/code/step05c_population_predictions.py", line 57, in <module>
+    competitive = comparison_full[comparison_full['delta_AIC'] < 2.0].copy()
+                                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'delta_AIC'
+
+================================================================================
+Step 05c: Population-Level Model-Averaged Predictions
+================================================================================
+
+Loading input data...
+  Training data: 400 observations
+  Competitive models: 2
+  Best model: Linear+Logarithmic (renorm_weight=0.6875)
+  Cumulative weight: 100.0%
+
+Creating population-level prediction grid...
+  Grid points: 100
+  TSVR range: [1, 246.2] hours
+
+Computing model-averaged predictions...
+
+All models failed to fit
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.1/code/step05c_population_predictions.py", line 97, in <module>
+    results = compute_model_averaged_predictions(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/model_averaging.py", line 228, in compute_model_averaged_predictions
+    raise ValueError("All models failed to fit")
+ValueError: All models failed to fit
+
+================================================================================
+Step 05c: Population-Level Model-Averaged Predictions
+================================================================================
+
+Loading input data...
+  Training data: 400 observations
+  Competitive models: 1
+  Best model: Sin+Cos (renorm_weight=1.0000)
+  Cumulative weight: 100.0%
+
+Creating population-level prediction grid...
+  Grid points: 100
+  TSVR range: [1, 246.2] hours
+
+Computing model-averaged predictions...
+
+Model averaging complete:
+  Models used: 1
+  Effective N models: 1.00
+  Prediction variance: [0.000000, 0.000000]
+
+Saving population-level predictions...
+  ✓ step05c_population_predictions.csv (100 rows)
+
+Prediction characteristics:
+  Mean theta: -0.0393
+  SD theta: 0.4069
+  Range: [-0.6134, 0.5281]
+  Total decline (t=1 to t=246): -0.0017 theta units
+
+================================================================================
+Step 05c Complete
+  Models averaged: 1
+  Output: step05c_population_predictions.csv
+================================================================================
+================================================================================
+Step 05c: Population-Level Model-Averaged Predictions
+================================================================================
+
+Loading input data...
+  Training data: 400 observations
+  Competitive models: 21
+  Best model: Root_033 (renorm_weight=0.0838)
+  Cumulative weight: 100.0%
+
+Creating population-level prediction grid...
+  Grid points: 100
+  TSVR range: [1, 246.2] hours
+
+Computing model-averaged predictions...
+
+Model averaging complete:
+  Models used: 21
+  Effective N models: 19.40
+  Prediction variance: [0.000042, 0.003089]
+
+Saving population-level predictions...
+  ✓ step05c_population_predictions.csv (100 rows)
+
+Prediction characteristics:
+  Mean theta: -0.3151
+  SD theta: 0.3269
+  Range: [-0.6892, 0.7078]
+  Total decline (t=1 to t=246): 1.3970 theta units
+
+================================================================================
+Step 05c Complete
+  Models averaged: 21
+  Output: step05c_population_predictions.csv
+================================================================================

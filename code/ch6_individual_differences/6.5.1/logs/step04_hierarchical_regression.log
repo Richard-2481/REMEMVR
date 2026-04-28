@@ -1,0 +1,49 @@
+Step 04: Hierarchical Regression
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 6 cols)
+All expected columns present: ['UID', 'theta_all', 'Education_z', 'VR_Experience_z', 'Typical_Sleep_z', 'Age_z']
+Preparing predictor blocks...
+Block 1 (Control): ['Age_z']
+Block 2 (Full): ['Age_z', 'Education_z', 'VR_Experience_z', 'Typical_Sleep_z']
+Outcome variable: theta_all (N=100)
+Running fit_hierarchical_regression...
+Hierarchical regression complete
+Computing bootstrap confidence intervals...
+Bootstrap analysis complete (1000 iterations)
+Applying multiple comparison corrections...
+'numpy.ndarray' object has no attribute 'iloc'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.1/code/step04_hierarchical_regression.py", line 228, in <module>
+    main_p_values.append(full_model.pvalues.iloc[idx])
+                         ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'iloc'
+Step 04: Hierarchical Regression
+Loading analysis dataset...
+step03_analysis_dataset.csv (100 rows, 6 cols)
+All expected columns present: ['UID', 'theta_all', 'Education_z', 'VR_Experience_z', 'Typical_Sleep_z', 'Age_z']
+Preparing predictor blocks...
+Block 1 (Control): ['Age_z']
+Block 2 (Full): ['Age_z', 'Education_z', 'VR_Experience_z', 'Typical_Sleep_z']
+Outcome variable: theta_all (N=100)
+Running fit_hierarchical_regression...
+Hierarchical regression complete
+Computing bootstrap confidence intervals...
+Bootstrap analysis complete (1000 iterations)
+Applying multiple comparison corrections...
+Bonferroni correction applied (k=3)
+FDR correction applied
+Saving model comparison results...
+step04_regression_models.csv (2 models)
+Saving coefficients with bootstrap CIs and dual p-values...
+step04_coefficients_ci.csv (4 coefficients)
+Running validate_probability_range...
+valid: True
+message: All probability values valid (n=3 columns, 12 total values in [0, 1]).
+violations: []
+Control model R2: 0.0374
+Full model R2: 0.0626
+R2 change: 0.0253
+Bootstrap CIs computed: 95% confidence intervals
+Multiple comparisons: Bonferroni + FDR for 3 predictors
+Step 04 complete

@@ -1,0 +1,296 @@
+Step 05: Binary Confidence Analysis
+  Random seed: 42
+  Binary collapse rule: {'low': [1, 2], 'high': [4, 5], 'exclude': [3]}
+
+[SUBSTEP 5a] Binary Collapse
+Loading wide-format IRT input...
+step00_irt_input.csv (400 rows, 106 cols)
+
+Converting wide to long format...
+  Found 105 items
+  Reshaped to 42000 rows (long format)
+
+  Original response distribution:
+
+response
+0.0    10697
+1.0     7504
+2.0     6365
+3.0     4381
+4.0    13053
+
+Applying binary collapse rule...
+  Original responses: 42000
+  Valid binary responses: 26922
+  Excluded (level 3 or NaN): 15078 (35.9%)
+
+  Binary response distribution:
+
+response_binary
+0.0    13869
+1.0    13053
+step05_binary_confidence_responses.csv
+
+[SUBSTEP 5b] Binary IRT Calibration
+Preparing IRT input...
+  IRT input: 26922 responses
+  Unique composite_IDs: 400
+  Unique items: 105
+
+Calibrating binary GRM (equivalent to 2PL)...
+  n_cats: 2
+  max_iter: 200
+IRT calibration failed: Missing required columns: ['UID', 'test', 'item_name', 'score']
+TOOL ERROR: IRT calibration failed: Missing required columns: ['UID', 'test', 'item_name', 'score']
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step05_binary_confidence_analysis.py", line 230, in <module>
+    df_theta_binary, df_items_binary = calibrate_grm(
+                                       ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 732, in calibrate_grm
+    return calibrate_irt(df_long, groups, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 472, in calibrate_irt
+    response_matrix, Q_matrix, missing_mask, item_list, composite_ids = prepare_irt_input_from_long(
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 67, in prepare_irt_input_from_long
+    raise ValueError(f"Missing required columns: {missing_cols}")
+ValueError: Missing required columns: ['UID', 'test', 'item_name', 'score']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step05_binary_confidence_analysis.py", line 239, in <module>
+    raise RuntimeError(f"TOOL ERROR: IRT calibration failed: {e}")
+RuntimeError: TOOL ERROR: IRT calibration failed: Missing required columns: ['UID', 'test', 'item_name', 'score']
+Step 05: Binary Confidence Analysis
+  Random seed: 42
+  Binary collapse rule: {'low': [1, 2], 'high': [4, 5], 'exclude': [3]}
+
+[SUBSTEP 5a] Binary Collapse
+Loading wide-format IRT input...
+step00_irt_input.csv (400 rows, 106 cols)
+
+Converting wide to long format...
+  Found 105 items
+  Reshaped to 42000 rows (long format)
+
+  Original response distribution:
+
+response
+0.0    10697
+1.0     7504
+2.0     6365
+3.0     4381
+4.0    13053
+
+Applying binary collapse rule...
+  Original responses: 42000
+  Valid binary responses: 26922
+  Excluded (level 3 or NaN): 15078 (35.9%)
+
+  Binary response distribution:
+
+response_binary
+0.0    13869
+1.0    13053
+step05_binary_confidence_responses.csv
+
+[SUBSTEP 5b] Binary IRT Calibration
+Preparing IRT input...
+  IRT input: 26922 responses
+  Unique UIDs: 100
+  Unique items: 105
+
+Calibrating binary GRM (equivalent to 2PL)...
+  n_cats: 2
+  max_iter: 200
+IRT calibration failed: 'model_fit'
+TOOL ERROR: IRT calibration failed: 'model_fit'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step05_binary_confidence_analysis.py", line 230, in <module>
+    df_theta_binary, df_items_binary = calibrate_grm(
+                                       ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 732, in calibrate_grm
+    return calibrate_irt(df_long, groups, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 529, in calibrate_irt
+    **config['model_fit']
+      ~~~~~~^^^^^^^^^^^^^
+KeyError: 'model_fit'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step05_binary_confidence_analysis.py", line 239, in <module>
+    raise RuntimeError(f"TOOL ERROR: IRT calibration failed: {e}")
+RuntimeError: TOOL ERROR: IRT calibration failed: 'model_fit'
+Step 05: Binary Confidence Analysis
+  Random seed: 42
+  Binary collapse rule: {'low': [1, 2], 'high': [4, 5], 'exclude': [3]}
+
+[SUBSTEP 5a] Binary Collapse
+Loading wide-format IRT input...
+step00_irt_input.csv (400 rows, 106 cols)
+
+Converting wide to long format...
+  Found 105 items
+  Reshaped to 42000 rows (long format)
+
+  Original response distribution:
+
+response
+0.0    10697
+1.0     7504
+2.0     6365
+3.0     4381
+4.0    13053
+
+Applying binary collapse rule...
+  Original responses: 42000
+  Valid binary responses: 26922
+  Excluded (level 3 or NaN): 15078 (35.9%)
+
+  Binary response distribution:
+
+response_binary
+0.0    13869
+1.0    13053
+step05_binary_confidence_responses.csv
+
+[SUBSTEP 5b] Binary IRT Calibration
+Preparing IRT input...
+  IRT input: 26922 responses
+  Unique UIDs: 100
+  Unique items: 105
+
+Calibrating binary GRM (equivalent to 2PL)...
+  n_cats: 2
+  max_iter: 200
+IRT calibration failed: fit_irt_grm() got an unexpected keyword argument 'max_iter'
+TOOL ERROR: IRT calibration failed: fit_irt_grm() got an unexpected keyword argument 'max_iter'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step05_binary_confidence_analysis.py", line 232, in <module>
+    df_theta_binary, df_items_binary = calibrate_grm(
+                                       ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 732, in calibrate_grm
+    return calibrate_irt(df_long, groups, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 525, in calibrate_irt
+    model = fit_irt_grm(
+            ^^^^^^^^^^^^
+TypeError: fit_irt_grm() got an unexpected keyword argument 'max_iter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step05_binary_confidence_analysis.py", line 241, in <module>
+    raise RuntimeError(f"TOOL ERROR: IRT calibration failed: {e}")
+RuntimeError: TOOL ERROR: IRT calibration failed: fit_irt_grm() got an unexpected keyword argument 'max_iter'
+Step 05: Binary Confidence Analysis
+  Random seed: 42
+  Binary collapse rule: {'low': [1, 2], 'high': [4, 5], 'exclude': [3]}
+
+[SUBSTEP 5a] Binary Collapse
+Loading wide-format IRT input...
+step00_irt_input.csv (400 rows, 106 cols)
+
+Converting wide to long format...
+  Found 105 items
+  Reshaped to 42000 rows (long format)
+
+  Original response distribution:
+
+response
+0.0    10697
+1.0     7504
+2.0     6365
+3.0     4381
+4.0    13053
+
+Applying binary collapse rule...
+  Original responses: 42000
+  Valid binary responses: 26922
+  Excluded (level 3 or NaN): 15078 (35.9%)
+
+  Binary response distribution:
+
+response_binary
+0.0    13869
+1.0    13053
+step05_binary_confidence_responses.csv
+
+[SUBSTEP 5b] Binary IRT Calibration
+Preparing IRT input...
+  IRT input: 26922 responses
+  Unique UIDs: 100
+  Unique items: 105
+
+Calibrating binary GRM (equivalent to 2PL)...
+  n_cats: 2
+  device: cpu
+IRT calibration failed: 'model_fit'
+TOOL ERROR: IRT calibration failed: 'model_fit'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step05_binary_confidence_analysis.py", line 226, in <module>
+    df_theta_binary, df_items_binary = calibrate_grm(
+                                       ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 732, in calibrate_grm
+    return calibrate_irt(df_long, groups, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_irt.py", line 529, in calibrate_irt
+    **config['model_fit']
+      ~~~~~~^^^^^^^^^^^^^
+KeyError: 'model_fit'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step05_binary_confidence_analysis.py", line 235, in <module>
+    raise RuntimeError(f"TOOL ERROR: IRT calibration failed: {e}")
+RuntimeError: TOOL ERROR: IRT calibration failed: 'model_fit'
+Step 05: Binary Confidence Analysis
+  Random seed: 42
+  Binary collapse rule: {'low': [1, 2], 'high': [4, 5], 'exclude': [3]}
+
+[SUBSTEP 5a] Binary Collapse
+Loading wide-format IRT input...
+step00_irt_input.csv (400 rows, 106 cols)
+
+Converting wide to long format...
+  Found 105 items
+  Reshaped to 42000 rows (long format)
+
+  Original response distribution:
+
+response
+0.0    10697
+1.0     7504
+2.0     6365
+3.0     4381
+4.0    13053
+
+Applying binary collapse rule...
+  Original responses: 42000
+  Valid binary responses: 26922
+  Excluded (level 3 or NaN): 15078 (35.9%)
+
+  Binary response distribution:
+
+response_binary
+0.0    13869
+1.0    13053
+step05_binary_confidence_responses.csv
+
+[SUBSTEP 5b] Binary IRT Calibration
+Preparing IRT input...
+  IRT input: 26922 responses
+  Unique UIDs: 100
+  Unique items: 105
+
+Calibrating binary GRM (equivalent to 2PL)...
+  n_cats: 2
+  device: cpu

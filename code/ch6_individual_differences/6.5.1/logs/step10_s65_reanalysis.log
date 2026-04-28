@@ -1,0 +1,155 @@
+======================================================================
+§6.5 SELF-REPORT MEASURES — UNIFIED REANALYSIS
+======================================================================
+
+[STEP 1] Loading and merging data sources...
+  Theta scores: N=100, cols=['UID', 'theta_all', 'theta_SE']
+  Cognitive tests: N=100, cols=['UID', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'age', 'sex', 'education']
+  dfnonvr: N=100, cols=235
+  Merged dataset: N=100, cols=['UID', 'theta_all', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'age', 'education', 'vr_experience', 'sleep_hours_typical', 'dass_dep', 'dass_anx', 'dass_str']
+  No missing data — full N=100 for all variables
+  Saved: step10_merged_dataset.csv
+
+[STEP 2] DASS descriptive statistics...
+  Depression: M=2.32, SD=3.27, range=[0, 17], 5% above mild threshold (>=10), mean = 23% of threshold
+  Anxiety: M=1.44, SD=2.38, range=[0, 12], 5% above mild threshold (>=8), mean = 18% of threshold
+  Stress: M=3.34, SD=3.60, range=[0, 16], 2% above mild threshold (>=15), mean = 22% of threshold
+  Saved: step10_dass_descriptives.csv
+
+  Lifestyle descriptives:
+  Education: M=6.10, SD=1.64, range=[1, 9]
+  VR Experience: M=1.18, SD=1.08, range=[0, 4]
+  Typical Sleep Hours: M=7.07, SD=0.99, range=[4.0, 10.0]
+
+======================================================================
+[MODEL 1] LIFESTYLE FACTORS
+======================================================================
+  Block 1: ['age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+  Block 2: ['education', 'vr_experience', 'sleep_hours_typical']
+  N = 100
+
+  Block 1: R²=0.2955, Adj R²=0.2500, F(6,93)=6.50, p=0.0000
+  Block 2: R²=0.3004, Adj R²=0.2304, F(9,90)=4.29, p=0.0001
+  ΔR²=0.0049, F-change(3,90)=0.21, p=0.8890
+
+  Individual predictors (Block 2 model):
+    age                      : β=0.0022, sr²=0.0014, t=0.431, p=0.6673
+    RAVLT_T                  : β=0.0071, sr²=0.0089, t=1.067, p=0.2887
+    BVMT_T                   : β=0.0085, sr²=0.0083, t=1.033, p=0.3044
+    RPM_T                    : β=0.0200, sr²=0.0601, t=2.780, p=0.0066
+    RAVLT_Pct_Ret_T          : β=0.0128, sr²=0.0291, t=1.936, p=0.0560
+    BVMT_Pct_Ret_T           : β=0.0071, sr²=0.0100, t=1.135, p=0.2595
+    education                : β=-0.0009, sr²=0.0000, t=-0.025, p=0.9800, p_Bonf=1.0000
+    vr_experience            : β=0.0192, sr²=0.0008, t=0.317, p=0.7519, p_Bonf=1.0000
+    sleep_hours_typical      : β=-0.0436, sr²=0.0037, t=-0.688, p=0.4930, p_Bonf=1.0000
+
+  Cross-validation (10-fold):
+    Mean train R² = 0.3090
+    Mean test R²  = -0.0184
+    Gap = 0.3274
+
+======================================================================
+[MODEL 2] PSYCHOLOGICAL DISTRESS (DASS)
+======================================================================
+  Block 1: ['age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+  Block 2: ['dass_dep', 'dass_anx', 'dass_str']
+  N = 100
+
+  Block 1: R²=0.2955, Adj R²=0.2500, F(6,93)=6.50, p=0.0000
+  Block 2: R²=0.3515, Adj R²=0.2867, F(9,90)=5.42, p=0.0000
+  ΔR²=0.0560, F-change(3,90)=2.59, p=0.0576
+
+  Individual predictors (Block 2 model):
+    age                      : β=0.0058, sr²=0.0098, t=1.168, p=0.2457
+    RAVLT_T                  : β=0.0084, sr²=0.0127, t=1.327, p=0.1880
+    BVMT_T                   : β=0.0089, sr²=0.0091, t=1.126, p=0.2631
+    RPM_T                    : β=0.0212, sr²=0.0669, t=3.047, p=0.0030
+    RAVLT_Pct_Ret_T          : β=0.0128, sr²=0.0302, t=2.049, p=0.0434
+    BVMT_Pct_Ret_T           : β=0.0094, sr²=0.0172, t=1.546, p=0.1256
+    dass_dep                 : β=-0.0325, sr²=0.0137, t=-1.380, p=0.1711, p_Bonf=0.5134
+    dass_anx                 : β=0.0666, sr²=0.0244, t=1.840, p=0.0691, p_Bonf=0.2074
+    dass_str                 : β=0.0136, sr²=0.0017, t=0.490, p=0.6250, p_Bonf=1.0000
+
+  Cross-validation (10-fold):
+    Mean train R² = 0.3577
+    Mean test R²  = 0.0615
+    Gap = 0.2962
+
+======================================================================
+[MODEL 3] WITHIN-PERSON SLEEP (MLM)
+======================================================================
+  Sleep dataset: 400 rows, 100 participants
+  Merged with cognitive controls: 400 rows
+  Level 1 (within-person): Sleep_Hours_WP, Sleep_Quality_WP
+  Level 2 (between-person): age, RAVLT_T, BVMT_T, RPM_T, RAVLT_Pct_Ret_T, BVMT_Pct_Ret_T, Sleep_Hours_PM, Sleep_Quality_PM
+  Formula: Memory_Score ~ Sleep_Hours_WP + Sleep_Quality_WP + Sleep_Hours_PM_z + Sleep_Quality_PM_z + age_z + RAVLT_T_z + BVMT_T_z + RPM_T_z + RAVLT_Pct_Ret_T_z + BVMT_Pct_Ret_T_z + TEST
+  Random effects: (1 | UID)
+
+  Model converged: True
+  Log-likelihood: 145.31
+  AIC: nan
+  N observations: 400
+  N groups: 100
+
+  Fixed effects:
+    Intercept                : β=0.915944, SE=0.018885, z=48.501, p=0.0000
+    Sleep_Hours_WP           : β=-0.008662, SE=0.009242, z=-0.937, p=0.3486, p_Bonf=0.6973
+    Sleep_Quality_WP         : β=0.040209, SE=0.024211, z=1.661, p=0.0968, p_Bonf=0.1935
+    Sleep_Hours_PM_z         : β=0.001112, SE=0.011788, z=0.094, p=0.9248
+    Sleep_Quality_PM_z       : β=0.009194, SE=0.012015, z=0.765, p=0.4441
+    age_z                    : β=-0.004802, SE=0.012856, z=-0.374, p=0.7088
+    RAVLT_T_z                : β=0.024535, SE=0.011621, z=2.111, p=0.0348
+    BVMT_T_z                 : β=0.000285, SE=0.014700, z=0.019, p=0.9846
+    RPM_T_z                  : β=0.024279, SE=0.012581, z=1.930, p=0.0536
+    RAVLT_Pct_Ret_T_z        : β=0.006670, SE=0.011298, z=0.590, p=0.5549
+    BVMT_Pct_Ret_T_z         : β=0.037479, SE=0.011073, z=3.385, p=0.0007
+    TEST                     : β=-0.042449, SE=0.006317, z=-6.720, p=0.0000
+    Group Var                : β=0.307288, SE=0.094430, z=3.254, p=0.0011
+
+  Random effects:
+    Random intercept variance: 0.005916
+    Residual variance: 0.019251
+    ICC: 0.2351
+
+  Sleep_Hours_WP effect size: d = -0.0624
+
+  Nakagawa R²:
+    Marginal R² (fixed effects): 0.2690
+    Conditional R² (fixed + random): 0.4408
+
+======================================================================
+COMPREHENSIVE SUMMARY
+======================================================================
+
+  Consistent Block 1 across Models 1 & 2:
+    Predictors: age, RAVLT_T, BVMT_T, RPM_T, RAVLT_Pct_Ret_T, BVMT_Pct_Ret_T
+    R² = 0.2955 (same for both — identical Block 1)
+    F(6,93) = 6.50, p = 0.0000
+
+  Model 1 — Lifestyle (ΔR² beyond cognitive baseline):
+    ΔR² = 0.0049, F-change(3,90) = 0.21, p = 0.8890
+    CV: train R² = 0.3090, test R² = -0.0184
+
+  Model 2 — DASS (ΔR² beyond cognitive baseline):
+    ΔR² = 0.0560, F-change(3,90) = 2.59, p = 0.0576
+    CV: train R² = 0.3577, test R² = 0.0615
+
+  Model 3 — Within-person sleep (MLM with cognitive controls):
+    Sleep_Hours_WP: β = -0.008662, p = 0.3486
+    Cohen's d = -0.0624
+    Marginal R² = 0.2690
+    ICC = 0.2351
+
+  Missing data: N=100 for all models (no listwise deletion)
+    All 100 participants have complete cognitive tests (RAVLT, BVMT, RPM, retention T-scores)
+    All 100 participants have complete self-report data
+    All 100 participants have complete DASS data
+    Sleep MLM: 400 observations (100 × 4 sessions), no missing
+
+  Degrees of freedom summary:
+    Models 1 & 2 Block 1: F(6,93)
+    Model 1 Block 2: F(9,90), F-change(3,90)
+    Model 2 Block 2: F(9,90), F-change(3,90)
+    Model 3: 400 obs, 100 groups
+
+§6.5 reanalysis complete

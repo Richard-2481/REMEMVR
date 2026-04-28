@@ -42,46 +42,39 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step04_extract_interaction.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 def main():
     try:
-        log("[START] Step 04: Extract 3-Way Interaction and Prepare Plot Data")
-
-        # =====================================================================
-        # STEP 1: Load Fixed Effects
-        # =====================================================================
-        log("[LOAD] Loading fixed effects...")
+        log("Step 04: Extract 3-Way Interaction and Prepare Plot Data")
+        # Load Fixed Effects
+        log("Loading fixed effects...")
         fixed_effects_path = RQ_DIR / "data" / "step03_fixed_effects.csv"
         fixed_effects = pd.read_csv(fixed_effects_path)
-        log(f"[LOADED] {len(fixed_effects)} fixed effect terms")
-        log(f"[INFO] Columns: {list(fixed_effects.columns)}")
-
-        # =====================================================================
-        # STEP 2: Extract 3-Way Interaction Terms
-        # =====================================================================
-        log("[EXTRACT] Filtering for 3-way interaction terms...")
+        log(f"{len(fixed_effects)} fixed effect terms")
+        log(f"Columns: {list(fixed_effects.columns)}")
+        # Extract 3-Way Interaction Terms
+        log("Filtering for 3-way interaction terms...")
 
         # Filter for Time:Difficulty_c:C(paradigm) interactions
         interaction_mask = fixed_effects['term'].str.contains('Time:Difficulty_c:C\\(paradigm\\)', regex=True)
         interaction_terms = fixed_effects[interaction_mask].copy()
 
-        log(f"[INFO] Found {len(interaction_terms)} 3-way interaction terms:")
+        log(f"Found {len(interaction_terms)} 3-way interaction terms:")
         for term in interaction_terms['term']:
             log(f"  - {term}")
 
         if len(interaction_terms) == 0:
-            log("[ERROR] No 3-way interaction terms found")
+            log("No 3-way interaction terms found")
             raise ValueError("No 3-way interaction terms found in fixed effects")
 
         # Add significance flag
         bonferroni_alpha = 0.0033
         interaction_terms['significant_at_0.0033'] = interaction_terms['p_bonferroni'] < bonferroni_alpha
 
-        log(f"[INFO] Bonferroni alpha: {bonferroni_alpha}")
+        log(f"Bonferroni alpha: {bonferroni_alpha}")
         for _, row in interaction_terms.iterrows():
             sig_flag = "SIGNIFICANT" if row['significant_at_0.0033'] else "NOT SIGNIFICANT"
             log(f"  {row['term']}: p_bonf = {row['p_bonferroni']:.4f} ({sig_flag})")
@@ -89,33 +82,27 @@ def main():
         # Save interaction summary
         output_path = RQ_DIR / "data" / "step04_3way_interaction_summary.csv"
         interaction_terms.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_path}")
-
-        # =====================================================================
-        # STEP 3: Load LMM Input Data and Model
-        # =====================================================================
-        log("[LOAD] Loading LMM input data for plot preparation...")
+        log(f"{output_path}")
+        # Load LMM Input Data and Model
+        log("Loading LMM input data for plot preparation...")
         lmm_input_path = RQ_DIR / "data" / "step02_lmm_input.csv"
         df = pd.read_csv(lmm_input_path)
-        log(f"[LOADED] {len(df)} rows")
+        log(f"{len(df)} rows")
 
         # Drop rows with missing Response
         df = df.dropna(subset=['Response'])
-        log(f"[INFO] {len(df)} rows after dropping missing Response")
+        log(f"{len(df)} rows after dropping missing Response")
 
-        log("[LOAD] Loading fitted LMM model...")
+        log("Loading fitted LMM model...")
         model_path = RQ_DIR / "data" / "step03_lmm_model.pkl"
         lmm_model = MixedLMResults.load(str(model_path))
-        log("[LOADED] LMM model")
-
-        # =====================================================================
-        # STEP 4: Define Difficulty Levels and Timepoints
-        # =====================================================================
-        log("[PREPARE] Defining difficulty levels and timepoints...")
+        log("LMM model")
+        # Define Difficulty Levels and Timepoints
+        log("Defining difficulty levels and timepoints...")
 
         # Compute SD of Difficulty_c
         difficulty_sd = df['Difficulty_c'].std()
-        log(f"[INFO] Difficulty_c SD: {difficulty_sd:.4f}")
+        log(f"Difficulty_c SD: {difficulty_sd:.4f}")
 
         # Define difficulty levels (Easy = -1 SD, Hard = +1 SD)
         difficulty_levels = {
@@ -123,7 +110,7 @@ def main():
             'Hard (+1SD)': 1.0 * difficulty_sd
         }
 
-        log("[INFO] Difficulty levels:")
+        log("Difficulty levels:")
         for level_name, level_value in difficulty_levels.items():
             log(f"  {level_name}: Difficulty_c = {level_value:.4f}")
 
@@ -135,14 +122,11 @@ def main():
             {'time_days': 6, 'time_hours_approx': 144}
         ]
 
-        log("[INFO] Timepoints:")
+        log("Timepoints:")
         for tp in timepoints:
             log(f"  Day {tp['time_days']}: ~{tp['time_hours_approx']} hours")
-
-        # =====================================================================
-        # STEP 5: Prepare Plot Data
-        # =====================================================================
-        log("[PREPARE] Computing predicted and observed values...")
+        # Prepare Plot Data
+        log("Computing predicted and observed values...")
 
         plot_data_rows = []
         paradigms = ['IFR', 'ICR', 'IRE']
@@ -165,7 +149,7 @@ def main():
                     try:
                         predicted_response = lmm_model.predict(pred_df).values[0]
                     except Exception as e:
-                        log(f"[WARNING] Prediction failed for {paradigm}/{difficulty_name}/Day{time_days}: {e}")
+                        log(f"Prediction failed for {paradigm}/{difficulty_name}/Day{time_days}: {e}")
                         predicted_response = np.nan
 
                     # Compute observed mean from data
@@ -205,33 +189,27 @@ def main():
         # Create plot data DataFrame
         plot_data = pd.DataFrame(plot_data_rows)
 
-        log(f"[INFO] Plot data shape: {plot_data.shape}")
-        log(f"[INFO] Expected: 24 rows (3 paradigms × 2 difficulty levels × 4 timepoints)")
-
-        # =====================================================================
-        # STEP 6: Save Plot Data
-        # =====================================================================
-        log("[SAVE] Saving plot data...")
+        log(f"Plot data shape: {plot_data.shape}")
+        log(f"Expected: 24 rows (3 paradigms × 2 difficulty levels × 4 timepoints)")
+        # Save Plot Data
+        log("Saving plot data...")
         plot_data_path = RQ_DIR / "data" / "step04_difficulty_trajectories_data.csv"
         plot_data.to_csv(plot_data_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {plot_data_path}")
-
-        # =====================================================================
-        # STEP 7: Run Validation Tools
-        # =====================================================================
-        log("[VALIDATION] Running validate_hypothesis_test_dual_pvalues...")
+        log(f"{plot_data_path}")
+        # Run Validation Tools
+        log("Running validate_hypothesis_test_dual_pvalues...")
         validation_result = validate_hypothesis_test_dual_pvalues(
             interaction_df=interaction_terms,
             required_terms=['Time:Difficulty_c:C(paradigm)[T.IFR]', 'Time:Difficulty_c:C(paradigm)[T.IRE]'],
             alpha_bonferroni=0.0033
         )
-        log(f"[VALIDATION] Hypothesis test result: {validation_result}")
+        log(f"Hypothesis test result: {validation_result}")
 
         if not validation_result.get('valid', False):
-            log(f"[ERROR] Hypothesis test validation failed: {validation_result}")
+            log(f"Hypothesis test validation failed: {validation_result}")
             raise ValueError(f"Hypothesis test validation failed: {validation_result.get('message', 'Unknown error')}")
 
-        log("[VALIDATION] Running validate_plot_data_completeness...")
+        log("Running validate_plot_data_completeness...")
         plot_validation_result = validate_plot_data_completeness(
             plot_data=plot_data,
             required_domains=['IFR', 'ICR', 'IRE'],
@@ -239,19 +217,19 @@ def main():
             domain_col='paradigm',
             group_col='difficulty_level'
         )
-        log(f"[VALIDATION] Plot data result: {plot_validation_result}")
+        log(f"Plot data result: {plot_validation_result}")
 
         if not plot_validation_result.get('valid', False):
-            log(f"[ERROR] Plot data validation failed: {plot_validation_result}")
+            log(f"Plot data validation failed: {plot_validation_result}")
             raise ValueError(f"Plot data validation failed: {plot_validation_result.get('message', 'Unknown error')}")
 
-        log("[SUCCESS] Step 04 complete")
+        log("Step 04 complete")
         return 0
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         traceback.print_exc()
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

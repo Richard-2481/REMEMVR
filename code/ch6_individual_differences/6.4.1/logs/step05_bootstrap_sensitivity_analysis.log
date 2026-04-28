@@ -1,0 +1,101 @@
+Step 5: bootstrap_sensitivity_analysis
+Loading correlation input data...
+step02_correlation_input.csv (100 rows, 4 cols)
+All required columns present: ['ravlt_total', 'theta_free_recall', 'theta_recognition']
+Running bootstrap correlation difference analysis...
+Starting 1000 iterations with seed=42
+r(RAVLT, FreeRecall) = 0.2783
+r(RAVLT, Recognition) = 0.2843
+Difference = -0.0060
+Completed 100/1000 bootstrap iterations
+Completed 200/1000 bootstrap iterations
+Completed 300/1000 bootstrap iterations
+Completed 400/1000 bootstrap iterations
+Completed 500/1000 bootstrap iterations
+Completed 600/1000 bootstrap iterations
+Completed 700/1000 bootstrap iterations
+Completed 800/1000 bootstrap iterations
+Completed 900/1000 bootstrap iterations
+Completed 1000/1000 bootstrap iterations
+Mean difference = -0.0070
+95% CI = [-0.0438, 0.0290]
+Excludes zero: False
+Bootstrap analysis complete
+Saving bootstrap sensitivity results...
+step05_bootstrap_sensitivity.csv (1 rows, 7 cols)
+Correlation difference: -0.0070
+95% CI: [-0.0438, 0.0290]
+Excludes zero: False
+Running custom bootstrap validation...
+valid: True
+message: Bootstrap results validation passed
+n_successful_bootstrap: 1000
+ci_width: 0.07283076136666457
+Bootstrap CI includes zero - does not support process-specificity hypothesis
+Step 5 complete
+Step 5: bootstrap_sensitivity_analysis
+Loading correlation input data...
+step02_correlation_input.csv (100 rows, 5 cols)
+All required columns present: ['ravlt_total', 'ravlt_pct_ret', 'theta_free_recall', 'theta_recognition']
+
+Running bootstrap correlation difference for ravlt_total...
+Starting 1000 iterations with seed=42, predictor=ravlt_total
+r(RAVLT, FreeRecall) = 0.2696
+r(RAVLT, Recognition) = 0.2793
+Difference = -0.0097
+Completed 100/1000 bootstrap iterations
+Completed 200/1000 bootstrap iterations
+Completed 300/1000 bootstrap iterations
+Completed 400/1000 bootstrap iterations
+Completed 500/1000 bootstrap iterations
+Completed 600/1000 bootstrap iterations
+Completed 700/1000 bootstrap iterations
+Completed 800/1000 bootstrap iterations
+Completed 900/1000 bootstrap iterations
+Completed 1000/1000 bootstrap iterations
+Mean difference = -0.0111
+95% CI = [-0.0488, 0.0256]
+Excludes zero: False
+Bootstrap analysis complete for ravlt_total
+ravlt_total correlation difference: -0.0111
+ravlt_total 95% CI: [-0.0488, 0.0256]
+ravlt_total Excludes zero: False
+Running custom bootstrap validation for ravlt_total...
+ravlt_total valid: True
+ravlt_total message: Bootstrap results validation passed
+ravlt_total n_successful_bootstrap: 1000
+ravlt_total ci_width: 0.07431469551107245
+ravlt_total: Bootstrap CI includes zero - does not support process-specificity hypothesis
+
+Running bootstrap correlation difference for ravlt_pct_ret...
+Starting 1000 iterations with seed=42, predictor=ravlt_pct_ret
+r(RAVLT, FreeRecall) = 0.3698
+r(RAVLT, Recognition) = 0.3675
+Difference = 0.0023
+Completed 100/1000 bootstrap iterations
+Completed 200/1000 bootstrap iterations
+Completed 300/1000 bootstrap iterations
+Completed 400/1000 bootstrap iterations
+Completed 500/1000 bootstrap iterations
+Completed 600/1000 bootstrap iterations
+Completed 700/1000 bootstrap iterations
+Completed 800/1000 bootstrap iterations
+Completed 900/1000 bootstrap iterations
+Completed 1000/1000 bootstrap iterations
+Mean difference = 0.0021
+95% CI = [-0.0281, 0.0341]
+Excludes zero: False
+Bootstrap analysis complete for ravlt_pct_ret
+ravlt_pct_ret correlation difference: 0.0021
+ravlt_pct_ret 95% CI: [-0.0281, 0.0341]
+ravlt_pct_ret Excludes zero: False
+Running custom bootstrap validation for ravlt_pct_ret...
+ravlt_pct_ret valid: True
+ravlt_pct_ret message: Bootstrap results validation passed
+ravlt_pct_ret n_successful_bootstrap: 1000
+ravlt_pct_ret ci_width: 0.062271242537143286
+ravlt_pct_ret: Bootstrap CI includes zero - does not support process-specificity hypothesis
+
+Saving bootstrap sensitivity results...
+step05_bootstrap_sensitivity.csv (2 rows, 8 cols)
+Step 5 complete

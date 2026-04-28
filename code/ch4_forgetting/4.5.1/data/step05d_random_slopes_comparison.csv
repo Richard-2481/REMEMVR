@@ -1,0 +1,3 @@
+model,formula,re_formula,AIC,BIC,logLik,intercept_var,slope_var,residual_var,converged,delta_AIC
+Intercepts-only,theta ~ log_Days_plus1 * LocationType,~1,1751.14714200642,1779.2548123724275,-869.57357100321,0.18525445837586735,0.0,0.42692053344165276,True,3.380361479901694
+Intercepts+slopes,theta ~ log_Days_plus1 * LocationType,~log_Days_plus1,1747.7667805265182,1785.2436743478615,-865.8833902632591,0.2616092169911728,0.04374990261889265,0.4003125683004645,True,0.0

@@ -1,0 +1,23 @@
+Step 5: Test consolidation benefit per location type
+Loading segment-location slopes from Step 4...
+step04_segment_location_slopes.csv (4 rows, 7 cols)
+Loading fitted LMM model for variance-covariance matrix...
+step03_piecewise_lmm_model.pkl (MixedLMResults object)
+Extracting Early/Late slopes per location type...
+Source Early slope: -0.2062 +/- 0.0806
+Source Late slope: -0.1040 +/- 0.0293
+Destination Early slope: -0.2091 +/- 0.0806
+Destination Late slope: -0.0463 +/- 0.0293
+Computing consolidation benefit per location type with delta method SE...
+Model coefficients: ['Intercept', 'Segment[T.Late]', 'LocationType[T.Destination]', 'Segment[T.Late]:LocationType[T.Destination]', 'Days_within', 'Days_within:Segment[T.Late]', 'Days_within:LocationType[T.Destination]', 'Days_within:Segment[T.Late]:LocationType[T.Destination]', 'Group Var', 'Group x Days_within Cov', 'Days_within Var']
+Source consolidation benefit: -0.1022 +/- 0.0846
+95% CI: [-0.2679, 0.0636]
+Significant: False
+Destination consolidation benefit: -0.1628 +/- 0.0846
+95% CI: [-0.3286, 0.0029]
+Significant: False
+Saving consolidation benefit results...
+step05_consolidation_benefit.csv (2 rows, 8 cols)
+Running validate_dataframe_structure...
+PASS - DataFrame structure valid: 2 rows, 8 columns (required: 8).
+Step 5 complete

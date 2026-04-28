@@ -1,0 +1,26 @@
+======================================================================
+RQ 5.2 PLOTTING: Differential Consolidation Across Memory Domains
+======================================================================
+RQ root: /home/etai/projects/REMEMVR/results/ch5/rq2
+
+Generating Plot 1: Piecewise theta-scale trajectory...
+  Loaded 12 rows from step05_piecewise_theta_data.csv
+  Columns: ['time', 'test', 'domain', 'Segment', 'mean_theta', 'CI_lower', 'CI_upper', 'predicted_theta', 'n_obs']
+  Domains: ['what', 'when', 'where']
+  Segments: ['Early', 'Late']
+  Saved: plots/piecewise_trajectory_theta.png
+
+Generating Plot 2: Piecewise probability-scale trajectory (Decision D069)...
+  Loaded 12 rows from step05_piecewise_probability_data.csv
+  Saved: plots/piecewise_trajectory_probability.png
+
+======================================================================
+PLOTTING COMPLETE
+======================================================================
+Total plots generated: 2
+  - plots/piecewise_trajectory_theta.png (theta scale)
+  - plots/piecewise_trajectory_probability.png (probability scale, Decision D069)
+
+All plots saved with 300 DPI publication quality.
+Decision D069 compliance: BOTH theta + probability scale plots generated.
+======================================================================

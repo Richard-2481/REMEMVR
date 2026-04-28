@@ -28,7 +28,6 @@ IMPORTANT NOTE ON ICC_slope:
     Low ICC_slope values may reflect design limitations rather than absence of true differences.
     The thesis should interpret ICC_slope cautiously.
 
-Author: Claude (g_code agent)
 Date: 2025-12-03
 """
 

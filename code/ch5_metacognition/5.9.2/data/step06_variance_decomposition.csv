@@ -1,0 +1,5 @@
+component,variance_explained,percent_of_total,interpretation
+scaling_artifact,0.0,0.0,Ordinal vs binary measurement scaling (0.0%)
+modeling_artifact,0.2239886516824411,87.27923101264895,Single-model vs model-averaged (87.3%)
+genuine_variance,0.03264588677949781,12.720768987351045,Genuine individual differences (12.7%)
+total,0.2566345384619389,100.0,Total ICC difference to explain

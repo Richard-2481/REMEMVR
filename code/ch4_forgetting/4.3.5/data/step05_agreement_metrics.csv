@@ -1,0 +1,4 @@
+metric,value,threshold,result,interpretation
+Cohens_kappa,0.6666666666666667,0.6,PASS,Substantial
+Percentage_agreement,0.8333333333333334,0.8,PASS,83.3% terms agree
+Kappa_interpretation,0.6666666666666667,0.6,PASS,Substantial

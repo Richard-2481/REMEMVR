@@ -67,19 +67,14 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # Import validation tools
 from tools.validation import validate_lmm_convergence
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step02b_fit_ar1_corrected_models.log"
 
-# =============================================================================
 # Logging
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -89,9 +84,7 @@ LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 with open(LOG_FILE, 'w', encoding='utf-8') as f:
     f.write("")
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
@@ -100,10 +93,7 @@ if __name__ == "__main__":
         log("=" * 80)
         log(f"Date: {pd.Timestamp.now()}")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Data and Original Models
-        # =====================================================================
+        # Load Data and Original Models
 
         log("[STEP 1] Loading time-transformed data and original models...")
 
@@ -138,10 +128,7 @@ if __name__ == "__main__":
 
         log(f"  Original piecewise AIC: {original_piecewise.aic:.2f}")
         log("")
-
-        # =====================================================================
-        # STEP 2: Fit Quadratic Model with AR(1) Correlation
-        # =====================================================================
+        # Fit Quadratic Model with AR(1) Correlation
 
         log("[STEP 2] Fitting quadratic model with AR(1) correlation structure...")
         log("  Formula: theta ~ Time + Time_squared")
@@ -162,9 +149,9 @@ if __name__ == "__main__":
         # This addresses heteroscedasticity and provides conservative SEs
         # AR(1) would require switching to GEE (changes interpretation from subject-specific to population-averaged)
 
-        log("  [INFO] statsmodels MixedLM does not support AR(1) correlation natively")
-        log("  [INFO] Using ROBUST STANDARD ERRORS (Huber-White) instead")
-        log("  [INFO] This corrects heteroscedasticity and provides conservative inference")
+        log("  statsmodels MixedLM does not support AR(1) correlation natively")
+        log("  Using ROBUST STANDARD ERRORS (Huber-White) instead")
+        log("  This corrects heteroscedasticity and provides conservative inference")
         log("")
 
         # Refit quadratic model with robust covariance
@@ -204,10 +191,7 @@ if __name__ == "__main__":
         else:
             log(f"    NOT SIGNIFICANT (p >= {bonferroni_alpha}) - Test 1 FAILS with robust SEs")
         log("")
-
-        # =====================================================================
-        # STEP 3: Fit Piecewise Model with Robust SEs
-        # =====================================================================
+        # Fit Piecewise Model with Robust SEs
 
         log("[STEP 3] Fitting piecewise model with robust standard errors...")
         log("  Formula: theta ~ Days_within * Segment")
@@ -251,10 +235,7 @@ if __name__ == "__main__":
         else:
             log(f"    NOT SIGNIFICANT (p >= {bonferroni_alpha}) - Test 3 FAILS with robust SEs")
         log("")
-
-        # =====================================================================
-        # STEP 4: Compare Original vs Robust Models
-        # =====================================================================
+        # Compare Original vs Robust Models
 
         log("[STEP 4] Comparing original vs robust standard error models...")
 
@@ -294,10 +275,7 @@ if __name__ == "__main__":
             log(f"    SE change: {row['se_change_pct']:+.1f}%")
             log(f"    p-value: {row['p_original']:.6f} → {row['p_robust']:.6f}")
         log("")
-
-        # =====================================================================
-        # STEP 5: Save Outputs
-        # =====================================================================
+        # Save Outputs
 
         log("[STEP 5] Saving robust model outputs...")
 
@@ -344,13 +322,10 @@ if __name__ == "__main__":
                                    index=False, encoding='utf-8')
         log("  Saved: step02b_quadratic_robust_predictions.csv")
         log("")
-
-        # =====================================================================
-        # STEP 6: Summary and Conclusions
-        # =====================================================================
+        # Summary and Conclusions
 
         log("=" * 80)
-        log("[SUCCESS] AR(1)/Robust SE Correction Complete")
+        log("AR(1)/Robust SE Correction Complete")
         log("=" * 80)
         log("")
         log("KEY FINDINGS:")
@@ -375,7 +350,7 @@ if __name__ == "__main__":
     except Exception as e:
         log("")
         log("=" * 80)
-        log("[ERROR] AR(1)/Robust SE fitting failed!")
+        log("AR(1)/Robust SE fitting failed!")
         log("=" * 80)
         log(f"Error: {str(e)}")
         import traceback

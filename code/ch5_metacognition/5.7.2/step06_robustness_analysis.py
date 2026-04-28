@@ -26,7 +26,6 @@ OUTPUT:
 - data/step06_outlier_sensitivity.csv
 - results/robustness_analysis.md
 
-Author: Claude Code
 Date: 2025-12-14
 RQ: ch6/6.7.2
 Task: T1.2 from rq_rework.md
@@ -225,10 +224,7 @@ def main():
     log("RQ 6.7.2 - Step 06: Bootstrap Robustness Analysis")
     log(f"Started: {datetime.now().isoformat()}")
     log("=" * 80)
-
-    # =========================================================================
-    # STEP 1: Load Data
-    # =========================================================================
+    # Load Data
     log("\n[STEP 1] Load Person-Level Data")
     log("-" * 60)
 
@@ -251,10 +247,7 @@ def main():
     log(f"\n  Original Partial Correlation:")
     log(f"    r_partial = {r_original:.4f}")
     log(f"    p_parametric = {p_original:.4f}")
-
-    # =========================================================================
-    # STEP 2: Bootstrap Analysis
-    # =========================================================================
+    # Bootstrap Analysis
     log("\n[STEP 2] Bootstrap 95% CI (10,000 resamples)")
     log("-" * 60)
 
@@ -282,10 +275,7 @@ def main():
     })
     bootstrap_df.to_csv(DATA_DIR / "step06_bootstrap_results.csv", index=False)
     log(f"  ✓ Saved: step06_bootstrap_results.csv")
-
-    # =========================================================================
-    # STEP 3: Leave-One-Out Cross-Validation
-    # =========================================================================
+    # Leave-One-Out Cross-Validation
     log("\n[STEP 3] Leave-One-Out Cross-Validation (100 iterations)")
     log("-" * 60)
 
@@ -328,10 +318,7 @@ def main():
     })
     loo_df.to_csv(DATA_DIR / "step06_loo_results.csv", index=False)
     log(f"  ✓ Saved: step06_loo_results.csv")
-
-    # =========================================================================
-    # STEP 4: Permutation Test
-    # =========================================================================
+    # Permutation Test
     log("\n[STEP 4] Permutation Test (1,000 permutations)")
     log("-" * 60)
 
@@ -362,10 +349,7 @@ def main():
     })
     perm_df.to_csv(DATA_DIR / "step06_permutation_results.csv", index=False)
     log(f"  ✓ Saved: step06_permutation_results.csv")
-
-    # =========================================================================
-    # STEP 5: Outlier Sensitivity Analysis
-    # =========================================================================
+    # Outlier Sensitivity Analysis
     log("\n[STEP 5] Outlier Sensitivity Analysis")
     log("-" * 60)
 
@@ -399,12 +383,9 @@ def main():
     })
     outlier_df.to_csv(DATA_DIR / "step06_outlier_sensitivity.csv", index=False)
     log(f"  ✓ Saved: step06_outlier_sensitivity.csv")
-
-    # =========================================================================
-    # STEP 6: Overall Robustness Assessment
-    # =========================================================================
+    # Overall Robustness Assessment
     log("\n" + "=" * 80)
-    log("[SUMMARY] Robustness Assessment")
+    log("Robustness Assessment")
     log("=" * 80)
 
     # Compile robustness criteria
@@ -439,10 +420,7 @@ def main():
 
     log(f"\n  Overall Assessment: {overall}")
     log(f"  Interpretation: {interpretation}")
-
-    # =========================================================================
-    # STEP 7: Create Results Summary
-    # =========================================================================
+    # Create Results Summary
     log("\n[STEP 7] Create Results Summary")
     log("-" * 60)
 
@@ -561,7 +539,7 @@ if __name__ == "__main__":
     try:
         results = main()
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

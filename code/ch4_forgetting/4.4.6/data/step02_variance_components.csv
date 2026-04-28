@@ -1,0 +1,16 @@
+congruence,component,value
+Common,var_intercept,0.17361232379754157
+Common,var_slope,7.092854245767811e-08
+Common,cov_int_slope,0.00011092907512526436
+Common,var_residual,0.45340399694493017
+Common,var_total,0.6270163207424717
+Congruent,var_intercept,0.2942673844550056
+Congruent,var_slope,8.173467040168388e-06
+Congruent,cov_int_slope,-0.0010808535806756817
+Congruent,var_residual,0.5120409946742065
+Congruent,var_total,0.806308379129212
+Incongruent,var_intercept,0.15915339600727693
+Incongruent,var_slope,3.456431058103562e-07
+Incongruent,cov_int_slope,0.0002345277867897484
+Incongruent,var_residual,0.43803350945508507
+Incongruent,var_total,0.597186905462362

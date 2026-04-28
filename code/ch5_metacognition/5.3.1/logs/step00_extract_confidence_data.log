@@ -1,0 +1,113 @@
+Step 00: Extract Confidence Data
+Loading data/cache/dfData.csv...
+dfData.csv (400 rows, 214 cols)
+Required columns present: ['UID', 'TEST', 'TSVR']
+Filtering to interactive paradigm TC_* columns...
+105 total TC_* columns
+72 interactive TC_* columns (IFR, ICR, IRE)
+IFR: 24 items
+ICR: 24 items
+IRE: 24 items
+Creating composite_ID from UID and TEST...
+composite_ID for 400 observations
+First 3 composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+Creating IRT input wide-format DataFrame...
+IRT input: 400 rows x 73 cols
+Creating TSVR time mapping...
+TSVR mapping: 400 rows
+[TSVR RANGE] Min: 1.00 hours, Max: 246.24 hours
+Creating 3-factor Q-matrix...
+Q-matrix: 72 items
+What: 18 items
+Where: 36 items
+When: 18 items
+Saving outputs...
+step00_irt_input.csv (400 rows, 73 cols)
+step00_tsvr_mapping.csv (400 rows, 3 cols)
+step00_q_matrix.csv (72 rows, 3 cols)
+Running inline validation checks...
+All 3 output files exist
+IRT input dimensions: 400 rows x 73 cols
+Unexpected TC_* values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+TSVR_hours range: [1.00, 246.24] outside [0, 168]
+Q-matrix has all 3 dimensions (What, Where, When)
+All items have <10% missing data
+Some checks FAILED - see details above
+Step 00: Extract Confidence Data
+Loading data/cache/dfData.csv...
+dfData.csv (400 rows, 478 cols)
+Required columns present: ['UID', 'TEST', 'TSVR']
+Filtering to interactive paradigm TC_* columns...
+105 total TC_* columns
+72 interactive TC_* columns (IFR, ICR, IRE)
+IFR: 24 items
+ICR: 24 items
+IRE: 24 items
+Creating composite_ID from UID and TEST...
+composite_ID for 400 observations
+First 3 composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+Creating IRT input wide-format DataFrame...
+IRT input: 400 rows x 73 cols
+Converting fractional confidence values to integers for IRT...
+Values mapped: 0.0→0, 0.25→1, 0.5→2, 0.75→3, 1.0→4
+Creating TSVR time mapping...
+TSVR mapping: 400 rows
+[TSVR RANGE] Min: 1.00 hours, Max: 246.24 hours
+Creating 3-factor Q-matrix...
+Q-matrix: 72 items
+What: 18 items
+Where: 36 items
+When: 18 items
+Saving outputs...
+step00_irt_input.csv (400 rows, 73 cols)
+step00_tsvr_mapping.csv (400 rows, 3 cols)
+step00_q_matrix.csv (72 rows, 3 cols)
+Running inline validation checks...
+All 3 output files exist
+IRT input dimensions: 400 rows x 73 cols
+Unexpected TC_* values: {np.float64(0.2), np.float64(0.6), np.float64(0.8), np.float64(0.4)}
+TSVR_hours range: [1.00, 246.24] outside [0, 168]
+Q-matrix has all 3 dimensions (What, Where, When)
+All items have <10% missing data
+Some checks FAILED - see details above
+Step 00: Extract Confidence Data
+Loading data/cache/dfData.csv...
+dfData.csv (400 rows, 478 cols)
+Required columns present: ['UID', 'TEST', 'TSVR']
+Extracting ALL TC_* columns (all paradigms)...
+105 total TC_* columns
+105 TC_* columns (all paradigms)
+IFR: 24 items
+ICR: 24 items
+IRE: 24 items
+RFR: 19 items
+RRE: 8 items
+TCR: 6 items
+Creating composite_ID from UID and TEST...
+composite_ID for 400 observations
+First 3 composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+Creating IRT input wide-format DataFrame...
+IRT input: 400 rows x 106 cols
+Converting fractional confidence values to integers for IRT...
+Values mapped: 0.2→0, 0.4→1, 0.6→2, 0.8→3, 1.0→4
+Creating TSVR time mapping...
+TSVR mapping: 400 rows
+[TSVR RANGE] Min: 1.00 hours, Max: 246.24 hours
+Creating 3-factor Q-matrix...
+Q-matrix: 105 items
+What: 29 items
+Where: 50 items
+When: 26 items
+Saving outputs...
+step00_irt_input.csv (400 rows, 106 cols)
+step00_tsvr_mapping.csv (400 rows, 3 cols)
+step00_q_matrix.csv (105 rows, 3 cols)
+Running inline validation checks...
+All 3 output files exist
+IRT input dimensions: 400 rows x 106 cols
+All TC_* values in {0, 1, 2, 3, 4}
+TSVR_hours range: [1.00, 246.24] within [0, 300]
+Q-matrix has all 3 dimensions (What, Where, When)
+All items have <10% missing data
+All critical checks PASSED
+Step 00 complete

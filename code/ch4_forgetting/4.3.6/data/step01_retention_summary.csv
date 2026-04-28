@@ -1,0 +1,4 @@
+paradigm,total_items,retained_items,removed_items,retention_rate
+IFR,24,12,12,0.5
+ICR,24,19,5,0.7916666666666666
+IRE,24,14,10,0.5833333333333334

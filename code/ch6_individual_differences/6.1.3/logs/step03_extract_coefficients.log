@@ -1,0 +1,136 @@
+Step 03: Extract and Compare Beta Coefficients
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.3
+
+[STEP 1] Loading model results for all domains...
+Loaded What model: 4 coefficients
+Loaded Where model: 4 coefficients
+Loaded When model: 4 coefficients
+
+[STEP 2] Creating beta coefficient matrix...
+Beta coefficient matrix saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step03_beta_coefficient_matrix.csv
+
+Beta Coefficient Matrix:
+Domain     RAVLT      BVMT       RPM       
+----------------------------------------
+What           0.095     0.105     0.204
+Where          0.077     0.093     0.233
+When           0.030     0.031     0.048
+
+[STEP 3] Calculating cross-domain comparisons...
+Cross-domain comparisons saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step03_cross_domain_comparisons.csv
+
+[HYPOTHESIS TESTS] Cross-domain predictions:
+  RAVLT_What - RAVLT_Where: diff=0.018 (expected positive, observed positive) ✓
+  BVMT_Where - BVMT_What: diff=-0.012 (expected positive, observed negative) ✗
+  RPM_range: diff=0.185 (expected small (<0.1), observed large) ✗
+
+[STEP 4] Classifying effect sizes using Cohen's conventions...
+Effect sizes saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step03_effect_sizes.csv
+
+Effect Size Classification:
+
+  What domain:
+    RAVLT_T: negligible (β=0.095)
+    BVMT_T: small (β=0.105)
+    RPM_T: small (β=0.204)*
+
+  Where domain:
+    RAVLT_T: negligible (β=0.077)
+    BVMT_T: negligible (β=0.093)
+    RPM_T: small (β=0.233)*
+
+  When domain:
+    RAVLT_T: negligible (β=0.030)
+    BVMT_T: negligible (β=0.031)
+    RPM_T: negligible (β=0.048)
+
+[STEP 5] Preparing heatmap data for visualization...
+Heatmap plot data saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step03_heatmap_plot_data.csv
+
+[STEP 6] Computing summary statistics...
+
+Strongest predictor by domain:
+  What: RPM_T (β=0.204, p=0.002)
+  Where: RPM_T (β=0.233, p=0.001)
+  When: RPM_T (β=0.048, p=0.137)
+
+Best predicted domain by test:
+  RAVLT_T: What (β=0.095, p=0.117)
+  BVMT_T: What (β=0.105, p=0.114)
+  RPM_T: Where (β=0.233, p=0.001)
+
+Step 03 completed successfully
+Extracted 9 beta coefficients (3 predictors × 3 domains)
+Step 03: Extract and Compare Beta Coefficients
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.3
+
+[STEP 1] Loading model results for all domains...
+Loaded What model: 6 coefficients
+Loaded Where model: 6 coefficients
+Loaded When model: 6 coefficients
+
+[STEP 2] Creating beta coefficient matrix...
+Beta coefficient matrix saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step03_beta_coefficient_matrix.csv
+
+Beta Coefficient Matrix:
+Domain     RAVLT      RAVLT_Pct  BVMT       BVMT_Pct   RPM       
+------------------------------------------------------------
+What           0.108     0.126     0.061     0.085     0.165
+Where          0.064     0.140     0.063     0.055     0.195
+When           0.032     0.006     0.028    -0.004     0.047
+
+[STEP 3] Calculating cross-domain comparisons...
+Cross-domain comparisons saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step03_cross_domain_comparisons.csv
+
+[HYPOTHESIS TESTS] Cross-domain predictions:
+  RAVLT_T_What - RAVLT_T_Where: diff=0.044 (expected positive, observed positive) ✓
+  RAVLT_Pct_Ret_T_What - RAVLT_Pct_Ret_T_Where: diff=-0.013 (expected positive, observed negative) ✗
+  BVMT_T_Where - BVMT_T_What: diff=0.001 (expected positive, observed positive) ✓
+  BVMT_Pct_Ret_T_Where - BVMT_Pct_Ret_T_What: diff=-0.030 (expected positive, observed negative) ✗
+  RPM_range: diff=0.148 (expected small (<0.1), observed large) ✗
+
+[STEP 4] Classifying effect sizes using Cohen's conventions...
+Effect sizes saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step03_effect_sizes.csv
+
+Effect Size Classification:
+
+  What domain:
+    RAVLT_T: small (β=0.108)
+    RAVLT_Pct_Ret_T: small (β=0.126)*
+    BVMT_T: negligible (β=0.061)
+    BVMT_Pct_Ret_T: negligible (β=0.085)
+    RPM_T: small (β=0.165)*
+
+  Where domain:
+    RAVLT_T: negligible (β=0.064)
+    RAVLT_Pct_Ret_T: small (β=0.140)*
+    BVMT_T: negligible (β=0.063)
+    BVMT_Pct_Ret_T: negligible (β=0.055)
+    RPM_T: small (β=0.195)*
+
+  When domain:
+    RAVLT_T: negligible (β=0.032)
+    RAVLT_Pct_Ret_T: negligible (β=0.006)
+    BVMT_T: negligible (β=0.028)
+    BVMT_Pct_Ret_T: negligible (β=-0.004)
+    RPM_T: negligible (β=0.047)
+
+[STEP 5] Preparing heatmap data for visualization...
+Heatmap plot data saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step03_heatmap_plot_data.csv
+
+[STEP 6] Computing summary statistics...
+
+Strongest predictor by domain:
+  What: RPM_T (β=0.165, p=0.013)
+  Where: RPM_T (β=0.195, p=0.006)
+  When: RPM_T (β=0.047, p=0.159)
+
+Best predicted domain by test:
+  RAVLT_T: What (β=0.108, p=0.072)
+  RAVLT_Pct_Ret_T: Where (β=0.140, p=0.029)
+  BVMT_T: Where (β=0.063, p=0.385)
+  BVMT_Pct_Ret_T: What (β=0.085, p=0.135)
+  RPM_T: Where (β=0.195, p=0.006)
+
+Step 03 completed successfully
+Extracted 15 beta coefficients (5 predictors x 3 domains)

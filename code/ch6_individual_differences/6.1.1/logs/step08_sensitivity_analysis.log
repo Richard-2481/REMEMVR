@@ -1,0 +1,68 @@
+Step 08: Sensitivity Analysis
+Loading input data...
+step03_merged_analysis.csv (97 rows, 6 cols)
+step05_regression_results.csv (5 rows, 7 cols)
+All required columns present: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T', 'theta_mean']
+Fitting multiple regression models...
+Full model: R² = 0.2262, Adj R² = 0.1926
+Without NART: R² = 0.2244, Adj R² = 0.1994
+Episodic only: R² = 0.1417, Adj R² = 0.1235
+Computing model comparisons and effect sizes...
+Model comparison: ΔNART = 0.0018, ΔEpisodic = 0.0845
+Semi-partial correlations: {'RAVLT_T': np.float64(0.017257633875297884), 'BVMT_T': np.float64(0.010778377917442628), 'NART_T': np.float64(0.0018277142666673907), 'RPM_T': np.float64(0.08011041405056274)}
+Sum of sr² = 0.1100, Total R² = 0.2262
+Computing post-hoc power analysis...
+Power calculation failed for alpha=0.05: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.0125: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.00179: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.05: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.0125: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.00179: ftest_power() got an unexpected keyword argument 'dfnum'
+Power analysis completed for 6 conditions
+Saving analysis outputs...
+step08_sensitivity_analysis.csv (3 rows, 6 cols)
+step08_effect_sizes.csv (7 rows, 4 cols)
+step08_power_analysis.csv (6 rows, 7 cols)
+Validating analysis results...
+All R² values in valid range [0, 1]
+All Cohen's f² values ≥ 0
+Semi-partial correlations sum ≠ R² (0.1100 ≠ 0.2262)
+All power values in valid range [0, 1]
+Interpretations provided for all effect sizes
+Power calculated for 3 alpha levels
+Some criteria failed - document limitations in interpretation
+Step 08 complete
+Step 08: Sensitivity Analysis
+Loading input data...
+step03_merged_analysis.csv (97 rows, 9 cols)
+step05_regression_results.csv (7 rows, 7 cols)
+All required columns present: ['UID', 'RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T', 'theta_mean']
+Fitting multiple regression models...
+Full model: R² = 0.2724, Adj R² = 0.2239
+Without NART: R² = 0.2706, Adj R² = 0.2305
+Episodic only: R² = 0.2143, Adj R² = 0.1802
+Computing model comparisons and effect sizes...
+Model comparison: ΔNART = 0.0018, ΔEpisodic = 0.0581
+Semi-partial correlations: {'RAVLT_T': np.float64(0.01578786364844298), 'RAVLT_Pct_Ret_T': np.float64(0.029175035559985796), 'BVMT_T': np.float64(0.00282459703598803), 'BVMT_Pct_Ret_T': np.float64(0.013344068249117269), 'NART_T': np.float64(0.0018477053946244215), 'RPM_T': np.float64(0.05374266257772908)}
+Sum of sr² = 0.1167, Total R² = 0.2724
+Computing post-hoc power analysis...
+Power calculation failed for alpha=0.05: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.008333333333333333: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.00179: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.05: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.008333333333333333: ftest_power() got an unexpected keyword argument 'dfnum'
+Power calculation failed for alpha=0.00179: ftest_power() got an unexpected keyword argument 'dfnum'
+Power analysis completed for 6 conditions
+Saving analysis outputs...
+step08_sensitivity_analysis.csv (3 rows, 6 cols)
+step08_effect_sizes.csv (9 rows, 4 cols)
+step08_power_analysis.csv (6 rows, 7 cols)
+Validating analysis results...
+All R² values in valid range [0, 1]
+All Cohen's f² values ≥ 0
+Semi-partial correlations sum ≠ R² (0.1167 ≠ 0.2724)
+All power values in valid range [0, 1]
+Interpretations provided for all effect sizes
+Power calculated for 3 alpha levels
+Some criteria failed - document limitations in interpretation
+Step 08 complete

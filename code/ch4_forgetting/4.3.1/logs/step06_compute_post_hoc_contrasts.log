@@ -1,0 +1,99 @@
+Step 06: Compute Post-hoc Pairwise Contrasts
+RQ Directory: /home/etai/projects/REMEMVR/results/ch5/rq3
+
+Loading best LMM model from Step 5...
+Best LMM model from /home/etai/projects/REMEMVR/results/ch5/rq3/data/step05_lmm_fitted_model.pkl
+  AIC: 2346.60
+  N observations: 1200
+  N groups: 100
+Fixed effects reference from /home/etai/projects/REMEMVR/results/ch5/rq3/data/step05_fixed_effects.csv
+  Fixed effects: 9 terms
+
+Computing pairwise contrasts (Decision D068)...
+  Comparisons: ['Cued_Recall-Free_Recall', 'Recognition-Free_Recall', 'Recognition-Cued_Recall']
+  Family-wise alpha: 0.05
+  Bonferroni-corrected alpha: 0.0167
+
+============================================================
+POST-HOC PAIRWISE CONTRASTS (Decision D068)
+============================================================
+Family-wise alpha: 0.05
+Number of comparisons: 3
+Bonferroni-corrected alpha: 0.0167
+
+Available coefficient names:
+  Intercept
+  C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]
+  C(Factor, Treatment('Free_Recall'))[T.Recognition]
+  log_Days
+  log_Days:C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]
+  log_Days:C(Factor, Treatment('Free_Recall'))[T.Recognition]
+  Group Var
+  Group x log_Days Cov
+  log_Days Var
+
+Detected factor name: Factor
+Detected reference level: Free_Recall
+
+  Processing: Cued_Recall vs Free_Recall
+    Found direct coefficient: C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]
+
+  Processing: Recognition vs Free_Recall
+    Found direct coefficient: C(Factor, Treatment('Free_Recall'))[T.Recognition]
+
+  Processing: Recognition vs Cued_Recall
+    Using delta method: C(Factor, Treatment('Free_Recall'))[T.Recognition] - C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]
+
+Results:
+  Significant (uncorrected alpha=0.05): 2/3
+  Significant (corrected alpha=0.0167): 2/3
+============================================================
+
+Pairwise contrasts computed
+  Significant (uncorrected): 2/3
+  Significant (Bonferroni): 2/3
+
+Computing effect sizes (Cohen's f-squared)...
+
+============================================================
+EFFECT SIZES (Cohen's f²)
+============================================================
+
+Effect sizes computed for 5 fixed effects
+  Negligible (f²<0.02): 4
+  Small (0.02≤f²<0.15): 1
+  Medium (0.15≤f²<0.35): 0
+  Large (f²≥0.35): 0
+============================================================
+
+Effect sizes computed
+  Total effects: 5
+
+/home/etai/projects/REMEMVR/results/ch5/rq3/results/step06_post_hoc_contrasts.csv
+  Rows: 3, Columns: 9
+/home/etai/projects/REMEMVR/results/ch5/rq3/results/step06_effect_sizes.csv
+  Rows: 5, Columns: 3
+
+Running validation checks...
+Convergence: PASS
+Message: LMM converged successfully
+All contrast validation checks passed
+
+============================================================
+STEP 06 SUMMARY: Post-hoc Pairwise Contrasts
+============================================================
+
+Pairwise Contrasts (Decision D068 - Dual p-value reporting):
+  Cued_Recall-Free_Recall: beta=0.0234, z=0.35, p_unc=0.7257, p_cor=1.0000
+  Recognition-Free_Recall: beta=0.2099, z=3.15, p_unc=0.0016*, p_cor=0.0048**
+  Recognition-Cued_Recall: beta=0.1865, z=2.80, p_unc=0.0051*, p_cor=0.0152**
+
+Effect Sizes (Cohen's f-squared):
+  C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]: f^2=0.0001 (negligible)
+  C(Factor, Treatment('Free_Recall'))[T.Recognition]: f^2=0.0083 (negligible)
+  log_Days: f^2=0.0666 (small)
+  log_Days:C(Factor, Treatment('Free_Recall'))[T.Cued_Recall]: f^2=0.0008 (negligible)
+  log_Days:C(Factor, Treatment('Free_Recall'))[T.Recognition]: f^2=0.0051 (negligible)
+
+============================================================
+Step 06 complete

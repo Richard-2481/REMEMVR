@@ -344,7 +344,7 @@ def main():
     print("4. VR Scaffolding Hypothesis supported over Cognitive Reserve Theory")
     
     print("\nAll outputs saved to data/ directory")
-    print("Ready for validation agents")
+    print("Ready for validation")
 
 if __name__ == "__main__":
     main()

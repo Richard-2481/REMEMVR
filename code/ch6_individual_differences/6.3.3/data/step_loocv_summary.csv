@@ -1,0 +1,2 @@
+model_name,n,p,in_sample_r2,adjusted_r2,ols_loocv_r2,ridge_loocv_r2,ridge_alpha,shrinkage_ols,shrinkage_ridge
+hce_prediction,100,8,0.1788,0.1066,-0.0769,-0.0578,104.8113,0.2557,0.2366

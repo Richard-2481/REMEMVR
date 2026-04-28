@@ -1,0 +1,20 @@
+Step 7: slope_comparison
+step03_lmm_fixed_effects.csv
+Extracting paradigm-specific slopes...
+  Free Recall slope: 0.001119 (SE=0.042926)
+  Recognition slope: 0.000872 (SE=0.042931)
+  Difference: -0.000247 (SE=0.060710)
+  z-statistic: -0.004, p=0.9967
+  Interpretation: No significant difference between Recognition and Free Recall slopes
+step07_slope_comparison.csv
+Step 7 complete
+Step 7: slope_comparison
+step03_lmm_fixed_effects.csv
+Extracting paradigm-specific slopes...
+  Free Recall slope: 0.001119 (SE=0.000564)
+  Recognition slope: 0.000872 (SE=0.000977)
+  Difference: -0.000247 (SE=0.001128)
+  z-statistic: -0.219, p=0.8265
+  Interpretation: No significant difference between Recognition and Free Recall slopes
+step07_slope_comparison.csv
+Step 7 complete

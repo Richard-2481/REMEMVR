@@ -1,0 +1,135 @@
+======================================================================
+RQ 6.4.2: SEM-Based Paradigm-Stratified Calibration
+======================================================================
+Using tools/sem_calibration.py (SEMCalibration class)
+Same methodology as RQ 6.2.1, 6.3.2, 6.8.2
+======================================================================
+
+======================================================================
+STEP 1: Load Paradigm-Stratified Calibration Data
+======================================================================
+Loaded: 1200 rows, 10 columns
+Columns: ['UID', 'TEST', 'Paradigm', 'theta_accuracy', 'theta_confidence', 'TSVR_hours', 'theta_accuracy_z', 'theta_confidence_z', 'calibration', 'abs_calibration']
+All required columns present
+Paradigms found: ['ICR', 'IFR', 'IRE']
+No missing values in theta scores
+STEP 1 COMPLETE
+
+======================================================================
+STEP 2: Compute PRE-SEM Difference Score Reliability (BY PARADIGM)
+======================================================================
+
+======================================================================
+PARADIGM: ICR
+======================================================================
+N = 400 observations (100 participants x 4 tests)
+Correlation (accuracy, confidence): r = 0.5572, p = 0.000000
+
+Accuracy ICC (r_xx): 0.3915
+Confidence ICC (r_yy): 0.6374
+Difference Score Reliability: r_diff = -0.0965 (CATASTROPHIC (negative))
+
+======================================================================
+PARADIGM: IFR
+======================================================================
+N = 400 observations (100 participants x 4 tests)
+Correlation (accuracy, confidence): r = 0.5694, p = 0.000000
+
+Accuracy ICC (r_xx): 0.4019
+Confidence ICC (r_yy): 0.6601
+Difference Score Reliability: r_diff = -0.0891 (CATASTROPHIC (negative))
+
+======================================================================
+PARADIGM: IRE
+======================================================================
+N = 400 observations (100 participants x 4 tests)
+Correlation (accuracy, confidence): r = 0.5525, p = 0.000000
+
+Accuracy ICC (r_xx): 0.4072
+Confidence ICC (r_yy): 0.6233
+Difference Score Reliability: r_diff = -0.0832 (CATASTROPHIC (negative))
+
+SUMMARY: PRE-SEM Reliability BY PARADIGM
+  ICR     : r_diff=-0.0965 (CATASTROPHIC (negative))
+  IFR     : r_diff=-0.0891 (CATASTROPHIC (negative))
+  IRE     : r_diff=-0.0832 (CATASTROPHIC (negative))
+STEP 2 COMPLETE
+
+======================================================================
+STEP 3: Compute SEM-Based Latent Calibration (BY PARADIGM)
+======================================================================
+
+======================================================================
+PARADIGM: ICR
+======================================================================
+SE_accuracy: 0.7801 (from r_xx=0.3915)
+SE_confidence: 0.6021 (from r_yy=0.6374)
+
+Initializing SEMCalibration for ICR...
+Fitting latent difference model for ICR...
+
+SEM calibration SUCCESSFUL for ICR
+Assigned 400/400 latent_calibration values for ICR
+  WARNING: Zero/NaN variance in split-half - using ICC method
+
+POST-SEM Reliability for ICR:
+  Split-half r: nan
+  Full-length r: nan
+  Improvement: -0.0965 -> nan (+nan)
+  Correlation (SEM vs Simple): r=0.9154
+
+======================================================================
+PARADIGM: IFR
+======================================================================
+SE_accuracy: 0.7733 (from r_xx=0.4019)
+SE_confidence: 0.5830 (from r_yy=0.6601)
+
+Initializing SEMCalibration for IFR...
+Fitting latent difference model for IFR...
+
+SEM calibration SUCCESSFUL for IFR
+Assigned 400/400 latent_calibration values for IFR
+
+POST-SEM Reliability for IFR:
+  Split-half r: 0.8207103468555395
+  Full-length r: 0.9015
+  Improvement: -0.0891 -> 0.9015 (+0.9906)
+  Correlation (SEM vs Simple): r=0.9088
+
+======================================================================
+PARADIGM: IRE
+======================================================================
+SE_accuracy: 0.7699 (from r_xx=0.4072)
+SE_confidence: 0.6138 (from r_yy=0.6233)
+
+Initializing SEMCalibration for IRE...
+Fitting latent difference model for IRE...
+
+SEM calibration SUCCESSFUL for IRE
+Assigned 400/400 latent_calibration values for IRE
+  WARNING: Zero/NaN variance in split-half - using ICC method
+
+POST-SEM Reliability for IRE:
+  Split-half r: nan
+  Full-length r: nan
+  Improvement: -0.0832 -> nan (+nan)
+  Correlation (SEM vs Simple): r=0.9289
+
+======================================================================
+SUMMARY: POST-SEM Reliability BY PARADIGM
+======================================================================
+  ICR     : r_PRE=-0.0965 -> r_POST=+nan (+nan)
+  IFR     : r_PRE=-0.0891 -> r_POST=+0.9015 (+0.9906)
+  IRE     : r_PRE=-0.0832 -> r_POST=+nan (+nan)
+STEP 3 COMPLETE
+
+======================================================================
+STEP 4: Save SEM Calibration Scores
+======================================================================
+No missing values in latent_calibration
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step11_calibration_scores_SEM.csv (1200 rows)
+Saved diagnostics: /home/etai/projects/REMEMVR/results/ch6/6.4.2/data/step11_SEM_diagnostics.csv
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================

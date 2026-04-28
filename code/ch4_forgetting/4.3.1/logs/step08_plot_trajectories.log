@@ -1,0 +1,41 @@
+======================================================================
+RQ 5.3: Paradigm-Specific Forgetting Trajectories - Plotting
+======================================================================
+RQ root: /home/etai/projects/REMEMVR/results/ch5/rq3
+Plots directory: /home/etai/projects/REMEMVR/results/ch5/rq3/plots
+
+----------------------------------------------------------------------
+Loading data and fitting LMM for CI calculation...
+----------------------------------------------------------------------
+  Loaded 1200 rows from step04_lmm_input.csv
+  Fitting LMM model (Log model - best by AIC)...
+  Model fitted: AIC = 2202.39
+  Paradigm IRT parameters loaded from column 'domain'
+
+----------------------------------------------------------------------
+Generating Plot 1: Theta-scale trajectory (publication style)...
+----------------------------------------------------------------------
+  Using 1200 individual observations for scatter
+  Saved: /home/etai/projects/REMEMVR/results/ch5/rq3/plots/trajectory_theta.png
+
+----------------------------------------------------------------------
+Generating Plot 2: Probability-scale trajectory (publication style)...
+----------------------------------------------------------------------
+  Overall mean discrimination: 0.875
+  Saved: /home/etai/projects/REMEMVR/results/ch5/rq3/plots/trajectory_probability.png
+
+======================================================================
+PLOTTING COMPLETE
+======================================================================
+Total plots generated: 2
+  - /home/etai/projects/REMEMVR/results/ch5/rq3/plots/trajectory_theta.png
+  - /home/etai/projects/REMEMVR/results/ch5/rq3/plots/trajectory_probability.png
+
+Plot style (matching legacy):
+  - Faded scatter points (individual observations)
+  - Dashed fitted curves (LMM predictions)
+  - Shaded 95% CI bands (from LMM covariance matrix)
+
+Decision D069 compliance: BOTH theta + probability scale plots generated
+All plots saved with 300 DPI publication quality.
+======================================================================

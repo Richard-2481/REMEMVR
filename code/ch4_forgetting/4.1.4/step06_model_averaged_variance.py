@@ -81,9 +81,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from tools.variance_decomposition import compute_model_averaged_variance_decomposition
 from tools.validation import validate_dataframe_structure
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step06_model_averaged_variance.log"
@@ -102,9 +100,7 @@ AVERAGED_RANDOM_EFFECTS_CSV = RQ_DIR / "data" / "step06_averaged_random_effects.
 
 MODEL_COMPARISON_CSV.parent.mkdir(parents=True, exist_ok=True)
 
-# =============================================================================
 # Logging Function
-# =============================================================================
 
 def log(msg: str) -> None:
     """Write message to both console and log file (UTF-8 encoding)."""
@@ -115,55 +111,44 @@ def log(msg: str) -> None:
         f.write(formatted_msg + "\n")
 
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 06: Model-Averaged Variance Decomposition")
+        log("Step 06: Model-Averaged Variance Decomposition")
         log("=" * 70)
-
-        # =====================================================================
-        # STEP 1: Load LMM Input Data
-        # =====================================================================
-        log("[LOAD] Loading LMM input data from RQ 5.1.1...")
+        # Load LMM Input Data
+        log("Loading LMM input data from RQ 5.1.1...")
         log(f"  File: {LMM_INPUT}")
 
         if not LMM_INPUT.exists():
-            log(f"[ERROR] LMM input file not found: {LMM_INPUT}")
-            log("[FAIL] Cannot proceed without LMM input data")
+            log(f"LMM input file not found: {LMM_INPUT}")
+            log("Cannot proceed without LMM input data")
             sys.exit(1)
 
         lmm_input = pd.read_csv(LMM_INPUT, encoding='utf-8')
-        log(f"[LOADED] {len(lmm_input)} rows, {len(lmm_input.columns)} columns")
-        log(f"[INFO] Columns: {list(lmm_input.columns)}")
+        log(f"{len(lmm_input)} rows, {len(lmm_input.columns)} columns")
+        log(f"Columns: {list(lmm_input.columns)}")
 
         # Verify expected columns
         required_cols = ['UID', 'theta', 'TSVR_hours']
         missing_cols = [col for col in required_cols if col not in lmm_input.columns]
         if missing_cols:
-            log(f"[ERROR] Missing required columns: {missing_cols}")
+            log(f"Missing required columns: {missing_cols}")
             sys.exit(1)
 
-        log(f"[INFO] Unique participants: {lmm_input['UID'].nunique()}")
-        log(f"[INFO] Observations per participant: {len(lmm_input) / lmm_input['UID'].nunique():.1f}")
-
-        # =====================================================================
-        # STEP 2: Create Dummy Stratification Variable (Unstratified Analysis)
-        # =====================================================================
-        log("[PREPARE] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...")
+        log(f"Unique participants: {lmm_input['UID'].nunique()}")
+        log(f"Observations per participant: {len(lmm_input) / lmm_input['UID'].nunique():.1f}")
+        # Create Dummy Stratification Variable (Unstratified Analysis)
+        log("Creating dummy stratification variable (RQ 5.1.4 is unstratified)...")
 
         # RQ 5.1.4 analyzes ALL items together (no stratification by domain/congruence/paradigm)
         # But variance_decomposition tool requires stratify_var parameter
         # Solution: Create dummy variable with single level 'all'
         lmm_input['intercept_dummy'] = 'all'
-        log("[INFO] Added 'intercept_dummy' column with value 'all' for all rows")
-
-        # =====================================================================
-        # STEP 3: Run Model-Averaged Variance Decomposition
-        # =====================================================================
-        log("[ANALYSIS] Running model-averaged variance decomposition (17 models)...")
+        log("Added 'intercept_dummy' column with value 'all' for all rows")
+        # Run Model-Averaged Variance Decomposition
+        log("Running model-averaged variance decomposition (17 models)...")
         log(f"  Outcome variable: theta")
         log(f"  Time variable: TSVR_hours")
         log(f"  Groups variable: UID")
@@ -171,7 +156,7 @@ if __name__ == "__main__":
         log(f"  Delta AIC threshold: 2.0 (competitive models)")
         log(f"  Random effects: Intercepts + Slopes")
         log("")
-        log("[INFO] This will take ~2-5 minutes (17 model fits + variance extraction)...")
+        log("This will take ~2-5 minutes (17 model fits + variance extraction)...")
         log("")
 
         results = compute_model_averaged_variance_decomposition(
@@ -193,25 +178,22 @@ if __name__ == "__main__":
             handle_convergence_failures='warn',
         )
 
-        log("[SUCCESS] Model-averaged variance decomposition complete")
+        log("Model-averaged variance decomposition complete")
         log("")
-
-        # =====================================================================
-        # STEP 4: Extract and Save Results
-        # =====================================================================
-        log("[EXTRACT] Extracting results from variance decomposition...")
+        # Extract and Save Results
+        log("Extracting results from variance decomposition...")
 
         # Extract kitchen sink model comparison
         model_comparison = results['model_comparison']
-        log(f"[INFO] Kitchen sink comparison: {len(model_comparison)} models tested")
+        log(f"Kitchen sink comparison: {len(model_comparison)} models tested")
 
         # Best model info
         best_row = model_comparison.iloc[0]
-        log(f"[INFO] Best model: {best_row['model_name']} (AIC={best_row['AIC']:.2f})")
+        log(f"Best model: {best_row['model_name']} (AIC={best_row['AIC']:.2f})")
 
         # Extract competitive models metadata
         competitive_models = results['competitive_models']
-        log(f"[INFO] Competitive models (ΔAIC < 2.0): {len(competitive_models)}")
+        log(f"Competitive models (ΔAIC < 2.0): {len(competitive_models)}")
         for model_name in competitive_models:
             model_row = model_comparison[model_comparison['model_name'] == model_name].iloc[0]
             log(f"  - {model_name}: AIC={model_row['AIC']:.2f}, ΔAIC={model_row['delta_AIC']:.2f}, weight={model_row['akaike_weight']:.3f}")
@@ -220,7 +202,7 @@ if __name__ == "__main__":
         variance_components_df = results['averaged_variance_components']
         variance_avg = variance_components_df.iloc[0]  # Single row
         log("")
-        log("[INFO] Model-averaged variance components:")
+        log("Model-averaged variance components:")
         log(f"  Columns available: {list(variance_components_df.columns)}")
         log(f"  var_intercept = {variance_avg.get('var_intercept', variance_avg.get('var_int', 'N/A')):.6f}")
         log(f"  var_slope = {variance_avg.get('var_slope', 'N/A'):.6f}")
@@ -240,7 +222,7 @@ if __name__ == "__main__":
         iccs_df = results['averaged_ICCs']
         iccs_avg = iccs_df.iloc[0]  # Single row
         log("")
-        log("[INFO] Model-averaged ICCs:")
+        log("Model-averaged ICCs:")
         log(f"  ICC_intercept = {iccs_avg['ICC_intercept']:.6f} ({iccs_avg['ICC_intercept']*100:.2f}%)")
         log(f"  ICC_slope_simple = {iccs_avg['ICC_slope_simple']:.6f} ({iccs_avg['ICC_slope_simple']*100:.4f}%)")
 
@@ -257,7 +239,7 @@ if __name__ == "__main__":
         # Extract random effects (dataframe with UID, intercept, slope columns)
         random_effects_df = results['averaged_random_effects']
         log("")
-        log(f"[INFO] Model-averaged random effects: {len(random_effects_df)} participants")
+        log(f"Model-averaged random effects: {len(random_effects_df)} participants")
         log(f"  Columns available: {list(random_effects_df.columns)}")
 
         # Find intercept and slope columns (might have different names)
@@ -282,7 +264,7 @@ if __name__ == "__main__":
         icc_by_model = stratified_all['ICCs_by_model']
 
         log("")
-        log("[INFO] Model-specific variance extraction:")
+        log("Model-specific variance extraction:")
         log(f"  Variance by model columns: {list(var_by_model.columns)}")
         log(f"  ICC by model columns: {list(icc_by_model.columns)}")
 
@@ -310,16 +292,13 @@ if __name__ == "__main__":
                 })
 
         log("")
-        log("[INFO] Model-specific variance components extracted for transparency")
-
-        # =====================================================================
-        # STEP 5: Save All Outputs
-        # =====================================================================
-        log("[SAVE] Saving results to CSV/YAML files...")
+        log("Model-specific variance components extracted for transparency")
+        # Save All Outputs
+        log("Saving results to CSV/YAML files...")
 
         # Save model comparison
         model_comparison.to_csv(MODEL_COMPARISON_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {MODEL_COMPARISON_CSV}")
+        log(f"{MODEL_COMPARISON_CSV}")
 
         # Save competitive models metadata
         competitive_models_meta = {
@@ -331,69 +310,63 @@ if __name__ == "__main__":
         }
         with open(COMPETITIVE_MODELS_YAML, 'w', encoding='utf-8') as f:
             yaml.dump(competitive_models_meta, f, default_flow_style=False, allow_unicode=True)
-        log(f"[SAVED] {COMPETITIVE_MODELS_YAML}")
+        log(f"{COMPETITIVE_MODELS_YAML}")
 
         # Save averaged variance components (already a dataframe)
         variance_components_df.to_csv(AVERAGED_VARIANCE_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {AVERAGED_VARIANCE_CSV}")
+        log(f"{AVERAGED_VARIANCE_CSV}")
 
         # Save averaged ICCs (already a dataframe)
         iccs_df.to_csv(AVERAGED_ICCS_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {AVERAGED_ICCS_CSV}")
+        log(f"{AVERAGED_ICCS_CSV}")
 
         # Save model-specific variance
         model_specific_df = pd.DataFrame(model_specific_list)
         model_specific_df.to_csv(MODEL_SPECIFIC_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {MODEL_SPECIFIC_CSV}")
+        log(f"{MODEL_SPECIFIC_CSV}")
 
         # Save averaged random effects (already has intercept_avg and slope_avg columns)
         random_effects_export = random_effects_df[['UID', 'intercept_avg', 'slope_avg']].copy()
         random_effects_export.to_csv(AVERAGED_RANDOM_EFFECTS_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {AVERAGED_RANDOM_EFFECTS_CSV}")
-
-        # =====================================================================
-        # STEP 6: Validation
-        # =====================================================================
-        log("[VALIDATE] Running output validation...")
+        log(f"{AVERAGED_RANDOM_EFFECTS_CSV}")
+        # Validation
+        log("Running output validation...")
 
         # Validate averaged variance components
         if len(variance_components_df) != 1:
-            log(f"[FAIL] Expected 1 row (level='all'), got {len(variance_components_df)}")
+            log(f"Expected 1 row (level='all'), got {len(variance_components_df)}")
             sys.exit(1)
         if variance_components_df.isna().sum().sum() > 0:
-            log(f"[FAIL] Variance components contain NaN values")
+            log(f"Variance components contain NaN values")
             sys.exit(1)
-        log(f"[PASS] Variance components validated: 1 level, no NaN values")
+        log(f"Variance components validated: 1 level, no NaN values")
 
         # Validate averaged ICCs
         if len(iccs_df) != 1:
-            log(f"[FAIL] Expected 1 row (level='all'), got {len(iccs_df)}")
+            log(f"Expected 1 row (level='all'), got {len(iccs_df)}")
             sys.exit(1)
         if iccs_df[['ICC_intercept', 'ICC_slope_simple']].isna().sum().sum() > 0:
-            log(f"[FAIL] ICCs contain NaN values")
+            log(f"ICCs contain NaN values")
             sys.exit(1)
-        log(f"[PASS] ICCs validated: 1 level, no NaN values")
+        log(f"ICCs validated: 1 level, no NaN values")
 
         # Validate random effects
         if len(random_effects_export) != 100:
-            log(f"[FAIL] Expected 100 participants, got {len(random_effects_export)}")
+            log(f"Expected 100 participants, got {len(random_effects_export)}")
             sys.exit(1)
         if random_effects_export.isna().sum().sum() > 0:
-            log(f"[FAIL] Random effects contain NaN values")
+            log(f"Random effects contain NaN values")
             sys.exit(1)
-        log(f"[PASS] Random effects validated: 100 participants, no NaN values")
+        log(f"Random effects validated: 100 participants, no NaN values")
 
         # Check for positive variance
         if variance_avg['var_slope'] <= 0:
-            log(f"[FAIL] var_slope_avg must be positive, got {variance_avg['var_slope']}")
+            log(f"var_slope_avg must be positive, got {variance_avg['var_slope']}")
             sys.exit(1)
-        log(f"[PASS] var_slope_avg > 0 ({variance_avg['var_slope']:.6f})")
-
-        # =====================================================================
+        log(f"var_slope_avg > 0 ({variance_avg['var_slope']:.6f})")
         # SUMMARY
-        # =====================================================================
         log("=" * 70)
-        log("[SUCCESS] Step 06 complete: Model-averaged variance decomposition")
+        log("Step 06 complete: Model-averaged variance decomposition")
         log(f"  Models tested: {len(model_comparison)}")
         log(f"  Competitive models: {len(competitive_models)}")
         log(f"  var_intercept_avg: {variance_avg['var_intercept']:.6f}")
@@ -406,8 +379,8 @@ if __name__ == "__main__":
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] Unexpected error: {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"Unexpected error: {str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

@@ -1,0 +1,72 @@
+Step 01: extract_domain_theta_scores
+Loading Ch5 theta scores...
+Ch5 theta file: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+Extracting and aggregating domain theta scores...
+Ch5 theta scores: 400 rows, columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Extracted UID from composite_ID
+Found 100 unique participants
+Domain column mapping: {'Where': 'theta_where', 'What': 'theta_what'}
+Created aggregated dataset: 100 participants
+Domain score extraction complete
+Saving domain theta scores to /home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step01_domain_theta_scores.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step01_domain_theta_scores.csv (100 rows, 3 cols)
+First 3 rows:
+  {'UID': 'A010', 'Where_mean': 0.85377241625, 'What_mean': 0.7559712974999999}
+  {'UID': 'A011', 'Where_mean': 0.04574041000000001, 'What_mean': 0.197499705}
+  {'UID': 'A012', 'Where_mean': 0.4314021725, 'What_mean': 0.28557254750000005}
+Validating domain theta scores...
+Overall valid: True
+Participants: 100
+Missing values: {'Where_mean': np.int64(0), 'What_mean': np.int64(0)}
+Out of range: {'Where_mean': np.int64(0), 'What_mean': np.int64(0)}
+Variance check: {'Where_mean': np.float64(0.4502166364534158), 'What_mean': np.float64(0.40689344389148757)}
+All checks passed
+Step 01 complete
+Step 01: extract_domain_theta_scores
+Loading Ch5 theta scores...
+Ch5 theta file: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+Extracting and aggregating domain theta scores...
+Ch5 theta scores: 400 rows, columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Extracted UID from composite_ID
+Found 100 unique participants
+Domain column mapping: {'Where': 'theta_where', 'What': 'theta_what'}
+Created aggregated dataset: 100 participants
+Domain score extraction complete
+Saving domain theta scores to /home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step01_domain_theta_scores.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step01_domain_theta_scores.csv (100 rows, 3 cols)
+First 3 rows:
+  {'UID': 'A010', 'Where_mean': 0.85377241625, 'What_mean': 0.7559712974999999}
+  {'UID': 'A011', 'Where_mean': 0.04574041000000001, 'What_mean': 0.197499705}
+  {'UID': 'A012', 'Where_mean': 0.4314021725, 'What_mean': 0.28557254750000005}
+Validating domain theta scores...
+Overall valid: True
+Participants: 100
+Missing values: {'Where_mean': np.int64(0), 'What_mean': np.int64(0)}
+Out of range: {'Where_mean': np.int64(0), 'What_mean': np.int64(0)}
+Variance check: {'Where_mean': np.float64(0.4502166364534158), 'What_mean': np.float64(0.40689344389148757)}
+All checks passed
+Step 01 complete
+Step 01: extract_domain_theta_scores
+Loading Ch5 theta scores...
+Ch5 theta file: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+Extracting and aggregating domain theta scores...
+Ch5 theta scores: 400 rows, columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Extracted UID from composite_ID
+Found 100 unique participants
+Domain column mapping: {'Where': 'theta_where', 'What': 'theta_what'}
+Created aggregated dataset: 100 participants
+Domain score extraction complete
+Saving domain theta scores to /home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step01_domain_theta_scores.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step01_domain_theta_scores.csv (100 rows, 3 cols)
+First 3 rows:
+  {'UID': 'A010', 'Where_mean': 0.85377241625, 'What_mean': 0.7559712974999999}
+  {'UID': 'A011', 'Where_mean': 0.04574041000000001, 'What_mean': 0.197499705}
+  {'UID': 'A012', 'Where_mean': 0.4314021725, 'What_mean': 0.28557254750000005}
+Validating domain theta scores...
+Overall valid: True
+Participants: 100
+Missing values: {'Where_mean': np.int64(0), 'What_mean': np.int64(0)}
+Out of range: {'Where_mean': np.int64(0), 'What_mean': np.int64(0)}
+Variance check: {'Where_mean': np.float64(0.4502166364534158), 'What_mean': np.float64(0.40689344389148757)}
+All checks passed
+Step 01 complete

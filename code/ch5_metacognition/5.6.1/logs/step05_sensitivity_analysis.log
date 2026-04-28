@@ -1,0 +1,76 @@
+Step 05: Sensitivity Analysis
+======================================================================
+Loading HCE rates from Step 01...
+400 rows, 100 participants
+Days range: [0.04, 10.26]
+
+======================================================================
+[MODEL A] Full Model: HCE_rate ~ Days + (Days | UID)
+======================================================================
+[MODEL A] Converged: True
+[MODEL A] Days β = -0.003007
+[MODEL A] Days SE = 0.000707
+[MODEL A] Days p = 0.000021
+[MODEL A] Random slope var = 0.000011
+
+======================================================================
+[MODEL B] Reduced Model: HCE_rate ~ Days + (1 | UID)
+======================================================================
+[MODEL B] Converged: True
+[MODEL B] Days β = -0.002957
+[MODEL B] Days SE = 0.000648
+[MODEL B] Days p = 0.000005
+[LRT A vs B] Chi² = 5.2191, df=2, p = 0.073569
+[LRT A vs B] Random slopes NOT significant - Model B adequate
+
+======================================================================
+[MODEL C] Quadratic Model: HCE_rate ~ Days + Days² + (Days | UID)
+======================================================================
+[MODEL C] Converged: True
+[MODEL C] Days β = -0.004081
+[MODEL C] Days² β = 0.000162
+[MODEL C] Days p = 0.064924
+[MODEL C] Days² p = 0.607743
+
+======================================================================
+[MODEL D] Exclude Late: HCE_rate ~ Days + (Days | UID), Days ≤ 7.5
+======================================================================
+[MODEL D] Excluding 4 observations with Days > 7.5
+[MODEL D] Remaining: 396 observations
+[MODEL D] Converged: True
+[MODEL D] Days β = -0.003063
+[MODEL D] Days SE = 0.000735
+[MODEL D] Days p = 0.000031
+
+======================================================================
+Days Coefficient Across Models
+======================================================================
+  A_Full_RandomSlopes           : β=-0.003007 (SE=0.000707) p=0.0000*** [+0.0% vs ref]
+  B_Reduced_InterceptOnly       : β=-0.002957 (SE=0.000648) p=0.0000*** [+1.7% vs ref]
+  C_Quadratic                   : β=-0.004081 (SE=0.002211) p=0.0649 [-35.7% vs ref]
+  D_ExcludeLate                 : β=-0.003063 (SE=0.000735) p=0.0000*** [-1.9% vs ref]
+
+======================================================================
+Assessment
+======================================================================
+  All models significant (p < 0.05): False
+  All models negative coefficient: True
+  Max deviation from reference: 35.7%
+  Within 50% tolerance: True
+
+⚠ WARNING - Sensitivity concerns detected
+
+step05_sensitivity_results.csv
+
+======================================================================
+For validation.md
+======================================================================
+Sensitivity Analysis: WARNING
+Models tested: 4
+Reference (Model A): β=-0.003007, p=0.000021
+All models significant: False
+All coefficients negative: True
+Maximum deviation: 35.7%
+Random slopes significant (LRT): p=0.0736
+
+Step 05 complete

@@ -1,0 +1,106 @@
+Step 5: Correlation Analysis with Steiger's z-test
+Loading input data...
+step00_theta_scores.csv (400 rows, 4 cols)
+step02_ctt_full_scores.csv (400 rows, 6 cols)
+step03_ctt_purified_scores.csv (400 rows, 6 cols)
+Merging theta, full CTT, and purified CTT on composite_ID...
+Combined dataset: 400 rows, 10 cols
+Running Steiger's z-test for each domain...
+Sample size for correlations: n = 400
+Processing domain: what
+  Valid observations after removing NaN: 400
+  Correlations:
+    r(Full CTT, IRT) = 0.879
+    r(Full CTT, Purified CTT) = 0.956
+    r(Purified CTT, IRT) = 0.906
+  Steiger's z = 10.060
+  p (uncorrected) = 0.0000
+  Delta r (Purified - Full) = 0.027
+  p (Bonferroni) = 0.0000
+  Interpretation: Purified CTT significantly higher correlation with IRT (Bonferroni p < 0.05)
+Processing domain: where
+  Valid observations after removing NaN: 400
+  Correlations:
+    r(Full CTT, IRT) = 0.940
+    r(Full CTT, Purified CTT) = 0.986
+    r(Purified CTT, IRT) = 0.955
+  Steiger's z = 14.218
+  p (uncorrected) = 0.0000
+  Delta r (Purified - Full) = 0.015
+  p (Bonferroni) = 0.0000
+  Interpretation: Purified CTT significantly higher correlation with IRT (Bonferroni p < 0.05)
+Processing domain: when
+  Valid observations after removing NaN: 400
+  Correlations:
+    r(Full CTT, IRT) = 0.451
+    r(Full CTT, Purified CTT) = 0.536
+    r(Purified CTT, IRT) = 0.838
+  Steiger's z = 2.086
+  p (uncorrected) = 0.0370
+  Delta r (Purified - Full) = 0.388
+  p (Bonferroni) = 0.1109
+  Interpretation: No significant difference between Full and Purified CTT correlations with IRT
+Steiger's z-test complete for all domains
+Saving correlation analysis results...
+step05_correlation_analysis.csv (3 rows, 9 cols)
+Correlation analysis results:
+  Domains analyzed: 3
+  Mean r(Full CTT, IRT): 0.757
+  Mean r(Purified CTT, IRT): 0.900
+  Mean delta_r: 0.143
+  Significant differences (Bonferroni p < 0.05): 2
+Running validate_correlation_test_d068...
+PASSED - Custom validation: 6 required columns.
+Checking value ranges...
+  All correlations in [-1, 1] range
+  All p-values in [0, 1] range
+  Decision D068 compliant (dual p-value reporting)
+Step 5 complete
+Step 5: Correlation Analysis with Steiger's z-test
+Loading input data...
+step00_theta_scores.csv (400 rows, 3 cols)
+step02_ctt_full_scores.csv (400 rows, 5 cols)
+step03_ctt_purified_scores.csv (400 rows, 5 cols)
+Merging theta, full CTT, and purified CTT on composite_ID...
+Combined dataset: 400 rows, 7 cols
+Running Steiger's z-test for each domain...
+When domain EXCLUDED per RQ 5.2.1 floor effect
+Sample size for correlations: n = 400
+Processing domain: what
+  Valid observations after removing NaN: 400
+  Correlations:
+    r(Full CTT, IRT) = 0.879
+    r(Full CTT, Purified CTT) = 0.956
+    r(Purified CTT, IRT) = 0.906
+  Steiger's z = 10.060
+  p (uncorrected) = 0.0000
+  Delta r (Purified - Full) = 0.027
+  p (Bonferroni, k=2) = 0.0000
+  Interpretation: Purified CTT significantly higher correlation with IRT (Bonferroni p < 0.05)
+Processing domain: where
+  Valid observations after removing NaN: 400
+  Correlations:
+    r(Full CTT, IRT) = 0.940
+    r(Full CTT, Purified CTT) = 0.986
+    r(Purified CTT, IRT) = 0.955
+  Steiger's z = 14.218
+  p (uncorrected) = 0.0000
+  Delta r (Purified - Full) = 0.015
+  p (Bonferroni, k=2) = 0.0000
+  Interpretation: Purified CTT significantly higher correlation with IRT (Bonferroni p < 0.05)
+Steiger's z-test complete for all domains
+Saving correlation analysis results...
+step05_correlation_analysis.csv (2 rows, 9 cols)
+Correlation analysis results:
+  Domains analyzed: 2
+  Mean r(Full CTT, IRT): 0.910
+  Mean r(Purified CTT, IRT): 0.931
+  Mean delta_r: 0.021
+  Significant differences (Bonferroni p < 0.05): 2
+Running validate_correlation_test_d068...
+PASSED - Custom validation: 6 required columns.
+Checking value ranges...
+  All correlations in [-1, 1] range
+  All p-values in [0, 1] range
+  Decision D068 compliant (dual p-value reporting)
+Step 5 complete

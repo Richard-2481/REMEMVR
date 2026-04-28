@@ -49,16 +49,16 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05: Kitchen Sink LMM Model Comparison")
+        log("Step 05: Kitchen Sink LMM Model Comparison")
         log("=" * 80)
 
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         input_path = DATA_DIR / "step04_lmm_input.csv"
         lmm_input = pd.read_csv(input_path, encoding='utf-8')
         log(f"  ✓ Loaded {len(lmm_input)} rows, {len(lmm_input.columns)} columns")
         log(f"  ✓ Outcome: theta_All, TSVR range: [{lmm_input['TSVR_hours'].min():.2f}, {lmm_input['TSVR_hours'].max():.2f}]")
 
-        log("[ANALYSIS] Running kitchen sink model comparison...")
+        log("Running kitchen sink model comparison...")
         log("  CORRECTED: Using re_formula='~1' (random intercepts only) to match Ch5")
         results = compare_lmm_models_kitchen_sink(
             data=lmm_input,
@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
         comparison = results['comparison']
         best_model = results['best_model']
-        log(f"[SUCCESS] Best model: {best_model['name']} (AIC={best_model['AIC']:.2f}, w={best_model['weight']:.4f})")
+        log(f"Best model: {best_model['name']} (AIC={best_model['AIC']:.2f}, w={best_model['weight']:.4f})")
         log(f"  Converged: {results['summary_stats']['n_models_converged']}/{results['summary_stats']['n_models_tested']}")
 
         # Rename outputs
@@ -84,7 +84,7 @@ if __name__ == "__main__":
         log("=" * 80)
 
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         import traceback
         log(traceback.format_exc())
         raise

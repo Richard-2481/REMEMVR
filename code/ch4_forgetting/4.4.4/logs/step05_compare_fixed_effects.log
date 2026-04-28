@@ -1,0 +1,83 @@
+2025-12-03 20:06:22,902 - INFO - ============================================================
+2025-12-03 20:06:22,902 - INFO - Step 05: Compare Fixed Effects (IRT vs CTT)
+2025-12-03 20:06:22,902 - INFO - ============================================================
+2025-12-03 20:06:22,902 - INFO - Loading fitted models...
+2025-12-03 20:06:22,939 - INFO - Models loaded successfully
+2025-12-03 20:06:22,939 - INFO - Extracting fixed effects...
+2025-12-03 20:06:37,906 - INFO - ============================================================
+2025-12-03 20:06:37,906 - INFO - Step 05: Compare Fixed Effects (IRT vs CTT)
+2025-12-03 20:06:37,906 - INFO - ============================================================
+2025-12-03 20:06:37,906 - INFO - Loading fitted models...
+2025-12-03 20:06:37,924 - INFO - Models loaded successfully
+2025-12-03 20:06:37,924 - INFO - Extracting fixed effects...
+2025-12-03 20:06:37,925 - INFO - IRT fixed effects: 6 terms
+2025-12-03 20:06:37,925 - INFO - CTT fixed effects: 6 terms
+2025-12-03 20:06:37,925 - INFO - Computing Cohen's kappa for agreement...
+2025-12-03 20:07:00,256 - INFO - ============================================================
+2025-12-03 20:07:00,256 - INFO - Step 05: Compare Fixed Effects (IRT vs CTT)
+2025-12-03 20:07:00,256 - INFO - ============================================================
+2025-12-03 20:07:00,256 - INFO - Loading fitted models...
+2025-12-03 20:07:00,277 - INFO - Models loaded successfully
+2025-12-03 20:07:00,277 - INFO - Extracting fixed effects...
+2025-12-03 20:07:00,279 - INFO - IRT fixed effects: 6 terms
+2025-12-03 20:07:00,279 - INFO - CTT fixed effects: 6 terms
+2025-12-03 20:07:00,279 - INFO - Computing Cohen's kappa for agreement...
+2025-12-03 20:07:00,281 - INFO - Cohen's kappa: 0.667
+2025-12-03 20:07:40,587 - INFO - ============================================================
+2025-12-03 20:07:40,587 - INFO - Step 05: Compare Fixed Effects (IRT vs CTT)
+2025-12-03 20:07:40,587 - INFO - ============================================================
+2025-12-03 20:07:40,587 - INFO - Loading fitted models...
+2025-12-03 20:07:40,608 - INFO - Models loaded successfully
+2025-12-03 20:07:40,608 - INFO - Extracting fixed effects...
+2025-12-03 20:07:40,609 - INFO - IRT fixed effects: 6 terms
+2025-12-03 20:07:40,610 - INFO - CTT fixed effects: 6 terms
+2025-12-03 20:07:40,610 - INFO - Computing Cohen's kappa for agreement...
+2025-12-03 20:07:40,611 - INFO - Cohen's kappa: 0.667
+2025-12-03 20:07:40,611 - INFO - Percent agreement: 83.3%
+2025-12-03 20:07:40,611 - INFO - Interpretation: Substantial agreement
+2025-12-03 20:07:40,611 - INFO - Creating coefficient comparison table...
+2025-12-03 20:07:40,615 - INFO - 
+Coefficient comparison:
+2025-12-03 20:07:40,616 - INFO - Saving outputs...
+2025-12-03 20:07:40,617 - INFO - Saved: step05_irt_fixed_effects.csv (6 rows)
+2025-12-03 20:07:40,618 - INFO - Saved: step05_ctt_fixed_effects.csv (6 rows)
+2025-12-03 20:07:40,618 - INFO - Saved: step05_coefficient_comparison.csv (6 rows)
+2025-12-03 20:07:40,619 - INFO - Saved: step05_agreement_metrics.csv (3 rows)
+2025-12-03 20:07:40,619 - INFO - ============================================================
+2025-12-03 20:07:40,619 - INFO - Agreement Summary:
+2025-12-03 20:07:40,619 - INFO -   Cohen's kappa: 0.667 (Substantial agreement)
+2025-12-03 20:07:40,619 - INFO -   Percent agreement: 83.3%
+2025-12-03 20:07:40,619 - INFO -   Threshold kappa > 0.60: PASS
+2025-12-03 20:07:40,619 - INFO -   Threshold agreement >= 80%: PASS
+2025-12-03 20:07:40,619 - INFO - ============================================================
+2025-12-03 20:07:40,619 - INFO - Step 05 COMPLETE: Fixed effects compared successfully
+2025-12-03 20:07:40,619 - INFO - ============================================================
+2025-12-09 20:38:12,315 - INFO - ============================================================
+2025-12-09 20:38:12,316 - INFO - Step 05: Compare Fixed Effects (IRT vs CTT)
+2025-12-09 20:38:12,316 - INFO - ============================================================
+2025-12-09 20:38:12,316 - INFO - Loading fitted models...
+2025-12-09 20:38:12,353 - INFO - Models loaded successfully
+2025-12-09 20:38:12,354 - INFO - Extracting fixed effects...
+2025-12-09 20:38:12,358 - INFO - IRT fixed effects: 9 terms
+2025-12-09 20:38:12,358 - INFO - CTT fixed effects: 9 terms
+2025-12-09 20:38:12,358 - INFO - Computing Cohen's kappa for agreement...
+2025-12-09 20:38:12,360 - INFO - Cohen's kappa: 1.000
+2025-12-09 20:38:12,360 - INFO - Percent agreement: 100.0%
+2025-12-09 20:38:12,360 - INFO - Interpretation: Almost perfect agreement
+2025-12-09 20:38:12,360 - INFO - Creating coefficient comparison table...
+2025-12-09 20:38:12,362 - INFO - 
+Coefficient comparison:
+2025-12-09 20:38:12,367 - INFO - Saving outputs...
+2025-12-09 20:38:12,369 - INFO - Saved: step05_irt_fixed_effects.csv (9 rows)
+2025-12-09 20:38:12,369 - INFO - Saved: step05_ctt_fixed_effects.csv (9 rows)
+2025-12-09 20:38:12,370 - INFO - Saved: step05_coefficient_comparison.csv (9 rows)
+2025-12-09 20:38:12,371 - INFO - Saved: step05_agreement_metrics.csv (3 rows)
+2025-12-09 20:38:12,371 - INFO - ============================================================
+2025-12-09 20:38:12,371 - INFO - Agreement Summary:
+2025-12-09 20:38:12,371 - INFO -   Cohen's kappa: 1.000 (Almost perfect agreement)
+2025-12-09 20:38:12,371 - INFO -   Percent agreement: 100.0%
+2025-12-09 20:38:12,372 - INFO -   Threshold kappa > 0.60: PASS
+2025-12-09 20:38:12,372 - INFO -   Threshold agreement >= 80%: PASS
+2025-12-09 20:38:12,372 - INFO - ============================================================
+2025-12-09 20:38:12,372 - INFO - Step 05 COMPLETE: Fixed effects compared successfully
+2025-12-09 20:38:12,372 - INFO - ============================================================

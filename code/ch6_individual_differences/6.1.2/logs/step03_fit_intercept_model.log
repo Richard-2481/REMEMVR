@@ -1,0 +1,39 @@
+Step 03: fit_intercept_model
+Loading regression input data...
+step02_regression_input.csv (97 rows, 10 cols)
+All required columns present: ['UID', 'intercept', 'RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RPM_T']
+Intercept range: [-1.118, 1.265]
+RAVLT_T range: [21.764, 73.148]
+RAVLT_Pct_Ret_T range: [23.112, 77.956]
+BVMT_T range: [17.590, 65.556]
+BVMT_Pct_Ret_T range: [5.017, 69.395]
+RPM_T range: [19.262, 61.109]
+Running fit_multiple_regression...
+Predictors shape: (97, 5)
+Response shape: (97,)
+Analysis complete
+R² = 0.2651
+Adjusted R² = 0.2248
+F-statistic = 6.5668
+Model p-value = 0.000029
+Extracting regression coefficients...
+Coefficients: {'intercept': np.float64(-2.100233232266254), 'RAVLT_T': np.float64(0.008397566683878829), 'RAVLT_Pct_Ret_T': np.float64(0.009412214554486327), 'BVMT_T': np.float64(0.003112338803540857), 'BVMT_Pct_Ret_T': np.float64(0.0061994707567239625), 'RPM_T': np.float64(0.015044749977758985)}
+P-values: {'intercept': np.float64(7.546417192460081e-07), 'RAVLT_T': np.float64(0.12044643042853431), 'RAVLT_Pct_Ret_T': np.float64(0.07112661000170552), 'BVMT_T': np.float64(0.6000691973647087), 'BVMT_Pct_Ret_T': np.float64(0.2195345952116631), 'RPM_T': np.float64(0.009448544317028856)}
+intercept: β=-2.1002, p=0.0000, p_bonf=0.0000
+RAVLT_T: β=0.0084, p=0.1204, p_bonf=0.6022
+RAVLT_Pct_Ret_T: β=0.0094, p=0.0711, p_bonf=0.3556
+BVMT_T: β=0.0031, p=0.6001, p_bonf=1.0000
+BVMT_Pct_Ret_T: β=0.0062, p=0.2195, p_bonf=1.0000
+RPM_T: β=0.0150, p=0.0094, p_bonf=0.0472
+Results table created: 6 coefficients
+Saving step03_intercept_predictions.csv...
+step03_intercept_predictions.csv (6 rows, 8 cols)
+Running validate_numeric_range...
+PASS: All p-values in valid range [0, 1]
+Additional checks:
+Standard errors positive: PASS
+Bonferroni correction: PASS
+VIF check skipped (multicollinearity assessment not implemented)
+All 6 terms present: PASS
+All validation checks PASSED
+Step 03 complete

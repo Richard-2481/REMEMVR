@@ -1,0 +1,42 @@
+Step 02: Extract Theta Scores
+Loading Ch5 5.1.1 theta scores...
+step03_theta_scores.csv (400 rows, 3 columns)
+Columns: ['UID', 'test', 'Theta_All']
+Computing participant-level theta means...
+100 participants
+Computing z-scores...
+Theta scores converted to z-scores
+Running validation checks...
+Theta range: [-1.95, 1.56]
+Theta M=0.01, SD=0.68
+Theta scores within expected IRT range
+No missing values
+N=100 participants (as expected)
+Saving participant-level theta scores...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step02_theta_scores.csv (100 participants, 3 columns)
+Descriptive statistics:
+  Theta_all: M=0.01, SD=0.68
+  Theta_all: Range=[-1.95, 1.56]
+  Theta_standardized: M=0.00, SD=1.00
+Step 02 complete
+Step 02: Extract Theta Scores
+Loading Ch5 5.1.1 theta scores...
+step03_theta_scores.csv (400 rows, 3 columns)
+Columns: ['UID', 'test', 'Theta_All']
+Computing participant-level theta means...
+100 participants
+Computing z-scores...
+Theta scores converted to z-scores
+Running validation checks...
+Theta range: [-1.95, 1.56]
+Theta M=0.01, SD=0.68
+Theta scores within expected IRT range
+No missing values
+N=100 participants (as expected)
+Saving participant-level theta scores...
+/home/etai/projects/REMEMVR/results/ch7/7.7.3/data/step02_theta_scores.csv (100 participants, 3 columns)
+Descriptive statistics:
+  Theta_all: M=0.01, SD=0.68
+  Theta_all: Range=[-1.95, 1.56]
+  Theta_standardized: M=0.00, SD=1.00
+Step 02 complete

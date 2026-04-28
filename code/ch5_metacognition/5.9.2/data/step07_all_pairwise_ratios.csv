@@ -1,0 +1,4 @@
+comparison_name,ICC_numerator,ICC_denominator,ratio,absolute_difference,interpretation
+824x_single_vs_accuracy,0.2640976039075434,0.007463065445604469,35.38728232151432,0.2566345384619389,Single Recip_sq confidence vs Model-avg PowerLaw accuracy
+221x_modelavg_vs_accuracy,0.0401089522251023,0.007463065445604469,5.374326745148044,0.03264588677949783,Model-avg confidence vs Model-avg accuracy
+matched_powerlaw,0.9184748171144944,0.007463065445604469,123.0693772966241,0.9110117516688899,Confidence PowerLaw matched vs Accuracy PowerLaw

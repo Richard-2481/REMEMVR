@@ -66,7 +66,7 @@ def bootstrap_r2(X, y, n_bootstrap=1000, random_state=42):
 
 def main():
     """Main execution."""
-    log("[START] Steps 06-09: Hierarchical regression analysis")
+    log("Steps 06-09: Hierarchical regression analysis")
     
     # Step 06: Prepare regression data
     log("\n[STEP 06] Preparing regression data...")
@@ -74,11 +74,11 @@ def main():
     # Load merged data
     merged_path = RQ_DIR / "data" / "step05_merged_predictors.csv"
     df = pd.read_csv(merged_path)
-    log(f"[LOAD] Loaded {len(df)} participants")
+    log(f"Loaded {len(df)} participants")
     
     # Remove rows with missing values
     df_complete = df.dropna()
-    log(f"[INFO] Complete cases: {len(df_complete)} (removed {len(df)-len(df_complete)} with missing data)")
+    log(f"Complete cases: {len(df_complete)} (removed {len(df)-len(df_complete)} with missing data)")
     
     # Define predictor blocks
     block1_vars = ['age_z', 'sex_binary', 'education_z']
@@ -98,9 +98,9 @@ def main():
     X2 = sm.add_constant(X2)
     X3 = sm.add_constant(X3)
     
-    log(f"[INFO] Model 1 (Demographics): {X1.shape[1]-1} predictors")
-    log(f"[INFO] Model 2 (+ Cognitive): {X2.shape[1]-1} predictors")
-    log(f"[INFO] Model 3 (+ Self-report): {X3.shape[1]-1} predictors")
+    log(f"Model 1 (Demographics): {X1.shape[1]-1} predictors")
+    log(f"Model 2 (+ Cognitive): {X2.shape[1]-1} predictors")
+    log(f"Model 3 (+ Self-report): {X3.shape[1]-1} predictors")
     
     # Save prepared data
     prep_df = pd.DataFrame()
@@ -115,7 +115,7 @@ def main():
     
     prep_path = RQ_DIR / "data" / "step06_regression_ready.csv"
     prep_df.to_csv(prep_path, index=False)
-    log(f"[SAVE] Saved prepared data to {prep_path}")
+    log(f"Saved prepared data to {prep_path}")
     
     # Step 07: Fit hierarchical regression
     log("\n[STEP 07] Fitting hierarchical regression models...")
@@ -126,7 +126,7 @@ def main():
     model3 = sm.OLS(y, X3).fit()
     
     # Report R² for each model
-    log(f"\n[RESULTS] Full-sample R² values:")
+    log(f"\nFull-sample R² values:")
     log(f"  Model 1 (Demographics): R²={model1.rsquared:.4f}, Adj R²={model1.rsquared_adj:.4f}")
     log(f"  Model 2 (+ Cognitive): R²={model2.rsquared:.4f}, Adj R²={model2.rsquared_adj:.4f}")
     log(f"  Model 3 (+ Self-report): R²={model3.rsquared:.4f}, Adj R²={model3.rsquared_adj:.4f}")
@@ -135,7 +135,7 @@ def main():
     delta_r2_block2 = model2.rsquared - model1.rsquared
     delta_r2_block3 = model3.rsquared - model2.rsquared
     
-    log(f"\n[INCREMENTAL] R² change:")
+    log(f"\nR² change:")
     log(f"  Block 2 (Cognitive): ΔR²={delta_r2_block2:.4f}")
     log(f"  Block 3 (Self-report): ΔR²={delta_r2_block3:.4f}")
     
@@ -159,7 +159,7 @@ def main():
 
     # Report individual predictor coefficients for full model
     all_vars = ['Intercept'] + block1_vars + block2_vars + block3_vars
-    log(f"\n[COEFFICIENTS] Full model (Model 3) individual predictors:")
+    log(f"\nFull model (Model 3) individual predictors:")
     log(f"  {'Variable':25s} {'B':>8s} {'SE':>8s} {'t':>8s} {'p':>8s}")
     log(f"  {'-'*25} {'-'*8} {'-'*8} {'-'*8} {'-'*8}")
     coef_records = []
@@ -175,7 +175,7 @@ def main():
     coef_df = pd.DataFrame(coef_records)
     coef_path = RQ_DIR / "data" / "step07_predictor_coefficients.csv"
     coef_df.to_csv(coef_path, index=False)
-    log(f"[SAVE] Saved predictor coefficients to {coef_path}")
+    log(f"Saved predictor coefficients to {coef_path}")
 
     # 5-fold cross-validation
     log("\n[CROSS-VALIDATION] 5-fold CV...")
@@ -248,13 +248,13 @@ def main():
     
     hier_path = RQ_DIR / "data" / "step07_hierarchical_models.csv"
     hier_results.to_csv(hier_path, index=False)
-    log(f"[SAVE] Saved hierarchical results to {hier_path}")
+    log(f"Saved hierarchical results to {hier_path}")
     
     # Save CV details
     cv_df = pd.DataFrame(cv_results)
     cv_path = RQ_DIR / "data" / "step07_cross_validation_results.csv"
     cv_df.to_csv(cv_path, index=False)
-    log(f"[SAVE] Saved CV results to {cv_path}")
+    log(f"Saved CV results to {cv_path}")
     
     # Step 08: Compute Cohen's f² effect sizes
     log("\n[STEP 08] Computing Cohen's f² effect sizes...")
@@ -271,7 +271,7 @@ def main():
     log(f"  Total model: f²={f2_total:.4f} ({'small' if f2_total < 0.15 else 'medium' if f2_total < 0.35 else 'large'})")
     
     # Bootstrap CIs for f²
-    log("\n[BOOTSTRAP] Computing 95% CIs (1000 iterations)...")
+    log("\nComputing 95% CIs (1000 iterations)...")
     
     r2_m1_mean, r2_m1_lower, r2_m1_upper = bootstrap_r2(X1, y, n_bootstrap=1000)
     r2_m2_mean, r2_m2_lower, r2_m2_upper = bootstrap_r2(X2, y, n_bootstrap=1000)
@@ -298,7 +298,7 @@ def main():
     
     effect_path = RQ_DIR / "data" / "step08_incremental_validity.csv"
     effect_df.to_csv(effect_path, index=False)
-    log(f"[SAVE] Saved effect sizes to {effect_path}")
+    log(f"Saved effect sizes to {effect_path}")
     
     # Step 09: Residual analysis
     log("\n[STEP 09] Residual variance analysis...")
@@ -338,7 +338,7 @@ def main():
     # Check assumptions
     # 1. Normality of residuals
     _, p_shapiro = stats.shapiro(residuals)
-    log(f"\n[DIAGNOSTICS] Model 3 assumptions:")
+    log(f"\nModel 3 assumptions:")
     log(f"  Normality (Shapiro-Wilk): p={p_shapiro:.4f} {'(PASS)' if p_shapiro > 0.05 else '(FAIL - consider robust SEs)'}")
     
     # 2. Homoscedasticity (Breusch-Pagan test)
@@ -364,11 +364,11 @@ def main():
     
     residual_path = RQ_DIR / "data" / "step09_residual_variance.csv"
     residual_df.to_csv(residual_path, index=False)
-    log(f"[SAVE] Saved residual analysis to {residual_path}")
+    log(f"Saved residual analysis to {residual_path}")
     
-    log("\n[SUCCESS] Steps 06-09 complete")
+    log("\nSteps 06-09 complete")
     log(f"\n[KEY FINDING] {residual_variance*100:.1f}% of REMEMVR variance unexplained by all predictors")
-    log(f"[INTERPRETATION] REMEMVR captures unique variance beyond traditional measures")
+    log(f"REMEMVR captures unique variance beyond traditional measures")
     
     return 0
 

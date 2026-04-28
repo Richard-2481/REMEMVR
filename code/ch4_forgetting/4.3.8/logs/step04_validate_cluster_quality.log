@@ -1,0 +1,117 @@
+================================================================================
+STEP 04: Validate Cluster Quality
+================================================================================
+
+Loading standardized features and cluster assignments...
+Standardized features: (100, 7)
+Cluster assignments: (100, 2)
+Feature matrix: (100, 6) (100 participants x 6 features)
+Cluster labels: (100,) (3 clusters)
+
+Computing cluster quality metrics...
+Silhouette score: 0.3673
+         Threshold: >= 0.4
+         Status: WARNING (below threshold)
+Davies-Bouldin index: 0.9809
+         Threshold: < 1.5
+         Status: PASS
+Dunn index: 0.0644
+         Threshold: > 0 (higher is better)
+         Status: PASS
+
+Saving quality metrics table...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step04_cluster_quality_metrics.csv
+        3 metrics recorded
+
+Generating quality interpretation...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step04_quality_interpretation.txt
+
+Validating metric value ranges...
+All metrics in valid ranges
+
+'actual_min'
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.8/code/step04_validate_cluster_quality.py", line 280, in <module>
+    log(f"       Range: [{validation_result['actual_min']:.4f}, {validation_result['actual_max']:.4f}]")
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'actual_min'
+================================================================================
+STEP 04: Validate Cluster Quality
+================================================================================
+
+Loading standardized features and cluster assignments...
+Standardized features: (100, 7)
+Cluster assignments: (100, 2)
+Feature matrix: (100, 6) (100 participants x 6 features)
+Cluster labels: (100,) (3 clusters)
+
+Computing cluster quality metrics...
+Silhouette score: 0.3673
+         Threshold: >= 0.4
+         Status: WARNING (below threshold)
+Davies-Bouldin index: 0.9809
+         Threshold: < 1.5
+         Status: PASS
+Dunn index: 0.0644
+         Threshold: > 0 (higher is better)
+         Status: PASS
+
+Saving quality metrics table...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step04_cluster_quality_metrics.csv
+        3 metrics recorded
+
+Generating quality interpretation...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step04_quality_interpretation.txt
+
+Validating metric value ranges...
+All metrics in valid ranges
+
+'data_min'
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.8/code/step04_validate_cluster_quality.py", line 280, in <module>
+    log(f"       Range: [{validation_result['data_min']:.4f}, {validation_result['data_max']:.4f}]")
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'data_min'
+================================================================================
+STEP 04: Validate Cluster Quality
+================================================================================
+
+Loading standardized features and cluster assignments...
+Standardized features: (100, 7)
+Cluster assignments: (100, 2)
+Feature matrix: (100, 6) (100 participants x 6 features)
+Cluster labels: (100,) (3 clusters)
+
+Computing cluster quality metrics...
+Silhouette score: 0.3673
+         Threshold: >= 0.4
+         Status: WARNING (below threshold)
+Davies-Bouldin index: 0.9809
+         Threshold: < 1.5
+         Status: PASS
+Dunn index: 0.0644
+         Threshold: > 0 (higher is better)
+         Status: PASS
+
+Saving quality metrics table...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step04_cluster_quality_metrics.csv
+        3 metrics recorded
+
+Generating quality interpretation...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step04_quality_interpretation.txt
+
+Validating metric value ranges...
+All metrics in valid ranges
+       Metrics: silhouette=0.3673, davies_bouldin=0.9809, dunn=0.0644
+
+================================================================================
+Step 04 complete
+================================================================================
+
+Outputs:
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step04_cluster_quality_metrics.csv
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step04_quality_interpretation.txt
+
+Next: Step 05 (Bootstrap stability assessment)

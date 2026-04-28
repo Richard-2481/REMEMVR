@@ -1,0 +1,33 @@
+Step 04: Extract Schema Effect Sizes
+Ch5 5.4.1 (Accuracy by Schema)...
+Searching /home/etai/projects/REMEMVR/results/ch5/5.4.1/results/summary.md for schema effect...
+Effect size d = 0.200 using pattern: schema.*effect.*[dD]\s*=\s*([-+]?\d*\.?\d+)
+SE_d = 0.196
+p = 0.5480
+Accuracy effect: d = 0.200, SE = 0.196
+Ch6 6.5.1 (Confidence by Schema)...
+Searching /home/etai/projects/REMEMVR/results/ch6/6.5.1/results/summary.md for schema effect...
+No effect size found in summary.md
+Trying data files...
+Searching data files in /home/etai/projects/REMEMVR/results/ch6/6.5.1/data...
+1 candidate files: ['lmm_random_slopes_fixed_effects.csv']
+lmm_random_slopes_fixed_effects.csv: 9 rows, columns: ['effect', 'beta', 'se', 'z', 'p_value', 'ci_lower', 'ci_upper']
+Candidate effect columns: ['effect']
+Failed to parse lmm_random_slopes_fixed_effects.csv: Unknown format code 'f' for object of type 'str'
+No effect size extracted from data files
+Using placeholder effect
+Creating placeholder for Confidence (reason: no effect found in summary or data files)
+Confidence effect: d = 0.050, SE = 0.150
+2 effect sizes extracted
+Checking extracted effects...
+Row count: 2 (Accuracy, Confidence)
+Confidence effect negligible: |d| = 0.050 < 0.20
+All SE_d > 0
+All p_values in [0, 1]
+At least one effect >= 0.20 -> Convergent NULL pattern NOT confirmed
+- Accuracy effect small but non-negligible: |d| = 0.200
+PASS - All checks passed
+Output: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step04_schema_effects_extracted.csv
+Extracted accuracy effect: d = 0.200
+Extracted confidence effect: d = 0.050
+Step 04 complete

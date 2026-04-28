@@ -1,0 +1,49 @@
+Step 05: Correlation Analysis with Steiger's Z-Test
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step03_theta_scores.csv
+400 rows
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step02_ctt_full_scores.csv
+400 rows
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step03_ctt_purified_scores.csv
+400 rows
+Merging theta, Full CTT, and Purified CTT on composite_ID
+400 rows retained after merge
+Performing Steiger's z-test (Bonferroni alpha = 0.0167)
+
+Common
+  r(theta, Full CTT) = 0.853
+  r(theta, Purified CTT) = 0.875
+  r(Full CTT, Purified CTT) = 0.957
+  Delta r (Purified - Full) = +0.022
+  Steiger's z = -1.466
+  p (uncorrected) = 0.1426
+  p (Bonferroni) = 0.4277
+  Normality assumption violated
+
+Congruent
+  r(theta, Full CTT) = 0.786
+  r(theta, Purified CTT) = 0.882
+  r(Full CTT, Purified CTT) = 0.924
+  Delta r (Purified - Full) = +0.096
+  Steiger's z = -4.869
+  p (uncorrected) = 0.0000
+  p (Bonferroni) = 0.0000
+  Normality assumption violated
+
+Incongruent
+  r(theta, Full CTT) = 0.799
+  r(theta, Purified CTT) = 0.907
+  r(Full CTT, Purified CTT) = 0.864
+  Delta r (Purified - Full) = +0.108
+  Steiger's z = -4.010
+  p (uncorrected) = 0.0001
+  p (Bonferroni) = 0.0002
+  Normality assumption violated
+
+Checking correlations in [-1, 1]
+All correlations in valid range
+Checking p_bonferroni = min(p_uncorrected * 3, 1.0)
+Bonferroni correction verified
+
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step05_correlation_analysis.csv
+3 rows, 9 columns
+Step 05 complete

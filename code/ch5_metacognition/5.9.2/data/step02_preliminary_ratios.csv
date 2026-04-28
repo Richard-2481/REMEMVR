@@ -1,0 +1,3 @@
+comparison,ICC_accuracy,ICC_confidence,ratio,absolute_difference,stable,interpretation
+single-model,0.007463065445604469,0.2640976039075434,35.38728232151432,0.2566345384619389,False,Single Recip_sq vs Model-avg PowerLaw
+model-averaged,0.007463065445604469,0.04010895222510236,5.374326745148052,0.03264588677949789,False,Model-avg 48 vs Model-avg PowerLaw

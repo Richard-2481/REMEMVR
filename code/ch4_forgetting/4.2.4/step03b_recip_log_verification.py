@@ -1,77 +1,5 @@
 #!/usr/bin/env python3
-# =============================================================================
-# SCRIPT METADATA
-# =============================================================================
-"""
-Step ID: step03b
-Step Name: Recip+Log ROOT Model Verification for RQ 5.2.4
-RQ: results/ch5/5.2.4
-Generated: 2025-12-10
-Updated: 2025-12-10
-
-PURPOSE:
-Verify that IRT-CTT convergence findings (RQ 5.2.4) remain robust when updating
-functional form from Log-only to Recip+Log (matching RQ 5.2.1 ROOT model after
-extended comparison).
-
-KEY QUESTION:
-Do IRT and CTT show EXCEPTIONAL convergence (r=0.87-0.91) regardless of whether
-forgetting trajectories modeled as Log-only or Recip+Log (two-process)?
-
-EXPECTED INPUTS:
-  - data/step03_irt_lmm_input.csv
-    Columns: ['composite_ID', 'UID', 'test', 'domain', 'TSVR_hours', 'IRT_score']
-    Format: Long-format IRT scores (from step03)
-    Expected rows: 800 (100 participants × 4 tests × 2 domains)
-
-  - data/step03_ctt_lmm_input.csv
-    Columns: ['composite_ID', 'UID', 'test', 'domain', 'TSVR_hours', 'CTT_score']
-    Format: Long-format CTT scores (from step03)
-    Expected rows: 800 (100 participants × 4 tests × 2 domains)
-
-EXPECTED OUTPUTS:
-  - data/step03b_irt_lmm_recip_log.pkl
-    Format: IRT model with Recip+Log functional form (statsmodels save format)
-
-  - data/step03b_ctt_lmm_recip_log.pkl
-    Format: CTT model with Recip+Log functional form
-
-  - data/step03b_irt_fixed_effects.csv
-    Columns: ['term', 'estimate', 'se', 'z', 'p']
-    Format: IRT model fixed effects with Recip+Log
-
-  - data/step03b_ctt_fixed_effects.csv
-    Format: CTT model fixed effects with Recip+Log
-
-  - data/step03b_convergence_comparison.csv
-    Columns: ['domain', 'r_log', 'r_recip_log', 'delta_r', 'both_exceptional']
-    Format: Convergence comparison Log vs Recip+Log
-    Expected: r > 0.87 for both models (EXCEPTIONAL threshold)
-
-  - data/step03b_random_slope_variance_comparison.csv
-    Columns: ['model', 'log_only_var', 'recip_log_var', 'variance_pattern']
-    Format: Random slope variance comparison
-    Expected: IRT detects variance, CTT does not (robust pattern)
-
-  - logs/step03b_recip_log_verification.log
-    Format: Execution log with convergence reports
-
-VALIDATION CRITERIA:
-  - Both IRT and CTT models converge with Recip+Log
-  - Correlations remain EXCEPTIONAL (r > 0.87) for both domains
-  - IRT random slope variance > 0 (detects individual differences)
-  - CTT random slope variance = 0 (no individual differences)
-  - Pattern robust across functional forms
-
-g_code REASONING:
-- Approach: Refit step03 models with Recip+Log (ROOT 5.2.1 functional form)
-- Why this approach: IRT-CTT convergence tests relationship, expected robust
-- Precedent: RQ 5.4.4 IRT-CTT improved convergence with Recip+Log (κ: 0.667→1.00)
-- Expected outcome: Convergence r remains EXCEPTIONAL, variance divergence persists
-- Data flow: Load step03 inputs → Add recip_TSVR → Fit parallel IRT/CTT models →
-  Extract correlations + random effects → Compare to original Log-only results
-"""
-# =============================================================================
+"""Recip+Log ROOT Model Verification for RQ 5.2.4: Verify that IRT-CTT convergence findings (RQ 5.2.4) remain robust when updating"""
 
 import sys
 from pathlib import Path
@@ -92,7 +20,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step03b_recip_log_verification.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -107,10 +34,7 @@ if __name__ == "__main__":
         log("  RQ 5.2.1 ROOT model changed from Log-only to Recip+Log")
         log("  Testing if IRT-CTT convergence (r=0.87-0.91) robust to functional form")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Original LMM Inputs and Add Recip+Log Transformation
-        # =====================================================================
+        # Load Original LMM Inputs and Add Recip+Log Transformation
         log("[STEP 1] Loading LMM inputs and adding recip_TSVR transformation...")
         log("")
 
@@ -142,10 +66,7 @@ if __name__ == "__main__":
         log(f"  IRT input: {irt_input['UID'].nunique()} participants, {irt_input['domain'].nunique()} domains")
         log(f"  CTT input: {ctt_input['UID'].nunique()} participants, {ctt_input['domain'].nunique()} domains")
         log("")
-
-        # =====================================================================
-        # STEP 2: Fit IRT Model with Recip+Log Functional Form
-        # =====================================================================
+        # Fit IRT Model with Recip+Log Functional Form
         log("[STEP 2] Fitting IRT model with Recip+Log functional form...")
         log("")
 
@@ -190,10 +111,7 @@ if __name__ == "__main__":
             irt_recip_slope_var = 0.0
             log(f"  IRT recip_TSVR slope variance: 0.000 (intercepts-only)")
         log("")
-
-        # =====================================================================
-        # STEP 3: Fit CTT Model with Recip+Log Functional Form
-        # =====================================================================
+        # Fit CTT Model with Recip+Log Functional Form
         log("[STEP 3] Fitting CTT model with Recip+Log functional form...")
         log("")
 
@@ -238,10 +156,7 @@ if __name__ == "__main__":
             ctt_recip_slope_var = 0.0
             log(f"  CTT recip_TSVR slope variance: 0.000 (intercepts-only)")
         log("")
-
-        # =====================================================================
-        # STEP 4: Calculate IRT-CTT Correlations by Domain (Recip+Log Model)
-        # =====================================================================
+        # Calculate IRT-CTT Correlations by Domain (Recip+Log Model)
         log("[STEP 4] Calculating IRT-CTT correlations by domain (Recip+Log predictions)...")
         log("")
 
@@ -275,10 +190,7 @@ if __name__ == "__main__":
         log("")
 
         convergence_df = pd.DataFrame(convergence_results)
-
-        # =====================================================================
-        # STEP 5: Compare to Original Log-Only Results
-        # =====================================================================
+        # Compare to Original Log-Only Results
         log("[STEP 5] Comparing to original Log-only results...")
         log("")
 
@@ -321,10 +233,7 @@ if __name__ == "__main__":
             log("  Cannot compare to original Log-only results")
             log("")
             comparison = convergence_df  # Use only Recip+Log results
-
-        # =====================================================================
-        # STEP 6: Compare Random Slope Variance (Log vs Recip+Log)
-        # =====================================================================
+        # Compare Random Slope Variance (Log vs Recip+Log)
         log("[STEP 6] Comparing random slope variance patterns...")
         log("")
 
@@ -370,10 +279,7 @@ if __name__ == "__main__":
         variance_comparison.to_csv(variance_file, index=False, encoding='utf-8')
         log(f"  Saved: {variance_file.name}")
         log("")
-
-        # =====================================================================
-        # STEP 7: Save Model Objects and Fixed Effects
-        # =====================================================================
+        # Save Model Objects and Fixed Effects
         log("[STEP 7] Saving model objects and fixed effects tables...")
         log("")
 
@@ -412,10 +318,7 @@ if __name__ == "__main__":
         ctt_fe.to_csv(ctt_fe_file, index=False, encoding='utf-8')
         log(f"  Saved: {ctt_fe_file.name} ({len(ctt_fe)} terms)")
         log("")
-
-        # =====================================================================
-        # STEP 8: Verification Summary
-        # =====================================================================
+        # Verification Summary
         log("[STEP 8] VERIFICATION SUMMARY")
         log("=" * 80)
         log("")
@@ -453,16 +356,16 @@ if __name__ == "__main__":
 
         log("")
         log("=" * 80)
-        log("[SUCCESS] Step 03b complete")
-        log(f"[INFO] All outputs saved to {RQ_DIR / 'data'}")
+        log("Step 03b complete")
+        log(f"All outputs saved to {RQ_DIR / 'data'}")
         sys.exit(0)
 
     except Exception as e:
         log("")
         log("=" * 80)
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         log("")
-        log("[TRACEBACK] Full error details:")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

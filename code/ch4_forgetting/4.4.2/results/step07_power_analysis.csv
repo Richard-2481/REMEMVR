@@ -1,0 +1,12 @@
+Metric,Value
+Observed Beta,-0.0180
+Standard Error,0.2260
+Z-value,-0.0780
+P-value (uncorrected),0.9380
+Cohen's d,-0.0180
+Cohen's f²,0.000005
+Post-hoc Power,0.0500
+Classification,SEVERELY UNDERPOWERED
+Sample Size (N),1200
+N for 0.80 Power (observed),374817601426
+N for 0.80 Power (small d=0.20),96349

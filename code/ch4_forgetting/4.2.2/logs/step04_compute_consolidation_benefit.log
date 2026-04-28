@@ -1,0 +1,95 @@
+Step 04: Compute Consolidation Benefit Indices
+
+Loading segment-domain slopes from Step 2...
+step02_segment_domain_slopes.csv (6 rows, 6 cols)
+Input columns match expected: ['segment', 'domain', 'slope', 'se', 'CI_lower', 'CI_upper']
+
+Organizing slopes by domain and segment...
+All 3 domains present in both segments
+
+Computing consolidation benefit indices...
+  what: Early=-0.4455, Late=-0.0686, Benefit=-0.3769 (SE=0.0764)
+  where: Early=-0.4222, Late=-0.0824, Benefit=-0.3398 (SE=0.0764)
+  when: Early=-0.3014, Late=-0.0056, Benefit=-0.2959 (SE=0.0764)
+
+Ranking domains by consolidation benefit...
+  Ranking interpretation:
+    Rank 1 = Best consolidation benefit (least negative = least excess early forgetting)
+    Rank 3 = Worst consolidation benefit (most negative = most excess early forgetting)
+
+  Rank 1: when (benefit=-0.2959)
+  Rank 2: where (benefit=-0.3398)
+  Rank 3: what (benefit=-0.3769)
+
+Saving consolidation benefit indices to /home/etai/projects/REMEMVR/results/ch5/rq2/results/step04_consolidation_benefit.csv...
+step04_consolidation_benefit.csv (3 rows, 8 cols)
+
+Running inline validation checks...
+Row count: 3 rows (what, where, when)
+Ranks: {1, 2, 3} (all unique)
+Benefit values: All numeric (no NaN)
+CI structure: benefit_CI_lower < consolidation_benefit < benefit_CI_upper (all rows)
+
+Step 04 complete - Consolidation benefit indices computed
+
+============================================================
+CONSOLIDATION BENEFIT SUMMARY
+============================================================
+
+Interpretation:
+  - Early slope: forgetting rate per day during consolidation phase (test 0-1)
+  - Late slope: forgetting rate per day during decay phase (test 3-6)
+  - Consolidation benefit: Early - Late (negative = more Early forgetting)
+
+Results:
+  when: benefit=-0.2959 [-0.4456, -0.1461] (significant)
+  where: benefit=-0.3398 [-0.4896, -0.1901] (significant)
+  what: benefit=-0.3769 [-0.5266, -0.2271] (significant)
+
+============================================================
+Step 04: Compute Consolidation Benefit Indices
+
+Loading segment-domain slopes from Step 2...
+step02_segment_domain_slopes.csv (4 rows, 6 cols)
+Input columns match expected: ['segment', 'domain', 'slope', 'se', 'CI_lower', 'CI_upper']
+
+Organizing slopes by domain and segment...
+All 2 domains present in both segments (When excluded)
+
+Computing consolidation benefit indices...
+  what: Early=-0.4564, Late=-0.0710, Benefit=-0.3854 (SE=0.0645)
+  where: Early=-0.4331, Late=-0.0848, Benefit=-0.3483 (SE=0.0645)
+
+Ranking domains by consolidation benefit...
+  Ranking interpretation:
+    Rank 1 = Best consolidation benefit (least negative = least excess early forgetting)
+    Rank 2 = Worst consolidation benefit (most negative = most excess early forgetting)
+
+  Rank 1: where (benefit=-0.3483)
+  Rank 2: what (benefit=-0.3854)
+
+Saving consolidation benefit indices to /home/etai/projects/REMEMVR/results/ch5/5.2.2/results/step04_consolidation_benefit.csv...
+step04_consolidation_benefit.csv (2 rows, 8 cols)
+
+Running inline validation checks...
+Row count: 2 rows (what, where - When excluded)
+Ranks: {1, 2} (all unique)
+Benefit values: All numeric (no NaN)
+CI structure: benefit_CI_lower < consolidation_benefit < benefit_CI_upper (all rows)
+
+Step 04 complete - Consolidation benefit indices computed
+
+============================================================
+CONSOLIDATION BENEFIT SUMMARY
+============================================================
+
+Interpretation:
+  - Early slope: forgetting rate per day during consolidation phase (test 0-1)
+  - Late slope: forgetting rate per day during decay phase (test 3-6)
+  - Consolidation benefit: Early - Late (negative = more Early forgetting)
+
+Results:
+  where: benefit=-0.3483 [-0.4747, -0.2219] (significant)
+  what: benefit=-0.3854 [-0.5118, -0.2590] (significant)
+
+============================================================

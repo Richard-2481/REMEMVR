@@ -1,28 +1,5 @@
 #!/usr/bin/env python3
-# =============================================================================
-# SCRIPT METADATA
-# =============================================================================
-"""
-Step ID: 04
-Step Name: Bootstrap Stability Validation
-RQ: results/ch5/5.1.5
-Generated: 2025-12-02
-
-PURPOSE:
-Bootstrap resampling (B=100) with Jaccard coefficient to assess cluster stability.
-Tests whether the K=2 clustering solution is robust to sampling variation.
-Jaccard >= 0.75 = Stable, 0.60-0.74 = Questionable, < 0.60 = Unstable.
-
-EXPECTED INPUTS:
-  - data/step01_standardized_features.csv (100 x 3: UID, Intercept_z, Slope_z)
-  - data/step03_cluster_assignments.csv (100 x 2: UID, cluster)
-  - data/step02_optimal_k.txt (K=2)
-
-EXPECTED OUTPUTS:
-  - data/step04_bootstrap_jaccard.csv (100 rows: iteration, jaccard)
-  - data/step04_stability_summary.txt (mean Jaccard, 95% CI, classification)
-"""
-# =============================================================================
+"""Bootstrap Stability Validation: Bootstrap resampling (B=100) with Jaccard coefficient to assess cluster stability."""
 
 import sys
 from pathlib import Path
@@ -33,16 +10,12 @@ import traceback
 from sklearn.cluster import KMeans
 from sklearn.metrics import jaccard_score
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# Import validation tool
 from tools.validation import validate_bootstrap_stability
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step04_bootstrap_stability.log"
@@ -51,19 +24,14 @@ RANDOM_STATE = 42
 N_INIT = 50
 N_BOOTSTRAP = 100
 
-# =============================================================================
 # Logging Function
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # Jaccard Computation with Cluster Relabeling
-# =============================================================================
 
 def compute_jaccard_with_relabeling(labels_original: np.ndarray, labels_bootstrap: np.ndarray,
                                     sample_indices: np.ndarray) -> float:
@@ -92,41 +60,33 @@ def compute_jaccard_with_relabeling(labels_original: np.ndarray, labels_bootstra
         # For K>2, use direct comparison (more complex alignment needed for production)
         return jaccard_score(original_subset, labels_bootstrap, average='macro')
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 04: Bootstrap Stability Validation")
+        log("Step 04: Bootstrap Stability Validation")
+        # Load Input Data
 
-        # =========================================================================
-        # STEP 1: Load Input Data
-        # =========================================================================
-
-        log("[LOAD] Loading standardized features...")
+        log("Loading standardized features...")
         standardized_features = pd.read_csv(RQ_DIR / "data" / "step01_standardized_features.csv")
         X = standardized_features[['Intercept_z', 'Slope_z']].values
-        log(f"[LOADED] Feature matrix shape: {X.shape}")
+        log(f"Feature matrix shape: {X.shape}")
 
-        log("[LOAD] Loading original cluster assignments...")
+        log("Loading original cluster assignments...")
         cluster_assignments = pd.read_csv(RQ_DIR / "data" / "step03_cluster_assignments.csv")
         original_labels = cluster_assignments['cluster'].values
-        log(f"[LOADED] Original cluster labels shape: {original_labels.shape}")
+        log(f"Original cluster labels shape: {original_labels.shape}")
 
-        log("[LOAD] Reading K_final from Step 2...")
+        log("Reading K_final from Step 2...")
         with open(RQ_DIR / "data" / "step02_optimal_k.txt", 'r') as f:
             K_final = int(f.read().strip())
-        log(f"[INFO] K_final = {K_final}")
+        log(f"K_final = {K_final}")
 
         N = len(X)
-        log(f"[INFO] N = {N} participants")
+        log(f"N = {N} participants")
+        # Bootstrap Resampling with Jaccard Computation
 
-        # =========================================================================
-        # STEP 2: Bootstrap Resampling with Jaccard Computation
-        # =========================================================================
-
-        log(f"[ANALYSIS] Running {N_BOOTSTRAP} bootstrap iterations...")
+        log(f"Running {N_BOOTSTRAP} bootstrap iterations...")
 
         jaccard_coefficients = []
 
@@ -145,21 +105,18 @@ if __name__ == "__main__":
             jaccard_coefficients.append(jaccard)
 
             if (b + 1) % 20 == 0:
-                log(f"[PROGRESS] Completed {b + 1}/{N_BOOTSTRAP} iterations (current Jaccard: {jaccard:.4f})")
+                log(f"Completed {b + 1}/{N_BOOTSTRAP} iterations (current Jaccard: {jaccard:.4f})")
 
-        log(f"[DONE] Bootstrap resampling complete")
-
-        # =========================================================================
-        # STEP 3: Compute Summary Statistics
-        # =========================================================================
+        log(f"Bootstrap resampling complete")
+        # Compute Summary Statistics
 
         jaccard_array = np.array(jaccard_coefficients)
         mean_jaccard = jaccard_array.mean()
         ci_lower = np.percentile(jaccard_array, 2.5)
         ci_upper = np.percentile(jaccard_array, 97.5)
 
-        log(f"[SUMMARY] Mean Jaccard: {mean_jaccard:.4f}")
-        log(f"[SUMMARY] 95% CI: [{ci_lower:.4f}, {ci_upper:.4f}]")
+        log(f"Mean Jaccard: {mean_jaccard:.4f}")
+        log(f"95% CI: [{ci_lower:.4f}, {ci_upper:.4f}]")
 
         # Classify stability
         if mean_jaccard >= 0.75:
@@ -172,21 +129,18 @@ if __name__ == "__main__":
             stability_class = "Unstable"
             recommendation = "Consider reducing K"
 
-        log(f"[CLASSIFICATION] Stability: {stability_class} ({recommendation})")
+        log(f"Stability: {stability_class} ({recommendation})")
+        # Save Outputs
 
-        # =========================================================================
-        # STEP 4: Save Outputs
-        # =========================================================================
-
-        log("[SAVE] Saving bootstrap Jaccard coefficients...")
+        log("Saving bootstrap Jaccard coefficients...")
         jaccard_df = pd.DataFrame({
             'iteration': list(range(1, N_BOOTSTRAP + 1)),
             'jaccard': jaccard_coefficients
         })
         jaccard_df.to_csv(RQ_DIR / "data" / "step04_bootstrap_jaccard.csv", index=False, encoding='utf-8')
-        log(f"[SAVED] step04_bootstrap_jaccard.csv ({len(jaccard_df)} rows)")
+        log(f"step04_bootstrap_jaccard.csv ({len(jaccard_df)} rows)")
 
-        log("[SAVE] Saving stability summary...")
+        log("Saving stability summary...")
         summary = f"""Bootstrap Stability Validation (B={N_BOOTSTRAP} iterations)
 {'=' * 60}
 
@@ -207,13 +161,10 @@ Threshold Reference:
 """
         with open(RQ_DIR / "data" / "step04_stability_summary.txt", 'w', encoding='utf-8') as f:
             f.write(summary)
-        log(f"[SAVED] step04_stability_summary.txt")
+        log(f"step04_stability_summary.txt")
+        # Run Validation Tool
 
-        # =========================================================================
-        # STEP 5: Run Validation Tool
-        # =========================================================================
-
-        log("[VALIDATION] Running validate_bootstrap_stability...")
+        log("Running validate_bootstrap_stability...")
         validation_result = validate_bootstrap_stability(
             stability_df=jaccard_df,
             min_jaccard_threshold=0.75,
@@ -221,20 +172,20 @@ Threshold Reference:
         )
 
         if validation_result['valid']:
-            log(f"[VALIDATION] PASS - {validation_result['message']}")
+            log(f"PASS - {validation_result['message']}")
         else:
-            log(f"[VALIDATION] WARNING - {validation_result['message']}")
+            log(f"WARNING - {validation_result['message']}")
             # Note: Don't raise error for stability warnings, just report
 
-        log(f"[VALIDATION] Mean Jaccard: {validation_result['mean_jaccard']:.4f}")
-        log(f"[VALIDATION] 95% CI: [{validation_result['ci_lower']:.4f}, {validation_result['ci_upper']:.4f}]")
+        log(f"Mean Jaccard: {validation_result['mean_jaccard']:.4f}")
+        log(f"95% CI: [{validation_result['ci_lower']:.4f}, {validation_result['ci_upper']:.4f}]")
 
-        log(f"[SUCCESS] Step 04 complete")
+        log(f"Step 04 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

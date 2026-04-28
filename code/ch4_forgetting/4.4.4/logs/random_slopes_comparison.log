@@ -1,0 +1,122 @@
+2025-12-31 15:24:28,256 - INFO - ============================================================
+2025-12-31 15:24:28,256 - INFO - RQ 5.4.4: Random Slopes Comparison (validation Certification)
+2025-12-31 15:24:28,256 - INFO - ============================================================
+2025-12-31 15:24:28,256 - INFO - Testing intercepts-only vs intercepts+slopes for parallel LMMs
+2025-12-31 15:24:28,256 - INFO - Mandatory per improvement_taxonomy.md Section 4.4
+
+2025-12-31 15:24:28,256 - INFO - Loading IRT LMM input data...
+2025-12-31 15:24:28,259 - INFO - IRT data: 1200 observations
+2025-12-31 15:24:28,259 - INFO - Loading CTT LMM input data...
+2025-12-31 15:24:28,261 - INFO - CTT data: 1200 observations
+
+2025-12-31 15:24:28,261 - INFO - 
+============================================================
+2025-12-31 15:24:28,261 - INFO - Random Structure Comparison: IRT
+2025-12-31 15:24:28,261 - INFO - ============================================================
+
+2025-12-31 15:24:28,261 - INFO - Fitting Model 1: Intercepts-only (~1)
+2025-12-31 15:24:28,262 - INFO - Fitting IRT_Intercepts with re_formula=~1
+2025-12-31 15:24:28,346 - INFO - IRT_Intercepts: Converged (powell)
+2025-12-31 15:24:28,346 - INFO - Fitting Model 2: Intercepts + Slopes (~recip_TSVR)
+2025-12-31 15:24:28,346 - INFO - Fitting IRT_Slopes with re_formula=~recip_TSVR
+2025-12-31 15:24:28,608 - INFO - IRT_Slopes: Converged (powell)
+2025-12-31 15:24:28,611 - INFO - 
+============================================================
+2025-12-31 15:24:28,611 - INFO - AIC Comparison: IRT
+2025-12-31 15:24:28,612 - INFO - ============================================================
+2025-12-31 15:24:28,612 - INFO - Intercepts-only AIC: 2599.00
+2025-12-31 15:24:28,612 - INFO - Intercepts+Slopes AIC: 2529.98
+2025-12-31 15:24:28,612 - INFO - ΔAIC (Intercepts - Slopes): 69.02
+2025-12-31 15:24:28,612 - INFO - ============================================================
+
+2025-12-31 15:24:28,612 - INFO - Random slope variance: 1.3661
+2025-12-31 15:24:28,612 - INFO - Random slope SD: 1.1688
+2025-12-31 15:24:28,612 - INFO - Outcome: Option A: Slopes improve fit (ΔAIC = 69.02 > 2)
+2025-12-31 15:24:28,612 - INFO - Recommendation: Use slopes model (individual differences in forgetting rates)
+
+2025-12-31 15:24:28,612 - INFO - 
+============================================================
+2025-12-31 15:24:28,612 - INFO - Random Structure Comparison: CTT
+2025-12-31 15:24:28,612 - INFO - ============================================================
+
+2025-12-31 15:24:28,612 - INFO - Fitting Model 1: Intercepts-only (~1)
+2025-12-31 15:24:28,613 - INFO - Fitting CTT_Intercepts with re_formula=~1
+2025-12-31 15:24:28,613 - WARNING - CTT_Intercepts: Powell failed with Error evaluating factor: NameError: name 'ctt' is not defined
+    ctt ~ C(congruence) * (recip_TSVR + log_TSVR)
+    ^^^, trying LBFGS
+2025-12-31 15:24:28,614 - WARNING - CTT_Intercepts: LBFGS failed with Error evaluating factor: NameError: name 'ctt' is not defined
+    ctt ~ C(congruence) * (recip_TSVR + log_TSVR)
+    ^^^
+2025-12-31 15:24:28,614 - ERROR - CTT Intercepts-only FAILED to converge
+2025-12-31 15:24:28,615 - INFO - 
+============================================================
+2025-12-31 15:24:28,615 - INFO - Comparison saved: /home/etai/projects/REMEMVR/results/ch5/5.4.4/data/random_slopes_comparison.csv
+2025-12-31 15:24:28,615 - INFO - ============================================================
+
+2025-12-31 15:24:43,199 - INFO - ============================================================
+2025-12-31 15:24:43,199 - INFO - RQ 5.4.4: Random Slopes Comparison (validation Certification)
+2025-12-31 15:24:43,199 - INFO - ============================================================
+2025-12-31 15:24:43,199 - INFO - Testing intercepts-only vs intercepts+slopes for parallel LMMs
+2025-12-31 15:24:43,199 - INFO - Mandatory per improvement_taxonomy.md Section 4.4
+
+2025-12-31 15:24:43,199 - INFO - Loading IRT LMM input data...
+2025-12-31 15:24:43,201 - INFO - IRT data: 1200 observations
+2025-12-31 15:24:43,202 - INFO - Loading CTT LMM input data...
+2025-12-31 15:24:43,204 - INFO - CTT data: 1200 observations
+
+2025-12-31 15:24:43,204 - INFO - 
+============================================================
+2025-12-31 15:24:43,204 - INFO - Random Structure Comparison: IRT
+2025-12-31 15:24:43,204 - INFO - ============================================================
+
+2025-12-31 15:24:43,204 - INFO - Fitting Model 1: Intercepts-only (~1)
+2025-12-31 15:24:43,204 - INFO - Fitting IRT_Intercepts with re_formula=~1
+2025-12-31 15:24:43,280 - INFO - IRT_Intercepts: Converged (powell)
+2025-12-31 15:24:43,280 - INFO - Fitting Model 2: Intercepts + Slopes (~recip_TSVR)
+2025-12-31 15:24:43,280 - INFO - Fitting IRT_Slopes with re_formula=~recip_TSVR
+2025-12-31 15:24:43,537 - INFO - IRT_Slopes: Converged (powell)
+2025-12-31 15:24:43,540 - INFO - 
+============================================================
+2025-12-31 15:24:43,540 - INFO - AIC Comparison: IRT
+2025-12-31 15:24:43,540 - INFO - ============================================================
+2025-12-31 15:24:43,540 - INFO - Intercepts-only AIC: 2599.00
+2025-12-31 15:24:43,541 - INFO - Intercepts+Slopes AIC: 2529.98
+2025-12-31 15:24:43,541 - INFO - ΔAIC (Intercepts - Slopes): 69.02
+2025-12-31 15:24:43,541 - INFO - ============================================================
+
+2025-12-31 15:24:43,541 - INFO - Random slope variance: 1.3661
+2025-12-31 15:24:43,541 - INFO - Random slope SD: 1.1688
+2025-12-31 15:24:43,541 - INFO - Outcome: Option A: Slopes improve fit (ΔAIC = 69.02 > 2)
+2025-12-31 15:24:43,541 - INFO - Recommendation: Use slopes model (individual differences in forgetting rates)
+
+2025-12-31 15:24:43,542 - INFO - 
+============================================================
+2025-12-31 15:24:43,542 - INFO - Random Structure Comparison: CTT
+2025-12-31 15:24:43,542 - INFO - ============================================================
+
+2025-12-31 15:24:43,542 - INFO - Fitting Model 1: Intercepts-only (~1)
+2025-12-31 15:24:43,542 - INFO - Fitting CTT_Intercepts with re_formula=~1
+2025-12-31 15:24:43,612 - INFO - CTT_Intercepts: Converged (powell)
+2025-12-31 15:24:43,612 - INFO - Fitting Model 2: Intercepts + Slopes (~recip_TSVR)
+2025-12-31 15:24:43,612 - INFO - Fitting CTT_Slopes with re_formula=~recip_TSVR
+2025-12-31 15:24:43,880 - INFO - CTT_Slopes: Converged (powell)
+2025-12-31 15:24:43,883 - INFO - 
+============================================================
+2025-12-31 15:24:43,883 - INFO - AIC Comparison: CTT
+2025-12-31 15:24:43,883 - INFO - ============================================================
+2025-12-31 15:24:43,883 - INFO - Intercepts-only AIC: -1075.48
+2025-12-31 15:24:43,883 - INFO - Intercepts+Slopes AIC: -1077.45
+2025-12-31 15:24:43,883 - INFO - ΔAIC (Intercepts - Slopes): 1.98
+2025-12-31 15:24:43,883 - INFO - ============================================================
+
+2025-12-31 15:24:43,883 - INFO - Outcome: Option C: Slopes converge but don't improve (|ΔAIC| = 1.98 < 2)
+2025-12-31 15:24:43,883 - INFO - Recommendation: Keep intercepts-only (negligible slope variance, homogeneous effects CONFIRMED)
+
+2025-12-31 15:24:43,885 - INFO - 
+============================================================
+2025-12-31 15:24:43,885 - INFO - Comparison saved: /home/etai/projects/REMEMVR/results/ch5/5.4.4/data/random_slopes_comparison.csv
+2025-12-31 15:24:43,885 - INFO - ============================================================
+
+2025-12-31 15:24:43,886 - INFO - 
+Random slopes comparison COMPLETE
+2025-12-31 15:24:43,887 - INFO - BLOCKER RESOLVED: Section 4.4 random effects testing performed

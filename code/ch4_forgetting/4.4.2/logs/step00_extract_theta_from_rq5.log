@@ -1,0 +1,23 @@
+Step 0: Extract Theta Scores from RQ 5.5
+[DEPENDENCY CHECK] Validating RQ 5.5 completion status...
+RQ 5.5 dependency satisfied (status = success)
+Loading RQ 5.5 theta scores...
+step03_theta_scores.csv (400 rows, 7 cols)
+Validating theta scores structure...
+Column count correct (7 columns)
+Column names correct
+Row count correct (400 rows)
+Theta value ranges valid (all in [-3, 3])
+SE value ranges valid (all in [0.1, 1.0])
+No missing data (all theta and SE columns complete)
+Saving cached theta scores...
+step00_theta_scores_from_rq5.csv (400 rows, 7 cols)
+All checks passed:
+  - RQ 5.5 dependency satisfied
+  - Theta file exists and loaded
+  - Row count correct (400)
+  - Column count correct (7)
+  - Theta ranges valid ([-3, 3])
+  - SE ranges valid ([0.1, 1.0])
+  - No missing data
+Step 0 complete

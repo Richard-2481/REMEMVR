@@ -1,0 +1,15 @@
+Step 8: Location-Specific Correlations
+1600 rows
+Test values: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Computed 0 correlations (should be 8)
+step08_location_correlations.csv (0 rows)
+step08_scatterplot_data.csv
+'location'
+Step 8: Location-Specific Correlations
+1600 rows
+Test values: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Computed 8 correlations (should be 8)
+step08_location_correlations.csv (8 rows)
+step08_scatterplot_data.csv
+step08_correlation_differences.csv
+Step 8 complete

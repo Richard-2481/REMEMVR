@@ -1,0 +1,47 @@
+================================================================================
+STEP 06: CONFIDENCE RATING RESPONSE PATTERN ANALYSIS
+================================================================================
+Input: /home/etai/projects/REMEMVR/results/ch6/6.6.1/data/step00_item_level.csv
+Output: /home/etai/projects/REMEMVR/results/ch6/6.6.1/data/step06_response_patterns.csv
+
+Loading item-level data...
+✓ Loaded 28,800 item-responses from 100 participants
+
+Analyzing response patterns per participant...
+--------------------------------------------------------------------------------
+✓ Analyzed 100 participants
+
+================================================================================
+AGGREGATE RESPONSE PATTERN STATISTICS
+================================================================================
+Total Participants: 100
+Full-scale users (all 5 levels): 97 (97.0%)
+Extremes-only users (0.2 and 1.0): 0 (0.0%)
+Restricted range (SD < 0.2): 6 (6.0%)
+Mean rating SD: 0.300
+Median levels used: 5
+
+================================================================================
+INTERPRETATION
+================================================================================
+✓ GOOD: Majority of participants use full confidence scale
+  Interpretation: Confidence ratings reflect nuanced metacognitive judgments
+✓ GOOD: Low extremes-only usage (0.0%)
+⚠ WARNING: Mean SD (0.300) suggests restricted variability
+  Interpretation: Participants not differentiating confidence levels well
+
+================================================================================
+SAVING RESULTS
+================================================================================
+✓ Results saved: /home/etai/projects/REMEMVR/results/ch6/6.6.1/data/step06_response_patterns.csv
+  Rows: 100
+  Columns: 8
+
+================================================================================
+VALIDATION
+================================================================================
+✓ All validation checks passed
+
+================================================================================
+STEP 06 COMPLETE - Response patterns documented per Section 1.4
+================================================================================

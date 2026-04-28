@@ -19,7 +19,6 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 RQ_DIR = SCRIPT_DIR.parent
 PROJECT_ROOT = RQ_DIR.parents[2]
 
-# Add project root to path for imports
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Setup logging

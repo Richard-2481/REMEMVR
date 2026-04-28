@@ -1,0 +1,2 @@
+analysis,mean_group1,mean_group2,t_statistic,df,p_uncorrected,p_bonferroni,cohens_d,CI_lower,CI_upper,n1,n2
+mnemonic_users_vs_non_users,0.16536218,-0.5134080553326531,0.0,98,0.2509393252137531,0.5018786504275062,0.8249291678847344,0.5145050850333673,0.836489696789949,2,98

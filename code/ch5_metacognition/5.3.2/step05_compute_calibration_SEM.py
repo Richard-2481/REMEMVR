@@ -16,7 +16,6 @@ Tier 1 SEM Validation: CRITICAL FINDING AT RISK
 Input: step00_calibration_by_domain.csv (1200 rows: 100 UID × 4 tests × 3 domains)
 Output: step05_calibration_scores_SEM.csv (1200 rows, with latent_calibration by domain)
 
-Author: Claude Code (Tier 1 Batch - Domain-Stratified SEM)
 Date: 2025-12-28
 """
 
@@ -32,9 +31,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "tools"))
 
 from sem_calibration import compute_difference_score_reliability, SEMCalibration
 
-# ============================================================================
 # SETUP
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.3.2
 LOG_FILE = RQ_DIR / "logs" / "step05_SEM.log"
@@ -71,9 +68,7 @@ log("  - When: r_diff=0.336")
 log("Target: r>0.70 for EACH domain after SEM")
 log("=" * 70)
 
-# ============================================================================
-# STEP 1: Load Merged Domain-Stratified Data
-# ============================================================================
+# Load Merged Domain-Stratified Data
 
 log("\n" + "=" * 70)
 log("STEP 1: Load Domain-Stratified Calibration Data")
@@ -122,9 +117,7 @@ log("No missing values in theta scores")
 
 log("STEP 1 COMPLETE")
 
-# ============================================================================
-# STEP 2: Compute PRE-SEM Reliability BY DOMAIN
-# ============================================================================
+# Compute PRE-SEM Reliability BY DOMAIN
 
 log("\n" + "=" * 70)
 log("STEP 2: Compute PRE-SEM Difference Score Reliability (BY DOMAIN)")
@@ -225,9 +218,7 @@ for res in reliability_results:
 
 log("STEP 2 COMPLETE")
 
-# ============================================================================
-# STEP 3: Compute SEM-Based Latent Calibration (BY DOMAIN)
-# ============================================================================
+# Compute SEM-Based Latent Calibration (BY DOMAIN)
 
 log("\n" + "=" * 70)
 log("STEP 3: Compute SEM-Based Latent Calibration (BY DOMAIN)")
@@ -418,9 +409,7 @@ for diag in sem_diagnostics:
 
 log("STEP 3 COMPLETE")
 
-# ============================================================================
-# STEP 4: Validate & Save SEM Calibration Scores
-# ============================================================================
+# Validate & Save SEM Calibration Scores
 
 log("\n" + "=" * 70)
 log("STEP 4: Validate & Save SEM Calibration Scores")
@@ -456,9 +445,7 @@ log(f"Saved diagnostics: {diagnostics_file}")
 
 log("STEP 4 COMPLETE")
 
-# ============================================================================
 # SUMMARY
-# ============================================================================
 
 log("\n" + "=" * 70)
 log("SEM-BASED DOMAIN-STRATIFIED CALIBRATION COMPLETE")

@@ -1,0 +1,63 @@
+Step 08: power_analysis
+Loading model results...
+4 model comparisons
+24 effect sizes
+3 univariate models
+Computing post-hoc power...
+What: R² = 0.231, Power = 0.844, Min R² (80% power) = 0.221
+Where: R² = 0.228, Power = 0.834, Min R² (80% power) = 0.221
+When: R² = 0.101, Power = 0.198, Min R² (80% power) = 0.221
+Multivariate: R² = -0.001, Power = 0.050, Min R² (80% power) = 0.221
+Summarizing effect sizes with Cohen's conventions...
+Summarized 8 effect sizes
+Saving power analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step08_power_analysis.csv (4 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step08_effect_size_summary.csv (8 rows)
+Validating power analysis results...
+All power values in valid range [0, 1]
+All effect sizes categorized correctly
+All models have power estimates
+All validation checks passed
+Step 08 complete
+Step 08: power_analysis
+Loading model results...
+4 model comparisons
+24 effect sizes
+3 univariate models
+Computing post-hoc power...
+What: R² = 0.231, Power = 0.844, Min R² (80% power) = 0.221
+Where: R² = 0.228, Power = 0.834, Min R² (80% power) = 0.221
+When: R² = 0.101, Power = 0.198, Min R² (80% power) = 0.221
+Multivariate: R² = -0.001, Power = 0.050, Min R² (80% power) = 0.221
+Summarizing effect sizes with Cohen's conventions...
+Summarized 8 effect sizes
+Saving power analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step08_power_analysis.csv (4 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step08_effect_size_summary.csv (8 rows)
+Validating power analysis results...
+All power values in valid range [0, 1]
+All effect sizes categorized correctly
+All models have power estimates
+All validation checks passed
+Step 08 complete
+Step 08: power_analysis
+Loading model results...
+4 model comparisons
+30 effect sizes
+3 univariate models
+Computing post-hoc power...
+What: R² = 0.273, Power = 0.960, Min R² (80% power) = 0.221
+Where: R² = 0.265, Power = 0.947, Min R² (80% power) = 0.221
+When: R² = 0.097, Power = 0.185, Min R² (80% power) = 0.221
+Multivariate: R² = 0.043, Power = 0.073, Min R² (80% power) = 0.221
+Summarizing effect sizes with Cohen's conventions...
+Summarized 9 effect sizes
+Saving power analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step08_power_analysis.csv (4 rows)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step08_effect_size_summary.csv (9 rows)
+Validating power analysis results...
+All power values in valid range [0, 1]
+All effect sizes categorized correctly
+All models have power estimates
+All validation checks passed
+Step 08 complete

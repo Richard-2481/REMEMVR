@@ -17,16 +17,15 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step06_individual_predictors.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
     print(msg, flush=True)
 
 # Load data
-log("[START] Step 06: Individual Predictors (Simplified)")
+log("Step 06: Individual Predictors (Simplified)")
 df = pd.read_csv(RQ_DIR / "data" / "step04_analysis_dataset.csv")
-log(f"[LOADED] Analysis dataset: {len(df)} rows")
+log(f"Analysis dataset: {len(df)} rows")
 
 # Setup regression
 X = df[['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']]
@@ -35,7 +34,7 @@ X_with_const = sm.add_constant(X)
 
 # Fit model
 model = sm.OLS(y, X_with_const).fit()
-log(f"[MODEL] R² = {model.rsquared:.4f}, F = {model.fvalue:.3f}, p = {model.f_pvalue:.6f}")
+log(f"R² = {model.rsquared:.4f}, F = {model.fvalue:.3f}, p = {model.f_pvalue:.6f}")
 
 # Calculate VIF
 vif_values = []
@@ -84,12 +83,12 @@ for i, predictor in enumerate(X.columns):
     
     # Report significance
     sig_bonf = p_bonferroni[i] < (0.000358 if predictor in ['RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T'] else 0.05)
-    log(f"[PREDICTOR] {predictor}: β={results[-1]['beta']:.4f}, p={p_uncorrected[i]:.4f}, sig_bonf={sig_bonf}")
+    log(f"{predictor}: β={results[-1]['beta']:.4f}, p={p_uncorrected[i]:.4f}, sig_bonf={sig_bonf}")
 
 # Save results
 results_df = pd.DataFrame(results)
 results_df.to_csv(RQ_DIR / "data" / "step06_individual_predictors.csv", index=False)
-log(f"[SAVED] Individual predictors results: {len(results_df)} predictors")
+log(f"Individual predictors results: {len(results_df)} predictors")
 
 # Save diagnostics
 with open(RQ_DIR / "data" / "step06_assumption_diagnostics.txt", 'w') as f:
@@ -106,4 +105,4 @@ with open(RQ_DIR / "data" / "step06_assumption_diagnostics.txt", 'w') as f:
         sig = "***" if res['p_bonferroni'] < 0.001 else ("**" if res['p_bonferroni'] < 0.01 else ("*" if res['p_bonferroni'] < 0.05 else ""))
         f.write(f"  {res['predictor']}: β={res['beta']:.4f}, p={res['p_uncorrected']:.4f} {sig}\n")
 
-log("[SUCCESS] Step 06 complete")
+log("Step 06 complete")

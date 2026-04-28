@@ -1,64 +1,5 @@
 #!/usr/bin/env python3
-# =============================================================================
-# SCRIPT METADATA (Generated for RQ 5.3.6)
-# =============================================================================
-"""
-Step ID: step00
-Step Name: Load Dependencies and Validate
-RQ: 5.3.6 - Purified CTT Effects (Paradigms)
-Generated: 2025-12-03
-
-PURPOSE:
-Verify RQ 5.3.1 completion and load required outputs for CTT comparison analysis.
-This step validates that all dependency files exist, checks RQ 5.3.1 status shows
-success, validates schema compliance, and copies required files to current RQ folder.
-
-EXPECTED INPUTS (from RQ 5.3.1):
-  - results/ch5/5.3.1/status.yaml
-    Purpose: Verify RQ 5.3.1 completed successfully
-    Expected: rq_results.status = "success"
-
-  - results/ch5/5.3.1/data/step02_purified_items.csv
-    Actual columns: ['item', 'domain', 'Discrimination', 'Difficulty_1']
-    Expected rows: 40-80 items (purified from ~105 original items)
-    Purpose: Identify which items survived IRT purification
-    Note: domain maps to paradigms (free_recall=IFR, cued_recall=ICR, recognition=IRE)
-
-  - results/ch5/5.3.1/data/step03_theta_scores.csv
-    Actual columns: ['composite_ID', 'domain_name', 'theta']
-    Expected rows: 1200 (400 obs x 3 domains, long format)
-    Purpose: IRT theta scores as convergent validity criterion
-    Note: Long format - one row per observation x domain
-
-  - results/ch5/5.3.1/data/step00_tsvr_mapping.csv
-    Actual columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
-    Expected rows: 400 (100 participants x 4 tests)
-    Purpose: Time-since-viewing-room mapping for LMM trajectory analysis
-
-EXPECTED OUTPUTS:
-  - data/step00_purified_items.csv (copy from RQ 5.3.1)
-  - data/step00_theta_scores.csv (copy from RQ 5.3.1)
-  - data/step00_tsvr_mapping.csv (copy from RQ 5.3.1)
-  - data/step00_dependency_validation_report.txt (>500 bytes)
-  - logs/step00_load_dependencies.log
-
-VALIDATION CRITERIA:
-  - All 4 dependency files exist
-  - RQ 5.3.1 status shows rq_results.status = "success"
-  - Schema validation passes for all CSVs (columns match actual structure)
-  - Row counts match expected ranges
-  - No NaN values in critical columns
-  - Report contains "PASS" for all checks
-
-IMPLEMENTATION NOTES:
-- Cross-RQ dependency: RQ 5.3.1 must complete before RQ 5.3.6 can start
-- If any check fails, raises ValueError with descriptive message
-- Copies files to current RQ folder with step00_ prefix for local access
-- Validation report documents all checks and provides actionable failure messages
-- Actual column names from RQ 5.3.1 differ from initial specification
-  (using actual names: 'item' not 'item_name', 'domain' not 'dimension', etc.)
-"""
-# =============================================================================
+"""Load Dependencies and Validate: Verify RQ 5.3.1 completion and load required outputs for CTT comparison analysis."""
 
 import sys
 from pathlib import Path
@@ -68,14 +9,10 @@ from typing import Dict, List, Any
 import traceback
 import shutil
 
-# Add project root to path for imports
-# CRITICAL: RQ scripts are in results/chX/rqY/code/ (4 levels deep from project root)
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch5/5.3.6
 DEPENDENCY_RQ_DIR = PROJECT_ROOT / "results" / "ch5" / "5.3.1"  # RQ 5.3.1 directory
@@ -116,19 +53,14 @@ EXPECTED_SCHEMAS = {
     }
 }
 
-# =============================================================================
 # Logging Function
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # Validation Functions
-# =============================================================================
 
 def check_file_exists(file_path: Path, min_size_bytes: int = 100) -> Dict[str, Any]:
     """
@@ -179,23 +111,23 @@ def check_rq_status(status_file: Path) -> Dict[str, Any]:
         with open(status_file, 'r', encoding='utf-8') as f:
             status_data = yaml.safe_load(f)
 
-        # Check if rq_results.status exists and equals "success"
-        if "rq_results" not in status_data:
+        # Check if results analysis.status exists and equals "success"
+        if "results analysis" not in status_data:
             return {
                 "status": "FAIL",
-                "message": "rq_results section not found in status.yaml"
+                "message": "results analysis section not found in status.yaml"
             }
 
-        rq_results_status = status_data.get("rq_results", {}).get("status", "")
-        if rq_results_status != "success":
+        results analysis_status = status_data.get("results analysis", {}).get("status", "")
+        if results analysis_status != "success":
             return {
                 "status": "FAIL",
-                "message": f"RQ 5.3.1 status is '{rq_results_status}' (expected 'success')"
+                "message": f"RQ 5.3.1 status is '{results analysis_status}' (expected 'success')"
             }
 
         return {
             "status": "PASS",
-            "message": "RQ 5.3.1 completed successfully (rq_results.status = success)"
+            "message": "RQ 5.3.1 completed successfully (results analysis.status = success)"
         }
 
     except Exception as e:
@@ -328,7 +260,7 @@ def write_validation_report(results: Dict[str, Any], output_path: Path):
         f.write("-" * 80 + "\n\n")
 
         if all_passed:
-            f.write("[PASS] All validation checks passed\n")
+            f.write("All validation checks passed\n")
             f.write("RQ 5.3.1 dependencies verified and ready for RQ 5.3.6 analysis\n\n")
             f.write("Files copied to RQ 5.3.6/data/:\n")
             f.write("  - step00_purified_items.csv\n")
@@ -340,27 +272,22 @@ def write_validation_report(results: Dict[str, Any], output_path: Path):
             f.write("  - tsvr_mapping: Wide format (400 rows = 100 participants x 4 tests)\n")
             f.write("  - Domain mapping: free_recall=IFR, cued_recall=ICR, recognition=IRE\n")
         else:
-            f.write("[FAIL] One or more validation checks failed\n")
+            f.write("One or more validation checks failed\n")
             f.write("RQ 5.3.1 incomplete - run RQ 5.3.1 before RQ 5.3.6\n")
 
         f.write("\n" + "=" * 80 + "\n")
 
-# =============================================================================
 # Main Validation Logic
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 00: Load Dependencies and Validate")
-        log(f"[INFO] Source RQ: {DEPENDENCY_RQ_DIR}")
-        log(f"[INFO] Target RQ: {RQ_DIR}")
+        log("Step 00: Load Dependencies and Validate")
+        log(f"Source RQ: {DEPENDENCY_RQ_DIR}")
+        log(f"Target RQ: {RQ_DIR}")
 
         # Dictionary to store all validation results
         validation_results = {}
-
-        # =========================================================================
         # CHECK 1: Verify all dependency files exist
-        # =========================================================================
         log("\n[CHECK 1] Verifying dependency files exist...")
 
         for file_key, file_path in DEPENDENCY_FILES.items():
@@ -372,11 +299,8 @@ if __name__ == "__main__":
             if result['status'] != "PASS":
                 raise ValueError(f"Dependency file check failed: {result['message']}")
 
-        log("[PASS] All dependency files exist")
-
-        # =========================================================================
+        log("All dependency files exist")
         # CHECK 2: Verify RQ 5.3.1 status shows success
-        # =========================================================================
         log("\n[CHECK 2] Verifying RQ 5.3.1 completion status...")
 
         status_result = check_rq_status(DEPENDENCY_FILES["status"])
@@ -386,11 +310,8 @@ if __name__ == "__main__":
         if status_result['status'] != "PASS":
             raise ValueError(f"RQ 5.3.1 incomplete - run RQ 5.3.1 before RQ 5.3.6")
 
-        log("[PASS] RQ 5.3.1 completed successfully")
-
-        # =========================================================================
+        log("RQ 5.3.1 completed successfully")
         # CHECK 3: Validate CSV schemas
-        # =========================================================================
         log("\n[CHECK 3] Validating CSV file schemas...")
 
         for file_key in ["purified_items", "theta_scores", "tsvr_mapping"]:
@@ -414,11 +335,8 @@ if __name__ == "__main__":
             if result['status'] != "PASS":
                 raise ValueError(f"Schema validation failed for {file_key}: {result['message']}")
 
-        log("[PASS] All CSV schemas validated")
-
-        # =========================================================================
-        # STEP 4: Copy files to current RQ folder
-        # =========================================================================
+        log("All CSV schemas validated")
+        # Copy files to current RQ folder
         log("\n[STEP 4] Copying dependency files to RQ 5.3.6/data/...")
 
         for file_key in ["purified_items", "theta_scores", "tsvr_mapping"]:
@@ -436,36 +354,30 @@ if __name__ == "__main__":
                 raise ValueError(f"Failed to copy {file_key} to {dest_path}")
 
             copied_size = dest_path.stat().st_size
-            log(f"    [COPIED] {copied_size:,} bytes")
+            log(f"    {copied_size:,} bytes")
 
-        log("[PASS] All files copied successfully")
-
-        # =========================================================================
-        # STEP 5: Write validation report
-        # =========================================================================
+        log("All files copied successfully")
+        # Write validation report
         log("\n[STEP 5] Writing validation report...")
 
         write_validation_report(validation_results, OUTPUT_FILES["validation_report"])
 
         report_size = OUTPUT_FILES["validation_report"].stat().st_size
-        log(f"  [SAVED] {OUTPUT_FILES['validation_report']}")
+        log(f"  {OUTPUT_FILES['validation_report']}")
         log(f"  Size: {report_size:,} bytes")
 
         if report_size < 500:
             raise ValueError(f"Validation report too small: {report_size} bytes (expected >=500)")
-
-        # =========================================================================
         # FINAL SUMMARY
-        # =========================================================================
         log("\n" + "=" * 80)
-        log("[SUCCESS] Step 00: Load Dependencies and Validate")
+        log("Step 00: Load Dependencies and Validate")
         log("=" * 80)
         log("\nValidation Summary:")
-        log("  [PASS] All 4 dependency files exist")
-        log("  [PASS] RQ 5.3.1 status shows success")
-        log("  [PASS] All CSV schemas validated")
-        log("  [PASS] All files copied to RQ 5.3.6/data/")
-        log("  [PASS] Validation report written")
+        log("  All 4 dependency files exist")
+        log("  RQ 5.3.1 status shows success")
+        log("  All CSV schemas validated")
+        log("  All files copied to RQ 5.3.6/data/")
+        log("  Validation report written")
 
         log("\nOutput Files:")
         log(f"  - {OUTPUT_FILES['purified_items']} (45 items)")
@@ -484,13 +396,13 @@ if __name__ == "__main__":
         sys.exit(0)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
-        log("\n[TRACEBACK] Full error details:")
+        log(f"\n{str(e)}")
+        log("\nFull error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()
 
-        log("\n[FAIL] Step 00: Load Dependencies and Validate")
+        log("\nStep 00: Load Dependencies and Validate")
         log("RQ 5.3.1 incomplete - run RQ 5.3.1 before RQ 5.3.6")
 
         sys.exit(1)

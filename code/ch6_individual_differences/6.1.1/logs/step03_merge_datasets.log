@@ -1,0 +1,61 @@
+Step 03: Merge Datasets
+Loading cognitive test data from step01...
+Cognitive tests (100 rows, 5 cols)
+Cognitive test columns: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T']
+Loading theta means data from step02...
+Theta means (100 rows, 2 cols)
+Theta means columns: ['UID', 'theta_mean']
+Checking for missing data in cognitive tests...
+Participants missing NART: 3
+Participants missing any cognitive test: 3
+Found 3 participants with missing NART
+After removing missing NART: 97 participants remain
+Merging cognitive tests with theta means on UID...
+Successfully merged datasets: 97 participants
+Merge retention: 97/97 cognitive, 97/100 theta
+Good merge retention: 97/97 = 100.00%
+Validating merged dataset...
+Final analysis dataset: 97 participants
+Columns: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T', 'theta_mean']
+Theta range: [-1.326, 1.559]
+Saving merged analysis dataset to /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step03_merged_analysis.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step03_merged_analysis.csv (97 rows, 6 cols)
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['RPM_T', 'UID', 'NART_T', 'RAVLT_T', 'BVMT_T', 'theta_mean']
+n_required: 6
+n_missing: 0
+Sample size adequate (N >= 90)
+Complete cases only - no missing data
+Step 03 complete
+Step 03: Merge Datasets
+Loading cognitive test data from step01...
+Cognitive tests (97 rows, 8 cols)
+Cognitive test columns: ['UID', 'RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T']
+Loading theta means data from step02...
+Theta means (100 rows, 2 cols)
+Theta means columns: ['UID', 'theta_mean']
+Checking for missing data in cognitive tests...
+Participants missing NART: 0
+Participants missing any cognitive test: 0
+No missing NART data - all participants retained
+Merging cognitive tests with theta means on UID...
+Successfully merged datasets: 97 participants
+Merge retention: 97/97 cognitive, 97/100 theta
+Good merge retention: 97/97 = 100.00%
+Validating merged dataset...
+Final analysis dataset: 97 participants
+Columns: ['UID', 'RAVLT_T', 'RAVLT_DR_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T', 'theta_mean']
+Theta range: [-1.326, 1.559]
+Saving merged analysis dataset to /home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step03_merged_analysis.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step03_merged_analysis.csv (97 rows, 9 cols)
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['theta_mean', 'NART_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'UID', 'BVMT_T', 'BVMT_Pct_Ret_T', 'RAVLT_DR_T', 'RAVLT_T']
+n_required: 9
+n_missing: 0
+Sample size adequate (N >= 90)
+Complete cases only - no missing data
+Step 03 complete

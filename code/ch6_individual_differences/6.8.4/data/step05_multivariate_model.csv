@@ -1,0 +1,5 @@
+test_statistic,statistic_name,F_stat,p_value,partial_eta2
+Pillai,Pillai's Trace,,,
+Wilks,Wilks' Lambda,,,
+Hotelling,Hotelling-Lawley Trace,,,
+Roy,Roy's Greatest Root,,,

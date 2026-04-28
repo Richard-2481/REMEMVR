@@ -1,0 +1,74 @@
+Step 00: validate_data_availability
+Loading dfvr.csv data...
+dfvr.csv (400 rows, 244 cols)
+Running validate_data_columns...
+Column validation complete
+Checking sleep data completeness...
+hours-slept-night-before: 0/400 missing (0.0%)
+sleep-quality--1=bad-1=good: 0/400 missing (0.0%)
+Saving validation results...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step00_data_validation.csv (1 row, 8 cols)
+Running validate_data_format...
+validate_data_format() got an unexpected keyword argument 'expected_format'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.4/code/step00_validate_data_availability.py", line 194, in <module>
+    format_validation = validate_data_format(
+                        ^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_data_format() got an unexpected keyword argument 'expected_format'
+Step 00: validate_data_availability
+Loading dfvr.csv data...
+dfvr.csv (400 rows, 244 cols)
+Running validate_data_columns...
+Column validation complete
+Checking sleep data completeness...
+hours-slept-night-before: 0/400 missing (0.0%)
+sleep-quality--1=bad-1=good: 0/400 missing (0.0%)
+Saving validation results...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step00_data_validation.csv (1 row, 8 cols)
+Running validate_data_format...
+Column validation: PASS
+Sleep completeness: PASS
+Format validation: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Are sleep variables available and complete in dfvr.csv for 400 observations?
+2. What did we find?
+   -> 400 total rows, sleep completeness: True
+3. What does it mean?
+   -> Data validation determines if sleep-performance analysis can proceed
+4. What should we do next?
+   -> If validation passed: proceed to step01 sleep extraction
+   -> If validation failed: investigate data quality issues
+=========================
+
+Step 00 complete
+Step 00: validate_data_availability
+Loading dfvr.csv data...
+dfvr.csv (400 rows, 244 cols)
+Running validate_data_columns...
+Column validation complete
+Checking sleep data completeness...
+hours-slept-night-before: 0/400 missing (0.0%)
+sleep-quality--1=bad-1=good: 0/400 missing (0.0%)
+Saving validation results...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step00_data_validation.csv (1 row, 8 cols)
+Running validate_data_format...
+Column validation: PASS
+Sleep completeness: PASS
+Format validation: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Are sleep variables available and complete in dfvr.csv for 400 observations?
+2. What did we find?
+   -> 400 total rows, sleep completeness: True
+3. What does it mean?
+   -> Data validation determines if sleep-performance analysis can proceed
+4. What should we do next?
+   -> If validation passed: proceed to step01 sleep extraction
+   -> If validation failed: investigate data quality issues
+=========================
+
+Step 00 complete

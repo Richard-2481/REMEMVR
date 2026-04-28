@@ -1,0 +1,2 @@
+model_name,n,p,in_sample_r2,adjusted_r2,ols_loocv_r2,ridge_loocv_r2,ridge_alpha,shrinkage_ols,shrinkage_ridge
+calibration_prediction,100,8,0.0715,-0.0101,-0.1524,-0.0256,1000.0,0.2238,0.0971

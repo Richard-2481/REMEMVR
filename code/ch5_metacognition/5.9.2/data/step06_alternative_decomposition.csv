@@ -1,0 +1,2 @@
+method,D_total,scaling_pct,notes
+primary_binary_scaling,0.2566345384619389,0.0,Uses binary confidence ICC to isolate scaling artifact

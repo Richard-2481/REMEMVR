@@ -1,0 +1,11 @@
+component,value
+var_intercept,0.31154891540136964
+var_slope,0.0023951413521619627
+cov_int_slope,0.001035552927844474
+var_residual,0.3185375061797758
+ICC_slope,0.007463065445604469
+ICC_conditional,0.00378689513264835
+N_participants,100
+source_RQ,ch5/5.1.4
+functional_form,PowerLaw_lambda_0.41
+N_models,9.84

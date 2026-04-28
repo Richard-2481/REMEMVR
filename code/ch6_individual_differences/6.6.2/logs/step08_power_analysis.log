@@ -1,0 +1,43 @@
+Step 08: power_analysis (Forgetting + Pct Retention)
+Loading correlation results...
+Bivariate correlations: /home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step04_bivariate_correlation.csv (2 rows)
+Partial correlations: /home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step05_partial_correlation.csv (2 rows)
+
+Analyzing bivariate correlations...
+RAVLT_Forgetting bivariate: r=0.3324, effect=medium, power=0.86
+RAVLT_Pct_Ret bivariate: r=-0.3183, effect=medium, power=0.86
+
+Analyzing partial correlations...
+RAVLT_Forgetting partial: r=0.0196, effect=negligible, power=0.08
+RAVLT_Pct_Ret partial: r=0.0116, effect=negligible, power=0.08
+
+Saving power analysis results...
+/home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step08_power_analysis.csv (4 rows, 6 cols)
+Running validate_probability_range on power...
+valid: True
+message: All probability values valid (n=1 columns, 4 total values in [0, 1]).
+violations: []
+PASS - All power values in valid range [0, 1]
+
+Power Analysis Results:
+================================================================================
+  Minimum detectable r (80% power, N=100, alpha=0.05): 0.28
+
+  [RAVLT_Forgetting] bivariate_correlation:
+    Effect size: 0.3324 (medium)
+    Approximate power: 0.86
+
+  [RAVLT_Pct_Ret] bivariate_correlation:
+    Effect size: -0.3183 (medium)
+    Approximate power: 0.86
+
+  [RAVLT_Forgetting] partial_correlation:
+    Effect size: 0.0196 (negligible)
+    Approximate power: 0.08
+
+  [RAVLT_Pct_Ret] partial_correlation:
+    Effect size: 0.0116 (negligible)
+    Approximate power: 0.08
+
+================================================================================
+Step 08 complete

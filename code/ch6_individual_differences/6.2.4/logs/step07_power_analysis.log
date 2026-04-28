@@ -1,0 +1,43 @@
+============================================================
+Step 7: Power Analysis and Effect Size Interpretation
+============================================================
+
+Loaded results:
+  Correlation difference: 0.099
+  Sample size: 100
+
+POWER ANALYSIS:
+  Observed z-statistic: 0.689
+  Critical z-value (α=0.05): 1.645
+  Power achieved: 0.170
+  Minimum detectable difference (80% power): 0.343
+  Required N for 80% power: 16
+
+EFFECT SIZE INTERPRETATION:
+  Correlation difference: 0.099
+  Effect size category: negligible
+
+VR SCAFFOLDING ASSESSMENT:
+  RAVLT age correlation: r = -0.292
+  REMEMVR age correlation: r = -0.193
+  Steiger test p-value: 0.2211
+  → WEAK support: Expected pattern but not significant
+
+CLINICAL SIGNIFICANCE:
+  Limited support for VR scaffolding - further research needed
+
+LIMITATIONS:
+  Cross-sectional design; N=100 adequate for medium effects but limited for small effects; Power=0.17 suggests larger sample needed
+
+Power analysis: achieved power = 0.170
+Effect interpretation: correlation difference = 0.099
+Scaffolding support: WEAK
+
+Saved results to data folder
+
+Step 7 completed successfully
+
+============================================================
+ALL ANALYSIS STEPS COMPLETE
+Ready for validation
+============================================================

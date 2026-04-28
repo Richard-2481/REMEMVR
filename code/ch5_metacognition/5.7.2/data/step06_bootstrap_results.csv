@@ -1,0 +1,8 @@
+metric,value
+r_original,0.21351443398554756
+ci_lower,0.021273662013844386
+ci_upper,0.4059910931835335
+bootstrap_mean,0.2146403983394467
+bootstrap_sd,0.09984940956511054
+ci_excludes_zero,True
+n_bootstrap,10000

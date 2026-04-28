@@ -146,40 +146,40 @@ def main():
     logger = setup_logging(log_path)
 
     log("\n" + "="*60, logger)
-    log("[START] Step 06: Compute Post-Hoc Contrasts (Decision D068)", logger)
+    log("Step 06: Compute Post-Hoc Contrasts (Decision D068)", logger)
     log("="*60 + "\n", logger)
 
     try:
         # Load Step 05 coefficients
-        log("[LOAD] Loading Step 05 fixed effects coefficients...", logger)
+        log("Loading Step 05 fixed effects coefficients...", logger)
         coef_path = data_dir / "step05_lmm_coefficients.csv"
         df_coef = pd.read_csv(coef_path)
-        log(f"[LOADED] step05_lmm_coefficients.csv ({len(df_coef)} rows)\n", logger)
+        log(f"step05_lmm_coefficients.csv ({len(df_coef)} rows)\n", logger)
 
         # Check interaction significance
-        log("[CHECK] Checking Domain × Time interaction significance...", logger)
+        log("Checking Domain × Time interaction significance...", logger)
         interaction_terms = df_coef[df_coef['term'].str.contains(':log_TSVR')]
-        log(f"[FOUND] {len(interaction_terms)} interaction terms:\n", logger)
+        log(f"{len(interaction_terms)} interaction terms:\n", logger)
         for _, row in interaction_terms.iterrows():
             log(f"  - {row['term']}: p={row['p_value']:.4f}", logger)
 
         min_interaction_p = interaction_terms['p_value'].min()
-        log(f"\n[DECISION] Minimum interaction p-value: {min_interaction_p:.4f}", logger)
-        log(f"[DECISION] Threshold: 0.05", logger)
+        log(f"\nMinimum interaction p-value: {min_interaction_p:.4f}", logger)
+        log(f"Threshold: 0.05", logger)
 
         if min_interaction_p < 0.05:
-            log(f"[DECISION] Result: SIGNIFICANT (p < 0.05)\n", logger)
-            log("[COMPUTE] Domain × Time interaction IS significant", logger)
+            log(f"Result: SIGNIFICANT (p < 0.05)\n", logger)
+            log("Domain × Time interaction IS significant", logger)
             log("          Post-hoc pairwise contrasts appropriate\n", logger)
 
             # Load data and re-fit model
-            log("[LOAD] Loading LMM input data for model re-fitting...", logger)
+            log("Loading LMM input data for model re-fitting...", logger)
             lmm_input_path = data_dir / "step04_lmm_input.csv"
             df_lmm = pd.read_csv(lmm_input_path)
-            log(f"[LOADED] step04_lmm_input.csv ({len(df_lmm)} rows)\n", logger)
+            log(f"step04_lmm_input.csv ({len(df_lmm)} rows)\n", logger)
 
             # Re-fit model
-            log("[FIT] Re-fitting LMM model...", logger)
+            log("Re-fitting LMM model...", logger)
             log("      Formula: theta ~ C(paradigm) * log_TSVR", logger)
             log("      Random effects: ~log_TSVR | UID", logger)
             log("      Method: powell (ML estimation)\n", logger)
@@ -194,13 +194,13 @@ def main():
                     re_formula="~log_TSVR"
                 ).fit(method='powell', maxiter=1000, reml=False)
 
-            log(f"[FITTED] Model converged: {model.converged}", logger)
+            log(f"Model converged: {model.converged}", logger)
             log(f"         AIC: {model.aic:.2f}", logger)
             log(f"         BIC: {model.bic:.2f}", logger)
             log(f"         Log-Likelihood: {model.llf:.2f}\n", logger)
 
             # Compute contrasts
-            log("[ANALYSIS] Computing pairwise slope contrasts...", logger)
+            log("Computing pairwise slope contrasts...", logger)
             log("           Implementing Decision D068: Dual p-value reporting", logger)
             log("           - Family-wise alpha: 0.05", logger)
             log("           - Number of comparisons: 3", logger)
@@ -214,7 +214,7 @@ def main():
             # Save contrasts
             contrasts_path = data_dir / "step06_post_hoc_contrasts.csv"
             df_contrasts.to_csv(contrasts_path, index=False, float_format='%.6f')
-            log(f"[SAVED] {contrasts_path.name} ({len(df_contrasts)} rows)\n", logger)
+            log(f"{contrasts_path.name} ({len(df_contrasts)} rows)\n", logger)
 
             # Print contrasts summary
             log("="*60, logger)
@@ -271,11 +271,11 @@ Significant Contrasts (Bonferroni-corrected p < 0.05):
 
             decision_path = data_dir / "step06_contrast_decision.txt"
             decision_path.write_text(decision_text)
-            log(f"[SAVED] {decision_path.name}\n", logger)
+            log(f"{decision_path.name}\n", logger)
 
         else:
-            log(f"[DECISION] Result: NOT SIGNIFICANT (p >= 0.05)\n", logger)
-            log("[SKIP] Domain × Time interaction is NOT significant", logger)
+            log(f"Result: NOT SIGNIFICANT (p >= 0.05)\n", logger)
+            log("Domain × Time interaction is NOT significant", logger)
             log("       Post-hoc contrasts not appropriate (NULL hypothesis supported)\n", logger)
 
             # Create empty contrasts file
@@ -284,7 +284,7 @@ Significant Contrasts (Bonferroni-corrected p < 0.05):
             ])
             contrasts_path = data_dir / "step06_post_hoc_contrasts.csv"
             df_contrasts.to_csv(contrasts_path, index=False)
-            log(f"[SAVED] {contrasts_path.name} (0 rows - empty as expected)\n", logger)
+            log(f"{contrasts_path.name} (0 rows - empty as expected)\n", logger)
 
             # Write decision document
             decision_text = f"""RQ 6.3.1 Step 06: Post-Hoc Contrast Decision
@@ -313,51 +313,51 @@ Result:
 
             decision_path = data_dir / "step06_contrast_decision.txt"
             decision_path.write_text(decision_text)
-            log(f"[SAVED] {decision_path.name}\n", logger)
+            log(f"{decision_path.name}\n", logger)
 
         # Validation
         log("="*60, logger)
-        log("[VALIDATION] Checking outputs...", logger)
+        log("Checking outputs...", logger)
         log("="*60 + "\n", logger)
 
         # Check files exist
         assert contrasts_path.exists(), f"Missing {contrasts_path}"
         assert decision_path.exists(), f"Missing {decision_path}"
-        log("[PASS] Required files exist", logger)
+        log("Required files exist", logger)
 
         # Check contrasts file structure
         df_check = pd.read_csv(contrasts_path)
         expected_cols = ['contrast', 'estimate', 'se', 'z', 'p_uncorrected', 'p_bonferroni', 'cohens_d']
         assert list(df_check.columns) == expected_cols, f"Column mismatch: {df_check.columns}"
-        log("[PASS] Contrasts CSV has correct columns", logger)
+        log("Contrasts CSV has correct columns", logger)
 
         if len(df_check) > 0:
             # Check p-value properties
             assert (df_check['p_uncorrected'] >= 0).all() and (df_check['p_uncorrected'] <= 1).all(), "p_uncorrected out of [0,1]"
             assert (df_check['p_bonferroni'] >= 0).all() and (df_check['p_bonferroni'] <= 1).all(), "p_bonferroni out of [0,1]"
             assert (df_check['p_bonferroni'] >= df_check['p_uncorrected']).all(), "Bonferroni < uncorrected"
-            log("[PASS] Dual p-values in valid ranges (Decision D068)", logger)
+            log("Dual p-values in valid ranges (Decision D068)", logger)
 
             # Check SE > 0
             assert (df_check['se'] > 0).all(), "SE not positive"
-            log("[PASS] Standard errors positive", logger)
+            log("Standard errors positive", logger)
 
             # Check finite values
             assert df_check[['estimate', 'se', 'z', 'cohens_d']].notna().all().all(), "NaN in contrasts"
-            log("[PASS] No NaN values in contrasts", logger)
+            log("No NaN values in contrasts", logger)
         else:
-            log("[PASS] Empty contrasts file (expected for non-significant interaction)", logger)
+            log("Empty contrasts file (expected for non-significant interaction)", logger)
 
         log("\n" + "="*60, logger)
-        log("[SUCCESS] Step 06 Complete", logger)
+        log("Step 06 Complete", logger)
         log("="*60 + "\n", logger)
 
         return 0
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}\n", logger)
+        log(f"\n{str(e)}\n", logger)
         import traceback
-        log("[TRACEBACK] Full error details:", logger)
+        log("Full error details:", logger)
         log(traceback.format_exc(), logger)
         return 1
 

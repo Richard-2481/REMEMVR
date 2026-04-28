@@ -1,0 +1,102 @@
+Step 3: Fit Parallel LMMs (IRT-based and CTT-based)
+Loading IRT theta scores...
+step00_irt_theta_from_rq551.csv (800 rows, 7 cols)
+IRT theta range: [-1.87, 2.25]
+Loading CTT mean scores...
+step01_ctt_scores.csv (800 rows, 7 cols)
+CTT score range: [0.100, 1.000]
+Creating log_TSVR transformation...
+log_TSVR range (IRT): [0.693, 5.510]
+log_TSVR range (CTT): [0.693, 5.510]
+Checking data integrity...
+Data integrity checks passed
+Fitting IRT-based LMM with full random structure...
+Formula: irt_theta ~ C(location_type, Treatment('source')) * log_TSVR
+Random: ~log_TSVR (random intercepts + slopes for TSVR)
+Groups: UID
+REML: False (for AIC comparison)
+IRT model (full) convergence: True
+Fitting CTT-based LMM with full random structure...
+Formula: ctt_mean_score ~ C(location_type, Treatment('source')) * log_TSVR
+Random: ~log_TSVR (random intercepts + slopes for TSVR)
+Groups: UID
+REML: False (for AIC comparison)
+CTT model (full) convergence: True
+Both models converged with full random structure
+Extracting fixed effects from IRT model...
+All arrays must be of the same length
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.4/code/step03_fit_parallel_lmms.py", line 309, in <module>
+    irt_coef_df = pd.DataFrame({
+                  ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 782, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 503, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 114, in arrays_to_mgr
+    index = _extract_index(arrays)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 677, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+Step 3: Fit Parallel LMMs (IRT-based and CTT-based)
+Loading IRT theta scores...
+step00_irt_theta_from_rq551.csv (800 rows, 7 cols)
+IRT theta range: [-1.87, 2.25]
+Loading CTT mean scores...
+step01_ctt_scores.csv (800 rows, 7 cols)
+CTT score range: [0.100, 1.000]
+Creating log_TSVR transformation...
+log_TSVR range (IRT): [0.693, 5.510]
+log_TSVR range (CTT): [0.693, 5.510]
+Checking data integrity...
+Data integrity checks passed
+Fitting IRT-based LMM with full random structure...
+Formula: irt_theta ~ C(location_type, Treatment('source')) * log_TSVR
+Random: ~log_TSVR (random intercepts + slopes for TSVR)
+Groups: UID
+REML: False (for AIC comparison)
+IRT model (full) convergence: True
+Fitting CTT-based LMM with full random structure...
+Formula: ctt_mean_score ~ C(location_type, Treatment('source')) * log_TSVR
+Random: ~log_TSVR (random intercepts + slopes for TSVR)
+Groups: UID
+REML: False (for AIC comparison)
+CTT model (full) convergence: True
+Both models converged with full random structure
+Extracting fixed effects from IRT model...
+IRT model: 4 fixed effects
+Extracting fixed effects from CTT model...
+CTT model: 4 fixed effects
+Saving IRT model...
+data/step03_irt_lmm_model.pkl
+Saving CTT model...
+data/step03_ctt_lmm_model.pkl
+Saving IRT model summary...
+data/step03_irt_lmm_summary.txt
+Saving CTT model summary...
+data/step03_ctt_lmm_summary.txt
+Saving IRT fixed effects table...
+data/step03_irt_coefficients.csv (4 rows)
+Saving CTT fixed effects table...
+data/step03_ctt_coefficients.csv (4 rows)
+Creating model metadata...
+data/step03_model_metadata.yaml
+Running validation checks...
+IRT model convergence: Model converged successfully.
+CTT model convergence: Model converged successfully.
+IRT model AIC=1764.26, BIC=1801.73
+CTT model AIC=-685.18, BIC=-647.71
+Both models have 4 fixed effects (Intercept, LocationType, log_TSVR, interaction)
+All validation checks passed:
+  IRT model converged
+  CTT model converged
+  Both models have identical random structure (symmetric)
+  AIC and BIC are finite for both models
+  Both models have 4 fixed effects
+Step 3 complete
+Random structure: Full (~log_TSVR)
+Next: Run step04_validate_lmm_assumptions.py

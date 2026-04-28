@@ -29,12 +29,12 @@ def log(msg):
 
 def main():
     """Main execution."""
-    log("[START] Step 02: Extract demographics")
+    log("Step 02: Extract demographics")
     
     # Load participant data
-    log("[LOAD] Reading dfnonvr.csv...")
+    log("Reading dfnonvr.csv...")
     df = pd.read_csv(PROJ_ROOT / "data" / "dfnonvr.csv")
-    log(f"[INFO] Loaded {len(df)} participants")
+    log(f"Loaded {len(df)} participants")
     
     # Initialize output dataframe
     demographics = pd.DataFrame()
@@ -43,9 +43,9 @@ def main():
     # Extract age - correct column name: age
     if 'age' in df.columns:
         demographics['age'] = df['age']
-        log(f"[SUCCESS] Age extracted: M={demographics['age'].mean():.1f}, SD={demographics['age'].std():.1f}, Range=[{demographics['age'].min():.0f}, {demographics['age'].max():.0f}]")
+        log(f"Age extracted: M={demographics['age'].mean():.1f}, SD={demographics['age'].std():.1f}, Range=[{demographics['age'].min():.0f}, {demographics['age'].max():.0f}]")
     else:
-        log("[ERROR] Column 'age' not found")
+        log("Column 'age' not found")
         demographics['age'] = np.nan
     
     # Extract sex - correct column name: sex (already coded as 0=female, 1=male)
@@ -54,9 +54,9 @@ def main():
         demographics['sex_binary'] = demographics['sex']  # Already binary
         n_female = (demographics['sex'] == 0).sum()
         n_male = (demographics['sex'] == 1).sum()
-        log(f"[SUCCESS] Sex extracted: {n_female} female, {n_male} male")
+        log(f"Sex extracted: {n_female} female, {n_male} male")
     else:
-        log("[ERROR] Column 'sex' not found")
+        log("Column 'sex' not found")
         demographics['sex'] = np.nan
         demographics['sex_binary'] = np.nan
     
@@ -64,13 +64,13 @@ def main():
     if 'education' in df.columns:
         demographics['education'] = df['education']
         demographics['education_years'] = df['education']  # Already on ordinal scale
-        log(f"[SUCCESS] Education extracted (1-10 ordinal scale)")
+        log(f"Education extracted (1-10 ordinal scale)")
         
         valid_edu = demographics['education'].dropna()
         if len(valid_edu) > 0:
-            log(f"[INFO] Education: M={valid_edu.mean():.1f}, SD={valid_edu.std():.1f}, Range=[{valid_edu.min():.0f}, {valid_edu.max():.0f}]")
+            log(f"Education: M={valid_edu.mean():.1f}, SD={valid_edu.std():.1f}, Range=[{valid_edu.min():.0f}, {valid_edu.max():.0f}]")
     else:
-        log("[ERROR] Column 'education' not found")
+        log("Column 'education' not found")
         demographics['education'] = np.nan
         demographics['education_years'] = np.nan
     
@@ -87,7 +87,7 @@ def main():
     demographics = demographics[output_cols]
     
     # Check for missing values
-    log("[CHECK] Missing values:")
+    log("Missing values:")
     for col in demographics.columns:
         n_missing = demographics[col].isna().sum()
         if n_missing > 0:
@@ -97,10 +97,10 @@ def main():
     output_path = RQ_DIR / "data" / "step02_demographics.csv"
     output_path.parent.mkdir(exist_ok=True)
     demographics.to_csv(output_path, index=False)
-    log(f"[SAVE] Saved demographics to {output_path}")
-    log(f"[INFO] Shape: {demographics.shape}")
+    log(f"Saved demographics to {output_path}")
+    log(f"Shape: {demographics.shape}")
     
-    log("[SUCCESS] Step 02 complete")
+    log("Step 02 complete")
     return 0
 
 if __name__ == "__main__":

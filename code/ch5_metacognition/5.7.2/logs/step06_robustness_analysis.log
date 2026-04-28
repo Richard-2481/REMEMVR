@@ -1,0 +1,97 @@
+================================================================================
+RQ 6.7.2 - Step 06: Bootstrap Robustness Analysis
+Started: 2026-01-17T14:30:42.989812
+================================================================================
+
+[STEP 1] Load Person-Level Data
+------------------------------------------------------------
+  ✓ Loaded 100 participants
+  ✓ Columns: ['UID', 'avg_SD_confidence', 'avg_SD_accuracy', 'avg_mean_accuracy']
+
+  Variable Stats:
+    SD_confidence: M=0.285, SD=0.057, range=[0.097, 0.368]
+    SD_accuracy: M=0.429, SD=0.015, range=[0.380, 0.457]
+    mean_accuracy: M=0.584, SD=0.075, range=[0.398, 0.747]
+
+  Original Partial Correlation:
+    r_partial = 0.2135
+    p_parametric = 0.0329
+
+[STEP 2] Bootstrap 95% CI (10,000 resamples)
+------------------------------------------------------------
+  N bootstrap samples: 10000
+  Bootstrap distribution:
+    Mean: 0.2146
+    SD: 0.0998
+    95% CI: [0.0213, 0.4060]
+
+  CI excludes 0? True
+  ✓ ROBUST: 95% CI does not contain zero
+  ✓ Saved: step06_bootstrap_results.csv
+
+[STEP 3] Leave-One-Out Cross-Validation (100 iterations)
+------------------------------------------------------------
+  N LOO iterations: 100
+  LOO distribution:
+    Mean: 0.2135
+    SD: 0.0105
+    Range: [0.1634, 0.2727]
+    N positive: 100
+    N negative: 0
+
+  All same direction? True
+  ✓ STABLE: All LOO correlations have same sign
+
+  Most influential observation:
+    UID: A100
+    LOO r without this participant: 0.2727
+    Deviation from original: 0.0592
+  ✓ Saved: step06_loo_results.csv
+
+[STEP 4] Permutation Test (1,000 permutations)
+------------------------------------------------------------
+  N permutations: 1000
+  Null distribution:
+    Mean: -0.0021 (expected ~0)
+    SD: 0.0958
+    Range: [-0.3215, 0.3502]
+
+  Observed r: 0.2135
+  p_permutation (two-tailed): 0.0310
+  p_parametric: 0.0329
+
+  Permutation confirms parametric? True
+  ✓ SIGNIFICANT: Permutation p < 0.05
+  ✓ Saved: step06_permutation_results.csv
+
+[STEP 5] Outlier Sensitivity Analysis
+------------------------------------------------------------
+  Threshold: 2.5 SD from mean
+  N outliers detected: 7
+  Outlier indices: [np.int64(29), np.int64(51), np.int64(78), np.int64(90), np.int64(93), np.int64(97), np.int64(99)]
+  Outlier UIDs: ['A039', 'A061', 'A088', 'A100', 'A103', 'A107', 'A109']
+
+  Original r: 0.2135 (p=0.0329)
+  Without outliers r: 0.1495 (p=0.1527)
+  Delta r: -0.0640
+  ⚠️ SENSITIVE: Change >= 0.05 with outliers removed
+  ✓ Saved: step06_outlier_sensitivity.csv
+
+================================================================================
+Robustness Assessment
+================================================================================
+
+  Robustness Criteria: 3/4 passed
+    ✓ Bootstrap CI excludes 0
+    ✓ LOO all same direction
+    ✓ Permutation p < 0.05
+    ✗ Robust to outliers
+
+  Overall Assessment: SUBSTANTIALLY ROBUST
+  Interpretation: Finding passes most checks. p=0.034 is reasonably trustworthy.
+
+[STEP 7] Create Results Summary
+------------------------------------------------------------
+  ✓ Saved: results/robustness_analysis.md
+
+Completed: 2026-01-17T14:30:47.284891

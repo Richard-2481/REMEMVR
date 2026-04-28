@@ -1,0 +1,34 @@
+Step 7: Prepare Trajectory Plot Data
+Loading LMM input data...
+step04_lmm_input.csv (800 rows)
+Loading LMM coefficients...
+step05_lmm_coefficients.csv (7 parameters)
+Extracting model coefficients...
+Intercept: 0.3905
+LocationType[T.source]: 0.1004
+log_Days_plus1: -0.3472
+Interaction: -0.1366
+Creating individual trajectories data...
+Individual trajectories: 800 rows
+Creating model-predicted trajectories...
+Predicted trajectories: 200 rows (100 timepoints x 2 locations)
+Creating summary statistics by time bin...
+Summary by time bin: 8 rows
+Saving plot data files...
+step07_individual_trajectories.csv (800 rows)
+step07_predicted_trajectories.csv (200 rows)
+step07_summary_by_timebin.csv (8 rows)
+Running validation checks...
+Individual trajectories: 800 rows
+Predicted trajectories: 200 rows
+Summary by time bin: 8 rows
+No NaN values in individual trajectories
+Destination predictions monotonically decreasing
+Source predictions monotonically decreasing
+All checks passed
+Trajectory data summary:
+  Individual observations: 800 (100 UIDs x 4 tests x 2 locations)
+  Predicted timepoints: 100 (0.01 to 10.26 days)
+  Time bins: 4 ([0,1), [1,3), [3,6), [6+] days)
+  Location types: 2 (source, destination)
+Step 7 complete - Plot data ready

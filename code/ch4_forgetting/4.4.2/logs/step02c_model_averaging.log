@@ -1,0 +1,38 @@
+================================================================================
+Step 02c: Model Averaging (Congruence × Time)
+================================================================================
+Loading input data and model comparison...
+  Training data: 1200 observations
+  Models compared: 65
+  Congruence levels: ['Common', 'Congruent', 'Incongruent']
+  Best single model: PowerLaw_01 (weight=0.0604)
+  Competitive models (ΔAIC<2): 15
+  Cumulative weight: 56.4%
+
+Creating prediction grid...
+  Grid points: 300 (100 per congruence level)
+
+Computing model-averaged predictions...
+  NOTE: Congruence × Time interaction - averaging across functional forms
+
+Model averaging complete:
+  Models used: 15
+  Effective N models: 13.96
+  Prediction variance: [0.0000, 0.0019]
+
+Model types in competitive set:
+  Reciprocal family: 3 models
+  Power-law family: 6 models
+  Logarithmic family: 6 models
+
+[POWER LAW] Effective alpha (if applicable):
+  Weighted mean: α=0.181
+  Range: [0.1, 0.3]
+
+Saving model-averaged predictions...
+  ✓ step02c_averaged_predictions.csv
+  ✓ step02c_averaging_summary.txt
+
+================================================================================
+Step 02c complete
+================================================================================

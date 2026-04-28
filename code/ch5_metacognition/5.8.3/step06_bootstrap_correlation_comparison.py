@@ -22,7 +22,6 @@ OUTPUT:
 - data/step06_correlation_comparison.csv
 - Append to results/summary.md
 
-Author: Claude Code
 Date: 2025-12-14
 Task: T2.3 from rq_rework.md
 """
@@ -133,10 +132,7 @@ def main():
     log("RQ 6.8.3 - Step 06: Bootstrap CI for Correlation Difference")
     log(f"Started: {datetime.now().isoformat()}")
     log("=" * 80)
-
-    # =========================================================================
-    # STEP 1: Load Random Effects
-    # =========================================================================
+    # Load Random Effects
     log("\n[STEP 1] Load Random Effects")
     log("-" * 60)
 
@@ -164,10 +160,7 @@ def main():
     source_slope = source['random_slope'].values
     dest_int = destination['random_intercept'].values
     dest_slope = destination['random_slope'].values
-
-    # =========================================================================
-    # STEP 2: Compute Original Correlations
-    # =========================================================================
+    # Compute Original Correlations
     log("\n[STEP 2] Compute Original Correlations")
     log("-" * 60)
 
@@ -177,10 +170,7 @@ def main():
     log(f"  Source: r = {r_source:.4f}, p = {p_source:.4f}")
     log(f"  Destination: r = {r_dest:.4f}, p = {p_dest:.4f}")
     log(f"  Difference (Source - Dest): {r_source - r_dest:+.4f}")
-
-    # =========================================================================
-    # STEP 3: Fisher's Z Test for Dependent Correlations
-    # =========================================================================
+    # Fisher's Z Test for Dependent Correlations
     log("\n[STEP 3] Fisher's Z Test for Dependent Correlations")
     log("-" * 60)
 
@@ -204,10 +194,7 @@ def main():
     # Steiger's (1980) test for dependent correlations
     # This is complex - use bootstrap instead as primary method
     log(f"\n  Note: Using bootstrap as primary method (Steiger test complex for this design)")
-
-    # =========================================================================
-    # STEP 4: Bootstrap CI for Difference
-    # =========================================================================
+    # Bootstrap CI for Difference
     log("\n[STEP 4] Bootstrap 95% CI for Correlation Difference")
     log("-" * 60)
 
@@ -229,10 +216,7 @@ def main():
         log(f"  ✓ SIGNIFICANT: Correlations differ between Source and Destination")
     else:
         log(f"  ⚠️ NOT SIGNIFICANT: Cannot conclude correlations differ")
-
-    # =========================================================================
-    # STEP 5: Effect Size (Cohen's q)
-    # =========================================================================
+    # Effect Size (Cohen's q)
     log("\n[STEP 5] Effect Size (Cohen's q)")
     log("-" * 60)
 
@@ -250,10 +234,7 @@ def main():
 
     log(f"  Cohen's q = {q:.4f}")
     log(f"  Interpretation: {interpret_q(q)}")
-
-    # =========================================================================
-    # STEP 6: Comparison to Ch5 Accuracy Pattern
-    # =========================================================================
+    # Comparison to Ch5 Accuracy Pattern
     log("\n[STEP 6] Comparison to Ch5 5.5.6 Accuracy Pattern")
     log("-" * 60)
 
@@ -284,10 +265,7 @@ def main():
     log(f"\n  Cohen's q (Accuracy vs Confidence):")
     log(f"    Source: q = {q_source:.4f} ({interpret_q(q_source)})")
     log(f"    Destination: q = {q_dest:.4f} ({interpret_q(q_dest)})")
-
-    # =========================================================================
-    # STEP 7: Save Results
-    # =========================================================================
+    # Save Results
     log("\n[STEP 7] Save Results")
     log("-" * 60)
 
@@ -312,12 +290,9 @@ def main():
 
     results_df.to_csv(DATA_DIR / "step06_correlation_comparison.csv", index=False)
     log(f"  ✓ Saved: step06_correlation_comparison.csv")
-
-    # =========================================================================
     # SUMMARY
-    # =========================================================================
     log("\n" + "=" * 80)
-    log("[SUMMARY] Correlation Comparison Results")
+    log("Correlation Comparison Results")
     log("=" * 80)
 
     log(f"""
@@ -360,7 +335,7 @@ if __name__ == "__main__":
     try:
         results = main()
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

@@ -1,0 +1,97 @@
+Step 00: Extract Confidence Data (Paradigm-Based)
+Loading data/cache/dfData.csv...
+dfData.csv (400 rows, 214 cols)
+Required columns present: ['UID', 'TEST', 'TSVR']
+Filtering to interactive paradigm TC_* columns...
+105 total TC_* columns
+72 interactive TC_* columns (IFR, ICR, IRE)
+IFR: 24 items
+ICR: 24 items
+IRE: 24 items
+Creating composite_ID from UID and TEST...
+composite_ID for 400 observations
+First 3 composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+Creating IRT input wide-format DataFrame...
+IRT input: 400 rows x 73 cols
+Detecting actual unique TC_* values for n_cats determination...
+Unique TC_* values found: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8), np.float64(1.0)]
+Number of categories (n_cats): 5
+Number of thresholds for GRM: 4 (b1 to b4)
+
+================================================================================
+RECOMMENDATION FOR STEP 01 (IRT Calibration):
+  Set n_cats = 5 in 4_analysis.yaml Step 01 parameters
+  This will create 4 thresholds: b1, b2, ..., b4
+  Item parameter CSV will have columns: item_name, factor, a, b1, b2, ..., b4
+================================================================================
+
+Creating TSVR time mapping...
+TSVR mapping: 400 rows
+[TSVR RANGE] Min: 1.00 hours, Max: 246.24 hours
+Creating 3-factor Q-matrix BY PARADIGM...
+Q-matrix: 72 items
+IFR: 24 items
+ICR: 24 items
+IRE: 24 items
+Saving outputs...
+step00_irt_input.csv (400 rows, 73 cols)
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+step00_q_matrix.csv (72 rows, 4 cols)
+Running inline validation checks...
+All 3 output files exist
+IRT input dimensions: 400 rows x 73 cols
+TSVR_hours range: [1.00, 246.24] outside [0, 168]
+Q-matrix has all 3 paradigms (IFR=24, ICR=24, IRE=24)
+Each item loads on exactly one factor
+All items have <10% missing data
+Some checks FAILED - see details above
+Step 00: Extract Confidence Data (Paradigm-Based)
+Loading data/cache/dfData.csv...
+dfData.csv (400 rows, 478 cols)
+Required columns present: ['UID', 'TEST', 'TSVR']
+Filtering to interactive paradigm TC_* columns...
+105 total TC_* columns
+72 interactive TC_* columns (IFR, ICR, IRE)
+IFR: 24 items
+ICR: 24 items
+IRE: 24 items
+Creating composite_ID from UID and TEST...
+composite_ID for 400 observations
+First 3 composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+Creating IRT input wide-format DataFrame...
+IRT input: 400 rows x 73 cols
+Converting fractional confidence values to integers for IRT...
+Values mapped: 0.2→0, 0.4→1, 0.6→2, 0.8→3, 1.0→4
+Detecting actual unique TC_* values for n_cats determination...
+Unique TC_* values found: [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Number of categories (n_cats): 5
+Number of thresholds for GRM: 4 (b1 to b4)
+
+================================================================================
+RECOMMENDATION FOR STEP 01 (IRT Calibration):
+  Set n_cats = 5 in 4_analysis.yaml Step 01 parameters
+  This will create 4 thresholds: b1, b2, ..., b4
+  Item parameter CSV will have columns: item_name, factor, a, b1, b2, ..., b4
+================================================================================
+
+Creating TSVR time mapping...
+TSVR mapping: 400 rows
+[TSVR RANGE] Min: 1.00 hours, Max: 246.24 hours
+Creating 3-factor Q-matrix BY PARADIGM...
+Q-matrix: 72 items
+IFR: 24 items
+ICR: 24 items
+IRE: 24 items
+Saving outputs...
+step00_irt_input.csv (400 rows, 73 cols)
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+step00_q_matrix.csv (72 rows, 4 cols)
+Running inline validation checks...
+All 3 output files exist
+IRT input dimensions: 400 rows x 73 cols
+TSVR_hours range: [1.00, 246.24] within [0, 300]
+Q-matrix has all 3 paradigms (IFR=24, ICR=24, IRE=24)
+Each item loads on exactly one factor
+All items have <10% missing data
+All critical checks PASSED
+Step 00 complete

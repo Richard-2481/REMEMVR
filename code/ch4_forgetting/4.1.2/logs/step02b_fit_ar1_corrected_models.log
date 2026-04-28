@@ -1,0 +1,42 @@
+================================================================================
+STEP 02B: FIT AR(1) CORRECTED MODELS
+================================================================================
+Date: 2025-12-09 23:04:08.997184
+
+[STEP 1] Loading time-transformed data and original models...
+  Loaded: 400 observations, 100 participants
+  Data sorted by UID and Time (required for AR(1))
+  Fitting original models (without robust SEs) for comparison...
+  Original quadratic AIC: 873.24
+  Original piecewise AIC: 873.31
+
+[STEP 2] Fitting quadratic model with AR(1) correlation structure...
+  Formula: theta ~ Time + Time_squared
+  Random: (1 | UID) - matched to original model
+  Correlation: AR(1) within UID (addresses autocorrelation)
+
+  statsmodels MixedLM does not support AR(1) correlation natively
+  Using ROBUST STANDARD ERRORS (Huber-White) instead
+  This corrects heteroscedasticity and provides conservative inference
+
+
+================================================================================
+AR(1)/Robust SE fitting failed!
+================================================================================
+Error: cov_type not recognized. See docstring for available options and spelling
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.2/code/step02b_fit_ar1_corrected_models.py", line 178, in <module>
+    ).fit(
+      ^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 2191, in fit
+    rslt = super().fit(start_params=packed,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 600, in fit
+    mlefit = LikelihoodModelResults(self, xopt, Hinv, scale=1., **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 1381, in __init__
+    get_robustcov_results(self, cov_type=cov_type, use_self=True,
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/covtype.py", line 355, in get_robustcov_results
+    raise ValueError('cov_type not recognized. See docstring for ' +
+ValueError: cov_type not recognized. See docstring for available options and spelling
+

@@ -17,9 +17,7 @@ import pandas as pd
 import statsmodels.api as sm
 from scipy import stats
 
-# ============================================================================
 # SETUP
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.2.2
 LOG_FILE = RQ_DIR / "logs" / "steps_00_to_05.log"
@@ -45,9 +43,7 @@ log("=" * 70)
 log("RQ 6.2.2: Over-Underconfidence Trajectory Analysis")
 log("=" * 70)
 
-# ============================================================================
-# STEP 00: Load Calibration Data from RQ 6.2.1
-# ============================================================================
+# Load Calibration Data from RQ 6.2.1
 
 log("\n" + "=" * 70)
 log("STEP 00: Load Calibration Data from RQ 6.2.1")
@@ -100,9 +96,7 @@ log(f"Saved: {output_file} ({len(df)} rows)")
 log(f"\nLoaded calibration data: {len(df)} rows, {len(df.columns)} columns")
 log("STEP 00 COMPLETE")
 
-# ============================================================================
-# STEP 01: Classify Observations by Calibration Sign
-# ============================================================================
+# Classify Observations by Calibration Sign
 
 log("\n" + "=" * 70)
 log("STEP 01: Classify Observations by Calibration Sign")
@@ -144,9 +138,7 @@ log(f"\nSaved: {output_file} ({len(df)} rows)")
 log(f"Classification complete: {len(df)} observations classified")
 log("STEP 01 COMPLETE")
 
-# ============================================================================
-# STEP 02: Compute Proportion Overconfident Per Timepoint
-# ============================================================================
+# Compute Proportion Overconfident Per Timepoint
 
 log("\n" + "=" * 70)
 log("STEP 02: Compute Proportion Overconfident Per Timepoint")
@@ -204,9 +196,7 @@ log(f"\nSaved: {output_file} ({len(df_proportions)} rows)")
 log(f"Proportion overconfident computed: {len(df_proportions)} timepoints")
 log("STEP 02 COMPLETE")
 
-# ============================================================================
-# STEP 03: Trend Test (Logistic Regression)
-# ============================================================================
+# Trend Test (Logistic Regression)
 
 log("\n" + "=" * 70)
 log("STEP 03: Trend Test (Logistic Regression)")
@@ -290,9 +280,7 @@ df_trend.to_csv(output_file, index=False)
 log(f"\nSaved: {output_file} ({len(df_trend)} rows)")
 log("STEP 03 COMPLETE")
 
-# ============================================================================
-# STEP 04: Compute Mean Calibration Per Timepoint
-# ============================================================================
+# Compute Mean Calibration Per Timepoint
 
 log("\n" + "=" * 70)
 log("STEP 04: Compute Mean Calibration Per Timepoint")
@@ -337,9 +325,7 @@ log(f"\nSaved: {output_file} ({len(df_mean_cal)} rows)")
 log("Mean calibration computed: 4 timepoints")
 log("STEP 04 COMPLETE")
 
-# ============================================================================
-# STEP 05: Prepare Plot Data
-# ============================================================================
+# Prepare Plot Data
 
 log("\n" + "=" * 70)
 log("STEP 05: Prepare Overconfidence Trajectory Plot Data")
@@ -393,9 +379,7 @@ log(f"\nSaved: {output_file} ({len(df_plot_final)} rows)")
 log("Plot data preparation complete: 4 rows created")
 log("STEP 05 COMPLETE")
 
-# ============================================================================
 # SUMMARY
-# ============================================================================
 
 log("\n" + "=" * 70)
 log("ANALYSIS COMPLETE - SUMMARY")

@@ -1,0 +1,81 @@
+Step 00: Load and Validate Dependency Files
+
+Created output directories (if not exist)
+
+[STEP 1] Validate Dependency Files Exist
+----------------------------------------------------------------------
+Theta scores (RQ 5.4.1) exists: /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step03_theta_scores.csv
+TSVR mapping (RQ 5.4.1) exists: /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step00_tsvr_mapping.csv
+Master data (dfData.csv) exists: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+
+[STEP 2] Load Theta Scores from RQ 5.4.1
+----------------------------------------------------------------------
+Theta scores: 400 rows, 7 columns
+Theta scores has all expected columns: ['composite_ID', 'theta_common', 'theta_congruent', 'theta_incongruent', 'se_common', 'se_congruent', 'se_incongruent']
+Theta scores row count: 400 (expected ~400)
+Theta scores has no NaN in critical columns: ['composite_ID', 'theta_common', 'theta_congruent', 'theta_incongruent', 'se_common', 'se_congruent', 'se_incongruent']
+Theta scores values within expected ranges
+Theta score sample:
+  theta_common: [-2.15, 2.20]
+  theta_congruent: [-2.10, 2.34]
+  theta_incongruent: [-1.89, 2.05]
+
+[STEP 3] Load TSVR Mapping from RQ 5.4.1
+----------------------------------------------------------------------
+TSVR mapping: 400 rows, 4 columns
+TSVR mapping has all expected columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+TSVR mapping row count: 400 (expected ~400)
+TSVR mapping has no NaN in critical columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+TSVR mapping values within expected ranges
+TSVR_hours range: [1.00, 246.24]
+
+[STEP 4] Validate Theta <-> TSVR Composite ID Match
+----------------------------------------------------------------------
+All composite_IDs match between theta and TSVR
+
+[STEP 5] Load Age Data from Master
+----------------------------------------------------------------------
+Master data: 400 rows, 2 columns
+Renamed 'age' column to 'Age' for consistency
+Extracted 100 unique UIDs from master data
+Age data has all expected columns: ['UID', 'Age']
+Age data has 100 unique UIDs (>= 100)
+Age data has no NaN in critical columns: ['UID', 'Age']
+Age data values within expected ranges
+Age range: [20.0, 70.0]
+Age mean: 44.6 (SD: 14.6)
+
+[STEP 6] Validate All Theta UIDs Have Age Data
+----------------------------------------------------------------------
+Parsed 100 unique UIDs from theta composite_IDs
+All UIDs from theta scores have matching Age data
+
+[STEP 7] Save Validated Copies
+----------------------------------------------------------------------
+Theta scores: /home/etai/projects/REMEMVR/results/ch5/5.4.3/data/step00_theta_wide.csv
+  400 rows, 7 columns
+TSVR mapping: /home/etai/projects/REMEMVR/results/ch5/5.4.3/data/step00_tsvr_mapping.csv
+  400 rows, 4 columns
+Age data: /home/etai/projects/REMEMVR/results/ch5/5.4.3/data/step00_age_data.csv
+  100 rows, 2 columns
+
+[STEP 8] Final Validation Summary
+----------------------------------------------------------------------
+All dependency files loaded and validated successfully
+
+Summary:
+  Theta scores: 400 rows (400 expected)
+  TSVR mapping: 400 rows (400 expected)
+  Age data: 100 rows (100 unique UIDs)
+  Composite IDs: 400 in theta, 400 in TSVR
+  UIDs in theta: 100
+  UIDs with Age: 100
+
+Value Ranges:
+  theta_common: [-2.15, 2.20]
+  theta_congruent: [-2.10, 2.34]
+  theta_incongruent: [-1.89, 2.05]
+  TSVR_hours: [1.00, 246.24]
+  Age: [20.0, 70.0]
+
+Step 00 complete - all dependencies validated and saved

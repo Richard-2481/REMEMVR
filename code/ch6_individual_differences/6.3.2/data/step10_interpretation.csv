@@ -1,0 +1,2 @@
+comparison_performed,calibration_r2,accuracy_r2,r2_difference,calibration_harder,interpretation
+True,0.0714806776899149,0.2488406162710741,0.1773599385811592,True,"Supports metacognitive dissociation: Calibration quality (matching confidence to accuracy) is harder to predict than raw accuracy, suggesting it involves distinct cognitive processes beyond those measured by standard cognitive tests."

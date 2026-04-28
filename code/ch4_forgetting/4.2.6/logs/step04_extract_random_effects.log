@@ -1,0 +1,53 @@
+2025-12-03 15:09:02,823 - INFO - ============================================================
+2025-12-03 15:09:02,823 - INFO - RQ 5.2.6 Step 04: Extract Individual Random Effects per Domain
+2025-12-03 15:09:02,823 - INFO - ============================================================
+2025-12-03 15:09:03,284 - INFO - Loaded fitted models: ['What', 'Where']
+2025-12-03 15:09:03,285 - INFO - Loaded metadata for What: Full structure
+2025-12-03 15:09:03,285 - INFO - Loaded metadata for Where: Full structure
+2025-12-03 15:09:03,285 - INFO - 
+Extracting random effects for What domain
+2025-12-03 15:09:03,285 - INFO -   Random structure: Full
+2025-12-03 15:09:03,291 - INFO -   Extracted 100 participants
+2025-12-03 15:09:03,291 - INFO -   Total_Intercept range: [-1.5312, 1.1302]
+2025-12-03 15:09:03,291 - INFO -   Total_Slope range: [-0.0381, 0.0374]
+2025-12-03 15:09:03,291 - INFO - 
+Extracting random effects for Where domain
+2025-12-03 15:09:03,291 - INFO -   Random structure: Full
+2025-12-03 15:09:03,295 - INFO -   Extracted 100 participants
+2025-12-03 15:09:03,295 - INFO -   Total_Intercept range: [-1.6214, 1.3155]
+2025-12-03 15:09:03,295 - INFO -   Total_Slope range: [-0.0442, 0.0433]
+2025-12-03 15:09:03,295 - INFO - 
+============================================================
+2025-12-03 15:09:03,295 - INFO - VALIDATION: Checking random effects structure
+2025-12-03 15:09:03,295 - INFO - ============================================================
+2025-12-03 15:09:03,295 - INFO -   Row count: 200 (expected 200): PASS
+2025-12-03 15:09:03,296 - INFO -   Unique UIDs: 100: PASS
+2025-12-03 15:09:03,296 - INFO -   Domains present: {'Where', 'What'}: PASS
+2025-12-03 15:09:03,298 - INFO -   All UIDs have both domains: PASS
+2025-12-03 15:09:03,298 - INFO -   No missing Total_Intercept values: PASS
+2025-12-03 15:09:03,299 - INFO -   All intercept_se > 0: PASS
+2025-12-03 15:09:03,300 - INFO - 
+Saved random effects to: results/ch5/5.2.6/data/step04_random_effects.csv
+2025-12-03 15:09:03,300 - INFO - 
+============================================================
+2025-12-03 15:09:03,300 - INFO - RANDOM EFFECTS SUMMARY
+2025-12-03 15:09:03,300 - INFO - ============================================================
+2025-12-03 15:09:03,301 - INFO - 
+What Domain (n=100):
+2025-12-03 15:09:03,301 - INFO -   Total_Intercept: mean=0.0000, SD=0.4962
+2025-12-03 15:09:03,301 - INFO -   Total_Slope: mean=-0.0000, SD=0.0156
+2025-12-03 15:09:03,301 - INFO - 
+Where Domain (n=100):
+2025-12-03 15:09:03,302 - INFO -   Total_Intercept: mean=-0.0000, SD=0.5679
+2025-12-03 15:09:03,302 - INFO -   Total_Slope: mean=-0.0000, SD=0.0202
+2025-12-03 15:09:03,303 - INFO - 
+Cross-domain intercept correlation (What-Where): r=0.961
+2025-12-03 15:09:03,304 - INFO - Cross-domain slope correlation (What-Where): r=0.773
+2025-12-03 15:09:03,304 - INFO - 
+============================================================
+2025-12-03 15:09:03,304 - INFO - STEP 04 COMPLETE
+2025-12-03 15:09:03,304 - INFO - ============================================================
+2025-12-03 15:09:03,304 - INFO - Extracted random effects for 200 observations
+2025-12-03 15:09:03,304 - INFO -   100 participants x 2 domains = 200 rows
+2025-12-03 15:09:03,304 - INFO - Output file ready for RQ 5.2.7 (domain-based clustering)
+2025-12-03 15:09:03,304 - INFO - Ready for Step 05: Test Intercept-Slope Correlations

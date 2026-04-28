@@ -1,0 +1,137 @@
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/deepirtools/data.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 72 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Common', 'Discrim_Congruent', 'Discrim_Incongruent']
+  Difficulty range: [0.05, 1.18]
+  Overall_Discrimination range: [1.98, 6.14]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+
+============================================================
+ITEM PURIFICATION (Decision D039)
+============================================================
+Thresholds: a >= 0.4, |b| <= 3.0
+Format: Multivariate IRT (from calibrate_irt)
+
+Total items: 72
+Excluded: 0 (0.0%)
+Purified: 72 (100.0%)
+============================================================
+
+Purification complete
+  Retained: 72 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 72 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Common', 'Discrim_Congruent', 'Discrim_Incongruent']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 72 / 72
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 72
+Retained (Pass 2): 72 (100.0%)
+Excluded: 0 (0.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 72 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Common', 'Discrim_Congruent', 'Discrim_Incongruent']
+  Difficulty range: [0.06, 1.21]
+  Overall_Discrimination range: [1.96, 6.35]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 72 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 72 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Common', 'Discrim_Congruent', 'Discrim_Incongruent']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 72 / 72
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 72
+Retained (Pass 2): 72 (100.0%)
+Excluded: 0 (0.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================
+================================================================================
+Step 02: Item Purification (Decision D039)
+================================================================================
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv
+  Rows: 72 items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Common', 'Discrim_Congruent', 'Discrim_Incongruent']
+  Difficulty range: [-2.74, 2.02]
+  Overall_Discrimination range: [0.77, 2.00]
+
+Running filter_items_by_quality...
+  Thresholds: a >= 0.4, |b| <= 3.0
+Purification complete
+  Retained: 72 items (100.0%)
+  Excluded: 0 items (0.0%)
+Retention rate 100.0% outside typical 20-80% range
+          This may indicate calibration problems in Pass 1
+
+Saving purification results...
+step02_purified_items.csv
+  Rows: 72 retained items
+  Columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_Common', 'Discrim_Congruent', 'Discrim_Incongruent']
+step02_excluded_items.csv
+  Rows: 0 excluded items
+  Columns: ['item_name', 'factor', 'a', 'b', 'exclusion_reason']
+
+Validating purified items...
+[VALIDATION PASSED]
+  Valid items: 72 / 72
+
+================================================================================
+Step 02 complete
+================================================================================
+Pass 1 items: 72
+Retained (Pass 2): 72 (100.0%)
+Excluded: 0 (0.0%)
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Next: Step 03 will recalibrate using {len(df_purified)} purified items
+================================================================================

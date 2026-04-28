@@ -1,0 +1,93 @@
+Step 03: merge_analysis_dataset
+Loading input data...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step01_domain_theta_scores.csv (100 rows, 4 cols)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step02_cognitive_tests.csv (100 rows, 5 cols)
+Merging theta and cognitive datasets...
+'uid'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.4/code/step03_merge_analysis_dataset.py", line 124, in <module>
+    df_merged = merge_theta_cognitive(
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/data.py", line 225, in merge_theta_cognitive
+    return pd.merge(theta_df, cognitive_df, on='uid', how=how)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 1298, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1914, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'uid'
+Step 03: merge_analysis_dataset
+Loading input data...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step01_domain_theta_scores.csv (100 rows, 4 cols)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step02_cognitive_tests.csv (100 rows, 5 cols)
+Merging theta and cognitive datasets...
+100 participants with complete data
+Computing descriptive statistics...
+What_theta: n=100, mean=-0.007, SD=0.638
+Where_theta: n=100, mean=0.037, SD=0.671
+When_theta: n=100, mean=0.109, SD=0.282
+ravlt_z: n=100, mean=0.000, SD=1.000
+bvmt_z: n=100, mean=0.000, SD=1.000
+rpm_z: n=100, mean=0.000, SD=1.000
+age_z: n=100, mean=0.000, SD=1.000
+Saving analysis dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step03_analysis_dataset.csv (100 rows, 8 cols)
+Saving descriptive statistics...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step03_descriptive_stats.csv (7 rows, 6 cols)
+Running validation...
+No missing data in merged dataset
+Z-score properties validated
+Step 03 complete
+Step 03: merge_analysis_dataset
+Loading input data...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step01_domain_theta_scores.csv (100 rows, 4 cols)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step02_cognitive_tests.csv (100 rows, 5 cols)
+Merging theta and cognitive datasets...
+100 participants with complete data
+Computing descriptive statistics...
+What_theta: n=100, mean=-0.007, SD=0.638
+Where_theta: n=100, mean=0.037, SD=0.671
+When_theta: n=100, mean=0.109, SD=0.282
+ravlt_z: n=100, mean=0.000, SD=1.000
+bvmt_z: n=100, mean=0.000, SD=1.000
+rpm_z: n=100, mean=0.000, SD=1.000
+age_z: n=100, mean=0.000, SD=1.000
+Saving analysis dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step03_analysis_dataset.csv (100 rows, 8 cols)
+Saving descriptive statistics...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step03_descriptive_stats.csv (7 rows, 6 cols)
+Running validation...
+No missing data in merged dataset
+Z-score properties validated
+Step 03 complete
+Step 03: merge_analysis_dataset
+Loading input data...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step01_domain_theta_scores.csv (100 rows, 4 cols)
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step02_cognitive_tests.csv (100 rows, 6 cols)
+Merging theta and cognitive datasets...
+100 participants with complete data
+Computing descriptive statistics...
+What_theta: n=100, mean=-0.007, SD=0.638
+Where_theta: n=100, mean=0.037, SD=0.671
+When_theta: n=100, mean=0.109, SD=0.282
+ravlt_z: n=100, mean=0.000, SD=1.000
+bvmt_z: n=100, mean=0.000, SD=1.000
+rpm_z: n=100, mean=0.000, SD=1.000
+age_z: n=100, mean=0.000, SD=1.000
+pctret_z: n=100, mean=0.000, SD=1.000
+Saving analysis dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step03_analysis_dataset.csv (100 rows, 9 cols)
+Saving descriptive statistics...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step03_descriptive_stats.csv (8 rows, 6 cols)
+Running validation...
+No missing data in merged dataset
+Z-score properties validated
+Step 03 complete

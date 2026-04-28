@@ -1,0 +1,388 @@
+Step 04: Cross-Validation
+Loading analysis dataset and model specifications...
+Analysis dataset: 100 rows
+Model specifications: 4 models
+Outcome (Theta_All): mean=0.006, SD=0.677
+[CV] Performing 5-fold cross-validation for 4 models...
+
+Minimal (2 predictors)
+Predictors: ['Age', 'RAVLT_T']
+  Fold 1: Train R²=0.0879, CV R²=-0.4928, Shrinkage=0.5807
+  Fold 2: Train R²=0.0742, CV R²=-0.0744, Shrinkage=0.1486
+  Fold 3: Train R²=0.1225, CV R²=-0.0852, Shrinkage=0.2077
+  Fold 4: Train R²=0.0645, CV R²=0.1051, Shrinkage=-0.0406
+  Fold 5: Train R²=0.1192, CV R²=-0.0449, Shrinkage=0.1641
+Train R²: 0.0937 ± 0.0262
+CV R²: -0.1184 ± 0.2228
+Shrinkage: 0.2121
+Overfitting: YES
+
+Core (3 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T']
+  Fold 1: Train R²=0.1501, CV R²=-0.3045, Shrinkage=0.4546
+  Fold 2: Train R²=0.1361, CV R²=0.0660, Shrinkage=0.0701
+  Fold 3: Train R²=0.2279, CV R²=-0.1939, Shrinkage=0.4218
+  Fold 4: Train R²=0.1704, CV R²=0.0097, Shrinkage=0.1607
+  Fold 5: Train R²=0.1434, CV R²=0.1277, Shrinkage=0.0156
+Train R²: 0.1656 ± 0.0371
+CV R²: -0.0590 ± 0.1828
+Shrinkage: 0.2246
+Overfitting: YES
+
+Extended (5 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education']
+  Fold 1: Train R²=0.2035, CV R²=0.0317, Shrinkage=0.1718
+  Fold 2: Train R²=0.2615, CV R²=-0.1147, Shrinkage=0.3761
+  Fold 3: Train R²=0.2877, CV R²=-0.0312, Shrinkage=0.3189
+  Fold 4: Train R²=0.2622, CV R²=0.1171, Shrinkage=0.1451
+  Fold 5: Train R²=0.2785, CV R²=0.1033, Shrinkage=0.1752
+Train R²: 0.2587 ± 0.0328
+CV R²: 0.0213 ± 0.0965
+Shrinkage: 0.2374
+Overfitting: YES
+
+Full (8 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education', 'DASS_Total', 'Sleep', 'Sex']
+  Fold 1: Train R²=0.2366, CV R²=-0.0631, Shrinkage=0.2997
+  Fold 2: Train R²=0.2967, CV R²=-0.2494, Shrinkage=0.5461
+  Fold 3: Train R²=0.3057, CV R²=-0.0136, Shrinkage=0.3192
+  Fold 4: Train R²=0.2923, CV R²=0.0714, Shrinkage=0.2209
+  Fold 5: Train R²=0.2997, CV R²=0.0080, Shrinkage=0.2918
+Train R²: 0.2862 ± 0.0281
+CV R²: -0.0493 ± 0.1218
+Shrinkage: 0.3355
+Overfitting: YES
+
+Computing 1000 bootstrap CIs for CV-R²...
+Minimal...
+Per-column arrays must each be 1-dimensional
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step04_cross_validation.py", line 308, in <module>
+    ci_lower, ci_upper = bootstrap_cv_r2(
+                         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step04_cross_validation.py", line 180, in bootstrap_cv_r2
+    df_boot = pd.DataFrame({'Age': X.iloc[boot_indices]['Age'].values})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 782, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 503, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 114, in arrays_to_mgr
+    index = _extract_index(arrays)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 664, in _extract_index
+    raise ValueError("Per-column arrays must each be 1-dimensional")
+ValueError: Per-column arrays must each be 1-dimensional
+Step 04: Cross-Validation
+Loading analysis dataset and model specifications...
+Analysis dataset: 100 rows
+Model specifications: 4 models
+Outcome (Theta_All): mean=0.006, SD=0.677
+[CV] Performing 5-fold cross-validation for 4 models...
+
+Minimal (2 predictors)
+Predictors: ['Age', 'RAVLT_T']
+  Fold 1: Train R²=0.0879, CV R²=-0.4928, Shrinkage=0.5807
+  Fold 2: Train R²=0.0742, CV R²=-0.0744, Shrinkage=0.1486
+  Fold 3: Train R²=0.1225, CV R²=-0.0852, Shrinkage=0.2077
+  Fold 4: Train R²=0.0645, CV R²=0.1051, Shrinkage=-0.0406
+  Fold 5: Train R²=0.1192, CV R²=-0.0449, Shrinkage=0.1641
+Train R²: 0.0937 ± 0.0262
+CV R²: -0.1184 ± 0.2228
+Shrinkage: 0.2121
+Overfitting: YES
+
+Core (3 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T']
+  Fold 1: Train R²=0.1501, CV R²=-0.3045, Shrinkage=0.4546
+  Fold 2: Train R²=0.1361, CV R²=0.0660, Shrinkage=0.0701
+  Fold 3: Train R²=0.2279, CV R²=-0.1939, Shrinkage=0.4218
+  Fold 4: Train R²=0.1704, CV R²=0.0097, Shrinkage=0.1607
+  Fold 5: Train R²=0.1434, CV R²=0.1277, Shrinkage=0.0156
+Train R²: 0.1656 ± 0.0371
+CV R²: -0.0590 ± 0.1828
+Shrinkage: 0.2246
+Overfitting: YES
+
+Extended (5 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education']
+  Fold 1: Train R²=0.2035, CV R²=0.0317, Shrinkage=0.1718
+  Fold 2: Train R²=0.2615, CV R²=-0.1147, Shrinkage=0.3761
+  Fold 3: Train R²=0.2877, CV R²=-0.0312, Shrinkage=0.3189
+  Fold 4: Train R²=0.2622, CV R²=0.1171, Shrinkage=0.1451
+  Fold 5: Train R²=0.2785, CV R²=0.1033, Shrinkage=0.1752
+Train R²: 0.2587 ± 0.0328
+CV R²: 0.0213 ± 0.0965
+Shrinkage: 0.2374
+Overfitting: YES
+
+Full (8 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education', 'DASS_Total', 'Sleep', 'Sex']
+  Fold 1: Train R²=0.2366, CV R²=-0.0631, Shrinkage=0.2997
+  Fold 2: Train R²=0.2967, CV R²=-0.2494, Shrinkage=0.5461
+  Fold 3: Train R²=0.3057, CV R²=-0.0136, Shrinkage=0.3192
+  Fold 4: Train R²=0.2923, CV R²=0.0714, Shrinkage=0.2209
+  Fold 5: Train R²=0.2997, CV R²=0.0080, Shrinkage=0.2918
+Train R²: 0.2862 ± 0.0281
+CV R²: -0.0493 ± 0.1218
+Shrinkage: 0.3355
+Overfitting: YES
+
+Computing 1000 bootstrap CIs for CV-R²...
+Minimal...
+index 147 is out of bounds for axis 0 with size 100
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step04_cross_validation.py", line 308, in <module>
+    ci_lower, ci_upper = bootstrap_cv_r2(
+                         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step04_cross_validation.py", line 185, in bootstrap_cv_r2
+    X_train, X_test = X_boot[train_idx], X_boot[test_idx]
+                      ~~~~~~^^^^^^^^^^^
+IndexError: index 147 is out of bounds for axis 0 with size 100
+Step 04: Cross-Validation
+Loading analysis dataset and model specifications...
+Analysis dataset: 100 rows
+Model specifications: 4 models
+Outcome (Theta_All): mean=0.006, SD=0.677
+[CV] Performing 5-fold cross-validation for 4 models...
+
+Minimal (2 predictors)
+Predictors: ['Age', 'RAVLT_T']
+  Fold 1: Train R²=0.0879, CV R²=-0.4928, Shrinkage=0.5807
+  Fold 2: Train R²=0.0742, CV R²=-0.0744, Shrinkage=0.1486
+  Fold 3: Train R²=0.1225, CV R²=-0.0852, Shrinkage=0.2077
+  Fold 4: Train R²=0.0645, CV R²=0.1051, Shrinkage=-0.0406
+  Fold 5: Train R²=0.1192, CV R²=-0.0449, Shrinkage=0.1641
+Train R²: 0.0937 ± 0.0262
+CV R²: -0.1184 ± 0.2228
+Shrinkage: 0.2121
+Overfitting: YES
+
+Core (3 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T']
+  Fold 1: Train R²=0.1501, CV R²=-0.3045, Shrinkage=0.4546
+  Fold 2: Train R²=0.1361, CV R²=0.0660, Shrinkage=0.0701
+  Fold 3: Train R²=0.2279, CV R²=-0.1939, Shrinkage=0.4218
+  Fold 4: Train R²=0.1704, CV R²=0.0097, Shrinkage=0.1607
+  Fold 5: Train R²=0.1434, CV R²=0.1277, Shrinkage=0.0156
+Train R²: 0.1656 ± 0.0371
+CV R²: -0.0590 ± 0.1828
+Shrinkage: 0.2246
+Overfitting: YES
+
+Extended (5 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education']
+  Fold 1: Train R²=0.2035, CV R²=0.0317, Shrinkage=0.1718
+  Fold 2: Train R²=0.2615, CV R²=-0.1147, Shrinkage=0.3761
+  Fold 3: Train R²=0.2877, CV R²=-0.0312, Shrinkage=0.3189
+  Fold 4: Train R²=0.2622, CV R²=0.1171, Shrinkage=0.1451
+  Fold 5: Train R²=0.2785, CV R²=0.1033, Shrinkage=0.1752
+Train R²: 0.2587 ± 0.0328
+CV R²: 0.0213 ± 0.0965
+Shrinkage: 0.2374
+Overfitting: YES
+
+Full (8 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education', 'DASS_Total', 'Sleep', 'Sex']
+  Fold 1: Train R²=0.2366, CV R²=-0.0631, Shrinkage=0.2997
+  Fold 2: Train R²=0.2967, CV R²=-0.2494, Shrinkage=0.5461
+  Fold 3: Train R²=0.3057, CV R²=-0.0136, Shrinkage=0.3192
+  Fold 4: Train R²=0.2923, CV R²=0.0714, Shrinkage=0.2209
+  Fold 5: Train R²=0.2997, CV R²=0.0080, Shrinkage=0.2918
+Train R²: 0.2862 ± 0.0281
+CV R²: -0.0493 ± 0.1218
+Shrinkage: 0.3355
+Overfitting: YES
+
+Computing 1000 bootstrap CIs for CV-R²...
+Minimal...
+index 147 is out of bounds for axis 0 with size 100
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step04_cross_validation.py", line 309, in <module>
+    ci_lower, ci_upper = bootstrap_cv_r2(
+                         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.3/code/step04_cross_validation.py", line 186, in bootstrap_cv_r2
+    X_train, X_test = X_boot[train_idx], X_boot[test_idx]
+                      ~~~~~~^^^^^^^^^^^
+IndexError: index 147 is out of bounds for axis 0 with size 100
+Step 04: Cross-Validation
+Loading analysis dataset and model specifications...
+Analysis dataset: 100 rows
+Model specifications: 4 models
+Outcome (Theta_All): mean=0.006, SD=0.677
+[CV] Performing 5-fold cross-validation for 4 models...
+
+Minimal (2 predictors)
+Predictors: ['Age', 'RAVLT_T']
+  Fold 1: Train R²=0.0879, CV R²=-0.4928, Shrinkage=0.5807
+  Fold 2: Train R²=0.0742, CV R²=-0.0744, Shrinkage=0.1486
+  Fold 3: Train R²=0.1225, CV R²=-0.0852, Shrinkage=0.2077
+  Fold 4: Train R²=0.0645, CV R²=0.1051, Shrinkage=-0.0406
+  Fold 5: Train R²=0.1192, CV R²=-0.0449, Shrinkage=0.1641
+Train R²: 0.0937 ± 0.0262
+CV R²: -0.1184 ± 0.2228
+Shrinkage: 0.2121
+Overfitting: YES
+
+Core (3 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T']
+  Fold 1: Train R²=0.1501, CV R²=-0.3045, Shrinkage=0.4546
+  Fold 2: Train R²=0.1361, CV R²=0.0660, Shrinkage=0.0701
+  Fold 3: Train R²=0.2279, CV R²=-0.1939, Shrinkage=0.4218
+  Fold 4: Train R²=0.1704, CV R²=0.0097, Shrinkage=0.1607
+  Fold 5: Train R²=0.1434, CV R²=0.1277, Shrinkage=0.0156
+Train R²: 0.1656 ± 0.0371
+CV R²: -0.0590 ± 0.1828
+Shrinkage: 0.2246
+Overfitting: YES
+
+Extended (5 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education']
+  Fold 1: Train R²=0.2035, CV R²=0.0317, Shrinkage=0.1718
+  Fold 2: Train R²=0.2615, CV R²=-0.1147, Shrinkage=0.3761
+  Fold 3: Train R²=0.2877, CV R²=-0.0312, Shrinkage=0.3189
+  Fold 4: Train R²=0.2622, CV R²=0.1171, Shrinkage=0.1451
+  Fold 5: Train R²=0.2785, CV R²=0.1033, Shrinkage=0.1752
+Train R²: 0.2587 ± 0.0328
+CV R²: 0.0213 ± 0.0965
+Shrinkage: 0.2374
+Overfitting: YES
+
+Full (8 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education', 'DASS_Total', 'Sleep', 'Sex']
+  Fold 1: Train R²=0.2366, CV R²=-0.0631, Shrinkage=0.2997
+  Fold 2: Train R²=0.2967, CV R²=-0.2494, Shrinkage=0.5461
+  Fold 3: Train R²=0.3057, CV R²=-0.0136, Shrinkage=0.3192
+  Fold 4: Train R²=0.2923, CV R²=0.0714, Shrinkage=0.2209
+  Fold 5: Train R²=0.2997, CV R²=0.0080, Shrinkage=0.2918
+Train R²: 0.2862 ± 0.0281
+CV R²: -0.0493 ± 0.1218
+Shrinkage: 0.3355
+Overfitting: YES
+
+Computing 1000 bootstrap CIs for CV-R²...
+Minimal...
+[CI] CV-R²=-0.1184, 95% CI=[-0.2012, 0.1488]
+Core...
+[CI] CV-R²=-0.0590, 95% CI=[-0.1860, 0.2154]
+Extended...
+[CI] CV-R²=0.0213, 95% CI=[-0.1755, 0.3184]
+Full...
+[CI] CV-R²=-0.0493, 95% CI=[-0.2236, 0.3175]
+
+Saving cross-validation results...
+CV results: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step04_cv_results.csv
+Bootstrap CIs: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step04_cv_bootstrap_cis.csv
+Fold details: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step04_fold_details.csv
+
+Validating CV results...
+Minimal: CV-R²=-0.1184 outside valid range [0, 1]
+Core: CV-R²=-0.0590 outside valid range [0, 1]
+Extended: CV-R²=0.0213 in valid range [0, 1]
+Full: CV-R²=-0.0493 outside valid range [0, 1]
+Minimal: Shrinkage=0.2121 >= 0
+Core: Shrinkage=0.2246 >= 0
+Extended: Shrinkage=0.2374 >= 0
+Full: Shrinkage=0.3355 >= 0
+Step 04 complete
+Step 04: Cross-Validation
+Loading analysis dataset and model specifications...
+Analysis dataset: 100 rows
+Model specifications: 5 models
+Outcome (Theta_All): mean=0.006, SD=0.677
+[CV] Performing 5-fold cross-validation for 5 models...
+
+Minimal (2 predictors)
+Predictors: ['Age', 'RAVLT_T']
+  Fold 1: Train R²=0.0935, CV R²=-0.4390, Shrinkage=0.5325
+  Fold 2: Train R²=0.0931, CV R²=-0.1091, Shrinkage=0.2023
+  Fold 3: Train R²=0.1400, CV R²=-0.0907, Shrinkage=0.2308
+  Fold 4: Train R²=0.0916, CV R²=0.0626, Shrinkage=0.0290
+  Fold 5: Train R²=0.1044, CV R²=0.0676, Shrinkage=0.0368
+Train R²: 0.1045 ± 0.0205
+CV R²: -0.1017 ± 0.2059
+Shrinkage: 0.2063
+Overfitting: YES
+
+Core (3 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T']
+  Fold 1: Train R²=0.1485, CV R²=-0.3141, Shrinkage=0.4627
+  Fold 2: Train R²=0.1372, CV R²=0.0404, Shrinkage=0.0968
+  Fold 3: Train R²=0.2255, CV R²=-0.1908, Shrinkage=0.4163
+  Fold 4: Train R²=0.1753, CV R²=-0.0063, Shrinkage=0.1816
+  Fold 5: Train R²=0.1297, CV R²=0.1933, Shrinkage=-0.0636
+Train R²: 0.1632 ± 0.0389
+CV R²: -0.0555 ± 0.1992
+Shrinkage: 0.2188
+Overfitting: YES
+
+Extended (5 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education']
+  Fold 1: Train R²=0.2037, CV R²=0.0358, Shrinkage=0.1679
+  Fold 2: Train R²=0.2669, CV R²=-0.1591, Shrinkage=0.4260
+  Fold 3: Train R²=0.2870, CV R²=-0.0202, Shrinkage=0.3072
+  Fold 4: Train R²=0.2635, CV R²=0.1172, Shrinkage=0.1463
+  Fold 5: Train R²=0.2768, CV R²=0.1108, Shrinkage=0.1660
+Train R²: 0.2596 ± 0.0326
+CV R²: 0.0169 ± 0.1136
+Shrinkage: 0.2427
+Overfitting: YES
+
+Full (8 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education', 'DASS_Total', 'Sleep', 'Sex']
+  Fold 1: Train R²=0.2370, CV R²=-0.0483, Shrinkage=0.2853
+  Fold 2: Train R²=0.3010, CV R²=-0.2793, Shrinkage=0.5803
+  Fold 3: Train R²=0.3062, CV R²=-0.0069, Shrinkage=0.3131
+  Fold 4: Train R²=0.2924, CV R²=0.0767, Shrinkage=0.2157
+  Fold 5: Train R²=0.2965, CV R²=0.0352, Shrinkage=0.2613
+Train R²: 0.2866 ± 0.0282
+CV R²: -0.0445 ± 0.1393
+Shrinkage: 0.3312
+Overfitting: YES
+
+Full+Retention (10 predictors)
+Predictors: ['Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'Education', 'DASS_Total', 'Sleep', 'Sex', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
+  Fold 1: Train R²=0.3201, CV R²=-0.2738, Shrinkage=0.5939
+  Fold 2: Train R²=0.3861, CV R²=-0.8000, Shrinkage=1.1861
+  Fold 3: Train R²=0.3717, CV R²=-0.3248, Shrinkage=0.6965
+  Fold 4: Train R²=0.3206, CV R²=0.1808, Shrinkage=0.1398
+  Fold 5: Train R²=0.3297, CV R²=0.0575, Shrinkage=0.2723
+Train R²: 0.3456 ± 0.0310
+CV R²: -0.2321 ± 0.3831
+Shrinkage: 0.5777
+Overfitting: YES
+
+Computing 1000 bootstrap CIs for CV-R²...
+Minimal...
+[CI] CV-R²=-0.1017, 95% CI=[-0.1792, 0.1670]
+Core...
+[CI] CV-R²=-0.0555, 95% CI=[-0.1818, 0.2219]
+Extended...
+[CI] CV-R²=0.0169, 95% CI=[-0.1695, 0.3213]
+Full...
+[CI] CV-R²=-0.0445, 95% CI=[-0.2133, 0.3300]
+Full+Retention...
+[CI] CV-R²=-0.2321, 95% CI=[-0.2297, 0.3565]
+
+Saving cross-validation results...
+CV results: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step04_cv_results.csv
+Bootstrap CIs: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step04_cv_bootstrap_cis.csv
+Fold details: /home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step04_fold_details.csv
+
+Validating CV results...
+Minimal: CV-R²=-0.1017 outside valid range [0, 1]
+Core: CV-R²=-0.0555 outside valid range [0, 1]
+Extended: CV-R²=0.0169 in valid range [0, 1]
+Full: CV-R²=-0.0445 outside valid range [0, 1]
+Full+Retention: CV-R²=-0.2321 outside valid range [0, 1]
+Minimal: Shrinkage=0.2063 >= 0
+Core: Shrinkage=0.2188 >= 0
+Extended: Shrinkage=0.2427 >= 0
+Full: Shrinkage=0.3312 >= 0
+Full+Retention: Shrinkage=0.5777 >= 0
+Step 04 complete

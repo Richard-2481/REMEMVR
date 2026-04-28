@@ -1,0 +1,85 @@
+Step 04b: validate_ctt_assumptions
+Loading CTT model and input data...
+step03_ctt_lmm_model.pkl (CTT LMM model object)
+step03_ctt_lmm_input.csv (1200 rows, 6 cols)
+Running validate_lmm_assumptions_comprehensive...
+Assumption validation complete
+Saving assumption diagnostics report...
+step04b_ctt_assumptions_report.txt (2482 bytes)
+6 diagnostic plots in step04b_ctt_diagnostics/
+Running check_file_exists...
+IRT report exists: False
+CTT report exists: False
+IRT plots exist: False
+CTT plots exist: False
+Validation failed - not all required files exist. Check that step04a completed successfully before running step04b.
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step04b_validate_ctt_assumptions.py", line 281, in <module>
+    raise FileNotFoundError(
+FileNotFoundError: Validation failed - not all required files exist. Check that step04a completed successfully before running step04b.
+Step 04b: validate_ctt_assumptions
+Loading CTT model and input data...
+step03_ctt_lmm_model.pkl (CTT LMM model object)
+step03_ctt_lmm_input.csv (1200 rows, 6 cols)
+Running validate_lmm_assumptions_comprehensive...
+Assumption validation complete
+Saving assumption diagnostics report...
+step04b_ctt_assumptions_report.txt (2482 bytes)
+6 diagnostic plots in step04b_ctt_diagnostics/
+Running check_file_exists...
+IRT report exists: False
+CTT report exists: False
+IRT plots exist: False
+CTT plots exist: False
+Validation failed - not all required files exist. Check that step04a completed successfully before running step04b.
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step04b_validate_ctt_assumptions.py", line 281, in <module>
+    raise FileNotFoundError(
+FileNotFoundError: Validation failed - not all required files exist. Check that step04a completed successfully before running step04b.
+Step 04b: validate_ctt_assumptions
+Loading CTT model and input data...
+step03_ctt_lmm_model.pkl (CTT LMM model object)
+step03_ctt_lmm_input.csv (1200 rows, 6 cols)
+Running validate_lmm_assumptions_comprehensive...
+Assumption validation complete
+Saving assumption diagnostics report...
+step04b_ctt_assumptions_report.txt (2482 bytes)
+6 diagnostic plots in step04b_ctt_diagnostics/
+Checking file existence with os.path...
+IRT report exists: True
+CTT report exists: True
+IRT plots exist: True
+CTT plots exist: True
+Step 04b complete
+Step 04b: validate_ctt_assumptions
+Loading CTT model and input data...
+step03_ctt_lmm_model.pkl (CTT LMM model object)
+step03_ctt_lmm_input.csv (800 rows, 6 cols)
+Running validate_lmm_assumptions_comprehensive...
+Assumption validation complete
+Saving assumption diagnostics report...
+step04b_ctt_assumptions_report.txt (2412 bytes)
+6 diagnostic plots in step04b_ctt_diagnostics/
+Checking file existence with os.path...
+IRT report exists: True
+CTT report exists: True
+IRT plots exist: True
+CTT plots exist: True
+Step 04b complete
+Step 04b: validate_ctt_assumptions
+Loading CTT model and input data...
+step03_ctt_lmm_model.pkl (CTT LMM model object)
+step03_ctt_lmm_input.csv (800 rows, 6 cols)
+Running validate_lmm_assumptions_comprehensive...
+Assumption validation complete
+Saving assumption diagnostics report...
+step04b_ctt_assumptions_report.txt (2537 bytes)
+6 diagnostic plots in step04b_ctt_diagnostics/
+Checking file existence with os.path...
+IRT report exists: True
+CTT report exists: True
+IRT plots exist: True
+CTT plots exist: True
+Step 04b complete

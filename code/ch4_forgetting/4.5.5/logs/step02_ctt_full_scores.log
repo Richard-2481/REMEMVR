@@ -1,0 +1,28 @@
+Step 02: Compute Full CTT Sum Scores
+Loading raw binary responses...
+dfData.csv (400 rows, 214 cols)
+Loading item mapping...
+step01_item_mapping.csv (36 rows)
+Identifying source and destination items...
+18 source items (location_type='source')
+18 destination items (location_type='destination')
+All items present in dfData.csv
+Computing CTT sum scores (proportion correct)...
+Source CTT mean=0.6835, SD=0.1813
+Destination CTT mean=0.4550, SD=0.1539
+Converting to long format...
+Long format: 800 rows, 4 cols
+Validating output...
+Row count: 800 rows
+ctt_full_score in [0, 1]: min=0.1250, max=1.0000
+No NaN values in ctt_full_score
+400 rows per location_type
+100 unique UIDs
+4 tests per UID (T1, T2, T3, T4)
+All checks passed
+Saving output...
+/home/etai/projects/REMEMVR/results/ch5/5.5.5/data/step02_ctt_full_scores.csv (800 rows, 4 cols)
+CTT Full Scores Summary:
+  Source: mean=0.6835, SD=0.1813, range=[0.2639, 1.0000]
+  Destination: mean=0.4550, SD=0.1539, range=[0.1250, 0.9444]
+Step 02 complete

@@ -1,0 +1,44 @@
+Step 04: Merge Analysis Dataset
+Loading confidence theta scores...
+step01_confidence_theta.csv (100 rows, 3 cols)
+Loading cognitive test scores...
+step02_cognitive_tests.csv (100 rows, 7 cols)
+Running pd.merge for inner join on UID...
+Inner join complete: 100 participants with complete data
+Removed se_theta column (not needed for regression)
+No missing values found - dataset is complete
+Analysis complete
+Saving step04_analysis_dataset.csv...
+step04_analysis_dataset.csv (100 rows, 8 cols)
+Final dataset columns: ['UID', 'confidence_theta', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'age', 'sex', 'education']
+Sample size: 100 participants
+Running validate_dataframe_structure...
+Dataset structure validation PASSED
+row_count_valid: PASS
+actual_rows: PASS
+columns_valid: PASS
+missing_columns: FAIL
+types_valid: PASS
+Step 04 complete
+Step 04: Merge Analysis Dataset
+Loading confidence theta scores...
+step01_confidence_theta.csv (100 rows, 3 cols)
+Loading cognitive test scores...
+step02_cognitive_tests.csv (100 rows, 9 cols)
+Running pd.merge for inner join on UID...
+Inner join complete: 100 participants with complete data
+Removed se_theta column (not needed for regression)
+No missing values found - dataset is complete
+Analysis complete
+Saving step04_analysis_dataset.csv...
+step04_analysis_dataset.csv (100 rows, 10 cols)
+Final dataset columns: ['UID', 'confidence_theta', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'age', 'sex', 'education']
+Sample size: 100 participants
+Running validate_dataframe_structure...
+Dataset structure validation PASSED
+row_count_valid: PASS
+actual_rows: PASS
+columns_valid: PASS
+missing_columns: FAIL
+types_valid: PASS
+Step 04 complete

@@ -1,0 +1,63 @@
+Step 01: extract_domain_theta_scores
+Loading Ch5 domain theta scores...
+What domain: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv (400 rows, 4 cols)
+[Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/5.2.2/data/step00_theta_from_rq51.csv'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.8.4/code/step01_extract_domain_theta_scores.py", line 118, in <module>
+    df_where = pd.read_csv(where_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/5.2.2/data/step00_theta_from_rq51.csv'
+Step 01: extract_domain_theta_scores
+Loading Ch5 domain theta scores...
+All domains: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv (400 rows, 4 cols)
+['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Extracting UID and aggregating to participant-level...
+400 rows -> 100 UIDs (participant-level)
+Computing inter-domain correlations...
+What_theta <-> Where_theta: r = 0.961, p = 0.0000
+What_theta <-> When_theta: r = 0.449, p = 0.0000
+Where_theta <-> When_theta: r = 0.372, p = 0.0001
+Saving domain theta scores...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step01_domain_theta_scores.csv (100 rows, 4 cols)
+Saving domain correlations...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step01_domain_correlations.csv (3 rows, 4 cols)
+Validating outputs...
+What-Where correlation 0.961 outside expected range [0.20, 0.70]
+No missing data in output
+All validation checks passed
+Step 01 complete
+Step 01: extract_domain_theta_scores
+Loading Ch5 domain theta scores...
+All domains: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv (400 rows, 4 cols)
+['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Extracting UID and aggregating to participant-level...
+400 rows -> 100 UIDs (participant-level)
+Computing inter-domain correlations...
+What_theta <-> Where_theta: r = 0.961, p = 0.0000
+What_theta <-> When_theta: r = 0.449, p = 0.0000
+Where_theta <-> When_theta: r = 0.372, p = 0.0001
+Saving domain theta scores...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step01_domain_theta_scores.csv (100 rows, 4 cols)
+Saving domain correlations...
+/home/etai/projects/REMEMVR/results/ch7/7.8.4/data/step01_domain_correlations.csv (3 rows, 4 cols)
+Validating outputs...
+What-Where correlation 0.961 outside expected range [0.20, 0.70]
+No missing data in output
+All validation checks passed
+Step 01 complete

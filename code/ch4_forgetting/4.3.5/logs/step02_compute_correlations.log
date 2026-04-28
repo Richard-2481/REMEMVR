@@ -1,0 +1,44 @@
+2025-12-03 18:52:40,203 - INFO - ============================================================
+2025-12-03 18:52:40,203 - INFO - STEP 02: COMPUTE PEARSON CORRELATIONS (IRT vs CTT)
+2025-12-03 18:52:40,203 - INFO - ============================================================
+2025-12-03 18:52:40,203 - INFO - 
+1. Loading input files...
+2025-12-03 18:52:40,206 - INFO - Loaded IRT theta: 400 rows, columns: ['composite_ID', 'theta_IFR', 'theta_ICR', 'theta_IRE', 'se_IFR', 'se_ICR', 'se_IRE']
+2025-12-03 18:52:40,207 - INFO - Loaded CTT scores: 1200 rows, columns: ['composite_ID', 'UID', 'TEST', 'paradigm', 'CTT_mean', 'n_items']
+2025-12-03 18:52:40,207 - INFO - 
+2. Reshaping CTT to wide format...
+2025-12-03 18:52:40,214 - INFO - Reshaped CTT to wide: 400 rows, columns: ['composite_ID', 'CTT_ICR', 'CTT_IFR', 'CTT_IRE']
+2025-12-03 18:52:40,214 - INFO - 
+3. Merging IRT and CTT data...
+2025-12-03 18:52:40,216 - INFO - Merged IRT-CTT: 400 rows
+2025-12-03 18:52:40,219 - INFO -    Saved: step02_merged_irt_ctt.csv (400 rows)
+2025-12-03 18:52:40,219 - INFO - 
+4. Computing Pearson correlations...
+2025-12-03 18:52:40,220 - INFO - IFR: r=0.876, p=0.0000, n=400
+2025-12-03 18:52:40,220 - INFO - ICR: r=0.883, p=0.0000, n=400
+2025-12-03 18:52:40,221 - INFO - IRE: r=0.838, p=0.0000, n=400
+2025-12-03 18:52:40,221 - INFO - Overall: r=0.840, p=0.0000, n=1200
+2025-12-03 18:52:40,222 - INFO - 
+5. Applying Holm-Bonferroni correction (4 tests, alpha=0.05)...
+2025-12-03 18:52:40,222 - INFO - 
+6. Adding threshold classifications...
+2025-12-03 18:52:40,223 - INFO - 
+7. Validating results...
+2025-12-03 18:52:40,223 - INFO - Strong convergence (r > 0.70): 4/4 tests
+2025-12-03 18:52:40,223 - INFO - Correlations validation: PASS
+2025-12-03 18:52:40,223 - INFO - 
+8. Saving output files...
+2025-12-03 18:52:40,223 - INFO -    Saved: step02_correlations.csv (4 rows)
+2025-12-03 18:52:40,224 - INFO - 
+============================================================
+2025-12-03 18:52:40,224 - INFO - STEP 02 COMPLETE: Correlations computed successfully
+2025-12-03 18:52:40,224 - INFO - Correlations computed: 4 tests (IFR, ICR, IRE, Overall)
+2025-12-03 18:52:40,224 - INFO - Holm-Bonferroni correction applied (4 tests, alpha=0.05)
+2025-12-03 18:52:40,224 - INFO - Strong convergence (r > 0.70): 4/4 tests
+2025-12-03 18:52:40,224 - INFO - ============================================================
+2025-12-03 18:52:40,224 - INFO - 
+Correlation Summary:
+2025-12-03 18:52:40,224 - INFO -   IFR: r=0.876, p_holm=0.0000, Strong
+2025-12-03 18:52:40,224 - INFO -   ICR: r=0.883, p_holm=0.0000, Strong
+2025-12-03 18:52:40,224 - INFO -   IRE: r=0.838, p_holm=0.0000, Strong
+2025-12-03 18:52:40,224 - INFO -   Overall: r=0.840, p_holm=0.0000, Strong

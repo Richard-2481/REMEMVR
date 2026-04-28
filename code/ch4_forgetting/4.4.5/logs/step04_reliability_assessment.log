@@ -1,0 +1,30 @@
+Step 04: Cronbach's Alpha Reliability Assessment
+Reading /home/etai/projects/REMEMVR/data/cache/dfData.csv
+400 rows, 214 columns
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step00_full_item_list.csv
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.1/data/step02_purified_items.csv
+Processing Common dimension
+  Full: 24 items
+  Purified: 19 items
+  Full alpha: 0.696 [0.651, 0.732]
+  Purified alpha: 0.718 [0.678, 0.753]
+  Delta alpha (Purified - Full): +0.022
+Processing Congruent dimension
+  Full: 24 items
+  Purified: 18 items
+  Full alpha: 0.721 [0.678, 0.754]
+  Purified alpha: 0.743 [0.700, 0.775]
+  Delta alpha (Purified - Full): +0.022
+Processing Incongruent dimension
+  Full: 24 items
+  Purified: 13 items
+  Full alpha: 0.639 [0.582, 0.686]
+  Purified alpha: 0.702 [0.660, 0.736]
+  Delta alpha (Purified - Full): +0.063
+Checking alpha values in [0, 1]
+All alpha values in valid range
+Checking CI_lower < alpha < CI_upper
+All CIs contain estimates
+Writing /home/etai/projects/REMEMVR/results/ch5/5.4.5/data/step04_reliability_assessment.csv
+3 rows, 8 columns
+Step 04 complete

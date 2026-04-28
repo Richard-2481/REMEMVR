@@ -15,9 +15,7 @@ print("=" * 80)
 print("POWER ANALYSIS FOR NULL 3-WAY INTERACTION - RQ 5.4.2")
 print("=" * 80)
 
-# ============================================================================
 # OBSERVED EFFECT EXTRACTION
-# ============================================================================
 
 print("\n1. OBSERVED EFFECT SIZE")
 print("-" * 80)
@@ -73,9 +71,7 @@ f_squared = (z_val ** 2) / N
 print(f"  Cohen's f² ≈ {f_squared:.6f}")
 print(f"  Interpretation: {f_squared*100:.4f}% variance explained")
 
-# ============================================================================
 # POST-HOC POWER FOR OBSERVED EFFECT
-# ============================================================================
 
 print("\n2. POST-HOC POWER FOR OBSERVED EFFECT")
 print("-" * 80)
@@ -104,9 +100,7 @@ except Exception as e:
     print(f"  f² = {f_squared:.6f} (near zero)")
     observed_power = np.nan
 
-# ============================================================================
 # POWER FOR MEANINGFUL THRESHOLDS
-# ============================================================================
 
 print("\n3. POWER FOR MEANINGFUL EFFECT THRESHOLDS")
 print("-" * 80)
@@ -134,9 +128,7 @@ for label, d_threshold in thresholds.items():
     except Exception as e:
         print(f"  {label}: f² = {f2_threshold:.4f}, Power = [computational error]")
 
-# ============================================================================
 # SAMPLE SIZE FOR 0.80 POWER
-# ============================================================================
 
 print("\n4. SAMPLE SIZE REQUIRED FOR 0.80 POWER")
 print("-" * 80)
@@ -174,9 +166,7 @@ except Exception as e:
     print(f"  Small effect (d=0.20): [computational error]")
     n_required_small = np.nan
 
-# ============================================================================
 # INTERPRETATION & CONCLUSION
-# ============================================================================
 
 print("\n5. INTERPRETATION & CONCLUSION")
 print("-" * 80)
@@ -224,9 +214,7 @@ else:
         print(f"  Power = {observed_power:.4f} >= 0.80")
         print(f"  Conclusion: ADEQUATELY POWERED NULL")
 
-# ============================================================================
 # SAVE RESULTS
-# ============================================================================
 
 print("\n6. SAVING RESULTS")
 print("-" * 80)

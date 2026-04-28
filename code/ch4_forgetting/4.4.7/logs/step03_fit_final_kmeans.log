@@ -1,0 +1,91 @@
+Step 03: Fit Final K-means Model
+Reading optimal K from /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_optimal_k.txt
+Optimal K = 6
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+100 rows, 7 columns
+Fitting K-means with K=6, n_init=50, random_state=42
+Inertia = 118.6476
+Cluster sizes:
+  Cluster 0: 22 participants (22.0%)
+  Cluster 1: 17 participants (17.0%)
+  Cluster 2: 15 participants (15.0%)
+  Cluster 3: 22 participants (22.0%)
+  Cluster 4: 18 participants (18.0%)
+  Cluster 5: 6 participants (6.0%)
+Writing cluster assignments to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+Writing cluster centers to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+Validating cluster assignments
+validate_cluster_assignment() got an unexpected keyword argument 'cluster_labels'
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.7/code/step03_fit_final_kmeans.py", line 107, in <module>
+    validation_result = validate_cluster_assignment(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_cluster_assignment() got an unexpected keyword argument 'cluster_labels'
+Step 03: Fit Final K-means Model
+Reading optimal K from /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_optimal_k.txt
+Optimal K = 6
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+100 rows, 7 columns
+Fitting K-means with K=6, n_init=50, random_state=42
+Inertia = 118.6476
+Cluster sizes:
+  Cluster 0: 22 participants (22.0%)
+  Cluster 1: 17 participants (17.0%)
+  Cluster 2: 15 participants (15.0%)
+  Cluster 3: 22 participants (22.0%)
+  Cluster 4: 18 participants (18.0%)
+  Cluster 5: 6 participants (6.0%)
+Writing cluster assignments to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+Writing cluster centers to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+Validating cluster assignments
+Validation failed: Clusters below minimum size (10): [5]
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.7/code/step03_fit_final_kmeans.py", line 114, in <module>
+    raise ValueError(f"Validation failed: {validation_result['message']}")
+ValueError: Validation failed: Clusters below minimum size (10): [5]
+Step 03: Fit Final K-means Model
+Reading optimal K from /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_optimal_k.txt
+Optimal K = 6
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+100 rows, 7 columns
+Fitting K-means with K=6, n_init=50, random_state=42
+Inertia = 118.6476
+Cluster sizes:
+  Cluster 0: 22 participants (22.0%)
+  Cluster 1: 17 participants (17.0%)
+  Cluster 2: 15 participants (15.0%)
+  Cluster 3: 22 participants (22.0%)
+  Cluster 4: 18 participants (18.0%)
+  Cluster 5: 6 participants (6.0%)
+Writing cluster assignments to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+Writing cluster centers to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+Validating cluster assignments
+[VALIDATION PASS] Valid cluster assignment: 6 clusters, sizes {3: 22, 0: 22, 4: 18, 1: 17, 2: 15, 5: 6}
+Step 03 complete - 6 clusters assigned
+Step 03: Fit Final K-means Model
+Reading optimal K from /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step02_optimal_k.txt
+Optimal K = 6
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step01_standardized_features.csv
+100 rows, 7 columns
+Fitting K-means with K=6, n_init=50, random_state=42
+Inertia = 122.4338
+Cluster sizes:
+  Cluster 0: 14 participants (14.0%)
+  Cluster 1: 19 participants (19.0%)
+  Cluster 2: 15 participants (15.0%)
+  Cluster 3: 16 participants (16.0%)
+  Cluster 4: 11 participants (11.0%)
+  Cluster 5: 25 participants (25.0%)
+Writing cluster assignments to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_assignments.csv
+Writing cluster centers to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step03_cluster_centers.csv
+Validating cluster assignments
+[VALIDATION PASS] Valid cluster assignment: 6 clusters, sizes {5: 25, 1: 19, 3: 16, 2: 15, 0: 14, 4: 11}
+Step 03 complete - 6 clusters assigned

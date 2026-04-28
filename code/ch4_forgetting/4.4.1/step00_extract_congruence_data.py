@@ -1,55 +1,5 @@
 #!/usr/bin/env python3
-# =============================================================================
-# SCRIPT METADATA
-# =============================================================================
-"""
-Step ID: step00
-Step Name: Extract VR Data for Congruence IRT Analysis
-RQ: results/ch5/5.4.1
-Generated: 2025-12-01 (Updated from 2025-11-24)
-
-PURPOSE:
-Extract VR test item responses from dfData.csv, dichotomize scores,
-create Q-matrix for congruence-based IRT with Common/Congruent/Incongruent factors.
-
-This is the ROOT extraction for Congruence type RQs (5.4.X).
-5.4.1 extracts independently from dfData.csv - NO cross-type dependencies.
-
-EXPECTED INPUTS:
-  - data/step00_input_data.csv (LOCAL to this RQ - no external dependencies)
-    Columns: [UID, TEST, TSVR, TQ_* columns]
-    Format: CSV with UTF-8 encoding
-    Expected rows: ~400 (100 participants x 4 test sessions)
-
-EXPECTED OUTPUTS:
-  - data/step00_irt_input.csv
-    Columns: composite_ID + interactive paradigm item columns
-    Format: Wide-format IRT input (binary 0/1)
-    Expected rows: ~400
-
-  - data/step00_q_matrix.csv
-    Columns: item_name, common, congruent, incongruent
-    Format: Q-matrix with binary loadings (each item loads on exactly 1 dimension)
-    Expected rows: ~72 items (24 items x 3 paradigms)
-
-  - data/step00_tsvr_mapping.csv
-    Columns: composite_ID, UID, test, TSVR_hours
-    Format: CSV with time-since-VR-encoding mapping
-    Expected rows: ~400
-
-VALIDATION CRITERIA:
-  - Output files created
-  - Row count: ~400
-  - Q-matrix structure valid (each item loads on exactly 1 dimension)
-  - All congruence categories present (common, congruent, incongruent)
-
-IMPLEMENTATION NOTES:
-- Item naming: TQ_{paradigm}-{domain}-{item} (e.g., TQ_IFR-N-i1)
-- Interactive paradigms: IFR (Free Recall), ICR (Cued Recall), IRE (Recognition)
-- Excludes: RFR (Room Free Recall), TCR (Task Cued Recall) - different format
-- Congruence mapping: i1,i2 -> common; i3,i4 -> congruent; i5,i6 -> incongruent
-"""
-# =============================================================================
+"""Extract VR Data for Congruence IRT Analysis: Extract VR test item responses from dfData.csv, dichotomize scores,"""
 
 import sys
 from pathlib import Path
@@ -59,13 +9,10 @@ from typing import Dict, List
 import traceback
 from datetime import datetime
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch5/5.4.1
 LOG_FILE = RQ_DIR / "logs" / "step00_extract_congruence_data.log"
@@ -94,12 +41,9 @@ CONGRUENCE_MAPPING = {
     "incongruent": ["-i5", "-i6"]
 }
 
-# =============================================================================
 # Logging Function
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     formatted_msg = f"[{timestamp}] {msg}"
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -107,9 +51,7 @@ def log(msg):
         f.write(f"{formatted_msg}\n")
     print(formatted_msg)
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
@@ -119,21 +61,15 @@ if __name__ == "__main__":
             f.write(f"Step 00: Extract VR Data for Congruence IRT Analysis (Congruence Type ROOT)\n")
             f.write(f"{'='*80}\n\n")
 
-        log("[START] Step 00: Extract VR Data for Congruence IRT Analysis")
-        log(f"[INFO] RQ: 5.4.1 (Congruence Type ROOT)")
-        log(f"[INFO] Source: step00_input_data.csv (LOCAL - no external dependencies)")
-
-        # =========================================================================
-        # STEP 1: Load Input Data from step00_input_data.csv
-        # =========================================================================
-        log("[LOAD] Loading raw data from step00_input_data.csv...")
+        log("Step 00: Extract VR Data for Congruence IRT Analysis")
+        log(f"RQ: 5.4.1 (Congruence Type ROOT)")
+        log(f"Source: step00_input_data.csv (LOCAL - no external dependencies)")
+        # Load Input Data from step00_input_data.csv
+        log("Loading raw data from step00_input_data.csv...")
         df = pd.read_csv(INPUT_FILE, encoding='utf-8')
-        log(f"[LOADED] step00_input_data.csv ({len(df)} rows, {len(df.columns)} cols)")
-
-        # =========================================================================
-        # STEP 2: Identify and Filter Columns
-        # =========================================================================
-        log("[PROCESS] Identifying columns...")
+        log(f"step00_input_data.csv ({len(df)} rows, {len(df.columns)} cols)")
+        # Identify and Filter Columns
+        log("Identifying columns...")
 
         # Required metadata columns
         meta_cols = ["UID", "TEST", "TSVR"]
@@ -143,7 +79,7 @@ if __name__ == "__main__":
 
         # Item columns are all TQ_* columns
         all_item_cols = [col for col in df.columns if col.startswith("TQ_")]
-        log(f"[INFO] Found {len(all_item_cols)} total item columns (TQ_*)")
+        log(f"Found {len(all_item_cols)} total item columns (TQ_*)")
 
         # Filter to interactive paradigm items only (IFR, ICR, IRE)
         interactive_cols = []
@@ -153,20 +89,14 @@ if __name__ == "__main__":
             if is_interactive and not is_excluded:
                 interactive_cols.append(col)
 
-        log(f"[FILTERED] Retained {len(interactive_cols)} interactive paradigm items (IFR/ICR/IRE)")
-        log(f"[FILTERED] Excluded {len(all_item_cols) - len(interactive_cols)} non-interactive items")
-
-        # =========================================================================
-        # STEP 3: Create composite_ID
-        # =========================================================================
-        log("[PROCESS] Creating composite_ID...")
+        log(f"Retained {len(interactive_cols)} interactive paradigm items (IFR/ICR/IRE)")
+        log(f"Excluded {len(all_item_cols) - len(interactive_cols)} non-interactive items")
+        # Create composite_ID
+        log("Creating composite_ID...")
         df["composite_ID"] = df["UID"].astype(str) + "_" + df["TEST"].astype(str)
-        log(f"[INFO] Created {df['composite_ID'].nunique()} unique composite_IDs")
-
-        # =========================================================================
-        # STEP 4: Dichotomize Item Responses
-        # =========================================================================
-        log(f"[PROCESS] Dichotomizing item responses (threshold={DICHOTOMIZATION_THRESHOLD})...")
+        log(f"Created {df['composite_ID'].nunique()} unique composite_IDs")
+        # Dichotomize Item Responses
+        log(f"Dichotomizing item responses (threshold={DICHOTOMIZATION_THRESHOLD})...")
 
         df_items = df[interactive_cols].copy()
 
@@ -184,28 +114,22 @@ if __name__ == "__main__":
         ones = (df_items_binary == 1).sum().sum()
         zeros = (df_items_binary == 0).sum().sum()
         nan_count = df_items_binary.isna().sum().sum()
-        log(f"[INFO] Dichotomization results:")
+        log(f"Dichotomization results:")
         log(f"       - Total valid responses: {total_responses}")
         log(f"       - Correct (1): {ones} ({100*ones/total_responses:.1f}%)")
         log(f"       - Incorrect (0): {zeros} ({100*zeros/total_responses:.1f}%)")
         log(f"       - Missing (NaN): {nan_count}")
-
-        # =========================================================================
-        # STEP 5: Create IRT Input (Wide Format)
-        # =========================================================================
-        log("[PROCESS] Creating IRT input file (wide format)...")
+        # Create IRT Input (Wide Format)
+        log("Creating IRT input file (wide format)...")
 
         df_irt = pd.DataFrame({
             "composite_ID": df["composite_ID"]
         })
         df_irt = pd.concat([df_irt, df_items_binary], axis=1)
 
-        log(f"[INFO] IRT input shape: {df_irt.shape}")
-
-        # =========================================================================
-        # STEP 6: Create TSVR Mapping
-        # =========================================================================
-        log("[PROCESS] Creating TSVR mapping file...")
+        log(f"IRT input shape: {df_irt.shape}")
+        # Create TSVR Mapping
+        log("Creating TSVR mapping file...")
 
         df_tsvr = df[["composite_ID", "UID", "TEST", "TSVR"]].copy()
         df_tsvr = df_tsvr.rename(columns={
@@ -213,13 +137,10 @@ if __name__ == "__main__":
             "TSVR": "TSVR_hours"
         })
 
-        log(f"[INFO] TSVR mapping shape: {df_tsvr.shape}")
-        log(f"[INFO] TSVR_hours range: [{df_tsvr['TSVR_hours'].min():.2f}, {df_tsvr['TSVR_hours'].max():.2f}]")
-
-        # =========================================================================
-        # STEP 7: Create Q-Matrix (Congruence Factors)
-        # =========================================================================
-        log("[PROCESS] Creating Q-matrix with congruence factors...")
+        log(f"TSVR mapping shape: {df_tsvr.shape}")
+        log(f"TSVR_hours range: [{df_tsvr['TSVR_hours'].min():.2f}, {df_tsvr['TSVR_hours'].max():.2f}]")
+        # Create Q-Matrix (Congruence Factors)
+        log("Creating Q-matrix with congruence factors...")
 
         q_matrix_data = []
         skipped_items = []
@@ -245,41 +166,38 @@ if __name__ == "__main__":
         df_q_matrix = pd.DataFrame(q_matrix_data)
 
         if skipped_items:
-            log(f"[WARN] {len(skipped_items)} items don't match any congruence suffix - skipped")
-            log(f"[WARN] First 5 skipped: {skipped_items[:5]}")
+            log(f"{len(skipped_items)} items don't match any congruence suffix - skipped")
+            log(f"First 5 skipped: {skipped_items[:5]}")
 
         # Count items per congruence category
         n_common = df_q_matrix["common"].sum()
         n_congruent = df_q_matrix["congruent"].sum()
         n_incongruent = df_q_matrix["incongruent"].sum()
 
-        log(f"[INFO] Q-matrix shape: {df_q_matrix.shape}")
-        log(f"[INFO] Q-matrix factor counts:")
+        log(f"Q-matrix shape: {df_q_matrix.shape}")
+        log(f"Q-matrix factor counts:")
         log(f"       - common: {n_common} items")
         log(f"       - congruent: {n_congruent} items")
         log(f"       - incongruent: {n_incongruent} items")
-
-        # =========================================================================
-        # STEP 8: Validation
-        # =========================================================================
-        log("[VALIDATION] Running validation checks...")
+        # Validation
+        log("Running validation checks...")
 
         # Validation 1: Row count
         assert len(df_irt) == 400, f"Row count mismatch: expected 400, got {len(df_irt)}"
-        log("[PASS] Row count: 400 rows")
+        log("Row count: 400 rows")
 
         # Validation 2: Q-matrix structure (each item loads on exactly 1 dimension)
         row_sums = df_q_matrix[["common", "congruent", "incongruent"]].sum(axis=1)
         if not all(row_sums == 1):
             invalid_items = df_q_matrix[row_sums != 1]["item_name"].tolist()
             raise ValueError(f"Q-matrix invalid: items don't load on exactly 1 dimension: {invalid_items}")
-        log("[PASS] Q-matrix structure: Each item in exactly one factor")
+        log("Q-matrix structure: Each item in exactly one factor")
 
         # Validation 3: All congruence categories present
         assert n_common > 0, "No common items found"
         assert n_congruent > 0, "No congruent items found"
         assert n_incongruent > 0, "No incongruent items found"
-        log("[PASS] All congruence categories present")
+        log("All congruence categories present")
 
         # Validation 4: Item values valid (0, 1, or NaN)
         item_values = df_irt.drop(columns=["composite_ID"]).values.flatten()
@@ -287,44 +205,38 @@ if __name__ == "__main__":
         unique_values = set(item_values[~np.isnan(item_values)])
         invalid_values = unique_values - valid_values
         if invalid_values:
-            log(f"[WARN] Found unexpected item values: {invalid_values}")
+            log(f"Found unexpected item values: {invalid_values}")
         else:
-            log("[PASS] Item values valid (0, 1, NaN only)")
+            log("Item values valid (0, 1, NaN only)")
 
         # Validation 5: TSVR range
         tsvr_min = df_tsvr["TSVR_hours"].min()
         tsvr_max = df_tsvr["TSVR_hours"].max()
         assert tsvr_min >= 0 and tsvr_max <= 300, f"TSVR_hours outside expected range [0, 300]"
-        log(f"[PASS] TSVR_hours range: [{tsvr_min:.2f}, {tsvr_max:.2f}]")
+        log(f"TSVR_hours range: [{tsvr_min:.2f}, {tsvr_max:.2f}]")
 
-        log("[VALIDATION] All validation checks PASSED")
-
-        # =========================================================================
-        # STEP 9: Save Output Files
-        # =========================================================================
-        log("[SAVE] Saving output files...")
+        log("All validation checks PASSED")
+        # Save Output Files
+        log("Saving output files...")
 
         # Ensure data directory exists
         OUTPUT_IRT_INPUT.parent.mkdir(parents=True, exist_ok=True)
 
         # Save IRT input (filtered)
         df_irt.to_csv(OUTPUT_IRT_INPUT, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_IRT_INPUT} ({len(df_irt)} rows, {len(df_irt.columns)} cols)")
+        log(f"{OUTPUT_IRT_INPUT} ({len(df_irt)} rows, {len(df_irt.columns)} cols)")
 
         # Save Q-matrix
         df_q_matrix.to_csv(OUTPUT_Q_MATRIX, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_Q_MATRIX} ({len(df_q_matrix)} rows)")
+        log(f"{OUTPUT_Q_MATRIX} ({len(df_q_matrix)} rows)")
 
         # Save TSVR mapping
         df_tsvr.to_csv(OUTPUT_TSVR_MAPPING, index=False, encoding='utf-8')
-        log(f"[SAVED] {OUTPUT_TSVR_MAPPING} ({len(df_tsvr)} rows)")
-
-        # =========================================================================
-        # STEP 10: Summary
-        # =========================================================================
+        log(f"{OUTPUT_TSVR_MAPPING} ({len(df_tsvr)} rows)")
+        # Summary
         log("")
         log("=" * 80)
-        log("[SUCCESS] Step 00 Complete - Congruence Type ROOT extraction")
+        log("Step 00 Complete - Congruence Type ROOT extraction")
         log("=" * 80)
         log(f"Outputs created:")
         log(f"  1. IRT input: {OUTPUT_IRT_INPUT}")
@@ -341,16 +253,16 @@ if __name__ == "__main__":
         if skipped_items:
             log(f"    - Skipped (no congruence suffix): {len(skipped_items)} items")
         log("")
-        log("[INFO] This is the ROOT extraction for Congruence type (5.4.X)")
-        log("[INFO] NO cross-type dependencies - extracts directly from dfData.csv")
+        log("This is the ROOT extraction for Congruence type (5.4.X)")
+        log("NO cross-type dependencies - extracts directly from dfData.csv")
         log("")
-        log("[NEXT] Step 01: IRT Calibration Pass 1")
+        log("Step 01: IRT Calibration Pass 1")
 
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

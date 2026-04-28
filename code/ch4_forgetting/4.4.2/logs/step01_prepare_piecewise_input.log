@@ -1,0 +1,72 @@
+Step 1: Prepare Piecewise LMM Input
+Loading theta scores from Step 0...
+step00_theta_scores_from_rq5.csv (400 rows, 7 cols)
+Reshaping wide to long format...
+Long format created: 1200 rows
+Extracting UID and test from composite_ID...
+UID and test extracted
+Loading TSVR timestamps from dfData.csv...
+[Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/data/cache/dfData.csv'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq6/code/step01_prepare_piecewise_input.py", line 196, in <module>
+    df_master = pd.read_csv(DFDATA_PATH, encoding='utf-8')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/io/common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/data/cache/dfData.csv'
+Step 1: Prepare Piecewise LMM Input
+Loading theta scores from Step 0...
+step00_theta_scores_from_rq5.csv (400 rows, 7 cols)
+Reshaping wide to long format...
+Long format created: 1200 rows
+Extracting UID and test from composite_ID...
+UID and test extracted
+Loading TSVR timestamps from dfData.csv...
+dfData.csv (400 rows)
+Extracted TSVR for 400 composite_IDs
+Merged TSVR_hours for all 1200 rows
+Assigning piecewise segments...
+Segment assignment incomplete: 27 rows have missing Segment
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq6/code/step01_prepare_piecewise_input.py", line 232, in <module>
+    raise ValueError(
+ValueError: Segment assignment incomplete: 27 rows have missing Segment
+Step 1: Prepare Piecewise LMM Input
+Loading theta scores from Step 0...
+step00_theta_scores_from_rq5.csv (400 rows, 7 cols)
+Reshaping wide to long format...
+Long format created: 1200 rows
+Extracting UID and test from composite_ID...
+UID and test extracted
+Loading TSVR timestamps from dfData.csv...
+dfData.csv (400 rows)
+Extracted TSVR for 400 composite_IDs
+Merged TSVR_hours for all 1200 rows
+Assigning piecewise segments...
+Segment distribution:
+  - Late: 828 rows
+  - Early: 372 rows
+Applying treatment coding...
+Treatment coding applied (Congruence ref='Common', Segment ref='Early')
+Validating piecewise input structure...
+Row count correct (1200)
+Column count correct (9)
+Days_within ranges valid (Early: [0.042, 0.996], Late: [0.006, 9.260])
+No missing data
+step01_lmm_input_piecewise.csv (1200 rows, 9 cols)
+Step 1 complete

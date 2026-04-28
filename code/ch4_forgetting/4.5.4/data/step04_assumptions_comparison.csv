@@ -1,0 +1,17 @@
+model,assumption,test_statistic,p_value,threshold,status,notes
+IRT,Linearity,0.0,,Visual inspection,FAIL,"Method: unknown, CSVs: 0"
+IRT,Homoscedasticity,18.244757668414113,0.00039156938614033453,p > 0.05,FAIL,Test: Breusch-Pagan
+IRT,Normality_residuals,0.9899381922157726,2.723332155699104e-05,p > 0.05 (or note N=800 limitation),FAIL,Test: Shapiro-Wilk
+IRT,Normality_random_effects_intercepts,0.9849197281879887,0.3133837417831943,p > 0.05,FAIL,"Test: Shapiro-Wilk, Component: Intercepts"
+IRT,Normality_random_effects_slopes,0.9747143019753653,0.05125017828838429,p > 0.05,FAIL,"Test: Shapiro-Wilk, Component: Slopes"
+IRT,Independence,-0.17351115045388998,,ACF < 0.1,FAIL,Lag-1 ACF: -0.1735
+IRT,No_multicollinearity,,,N/A (<=2 predictors),PASS,VIF test skipped (model has <=2 predictors or other reason)
+IRT,Influential_observations,,,Cook's D < 1.0,FAIL,"Max Cook's D: nan, N outliers: 0"
+CTT,Linearity,0.0,,Visual inspection,FAIL,"Method: unknown, CSVs: 0"
+CTT,Homoscedasticity,10.161753243652072,0.01724005040842244,p > 0.05,FAIL,Test: Breusch-Pagan
+CTT,Normality_residuals,0.9965453299629943,0.07888091147279402,p > 0.05 (or note N=800 limitation),FAIL,Test: Shapiro-Wilk
+CTT,Normality_random_effects_intercepts,0.9777208199997576,0.08818201456103632,p > 0.05,FAIL,"Test: Shapiro-Wilk, Component: Intercepts"
+CTT,Normality_random_effects_slopes,0.9826206976171327,0.2115506911561978,p > 0.05,FAIL,"Test: Shapiro-Wilk, Component: Slopes"
+CTT,Independence,-0.1351809243510189,,ACF < 0.1,FAIL,Lag-1 ACF: -0.1352
+CTT,No_multicollinearity,,,N/A (<=2 predictors),PASS,VIF test skipped (model has <=2 predictors or other reason)
+CTT,Influential_observations,,,Cook's D < 1.0,FAIL,"Max Cook's D: nan, N outliers: 0"

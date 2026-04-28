@@ -1,0 +1,85 @@
+Step 01: Merge TSVR and Transform Variables
+Loading Step 0 theta-age merged data...
+step00_theta_age_merged.csv (1200 rows, 6 cols)
+Columns: ['composite_ID', 'UID', 'test', 'paradigm', 'theta', 'Age']
+Loading TSVR mapping from RQ 5.3.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Merge strategy: UID + test (TSVR has no paradigm dimension, must replicate across paradigms)
+Merging theta-age with TSVR on (UID, test)...
+Result: 1200 rows, 7 cols
+Merge successful - all 1200 theta observations have TSVR_hours
+Creating Age_c (grand-mean centered)...
+Age mean: 44.570
+Age_c mean: 0.000000 (should be ~0)
+Age SD: 14.512
+Age_c SD: 14.512 (should equal Age SD)
+Age_c grand-mean centered (mean = 0.000000)
+Age_c preserves variance (SD = 14.512)
+Creating log_TSVR (log transformation)...
+log_TSVR range: [0.693, 5.510]
+Expected range: [0.0, ~5.13] (log(0+1)=0, log(168+1)~5.13)
+log_TSVR maximum exceeds expected: 5.510 > 5.2
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.4/code/step01_merge_tsvr_transform.py", line 240, in <module>
+    raise ValueError(f"log_TSVR maximum exceeds expected: {df_merged['log_TSVR'].max():.3f} > 5.2")
+ValueError: log_TSVR maximum exceeds expected: 5.510 > 5.2
+Step 01: Merge TSVR and Transform Variables
+Loading Step 0 theta-age merged data...
+step00_theta_age_merged.csv (1200 rows, 6 cols)
+Columns: ['composite_ID', 'UID', 'test', 'paradigm', 'theta', 'Age']
+Loading TSVR mapping from RQ 5.3.1...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+Merge strategy: UID + test (TSVR has no paradigm dimension, must replicate across paradigms)
+Merging theta-age with TSVR on (UID, test)...
+Result: 1200 rows, 7 cols
+Merge successful - all 1200 theta observations have TSVR_hours
+Creating Age_c (grand-mean centered)...
+Age mean: 44.570
+Age_c mean: 0.000000 (should be ~0)
+Age SD: 14.512
+Age_c SD: 14.512 (should equal Age SD)
+Age_c grand-mean centered (mean = 0.000000)
+Age_c preserves variance (SD = 14.512)
+Creating log_TSVR (log transformation)...
+log_TSVR range: [0.693, 5.510]
+TSVR_hours range: [1.0, 246.2] hours
+log_TSVR range valid (transformation successful)
+Checking log_TSVR monotonicity...
+log(0 + 1) = 0.000
+log(1 + 1) = 0.693
+log(24 + 1) = 3.219
+log(72 + 1) = 4.290
+log(144 + 1) = 4.977
+log(168 + 1) = 5.130
+log_TSVR transformation correct
+Checking for missing values...
+No missing values in merged dataset
+Checking value ranges...
+theta range: [-2.406, 2.799]
+Age range: [20.0, 70.0]
+Age range valid
+TSVR_hours range: [1.00, 246.24]
+TSVR_hours range valid
+Paradigms: ['IFR', 'ICR', 'IRE']
+Paradigm counts:
+  IFR: 400 observations
+  ICR: 400 observations
+  IRE: 400 observations
+Paradigm balance validated (400 observations per paradigm)
+Unique participants: 100
+All 100 participants present
+Saving LMM input data...
+step01_lmm_input.csv (1200 rows, 9 cols)
+Output columns: ['composite_ID', 'UID', 'test', 'paradigm', 'theta', 'Age', 'Age_c', 'TSVR_hours', 'log_TSVR']
+Verifying saved file...
+Output file validated
+Step 01 complete
+Input: 1200 theta-age observations + 400 TSVR observations
+  Merge: UID + test (replicated TSVR across 3 paradigms)
+  Age_c: Grand-mean centered (mean = 0.000000)
+  log_TSVR: Log-transformed time (range [0.693, 5.510])
+  Output: 1200 rows x 9 columns
+  Ready for LMM analysis (Step 2)

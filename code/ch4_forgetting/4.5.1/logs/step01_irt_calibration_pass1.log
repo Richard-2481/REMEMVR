@@ -1,0 +1,50 @@
+Step 01: IRT Calibration Pass 1 (All Items)
+======================================================================
+
+Loading input data...
+step00_irt_input.csv (400 rows, 37 cols)
+step00_q_matrix.csv (36 items)
+
+Converting wide format to long format...
+Wide -> Long: 14400 -> 14400 observations (0 NaN removed)
+
+Defining factor groups...
+Groups: {'source': ['-U-'], 'destination': ['-D-']}
+
+Configuring IRT model settings...
+Using MINIMAL settings for pipeline validation
+model_fit: batch_size=2048, iw_samples=10, mc_samples=1
+model_scores: scoring_batch_size=2048, mc_samples=10, iw_samples=10
+Change to production settings after testing (iw_samples=100, mc_samples=100)
+
+Running IRT calibration (2-factor GRM)...
+This may take ~10 minutes with minimal settings...
+IRT calibration complete
+Theta scores: 400 rows, 4 cols
+Item parameters: 36 rows, 5 cols
+
+Reformatting outputs to match expected schema...
+SE not available from calibrate_irt - using placeholder SE=0.5
+Item parameters reformatted: 36 items
+Theta scores reformatted: 400 composite_IDs
+
+Saving outputs...
+step01_pass1_item_params.csv (36 rows, 4 cols)
+step01_pass1_theta.csv (400 rows, 5 cols)
+step01_pass1_diagnostics.txt
+
+Validating outputs...
+All 36 items present in item_params
+All 400 composite_IDs present in theta
+Discrimination (a) in [0.0, 10.0]: min=0.234, max=2.119
+Difficulty (b) in [-6.0, 6.0]: min=-1.436, max=3.162
+Theta in [-4, 4] for both factors
+
+Descriptive Statistics:
+  Items: 36 (source: 18, destination: 18)
+  Discrimination (a): mean=0.915, SD=0.507
+  Difficulty (b): mean=0.505, SD=1.147
+  Theta (source): mean=-0.014, SD=0.886
+  Theta (destination): mean=-0.007, SD=0.861
+
+Step 01 complete - all validations passed

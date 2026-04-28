@@ -1,0 +1,11 @@
+context,rank,predictor,importance_score
+univariate,1,rpm,0.07962741207669352
+univariate,2,pctret,0.03583365603971145
+univariate,3,bvmt,0.017544826099764193
+univariate,4,ravlt,0.005257581608140198
+univariate,5,age,0.0021912477025105553
+multivariate,1,rpm,0.07166467086902417
+multivariate,2,pctret,0.0322502904357403
+multivariate,3,bvmt,0.01579034348978777
+multivariate,4,ravlt,0.004731823447326178
+multivariate,5,age,0.0019721229322595

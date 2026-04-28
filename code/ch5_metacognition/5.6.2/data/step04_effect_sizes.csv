@@ -1,0 +1,7 @@
+metric,value
+R_squared,0.3975601742209367
+Adjusted_R_squared,0.3787339296653409
+partial_R2_baseline_accuracy,0.0
+partial_R2_baseline_confidence,0.0
+partial_R2_Age,0.007903605545990011
+partial_R2_confidence_bias,1.1102230246251565e-16

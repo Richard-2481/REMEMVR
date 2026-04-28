@@ -1,0 +1,114 @@
+======================================================================
+STEP 10: Murphy (1973) Brier Score Decomposition
+======================================================================
+Loaded dfData: 400 rows
+Matched TQ/TC item pairs: 105
+Interactive paradigm items: 105
+Confidence scale detected: 0-1 (max=1.00)
+
+Test sessions: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+
+--- T1 ---
+  Item-level pairs: 10500
+  Overall accuracy:    0.6135
+  Uncertainty:         0.237112
+  Reliability:         0.015603
+  Resolution:          0.063496
+  Brier (direct):      0.189219
+  Brier (reconstructed): 0.189219
+  Reconstruction error: 2.78e-17
+  VALIDATION - PASS: Brier = Reliability - Resolution + Uncertainty
+
+--- T2 ---
+  Item-level pairs: 10500
+  Overall accuracy:    0.5429
+  Uncertainty:         0.248163
+  Reliability:         0.015053
+  Resolution:          0.058081
+  Brier (direct):      0.205135
+  Brier (reconstructed): 0.205135
+  Reconstruction error: 0.00e+00
+  VALIDATION - PASS: Brier = Reliability - Resolution + Uncertainty
+
+--- T3 ---
+  Item-level pairs: 10500
+  Overall accuracy:    0.5023
+  Uncertainty:         0.249995
+  Reliability:         0.011970
+  Resolution:          0.061663
+  Brier (direct):      0.200301
+  Brier (reconstructed): 0.200301
+  Reconstruction error: 2.78e-17
+  VALIDATION - PASS: Brier = Reliability - Resolution + Uncertainty
+
+--- T4 ---
+  Item-level pairs: 10500
+  Overall accuracy:    0.4640
+  Uncertainty:         0.248704
+  Reliability:         0.010518
+  Resolution:          0.056621
+  Brier (direct):      0.202602
+  Brier (reconstructed): 0.202602
+  Reconstruction error: 2.78e-17
+  VALIDATION - PASS: Brier = Reliability - Resolution + Uncertainty
+
+======================================================================
+CROSS-VALIDATION: Step 10 vs Step 03 Brier Scores
+======================================================================
+  T1: step03=0.189219, step10=0.189219, diff=5.55e-17
+  T2: step03=0.205135, step10=0.205135, diff=2.78e-17
+  T3: step03=0.200301, step10=0.200301, diff=0.00e+00
+  T4: step03=0.202602, step10=0.202602, diff=5.55e-17
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step10_murphy_decomposition.csv
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step10_murphy_bin_detail.csv
+
+======================================================================
+BRIER & ECE LINEAR MIXED MODELS
+======================================================================
+
+--- Brier Score LMM ---
+  Model: brier_score ~ TSVR_hours + (TSVR_hours | UID)
+  N = 400 observations, 100 participants
+
+  Fixed effects:
+    Intercept: β = 0.195856, SE = 0.004161, z = 47.07, p = 0.0000, CI95 [0.18770, 0.20401]
+    TSVR_hours: β = 0.000053, SE = 0.000030, z = 1.78, p = 0.0756, CI95 [-0.00001, 0.00011]
+
+  Per-day effect: β = 0.001273, SE = 0.000716
+  LRT: χ² = 3.1090, p = 0.077863
+
+--- ECE LMM (per-participant) ---
+  Model: ECE ~ TSVR_hours + (TSVR_hours | UID)
+  N = 400 observations, 100 participants
+
+  Fixed effects:
+    Intercept: β = 0.144790, SE = 0.005929, z = 24.42, p = 0.0000, CI95 [0.13317, 0.15641]
+    TSVR_hours: β = -0.000152, SE = 0.000048, z = -3.18, p = 0.0015, CI95 [-0.00025, -0.00006]
+
+  Per-day effect: β = -0.003644, SE = 0.001145
+  LRT: χ² = 9.6834, p = 0.001859
+
+--- Descriptive means ---
+  T1: Brier = 0.189, ECE = 0.147
+  T2: Brier = 0.205, ECE = 0.140
+  T3: Brier = 0.200, ECE = 0.129
+  T4: Brier = 0.203, ECE = 0.124
+
+======================================================================
+SUMMARY TABLE (for thesis reporting)
+======================================================================
+
+Test     Reliability    Resolution     Uncertainty    Brier     
+------------------------------------------------------------
+T1       0.015603       0.063496       0.237112       0.189219  
+T2       0.015053       0.058081       0.248163       0.205135  
+T3       0.011970       0.061663       0.249995       0.200301  
+T4       0.010518       0.056621       0.248704       0.202602  
+
+Day 0 → Day 6 changes:
+  Reliability: 0.015603 → 0.010518 (Δ = -0.005084)
+  Resolution:  0.063496 → 0.056621 (Δ = -0.006876)
+  Uncertainty: 0.237112 → 0.248704 (Δ = +0.011592)
+
+Done.

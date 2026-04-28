@@ -35,7 +35,6 @@ VALIDATION CRITERIA:
   - Model converges successfully
   - Random slopes for recip_TSVR (not log_TSVR)
 
-Generated: 2025-12-09
 """
 
 import sys
@@ -49,22 +48,16 @@ import traceback
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# Import analysis tool
 from tools.analysis_lmm import fit_lmm_trajectory
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step02d_recip_log_verification.log"
 
-# =============================================================================
 # Logging
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -74,9 +67,7 @@ LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 with open(LOG_FILE, 'w', encoding='utf-8') as f:
     f.write("")
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
@@ -85,10 +76,7 @@ if __name__ == "__main__":
         log("=" * 80)
         log(f"Date: {pd.Timestamp.now()}")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Original LMM Input and Add Recip Transformation
-        # =====================================================================
+        # Load Original LMM Input and Add Recip Transformation
 
         log("[STEP 1] Loading original LMM input and adding recip_TSVR...")
         input_file = RQ_DIR / "data" / "step01_lmm_input.csv"
@@ -106,10 +94,7 @@ if __name__ == "__main__":
         lmm_input.to_csv(recip_log_input_file, index=False, encoding='utf-8')
         log(f"  Saved: {recip_log_input_file.name}")
         log("")
-
-        # =====================================================================
-        # STEP 2: Fit Recip+Log Model with Age × Domain × Time Interactions
-        # =====================================================================
+        # Fit Recip+Log Model with Age × Domain × Time Interactions
 
         log("[STEP 2] Fitting Recip+Log model with 3-way Age × Domain × Time interactions...")
 
@@ -141,10 +126,10 @@ if __name__ == "__main__":
                 re_formula="~recip_TSVR",  # Random slopes for recip_TSVR
                 reml=False
             )
-            log(f"  [SUCCESS] Model converged with random slopes")
+            log(f"  Model converged with random slopes")
             random_structure = "~recip_TSVR (random slopes)"
         except Exception as e:
-            log(f"  [FAILED] Random slopes did not converge: {str(e)}")
+            log(f"  Random slopes did not converge: {str(e)}")
             log("  [ATTEMPT 2] Falling back to random intercepts only: ~1...")
             lmm_recip_log = fit_lmm_trajectory(
                 data=lmm_input,
@@ -153,7 +138,7 @@ if __name__ == "__main__":
                 re_formula=None,  # Random intercepts only
                 reml=False
             )
-            log(f"  [SUCCESS] Model converged with random intercepts only")
+            log(f"  Model converged with random intercepts only")
             random_structure = "~1 (intercepts only)"
 
         log("")
@@ -165,10 +150,7 @@ if __name__ == "__main__":
         log(f"  AIC: {lmm_recip_log.aic:.2f}")
         log(f"  BIC: {lmm_recip_log.bic:.2f}")
         log("")
-
-        # =====================================================================
-        # STEP 3: Extract Fixed Effects and 3-Way Interactions
-        # =====================================================================
+        # Extract Fixed Effects and 3-Way Interactions
 
         log("[STEP 3] Extracting fixed effects and 3-way interaction terms...")
 
@@ -206,10 +188,7 @@ if __name__ == "__main__":
             sig_status = "SIGNIFICANT" if row['significant_bonf'] else "NULL"
             log(f"    {row['term']}: p_bonf={row['p_bonferroni']:.6f} [{sig_status}]")
         log("")
-
-        # =====================================================================
-        # STEP 4: Compare to Original Log Model
-        # =====================================================================
+        # Compare to Original Log Model
 
         log("[STEP 4] Comparing Recip+Log to original Log model...")
 
@@ -284,10 +263,7 @@ if __name__ == "__main__":
             log(f"    Change in p:    Δp={row['p_change']:+.6f}")
             log(f"    Both NULL:      {row['both_null']}")
         log("")
-
-        # =====================================================================
-        # STEP 5: Save Outputs
-        # =====================================================================
+        # Save Outputs
 
         log("[STEP 5] Saving verification outputs...")
 
@@ -306,10 +282,7 @@ if __name__ == "__main__":
         comparison_df.to_csv(comparison_file, index=False, encoding='utf-8')
         log(f"  Saved: {comparison_file.name}")
         log("")
-
-        # =====================================================================
-        # STEP 6: Verification Summary
-        # =====================================================================
+        # Verification Summary
 
         log("=" * 80)
         log("[VERIFICATION SUMMARY]")
@@ -350,13 +323,13 @@ if __name__ == "__main__":
 
         log("")
         log("=" * 80)
-        log("[SUCCESS] Step 02d Recip+Log verification complete")
+        log("Step 02d Recip+Log verification complete")
         log("=" * 80)
 
     except Exception as e:
         log("")
         log("=" * 80)
-        log("[ERROR] Recip+Log verification failed!")
+        log("Recip+Log verification failed!")
         log("=" * 80)
         log(f"Error: {str(e)}")
         log("")

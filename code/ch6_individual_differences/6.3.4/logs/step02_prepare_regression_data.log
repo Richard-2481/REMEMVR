@@ -1,0 +1,204 @@
+Step 02: Prepare Regression Data
+Loading input data...
+DASS scores (100 rows, 7 cols)
+DASS columns: ['UID', 'DASS_Dep', 'DASS_Anx', 'DASS_Str', 'z_Dep', 'z_Anx', 'z_Str']
+Ch5 theta scores (400 rows, 3 cols)
+Ch5 columns: ['UID', 'test', 'Theta_All']
+Ch6 confidence scores (400 rows, 3 cols)
+Ch6 confidence columns: ['composite_ID', 'theta_All', 'se_All']
+Ch6 calibration scores (400 rows, 7 cols)
+Ch6 calibration columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'z_theta_accuracy', 'z_theta_confidence', 'calibration']
+Handling column name variations...
+Renamed Theta_All -> theta in Ch5 data
+Ch5 aggregated to participant level: 100 participants
+Parsed UID from composite_ID and renamed theta_All -> theta_confidence
+Ch6 confidence aggregated to participant level: 100 participants
+Ch6 calibration aggregated to participant level: 100 participants
+Merging all datasets with inner join...
+Starting with DASS predictors: 100 participants
+After Ch5 theta merge: 100 participants
+After Ch6 confidence merge: 100 participants
+After Ch6 calibration merge: 100 participants
+Final dataset: 100 participants with complete data
+Final columns: ['UID', 'z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Checking for outliers in outcome variables...
+theta_accuracy: 1 outliers (1.00%)
+theta_accuracy: bounds = [-1.789, 1.776]
+confidence: 1 outliers (1.00%)
+confidence: bounds = [-1.437, 0.211]
+calibration: 5 outliers (5.00%)
+calibration: bounds = [-1.414, 1.536]
+Missing value check:
+UID: No missing values
+z_Dep: No missing values
+z_Anx: No missing values
+z_Str: No missing values
+theta_accuracy: No missing values
+confidence: No missing values
+calibration: No missing values
+Checking coefficient of variation for outcome variables...
+[CV] theta_accuracy: CV = 109.539 (mean=0.006, std=0.677)
+[CV] confidence: CV = 0.515 (mean=-0.633, std=0.326)
+[CV] calibration: CV = 24537584087350264.000 (mean=-0.000, std=0.654)
+All outcome variables have sufficient variance (CV > 0.10)
+Analysis dataset: /home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step02_analysis_dataset.csv
+Dataset shape: (100, 7) (rows, columns)
+Descriptive statistics for final dataset:
+z_Dep: mean=0.000, std=1.000, range=[-0.709, 4.487]
+z_Anx: mean=0.000, std=1.000, range=[-0.605, 4.438]
+z_Str: mean=0.000, std=1.000, range=[-0.927, 3.512]
+theta_accuracy: mean=0.006, std=0.677, range=[-1.954, 1.559]
+confidence: mean=-0.633, std=0.326, range=[-1.792, 0.089]
+calibration: mean=-0.000, std=0.654, range=[-1.969, 1.818]
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['z_Dep', 'confidence', 'theta_accuracy', 'z_Anx', 'z_Str', 'UID', 'calibration']
+n_required: 7
+n_missing: 0
+Checking analysis criteria...
+PASS - All 7 required columns present
+PASS - Sufficient sample size: N=100 >= 90
+PASS - No missing values in analysis dataset
+PASS - All outcome variables have CV > 0.10
+Checking DASS z-standardization...
+PASS - z_Dep: mean=0.000, std=1.000
+PASS - z_Anx: mean=0.000, std=1.000
+PASS - z_Str: mean=0.000, std=1.000
+Step 02 complete
+Step 02: Prepare Regression Data
+Loading input data...
+DASS scores (100 rows, 7 cols)
+DASS columns: ['UID', 'DASS_Dep', 'DASS_Anx', 'DASS_Str', 'z_Dep', 'z_Anx', 'z_Str']
+Ch5 theta scores (400 rows, 3 cols)
+Ch5 columns: ['UID', 'test', 'Theta_All']
+Ch6 confidence scores (400 rows, 3 cols)
+Ch6 confidence columns: ['composite_ID', 'theta_All', 'se_All']
+Ch6 calibration scores (400 rows, 7 cols)
+Ch6 calibration columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'z_theta_accuracy', 'z_theta_confidence', 'calibration']
+Handling column name variations...
+Renamed Theta_All -> theta in Ch5 data
+Ch5 aggregated to participant level: 100 participants
+Parsed UID from composite_ID and renamed theta_All -> theta_confidence
+Ch6 confidence aggregated to participant level: 100 participants
+Ch6 calibration aggregated to participant level: 100 participants
+Merging all datasets with inner join...
+Starting with DASS predictors: 100 participants
+After Ch5 theta merge: 100 participants
+After Ch6 confidence merge: 100 participants
+After Ch6 calibration merge: 100 participants
+Final dataset: 100 participants with complete data
+Final columns: ['UID', 'z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Checking for outliers in outcome variables...
+theta_accuracy: 1 outliers (1.00%)
+theta_accuracy: bounds = [-1.789, 1.776]
+confidence: 1 outliers (1.00%)
+confidence: bounds = [-2.003, 2.118]
+calibration: 3 outliers (3.00%)
+calibration: bounds = [-1.529, 1.643]
+Missing value check:
+UID: No missing values
+z_Dep: No missing values
+z_Anx: No missing values
+z_Str: No missing values
+theta_accuracy: No missing values
+confidence: No missing values
+calibration: No missing values
+Checking coefficient of variation for outcome variables...
+[CV] theta_accuracy: CV = 109.539 (mean=0.006, std=0.677)
+[CV] confidence: CV = 26.065 (mean=0.031, std=0.807)
+[CV] calibration: CV = 52013211830455640.000 (mean=-0.000, std=0.693)
+All outcome variables have sufficient variance (CV > 0.10)
+Analysis dataset: /home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step02_analysis_dataset.csv
+Dataset shape: (100, 7) (rows, columns)
+Descriptive statistics for final dataset:
+z_Dep: mean=0.000, std=1.000, range=[-0.709, 4.487]
+z_Anx: mean=0.000, std=1.000, range=[-0.605, 4.438]
+z_Str: mean=0.000, std=1.000, range=[-0.927, 3.512]
+theta_accuracy: mean=0.006, std=0.677, range=[-1.954, 1.559]
+confidence: mean=0.031, std=0.807, range=[-2.595, 1.766]
+calibration: mean=-0.000, std=0.693, range=[-2.131, 2.234]
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['z_Anx', 'calibration', 'z_Str', 'theta_accuracy', 'UID', 'z_Dep', 'confidence']
+n_required: 7
+n_missing: 0
+Checking analysis criteria...
+PASS - All 7 required columns present
+PASS - Sufficient sample size: N=100 >= 90
+PASS - No missing values in analysis dataset
+PASS - All outcome variables have CV > 0.10
+Checking DASS z-standardization...
+PASS - z_Dep: mean=0.000, std=1.000
+PASS - z_Anx: mean=0.000, std=1.000
+PASS - z_Str: mean=0.000, std=1.000
+Step 02 complete
+Step 02: Prepare Regression Data
+Loading input data...
+DASS scores (100 rows, 7 cols)
+DASS columns: ['UID', 'DASS_Dep', 'DASS_Anx', 'DASS_Str', 'z_Dep', 'z_Anx', 'z_Str']
+Ch5 theta scores (400 rows, 3 cols)
+Ch5 columns: ['UID', 'test', 'Theta_All']
+Ch6 confidence scores (400 rows, 3 cols)
+Ch6 confidence columns: ['composite_ID', 'theta_All', 'se_All']
+Ch6 calibration scores (400 rows, 7 cols)
+Ch6 calibration columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'z_theta_accuracy', 'z_theta_confidence', 'calibration']
+Handling column name variations...
+Renamed Theta_All -> theta in Ch5 data
+Ch5 aggregated to participant level: 100 participants
+Parsed UID from composite_ID and renamed theta_All -> theta_confidence
+Ch6 confidence aggregated to participant level: 100 participants
+Ch6 calibration aggregated to participant level: 100 participants
+Merging all datasets with inner join...
+Starting with DASS predictors: 100 participants
+After Ch5 theta merge: 100 participants
+After Ch6 confidence merge: 100 participants
+After Ch6 calibration merge: 100 participants
+Final dataset: 100 participants with complete data
+Final columns: ['UID', 'z_Dep', 'z_Anx', 'z_Str', 'theta_accuracy', 'confidence', 'calibration']
+Checking for outliers in outcome variables...
+theta_accuracy: 1 outliers (1.00%)
+theta_accuracy: bounds = [-1.789, 1.776]
+confidence: 1 outliers (1.00%)
+confidence: bounds = [-2.003, 2.118]
+calibration: 3 outliers (3.00%)
+calibration: bounds = [-1.529, 1.643]
+Missing value check:
+UID: No missing values
+z_Dep: No missing values
+z_Anx: No missing values
+z_Str: No missing values
+theta_accuracy: No missing values
+confidence: No missing values
+calibration: No missing values
+Checking coefficient of variation for outcome variables...
+[CV] theta_accuracy: CV = 109.539 (mean=0.006, std=0.677)
+[CV] confidence: CV = 26.065 (mean=0.031, std=0.807)
+[CV] calibration: CV = 52013211830455640.000 (mean=-0.000, std=0.693)
+All outcome variables have sufficient variance (CV > 0.10)
+Analysis dataset: /home/etai/projects/REMEMVR/results/ch7/7.3.4/data/step02_analysis_dataset.csv
+Dataset shape: (100, 7) (rows, columns)
+Descriptive statistics for final dataset:
+z_Dep: mean=0.000, std=1.000, range=[-0.709, 4.487]
+z_Anx: mean=0.000, std=1.000, range=[-0.605, 4.438]
+z_Str: mean=0.000, std=1.000, range=[-0.927, 3.512]
+theta_accuracy: mean=0.006, std=0.677, range=[-1.954, 1.559]
+confidence: mean=0.031, std=0.807, range=[-2.595, 1.766]
+calibration: mean=-0.000, std=0.693, range=[-2.131, 2.234]
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['calibration', 'theta_accuracy', 'confidence', 'z_Dep', 'z_Str', 'UID', 'z_Anx']
+n_required: 7
+n_missing: 0
+Checking analysis criteria...
+PASS - All 7 required columns present
+PASS - Sufficient sample size: N=100 >= 90
+PASS - No missing values in analysis dataset
+PASS - All outcome variables have CV > 0.10
+Checking DASS z-standardization...
+PASS - z_Dep: mean=0.000, std=1.000
+PASS - z_Anx: mean=0.000, std=1.000
+PASS - z_Str: mean=0.000, std=1.000
+Step 02 complete

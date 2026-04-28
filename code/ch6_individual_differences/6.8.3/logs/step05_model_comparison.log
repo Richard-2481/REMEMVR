@@ -1,0 +1,79 @@
+Step 05: Model Comparison
+Loading data...
+100 participants, 4 models
+Ranking models by CV-R²...
+1. Extended: CV-R²=0.0213, Shrinkage=0.2374
+  2. Full: CV-R²=-0.0493, Shrinkage=0.3355
+  3. Core: CV-R²=-0.0590, Shrinkage=0.2246
+  4. Minimal: CV-R²=-0.1184, Shrinkage=0.2121
+
+Applying parsimony criterion (threshold=0.02)...
+Extended: ΔCV-R²=0.0000 < 0.02 (within threshold)
+Full: ΔCV-R²=0.0706 >= 0.02 (excluded by parsimony)
+Core: ΔCV-R²=0.0803 >= 0.02 (excluded by parsimony)
+Minimal: ΔCV-R²=0.1397 >= 0.02 (excluded by parsimony)
+
+Optimal model: Extended
+
+Performing nested F-tests with dual p-values (D068)...
+Minimal vs Core:
+  F=8.0208, p_uncorrected=0.0056, p_bonferroni=0.0169
+  Significant (Bonferroni): YES
+Core vs Extended:
+  F=5.6816, p_uncorrected=0.0047, p_bonferroni=0.0141
+  Significant (Bonferroni): YES
+Extended vs Full:
+  F=0.8322, p_uncorrected=0.4796, p_bonferroni=1.0000
+  Significant (Bonferroni): NO
+
+Saving model comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step05_model_comparison.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step05_nested_comparisons.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step05_optimal_model.txt
+
+Validating model comparison results...
+Best model correctly ranked
+Model assumption diagnostics will be performed in Step 07
+Step 05 complete
+Step 05: Model Comparison
+Loading data...
+100 participants, 5 models
+Ranking models by CV-R²...
+1. Extended: CV-R²=0.0169, Shrinkage=0.2427
+  2. Full: CV-R²=-0.0445, Shrinkage=0.3312
+  3. Core: CV-R²=-0.0555, Shrinkage=0.2188
+  4. Minimal: CV-R²=-0.1017, Shrinkage=0.2063
+  5. Full+Retention: CV-R²=-0.2321, Shrinkage=0.5777
+
+Applying parsimony criterion (threshold=0.02)...
+Extended: ΔCV-R²=0.0000 < 0.02 (within threshold)
+Full: ΔCV-R²=0.0614 >= 0.02 (excluded by parsimony)
+Core: ΔCV-R²=0.0724 >= 0.02 (excluded by parsimony)
+Minimal: ΔCV-R²=0.1186 >= 0.02 (excluded by parsimony)
+Full+Retention: ΔCV-R²=0.2490 >= 0.02 (excluded by parsimony)
+
+Optimal model: Extended
+
+Performing nested F-tests with dual p-values (D068)...
+Minimal vs Core:
+  F=6.4701, p_uncorrected=0.0126, p_bonferroni=0.0503
+  Significant (Bonferroni): NO
+Core vs Extended:
+  F=5.8112, p_uncorrected=0.0042, p_bonferroni=0.0167
+  Significant (Bonferroni): YES
+Extended vs Full:
+  F=0.8425, p_uncorrected=0.4741, p_bonferroni=1.0000
+  Significant (Bonferroni): NO
+Full vs Full+Retention:
+  F=2.7922, p_uncorrected=0.0667, p_bonferroni=0.2667
+  Significant (Bonferroni): NO
+
+Saving model comparison results...
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step05_model_comparison.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step05_nested_comparisons.csv
+/home/etai/projects/REMEMVR/results/ch7/7.8.3/data/step05_optimal_model.txt
+
+Validating model comparison results...
+Best model correctly ranked
+Model assumption diagnostics will be performed in Step 07
+Step 05 complete

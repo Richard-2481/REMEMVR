@@ -1,0 +1,26 @@
+Step 00: Validate Cross-RQ Dependencies
+RQ Directory: /home/etai/projects/REMEMVR/results/ch7/7.1.3
+Output will be saved to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step00_dependency_validation.txt
+
+Checking Ch5 5.2.1 domain theta scores...
+Found Ch5 5.2.1 theta scores: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+Theta file shape: (400, 4)
+Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+All required columns present: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+Total records: 400
+Unique composite IDs: 400
+Unique participants: 100
+No missing theta values
+
+Checking cognitive test data...
+Found dfnonvr.csv: /home/etai/projects/REMEMVR/data/dfnonvr.csv
+dfnonvr shape: (100, 101)
+RAVLT_T not found in dfnonvr.csv
+BVMT_T not found in dfnonvr.csv
+RPM_T not found in dfnonvr.csv
+Participants in dfnonvr: 100
+
+Writing validation results...
+Some dependencies failed validation
+Validation report written to: /home/etai/projects/REMEMVR/results/ch7/7.1.3/data/step00_dependency_validation.txt
+Exiting due to dependency validation failure

@@ -1,0 +1,271 @@
+
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/deepirtools/data.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Step 3: IRT Calibration Pass 2 (Purified Items Only)
+Step 3: IRT Calibration Pass 2 (Purified Items Only)
+Loading IRT input data (all items)...
+Loading IRT input data (all items)...
+step00_irt_input.csv (400 rows, 37 cols)
+step00_irt_input.csv (400 rows, 37 cols)
+Loading purified items list...
+Loading purified items list...
+step02_purified_items.csv (32 items retained)
+step02_purified_items.csv (32 items retained)
+Loading Q-matrix (all items)...
+Loading Q-matrix (all items)...
+step00_q_matrix.csv (36 rows)
+step00_q_matrix.csv (36 rows)
+Filtering IRT input to purified items...
+Filtering IRT input to purified items...
+IRT input: 400 rows x 33 cols (composite_ID + 32 items)
+IRT input: 400 rows x 33 cols (composite_ID + 32 items)
+Filtering Q-matrix to purified items...
+Filtering Q-matrix to purified items...
+Q-matrix: 32 rows (purified items)
+Q-matrix: 32 rows (purified items)
+Converting wide to long format...
+Converting wide to long format...
+Long format: 12800 rows (400 composite_IDs x 32 items)
+Long format: 12800 rows (400 composite_IDs x 32 items)
+Creating factor groups from tag patterns...
+Creating factor groups from tag patterns...
+Source factor: 17 items (pattern: '-U-')
+Source factor: 17 items (pattern: '-U-')
+Destination factor: 15 items (pattern: '-D-')
+Destination factor: 15 items (pattern: '-D-')
+Setting IRT configuration...
+Setting IRT configuration...
+============================================================
+============================================================
+IRT TESTING WORKFLOW RECOMMENDATION:
+IRT TESTING WORKFLOW RECOMMENDATION:
+============================================================
+============================================================
+Phase 1 (MINIMAL TEST - run this first):
+Phase 1 (MINIMAL TEST - run this first):
+Set: max_iter=50, mc_samples=10, iw_samples=10
+Set: max_iter=50, mc_samples=10, iw_samples=10
+Runtime: ~10 minutes (validates entire pipeline)
+Runtime: ~10 minutes (validates entire pipeline)
+Expected: Convergence may fail (acceptable for testing)
+Expected: Convergence may fail (acceptable for testing)
+Phase 2 (PRODUCTION - only after Phase 1 passes):
+Phase 2 (PRODUCTION - only after Phase 1 passes):
+Set: max_iter=200, mc_samples=100, iw_samples=100
+Set: max_iter=200, mc_samples=100, iw_samples=100
+Runtime: ~45 minutes (production-quality theta scores)
+Runtime: ~45 minutes (production-quality theta scores)
+============================================================
+============================================================
+CURRENT SETTINGS: MINIMUM (Phase 1 validation)
+CURRENT SETTINGS: MINIMUM (Phase 1 validation)
+TO SWITCH TO PRODUCTION: Edit config dict below
+TO SWITCH TO PRODUCTION: Edit config dict below
+============================================================
+============================================================
+Factors: ['source', 'destination']
+Factors: ['source', 'destination']
+Correlated factors: True
+Correlated factors: True
+Device: cpu
+Device: cpu
+Seed: 42
+Seed: 42
+Model fit: batch_size=2048, iw_samples=100, mc_samples=1
+Model fit: batch_size=2048, iw_samples=100, mc_samples=1
+Model scores: scoring_batch_size=2048, mc_samples=100, iw_samples=100
+Model scores: scoring_batch_size=2048, mc_samples=100, iw_samples=100
+Running calibrate_irt (Pass 2)...
+Running calibrate_irt (Pass 2)...
+This may take 10-45 minutes depending on settings...
+This may take 10-45 minutes depending on settings...
+
+============================================================
+IRT CALIBRATION PIPELINE
+============================================================
+
+Step 1: Preparing IRT data...
+  Observations: 400
+  Items: 32
+  Factors: 2
+  Missing data: 0 cells (0.00%)
+
+Step 2: Determining category counts...
+  Category counts: {2}
+
+Step 3: Configuring IRT model...
+
+Initializing model parameters
+Initialization ended in  0.0  seconds
+  Model type: GRM (Graded Response Model)
+  Device: cpu
+  Correlated factors: True
+
+Step 4: Fitting IRT model...
+Fitting IRT model on cpu...
+
+Fitting started
+
+Epoch =        0 Iter. =        1 Cur. loss =   18.76   Intervals no change =    0
+Epoch =      100 Iter. =      101 Cur. loss =   19.48   Intervals no change =    0
+Epoch =      200 Iter. =      201 Cur. loss =   19.75   Intervals no change =    1
+Epoch =      300 Iter. =      301 Cur. loss =   19.67   Intervals no change =    2
+Epoch =      400 Iter. =      401 Cur. loss =   19.57   Intervals no change =    3
+Epoch =      500 Iter. =      501 Cur. loss =   19.49   Intervals no change =    4
+Epoch =      600 Iter. =      601 Cur. loss =   19.41   Intervals no change =    5
+Epoch =      700 Iter. =      701 Cur. loss =   19.35   Intervals no change =    6
+Epoch =      800 Iter. =      801 Cur. loss =   19.31   Intervals no change =    7
+Epoch =      900 Iter. =      901 Cur. loss =   19.27   Intervals no change =    8
+Epoch =     1000 Iter. =     1001 Cur. loss =   19.24   Intervals no change =    9
+Epoch =     1100 Iter. =     1101 Cur. loss =   19.23   Intervals no change =   10
+Epoch =     1200 Iter. =     1201 Cur. loss =   19.22   Intervals no change =   11
+Epoch =     1300 Iter. =     1301 Cur. loss =   19.21   Intervals no change =   12
+Epoch =     1400 Iter. =     1401 Cur. loss =   19.20   Intervals no change =   13
+Epoch =     1500 Iter. =     1501 Cur. loss =   19.20   Intervals no change =   14
+Epoch =     1600 Iter. =     1601 Cur. loss =   19.20   Intervals no change =   15
+Epoch =     1700 Iter. =     1701 Cur. loss =   19.19   Intervals no change =   16
+Epoch =     1800 Iter. =     1801 Cur. loss =   19.19   Intervals no change =   17
+Epoch =     1900 Iter. =     1901 Cur. loss =   19.19   Intervals no change =   18
+Epoch =     2000 Iter. =     2001 Cur. loss =   19.19   Intervals no change =   19
+Epoch =     2100 Iter. =     2101 Cur. loss =   19.19   Intervals no change =   20
+Epoch =     2200 Iter. =     2201 Cur. loss =   19.19   Intervals no change =   21
+Epoch =     2300 Iter. =     2301 Cur. loss =   19.19   Intervals no change =   22
+Epoch =     2400 Iter. =     2401 Cur. loss =   19.19   Intervals no change =   23
+Epoch =     2500 Iter. =     2501 Cur. loss =   19.16   Intervals no change =   24
+Epoch =     2600 Iter. =     2601 Cur. loss =   19.19   Intervals no change =   25
+Epoch =     2700 Iter. =     2701 Cur. loss =   19.19   Intervals no change =   26
+Epoch =     2800 Iter. =     2801 Cur. loss =   19.19   Intervals no change =   27
+Epoch =     2900 Iter. =     2901 Cur. loss =   19.18   Intervals no change =   28
+Epoch =     3000 Iter. =     3001 Cur. loss =   19.19   Intervals no change =   29
+Epoch =     3100 Iter. =     3101 Cur. loss =   19.19   Intervals no change =   30
+Epoch =     3200 Iter. =     3201 Cur. loss =   19.19   Intervals no change =   31
+Epoch =     3300 Iter. =     3301 Cur. loss =   19.19   Intervals no change =   32
+Epoch =     3400 Iter. =     3401 Cur. loss =   19.19   Intervals no change =   33
+Epoch =     3500 Iter. =     3501 Cur. loss =   19.19   Intervals no change =   34
+Epoch =     3600 Iter. =     3601 Cur. loss =   19.18   Intervals no change =   35
+Epoch =     3700 Iter. =     3701 Cur. loss =   19.19   Intervals no change =   36
+Epoch =     3800 Iter. =     3801 Cur. loss =   19.19   Intervals no change =   37
+Epoch =     3900 Iter. =     3901 Cur. loss =   19.19   Intervals no change =   38
+Epoch =     4000 Iter. =     4001 Cur. loss =   19.19   Intervals no change =   39
+Epoch =     4100 Iter. =     4101 Cur. loss =   19.19   Intervals no change =   40
+Epoch =     4200 Iter. =     4201 Cur. loss =   19.19   Intervals no change =   41
+Epoch =     4300 Iter. =     4301 Cur. loss =   19.19   Intervals no change =   42
+Epoch =     4400 Iter. =     4401 Cur. loss =   19.19   Intervals no change =   43
+Epoch =     4500 Iter. =     4501 Cur. loss =   19.19   Intervals no change =   44
+Epoch =     4600 Iter. =     4601 Cur. loss =   19.19   Intervals no change =   45
+Epoch =     4700 Iter. =     4701 Cur. loss =   19.19   Intervals no change =   46
+Epoch =     4800 Iter. =     4801 Cur. loss =   19.19   Intervals no change =   47
+Epoch =     4900 Iter. =     4901 Cur. loss =   19.19   Intervals no change =   48
+Epoch =     5000 Iter. =     5001 Cur. loss =   19.17   Intervals no change =   49
+Epoch =     5100 Iter. =     5101 Cur. loss =   19.18   Intervals no change =   50
+Epoch =     5200 Iter. =     5201 Cur. loss =   19.19   Intervals no change =   51
+Epoch =     5300 Iter. =     5301 Cur. loss =   19.19   Intervals no change =   52
+Epoch =     5400 Iter. =     5401 Cur. loss =   19.19   Intervals no change =   53
+Epoch =     5500 Iter. =     5501 Cur. loss =   19.19   Intervals no change =   54
+Epoch =     5600 Iter. =     5601 Cur. loss =   19.18   Intervals no change =   55
+Epoch =     5700 Iter. =     5701 Cur. loss =   19.16   Intervals no change =   56
+Epoch =     5800 Iter. =     5801 Cur. loss =   19.19   Intervals no change =   57
+Epoch =     5900 Iter. =     5901 Cur. loss =   19.18   Intervals no change =   58
+Epoch =     6000 Iter. =     6001 Cur. loss =   19.19   Intervals no change =   59
+Epoch =     6100 Iter. =     6101 Cur. loss =   19.19   Intervals no change =   60
+Epoch =     6200 Iter. =     6201 Cur. loss =   19.19   Intervals no change =   61
+Epoch =     6300 Iter. =     6301 Cur. loss =   19.19   Intervals no change =   62
+Epoch =     6400 Iter. =     6401 Cur. loss =   19.19   Intervals no change =   63
+Epoch =     6500 Iter. =     6501 Cur. loss =   19.19   Intervals no change =   64
+Epoch =     6600 Iter. =     6601 Cur. loss =   19.19   Intervals no change =   65
+Epoch =     6700 Iter. =     6701 Cur. loss =   19.19   Intervals no change =   66
+Epoch =     6800 Iter. =     6801 Cur. loss =   19.19   Intervals no change =   67
+Epoch =     6900 Iter. =     6901 Cur. loss =   19.19   Intervals no change =   68
+Epoch =     7000 Iter. =     7001 Cur. loss =   19.19   Intervals no change =   69
+Epoch =     7100 Iter. =     7101 Cur. loss =   19.19   Intervals no change =   70
+Epoch =     7200 Iter. =     7201 Cur. loss =   19.19   Intervals no change =   71
+Epoch =     7300 Iter. =     7301 Cur. loss =   19.19   Intervals no change =   72
+Epoch =     7400 Iter. =     7401 Cur. loss =   19.19   Intervals no change =   73
+Epoch =     7500 Iter. =     7501 Cur. loss =   19.19   Intervals no change =   74
+Epoch =     7600 Iter. =     7601 Cur. loss =   19.19   Intervals no change =   75
+Epoch =     7700 Iter. =     7701 Cur. loss =   19.19   Intervals no change =   76
+Epoch =     7800 Iter. =     7801 Cur. loss =   19.19   Intervals no change =   77
+Epoch =     7900 Iter. =     7901 Cur. loss =   19.19   Intervals no change =   78
+Epoch =     8000 Iter. =     8001 Cur. loss =   19.19   Intervals no change =   79
+Epoch =     8100 Iter. =     8101 Cur. loss =   19.19   Intervals no change =   80
+Epoch =     8200 Iter. =     8201 Cur. loss =   19.19   Intervals no change =   81
+Epoch =     8300 Iter. =     8301 Cur. loss =   19.17   Intervals no change =   82
+Epoch =     8400 Iter. =     8401 Cur. loss =   19.19   Intervals no change =   83
+Epoch =     8500 Iter. =     8501 Cur. loss =   19.19   Intervals no change =   84
+Epoch =     8600 Iter. =     8601 Cur. loss =   19.19   Intervals no change =   85
+Epoch =     8700 Iter. =     8701 Cur. loss =   19.19   Intervals no change =   86
+Epoch =     8800 Iter. =     8801 Cur. loss =   19.19   Intervals no change =   87
+Epoch =     8900 Iter. =     8901 Cur. loss =   19.19   Intervals no change =   88
+Epoch =     9000 Iter. =     9001 Cur. loss =   19.19   Intervals no change =   89
+Epoch =     9100 Iter. =     9101 Cur. loss =   19.19   Intervals no change =   90
+Epoch =     9200 Iter. =     9201 Cur. loss =   19.19   Intervals no change =   91
+Epoch =     9300 Iter. =     9301 Cur. loss =   19.19   Intervals no change =   92
+Epoch =     9400 Iter. =     9401 Cur. loss =   19.19   Intervals no change =   93
+Epoch =     9500 Iter. =     9501 Cur. loss =   19.19   Intervals no change =   94
+Epoch =     9600 Iter. =     9601 Cur. loss =   19.19   Intervals no change =   95
+Epoch =     9700 Iter. =     9701 Cur. loss =   19.19   Intervals no change =   96
+Epoch =     9800 Iter. =     9801 Cur. loss =   19.19   Intervals no change =   97
+Epoch =     9900 Iter. =     9901 Cur. loss =   19.19   Intervals no change =   98
+Epoch =    10000 Iter. =    10001 Cur. loss =   19.19   Intervals no change =   99
+Epoch =    10100 Iter. =    10101 Cur. loss =   19.19   Intervals no change =  100
+Fitting ended in  160.89  seconds
+IRT model fitting complete.
+
+Step 5: Extracting theta scores...
+  Theta scores extracted: 400 observations
+
+Step 6: Extracting item parameters...
+  Item parameters extracted: 32 items
+
+============================================================
+IRT CALIBRATION COMPLETE
+============================================================
+Theta scores shape: (400, 4)
+Item parameters shape: (32, 5)
+
+IRT calibration complete
+IRT calibration complete
+Item parameters: 32 items, 5 columns
+Item parameters: 32 items, 5 columns
+Theta scores: 400 rows, 4 columns
+Theta scores: 400 rows, 4 columns
+Reformatting item parameters...
+Reformatting item parameters...
+Item params columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_source', 'Discrim_destination']
+Item params columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_source', 'Discrim_destination']
+Item parameters: (32, 4)
+Item parameters: (32, 4)
+Reformatting theta scores...
+Reformatting theta scores...
+Theta scores columns: ['UID', 'test', 'Theta_source', 'Theta_destination']
+Theta scores columns: ['UID', 'test', 'Theta_source', 'Theta_destination']
+Theta scores: (400, 5)
+Theta scores: (400, 5)
+SE not available from calibrate_irt - using placeholder SE=0.5
+SE not available from calibrate_irt - using placeholder SE=0.5
+Saving item parameters...
+Saving item parameters...
+step03_item_parameters.csv (32 rows, 4 cols)
+step03_item_parameters.csv (32 rows, 4 cols)
+Saving theta scores...
+Saving theta scores...
+step03_theta_scores.csv (400 rows, 5 cols)
+step03_theta_scores.csv (400 rows, 5 cols)
+Generating Pass 2 diagnostics...
+Generating Pass 2 diagnostics...
+step03_pass2_diagnostics.txt
+step03_pass2_diagnostics.txt
+Running validate_irt_convergence...
+Running validate_irt_convergence...
+Converged: False
+Converged: False
+Message: Model did not converge
+Message: Model did not converge
+validate_irt_convergence reports non-convergence, but loss stabilized at 19.20
+validate_irt_convergence reports non-convergence, but loss stabilized at 19.20
+Continuing with IRT results - manual inspection recommended
+Continuing with IRT results - manual inspection recommended
+Step 3 complete
+Step 3 complete
+Run Step 4: Merge theta scores with TSVR time variable
+Run Step 4: Merge theta scores with TSVR time variable

@@ -1,0 +1,3 @@
+model,converged,aic,delta_aic,random_effects,n_random_params
+Intercepts-only,True,598.2114845744109,0.0,~1,1
+Intercepts+slopes,True,399.07432813430387,199.137156440107,~log_TSVR,3

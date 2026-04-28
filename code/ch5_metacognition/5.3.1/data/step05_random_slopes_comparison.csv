@@ -1,0 +1,3 @@
+model,formula,random_effects,converged,AIC,BIC,log_likelihood,n_params,random_intercept_var,random_slope_var,delta_AIC
+Intercepts-only,theta ~ C(domain) * log_TSVR,~1,True,506.1856638041827,546.9062784903914,-245.09283190209135,7,0.19161498329907856,,188.7626235125026
+Intercepts+slopes,theta ~ C(domain) * log_TSVR,~log_TSVR,True,317.4230402916801,368.323808649441,-148.71152014584004,9,,0.006035935487930508,0.0

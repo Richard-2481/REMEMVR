@@ -1,0 +1,10 @@
+======================================================================
+STEP 12: Apply Thorndike Case II Correction
+======================================================================
+  depression: r_obs=0.047268 / u=0.4374 = r_corr=0.108064 (negligible)
+  anxiety: r_obs=0.208217 / u=0.4415 = r_corr=0.471608 (large)
+  stress: r_obs=0.175732 / u=0.4484 = r_corr=0.391950 (large)
+Thorndike Case II correction applied: N=3
+Mean |r_corrected| = 0.3239
+Saved: step12_dass_corrected_correlations.csv (3 rows)
+Validation PASSED

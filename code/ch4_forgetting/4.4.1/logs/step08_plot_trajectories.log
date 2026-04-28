@@ -1,0 +1,30 @@
+======================================================================
+PLOTTING FOR RQ 5.5: Schema Congruence Effects on Forgetting
+======================================================================
+RQ root: /home/etai/projects/REMEMVR/results/ch5/rq5
+
+----------------------------------------------------------------------
+Generating Plot 1: Theta-scale trajectory...
+----------------------------------------------------------------------
+  Loaded 12 rows from step07_trajectory_theta_data.csv
+  Columns: ['time', 'theta_mean', 'CI_lower', 'CI_upper', 'congruence']
+  Congruence categories: ['common', 'congruent', 'incongruent']
+  Saved: /home/etai/projects/REMEMVR/results/ch5/rq5/plots/trajectory_theta.png
+
+----------------------------------------------------------------------
+Generating Plot 2: Probability-scale trajectory (Decision D069)...
+----------------------------------------------------------------------
+  Loaded 12 rows from step07_trajectory_probability_data.csv
+  Columns: ['time', 'prob_mean', 'CI_lower', 'CI_upper', 'congruence']
+  Saved: /home/etai/projects/REMEMVR/results/ch5/rq5/plots/trajectory_probability.png
+
+======================================================================
+PLOTTING COMPLETE
+======================================================================
+Total plots generated: 2
+  - plots/trajectory_theta.png (Theta scale)
+  - plots/trajectory_probability.png (Probability scale - Decision D069)
+
+Decision D069 Compliance: BOTH theta-scale AND probability-scale plots generated
+All plots saved with 300 DPI publication quality.
+======================================================================

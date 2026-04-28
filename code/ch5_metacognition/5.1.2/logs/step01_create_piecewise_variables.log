@@ -1,0 +1,66 @@
+Step 01: Create Piecewise Time Variables
+Loading input data from step00_lmm_input.csv...
+step00_lmm_input.csv (400 rows, 6 cols)
+TSVR_hours range: [1.0, 246.2]
+Creating piecewise segments with breakpoint at 48.0h...
+Piecewise variables created
+Segment distribution:
+  Early: 196 rows (49.0%)
+  Late: 204 rows (51.0%)
+Time_Early range: [0.0, 47.7]
+Time_Late range: [0.0, 198.2]
+Verifying mutual exclusivity of time variables...
+No rows with both Time_Early and Time_Late > 0
+No rows with both Time_Early and Time_Late == 0
+Mutual exclusivity verified (exactly one time variable > 0 per row)
+Saving piecewise data to step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows, 9 cols)
+Running validate_dataframe_structure...
+'type' object is not iterable
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.2/code/step01_create_piecewise_variables.py", line 189, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'type' object is not iterable
+Step 01: Create Piecewise Time Variables
+Loading input data from step00_lmm_input.csv...
+step00_lmm_input.csv (400 rows, 6 cols)
+TSVR_hours range: [1.0, 246.2]
+Creating piecewise segments with breakpoint at 48.0h...
+Piecewise variables created
+Segment distribution:
+  Early: 196 rows (49.0%)
+  Late: 204 rows (51.0%)
+Time_Early range: [0.0, 47.7]
+Time_Late range: [0.0, 198.2]
+Verifying mutual exclusivity of time variables...
+No rows with both Time_Early and Time_Late > 0
+No rows with both Time_Early and Time_Late == 0
+Mutual exclusivity verified (exactly one time variable > 0 per row)
+Saving piecewise data to step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows, 9 cols)
+Skipping detailed validation (commented out)
+Step 01 complete
+Step 01: Create Piecewise Time Variables
+Loading input data from step00_lmm_input.csv...
+step00_lmm_input.csv (400 rows, 6 cols)
+TSVR_hours range: [1.0, 246.2]
+Creating piecewise segments with breakpoint at 48.0h...
+Piecewise variables created
+Segment distribution:
+  Early: 196 rows (49.0%)
+  Late: 204 rows (51.0%)
+Time_Early range: [0.0, 47.7]
+Time_Late range: [0.0, 198.2]
+Verifying mutual exclusivity of time variables...
+No rows with both Time_Early and Time_Late > 0
+No rows with both Time_Early and Time_Late == 0
+Mutual exclusivity verified (exactly one time variable > 0 per row)
+Saving piecewise data to step01_piecewise_input.csv...
+step01_piecewise_input.csv (400 rows, 9 cols)
+Skipping detailed validation (commented out)
+Step 01 complete

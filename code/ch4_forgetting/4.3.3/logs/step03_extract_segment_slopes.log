@@ -1,0 +1,51 @@
+2025-12-02 15:33:53,190 - INFO - ============================================================
+2025-12-02 15:33:53,190 - INFO - Step 03: Extract Segment-Paradigm Slopes
+2025-12-02 15:33:53,190 - INFO - ============================================================
+2025-12-02 15:33:53,190 - INFO - Loading model from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step02_piecewise_lmm_model.pkl
+2025-12-02 15:33:53,205 - INFO - Model loaded successfully
+2025-12-02 15:33:53,205 - INFO - 
+Extracting segment-paradigm slopes...
+2025-12-02 15:33:53,205 - INFO - Available coefficients: ['Intercept', 'Segment[T.Late]', 'paradigm_code[T.ICR]', 'paradigm_code[T.IRE]', 'Segment[T.Late]:paradigm_code[T.ICR]', 'Segment[T.Late]:paradigm_code[T.IRE]', 'Days_within', 'Days_within:Segment[T.Late]', 'Days_within:paradigm_code[T.ICR]', 'Days_within:paradigm_code[T.IRE]', 'Days_within:Segment[T.Late]:paradigm_code[T.ICR]', 'Days_within:Segment[T.Late]:paradigm_code[T.IRE]']
+2025-12-02 15:33:53,205 - INFO - Fixed effect names: ['Intercept', 'Segment[T.Late]', 'paradigm_code[T.ICR]', 'paradigm_code[T.IRE]', 'Segment[T.Late]:paradigm_code[T.ICR]', 'Segment[T.Late]:paradigm_code[T.IRE]', 'Days_within', 'Days_within:Segment[T.Late]', 'Days_within:paradigm_code[T.ICR]', 'Days_within:paradigm_code[T.IRE]', 'Days_within:Segment[T.Late]:paradigm_code[T.ICR]', 'Days_within:Segment[T.Late]:paradigm_code[T.IRE]']
+2025-12-02 15:33:53,206 - INFO - 
+============================================================
+2025-12-02 15:33:53,206 - INFO - SEGMENT-PARADIGM SLOPES
+2025-12-02 15:33:53,206 - INFO - ============================================================
+2025-12-02 15:33:53,207 - INFO - 
+Segment paradigm     slope       SE  z_statistic      p_value  CI_lower  CI_upper                   interpretation
+  Early      IFR -0.368001 0.134651    -2.732988 6.276270e-03 -0.631918 -0.104084 Significant decline (forgetting)
+  Early      ICR -0.419788 0.134651    -3.117590 1.823362e-03 -0.683705 -0.155871 Significant decline (forgetting)
+  Early      IRE -0.325041 0.134651    -2.413943 1.578095e-02 -0.588958 -0.061124 Significant decline (forgetting)
+   Late      IFR -0.102046 0.020222    -5.046402 4.502082e-07 -0.141680 -0.062412 Significant decline (forgetting)
+   Late      ICR -0.122221 0.020222    -6.044098 1.502478e-09 -0.161855 -0.082587 Significant decline (forgetting)
+   Late      IRE -0.124340 0.020222    -6.148876 7.803409e-10 -0.163974 -0.084705 Significant decline (forgetting)
+2025-12-02 15:33:53,208 - INFO - 
+============================================================
+2025-12-02 15:33:53,208 - INFO - VALIDATION CHECKS
+2025-12-02 15:33:53,208 - INFO - ============================================================
+2025-12-02 15:33:53,208 - INFO - VALIDATION - PASS: 6 slopes extracted
+2025-12-02 15:33:53,208 - INFO - VALIDATION - PASS: No NaN in slopes
+2025-12-02 15:33:53,208 - INFO - VALIDATION - PASS: All SEs > 0
+2025-12-02 15:33:53,208 - INFO - VALIDATION - PASS: CI ordering correct
+2025-12-02 15:33:53,209 - INFO - 
+Output saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step03_segment_paradigm_slopes.csv
+2025-12-02 15:33:53,209 - INFO - 
+============================================================
+2025-12-02 15:33:53,209 - INFO - INTERPRETATION
+2025-12-02 15:33:53,209 - INFO - ============================================================
+2025-12-02 15:33:53,209 - INFO - 
+Early segment slopes (per day):
+2025-12-02 15:33:53,209 - INFO -   IFR: -0.3680 (p=0.0063) - Significant decline (forgetting)
+2025-12-02 15:33:53,209 - INFO -   ICR: -0.4198 (p=0.0018) - Significant decline (forgetting)
+2025-12-02 15:33:53,210 - INFO -   IRE: -0.3250 (p=0.0158) - Significant decline (forgetting)
+2025-12-02 15:33:53,210 - INFO - 
+Late segment slopes (per day):
+2025-12-02 15:33:53,210 - INFO -   IFR: -0.1020 (p<0.001) - Significant decline (forgetting)
+2025-12-02 15:33:53,210 - INFO -   ICR: -0.1222 (p<0.001) - Significant decline (forgetting)
+2025-12-02 15:33:53,210 - INFO -   IRE: -0.1243 (p<0.001) - Significant decline (forgetting)
+2025-12-02 15:33:53,210 - INFO - 
+============================================================
+2025-12-02 15:33:53,210 - INFO - STEP 03 COMPLETE
+2025-12-02 15:33:53,210 - INFO - ============================================================
+2025-12-02 15:33:53,210 - INFO - Slope extraction complete: 6 segment-paradigm slopes computed
+2025-12-02 15:33:53,210 - INFO - Delta method SEs propagated successfully

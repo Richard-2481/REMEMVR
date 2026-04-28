@@ -1,0 +1,4 @@
+domain,ICC_slope_confidence,ICC_slope_accuracy,delta_ICC,interpretation
+What,0.5895447252627264,0.0081301557687478,0.5814145694939786,Confidence reveals MORE trait variance
+Where,0.5895931035089618,0.0110128352181805,0.5785802682907812,Confidence reveals MORE trait variance
+When,1.2246127179421651e-05,,,comparison pending (accuracy data missing)

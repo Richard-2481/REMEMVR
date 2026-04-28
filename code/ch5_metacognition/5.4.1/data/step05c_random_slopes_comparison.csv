@@ -1,0 +1,3 @@
+model,formula,AIC,BIC,converged,var_intercept,var_slope,cov_intercept_slope,var_residual,delta_AIC,delta_BIC,conclusion,recommendation
+Intercepts_only,theta ~ paradigm * TSVR_hours + (1 | UID),517.3249993940553,558.045614080264,True,0.21781759590557953,,,0.06523863907748134,0.0,0.0,SLOPES IMPROVE FIT,Use random slopes model. Individual participants have different confidence decline rates.
+Intercepts_plus_slopes,theta ~ paradigm * TSVR_hours + (TSVR_hours | UID),298.3705830278359,349.2713513855968,True,0.21562639696857355,5.734324779303531e-06,-0.00015555504648467815,0.04541113416331575,218.95441636621945,208.77426269466724,SLOPES IMPROVE FIT,Use random slopes model. Individual participants have different confidence decline rates.

@@ -1,34 +1,5 @@
 #!/usr/bin/env python3
-# =============================================================================
-# SCRIPT METADATA
-# =============================================================================
-"""
-Step ID: step05
-Step Name: Sensitivity Analysis (Model Specification Robustness)
-RQ: results/ch6/6.6.1
-Generated: 2025-12-12
-
-PURPOSE:
-Verify robustness of primary finding (HCE rate decreases over time) across
-multiple model specifications. Tests whether Days coefficient remains significant
-under different modeling assumptions.
-
-SENSITIVITY ANALYSES:
-1. Model A: Full model (random intercepts + random slopes) - REFERENCE
-2. Model B: Reduced model (random intercepts only, no random slopes)
-3. Model C: Quadratic time effect (Days + Days²)
-4. Model D: Exclude late-tested participants (Days > 7.5)
-
-EXPECTED OUTPUTS:
-- data/step05_sensitivity_results.csv: Comparison of Days coefficients across models
-- logs/step05_sensitivity_analysis.log: Detailed execution log
-
-VALIDATION:
-- All models should show significant negative Days effect (β < 0, p < 0.05)
-- Coefficient magnitude should be similar across models (within 50% of reference)
-- If any model shows non-significant or opposite effect, flag as sensitivity concern
-"""
-# =============================================================================
+"""Sensitivity Analysis (Model Specification Robustness): Verify robustness of primary finding (HCE rate decreases over time) across"""
 
 import sys
 from pathlib import Path
@@ -36,7 +7,6 @@ import pandas as pd
 import numpy as np
 import traceback
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
@@ -44,16 +14,12 @@ sys.path.insert(0, str(PROJECT_ROOT))
 import statsmodels.formula.api as smf
 from scipy import stats
 
-# =============================================================================
 # Configuration
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step05_sensitivity_analysis.log"
 
-# =============================================================================
 # Logging Function
-# =============================================================================
 
 def log(msg, flush=True):
     """Write to both log file and console."""
@@ -61,9 +27,7 @@ def log(msg, flush=True):
         f.write(f"{msg}\n")
     print(msg, flush=flush)
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
@@ -72,28 +36,22 @@ if __name__ == "__main__":
         with open(LOG_FILE, 'w') as f:
             f.write("")
 
-        log("[START] Step 05: Sensitivity Analysis")
+        log("Step 05: Sensitivity Analysis")
         log("=" * 70)
-
-        # =========================================================================
         # LOAD DATA
-        # =========================================================================
-        log("[LOAD] Loading HCE rates from Step 01...")
+        log("Loading HCE rates from Step 01...")
         input_path = RQ_DIR / "data" / "step01_hce_rates.csv"
         df_hce = pd.read_csv(input_path)
-        log(f"[LOADED] {len(df_hce)} rows, {df_hce['UID'].nunique()} participants")
+        log(f"{len(df_hce)} rows, {df_hce['UID'].nunique()} participants")
 
         # Create Days variable
         df_hce['Days'] = df_hce['TSVR'] / 24.0
         df_hce['Days_sq'] = df_hce['Days'] ** 2
-        log(f"[INFO] Days range: [{df_hce['Days'].min():.2f}, {df_hce['Days'].max():.2f}]")
+        log(f"Days range: [{df_hce['Days'].min():.2f}, {df_hce['Days'].max():.2f}]")
 
         # Store results
         results = []
-
-        # =========================================================================
         # MODEL A: Full Model (Reference - Random Intercepts + Slopes)
-        # =========================================================================
         log("\n" + "=" * 70)
         log("[MODEL A] Full Model: HCE_rate ~ Days + (Days | UID)")
         log("=" * 70)
@@ -123,10 +81,7 @@ if __name__ == "__main__":
             'llf': result_a.llf,
             'note': 'REFERENCE MODEL'
         })
-
-        # =========================================================================
         # MODEL B: Reduced Model (Random Intercepts Only)
-        # =========================================================================
         log("\n" + "=" * 70)
         log("[MODEL B] Reduced Model: HCE_rate ~ Days + (1 | UID)")
         log("=" * 70)
@@ -165,10 +120,7 @@ if __name__ == "__main__":
             log("[LRT A vs B] Random slopes SIGNIFICANT - keep Model A")
         else:
             log("[LRT A vs B] Random slopes NOT significant - Model B adequate")
-
-        # =========================================================================
         # MODEL C: Quadratic Time Effect
-        # =========================================================================
         log("\n" + "=" * 70)
         log("[MODEL C] Quadratic Model: HCE_rate ~ Days + Days² + (Days | UID)")
         log("=" * 70)
@@ -198,10 +150,7 @@ if __name__ == "__main__":
             'llf': result_c.llf,
             'note': f'Days² β={result_c.params["Days_sq"]:.6f}, p={result_c.pvalues["Days_sq"]:.4f}'
         })
-
-        # =========================================================================
         # MODEL D: Exclude Late-Tested Participants
-        # =========================================================================
         log("\n" + "=" * 70)
         log("[MODEL D] Exclude Late: HCE_rate ~ Days + (Days | UID), Days ≤ 7.5")
         log("=" * 70)
@@ -238,12 +187,9 @@ if __name__ == "__main__":
             })
         else:
             log(f"[MODEL D] Skipped - insufficient data after exclusion")
-
-        # =========================================================================
         # COMPARE RESULTS
-        # =========================================================================
         log("\n" + "=" * 70)
-        log("[COMPARISON] Days Coefficient Across Models")
+        log("Days Coefficient Across Models")
         log("=" * 70)
 
         df_results = pd.DataFrame(results)
@@ -255,12 +201,9 @@ if __name__ == "__main__":
             pct_diff = ((row['days_coef'] - ref_coef) / abs(ref_coef)) * 100
             sig_label = "***" if row['days_p'] < 0.001 else ("**" if row['days_p'] < 0.01 else ("*" if row['days_p'] < 0.05 else ""))
             log(f"  {row['model']:30s}: β={row['days_coef']:.6f} (SE={row['days_se']:.6f}) p={row['days_p']:.4f}{sig_label} [{pct_diff:+.1f}% vs ref]")
-
-        # =========================================================================
         # ROBUSTNESS ASSESSMENT
-        # =========================================================================
         log("\n" + "=" * 70)
-        log("[ROBUSTNESS] Assessment")
+        log("Assessment")
         log("=" * 70)
 
         # Check 1: All models show significant negative effect?
@@ -281,20 +224,17 @@ if __name__ == "__main__":
         robust = all_significant and all_negative and within_tolerance
 
         if robust:
-            log("\n[ROBUSTNESS] ✓ PASS - Primary finding robust across all specifications")
+            log("\n✓ PASS - Primary finding robust across all specifications")
         else:
-            log("\n[ROBUSTNESS] ⚠ WARNING - Sensitivity concerns detected")
-
-        # =========================================================================
+            log("\n⚠ WARNING - Sensitivity concerns detected")
         # SAVE RESULTS
-        # =========================================================================
         output_path = RQ_DIR / "data" / "step05_sensitivity_results.csv"
         df_results.to_csv(output_path, index=False)
-        log(f"\n[SAVED] step05_sensitivity_results.csv")
+        log(f"\nstep05_sensitivity_results.csv")
 
         # Summary for validation.md
         log("\n" + "=" * 70)
-        log("[SUMMARY] For validation.md")
+        log("For validation.md")
         log("=" * 70)
         log(f"Sensitivity Analysis: {'PASS' if robust else 'WARNING'}")
         log(f"Models tested: {len(results)}")
@@ -304,12 +244,12 @@ if __name__ == "__main__":
         log(f"Maximum deviation: {max_deviation:.1f}%")
         log(f"Random slopes significant (LRT): p={p_lrt_ab:.4f}")
 
-        log("\n[SUCCESS] Step 05 complete")
+        log("\nStep 05 complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

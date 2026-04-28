@@ -1,0 +1,56 @@
+Step 01: Extract RAVLT Scores, Ceiling Fix, Forgetting Index + Percent Retention
+Loading participant data from Step 00...
+step00_participant_data.csv (100 rows, 7 cols)
+[CEILING FIX] Applying RAVLT ceiling fix...
+[CEILING FIX] Rule: if trial N == 0 and trial N-1 >= 14, set trial N = 15
+[PRE-FIX] A077: ravlt-trial-3-score = 0
+[PRE-FIX] A077: ravlt-trial-4-score = 0
+[PRE-FIX] A103: ravlt-trial-4-score = 0
+[PRE-FIX] A064: ravlt-trial-5-score = 0
+[PRE-FIX] A070: ravlt-trial-5-score = 0
+[PRE-FIX] A077: ravlt-trial-5-score = 0
+[PRE-FIX] A103: ravlt-trial-5-score = 0
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial ravlt-trial-4-score = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial ravlt-trial-4-score = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial ravlt-trial-2-score = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial ravlt-trial-3-score = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial ravlt-trial-4-score = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial ravlt-trial-3-score = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial ravlt-trial-4-score = 15)
+[CEILING FIX] Total fixes applied: 7
+Calculating RAVLT_Forgetting (Trial 5 - Delayed Recall) [post-ceiling-fix]...
+RAVLT_Forgetting column added
+Forgetting score: mean=1.75, std=1.93, range=[-3, 6]
+16 participants have negative forgetting (retention > encoding)
+This can occur due to practice effects or measurement noise
+Calculating RAVLT_Pct_Ret (DR / best_learning_trial * 100) [post-ceiling-fix]...
+Best learning trial: mean=12.97, range=[7, 15]
+RAVLT_Pct_Ret: 100 valid, 0 NaN (best_trial == 0)
+Pct Retention: mean=83.28, std=14.79, range=[44.4, 115.4]
+Standardizing RAVLT_Forgetting to z-scores...
+RAVLT_Forgetting_z: mean=0.0000, std=1.0000
+Standardizing RAVLT_Pct_Ret to z-scores...
+RAVLT_Pct_Ret_z: mean=0.0000, std=1.0000
+Verifying data quality...
+No missing values in RAVLT_Forgetting
+No missing values in RAVLT_Forgetting_z
+No missing values in RAVLT_Pct_Ret
+No missing values in RAVLT_Pct_Ret_z
+No extreme forgetting outliers detected
+No extreme pct retention outliers detected
+Saving RAVLT scores to: /home/etai/projects/REMEMVR/results/ch7/7.6.2/data/step01_ravlt_scores.csv
+step01_ravlt_scores.csv (100 rows, 11 cols)
+Output columns: ['UID', 'ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score', 'ravlt-delayed-recall-score', 'RAVLT_Forgetting', 'RAVLT_Pct_Ret', 'RAVLT_Forgetting_z', 'RAVLT_Pct_Ret_z']
+Running validate_numeric_range on RAVLT_Forgetting...
+valid: True
+message: RAVLT_Forgetting: All values within range [-15.0, 15.0] (n=100).
+out_of_range_count: 0
+violations: []
+PASS - Forgetting scores within expected range [-15, 15]
+Running validate_numeric_range on RAVLT_Pct_Ret...
+valid: True
+message: RAVLT_Pct_Ret: All values within range [0.0, 200.0] (n=100).
+out_of_range_count: 0
+violations: []
+PASS - Percent retention within expected range [0, 200]
+Step 01 complete

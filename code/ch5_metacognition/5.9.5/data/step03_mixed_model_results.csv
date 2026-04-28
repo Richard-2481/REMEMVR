@@ -1,0 +1,10 @@
+term,beta,se,t_stat,df,p_uncorrected,p_bonferroni
+Intercept,0.29,0.054,5.398,1591,0.0,0.0
+measure[T.confidence],-0.94,0.06,-15.728,1591,0.0,0.0
+location[T.source],0.077,0.06,1.284,1591,0.199,0.199
+measure[T.confidence]:location[T.source],-0.114,0.085,-1.348,1591,0.178,0.178
+TSVR_hours,-0.004,0.001,-8.54,1591,0.0,0.0
+measure[T.confidence]:TSVR_hours,0.001,0.001,1.465,1591,0.143,0.143
+location[T.source]:TSVR_hours,-0.002,0.001,-2.734,1591,0.006,0.006
+measure[T.confidence]:location[T.source]:TSVR_hours,0.004,0.001,3.692,1591,0.0,0.0
+Group Var,0.111,0.034,,1591,,

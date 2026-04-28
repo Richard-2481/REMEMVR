@@ -1,0 +1,10 @@
+metric,value
+observed_f2,0.0
+power_observed,0.05
+power_small_f2_0.02,0.28811837659816375
+power_medium_f2_0.15,0.9695057791579231
+power_large_f2_0.35,0.9999509925732689
+N_for_80pct_power_small,400.0
+N_for_80pct_power_medium,60.0
+N_for_80pct_power_large,50.0
+current_N,100.0

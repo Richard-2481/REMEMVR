@@ -1,0 +1,152 @@
+Step 2: Compute Standardized Decline Rates
+Loading input data...
+step01_merged_trajectories.csv (400 rows, 7 cols)
+step01_baseline_comparison.csv (2 rows, 7 cols)
+Extracting baseline SDs...
+SD_acc_baseline = 0.880956
+SD_conf_baseline = 0.424038
+Filtering T1 and T4 data...
+T1/T4 data: 200 rows (expected 200)
+Computing per-participant decline rates...
+Decline rates for 100 participants
+Screening for practice effects...
+Accuracy: 94 decline, 2 stable, 6 improvement
+Confidence: 83 decline, 6 stable, 17 improvement
+Confidence: 17.0% show improvement (acknowledges practice effects)
+Saving analysis outputs...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+step02_practice_effects_summary.txt
+Running inline validation...
+acc_rate range: [-0.027639, 0.005942]
+conf_rate range: [-0.026108, 0.015703]
+difference range: [-0.021933, 0.031822]
+delta_hours range: [135.8, 245.2]
+no_decline_flag count: 60
+Too many near-zero denominators (60)
+Improvement: accuracy 6.0%, confidence 17.0%
+Practice effects: >10% improvement (flag but proceed)
+Time elapsed: mean=150.4 hours, SD=16.3
+Mean acc_rate: -0.008814
+Mean conf_rate: -0.006860
+Mean difference: 0.001954
+Step 2 complete
+Step 2: Compute Standardized Decline Rates
+Loading input data...
+step01_merged_trajectories.csv (400 rows, 7 cols)
+step01_baseline_comparison.csv (2 rows, 7 cols)
+Extracting baseline SDs...
+SD_acc_baseline = 0.880956
+SD_conf_baseline = 0.887333
+Filtering T1 and T4 data...
+T1/T4 data: 200 rows (expected 200)
+Computing per-participant decline rates...
+Decline rates for 100 participants
+Screening for practice effects...
+Accuracy: 94 decline, 2 stable, 6 improvement
+Confidence: 95 decline, 5 stable, 5 improvement
+Saving analysis outputs...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+step02_practice_effects_summary.txt
+Running inline validation...
+acc_rate range: [-0.027639, 0.005942]
+conf_rate range: [-0.030650, 0.009179]
+difference range: [-0.013494, 0.016879]
+delta_hours range: [135.8, 245.2]
+no_decline_flag count: 60
+Too many near-zero denominators (60)
+Improvement: accuracy 6.0%, confidence 5.0%
+Time elapsed: mean=150.4 hours, SD=16.3
+Mean acc_rate: -0.008814
+Mean conf_rate: -0.008851
+Mean difference: -0.000037
+Step 2 complete
+Step 2: Compute Standardized Decline Rates
+Loading input data...
+step01_merged_trajectories.csv (400 rows, 7 cols)
+step01_baseline_comparison.csv (2 rows, 7 cols)
+Extracting baseline SDs...
+SD_acc_baseline = 0.880956
+SD_conf_baseline = 0.846741
+Filtering T1 and T4 data...
+T1/T4 data: 200 rows (expected 200)
+Computing per-participant decline rates...
+Decline rates for 100 participants
+Screening for practice effects...
+Accuracy: 94 decline, 2 stable, 6 improvement
+Confidence: 98 decline, 4 stable, 2 improvement
+Saving analysis outputs...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+step02_practice_effects_summary.txt
+Running inline validation...
+acc_rate range: [-0.027639, 0.005942]
+conf_rate range: [-0.028425, 0.000529]
+difference range: [-0.016143, 0.012326]
+delta_hours range: [135.8, 245.2]
+no_decline_flag count: 60
+Too many near-zero denominators (60)
+Improvement: accuracy 6.0%, confidence 2.0%
+Time elapsed: mean=150.4 hours, SD=16.3
+Mean acc_rate: -0.008814
+Mean conf_rate: -0.009528
+Mean difference: -0.000714
+Step 2 complete
+Step 2: Compute Standardized Decline Rates
+Loading input data...
+step01_merged_trajectories.csv (400 rows, 7 cols)
+step01_baseline_comparison.csv (2 rows, 7 cols)
+Extracting baseline SDs...
+SD_acc_baseline = 0.880956
+SD_conf_baseline = 0.846741
+Filtering T1 and T4 data...
+T1/T4 data: 200 rows (expected 200)
+Computing per-participant decline rates...
+Decline rates for 100 participants
+Screening for practice effects...
+Accuracy: 94 decline, 2 stable, 6 improvement
+Confidence: 98 decline, 4 stable, 2 improvement
+Saving analysis outputs...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+step02_practice_effects_summary.txt
+Running inline validation...
+acc_rate range: [-0.027639, 0.005942]
+conf_rate range: [-0.028425, 0.000529]
+difference range: [-0.016143, 0.012326]
+delta_hours range: [135.8, 245.2]
+no_decline_flag count: 60
+Too many near-zero denominators (60)
+Improvement: accuracy 6.0%, confidence 2.0%
+Time elapsed: mean=150.4 hours, SD=16.3
+Mean acc_rate: -0.008814
+Mean conf_rate: -0.009528
+Mean difference: -0.000714
+Step 2 complete
+Step 2: Compute Standardized Decline Rates
+Loading input data...
+step01_merged_trajectories.csv (400 rows, 7 cols)
+step01_baseline_comparison.csv (2 rows, 7 cols)
+Extracting baseline SDs...
+SD_acc_baseline = 0.880956
+SD_conf_baseline = 0.846741
+Filtering T1 and T4 data...
+T1/T4 data: 200 rows (expected 200)
+Computing per-participant decline rates...
+Decline rates for 100 participants
+Screening for practice effects...
+Accuracy: 94 decline, 2 stable, 6 improvement
+Confidence: 98 decline, 4 stable, 2 improvement
+Saving analysis outputs...
+step02_individual_decline_rates.csv (100 rows, 9 cols)
+step02_practice_effects_summary.txt
+Running inline validation...
+acc_rate range: [-0.027639, 0.005942]
+conf_rate range: [-0.028425, 0.000529]
+difference range: [-0.016143, 0.012326]
+delta_hours range: [135.8, 245.2]
+no_decline_flag count: 60
+Too many near-zero denominators (60)
+Improvement: accuracy 6.0%, confidence 2.0%
+Time elapsed: mean=150.4 hours, SD=16.3
+Mean acc_rate: -0.008814
+Mean conf_rate: -0.009528
+Mean difference: -0.000714
+Step 2 complete

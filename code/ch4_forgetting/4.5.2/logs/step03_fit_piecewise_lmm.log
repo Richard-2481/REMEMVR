@@ -1,0 +1,54 @@
+Step 3: Fit Piecewise LMM
+Loading LMM input data...
+step02_lmm_input_long.csv (800 rows, 8 cols)
+LocationType distribution: {'Source': 400, 'Destination': 400}
+Segment distribution: {'Late': 408, 'Early': 392}
+Unique UIDs: 100
+theta range: [-1.868, 2.251]
+Days_within range: [0.000, 8.015]
+Setting treatment coding...
+LocationType reference = Source
+Segment reference = Early
+Fitting piecewise LMM with 3-way interaction...
+Fixed: theta ~ Days_within * Segment * LocationType
+Random: ~Days_within | UID (random intercepts + slopes)
+Estimation: REML=False (ML for AIC comparison)
+Attempting full random structure: (1 + Days_within | UID)...
+✓ Full random structure converged successfully
+Model converged successfully
+Random structure used: ~Days_within (random intercepts + slopes)
+Fixed effects:
+  Intercept: β=0.4320, SE=0.0788, z=5.48, p=0.0000
+  Segment[T.Late]: β=-0.5171, SE=0.1046, z=-4.94, p=0.0000
+  LocationType[T.Destination]: β=-0.0471, SE=0.0915, z=-0.51, p=0.6071
+  Segment[T.Late]:LocationType[T.Destination]: β=0.0370, SE=0.1462, z=0.25, p=0.8001
+  Days_within: β=-0.2062, SE=0.0806, z=-2.56, p=0.0105
+  Days_within:Segment[T.Late]: β=0.1022, SE=0.0846, z=1.21, p=0.2269
+  Days_within:LocationType[T.Destination]: β=-0.0029, SE=0.1127, z=-0.03, p=0.9794
+  Days_within:Segment[T.Late]:LocationType[T.Destination]: β=0.0607, SE=0.1189, z=0.51, p=0.6099
+Observations: 800
+Groups (UIDs): 100
+Log-likelihood: -866.26
+AIC: 1756.51
+BIC: 1812.73
+Random effects:
+  Variance (Group): 0.2007
+  Residual variance (Scale): 0.4025
+Number of fixed effects: 8 (expected 8)
+Saving model to step03_piecewise_lmm_model.pkl...
+Model pickle (348882 bytes)
+Saving summary to step03_piecewise_lmm_summary.txt...
+Summary text file
+Saving coefficients to step03_lmm_coefficients.csv...
+Coefficients CSV (8 rows)
+Checking model quality...
+Model converged
+8 fixed effects as expected
+No NaN values in coefficients
+Positive random effect variance: 0.2007
+Step 03 complete
+Model saved to: /home/etai/projects/REMEMVR/results/ch5/5.5.2/data/step03_piecewise_lmm_model.pkl
+Summary saved to: /home/etai/projects/REMEMVR/results/ch5/5.5.2/data/step03_piecewise_lmm_summary.txt
+Coefficients saved to: /home/etai/projects/REMEMVR/results/ch5/5.5.2/data/step03_lmm_coefficients.csv
+3-way interaction: β=0.0607, p=0.6099
+Interaction NOT significant at Bonferroni α=0.025

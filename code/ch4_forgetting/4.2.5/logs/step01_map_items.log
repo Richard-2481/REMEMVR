@@ -1,0 +1,104 @@
+Step 1: Map Items to Full vs Purified Sets
+Loading input data...
+step00_irt_purified_items.csv (69 rows, 4 cols)
+step00_raw_scores.csv (400 rows, 215 cols)
+Extracting item lists...
+Full item list: 105 items
+Purified item list: 69 items
+Retention rate: 65.7% (69/105)
+Classifying items by domain using tag patterns...
+Created mapping for 105 items
+Item counts per domain:
+  What:  19 retained / 29 total (65.5%)
+  Where: 45 retained / 50 total (90.0%)
+  When:  5 retained / 26 total (19.2%)
+Saving outputs...
+step01_item_mapping.csv (105 rows, 3 cols)
+step01_item_counts.txt (item counts report)
+Running validate_dataframe_structure...
+'type' object is not iterable
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq12/code/step01_map_items.py", line 279, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'type' object is not iterable
+Step 1: Map Items to Full vs Purified Sets
+Loading input data...
+step00_irt_purified_items.csv (69 rows, 4 cols)
+step00_raw_scores.csv (400 rows, 215 cols)
+Extracting item lists...
+Full item list: 105 items
+Purified item list: 69 items
+Retention rate: 65.7% (69/105)
+Classifying items by domain using tag patterns...
+Created mapping for 105 items
+Item counts per domain:
+  What:  19 retained / 29 total (65.5%)
+  Where: 45 retained / 50 total (90.0%)
+  When:  5 retained / 26 total (19.2%)
+Saving outputs...
+step01_item_mapping.csv (105 rows, 3 cols)
+step01_item_counts.txt (item counts report)
+Running validate_dataframe_structure...
+DataFrame structure validation failed: Expected 48-52 rows, found 105
+Validation failed: DataFrame structure validation failed: Expected 48-52 rows, found 105
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq12/code/step01_map_items.py", line 312, in <module>
+    raise ValueError(f"Validation failed: {validation_result['message']}")
+ValueError: Validation failed: DataFrame structure validation failed: Expected 48-52 rows, found 105
+Step 1: Map Items to Full vs Purified Sets
+Loading input data...
+step00_irt_purified_items.csv (69 rows, 4 cols)
+step00_raw_scores.csv (400 rows, 215 cols)
+Extracting item lists...
+Full item list: 105 items
+Purified item list: 69 items
+Retention rate: 65.7% (69/105)
+Classifying items by domain using tag patterns...
+Created mapping for 105 items
+Item counts per domain:
+  What:  19 retained / 29 total (65.5%)
+  Where: 45 retained / 50 total (90.0%)
+  When:  5 retained / 26 total (19.2%)
+Saving outputs...
+step01_item_mapping.csv (105 rows, 3 cols)
+step01_item_counts.txt (item counts report)
+Running validate_dataframe_structure...
+DataFrame structure valid
+Row count: 105 (expected range: [48, 52])
+Columns: ['item_name', 'domain', 'retained']
+Domain values: ['what', 'when', 'where']
+Retention rate: 65.7% (expected ~75%)
+Step 1 complete
+Step 1: Map Items to Full vs Purified Sets
+Loading input data...
+step00_irt_purified_items.csv (64 rows, 4 cols)
+step00_raw_scores.csv (400 rows, 215 cols)
+Extracting item lists...
+Full item list: 105 items
+Purified item list: 64 items
+Retention rate: 61.0% (64/105)
+Classifying items by domain using tag patterns...
+When domain (-O-) items will be EXCLUDED per RQ 5.2.1 floor effect
+Excluded 26 When domain items
+Created mapping for 79 items
+Item counts per domain (What/Where only):
+  What:  19 retained / 29 total (65.5%)
+  Where: 45 retained / 50 total (90.0%)
+  When:  EXCLUDED (floor effect in RQ 5.2.1 - 26 items removed)
+Saving outputs...
+step01_item_mapping.csv (79 rows, 3 cols)
+step01_item_counts.txt (item counts report)
+Running validate_dataframe_structure...
+DataFrame structure valid
+Row count: 79 (What/Where items only)
+Columns: ['item_name', 'domain', 'retained']
+Domain values: ['what', 'where']
+Retention rate (What/Where): 81.0%
+When domain correctly excluded
+Step 1 complete

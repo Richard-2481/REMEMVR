@@ -1,0 +1,61 @@
+Step 02: standardize_scores
+Loading cognitive scores from step01...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step01_cognitive_scores.csv (100 rows, 7 columns)
+Computing z-scores for RAVLT and REMEMVR...
+RAVLT_z: mean=-0.000000, std=1.005038
+REMEMVR_z: mean=0.000000, std=1.005038
+No missing z-scores
+Saving standardized scores...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step02_standardized_scores.csv (100 rows, 9 columns)
+Running validate_standardization...
+Standardization validation passed
+RAVLT_z: mean=-0.000000, std=1.005038, range=[-2.936, 2.077]
+REMEMVR_z: mean=0.000000, std=1.005038, range=[-2.910, 2.306]
+Manual standardization checks...
+RAVLT_z mean=-0.000000 within tolerance
+RAVLT_z std=1.000000 within tolerance
+REMEMVR_z mean=0.000000 within tolerance
+REMEMVR_z std=1.000000 within tolerance
+Step 02 complete
+Step 02: standardize_scores
+Loading cognitive scores from step01...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step01_cognitive_scores.csv (100 rows, 7 columns)
+Computing z-scores for RAVLT and REMEMVR...
+RAVLT_z: mean=-0.000000, std=1.005038
+REMEMVR_z: mean=0.000000, std=1.005038
+No missing z-scores
+Saving standardized scores...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step02_standardized_scores.csv (100 rows, 9 columns)
+Running validate_standardization...
+Standardization validation passed
+RAVLT_z: mean=-0.000000, std=1.005038, range=[-2.936, 2.077]
+REMEMVR_z: mean=0.000000, std=1.005038, range=[-2.910, 2.306]
+Manual standardization checks...
+RAVLT_z mean=-0.000000 within tolerance
+RAVLT_z std=1.000000 within tolerance
+REMEMVR_z mean=0.000000 within tolerance
+REMEMVR_z std=1.000000 within tolerance
+Step 02 complete
+Step 02: standardize_scores
+Loading cognitive scores from step01...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step01_cognitive_scores.csv (100 rows, 8 columns)
+Computing z-scores for RAVLT and REMEMVR...
+RAVLT_z: mean=0.000000, std=1.005038
+REMEMVR_z: mean=0.000000, std=1.005038
+RAVLT_Pct_Ret_z: mean=0.000000, std=1.005038
+No missing z-scores
+Saving standardized scores...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step02_standardized_scores.csv (100 rows, 11 columns)
+Running validate_standardization...
+Standardization validation passed
+RAVLT_z: mean=0.000000, std=1.005038, range=[-2.801, 2.292]
+REMEMVR_z: mean=0.000000, std=1.005038, range=[-2.910, 2.306]
+RAVLT_Pct_Ret_z: mean=0.000000, std=1.005038, range=[-2.639, 2.181]
+Manual standardization checks...
+RAVLT_z mean=0.000000 within tolerance
+RAVLT_z std=1.000000 within tolerance
+REMEMVR_z mean=0.000000 within tolerance
+REMEMVR_z std=1.000000 within tolerance
+RAVLT_Pct_Ret_z mean=0.000000 within tolerance
+RAVLT_Pct_Ret_z std=1.000000 within tolerance
+Step 02 complete

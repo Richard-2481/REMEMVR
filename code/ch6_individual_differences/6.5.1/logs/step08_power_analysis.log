@@ -1,0 +1,45 @@
+Step 08: power_analysis
+Loading model results...
+step04_regression_models.csv (2 rows, 8 cols)
+Loading coefficient results...
+step04_coefficients_ci.csv (4 rows, 8 cols)
+Full model parameters: N=100, k=4, R2=0.0626
+Computing post-hoc power for overall model...
+Uncorrected power (alpha=0.05): 0.4958
+Corrected power (alpha=0.0167): 0.3235
+Computing approximate power for individual predictors...
+Education_z power: 0.1608 (effect size: 0.0514)
+VR_Experience_z power: 0.0438 (effect size: 0.0469)
+Typical_Sleep_z power: 0.0936 (effect size: 0.0796)
+Computing sensitivity analysis - minimum detectable effects...
+FTestAnovaPower.solve_power() got an unexpected keyword argument 'k_constraint'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.5.1/code/step08_power_analysis.py", line 248, in <module>
+    min_f2_uncorrected = power_test.solve_power(
+                         ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: FTestAnovaPower.solve_power() got an unexpected keyword argument 'k_constraint'
+Step 08: power_analysis
+Loading model results...
+step04_regression_models.csv (2 rows, 8 cols)
+Loading coefficient results...
+step04_coefficients_ci.csv (4 rows, 8 cols)
+Full model parameters: N=100, k=4, R2=0.0626
+Computing post-hoc power for overall model...
+Uncorrected power (alpha=0.05): 0.4958
+Corrected power (alpha=0.0167): 0.3235
+Computing approximate power for individual predictors...
+Education_z power: 0.1608 (effect size: 0.0514)
+VR_Experience_z power: 0.0438 (effect size: 0.0469)
+Typical_Sleep_z power: 0.0936 (effect size: 0.0796)
+Computing sensitivity analysis - minimum detectable effects...
+Minimum detectable f² (alpha=0.05): 0.2829 (Medium effect)
+Minimum detectable f² (alpha=0.0167): 0.3283 (Medium effect)
+Saving power analysis results...
+step08_power_analysis.csv (4 rows, 5 cols)
+Saving sensitivity analysis results...
+step08_sensitivity_analysis.csv (2 rows, 4 cols)
+Running power value validation...
+PASS: All power values within valid range [0,1]
+Range: [0.0438, 0.4958]
+Step 08 complete

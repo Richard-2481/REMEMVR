@@ -1,0 +1,49 @@
+Step 2: Fit Piecewise LMM with 3-Way Interaction
+Loading piecewise LMM input from Step 1...
+step01_lmm_input_piecewise.csv (1200 rows, 9 cols)
+Categorical coding restored (Congruence ref='Common', Segment ref='Early')
+Fitting piecewise LMM with 3-way interaction...
+theta ~ Days_within * C(Segment, Treatment('Early')) * C(Congruence, Treatment('Common'))
+~Days_within (random intercepts + slopes by UID)
+Error evaluating factor: NameError: name 'Days_within' is not defined
+    ~Days_within
+     ^^^^^^^^^^^
+Full error details:
+Step 2: Fit Piecewise LMM with 3-Way Interaction
+Loading piecewise LMM input from Step 1...
+step01_lmm_input_piecewise.csv (1200 rows, 9 cols)
+Categorical coding restored (Congruence ref='Common', Segment ref='Early')
+Fitting piecewise LMM with 3-way interaction...
+theta ~ Days_within * C(Segment, Treatment('Early')) * C(Congruence, Treatment('Common'))
+~Days_within (random intercepts + slopes by UID)
+Model fitting complete
+Saving fitted model object...
+step02_piecewise_lmm_model.pkl
+Saving model summary...
+step02_lmm_model_summary.txt
+Validating model convergence...
+converged: True
+message: LMM converged successfully
+Fixed effects count incorrect: expected 11 terms (4 main + 5 two-way + 2 three-way), found 12
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq6/code/step02_fit_piecewise_lmm.py", line 205, in <module>
+    raise ValueError(
+ValueError: Fixed effects count incorrect: expected 11 terms (4 main + 5 two-way + 2 three-way), found 12
+Step 2: Fit Piecewise LMM with 3-Way Interaction
+Loading piecewise LMM input from Step 1...
+step01_lmm_input_piecewise.csv (1200 rows, 9 cols)
+Categorical coding restored (Congruence ref='Common', Segment ref='Early')
+Fitting piecewise LMM with 3-way interaction...
+theta ~ Days_within * C(Segment, Treatment('Early')) * C(Congruence, Treatment('Common'))
+~Days_within (random intercepts + slopes by UID)
+Model fitting complete
+Saving fitted model object...
+step02_piecewise_lmm_model.pkl
+Saving model summary...
+step02_lmm_model_summary.txt
+Validating model convergence...
+converged: True
+message: LMM converged successfully
+All 12 fixed effect terms present
+Step 2 complete

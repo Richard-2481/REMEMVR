@@ -1,0 +1,27 @@
+Step 00: Dependency Validation
+[VALIDATION 1/6] Checking RQ 5.5.1 completion status...
+RQ 5.5.1 status = 'success'
+[VALIDATION 2/6] Validating purified items file...
+All expected columns present
+Row count in expected range [32, 36]
+source: 17 items (>= 10)
+destination: 15 items (>= 10)
+[VALIDATION 3/6] Validating theta scores file...
+All expected columns present
+Row count = 400
+theta_source: No NaN values
+theta_source: Range within [-4.0, 4.0]
+theta_destination: No NaN values
+theta_destination: Range within [-4.0, 4.0]
+[VALIDATION 4/6] Validating TSVR mapping file...
+All expected columns present
+Row count = 400
+composite_ID sets match between theta and TSVR files
+[VALIDATION 5/6] Validating raw data file...
+Source items: 36 >= 18
+Destination items: 36 >= 18
+All required base columns present: ['UID', 'TEST']
+[VALIDATION 6/6] Writing validation report...
+All validations PASSED - RQ 5.5.5 dependencies satisfied
+Validation report: /home/etai/projects/REMEMVR/results/ch5/5.5.5/data/step00_dependency_validation.txt
+Step 00: Dependency Validation complete

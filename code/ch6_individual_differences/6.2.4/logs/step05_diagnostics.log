@@ -1,0 +1,188 @@
+============================================================
+Step 5: Assumption Checks and Diagnostics
+============================================================
+Loaded 100 participants
+
+========================================
+LINEARITY ASSESSMENT
+========================================
+
+Age vs RAVLT:
+  Linear R² = 0.076
+  Quadratic R² = 0.095
+  F-test for quadratic: F = 2.07, p = 0.1537
+  → LINEAR
+
+Age vs REMEMVR:
+  Linear R² = 0.028
+  Quadratic R² = 0.029
+  F-test for quadratic: F = 0.09, p = 0.7679
+  → LINEAR
+
+========================================
+NORMALITY ASSESSMENT
+========================================
+
+Age-RAVLT residuals:
+  Shapiro-Wilk W = 0.976, p = 0.0704
+  → NORMAL
+
+Age-REMEMVR residuals:
+  Shapiro-Wilk W = 0.982, p = 0.2045
+  → NORMAL
+
+========================================
+OUTLIER DETECTION
+========================================
+
+Outliers detected: 14 flags across 14 participants
+
+Outlier summary by type:
+  cooks_distance_RAVLT: 14
+
+========================================
+ASSUMPTION CHECK SUMMARY
+========================================
+
+Assumption checks completed: 4/4 passed
+  linearity_age_ravlt: PASS
+  linearity_age_rememvr: PASS
+  normality_residuals: PASS
+  homoscedasticity: PASS
+
+Remedial actions:
+  - 14 outliers: Will report with/without in sensitivity
+
+Saved diagnostics to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step05_diagnostics.csv
+Saved outliers to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step05_outliers.csv
+
+Step 5 completed successfully
+============================================================
+Step 5: Assumption Checks and Diagnostics
+============================================================
+Loaded 100 participants
+
+========================================
+LINEARITY ASSESSMENT
+========================================
+
+Age vs RAVLT:
+  Linear R² = 0.076
+  Quadratic R² = 0.095
+  F-test for quadratic: F = 2.07, p = 0.1537
+  → LINEAR
+
+Age vs REMEMVR:
+  Linear R² = 0.028
+  Quadratic R² = 0.029
+  F-test for quadratic: F = 0.09, p = 0.7679
+  → LINEAR
+
+========================================
+NORMALITY ASSESSMENT
+========================================
+
+Age-RAVLT residuals:
+  Shapiro-Wilk W = 0.976, p = 0.0704
+  → NORMAL
+
+Age-REMEMVR residuals:
+  Shapiro-Wilk W = 0.982, p = 0.2045
+  → NORMAL
+
+========================================
+OUTLIER DETECTION
+========================================
+
+Outliers detected: 14 flags across 14 participants
+
+Outlier summary by type:
+  cooks_distance_RAVLT: 14
+
+========================================
+ASSUMPTION CHECK SUMMARY
+========================================
+
+Assumption checks completed: 4/4 passed
+  linearity_age_ravlt: PASS
+  linearity_age_rememvr: PASS
+  normality_residuals: PASS
+  homoscedasticity: PASS
+
+Remedial actions:
+  - 14 outliers: Will report with/without in sensitivity
+
+Saved diagnostics to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step05_diagnostics.csv
+Saved outliers to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step05_outliers.csv
+
+Step 5 completed successfully
+============================================================
+Step 5: Assumption Checks and Diagnostics
+============================================================
+Loaded 100 participants
+
+========================================
+LINEARITY ASSESSMENT
+========================================
+
+Age vs RAVLT:
+  Linear R² = 0.034
+  Quadratic R² = 0.057
+  F-test for quadratic: F = 2.31, p = 0.1315
+  → LINEAR
+
+Age vs REMEMVR:
+  Linear R² = 0.028
+  Quadratic R² = 0.029
+  F-test for quadratic: F = 0.09, p = 0.7679
+  → LINEAR
+
+Age vs RAVLT Pct Ret:
+  Linear R2 = 0.026
+  Quadratic R2 = 0.052
+  F-test for quadratic: F = 2.72, p = 0.1023
+  -> LINEAR
+
+========================================
+NORMALITY ASSESSMENT
+========================================
+
+Age-RAVLT residuals:
+  Shapiro-Wilk W = 0.987, p = 0.4462
+  → NORMAL
+
+Age-REMEMVR residuals:
+  Shapiro-Wilk W = 0.982, p = 0.2045
+  → NORMAL
+
+Age-RAVLT Pct Ret residuals:
+  Shapiro-Wilk W = 0.989, p = 0.6074
+  -> NORMAL
+
+========================================
+OUTLIER DETECTION
+========================================
+
+Outliers detected: 15 flags across 15 participants
+
+Outlier summary by type:
+  cooks_distance_RAVLT: 15
+
+========================================
+ASSUMPTION CHECK SUMMARY
+========================================
+
+Assumption checks completed: 5/5 passed
+  linearity_age_ravlt: PASS
+  linearity_age_rememvr: PASS
+  linearity_age_pctret: PASS
+  normality_residuals: PASS
+  homoscedasticity: PASS
+
+Remedial actions:
+  - 15 outliers: Will report with/without in sensitivity
+
+Saved diagnostics to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step05_diagnostics.csv
+Saved outliers to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step05_outliers.csv
+
+Step 5 completed successfully

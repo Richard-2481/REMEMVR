@@ -30,9 +30,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import warnings
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.8.4
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR project root
@@ -52,9 +50,7 @@ def log(msg):
         f.flush()
     print(msg, flush=True)
 
-# =============================================================================
-# STEP 00: Reshape Random Effects Data (Long -> Wide)
-# =============================================================================
+# Reshape Random Effects Data (Long -> Wide)
 
 def step00_reshape_random_effects():
     """
@@ -109,9 +105,7 @@ def step00_reshape_random_effects():
     log(f"\nAll 100 participants matched between source and destination")
     return df_wide
 
-# =============================================================================
-# STEP 01: Standardize Features
-# =============================================================================
+# Standardize Features
 
 def step01_standardize_features(df_raw):
     """
@@ -152,9 +146,7 @@ def step01_standardize_features(df_raw):
     log(f"\nStandardized 4 features: mean approximately 0, SD approximately 1")
     return df_z
 
-# =============================================================================
-# STEP 02: K-Means Cluster Selection (BIC)
-# =============================================================================
+# K-Means Cluster Selection (BIC)
 
 def step02_cluster_selection(df_z):
     """
@@ -203,9 +195,7 @@ def step02_cluster_selection(df_z):
 
     return int(optimal_k), df_results
 
-# =============================================================================
-# STEP 03: Fit Final K-Means Clustering
-# =============================================================================
+# Fit Final K-Means Clustering
 
 def step03_fit_final_kmeans(df_z, optimal_k):
     """
@@ -249,9 +239,7 @@ def step03_fit_final_kmeans(df_z, optimal_k):
     log(f"\nFitted K-means with K = {optimal_k} clusters")
     return df_assignments, kmeans
 
-# =============================================================================
-# STEP 04: Validate Clustering Quality
-# =============================================================================
+# Validate Clustering Quality
 
 def step04_validate_clustering_quality(df_z, df_assignments):
     """
@@ -329,9 +317,7 @@ def step04_validate_clustering_quality(df_z, df_assignments):
 
     return df_validation, silhouette
 
-# =============================================================================
-# STEP 05: Characterize Clusters
-# =============================================================================
+# Characterize Clusters
 
 def step05_characterize_clusters(df_raw, df_assignments):
     """
@@ -391,9 +377,7 @@ def step05_characterize_clusters(df_raw, df_assignments):
     log(f"\nCharacterized {len(df_char)} clusters")
     return df_char
 
-# =============================================================================
-# STEP 06: Cross-Tabulate with Ch5 5.5.7 Accuracy Clusters
-# =============================================================================
+# Cross-Tabulate with Ch5 5.5.7 Accuracy Clusters
 
 def step06_crosstab_ch5(df_assignments):
     """
@@ -462,9 +446,7 @@ def step06_crosstab_ch5(df_assignments):
     log(f"\nChi-square test: X2 = {chi2:.2f}, df = {dof}, p = {p_uncorrected:.4e}")
     return crosstab, chi_df
 
-# =============================================================================
-# STEP 07: Prepare Visualization Data (PCA Projection)
-# =============================================================================
+# Prepare Visualization Data (PCA Projection)
 
 def step07_prepare_visualization(df_z, df_assignments):
     """
@@ -503,9 +485,7 @@ def step07_prepare_visualization(df_z, df_assignments):
 
     return df_viz, var_explained
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all steps."""

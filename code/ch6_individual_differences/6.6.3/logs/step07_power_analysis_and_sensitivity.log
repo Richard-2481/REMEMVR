@@ -1,0 +1,54 @@
+Step 07: Power Analysis and Sensitivity
+Reading ICC estimates...
+2 rows
+Reading pairwise comparisons...
+1 rows
+Comparison: What-Where
+Cohen's d: 0.0000
+Calculating achieved power...
+N=100, alpha=0.05, d=0.0000
+d=0.0000 -> R^2=0.000000
+Power: 0.0500
+Calculating minimum detectable effect size...
+N=100, power=0.8, alpha=0.05
+Detectable d: 0.5659 (at 80% power)
+Calculating required N for small effect...
+d=0.2, power=0.8, alpha=0.05
+N=788 participants (for d=0.2 at 80% power)
+Power analysis table: 1 row
+Checking power analysis results...
+achieved_power in [0, 1]
+min_detectable_d > 0
+required_n_d02 > 100 (larger sample needed for d=0.2)
+Writing power analysis...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step07_power_analysis.csv (1 row)
+Step 07 complete
+Achieved power: 0.0500, Min detectable d: 0.5659
+All 8 analysis steps complete for RQ 7.6.3
+Step 07: Power Analysis and Sensitivity
+Reading ICC estimates...
+2 rows
+Reading pairwise comparisons...
+1 rows
+Comparison: What-Where
+Cohen's d: 0.0000
+Calculating achieved power...
+N=100, alpha=0.05, d=0.0000
+d=0.0000 -> R^2=0.000000
+Power: 0.0500
+Calculating minimum detectable effect size...
+N=100, power=0.8, alpha=0.05
+Detectable d: 0.5659 (at 80% power)
+Calculating required N for small effect...
+d=0.2, power=0.8, alpha=0.05
+N=788 participants (for d=0.2 at 80% power)
+Power analysis table: 1 row
+Checking power analysis results...
+achieved_power in [0, 1]
+min_detectable_d > 0
+required_n_d02 > 100 (larger sample needed for d=0.2)
+Writing power analysis...
+/home/etai/projects/REMEMVR/results/ch7/7.6.3/data/step07_power_analysis.csv (1 row)
+Step 07 complete
+Achieved power: 0.0500, Min detectable d: 0.5659
+All 8 analysis steps complete for RQ 7.6.3

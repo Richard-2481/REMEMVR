@@ -1,0 +1,7 @@
+DV,test,statistic,p_value,assumption,status
+education,shapiro_wilk,min_group_p,0.0008593696409704408,normality,violation
+education,levene,2.006501967083175,0.14000086597380126,homoscedasticity,pass
+rpm,shapiro_wilk,min_group_p,1.8188165250082463e-05,normality,violation
+rpm,levene,0.40485021255697606,0.6681986105019804,homoscedasticity,pass
+age,shapiro_wilk,min_group_p,0.016489395099223092,normality,violation
+age,levene,1.1120324990179484,0.333045734349019,homoscedasticity,pass

@@ -1,0 +1,297 @@
+[2025-12-11 21:41:50] ======================================================================
+[2025-12-11 21:41:50] RQ 6.3.2: Domain Confidence Calibration
+[2025-12-11 21:41:50] ======================================================================
+[2025-12-11 21:41:50] Started: 2025-12-11 21:41:50.965277
+[2025-12-11 21:41:50] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2025-12-11 21:41:50] ======================================================================
+[2025-12-11 21:41:50] STEP 00: Load and Merge Accuracy/Confidence Data
+[2025-12-11 21:41:50] ======================================================================
+[2025-12-11 21:41:50] Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+[2025-12-11 21:41:50]   Loaded accuracy data: 400 rows (wide format)
+[2025-12-11 21:41:50]   Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+[2025-12-11 21:41:50]   Accuracy data (long format): 1200 rows
+[2025-12-11 21:41:50]   Domains: ['What', 'Where', 'When']
+[2025-12-11 21:41:50] Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step03_theta_confidence.csv
+[2025-12-11 21:41:50]   Loaded confidence data: 400 rows (wide format)
+[2025-12-11 21:41:50]   Columns: ['composite_ID', 'theta_What', 'theta_Where', 'theta_When']
+[2025-12-11 21:41:50]   Confidence data (long format): 1200 rows
+[2025-12-11 21:41:50]   Domains: ['What', 'Where', 'When']
+[2025-12-11 21:41:50] Loading TSVR mapping from: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_tsvr_mapping.csv
+[2025-12-11 21:41:50]   TSVR mapping: 400 rows
+[2025-12-11 21:41:50] Merging accuracy and confidence data...
+[2025-12-11 21:41:50]   After merge (accuracy + confidence): 1200 rows
+[2025-12-11 21:41:50]   After TSVR merge: 1200 rows
+[2025-12-11 21:41:50] Computing z-standardized theta values...
+[2025-12-11 21:41:50]   theta_accuracy: mean=0.0461, SD=0.8469
+[2025-12-11 21:41:50]   theta_accuracy_z: mean=0.0000, SD=1.0000
+[2025-12-11 21:41:50]   theta_confidence: mean=-0.7699, SD=0.5939
+[2025-12-11 21:41:50]   theta_confidence_z: mean=-0.0000, SD=1.0000
+[2025-12-11 21:41:50] Computing calibration metrics...
+[2025-12-11 21:41:50]   Calibration range: [-4.431, 2.767]
+[2025-12-11 21:41:50]   Mean calibration: -0.0000
+[2025-12-11 21:41:50]   Mean |calibration|: 0.8249
+[2025-12-11 21:41:50] Validating merged data...
+[2025-12-11 21:41:50]   Domains in merged data: ['What', 'Where', 'When']
+[2025-12-11 21:41:50]   Unique participants: 100
+[2025-12-11 21:41:50]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2025-12-11 21:41:50] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step00_calibration_by_domain.csv (1200 rows)
+[2025-12-11 21:41:50] ======================================================================
+[2025-12-11 21:41:50] STEP 01: Fit LMM with Domain × Time Interaction
+[2025-12-11 21:41:50] ======================================================================
+[2025-12-11 21:41:50] TSVR centering: mean = 64.95 hours
+[2025-12-11 21:41:50] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2025-12-11 21:41:51]   Model with random slopes converged successfully
+[2025-12-11 21:41:51] Extracting fixed effects...
+[2025-12-11 21:41:51] 
+Fixed Effects:
+[2025-12-11 21:41:51]   Intercept: β=0.0106, SE=0.0754, z=0.14, p=0.8879
+[2025-12-11 21:41:51]   C(Domain)[T.Where]: β=-0.0385, SE=0.0567, z=-0.68, p=0.4967
+[2025-12-11 21:41:51]   C(Domain)[T.When]: β=0.0035, SE=0.0567, z=0.06, p=0.9506
+[2025-12-11 21:41:51]   TSVR_centered: β=0.0017, SE=0.0008, z=2.15, p=0.0313
+[2025-12-11 21:41:51]   C(Domain)[T.Where]:TSVR_centered: β=0.0005, SE=0.0010, z=0.50, p=0.6151
+[2025-12-11 21:41:51]   C(Domain)[T.When]:TSVR_centered: β=-0.0063, SE=0.0010, z=-6.52, p=0.0000
+[2025-12-11 21:41:51] 
+Testing Domain main effect (LRT)...
+[2025-12-11 21:41:51]   Domain main effect: χ²(2)=60.24, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2025-12-11 21:41:51] 
+Testing Domain × Time interaction (LRT)...
+[2025-12-11 21:41:51]   Domain × Time interaction: χ²(2)=59.60, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2025-12-11 21:41:51] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2025-12-11 21:41:51] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2025-12-11 21:41:51] ======================================================================
+[2025-12-11 21:41:51] STEP 02: Post-Hoc Domain Contrasts
+[2025-12-11 21:41:51] ======================================================================
+[2025-12-11 21:41:51] Domain-level calibration statistics:
+[2025-12-11 21:41:51]   What: mean=0.0117, SD=0.9443, N=400
+[2025-12-11 21:41:51]   When: mean=0.0152, SD=1.2733, N=400
+[2025-12-11 21:41:51]   Where: mean=-0.0269, SD=0.9310, N=400
+[2025-12-11 21:41:51]   What vs Where: Δ=0.0385, z=0.58, p_uncorr=0.5612, p_bonf=1.0000, d=0.041
+[2025-12-11 21:41:51]   What vs When: Δ=-0.0035, z=-0.04, p_uncorr=0.9647, p_bonf=1.0000, d=-0.003
+[2025-12-11 21:41:51]   Where vs When: Δ=-0.0420, z=-0.53, p_uncorr=0.5940, p_bonf=1.0000, d=-0.038
+[2025-12-11 21:41:51] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step02_post_hoc_contrasts.csv
+[2025-12-11 21:41:51] ======================================================================
+[2025-12-11 21:41:51] STEP 03: Rank Domains by Calibration Quality
+[2025-12-11 21:41:51] ======================================================================
+[2025-12-11 21:41:51] Domain ranking by calibration quality:
+[2025-12-11 21:41:51]   Rank 1: What - mean |calibration|=0.7250 (Best calibrated)
+[2025-12-11 21:41:51]   Rank 2: Where - mean |calibration|=0.7259 (Middle)
+[2025-12-11 21:41:51]   Rank 3: When - mean |calibration|=1.0237 (Worst calibrated)
+[2025-12-11 21:41:51] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step03_domain_ranking.csv
+[2025-12-11 21:41:51] ======================================================================
+[2025-12-11 21:41:51] STEP 04: Prepare Calibration Trajectory Plot Data
+[2025-12-11 21:41:51] ======================================================================
+[2025-12-11 21:41:51] Plot data summary:
+[2025-12-11 21:41:51]   Rows: 12
+[2025-12-11 21:41:51]   Domains: ['What', 'When', 'Where']
+[2025-12-11 21:41:51]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2025-12-11 21:41:51]   What: T1=-0.252 → T4=0.077 (Δ=0.329)
+[2025-12-11 21:41:51]   When: T1=0.377 → T4=-0.351 (Δ=-0.727)
+[2025-12-11 21:41:51]   Where: T1=-0.248 → T4=0.116 (Δ=0.364)
+[2025-12-11 21:41:51] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step04_calibration_trajectory_data.csv
+[2025-12-11 21:41:51] ======================================================================
+[2025-12-11 21:41:51] EXECUTION COMPLETE
+[2025-12-11 21:41:51] ======================================================================
+[2025-12-11 21:41:51] All steps completed successfully
+[2025-12-11 21:41:51] Ended: 2025-12-11 21:41:51.923716
+[2026-01-17 14:15:50] ======================================================================
+[2026-01-17 14:15:50] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:15:50] ======================================================================
+[2026-01-17 14:15:50] Started: 2026-01-17 14:15:50.687230
+[2026-01-17 14:15:50] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:15:50] ======================================================================
+[2026-01-17 14:15:50] STEP 00: Load and Merge Accuracy/Confidence Data
+[2026-01-17 14:15:50] ======================================================================
+[2026-01-17 14:15:50] Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+[2026-01-17 14:15:50]   Loaded accuracy data: 400 rows (wide format)
+[2026-01-17 14:15:50]   Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+[2026-01-17 14:15:50]   Accuracy data (long format): 1200 rows
+[2026-01-17 14:15:50]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:15:50] Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step03_theta_confidence.csv
+[2026-01-17 14:15:50]   Loaded confidence data: 400 rows (wide format)
+[2026-01-17 14:15:50]   Columns: ['composite_ID', 'theta_What', 'theta_Where', 'theta_When']
+[2026-01-17 14:15:50]   Confidence data (long format): 1200 rows
+[2026-01-17 14:15:50]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:15:50] Loading TSVR mapping from: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_tsvr_mapping.csv
+[2026-01-17 14:15:50]   TSVR mapping: 400 rows
+[2026-01-17 14:15:50] Merging accuracy and confidence data...
+[2026-01-17 14:15:50]   After merge (accuracy + confidence): 1200 rows
+[2026-01-17 14:15:50]   After TSVR merge: 1200 rows
+[2026-01-17 14:15:50] Computing z-standardized theta values...
+[2026-01-17 14:15:50]   theta_accuracy: mean=0.0461, SD=0.8469
+[2026-01-17 14:15:50]   theta_accuracy_z: mean=0.0000, SD=1.0000
+[2026-01-17 14:15:50]   theta_confidence: mean=-0.7699, SD=0.5939
+[2026-01-17 14:15:50]   theta_confidence_z: mean=-0.0000, SD=1.0000
+[2026-01-17 14:15:50] Computing calibration metrics...
+[2026-01-17 14:15:50]   Calibration range: [-4.431, 2.767]
+[2026-01-17 14:15:50]   Mean calibration: -0.0000
+[2026-01-17 14:15:50]   Mean |calibration|: 0.8249
+[2026-01-17 14:15:50] Validating merged data...
+[2026-01-17 14:15:50]   Domains in merged data: ['What', 'Where', 'When']
+[2026-01-17 14:15:50]   Unique participants: 100
+[2026-01-17 14:15:50]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:15:50] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step00_calibration_by_domain.csv (1200 rows)
+[2026-01-17 14:15:50] ======================================================================
+[2026-01-17 14:15:50] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:15:50] ======================================================================
+[2026-01-17 14:15:50] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:15:50] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:15:50]   Model with random slopes converged successfully
+[2026-01-17 14:15:50] Extracting fixed effects...
+[2026-01-17 14:15:50] 
+Fixed Effects:
+[2026-01-17 14:15:50]   Intercept: β=0.0106, SE=0.0754, z=0.14, p=0.8879
+[2026-01-17 14:15:50]   C(Domain)[T.Where]: β=-0.0385, SE=0.0567, z=-0.68, p=0.4967
+[2026-01-17 14:15:50]   C(Domain)[T.When]: β=0.0035, SE=0.0567, z=0.06, p=0.9506
+[2026-01-17 14:15:50]   TSVR_centered: β=0.0017, SE=0.0008, z=2.15, p=0.0313
+[2026-01-17 14:15:50]   C(Domain)[T.Where]:TSVR_centered: β=0.0005, SE=0.0010, z=0.50, p=0.6151
+[2026-01-17 14:15:50]   C(Domain)[T.When]:TSVR_centered: β=-0.0063, SE=0.0010, z=-6.52, p=0.0000
+[2026-01-17 14:15:50] 
+Testing Domain main effect (LRT)...
+[2026-01-17 14:15:51]   Domain main effect: χ²(2)=60.24, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:15:51] 
+Testing Domain × Time interaction (LRT)...
+[2026-01-17 14:15:51]   Domain × Time interaction: χ²(2)=59.60, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:15:51] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2026-01-17 14:15:51] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:15:51] ======================================================================
+[2026-01-17 14:15:51] STEP 02: Post-Hoc Domain Contrasts
+[2026-01-17 14:15:51] ======================================================================
+[2026-01-17 14:15:51] Domain-level calibration statistics:
+[2026-01-17 14:15:51]   What: mean=0.0117, SD=0.9443, N=400
+[2026-01-17 14:15:51]   When: mean=0.0152, SD=1.2733, N=400
+[2026-01-17 14:15:51]   Where: mean=-0.0269, SD=0.9310, N=400
+[2026-01-17 14:15:51]   What vs Where: Δ=0.0385, z=0.58, p_uncorr=0.5612, p_bonf=1.0000, d=0.041
+[2026-01-17 14:15:51]   What vs When: Δ=-0.0035, z=-0.04, p_uncorr=0.9647, p_bonf=1.0000, d=-0.003
+[2026-01-17 14:15:51]   Where vs When: Δ=-0.0420, z=-0.53, p_uncorr=0.5940, p_bonf=1.0000, d=-0.038
+[2026-01-17 14:15:51] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:15:51] ======================================================================
+[2026-01-17 14:15:51] STEP 03: Rank Domains by Calibration Quality
+[2026-01-17 14:15:51] ======================================================================
+[2026-01-17 14:15:51] Domain ranking by calibration quality:
+[2026-01-17 14:15:51]   Rank 1: What - mean |calibration|=0.7250 (Best calibrated)
+[2026-01-17 14:15:51]   Rank 2: Where - mean |calibration|=0.7259 (Middle)
+[2026-01-17 14:15:51]   Rank 3: When - mean |calibration|=1.0237 (Worst calibrated)
+[2026-01-17 14:15:51] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step03_domain_ranking.csv
+[2026-01-17 14:15:51] ======================================================================
+[2026-01-17 14:15:51] STEP 04: Prepare Calibration Trajectory Plot Data
+[2026-01-17 14:15:51] ======================================================================
+[2026-01-17 14:15:51] Plot data summary:
+[2026-01-17 14:15:51]   Rows: 12
+[2026-01-17 14:15:51]   Domains: ['What', 'When', 'Where']
+[2026-01-17 14:15:51]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:15:51]   What: T1=-0.252 → T4=0.077 (Δ=0.329)
+[2026-01-17 14:15:51]   When: T1=0.377 → T4=-0.351 (Δ=-0.727)
+[2026-01-17 14:15:51]   Where: T1=-0.248 → T4=0.116 (Δ=0.364)
+[2026-01-17 14:15:51] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step04_calibration_trajectory_data.csv
+[2026-01-17 14:15:51] ======================================================================
+[2026-01-17 14:15:51] EXECUTION COMPLETE
+[2026-01-17 14:15:51] ======================================================================
+[2026-01-17 14:15:51] All steps completed successfully
+[2026-01-17 14:15:51] Ended: 2026-01-17 14:15:51.929429
+[2026-01-17 14:30:11] ======================================================================
+[2026-01-17 14:30:11] RQ 6.3.2: Domain Confidence Calibration
+[2026-01-17 14:30:11] ======================================================================
+[2026-01-17 14:30:11] Started: 2026-01-17 14:30:11.247310
+[2026-01-17 14:30:11] RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.3.2
+[2026-01-17 14:30:11] ======================================================================
+[2026-01-17 14:30:11] STEP 00: Load and Merge Accuracy/Confidence Data
+[2026-01-17 14:30:11] ======================================================================
+[2026-01-17 14:30:11] Loading accuracy data from: /home/etai/projects/REMEMVR/results/ch5/5.2.1/data/step03_theta_scores.csv
+[2026-01-17 14:30:11]   Loaded accuracy data: 400 rows (wide format)
+[2026-01-17 14:30:11]   Columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+[2026-01-17 14:30:11]   Accuracy data (long format): 1200 rows
+[2026-01-17 14:30:11]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:30:11] Loading confidence data from: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step03_theta_confidence.csv
+[2026-01-17 14:30:11]   Loaded confidence data: 400 rows (wide format)
+[2026-01-17 14:30:11]   Columns: ['composite_ID', 'theta_What', 'theta_Where', 'theta_When']
+[2026-01-17 14:30:11]   Confidence data (long format): 1200 rows
+[2026-01-17 14:30:11]   Domains: ['What', 'Where', 'When']
+[2026-01-17 14:30:11] Loading TSVR mapping from: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_tsvr_mapping.csv
+[2026-01-17 14:30:11]   TSVR mapping: 400 rows
+[2026-01-17 14:30:11] Merging accuracy and confidence data...
+[2026-01-17 14:30:11]   After merge (accuracy + confidence): 1200 rows
+[2026-01-17 14:30:11]   After TSVR merge: 1200 rows
+[2026-01-17 14:30:11] Computing z-standardized theta values...
+[2026-01-17 14:30:11]   theta_accuracy: mean=0.0461, SD=0.8469
+[2026-01-17 14:30:11]   theta_accuracy_z: mean=0.0000, SD=1.0000
+[2026-01-17 14:30:11]   theta_confidence: mean=-0.7699, SD=0.5939
+[2026-01-17 14:30:11]   theta_confidence_z: mean=-0.0000, SD=1.0000
+[2026-01-17 14:30:11] Computing calibration metrics...
+[2026-01-17 14:30:11]   Calibration range: [-4.431, 2.767]
+[2026-01-17 14:30:11]   Mean calibration: -0.0000
+[2026-01-17 14:30:11]   Mean |calibration|: 0.8249
+[2026-01-17 14:30:11] Validating merged data...
+[2026-01-17 14:30:11]   Domains in merged data: ['What', 'Where', 'When']
+[2026-01-17 14:30:11]   Unique participants: 100
+[2026-01-17 14:30:11]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:30:11] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step00_calibration_by_domain.csv (1200 rows)
+[2026-01-17 14:30:11] ======================================================================
+[2026-01-17 14:30:11] STEP 01: Fit LMM with Domain × Time Interaction
+[2026-01-17 14:30:11] ======================================================================
+[2026-01-17 14:30:11] TSVR centering: mean = 64.95 hours
+[2026-01-17 14:30:11] Fitting LMM: calibration ~ Domain * TSVR_centered + (TSVR_centered | UID)
+[2026-01-17 14:30:11]   Model with random slopes converged successfully
+[2026-01-17 14:30:11] Extracting fixed effects...
+[2026-01-17 14:30:11] 
+Fixed Effects:
+[2026-01-17 14:30:11]   Intercept: β=0.0106, SE=0.0754, z=0.14, p=0.8879
+[2026-01-17 14:30:11]   C(Domain)[T.Where]: β=-0.0385, SE=0.0567, z=-0.68, p=0.4967
+[2026-01-17 14:30:11]   C(Domain)[T.When]: β=0.0035, SE=0.0567, z=0.06, p=0.9506
+[2026-01-17 14:30:11]   TSVR_centered: β=0.0017, SE=0.0008, z=2.15, p=0.0313
+[2026-01-17 14:30:11]   C(Domain)[T.Where]:TSVR_centered: β=0.0005, SE=0.0010, z=0.50, p=0.6151
+[2026-01-17 14:30:11]   C(Domain)[T.When]:TSVR_centered: β=-0.0063, SE=0.0010, z=-6.52, p=0.0000
+[2026-01-17 14:30:11] 
+Testing Domain main effect (LRT)...
+[2026-01-17 14:30:12]   Domain main effect: χ²(2)=60.24, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:30:12] 
+Testing Domain × Time interaction (LRT)...
+[2026-01-17 14:30:12]   Domain × Time interaction: χ²(2)=59.60, p_uncorrected=0.0000, p_bonferroni=0.0000
+[2026-01-17 14:30:12] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_domain_effects.csv
+[2026-01-17 14:30:12] Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step01_lmm_model_summary.txt
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] STEP 02: Post-Hoc Domain Contrasts
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] Domain-level calibration statistics:
+[2026-01-17 14:30:12]   What: mean=0.0117, SD=0.9443, N=400
+[2026-01-17 14:30:12]   When: mean=0.0152, SD=1.2733, N=400
+[2026-01-17 14:30:12]   Where: mean=-0.0269, SD=0.9310, N=400
+[2026-01-17 14:30:12]   What vs Where: Δ=0.0385, z=0.58, p_uncorr=0.5612, p_bonf=1.0000, d=0.041
+[2026-01-17 14:30:12]   What vs When: Δ=-0.0035, z=-0.04, p_uncorr=0.9647, p_bonf=1.0000, d=-0.003
+[2026-01-17 14:30:12]   Where vs When: Δ=-0.0420, z=-0.53, p_uncorr=0.5940, p_bonf=1.0000, d=-0.038
+[2026-01-17 14:30:12] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step02_post_hoc_contrasts.csv
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] STEP 03: Rank Domains by Calibration Quality
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] Domain ranking by calibration quality:
+[2026-01-17 14:30:12]   Rank 1: What - mean |calibration|=0.7250 (Best calibrated)
+[2026-01-17 14:30:12]   Rank 2: Where - mean |calibration|=0.7259 (Middle)
+[2026-01-17 14:30:12]   Rank 3: When - mean |calibration|=1.0237 (Worst calibrated)
+[2026-01-17 14:30:12] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step03_domain_ranking.csv
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] STEP 04: Prepare Calibration Trajectory Plot Data
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] Plot data summary:
+[2026-01-17 14:30:12]   Rows: 12
+[2026-01-17 14:30:12]   Domains: ['What', 'When', 'Where']
+[2026-01-17 14:30:12]   Tests: ['T1', 'T2', 'T3', 'T4']
+[2026-01-17 14:30:12]   What: T1=-0.252 → T4=0.077 (Δ=0.329)
+[2026-01-17 14:30:12]   When: T1=0.377 → T4=-0.351 (Δ=-0.727)
+[2026-01-17 14:30:12]   Where: T1=-0.248 → T4=0.116 (Δ=0.364)
+[2026-01-17 14:30:12] 
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.2/data/step04_calibration_trajectory_data.csv
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] EXECUTION COMPLETE
+[2026-01-17 14:30:12] ======================================================================
+[2026-01-17 14:30:12] All steps completed successfully
+[2026-01-17 14:30:12] Ended: 2026-01-17 14:30:12.538151

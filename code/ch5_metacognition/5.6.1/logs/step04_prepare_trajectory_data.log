@@ -1,0 +1,102 @@
+Step 04: Prepare trajectory plot data
+Loading HCE rates from Step 1...
+step01_hce_rates.csv (400 rows, 6 cols)
+Columns: ['UID', 'TEST', 'TSVR', 'HCE_rate', 'n_HCE', 'n_total']
+Tests present: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Aggregating HCE rates by timepoint...
+Aggregated to 4 timepoints
+Timepoints: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Sample sizes per timepoint: [np.int64(100), np.int64(100), np.int64(100), np.int64(100)]
+Computing 95% confidence intervals...
+Confidence intervals computed
+1.0: mean=0.0487, CI=[0.0390, 0.0585], SE=0.0050
+2.0: mean=0.0487, CI=[0.0403, 0.0572], SE=0.0043
+3.0: mean=0.0379, CI=[0.0291, 0.0467], SE=0.0045
+4.0: mean=0.0317, CI=[0.0236, 0.0397], SE=0.0041
+Preparing plot-ready output...
+Plot data prepared: 4 rows, 5 cols
+step04_hce_trajectory_data.csv (4 rows, 5 cols)
+Running validate_plot_data_completeness...
+Plot data incomplete: Missing groups: 1, 2, 3, 4
+Validation failed: Plot data incomplete: Missing groups: 1, 2, 3, 4
+Validation failed: Plot data incomplete: Missing groups: 1, 2, 3, 4
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.6.1/code/step04_prepare_trajectory_data.py", line 227, in <module>
+    raise ValueError(error_msg)
+ValueError: Validation failed: Plot data incomplete: Missing groups: 1, 2, 3, 4
+Step 04: Prepare trajectory plot data
+Loading HCE rates from Step 1...
+step01_hce_rates.csv (400 rows, 6 cols)
+Columns: ['UID', 'TEST', 'TSVR', 'HCE_rate', 'n_HCE', 'n_total']
+Tests present: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Aggregating HCE rates by timepoint...
+Aggregated to 4 timepoints
+Timepoints: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Sample sizes per timepoint: [np.int64(100), np.int64(100), np.int64(100), np.int64(100)]
+Computing 95% confidence intervals...
+Confidence intervals computed
+1.0: mean=0.0487, CI=[0.0390, 0.0585], SE=0.0050
+2.0: mean=0.0487, CI=[0.0403, 0.0572], SE=0.0043
+3.0: mean=0.0379, CI=[0.0291, 0.0467], SE=0.0045
+4.0: mean=0.0317, CI=[0.0236, 0.0397], SE=0.0041
+Preparing plot-ready output...
+Plot data prepared: 4 rows, 5 cols
+step04_hce_trajectory_data.csv (4 rows, 5 cols)
+Running validate_plot_data_completeness...
+Plot data complete: 0 domains, 4 groups.
+Running additional checks...
+All checks passed
+Plot data preparation complete: 4 timepoints created
+All tests represented: 1, 2, 3, 4
+Step 04 complete
+Step 04: Prepare trajectory plot data
+Loading HCE rates from Step 1...
+step01_hce_rates.csv (400 rows, 6 cols)
+Columns: ['UID', 'TEST', 'TSVR', 'HCE_rate', 'n_HCE', 'n_total']
+Tests present: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Aggregating HCE rates by timepoint...
+Aggregated to 4 timepoints
+Timepoints: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Sample sizes per timepoint: [np.int64(100), np.int64(100), np.int64(100), np.int64(100)]
+Computing 95% confidence intervals...
+Confidence intervals computed
+1.0: mean=0.0487, CI=[0.0390, 0.0585], SE=0.0050
+2.0: mean=0.0487, CI=[0.0403, 0.0572], SE=0.0043
+3.0: mean=0.0379, CI=[0.0291, 0.0467], SE=0.0045
+4.0: mean=0.0317, CI=[0.0236, 0.0397], SE=0.0041
+Preparing plot-ready output...
+Plot data prepared: 4 rows, 5 cols
+step04_hce_trajectory_data.csv (4 rows, 5 cols)
+Running validate_plot_data_completeness...
+Plot data complete: 0 domains, 4 groups.
+Running additional checks...
+All checks passed
+Plot data preparation complete: 4 timepoints created
+All tests represented: 1, 2, 3, 4
+Step 04 complete
+Step 04: Prepare trajectory plot data
+Loading HCE rates from Step 1...
+step01_hce_rates.csv (400 rows, 6 cols)
+Columns: ['UID', 'TEST', 'TSVR', 'HCE_rate', 'n_HCE', 'n_total']
+Tests present: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Aggregating HCE rates by timepoint...
+Aggregated to 4 timepoints
+Timepoints: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Sample sizes per timepoint: [np.int64(100), np.int64(100), np.int64(100), np.int64(100)]
+Computing 95% confidence intervals...
+Confidence intervals computed
+1.0: mean=0.0487, CI=[0.0390, 0.0585], SE=0.0050
+2.0: mean=0.0487, CI=[0.0403, 0.0572], SE=0.0043
+3.0: mean=0.0379, CI=[0.0291, 0.0467], SE=0.0045
+4.0: mean=0.0317, CI=[0.0236, 0.0397], SE=0.0041
+Preparing plot-ready output...
+Plot data prepared: 4 rows, 5 cols
+step04_hce_trajectory_data.csv (4 rows, 5 cols)
+Running validate_plot_data_completeness...
+Plot data complete: 0 domains, 4 groups.
+Running additional checks...
+All checks passed
+Plot data preparation complete: 4 timepoints created
+All tests represented: 1, 2, 3, 4
+Step 04 complete

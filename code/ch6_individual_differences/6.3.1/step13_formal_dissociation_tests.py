@@ -3,7 +3,6 @@
 Step ID: step13
 Step Name: formal_dissociation_tests
 RQ: results/ch7/7.3.1
-Generated: 2026-02-26
 
 PURPOSE:
 Formal tests of the accuracy-confidence dissociation using MATCHED models
@@ -88,16 +87,13 @@ def steiger_z_test(r_ya, r_yb, r_ab, N):
 if __name__ == "__main__":
     try:
         LOG_FILE.write_text("")
-        log("[START] Step 13: Formal Dissociation Tests (Matched 6-Predictor Models)")
-
-        # ==================================================================
+        log("Step 13: Formal Dissociation Tests (Matched 6-Predictor Models)")
         # LOAD DATA
-        # ==================================================================
         acc_df = pd.read_csv(RQ_DIR / "data" / "step11_accuracy_analysis_dataset.csv")
         conf_df = pd.read_csv(RQ_DIR / "data" / "step04_analysis_dataset.csv")
 
-        log(f"[LOADED] Accuracy dataset: {acc_df.shape}")
-        log(f"[LOADED] Confidence dataset: {conf_df.shape}")
+        log(f"Accuracy dataset: {acc_df.shape}")
+        log(f"Confidence dataset: {conf_df.shape}")
 
         # Merge on UID to ensure identical participant ordering
         merged = pd.merge(
@@ -108,7 +104,7 @@ if __name__ == "__main__":
         )
         merged = merged.dropna()
         N = len(merged)
-        log(f"[MERGED] N={N} participants with both accuracy and confidence theta")
+        log(f"N={N} participants with both accuracy and confidence theta")
 
         predictor_cols = ['age', 'sex', 'education', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T']
         X = merged[predictor_cols]
@@ -118,12 +114,9 @@ if __name__ == "__main__":
         # Verify R2 matches step12
         model_acc = sm.OLS(y_acc, sm.add_constant(X)).fit()
         model_conf = sm.OLS(y_conf, sm.add_constant(X)).fit()
-        log(f"[VERIFY] Accuracy R2 = {model_acc.rsquared:.6f} (expect ~0.249)")
-        log(f"[VERIFY] Confidence R2 = {model_conf.rsquared:.6f} (expect ~0.188)")
-
-        # ==================================================================
+        log(f"Accuracy R2 = {model_acc.rsquared:.6f} (expect ~0.249)")
+        log(f"Confidence R2 = {model_conf.rsquared:.6f} (expect ~0.188)")
         # TEST 1: STEIGER'S Z FOR RPM AND BVMT
-        # ==================================================================
         log("")
         log("=" * 70)
         log("TEST 1: Steiger's Z Tests for Dependent Correlations")
@@ -172,11 +165,8 @@ if __name__ == "__main__":
         steiger_df = pd.DataFrame(steiger_results)
         steiger_path = RQ_DIR / "data" / "step13_steiger_z_tests.csv"
         steiger_df.to_csv(steiger_path, index=False)
-        log(f"\n[SAVED] {steiger_path.name}")
-
-        # ==================================================================
+        log(f"\n{steiger_path.name}")
         # TEST 2: BOOTSTRAP SR2 DIFFERENCE FOR RPM (B=5000, BCa)
-        # ==================================================================
         log("")
         log("=" * 70)
         log("TEST 2: Bootstrap sr2 Difference for RPM (B=5000)")
@@ -294,11 +284,8 @@ if __name__ == "__main__":
         ])
         boot_path = RQ_DIR / "data" / "step13_bootstrap_sr2_difference.csv"
         boot_summary.to_csv(boot_path, index=False)
-        log(f"\n[SAVED] {boot_path.name}")
-
-        # ==================================================================
+        log(f"\n{boot_path.name}")
         # TEST 3: CROSS-VALIDATION FOR ACCURACY MODEL (5-fold)
-        # ==================================================================
         log("")
         log("=" * 70)
         log("TEST 3: 5-Fold Cross-Validation for Accuracy Model")
@@ -351,11 +338,8 @@ if __name__ == "__main__":
 
         cv_path = RQ_DIR / "data" / "step13_accuracy_cross_validation.csv"
         cv_df.to_csv(cv_path, index=False)
-        log(f"[SAVED] {cv_path.name}")
-
-        # ==================================================================
+        log(f"{cv_path.name}")
         # TEST 4: OMNIBUS R2 DIFFERENCE (Bootstrap)
-        # ==================================================================
         log("")
         log("=" * 70)
         log("TEST 4: Omnibus R2 Difference (Accuracy vs Confidence)")
@@ -412,11 +396,8 @@ if __name__ == "__main__":
         }])
         omnibus_path = RQ_DIR / "data" / "step13_omnibus_r2_comparison.csv"
         omnibus_df.to_csv(omnibus_path, index=False)
-        log(f"[SAVED] {omnibus_path.name}")
-
-        # ==================================================================
+        log(f"{omnibus_path.name}")
         # FINAL SUMMARY
-        # ==================================================================
         log("")
         log("=" * 70)
         log("SUMMARY OF ALL DISSOCIATION TESTS")
@@ -454,11 +435,11 @@ if __name__ == "__main__":
             log("  -> S6.3 retains 'numerical trend' framing")
 
         log("")
-        log("[SUCCESS] Step 13: Formal dissociation tests complete")
+        log("Step 13: Formal dissociation tests complete")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

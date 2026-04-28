@@ -43,21 +43,21 @@ if __name__ == "__main__":
     import traceback
     
     try:
-        log("[START] Step 07: Cross-validation")
+        log("Step 07: Cross-validation")
         
         # Load data
-        log("[LOAD] Loading analysis dataset...")
+        log("Loading analysis dataset...")
         input_file = DATA_DIR / "step03_analysis_dataset.csv"
         df = pd.read_csv(input_file)
-        log(f"[LOADED] {input_file.name} ({len(df)} rows, {len(df.columns)} cols)")
+        log(f"{input_file.name} ({len(df)} rows, {len(df.columns)} cols)")
         
         # Extract features and target
         predictors = ['age_c', 'sex', 'education', 'ravlt_c', 'bvmt_c', 'rpm_c', 'ravlt_pct_ret_c', 'bvmt_pct_ret_c']
         X = df[predictors].values
         y = df['hce_rate'].values
         
-        log("[CV_SETUP] Setting up 5-fold cross-validation...")
-        log(f"[CV_SETUP] Final dataset: {len(df)} observations, {len(predictors)} predictors")
+        log("Setting up 5-fold cross-validation...")
+        log(f"Final dataset: {len(df)} observations, {len(predictors)} predictors")
         
         # Run CV manually using sklearn
         from sklearn.model_selection import KFold
@@ -66,19 +66,19 @@ if __name__ == "__main__":
         
         kf = KFold(n_splits=5, shuffle=True, random_state=42)
         
-        log("[CV_RUN] Running cross-validation...")
+        log("Running cross-validation...")
         
         cv_results = []
         fold_num = 0
         
         for train_idx, test_idx in kf.split(X):
             fold_num += 1
-            log(f"[CV_FOLD] Processing fold {fold_num}/5...")
+            log(f"Processing fold {fold_num}/5...")
             
             X_train, X_test = X[train_idx], X[test_idx]
             y_train, y_test = y[train_idx], y[test_idx]
             
-            log(f"[CV_FOLD] Fold {fold_num}: train={len(X_train)}, test={len(X_test)}")
+            log(f"Fold {fold_num}: train={len(X_train)}, test={len(X_test)}")
             
             # Fit model
             model = LinearRegression()
@@ -105,19 +105,19 @@ if __name__ == "__main__":
                 'overfitting': gap > 0.10
             })
             
-            log(f"[CV_FOLD] Fold {fold_num} results:")
-            log(f"[CV_FOLD]   Train R²: {train_r2:.4f}")
-            log(f"[CV_FOLD]   Test R²: {test_r2:.4f}")
-            log(f"[CV_FOLD]   RMSE: {rmse:.4f}")
-            log(f"[CV_FOLD]   MAE: {mae:.4f}")
-            log(f"[CV_FOLD]   Gap: {gap:.4f}")
+            log(f"Fold {fold_num} results:")
+            log(f"Train R²: {train_r2:.4f}")
+            log(f"Test R²: {test_r2:.4f}")
+            log(f"RMSE: {rmse:.4f}")
+            log(f"MAE: {mae:.4f}")
+            log(f"Gap: {gap:.4f}")
         
         cv_df = pd.DataFrame(cv_results)
         
-        log("[CV_RUN] Cross-validation complete: 5/5 folds successful")
+        log("Cross-validation complete: 5/5 folds successful")
         
         # Aggregate statistics
-        log("[CV_AGGREGATE] Computing aggregated statistics...")
+        log("Computing aggregated statistics...")
         
         summary_data = []
         for metric in ['train_r2', 'test_r2', 'rmse', 'mae', 'generalization_gap']:
@@ -134,29 +134,29 @@ if __name__ == "__main__":
         
         mean_gap = cv_df['generalization_gap'].mean()
         if mean_gap > 0.10:
-            log("[CV_WARNING] OVERFITTING DETECTED: Gap > 0.10")
+            log("OVERFITTING DETECTED: Gap > 0.10")
         
         # Save results
-        log("[SAVE] Saving cross-validation results...")
+        log("Saving cross-validation results...")
         cv_df.to_csv(OUTPUT_CV_FILE, index=False)
-        log(f"[SAVED] {OUTPUT_CV_FILE.name} ({len(cv_df)} rows, {len(cv_df.columns)} cols)")
+        log(f"{OUTPUT_CV_FILE.name} ({len(cv_df)} rows, {len(cv_df.columns)} cols)")
         
         summary_df.to_csv(OUTPUT_SUMMARY_FILE, index=False)
-        log(f"[SAVED] {OUTPUT_SUMMARY_FILE.name} ({len(summary_df)} rows, {len(summary_df.columns)} cols)")
+        log(f"{OUTPUT_SUMMARY_FILE.name} ({len(summary_df)} rows, {len(summary_df.columns)} cols)")
         
         # Summary
-        log("[SUMMARY] Cross-validation results:")
-        log(f"[SUMMARY] - Mean train R²: {cv_df['train_r2'].mean():.4f}")
-        log(f"[SUMMARY] - Mean test R²: {cv_df['test_r2'].mean():.4f}")
-        log(f"[SUMMARY] - Mean generalization gap: {mean_gap:.4f}")
+        log("Cross-validation results:")
+        log(f"- Mean train R²: {cv_df['train_r2'].mean():.4f}")
+        log(f"- Mean test R²: {cv_df['test_r2'].mean():.4f}")
+        log(f"- Mean generalization gap: {mean_gap:.4f}")
         
         if cv_df['test_r2'].mean() < 0:
-            log("[SUMMARY] - WARNING: Negative test R² indicates model performs worse than mean baseline")
+            log("- WARNING: Negative test R² indicates model performs worse than mean baseline")
         
-        log("[SUCCESS] Step 07 complete")
+        log("Step 07 complete")
         
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         traceback.print_exc()
         sys.exit(1)

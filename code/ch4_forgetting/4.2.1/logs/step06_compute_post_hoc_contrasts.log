@@ -1,0 +1,96 @@
+Step 06: Compute Post-Hoc Contrasts (Decision D068)
+============================================================
+
+Loading LMM input data and re-fitting best model...
+step04_lmm_input.csv (1200 rows)
+Re-fitting Log model (best by AIC)...
+Log model
+  - AIC: 2523.36
+  - BIC: 2574.26
+  - Log-Likelihood: -1251.68
+  - Number of observations: 1200
+  - Converged: True
+
+Running validate_lmm_convergence...
+  - Converged: True
+  - Message: LMM converged successfully
+
+Running compute_contrasts_pairwise...
+  Implementing Decision D068: Dual p-value reporting
+  - Comparisons: ['Where-What', 'When-What', 'When-Where']
+  - Family-wise alpha: 0.05
+  - Number of comparisons: 3
+  - Bonferroni-corrected alpha: 0.0167
+
+============================================================
+POST-HOC PAIRWISE CONTRASTS (Decision D068)
+============================================================
+Family-wise alpha: 0.05
+Number of comparisons: 3
+Bonferroni-corrected alpha: 0.0167
+Detected reference level: What
+
+Results:
+  Significant (uncorrected alpha=0.05): 2/3
+  Significant (corrected alpha=0.0167): 2/3
+============================================================
+
+
+Contrasts computed: 3 comparisons
+
+Saved contrasts: /home/etai/projects/REMEMVR/results/ch5/rq1/results/step06_post_hoc_contrasts.csv
+  - Rows: 3
+  - Columns: ['comparison', 'beta', 'se', 'z', 'p_uncorrected', 'alpha_corrected', 'p_corrected', 'sig_uncorrected', 'sig_corrected']
+
+Post-hoc contrast results:
+  Where-What: beta=0.0733, z=0.957, p_uncorr=0.3386, p_corr=1.0000 ns
+  When-What: beta=-0.3144, z=-4.107, p_uncorr=0.0000, p_corr=0.0001 *** (corrected)
+  When-Where: beta=-0.3877, z=-5.064, p_uncorr=0.0000, p_corr=0.0000 *** (corrected)
+
+Running compute_effect_sizes_cohens...
+
+============================================================
+EFFECT SIZES (Cohen's f²)
+============================================================
+
+Effect sizes computed for 5 fixed effects
+  Negligible (f²<0.02): 3
+  Small (0.02≤f²<0.15): 2
+  Medium (0.15≤f²<0.35): 0
+  Large (f²≥0.35): 0
+============================================================
+
+Effect sizes computed: 5 effects
+
+Saved effect sizes: /home/etai/projects/REMEMVR/results/ch5/rq1/results/step06_effect_sizes.csv
+  - Rows: 5
+  - Columns: ['effect', 'f_squared', 'interpretation']
+
+Effect sizes (Cohen's f-squared):
+  C(Factor, Treatment('What'))[T.When]: f2=0.0141 (negligible)
+  C(Factor, Treatment('What'))[T.Where]: f2=0.0008 (negligible)
+  log_Days: f2=0.1051 (small)
+  log_Days:C(Factor, Treatment('What'))[T.When]: f2=0.0389 (small)
+  log_Days:C(Factor, Treatment('What'))[T.Where]: f2=0.0002 (negligible)
+
+Running output validation checks...
+  Exactly 3 pairwise contrasts computed
+  Both uncorrected AND Bonferroni p-values present
+  p_corrected = min(1.0, p_uncorrected * 3) verified
+  Effect sizes computed for 5 effects
+  p_uncorrected in [0, 1]
+  z values finite (no NaN/Inf)
+
+All validation checks passed
+
+============================================================
+Step 06 complete: Post-hoc contrasts computed
+============================================================
+
+Outputs created:
+  1. /home/etai/projects/REMEMVR/results/ch5/rq1/results/step06_post_hoc_contrasts.csv
+  2. /home/etai/projects/REMEMVR/results/ch5/rq1/results/step06_effect_sizes.csv
+
+Decision D068 implemented: Dual p-value reporting
+  - Significant at uncorrected alpha=0.05: 2/3
+  - Significant at corrected alpha=0.0167: 2/3

@@ -1,0 +1,66 @@
+2025-12-02 15:35:39,906 - INFO - ============================================================
+2025-12-02 15:35:39,907 - INFO - Step 04: Compute Planned Contrasts
+2025-12-02 15:35:39,907 - INFO - ============================================================
+2025-12-02 15:35:39,907 - INFO - Loading model from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step02_piecewise_lmm_model.pkl
+2025-12-02 15:35:39,923 - INFO - Loading slopes from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step03_segment_paradigm_slopes.csv
+2025-12-02 15:35:39,924 - INFO - 
+Computing 6 planned contrasts...
+2025-12-02 15:35:39,926 - INFO - 
+============================================================
+2025-12-02 15:35:39,926 - INFO - PLANNED CONTRASTS
+2025-12-02 15:35:39,926 - INFO - ============================================================
+2025-12-02 15:35:39,927 - INFO - 
+                contrast_name  estimate       SE  z_statistic  p_uncorrected  p_bonferroni  significant
+    IFR_consolidation_benefit  0.265955 0.134212     1.981610       0.047523      0.285138        False
+    ICR_consolidation_benefit  0.297567 0.134212     2.217151       0.026613      0.159677        False
+    IRE_consolidation_benefit  0.200701 0.134212     1.495410       0.134807      0.808844        False
+IFR_vs_ICR_benefit_difference -0.031612 0.183004    -0.172741       0.862855      1.000000        False
+IFR_vs_IRE_benefit_difference  0.065254 0.183004     0.356569       0.721415      1.000000        False
+ICR_vs_IRE_benefit_difference  0.096866 0.183004     0.529310       0.596591      1.000000        False
+2025-12-02 15:35:39,927 - INFO - 
+Computing effect sizes...
+2025-12-02 15:35:39,928 - INFO - 
+============================================================
+2025-12-02 15:35:39,928 - INFO - EFFECT SIZES
+2025-12-02 15:35:39,928 - INFO - ============================================================
+2025-12-02 15:35:39,929 - INFO - 
+                contrast_name  effect_size     effect_type interpretation
+    IFR_consolidation_benefit     1.981610 cohens_d_approx          large
+    ICR_consolidation_benefit     2.217151 cohens_d_approx          large
+    IRE_consolidation_benefit     1.495410 cohens_d_approx          large
+IFR_vs_ICR_benefit_difference     0.172741 cohens_d_approx     negligible
+IFR_vs_IRE_benefit_difference     0.356569 cohens_d_approx          small
+ICR_vs_IRE_benefit_difference     0.529310 cohens_d_approx         medium
+2025-12-02 15:35:39,929 - INFO - 
+============================================================
+2025-12-02 15:35:39,929 - INFO - VALIDATION CHECKS
+2025-12-02 15:35:39,929 - INFO - ============================================================
+2025-12-02 15:35:39,929 - INFO - VALIDATION - PASS: 6 contrasts computed
+2025-12-02 15:35:39,929 - INFO - VALIDATION - PASS: Dual p-values present (uncorrected + bonferroni)
+2025-12-02 15:35:39,929 - INFO - Bonferroni alpha = 0.0083 for 6 contrasts
+2025-12-02 15:35:39,929 - INFO - VALIDATION - PASS: p_bonferroni >= p_uncorrected
+2025-12-02 15:35:39,929 - INFO - VALIDATION - PASS: No NaN in estimates
+2025-12-02 15:35:39,929 - INFO - Effect sizes computed for all 6 contrasts
+2025-12-02 15:35:39,930 - INFO - 
+Contrasts saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step04_planned_contrasts.csv
+2025-12-02 15:35:39,931 - INFO - Effect sizes saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step04_effect_sizes.csv
+2025-12-02 15:35:39,931 - INFO - 
+============================================================
+2025-12-02 15:35:39,931 - INFO - INTERPRETATION
+2025-12-02 15:35:39,931 - INFO - ============================================================
+2025-12-02 15:35:39,931 - INFO - 
+Consolidation benefits (Late slope - Early slope):
+2025-12-02 15:35:39,931 - INFO - (Positive = slower forgetting in Late vs Early)
+2025-12-02 15:35:39,931 - INFO -   IFR_consolidation_benefit: 0.2660 (p=0.2851) 
+2025-12-02 15:35:39,931 - INFO -   ICR_consolidation_benefit: 0.2976 (p=0.1597) 
+2025-12-02 15:35:39,931 - INFO -   IRE_consolidation_benefit: 0.2007 (p=0.8088) 
+2025-12-02 15:35:39,931 - INFO - 
+Paradigm differences in consolidation benefit:
+2025-12-02 15:35:39,931 - INFO -   IFR_vs_ICR_benefit_difference: -0.0316 (p=1.0000) 
+2025-12-02 15:35:39,931 - INFO -   IFR_vs_IRE_benefit_difference: 0.0653 (p=1.0000) 
+2025-12-02 15:35:39,932 - INFO -   ICR_vs_IRE_benefit_difference: 0.0969 (p=1.0000) 
+2025-12-02 15:35:39,932 - INFO - 
+============================================================
+2025-12-02 15:35:39,932 - INFO - STEP 04 COMPLETE
+2025-12-02 15:35:39,932 - INFO - ============================================================
+2025-12-02 15:35:39,932 - INFO - 0/6 contrasts significant after Bonferroni correction

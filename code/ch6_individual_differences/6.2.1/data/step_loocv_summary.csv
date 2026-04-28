@@ -1,0 +1,3 @@
+model_name,n,p,in_sample_r2,adjusted_r2,ols_loocv_r2,ridge_loocv_r2,ridge_alpha,shrinkage_ols,shrinkage_ridge
+age_only,100,1,0.0374,0.0275,-0.0011,-0.0081,33.9322,0.0384,0.0454
+age_plus_cognitive,100,4,0.2479,0.2163,0.1603,0.1728,33.9322,0.0876,0.0752

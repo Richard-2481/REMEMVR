@@ -1,0 +1,3 @@
+model_name,n,p,in_sample_r2,adjusted_r2,ols_loocv_r2,ridge_loocv_r2,ridge_alpha,shrinkage_ols,shrinkage_ridge
+block2_demographics_cognitive,100,8,0.3007,0.2392,0.1381,0.1786,59.6362,0.1626,0.1221
+block3_full,100,13,0.3643,0.2683,0.147,0.1759,59.6362,0.2173,0.1885

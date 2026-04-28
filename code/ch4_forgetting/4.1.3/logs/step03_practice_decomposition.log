@@ -1,0 +1,60 @@
+======================================================================
+RQ 5.1.3 - PRACTICE EFFECTS DECOMPOSITION
+======================================================================
+Date: 2025-12-09 23:07:35.622534
+
+[STEP 1] Loading data and defining practice vs forgetting phases...
+  Loaded: 400 observations, 100 participants
+
+  Phase definitions:
+    Practice: T1→T2 (N=200 obs)
+    Forgetting: T3→T4 (N=200 obs)
+
+[STEP 2] Fitting dual-phase model: theta ~ Phase × Time × Age_c...
+  Formula: theta ~ (Time_within_phase_log * Phase) * Age_c
+  Random effects: ~Time_within_phase_log | UID
+
+  Model converged: True
+  AIC: 875.73
+  N observations: 400
+
+[STEP 3] Extracting practice vs forgetting age effects...
+
+  Key Age Effects:
+  ------------------------------------------------------------
+  Age_c                                             : β=-0.0338 ± 0.0235, p=0.1513 ns
+  Time_within_phase_log:Age_c                       : β= 0.0059 ± 0.0053, p=0.2628 ns
+  Phase[T.Practice]:Age_c                           : β= 0.0215 ± 0.0235, p=0.3599 ns
+  Time_within_phase_log:Phase[T.Practice]:Age_c     : β=-0.0045 ± 0.0055, p=0.4132 ns
+
+[STEP 4] Testing age-invariance of practice effects...
+  Age × Practice Slope Interaction:
+    Coefficient: -0.00453 ± 0.00553
+    Z-statistic: -0.818
+    P-value: 0.4132
+
+  RESULT: Practice effects are AGE-INVARIANT (p≥0.05)
+  Interpretation: All ages benefit equally from repeated testing
+
+[STEP 5] Comparing practice phase vs forgetting phase age effects...
+  Phase-Specific Age × Slope Effects:
+    Practice phase (T1→T2):   β= 0.0014 ± 0.0077
+    Forgetting phase (T2→T4): β= 0.0059 ± 0.0053
+
+  PATTERN: Age effects stronger in forgetting than practice
+    - Consistent with hippocampal aging hypothesis
+
+[STEP 6] Saving outputs...
+  Saved: step03_practice_decomp_input.csv
+  Saved: step03_practice_phase_estimates.csv
+  Saved: step03_forgetting_phase_estimates.csv
+  Saved: step03_age_practice_interaction.csv
+
+======================================================================
+Practice effects decomposition complete!
+======================================================================
+Key findings:
+  - Practice effects are AGE-INVARIANT
+  - Wrong-direction findings NOT explained by practice confound
+
+Next: Examine step03_age_practice_interaction.csv for detailed results

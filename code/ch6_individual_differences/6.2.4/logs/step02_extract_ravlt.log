@@ -1,0 +1,118 @@
+============================================================
+Step 2: Extract RAVLT and Age Data
+============================================================
+Reading participant data from: data/dfnonvr.csv
+Loaded 100 rows with 101 columns
+All required columns found
+Calculating RAVLT_Total as sum of trials 1-5 + delayed recall
+
+RESULTS:
+RAVLT data extracted: 100 participants
+RAVLT descriptives: mean=61.5, sd=10.2
+RAVLT range: min=33.0, max=81.0
+Age descriptives: mean=44.6, sd=14.6
+Age range: 20-70 years (range=50)
+Age variance: 212.6
+Age range 50 years: adequate variance for correlation
+
+Ceiling/floor effects check:
+  - At floor (≤10): 0.0%
+  - At ceiling (≥80): 2.0%
+
+Standardization verification: z_mean=-0.000000, z_std=1.000000
+
+Saved to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step02_ravlt_age_data.csv
+Output shape: (100, 4)
+
+Final data check:
+  - Participants: 100
+  - Columns: ['UID', 'RAVLT_Total', 'RAVLT_Total_z', 'Age']
+  - No missing values: True
+  - All finite values: True
+
+Step 2 completed successfully
+============================================================
+Step 2: Extract RAVLT and Age Data
+============================================================
+Reading participant data from: data/dfnonvr.csv
+Loaded 100 rows with 235 columns
+All required columns found
+Calculating RAVLT_Total as sum of trials 1-5 + delayed recall
+
+RESULTS:
+RAVLT data extracted: 100 participants
+RAVLT descriptives: mean=61.5, sd=10.2
+RAVLT range: min=33.0, max=81.0
+Age descriptives: mean=44.6, sd=14.6
+Age range: 20-70 years (range=50)
+Age variance: 212.6
+Age range 50 years: adequate variance for correlation
+
+Ceiling/floor effects check:
+  - At floor (≤10): 0.0%
+  - At ceiling (≥80): 2.0%
+
+Standardization verification: z_mean=-0.000000, z_std=1.000000
+
+Saved to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step02_ravlt_age_data.csv
+Output shape: (100, 4)
+
+Final data check:
+  - Participants: 100
+  - Columns: ['UID', 'RAVLT_Total', 'RAVLT_Total_z', 'Age']
+  - No missing values: True
+  - All finite values: True
+
+Step 2 completed successfully
+============================================================
+Step 2: Extract RAVLT and Age Data
+============================================================
+Reading participant data from: data/dfnonvr.csv
+Loaded 100 rows with 235 columns
+All required columns found
+
+Applying ceiling fix to RAVLT trial scores...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+
+Calculating RAVLT_Total as sum of trials 1-5 + delayed recall
+
+Computing RAVLT Percent Retention...
+RAVLT Percent Retention: 100/100 valid
+
+RESULTS:
+RAVLT data extracted: 100 participants
+RAVLT Total descriptives: mean=62.5, sd=10.4
+RAVLT Total range: min=33.0, max=83.0
+RAVLT Pct Ret descriptives: mean=86.1, sd=15.8
+RAVLT Pct Ret range: min=44.4, max=130.0
+RAVLT Pct Ret valid: 100/100
+Age descriptives: mean=44.6, sd=14.6
+Age range: 20-70 years (range=50)
+Age variance: 212.6
+Age range 50 years: adequate variance for correlation
+
+Ceiling/floor effects check:
+  - At floor (<=10): 0.0%
+  - At ceiling (>=80): 4.0%
+
+Standardization verification (Total): z_mean=-0.000000, z_std=1.000000
+Standardization verification (Pct Ret): z_mean=0.000000, z_std=1.000000
+
+Saved to: /home/etai/projects/REMEMVR/results/ch7/7.2.4/data/step02_ravlt_age_data.csv
+Output shape: (100, 6)
+
+Final data check:
+  - Participants: 100
+  - Columns: ['UID', 'RAVLT_Total', 'RAVLT_Total_z', 'RAVLT_Pct_Ret', 'RAVLT_Pct_Ret_z', 'Age']
+  - No missing values (Total/Age): True
+  - Pct Ret missing: 0
+  - All finite values (Total/Age): True
+
+Step 2 completed successfully

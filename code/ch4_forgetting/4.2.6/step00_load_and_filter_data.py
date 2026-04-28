@@ -17,7 +17,6 @@ When Domain Exclusion Rationale:
     - 6-9% participants at floor
     - Only What and Where domains provide reliable theta estimates
 
-Author: Claude (g_code agent)
 Date: 2025-12-03
 """
 

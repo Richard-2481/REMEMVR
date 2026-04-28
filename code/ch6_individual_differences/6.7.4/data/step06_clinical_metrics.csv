@@ -1,0 +1,8 @@
+Metric,Value,CI_Lower,CI_Upper,Interpretation
+Sensitivity,0.5333333333333333,0.3011663015105079,0.7519077474025355,Proportion of RAVLT-impaired correctly identified by REMEMVR
+Specificity,0.7647058823529411,0.6643136684446008,0.8422057999125651,Proportion of RAVLT-normal correctly identified by REMEMVR
+PPV,0.2857142857142857,0.15253815848329969,0.470596357370175,"If REMEMVR low, probability RAVLT also impaired"
+NPV,0.9027777777777778,0.812647509746432,0.9521042887388321,"If REMEMVR normal, probability RAVLT also normal"
+RAVLT_Impairment_Rate,0.15,0.09305903191162296,0.23283733332157835,Base rate of RAVLT impairment (z < -1.0) in sample
+REMEMVR_Normal_Rate,0.72,0.6251178763865427,0.7986044083240164,Proportion classified as REMEMVR normal (z > -0.5)
+False_Negative_Rate,0.4666666666666667,0.24809225259746442,0.6988336984894921,Proportion of RAVLT-impaired missed by REMEMVR (1 - Sensitivity)

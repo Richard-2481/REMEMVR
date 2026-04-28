@@ -1,0 +1,50 @@
+Step 5: Bootstrap 95% CI for Delta_f2
+n_iterations=10000, seed=42
+
+[STEP 5.1] Load accuracy and confidence data
+Accuracy: 400 rows
+Confidence: 400 rows
+Confidence test format: T1/T2/T3/T4 -> 1/2/3/4
+100 participants in both datasets
+
+[STEP 5.2] Bootstrap loop: 10000 iterations
+This will take ~15 minutes (40,000 LMM fits)
+Iteration 1000/10000 (999 converged)
+Iteration 2000/10000 (1999 converged)
+Iteration 3000/10000 (2999 converged)
+Iteration 4000/10000 (3999 converged)
+Iteration 5000/10000 (4999 converged)
+Iteration 6000/10000 (5999 converged)
+Iteration 7000/10000 (6999 converged)
+Iteration 8000/10000 (7999 converged)
+Iteration 9000/10000 (8999 converged)
+Iteration 10000/10000 (9999 converged)
+
+Bootstrap complete: 10000/10000 converged
+10000 valid iterations (>9500 required)
+
+[STEP 5.3] Compute summary statistics
+Mean Delta_f2: -0.0061
+SE Delta_f2: 0.0063
+95% CI: [-0.0193, 0.0055]
+Excludes zero: False
+
+[STEP 5.4] Compute distribution percentiles
+[P  1.0] -0.0218
+[P  2.5] -0.0193
+[P  5.0] -0.0169
+[P 25.0] -0.0101
+[P 50.0] -0.0059
+[P 75.0] -0.0020
+[P 95.0] 0.0036
+[P 97.5] 0.0055
+[P 99.0] 0.0080
+
+[STEP 5.5] Validate bootstrap results
+Delta_f2 values in reasonable range
+
+[STEP 5.6] Save outputs
+step05_bootstrap_results.csv (10000 rows)
+step05_bootstrap_summary.csv
+step05_bootstrap_distribution.csv
+Step 5 complete

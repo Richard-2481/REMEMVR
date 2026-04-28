@@ -1,0 +1,525 @@
+[2025-12-09 16:23:59] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:23:59] ======================================================================
+[2025-12-09 16:23:59] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:23:59]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:23:59] 400 rows, 6 columns
+[2025-12-09 16:23:59] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:23:59] Missing required columns: ['Theta']
+[2025-12-09 16:24:22] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:24:22] ======================================================================
+[2025-12-09 16:24:22] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:24:22]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:24:22] 400 rows, 6 columns
+[2025-12-09 16:24:22] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:24:22] Unique participants: 100
+[2025-12-09 16:24:22] Observations per participant: 4.0
+[2025-12-09 16:24:22] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...
+[2025-12-09 16:24:22] Added 'intercept_dummy' column with value 'all' for all rows
+[2025-12-09 16:24:22] Running model-averaged variance decomposition (17 models)...
+[2025-12-09 16:24:22]   Outcome variable: theta
+[2025-12-09 16:24:22]   Time variable: TSVR_hours
+[2025-12-09 16:24:22]   Groups variable: UID
+[2025-12-09 16:24:22]   Stratify variable: intercept_dummy (single level: 'all')
+[2025-12-09 16:24:22]   Delta AIC threshold: 2.0 (competitive models)
+[2025-12-09 16:24:22]   Random effects: Intercepts + Slopes
+[2025-12-09 16:24:22] 
+[2025-12-09 16:24:22] This will take ~2-5 minutes (17 model fits + variance extraction)...
+[2025-12-09 16:24:22] 
+[2025-12-09 16:27:07] Model-averaged variance decomposition complete
+[2025-12-09 16:27:07] 
+[2025-12-09 16:27:07] Extracting results from variance decomposition...
+[2025-12-09 16:27:07] Kitchen sink comparison: 65 models tested
+[2025-12-09 16:27:07] Unexpected error: 'aic'
+[2025-12-09 16:27:07] Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'aic'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.4/code/step06_model_averaged_variance.py", line 207, in <module>
+    log(f"Best model: {model_comparison.iloc[0]['model_name']} (AIC={model_comparison.iloc[0]['aic']:.2f})")
+                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'aic'
+[2025-12-09 16:28:27] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:28:27] ======================================================================
+[2025-12-09 16:28:27] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:28:27]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:28:27] 400 rows, 6 columns
+[2025-12-09 16:28:27] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:28:27] Unique participants: 100
+[2025-12-09 16:28:27] Observations per participant: 4.0
+[2025-12-09 16:28:27] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...
+[2025-12-09 16:28:27] Added 'intercept_dummy' column with value 'all' for all rows
+[2025-12-09 16:28:27] Running model-averaged variance decomposition (17 models)...
+[2025-12-09 16:28:27]   Outcome variable: theta
+[2025-12-09 16:28:27]   Time variable: TSVR_hours
+[2025-12-09 16:28:27]   Groups variable: UID
+[2025-12-09 16:28:27]   Stratify variable: intercept_dummy (single level: 'all')
+[2025-12-09 16:28:27]   Delta AIC threshold: 2.0 (competitive models)
+[2025-12-09 16:28:27]   Random effects: Intercepts + Slopes
+[2025-12-09 16:28:27] 
+[2025-12-09 16:28:27] This will take ~2-5 minutes (17 model fits + variance extraction)...
+[2025-12-09 16:28:27] 
+[2025-12-09 16:31:09] Model-averaged variance decomposition complete
+[2025-12-09 16:31:09] 
+[2025-12-09 16:31:09] Extracting results from variance decomposition...
+[2025-12-09 16:31:09] Kitchen sink comparison: 65 models tested
+[2025-12-09 16:31:09] Unexpected error: 'aic'
+[2025-12-09 16:31:09] Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'aic'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.4/code/step06_model_averaged_variance.py", line 207, in <module>
+    log(f"Best model: {model_comparison.iloc[0]['model_name']} (AIC={model_comparison.iloc[0]['aic']:.2f})")
+                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'aic'
+[2025-12-09 16:31:33] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:31:33] ======================================================================
+[2025-12-09 16:31:33] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:31:33]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:31:33] 400 rows, 6 columns
+[2025-12-09 16:31:33] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:31:33] Unique participants: 100
+[2025-12-09 16:31:33] Observations per participant: 4.0
+[2025-12-09 16:31:33] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...
+[2025-12-09 16:31:33] Added 'intercept_dummy' column with value 'all' for all rows
+[2025-12-09 16:31:33] Running model-averaged variance decomposition (17 models)...
+[2025-12-09 16:31:33]   Outcome variable: theta
+[2025-12-09 16:31:33]   Time variable: TSVR_hours
+[2025-12-09 16:31:33]   Groups variable: UID
+[2025-12-09 16:31:33]   Stratify variable: intercept_dummy (single level: 'all')
+[2025-12-09 16:31:33]   Delta AIC threshold: 2.0 (competitive models)
+[2025-12-09 16:31:33]   Random effects: Intercepts + Slopes
+[2025-12-09 16:31:33] 
+[2025-12-09 16:31:33] This will take ~2-5 minutes (17 model fits + variance extraction)...
+[2025-12-09 16:31:33] 
+[2025-12-09 16:34:16] Model-averaged variance decomposition complete
+[2025-12-09 16:34:16] 
+[2025-12-09 16:34:16] Extracting results from variance decomposition...
+[2025-12-09 16:34:16] Kitchen sink comparison: 65 models tested
+[2025-12-09 16:34:16] Best model: PowerLaw_04 (AIC=871.29)
+[2025-12-09 16:34:16] Competitive models (ΔAIC < 2.0): 10
+[2025-12-09 16:34:16]   - PowerLaw_04: AIC=871.29, ΔAIC=0.00, weight=0.057
+[2025-12-09 16:34:16]   - PowerLaw_05: AIC=871.43, ΔAIC=0.14, weight=0.053
+[2025-12-09 16:34:16]   - PowerLaw_03: AIC=871.52, ΔAIC=0.22, weight=0.051
+[2025-12-09 16:34:16]   - LogLog: AIC=871.58, ΔAIC=0.29, weight=0.049
+[2025-12-09 16:34:16]   - Root_033: AIC=871.74, ΔAIC=0.44, weight=0.046
+[2025-12-09 16:34:16]   - CubeRoot: AIC=871.74, ΔAIC=0.45, weight=0.046
+[2025-12-09 16:34:16]   - PowerLaw_06: AIC=871.90, ΔAIC=0.61, weight=0.042
+[2025-12-09 16:34:16]   - FourthRoot: AIC=871.99, ΔAIC=0.69, weight=0.040
+[2025-12-09 16:34:16]   - PowerLaw_02: AIC=872.13, ΔAIC=0.84, weight=0.037
+[2025-12-09 16:34:16]   - PowerLaw_07: AIC=872.67, ΔAIC=1.38, weight=0.029
+[2025-12-09 16:34:16] Unexpected error: 'all'
+[2025-12-09 16:34:16] Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'all'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.4/code/step06_model_averaged_variance.py", line 220, in <module>
+    variance_avg = results['averaged_variance_components']['all']
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'all'
+[2025-12-09 16:35:55] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:35:55] ======================================================================
+[2025-12-09 16:35:55] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:35:55]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:35:55] 400 rows, 6 columns
+[2025-12-09 16:35:55] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:35:55] Unique participants: 100
+[2025-12-09 16:35:55] Observations per participant: 4.0
+[2025-12-09 16:35:55] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...
+[2025-12-09 16:35:55] Added 'intercept_dummy' column with value 'all' for all rows
+[2025-12-09 16:35:55] Running model-averaged variance decomposition (17 models)...
+[2025-12-09 16:35:55]   Outcome variable: theta
+[2025-12-09 16:35:55]   Time variable: TSVR_hours
+[2025-12-09 16:35:55]   Groups variable: UID
+[2025-12-09 16:35:55]   Stratify variable: intercept_dummy (single level: 'all')
+[2025-12-09 16:35:55]   Delta AIC threshold: 2.0 (competitive models)
+[2025-12-09 16:35:55]   Random effects: Intercepts + Slopes
+[2025-12-09 16:35:55] 
+[2025-12-09 16:35:55] This will take ~2-5 minutes (17 model fits + variance extraction)...
+[2025-12-09 16:35:55] 
+[2025-12-09 16:38:40] Model-averaged variance decomposition complete
+[2025-12-09 16:38:40] 
+[2025-12-09 16:38:40] Extracting results from variance decomposition...
+[2025-12-09 16:38:40] Kitchen sink comparison: 65 models tested
+[2025-12-09 16:38:40] Best model: PowerLaw_04 (AIC=871.29)
+[2025-12-09 16:38:40] Competitive models (ΔAIC < 2.0): 10
+[2025-12-09 16:38:40]   - PowerLaw_04: AIC=871.29, ΔAIC=0.00, weight=0.057
+[2025-12-09 16:38:40]   - PowerLaw_05: AIC=871.43, ΔAIC=0.14, weight=0.053
+[2025-12-09 16:38:40]   - PowerLaw_03: AIC=871.52, ΔAIC=0.22, weight=0.051
+[2025-12-09 16:38:40]   - LogLog: AIC=871.58, ΔAIC=0.29, weight=0.049
+[2025-12-09 16:38:40]   - Root_033: AIC=871.74, ΔAIC=0.44, weight=0.046
+[2025-12-09 16:38:40]   - CubeRoot: AIC=871.74, ΔAIC=0.45, weight=0.046
+[2025-12-09 16:38:40]   - PowerLaw_06: AIC=871.90, ΔAIC=0.61, weight=0.042
+[2025-12-09 16:38:40]   - FourthRoot: AIC=871.99, ΔAIC=0.69, weight=0.040
+[2025-12-09 16:38:40]   - PowerLaw_02: AIC=872.13, ΔAIC=0.84, weight=0.037
+[2025-12-09 16:38:40]   - PowerLaw_07: AIC=872.67, ΔAIC=1.38, weight=0.029
+[2025-12-09 16:38:40] Unexpected error: 'level'
+[2025-12-09 16:38:40] Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'level'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.4/code/step06_model_averaged_variance.py", line 221, in <module>
+    variance_avg = variance_components_df[variance_components_df['level'] == 'all'].iloc[0]
+                                          ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'level'
+[2025-12-09 16:39:29] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:39:29] ======================================================================
+[2025-12-09 16:39:29] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:39:29]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:39:29] 400 rows, 6 columns
+[2025-12-09 16:39:29] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:39:29] Unique participants: 100
+[2025-12-09 16:39:29] Observations per participant: 4.0
+[2025-12-09 16:39:29] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...
+[2025-12-09 16:39:29] Added 'intercept_dummy' column with value 'all' for all rows
+[2025-12-09 16:39:29] Running model-averaged variance decomposition (17 models)...
+[2025-12-09 16:39:29]   Outcome variable: theta
+[2025-12-09 16:39:29]   Time variable: TSVR_hours
+[2025-12-09 16:39:29]   Groups variable: UID
+[2025-12-09 16:39:29]   Stratify variable: intercept_dummy (single level: 'all')
+[2025-12-09 16:39:29]   Delta AIC threshold: 2.0 (competitive models)
+[2025-12-09 16:39:29]   Random effects: Intercepts + Slopes
+[2025-12-09 16:39:29] 
+[2025-12-09 16:39:29] This will take ~2-5 minutes (17 model fits + variance extraction)...
+[2025-12-09 16:39:29] 
+[2025-12-09 16:42:12] Model-averaged variance decomposition complete
+[2025-12-09 16:42:12] 
+[2025-12-09 16:42:12] Extracting results from variance decomposition...
+[2025-12-09 16:42:12] Kitchen sink comparison: 65 models tested
+[2025-12-09 16:42:12] Best model: PowerLaw_04 (AIC=871.29)
+[2025-12-09 16:42:12] Competitive models (ΔAIC < 2.0): 10
+[2025-12-09 16:42:12]   - PowerLaw_04: AIC=871.29, ΔAIC=0.00, weight=0.057
+[2025-12-09 16:42:12]   - PowerLaw_05: AIC=871.43, ΔAIC=0.14, weight=0.053
+[2025-12-09 16:42:12]   - PowerLaw_03: AIC=871.52, ΔAIC=0.22, weight=0.051
+[2025-12-09 16:42:12]   - LogLog: AIC=871.58, ΔAIC=0.29, weight=0.049
+[2025-12-09 16:42:12]   - Root_033: AIC=871.74, ΔAIC=0.44, weight=0.046
+[2025-12-09 16:42:12]   - CubeRoot: AIC=871.74, ΔAIC=0.45, weight=0.046
+[2025-12-09 16:42:12]   - PowerLaw_06: AIC=871.90, ΔAIC=0.61, weight=0.042
+[2025-12-09 16:42:12]   - FourthRoot: AIC=871.99, ΔAIC=0.69, weight=0.040
+[2025-12-09 16:42:12]   - PowerLaw_02: AIC=872.13, ΔAIC=0.84, weight=0.037
+[2025-12-09 16:42:12]   - PowerLaw_07: AIC=872.67, ΔAIC=1.38, weight=0.029
+[2025-12-09 16:42:12] 
+[2025-12-09 16:42:12] Model-averaged variance components:
+[2025-12-09 16:42:12]   var_intercept = 0.422210
+[2025-12-09 16:42:12]   var_slope = 0.097874
+[2025-12-09 16:42:12] Unexpected error: 'cov_int_slope'
+[2025-12-09 16:42:12] Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'cov_int_slope'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.4/code/step06_model_averaged_variance.py", line 226, in <module>
+    log(f"  cov_int_slope = {variance_avg['cov_int_slope']:.6f}")
+                             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1133, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 1249, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'cov_int_slope'
+[2025-12-09 16:42:46] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:42:46] ======================================================================
+[2025-12-09 16:42:46] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:42:46]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:42:46] 400 rows, 6 columns
+[2025-12-09 16:42:46] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:42:46] Unique participants: 100
+[2025-12-09 16:42:46] Observations per participant: 4.0
+[2025-12-09 16:42:46] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...
+[2025-12-09 16:42:46] Added 'intercept_dummy' column with value 'all' for all rows
+[2025-12-09 16:42:46] Running model-averaged variance decomposition (17 models)...
+[2025-12-09 16:42:46]   Outcome variable: theta
+[2025-12-09 16:42:46]   Time variable: TSVR_hours
+[2025-12-09 16:42:46]   Groups variable: UID
+[2025-12-09 16:42:46]   Stratify variable: intercept_dummy (single level: 'all')
+[2025-12-09 16:42:46]   Delta AIC threshold: 2.0 (competitive models)
+[2025-12-09 16:42:46]   Random effects: Intercepts + Slopes
+[2025-12-09 16:42:46] 
+[2025-12-09 16:42:46] This will take ~2-5 minutes (17 model fits + variance extraction)...
+[2025-12-09 16:42:46] 
+[2025-12-09 16:45:31] Model-averaged variance decomposition complete
+[2025-12-09 16:45:31] 
+[2025-12-09 16:45:31] Extracting results from variance decomposition...
+[2025-12-09 16:45:31] Kitchen sink comparison: 65 models tested
+[2025-12-09 16:45:31] Best model: PowerLaw_04 (AIC=871.29)
+[2025-12-09 16:45:31] Competitive models (ΔAIC < 2.0): 10
+[2025-12-09 16:45:31]   - PowerLaw_04: AIC=871.29, ΔAIC=0.00, weight=0.057
+[2025-12-09 16:45:31]   - PowerLaw_05: AIC=871.43, ΔAIC=0.14, weight=0.053
+[2025-12-09 16:45:31]   - PowerLaw_03: AIC=871.52, ΔAIC=0.22, weight=0.051
+[2025-12-09 16:45:31]   - LogLog: AIC=871.58, ΔAIC=0.29, weight=0.049
+[2025-12-09 16:45:31]   - Root_033: AIC=871.74, ΔAIC=0.44, weight=0.046
+[2025-12-09 16:45:31]   - CubeRoot: AIC=871.74, ΔAIC=0.45, weight=0.046
+[2025-12-09 16:45:31]   - PowerLaw_06: AIC=871.90, ΔAIC=0.61, weight=0.042
+[2025-12-09 16:45:31]   - FourthRoot: AIC=871.99, ΔAIC=0.69, weight=0.040
+[2025-12-09 16:45:31]   - PowerLaw_02: AIC=872.13, ΔAIC=0.84, weight=0.037
+[2025-12-09 16:45:31]   - PowerLaw_07: AIC=872.67, ΔAIC=1.38, weight=0.029
+[2025-12-09 16:45:31] 
+[2025-12-09 16:45:31] Model-averaged variance components:
+[2025-12-09 16:45:31]   Columns available: ['intercept_dummy', 'var_intercept', 'var_slope', 'cov_intercept_slope', 'var_residual']
+[2025-12-09 16:45:31]   var_intercept = 0.422210
+[2025-12-09 16:45:31]   var_slope = 0.097874
+[2025-12-09 16:45:31]   var_resid = 0.318538
+[2025-12-09 16:45:31] 
+[2025-12-09 16:45:31] Model-averaged ICCs:
+[2025-12-09 16:45:31]   ICC_intercept = 0.569543 (56.95%)
+[2025-12-09 16:45:31]   ICC_slope_simple = 0.216077 (21.6077%)
+[2025-12-09 16:45:31]   ICC_slope_conditional = 0.925402
+[2025-12-09 16:45:31] 
+[2025-12-09 16:45:31] Model-averaged random effects: 100 participants
+[2025-12-09 16:45:31] Unexpected error: 'intercept'
+[2025-12-09 16:45:31] Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'intercept'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.4/code/step06_model_averaged_variance.py", line 261, in <module>
+    log(f"  Intercept range: [{random_effects_df['intercept'].min():.3f}, {random_effects_df['intercept'].max():.3f}]")
+                               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'intercept'
+[2025-12-09 16:45:57] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:45:57] ======================================================================
+[2025-12-09 16:45:57] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:45:57]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:45:57] 400 rows, 6 columns
+[2025-12-09 16:45:57] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:45:57] Unique participants: 100
+[2025-12-09 16:45:57] Observations per participant: 4.0
+[2025-12-09 16:45:57] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...
+[2025-12-09 16:45:57] Added 'intercept_dummy' column with value 'all' for all rows
+[2025-12-09 16:45:57] Running model-averaged variance decomposition (17 models)...
+[2025-12-09 16:45:57]   Outcome variable: theta
+[2025-12-09 16:45:57]   Time variable: TSVR_hours
+[2025-12-09 16:45:57]   Groups variable: UID
+[2025-12-09 16:45:57]   Stratify variable: intercept_dummy (single level: 'all')
+[2025-12-09 16:45:57]   Delta AIC threshold: 2.0 (competitive models)
+[2025-12-09 16:45:57]   Random effects: Intercepts + Slopes
+[2025-12-09 16:45:57] 
+[2025-12-09 16:45:57] This will take ~2-5 minutes (17 model fits + variance extraction)...
+[2025-12-09 16:45:57] 
+[2025-12-09 16:48:40] Model-averaged variance decomposition complete
+[2025-12-09 16:48:40] 
+[2025-12-09 16:48:40] Extracting results from variance decomposition...
+[2025-12-09 16:48:40] Kitchen sink comparison: 65 models tested
+[2025-12-09 16:48:40] Best model: PowerLaw_04 (AIC=871.29)
+[2025-12-09 16:48:40] Competitive models (ΔAIC < 2.0): 10
+[2025-12-09 16:48:40]   - PowerLaw_04: AIC=871.29, ΔAIC=0.00, weight=0.057
+[2025-12-09 16:48:40]   - PowerLaw_05: AIC=871.43, ΔAIC=0.14, weight=0.053
+[2025-12-09 16:48:40]   - PowerLaw_03: AIC=871.52, ΔAIC=0.22, weight=0.051
+[2025-12-09 16:48:40]   - LogLog: AIC=871.58, ΔAIC=0.29, weight=0.049
+[2025-12-09 16:48:40]   - Root_033: AIC=871.74, ΔAIC=0.44, weight=0.046
+[2025-12-09 16:48:40]   - CubeRoot: AIC=871.74, ΔAIC=0.45, weight=0.046
+[2025-12-09 16:48:40]   - PowerLaw_06: AIC=871.90, ΔAIC=0.61, weight=0.042
+[2025-12-09 16:48:40]   - FourthRoot: AIC=871.99, ΔAIC=0.69, weight=0.040
+[2025-12-09 16:48:40]   - PowerLaw_02: AIC=872.13, ΔAIC=0.84, weight=0.037
+[2025-12-09 16:48:40]   - PowerLaw_07: AIC=872.67, ΔAIC=1.38, weight=0.029
+[2025-12-09 16:48:40] 
+[2025-12-09 16:48:40] Model-averaged variance components:
+[2025-12-09 16:48:40]   Columns available: ['intercept_dummy', 'var_intercept', 'var_slope', 'cov_intercept_slope', 'var_residual']
+[2025-12-09 16:48:40]   var_intercept = 0.422210
+[2025-12-09 16:48:40]   var_slope = 0.097874
+[2025-12-09 16:48:40]   var_resid = 0.318538
+[2025-12-09 16:48:40] 
+[2025-12-09 16:48:40] Model-averaged ICCs:
+[2025-12-09 16:48:40]   ICC_intercept = 0.569543 (56.95%)
+[2025-12-09 16:48:40]   ICC_slope_simple = 0.216077 (21.6077%)
+[2025-12-09 16:48:40]   ICC_slope_conditional = 0.925402
+[2025-12-09 16:48:40] 
+[2025-12-09 16:48:40] Model-averaged random effects: 100 participants
+[2025-12-09 16:48:40]   Columns available: ['UID', 'intercept_dummy', 'intercept_avg', 'slope_avg']
+[2025-12-09 16:48:40]   Intercept range: [-1.533, 1.265]
+[2025-12-09 16:48:40]   Slope range: [-0.106, 0.116]
+[2025-12-09 16:48:40] Unexpected error: 'model'
+[2025-12-09 16:48:40] Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'model'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.4/code/step06_model_averaged_variance.py", line 285, in <module>
+    var_row = var_by_model[var_by_model['model'] == model_name].iloc[0]
+                           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'model'
+[2025-12-09 16:49:06] Step 06: Model-Averaged Variance Decomposition
+[2025-12-09 16:49:06] ======================================================================
+[2025-12-09 16:49:06] Loading LMM input data from RQ 5.1.1...
+[2025-12-09 16:49:06]   File: /home/etai/projects/REMEMVR/results/ch5/5.1.4/../5.1.1/data/step04_lmm_input.csv
+[2025-12-09 16:49:06] 400 rows, 6 columns
+[2025-12-09 16:49:06] Columns: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+[2025-12-09 16:49:06] Unique participants: 100
+[2025-12-09 16:49:06] Observations per participant: 4.0
+[2025-12-09 16:49:06] Creating dummy stratification variable (RQ 5.1.4 is unstratified)...
+[2025-12-09 16:49:06] Added 'intercept_dummy' column with value 'all' for all rows
+[2025-12-09 16:49:06] Running model-averaged variance decomposition (17 models)...
+[2025-12-09 16:49:06]   Outcome variable: theta
+[2025-12-09 16:49:06]   Time variable: TSVR_hours
+[2025-12-09 16:49:06]   Groups variable: UID
+[2025-12-09 16:49:06]   Stratify variable: intercept_dummy (single level: 'all')
+[2025-12-09 16:49:06]   Delta AIC threshold: 2.0 (competitive models)
+[2025-12-09 16:49:06]   Random effects: Intercepts + Slopes
+[2025-12-09 16:49:06] 
+[2025-12-09 16:49:06] This will take ~2-5 minutes (17 model fits + variance extraction)...
+[2025-12-09 16:49:06] 
+[2025-12-09 16:51:45] Model-averaged variance decomposition complete
+[2025-12-09 16:51:45] 
+[2025-12-09 16:51:45] Extracting results from variance decomposition...
+[2025-12-09 16:51:45] Kitchen sink comparison: 65 models tested
+[2025-12-09 16:51:45] Best model: PowerLaw_04 (AIC=871.29)
+[2025-12-09 16:51:45] Competitive models (ΔAIC < 2.0): 10
+[2025-12-09 16:51:45]   - PowerLaw_04: AIC=871.29, ΔAIC=0.00, weight=0.057
+[2025-12-09 16:51:45]   - PowerLaw_05: AIC=871.43, ΔAIC=0.14, weight=0.053
+[2025-12-09 16:51:45]   - PowerLaw_03: AIC=871.52, ΔAIC=0.22, weight=0.051
+[2025-12-09 16:51:45]   - LogLog: AIC=871.58, ΔAIC=0.29, weight=0.049
+[2025-12-09 16:51:45]   - Root_033: AIC=871.74, ΔAIC=0.44, weight=0.046
+[2025-12-09 16:51:45]   - CubeRoot: AIC=871.74, ΔAIC=0.45, weight=0.046
+[2025-12-09 16:51:45]   - PowerLaw_06: AIC=871.90, ΔAIC=0.61, weight=0.042
+[2025-12-09 16:51:45]   - FourthRoot: AIC=871.99, ΔAIC=0.69, weight=0.040
+[2025-12-09 16:51:45]   - PowerLaw_02: AIC=872.13, ΔAIC=0.84, weight=0.037
+[2025-12-09 16:51:45]   - PowerLaw_07: AIC=872.67, ΔAIC=1.38, weight=0.029
+[2025-12-09 16:51:45] 
+[2025-12-09 16:51:45] Model-averaged variance components:
+[2025-12-09 16:51:45]   Columns available: ['intercept_dummy', 'var_intercept', 'var_slope', 'cov_intercept_slope', 'var_residual']
+[2025-12-09 16:51:45]   var_intercept = 0.422210
+[2025-12-09 16:51:45]   var_slope = 0.097874
+[2025-12-09 16:51:45]   var_resid = 0.318538
+[2025-12-09 16:51:45] 
+[2025-12-09 16:51:45] Model-averaged ICCs:
+[2025-12-09 16:51:45]   ICC_intercept = 0.569543 (56.95%)
+[2025-12-09 16:51:45]   ICC_slope_simple = 0.216077 (21.6077%)
+[2025-12-09 16:51:45]   ICC_slope_conditional = 0.925402
+[2025-12-09 16:51:45] 
+[2025-12-09 16:51:45] Model-averaged random effects: 100 participants
+[2025-12-09 16:51:45]   Columns available: ['UID', 'intercept_dummy', 'intercept_avg', 'slope_avg']
+[2025-12-09 16:51:45]   Intercept range: [-1.533, 1.265]
+[2025-12-09 16:51:45]   Slope range: [-0.106, 0.116]
+[2025-12-09 16:51:45] 
+[2025-12-09 16:51:45] Model-specific variance extraction:
+[2025-12-09 16:51:45]   Variance by model columns: ['model_name', 'var_intercept', 'var_slope', 'cov_intercept_slope', 'var_residual']
+[2025-12-09 16:51:45]   ICC by model columns: ['model_name', 'ICC_intercept', 'ICC_slope_simple', 'ICC_slope_conditional']
+[2025-12-09 16:51:45] 
+[2025-12-09 16:51:45] Model-specific variance components extracted for transparency
+[2025-12-09 16:51:45] Saving results to CSV/YAML files...
+[2025-12-09 16:51:45] /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_model_comparison.csv
+[2025-12-09 16:51:45] /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_competitive_models_metadata.yaml
+[2025-12-09 16:51:45] /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_averaged_variance_components.csv
+[2025-12-09 16:51:45] /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_averaged_iccs.csv
+[2025-12-09 16:51:45] /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_model_specific_variance.csv
+[2025-12-09 16:51:45] /home/etai/projects/REMEMVR/results/ch5/5.1.4/data/step06_averaged_random_effects.csv
+[2025-12-09 16:51:45] Running output validation...
+[2025-12-09 16:51:45] Variance components validated: 1 level, no NaN values
+[2025-12-09 16:51:45] ICCs validated: 1 level, no NaN values
+[2025-12-09 16:51:45] Random effects validated: 100 participants, no NaN values
+[2025-12-09 16:51:45] var_slope_avg > 0 (0.097874)
+[2025-12-09 16:51:45] ======================================================================
+[2025-12-09 16:51:45] Step 06 complete: Model-averaged variance decomposition
+[2025-12-09 16:51:45]   Models tested: 65
+[2025-12-09 16:51:45]   Competitive models: 10
+[2025-12-09 16:51:45]   var_intercept_avg: 0.422210
+[2025-12-09 16:51:45]   var_slope_avg: 0.097874
+[2025-12-09 16:51:45]   ICC_intercept_avg: 0.5695 (56.95%)
+[2025-12-09 16:51:45]   ICC_slope_simple_avg: 0.216077 (21.6077%)
+[2025-12-09 16:51:45]   Outputs: 6 CSV/YAML files in data/
+[2025-12-09 16:51:45] ======================================================================

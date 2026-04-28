@@ -1,0 +1,33 @@
+2025-12-30 11:47:49,912 - INFO - ============================================================
+2025-12-30 11:47:49,912 - INFO - RQ 5.5.6: Generate LMM Diagnostic Plots
+2025-12-30 11:47:49,912 - INFO - ============================================================
+2025-12-30 11:47:49,912 - INFO - 
+============================================================
+2025-12-30 11:47:49,912 - INFO - Generating diagnostics for: source
+2025-12-30 11:47:49,912 - INFO - ============================================================
+2025-12-30 11:47:49,947 - INFO - Observations: 400
+2025-12-30 11:47:49,948 - INFO - Residuals mean: 0.000000 (should be ~0)
+2025-12-30 11:47:49,948 - INFO - Residuals SD: 0.5746
+2025-12-30 11:47:49,969 - INFO - Shapiro-Wilk test: W=0.9897, p=0.0067
+2025-12-30 11:47:50,457 - INFO - Saved diagnostic plot: results/ch5/5.5.6/plots/diagnostics_source.png
+2025-12-30 11:47:50,457 - INFO - 
+============================================================
+2025-12-30 11:47:50,457 - INFO - Generating diagnostics for: destination
+2025-12-30 11:47:50,457 - INFO - ============================================================
+2025-12-30 11:47:50,465 - INFO - Observations: 400
+2025-12-30 11:47:50,465 - INFO - Residuals mean: 0.000000 (should be ~0)
+2025-12-30 11:47:50,465 - INFO - Residuals SD: 0.6230
+2025-12-30 11:47:50,476 - INFO - Shapiro-Wilk test: W=0.9747, p=0.0000
+2025-12-30 11:47:50,932 - INFO - Saved diagnostic plot: results/ch5/5.5.6/plots/diagnostics_destination.png
+2025-12-30 11:47:50,932 - INFO - 
+============================================================
+2025-12-30 11:47:50,933 - INFO - DIAGNOSTIC SUMMARY
+2025-12-30 11:47:50,933 - INFO - ============================================================
+2025-12-30 11:47:50,933 - INFO - Source: Shapiro-Wilk p=0.0067 2025-12-30 11:47:50,933 - INFO - Destination: Shapiro-Wilk p=0.0000 2025-12-30 11:47:50,933 - INFO - 
+Interpretation:
+2025-12-30 11:47:50,933 - INFO - - Q-Q Plot: Points should follow red line (normality)
+2025-12-30 11:47:50,933 - INFO - - Residuals vs Fitted: Should show random scatter around 0 (homoscedasticity)
+2025-12-30 11:47:50,933 - INFO - - Scale-Location: Smooth line should be horizontal (constant variance)
+2025-12-30 11:47:50,933 - INFO - - Histogram: Should resemble normal distribution
+2025-12-30 11:47:50,933 - INFO - 
+Diagnostic plots generated successfully

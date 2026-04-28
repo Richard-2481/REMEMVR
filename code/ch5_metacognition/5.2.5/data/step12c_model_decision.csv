@@ -1,0 +1,2 @@
+delta_AIC,delta_BIC,decision,preferred_model,justification
+3.971183968225432,11.954113062441365,INTERCEPTS ONLY BETTER,Intercepts Only,ΔAIC = 3.97 > +2: Random slopes worsen fit (overfitting)

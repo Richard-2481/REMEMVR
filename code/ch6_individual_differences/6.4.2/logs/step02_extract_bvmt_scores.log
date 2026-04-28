@@ -1,0 +1,68 @@
+Step 02: Extract BVMT Scores
+Loading cognitive test data from dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+Required columns present: ['UID', 'bvmt-total-recall']
+Extracting BVMT Total Recall scores...
+BVMT scores for 100 participants
+Column 'bvmt-total-recall' -> 'bvmt_total'
+0 participants (0.0%) with missing BVMT scores
+Saving /home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step02_bvmt_scores.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step02_bvmt_scores.csv (100 rows, 2 cols)
+Running validate_numeric_range...
+valid: True
+message: bvmt_total: All values within range [0.0, 36.0] (n=100).
+out_of_range_count: 0
+violations: []
+Participants with BVMT scores: 100/100
+Missing data percentage: 0.0%
+BVMT standard deviation: 5.06
+BVMT score range: [12.0, 36.0]
+Step 02 complete
+Step 02: Extract BVMT Scores
+Loading cognitive test data from dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+Required columns present: ['UID', 'bvmt-total-recall']
+Extracting BVMT Total Recall scores...
+BVMT scores for 100 participants
+Column 'bvmt-total-recall' -> 'bvmt_total'
+0 participants (0.0%) with missing BVMT scores
+Saving /home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step02_bvmt_scores.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step02_bvmt_scores.csv (100 rows, 2 cols)
+Running validate_numeric_range...
+valid: True
+message: bvmt_total: All values within range [0.0, 36.0] (n=100).
+out_of_range_count: 0
+violations: []
+Participants with BVMT scores: 100/100
+Missing data percentage: 0.0%
+BVMT standard deviation: 5.06
+BVMT score range: [12.0, 36.0]
+Step 02 complete
+Step 02: Extract BVMT Scores
+Loading cognitive test data from dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+Required columns present: ['UID', 'bvmt-trial-1-score', 'bvmt-trial-2-score', 'bvmt-trial-3-score', 'bvmt-percent-retained']
+Computing BVMT Total from trials 1-3...
+Recomputed vs pre-computed bvmt-total-recall: 0 mismatches out of 100
+bvmt_total = trial1 + trial2 + trial3 for 100 participants
+bvmt_pct_ret from 'bvmt-percent-retained'
+bvmt_total: 0 missing; bvmt_pct_ret: 0 missing (0.0%)
+Saving /home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step02_bvmt_scores.csv...
+/home/etai/projects/REMEMVR/results/ch7/7.4.2/data/step02_bvmt_scores.csv (100 rows, 3 cols)
+Running validate_numeric_range...
+bvmt_total valid: True
+bvmt_total message: bvmt_total: All values within range [0.0, 36.0] (n=100).
+bvmt_total out_of_range_count: 0
+bvmt_total violations: []
+bvmt_pct_ret valid: True
+bvmt_pct_ret message: bvmt_pct_ret: All values within range [0.0, 200.0] (n=100).
+bvmt_pct_ret out_of_range_count: 0
+bvmt_pct_ret violations: []
+Participants with bvmt_total: 100/100
+Participants with bvmt_pct_ret: 100/100
+Missing data percentage: 0.0%
+bvmt_total SD: 5.06
+bvmt_pct_ret SD: 9.05
+bvmt_total range: [12.0, 36.0]
+bvmt_pct_ret range: [55.6, 114.3]
+Step 02 complete

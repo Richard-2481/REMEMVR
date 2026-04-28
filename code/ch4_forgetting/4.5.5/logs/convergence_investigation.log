@@ -1,0 +1,219 @@
+
+================================================================================
+CONVERGENCE INVESTIGATION - RQ 5.5.5
+================================================================================
+Testing random intercepts-only vs intercepts+slopes
+
+Loading standardized scores and TSVR mapping...
+800 observations, Time range: 0.04-10.26 days
+
+--------------------------------------------------------------------------------
+Source_IRT
+--------------------------------------------------------------------------------
+  N observations: 400
+  N participants: 100
+  N timepoints per participant: 4.0
+
+  [A] ORIGINAL SPECIFICATION: Random intercepts + slopes
+      Formula: score ~ Time, re_formula='~Time'
+      ✓ Converged: False
+      ✓ AIC: 1020.71
+      ⚠ Warnings: 7
+         - Maximum Likelihood optimization failed to converge. Check mle_retvals
+         - Retrying MixedLM optimization with lbfgs
+         - Maximum Likelihood optimization failed to converge. Check mle_retvals
+
+  [B] SIMPLIFIED SPECIFICATION: Random intercepts only
+      Formula: score ~ Time, re_formula='~1'
+      ✓ Converged: True
+      ✓ AIC: 1007.11
+      ✓ Var(Intercept): 0.3116
+
+  [C] COMPARISON:
+      ⚠ Only intercepts-only converged
+      → Random slope variance too high for stable estimation
+
+  Use intercepts-only (slopes unstable)
+
+--------------------------------------------------------------------------------
+Source_Full_CTT
+--------------------------------------------------------------------------------
+  N observations: 400
+  N participants: 100
+  N timepoints per participant: 4.0
+
+  [A] ORIGINAL SPECIFICATION: Random intercepts + slopes
+      Formula: score ~ Time, re_formula='~Time'
+      ✓ Converged: True
+      ✓ AIC: 974.49
+      ✓ Var(Intercept): 0.2343
+      ✓ Var(Slope): 0.0023
+      ⚠ Warnings: 2
+         - Random effects covariance is singular
+         - The MLE may be on the boundary of the parameter space.
+
+  [B] SIMPLIFIED SPECIFICATION: Random intercepts only
+      Formula: score ~ Time, re_formula='~1'
+      ✓ Converged: True
+      ✓ AIC: 979.97
+      ✓ Var(Intercept): 0.3730
+
+  [C] COMPARISON:
+      ✓ Both specifications converged
+      ✓ ΔAIC (Slopes - Intercepts): -5.48
+      → Slopes provide BETTER fit (ΔAIC < -2)
+
+  Use slopes despite convergence warnings
+
+--------------------------------------------------------------------------------
+Source_Purified_CTT
+--------------------------------------------------------------------------------
+  N observations: 400
+  N participants: 100
+  N timepoints per participant: 4.0
+
+  [A] ORIGINAL SPECIFICATION: Random intercepts + slopes
+      Formula: score ~ Time, re_formula='~Time'
+      ✓ Converged: False
+      ✓ AIC: 979.75
+      ⚠ Warnings: 17
+         - Random effects covariance is singular
+         - Random effects covariance is singular
+         - Random effects covariance is singular
+
+  [B] SIMPLIFIED SPECIFICATION: Random intercepts only
+      Formula: score ~ Time, re_formula='~1'
+      ✓ Converged: True
+      ✓ AIC: 986.70
+      ✓ Var(Intercept): 0.3547
+
+  [C] COMPARISON:
+      ⚠ Only intercepts-only converged
+      → Random slope variance too high for stable estimation
+
+  Use intercepts-only (slopes unstable)
+
+--------------------------------------------------------------------------------
+Destination_IRT
+--------------------------------------------------------------------------------
+  N observations: 400
+  N participants: 100
+  N timepoints per participant: 4.0
+
+  [A] ORIGINAL SPECIFICATION: Random intercepts + slopes
+      Formula: score ~ Time, re_formula='~Time'
+      ✓ Converged: False
+      ✓ AIC: 1111.09
+      ⚠ Warnings: 7
+         - Maximum Likelihood optimization failed to converge. Check mle_retvals
+         - Retrying MixedLM optimization with lbfgs
+         - Maximum Likelihood optimization failed to converge. Check mle_retvals
+
+  [B] SIMPLIFIED SPECIFICATION: Random intercepts only
+      Formula: score ~ Time, re_formula='~1'
+      ✓ Converged: True
+      ✓ AIC: 1092.74
+      ✓ Var(Intercept): 0.1606
+
+  [C] COMPARISON:
+      ⚠ Only intercepts-only converged
+      → Random slope variance too high for stable estimation
+
+  Use intercepts-only (slopes unstable)
+
+--------------------------------------------------------------------------------
+Destination_Full_CTT
+--------------------------------------------------------------------------------
+  N observations: 400
+  N participants: 100
+  N timepoints per participant: 4.0
+
+  [A] ORIGINAL SPECIFICATION: Random intercepts + slopes
+      Formula: score ~ Time, re_formula='~Time'
+      ✓ Converged: True
+      ✓ AIC: 1098.00
+      ✓ Var(Intercept): 0.4838
+      ✓ Var(Slope): 0.0242
+      ⚠ Warnings: 2
+         - Maximum Likelihood optimization failed to converge. Check mle_retvals
+         - Retrying MixedLM optimization with lbfgs
+
+  [B] SIMPLIFIED SPECIFICATION: Random intercepts only
+      Formula: score ~ Time, re_formula='~1'
+      ✓ Converged: True
+      ✓ AIC: 1081.83
+      ✓ Var(Intercept): 0.2348
+
+  [C] COMPARISON:
+      ✓ Both specifications converged
+      ✓ ΔAIC (Slopes - Intercepts): 16.17
+      → Intercepts provide BETTER fit (ΔAIC > +2)
+
+  Use intercepts (better fit, simpler)
+
+--------------------------------------------------------------------------------
+Destination_Purified_CTT
+--------------------------------------------------------------------------------
+  N observations: 400
+  N participants: 100
+  N timepoints per participant: 4.0
+
+  [A] ORIGINAL SPECIFICATION: Random intercepts + slopes
+      Formula: score ~ Time, re_formula='~Time'
+      ✓ Converged: True
+      ✓ AIC: 1115.92
+      ✓ Var(Intercept): 0.4488
+      ✓ Var(Slope): 0.0270
+      ⚠ Warnings: 2
+         - Maximum Likelihood optimization failed to converge. Check mle_retvals
+         - Retrying MixedLM optimization with lbfgs
+
+  [B] SIMPLIFIED SPECIFICATION: Random intercepts only
+      Formula: score ~ Time, re_formula='~1'
+      ✓ Converged: True
+      ✓ AIC: 1098.51
+      ✓ Var(Intercept): 0.2022
+
+  [C] COMPARISON:
+      ✓ Both specifications converged
+      ✓ ΔAIC (Slopes - Intercepts): 17.41
+      → Intercepts provide BETTER fit (ΔAIC > +2)
+
+  Use intercepts (better fit, simpler)
+
+
+================================================================================
+SUMMARY REPORT
+================================================================================
+
+CONVERGENCE RATES:
+  Slopes specification:      3/6 converged (50%)
+  Intercepts-only:           6/6 converged (100%)
+  Improvement with simplification: 3 models
+
+MODELS THAT CONVERGED AFTER SIMPLIFICATION:
+  - Source_IRT: Now AIC = 1007.11
+  - Source_Purified_CTT: Now AIC = 986.70
+  - Destination_IRT: Now AIC = 1092.74
+
+MODELS THAT CONVERGED IN BOTH SPECIFICATIONS:
+  - Source_Full_CTT:
+      Slopes AIC: 974.49
+      Intercepts AIC: 979.97
+      ΔAIC: -5.48
+      → Use slopes despite convergence warnings
+  - Destination_Full_CTT:
+      Slopes AIC: 1098.00
+      Intercepts AIC: 1081.83
+      ΔAIC: 16.17
+      → Use intercepts (better fit, simpler)
+  - Destination_Purified_CTT:
+      Slopes AIC: 1115.92
+      Intercepts AIC: 1098.51
+      ΔAIC: 17.41
+      → Use intercepts (better fit, simpler)
+
+convergence_investigation.csv
+
+Convergence investigation complete
+================================================================================

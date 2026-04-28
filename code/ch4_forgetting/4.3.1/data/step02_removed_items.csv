@@ -1,0 +1,30 @@
+item,domain,Discrimination,Difficulty_1,exclusion_reason
+TQ_ICR-N-i3,cued_recall,0.92200166,-3.2046098709106445,|b| > 3.0 on cued_recall (b=-3.20)
+TQ_ICR-O-i1,cued_recall,0.43618295,3.0242583751678467,|b| > 3.0 on cued_recall (b=3.02)
+TQ_ICR-O-i3,cued_recall,0.20324549,2.8405025005340576,a < 0.4 on cued_recall
+TQ_ICR-O-i4,cued_recall,0.34813643,2.823183536529541,a < 0.4 on cued_recall
+TQ_ICR-O-i5,cued_recall,0.17440432,5.353593826293945,a < 0.4 on cued_recall
+TQ_ICR-O-i6,cued_recall,0.23241301,4.8520121574401855,a < 0.4 on cued_recall
+TQ_IFR-D-i1,free_recall,0.36809397,1.7547730207443235,a < 0.4 on free_recall
+TQ_IFR-D-i4,free_recall,0.2541129,2.9022176265716557,a < 0.4 on free_recall
+TQ_IFR-D-i5,free_recall,0.15673187,4.386507511138916,a < 0.4 on free_recall
+TQ_IFR-D-i6,free_recall,0.04958712,21.64993667602539,a < 0.4 on free_recall
+TQ_IFR-N-i4,free_recall,0.38765454,-0.9857882261276244,a < 0.4 on free_recall
+TQ_IFR-O-i1,free_recall,0.09231577,10.146563529968262,a < 0.4 on free_recall
+TQ_IFR-O-i2,free_recall,0.16741908,6.307758331298828,a < 0.4 on free_recall
+TQ_IFR-O-i3,free_recall,0.31993183,1.335323452949524,a < 0.4 on free_recall
+TQ_IFR-O-i4,free_recall,0.07382194,9.24545669555664,a < 0.4 on free_recall
+TQ_IFR-O-i5,free_recall,0.22666363,2.463472604751587,a < 0.4 on free_recall
+TQ_IFR-O-i6,free_recall,0.22046743,4.043011665344238,a < 0.4 on free_recall
+TQ_IFR-U-i4,free_recall,0.34431028,-0.2037292122840881,a < 0.4 on free_recall
+TQ_IRE-N-i2,recognition,0.611171,-4.437190532684326,|b| > 3.0 on recognition (b=-4.44)
+TQ_IRE-N-i3,recognition,0.5605819,-3.8791873455047607,|b| > 3.0 on recognition (b=-3.88)
+TQ_IRE-N-i4,recognition,0.6822476,-3.077089548110962,|b| > 3.0 on recognition (b=-3.08)
+TQ_IRE-N-i5,recognition,0.54536104,-4.163266181945801,|b| > 3.0 on recognition (b=-4.16)
+TQ_IRE-N-i6,recognition,0.65151584,-4.386441230773926,|b| > 3.0 on recognition (b=-4.39)
+TQ_IRE-O-i1,recognition,0.39261577,2.9639179706573486,a < 0.4 on recognition
+TQ_IRE-O-i2,recognition,0.38263777,5.016102313995361,a < 0.4 on recognition
+TQ_IRE-O-i3,recognition,0.15496458,3.4979634284973145,a < 0.4 on recognition
+TQ_IRE-O-i4,recognition,0.0725199,14.146265029907228,a < 0.4 on recognition
+TQ_IRE-O-i5,recognition,0.28026935,3.586918354034424,a < 0.4 on recognition
+TQ_IRE-O-i6,recognition,0.4288602,3.660398244857788,|b| > 3.0 on recognition (b=3.66)

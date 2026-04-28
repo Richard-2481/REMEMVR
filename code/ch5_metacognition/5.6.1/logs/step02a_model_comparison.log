@@ -1,0 +1,186 @@
+Step 02a: AIC Model Comparison for HCE Rate Time Transformation
+Loading HCE rate data from step01...
+step01_hce_rates.csv (400 rows, 6 cols)
+Data summary: 400 observations from 100 participants
+Creating time transformations from TSVR...
+Created transformations:
+  - Days: range [0.04, 10.26]
+  - Days_squared: range [0.00, 105.27]
+  - log_Days_plus1: range [0.041, 2.421]
+Fitting 5 candidate LMM models with REML=False...
+
+Fitting Linear: Linear time trend
+  Formula: HCE_rate ~ Days
+  Random: ~Days
+  Linear converged successfully
+  AIC: -1467.26, BIC: -1443.32, LogLik: 739.63
+
+Fitting Quadratic: Quadratic time trend (Days + Days^2)
+  Formula: HCE_rate ~ Days + Days_squared
+  Random: ~Days
+  Quadratic converged successfully
+  AIC: -1465.54, BIC: -1437.60, LogLik: 739.77
+
+Fitting Logarithmic: Logarithmic time trend (log(Days+1))
+  Formula: HCE_rate ~ log_Days_plus1
+  Random: ~log_Days_plus1
+  Logarithmic converged successfully
+  AIC: -1467.31, BIC: -1443.36, LogLik: 739.66
+
+Fitting Linear+Log: Linear + Logarithmic (Days + log(Days+1))
+  Formula: HCE_rate ~ Days + log_Days_plus1
+  Random: ~log_Days_plus1
+  Linear+Log converged successfully
+  AIC: -1466.71, BIC: -1438.77, LogLik: 740.35
+
+Fitting Quadratic+Log: Quadratic + Logarithmic (Days + Days^2 + log(Days+1))
+  Formula: HCE_rate ~ Days + Days_squared + log_Days_plus1
+  Random: ~log_Days_plus1
+  Quadratic+Log converged successfully
+  AIC: -1466.14, BIC: -1434.21, LogLik: 741.07
+
+All models fitted
+
+Computing Akaike weights...
+Akaike weights sum: 1.000000 (should be 1.0)
+
+Identifying best model...
+Logarithmic (weight=0.2717, AIC=-1467.31)
+No clear winner for Logarithmic model
+
+Saving model comparison results...
+step02a_model_comparison.csv (5 models)
+step02a_best_model_selection.txt
+
+Checking results...
+All 5 models attempted
+5/5 models have finite AIC values
+Akaike weights sum to 1.0
+Best model identified: Logarithmic
+All models fitted with REML=False (required for AIC comparison)
+
+Step 02a complete - all validations passed
+Step 02a: AIC Model Comparison for HCE Rate Time Transformation
+Loading HCE rate data from step01...
+step01_hce_rates.csv (400 rows, 6 cols)
+Data summary: 400 observations from 100 participants
+Creating time transformations from TSVR...
+Created transformations:
+  - Days: range [0.04, 10.26]
+  - Days_squared: range [0.00, 105.27]
+  - log_Days_plus1: range [0.041, 2.421]
+Fitting 5 candidate LMM models with REML=False...
+
+Fitting Linear: Linear time trend
+  Formula: HCE_rate ~ Days
+  Random: ~Days
+  Linear converged successfully
+  AIC: -1467.26, BIC: -1443.32, LogLik: 739.63
+
+Fitting Quadratic: Quadratic time trend (Days + Days^2)
+  Formula: HCE_rate ~ Days + Days_squared
+  Random: ~Days
+  Quadratic converged successfully
+  AIC: -1465.54, BIC: -1437.60, LogLik: 739.77
+
+Fitting Logarithmic: Logarithmic time trend (log(Days+1))
+  Formula: HCE_rate ~ log_Days_plus1
+  Random: ~log_Days_plus1
+  Logarithmic converged successfully
+  AIC: -1467.31, BIC: -1443.36, LogLik: 739.66
+
+Fitting Linear+Log: Linear + Logarithmic (Days + log(Days+1))
+  Formula: HCE_rate ~ Days + log_Days_plus1
+  Random: ~log_Days_plus1
+  Linear+Log converged successfully
+  AIC: -1466.71, BIC: -1438.77, LogLik: 740.35
+
+Fitting Quadratic+Log: Quadratic + Logarithmic (Days + Days^2 + log(Days+1))
+  Formula: HCE_rate ~ Days + Days_squared + log_Days_plus1
+  Random: ~log_Days_plus1
+  Quadratic+Log converged successfully
+  AIC: -1466.14, BIC: -1434.21, LogLik: 741.07
+
+All models fitted
+
+Computing Akaike weights...
+Akaike weights sum: 1.000000 (should be 1.0)
+
+Identifying best model...
+Logarithmic (weight=0.2717, AIC=-1467.31)
+No clear winner for Logarithmic model
+
+Saving model comparison results...
+step02a_model_comparison.csv (5 models)
+step02a_best_model_selection.txt
+
+Checking results...
+All 5 models attempted
+5/5 models have finite AIC values
+Akaike weights sum to 1.0
+Best model identified: Logarithmic
+All models fitted with REML=False (required for AIC comparison)
+
+Step 02a complete - all validations passed
+Step 02a: AIC Model Comparison for HCE Rate Time Transformation
+Loading HCE rate data from step01...
+step01_hce_rates.csv (400 rows, 6 cols)
+Data summary: 400 observations from 100 participants
+Creating time transformations from TSVR...
+Created transformations:
+  - Days: range [0.04, 10.26]
+  - Days_squared: range [0.00, 105.27]
+  - log_Days_plus1: range [0.041, 2.421]
+Fitting 5 candidate LMM models with REML=False...
+
+Fitting Linear: Linear time trend
+  Formula: HCE_rate ~ Days
+  Random: ~Days
+  Linear converged successfully
+  AIC: -1467.26, BIC: -1443.32, LogLik: 739.63
+
+Fitting Quadratic: Quadratic time trend (Days + Days^2)
+  Formula: HCE_rate ~ Days + Days_squared
+  Random: ~Days
+  Quadratic converged successfully
+  AIC: -1465.54, BIC: -1437.60, LogLik: 739.77
+
+Fitting Logarithmic: Logarithmic time trend (log(Days+1))
+  Formula: HCE_rate ~ log_Days_plus1
+  Random: ~log_Days_plus1
+  Logarithmic converged successfully
+  AIC: -1467.31, BIC: -1443.36, LogLik: 739.66
+
+Fitting Linear+Log: Linear + Logarithmic (Days + log(Days+1))
+  Formula: HCE_rate ~ Days + log_Days_plus1
+  Random: ~log_Days_plus1
+  Linear+Log converged successfully
+  AIC: -1466.71, BIC: -1438.77, LogLik: 740.35
+
+Fitting Quadratic+Log: Quadratic + Logarithmic (Days + Days^2 + log(Days+1))
+  Formula: HCE_rate ~ Days + Days_squared + log_Days_plus1
+  Random: ~log_Days_plus1
+  Quadratic+Log converged successfully
+  AIC: -1466.14, BIC: -1434.21, LogLik: 741.07
+
+All models fitted
+
+Computing Akaike weights...
+Akaike weights sum: 1.000000 (should be 1.0)
+
+Identifying best model...
+Logarithmic (weight=0.2717, AIC=-1467.31)
+No clear winner for Logarithmic model
+
+Saving model comparison results...
+step02a_model_comparison.csv (5 models)
+step02a_best_model_selection.txt
+
+Checking results...
+All 5 models attempted
+5/5 models have finite AIC values
+Akaike weights sum to 1.0
+Best model identified: Logarithmic
+All models fitted with REML=False (required for AIC comparison)
+
+Step 02a complete - all validations passed

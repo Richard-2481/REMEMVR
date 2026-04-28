@@ -1,0 +1,4 @@
+icc_type,source_value,destination_value,difference,interpretation
+ICC_intercept,0.2399600374064752,0.4211014276318049,-0.1811413902253297,Destination shows substantially higher baseline stability than Source
+ICC_slope_conditional,0.4079842141828957,0.1668943346899547,0.241089879492941,Difference in slope variance: 0.2411 (both near zero)
+ICC_slope_simple,0.0050531307644917,0.0215800330764265,-0.0165269023119348,Difference in slope variance: -0.0165 (both near zero)

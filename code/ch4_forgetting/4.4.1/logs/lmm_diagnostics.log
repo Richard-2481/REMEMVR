@@ -1,0 +1,61 @@
+======================================================================
+LMM RESIDUAL DIAGNOSTICS
+======================================================================
+Date: 2025-12-27
+Purpose: Validate LMM assumptions
+
+Loading fitted model and data...
+  Model AIC: 2652.57
+  N observations: 1200
+
+  Residuals: N=1200, mean=0.000000, SD=0.5971
+  Fitted values: range [-1.39, 1.74]
+
+======================================================================
+DIAGNOSTIC 1: NORMALITY OF RESIDUALS
+======================================================================
+
+qq_plot.png
+  Shapiro-Wilk test: W=0.9980, p=0.149104
+  Residuals approximately normally distributed
+
+======================================================================
+DIAGNOSTIC 2: HOMOSCEDASTICITY (CONSTANT VARIANCE)
+======================================================================
+
+residuals_vs_fitted.png
+  Breusch-Pagan test: LM=0.2301, p=0.631441
+  No significant heteroscedasticity detected
+
+======================================================================
+DIAGNOSTIC 3: SCALE-LOCATION (SQRT STANDARDIZED RESIDUALS)
+======================================================================
+
+scale_location.png
+  Purpose: Check if variance increases with fitted values
+  Ideal: Horizontal red line (constant variance)
+
+======================================================================
+DIAGNOSTIC 4: OUTLIERS AND INFLUENTIAL POINTS
+======================================================================
+
+  Outliers (|std residual| > 3): N=1 (0.08%)
+  Outlier rate within expected range (<1%)
+residuals_histogram.png
+
+======================================================================
+SUMMARY
+======================================================================
+
+[✓] ALL DIAGNOSTIC CHECKS PASSED
+    Residuals are approximately normal
+    Variance is homoscedastic
+    Outlier rate within expected range
+    LMM assumptions are met
+
+Writing diagnostics report...
+lmm_diagnostics.txt
+
+LMM diagnostics complete
+
+Diagnostic plots saved to: /home/etai/projects/REMEMVR/results/ch5/5.4.1/plots/diagnostics

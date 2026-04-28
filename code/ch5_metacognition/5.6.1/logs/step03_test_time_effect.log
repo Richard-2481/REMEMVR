@@ -1,0 +1,52 @@
+Step 03 (FIXED): Test Time Effect on HCE Rate
+CRITICAL FIX: Using Days (TSVR/24) consistently with step02
+Loading HCE rates from Step 01...
+step01_hce_rates.csv (400 rows, 6 cols)
+100 participants, 4 test sessions
+Converting TSVR hours to Days...
+Days range: [0.04, 10.26]
+TSVR range: [1.00, 246.24] hours
+Fitting Full LMM: HCE_rate ~ Days + (Days | UID) using REML...
+[FULL MODEL REML] Converged: True
+[FULL MODEL REML] Log-likelihood (REML): 728.54
+[REML EFFECT] Days coefficient: -0.003007
+[REML EFFECT] SE: 0.000707
+[REML EFFECT] z: -4.2513
+[REML EFFECT] p_wald (REML): 0.000021
+Fitting Full LMM: HCE_rate ~ Days + (Days | UID) using ML for LRT...
+[FULL MODEL ML] Converged: True
+[FULL MODEL ML] Log-likelihood: 739.63
+[FULL MODEL ML] AIC: -1467.26
+Fitting Reduced LMM: HCE_rate ~ 1 + (Days | UID) using ML...
+[REDUCED MODEL ML] Converged: True
+[REDUCED MODEL ML] Log-likelihood: 731.19
+[REDUCED MODEL ML] AIC: -1452.38
+Computing Likelihood Ratio Test for Days effect...
+Chi-square statistic: 16.8802
+Degrees of freedom: 1
+p_lrt: 0.000040
+Selecting authoritative p-values...
+Full ML converged: True
+Reduced ML converged: True
+LRT statistic valid (>=0): True
+ML-based LRT valid: True
+Using ML-based LRT p-value: 0.000040
+Creating output DataFrame with dual p-values...
+Time effect results:
+  - effect: Days
+  - coefficient: -0.003007
+  - SE: 0.000707
+  - p_wald (REML): 0.000021
+  - p_lrt: 0.000040
+  - significant: True
+  - ml_valid: True
+step03_time_effect.csv (1 rows, 8 cols)
+Running validation checks...
+[VALIDATION - PASS] Both p-values in [0, 1] range
+[VALIDATION - PASS] SE > 0 (positive standard error)
+[VALIDATION - PASS] Coefficient in reasonable range
+Checking consistency with step02...
+Step02 result: β=-0.003, p<.001
+Step03 result: β=-0.003007, p=0.000021
+[VALIDATION - PASS] Consistent with step02 (significant negative Days effect)
+Step 03 (FIXED) complete

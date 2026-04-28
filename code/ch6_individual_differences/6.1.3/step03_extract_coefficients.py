@@ -11,13 +11,10 @@ import numpy as np
 from pathlib import Path
 import sys
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# =============================================================================
 # Configuration
-# =============================================================================
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch7/7.1.3
 LOG_FILE = RQ_DIR / "logs" / "step03_extract_coefficients.log"
 
@@ -36,7 +33,6 @@ OUTPUT_HEATMAP = RQ_DIR / "data" / "step03_heatmap_plot_data.csv"
 LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
         f.flush()
@@ -54,31 +50,23 @@ def classify_effect_size(beta):
     else:
         return "large"
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 03: Extract and Compare Beta Coefficients")
-        log(f"[SETUP] RQ Directory: {RQ_DIR}")
-        
-        # =========================================================================
-        # STEP 1: Load model results
-        # =========================================================================
+        log("Step 03: Extract and Compare Beta Coefficients")
+        log(f"RQ Directory: {RQ_DIR}")
+        # Load model results
         log("\n[STEP 1] Loading model results for all domains...")
         
         what_results = pd.read_csv(INPUT_WHAT)
         where_results = pd.read_csv(INPUT_WHERE)
         when_results = pd.read_csv(INPUT_WHEN)
         
-        log(f"[INFO] Loaded What model: {len(what_results)} coefficients")
-        log(f"[INFO] Loaded Where model: {len(where_results)} coefficients")
-        log(f"[INFO] Loaded When model: {len(when_results)} coefficients")
-        
-        # =========================================================================
-        # STEP 2: Create beta coefficient matrix
-        # =========================================================================
+        log(f"Loaded What model: {len(what_results)} coefficients")
+        log(f"Loaded Where model: {len(where_results)} coefficients")
+        log(f"Loaded When model: {len(when_results)} coefficients")
+        # Create beta coefficient matrix
         log("\n[STEP 2] Creating beta coefficient matrix...")
         
         # Extract coefficients (excluding intercept)
@@ -104,18 +92,15 @@ if __name__ == "__main__":
         
         matrix_df = pd.DataFrame(matrix_data)
         matrix_df.to_csv(OUTPUT_MATRIX, index=False)
-        log(f"[OUTPUT] Beta coefficient matrix saved to: {OUTPUT_MATRIX}")
+        log(f"Beta coefficient matrix saved to: {OUTPUT_MATRIX}")
         
         # Display matrix
-        log("\n[INFO] Beta Coefficient Matrix:")
+        log("\nBeta Coefficient Matrix:")
         log(f"{'Domain':<10} {'RAVLT':<10} {'RAVLT_Pct':<10} {'BVMT':<10} {'BVMT_Pct':<10} {'RPM':<10}")
         log("-" * 60)
         for _, row in matrix_df.iterrows():
             log(f"{row['domain']:<10} {row['RAVLT_T_beta']:>9.3f} {row['RAVLT_Pct_Ret_T_beta']:>9.3f} {row['BVMT_T_beta']:>9.3f} {row['BVMT_Pct_Ret_T_beta']:>9.3f} {row['RPM_T_beta']:>9.3f}")
-        
-        # =========================================================================
-        # STEP 3: Calculate cross-domain comparisons
-        # =========================================================================
+        # Calculate cross-domain comparisons
         log("\n[STEP 3] Calculating cross-domain comparisons...")
         
         comparisons = []
@@ -176,17 +161,14 @@ if __name__ == "__main__":
         
         comparisons_df = pd.DataFrame(comparisons)
         comparisons_df.to_csv(OUTPUT_COMPARISONS, index=False)
-        log(f"[OUTPUT] Cross-domain comparisons saved to: {OUTPUT_COMPARISONS}")
+        log(f"Cross-domain comparisons saved to: {OUTPUT_COMPARISONS}")
         
         # Log hypothesis tests
         log("\n[HYPOTHESIS TESTS] Cross-domain predictions:")
         for _, comp in comparisons_df.iterrows():
             match = "✓" if comp['hypothesis'] == comp['observed'] or (comp['hypothesis'] == 'small (<0.1)' and comp['observed'] == 'small') else "✗"
             log(f"  {comp['comparison']}: diff={comp['beta_difference']:.3f} (expected {comp['hypothesis']}, observed {comp['observed']}) {match}")
-        
-        # =========================================================================
-        # STEP 4: Classify effect sizes
-        # =========================================================================
+        # Classify effect sizes
         log("\n[STEP 4] Classifying effect sizes using Cohen's conventions...")
         
         effect_sizes = []
@@ -210,20 +192,17 @@ if __name__ == "__main__":
         
         effect_sizes_df = pd.DataFrame(effect_sizes)
         effect_sizes_df.to_csv(OUTPUT_EFFECT_SIZES, index=False)
-        log(f"[OUTPUT] Effect sizes saved to: {OUTPUT_EFFECT_SIZES}")
+        log(f"Effect sizes saved to: {OUTPUT_EFFECT_SIZES}")
         
         # Summary of effect sizes
-        log("\n[SUMMARY] Effect Size Classification:")
+        log("\nEffect Size Classification:")
         for domain in ['What', 'Where', 'When']:
             domain_effects = effect_sizes_df[effect_sizes_df['domain'] == domain]
             log(f"\n  {domain} domain:")
             for _, row in domain_effects.iterrows():
                 sig_marker = "*" if row['significant'] else ""
                 log(f"    {row['predictor']}: {row['effect_size_magnitude']} (β={row['beta']:.3f}){sig_marker}")
-        
-        # =========================================================================
-        # STEP 5: Prepare heatmap data for visualization
-        # =========================================================================
+        # Prepare heatmap data for visualization
         log("\n[STEP 5] Preparing heatmap data for visualization...")
         
         heatmap_data = []
@@ -246,32 +225,29 @@ if __name__ == "__main__":
         
         heatmap_df = pd.DataFrame(heatmap_data)
         heatmap_df.to_csv(OUTPUT_HEATMAP, index=False)
-        log(f"[OUTPUT] Heatmap plot data saved to: {OUTPUT_HEATMAP}")
-        
-        # =========================================================================
-        # STEP 6: Summary statistics
-        # =========================================================================
+        log(f"Heatmap plot data saved to: {OUTPUT_HEATMAP}")
+        # Summary statistics
         log("\n[STEP 6] Computing summary statistics...")
         
         # Find strongest predictor for each domain
-        log("\n[SUMMARY] Strongest predictor by domain:")
+        log("\nStrongest predictor by domain:")
         for domain in ['What', 'Where', 'When']:
             domain_effects = effect_sizes_df[effect_sizes_df['domain'] == domain]
             strongest = domain_effects.loc[domain_effects['beta'].abs().idxmax()]
             log(f"  {domain}: {strongest['predictor']} (β={strongest['beta']:.3f}, p={strongest['p_value']:.3f})")
         
         # Find strongest domain for each predictor
-        log("\n[SUMMARY] Best predicted domain by test:")
+        log("\nBest predicted domain by test:")
         for predictor in predictors:
             pred_effects = effect_sizes_df[effect_sizes_df['predictor'] == predictor]
             strongest = pred_effects.loc[pred_effects['beta'].abs().idxmax()]
             log(f"  {predictor}: {strongest['domain']} (β={strongest['beta']:.3f}, p={strongest['p_value']:.3f})")
         
-        log("\n[COMPLETE] Step 03 completed successfully")
-        log(f"[SUMMARY] Extracted 15 beta coefficients (5 predictors x 3 domains)")
+        log("\nStep 03 completed successfully")
+        log(f"Extracted 15 beta coefficients (5 predictors x 3 domains)")
         
     except Exception as e:
         log(f"[CRITICAL ERROR] Unexpected error: {e}")
         import traceback
-        log(f"[TRACEBACK] {traceback.format_exc()}")
+        log(f"{traceback.format_exc()}")
         sys.exit(1)

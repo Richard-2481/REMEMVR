@@ -1,0 +1,171 @@
+Step 5b: Extended Model Comparison (Congruence x Time)
+Loading LMM input data...
+1200 rows, 9 cols
+  Congruence levels: ['common' 'congruent' 'incongruent']
+  N subjects: 100
+Adding new time transformations...
+  Added transformations (same as RQ 5.1.1)
+Defining extended model set...
+  NOTE: All models include Congruence x Time interaction
+  Total models to fit: 17
+Fitting all models...
+  Fitting Linear...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting Quadratic...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting Log...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting Lin+Log...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting Quad+Log...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting PowerLaw_LogLog...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting PowerLaw_Alpha05...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting PowerLaw_Alpha03...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting PowerLaw_Alpha07...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting PowerLaw_Combined...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting SquareRoot...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting CubeRoot...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting SquareRoot+Log...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting Reciprocal...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting Recip+Log...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting Exponential...
+    ✗ FAILED: Model fitting failed: Singular matrix
+  Fitting Exp+Log...
+    ✗ FAILED: Model fitting failed: Singular matrix
+Computing AIC comparison metrics...
+Extended Model Comparison:
+
+Empty DataFrame
+Columns: [model_name, AIC, delta_AIC, akaike_weight]
+Index: []
+
+single positional indexer is out-of-bounds
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.1/code/step05b_fit_extended_candidate_lmms.py", line 238, in <module>
+    best_model_name = comparison_df.iloc[0]['model_name']
+                      ~~~~~~~~~~~~~~~~~~^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1192, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1753, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexing.py", line 1686, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Step 5b: Extended Model Comparison (Congruence x Time)
+Loading LMM input data...
+1200 rows, 9 cols
+  Congruence levels: ['common' 'congruent' 'incongruent']
+  N subjects: 100
+Adding new time transformations...
+  Added transformations (same as RQ 5.1.1)
+Defining extended model set...
+  NOTE: All models include Congruence x Time interaction
+  Total models to fit: 17
+Fitting all models...
+  Fitting Linear...
+    ✓ AIC=2590.48
+  Fitting Quadratic...
+    ✓ AIC=2571.04
+  Fitting Log...
+    ✓ AIC=2553.07
+  Fitting Lin+Log...
+    ✓ AIC=2569.08
+  Fitting Quad+Log...
+    ✓ AIC=2573.48
+  Fitting PowerLaw_LogLog...
+    ✓ AIC=2551.28
+  Fitting PowerLaw_Alpha05...
+    ✓ AIC=2551.01
+  Fitting PowerLaw_Alpha03...
+    ✓ AIC=2550.39
+  Fitting PowerLaw_Alpha07...
+    ✓ AIC=2553.30
+  Fitting PowerLaw_Combined...
+    ✓ AIC=2557.98
+  Fitting SquareRoot...
+    ✓ AIC=2554.24
+  Fitting CubeRoot...
+    ✓ AIC=2550.57
+  Fitting SquareRoot+Log...
+    ✓ AIC=2558.95
+  Fitting Reciprocal...
+    ✓ AIC=2559.07
+  Fitting Recip+Log...
+    ✓ AIC=2545.57
+  Fitting Exponential...
+    ✓ AIC=2590.48
+  Fitting Exp+Log...
+    ✓ AIC=2569.08
+Computing AIC comparison metrics...
+Extended Model Comparison:
+
+       model_name         AIC  delta_AIC  akaike_weight
+        Recip+Log 2545.567793   0.000000   7.368259e-01
+ PowerLaw_Alpha03 2550.385006   4.817213   6.627052e-02
+         CubeRoot 2550.571328   5.003534   6.037557e-02
+ PowerLaw_Alpha05 2551.013203   5.445410   4.840712e-02
+  PowerLaw_LogLog 2551.277687   5.709893   4.241089e-02
+              Log 2553.069745   7.501952   1.731158e-02
+ PowerLaw_Alpha07 2553.296313   7.728520   1.545746e-02
+       SquareRoot 2554.235672   8.667879   9.664045e-03
+PowerLaw_Combined 2557.979411  12.411617   1.486676e-03
+   SquareRoot+Log 2558.954006  13.386213   9.132418e-04
+       Reciprocal 2559.068153  13.500360   8.625794e-04
+          Lin+Log 2569.076176  23.508383   5.788745e-06
+          Exp+Log 2569.076176  23.508383   5.788745e-06
+        Quadratic 2571.041673  25.473879   2.166618e-06
+         Quad+Log 2573.483013  27.915220   6.392223e-07
+           Linear 2590.481118  44.913325   1.301848e-10
+      Exponential 2590.481118  44.913325   1.301848e-10
+
+[BEST MODEL] Recip+Log
+  AIC: 2545.57
+  Weight: 0.7368 (73.7%)
+
+Original 'Log' model:
+  Rank: #6 of 17
+  AIC: 2553.07 (Δ = 7.50)
+  Weight: 0.0173 (1.7%)
+  Original weight (5-model comparison): 99.998%
+
+[POWER LAW MODELS]
+  #2: PowerLaw_Alpha03
+       AIC=2550.39, Δ=4.82, weight=0.0663
+  #4: PowerLaw_Alpha05
+       AIC=2551.01, Δ=5.45, weight=0.0484
+  #5: PowerLaw_LogLog
+       AIC=2551.28, Δ=5.71, weight=0.0424
+  #7: PowerLaw_Alpha07
+       AIC=2553.30, Δ=7.73, weight=0.0155
+  #9: PowerLaw_Combined
+       AIC=2557.98, Δ=12.41, weight=0.0015
+Saving results...
+  ✓ step05b_extended_model_comparison.csv
+  ✓ step05b_extended_model_fits.pkl
+
+Total models tested: 17
+  Successful fits: 17
+  Failed fits: 0
+  Best model: Recip+Log
+  Best AIC: 2545.57
+  Original Log model rank: #6
+
+Cross-RQ Comparison:
+  RQ 5.1.1 (single trajectory): Power law wins (#1), Log #10, ΔAIC=2.97
+  RQ 5.3.1 (Paradigm x Time): Log wins (#1), SquareRoot #2, ΔAIC=0.68
+  RQ 5.4.1 (Congruence x Time): [results above]
+  ✓ POWER LAW WINS: Best power law (#2) beats Log (#6)
+Step 5b complete

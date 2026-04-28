@@ -1,0 +1,3 @@
+location_type,aic_irt,aic_ctt_full,aic_ctt_purified,delta_aic_full_purified,interpretation,n_observations,converged_all
+source,1020.714223419016,974.4915690925254,979.7527818156213,5.261212723095923,Full CTT favored,400,False
+destination,1111.0879337246497,1097.9999260907853,1115.92039097085,17.92046488006463,Full CTT favored,400,False

@@ -1,0 +1,34 @@
+2025-12-05 14:36:56,068 - INFO - ============================================================
+2025-12-05 14:36:56,068 - INFO - RQ 5.5.7 Step 06: Create Scatter Plot Matrix Data
+2025-12-05 14:36:56,068 - INFO - ============================================================
+2025-12-05 14:36:56,070 - INFO - Loaded 100 rows (z-scored features)
+2025-12-05 14:36:56,070 - INFO - Loaded 100 cluster assignments
+2025-12-05 14:36:56,071 - INFO - Merged data: 100 rows
+2025-12-05 14:36:56,071 - INFO - 
+Validating plot data...
+2025-12-05 14:36:56,071 - INFO - Plot data prepared: 100 participants
+2025-12-05 14:36:56,071 - INFO - Columns match specification: PASS
+2025-12-05 14:36:56,072 - INFO - No NaN values in features or cluster column: PASS
+2025-12-05 14:36:56,072 - INFO - All 4 clusters represented in plot data: PASS
+2025-12-05 14:36:56,072 - INFO - No duplicate UIDs: PASS
+2025-12-05 14:36:56,072 - INFO -   Source_intercept: z_min=-1.959, z_max=2.367
+2025-12-05 14:36:56,073 - INFO -   Source_slope: z_min=-1.923, z_max=2.397
+2025-12-05 14:36:56,073 - INFO -   Destination_intercept: z_min=-2.006, z_max=2.379
+2025-12-05 14:36:56,073 - INFO -   Destination_slope: z_min=-2.193, z_max=1.809
+2025-12-05 14:36:56,074 - INFO - 
+Saved to /home/etai/projects/REMEMVR/results/ch5/5.5.7/plots/step06_cluster_scatter_matrix_data.csv
+2025-12-05 14:36:56,074 - INFO - 
+Cluster distribution in plot data:
+2025-12-05 14:36:56,075 - INFO -   Cluster 0: 20 participants
+2025-12-05 14:36:56,075 - INFO -   Cluster 1: 26 participants
+2025-12-05 14:36:56,076 - INFO -   Cluster 2: 35 participants
+2025-12-05 14:36:56,076 - INFO -   Cluster 3: 19 participants
+2025-12-05 14:36:56,076 - INFO - 
+============================================================
+2025-12-05 14:36:56,076 - INFO - Step 06 COMPLETE
+2025-12-05 14:36:56,076 - INFO -   Plot data: 100 participants, 4 clusters
+2025-12-05 14:36:56,076 - INFO -   Features: 4 z-scored (Source_intercept, Source_slope, Destination_intercept, Destination_slope)
+2025-12-05 14:36:56,076 - INFO -   All clusters represented
+2025-12-05 14:36:56,076 - INFO -   Output: /home/etai/projects/REMEMVR/results/ch5/5.5.7/plots/step06_cluster_scatter_matrix_data.csv
+2025-12-05 14:36:56,076 - INFO -   Ready for plotting pipeline to generate scatter matrix PNG
+2025-12-05 14:36:56,076 - INFO - ============================================================

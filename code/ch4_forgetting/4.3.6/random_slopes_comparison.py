@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-# =============================================================================
-# Random Slopes Comparison - PLATINUM Finalization Requirement
-# =============================================================================
+# Random Slopes Comparison - validation Finalization Requirement
 """
 PURPOSE:
 Test whether random slopes improve model fit compared to intercepts-only.
@@ -23,14 +21,13 @@ METHOD:
   * 3 measurement types (IRT, Full CTT, Purified CTT)
   * 2 random structures (intercepts-only, intercepts+slopes)
 - Compare ΔAIC (intercepts - slopes) per measurement type
-- Interpret per agent prompt Step 12C protocol
+- Interpret per protocol Step 12C protocol
 
 EXPECTED OUTCOMES:
 Option A: Slopes improve fit (ΔAIC > 2)
 Option B: Slopes don't converge / overfit
 Option C: Slopes converge but don't improve (ΔAIC < 2)
 """
-# =============================================================================
 
 import sys
 from pathlib import Path
@@ -44,19 +41,16 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "random_slopes_comparison.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'w' if not LOG_FILE.exists() else 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # Main Analysis
-# =============================================================================
 
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("RANDOM SLOPES COMPARISON - PLATINUM FINALIZATION")
+        log("RANDOM SLOPES COMPARISON - VALIDATION")
         log("=" * 80)
         log("")
         log("Testing: Intercepts-only vs Intercepts+Slopes")
@@ -65,10 +59,10 @@ if __name__ == "__main__":
         log("")
 
         # Load standardized scores
-        log("[LOAD] Loading standardized scores...")
+        log("Loading standardized scores...")
         input_path = RQ_DIR / "data" / "step06_standardized_scores.csv"
         df = pd.read_csv(input_path)
-        log(f"[LOADED] {len(df)} rows")
+        log(f"{len(df)} rows")
 
         # Test on IFR paradigm only
         paradigm = 'IFR'
@@ -82,12 +76,9 @@ if __name__ == "__main__":
 
         for mtype, dv in measurement_types.items():
             log("")
-            log(f"[FIT] {mtype} ({dv})")
+            log(f"{mtype} ({dv})")
             log("-" * 80)
-
-            # =========================================================================
             # Model 1: Intercepts-Only (Current Implementation)
-            # =========================================================================
             log(f"  Model 1: {dv} ~ TSVR_hours + (1|UID)")
             try:
                 model_intercepts = smf.mixedlm(
@@ -103,13 +94,10 @@ if __name__ == "__main__":
                 log(f"    Converged: {converged_intercepts}")
 
             except Exception as e:
-                log(f"    [ERROR] Intercepts-only model failed: {e}")
+                log(f"    Intercepts-only model failed: {e}")
                 aic_intercepts = np.nan
                 converged_intercepts = False
-
-            # =========================================================================
             # Model 2: Intercepts + Slopes (Plan.md Specification)
-            # =========================================================================
             log(f"  Model 2: {dv} ~ TSVR_hours + (1 + TSVR_hours | UID)")
             try:
                 # Create random effects formula
@@ -142,19 +130,16 @@ if __name__ == "__main__":
                     log(f"    Random slope SD: {slope_sd:.6f}")
 
             except Exception as e:
-                log(f"    [WARNING] Slopes model failed: {e}")
+                log(f"    Slopes model failed: {e}")
                 aic_slopes = np.nan
                 converged_slopes = False
                 slope_var = np.nan
                 slope_sd = np.nan
-
-            # =========================================================================
             # Compare Models
-            # =========================================================================
             delta_aic = aic_intercepts - aic_slopes
             log(f"  ΔAIC (Intercepts - Slopes): {delta_aic:.2f}")
 
-            # Interpret per agent prompt Step 12C
+            # Interpret per protocol Step 12C
             if not converged_slopes:
                 outcome = "Option B: Slopes don't converge"
                 interpretation = "Convergence failure - insufficient data for stable slope estimation"
@@ -199,20 +184,14 @@ if __name__ == "__main__":
                 'recommendation': recommendation,
                 'limitation': limitation if limitation else ''
             })
-
-        # =========================================================================
         # Save Results
-        # =========================================================================
         log("")
-        log("[SAVE] Saving comparison results...")
+        log("Saving comparison results...")
         df_results = pd.DataFrame(results)
         output_path = RQ_DIR / "data" / "random_slopes_comparison.csv"
         df_results.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_path}")
-
-        # =========================================================================
+        log(f"{output_path}")
         # Summary Report
-        # =========================================================================
         log("")
         log("=" * 80)
         log("SUMMARY")
@@ -250,12 +229,12 @@ if __name__ == "__main__":
         log("RANDOM SLOPES COMPARISON COMPLETE")
         log("=" * 80)
         log("")
-        log("[SUCCESS] Random slopes comparison completed")
+        log("Random slopes comparison completed")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

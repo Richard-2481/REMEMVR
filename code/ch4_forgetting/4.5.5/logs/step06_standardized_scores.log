@@ -1,0 +1,75 @@
+Step 6: Z-Standardize All Measurements
+Loading IRT theta scores from RQ 5.5.1...
+step03_theta_scores.csv (400 rows, 5 cols)
+Theta columns: ['composite_ID', 'theta_source', 'theta_destination', 'se_source', 'se_destination']
+Loading Full CTT scores from Step 2...
+step02_ctt_full_scores.csv (800 rows, 4 cols)
+Loading Purified CTT scores from Step 3...
+step03_ctt_purified_scores.csv (800 rows, 4 cols)
+Parsing composite_ID into UID and test...
+Parsed 400 composite_IDs
+Reshaping theta to long format...
+Theta reshaped to long format (800 rows)
+Theta location_type counts: {'source': 400, 'destination': 400}
+Merging theta with Full CTT...
+After Full CTT merge: 0 rows
+Merging with Purified CTT...
+After Purified CTT merge: 0 rows
+Expected 800 rows after merge, got 0
+Merge produced 0 rows, expected 800
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.5.5/code/step06_standardized_scores.py", line 220, in <module>
+    raise ValueError(f"Merge produced {len(merged_df)} rows, expected 800")
+ValueError: Merge produced 0 rows, expected 800
+Step 6: Z-Standardize All Measurements
+Loading IRT theta scores from RQ 5.5.1...
+step03_theta_scores.csv (400 rows, 5 cols)
+Theta columns: ['composite_ID', 'theta_source', 'theta_destination', 'se_source', 'se_destination']
+Loading Full CTT scores from Step 2...
+step02_ctt_full_scores.csv (800 rows, 4 cols)
+Loading Purified CTT scores from Step 3...
+step03_ctt_purified_scores.csv (800 rows, 4 cols)
+Parsing composite_ID into UID and test...
+Parsed 400 composite_IDs
+Test values: ['T1', 'T2', 'T3', 'T4']
+Reshaping theta to long format...
+Theta reshaped to long format (800 rows)
+Theta location_type counts: {'source': 400, 'destination': 400}
+Merging theta with Full CTT...
+After Full CTT merge: 800 rows
+Merging with Purified CTT...
+After Purified CTT merge: 800 rows
+Merged columns: ['UID', 'test', 'theta', 'location_type', 'ctt_full_score', 'ctt_purified_score']
+Missing values: {'UID': 0, 'test': 0, 'theta': 0, 'location_type': 0, 'ctt_full_score': 0, 'ctt_purified_score': 0}
+Z-standardizing measurements within location_type...
+Using sample std (ddof=1) for consistency with LMM estimation
+IRT theta -> irt_z
+Full CTT -> ctt_full_z
+Purified CTT -> ctt_purified_z
+Validating z-score standardization...
+
+Location type: source
+  irt_z: mean=0.000000, std=1.000000
+  ctt_full_z: mean=-0.000000, std=1.000000
+  ctt_purified_z: mean=-0.000000, std=1.000000
+
+Location type: destination
+  irt_z: mean=0.000000, std=1.000000
+  ctt_full_z: mean=0.000000, std=1.000000
+  ctt_purified_z: mean=0.000000, std=1.000000
+
+All z-scores validated: mean ≈ 0, std ≈ 1
+No NaN values in z-score columns
+Saving standardized scores...
+step06_standardized_scores.csv (800 rows, 6 cols)
+
+Step 6 Complete:
+  Input files: 3 (theta, full_ctt, purified_ctt)
+  Output rows: 800
+  Location types: 2
+  Participants: 100
+  Test sessions: 4
+  Z-score columns: 3
+  Validation: All z-scores have mean ≈ 0, std ≈ 1 per location_type
+Step 6 complete

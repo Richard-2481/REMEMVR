@@ -1,0 +1,112 @@
+Step 03: Create Discrepancy Groups
+Loading discrepancy scores from step 2...
+100 participants with discrepancy scores
+Computing ±1 SD cutoffs...
+Discrepancy distribution: M=0.0000, SD=1.2174
+Upper cutoff (+1 SD): 1.2174
+Lower cutoff (-1 SD): -1.2174
+Classifying participants into groups...
+VR-favored: 12 participants
+RAVLT-favored: 17 participants
+Concordant: 71 participants
+Computing descriptive statistics by group...
+Concordant: n=71, M=0.0686, SD=0.6553, range=[-1.1764, 1.1862]
+RAVLT-favored: n=17, M=-1.7626, SD=0.5645, range=[-3.5544, -1.2607]
+VR-favored: n=12, M=2.0912, SD=0.7349, range=[1.3057, 3.6493]
+Testing alternative cutoff values...
+Cutoff ±0.75 SD: VR=22, RAVLT=21, Concordant=57
+Cutoff ±1.25 SD: VR=9, RAVLT=10, Concordant=81
+Validating minimum group sizes...
+VR-favored group has adequate sample size (12 >= 10)
+RAVLT-favored group has adequate sample size (17 >= 10)
+Concordant group has adequate sample size (71 >= 10)
+Saving group assignments and descriptives...
+step03_group_assignments.csv (100 rows)
+step03_group_descriptives.csv (3 rows)
+step03_sensitivity_analysis.csv (3 rows)
+Running validate_data_format...
+validate_data_format() got an unexpected keyword argument 'expected_columns'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch7/7.7.2/code/step03_create_discrepancy_groups.py", line 235, in <module>
+    validation_result = validate_data_format(
+                        ^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_data_format() got an unexpected keyword argument 'expected_columns'
+Step 03: Create Discrepancy Groups
+Loading discrepancy scores from step 2...
+100 participants with discrepancy scores
+Computing ±1 SD cutoffs...
+Discrepancy distribution: M=0.0000, SD=1.2174
+Upper cutoff (+1 SD): 1.2174
+Lower cutoff (-1 SD): -1.2174
+Classifying participants into groups...
+VR-favored: 12 participants
+RAVLT-favored: 17 participants
+Concordant: 71 participants
+Computing descriptive statistics by group...
+Concordant: n=71, M=0.0686, SD=0.6553, range=[-1.1764, 1.1862]
+RAVLT-favored: n=17, M=-1.7626, SD=0.5645, range=[-3.5544, -1.2607]
+VR-favored: n=12, M=2.0912, SD=0.7349, range=[1.3057, 3.6493]
+Testing alternative cutoff values...
+Cutoff ±0.75 SD: VR=22, RAVLT=21, Concordant=57
+Cutoff ±1.25 SD: VR=9, RAVLT=10, Concordant=81
+Validating minimum group sizes...
+VR-favored group has adequate sample size (12 >= 10)
+RAVLT-favored group has adequate sample size (17 >= 10)
+Concordant group has adequate sample size (71 >= 10)
+Saving group assignments and descriptives...
+step03_group_assignments.csv (100 rows)
+step03_group_descriptives.csv (3 rows)
+step03_sensitivity_analysis.csv (3 rows)
+Running validate_data_format...
+Group assignment structure valid
+All 100 participants assigned to exactly one group
+Group values correct: {'RAVLT-favored', 'VR-favored', 'Concordant'}
+Step 03 complete
+Step 03: Create Discrepancy Groups
+Loading discrepancy scores from step 2...
+100 participants with discrepancy scores
+
+=== Processing RAVLT_Total (column: Discrepancy) ===
+RAVLT_Total distribution: M=-0.0000, SD=1.2072
+Upper cutoff (+1 SD): 1.2072
+Lower cutoff (-1 SD): -1.2072
+VR-favored: 14 participants
+RAVLT-favored: 19 participants
+Concordant: 67 participants
+Concordant: n=67, M=0.0853, SD=0.6576, range=[-1.2027, 1.1968]
+RAVLT-favored: n=19, M=-1.6957, SD=0.5584, range=[-3.4251, -1.2085]
+VR-favored: n=14, M=1.8931, SD=0.6094, range=[1.2263, 3.0037]
+RAVLT_Total ±0.75 SD: VR=22, RAVLT=23, Concordant=55
+RAVLT_Total ±1.0 SD: VR=14, RAVLT=19, Concordant=67
+RAVLT_Total ±1.25 SD: VR=9, RAVLT=10, Concordant=81
+RAVLT_Total VR-favored group has adequate sample size (14 >= 10)
+RAVLT_Total RAVLT-favored group has adequate sample size (19 >= 10)
+RAVLT_Total Concordant group has adequate sample size (67 >= 10)
+
+=== Processing RAVLT_Pct_Ret (column: Discrepancy_PctRet) ===
+RAVLT_Pct_Ret distribution: M=-0.0000, SD=1.1650
+Upper cutoff (+1 SD): 1.1650
+Lower cutoff (-1 SD): -1.1650
+VR-favored: 13 participants
+RAVLT-favored: 18 participants
+Concordant: 69 participants
+Concordant: n=69, M=0.1704, SD=0.6001, range=[-1.1336, 1.1138]
+RAVLT-favored: n=18, M=-1.8706, SD=0.5444, range=[-3.1138, -1.2324]
+VR-favored: n=13, M=1.6858, SD=0.4921, range=[1.1688, 2.7671]
+RAVLT_Pct_Ret ±0.75 SD: VR=19, RAVLT=21, Concordant=60
+RAVLT_Pct_Ret ±1.0 SD: VR=13, RAVLT=18, Concordant=69
+RAVLT_Pct_Ret ±1.25 SD: VR=8, RAVLT=14, Concordant=78
+RAVLT_Pct_Ret VR-favored group has adequate sample size (13 >= 10)
+RAVLT_Pct_Ret RAVLT-favored group has adequate sample size (18 >= 10)
+RAVLT_Pct_Ret Concordant group has adequate sample size (69 >= 10)
+Saving group assignments and descriptives...
+step03_group_assignments.csv (100 rows)
+step03_group_descriptives.csv (6 rows)
+step03_sensitivity_analysis.csv (6 rows)
+Running validate_data_format...
+Group assignment structure valid
+RAVLT_Total group values correct: {'RAVLT-favored', 'VR-favored', 'Concordant'}
+RAVLT_Pct_Ret group values correct: {'RAVLT-favored', 'VR-favored', 'Concordant'}
+All 100 participants assigned to groups for both metrics
+Step 03 complete

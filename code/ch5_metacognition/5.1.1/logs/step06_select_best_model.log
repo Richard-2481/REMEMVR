@@ -1,0 +1,153 @@
+Step 06: Select Best Model via AIC
+Loading model comparison results...
+step05_model_comparison.csv (65 rows, 9 cols)
+Model names mismatch:
+  Expected: {'Linear+Logarithmic', 'Linear', 'Quadratic+Logarithmic', 'Quadratic', 'Logarithmic'}
+  Actual:   {'Recip+Lin', 'Recip+PowerLaw', 'Root_Multi', 'Cos', 'Quadratic', 'Exponential_proxy', 'PowerLaw_07', 'Log+PowerLaw05', 'Sin+Cos', 'Reciprocal', 'Linear', 'Root_033', 'Lin+Quad+Log', 'PowerLaw+Recip+Log', 'Log10', 'SquareRoot+PowerLaw', 'Quad+Log+SquareRoot', 'CubeRoot', 'Sin', 'LogLog', 'Quartic', 'Tanh+Log', 'Quadratic_pure', 'PowerLaw_08', 'PowerLaw_06', 'Lin+Log', 'PowerLaw_02', 'Log+Recip', 'CubeRoot+Log', 'Sin+Log', 'Sinh', 'PowerLaw_01', 'Arctanh', 'SquareRoot+Recip', 'Lin+Log+PowerLaw', 'PowerLaw_03', 'Tanh', 'Root_067', 'PowerLaw_10', 'Log+SquareRoot', 'Exp_slow', 'Recip+PowerLaw05', 'SquareRoot', 'PowerLaw_09', 'Exp+Log', 'SquareRoot+Lin', 'Exp+PowerLaw', 'Log+LogLog', 'Recip+Quad', 'Exp_fast', 'PowerLaw_Lin', 'Recip+Log', 'Cubic', 'Quad+Log', 'PowerLaw_05', 'PowerLaw_04', 'Cubic_pure', 'Ultimate', 'SquareRoot+Log', 'Log2', 'FourthRoot', 'PowerLaw_Log', 'Log', 'Recip_sq', 'Exp+Recip'}
+AIC range: 1068.98 - 1119.54
+Computing Akaike weights...
+delta_AIC (minimum AIC = 1068.9810)
+relative_likelihood (exponential transformation)
+akaike_weight (normalized to sum=1.0)
+Best model: Sin+Cos
+  AIC: 1068.9810
+  Akaike weight: 0.2171
+Models by AIC ascending (best first)
+Saving AIC comparison table...
+step06_aic_comparison.csv (65 rows, 11 cols)
+AIC Comparison:
+  Sin+Cos                   AIC=1068.98  delta=  0.00  weight=0.2171 <- BEST
+  Tanh+Log                  AIC=1072.04  delta=  3.06  weight=0.0469
+  PowerLaw_10               AIC=1073.13  delta=  4.15  weight=0.0273
+  Reciprocal                AIC=1073.13  delta=  4.15  weight=0.0273
+  Recip_sq                  AIC=1073.13  delta=  4.15  weight=0.0273
+  PowerLaw_09               AIC=1073.22  delta=  4.24  weight=0.0261
+  FourthRoot                AIC=1073.26  delta=  4.28  weight=0.0255
+  Root_033                  AIC=1073.32  delta=  4.34  weight=0.0248
+  CubeRoot                  AIC=1073.32  delta=  4.34  weight=0.0248
+  PowerLaw_08               AIC=1073.34  delta=  4.35  weight=0.0246
+  PowerLaw_07               AIC=1073.48  delta=  4.50  weight=0.0229
+  Cubic                     AIC=1073.48  delta=  4.50  weight=0.0229
+  LogLog                    AIC=1073.54  delta=  4.56  weight=0.0222
+  SquareRoot+Recip          AIC=1073.63  delta=  4.65  weight=0.0212
+  Exp_slow                  AIC=1073.64  delta=  4.65  weight=0.0212
+  SquareRoot                AIC=1073.64  delta=  4.65  weight=0.0212
+  PowerLaw_06               AIC=1073.65  delta=  4.66  weight=0.0211
+  PowerLaw_05               AIC=1073.84  delta=  4.86  weight=0.0191
+  Root_067                  AIC=1074.04  delta=  5.05  weight=0.0173
+  PowerLaw_04               AIC=1074.06  delta=  5.08  weight=0.0171
+  PowerLaw+Recip+Log        AIC=1074.28  delta=  5.30  weight=0.0153
+  PowerLaw_03               AIC=1074.32  delta=  5.34  weight=0.0151
+  Log+PowerLaw05            AIC=1074.58  delta=  5.60  weight=0.0132
+  PowerLaw_Log              AIC=1074.58  delta=  5.60  weight=0.0132
+  Quartic                   AIC=1074.59  delta=  5.61  weight=0.0131
+  PowerLaw_02               AIC=1074.60  delta=  5.62  weight=0.0131
+  Recip+Log                 AIC=1074.80  delta=  5.82  weight=0.0118
+  Log+Recip                 AIC=1074.80  delta=  5.82  weight=0.0118
+  Log+LogLog                AIC=1074.85  delta=  5.87  weight=0.0115
+  Recip+PowerLaw            AIC=1074.88  delta=  5.89  weight=0.0114
+  Recip+PowerLaw05          AIC=1074.88  delta=  5.89  weight=0.0114
+  PowerLaw_01               AIC=1074.90  delta=  5.92  weight=0.0112
+  Lin+Quad+Log              AIC=1075.04  delta=  6.06  weight=0.0105
+  Quad+Log                  AIC=1075.04  delta=  6.06  weight=0.0105
+  Exp+Recip                 AIC=1075.14  delta=  6.15  weight=0.0100
+  Recip+Lin                 AIC=1075.14  delta=  6.15  weight=0.0100
+  Root_Multi                AIC=1075.22  delta=  6.24  weight=0.0096
+  Log                       AIC=1075.24  delta=  6.25  weight=0.0095
+  Log10                     AIC=1075.24  delta=  6.25  weight=0.0095
+  Log2                      AIC=1075.24  delta=  6.25  weight=0.0095
+  CubeRoot+Log              AIC=1075.28  delta=  6.30  weight=0.0093
+  SquareRoot+Log            AIC=1075.33  delta=  6.35  weight=0.0091
+  Log+SquareRoot            AIC=1075.33  delta=  6.35  weight=0.0091
+  Quad+Log+SquareRoot       AIC=1075.42  delta=  6.44  weight=0.0087
+  SquareRoot+PowerLaw       AIC=1075.67  delta=  6.69  weight=0.0077
+  SquareRoot+Lin            AIC=1075.70  delta=  6.72  weight=0.0076
+  PowerLaw_Lin              AIC=1075.84  delta=  6.86  weight=0.0070
+  Exp+PowerLaw              AIC=1075.84  delta=  6.86  weight=0.0070
+  Recip+Quad                AIC=1076.29  delta=  7.31  weight=0.0056
+  Lin+Log+PowerLaw          AIC=1076.69  delta=  7.71  weight=0.0046
+  Sin+Log                   AIC=1077.21  delta=  8.23  weight=0.0035
+  Exp+Log                   AIC=1077.28  delta=  8.29  weight=0.0034
+  Lin+Log                   AIC=1077.28  delta=  8.29  weight=0.0034
+  Sin                       AIC=1078.09  delta=  9.11  weight=0.0023
+  Ultimate                  AIC=1078.13  delta=  9.15  weight=0.0022
+  Exp_fast                  AIC=1086.63  delta= 17.65  weight=0.0000
+  Quadratic_pure            AIC=1086.63  delta= 17.65  weight=0.0000
+  Quadratic                 AIC=1089.38  delta= 20.40  weight=0.0000
+  Tanh                      AIC=1091.74  delta= 22.76  weight=0.0000
+  Sinh                      AIC=1094.60  delta= 25.62  weight=0.0000
+  Cubic_pure                AIC=1096.63  delta= 27.65  weight=0.0000
+  Arctanh                   AIC=1114.55  delta= 45.57  weight=0.0000
+  Cos                       AIC=1115.72  delta= 46.74  weight=0.0000
+  Linear                    AIC=1119.54  delta= 50.56  weight=0.0000
+  Exponential_proxy         AIC=1119.54  delta= 50.56  weight=0.0000
+Copying best model to canonical filename...
+'Sin+Cos'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.1.1/code/step06_select_best_model.py", line 237, in <module>
+    source_pkl = RQ_DIR / "data" / model_file_mapping[best_model_name]
+                                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'Sin+Cos'
+Step 06: Select Best Model via AIC
+Loading model comparison results...
+step05_model_comparison.csv (5 rows, 6 cols)
+AIC range: 770.29 - 809.43
+Computing Akaike weights...
+delta_AIC (minimum AIC = 770.2871)
+relative_likelihood (exponential transformation)
+akaike_weight (normalized to sum=1.0)
+Best model: Logarithmic
+  AIC: 770.2871
+  Akaike weight: 0.5210
+Models by AIC ascending (best first)
+Saving AIC comparison table...
+step06_aic_comparison.csv (5 rows, 10 cols)
+AIC Comparison:
+  Logarithmic               AIC= 770.29  delta=  0.00  weight=0.5210 <- BEST
+  Linear+Logarithmic        AIC= 771.52  delta=  1.23  weight=0.2812
+  Quadratic+Logarithmic     AIC= 773.21  delta=  2.92  weight=0.1210
+  Quadratic                 AIC= 774.11  delta=  3.83  weight=0.0769
+  Linear                    AIC= 809.43  delta= 39.14  weight=0.0000
+Copying best model to canonical filename...
+step06_best_model.pkl (copy of step05_model3_logarithmic.pkl)
+Running validate_numeric_range...
+Exactly one best model identified: PASS
+Akaike weights sum to 1.0: PASS (sum=1.000000)
+Best model has delta_AIC=0: PASS
+All AIC values finite: PASS
+delta_AIC in [0, Inf): PASS
+relative_likelihood in (0, 1]: PASS
+akaike_weight in (0, 1): PASS
+Step 06 complete - Best model identified: Logarithmic
+Step 06: Select Best Model via AIC
+Loading model comparison results...
+step05_model_comparison.csv (5 rows, 6 cols)
+AIC range: 693.47 - 765.90
+Computing Akaike weights...
+delta_AIC (minimum AIC = 693.4728)
+relative_likelihood (exponential transformation)
+akaike_weight (normalized to sum=1.0)
+Best model: Linear+Logarithmic
+  AIC: 693.4728
+  Akaike weight: 0.6418
+Models by AIC ascending (best first)
+Saving AIC comparison table...
+step06_aic_comparison.csv (5 rows, 10 cols)
+AIC Comparison:
+  Linear+Logarithmic        AIC= 693.47  delta=  0.00  weight=0.6418 <- BEST
+  Quadratic+Logarithmic     AIC= 695.05  delta=  1.58  weight=0.2917
+  Logarithmic               AIC= 698.03  delta=  4.56  weight=0.0658
+  Quadratic                 AIC= 706.95  delta= 13.48  weight=0.0008
+  Linear                    AIC= 765.90  delta= 72.43  weight=0.0000
+Copying best model to canonical filename...
+step06_best_model.pkl (copy of step05_model4_linear_logarithmic.pkl)
+Running validate_numeric_range...
+Exactly one best model identified: PASS
+Akaike weights sum to 1.0: PASS (sum=1.000000)
+Best model has delta_AIC=0: PASS
+All AIC values finite: PASS
+delta_AIC in [0, Inf): PASS
+relative_likelihood in (0, 1]: PASS
+akaike_weight in (0, 1): PASS
+Step 06 complete - Best model identified: Linear+Logarithmic

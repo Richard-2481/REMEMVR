@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.3/code/steps_01_to_09.py", line 361, in <module>
+    best_idx = comparison_df[comparison_df['converged']]['AIC'].idxmin()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 2689, in idxmin
+    i = self.argmin(axis, skipna, *args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/base.py", line 789, in argmin
+    result = nanops.nanargmin(delegate, skipna=skipna)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/nanops.py", line 1194, in nanargmin
+    result = values.argmin(axis)
+             ^^^^^^^^^^^^^^^^^^^
+ValueError: attempt to get argmin of an empty sequence
+RQ 6.9.3 Steps 1-9: Domain-Specific Confidence-Accuracy Alignment
+When domain EXCLUDED - analyzing What/Where only (N=1600)
+
+[STEP 1] Reshape Wide to Long Format
+Loading merged data from Step 0...
+step00b_merged_no_when.csv - When domain EXCLUDED (400 rows, 8 cols)
+Melting accuracy domains (What, Where ONLY - When EXCLUDED)...
+Accuracy long format: 800 rows
+Melting confidence domains (What, Where ONLY - When EXCLUDED)...
+Confidence long format: 800 rows
+Combining accuracy and confidence...
+Total rows: 1600 (expected: 1600 = 400 obs × 2 domains × 2 measures)
+No missing theta values
+Balanced design: all UIDs have 16 observations
+step01_long_format.csv (1600 rows, 7 cols)
+Step 1 complete - reshaped to long format (What/Where only)
+
+[STEP 2] Select Random Structure via LRT
+Comparing random intercepts-only vs intercepts+slopes...
+LRT failed: select_lmm_random_structure_via_lrt() got an unexpected keyword argument 'time_var'
+Using intercepts-only: (1 | UID)
+
+[STEP 3] Select Time Transformation via AIC
+Comparing linear, log, and sqrt time transformations...
+Testing linear transformation...
+linear transformation failed: Error evaluating factor: TypeError: Cannot perform 'ror_' with a dtyped [object] array and scalar of type [bool]
+    1 | UID
+    ^^^^^^^
+Testing log transformation...
+log transformation failed: Error evaluating factor: TypeError: Cannot perform 'ror_' with a dtyped [object] array and scalar of type [bool]
+    1 | UID
+    ^^^^^^^
+Testing sqrt transformation...
+sqrt transformation failed: Error evaluating factor: TypeError: Cannot perform 'ror_' with a dtyped [object] array and scalar of type [bool]
+    1 | UID
+    ^^^^^^^
+attempt to get argmin of an empty sequence
+Full error details:

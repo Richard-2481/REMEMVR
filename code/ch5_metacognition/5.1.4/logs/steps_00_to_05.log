@@ -1,0 +1,288 @@
+================================================================================
+RQ 6.1.4 - ICC Decomposition Analysis
+Started: 2025-12-11T17:37:25.898510
+================================================================================
+================================================================================
+[STEP 00] Re-fit Best LMM Model (Recip_sq)
+================================================================================
+Loading LMM input from RQ 6.1.1: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step04_lmm_input.csv
+  ✓ Loaded 400 rows × 9 columns
+  ✓ N participants: 100
+  ✓ TSVR range: [1.00, 246.24] hours
+  ✓ Created Recip_sq = 1/(TSVR_hours+1)^2
+  ✓ Recip_sq range: [0.000016, 0.250000]
+
+Fitting LMM:
+  Formula: theta_All ~ Recip_sq
+  Random effects: (1 + Recip_sq | UID)
+  Method: ML (reml=False for AIC comparison)
+
+Model fit complete:
+  ✓ Converged: True
+  ✓ AIC: 303.9172
+  ✓ BIC: 327.8660
+  ✓ Log-likelihood: -145.9586
+  ✓ N observations: 400
+  ✓ N groups: 100
+  ✓ Saved metadata: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step00_model_metadata.txt
+
+================================================================================
+[STEP 01] Extract Variance Components
+================================================================================
+
+Random effects covariance matrix:
+             Group  Recip_sq
+Group     0.081705  0.027417
+Recip_sq  0.027417  0.055744
+  Random effect names: ['Group', 'Recip_sq']
+
+[VARIANCE COMPONENTS]:
+  var_intercept: 0.081705
+  var_slope: 0.055744
+  cov_int_slope: 0.027417
+  var_residual: 0.079544
+  cor_int_slope: 0.4062
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step01_variance_components.csv
+
+================================================================================
+[STEP 02] Compute ICC Estimates (Hoffman & Stawski 2009)
+================================================================================
+
+:
+  Mean TSVR_hours: 64.95
+  Max TSVR_hours (Day 6): 246.24
+  Mean Recip_sq: 0.000230
+  Max Recip_sq (Day 6): 0.000016
+
+(baseline individual differences):
+  Formula: var_intercept / total_variance_at_mean_time
+  Total variance at mean time: 0.161262
+  ICC_intercept: 0.5067
+
+(forgetting rate individual differences):
+  Formula: var_slope / (var_slope + var_residual)
+  ICC_slope_simple: 0.4120
+
+(slope variance at Day 6):
+  Formula: var_slope * time^2 / total_variance_at_day6
+  Total variance at Day 6: 0.161250
+  ICC_slope_conditional: 0.000000
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step02_icc_estimates.csv
+
+:
+  ICC_intercept:       0.5067 (substantial)
+  ICC_slope_simple:    0.4120 (substantial)
+  ICC_slope_conditional: 0.000000 (negligible)
+
+================================================================================
+[STEP 03] Extract Participant-Level Random Effects
+================================================================================
+
+N groups: 100
+
+:
+  ✓ N participants: 100
+  ✓ N NaN intercepts: 0
+  ✓ N NaN slopes: 0
+  ✓ Random intercept range: [-0.9222, 0.5670]
+  ✓ Random slope range: [-0.397799, 0.220024]
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step03_random_effects.csv
+  ✓ NOTE: This file is REQUIRED for RQ 6.1.5 (Clustering Analysis)
+
+================================================================================
+[STEP 04] Test Intercept-Slope Correlation (D068 Dual P-values)
+================================================================================
+
+[CORRELATION TEST]:
+  Pearson r: 0.9408
+  95% CI: [0.9131, 0.9598]
+  N: 100
+
+[D068 DUAL P-VALUES]:
+  p_uncorrected: 0.0000
+  p_bonferroni: 0.0000 (N tests = 1)
+
+:
+  large positive correlation (significant); Higher baseline confidence associated with slower decline
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step04_intercept_slope_correlation.csv
+  ✓ Decision D068 compliance: PASS (dual p-values reported)
+
+================================================================================
+[STEP 05] Compare ICC_slope with Chapter 5 Accuracy Data
+================================================================================
+
+:
+  ICC_slope_confidence (5-level ordinal): 0.4120
+  ICC_slope_accuracy (dichotomous):       0.0005
+
+:
+  Delta ICC (confidence - accuracy): 0.4115
+  Ratio ICC (confidence / accuracy): 824.1x
+
+[HYPOTHESIS TEST]:
+  Hypothesis supported: Measurement Artifact
+
+:
+  ICC_slope_confidence (0.4120) > 0.10 threshold. Ordinal data reveals 824x more slope variance than dichotomous data. Chapter 5 finding of near-zero slope variance was a measurement limitation, not a substantive finding about forgetting dynamics.
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step05_ch5_icc_comparison.csv
+
+================================================================================
+RQ 6.1.4 Complete
+================================================================================
+
+:
+  ICC_intercept (baseline variance): 0.5067
+  ICC_slope (forgetting rate variance): 0.4120
+  Intercept-slope correlation: r=0.9408, p=0.0000
+  Hypothesis supported: Measurement Artifact
+
+  Completed: 2025-12-11T17:37:26.527814
+================================================================================
+RQ 6.1.4 - ICC Decomposition Analysis
+Started: 2026-01-17T14:37:19.203625
+================================================================================
+================================================================================
+[STEP 00] Re-fit Best LMM Model (Recip_sq)
+================================================================================
+Loading LMM input from RQ 6.1.1: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step04_lmm_input.csv
+  ✓ Loaded 400 rows × 9 columns
+  ✓ N participants: 100
+  ✓ TSVR range: [1.00, 246.24] hours
+  ✓ Created Recip_sq = 1/(TSVR_hours+1)^2
+  ✓ Recip_sq range: [0.000016, 0.250000]
+
+Fitting LMM:
+  Formula: theta_All ~ Recip_sq
+  Random effects: (1 + Recip_sq | UID)
+  Method: ML (reml=False for AIC comparison)
+
+Model fit complete:
+  ✓ Converged: True
+  ✓ AIC: 809.7098
+  ✓ BIC: 833.6586
+  ✓ Log-likelihood: -398.8549
+  ✓ N observations: 400
+  ✓ N groups: 100
+  ✓ Saved metadata: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step00_model_metadata.txt
+
+================================================================================
+[STEP 01] Extract Variance Components
+================================================================================
+
+Random effects covariance matrix:
+             Group  Recip_sq
+Group     0.614031 -0.226872
+Recip_sq -0.226872  0.084916
+  Random effect names: ['Group', 'Recip_sq']
+
+[VARIANCE COMPONENTS]:
+  var_intercept: 0.614031
+  var_slope: 0.084916
+  cov_int_slope: -0.226872
+  var_residual: 0.236618
+  cor_int_slope: -0.9936
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step01_variance_components.csv
+
+================================================================================
+[STEP 02] Compute ICC Estimates (Hoffman & Stawski 2009)
+================================================================================
+
+:
+  Mean TSVR_hours: 64.95
+  Max TSVR_hours (Day 6): 246.24
+  Mean Recip_sq: 0.000230
+  Max Recip_sq (Day 6): 0.000016
+
+(baseline individual differences):
+  Formula: var_intercept / total_variance_at_mean_time
+  Total variance at mean time: 0.850545
+  ICC_intercept: 0.7219
+
+(forgetting rate individual differences):
+  Formula: var_slope / (var_slope + var_residual)
+  ICC_slope_simple: 0.2641
+
+(slope variance at Day 6):
+  Formula: var_slope * time^2 / total_variance_at_day6
+  Total variance at Day 6: 0.850642
+  ICC_slope_conditional: 0.000000
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step02_icc_estimates.csv
+
+:
+  ICC_intercept:       0.7219 (substantial)
+  ICC_slope_simple:    0.2641 (moderate)
+  ICC_slope_conditional: 0.000000 (negligible)
+
+================================================================================
+[STEP 03] Extract Participant-Level Random Effects
+================================================================================
+
+N groups: 100
+
+:
+  ✓ N participants: 100
+  ✓ N NaN intercepts: 0
+  ✓ N NaN slopes: 0
+  ✓ Random intercept range: [-2.4401, 1.5984]
+  ✓ Random slope range: [-0.589550, 0.901209]
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step03_random_effects.csv
+  ✓ NOTE: This file is REQUIRED for RQ 6.1.5 (Clustering Analysis)
+
+================================================================================
+[STEP 04] Test Intercept-Slope Correlation (D068 Dual P-values)
+================================================================================
+
+[CORRELATION TEST]:
+  Pearson r: -1.0000
+  95% CI: [-1.0000, -1.0000]
+  N: 100
+
+[D068 DUAL P-VALUES]:
+  p_uncorrected: 0.0000
+  p_bonferroni: 0.0000 (N tests = 1)
+
+:
+  large negative correlation (significant); Higher baseline confidence associated with faster decline
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step04_intercept_slope_correlation.csv
+  ✓ Decision D068 compliance: PASS (dual p-values reported)
+
+================================================================================
+[STEP 05] Compare ICC_slope with Chapter 5 Accuracy Data
+================================================================================
+
+:
+  ICC_slope_confidence (5-level ordinal): 0.2641
+  ICC_slope_accuracy (dichotomous):       0.0005
+
+:
+  Delta ICC (confidence - accuracy): 0.2636
+  Ratio ICC (confidence / accuracy): 528.2x
+
+[HYPOTHESIS TEST]:
+  Hypothesis supported: Measurement Artifact
+
+:
+  ICC_slope_confidence (0.2641) > 0.10 threshold. Ordinal data reveals 528x more slope variance than dichotomous data. Chapter 5 finding of near-zero slope variance was a measurement limitation, not a substantive finding about forgetting dynamics.
+
+  ✓ Saved: /home/etai/projects/REMEMVR/results/ch6/6.1.4/data/step05_ch5_icc_comparison.csv
+
+================================================================================
+RQ 6.1.4 Complete
+================================================================================
+
+:
+  ICC_intercept (baseline variance): 0.7219
+  ICC_slope (forgetting rate variance): 0.2641
+  Intercept-slope correlation: r=-1.0000, p=0.0000
+  Hypothesis supported: Measurement Artifact
+
+  Completed: 2026-01-17T14:37:19.911117

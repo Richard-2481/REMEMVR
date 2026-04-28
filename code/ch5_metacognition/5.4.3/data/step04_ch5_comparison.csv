@@ -1,0 +1,4 @@
+term,domain,p_wald_bonferroni,p_lrt_bonferroni,significant_bonferroni,interpretation
+Age_c,Confidence,0.6289410738721971,0.6289410738721968,False,Ch5 comparison pending RQ 5.3.4 completion
+Age_c:log_TSVR,Confidence,1.0,1.0,False,Ch5 comparison pending RQ 5.3.4 completion
+Age_c:log_TSVR:Paradigm,Confidence,1.0,1.0,False,Ch5 comparison pending RQ 5.3.4 completion

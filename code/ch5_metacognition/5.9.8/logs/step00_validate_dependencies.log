@@ -1,0 +1,35 @@
+Step 00: Validate Cross-RQ Dependencies
+Verifying file existence...
+Ch5 5.4.1 status.yaml found
+Ch6 6.5.1 status.yaml found
+Ch5 5.4.1 accuracy data found
+Ch6 6.5.1 confidence data found
+Verifying RQ completion status...
+Ch5 5.4.1 status: {'status': 'success', 'timestamp': '2025-12-08T15:30:00', 'context_dump': 'Results summary UPDATED with extended model selection (2025-12-08)\nOriginal: Log 99.998% (5-model comparison, overconfident)\nExtended: PowerLaw_01 6.0% (66 models, extreme uncertainty)\nKey finding: Null schema effect ROBUST across all 66 functional forms\nModel averaging applied (15 competitive models, effective N=13.96)\nSummary.md documents most extreme functional form uncertainty in Chapter 5\n'}
+Ch6 6.5.1 status: success
+Dependency validation failed - see report
+Step 00: Validate Cross-RQ Dependencies
+Verifying file existence...
+Ch5 5.4.1 status.yaml found
+Ch6 6.5.1 status.yaml found
+Ch5 5.4.1 accuracy data found
+Ch6 6.5.1 confidence data found
+Verifying RQ completion status...
+Ch5 5.4.1 status: success
+Ch6 6.5.1 status: success
+Verifying data file structure...
+Accuracy file: 400 rows, 7 columns
+Accuracy Row count
+Accuracy composite_ID column
+Accuracy theta_common column
+Accuracy theta_congruent column
+Accuracy theta_incongruent column
+Confidence file: 400 rows, 4 columns
+Confidence Row count
+Confidence composite_ID column
+Confidence theta_Common column
+Confidence theta_Congruent column
+Confidence theta_Incongruent column
+All dependency checks passed
+Validation report: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step00_dependency_validation.txt
+Step 00 complete

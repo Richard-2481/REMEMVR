@@ -24,60 +24,46 @@ DESIGN PHILOSOPHY:
 Zero assumptions about functional form - test EVERY mathematically plausible
 time transformation. Let data determine best model via AIC.
 
-Author: g_code
 Date: 2025-12-08
 RQ: ch5/5.1.1
 Step: 05
 """
 
-# =============================================================================
 # IMPORTS
-# =============================================================================
 
 import sys
 from pathlib import Path
 import pandas as pd
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Import kitchen_sink model selection tool
 from tools.model_selection import compare_lmm_models_kitchen_sink
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch5/5.1.1
 LOG_FILE = RQ_DIR / "logs" / "step05_kitchen_sink.log"
 DATA_DIR = RQ_DIR / "data"
 
-# =============================================================================
 # LOGGING
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # MAIN ANALYSIS
-# =============================================================================
 
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05: Kitchen Sink LMM Model Comparison")
+        log("Step 05: Kitchen Sink LMM Model Comparison")
         log("=" * 80)
+        # Load LMM Input Data
 
-        # =====================================================================
-        # STEP 1: Load LMM Input Data
-        # =====================================================================
-
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         input_path = DATA_DIR / "step04_lmm_input.csv"
 
         if not input_path.exists():
@@ -103,12 +89,9 @@ if __name__ == "__main__":
         log(f"  ✓ Theta range: [{lmm_input['theta'].min():.3f}, "
             f"{lmm_input['theta'].max():.3f}]")
         log(f"  ✓ Participants: {lmm_input['UID'].nunique()}")
+        # Run Kitchen Sink Model Comparison
 
-        # =====================================================================
-        # STEP 2: Run Kitchen Sink Model Comparison
-        # =====================================================================
-
-        log("[ANALYSIS] Running kitchen sink model comparison...")
+        log("Running kitchen sink model comparison...")
         log("  Model suite: 70+ time transformations")
         log("  Outcome: theta (IRT ability estimates)")
         log("  Time variable: TSVR_hours (continuous)")
@@ -138,13 +121,10 @@ if __name__ == "__main__":
             log_file=LOG_FILE,
         )
 
-        log("[DONE] Kitchen sink comparison complete")
+        log("Kitchen sink comparison complete")
+        # Extract and Report Results
 
-        # =====================================================================
-        # STEP 3: Extract and Report Results
-        # =====================================================================
-
-        log("[RESULTS] Model comparison summary:")
+        log("Model comparison summary:")
         log("=" * 80)
 
         comparison = results['comparison']
@@ -192,12 +172,9 @@ if __name__ == "__main__":
                 f"cum={row['cumulative_weight']:.4f}")
 
         log("=" * 80)
+        # Validate Outputs Saved
 
-        # =====================================================================
-        # STEP 4: Validate Outputs Saved
-        # =====================================================================
-
-        log("[VALIDATE] Checking output files...")
+        log("Checking output files...")
 
         comparison_path = DATA_DIR / "model_comparison.csv"
         summary_path = DATA_DIR / "best_model_summary.txt"
@@ -219,13 +196,10 @@ if __name__ == "__main__":
 
         log(f"  ✓ Renamed to {comparison_final.name}")
         log(f"  ✓ Renamed to {summary_final.name}")
-
-        # =====================================================================
         # SUMMARY
-        # =====================================================================
 
         log("=" * 80)
-        log("[SUCCESS] Step 05 Complete")
+        log("Step 05 Complete")
         log(f"  Best model: {best_model['name']} (AIC={best_model['AIC']:.2f}, w={best_model['weight']:.4f})")
         log(f"  Log model: Rank #{log_model.get('rank', 'N/A')}")
         log(f"  Models converged: {stats['n_models_converged']}/{stats['n_models_tested']}")
@@ -234,7 +208,7 @@ if __name__ == "__main__":
         log("=" * 80)
 
     except Exception as e:
-        log(f"\n[ERROR] Step 05 Failed: {e}")
+        log(f"\nStep 05 Failed: {e}")
         import traceback
         log(traceback.format_exc())
         raise

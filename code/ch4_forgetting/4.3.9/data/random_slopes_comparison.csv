@@ -1,0 +1,3 @@
+model,aic,log_likelihood,converged,delta_aic,slope_variance,slope_sd,outcome,recommendation
+Intercepts_Only,17868.0033758583,-8920.00168792915,True,0.0,0.0,0.0,Option A: Slopes improve fit (ΔAIC > 2),Use slopes model - individual differences confirmed
+Intercepts_Slopes,17809.07459048892,-8888.53729524446,True,58.92878536938224,4.3439831067201485e-07,0.000659089000569737,Option A: Slopes improve fit (ΔAIC > 2),Use slopes model - individual differences confirmed

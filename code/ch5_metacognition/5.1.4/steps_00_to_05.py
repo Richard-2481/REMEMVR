@@ -29,7 +29,6 @@ METHODOLOGY:
 - Compute ICCs following Hoffman & Stawski (2009)
 - Test measurement artifact vs universal forgetting hypothesis
 
-Author: Claude Code
 Date: 2025-12-11
 RQ: ch6/6.1.4
 """
@@ -76,7 +75,7 @@ def step00_refit_best_model():
 
     # Load LMM input from RQ 6.1.1
     input_path = PROJECT_ROOT / "results" / "ch6" / "6.1.1" / "data" / "step04_lmm_input.csv"
-    log(f"[LOAD] Loading LMM input from RQ 6.1.1: {input_path}")
+    log(f"Loading LMM input from RQ 6.1.1: {input_path}")
     df = pd.read_csv(input_path)
     log(f"  ✓ Loaded {len(df)} rows × {len(df.columns)} columns")
     log(f"  ✓ N participants: {df['UID'].nunique()}")
@@ -91,7 +90,7 @@ def step00_refit_best_model():
     formula = "theta_All ~ Recip_sq"
     re_formula = "~Recip_sq"  # Random intercept + random slope on Recip_sq
 
-    log(f"\n[FIT] Fitting LMM:")
+    log(f"\nFitting LMM:")
     log(f"  Formula: {formula}")
     log(f"  Random effects: (1 + Recip_sq | UID)")
     log(f"  Method: ML (reml=False for AIC comparison)")
@@ -99,7 +98,7 @@ def step00_refit_best_model():
     model = smf.mixedlm(formula, df, groups=df["UID"], re_formula=re_formula)
     result = model.fit(reml=False)
 
-    log(f"\n[RESULT] Model fit complete:")
+    log(f"\nModel fit complete:")
     log(f"  ✓ Converged: {result.converged}")
     log(f"  ✓ AIC: {result.aic:.4f}")
     log(f"  ✓ BIC: {result.bic:.4f}")
@@ -109,7 +108,7 @@ def step00_refit_best_model():
 
     # Check convergence
     if not result.converged:
-        log("[WARNING] Model did not converge - results may be unreliable")
+        log("Model did not converge - results may be unreliable")
 
     # Save model metadata
     metadata_path = DATA_DIR / "step00_model_metadata.txt"
@@ -158,7 +157,7 @@ def step01_extract_variance_components(result):
 
     # Extract random effects covariance matrix
     cov_re = result.cov_re
-    log(f"\n[EXTRACT] Random effects covariance matrix:")
+    log(f"\nRandom effects covariance matrix:")
     log(f"{cov_re}")
 
     # Get variance components
@@ -190,19 +189,19 @@ def step01_extract_variance_components(result):
 
     # Validate variance components
     if var_intercept < 0:
-        log("[ERROR] Negative intercept variance - model estimation error")
+        log("Negative intercept variance - model estimation error")
         raise ValueError("Negative intercept variance detected")
     if var_slope < 0:
-        log("[ERROR] Negative slope variance - model estimation error")
+        log("Negative slope variance - model estimation error")
         raise ValueError("Negative slope variance detected")
     if var_residual < 0:
-        log("[ERROR] Negative residual variance - model estimation error")
+        log("Negative residual variance - model estimation error")
         raise ValueError("Negative residual variance detected")
 
     # Check covariance bounds
     max_cov = np.sqrt(var_intercept * var_slope) if var_slope > 0 else 0
     if abs(cov_int_slope) > max_cov + 1e-6:
-        log(f"[WARNING] Covariance |{cov_int_slope:.6f}| exceeds bound {max_cov:.6f}")
+        log(f"Covariance |{cov_int_slope:.6f}| exceeds bound {max_cov:.6f}")
 
     # Save variance components
     components = pd.DataFrame({
@@ -245,7 +244,7 @@ def step02_compute_icc_estimates(variance_components, df):
     mean_time = df['TSVR_hours'].mean()
     max_time = df['TSVR_hours'].max()  # Day 6 ~144-150 hours
 
-    log(f"\n[PARAMETERS]:")
+    log(f"\n:")
     log(f"  Mean TSVR_hours: {mean_time:.2f}")
     log(f"  Max TSVR_hours (Day 6): {max_time:.2f}")
 
@@ -267,7 +266,7 @@ def step02_compute_icc_estimates(variance_components, df):
 
     ICC_intercept = var_int / total_var_mean if total_var_mean > 0 else 0
 
-    log(f"\n[ICC_INTERCEPT] (baseline individual differences):")
+    log(f"\n(baseline individual differences):")
     log(f"  Formula: var_intercept / total_variance_at_mean_time")
     log(f"  Total variance at mean time: {total_var_mean:.6f}")
     log(f"  ICC_intercept: {ICC_intercept:.4f}")
@@ -276,7 +275,7 @@ def step02_compute_icc_estimates(variance_components, df):
     # Simple approach: var_slope / (var_slope + var_residual)
     ICC_slope_simple = var_slope / (var_slope + var_res) if (var_slope + var_res) > 0 else 0
 
-    log(f"\n[ICC_SLOPE_SIMPLE] (forgetting rate individual differences):")
+    log(f"\n(forgetting rate individual differences):")
     log(f"  Formula: var_slope / (var_slope + var_residual)")
     log(f"  ICC_slope_simple: {ICC_slope_simple:.4f}")
 
@@ -289,7 +288,7 @@ def step02_compute_icc_estimates(variance_components, df):
 
     ICC_slope_conditional = var_slope * max_recip_sq**2 / total_var_max if total_var_max > 0 else 0
 
-    log(f"\n[ICC_SLOPE_CONDITIONAL] (slope variance at Day 6):")
+    log(f"\n(slope variance at Day 6):")
     log(f"  Formula: var_slope * time^2 / total_variance_at_day6")
     log(f"  Total variance at Day 6: {total_var_max:.6f}")
     log(f"  ICC_slope_conditional: {ICC_slope_conditional:.6f}")
@@ -320,7 +319,7 @@ def step02_compute_icc_estimates(variance_components, df):
     icc_df.to_csv(output_path, index=False)
     log(f"\n  ✓ Saved: {output_path}")
 
-    log(f"\n[SUMMARY]:")
+    log(f"\n:")
     log(f"  ICC_intercept:       {ICC_intercept:.4f} ({interpret_icc(ICC_intercept)})")
     log(f"  ICC_slope_simple:    {ICC_slope_simple:.4f} ({interpret_icc(ICC_slope_simple)})")
     log(f"  ICC_slope_conditional: {ICC_slope_conditional:.6f} ({interpret_icc(ICC_slope_conditional)})")
@@ -350,7 +349,7 @@ def step03_extract_random_effects(result, df):
     # Get random effects from model
     random_effects = result.random_effects
 
-    log(f"\n[EXTRACT] N groups: {len(random_effects)}")
+    log(f"\nN groups: {len(random_effects)}")
 
     # Convert to DataFrame
     re_list = []
@@ -375,7 +374,7 @@ def step03_extract_random_effects(result, df):
 
     re_df = pd.DataFrame(re_list)
 
-    log(f"\n[VALIDATE]:")
+    log(f"\n:")
     log(f"  ✓ N participants: {len(re_df)}")
     log(f"  ✓ N NaN intercepts: {re_df['random_intercept'].isna().sum()}")
     log(f"  ✓ N NaN slopes: {re_df['random_slope'].isna().sum()}")
@@ -384,7 +383,7 @@ def step03_extract_random_effects(result, df):
 
     # Check for exactly 100 participants
     if len(re_df) != 100:
-        log(f"[WARNING] Expected 100 participants, found {len(re_df)}")
+        log(f"Expected 100 participants, found {len(re_df)}")
 
     # Save
     output_path = DATA_DIR / "step03_random_effects.csv"
@@ -452,7 +451,7 @@ def step04_test_intercept_slope_correlation(re_df):
     log(f"\n[D068 DUAL P-VALUES]:")
     log(f"  p_uncorrected: {p_uncorrected:.4f}")
     log(f"  p_bonferroni: {p_bonferroni:.4f} (N tests = {n_tests})")
-    log(f"\n[INTERPRETATION]:")
+    log(f"\n:")
     log(f"  {interpretation}")
 
     # Save
@@ -499,7 +498,7 @@ def step05_compare_icc_ch5(icc_estimates):
     ICC_slope_confidence = icc_estimates['ICC_slope_simple']
     ICC_slope_accuracy = 0.0005  # Hard-coded from Chapter 5 RQ 5.1.4
 
-    log(f"\n[COMPARISON]:")
+    log(f"\n:")
     log(f"  ICC_slope_confidence (5-level ordinal): {ICC_slope_confidence:.4f}")
     log(f"  ICC_slope_accuracy (dichotomous):       {ICC_slope_accuracy:.4f}")
 
@@ -507,7 +506,7 @@ def step05_compare_icc_ch5(icc_estimates):
     delta_ICC = ICC_slope_confidence - ICC_slope_accuracy
     ratio_ICC = ICC_slope_confidence / ICC_slope_accuracy if ICC_slope_accuracy > 0 else float('inf')
 
-    log(f"\n[METRICS]:")
+    log(f"\n:")
     log(f"  Delta ICC (confidence - accuracy): {delta_ICC:.4f}")
     log(f"  Ratio ICC (confidence / accuracy): {ratio_ICC:.1f}x")
 
@@ -532,7 +531,7 @@ def step05_compare_icc_ch5(icc_estimates):
 
     log(f"\n[HYPOTHESIS TEST]:")
     log(f"  Hypothesis supported: {hypothesis_supported}")
-    log(f"\n[INTERPRETATION]:")
+    log(f"\n:")
     log(f"  {interpretation}")
 
     # Save
@@ -584,9 +583,9 @@ if __name__ == "__main__":
         comparison = step05_compare_icc_ch5(icc_estimates)
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] RQ 6.1.4 Complete")
+        log("RQ 6.1.4 Complete")
         log("=" * 80)
-        log(f"\n[SUMMARY]:")
+        log(f"\n:")
         log(f"  ICC_intercept (baseline variance): {icc_estimates['ICC_intercept']:.4f}")
         log(f"  ICC_slope (forgetting rate variance): {icc_estimates['ICC_slope_simple']:.4f}")
         log(f"  Intercept-slope correlation: r={corr_results['r']:.4f}, p={corr_results['p_uncorrected']:.4f}")
@@ -594,7 +593,7 @@ if __name__ == "__main__":
         log(f"\n  Completed: {datetime.now().isoformat()}")
 
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

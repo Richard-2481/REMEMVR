@@ -1,0 +1,3 @@
+Test,Statistic,p_value,Result
+Shapiro-Wilk (Normality),0.9939573521216599,8.768881700901394e-05,Minor deviations
+Breusch-Pagan (Homoscedasticity),-1925.7480489730258,1.0,PASS

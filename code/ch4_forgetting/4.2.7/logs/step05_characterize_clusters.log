@@ -1,0 +1,70 @@
+============================================================
+RQ 5.2.7 Step 05: Characterize Clusters
+============================================================
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step00_random_effects_from_rq526.csv
+Loaded 100 rows
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step03_cluster_assignments.csv
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step03_cluster_sizes.csv
+
+Merged data: 100 rows, 5 clusters
+
+Computing cluster summary statistics...
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step05_cluster_summary_statistics.csv
+
+============================================================
+Cluster Characterizations
+============================================================
+
+--- Cluster 0: Average Baseline, Slow Decline ---
+N = 22 (22.0%)
+
+Mean values (raw scale):
+  What Intercept:   -0.1946
+  Where Intercept:  -0.2143
+  What Slope:       -0.0106
+  Where Slope:      -0.0116
+
+--- Cluster 1: Average Baseline, Improving ---
+N = 26 (26.0%)
+
+Mean values (raw scale):
+  What Intercept:    0.1544
+  Where Intercept:   0.1396
+  What Slope:        0.0174
+  Where Slope:       0.0188
+
+--- Cluster 2: Low Baseline, Stable What / Improving Where ---
+N = 17 (17.0%)
+
+Mean values (raw scale):
+  What Intercept:   -0.8018
+  Where Intercept:  -0.9251
+  What Slope:       -0.0021
+  Where Slope:       0.0173
+
+--- Cluster 3: High Baseline, Stable ---
+N = 21 (21.0%)
+
+Mean values (raw scale):
+  What Intercept:    0.4926
+  Where Intercept:   0.5547
+  What Slope:        0.0049
+  Where Slope:      -0.0036
+
+--- Cluster 4: Average What / High Where, Fast Decline ---
+N = 14 (14.0%)
+
+Mean values (raw scale):
+  What Intercept:    0.2539
+  Where Intercept:   0.3688
+  What Slope:       -0.0206
+  Where Slope:      -0.0323
+
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step05_cluster_characterization.txt
+
+============================================================
+Step 05 COMPLETE: Clusters characterized successfully
+============================================================

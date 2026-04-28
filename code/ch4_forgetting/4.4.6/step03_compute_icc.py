@@ -37,34 +37,27 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "step03_compute_icc.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
 if __name__ == "__main__":
     try:
-        log("[START] Step 03: Compute ICC Estimates")
-
-        # =====================================================================
-        # STEP 1: Load Variance Components
-        # =====================================================================
-        log("[LOAD] Loading variance components...")
+        log("Step 03: Compute ICC Estimates")
+        # Load Variance Components
+        log("Loading variance components...")
 
         variance_file = RQ_DIR / "data" / "step02_variance_components.csv"
         df_variance = pd.read_csv(variance_file, encoding='utf-8')
 
-        log(f"[LOADED] {variance_file.name} ({len(df_variance)} rows)")
-
-        # =====================================================================
-        # STEP 2: Compute ICC Estimates for Each Congruence Level
-        # =====================================================================
-        log("[ANALYSIS] Computing ICC estimates for each congruence level...")
+        log(f"{variance_file.name} ({len(df_variance)} rows)")
+        # Compute ICC Estimates for Each Congruence Level
+        log("Computing ICC estimates for each congruence level...")
 
         all_icc = []
 
         for congruence in sorted(df_variance['congruence'].unique()):
-            log(f"\n[ICC] Computing ICC for {congruence}...")
+            log(f"\nComputing ICC for {congruence}...")
 
             # Filter for this congruence
             df_cong = df_variance[df_variance['congruence'] == congruence].copy()
@@ -110,27 +103,21 @@ if __name__ == "__main__":
         # Reorder columns
         df_icc = df_icc[['congruence', 'icc_type', 'value', 'magnitude']]
 
-        log(f"\n[COMPUTED] {len(df_icc)} total ICC estimates")
+        log(f"\n{len(df_icc)} total ICC estimates")
 
         # Display ICC estimates
         log("\n[ICC ESTIMATES]")
         for _, row in df_icc.iterrows():
             log(f"  {row['congruence']:12s} | {row['icc_type']:20s} | {row['value']:.4f} ({row['magnitude']})")
-
-        # =====================================================================
-        # STEP 3: Save ICC Estimates
-        # =====================================================================
-        log("\n[SAVE] Saving ICC estimates...")
+        # Save ICC Estimates
+        log("\nSaving ICC estimates...")
 
         icc_output = RQ_DIR / "data" / "step03_icc_estimates.csv"
         df_icc.to_csv(icc_output, index=False, encoding='utf-8')
 
-        log(f"[SAVED] {icc_output.name} ({len(df_icc)} rows)")
-
-        # =====================================================================
-        # STEP 4: Create ICC Summary Report
-        # =====================================================================
-        log("[REPORT] Creating ICC interpretation report...")
+        log(f"{icc_output.name} ({len(df_icc)} rows)")
+        # Create ICC Summary Report
+        log("Creating ICC interpretation report...")
 
         report_path = RQ_DIR / "data" / "step03_icc_summary.txt"
 
@@ -181,39 +168,36 @@ if __name__ == "__main__":
 
                 f.write("\n")
 
-        log(f"[SAVED] {report_path.name}")
-
-        # =====================================================================
-        # STEP 5: Validate ICC Bounds
-        # =====================================================================
-        log("\n[VALIDATION] Validating ICC bounds...")
+        log(f"{report_path.name}")
+        # Validate ICC Bounds
+        log("\nValidating ICC bounds...")
 
         validation = validate_icc_bounds(df_icc, icc_col='value')
 
         if validation['valid']:
-            log("[PASS] All ICC values within valid bounds [0, 1]")
+            log("All ICC values within valid bounds [0, 1]")
         else:
-            log(f"[FAIL] ICC validation failed: {validation['message']}")
+            log(f"ICC validation failed: {validation['message']}")
             raise ValueError(validation['message'])
 
         # Additional validation: check row count
         if len(df_icc) != 9:
             raise ValueError(f"Expected 9 ICC estimates (3 types x 3 congruence), got {len(df_icc)}")
 
-        log("[PASS] ICC estimate count validated (9 estimates)")
+        log("ICC estimate count validated (9 estimates)")
 
         # Check for NaN
         if df_icc['value'].isna().any():
             raise ValueError("Found NaN values in ICC estimates")
 
-        log("[PASS] No NaN values in ICC estimates")
+        log("No NaN values in ICC estimates")
 
-        log("\n[SUCCESS] Step 03 complete - ICC estimates computed and validated")
+        log("\nStep 03 complete - ICC estimates computed and validated")
         sys.exit(0)
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
-        log("[TRACEBACK] Full error details:")
+        log(f"{str(e)}")
+        log("Full error details:")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

@@ -83,8 +83,8 @@ def main():
         f.write("key_finding: 'Suppression effect: 119.8% attenuation [41.9%, 620.8%]'\n")
         f.write("validation:\n")
         f.write("  rq_inspect: pending\n")
-        f.write("  rq_plots: pending\n")
-        f.write("  rq_results: pending\n")
+        f.write("  plotting pipeline: pending\n")
+        f.write("  results analysis: pending\n")
         f.write("  rq_validate: pending\n")
     
     print(f"Status file created: {status_file}")

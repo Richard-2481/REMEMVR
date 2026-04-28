@@ -1,0 +1,5 @@
+parameter,effect_size,cohens_d,power,practical_interpretation,effect_interpretation
+Sleep_Hours_WP,0.0086617329491029,0.04965718798451049,,negligible_effect,negligible
+Sleep_Quality_WP,0.0402087143044117,0.23051411265645655,,negligible_effect,small
+Sleep_Hours_PM,0.0131252374370768,0.07524618763751666,,negligible_effect,negligible
+Sleep_Quality_PM,0.0080913097183834,0.04638698630950921,,negligible_effect,negligible

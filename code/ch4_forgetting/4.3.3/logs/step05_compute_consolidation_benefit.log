@@ -1,0 +1,58 @@
+2025-12-02 15:37:06,943 - INFO - ============================================================
+2025-12-02 15:37:06,943 - INFO - Step 05: Compute Consolidation Benefit Index
+2025-12-02 15:37:06,943 - INFO - ============================================================
+2025-12-02 15:37:06,943 - INFO - Loading slopes from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step03_segment_paradigm_slopes.csv
+2025-12-02 15:37:06,944 - INFO - 
+Computing consolidation benefit indices...
+2025-12-02 15:37:06,947 - INFO - 
+============================================================
+2025-12-02 15:37:06,947 - INFO - CONSOLIDATION BENEFIT INDICES
+2025-12-02 15:37:06,947 - INFO - ============================================================
+2025-12-02 15:37:06,949 - INFO - 
+paradigm  Early_slope  Late_slope  consolidation_benefit  rank                                                             interpretation
+     ICR    -0.419788   -0.122221               0.297567     1 Pattern contradicts hypothesis: ICR > IFR > IRE (expected IFR > ICR > IRE)
+     IFR    -0.368001   -0.102046               0.265955     2 Pattern contradicts hypothesis: ICR > IFR > IRE (expected IFR > ICR > IRE)
+     IRE    -0.325041   -0.124340               0.200701     3 Pattern contradicts hypothesis: ICR > IFR > IRE (expected IFR > ICR > IRE)
+2025-12-02 15:37:06,949 - INFO - 
+============================================================
+2025-12-02 15:37:06,949 - INFO - DETAILED INTERPRETATION
+2025-12-02 15:37:06,949 - INFO - ============================================================
+2025-12-02 15:37:06,949 - INFO - 
+Consolidation benefit = Late slope - Early slope
+2025-12-02 15:37:06,949 - INFO - Positive value = slower forgetting in Late vs Early (memory stabilized)
+2025-12-02 15:37:06,949 - INFO - Negative value = faster forgetting in Late vs Early (unexpected)
+2025-12-02 15:37:06,949 - INFO - 
+ICR (Rank 1):
+2025-12-02 15:37:06,949 - INFO -   Early slope: -0.4198 theta/day
+2025-12-02 15:37:06,949 - INFO -   Late slope:  -0.1222 theta/day
+2025-12-02 15:37:06,949 - INFO -   Benefit:     0.2976 theta/day
+2025-12-02 15:37:06,949 - INFO -   → Forgetting slowed by 0.2976 theta/day in Late segment
+2025-12-02 15:37:06,949 - INFO - 
+IFR (Rank 2):
+2025-12-02 15:37:06,949 - INFO -   Early slope: -0.3680 theta/day
+2025-12-02 15:37:06,949 - INFO -   Late slope:  -0.1020 theta/day
+2025-12-02 15:37:06,949 - INFO -   Benefit:     0.2660 theta/day
+2025-12-02 15:37:06,949 - INFO -   → Forgetting slowed by 0.2660 theta/day in Late segment
+2025-12-02 15:37:06,949 - INFO - 
+IRE (Rank 3):
+2025-12-02 15:37:06,949 - INFO -   Early slope: -0.3250 theta/day
+2025-12-02 15:37:06,949 - INFO -   Late slope:  -0.1243 theta/day
+2025-12-02 15:37:06,949 - INFO -   Benefit:     0.2007 theta/day
+2025-12-02 15:37:06,949 - INFO -   → Forgetting slowed by 0.2007 theta/day in Late segment
+2025-12-02 15:37:06,950 - INFO - 
+Ranking comparison: ['ICR', 'IFR', 'IRE']
+2025-12-02 15:37:06,950 - INFO - Expected ranking:   ['IFR', 'ICR', 'IRE']
+2025-12-02 15:37:06,950 - INFO - Hypothesis comparison: CONTRADICTS expected pattern
+2025-12-02 15:37:06,950 - INFO - 
+============================================================
+2025-12-02 15:37:06,950 - INFO - VALIDATION CHECKS
+2025-12-02 15:37:06,950 - INFO - ============================================================
+2025-12-02 15:37:06,950 - INFO - Consolidation benefit computed for 3 paradigms
+2025-12-02 15:37:06,950 - INFO - Ranking: ICR > IFR > IRE
+2025-12-02 15:37:06,950 - INFO - Hypothesis comparison: CONTRADICTS expected pattern (IFR > ICR > IRE)
+2025-12-02 15:37:06,951 - INFO - 
+Output saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step05_consolidation_benefit.csv
+2025-12-02 15:37:06,951 - INFO - 
+============================================================
+2025-12-02 15:37:06,951 - INFO - STEP 05 COMPLETE
+2025-12-02 15:37:06,951 - INFO - ============================================================

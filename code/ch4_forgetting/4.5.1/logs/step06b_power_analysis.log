@@ -1,0 +1,47 @@
+================================================================================
+Power Analysis for NULL Main Effect (Section 3.1)
+================================================================================
+
+LocationType Main Effect:
+  Coefficient (β): +0.100 theta units
+  SE: 0.077
+  p-value: 0.403 (NULL)
+  Sample: N=100 participants, 800 observations
+
+Pooled SD (theta): 0.841
+  Observed Cohen's d: 0.119
+
+[POST-HOC] Power for observed effect (β=0.100):
+  Power: 0.255 (25.5%)
+  ⚠ UNDERPOWERED (power < 0.60)
+    Interpretation: NULL finding may be due to insufficient power
+
+Standard Effect Sizes (Cohen's benchmarks):
+  Small    (d=0.20):
+    β = 0.168
+    Power at N=100: 0.588 (58.8%)
+    N for 80% power: 165
+  Medium   (d=0.50):
+    β = 0.420
+    Power at N=100: 1.000 (100.0%)
+    N for 80% power: 27
+  Large    (d=0.80):
+    β = 0.673
+    Power at N=100: 1.000 (100.0%)
+    N for 80% power: 11
+
+Power analysis saved: step06b_power_analysis.csv
+
+================================================================================
+================================================================================
+✗ SEVERELY UNDERPOWERED for observed effect
+  NULL finding likely due to insufficient power, NOT true null
+  Need N≈466 for 80% power (current N=100)
+
+⚠ UNDERPOWERED for small effects (d=0.20)
+  Power: 0.59 (< 0.60 threshold)
+  Study cannot rule out small true effects
+
+================================================================================
+Power analysis complete
+================================================================================

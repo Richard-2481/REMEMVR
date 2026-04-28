@@ -1,0 +1,24 @@
+Step 05: Compare to Ch5 5.1.2 Accuracy Pattern
+Loading test results from Steps 2-4...
+step02_quadratic_test.csv (2 rows)
+step03_piecewise_comparison.csv (3 rows)
+step04_slope_ratio.csv (3 rows)
+Extracting evidence from each test...
+Quadratic term not found, trying alternative name...
+Test 1 - Quadratic: SUPPORT
+Test 2 - Piecewise: NULL
+Test 3 - Slope ratio: NULL
+Counting evidence across tests...
+Evidence count: 1/3 tests support two-phase pattern
+Conclusion: INCONCLUSIVE (1/3 tests positive)
+Attempting to load Ch5 5.1.2 accuracy results...
+No two-phase summary file found in Ch5 5.1.2 directory
+Ch5 comparison not available, pattern_match will be N/A
+Pattern match: N/A (Ch5 not available)
+Comparison DataFrame created
+Saving comparison to step05_ch5_comparison.csv...
+step05_ch5_comparison.csv (1 rows)
+Running custom comparison checks...
+PASS - All evidence_count values in [0, 3]
+PASS - All conclusions valid
+Step 05 complete

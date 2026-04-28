@@ -1,0 +1,266 @@
+Step 7: Fit Parallel LMMs to Standardized Outcomes
+Loading standardized outcomes from Step 6...
+step06_standardized_outcomes.csv (1200 rows, 7 cols)
+Loaded 1200 rows x 7 cols
+Domains: ['what', 'when', 'where']
+Unique participants: 100
+Unique composite_IDs: 400
+Unmerging TSVR data for function signature compatibility...
+Created TSVR DataFrame with 400 unique composite_IDs
+Starting parallel LMM fitting for 3 measurement types...
+theta ~ (TSVR_hours + np.log(TSVR_hours + 1/24)) * C(domain_name)
+~TSVR_hours
+ML (REML=False) for valid AIC comparison
+[LOOP 1/3] Processing Full CTT...
+[LOOP 1/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 1/3] Created theta_scores with 1200 rows
+[LOOP 1/3] Theta score range: [-3.359, 3.462]
+[LOOP 1/3] Theta mean: 0.000, SD: 0.999
+[LOOP 1/3] Step 2: Fitting LMM for Full CTT...
+'Test'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Test'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq12/code/step07_fit_parallel_lmms.py", line 265, in <module>
+    lmm_result = fit_lmm_trajectory_tsvr(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/analysis_lmm.py", line 1079, in fit_lmm_trajectory_tsvr
+    if tsvr_data[test_col].dtype in [int, float]:
+       ~~~~~~~~~^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Test'
+Step 7: Fit Parallel LMMs to Standardized Outcomes
+Loading standardized outcomes from Step 6...
+step06_standardized_outcomes.csv (1200 rows, 7 cols)
+Loaded 1200 rows x 7 cols
+Domains: ['what', 'when', 'where']
+Unique participants: 100
+Unique composite_IDs: 400
+Unmerging TSVR data for function signature compatibility...
+Created TSVR DataFrame with 400 unique composite_IDs
+Extracted 'test' column from composite_ID (range: 1-4)
+Starting parallel LMM fitting for 3 measurement types...
+theta ~ (TSVR_hours + np.log(TSVR_hours + 1/24)) * C(domain_name)
+~TSVR_hours
+ML (REML=False) for valid AIC comparison
+[LOOP 1/3] Processing Full CTT...
+[LOOP 1/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 1/3] Created theta_scores with 1200 rows
+[LOOP 1/3] Theta score range: [-3.359, 3.462]
+[LOOP 1/3] Theta mean: 0.000, SD: 0.999
+[LOOP 1/3] Step 2: Fitting LMM for Full CTT...
+Error evaluating factor: NameError: name 'TSVR_hours' is not defined
+    ~TSVR_hours
+     ^^^^^^^^^^
+Full error details:
+Step 7: Fit Parallel LMMs to Standardized Outcomes
+Loading standardized outcomes from Step 6...
+step06_standardized_outcomes.csv (1200 rows, 7 cols)
+Loaded 1200 rows x 7 cols
+Domains: ['what', 'when', 'where']
+Unique participants: 100
+Unique composite_IDs: 400
+Unmerging TSVR data for function signature compatibility...
+Created TSVR DataFrame with 400 unique composite_IDs
+Extracted 'test' column from composite_ID (range: 1-4)
+Starting parallel LMM fitting for 3 measurement types...
+theta ~ (Days + np.log(Days + 1/24)) * C(Domain)
+~Days
+ML (REML=False) for valid AIC comparison
+[LOOP 1/3] Processing Full CTT...
+[LOOP 1/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 1/3] Created theta_scores with 1200 rows
+[LOOP 1/3] Theta score range: [-3.359, 3.462]
+[LOOP 1/3] Theta mean: 0.000, SD: 0.999
+[LOOP 1/3] Step 2: Fitting LMM for Full CTT...
+Error evaluating factor: NameError: name 'theta' is not defined
+    theta ~ (Days + np.log(Days + 1/24)) * C(Domain)
+    ^^^^^
+Full error details:
+Step 7: Fit Parallel LMMs to Standardized Outcomes
+Loading standardized outcomes from Step 6...
+step06_standardized_outcomes.csv (1200 rows, 7 cols)
+Loaded 1200 rows x 7 cols
+Domains: ['what', 'when', 'where']
+Unique participants: 100
+Unique composite_IDs: 400
+Unmerging TSVR data for function signature compatibility...
+Created TSVR DataFrame with 400 unique composite_IDs
+Extracted 'test' column from composite_ID (range: 1-4)
+Starting parallel LMM fitting for 3 measurement types...
+Theta ~ (Days + np.log(Days + 1/24)) * C(Domain)
+~Days
+ML (REML=False) for valid AIC comparison
+[LOOP 1/3] Processing Full CTT...
+[LOOP 1/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 1/3] Created theta_scores with 1200 rows
+[LOOP 1/3] Theta score range: [-3.359, 3.462]
+[LOOP 1/3] Theta mean: 0.000, SD: 0.999
+[LOOP 1/3] Step 2: Fitting LMM for Full CTT...
+[LOOP 1/3] LMM fit complete
+[LOOP 1/3] LMM converged successfully
+[LOOP 1/3] Step 3: Saving LMM summary...
+step07_lmm_full_ctt_summary.txt
+[LOOP 1/3] Step 4: Extracting fixed effects...
+step07_lmm_full_ctt_fixed_effects.csv (12 terms)
+[LOOP 1/3] Step 5: Collecting model fit statistics...
+[LOOP 1/3] AIC=2954.08, BIC=3020.25, logLik=-1464.04
+[LOOP 1/3] Full CTT complete
+
+[LOOP 2/3] Processing Purified CTT...
+[LOOP 2/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 2/3] Created theta_scores with 1200 rows
+[LOOP 2/3] Theta score range: [-3.704, 2.450]
+[LOOP 2/3] Theta mean: -0.000, SD: 0.999
+[LOOP 2/3] Step 2: Fitting LMM for Purified CTT...
+[LOOP 2/3] LMM fit complete
+[LOOP 2/3] LMM converged successfully
+[LOOP 2/3] Step 3: Saving LMM summary...
+step07_lmm_purified_ctt_summary.txt
+[LOOP 2/3] Step 4: Extracting fixed effects...
+step07_lmm_purified_ctt_fixed_effects.csv (12 terms)
+[LOOP 2/3] Step 5: Collecting model fit statistics...
+[LOOP 2/3] AIC=3108.50, BIC=3174.67, logLik=-1541.25
+[LOOP 2/3] Purified CTT complete
+
+[LOOP 3/3] Processing IRT theta...
+[LOOP 3/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 3/3] Created theta_scores with 1200 rows
+[LOOP 3/3] Theta score range: [-2.743, 2.853]
+[LOOP 3/3] Theta mean: -0.000, SD: 0.999
+[LOOP 3/3] Step 2: Fitting LMM for IRT theta...
+[LOOP 3/3] LMM fit complete
+[LOOP 3/3] LMM converged successfully
+[LOOP 3/3] Step 3: Saving LMM summary...
+step07_lmm_irt_theta_summary.txt
+[LOOP 3/3] Step 4: Extracting fixed effects...
+step07_lmm_irt_theta_fixed_effects.csv (12 terms)
+[LOOP 3/3] Step 5: Collecting model fit statistics...
+[LOOP 3/3] AIC=3007.21, BIC=3073.38, logLik=-1490.61
+[LOOP 3/3] IRT theta complete
+
+[POST-LOOP] Creating AIC comparison table...
+[POST-LOOP] Reference AIC (IRT theta): 3007.21
+[POST-LOOP] Delta_AIC computed (IRT theta = 0.00)
+step07_lmm_model_comparison.csv (3 measurements)
+
+[COMPARISON RESULTS]
+================================================================================
+Full CTT        | AIC= 2954.08 | delta_AIC= -53.13 | Substantial support for lower AIC (|delta_AIC| >= 7)
+Purified CTT    | AIC= 3108.50 | delta_AIC= 101.29 | Substantial support for lower AIC (|delta_AIC| >= 7)
+IRT theta       | AIC= 3007.21 | delta_AIC=   0.00 | Equivalent fit (|delta_AIC| < 2)
+================================================================================
+
+[BEST MODEL] Full CTT (lowest AIC)
+
+Checking LMM convergence for all 3 models...
+Full CTT: Converged successfully
+Purified CTT: Converged successfully
+IRT theta: Converged successfully
+[VALIDATION PASS] All 3 models converged successfully
+
+Step 7 complete
+Model comparison: /home/etai/projects/REMEMVR/results/ch5/rq12/data/step07_lmm_model_comparison.csv
+Summaries: data/step07_lmm_*_summary.txt (3 files)
+Fixed effects: data/step07_lmm_*_fixed_effects.csv (3 files)
+Step 7: Fit Parallel LMMs to Standardized Outcomes
+Loading standardized outcomes from Step 6...
+step06_standardized_outcomes.csv (800 rows, 7 cols)
+Loaded 800 rows x 7 cols
+Domains: ['what', 'where']
+Unique participants: 100
+Unique composite_IDs: 400
+Unmerging TSVR data for function signature compatibility...
+Created TSVR DataFrame with 400 unique composite_IDs
+Extracted 'test' column from composite_ID (range: 1-4)
+Starting parallel LMM fitting for 3 measurement types...
+Theta ~ (Days + np.log(Days + 1/24)) * C(Domain)
+~Days
+ML (REML=False) for valid AIC comparison
+[LOOP 1/3] Processing Full CTT...
+[LOOP 1/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 1/3] Created theta_scores with 800 rows
+[LOOP 1/3] Theta score range: [-3.359, 2.554]
+[LOOP 1/3] Theta mean: 0.000, SD: 0.999
+[LOOP 1/3] Step 2: Fitting LMM for Full CTT...
+[LOOP 1/3] LMM fit complete
+[LOOP 1/3] LMM converged successfully
+[LOOP 1/3] Step 3: Saving LMM summary...
+step07_lmm_full_ctt_summary.txt
+[LOOP 1/3] Step 4: Extracting fixed effects...
+step07_lmm_full_ctt_fixed_effects.csv (9 terms)
+[LOOP 1/3] Step 5: Collecting model fit statistics...
+[LOOP 1/3] AIC=1780.06, BIC=1826.90, logLik=-880.03
+[LOOP 1/3] Full CTT complete
+
+[LOOP 2/3] Processing Purified CTT...
+[LOOP 2/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 2/3] Created theta_scores with 800 rows
+[LOOP 2/3] Theta score range: [-3.704, 2.385]
+[LOOP 2/3] Theta mean: -0.000, SD: 0.999
+[LOOP 2/3] Step 2: Fitting LMM for Purified CTT...
+[LOOP 2/3] LMM fit complete
+[LOOP 2/3] LMM converged successfully
+[LOOP 2/3] Step 3: Saving LMM summary...
+step07_lmm_purified_ctt_summary.txt
+[LOOP 2/3] Step 4: Extracting fixed effects...
+step07_lmm_purified_ctt_fixed_effects.csv (9 terms)
+[LOOP 2/3] Step 5: Collecting model fit statistics...
+[LOOP 2/3] AIC=1812.26, BIC=1859.11, logLik=-896.13
+[LOOP 2/3] Purified CTT complete
+
+[LOOP 3/3] Processing IRT theta...
+[LOOP 3/3] Step 1: Prepare theta_scores DataFrame
+[LOOP 3/3] Created theta_scores with 800 rows
+[LOOP 3/3] Theta score range: [-2.743, 2.829]
+[LOOP 3/3] Theta mean: -0.000, SD: 0.999
+[LOOP 3/3] Step 2: Fitting LMM for IRT theta...
+[LOOP 3/3] LMM fit complete
+[LOOP 3/3] LMM converged successfully
+[LOOP 3/3] Step 3: Saving LMM summary...
+step07_lmm_irt_theta_summary.txt
+[LOOP 3/3] Step 4: Extracting fixed effects...
+step07_lmm_irt_theta_fixed_effects.csv (9 terms)
+[LOOP 3/3] Step 5: Collecting model fit statistics...
+[LOOP 3/3] AIC=1655.06, BIC=1701.90, logLik=-817.53
+[LOOP 3/3] IRT theta complete
+
+[POST-LOOP] Creating AIC comparison table...
+[POST-LOOP] Reference AIC (IRT theta): 1655.06
+[POST-LOOP] Delta_AIC computed (IRT theta = 0.00)
+step07_lmm_model_comparison.csv (3 measurements)
+
+[COMPARISON RESULTS]
+================================================================================
+Full CTT        | AIC= 1780.06 | delta_AIC= 125.00 | Substantial support for lower AIC (|delta_AIC| >= 7)
+Purified CTT    | AIC= 1812.26 | delta_AIC= 157.21 | Substantial support for lower AIC (|delta_AIC| >= 7)
+IRT theta       | AIC= 1655.06 | delta_AIC=   0.00 | Equivalent fit (|delta_AIC| < 2)
+================================================================================
+
+[BEST MODEL] IRT theta (lowest AIC)
+
+Checking LMM convergence for all 3 models...
+Full CTT: Converged successfully
+Purified CTT: Converged successfully
+IRT theta: Converged successfully
+[VALIDATION PASS] All 3 models converged successfully
+
+Step 7 complete
+Model comparison: /home/etai/projects/REMEMVR/results/ch5/5.2.5/data/step07_lmm_model_comparison.csv
+Summaries: data/step07_lmm_*_summary.txt (3 files)
+Fixed effects: data/step07_lmm_*_fixed_effects.csv (3 files)

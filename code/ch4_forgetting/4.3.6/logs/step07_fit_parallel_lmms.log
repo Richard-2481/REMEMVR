@@ -1,0 +1,148 @@
+Step 07: Fit Parallel LMMs and Compare AIC
+Loading standardized scores...
+400 rows, 13 columns
+All required columns present
+Fitting 9 parallel LMMs (3 paradigms x 3 measurement types)...
+Paradigm: IFR
+  IRT model: z_theta_IFR ~ TSVR_hours + (1|UID)
+    AIC=1008.33, converged=True, intercept=0.4198, slope=-0.0065
+  FULL model: z_CTT_full_IFR ~ TSVR_hours + (1|UID)
+    AIC=1056.34, converged=True, intercept=0.3786, slope=-0.0058
+  PURIFIED model: z_CTT_purified_IFR ~ TSVR_hours + (1|UID)
+    AIC=1089.69, converged=True, intercept=0.2553, slope=-0.0039
+Paradigm: ICR
+  IRT model: z_theta_ICR ~ TSVR_hours + (1|UID)
+    AIC=983.93, converged=True, intercept=0.4737, slope=-0.0073
+  FULL model: z_CTT_full_ICR ~ TSVR_hours + (1|UID)
+    AIC=958.46, converged=True, intercept=0.5048, slope=-0.0078
+  PURIFIED model: z_CTT_purified_ICR ~ TSVR_hours + (1|UID)
+    AIC=963.75, converged=True, intercept=0.4870, slope=-0.0075
+Paradigm: IRE
+  IRT model: z_theta_IRE ~ TSVR_hours + (1|UID)
+    AIC=975.31, converged=True, intercept=0.4710, slope=-0.0073
+  FULL model: z_CTT_full_IRE ~ TSVR_hours + (1|UID)
+    AIC=1005.71, converged=True, intercept=0.4733, slope=-0.0073
+  PURIFIED model: z_CTT_purified_IRE ~ TSVR_hours + (1|UID)
+    AIC=1012.55, converged=True, intercept=0.4422, slope=-0.0068
+Computing AIC differences...
+AIC differences computed:
+  IFR: delta(Full-Purified)=-33.35, delta(Purified-IRT)=81.36
+  ICR: delta(Full-Purified)=-5.29, delta(Purified-IRT)=-20.17
+  IRE: delta(Full-Purified)=-6.83, delta(Purified-IRT)=37.24
+Computing slope correlation between Full and Purified CTT...
+Slope correlation (Full vs Purified): r=0.9983
+Saving model comparison results...
+/home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step07_lmm_model_comparison.csv (3 rows)
+Generating convergence report...
+/home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step07_lmm_convergence_report.txt
+
+================================================================================
+LMM MODEL COMPARISON REPORT
+================================================================================
+
+Total models fitted: 9 (3 paradigms x 3 measurement types)
+Random structure: Random intercepts only (1|UID)
+REML: False (ML estimation for AIC comparison)
+
+--------------------------------------------------------------------------------
+CONVERGENCE SUMMARY
+--------------------------------------------------------------------------------
+IFR:
+  IRT:      CONVERGED
+  Full:     CONVERGED
+  Purified: CONVERGED
+
+ICR:
+  IRT:      CONVERGED
+  Full:     CONVERGED
+  Purified: CONVERGED
+
+IRE:
+  IRT:      CONVERGED
+  Full:     CONVERGED
+  Purified: CONVERGED
+
+All models converged successfully
+
+--------------------------------------------------------------------------------
+AIC COMPARISON
+--------------------------------------------------------------------------------
+Lower AIC = better model fit
+Positive delta_AIC = first model worse (higher AIC)
+
+IFR:
+  AIC_IRT:       1008.33
+  AIC_Full:      1056.34
+  AIC_Purified:  1089.69
+  delta(Full-Purified):  -33.35 (Full better)
+  delta(Purified-IRT):   +81.36 (IRT better)
+
+ICR:
+  AIC_IRT:        983.93
+  AIC_Full:       958.46
+  AIC_Purified:   963.75
+  delta(Full-Purified):   -5.29 (Full better)
+  delta(Purified-IRT):   -20.17 (Purified better)
+
+IRE:
+  AIC_IRT:        975.31
+  AIC_Full:      1005.71
+  AIC_Purified:  1012.55
+  delta(Full-Purified):   -6.83 (Full better)
+  delta(Purified-IRT):   +37.24 (IRT better)
+
+--------------------------------------------------------------------------------
+FIXED EFFECTS COEFFICIENTS
+--------------------------------------------------------------------------------
+Model: z_score ~ TSVR_hours + (1|UID)
+
+IFR:
+  IRT:
+    Intercept:   0.4198
+    TSVR_hours: -0.0065
+  Full CTT:
+    Intercept:   0.3786
+    TSVR_hours: -0.0058
+  Purified CTT:
+    Intercept:   0.2553
+    TSVR_hours: -0.0039
+
+ICR:
+  IRT:
+    Intercept:   0.4737
+    TSVR_hours: -0.0073
+  Full CTT:
+    Intercept:   0.5048
+    TSVR_hours: -0.0078
+  Purified CTT:
+    Intercept:   0.4870
+    TSVR_hours: -0.0075
+
+IRE:
+  IRT:
+    Intercept:   0.4710
+    TSVR_hours: -0.0073
+  Full CTT:
+    Intercept:   0.4733
+    TSVR_hours: -0.0073
+  Purified CTT:
+    Intercept:   0.4422
+    TSVR_hours: -0.0068
+
+--------------------------------------------------------------------------------
+COEFFICIENT AGREEMENT
+--------------------------------------------------------------------------------
+Slope correlation (Full vs Purified CTT): r=0.9983
+
+Interpretation:
+  Very high agreement - both CTT types show similar decay patterns
+
+================================================================================
+END OF REPORT
+================================================================================
+Validating results...
+All models converged
+All AIC values positive and finite
+All 3 paradigms present
+No NaN values in coefficients
+Step 07 complete

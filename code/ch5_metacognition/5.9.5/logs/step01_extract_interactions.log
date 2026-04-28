@@ -1,0 +1,67 @@
+Step 1: Extract Location x Time Interaction Effects
+
+[EXTRACT 1] Accuracy model (Ch5 5.5.1)
+Searching step05_lmm_summary.txt for interaction term...
+[Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/5.5.1/results/step05_lmm_summary.txt'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.5/code/step01_extract_interactions.py", line 184, in <module>
+    accuracy_result = extract_interaction_from_text(CH5_SUMMARY, 'accuracy')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.5/code/step01_extract_interactions.py", line 101, in extract_interaction_from_text
+    with open(file_path, 'r', encoding='utf-8') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/etai/projects/REMEMVR/results/ch5/5.5.1/results/step05_lmm_summary.txt'
+Step 1: Extract Location x Time Interaction Effects
+
+[EXTRACT 1] Accuracy model (Ch5 5.5.1)
+Searching summary.md for interaction term...
+No interaction term found in summary.md
+Failed to extract accuracy interaction from Ch5 5.5.1 summary
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.5/code/step01_extract_interactions.py", line 206, in <module>
+    raise ValueError("Failed to extract accuracy interaction from Ch5 5.5.1 summary")
+ValueError: Failed to extract accuracy interaction from Ch5 5.5.1 summary
+Step 1: Extract Location x Time Interaction Effects
+
+[EXTRACT 1] Accuracy model (Ch5 5.5.1)
+Searching summary.md for interaction term...
+Pattern 'LocationType.+?Time.+?Interaction' matched: - All models include: LocationType � Time interactions, random intercepts + slop...
+Insufficient numeric values in line: - All models include: LocationType � Time interactions, random intercepts + slopes by participant
+Extracted numbers: []
+Columns: ['- All models include: LocationType � Time interactions, random intercepts + slopes by participant']
+Failed to extract accuracy interaction from Ch5 5.5.1 summary
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.5/code/step01_extract_interactions.py", line 208, in <module>
+    raise ValueError("Failed to extract accuracy interaction from Ch5 5.5.1 summary")
+ValueError: Failed to extract accuracy interaction from Ch5 5.5.1 summary
+Step 1: Extract Location x Time Interaction Effects
+
+[EXTRACT 1] Accuracy model (Ch5 5.5.1)
+Searching summary.md for interaction term...
+Pattern 'LocationType.+?Time.+?Interaction' matched: | LocationType � Time Interaction | -0.136 | 0.049 | -2.78 | 0.025 | 0.050 | [-0...
+accuracy: beta=-0.1360, SE=0.0490, t=-2.78, p=0.0250
+
+[EXTRACT 2] Confidence model (Ch6 6.8.1)
+Searching summary.md for interaction term...
+Pattern 'LocationType.+?log_TSVR' matched: | LocationType [Source] x log_TSVR | -0.009 | 0.015 | -0.59 | **0.553** | [-0.03...
+confidence: beta=-0.0090, SE=0.0150, t=-0.59, p=0.5530
+t-statistic inconsistency: observed=-0.5900, expected=-0.6000
+
+Comparison table
+Extracted interactions:
+  Accuracy:   beta=-0.1360, p=0.0250
+  Confidence: beta=-0.0090, p=0.5530
+
+Checking confidence p-value ~0.553
+Confidence p-value (0.553) in expected range [0.50, 0.60]
+
+Numeric range checks
+Beta values in range [-10, 10]
+SE values in range (0, 5]
+p-values in range [0, 1]
+
+step01_interaction_effects_extracted.csv (2 rows, 5 cols)
+Step 1 complete

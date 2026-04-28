@@ -1,0 +1,110 @@
+Step 00: Load Dependencies and Validate
+Source RQ: /home/etai/projects/REMEMVR/results/ch5/5.3.1
+Target RQ: /home/etai/projects/REMEMVR/results/ch5/5.3.6
+
+[CHECK 1] Verifying dependency files exist...
+  Checking status: /home/etai/projects/REMEMVR/results/ch5/5.3.1/status.yaml
+    File exists and meets size requirement
+  Checking purified_items: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step02_purified_items.csv
+    File exists and meets size requirement
+  Checking theta_scores: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+    File exists and meets size requirement
+  Checking tsvr_mapping: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step00_tsvr_mapping.csv
+    File exists and meets size requirement
+All dependency files exist
+
+[CHECK 2] Verifying RQ 5.3.1 completion status...
+  RQ 5.3.1 completed successfully (results analysis.status = success)
+RQ 5.3.1 completed successfully
+
+[CHECK 3] Validating CSV file schemas...
+  Validating purified_items: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step02_purified_items.csv
+    Column mismatch
+
+Schema validation failed for purified_items: Column mismatch
+
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.6/code/step00_load_dependencies.py", line 406, in <module>
+    raise ValueError(f"Schema validation failed for {file_key}: {result['message']}")
+ValueError: Schema validation failed for purified_items: Column mismatch
+
+Step 00: Load Dependencies and Validate
+RQ 5.3.1 incomplete - run RQ 5.3.1 before RQ 5.3.6
+Step 00: Load Dependencies and Validate
+Source RQ: /home/etai/projects/REMEMVR/results/ch5/5.3.1
+Target RQ: /home/etai/projects/REMEMVR/results/ch5/5.3.6
+
+[CHECK 1] Verifying dependency files exist...
+  Checking status: /home/etai/projects/REMEMVR/results/ch5/5.3.1/status.yaml
+    File exists and meets size requirement
+  Checking purified_items: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step02_purified_items.csv
+    File exists and meets size requirement
+  Checking theta_scores: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+    File exists and meets size requirement
+  Checking tsvr_mapping: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step00_tsvr_mapping.csv
+    File exists and meets size requirement
+All dependency files exist
+
+[CHECK 2] Verifying RQ 5.3.1 completion status...
+  RQ 5.3.1 completed successfully (results analysis.status = success)
+RQ 5.3.1 completed successfully
+
+[CHECK 3] Validating CSV file schemas...
+  Validating purified_items: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step02_purified_items.csv
+    Schema validation passed
+      Rows: 45
+      Columns: item, domain, Discrimination, Difficulty_1
+  Validating theta_scores: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+    Schema validation passed
+      Rows: 1200
+      Columns: composite_ID, domain_name, theta
+  Validating tsvr_mapping: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step00_tsvr_mapping.csv
+    Schema validation passed
+      Rows: 400
+      Columns: composite_ID, UID, test, TSVR_hours
+All CSV schemas validated
+
+[STEP 4] Copying dependency files to RQ 5.3.6/data/...
+  Copying purified_items...
+    Source: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step02_purified_items.csv
+    Dest:   /home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step00_purified_items.csv
+    2,452 bytes
+  Copying theta_scores...
+    Source: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step03_theta_scores.csv
+    Dest:   /home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step00_theta_scores.csv
+    35,963 bytes
+  Copying tsvr_mapping...
+    Source: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step00_tsvr_mapping.csv
+    Dest:   /home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step00_tsvr_mapping.csv
+    7,914 bytes
+All files copied successfully
+
+[STEP 5] Writing validation report...
+  /home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step00_dependency_validation_report.txt
+  Size: 2,492 bytes
+
+================================================================================
+Step 00: Load Dependencies and Validate
+================================================================================
+
+Validation Summary:
+  All 4 dependency files exist
+  RQ 5.3.1 status shows success
+  All CSV schemas validated
+  All files copied to RQ 5.3.6/data/
+  Validation report written
+
+Output Files:
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step00_purified_items.csv (45 items)
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step00_theta_scores.csv (1200 rows, long format)
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step00_tsvr_mapping.csv (400 rows)
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.6/data/step00_dependency_validation_report.txt
+
+Data Structure:
+  - purified_items: ['item', 'domain', 'Discrimination', 'Difficulty_1']
+  - theta_scores: ['composite_ID', 'domain_name', 'theta'] (long format)
+  - tsvr_mapping: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+  - Domain mapping: free_recall=IFR, cued_recall=ICR, recognition=IRE
+
+Next: Step 01 - Map Items by Paradigm (Retained vs Removed)

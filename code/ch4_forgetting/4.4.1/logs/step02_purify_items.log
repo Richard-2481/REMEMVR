@@ -1,0 +1,64 @@
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/deepirtools/data.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Step 02: Item Purification (Decision D039)
+RQ Directory: /home/etai/projects/REMEMVR/results/ch5/rq5
+Thresholds: a >= 0.4, |b| <= 3.0
+
+Loading Pass 1 item parameters...
+step01_pass1_item_params.csv (72 items)
+  Initial a range: [0.021, 3.010]
+  Initial b range: [-5.605, 43.292]
+
+Applying D039 purification thresholds...
+
+Purification summary:
+  Total items: 72
+  Purified (retained): 50 (69.4%)
+  Removed: 22 (30.6%)
+
+  Items per dimension after purification:
+    common: 19 / 24 retained
+    congruent: 18 / 24 retained
+    incongruent: 13 / 24 retained
+
+  Removed items:
+    - TQ_ICR-D-i4 (congruent): a < 0.4 (0.385)
+    - TQ_ICR-O-i2 (common): |b| > 3.0 (3.603)
+    - TQ_ICR-O-i5 (incongruent): a < 0.4 (0.206); |b| > 3.0 (4.465)
+    - TQ_ICR-O-i6 (incongruent): a < 0.4 (0.306); |b| > 3.0 (3.739)
+    - TQ_IFR-D-i4 (congruent): a < 0.4 (0.100); |b| > 3.0 (7.360)
+    - TQ_IFR-D-i5 (incongruent): a < 0.4 (0.180); |b| > 3.0 (3.806)
+    - TQ_IFR-D-i6 (incongruent): a < 0.4 (0.066); |b| > 3.0 (16.283)
+    - TQ_IFR-O-i1 (common): a < 0.4 (0.021); |b| > 3.0 (43.292)
+    - TQ_IFR-O-i2 (common): a < 0.4 (0.198); |b| > 3.0 (5.365)
+    - TQ_IFR-O-i4 (congruent): a < 0.4 (0.043); |b| > 3.0 (15.980)
+    - TQ_IFR-O-i5 (incongruent): a < 0.4 (0.100); |b| > 3.0 (5.421)
+    - TQ_IFR-O-i6 (incongruent): a < 0.4 (0.141); |b| > 3.0 (6.274)
+    - TQ_IRE-D-i4 (congruent): a < 0.4 (0.364)
+    - TQ_IRE-D-i5 (incongruent): a < 0.4 (0.301)
+    - TQ_IRE-N-i2 (common): |b| > 3.0 (-5.605)
+    - TQ_IRE-N-i3 (congruent): |b| > 3.0 (-3.975)
+    - TQ_IRE-N-i5 (incongruent): |b| > 3.0 (-4.471)
+    - TQ_IRE-N-i6 (incongruent): |b| > 3.0 (-4.139)
+    - TQ_IRE-O-i2 (common): a < 0.4 (0.312); |b| > 3.0 (6.101)
+    - TQ_IRE-O-i4 (congruent): a < 0.4 (0.200); |b| > 3.0 (5.175)
+    - TQ_IRE-O-i5 (incongruent): a < 0.4 (0.226); |b| > 3.0 (4.364)
+    - TQ_IRE-O-i6 (incongruent): |b| > 3.0 (3.426)
+
+Saving output files...
+step02_purified_items.csv (50 items)
+step02_removed_items.csv (22 items)
+
+Validating purification results...
+All retained items have a >= 0.4
+All retained items have |b| <= 3.0
+common: 19 items (>= 5)
+congruent: 18 items (>= 5)
+incongruent: 13 items (>= 5)
+Total items: 50 (>= 30)
+Retention rate: 69.4% (within expected 40-80%)
+
+  Final a range: [0.439, 3.010]
+  Final b range: [-2.849, 2.895]
+
+Step 02 complete (Item Purification)

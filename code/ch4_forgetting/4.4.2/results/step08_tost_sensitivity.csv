@@ -1,0 +1,4 @@
+Threshold,Cohen_d,TOST_p,Equivalent
+Very Small (d=0.10),0.1,0.3583652458599287,NO
+Small (d=0.20),0.2,0.2103204828734686,NO
+Medium (d=0.50),0.5,0.01647289231705018,YES

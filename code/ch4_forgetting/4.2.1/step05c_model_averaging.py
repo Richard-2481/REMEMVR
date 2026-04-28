@@ -19,7 +19,6 @@ Addresses Ph.D. thesis vulnerability: Cannot proceed with 8.9% single-model
 confidence. Model averaging provides scientifically defensible foundation
 for all downstream analyses.
 
-Author: Claude Code (adapted from 5.1.1)
 Date: 2025-12-08
 RQ: ch5/5.2.1
 Step: 05c
@@ -46,11 +45,11 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05c: Model Averaging (Domain × Time)")
+        log("Step 05c: Model Averaging (Domain × Time)")
         log("=" * 80)
 
         # Load data
-        log("[LOAD] Loading input data and model comparison...")
+        log("Loading input data and model comparison...")
         lmm_input = pd.read_csv(RQ_DIR / "data" / "step04_lmm_input.csv")
         comparison = pd.read_csv(RQ_DIR / "data" / "model_comparison.csv")
 
@@ -66,7 +65,7 @@ if __name__ == "__main__":
         log(f"  Cumulative weight: {competitive['akaike_weight'].sum():.1%}")
 
         # Create prediction grid (per domain)
-        log("\n[GRID] Creating prediction grid...")
+        log("\nCreating prediction grid...")
         tsvr_grid = np.linspace(1, 246, 100)
         domains = ['what', 'where', 'when']
 
@@ -82,7 +81,7 @@ if __name__ == "__main__":
         log(f"  Grid points: {len(pred_grid)} ({len(tsvr_grid)} per domain)")
 
         # Compute model-averaged predictions
-        log("\n[AVERAGING] Computing model-averaged predictions...")
+        log("\nComputing model-averaged predictions...")
         log("  NOTE: Domain × Time interaction - averaging across functional forms")
 
         results = compute_model_averaged_predictions(
@@ -103,13 +102,13 @@ if __name__ == "__main__":
         pred_var = results['prediction_variance']
         effective_n = results['effective_n_models']
 
-        log(f"\n[RESULTS] Model averaging complete:")
+        log(f"\nModel averaging complete:")
         log(f"  Models used: {len(models_used)}")
         log(f"  Effective N models: {effective_n:.2f}")
         log(f"  Prediction variance: [{pred_var.min():.4f}, {pred_var.max():.4f}]")
 
         # Analyze model composition
-        log(f"\n[COMPOSITION] Model types in competitive set:")
+        log(f"\nModel types in competitive set:")
         recip_models = [m for m in models_used if 'Recip' in m]
         power_models = [m for m in models_used if 'PowerLaw' in m]
         log_models = [m for m in models_used if 'Log' in m and 'PowerLaw' not in m and 'LogLog' not in m]
@@ -139,7 +138,7 @@ if __name__ == "__main__":
                 log(f"  Range: [{min(alphas):.1f}, {max(alphas):.1f}]")
 
         # Save averaged predictions
-        log("\n[SAVE] Saving model-averaged predictions...")
+        log("\nSaving model-averaged predictions...")
         output = pd.DataFrame({
             'TSVR_hours': pred_grid['TSVR_hours'],
             'domain': pred_grid['domain'],
@@ -193,7 +192,7 @@ if __name__ == "__main__":
         log(f"  ✓ {summary_path.name}")
 
         # Report per-domain predictions
-        log("\n[SUMMARY] Averaged predictions per domain:")
+        log("\nAveraged predictions per domain:")
         for domain in domains:
             domain_preds = output[output['domain'] == domain]
             log(f"  {domain.capitalize():5s}: θ ∈ [{domain_preds['theta_averaged'].min():.3f}, "
@@ -202,14 +201,14 @@ if __name__ == "__main__":
                 f"{domain_preds['prediction_se'].max():.4f}]")
 
         log("=" * 80)
-        log("[SUCCESS] Step 05c Complete")
+        log("Step 05c Complete")
         log(f"  Models averaged: {len(models_used)}")
         log(f"  Effective N: {effective_n:.2f}")
         log(f"  Output: {output_path.name}")
         log("=" * 80)
 
     except Exception as e:
-        log(f"[ERROR] {e}")
+        log(f"{e}")
         import traceback
         log(traceback.format_exc())
         raise

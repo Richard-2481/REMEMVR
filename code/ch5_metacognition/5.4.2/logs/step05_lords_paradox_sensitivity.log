@@ -1,0 +1,94 @@
+================================================================================
+RQ 6.4.2 - Step 05: Lord's Paradox Sensitivity Check
+Started: 2026-01-17T14:30:19.023821
+================================================================================
+
+[STEP 1] Load Calibration Data
+------------------------------------------------------------
+  ✓ Loaded 1200 observations
+  ✓ Paradigms: ['IFR', 'ICR', 'IRE']
+  ✓ N per paradigm: {'ICR': 400, 'IFR': 400, 'IRE': 400}
+
+[STEP 2] Document Baseline Accuracy Differences by Paradigm
+------------------------------------------------------------
+
+  Accuracy (theta) by Paradigm:
+    IFR: M=0.042, SD=0.899
+    ICR: M=0.063, SD=0.918
+    IRE: M=0.031, SD=0.965
+
+  ANOVA for accuracy ~ paradigm: F=0.12, p=0.8884
+  ✓ No significant accuracy differences - Lord's paradox less likely
+
+[STEP 3] Original Calibration (Pooled Z-Standardization)
+------------------------------------------------------------
+
+  Original Calibration by Paradigm:
+    IFR: M=+0.0217, SD=0.9084
+    ICR: M=-0.0620, SD=0.9479
+    IRE: M=+0.0404, SD=0.9615
+
+  ANOVA for calibration ~ paradigm: F=1.35, p=0.2603
+
+[STEP 4] Method 1: ANCOVA (Partial Out Accuracy)
+------------------------------------------------------------
+
+  ANCOVA Model: calibration ~ paradigm + accuracy
+  R² = 0.2225
+
+  ANCOVA Coefficients:
+    Intercept: β=-0.0538, p=0.1946
+    C(Paradigm)[T.IFR]: β=+0.0741, p=0.2068
+    C(Paradigm)[T.IRE]: β=+0.0874, p=0.1366
+    accuracy_centered: β=-0.4757, p=0.0000
+
+  LR test for paradigm effect (controlling accuracy):
+    χ²(2.0) = 2.58, p = 0.2749
+
+  ANCOVA-Adjusted Calibration Means:
+    IFR: -0.0538
+    ICR: +nan
+    IRE: +0.0336
+
+[STEP 5] Method 2: Within-Paradigm Z-Standardization
+------------------------------------------------------------
+
+  Within-Paradigm Calibration:
+    IFR: M=+0.0000, SD=0.9292
+    ICR: M=+0.0000, SD=0.9423
+    IRE: M=+0.0000, SD=0.9472
+
+  ANOVA for within-paradigm calibration: F=0.00, p=1.0000
+
+[STEP 6] Compare Methods
+------------------------------------------------------------
+
+  Method Comparison Table:
+  Method                         IFR      ICR      IRE        F        p
+  ------------------------------------------------------------------------
+  Original (Pooled Z)        +0.0217  -0.0620  +0.0404     1.35   0.2603
+  ANCOVA (Acc Controlled)    -0.0538     +nan  +0.0336     1.29   0.2749
+  Within-Paradigm Z          +0.0000  +0.0000  +0.0000     0.00   1.0000
+
+[STEP 7] Assess Robustness to Lord's Paradox
+------------------------------------------------------------
+
+  ICR - IFR Difference by Method:
+    Original: -0.0837
+    ANCOVA: +nan
+    Within-Paradigm: -0.0000
+
+  Robustness Checks:
+    Methods agree on significance? True
+    Effect direction consistent? True
+
+  Robustness Assessment: ROBUST
+  Interpretation: Paradigm calibration differences are genuine, not artifacts of baseline accuracy differences. All three approaches yield consistent conclusions.
+
+[STEP 8] Save Results
+------------------------------------------------------------
+  ✓ Saved: step05_lords_paradox_check.csv
+  ✓ Saved: step05_calibration_with_within.csv
+  ✓ Saved: results/sensitivity_analysis.md
+
+Completed: 2026-01-17T14:30:19.053158

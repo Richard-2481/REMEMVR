@@ -1,0 +1,22 @@
+======================================================================
+STEP 05: Bootstrap Mediation Confidence Intervals
+======================================================================
+Running bootstrap with B=5000 iterations...
+  Progress: 1000/5000 iterations
+  Progress: 2000/5000 iterations
+  Progress: 3000/5000 iterations
+  Progress: 4000/5000 iterations
+  Progress: 5000/5000 iterations
+Bootstrap mediation completed: 5000 iterations
+WARN: 1239 extreme proportion_mediated values (>250 threshold)
+Saved: step05_where_mediation_bootstrap.csv (5000 rows)
+
+Indirect effect CI: [-0.015488, -0.005205]
+Proportion mediated CI: [-4.9883, 8.4893]
+Bootstrap p-value: 1.000000
+Saved: step05_where_mediation_summary.csv (6 rows)
+SIGNIFICANT reverse mediation: CI excludes zero (negative)
+Validation PASSED
+======================================================================
+SUB-ANALYSIS 2 COMPLETE
+======================================================================

@@ -1,0 +1,72 @@
+============================================================
+Step 01: Extract and Merge Coefficients
+Reads betas dynamically from RQ 7.2.1 + computes domain models
+Includes retention predictors (RAVLT/BVMT Pct Ret)
+============================================================
+
+1. Reading age coefficients from RQ 7.2.1 mediation analysis...
+  Loaded mediation results: (1, 8)
+  Columns: ['beta_total', 'beta_direct', 'mediation_effect', 'proportion_mediated', 'ci_lower', 'ci_upper', 'p_mediation', 'effect_size_category']
+  Beta (age only, total effect):      -0.1302
+  Beta (age + cognitive, direct):      0.0258
+  Mediation effect:                    -0.1560
+  Proportion mediated:                 1.1982
+
+2. Loading RQ 7.2.1 analysis dataset...
+  Loaded: (100, 14)
+  Columns: ['UID', 'theta_all', 'Age', 'RAVLT_T', 'BVMT_T', 'RPM_T', 'RAVLT_Pct_Ret_T', 'BVMT_Pct_Ret_T', 'Age_std', 'RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std', 'RAVLT_Pct_Ret_T_std', 'BVMT_Pct_Ret_T_std']
+  Cognitive predictors (standardized): ['RAVLT_T_std', 'BVMT_T_std', 'RPM_T_std', 'RAVLT_Pct_Ret_T_std', 'BVMT_Pct_Ret_T_std']
+
+3. Verifying overall coefficients by re-fitting from raw data...
+  Re-fitted beta_bivariate:  -0.1302
+  Re-fitted beta_controlled: 0.0267
+  7.2.1 mediation beta_total:  -0.1302
+  7.2.1 mediation beta_direct: 0.0258
+
+  Using verified values (with retention predictors in controlled model):
+    beta_bivariate:  -0.1302
+    beta_controlled: 0.0267
+
+4. Extracting theta scores from Ch5...
+  Loaded overall theta from 5.1.1: (400, 3)
+  Loaded domain theta from 5.2.1: (400, 4)
+  Domain columns: ['composite_ID', 'theta_what', 'theta_where', 'theta_when']
+  What domain: 100 participants
+  Where domain: 100 participants
+  When domain: 100 participants
+  When domain stats: M=0.109, SD=0.282
+
+5. Merging domain theta with analysis dataset for domain-specific regressions...
+  Merged dataset: (100, 17)
+  What: 100, Where: 100, When: 100
+
+  Fitting what domain regression (n=100)...
+    beta_bivariate:  -0.1368 (p=0.0313)
+    beta_controlled: 0.0109 (p=0.8688)
+
+  Fitting where domain regression (n=100)...
+    beta_bivariate:  -0.1110 (p=0.0982)
+    beta_controlled: 0.0440 (p=0.5340)
+
+  Fitting when domain regression (n=100)...
+    beta_bivariate:  -0.0504 (p=0.0741)
+    beta_controlled: -0.0214 (p=0.5230)
+
+6. Creating merged output dataset...
+
+  Merged dataset: 100 rows, 13 cols
+  Columns: ['UID', 'theta_all', 'theta_what', 'theta_where', 'theta_when', 'beta_age_bivariate_all', 'beta_age_controlled_all', 'beta_age_bivariate_what', 'beta_age_controlled_what', 'beta_age_bivariate_where', 'beta_age_controlled_where', 'beta_age_bivariate_when', 'beta_age_controlled_when']
+
+7. Saving outputs...
+  Saved merged coefficients to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step01_merged_coefficients.csv
+  Saved coefficient table to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step01_coefficient_table.csv
+  Saved data summary to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step01_data_summary.txt
+  Saved domain availability to: /home/etai/projects/REMEMVR/results/ch7/7.2.2/data/step01_domain_availability.csv
+
+============================================================
+Step 01 COMPLETE
+  Overall: biv=-0.1302, ctrl=0.0267
+  What: biv=-0.1368, ctrl=0.0109
+  Where: biv=-0.1110, ctrl=0.0440
+  When: biv=-0.0504, ctrl=-0.0214
+============================================================

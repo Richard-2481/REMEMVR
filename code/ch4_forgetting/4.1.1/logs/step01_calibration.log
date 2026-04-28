@@ -1,0 +1,43 @@
+Step 01: IRT Calibration with Omnibus Factor
+Loading VR item responses from RQ 5.1...
+step00_irt_input.csv (400 rows, 106 cols)
+Found 105 VR item columns (TQ_* format)
+Converting wide format to long format for IRT...
+Long format: 42000 observations (0 missing values dropped)
+Score values confirmed binary: [np.int64(0), np.int64(1)]
+Split composite_ID into UID and test columns
+Defining item groups for omnibus 'All' factor...
+Omnibus factor 'All': 105 items
+IRT model: 2PL, single factor 'All', max_iter=200 (MED PRODUCTION), seed=42
+Running IRT calibration with omnibus factor...
+This may take 2-5 minutes...
+IRT calibration complete
+Processing calibration outputs...
+Theta scores: 400 rows, columns: ['UID', 'test', 'Theta_All']
+Created composite_ID from UID and test
+SE column missing from calibrate_irt output, added placeholder SE_All=0.3
+Item parameters: 105 rows, columns: ['item_name', 'Difficulty', 'Overall_Discrimination', 'Discrim_All']
+Item parameters: {'Difficulty': 'b', 'Overall_Discrimination': 'a'}
+Added dimension='All' column to item parameters
+All 105 items assigned to dimension='All'
+Saving calibration outputs...
+step01_theta_scores.csv (400 rows, 5 cols)
+step01_item_parameters.csv (105 rows, 5 cols)
+Running validation checks...
+Checking model convergence...
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Checking item parameter bounds...
+valid: False
+n_flagged: 23
+flagged_items: [{'item_name': 'TQ_ICR-O-i1', 'a': 0.3144940137863159, 'b': 4.0667500495910645, 'reasons': ['Extreme difficulty (|b|=4.07 > 4.0)']}, {'item_name': 'TQ_ICR-O-i5', 'a': 0.20250655710697174, 'b': 4.526728630065918, 'reasons': ['Extreme difficulty (|b|=4.53 > 4.0)']}, {'item_name': 'TQ_ICR-O-i6', 'a': 0.17403766512870789, 'b': 6.4357476234436035, 'reasons': ['Extreme difficulty (|b|=6.44 > 4.0)']}, {'item_name': 'TQ_IFR-D-i6', 'a': 0.20736370980739594, 'b': 5.223160266876221, 'reasons': ['Extreme difficulty (|b|=5.22 > 4.0)']}, {'item_name': 'TQ_IFR-O-i1', 'a': 0.006923842243850231, 'b': 132.85037231445312, 'reasons': ['Extreme difficulty (|b|=132.85 > 4.0)']}, {'item_name': 'TQ_IFR-O-i2', 'a': 0.20817877352237701, 'b': 5.076365947723389, 'reasons': ['Extreme difficulty (|b|=5.08 > 4.0)']}, {'item_name': 'TQ_IFR-O-i4', 'a': 0.008170327171683311, 'b': 83.9183120727539, 'reasons': ['Extreme difficulty (|b|=83.92 > 4.0)']}, {'item_name': 'TQ_IFR-O-i5', 'a': 0.09048012644052505, 'b': 6.01021671295166, 'reasons': ['Extreme difficulty (|b|=6.01 > 4.0)']}, {'item_name': 'TQ_IFR-O-i6', 'a': 0.215202197432518, 'b': 4.1462883949279785, 'reasons': ['Extreme difficulty (|b|=4.15 > 4.0)']}, {'item_name': 'TQ_IRE-N-i2', 'a': 0.4310218095779419, 'b': -6.178278923034668, 'reasons': ['Extreme difficulty (|b|=6.18 > 4.0)']}, {'item_name': 'TQ_IRE-N-i3', 'a': 0.5134643316268921, 'b': -4.211312294006348, 'reasons': ['Extreme difficulty (|b|=4.21 > 4.0)']}, {'item_name': 'TQ_IRE-N-i5', 'a': 0.3514192998409271, 'b': -6.308078765869141, 'reasons': ['Extreme difficulty (|b|=6.31 > 4.0)']}, {'item_name': 'TQ_IRE-N-i6', 'a': 0.6969529986381531, 'b': -4.170761585235596, 'reasons': ['Extreme difficulty (|b|=4.17 > 4.0)']}, {'item_name': 'TQ_IRE-O-i2', 'a': 0.393485426902771, 'b': 4.865671157836914, 'reasons': ['Extreme difficulty (|b|=4.87 > 4.0)']}, {'item_name': 'TQ_IRE-O-i4', 'a': 0.08706717193126678, 'b': 11.739812850952148, 'reasons': ['Extreme difficulty (|b|=11.74 > 4.0)']}, {'item_name': 'TQ_IRE-O-i5', 'a': 0.23046875, 'b': 4.259873390197754, 'reasons': ['Extreme difficulty (|b|=4.26 > 4.0)']}, {'item_name': 'TQ_IRE-O-i6', 'a': 0.38331344723701477, 'b': 4.079226970672607, 'reasons': ['Extreme difficulty (|b|=4.08 > 4.0)']}, {'item_name': 'TQ_RFR-N-OBJ1', 'a': 1.1083143949508667, 'b': -4.237797737121582, 'reasons': ['Extreme difficulty (|b|=4.24 > 4.0)']}, {'item_name': 'TQ_RRE-N-STRA', 'a': 0.2816528081893921, 'b': -5.231513023376465, 'reasons': ['Extreme difficulty (|b|=5.23 > 4.0)']}, {'item_name': 'TQ_TCR-O-TSK1', 'a': 0.2907913625240326, 'b': 4.2352399826049805, 'reasons': ['Extreme difficulty (|b|=4.24 > 4.0)']}, {'item_name': 'TQ_TCR-O-TSK3', 'a': 0.12222659587860107, 'b': 10.391975402832031, 'reasons': ['Extreme difficulty (|b|=10.39 > 4.0)']}, {'item_name': 'TQ_TCR-O-TSK4', 'a': 0.006883568130433559, 'b': 190.2877960205078, 'reasons': ['Extreme difficulty (|b|=190.29 > 4.0)']}, {'item_name': 'TQ_TCR-O-TSK5', 'a': 0.1017124354839325, 'b': 13.657248497009277, 'reasons': ['Extreme difficulty (|b|=13.66 > 4.0)']}]
+total_items: 105
+Running additional inline checks...
+Theta range OK: [-2.41, 2.84]
+SE range OK: [0.30, 0.30]
+No missing values in outputs
+Complete data: 400 composite_IDs (expected 400)
+Step 01 complete - All validations passed

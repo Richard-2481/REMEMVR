@@ -1,0 +1,117 @@
+Step 04: characterize_demographics
+Loading false negative cases from step03...
+False negatives: 7 cases
+Loading all participants from step02...
+All participants: 100 cases
+Creating comparison group (non-false-negatives)...
+False negative UIDs: ['A017', 'A041', 'A058', 'A075', 'A077', 'A084', 'A097']
+Other group: 93 participants
+Group counts verified: 7 + 93 = 100
+Computing descriptive statistics by group...
+Processing variable: Age
+  False Neg: N=7, Mean=47.00, SD=14.09
+  Other:     N=93, Mean=44.39, SD=14.67
+Processing variable: Education
+  False Neg: N=7, Mean=6.14, SD=0.90
+  Other:     N=93, Mean=6.10, SD=1.69
+Processing variable: VR_Experience
+  False Neg: N=7, Mean=0.57, SD=1.13
+  Other:     N=93, Mean=1.23, SD=1.06
+Processing variable: NART_Score
+  False Neg: N=6, Mean=26.50, SD=10.82
+  Other:     N=91, Mean=32.25, SD=8.35
+Processing variable: RAVLT_Total
+  False Neg: N=7, Mean=36.86, SD=6.89
+  Other:     N=93, Mean=51.63, SD=7.60
+Processing variable: REMEMVR_theta
+  False Neg: N=7, Mean=0.07, SD=0.29
+  Other:     N=93, Mean=0.00, SD=0.70
+Creating demographic summary table...
+Summary table: 6 rows, 7 columns
+Saving demographic summary...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step04_demographic_summary.csv
+Running validate_dataframe_structure...
+Demographic summary structure validated
+No missing values in summary
+False negative sample size verified: 7
+Other group sample size verified: 93
+Step 04 complete
+Step 04: characterize_demographics
+Loading false negative cases from step03...
+False negatives: 7 cases
+Loading all participants from step02...
+All participants: 100 cases
+Creating comparison group (non-false-negatives)...
+False negative UIDs: ['A017', 'A041', 'A058', 'A075', 'A077', 'A084', 'A097']
+Other group: 93 participants
+Group counts verified: 7 + 93 = 100
+Computing descriptive statistics by group...
+Processing variable: Age
+  False Neg: N=7, Mean=47.00, SD=14.09
+  Other:     N=93, Mean=44.39, SD=14.67
+Processing variable: Education
+  False Neg: N=7, Mean=6.14, SD=0.90
+  Other:     N=93, Mean=6.10, SD=1.69
+Processing variable: VR_Experience
+  False Neg: N=7, Mean=0.57, SD=1.13
+  Other:     N=93, Mean=1.23, SD=1.06
+Processing variable: NART_Score
+  False Neg: N=6, Mean=26.50, SD=10.82
+  Other:     N=91, Mean=32.25, SD=8.35
+Processing variable: RAVLT_Total
+  False Neg: N=7, Mean=36.86, SD=6.89
+  Other:     N=93, Mean=51.63, SD=7.60
+Processing variable: REMEMVR_theta
+  False Neg: N=7, Mean=0.07, SD=0.29
+  Other:     N=93, Mean=0.00, SD=0.70
+Creating demographic summary table...
+Summary table: 6 rows, 7 columns
+Saving demographic summary...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step04_demographic_summary.csv
+Running validate_dataframe_structure...
+Demographic summary structure validated
+No missing values in summary
+False negative sample size verified: 7
+Other group sample size verified: 93
+Step 04 complete
+Step 04: characterize_demographics
+Loading false negative cases from step03...
+False negatives: 7 cases
+Loading all participants from step02...
+All participants: 100 cases
+Creating comparison group (non-false-negatives)...
+False negative UIDs: ['A017', 'A041', 'A049', 'A058', 'A075', 'A084', 'A097']
+Other group: 93 participants
+Group counts verified: 7 + 93 = 100
+Computing descriptive statistics by group...
+Processing variable: Age
+  False Neg: N=7, Mean=44.57, SD=14.55
+  Other:     N=93, Mean=44.57, SD=14.66
+Processing variable: Education
+  False Neg: N=7, Mean=6.00, SD=1.00
+  Other:     N=93, Mean=6.11, SD=1.68
+Processing variable: VR_Experience
+  False Neg: N=7, Mean=1.00, SD=1.41
+  Other:     N=93, Mean=1.19, SD=1.06
+Processing variable: NART_Score
+  False Neg: N=6, Mean=25.17, SD=9.87
+  Other:     N=91, Mean=32.34, SD=8.35
+Processing variable: RAVLT_Total
+  False Neg: N=7, Mean=39.29, SD=5.22
+  Other:     N=93, Mean=52.58, SD=7.95
+Processing variable: RAVLT_Pct_Ret
+  False Neg: N=7, Mean=79.83, SD=8.13
+  Other:     N=93, Mean=83.54, SD=15.17
+Processing variable: REMEMVR_theta
+  False Neg: N=7, Mean=0.08, SD=0.29
+  Other:     N=93, Mean=0.00, SD=0.70
+Creating demographic summary table...
+Summary table: 7 rows, 7 columns
+Saving demographic summary...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step04_demographic_summary.csv
+Running validate_dataframe_structure...
+Demographic summary structure validated
+No missing values in summary
+False negative sample size verified: 7
+Other group sample size verified: 93
+Step 04 complete

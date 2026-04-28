@@ -1,0 +1,91 @@
+Step 01: extract_cognitive_data
+Loading Ch5 REMEMVR theta scores...
+Theta file: 400 rows, 3 columns
+Columns: ['UID', 'test', 'Theta_All']
+Mean theta per participant: 100 participants
+REMEMVR_theta range: [-1.954, 1.559]
+Loading RAVLT data from dfnonvr.csv...
+dfnonvr.csv: 100 rows, 235 columns
+RAVLT trial columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+RAVLT_Total range: [26, 68]
+Demographics for 100 participants
+Combining REMEMVR theta and RAVLT data...
+Final dataset: 100 participants
+Missing values detected:
+  NART_Score: 3 missing
+Saving cognitive scores dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step01_cognitive_scores.csv (100 rows, 7 columns)
+Running validate_data_columns...
+All required columns present
+Checking value ranges...
+REMEMVR_theta in expected range: [-1.954, 1.559]
+RAVLT_Total in expected range: [26, 68]
+Age in expected range: [20, 70]
+Education in expected range: [1, 9]
+VR_Experience in expected range: [0, 4]
+NART_Score in expected range: [6.0, 50.0]
+Step 01 complete
+Step 01: extract_cognitive_data
+Loading Ch5 REMEMVR theta scores...
+Theta file: 400 rows, 3 columns
+Columns: ['UID', 'test', 'Theta_All']
+Mean theta per participant: 100 participants
+REMEMVR_theta range: [-1.954, 1.559]
+Loading RAVLT data from dfnonvr.csv...
+dfnonvr.csv: 100 rows, 235 columns
+RAVLT trial columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+RAVLT_Total range: [26, 68]
+Demographics for 100 participants
+Combining REMEMVR theta and RAVLT data...
+Final dataset: 100 participants
+Missing values detected:
+  NART_Score: 3 missing
+Saving cognitive scores dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step01_cognitive_scores.csv (100 rows, 7 columns)
+Running validate_data_columns...
+All required columns present
+Checking value ranges...
+REMEMVR_theta in expected range: [-1.954, 1.559]
+RAVLT_Total in expected range: [26, 68]
+Age in expected range: [20, 70]
+Education in expected range: [1, 9]
+VR_Experience in expected range: [0, 4]
+NART_Score in expected range: [6.0, 50.0]
+Step 01 complete
+Step 01: extract_cognitive_data
+Loading Ch5 REMEMVR theta scores...
+Theta file: 400 rows, 3 columns
+Columns: ['UID', 'test', 'Theta_All']
+Mean theta per participant: 100 participants
+REMEMVR_theta range: [-1.954, 1.559]
+Loading RAVLT data from dfnonvr.csv...
+dfnonvr.csv: 100 rows, 235 columns
+RAVLT trial columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+RAVLT_Total range: [28, 71]
+RAVLT_Pct_Ret range: [44.4, 115.4]
+Demographics for 100 participants
+Combining REMEMVR theta and RAVLT data...
+Final dataset: 100 participants
+Missing values detected:
+  NART_Score: 3 missing
+Saving cognitive scores dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.7.4/data/step01_cognitive_scores.csv (100 rows, 8 columns)
+Running validate_data_columns...
+All required columns present
+Checking value ranges...
+REMEMVR_theta in expected range: [-1.954, 1.559]
+RAVLT_Total in expected range: [28, 71]
+RAVLT_Pct_Ret in expected range: [44.4, 115.4]
+Age in expected range: [20, 70]
+Education in expected range: [1, 9]
+VR_Experience in expected range: [0, 4]
+NART_Score in expected range: [6.0, 50.0]
+Step 01 complete

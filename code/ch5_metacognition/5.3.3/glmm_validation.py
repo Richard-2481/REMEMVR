@@ -4,7 +4,7 @@ RQ 6.3.3: GLMM Validation
 =========================
 Item-level GLMM validation for Age × Domain interaction in confidence.
 
-MANDATORY for PLATINUM certification (per rq_platinum agent Step 9).
+MANDATORY for quality validation (per validation process Step 9).
 
 Purpose: Test if IRT→LMM aggregation masked baseline Age/Domain effects
 by fitting GLMM on raw item-level confidence ratings (N=28,800 observations).
@@ -28,9 +28,7 @@ import statsmodels.formula.api as smf
 import statsmodels.api as sm
 from scipy import stats
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.3.3
 RQ_631_DIR = Path("/home/etai/projects/REMEMVR/results/ch6/6.3.1")
@@ -132,10 +130,7 @@ def reshape_to_long_format():
     pct_missing = (n_missing / len(df_long)) * 100
     log(f"\nRemoved {n_missing} missing confidence values ({pct_missing:.1f}%)")
     log(f"Final dataset: {len(df_long_clean)} rows")
-
-    # ========================================================================
     # VALIDATION
-    # ========================================================================
     log("\n--- Data Validation ---")
 
     # Check row count

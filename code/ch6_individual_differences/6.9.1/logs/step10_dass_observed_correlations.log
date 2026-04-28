@@ -1,0 +1,12 @@
+======================================================================
+STEP 10: Extract DASS Observed Correlations and Descriptives
+======================================================================
+Loaded 7.5.1 theta: (100, 3), columns: ['UID', 'theta_all', 'theta_SE']
+Using theta column: theta_all
+Merged DASS + theta: N=100
+  depression: r=0.047268, p=0.640503, M=2.32, SD=3.27
+  anxiety: r=0.208217, p=0.037632, M=1.44, SD=2.38
+  stress: r=0.175732, p=0.080314, M=3.34, SD=3.60
+DASS observed correlations computed: N=3
+Saved: step10_dass_observed_stats.csv (3 rows)
+Validation PASSED

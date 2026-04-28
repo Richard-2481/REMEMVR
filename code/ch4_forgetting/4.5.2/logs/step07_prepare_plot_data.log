@@ -1,0 +1,40 @@
+Step 7: Prepare Dual-Scale Plot Data
+Loading LMM input data...
+step02_lmm_input_long.csv (800 rows)
+Loading segment-location slopes...
+step04_segment_location_slopes.csv (4 rows)
+Computing observed means per Segment x LocationType...
+  Early-Source: n=196, theta=0.306 [0.199, 0.414]
+  Early-Destination: n=196, theta=0.258 [0.140, 0.375]
+  Late-Source: n=204, theta=-0.339 [-0.453, -0.224]
+  Late-Destination: n=204, theta=-0.204 [-0.306, -0.102]
+4 observed means computed
+Generating model-predicted trajectories...
+160 prediction points generated
+Combining observed and predicted data (theta scale)...
+164 total rows
+Saving to step07_piecewise_theta_data.csv...
+step07_piecewise_theta_data.csv
+Converting theta to probability scale...
+Saving to step07_piecewise_probability_data.csv...
+step07_piecewise_probability_data.csv
+Checking output data quality...
+Theta scale: 164 rows
+All 4 Segment x LocationType combinations present
+Probability scale: 164 rows
+Probability values in valid range [0, 1]
+CI ordering valid (lower <= upper)
+Step 07 complete
+Theta scale data: /home/etai/projects/REMEMVR/results/ch5/5.5.2/data/step07_piecewise_theta_data.csv
+Probability scale data: /home/etai/projects/REMEMVR/results/ch5/5.5.2/data/step07_piecewise_probability_data.csv
+Decision D069 compliance: Dual-scale plot data prepared
+Observed means (theta scale):
+  Early-Source: theta=0.306 [0.199, 0.414]
+  Early-Destination: theta=0.258 [0.140, 0.375]
+  Late-Source: theta=-0.339 [-0.453, -0.224]
+  Late-Destination: theta=-0.204 [-0.306, -0.102]
+Observed means (probability scale):
+  Early-Source: p=0.576 [0.550, 0.602]
+  Early-Destination: p=0.564 [0.535, 0.593]
+  Late-Source: p=0.416 [0.389, 0.444]
+  Late-Destination: p=0.449 [0.424, 0.475]

@@ -1,0 +1,55 @@
+Step 02: Extract Segment-by-Domain Slopes
+============================================================
+Loading piecewise LMM model from step01...
+Model loaded successfully
+  Converged: True
+  Observations: 800
+  Fixed effects: 8
+
+Extracting fixed effects from LMM...
+Fixed effects extracted: 11 terms
+
+Fixed Effects:
+  Intercept: 0.6120 (SE=0.0810, p=0.0000)*
+  C(Segment, Treatment('Early'))[T.Late]: -0.8000 (SE=0.0810, p=0.0000)*
+  C(domain, Treatment('what'))[T.where]: 0.0530 (SE=0.0720, p=0.4650)
+  C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.where]: -0.0010 (SE=0.1130, p=0.9950)
+  Days_within: -0.4560 (SE=0.0590, p=0.0000)*
+  Days_within:C(Segment, Treatment('Early'))[T.Late]: 0.3850 (SE=0.0630, p=0.0000)*
+  Days_within:C(domain, Treatment('what'))[T.where]: 0.0230 (SE=0.0810, p=0.7750)
+  Days_within:C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.where]: -0.0370 (SE=0.0870, p=0.6710)
+  Group Var: 0.3940 (SE=0.1370, p=nan)
+  Group x Days_within Cov: -0.0100 (SE=0.0230, p=nan)
+  Days_within Var: 0.0120 (SE=0.0090, p=nan)
+
+Computing segment-domain slopes via linear combinations...
+days_within: Days_within
+days_segment_late: Days_within:C(Segment, Treatment('Early'))[T.Late]
+days_domain_where: Days_within:C(domain, Treatment('what'))[T.where]
+days_seg_dom_where: Days_within:C(Segment, Treatment('Early'))[T.Late]:C(domain, Treatment('what'))[T.where]
+Slopes computed: 4 segment-domain combinations
+
+Segment-Domain Slopes (theta change per day):
+  Early-what: -0.4564 (SE=0.0593, 95% CI [-0.5727, -0.3401])
+  Early-where: -0.4331 (SE=0.0593, 95% CI [-0.5494, -0.3169])
+  Late-what: -0.0710 (SE=0.0253, 95% CI [-0.1205, -0.0215])
+  Late-where: -0.0848 (SE=0.0253, 95% CI [-0.1344, -0.0353])
+
+Saving fixed effects table...
+/home/etai/projects/REMEMVR/results/ch5/5.2.2/results/step02_fixed_effects.csv (11 rows)
+Saving segment-domain slopes...
+/home/etai/projects/REMEMVR/results/ch5/5.2.2/results/step02_segment_domain_slopes.csv (4 rows)
+
+Running inline validation checks...
+  Fixed effects table has 11 rows (>= 5 required)
+  Slope table has 4 rows (4 required - When excluded)
+  All segments present: {'Early', 'Late'}
+  All domains present (When excluded): {'where', 'what'}
+  All SE values > 0 (min=0.0253)
+  CI structure valid (CI_lower < slope < CI_upper) for all rows
+
+[VALIDATION PASSED] All checks passed
+
+============================================================
+Step 02 complete
+============================================================

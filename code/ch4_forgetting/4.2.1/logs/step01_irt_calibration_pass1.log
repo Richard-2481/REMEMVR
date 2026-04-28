@@ -1,0 +1,49 @@
+============================================================
+Step 01: IRT Calibration Pass 1
+============================================================
+
+Step 01: IRT Calibration Pass 1 (All Items)
+Loading input data from Step 0...
+step00_irt_input.csv (400 rows, 106 cols)
+step00_q_matrix.csv (105 rows, 4 cols)
+Converting wide format to long format for IRT...
+Long format created: 42000 rows
+Unique UIDs: 100
+Unique tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Unique items: 105
+Deriving factor groups from Q-matrix...
+What: ['-N-'] -> 29 items
+Where: ['-L-', '-U-', '-D-'] -> 50 items
+When: ['-O-'] -> 26 items
+Running calibrate_irt (Pass 1 - all items)...
+Config: factors=['What', 'Where', 'When'], correlated=True
+Device: cpu, seed: 42
+IRT calibration complete
+Theta scores shape: (400, 5)
+Item parameters shape: (105, 6)
+Formatting and saving item parameters...
+step01_pass1_item_params.csv (105 items)
+Item parameters (Pass 1):
+Discrimination range: 0.014 - 2.681
+Difficulty range: -9.686 - 67.385
+what items: 29
+where items: 50
+when items: 26
+Formatting and saving theta scores...
+step01_pass1_theta.csv (400 observations)
+Theta scores (Pass 1):
+theta_what: mean=-0.034, std=0.903
+theta_where: mean=0.021, std=0.928
+theta_when: mean=0.044, std=0.766
+Running validate_irt_convergence...
+Converged: True
+Message: Model converged successfully
+Additional parameter checks:
+Discrimination in [0.01, 10.0]: True (actual: [0.014, 2.681])
+Difficulty in [-6.0, 6.0]: False (actual: [-9.686, 67.385])
+No NaN in parameters: True (0 items with NaN)
+No NaN in theta scores: True (0 observations with NaN)
+Some validation checks failed - review item parameters
+Step 01: IRT Calibration Pass 1 complete
+
+Next: Step 02 will use logs/step01_pass1_item_params.csv to purify items

@@ -1,0 +1,132 @@
+======================================================================
+RQ 6.2.1: SEM-Based Calibration Computation
+======================================================================
+Phase 2 Prototype: Replacing simple difference with latent variables
+Target reliability: r > 0.70 (vs r_diff=-0.16 for simple difference)
+======================================================================
+
+======================================================================
+STEP 1: Load Merged Theta Scores
+======================================================================
+Loaded: 400 rows, 10 columns
+Columns: ['UID', 'test', 'composite_ID', 'TSVR_hours', 'theta_accuracy', 'se_accuracy', 'theta_confidence', 'se_confidence', 'z_theta_accuracy', 'z_theta_confidence']
+All required columns present: 10 columns
+No missing values in theta scores
+SE values - accuracy NaN: 400/400, confidence NaN: 0/400
+WARNING: Missing SE for accuracy, will use conservative estimate
+STEP 1 COMPLETE
+
+======================================================================
+STEP 2: Compute PRE-SEM Difference Score Reliability (Baseline)
+======================================================================
+Correlation (z_theta_accuracy, z_theta_confidence): r = 0.6562, p = 0.000000
+
+Computing IRT reliabilities via ICC (variance decomposition)...
+
+Accuracy IRT Reliability (ICC):
+  Between-person variance: 0.5142
+  Within-person variance: 0.6512
+  ICC (r_xx): 0.4412
+
+Confidence IRT Reliability (ICC):
+  Between-person variance: 0.6648
+  Within-person variance: 0.4525
+  ICC (r_yy): 0.5950
+
+Difference Score Reliability (PRE-SEM):
+  r_xx (accuracy reliability): 0.4412
+  r_yy (confidence reliability): 0.5950
+  r_xy (correlation): 0.6562
+  r_diff: -0.4016 (CATASTROPHIC (negative))
+
+🔴 CATASTROPHIC: r_diff=-0.4016 (NEGATIVE!)
+    Difference score is WORSE than random measurement!
+    SEM implementation is MANDATORY
+STEP 2 COMPLETE
+
+======================================================================
+STEP 3: Compute SEM-Based Latent Calibration
+======================================================================
+Using tools/sem_calibration.py - quick_sem_calibration() function
+Approach: Latent difference (Latent_Calibration = Latent_Confidence - Latent_Accuracy)
+Measurement error properly accounted for via factor score regression
+Filled 400 missing SE_accuracy with estimate: 0.7475
+
+Initializing SEMCalibration class...
+
+Fitting latent difference model...
+
+✅ SEM calibration computation SUCCESSFUL
+
+SEM Diagnostics:
+  method: fallback_factor_score_regression
+  reliability_acc: 0.4412
+  reliability_conf: 0.5950
+  shrinkage_applied: 1.0000
+STEP 3 COMPLETE
+
+======================================================================
+STEP 4: Validate SEM Calibration Reliability (Target r>0.70)
+======================================================================
+
+Correlation (SEM vs Simple Difference): r = 0.9508, p = 0.000000
+  ✅ High correlation (>0.95): SEM preserves core signal
+
+Split-Half Reliability (T1+T3 vs T2+T4):
+  Split-half r: 0.8188
+  Full-length r (Spearman-Brown): 0.9004
+  ✅ GOOD reliability (>= 0.70) - Target achieved!
+
+Descriptive Statistics Comparison:
+PRE-SEM (Simple Difference):
+  Mean: -0.0000
+  SD: 0.8292
+  Range: [-3.7266, +2.9759]
+  Reliability: r_diff = -0.4016
+
+POST-SEM (Latent Calibration):
+  Mean: -0.0000
+  SD: 0.4519
+  Range: [-1.9314, +1.4229]
+  Reliability (split-half): r = 0.9004
+
+📊 RELIABILITY IMPROVEMENT: +1.3020
+   SEM achieves 130.2 percentage points gain in reliability
+   From r_diff=-0.4016 to r=0.9004
+STEP 4 COMPLETE
+
+======================================================================
+STEP 5: Save SEM-Based Calibration Scores
+======================================================================
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_calibration_scores_SEM.csv (400 rows, 7 columns)
+Saved diagnostics: /home/etai/projects/REMEMVR/results/ch6/6.2.1/data/step02_SEM_diagnostics.csv
+STEP 5 COMPLETE
+
+======================================================================
+SEM-BASED CALIBRATION COMPUTATION COMPLETE
+======================================================================
+
+📊 KEY RESULTS:
+1. PRE-SEM reliability: r_diff = -0.4016 (CATASTROPHIC (negative))
+2. POST-SEM reliability: r = 0.9004 (split-half, Spearman-Brown corrected)
+3. Reliability improvement: +1.3020 (+130.2 percentage points)
+4. Method used: fallback_factor_score_regression
+5. Correlation with simple difference: r = 0.9508
+
+✅ SUCCESS: Target reliability (r>=0.70) ACHIEVED
+   SEM calibration scores are suitable for RQ 6.2.2 analysis
+
+📁 OUTPUT FILES:
+   step02_calibration_scores_SEM.csv
+   step02_SEM_diagnostics.csv
+
+🔄 NEXT STEPS:
+   1. Modify RQ 6.2.2 to use step02_calibration_scores_SEM.csv
+   2. Re-run RQ 6.2.2 analysis with SEM calibration
+   3. Compare PRE-SEM (p=0.230) vs POST-SEM (expected: stronger effect)
+   4. Document findings in Phase 2 prototype report
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================

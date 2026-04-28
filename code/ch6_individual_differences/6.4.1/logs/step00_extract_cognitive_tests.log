@@ -1,0 +1,60 @@
+Step 0: extract_cognitive_tests
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+Extracting RAVLT cognitive test scores...
+All required RAVLT columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+100 participants with complete RAVLT data
+RAVLT total scores (range: 26-68)
+RAVLT extraction complete
+Saving /home/etai/projects/REMEMVR/results/ch7/7.4.1/data/step00_cognitive_tests.csv...
+step00_cognitive_tests.csv (100 rows, 2 cols)
+Running validate_data_format...
+valid: True
+message: All required columns present (2 columns). DataFrame has 100 rows.
+missing_cols: []
+Running RAVLT-specific validation...
+Participant count: 100 (expected)
+RAVLT total range: 26-68 (within [0,75])
+No missing values in output
+Spot checking RAVLT total calculation...
+A010: trials [np.int64(8) np.int64(7) np.int64(9) np.int64(9) np.int64(11)] -> total 44 (correct)
+A011: trials [np.int64(8) np.int64(12) np.int64(15) np.int64(14) np.int64(14)] -> total 63 (correct)
+A012: trials [np.int64(4) np.int64(9) np.int64(9) np.int64(12) np.int64(11)] -> total 45 (correct)
+Step 0 complete
+Step 0: extract_cognitive_tests
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+Extracting RAVLT cognitive test scores...
+All required RAVLT columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score', 'ravlt-delayed-recall-score']
+100 participants with complete RAVLT data
+[CEILING FIX] Applying RAVLT ceiling fix...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+RAVLT total scores (range: 28-71)
+Computing RAVLT percent retention...
+RAVLT Percent Retention: 100/100 valid
+RAVLT pct retention (range: 44.4-130.0)
+RAVLT extraction complete
+Saving /home/etai/projects/REMEMVR/results/ch7/7.4.1/data/step00_cognitive_tests.csv...
+step00_cognitive_tests.csv (100 rows, 3 cols)
+Running validate_data_format...
+valid: True
+message: All required columns present (3 columns). DataFrame has 100 rows.
+missing_cols: []
+Running RAVLT-specific validation...
+Participant count: 100 (expected)
+RAVLT total range: 28-71 (within [0,75])
+RAVLT pct retention range: 44.4-130.0
+No missing ravlt_pct_ret values
+No missing values in uid/ravlt_total
+Spot checking RAVLT total calculation...
+A010: trials [np.int64(8) np.int64(7) np.int64(9) np.int64(9) np.int64(11)] -> total 44 (correct)
+A011: trials [np.int64(8) np.int64(12) np.int64(15) np.int64(14) np.int64(14)] -> total 63 (correct)
+A012: trials [np.int64(4) np.int64(9) np.int64(9) np.int64(12) np.int64(11)] -> total 45 (correct)
+Step 0 complete

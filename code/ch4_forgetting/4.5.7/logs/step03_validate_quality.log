@@ -1,0 +1,44 @@
+2025-12-05 14:33:44,468 - INFO - ============================================================
+2025-12-05 14:33:44,469 - INFO - RQ 5.5.7 Step 03: Validate Clustering Quality
+2025-12-05 14:33:44,469 - INFO - ============================================================
+2025-12-05 14:33:44,471 - INFO - Loaded 100 rows from Step 01
+2025-12-05 14:33:44,474 - INFO - Optimal K from Step 02: 4
+2025-12-05 14:33:44,474 - INFO - 
+Fitting K-means with K=4...
+2025-12-05 14:33:44,510 - INFO - K-means fitted, 4 clusters assigned
+2025-12-05 14:33:44,510 - INFO - 
+Computing Silhouette score...
+2025-12-05 14:33:44,513 - INFO - Silhouette score: 0.417 (threshold: 0.4)
+2025-12-05 14:33:44,513 - INFO - Silhouette status: PASS
+2025-12-05 14:33:44,513 - INFO - 
+Computing Davies-Bouldin index...
+2025-12-05 14:33:44,514 - INFO - Davies-Bouldin index: 0.785 (threshold: 1.5)
+2025-12-05 14:33:44,514 - INFO - Davies-Bouldin status: PASS
+2025-12-05 14:33:44,514 - INFO - 
+Computing Jaccard bootstrap stability (B=100)...
+2025-12-05 14:33:45,929 - INFO - Jaccard stability: 0.831 [95% CI: 0.576, 0.979] (threshold: 0.75)
+2025-12-05 14:33:45,929 - INFO - Jaccard status: PASS
+2025-12-05 14:33:45,929 - INFO - 
+----------------------------------------
+2025-12-05 14:33:45,929 - INFO - Overall Quality Assessment
+2025-12-05 14:33:45,929 - INFO - ----------------------------------------
+2025-12-05 14:33:45,929 - INFO - Overall quality: PASS
+2025-12-05 14:33:45,929 - INFO - Reason: At least one criterion met
+2025-12-05 14:33:45,930 - INFO - 
+Validating metric values...
+2025-12-05 14:33:45,930 - INFO - Silhouette in valid range [-1, 1]: PASS
+2025-12-05 14:33:45,930 - INFO - Davies-Bouldin >= 0: PASS
+2025-12-05 14:33:45,930 - INFO - Jaccard in valid range [0, 1]: PASS
+2025-12-05 14:33:45,930 - INFO - All bootstrap Jaccard values in [0, 1]: PASS
+2025-12-05 14:33:45,932 - INFO - 
+Saved to /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step03_cluster_validation.csv
+2025-12-05 14:33:45,932 - INFO - 
+============================================================
+2025-12-05 14:33:45,932 - INFO - Step 03 COMPLETE
+2025-12-05 14:33:45,932 - INFO -   Optimal K: 4
+2025-12-05 14:33:45,932 - INFO -   Silhouette: 0.417 (PASS)
+2025-12-05 14:33:45,932 - INFO -   Davies-Bouldin: 0.785 (PASS)
+2025-12-05 14:33:45,932 - INFO -   Jaccard: 0.831 (PASS)
+2025-12-05 14:33:45,932 - INFO -   Overall: PASS - At least one criterion met
+2025-12-05 14:33:45,932 - INFO -   Output: /home/etai/projects/REMEMVR/results/ch5/5.5.7/data/step03_cluster_validation.csv
+2025-12-05 14:33:45,932 - INFO - ============================================================

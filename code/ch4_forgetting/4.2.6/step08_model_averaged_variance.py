@@ -52,54 +52,46 @@ def log(msg):
 
 def main():
     try:
-        # =====================================================================
-        # STEP 1: Initialize Log
-        # =====================================================================
+        # Initialize Log
         LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
         with open(LOG_FILE, 'w', encoding='utf-8') as f:
             f.write("=== Step 08: Model-Averaged Variance Decomposition (Stratified) ===\n")
             f.write(f"Started: {datetime.now().isoformat()}\n\n")
 
-        log("[START] Model-averaged variance decomposition (stratified by domain)")
-        log(f"[INFO] RQ 5.2.6 upgrade: Log-only → Model-averaged (v4.X)")
+        log("Model-averaged variance decomposition (stratified by domain)")
+        log(f"RQ 5.2.6 upgrade: Log-only → Model-averaged (v4.X)")
         log("")
-
-        # =====================================================================
-        # STEP 2: Load LMM Input Data
-        # =====================================================================
-        log("[LOAD] Loading LMM input from RQ 5.2.1...")
+        # Load LMM Input Data
+        log("Loading LMM input from RQ 5.2.1...")
         if not LMM_INPUT.exists():
-            log(f"[FAIL] Cannot find {LMM_INPUT}")
-            log("[FAIL] RQ 5.2.1 must complete Step 04 first")
+            log(f"Cannot find {LMM_INPUT}")
+            log("RQ 5.2.1 must complete Step 04 first")
             sys.exit(1)
 
         lmm_input = pd.read_csv(LMM_INPUT, encoding='utf-8')
-        log(f"[LOADED] {len(lmm_input)} rows, {len(lmm_input.columns)} columns")
-        log(f"[INFO] Columns: {list(lmm_input.columns)}")
+        log(f"{len(lmm_input)} rows, {len(lmm_input.columns)} columns")
+        log(f"Columns: {list(lmm_input.columns)}")
 
         # Verify expected columns
         required_cols = ['UID', 'theta', 'TSVR_hours', 'domain']
         missing_cols = [col for col in required_cols if col not in lmm_input.columns]
         if missing_cols:
-            log(f"[ERROR] Missing required columns: {missing_cols}")
+            log(f"Missing required columns: {missing_cols}")
             sys.exit(1)
 
-        log(f"[INFO] Unique participants: {lmm_input['UID'].nunique()}")
-        log(f"[INFO] Unique domains: {lmm_input['domain'].nunique()}")
-        log(f"[INFO] Domain value counts:\n{lmm_input['domain'].value_counts()}")
+        log(f"Unique participants: {lmm_input['UID'].nunique()}")
+        log(f"Unique domains: {lmm_input['domain'].nunique()}")
+        log(f"Domain value counts:\n{lmm_input['domain'].value_counts()}")
 
         # Filter to What/Where only (When excluded due to floor effect)
         log("")
-        log("[FILTER] Excluding 'when' domain (floor effect from RQ 5.2.1)")
+        log("Excluding 'when' domain (floor effect from RQ 5.2.1)")
         lmm_input_filtered = lmm_input[lmm_input['domain'].isin(['what', 'where'])].copy()
-        log(f"[FILTERED] {len(lmm_input_filtered)} rows (what + where only)")
-        log(f"[INFO] Observations per domain: {len(lmm_input_filtered) / 2:.0f}")
-
-        # =====================================================================
-        # STEP 3: Run Model-Averaged Variance Decomposition (STRATIFIED)
-        # =====================================================================
+        log(f"{len(lmm_input_filtered)} rows (what + where only)")
+        log(f"Observations per domain: {len(lmm_input_filtered) / 2:.0f}")
+        # Run Model-Averaged Variance Decomposition (STRATIFIED)
         log("")
-        log("[ANALYSIS] Running STRATIFIED model-averaged variance decomposition...")
+        log("Running STRATIFIED model-averaged variance decomposition...")
         log(f"  Outcome variable: theta")
         log(f"  Time variable: TSVR_hours")
         log(f"  Groups variable: UID")
@@ -107,7 +99,7 @@ def main():
         log(f"  Delta AIC threshold: 2.0 (competitive models)")
         log(f"  Random effects: Intercepts + Slopes")
         log("")
-        log("[INFO] This will take ~4-8 minutes (2 domains × ~65 models each)...")
+        log("This will take ~4-8 minutes (2 domains × ~65 models each)...")
         log("")
 
         results = compute_model_averaged_variance_decomposition(
@@ -129,25 +121,22 @@ def main():
             handle_convergence_failures='warn',
         )
 
-        log("[SUCCESS] Model-averaged variance decomposition complete")
+        log("Model-averaged variance decomposition complete")
         log("")
-
-        # =====================================================================
-        # STEP 4: Extract and Save Results
-        # =====================================================================
-        log("[EXTRACT] Extracting results from variance decomposition...")
+        # Extract and Save Results
+        log("Extracting results from variance decomposition...")
 
         # Extract kitchen sink model comparison (POOLED across domains)
         model_comparison = results['model_comparison']
-        log(f"[INFO] Kitchen sink comparison: {len(model_comparison)} models tested")
+        log(f"Kitchen sink comparison: {len(model_comparison)} models tested")
 
         # Best model info (pooled)
         best_row = model_comparison.iloc[0]
-        log(f"[INFO] Best model (pooled): {best_row['model_name']} (AIC={best_row['AIC']:.2f})")
+        log(f"Best model (pooled): {best_row['model_name']} (AIC={best_row['AIC']:.2f})")
 
         # Extract competitive models metadata (pooled)
         competitive_models = results['competitive_models']
-        log(f"[INFO] Competitive models (pooled, ΔAIC < 2.0): {len(competitive_models)}")
+        log(f"Competitive models (pooled, ΔAIC < 2.0): {len(competitive_models)}")
         for model_name in competitive_models:
             model_row = model_comparison[model_comparison['model_name'] == model_name].iloc[0]
             log(f"  - {model_name}: AIC={model_row['AIC']:.2f}, ΔAIC={model_row['delta_AIC']:.2f}, weight={model_row['akaike_weight']:.3f}")
@@ -155,7 +144,7 @@ def main():
         # Extract variance components (2-row dataframe for 2 domains)
         variance_components_df = results['averaged_variance_components']
         log("")
-        log(f"[INFO] Model-averaged variance components ({len(variance_components_df)} domains):")
+        log(f"Model-averaged variance components ({len(variance_components_df)} domains):")
         log(f"  Columns available: {list(variance_components_df.columns)}")
 
         for idx, row in variance_components_df.iterrows():
@@ -172,7 +161,7 @@ def main():
         # Extract ICCs (2-row dataframe)
         iccs_df = results['averaged_ICCs']
         log("")
-        log(f"[INFO] Model-averaged ICCs ({len(iccs_df)} domains):")
+        log(f"Model-averaged ICCs ({len(iccs_df)} domains):")
         log(f"  Columns available: {list(iccs_df.columns)}")
 
         for idx, row in iccs_df.iterrows():
@@ -192,13 +181,13 @@ def main():
         # Extract random effects (dataframe with UID, domain, intercept_avg, slope_avg)
         random_effects_df = results['averaged_random_effects']
         log("")
-        log(f"[INFO] Model-averaged random effects: {len(random_effects_df)} rows")
+        log(f"Model-averaged random effects: {len(random_effects_df)} rows")
         log(f"  Columns available: {list(random_effects_df.columns)}")
         log(f"  Expected: 200 rows (100 UID × 2 domains)")
 
         # Verify structure
         if len(random_effects_df) != 200:
-            log(f"[WARNING] Expected 200 rows (100 UID × 2 domains), got {len(random_effects_df)}")
+            log(f"Expected 200 rows (100 UID × 2 domains), got {len(random_effects_df)}")
 
         # Find intercept and slope columns
         int_col = None
@@ -219,7 +208,7 @@ def main():
 
         # Extract model-specific variance (from stratified_results)
         log("")
-        log("[INFO] Extracting model-specific variance per domain...")
+        log("Extracting model-specific variance per domain...")
 
         model_specific_list = []
         for domain_name in ['what', 'where']:
@@ -268,17 +257,14 @@ def main():
                 })
 
         log("")
-        log(f"[INFO] Extracted {len(model_specific_list)} model-specific entries")
-
-        # =====================================================================
-        # STEP 5: Save All Outputs
-        # =====================================================================
+        log(f"Extracted {len(model_specific_list)} model-specific entries")
+        # Save All Outputs
         log("")
-        log("[SAVE] Saving results to CSV/YAML files...")
+        log("Saving results to CSV/YAML files...")
 
         # Save model comparison (pooled)
         model_comparison.to_csv(MODEL_COMPARISON_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {MODEL_COMPARISON_CSV}")
+        log(f"{MODEL_COMPARISON_CSV}")
 
         # Save competitive models metadata
         competitive_models_meta = {
@@ -292,20 +278,20 @@ def main():
         }
         with open(COMPETITIVE_MODELS_YAML, 'w', encoding='utf-8') as f:
             yaml.dump(competitive_models_meta, f, default_flow_style=False, allow_unicode=True)
-        log(f"[SAVED] {COMPETITIVE_MODELS_YAML}")
+        log(f"{COMPETITIVE_MODELS_YAML}")
 
         # Save averaged variance components (2 rows: what, where)
         variance_components_df.to_csv(AVERAGED_VARIANCE_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {AVERAGED_VARIANCE_CSV}")
+        log(f"{AVERAGED_VARIANCE_CSV}")
 
         # Save averaged ICCs (2 rows: what, where)
         iccs_df.to_csv(AVERAGED_ICCS_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {AVERAGED_ICCS_CSV}")
+        log(f"{AVERAGED_ICCS_CSV}")
 
         # Save model-specific variance
         model_specific_df = pd.DataFrame(model_specific_list)
         model_specific_df.to_csv(MODEL_SPECIFIC_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {MODEL_SPECIFIC_CSV}")
+        log(f"{MODEL_SPECIFIC_CSV}")
 
         # Save averaged random effects (200 rows: 100 UID × 2 domains)
         # Ensure columns match expected format for RQ 5.2.7
@@ -326,74 +312,68 @@ def main():
         missing_export_cols = [col for col in export_cols if col not in random_effects_export.columns]
 
         if missing_export_cols:
-            log(f"[WARNING] Missing export columns: {missing_export_cols}")
+            log(f"Missing export columns: {missing_export_cols}")
             # Use available columns
             export_cols = [col for col in export_cols if col in random_effects_export.columns]
 
         random_effects_export = random_effects_export[export_cols]
         random_effects_export.to_csv(AVERAGED_RANDOM_EFFECTS_CSV, index=False, encoding='utf-8')
-        log(f"[SAVED] {AVERAGED_RANDOM_EFFECTS_CSV}")
-
-        # =====================================================================
-        # STEP 6: Validation
-        # =====================================================================
+        log(f"{AVERAGED_RANDOM_EFFECTS_CSV}")
+        # Validation
         log("")
-        log("[VALIDATE] Running output validation...")
+        log("Running output validation...")
 
         # Validate averaged variance components
         if len(variance_components_df) != 2:
-            log(f"[FAIL] Expected 2 domains (what, where), got {len(variance_components_df)}")
+            log(f"Expected 2 domains (what, where), got {len(variance_components_df)}")
             sys.exit(1)
         if variance_components_df[['var_intercept', 'var_slope', 'var_residual']].isna().sum().sum() > 0:
-            log(f"[FAIL] Variance components contain NaN values")
+            log(f"Variance components contain NaN values")
             sys.exit(1)
-        log(f"[PASS] Variance components validated: 2 domains, no NaN values")
+        log(f"Variance components validated: 2 domains, no NaN values")
 
         # Validate averaged ICCs
         if len(iccs_df) != 2:
-            log(f"[FAIL] Expected 2 domains (what, where), got {len(iccs_df)}")
+            log(f"Expected 2 domains (what, where), got {len(iccs_df)}")
             sys.exit(1)
         if iccs_df[['ICC_intercept', 'ICC_slope_simple']].isna().sum().sum() > 0:
-            log(f"[FAIL] ICCs contain NaN values")
+            log(f"ICCs contain NaN values")
             sys.exit(1)
-        log(f"[PASS] ICCs validated: 2 domains, no NaN values")
+        log(f"ICCs validated: 2 domains, no NaN values")
 
         # Validate random effects
         if len(random_effects_export) != 200:
-            log(f"[WARNING] Expected 200 rows (100 UID × 2 domains), got {len(random_effects_export)}")
+            log(f"Expected 200 rows (100 UID × 2 domains), got {len(random_effects_export)}")
         if random_effects_export.isna().sum().sum() > 0:
-            log(f"[FAIL] Random effects contain NaN values")
+            log(f"Random effects contain NaN values")
             sys.exit(1)
-        log(f"[PASS] Random effects validated: {len(random_effects_export)} rows, no NaN values")
+        log(f"Random effects validated: {len(random_effects_export)} rows, no NaN values")
 
         # Check for positive variance
         for idx, row in variance_components_df.iterrows():
             domain = row.get('domain', row.get('level', f'domain_{idx}'))
             var_slope = row.get('var_slope', np.nan)
             if pd.isna(var_slope) or var_slope <= 0:
-                log(f"[FAIL] Domain {domain}: var_slope must be positive, got {var_slope}")
+                log(f"Domain {domain}: var_slope must be positive, got {var_slope}")
                 sys.exit(1)
-        log(f"[PASS] All variance components positive")
-
-        # =====================================================================
-        # STEP 7: Summary
-        # =====================================================================
+        log(f"All variance components positive")
+        # Summary
         log("")
         log("=" * 70)
-        log("[COMPLETE] Step 08: Model-Averaged Variance Decomposition (Stratified)")
+        log("Step 08: Model-Averaged Variance Decomposition (Stratified)")
         log("=" * 70)
         log(f"Kitchen sink: {len(model_comparison)} models tested (pooled AIC)")
         log(f"Competitive: {len(competitive_models)} models (ΔAIC < 2.0)")
         log(f"Domains analyzed: 2 (what, where)")
         log(f"Random effects: {len(random_effects_export)} rows → RQ 5.2.7 input")
         log("")
-        log("[NEXT] Run RQ 5.2.7 with model-averaged random effects from step08")
+        log("Run RQ 5.2.7 with model-averaged random effects from step08")
         log("")
 
     except Exception as e:
-        log(f"[ERROR] {str(e)}")
+        log(f"{str(e)}")
         import traceback
-        log("[TRACEBACK]")
+        log("")
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)
         traceback.print_exc()

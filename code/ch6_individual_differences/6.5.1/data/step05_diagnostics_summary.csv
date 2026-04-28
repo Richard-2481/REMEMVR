@@ -1,0 +1,5 @@
+test,statistic,p_value,interpretation
+Shapiro-Wilk,0.9838970296709889,0.26374467646207733,Normal
+Breusch-Pagan,2.105979233947375,0.7162739765218282,Homoscedastic
+VIF_max,1.1565363475187467,,Acceptable
+Cooks_D_outliers,8.0,,8 outliers (threshold=0.0400)

@@ -1,0 +1,59 @@
+2025-12-31 09:58:27,421 - INFO - ============================================================
+2025-12-31 09:58:27,422 - INFO - Step 02b: Random Slopes Comparison
+2025-12-31 09:58:27,422 - INFO - ============================================================
+2025-12-31 09:58:27,422 - INFO - Loading data from: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step01_piecewise_lmm_input.csv
+2025-12-31 09:58:27,429 - INFO - Data loaded: 1200 rows, 100 participants
+2025-12-31 09:58:27,429 - INFO - 
+============================================================
+2025-12-31 09:58:27,430 - INFO - MODEL A: Random Intercepts Only
+2025-12-31 09:58:27,430 - INFO - ============================================================
+2025-12-31 09:58:27,430 - INFO - Formula: theta ~ Days_within * Segment * paradigm_code
+2025-12-31 09:58:27,430 - INFO - Random effects: (1 | UID)
+2025-12-31 09:58:27,538 - INFO - ✓ Model A converged
+2025-12-31 09:58:27,540 - INFO -   AIC: 2391.33
+2025-12-31 09:58:27,540 - INFO -   BIC: 2462.60
+2025-12-31 09:58:27,540 - INFO -   Log-likelihood: -1181.67
+2025-12-31 09:58:27,540 - INFO -   Random intercept variance: 0.3682
+2025-12-31 09:58:27,540 - INFO - 
+============================================================
+2025-12-31 09:58:27,540 - INFO - MODEL B: Random Intercepts + Random Slopes
+2025-12-31 09:58:27,541 - INFO - ============================================================
+2025-12-31 09:58:27,541 - INFO - Formula: theta ~ Days_within * Segment * paradigm_code
+2025-12-31 09:58:27,541 - INFO - Random effects: (1 + Days_within | UID)
+2025-12-31 09:58:27,835 - INFO - ✓ Model B converged
+2025-12-31 09:58:27,837 - INFO -   AIC: 2247.79
+2025-12-31 09:58:27,837 - INFO -   BIC: 2329.23
+2025-12-31 09:58:27,837 - INFO -   Log-likelihood: -1107.89
+2025-12-31 09:58:27,838 - INFO -   Random intercept variance: 0.4267
+2025-12-31 09:58:27,838 - INFO -   Random slope variance: 0.0191
+2025-12-31 09:58:27,838 - INFO -   Random slope SD: 0.1382
+2025-12-31 09:58:27,838 - INFO - 
+============================================================
+2025-12-31 09:58:27,838 - INFO - MODEL COMPARISON
+2025-12-31 09:58:27,838 - INFO - ============================================================
+2025-12-31 09:58:27,838 - INFO - Intercepts-only AIC: 2391.33
+2025-12-31 09:58:27,838 - INFO - Intercepts+slopes AIC: 2247.79
+2025-12-31 09:58:27,838 - INFO - ΔAIC (Intercepts - Slopes): 143.55
+2025-12-31 09:58:27,838 - INFO - ΔBIC: 133.37
+2025-12-31 09:58:27,838 - INFO - 
+============================================================
+2025-12-31 09:58:27,839 - INFO - INTERPRETATION
+2025-12-31 09:58:27,839 - INFO - ============================================================
+2025-12-31 09:58:27,839 - INFO - 🟢 OPTION A: Slopes Improve Fit (ΔAIC > 2)
+2025-12-31 09:58:27,839 - INFO -   → Individual differences in forgetting rates CONFIRMED
+2025-12-31 09:58:27,839 - INFO -   → Random slope variance non-zero (SD = 0.1382)
+2025-12-31 09:58:27,839 - INFO -   → Use intercepts+slopes model for downstream analyses
+2025-12-31 09:58:27,839 - INFO -   → Can claim heterogeneous effects (individual variability)
+2025-12-31 09:58:27,842 - INFO - 
+✓ Comparison results saved: /home/etai/projects/REMEMVR/results/ch5/5.3.3/data/step02b_random_slopes_comparison.csv
+2025-12-31 09:58:27,842 - INFO - 
+============================================================
+2025-12-31 09:58:27,842 - INFO - RECOMMENDATION
+2025-12-31 09:58:27,842 - INFO - ============================================================
+2025-12-31 09:58:27,842 - INFO - Recommendation: USE random slopes model (current step02)
+2025-12-31 09:58:27,842 - INFO -   → Individual heterogeneity confirmed
+2025-12-31 09:58:27,842 - INFO -   → Document in validation.md as OPTION A
+2025-12-31 09:58:27,842 - INFO - 
+============================================================
+2025-12-31 09:58:27,842 - INFO - STEP 02B COMPLETE
+2025-12-31 09:58:27,842 - INFO - ============================================================

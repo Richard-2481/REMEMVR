@@ -1,0 +1,88 @@
+Step 0: Load Theta Scores from RQ 5.3.1
+
+Validating source file exists...
+  Source file exists: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step04_lmm_input.csv
+
+Loading theta scores from RQ 5.3.1...
+1200 rows, 8 columns
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'TSVR_hours_sq', 'TSVR_hours_log', 'paradigm', 'theta']
+
+Running comprehensive validation checks...
+'se'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'se'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.7/code/step00_load_theta_scores.py", line 305, in <module>
+    valid, msg = validate_value_range(df, 'se', SE_RANGE[0], SE_RANGE[1])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.7/code/step00_load_theta_scores.py", line 204, in validate_value_range
+    values = df[col].dropna()
+             ~~^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'se'
+Step 0: Load Theta Scores from RQ 5.3.1
+
+Validating source file exists...
+  Source file exists: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step04_lmm_input.csv
+
+Loading theta scores from RQ 5.3.1...
+1200 rows, 8 columns
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'TSVR_hours_sq', 'TSVR_hours_log', 'paradigm', 'theta']
+
+Running comprehensive validation checks...
+  Row count: Row count valid: 1200 rows
+  Columns: Columns valid: 8 columns match expected
+  Paradigm balance: Paradigm balance mismatch: IFR: expected 400, got 0; ICR: expected 400, got 0; IRE: expected 400, got 0
+  Test balance: Test balance mismatch: T1: expected 300, got 0; T2: expected 300, got 0; T3: expected 300, got 0; T4: expected 300, got 0
+  Missing data: No missing data in critical columns: ['theta', 'TSVR_hours', 'paradigm']
+  Theta range: theta range valid: all values in [-4, 4]
+  TSVR_hours range: TSVR_hours range valid: all values in [0, 300]
+  Participant balance: Participant balance valid: 100 participants with 12 rows each
+
+Validation failed - see errors above
+Step 0: Load Theta Scores from RQ 5.3.1
+
+Validating source file exists...
+  Source file exists: /home/etai/projects/REMEMVR/results/ch5/5.3.1/data/step04_lmm_input.csv
+
+Loading theta scores from RQ 5.3.1...
+1200 rows, 8 columns
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours', 'TSVR_hours_sq', 'TSVR_hours_log', 'paradigm', 'theta']
+
+Running comprehensive validation checks...
+  Row count: Row count valid: 1200 rows
+  Columns: Columns valid: 8 columns match expected
+  Paradigm balance: Paradigm balance valid: free_recall=400, cued_recall=400, recognition=400
+  Test balance: Test balance valid: 1=300, 2=300, 3=300, 4=300
+  Missing data: No missing data in critical columns: ['theta', 'TSVR_hours', 'paradigm']
+  Theta range: theta range valid: all values in [-4, 4]
+  TSVR_hours range: TSVR_hours range valid: all values in [0, 300]
+  Participant balance: Participant balance valid: 100 participants with 12 rows each
+
+All validation checks passed
+
+Saving validated theta scores...
+/home/etai/projects/REMEMVR/results/ch5/5.3.7/data/step00_theta_scores_validated.csv (1200 rows, 8 columns)
+
+Writing validation summary...
+/home/etai/projects/REMEMVR/results/ch5/5.3.7/data/step00_validation_summary.txt
+
+Step 0 complete
+  Validated data: /home/etai/projects/REMEMVR/results/ch5/5.3.7/data/step00_theta_scores_validated.csv
+  Summary report: /home/etai/projects/REMEMVR/results/ch5/5.3.7/data/step00_validation_summary.txt
+  Next: Run step01_load_model_metadata.py

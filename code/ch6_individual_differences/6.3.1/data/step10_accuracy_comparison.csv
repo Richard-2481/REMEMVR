@@ -1,0 +1,5 @@
+predictor,sr2_confidence,sr2_accuracy,difference,ci_lower,ci_upper,pattern,evidence
+RAVLT_T,0.0007888933244946,0.017,-0.0162111066755054,,,weaker,supports_dissociation
+BVMT_T,0.0367151496858066,0.011,0.025715149685806602,,,stronger,complex_pattern
+RPM_T,0.0263612245562162,0.08,-0.0536387754437838,,,weaker,supports_dissociation
+Overall_Model,0.2204538720480612,0.226,-0.005546127951938817,,,weaker,supports_dissociation

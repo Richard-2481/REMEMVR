@@ -1,0 +1,5 @@
+domain,data_available,n_participants,mean_theta,notes
+overall,True,100,0.006179757148499989,From Ch5 5.1.1
+what,True,100,-0.007222128663625008,From Ch5 5.2.1
+where,True,100,0.03678954643675,From Ch5 5.2.1
+when,True,100,0.10869476563824998,From Ch5 5.2.1 - possible floor effects

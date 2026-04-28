@@ -1,0 +1,46 @@
+Step 7: LMM Model Comparison
+Loading input data...
+standardized_scores: 800 rows, 6 cols
+Columns: ['UID', 'test', 'location_type', 'irt_z', 'ctt_full_z', 'ctt_purified_z']
+Test format in scores: ['T1' 'T2' 'T3' 'T4']
+tsvr_mapping: 400 rows, 4 cols
+Test format in TSVR: [1 2 3 4]
+Converting TSVR test format and merging datasets...
+TSVR test format after conversion: ['T1' 'T2' 'T3' 'T4']
+Combined dataset: 800 rows
+Time variable created: min=0.04, max=10.26 days
+Fitting 6 parallel LMMs...
+Fitting Source_IRT...
+Source_IRT: 400 observations
+Source_IRT: AIC=1020.71, converged=False
+Fitting Source_Full_CTT...
+Source_Full_CTT: 400 observations
+Source_Full_CTT: AIC=974.49, converged=True
+Fitting Source_Purified_CTT...
+Source_Purified_CTT: 400 observations
+Source_Purified_CTT: AIC=979.75, converged=False
+Fitting Destination_IRT...
+Destination_IRT: 400 observations
+Destination_IRT: AIC=1111.09, converged=False
+Fitting Destination_Full_CTT...
+Destination_Full_CTT: 400 observations
+Destination_Full_CTT: AIC=1098.00, converged=True
+Fitting Destination_Purified_CTT...
+Destination_Purified_CTT: 400 observations
+Destination_Purified_CTT: AIC=1115.92, converged=True
+Computing AIC comparisons...
+source: delta_aic=5.26, interpretation='Full CTT favored'
+destination: delta_aic=17.92, interpretation='Full CTT favored'
+Saving AIC comparison results...
+step07_lmm_model_comparison.csv (2 rows, 8 cols)
+Running validate_model_convergence...
+Source_IRT: Model did not converge. Check for collinearity, insufficient data, or model specification issues.
+Source_Full_CTT: Model converged successfully.
+Source_Purified_CTT: Model did not converge. Check for collinearity, insufficient data, or model specification issues.
+Destination_IRT: Model did not converge. Check for collinearity, insufficient data, or model specification issues.
+Destination_Full_CTT: Model converged successfully.
+Destination_Purified_CTT: Model converged successfully.
+Some models did not converge - check results carefully
+source: Not all models converged
+destination: Not all models converged
+Step 7 complete

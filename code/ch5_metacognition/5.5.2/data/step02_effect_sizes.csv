@@ -1,0 +1,6 @@
+effect,f_squared,interpretation
+"C(congruence, Treatment('Common'))[T.Congruent]",0.05000435622028986,small
+"C(congruence, Treatment('Common'))[T.Incongruent]",0.0015776505769309413,negligible
+log_TSVR,0.0016519886985054007,negligible
+"C(congruence, Treatment('Common'))[T.Congruent]:log_TSVR",0.00442604588090499,negligible
+"C(congruence, Treatment('Common'))[T.Incongruent]:log_TSVR",0.00013964291044505777,negligible

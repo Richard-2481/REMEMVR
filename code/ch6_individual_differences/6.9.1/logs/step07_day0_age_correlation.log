@@ -1,0 +1,7 @@
+======================================================================
+STEP 07: Day 0 Age-Theta Correlation
+======================================================================
+Day 0 correlation computed: r = -0.200652, p = 0.045317, N = 100
+Aggregated correlation: r = -0.193289, p = 0.054004, N = 100
+Saved: step07_day0_age_correlation.csv (2 rows)
+Validation PASSED

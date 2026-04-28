@@ -1,0 +1,60 @@
+Step 06: Multiple Comparisons Correction
+Loading regression results from step05...
+step05_regression_results.csv (5 rows, 7 cols)
+Predictors found: ['const', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T']
+P-value range: 0.000037 to 0.642202
+Applying multiple comparison corrections...
+Testing 4 predictors (excluding intercept)
+Applied corrections:
+  - Bonferroni within-RQ (alpha=0.0125 for 4 predictors)
+  - Bonferroni chapter-level (alpha=0.00179 for 28 tests)
+  - FDR Benjamini-Hochberg (alpha=0.05)
+Multiple comparison corrections complete
+Saving corrected_results...
+step06_corrected_results.csv (4 rows, 9 cols)
+Saving hypothesis_tests...
+step06_hypothesis_tests.csv (5 rows, 6 cols)
+Correction results:
+  RAVLT_T: p_uncorr=0.1554, p_bonf_within=0.6216, p_bonf_chapter=1.0000, p_fdr=0.3108
+  BVMT_T: p_uncorr=0.2606, p_bonf_within=1.0000, p_bonf_chapter=1.0000, p_fdr=0.3474
+  NART_T: p_uncorr=0.6422, p_bonf_within=1.0000, p_bonf_chapter=1.0000, p_fdr=0.6422
+  RPM_T: p_uncorr=0.0027, p_bonf_within=0.0107, p_bonf_chapter=0.0750, p_fdr=0.0107
+Validating multiple comparison corrections...
+P-values in [0,1] range: PASS
+Bonferroni more conservative: PASS
+FDR intermediate correction: PASS
+Significance flags consistent: PASS
+Dual reporting complete: PASS
+All validation criteria PASSED
+Step 06 complete
+Step 06: Multiple Comparisons Correction
+Loading regression results from step05...
+step05_regression_results.csv (7 rows, 7 cols)
+Predictors found: ['const', 'RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T']
+P-value range: 0.000003 to 0.633749
+Applying multiple comparison corrections...
+Testing 6 predictors (excluding intercept)
+Applied corrections:
+  - Bonferroni within-RQ (alpha=0.0125 for 4 predictors)
+  - Bonferroni chapter-level (alpha=0.00179 for 28 tests)
+  - FDR Benjamini-Hochberg (alpha=0.05)
+Multiple comparison corrections complete
+Saving corrected_results...
+step06_corrected_results.csv (6 rows, 9 cols)
+Saving hypothesis_tests...
+step06_hypothesis_tests.csv (7 rows, 6 cols)
+Correction results:
+  RAVLT_T: p_uncorr=0.1657, p_bonf_within=0.9942, p_bonf_chapter=1.0000, p_fdr=0.3032
+  RAVLT_Pct_Ret_T: p_uncorr=0.0607, p_bonf_within=0.3640, p_bonf_chapter=1.0000, p_fdr=0.1820
+  BVMT_T: p_uncorr=0.5559, p_bonf_within=1.0000, p_bonf_chapter=1.0000, p_fdr=0.6337
+  BVMT_Pct_Ret_T: p_uncorr=0.2022, p_bonf_within=1.0000, p_bonf_chapter=1.0000, p_fdr=0.3032
+  NART_T: p_uncorr=0.6337, p_bonf_within=1.0000, p_bonf_chapter=1.0000, p_fdr=0.6337
+  RPM_T: p_uncorr=0.0115, p_bonf_within=0.0693, p_bonf_chapter=0.3234, p_fdr=0.0693
+Validating multiple comparison corrections...
+P-values in [0,1] range: PASS
+Bonferroni more conservative: PASS
+FDR intermediate correction: PASS
+Significance flags consistent: PASS
+Dual reporting complete: PASS
+All validation criteria PASSED
+Step 06 complete

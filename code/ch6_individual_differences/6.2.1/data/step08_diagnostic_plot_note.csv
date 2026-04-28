@@ -1,0 +1,4 @@
+note,recommendation
+Diagnostic plots require actual model residuals from regression fitting.,Re-run step03 with residual extraction
+These should be generated during step03 when models are fit.,Or skip diagnostic plots if not essential
+Fake/synthetic diagnostic data has been removed for scientific integrity.,Never use synthetic data for model diagnostics

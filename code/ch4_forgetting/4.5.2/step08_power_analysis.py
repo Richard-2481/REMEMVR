@@ -1,5 +1,5 @@
 """
-Step 8: Power Analysis for NULL Interaction (PLATINUM Requirement)
+Step 8: Power Analysis for NULL Interaction (Validation Requirement)
 
 Purpose: Compute post-hoc power and required N for LocationType x Phase interaction
 

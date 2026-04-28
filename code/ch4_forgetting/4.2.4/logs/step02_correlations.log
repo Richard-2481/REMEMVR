@@ -1,0 +1,81 @@
+Step 02: Correlation Analysis (IRT vs CTT per Domain)
+Loading input data...
+step00_irt_theta_loaded.csv (400 rows, 4 cols)
+step01_ctt_scores.csv (1200 rows, 6 cols)
+Reshaping IRT theta to long format...
+IRT long format: 1200 rows
+Merging IRT and CTT scores...
+0 rows with both IRT and CTT scores
+Expected 1200 rows, got 0
+Computing Pearson correlations per domain...
+`x` and `y` must have length at least 2.
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq11/code/step02_correlations.py", line 309, in <module>
+    r, p_uncorrected = stats.pearsonr(
+                       ^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/scipy/stats/_stats_py.py", line 4689, in pearsonr
+    raise ValueError('`x` and `y` must have length at least 2.')
+ValueError: `x` and `y` must have length at least 2.
+Step 02: Correlation Analysis (IRT vs CTT per Domain)
+Loading input data...
+step00_irt_theta_loaded.csv (400 rows, 4 cols)
+step01_ctt_scores.csv (1200 rows, 6 cols)
+Reshaping IRT theta to long format...
+IRT long format: 1200 rows
+Merging IRT and CTT scores...
+1200 rows with both IRT and CTT scores
+Computing Pearson correlations per domain...
+what: r=0.906, p=0.0000, n=400
+where: r=0.970, p=0.0000, n=400
+when: r=0.919, p=0.0000, n=400
+Computing overall correlation (all domains pooled)...
+Overall: r=0.585, p=0.0000, n=1200
+Applying Holm-Bonferroni correction (m=4 tests)...
+Holm-Bonferroni correction applied
+[D068] what: p_uncorrected=0.0000, p_holm=0.0000
+[D068] where: p_uncorrected=0.0000, p_holm=0.0000
+[D068] when: p_uncorrected=0.0000, p_holm=0.0000
+[D068] Overall: p_uncorrected=0.0000, p_holm=0.0000
+Saving correlation results...
+step02_correlations.csv (4 rows, 9 cols)
+Running validate_correlation_test_d068...
+valid: True
+d068_compliant: True
+message: Custom validation: 2 required columns.
+Checking additional criteria...
+r values in [-1, 1]: PASS
+CI_lower < r < CI_upper: PASS
+p_holm >= p_uncorrected: PASS
+Exactly 4 rows: PASS
+Step 02 complete
+Step 02: Correlation Analysis (IRT vs CTT per Domain)
+Loading input data...
+step00_irt_theta_loaded.csv (400 rows, 3 cols)
+step01_ctt_scores.csv (800 rows, 6 cols)
+Reshaping IRT theta to long format (When excluded)...
+IRT long format: 800 rows (When excluded)
+Merging IRT and CTT scores...
+800 rows with both IRT and CTT scores
+Computing Pearson correlations per domain (When excluded)...
+what: r=0.906, p=0.0000, n=400
+where: r=0.970, p=0.0000, n=400
+Computing overall correlation (all domains pooled)...
+Overall: r=0.792, p=0.0000, n=800
+Applying Holm-Bonferroni correction (m=3 tests - When excluded)...
+Holm-Bonferroni correction applied
+[D068] what: p_uncorrected=0.0000, p_holm=0.0000
+[D068] where: p_uncorrected=0.0000, p_holm=0.0000
+[D068] Overall: p_uncorrected=0.0000, p_holm=0.0000
+Saving correlation results...
+step02_correlations.csv (3 rows, 9 cols)
+Running validate_correlation_test_d068...
+valid: True
+d068_compliant: True
+message: Custom validation: 2 required columns.
+Checking additional criteria...
+r values in [-1, 1]: PASS
+CI_lower < r < CI_upper: PASS
+p_holm >= p_uncorrected: PASS
+Exactly 3 rows (When excluded): PASS
+Step 02 complete

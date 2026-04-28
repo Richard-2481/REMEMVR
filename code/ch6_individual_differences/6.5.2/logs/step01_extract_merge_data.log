@@ -1,0 +1,66 @@
+Step 01: extract_merge_data
+Loading Ch5 theta scores...
+Ch5 theta scores (400 rows, 3 cols)
+Theta columns: ['UID', 'test', 'Theta_All']
+Unique UIDs: 100, Unique tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Aggregating theta scores by participant...
+Theta scores: 100 participants
+Tests per participant: min=4, max=4, mean=4.0
+Theta range: -1.954 to 1.559
+Loading DASS subscales and controls from dfnonvr.csv...
+dfnonvr.csv subset (100 rows, 6 cols)
+Columns standardized: ['UID', 'nart_score', 'age', 'dass_anx', 'dass_str', 'dass_dep']
+Merging theta scores with DASS subscales and controls...
+Analysis dataset: 100 complete cases
+Missing data found:
+  nart_score: 3 missing values
+Dropped 3 rows with missing data
+Saving analysis dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.5.2/data/step01_analysis_dataset.csv (97 rows, 7 cols)
+/home/etai/projects/REMEMVR/results/ch7/7.5.2/data/step01_extraction_log.txt
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['nart_score', 'UID', 'dass_dep', 'dass_anx', 'age', 'theta_all', 'dass_str']
+n_required: 7
+n_missing: 0
+Additional checks...
+Sample size 97 within expected range [90, 100]
+Theta range within expected bounds [-3.0, 3.0]
+dass_dep within DASS-21 range [0, 21]
+dass_anx within DASS-21 range [0, 21]
+dass_str within DASS-21 range [0, 21]
+Step 01 complete
+Step 01: extract_merge_data
+Loading Ch5 theta scores...
+Ch5 theta scores (400 rows, 3 cols)
+Theta columns: ['UID', 'test', 'Theta_All']
+Unique UIDs: 100, Unique tests: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+Aggregating theta scores by participant...
+Theta scores: 100 participants
+Tests per participant: min=4, max=4, mean=4.0
+Theta range: -1.954 to 1.559
+Loading DASS subscales and controls from dfnonvr.csv...
+dfnonvr.csv subset (100 rows, 6 cols)
+Columns standardized: ['UID', 'nart_score', 'age', 'dass_anx', 'dass_str', 'dass_dep']
+Merging theta scores with DASS subscales and controls...
+Analysis dataset: 100 complete cases
+Missing data found:
+  nart_score: 3 missing values
+Dropped 3 rows with missing data
+Saving analysis dataset...
+/home/etai/projects/REMEMVR/results/ch7/7.5.2/data/step01_analysis_dataset.csv (97 rows, 7 cols)
+/home/etai/projects/REMEMVR/results/ch7/7.5.2/data/step01_extraction_log.txt
+Running validate_data_columns...
+valid: True
+missing_columns: []
+existing_columns: ['nart_score', 'dass_dep', 'dass_anx', 'dass_str', 'UID', 'age', 'theta_all']
+n_required: 7
+n_missing: 0
+Additional checks...
+Sample size 97 within expected range [90, 100]
+Theta range within expected bounds [-3.0, 3.0]
+dass_dep within DASS-21 range [0, 21]
+dass_anx within DASS-21 range [0, 21]
+dass_str within DASS-21 range [0, 21]
+Step 01 complete

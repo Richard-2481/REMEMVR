@@ -1,0 +1,109 @@
+Step 03: Test Moderation with Mixed-Effects Model
+Loading long-format data...
+1200 rows
+Filtering to key timepoints...
+900 rows retained
+Standardizing confidence scores...
+Standardized confidence: mean = -0.000000, SD = 1.000556
+Creating dummy variables (Common as reference)...
+Congruent: 300 rows
+Incongruent: 300 rows
+Common (reference): 300 rows
+Fitting mixed-effects model...
+Formula: theta_accuracy ~ confidence_z + schema_Congruent + schema_Incongruent + confidence_z:schema_Congruent + confidence_z:schema_Incongruent
+Random effects: random intercepts by UID (1|UID)
+argument method not permitted for MixedLM initialization
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.8/code/step03_moderation_test.py", line 118, in <module>
+    model = smf.mixedlm(
+            ^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 1046, in from_formula
+    mod = super().from_formula(formula, data, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 229, in from_formula
+    mod = cls(endog, exog, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 704, in __init__
+    raise ValueError(
+ValueError: argument method not permitted for MixedLM initialization
+Step 03: Test Moderation with Mixed-Effects Model
+Loading long-format data...
+1200 rows
+Filtering to key timepoints...
+900 rows retained
+Standardizing confidence scores...
+Standardized confidence: mean = -0.000000, SD = 1.000556
+Creating dummy variables (Common as reference)...
+Congruent: 300 rows
+Incongruent: 300 rows
+Common (reference): 300 rows
+Fitting mixed-effects model...
+Formula: theta_accuracy ~ confidence_z + schema_Congruent + schema_Incongruent + confidence_z:schema_Congruent + confidence_z:schema_Incongruent
+Random effects: random intercepts by UID (1|UID)
+Running optimization (REML method)...
+Model fitting complete
+Extracting fixed effects table...
+Fixed effects: 7 terms
+  Intercept                     : beta =  0.0558, SE = 0.0556, t =   1.00, p = 0.3162
+  confidence_z                  : beta =  0.5566, SE = 0.0436, t =  12.78, p = 0.0000
+  schema_Congruent              : beta =  0.0081, SE = 0.0513, t =   0.16, p = 0.8749
+  schema_Incongruent            : beta =  0.0152, SE = 0.0513, t =   0.30, p = 0.7666
+  confidence_z:schema_Congruent : beta =  0.0224, SE = 0.0512, t =   0.44, p = 0.6619
+  confidence_z:schema_Incongruent: beta =  0.0251, SE = 0.0515, t =   0.49, p = 0.6260
+  Group Var                     : beta =  0.4512, SE = 0.0894, t =   5.05, p = 0.0000
+Extracting model diagnostics...
+'MixedLMResults' object has no attribute 'ngroups'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.8/code/step03_moderation_test.py", line 157, in <module>
+    diagnostics.append(f"Groups (UIDs): {result.ngroups}")
+                                         ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/wrapper.py", line 34, in __getattribute__
+    obj = getattr(results, attr)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MixedLMResults' object has no attribute 'ngroups'
+Step 03: Test Moderation with Mixed-Effects Model
+Loading long-format data...
+1200 rows
+Filtering to key timepoints...
+900 rows retained
+Standardizing confidence scores...
+Standardized confidence: mean = -0.000000, SD = 1.000556
+Creating dummy variables (Common as reference)...
+Congruent: 300 rows
+Incongruent: 300 rows
+Common (reference): 300 rows
+Fitting mixed-effects model...
+Formula: theta_accuracy ~ confidence_z + schema_Congruent + schema_Incongruent + confidence_z:schema_Congruent + confidence_z:schema_Incongruent
+Random effects: random intercepts by UID (1|UID)
+Running optimization (REML method)...
+Model fitting complete
+Extracting fixed effects table...
+Fixed effects: 7 terms
+  Intercept                     : beta =  0.0558, SE = 0.0556, t =   1.00, p = 0.3162
+  confidence_z                  : beta =  0.5566, SE = 0.0436, t =  12.78, p = 0.0000
+  schema_Congruent              : beta =  0.0081, SE = 0.0513, t =   0.16, p = 0.8749
+  schema_Incongruent            : beta =  0.0152, SE = 0.0513, t =   0.30, p = 0.7666
+  confidence_z:schema_Congruent : beta =  0.0224, SE = 0.0512, t =   0.44, p = 0.6619
+  confidence_z:schema_Incongruent: beta =  0.0251, SE = 0.0515, t =   0.49, p = 0.6260
+  Group Var                     : beta =  0.4512, SE = 0.0894, t =   5.05, p = 0.0000
+Extracting model diagnostics...
+Model converged: True
+Observations: 900, Groups: 100
+AIC = nan, BIC = nan
+Checking model results...
+Model converged successfully
+Fixed effects table has 7 rows (includes Group Var)
+Observations: 900
+Groups: 100 (UIDs)
+All SE values positive
+Main effect of confidence_z positive and significant (expected)
+Interaction terms: 2
+confidence_z:schema_Congruent: p = 0.6619 > 0.05 (non-significant, supports NULL moderation)
+confidence_z:schema_Incongruent: p = 0.6260 > 0.05 (non-significant, supports NULL moderation)
+All interaction terms non-significant -> Schema does NOT moderate relationship
+PASS - All checks passed
+Fixed effects table: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step03_moderation_test.csv
+Model diagnostics: /home/etai/projects/REMEMVR/results/ch6/6.9.8/data/step03_moderation_diagnostics.txt
+Step 03 complete

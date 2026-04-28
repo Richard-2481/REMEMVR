@@ -28,7 +28,6 @@ A) Slopes improve fit (ΔAIC > 2) → Use slopes, report individual differences
 B) Slopes don't converge → Document attempt, explain why
 C) Slopes converge but don't improve (ΔAIC < 2) → Keep intercepts, document negligible variance
 
-Author: rq_platinum agent
 Date: 2025-12-27
 RQ: ch5/5.5.1
 """
@@ -56,18 +55,18 @@ def log(msg):
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Random Slopes Testing (Section 4.4 MANDATORY CHECK)")
+        log("Random Slopes Testing (Section 4.4 MANDATORY CHECK)")
         log("=" * 80)
 
         # Load LMM input data
-        log("\n[LOAD] Loading LMM input data...")
+        log("\nLoading LMM input data...")
         lmm_input = pd.read_csv(DATA_DIR / "step04_lmm_input.csv", encoding='utf-8')
         log(f"  ✓ Loaded {len(lmm_input)} observations")
         log(f"  ✓ Participants: {lmm_input['UID'].nunique()}")
         log(f"  ✓ LocationTypes: {lmm_input['LocationType'].unique().tolist()}")
 
         # Define models to compare
-        log("\n[MODELS] Defining two model specifications...")
+        log("\nDefining two model specifications...")
         log("  Model: Logarithmic (competitive with best Quadratic, ΔAIC=0.34)")
         log("  Formula: theta ~ log_Days_plus1 * LocationType")
         log("")
@@ -92,7 +91,7 @@ if __name__ == "__main__":
         fitted_models = {}
 
         for model_name, spec in models.items():
-            log(f"\n[FIT] {model_name}...")
+            log(f"\n{model_name}...")
             log(f"  Random effects: {spec['re_formula']}")
 
             try:
@@ -157,7 +156,7 @@ if __name__ == "__main__":
             comparison['delta_AIC'] = comparison['AIC'] - min_aic
 
             log("\n" + "=" * 80)
-            log("[COMPARISON] Random Effects Structure Comparison")
+            log("Random Effects Structure Comparison")
             log("=" * 80)
             log(f"")
             for _, row in comparison.iterrows():
@@ -166,7 +165,7 @@ if __name__ == "__main__":
 
             # Determine outcome
             log("\n" + "=" * 80)
-            log("[DECISION]")
+            log("")
             log("=" * 80)
 
             delta_aic = comparison[comparison['model'] == 'Intercepts+slopes']['delta_AIC'].values[0]
@@ -199,10 +198,10 @@ if __name__ == "__main__":
         # Save comparison
         output_path = DATA_DIR / "step05d_random_slopes_comparison.csv"
         comparison.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"\n[SAVE] Comparison saved: {output_path.name}")
+        log(f"\nComparison saved: {output_path.name}")
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] Random slopes testing complete")
+        log("Random slopes testing complete")
         log("=" * 80)
         log("")
         log("NEXT STEPS:")
@@ -211,7 +210,7 @@ if __name__ == "__main__":
         log("3. Proceed with power analysis for NULL main effect")
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
         log(traceback.format_exc())
         raise

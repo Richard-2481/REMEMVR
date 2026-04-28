@@ -3,7 +3,6 @@
 RQ 6.5.3 - GEE Validation for High-Confidence Errors
 
 Purpose: Validate LPM results using proper binomial GEE model
-Author: Claude (PLATINUM certification workflow)
 Date: 2025-12-30
 
 Background:

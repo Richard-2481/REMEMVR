@@ -279,11 +279,11 @@ def run_model_averaging_with_location(
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 05b: Model Averaging for RQ 6.8.1")
+        log("Step 05b: Model Averaging for RQ 6.8.1")
         log("=" * 80)
 
         # Load data
-        log("\n[LOAD] Loading input data...")
+        log("\nLoading input data...")
         lmm_input = pd.read_csv(DATA_DIR / "step04_lmm_input.csv")
         comparison = pd.read_csv(DATA_DIR / "step05_model_comparison.csv")
 
@@ -300,7 +300,7 @@ if __name__ == "__main__":
         )
 
         # Save outputs
-        log("\n[SAVE] Saving output files...")
+        log("\nSaving output files...")
 
         results['competitive_models'].to_csv(
             DATA_DIR / "step05b_competitive_models.csv", index=False
@@ -329,7 +329,7 @@ if __name__ == "__main__":
 
         # Summary
         log("\n" + "=" * 80)
-        log("[SUCCESS] Model Averaging Complete")
+        log("Model Averaging Complete")
         log("=" * 80)
         log(f"  Models in competitive set: {len(results['competitive_models'])}")
         log(f"  Effective N models: {results['effective_n_models']:.2f}")
@@ -339,7 +339,7 @@ if __name__ == "__main__":
         log("=" * 80)
 
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

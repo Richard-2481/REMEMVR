@@ -1,0 +1,711 @@
+
+======================================================================
+RQ 6.8.3: Source-Destination Confidence ICC
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.3
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Extract Confidence Theta Data and Reshape to Long Format
+======================================================================
+
+Loading LMM input from: /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step04_lmm_input.csv
+  Loaded: 800 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'log_TSVR', 'location', 'theta']
+
+Data summary:
+  Total rows: 800 (expected: 800)
+  Unique UIDs: 100 (expected: 100)
+  Source rows: 400 (expected: 400)
+  Destination rows: 400 (expected: 400)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step00_lmm_input_confidence_location.csv
+
+Data extraction complete: 800 rows created
+
+======================================================================
+STEP 01: Fit Source Confidence LMM with Random Slopes
+======================================================================
+
+Source data: 400 rows (100 participants x 4 tests)
+
+Fitting LMM: theta ~ TSVR_scaled + (TSVR_scaled | UID)
+  Random effects: Intercept + slope per participant
+
+               Mixed Linear Model Regression Results
+===================================================================
+Model:                MixedLM     Dependent Variable:     theta    
+No. Observations:     400         Method:                 REML     
+No. Groups:           100         Scale:                  0.1011   
+Min. group size:      4           Log-Likelihood:         -268.6828
+Max. group size:      4           Converged:              Yes      
+Mean group size:      4.0                                          
+-------------------------------------------------------------------
+                        Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+-------------------------------------------------------------------
+Intercept               -0.256    0.060  -4.245 0.000 -0.374 -0.138
+TSVR_scaled             -0.412    0.037 -10.994 0.000 -0.486 -0.339
+Group Var                0.306    0.199                            
+Group x TSVR_scaled Cov -0.033    0.081                            
+TSVR_scaled Var          0.063    0.079                            
+===================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step01_source_lmm_model_summary.txt
+
+Random effects covariance matrix:
+                Group  TSVR_scaled
+Group        0.305789    -0.033447
+TSVR_scaled -0.033447     0.063137
+
+Variance Components (Source):
+     component  estimate
+ var_intercept  0.305789
+     var_slope  0.063137
+ cov_int_slope -0.033447
+  var_residual  0.101137
+corr_int_slope -0.240717
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step01_source_variance_components.csv
+
+Source LMM converged: True
+Intercept-Slope Correlation (Source): r = -0.2407
+
+======================================================================
+STEP 02: Fit Destination Confidence LMM with Random Slopes
+======================================================================
+
+Destination data: 400 rows (100 participants x 4 tests)
+
+Fitting LMM: theta ~ TSVR_scaled + (TSVR_scaled | UID)
+
+              Mixed Linear Model Regression Results
+==================================================================
+Model:                 MixedLM    Dependent Variable:    theta    
+No. Observations:      400        Method:                REML     
+No. Groups:            100        Scale:                 0.1177   
+Min. group size:       4          Log-Likelihood:        -282.8309
+Max. group size:       4          Converged:             Yes      
+Mean group size:       4.0                                        
+------------------------------------------------------------------
+                        Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+------------------------------------------------------------------
+Intercept               -0.298    0.061 -4.861 0.000 -0.419 -0.178
+TSVR_scaled             -0.362    0.038 -9.421 0.000 -0.437 -0.287
+Group Var                0.310    0.191                           
+Group x TSVR_scaled Cov -0.054    0.084                           
+TSVR_scaled Var          0.058    0.076                           
+==================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step02_destination_lmm_model_summary.txt
+
+Random effects covariance matrix:
+                Group  TSVR_scaled
+Group        0.309993    -0.053837
+TSVR_scaled -0.053837     0.057873
+
+Variance Components (Destination):
+     component  estimate
+ var_intercept  0.309993
+     var_slope  0.057873
+ cov_int_slope -0.053837
+  var_residual  0.117675
+corr_int_slope -0.401943
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step02_destination_variance_components.csv
+
+Destination LMM converged: True
+Intercept-Slope Correlation (Destination): r = -0.4019
+
+======================================================================
+STEP 03: Extract Random Effects for Both Location Types
+======================================================================
+
+Random effects extracted:
+  Total rows: 200 (expected: 200)
+  Unique UIDs: 100 (expected: 100)
+  Source rows: 100
+  Destination rows: 100
+
+Random Effects Descriptives:
+
+  Source:
+    random_intercept: mean=0.0000, SD=0.5181
+    random_slope: mean=-0.0000, SD=0.1686
+
+  Destination:
+    random_intercept: mean=0.0000, SD=0.5173
+    random_slope: mean=0.0000, SD=0.1518
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step03_random_effects.csv
+  NOTE: This file is REQUIRED for RQ 6.8.4 clustering
+
+Random effects extraction complete: 200 rows created
+
+======================================================================
+STEP 04: Compute Intercept-Slope Correlations Per Location Type
+======================================================================
+
+Source:
+  Intercept-Slope Correlation: r = -0.2407
+  95% CI: [-0.4174, -0.0465]
+  p_uncorrected = 1.5844e-02
+  p_bonferroni = 3.1688e-02
+  -> SIGNIFICANT at Bonferroni-corrected alpha = 0.05
+
+Destination:
+  Intercept-Slope Correlation: r = -0.4019
+  95% CI: [-0.5546, -0.2231]
+  p_uncorrected = 3.3965e-05
+  p_bonferroni = 6.7929e-05
+  -> SIGNIFICANT at Bonferroni-corrected alpha = 0.05
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step04_intercept_slope_correlations.csv
+
+==================================================
+CRITICAL PATTERN CHECK: Opposite Signs?
+==================================================
+  Source correlation:      r = -0.2407
+  Destination correlation: r = -0.4019
+  -> SAME SIGN: Pattern does NOT replicate Ch5 5.5.6
+
+Intercept-slope correlations computed for 2 location types
+
+======================================================================
+STEP 05: Compare Confidence Correlations to Ch5 5.5.6 Accuracy
+======================================================================
+
+Loading Ch5 5.5.6 accuracy correlations from: /home/etai/projects/REMEMVR/results/ch5/5.5.6/data/step05_intercept_slope_correlations.csv
+  Loaded: 2 rows
+
+==================================================
+SIDE-BY-SIDE COMPARISON
+==================================================
+
+Source:
+  Accuracy (Ch5 5.5.6):  r = +0.9890
+  Confidence (Ch6 6.8.3): r = -0.2407
+  Direction match: False
+  Magnitude difference: 1.2297
+
+Destination:
+  Accuracy (Ch5 5.5.6):  r = -0.9033
+  Confidence (Ch6 6.8.3): r = -0.4019
+  Direction match: True
+  Magnitude difference: 0.5013
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step05_ch5_comparison.csv
+
+==================================================
+PATTERN REPLICATION ASSESSMENT
+==================================================
+
+Ch5 5.5.6 Accuracy Pattern:
+  Source:      r = +0.9890 (positive -> regression to mean)
+  Destination: r = -0.9033 (negative -> fan effect)
+  OPPOSITE SIGNS: True
+
+RQ 6.8.3 Confidence Pattern:
+  Source:      r = -0.2407
+  Destination: r = -0.4019
+  OPPOSITE SIGNS: False
+
+PATTERN REPLICATION: False
+
+*** HYPOTHESIS NOT SUPPORTED ***
+Confidence does NOT show opposite signs like accuracy.
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step05_pattern_replication_summary.txt
+
+Ch5 5.5.6 comparison complete: 2 location types compared
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_lmm_input_confidence_location.csv (800 rows)
+  data/step01_source_lmm_model_summary.txt
+  data/step01_source_variance_components.csv
+  data/step02_destination_lmm_model_summary.txt
+  data/step02_destination_variance_components.csv
+  data/step03_random_effects.csv (200 rows - for RQ 6.8.4)
+  data/step04_intercept_slope_correlations.csv
+  data/step05_ch5_comparison.csv
+  data/step05_pattern_replication_summary.txt
+
+KEY RESULT: Pattern replication = False
+
+======================================================================
+RQ 6.8.3: Source-Destination Confidence ICC
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.3
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Extract Confidence Theta Data and Reshape to Long Format
+======================================================================
+
+Loading LMM input from: /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step04_lmm_input.csv
+  Loaded: 800 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'log_TSVR', 'location', 'theta']
+
+Data summary:
+  Total rows: 800 (expected: 800)
+  Unique UIDs: 100 (expected: 100)
+  Source rows: 400 (expected: 400)
+  Destination rows: 400 (expected: 400)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step00_lmm_input_confidence_location.csv
+
+Data extraction complete: 800 rows created
+
+======================================================================
+STEP 01: Fit Source Confidence LMM with Random Slopes
+======================================================================
+
+Source data: 400 rows (100 participants x 4 tests)
+
+Fitting LMM: theta ~ TSVR_scaled + (TSVR_scaled | UID)
+  Random effects: Intercept + slope per participant
+
+               Mixed Linear Model Regression Results
+===================================================================
+Model:                MixedLM     Dependent Variable:     theta    
+No. Observations:     400         Method:                 REML     
+No. Groups:           100         Scale:                  0.2185   
+Min. group size:      4           Log-Likelihood:         -413.8740
+Max. group size:      4           Converged:              Yes      
+Mean group size:      4.0                                          
+-------------------------------------------------------------------
+                        Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+-------------------------------------------------------------------
+Intercept                0.411    0.075   5.495 0.000  0.264  0.557
+TSVR_scaled             -0.657    0.059 -11.152 0.000 -0.773 -0.542
+Group Var                0.435    0.208                            
+Group x TSVR_scaled Cov -0.030    0.103                            
+TSVR_scaled Var          0.179    0.133                            
+===================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step01_source_lmm_model_summary.txt
+
+Random effects covariance matrix:
+                Group  TSVR_scaled
+Group        0.434602    -0.029627
+TSVR_scaled -0.029627     0.179500
+
+Variance Components (Source):
+     component  estimate
+ var_intercept  0.434602
+     var_slope  0.179500
+ cov_int_slope -0.029627
+  var_residual  0.218467
+corr_int_slope -0.106074
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step01_source_variance_components.csv
+
+Source LMM converged: True
+Intercept-Slope Correlation (Source): r = -0.1061
+
+======================================================================
+STEP 02: Fit Destination Confidence LMM with Random Slopes
+======================================================================
+
+Destination data: 400 rows (100 participants x 4 tests)
+
+Fitting LMM: theta ~ TSVR_scaled + (TSVR_scaled | UID)
+
+               Mixed Linear Model Regression Results
+===================================================================
+Model:                MixedLM     Dependent Variable:     theta    
+No. Observations:     400         Method:                 REML     
+No. Groups:           100         Scale:                  0.2357   
+Min. group size:      4           Log-Likelihood:         -415.1121
+Max. group size:      4           Converged:              Yes      
+Mean group size:      4.0                                          
+-------------------------------------------------------------------
+                        Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+-------------------------------------------------------------------
+Intercept                0.369    0.083   4.460 0.000  0.207  0.531
+TSVR_scaled             -0.582    0.051 -11.427 0.000 -0.682 -0.482
+Group Var                0.551    0.245                            
+Group x TSVR_scaled Cov -0.041    0.098                            
+TSVR_scaled Var          0.080    0.096                            
+===================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step02_destination_lmm_model_summary.txt
+
+Random effects covariance matrix:
+               Group  TSVR_scaled
+Group        0.55088    -0.040890
+TSVR_scaled -0.04089     0.080251
+
+Variance Components (Destination):
+     component  estimate
+ var_intercept  0.550880
+     var_slope  0.080251
+ cov_int_slope -0.040890
+  var_residual  0.235732
+corr_int_slope -0.194474
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step02_destination_variance_components.csv
+
+Destination LMM converged: True
+Intercept-Slope Correlation (Destination): r = -0.1945
+
+======================================================================
+STEP 03: Extract Random Effects for Both Location Types
+======================================================================
+
+Random effects extracted:
+  Total rows: 200 (expected: 200)
+  Unique UIDs: 100 (expected: 100)
+  Source rows: 100
+  Destination rows: 100
+
+Random Effects Descriptives:
+
+  Source:
+    random_intercept: mean=-0.0000, SD=0.5975
+    random_slope: mean=-0.0000, SD=0.3103
+
+  Destination:
+    random_intercept: mean=0.0000, SD=0.6896
+    random_slope: mean=0.0000, SD=0.1579
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step03_random_effects.csv
+  NOTE: This file is REQUIRED for RQ 6.8.4 clustering
+
+Random effects extraction complete: 200 rows created
+
+======================================================================
+STEP 04: Compute Intercept-Slope Correlations Per Location Type
+======================================================================
+
+Source:
+  Intercept-Slope Correlation: r = -0.1061
+  95% CI: [-0.2963, 0.0923]
+  p_uncorrected = 2.9355e-01
+  p_bonferroni = 5.8709e-01
+  -> Not significant at Bonferroni-corrected alpha = 0.05
+
+Destination:
+  Intercept-Slope Correlation: r = -0.1945
+  95% CI: [-0.3765, 0.0020]
+  p_uncorrected = 5.2520e-02
+  p_bonferroni = 1.0504e-01
+  -> Not significant at Bonferroni-corrected alpha = 0.05
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step04_intercept_slope_correlations.csv
+
+==================================================
+CRITICAL PATTERN CHECK: Opposite Signs?
+==================================================
+  Source correlation:      r = -0.1061
+  Destination correlation: r = -0.1945
+  -> SAME SIGN: Pattern does NOT replicate Ch5 5.5.6
+
+Intercept-slope correlations computed for 2 location types
+
+======================================================================
+STEP 05: Compare Confidence Correlations to Ch5 5.5.6 Accuracy
+======================================================================
+
+Loading Ch5 5.5.6 accuracy correlations from: /home/etai/projects/REMEMVR/results/ch5/5.5.6/data/step05_intercept_slope_correlations.csv
+  Loaded: 2 rows
+
+==================================================
+SIDE-BY-SIDE COMPARISON
+==================================================
+
+Source:
+  Accuracy (Ch5 5.5.6):  r = +0.9890
+  Confidence (Ch6 6.8.3): r = -0.1061
+  Direction match: False
+  Magnitude difference: 1.0950
+
+Destination:
+  Accuracy (Ch5 5.5.6):  r = -0.9033
+  Confidence (Ch6 6.8.3): r = -0.1945
+  Direction match: True
+  Magnitude difference: 0.7088
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step05_ch5_comparison.csv
+
+==================================================
+PATTERN REPLICATION ASSESSMENT
+==================================================
+
+Ch5 5.5.6 Accuracy Pattern:
+  Source:      r = +0.9890 (positive -> regression to mean)
+  Destination: r = -0.9033 (negative -> fan effect)
+  OPPOSITE SIGNS: True
+
+RQ 6.8.3 Confidence Pattern:
+  Source:      r = -0.1061
+  Destination: r = -0.1945
+  OPPOSITE SIGNS: False
+
+PATTERN REPLICATION: False
+
+*** HYPOTHESIS NOT SUPPORTED ***
+Confidence does NOT show opposite signs like accuracy.
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step05_pattern_replication_summary.txt
+
+Ch5 5.5.6 comparison complete: 2 location types compared
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_lmm_input_confidence_location.csv (800 rows)
+  data/step01_source_lmm_model_summary.txt
+  data/step01_source_variance_components.csv
+  data/step02_destination_lmm_model_summary.txt
+  data/step02_destination_variance_components.csv
+  data/step03_random_effects.csv (200 rows - for RQ 6.8.4)
+  data/step04_intercept_slope_correlations.csv
+  data/step05_ch5_comparison.csv
+  data/step05_pattern_replication_summary.txt
+
+KEY RESULT: Pattern replication = False
+
+======================================================================
+RQ 6.8.3: Source-Destination Confidence ICC
+======================================================================
+RQ_DIR: /home/etai/projects/REMEMVR/results/ch6/6.8.3
+PROJECT_ROOT: /home/etai/projects/REMEMVR
+
+======================================================================
+STEP 00: Extract Confidence Theta Data and Reshape to Long Format
+======================================================================
+
+Loading LMM input from: /home/etai/projects/REMEMVR/results/ch6/6.8.1/data/step04_lmm_input.csv
+  Loaded: 800 rows, columns: ['composite_ID', 'UID', 'TEST', 'TSVR_hours', 'log_TSVR', 'location', 'theta']
+
+Data summary:
+  Total rows: 800 (expected: 800)
+  Unique UIDs: 100 (expected: 100)
+  Source rows: 400 (expected: 400)
+  Destination rows: 400 (expected: 400)
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step00_lmm_input_confidence_location.csv
+
+Data extraction complete: 800 rows created
+
+======================================================================
+STEP 01: Fit Source Confidence LMM with Random Slopes
+======================================================================
+
+Source data: 400 rows (100 participants x 4 tests)
+
+Fitting LMM: theta ~ TSVR_scaled + (TSVR_scaled | UID)
+  Random effects: Intercept + slope per participant
+
+               Mixed Linear Model Regression Results
+===================================================================
+Model:                MixedLM     Dependent Variable:     theta    
+No. Observations:     400         Method:                 REML     
+No. Groups:           100         Scale:                  0.2185   
+Min. group size:      4           Log-Likelihood:         -413.8740
+Max. group size:      4           Converged:              Yes      
+Mean group size:      4.0                                          
+-------------------------------------------------------------------
+                        Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+-------------------------------------------------------------------
+Intercept                0.411    0.075   5.495 0.000  0.264  0.557
+TSVR_scaled             -0.657    0.059 -11.152 0.000 -0.773 -0.542
+Group Var                0.435    0.208                            
+Group x TSVR_scaled Cov -0.030    0.103                            
+TSVR_scaled Var          0.179    0.133                            
+===================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step01_source_lmm_model_summary.txt
+
+Random effects covariance matrix:
+                Group  TSVR_scaled
+Group        0.434602    -0.029627
+TSVR_scaled -0.029627     0.179500
+
+Variance Components (Source):
+     component  estimate
+ var_intercept  0.434602
+     var_slope  0.179500
+ cov_int_slope -0.029627
+  var_residual  0.218467
+corr_int_slope -0.106074
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step01_source_variance_components.csv
+
+Source LMM converged: True
+Intercept-Slope Correlation (Source): r = -0.1061
+
+======================================================================
+STEP 02: Fit Destination Confidence LMM with Random Slopes
+======================================================================
+
+Destination data: 400 rows (100 participants x 4 tests)
+
+Fitting LMM: theta ~ TSVR_scaled + (TSVR_scaled | UID)
+
+               Mixed Linear Model Regression Results
+===================================================================
+Model:                MixedLM     Dependent Variable:     theta    
+No. Observations:     400         Method:                 REML     
+No. Groups:           100         Scale:                  0.2357   
+Min. group size:      4           Log-Likelihood:         -415.1121
+Max. group size:      4           Converged:              Yes      
+Mean group size:      4.0                                          
+-------------------------------------------------------------------
+                        Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+-------------------------------------------------------------------
+Intercept                0.369    0.083   4.460 0.000  0.207  0.531
+TSVR_scaled             -0.582    0.051 -11.427 0.000 -0.682 -0.482
+Group Var                0.551    0.245                            
+Group x TSVR_scaled Cov -0.041    0.098                            
+TSVR_scaled Var          0.080    0.096                            
+===================================================================
+
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step02_destination_lmm_model_summary.txt
+
+Random effects covariance matrix:
+               Group  TSVR_scaled
+Group        0.55088    -0.040890
+TSVR_scaled -0.04089     0.080251
+
+Variance Components (Destination):
+     component  estimate
+ var_intercept  0.550880
+     var_slope  0.080251
+ cov_int_slope -0.040890
+  var_residual  0.235732
+corr_int_slope -0.194474
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step02_destination_variance_components.csv
+
+Destination LMM converged: True
+Intercept-Slope Correlation (Destination): r = -0.1945
+
+======================================================================
+STEP 03: Extract Random Effects for Both Location Types
+======================================================================
+
+Random effects extracted:
+  Total rows: 200 (expected: 200)
+  Unique UIDs: 100 (expected: 100)
+  Source rows: 100
+  Destination rows: 100
+
+Random Effects Descriptives:
+
+  Source:
+    random_intercept: mean=-0.0000, SD=0.5975
+    random_slope: mean=-0.0000, SD=0.3103
+
+  Destination:
+    random_intercept: mean=0.0000, SD=0.6896
+    random_slope: mean=0.0000, SD=0.1579
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step03_random_effects.csv
+  NOTE: This file is REQUIRED for RQ 6.8.4 clustering
+
+Random effects extraction complete: 200 rows created
+
+======================================================================
+STEP 04: Compute Intercept-Slope Correlations Per Location Type
+======================================================================
+
+Source:
+  Intercept-Slope Correlation: r = -0.1061
+  95% CI: [-0.2963, 0.0923]
+  p_uncorrected = 2.9355e-01
+  p_bonferroni = 5.8709e-01
+  -> Not significant at Bonferroni-corrected alpha = 0.05
+
+Destination:
+  Intercept-Slope Correlation: r = -0.1945
+  95% CI: [-0.3765, 0.0020]
+  p_uncorrected = 5.2520e-02
+  p_bonferroni = 1.0504e-01
+  -> Not significant at Bonferroni-corrected alpha = 0.05
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step04_intercept_slope_correlations.csv
+
+==================================================
+CRITICAL PATTERN CHECK: Opposite Signs?
+==================================================
+  Source correlation:      r = -0.1061
+  Destination correlation: r = -0.1945
+  -> SAME SIGN: Pattern does NOT replicate Ch5 5.5.6
+
+Intercept-slope correlations computed for 2 location types
+
+======================================================================
+STEP 05: Compare Confidence Correlations to Ch5 5.5.6 Accuracy
+======================================================================
+
+Loading Ch5 5.5.6 accuracy correlations from: /home/etai/projects/REMEMVR/results/ch5/5.5.6/data/step05_intercept_slope_correlations.csv
+  Loaded: 2 rows
+
+==================================================
+SIDE-BY-SIDE COMPARISON
+==================================================
+
+Source:
+  Accuracy (Ch5 5.5.6):  r = +0.9890
+  Confidence (Ch6 6.8.3): r = -0.1061
+  Direction match: False
+  Magnitude difference: 1.0950
+
+Destination:
+  Accuracy (Ch5 5.5.6):  r = -0.9033
+  Confidence (Ch6 6.8.3): r = -0.1945
+  Direction match: True
+  Magnitude difference: 0.7088
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step05_ch5_comparison.csv
+
+==================================================
+PATTERN REPLICATION ASSESSMENT
+==================================================
+
+Ch5 5.5.6 Accuracy Pattern:
+  Source:      r = +0.9890 (positive -> regression to mean)
+  Destination: r = -0.9033 (negative -> fan effect)
+  OPPOSITE SIGNS: True
+
+RQ 6.8.3 Confidence Pattern:
+  Source:      r = -0.1061
+  Destination: r = -0.1945
+  OPPOSITE SIGNS: False
+
+PATTERN REPLICATION: False
+
+*** HYPOTHESIS NOT SUPPORTED ***
+Confidence does NOT show opposite signs like accuracy.
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.8.3/data/step05_pattern_replication_summary.txt
+
+Ch5 5.5.6 comparison complete: 2 location types compared
+
+======================================================================
+ALL STEPS COMPLETE
+======================================================================
+
+Files Created:
+  data/step00_lmm_input_confidence_location.csv (800 rows)
+  data/step01_source_lmm_model_summary.txt
+  data/step01_source_variance_components.csv
+  data/step02_destination_lmm_model_summary.txt
+  data/step02_destination_variance_components.csv
+  data/step03_random_effects.csv (200 rows - for RQ 6.8.4)
+  data/step04_intercept_slope_correlations.csv
+  data/step05_ch5_comparison.csv
+  data/step05_pattern_replication_summary.txt
+
+KEY RESULT: Pattern replication = False

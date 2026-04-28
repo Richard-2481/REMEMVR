@@ -23,9 +23,7 @@ import json
 from scipy import stats
 
 
-# =============================================================================
 # DATA LINEAGE TRACKING
-# =============================================================================
 
 def create_lineage_metadata(
     source_file: str,
@@ -190,9 +188,7 @@ def validate_lineage(
     }
 
 
-# =============================================================================
 # IRT VALIDATION
-# =============================================================================
 
 def validate_irt_convergence(results: Dict[str, Any]) -> Dict[str, Any]:
     """
@@ -336,9 +332,7 @@ def check_missing_data(df: pd.DataFrame) -> Dict[str, Any]:
     }
 
 
-# =============================================================================
 # LMM VALIDATION
-# =============================================================================
 
 def validate_lmm_convergence(lmm_result) -> Dict[str, Any]:
     """
@@ -436,9 +430,7 @@ def validate_lmm_residuals(
     }
 
 
-# =============================================================================
 # GENERAL VALIDATION
-# =============================================================================
 
 def validate_data_columns(
     df: pd.DataFrame,
@@ -622,9 +614,7 @@ def validate_numeric_range(
     }
 
 
-# =============================================================================
 # VALIDATION REPORTING
-# =============================================================================
 
 def generate_validation_report(
     validation_checks: Dict[str, Dict[str, Any]],
@@ -700,9 +690,7 @@ def save_validation_report(report: Dict[str, Any], report_file: str) -> None:
         json.dump(report, f, indent=2)
 
 
-# ============================================================================
 # PIECEWISE LMM VALIDATION FUNCTIONS
-# ============================================================================
 
 def validate_hypothesis_tests(hypothesis_tests: pd.DataFrame) -> Dict[str, Any]:
     """
@@ -902,7 +890,7 @@ def validate_lmm_assumptions_comprehensive(
     2. Homoscedasticity (Breusch-Pagan test + residuals vs fitted plot)
     3. Random effects normality (Shapiro-Wilk + separate Q-Q plots for intercepts/slopes)
     4. Autocorrelation (ACF plot + Lag-1 test)
-    5. Linearity (Partial residual CSVs for ALL predictors - rq_plots handles visualization)
+    5. Linearity (Partial residual CSVs for ALL predictors - plotting pipeline handles visualization)
     6. Outliers (Cook's distance with threshold 4/(n-p-1))
     7. Convergence (convergence diagnostics integration)
 
@@ -952,10 +940,7 @@ def validate_lmm_assumptions_comprehensive(
     diagnostics = {}
     plot_paths = []
     failed_checks = []
-
-    # =========================================================================
     # 1. RESIDUAL NORMALITY (Shapiro-Wilk + Q-Q plot)
-    # =========================================================================
     stat_shapiro, p_shapiro = stats.shapiro(residuals)
     residual_normal = p_shapiro > alpha
 
@@ -978,10 +963,7 @@ def validate_lmm_assumptions_comprehensive(
     fig_qq_resid.savefig(qq_resid_path, dpi=300, bbox_inches='tight')
     plt.close(fig_qq_resid)
     plot_paths.append(qq_resid_path)
-
-    # =========================================================================
     # 2. HOMOSCEDASTICITY (Breusch-Pagan test + residuals vs fitted plot)
-    # =========================================================================
     # Breusch-Pagan test requires exog matrix
     try:
         # Use model design matrix (fixed effects predictors)
@@ -1020,10 +1002,7 @@ def validate_lmm_assumptions_comprehensive(
     fig_resid.savefig(resid_path, dpi=300, bbox_inches='tight')
     plt.close(fig_resid)
     plot_paths.append(resid_path)
-
-    # =========================================================================
     # 3. RANDOM EFFECTS NORMALITY (Separate Q-Q plots for intercepts/slopes)
-    # =========================================================================
     try:
         # Extract random effects from model
         random_effects = lmm_result.random_effects
@@ -1109,10 +1088,7 @@ def validate_lmm_assumptions_comprehensive(
                 "warning": "Extraction failed"
             }
         }
-
-    # =========================================================================
     # 4. AUTOCORRELATION (ACF plot + Lag-1 test)
-    # =========================================================================
     # Compute ACF
     from statsmodels.tsa.stattools import acf
     acf_values = acf(residuals, nlags=20, fft=False)
@@ -1136,10 +1112,7 @@ def validate_lmm_assumptions_comprehensive(
     fig_acf.savefig(acf_path, dpi=300, bbox_inches='tight')
     plt.close(fig_acf)
     plot_paths.append(acf_path)
-
-    # =========================================================================
     # 5. OUTLIERS (Studentized residuals - Cook's distance not available for MixedLM)
-    # =========================================================================
     # Use studentized residuals for outlier detection
     # Note: MixedLMResults doesn't support get_influence(), so we use standardized residuals
     residual_std = np.std(residuals)
@@ -1178,11 +1151,8 @@ def validate_lmm_assumptions_comprehensive(
     fig_stud.savefig(stud_path, dpi=300, bbox_inches='tight')
     plt.close(fig_stud)
     plot_paths.append(stud_path)
-
-    # =========================================================================
     # 6. LINEARITY (Partial residual CSVs for ALL predictors)
-    # =========================================================================
-    # Generate partial residual data for rq_plots to visualize later
+    # Generate partial residual data for plotting pipeline to visualize later
     partial_resid_dir = output_dir / "partial_residuals"
     partial_resid_dir.mkdir(exist_ok=True)
 
@@ -1232,10 +1202,7 @@ def validate_lmm_assumptions_comprehensive(
     except Exception as e:
         # Non-critical - log warning but don't fail
         pass
-
-    # =========================================================================
     # 7. CONVERGENCE
-    # =========================================================================
     converged = lmm_result.converged if hasattr(lmm_result, 'converged') else True
     convergence_pass = converged
 
@@ -1246,10 +1213,7 @@ def validate_lmm_assumptions_comprehensive(
 
     if not convergence_pass:
         failed_checks.append("convergence")
-
-    # =========================================================================
     # OVERALL VALIDATION & REMEDIAL RECOMMENDATIONS
-    # =========================================================================
     all_passed = len(failed_checks) == 0
 
     # Build remedial action message (per RQ 5.8 spec)
@@ -1975,9 +1939,7 @@ def validate_correlation_test_d068(
     }
 
 
-# =============================================================================
 # NUMERIC RANGE VALIDATION
-# =============================================================================
 
 def validate_numeric_range(
     data: Union[np.ndarray, pd.Series],
@@ -2394,9 +2356,7 @@ def validate_probability_range(
     }
 
 
-# =============================================================================
 # LMM CONVERGENCE VALIDATION
-# =============================================================================
 
 def validate_model_convergence(
     lmm_result: Any

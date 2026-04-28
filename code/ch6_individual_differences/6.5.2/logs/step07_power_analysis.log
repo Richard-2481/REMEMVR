@@ -1,0 +1,54 @@
+Step 07: Power Analysis
+Loading hierarchical regression results...
+step03_hierarchical_models.csv (2 models)
+Controls R² = 0.0594
+Full model R² = 0.0914
+ΔR² (DASS increment) = 0.0319
+Computing Cohen's f² effect sizes...
+Hierarchical Cohen's f² = 0.0352
+Individual predictor f² (estimated) = 0.0117
+Running post-hoc power analysis...
+Hierarchical power (α=0.05) = 0.280
+Hierarchical power (α=0.00060) = 0.018
+Individual power (α=0.05) = 0.184
+Individual power (α=0.00060) = 0.008
+Computing minimum detectable effects...
+Min detectable f² (α=0.05) = 0.1180
+Min detectable f² (α=0.00060) = 0.2590
+N=1000 achieves power=0.961 for α=0.00060
+Saving power analysis results...
+step07_power_analysis.csv (6 analyses)
+step07_effect_sizes.csv (3 predictors)
+step07_power_summary.txt (power interpretation and recommendations)
+Running validate_effect_sizes...
+valid: True
+message: All effect sizes valid (n=4, range=[0.012, 0.259]).
+warnings: []
+Step 07 complete
+Step 07: Power Analysis
+Loading hierarchical regression results...
+step03_hierarchical_models.csv (2 models)
+Controls R² = 0.0594
+Full model R² = 0.0914
+ΔR² (DASS increment) = 0.0319
+Computing Cohen's f² effect sizes...
+Hierarchical Cohen's f² = 0.0352
+Individual predictor f² (estimated) = 0.0117
+Running post-hoc power analysis...
+Hierarchical power (α=0.05) = 0.280
+Hierarchical power (α=0.00060) = 0.018
+Individual power (α=0.05) = 0.184
+Individual power (α=0.00060) = 0.008
+Computing minimum detectable effects...
+Min detectable f² (α=0.05) = 0.1180
+Min detectable f² (α=0.00060) = 0.2590
+N=1000 achieves power=0.961 for α=0.00060
+Saving power analysis results...
+step07_power_analysis.csv (6 analyses)
+step07_effect_sizes.csv (3 predictors)
+step07_power_summary.txt (power interpretation and recommendations)
+Running validate_effect_sizes...
+valid: True
+message: All effect sizes valid (n=4, range=[0.012, 0.259]).
+warnings: []
+Step 07 complete

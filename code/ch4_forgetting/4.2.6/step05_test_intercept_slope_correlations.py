@@ -22,7 +22,6 @@ Interpretation:
     - Positive correlation: High performers decline faster (regression to mean)
     - Near-zero correlation: Baseline and forgetting rate independent
 
-Author: Claude (g_code agent)
 Date: 2025-12-03
 """
 

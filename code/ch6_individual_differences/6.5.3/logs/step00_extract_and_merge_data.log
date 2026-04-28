@@ -1,0 +1,90 @@
+Step 00: Extract and merge data
+Loading theta scores from Ch5...
+Theta scores (400 rows, 3 cols)
+Theta columns: ['UID', 'test', 'Theta_All']
+Mapped Theta_All -> theta_all, set se_all=NaN
+Kept most recent test per participant (100 participants)
+Loading strategy data from dfvr.csv...
+Strategy data (400 rows, 244 cols)
+Aggregating strategy responses across test sessions...
+Strategy text for 100 participants
+Loading demographics from dfnonvr.csv...
+Demographics (100 rows, 235 cols)
+Demographics selected: ['UID', 'age', 'education', 'vr_exposure', 'sleep_hours']
+Merging theta scores with strategy data...
+Theta + strategy: 100 participants
+Adding demographics...
+Complete dataset: 100 participants
+/home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step00_merged_data.csv (100 rows, 8 cols)
+Dataset summary:
+  Participants with complete data: 100
+  Participants with strategy text: 100
+  Mean theta_all: -0.500
+  Mean age: 44.6
+Running validation...
+columns_match: True
+expected_rows: True
+no_missing_theta: True
+no_missing_uid: True
+valid: True
+Step 00 complete - merged dataset ready for strategy coding
+Step 00: Extract and merge data
+Loading theta scores from Ch5...
+Theta scores (400 rows, 3 cols)
+Theta columns: ['UID', 'test', 'Theta_All']
+Mapped Theta_All -> theta_all, set se_all=NaN
+Kept most recent test per participant (100 participants)
+Loading strategy data from dfvr.csv...
+Strategy data (400 rows, 244 cols)
+Aggregating strategy responses across test sessions...
+Strategy text for 100 participants
+Loading demographics from dfnonvr.csv...
+Demographics (100 rows, 235 cols)
+Demographics selected: ['UID', 'age', 'education', 'vr_exposure', 'sleep_hours']
+Merging theta scores with strategy data...
+Theta + strategy: 100 participants
+Adding demographics...
+Complete dataset: 100 participants
+/home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step00_merged_data.csv (100 rows, 8 cols)
+Dataset summary:
+  Participants with complete data: 100
+  Participants with strategy text: 100
+  Mean theta_all: -0.500
+  Mean age: 44.6
+Running validation...
+columns_match: True
+expected_rows: True
+no_missing_theta: True
+no_missing_uid: True
+valid: True
+Step 00 complete - merged dataset ready for strategy coding
+Step 00: Extract and merge data
+Loading theta scores from Ch5...
+Theta scores (400 rows, 3 cols)
+Theta columns: ['UID', 'test', 'Theta_All']
+Mapped Theta_All -> theta_all, set se_all=NaN
+Kept most recent test per participant (100 participants)
+Loading strategy data from dfvr.csv...
+Strategy data (400 rows, 244 cols)
+Aggregating strategy responses across test sessions...
+Strategy text for 100 participants
+Loading demographics from dfnonvr.csv...
+Demographics (100 rows, 235 cols)
+Demographics selected: ['UID', 'age', 'education', 'vr_exposure', 'sleep_hours']
+Merging theta scores with strategy data...
+Theta + strategy: 100 participants
+Adding demographics...
+Complete dataset: 100 participants
+/home/etai/projects/REMEMVR/results/ch7/7.5.3/data/step00_merged_data.csv (100 rows, 8 cols)
+Dataset summary:
+  Participants with complete data: 100
+  Participants with strategy text: 100
+  Mean theta_all: -0.500
+  Mean age: 44.6
+Running validation...
+columns_match: True
+expected_rows: True
+no_missing_theta: True
+no_missing_uid: True
+valid: True
+Step 00 complete - merged dataset ready for strategy coding

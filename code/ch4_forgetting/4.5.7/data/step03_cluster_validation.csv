@@ -1,0 +1,4 @@
+metric,value,threshold,status
+Silhouette,0.4169336558790697,0.4,PASS
+Davies-Bouldin,0.7853935556575721,1.5,PASS
+Jaccard,0.8312238824220026,0.75,PASS

@@ -29,9 +29,7 @@ import scipy.stats as stats
 import statsmodels.api as sm
 from statsmodels.formula.api import mixedlm
 
-# ============================================================================
 # CONFIGURATION
-# ============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.3.2
 LOG_FILE = RQ_DIR / "logs" / "steps_01_to_04_SEM.log"
@@ -43,9 +41,7 @@ SEM_CALIBRATION_FILE = DATA_DIR / "step05_calibration_scores_SEM.csv"
 # Domains (canonical names)
 DOMAINS = ['What', 'Where', 'When']
 
-# ============================================================================
 # LOGGING
-# ============================================================================
 
 def log(msg: str):
     """Log message to file and stdout."""
@@ -62,9 +58,7 @@ def log_section(title: str):
     log(title)
     log("=" * 70)
 
-# ============================================================================
-# STEP 00: LOAD SEM CALIBRATION DATA
-# ============================================================================
+# LOAD SEM CALIBRATION DATA
 
 def step00_load_sem_calibration() -> pd.DataFrame:
     """
@@ -276,9 +270,7 @@ def _step00_load_sem_calibration_OLD() -> pd.DataFrame:
 
     return df_merged
 
-# ============================================================================
-# STEP 01: FIT LMM WITH DOMAIN × TIME INTERACTION
-# ============================================================================
+# FIT LMM WITH DOMAIN × TIME INTERACTION
 
 def step01_fit_lmm(df: pd.DataFrame) -> dict:
     """
@@ -481,9 +473,7 @@ def step01_fit_lmm(df: pd.DataFrame) -> dict:
         'random_slope': random_slope
     }
 
-# ============================================================================
-# STEP 02: POST-HOC DOMAIN CONTRASTS
-# ============================================================================
+# POST-HOC DOMAIN CONTRASTS
 
 def step02_post_hoc_contrasts(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -559,9 +549,7 @@ def step02_post_hoc_contrasts(df: pd.DataFrame) -> pd.DataFrame:
 
     return df_contrasts
 
-# ============================================================================
-# STEP 03: RANK DOMAINS BY CALIBRATION QUALITY
-# ============================================================================
+# RANK DOMAINS BY CALIBRATION QUALITY
 
 def step03_rank_domains(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -602,9 +590,7 @@ def step03_rank_domains(df: pd.DataFrame) -> pd.DataFrame:
 
     return domain_ranking
 
-# ============================================================================
-# STEP 04: PREPARE PLOT DATA
-# ============================================================================
+# PREPARE PLOT DATA
 
 def step04_prepare_plot_data(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -649,9 +635,7 @@ def step04_prepare_plot_data(df: pd.DataFrame) -> pd.DataFrame:
 
     return plot_data
 
-# ============================================================================
 # MAIN
-# ============================================================================
 
 def main():
     """Execute all analysis steps."""

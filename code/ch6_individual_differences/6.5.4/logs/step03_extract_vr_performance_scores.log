@@ -1,0 +1,72 @@
+Step 03: extract_vr_performance_scores
+Loading dfvr.csv data...
+dfvr.csv (400 rows, 244 cols)
+Extracting episodic memory items...
+Available memory items: 7
+Available: ['TQ_RFR-N-OBJ1', 'TQ_RFR-N-OBJ2', 'TQ_RFR-N-OBJ3', 'TQ_RFR-N-OBJ4', 'TQ_RFR-N-STRA', 'TQ_RFR-N-PORT', 'TQ_RFR-N-LAND']
+Memory data for 400 observations
+Computing memory scores...
+Memory scores for 400 observations
+Memory_Score range: 0.286 - 1.000
+Mean Memory_Score: 0.810
+Items per observation: {7: 400}
+Missing memory scores: 0/400 (0.0%)
+Memory score computation complete
+Saving memory scores...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step03_memory_scores.csv (400 rows, 3 cols)
+Running memory score validation...
+Mean: 0.810, SD: 0.174
+Min: 0.286, Max: 1.000
+Distribution reasonable: True
+Memory score range: PASS
+Score distribution: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Can we extract episodic memory scores as outcome for sleep analysis?
+2. What did we find?
+   -> 400 observations, mean score: 0.810
+   -> Score range valid: True, distribution reasonable: True
+3. What does it mean?
+   -> We have clean memory outcome measure for within-person sleep effects
+4. What should we do next?
+   -> Proceed to step04: merge sleep and memory data
+=========================
+
+Step 03 complete
+Step 03: extract_vr_performance_scores
+Loading dfvr.csv data...
+dfvr.csv (400 rows, 244 cols)
+Extracting episodic memory items...
+Available memory items: 7
+Available: ['TQ_RFR-N-OBJ1', 'TQ_RFR-N-OBJ2', 'TQ_RFR-N-OBJ3', 'TQ_RFR-N-OBJ4', 'TQ_RFR-N-STRA', 'TQ_RFR-N-PORT', 'TQ_RFR-N-LAND']
+Memory data for 400 observations
+Computing memory scores...
+Memory scores for 400 observations
+Memory_Score range: 0.286 - 1.000
+Mean Memory_Score: 0.810
+Items per observation: {7: 400}
+Missing memory scores: 0/400 (0.0%)
+Memory score computation complete
+Saving memory scores...
+/home/etai/projects/REMEMVR/results/ch7/7.5.4/data/step03_memory_scores.csv (400 rows, 3 cols)
+Running memory score validation...
+Mean: 0.810, SD: 0.174
+Min: 0.286, Max: 1.000
+Distribution reasonable: True
+Memory score range: PASS
+Score distribution: PASS
+
+=== SCIENTIFIC MANTRA ===
+1. What question did we ask?
+   -> Can we extract episodic memory scores as outcome for sleep analysis?
+2. What did we find?
+   -> 400 observations, mean score: 0.810
+   -> Score range valid: True, distribution reasonable: True
+3. What does it mean?
+   -> We have clean memory outcome measure for within-person sleep effects
+4. What should we do next?
+   -> Proceed to step04: merge sleep and memory data
+=========================
+
+Step 03 complete

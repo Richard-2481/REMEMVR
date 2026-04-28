@@ -1,0 +1,13 @@
+======================================================================
+STEP 11: Compute Restriction Ratios (u)
+======================================================================
+  depression: u = 3.272 / 7.480 = 0.4374
+  anxiety: u = 2.380 / 5.390 = 0.4415
+  stress: u = 3.605 / 8.040 = 0.4484
+Restriction ratios computed: N=3
+Mean u = 0.4424
+Saved: step11_restriction_ratios.csv (3 rows)
+Note: u < 0.5 indicates substantial range restriction for depression
+Note: u < 0.5 indicates substantial range restriction for anxiety
+Note: u < 0.5 indicates substantial range restriction for stress
+Validation PASSED

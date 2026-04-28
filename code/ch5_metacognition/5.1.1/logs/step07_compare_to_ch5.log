@@ -1,0 +1,60 @@
+Step 07: Compare to Ch5 5.1.1 Accuracy Model Selection
+Loading confidence model comparison from this RQ...
+step06_aic_comparison.csv (5 rows, 10 cols)
+Confidence models: ['Logarithmic', 'Linear+Logarithmic', 'Quadratic+Logarithmic', 'Quadratic', 'Linear']
+Best confidence model: Logarithmic
+Attempting to load accuracy model comparison from Ch5 5.1.1...
+Ch5 5.1.1 file not found: /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step06_aic_comparison.csv
+This is expected if Ch5 5.1.1 hasn't run yet (soft dependency)
+Will create placeholder output with NaN accuracy values
+Creating comparison table...
+Created placeholder columns (Ch5 data not available)
+Comparison table created
+Saving step07_ch5_comparison.csv...
+step07_ch5_comparison.csv (5 rows, 6 cols)
+Model Comparison Results:
+  Logarithmic               | Conf: 0.5210 | Acc: N/A | [BEST CONF]
+  Linear+Logarithmic        | Conf: 0.2812 | Acc: N/A | 
+  Quadratic+Logarithmic     | Conf: 0.1210 | Acc: N/A | 
+  Quadratic                 | Conf: 0.0769 | Acc: N/A | 
+  Linear                    | Conf: 0.0000 | Acc: N/A | 
+Confidence best model: Logarithmic (accuracy comparison pending)
+Running validate_data_columns...
+PASS - All required columns present
+Expected: 6 columns
+Missing: 0 columns
+Additional checks...
+PASS - Row count (5 models)
+PASS - Exactly one best_in_confidence=True
+PASS - Accuracy columns contain NaN (Ch5 not available)
+Step 07 complete
+Step 07: Compare to Ch5 5.1.1 Accuracy Model Selection
+Loading confidence model comparison from this RQ...
+step06_aic_comparison.csv (5 rows, 10 cols)
+Confidence models: ['Linear+Logarithmic', 'Quadratic+Logarithmic', 'Logarithmic', 'Quadratic', 'Linear']
+Best confidence model: Linear+Logarithmic
+Attempting to load accuracy model comparison from Ch5 5.1.1...
+Ch5 5.1.1 file not found: /home/etai/projects/REMEMVR/results/ch5/5.1.1/data/step06_aic_comparison.csv
+This is expected if Ch5 5.1.1 hasn't run yet (soft dependency)
+Will create placeholder output with NaN accuracy values
+Creating comparison table...
+Created placeholder columns (Ch5 data not available)
+Comparison table created
+Saving step07_ch5_comparison.csv...
+step07_ch5_comparison.csv (5 rows, 6 cols)
+Model Comparison Results:
+  Linear+Logarithmic        | Conf: 0.6418 | Acc: N/A | [BEST CONF]
+  Quadratic+Logarithmic     | Conf: 0.2917 | Acc: N/A | 
+  Logarithmic               | Conf: 0.0658 | Acc: N/A | 
+  Quadratic                 | Conf: 0.0008 | Acc: N/A | 
+  Linear                    | Conf: 0.0000 | Acc: N/A | 
+Confidence best model: Linear+Logarithmic (accuracy comparison pending)
+Running validate_data_columns...
+PASS - All required columns present
+Expected: 6 columns
+Missing: 0 columns
+Additional checks...
+PASS - Row count (5 models)
+PASS - Exactly one best_in_confidence=True
+PASS - Accuracy columns contain NaN (Ch5 not available)
+Step 07 complete

@@ -1,0 +1,15 @@
+Metric,Value
+Observed Beta,-0.0180
+Standard Error,0.2260
+Equivalence Bound (d),0.20
+Equivalence Bound (beta),0.2000
+Test 1: β > lower bound,t = 0.8053
+Test 1: p-value,0.2103
+Test 2: β < upper bound,t = -0.9646
+Test 2: p-value,0.1674
+TOST p-value,0.2103
+Equivalence Established,NOT EQUIVALENT
+Conclusion,INDETERMINATE - Cannot establish equivalence
+90% CI Lower,-0.3897
+90% CI Upper,0.3537
+CI within bounds,NO

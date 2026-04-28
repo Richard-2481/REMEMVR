@@ -1,0 +1,198 @@
+======================================================================
+RQ 6.7.2: Post-Hoc Power Analysis
+======================================================================
+
+Observed effect:
+  Partial r = 0.2135
+  N = 100
+  α = 0.05
+
+======================================================================
+POST-HOC POWER (Observed Effect)
+======================================================================
+
+Power to detect r = 0.2135 with N = 100:
+  Power = 0.570 (57.0%)
+
+INTERPRETATION: UNDERPOWERED
+  Power < 60% indicates high risk of Type II error
+  Finding p = .034 is legitimate but marginal
+  Replication in larger sample recommended
+
+======================================================================
+POWER FOR HYPOTHESIS THRESHOLD (r = 0.30)
+======================================================================
+
+Power to detect r = 0.30 with N = 100:
+  Power = 0.862 (86.2%)
+
+INTERPRETATION:
+  Study adequately powered for moderate effects (r ≥ 0.30)
+  Failure to detect r = 0.30 would be informative
+
+======================================================================
+REQUIRED SAMPLE SIZE (0.80 power)
+======================================================================
+
+N required for 80% power at r = 0.2135:
+  N = 170
+  Current N = 100 (58.8% of required)
+
+======================================================================
+GENERATING POWER CURVE
+======================================================================
+
+Saved: plots/power_curve.png
+
+Saved: data/step09_power_analysis.csv
+
+======================================================================
+SUMMARY
+======================================================================
+
+Current study (N = 100):
+  Post-hoc power for r = 0.21: 0.57
+  Power for r = 0.30 threshold: 0.86
+  Required N for 80% power: 170
+
+KEY TAKEAWAY:
+  Finding p = .034 is legitimate but near detection threshold
+  Study adequately powered for moderate effects (r ≥ 0.30)
+  Weak effect (r = 0.21) detected with marginal power (~54%)
+  Replication in N ≈ 170 would provide robust confirmation
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+======================================================================
+RQ 6.7.2: Post-Hoc Power Analysis
+======================================================================
+
+Observed effect:
+  Partial r = 0.2135
+  N = 100
+  α = 0.05
+
+======================================================================
+POST-HOC POWER (Observed Effect)
+======================================================================
+
+Power to detect r = 0.2135 with N = 100:
+  Power = 0.570 (57.0%)
+
+INTERPRETATION: UNDERPOWERED
+  Power < 60% indicates high risk of Type II error
+  Finding p = .034 is legitimate but marginal
+  Replication in larger sample recommended
+
+======================================================================
+POWER FOR HYPOTHESIS THRESHOLD (r = 0.30)
+======================================================================
+
+Power to detect r = 0.30 with N = 100:
+  Power = 0.862 (86.2%)
+
+INTERPRETATION:
+  Study adequately powered for moderate effects (r ≥ 0.30)
+  Failure to detect r = 0.30 would be informative
+
+======================================================================
+REQUIRED SAMPLE SIZE (0.80 power)
+======================================================================
+
+N required for 80% power at r = 0.2135:
+  N = 170
+  Current N = 100 (58.8% of required)
+
+======================================================================
+GENERATING POWER CURVE
+======================================================================
+
+Saved: plots/power_curve.png
+
+Saved: data/step09_power_analysis.csv
+
+======================================================================
+SUMMARY
+======================================================================
+
+Current study (N = 100):
+  Post-hoc power for r = 0.21: 0.57
+  Power for r = 0.30 threshold: 0.86
+  Required N for 80% power: 170
+
+KEY TAKEAWAY:
+  Finding p = .034 is legitimate but near detection threshold
+  Study adequately powered for moderate effects (r ≥ 0.30)
+  Weak effect (r = 0.21) detected with marginal power (~54%)
+  Replication in N ≈ 170 would provide robust confirmation
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+======================================================================
+RQ 6.7.2: Post-Hoc Power Analysis
+======================================================================
+
+Observed effect:
+  Partial r = 0.2135
+  N = 100
+  α = 0.05
+
+======================================================================
+POST-HOC POWER (Observed Effect)
+======================================================================
+
+Power to detect r = 0.2135 with N = 100:
+  Power = 0.570 (57.0%)
+
+INTERPRETATION: UNDERPOWERED
+  Power < 60% indicates high risk of Type II error
+  Finding p = .034 is legitimate but marginal
+  Replication in larger sample recommended
+
+======================================================================
+POWER FOR HYPOTHESIS THRESHOLD (r = 0.30)
+======================================================================
+
+Power to detect r = 0.30 with N = 100:
+  Power = 0.862 (86.2%)
+
+INTERPRETATION:
+  Study adequately powered for moderate effects (r ≥ 0.30)
+  Failure to detect r = 0.30 would be informative
+
+======================================================================
+REQUIRED SAMPLE SIZE (0.80 power)
+======================================================================
+
+N required for 80% power at r = 0.2135:
+  N = 170
+  Current N = 100 (58.8% of required)
+
+======================================================================
+GENERATING POWER CURVE
+======================================================================
+
+Saved: plots/power_curve.png
+
+Saved: data/step09_power_analysis.csv
+
+======================================================================
+SUMMARY
+======================================================================
+
+Current study (N = 100):
+  Post-hoc power for r = 0.21: 0.57
+  Power for r = 0.30 threshold: 0.86
+  Required N for 80% power: 170
+
+KEY TAKEAWAY:
+  Finding p = .034 is legitimate but near detection threshold
+  Study adequately powered for moderate effects (r ≥ 0.30)
+  Weak effect (r = 0.21) detected with marginal power (~54%)
+  Replication in N ≈ 170 would provide robust confirmation
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================

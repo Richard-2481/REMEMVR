@@ -1,0 +1,135 @@
+Step 02: Extract Cognitive Tests
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+All 13 required columns present
+Running extract_cognitive_tests_custom...
+Starting custom cognitive test extraction...
+Extracting columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+Computed total scores, range: 26.0 to 68.0
+Extracting columns: ['bvmt-trial-1-score', 'bvmt-trial-2-score', 'bvmt-trial-3-score']
+Computed total scores, range: 12.0 to 36.0
+Extracting column: rpm-score
+Raw scores, range: 4.0 to 12.0
+Extracting columns: ['age', 'sex', 'education']
+Complete: 100 participants, 7 variables
+Cognitive test extraction complete
+[T-SCORE] Converting cognitive scores to T-scores (M=50, SD=10)...
+[T-SCORE] Raw: M=50.60, SD=8.42 -> T-score: M=50, SD=10
+[T-SCORE] Range: 20.8 to 70.7
+[T-SCORE] Raw: M=28.22, SD=5.06 -> T-score: M=50, SD=10
+[T-SCORE] Range: 17.9 to 65.4
+[T-SCORE] Raw: M=9.87, SD=1.93 -> T-score: M=50, SD=10
+[T-SCORE] Range: 19.5 to 61.1
+[T-SCORE] Conversion complete
+Saving /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step02_cognitive_tests.csv...
+step02_cognitive_tests.csv (100 rows, 7 cols)
+Running validate_numeric_range_custom...
+RAVLT_T: RAVLT_T: 100/100 valid, range [20.8, 70.7]
+BVMT_T: BVMT_T: 100/100 valid, range [17.9, 65.4], 1 out of range [20, 80]
+RPM_T: RPM_T: 100/100 valid, range [19.5, 61.1], 1 out of range [20, 80]
+FAIL - Issues with: ['BVMT_T', 'RPM_T']
+BVMT_T out-of-range values: [17.93456496986795]
+RPM_T out-of-range values: [19.525308178220932]
+Final dataset summary:
+Participants: 100
+RAVLT_T: M=50.0, SD=10.0
+BVMT_T: M=50.0, SD=10.0
+RPM_T: M=50.0, SD=10.0
+Step 02 complete
+Step 02: Extract Cognitive Tests
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+All 13 required columns present
+Running extract_cognitive_tests_custom...
+Starting custom cognitive test extraction...
+Extracting columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+Computed total scores, range: 26.0 to 68.0
+Extracting columns: ['bvmt-trial-1-score', 'bvmt-trial-2-score', 'bvmt-trial-3-score']
+Computed total scores, range: 12.0 to 36.0
+Extracting column: rpm-score
+Raw scores, range: 4.0 to 12.0
+Extracting columns: ['age', 'sex', 'education']
+Complete: 100 participants, 7 variables
+Cognitive test extraction complete
+[T-SCORE] Converting cognitive scores to T-scores (M=50, SD=10)...
+[T-SCORE] Raw: M=50.60, SD=8.42 -> T-score: M=50, SD=10
+[T-SCORE] Range: 20.8 to 70.7
+[T-SCORE] Raw: M=28.22, SD=5.06 -> T-score: M=50, SD=10
+[T-SCORE] Range: 17.9 to 65.4
+[T-SCORE] Raw: M=9.87, SD=1.93 -> T-score: M=50, SD=10
+[T-SCORE] Range: 19.5 to 61.1
+[T-SCORE] Conversion complete
+Saving /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step02_cognitive_tests.csv...
+step02_cognitive_tests.csv (100 rows, 7 cols)
+Running validate_numeric_range_custom...
+RAVLT_T: RAVLT_T: 100/100 valid, range [20.8, 70.7]
+BVMT_T: BVMT_T: 100/100 valid, range [17.9, 65.4], 1 out of range [20, 80]
+RPM_T: RPM_T: 100/100 valid, range [19.5, 61.1], 1 out of range [20, 80]
+FAIL - Issues with: ['BVMT_T', 'RPM_T']
+BVMT_T out-of-range values: [17.93456496986795]
+RPM_T out-of-range values: [19.525308178220932]
+Final dataset summary:
+Participants: 100
+RAVLT_T: M=50.0, SD=10.0
+BVMT_T: M=50.0, SD=10.0
+RPM_T: M=50.0, SD=10.0
+Step 02 complete
+Step 02: Extract Cognitive Tests
+Loading dfnonvr.csv...
+dfnonvr.csv (100 rows, 235 cols)
+All 15 required columns present
+Applying RAVLT ceiling fix...
+[CEILING FIX] A064: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A070: ravlt-trial-5-score 0 -> 15 (prev trial = 14)
+[CEILING FIX] A077: ravlt-trial-3-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A077: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-4-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] A103: ravlt-trial-5-score 0 -> 15 (prev trial = 15)
+[CEILING FIX] Total fixes applied: 7
+Running extract_cognitive_tests_custom...
+Starting custom cognitive test extraction...
+Extracting columns: ['ravlt-trial-1-score', 'ravlt-trial-2-score', 'ravlt-trial-3-score', 'ravlt-trial-4-score', 'ravlt-trial-5-score']
+Computed total scores, range: 28.0 to 71.0
+Extracting columns: ['bvmt-trial-1-score', 'bvmt-trial-2-score', 'bvmt-trial-3-score']
+Computed total scores, range: 12.0 to 36.0
+Extracting column: rpm-score
+Raw scores, range: 4.0 to 12.0
+Extracting columns: ['age', 'sex', 'education']
+Complete: 100 participants, 7 variables
+Cognitive test extraction complete
+Computing percent retention measures...
+RAVLT Percent Retention: 100/100 valid
+BVMT Percent Retention: 100/100 valid
+[T-SCORE] Converting cognitive scores to T-scores (M=50, SD=10)...
+[T-SCORE] Raw: M=51.65, SD=8.48 -> T-score: M=50, SD=10
+[T-SCORE] Range: 22.1 to 72.8
+[T-SCORE] Raw: M=28.22, SD=5.06 -> T-score: M=50, SD=10
+[T-SCORE] Range: 17.9 to 65.4
+[T-SCORE] Raw: M=9.87, SD=1.93 -> T-score: M=50, SD=10
+[T-SCORE] Range: 19.5 to 61.1
+[T-SCORE] Raw: M=86.12, SD=15.82 -> T-score: M=50, SD=10
+[T-SCORE] Range: 23.7 to 77.7
+[T-SCORE] Raw: M=96.70, SD=9.05 -> T-score: M=50, SD=10
+[T-SCORE] Range: 4.5 to 69.4
+[T-SCORE] Conversion complete
+Saving /home/etai/projects/REMEMVR/results/ch7/7.3.2/data/step02_cognitive_tests.csv...
+step02_cognitive_tests.csv (100 rows, 9 cols)
+Running validate_numeric_range_custom...
+RAVLT_T: RAVLT_T: 100/100 valid, range [22.1, 72.8]
+BVMT_T: BVMT_T: 100/100 valid, range [17.9, 65.4], 1 out of range [20, 80]
+RPM_T: RPM_T: 100/100 valid, range [19.5, 61.1], 1 out of range [20, 80]
+RAVLT_Pct_Ret_T: RAVLT_Pct_Ret_T: 100/100 valid, range [23.7, 77.7]
+BVMT_Pct_Ret_T: BVMT_Pct_Ret_T: 100/100 valid, range [4.5, 69.4], 4 out of range [20, 80]
+FAIL - Issues with: ['BVMT_T', 'RPM_T', 'BVMT_Pct_Ret_T']
+BVMT_T out-of-range values: [17.93456496986795]
+RPM_T out-of-range values: [19.525308178220932]
+BVMT_Pct_Ret_T out-of-range values: [16.815441360672345, 16.815441360672345, 13.466981974517097, 4.537756944769782]
+Final dataset summary:
+Participants: 100
+RAVLT_T: M=50.0, SD=10.0
+BVMT_T: M=50.0, SD=10.0
+RPM_T: M=50.0, SD=10.0
+RAVLT_Pct_Ret_T: M=50.0, SD=10.0
+BVMT_Pct_Ret_T: M=50.0, SD=10.0
+Step 02 complete

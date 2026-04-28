@@ -53,7 +53,7 @@ def compute_sr2(y, X_full, predictor_idx):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 1: Bootstrap sr² Difference
+# Bootstrap sr² Difference
 # ══════════════════════════════════════════════════════════════════════════════
 
 log("=" * 70)
@@ -225,7 +225,7 @@ log("Validation PASSED: All bootstrap checks OK")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# STEP 2: Steiger's Z Test
+# Steiger's Z Test
 # ══════════════════════════════════════════════════════════════════════════════
 
 LOG_FILE_2 = RQ_DIR / "logs" / "step02_steiger_z_test.log"

@@ -1,0 +1,2 @@
+model_slopes_aic,model_intercepts_aic,delta_aic,model_slopes_bic,model_intercepts_bic,delta_bic,lr_statistic,lr_p_value,slope_variance,recommendation
+1537.6333836939557,1545.1263749004393,7.492991206483566,1593.8487244259709,1591.9724921771185,-1.876232248852375,11.492991206483566,0.0031939540896064322,0.011564694881259672,SWITCH_TO_INTERCEPTS

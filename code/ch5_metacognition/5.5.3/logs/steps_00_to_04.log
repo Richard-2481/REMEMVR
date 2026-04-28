@@ -1,0 +1,529 @@
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44] RQ 6.5.3: High-Confidence Errors (Schema-Incongruent Effects)
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44] Start time: 2025-12-12 10:46:44.145058
+[2025-12-12 10:46:44] RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.5.3
+[2025-12-12 10:46:44] 
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44] STEP 00: Extract Item-Level Accuracy and Confidence Data
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44] Reading: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+[2025-12-12 10:46:44]   Loaded 400 rows, 214 columns
+[2025-12-12 10:46:44]   Found 18 TQ columns, 18 TC columns
+[2025-12-12 10:46:44]   Extracted 7200 item-responses
+[2025-12-12 10:46:44]   Unique participants: 100
+[2025-12-12 10:46:44]   Congruence levels: ['Common', 'Congruent', 'Incongruent']
+[2025-12-12 10:46:44]   Test sessions: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+[2025-12-12 10:46:44]   Paradigms: ['ICR', 'IFR', 'IRE']
+[2025-12-12 10:46:44]     Common: 2400 (33.3%)
+[2025-12-12 10:46:44]     Congruent: 2400 (33.3%)
+[2025-12-12 10:46:44]     Incongruent: 2400 (33.3%)
+[2025-12-12 10:46:44]   Missing Accuracy: 0 (0.0%)
+[2025-12-12 10:46:44]   Missing Confidence: 0 (0.0%)
+[2025-12-12 10:46:44]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step00_item_level.csv
+[2025-12-12 10:46:44] STEP 00 COMPLETE: 7200 rows extracted
+[2025-12-12 10:46:44] 
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44] STEP 01: Identify High-Confidence Errors
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44]   High-confidence threshold: >= 0.75
+[2025-12-12 10:46:44]   Error threshold: Accuracy == 0 (completely incorrect)
+[2025-12-12 10:46:44]   Total item-responses: 7200
+[2025-12-12 10:46:44]   High-confidence errors: 358 (5.0%)
+[2025-12-12 10:46:44]   HCE by Congruence:
+[2025-12-12 10:46:44]     Common: 99/2400 (4.1%)
+[2025-12-12 10:46:44]     Congruent: 125/2400 (5.2%)
+[2025-12-12 10:46:44]     Incongruent: 134/2400 (5.6%)
+[2025-12-12 10:46:44]   Validation: All HCE have Accuracy=0: True
+[2025-12-12 10:46:44]   Validation: All HCE have Confidence>=0.75: True
+[2025-12-12 10:46:44]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step01_hce_flags.csv
+[2025-12-12 10:46:44] STEP 01 COMPLETE: 358 HCEs identified (5.0%)
+[2025-12-12 10:46:44] 
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44] STEP 02: Compute HCE Rates by Congruence × Test
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44] WARNING: Missing cells: {('Common', 'T2'), ('Common', 'T4'), ('Congruent', 'T1'), ('Incongruent', 'T4'), ('Congruent', 'T3'), ('Common', 'T1'), ('Congruent', 'T2'), ('Common', 'T3'), ('Congruent', 'T4'), ('Incongruent', 'T3'), ('Incongruent', 'T1'), ('Incongruent', 'T2')}
+[2025-12-12 10:46:44]   Generated 12 cells (expected 12)
+[2025-12-12 10:46:44]   HCE Rates by Congruence × Test:
+[2025-12-12 10:46:44]   Congruence   Test   N_resp   N_hce    HCE_rate  
+[2025-12-12 10:46:44]   ------------ ------ -------- -------- ----------
+[2025-12-12 10:46:44]   Common       1      600      20       0.0333
+[2025-12-12 10:46:44]   Common       2      600      34       0.0567
+[2025-12-12 10:46:44]   Common       3      600      22       0.0367
+[2025-12-12 10:46:44]   Common       4      600      23       0.0383
+[2025-12-12 10:46:44]   Congruent    1      600      28       0.0467
+[2025-12-12 10:46:44]   Congruent    2      600      31       0.0517
+[2025-12-12 10:46:44]   Congruent    3      600      29       0.0483
+[2025-12-12 10:46:44]   Congruent    4      600      37       0.0617
+[2025-12-12 10:46:44]   Incongruent  1      600      24       0.0400
+[2025-12-12 10:46:44]   Incongruent  2      600      51       0.0850
+[2025-12-12 10:46:44]   Incongruent  3      600      33       0.0550
+[2025-12-12 10:46:44]   Incongruent  4      600      26       0.0433
+[2025-12-12 10:46:44] 
+  Marginal HCE Rates by Congruence:
+[2025-12-12 10:46:44]     Common: 4.12% (99/2400)
+[2025-12-12 10:46:44]     Congruent: 5.21% (125/2400)
+[2025-12-12 10:46:44]     Incongruent: 5.58% (134/2400)
+[2025-12-12 10:46:44]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step02_hce_rates.csv
+[2025-12-12 10:46:44] STEP 02 COMPLETE: 12 cells computed
+[2025-12-12 10:46:44] 
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44] STEP 03: Fit Mixed-Effects Model (GLMM)
+[2025-12-12 10:46:44] ======================================================================
+[2025-12-12 10:46:44]   Time mapping: {'T1': 0, 'T2': 1, 'T3': 3, 'T4': 6}
+[2025-12-12 10:46:44]   Note: Using Linear Mixed Model (LMM) on binary HCE_flag
+[2025-12-12 10:46:44]   (Linear probability model - statsmodels limitation)
+[2025-12-12 10:46:44]   Formula: HCE_flag ~ C(Congruence, Treatment('Common')) * Time
+[2025-12-12 10:46:44]   Random effects: (Time | UID)
+[2025-12-12 10:46:44]   Reference level: Common
+[2025-12-12 10:46:44]   Fitting model...
+[2025-12-12 10:46:44]   ERROR: Model fitting failed: Shape mismatch between endog/exog and extra 2d arrays given to model.
+[2025-12-12 10:46:44]   Attempting simpler model (random intercept only)...
+[2025-12-12 10:46:44] 
+ERROR: zero-size array to reduction operation maximum which has no identity
+[2025-12-12 10:46:44] Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.5.3/code/steps_00_to_04.py", line 324, in step03_fit_glmm
+    model = smf.mixedlm(
+            ^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 1046, in from_formula
+    mod = super().from_formula(formula, data, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 229, in from_formula
+    mod = cls(endog, exog, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 741, in __init__
+    super().__init__(endog, exog, groups=groups,
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 270, in __init__
+    super().__init__(endog, exog, **kwargs)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 95, in __init__
+    self.data = self._handle_data(endog, exog, missing, hasconst,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 135, in _handle_data
+    data = handle_data(endog, exog, missing, hasconst, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 675, in handle_data
+    return klass(endog, exog=exog, missing=missing, hasconst=hasconst,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 72, in __init__
+    arrays, nan_idx = self.handle_missing(endog, exog, missing,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 257, in handle_missing
+    raise ValueError("Shape mismatch between endog/exog "
+ValueError: Shape mismatch between endog/exog and extra 2d arrays given to model.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.5.3/code/steps_00_to_04.py", line 616, in main
+    model_info = step03_fit_glmm(df_hce)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/results/ch6/6.5.3/code/steps_00_to_04.py", line 337, in step03_fit_glmm
+    model = smf.mixedlm(
+            ^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 1046, in from_formula
+    mod = super().from_formula(formula, data, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 229, in from_formula
+    mod = cls(endog, exog, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py", line 741, in __init__
+    super().__init__(endog, exog, groups=groups,
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 270, in __init__
+    super().__init__(endog, exog, **kwargs)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 95, in __init__
+    self.data = self._handle_data(endog, exog, missing, hasconst,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/model.py", line 135, in _handle_data
+    data = handle_data(endog, exog, missing, hasconst, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 675, in handle_data
+    return klass(endog, exog=exog, missing=missing, hasconst=hasconst,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 88, in __init__
+    self._handle_constant(hasconst)
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 132, in _handle_constant
+    exog_max = np.max(self.exog, axis=0)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py", line 3164, in max
+    return _wrapreduction(a, np.maximum, 'max', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation maximum which has no identity
+
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11] RQ 6.5.3: High-Confidence Errors (Schema-Incongruent Effects)
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11] Start time: 2025-12-12 10:47:11.435550
+[2025-12-12 10:47:11] RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.5.3
+[2025-12-12 10:47:11] 
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11] STEP 00: Extract Item-Level Accuracy and Confidence Data
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11] Reading: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+[2025-12-12 10:47:11]   Loaded 400 rows, 214 columns
+[2025-12-12 10:47:11]   Found 18 TQ columns, 18 TC columns
+[2025-12-12 10:47:11]   Extracted 7200 item-responses
+[2025-12-12 10:47:11]   Unique participants: 100
+[2025-12-12 10:47:11]   Congruence levels: ['Common', 'Congruent', 'Incongruent']
+[2025-12-12 10:47:11]   Test sessions: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+[2025-12-12 10:47:11]   Paradigms: ['ICR', 'IFR', 'IRE']
+[2025-12-12 10:47:11]     Common: 2400 (33.3%)
+[2025-12-12 10:47:11]     Congruent: 2400 (33.3%)
+[2025-12-12 10:47:11]     Incongruent: 2400 (33.3%)
+[2025-12-12 10:47:11]   Missing Accuracy: 0 (0.0%)
+[2025-12-12 10:47:11]   Missing Confidence: 0 (0.0%)
+[2025-12-12 10:47:11]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step00_item_level.csv
+[2025-12-12 10:47:11] STEP 00 COMPLETE: 7200 rows extracted
+[2025-12-12 10:47:11] 
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11] STEP 01: Identify High-Confidence Errors
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11]   High-confidence threshold: >= 0.75
+[2025-12-12 10:47:11]   Error threshold: Accuracy == 0 (completely incorrect)
+[2025-12-12 10:47:11]   Total item-responses: 7200
+[2025-12-12 10:47:11]   High-confidence errors: 358 (5.0%)
+[2025-12-12 10:47:11]   HCE by Congruence:
+[2025-12-12 10:47:11]     Common: 99/2400 (4.1%)
+[2025-12-12 10:47:11]     Congruent: 125/2400 (5.2%)
+[2025-12-12 10:47:11]     Incongruent: 134/2400 (5.6%)
+[2025-12-12 10:47:11]   Validation: All HCE have Accuracy=0: True
+[2025-12-12 10:47:11]   Validation: All HCE have Confidence>=0.75: True
+[2025-12-12 10:47:11]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step01_hce_flags.csv
+[2025-12-12 10:47:11] STEP 01 COMPLETE: 358 HCEs identified (5.0%)
+[2025-12-12 10:47:11] 
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11] STEP 02: Compute HCE Rates by Congruence × Test
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11]   Generated 12 cells (expected 12)
+[2025-12-12 10:47:11]   HCE Rates by Congruence × Test:
+[2025-12-12 10:47:11]   Congruence   Test   N_resp   N_hce    HCE_rate  
+[2025-12-12 10:47:11]   ------------ ------ -------- -------- ----------
+[2025-12-12 10:47:11]   Common       1      600      20       0.0333
+[2025-12-12 10:47:11]   Common       2      600      34       0.0567
+[2025-12-12 10:47:11]   Common       3      600      22       0.0367
+[2025-12-12 10:47:11]   Common       4      600      23       0.0383
+[2025-12-12 10:47:11]   Congruent    1      600      28       0.0467
+[2025-12-12 10:47:11]   Congruent    2      600      31       0.0517
+[2025-12-12 10:47:11]   Congruent    3      600      29       0.0483
+[2025-12-12 10:47:11]   Congruent    4      600      37       0.0617
+[2025-12-12 10:47:11]   Incongruent  1      600      24       0.0400
+[2025-12-12 10:47:11]   Incongruent  2      600      51       0.0850
+[2025-12-12 10:47:11]   Incongruent  3      600      33       0.0550
+[2025-12-12 10:47:11]   Incongruent  4      600      26       0.0433
+[2025-12-12 10:47:11] 
+  Marginal HCE Rates by Congruence:
+[2025-12-12 10:47:11]     Common: 4.12% (99/2400)
+[2025-12-12 10:47:11]     Congruent: 5.21% (125/2400)
+[2025-12-12 10:47:11]     Incongruent: 5.58% (134/2400)
+[2025-12-12 10:47:11]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step02_hce_rates.csv
+[2025-12-12 10:47:11] STEP 02 COMPLETE: 12 cells computed
+[2025-12-12 10:47:11] 
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11] STEP 03: Fit Mixed-Effects Model (GLMM)
+[2025-12-12 10:47:11] ======================================================================
+[2025-12-12 10:47:11]   Time mapping: {1: 0, 2: 1, 3: 3, 4: 6}
+[2025-12-12 10:47:11]   Note: Using Linear Mixed Model (LMM) on binary HCE_flag
+[2025-12-12 10:47:11]   (Linear probability model - statsmodels limitation)
+[2025-12-12 10:47:11]   Formula: HCE_flag ~ C(Congruence, Treatment('Common')) * Time
+[2025-12-12 10:47:11]   Random effects: (Time | UID)
+[2025-12-12 10:47:11]   Reference level: Common
+[2025-12-12 10:47:11]   Fitting model...
+[2025-12-12 10:47:12]   Model converged successfully
+[2025-12-12 10:47:12]   Saved model summary: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step03_congruence_hce_model.txt
+[2025-12-12 10:47:12] 
+  FIXED EFFECTS:
+[2025-12-12 10:47:12]   Effect                                                 β         SE          z          p
+[2025-12-12 10:47:12]   --------------------------------------------- ---------- ---------- ---------- ----------
+[2025-12-12 10:47:12]   Intercept                                         0.0431     0.0073      5.938    0.0000*
+[2025-12-12 10:47:12]   C(Congruence, Treatment('Common'))[T.Congruent]     0.0035     0.0091      0.382    0.7023
+[2025-12-12 10:47:12]   C(Congruence, Treatment('Common'))[T.Incongruent]     0.0185     0.0091      2.019    0.0434*
+[2025-12-12 10:47:12]   Time                                             -0.0008     0.0019     -0.393    0.6941
+[2025-12-12 10:47:12]   C(Congruence, Treatment('Common'))[T.Congruent]:Time     0.0029     0.0027      1.090    0.2758
+[2025-12-12 10:47:12]   C(Congruence, Treatment('Common'))[T.Incongruent]:Time    -0.0015     0.0027     -0.574    0.5657
+[2025-12-12 10:47:12]   Saved hypothesis tests: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step03_congruence_hce_test.csv
+[2025-12-12 10:47:12] 
+  Congruence p-values: ['0.7023', '0.0434']
+[2025-12-12 10:47:12]   Congruence effect significant (any p < 0.05): True
+[2025-12-12 10:47:12] STEP 03 COMPLETE: Model fitted, converged=True
+[2025-12-12 10:47:12] 
+[2025-12-12 10:47:12] ======================================================================
+[2025-12-12 10:47:12] STEP 04: Post-Hoc Contrasts
+[2025-12-12 10:47:12] ======================================================================
+[2025-12-12 10:47:12]   Congruence effect significant - computing pairwise contrasts
+[2025-12-12 10:47:12]   Congruent vs Common: β = 0.0035, SE = 0.0091
+[2025-12-12 10:47:12]   Incongruent vs Common: β = 0.0185, SE = 0.0091
+[2025-12-12 10:47:12] 
+  PAIRWISE CONTRASTS (Bonferroni-corrected):
+[2025-12-12 10:47:12]   Contrast                    Estimate         SE          z   p_uncorr     p_bonf
+[2025-12-12 10:47:12]   ------------------------- ---------- ---------- ---------- ---------- ----------
+[2025-12-12 10:47:12]   Incongruent vs Common         0.0185     0.0091      2.019     0.0434    0.1303
+[2025-12-12 10:47:12]   Congruent vs Common           0.0035     0.0091      0.382     0.7023    1.0000
+[2025-12-12 10:47:12]   Incongruent vs Congruent      0.0150     0.0129      1.158     0.2470    0.7410
+[2025-12-12 10:47:12]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step04_post_hoc_contrasts.csv
+[2025-12-12 10:47:12] 
+  HYPOTHESIS TEST RESULT:
+[2025-12-12 10:47:12]   HYPOTHESIS NOT SUPPORTED: No significant difference for Incongruent items
+[2025-12-12 10:47:12]     Despite overall Congruence effect, Incongruent not significantly different
+[2025-12-12 10:47:12] STEP 04 COMPLETE: 3 pairwise contrasts computed
+[2025-12-12 10:47:12] 
+[2025-12-12 10:47:12] ======================================================================
+[2025-12-12 10:47:12] ALL STEPS COMPLETE
+[2025-12-12 10:47:12] ======================================================================
+[2025-12-12 10:47:12] End time: 2025-12-12 10:47:12.148651
+[2025-12-12 10:47:12] 
+FINAL SUMMARY:
+[2025-12-12 10:47:12]   Total item-responses: 7200
+[2025-12-12 10:47:12]   Total HCE: 358 (5.0%)
+[2025-12-12 10:47:12]   Congruence effect significant: True
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18] RQ 6.5.3: High-Confidence Errors (Schema-Incongruent Effects)
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18] Start time: 2026-01-17 14:16:18.679588
+[2026-01-17 14:16:18] RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.5.3
+[2026-01-17 14:16:18] 
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18] STEP 00: Extract Item-Level Accuracy and Confidence Data
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18] Reading: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+[2026-01-17 14:16:18]   Loaded 400 rows, 478 columns
+[2026-01-17 14:16:18]   Found 18 TQ columns, 18 TC columns
+[2026-01-17 14:16:18]   Extracted 7200 item-responses
+[2026-01-17 14:16:18]   Unique participants: 100
+[2026-01-17 14:16:18]   Congruence levels: ['Common', 'Congruent', 'Incongruent']
+[2026-01-17 14:16:18]   Test sessions: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+[2026-01-17 14:16:18]   Paradigms: ['ICR', 'IFR', 'IRE']
+[2026-01-17 14:16:18]     Common: 2400 (33.3%)
+[2026-01-17 14:16:18]     Congruent: 2400 (33.3%)
+[2026-01-17 14:16:18]     Incongruent: 2400 (33.3%)
+[2026-01-17 14:16:18]   Missing Accuracy: 0 (0.0%)
+[2026-01-17 14:16:18]   Missing Confidence: 0 (0.0%)
+[2026-01-17 14:16:18]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step00_item_level.csv
+[2026-01-17 14:16:18] STEP 00 COMPLETE: 7200 rows extracted
+[2026-01-17 14:16:18] 
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18] STEP 01: Identify High-Confidence Errors
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18]   High-confidence threshold: >= 0.75
+[2026-01-17 14:16:18]   Error threshold: Accuracy == 0 (completely incorrect)
+[2026-01-17 14:16:18]   Total item-responses: 7200
+[2026-01-17 14:16:18]   High-confidence errors: 358 (5.0%)
+[2026-01-17 14:16:18]   HCE by Congruence:
+[2026-01-17 14:16:18]     Common: 99/2400 (4.1%)
+[2026-01-17 14:16:18]     Congruent: 125/2400 (5.2%)
+[2026-01-17 14:16:18]     Incongruent: 134/2400 (5.6%)
+[2026-01-17 14:16:18]   Validation: All HCE have Accuracy=0: True
+[2026-01-17 14:16:18]   Validation: All HCE have Confidence>=0.75: True
+[2026-01-17 14:16:18]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step01_hce_flags.csv
+[2026-01-17 14:16:18] STEP 01 COMPLETE: 358 HCEs identified (5.0%)
+[2026-01-17 14:16:18] 
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18] STEP 02: Compute HCE Rates by Congruence × Test
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18]   Generated 12 cells (expected 12)
+[2026-01-17 14:16:18]   HCE Rates by Congruence × Test:
+[2026-01-17 14:16:18]   Congruence   Test   N_resp   N_hce    HCE_rate  
+[2026-01-17 14:16:18]   ------------ ------ -------- -------- ----------
+[2026-01-17 14:16:18]   Common       1      600      20       0.0333
+[2026-01-17 14:16:18]   Common       2      600      34       0.0567
+[2026-01-17 14:16:18]   Common       3      600      22       0.0367
+[2026-01-17 14:16:18]   Common       4      600      23       0.0383
+[2026-01-17 14:16:18]   Congruent    1      600      28       0.0467
+[2026-01-17 14:16:18]   Congruent    2      600      31       0.0517
+[2026-01-17 14:16:18]   Congruent    3      600      29       0.0483
+[2026-01-17 14:16:18]   Congruent    4      600      37       0.0617
+[2026-01-17 14:16:18]   Incongruent  1      600      24       0.0400
+[2026-01-17 14:16:18]   Incongruent  2      600      51       0.0850
+[2026-01-17 14:16:18]   Incongruent  3      600      33       0.0550
+[2026-01-17 14:16:18]   Incongruent  4      600      26       0.0433
+[2026-01-17 14:16:18] 
+  Marginal HCE Rates by Congruence:
+[2026-01-17 14:16:18]     Common: 4.12% (99/2400)
+[2026-01-17 14:16:18]     Congruent: 5.21% (125/2400)
+[2026-01-17 14:16:18]     Incongruent: 5.58% (134/2400)
+[2026-01-17 14:16:18]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step02_hce_rates.csv
+[2026-01-17 14:16:18] STEP 02 COMPLETE: 12 cells computed
+[2026-01-17 14:16:18] 
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18] STEP 03: Fit Mixed-Effects Model (GLMM)
+[2026-01-17 14:16:18] ======================================================================
+[2026-01-17 14:16:18]   Time mapping: {1: 0, 2: 1, 3: 3, 4: 6}
+[2026-01-17 14:16:18]   Note: Using Linear Mixed Model (LMM) on binary HCE_flag
+[2026-01-17 14:16:18]   (Linear probability model - statsmodels limitation)
+[2026-01-17 14:16:18]   Formula: HCE_flag ~ C(Congruence, Treatment('Common')) * Time
+[2026-01-17 14:16:18]   Random effects: (Time | UID)
+[2026-01-17 14:16:18]   Reference level: Common
+[2026-01-17 14:16:18]   Fitting model...
+[2026-01-17 14:16:19]   Model converged successfully
+[2026-01-17 14:16:19]   Saved model summary: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step03_congruence_hce_model.txt
+[2026-01-17 14:16:19] 
+  FIXED EFFECTS:
+[2026-01-17 14:16:19]   Effect                                                 β         SE          z          p
+[2026-01-17 14:16:19]   --------------------------------------------- ---------- ---------- ---------- ----------
+[2026-01-17 14:16:19]   Intercept                                         0.0431     0.0073      5.938    0.0000*
+[2026-01-17 14:16:19]   C(Congruence, Treatment('Common'))[T.Congruent]     0.0035     0.0091      0.382    0.7023
+[2026-01-17 14:16:19]   C(Congruence, Treatment('Common'))[T.Incongruent]     0.0185     0.0091      2.019    0.0434*
+[2026-01-17 14:16:19]   Time                                             -0.0008     0.0019     -0.393    0.6941
+[2026-01-17 14:16:19]   C(Congruence, Treatment('Common'))[T.Congruent]:Time     0.0029     0.0027      1.090    0.2758
+[2026-01-17 14:16:19]   C(Congruence, Treatment('Common'))[T.Incongruent]:Time    -0.0015     0.0027     -0.574    0.5657
+[2026-01-17 14:16:19]   Saved hypothesis tests: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step03_congruence_hce_test.csv
+[2026-01-17 14:16:19] 
+  Congruence p-values: ['0.7023', '0.0434']
+[2026-01-17 14:16:19]   Congruence effect significant (any p < 0.05): True
+[2026-01-17 14:16:19] STEP 03 COMPLETE: Model fitted, converged=True
+[2026-01-17 14:16:19] 
+[2026-01-17 14:16:19] ======================================================================
+[2026-01-17 14:16:19] STEP 04: Post-Hoc Contrasts
+[2026-01-17 14:16:19] ======================================================================
+[2026-01-17 14:16:19]   Congruence effect significant - computing pairwise contrasts
+[2026-01-17 14:16:19]   Congruent vs Common: β = 0.0035, SE = 0.0091
+[2026-01-17 14:16:19]   Incongruent vs Common: β = 0.0185, SE = 0.0091
+[2026-01-17 14:16:19] 
+  PAIRWISE CONTRASTS (Bonferroni-corrected):
+[2026-01-17 14:16:19]   Contrast                    Estimate         SE          z   p_uncorr     p_bonf
+[2026-01-17 14:16:19]   ------------------------- ---------- ---------- ---------- ---------- ----------
+[2026-01-17 14:16:19]   Incongruent vs Common         0.0185     0.0091      2.019     0.0434    0.1303
+[2026-01-17 14:16:19]   Congruent vs Common           0.0035     0.0091      0.382     0.7023    1.0000
+[2026-01-17 14:16:19]   Incongruent vs Congruent      0.0150     0.0129      1.158     0.2470    0.7410
+[2026-01-17 14:16:19]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step04_post_hoc_contrasts.csv
+[2026-01-17 14:16:19] 
+  HYPOTHESIS TEST RESULT:
+[2026-01-17 14:16:19]   HYPOTHESIS NOT SUPPORTED: No significant difference for Incongruent items
+[2026-01-17 14:16:19]     Despite overall Congruence effect, Incongruent not significantly different
+[2026-01-17 14:16:19] STEP 04 COMPLETE: 3 pairwise contrasts computed
+[2026-01-17 14:16:19] 
+[2026-01-17 14:16:19] ======================================================================
+[2026-01-17 14:16:19] ALL STEPS COMPLETE
+[2026-01-17 14:16:19] ======================================================================
+[2026-01-17 14:16:19] End time: 2026-01-17 14:16:19.687425
+[2026-01-17 14:16:19] 
+FINAL SUMMARY:
+[2026-01-17 14:16:19]   Total item-responses: 7200
+[2026-01-17 14:16:19]   Total HCE: 358 (5.0%)
+[2026-01-17 14:16:19]   Congruence effect significant: True
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] RQ 6.5.3: High-Confidence Errors (Schema-Incongruent Effects)
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] Start time: 2026-01-17 14:30:25.131643
+[2026-01-17 14:30:25] RQ Directory: /home/etai/projects/REMEMVR/results/ch6/6.5.3
+[2026-01-17 14:30:25] 
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] STEP 00: Extract Item-Level Accuracy and Confidence Data
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] Reading: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+[2026-01-17 14:30:25]   Loaded 400 rows, 478 columns
+[2026-01-17 14:30:25]   Found 18 TQ columns, 18 TC columns
+[2026-01-17 14:30:25]   Extracted 7200 item-responses
+[2026-01-17 14:30:25]   Unique participants: 100
+[2026-01-17 14:30:25]   Congruence levels: ['Common', 'Congruent', 'Incongruent']
+[2026-01-17 14:30:25]   Test sessions: [np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+[2026-01-17 14:30:25]   Paradigms: ['ICR', 'IFR', 'IRE']
+[2026-01-17 14:30:25]     Common: 2400 (33.3%)
+[2026-01-17 14:30:25]     Congruent: 2400 (33.3%)
+[2026-01-17 14:30:25]     Incongruent: 2400 (33.3%)
+[2026-01-17 14:30:25]   Missing Accuracy: 0 (0.0%)
+[2026-01-17 14:30:25]   Missing Confidence: 0 (0.0%)
+[2026-01-17 14:30:25]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step00_item_level.csv
+[2026-01-17 14:30:25] STEP 00 COMPLETE: 7200 rows extracted
+[2026-01-17 14:30:25] 
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] STEP 01: Identify High-Confidence Errors
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25]   High-confidence threshold: >= 0.75
+[2026-01-17 14:30:25]   Error threshold: Accuracy == 0 (completely incorrect)
+[2026-01-17 14:30:25]   Total item-responses: 7200
+[2026-01-17 14:30:25]   High-confidence errors: 358 (5.0%)
+[2026-01-17 14:30:25]   HCE by Congruence:
+[2026-01-17 14:30:25]     Common: 99/2400 (4.1%)
+[2026-01-17 14:30:25]     Congruent: 125/2400 (5.2%)
+[2026-01-17 14:30:25]     Incongruent: 134/2400 (5.6%)
+[2026-01-17 14:30:25]   Validation: All HCE have Accuracy=0: True
+[2026-01-17 14:30:25]   Validation: All HCE have Confidence>=0.75: True
+[2026-01-17 14:30:25]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step01_hce_flags.csv
+[2026-01-17 14:30:25] STEP 01 COMPLETE: 358 HCEs identified (5.0%)
+[2026-01-17 14:30:25] 
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] STEP 02: Compute HCE Rates by Congruence × Test
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25]   Generated 12 cells (expected 12)
+[2026-01-17 14:30:25]   HCE Rates by Congruence × Test:
+[2026-01-17 14:30:25]   Congruence   Test   N_resp   N_hce    HCE_rate  
+[2026-01-17 14:30:25]   ------------ ------ -------- -------- ----------
+[2026-01-17 14:30:25]   Common       1      600      20       0.0333
+[2026-01-17 14:30:25]   Common       2      600      34       0.0567
+[2026-01-17 14:30:25]   Common       3      600      22       0.0367
+[2026-01-17 14:30:25]   Common       4      600      23       0.0383
+[2026-01-17 14:30:25]   Congruent    1      600      28       0.0467
+[2026-01-17 14:30:25]   Congruent    2      600      31       0.0517
+[2026-01-17 14:30:25]   Congruent    3      600      29       0.0483
+[2026-01-17 14:30:25]   Congruent    4      600      37       0.0617
+[2026-01-17 14:30:25]   Incongruent  1      600      24       0.0400
+[2026-01-17 14:30:25]   Incongruent  2      600      51       0.0850
+[2026-01-17 14:30:25]   Incongruent  3      600      33       0.0550
+[2026-01-17 14:30:25]   Incongruent  4      600      26       0.0433
+[2026-01-17 14:30:25] 
+  Marginal HCE Rates by Congruence:
+[2026-01-17 14:30:25]     Common: 4.12% (99/2400)
+[2026-01-17 14:30:25]     Congruent: 5.21% (125/2400)
+[2026-01-17 14:30:25]     Incongruent: 5.58% (134/2400)
+[2026-01-17 14:30:25]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step02_hce_rates.csv
+[2026-01-17 14:30:25] STEP 02 COMPLETE: 12 cells computed
+[2026-01-17 14:30:25] 
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] STEP 03: Fit Mixed-Effects Model (GLMM)
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25]   Time mapping: {1: 0, 2: 1, 3: 3, 4: 6}
+[2026-01-17 14:30:25]   Note: Using Linear Mixed Model (LMM) on binary HCE_flag
+[2026-01-17 14:30:25]   (Linear probability model - statsmodels limitation)
+[2026-01-17 14:30:25]   Formula: HCE_flag ~ C(Congruence, Treatment('Common')) * Time
+[2026-01-17 14:30:25]   Random effects: (Time | UID)
+[2026-01-17 14:30:25]   Reference level: Common
+[2026-01-17 14:30:25]   Fitting model...
+[2026-01-17 14:30:25]   Model converged successfully
+[2026-01-17 14:30:25]   Saved model summary: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step03_congruence_hce_model.txt
+[2026-01-17 14:30:25] 
+  FIXED EFFECTS:
+[2026-01-17 14:30:25]   Effect                                                 β         SE          z          p
+[2026-01-17 14:30:25]   --------------------------------------------- ---------- ---------- ---------- ----------
+[2026-01-17 14:30:25]   Intercept                                         0.0431     0.0073      5.938    0.0000*
+[2026-01-17 14:30:25]   C(Congruence, Treatment('Common'))[T.Congruent]     0.0035     0.0091      0.382    0.7023
+[2026-01-17 14:30:25]   C(Congruence, Treatment('Common'))[T.Incongruent]     0.0185     0.0091      2.019    0.0434*
+[2026-01-17 14:30:25]   Time                                             -0.0008     0.0019     -0.393    0.6941
+[2026-01-17 14:30:25]   C(Congruence, Treatment('Common'))[T.Congruent]:Time     0.0029     0.0027      1.090    0.2758
+[2026-01-17 14:30:25]   C(Congruence, Treatment('Common'))[T.Incongruent]:Time    -0.0015     0.0027     -0.574    0.5657
+[2026-01-17 14:30:25]   Saved hypothesis tests: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step03_congruence_hce_test.csv
+[2026-01-17 14:30:25] 
+  Congruence p-values: ['0.7023', '0.0434']
+[2026-01-17 14:30:25]   Congruence effect significant (any p < 0.05): True
+[2026-01-17 14:30:25] STEP 03 COMPLETE: Model fitted, converged=True
+[2026-01-17 14:30:25] 
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] STEP 04: Post-Hoc Contrasts
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25]   Congruence effect significant - computing pairwise contrasts
+[2026-01-17 14:30:25]   Congruent vs Common: β = 0.0035, SE = 0.0091
+[2026-01-17 14:30:25]   Incongruent vs Common: β = 0.0185, SE = 0.0091
+[2026-01-17 14:30:25] 
+  PAIRWISE CONTRASTS (Bonferroni-corrected):
+[2026-01-17 14:30:25]   Contrast                    Estimate         SE          z   p_uncorr     p_bonf
+[2026-01-17 14:30:25]   ------------------------- ---------- ---------- ---------- ---------- ----------
+[2026-01-17 14:30:25]   Incongruent vs Common         0.0185     0.0091      2.019     0.0434    0.1303
+[2026-01-17 14:30:25]   Congruent vs Common           0.0035     0.0091      0.382     0.7023    1.0000
+[2026-01-17 14:30:25]   Incongruent vs Congruent      0.0150     0.0129      1.158     0.2470    0.7410
+[2026-01-17 14:30:25]   Saved: /home/etai/projects/REMEMVR/results/ch6/6.5.3/data/step04_post_hoc_contrasts.csv
+[2026-01-17 14:30:25] 
+  HYPOTHESIS TEST RESULT:
+[2026-01-17 14:30:25]   HYPOTHESIS NOT SUPPORTED: No significant difference for Incongruent items
+[2026-01-17 14:30:25]     Despite overall Congruence effect, Incongruent not significantly different
+[2026-01-17 14:30:25] STEP 04 COMPLETE: 3 pairwise contrasts computed
+[2026-01-17 14:30:25] 
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] ALL STEPS COMPLETE
+[2026-01-17 14:30:25] ======================================================================
+[2026-01-17 14:30:25] End time: 2026-01-17 14:30:25.930273
+[2026-01-17 14:30:25] 
+FINAL SUMMARY:
+[2026-01-17 14:30:25]   Total item-responses: 7200
+[2026-01-17 14:30:25]   Total HCE: 358 (5.0%)
+[2026-01-17 14:30:25]   Congruence effect significant: True

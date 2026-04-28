@@ -1,0 +1,54 @@
+Step 07: Cross Validation
+Loading merged analysis dataset...
+step03_merged_analysis.csv (97 rows, 6 cols)
+All required columns present: ['UID', 'RAVLT_T', 'BVMT_T', 'NART_T', 'RPM_T', 'theta_mean']
+Setting up predictor and outcome variables...
+X: 97 rows x 4 predictors
+y: 97 outcome values
+No missing data in predictor or outcome variables
+Running 5-fold cross-validation...
+[CV] Fold 1: train_r2=0.2613, test_r2=-0.0213, gap=0.2826
+[CV] Fold 2: train_r2=0.2389, test_r2=0.1395, gap=0.0994
+[CV] Fold 3: train_r2=0.2210, test_r2=0.1927, gap=0.0283
+[CV] Fold 4: train_r2=0.2726, test_r2=-0.6860, gap=0.9586
+[CV] Fold 5: train_r2=0.1887, test_r2=0.3675, gap=-0.1788
+Cross-validation complete
+Mean train R²: 0.2365
+Mean test R²: -0.0015
+Mean generalization gap: 0.2380 ± 0.4354
+Saving cross-validation results...
+/home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step07_cross_validation.csv (5 rows, 6 cols)
+Running validate_data_columns...
+All 5 folds completed successfully
+Reasonable train/test splits: train_n ~77, test_n ~19
+Train R² >= Test R² in 4/5 folds (expected pattern)
+Maximum generalization gap = 0.9586 > 0.10 (potential overfitting)
+All validation criteria passed
+Step 07 complete
+Step 07: Cross Validation
+Loading merged analysis dataset...
+step03_merged_analysis.csv (97 rows, 9 cols)
+All required columns present: ['UID', 'RAVLT_T', 'RAVLT_Pct_Ret_T', 'BVMT_T', 'BVMT_Pct_Ret_T', 'NART_T', 'RPM_T', 'theta_mean']
+Setting up predictor and outcome variables...
+X: 97 rows x 6 predictors
+y: 97 outcome values
+No missing data in predictor or outcome variables
+Running 5-fold cross-validation...
+[CV] Fold 1: train_r2=0.2857, test_r2=0.0905, gap=0.1952
+[CV] Fold 2: train_r2=0.3005, test_r2=0.1397, gap=0.1608
+[CV] Fold 3: train_r2=0.2774, test_r2=0.1482, gap=0.1291
+[CV] Fold 4: train_r2=0.3221, test_r2=-0.6573, gap=0.9793
+[CV] Fold 5: train_r2=0.2280, test_r2=0.4713, gap=-0.2433
+Cross-validation complete
+Mean train R²: 0.2827
+Mean test R²: 0.0385
+Mean generalization gap: 0.2442 ± 0.4474
+Saving cross-validation results...
+/home/etai/projects/REMEMVR/results/ch7/7.1.1/data/step07_cross_validation.csv (5 rows, 6 cols)
+Running validate_data_columns...
+All 5 folds completed successfully
+Reasonable train/test splits: train_n ~77, test_n ~19
+Train R² >= Test R² in 4/5 folds (expected pattern)
+Maximum generalization gap = 0.9793 > 0.10 (potential overfitting)
+All validation criteria passed
+Step 07 complete

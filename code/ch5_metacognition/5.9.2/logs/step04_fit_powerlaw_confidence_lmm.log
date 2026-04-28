@@ -1,0 +1,151 @@
+Step 04: Fit PowerLaw Confidence LMM
+  PowerLaw lambda: 0.41
+  Random seed: 42
+
+Loading confidence theta scores...
+step03_theta_confidence.csv (400 rows)
+  Columns: ['composite_ID', 'theta_All', 'se_All']
+invalid literal for int() with base 10: 'T1'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step04_fit_powerlaw_confidence_lmm.py", line 114, in <module>
+    df_theta['test'] = df_theta['test'].astype(int)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 6665, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 449, in astype
+    return self.apply(
+           ^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 363, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 784, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py", line 237, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py", line 182, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/dtypes/astype.py", line 133, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'T1'
+Step 04: Fit PowerLaw Confidence LMM
+  PowerLaw lambda: 0.41
+  Random seed: 42
+
+Loading confidence theta scores...
+step03_theta_confidence.csv (400 rows)
+  Columns: ['composite_ID', 'theta_All', 'se_All']
+  Parsed composite_ID into UID and test
+
+Loading TSVR to Days mapping...
+step00_tsvr_mapping.csv
+  Mapping columns: ['composite_ID', 'TSVR_hours', 'test']
+Theta with Days mapping (converted from TSVR_hours)
+
+Applying PowerLaw transformation with lambda=0.41...
+  Transformed time variable created
+  Range: [0.0167, 0.9927]
+
+Fitting PowerLaw confidence LMM...
+  Attempting random slopes model...
+  Random slopes model converged successfully
+
+Extracting fixed effects...
+step04_powerlaw_confidence_lmm_fit.csv
+
+                             parameter  estimate       se    t_value      p_value
+                             Intercept  0.669468 0.084846   7.890387 3.012504e-15
+            log_Days_plus1_lambda_0_41 -1.465783 0.087594 -16.733857 7.426904e-63
+                             Group Var 10.588477 1.493806   7.088252 1.358161e-12
+Group x log_Days_plus1_lambda_0_41 Cov -3.750409 1.154025  -3.249851 1.154653e-03
+        log_Days_plus1_lambda_0_41 Var 11.266149 1.598301   7.048829 1.804293e-12
+
+Extracting variance components...
+  var_intercept: 0.719359
+  var_slope: 0.765399
+  cov_int_slope: -0.254795
+  var_residual: 0.067938
+  ICC_slope: 0.918475
+  ICC_conditional: 0.492948
+step04_powerlaw_confidence_variance_components.csv
+
+Extracting random effects...
+step04_powerlaw_confidence_random_effects.csv (100 participants)
+
+Computing matched functional form ratio...
+'>' not supported between instances of 'str' and 'int'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch6/6.9.2/code/step04_fit_powerlaw_confidence_lmm.py", line 334, in <module>
+    ratio_matched = ICC_slope / ICC_slope_accuracy if ICC_slope_accuracy > 0 else np.inf
+                                                      ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+Step 04: Fit PowerLaw Confidence LMM
+  PowerLaw lambda: 0.41
+  Random seed: 42
+
+Loading confidence theta scores...
+step03_theta_confidence.csv (400 rows)
+  Columns: ['composite_ID', 'theta_All', 'se_All']
+  Parsed composite_ID into UID and test
+
+Loading TSVR to Days mapping...
+step00_tsvr_mapping.csv
+  Mapping columns: ['composite_ID', 'TSVR_hours', 'test']
+Theta with Days mapping (converted from TSVR_hours)
+
+Applying PowerLaw transformation with lambda=0.41...
+  Transformed time variable created
+  Range: [0.0167, 0.9927]
+
+Fitting PowerLaw confidence LMM...
+  Attempting random slopes model...
+  Random slopes model converged successfully
+
+Extracting fixed effects...
+step04_powerlaw_confidence_lmm_fit.csv
+
+                             parameter  estimate       se    t_value      p_value
+                             Intercept  0.669468 0.084846   7.890387 3.012504e-15
+            log_Days_plus1_lambda_0_41 -1.465783 0.087594 -16.733857 7.426904e-63
+                             Group Var 10.588477 1.493806   7.088252 1.358161e-12
+Group x log_Days_plus1_lambda_0_41 Cov -3.750409 1.154025  -3.249851 1.154653e-03
+        log_Days_plus1_lambda_0_41 Var 11.266149 1.598301   7.048829 1.804293e-12
+
+Extracting variance components...
+  var_intercept: 0.719359
+  var_slope: 0.765399
+  cov_int_slope: -0.254795
+  var_residual: 0.067938
+  ICC_slope: 0.918475
+  ICC_conditional: 0.492948
+step04_powerlaw_confidence_variance_components.csv
+
+Extracting random effects...
+step04_powerlaw_confidence_random_effects.csv (100 participants)
+
+Computing matched functional form ratio...
+  ICC_accuracy: 0.007463
+  ICC_confidence_PowerLaw: 0.918475
+  Ratio_matched: 123.1x
+  Ratio_824x (baseline): 35.4x
+  Percent reduction: -247.8%
+step04_matched_functional_form_ratio.csv
+step04_convergence_diagnostics.csv
+
+Running basic assumption checks...
+step04_assumption_checks.txt
+
+Summary:
+  Model converged: PASS
+  Fallback documented: NO
+  All variance components >= 0: PASS
+  ICC_slope in [0, 1]: PASS
+  Ratio_matched < 824x: FAIL
+
+Step 04 complete - PowerLaw confidence LMM fitted

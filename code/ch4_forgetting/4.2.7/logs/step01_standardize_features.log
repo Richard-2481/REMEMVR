@@ -1,0 +1,58 @@
+============================================================
+RQ 5.2.7 Step 01: Standardize Clustering Features
+============================================================
+
+Loading: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step00_random_effects_from_rq526.csv
+Loaded 100 rows
+
+Raw variable statistics (before standardization):
+  Total_Intercept_What:
+    Mean: 0.0000
+    SD:   0.4962
+    Range: [-1.5312, 1.1302]
+  Total_Intercept_Where:
+    Mean: -0.0000
+    SD:   0.5679
+    Range: [-1.6214, 1.3155]
+  Total_Slope_What:
+    Mean: -0.0000
+    SD:   0.0156
+    Range: [-0.0381, 0.0374]
+  Total_Slope_Where:
+    Mean: -0.0000
+    SD:   0.0202
+    Range: [-0.0442, 0.0433]
+
+Standardizing to z-scores...
+
+Z-scored variable statistics (after standardization):
+  Total_Intercept_What_z:
+    Mean: 0.000000 (expected: ~0)
+    SD:   1.000000 (expected: ~1)
+    Range: [-3.086, 2.278]
+    Outlier (unusual): UID=A065, z=-3.086
+  Total_Intercept_Where_z:
+    Mean: -0.000000 (expected: ~0)
+    SD:   1.000000 (expected: ~1)
+    Range: [-2.855, 2.316]
+  Total_Slope_What_z:
+    Mean: -0.000000 (expected: ~0)
+    SD:   1.000000 (expected: ~1)
+    Range: [-2.446, 2.396]
+  Total_Slope_Where_z:
+    Mean: 0.000000 (expected: ~0)
+    SD:   1.000000 (expected: ~1)
+    Range: [-2.185, 2.141]
+
+Validation - PASS: All means within [-0.01, 0.01]
+Validation - PASS: All SDs within [0.95, 1.05]
+Standardized 4 variables to z-scores
+
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step01_standardized_features.csv
+  - Rows: 100
+  - Columns: ['UID', 'Total_Intercept_What_z', 'Total_Intercept_Where_z', 'Total_Slope_What_z', 'Total_Slope_Where_z']
+Saved: /home/etai/projects/REMEMVR/results/ch5/5.2.7/data/step01_standardization_summary.txt
+
+============================================================
+Step 01 COMPLETE: Features standardized successfully
+============================================================

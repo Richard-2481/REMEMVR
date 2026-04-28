@@ -15,9 +15,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-# =============================================================================
 # Education mapping: Australian categories → Stricker years
-# =============================================================================
 EDUCATION_MAP = {
     0: 9,   # Year 9 or lower
     1: 10,  # Year 10
@@ -30,12 +28,9 @@ EDUCATION_MAP = {
     8: 18,  # Master's Degree
     9: 20,  # Doctoral Degree
 }
-
-# =============================================================================
 # Stricker Table A2: Raw score → Scaled score (primary variables)
 # Format: SS: (Trials1-5_ranges, 30min_ranges, SumTrials_ranges, RecPC_ranges)
 # We only need Trials 1-5 Total and 30-Min Recall for now
-# =============================================================================
 
 def raw_to_ss_trials15(raw):
     """Stricker Table A2: Trials 1-5 Total raw → scaled score."""
@@ -130,9 +125,7 @@ def raw_to_ss_trial1(raw):
     return np.nan
 
 
-# =============================================================================
 # Stricker T-score formulas
-# =============================================================================
 
 def tscore_trials15(ss, age, male, educ):
     """Fully adjusted T-score for Trials 1-5 Total."""
@@ -195,9 +188,7 @@ def tscore_to_percentile(t):
     return stats.norm.cdf((t - 50) / 10) * 100
 
 
-# =============================================================================
 # Murphy et al. (2023) RPM Set I percentile mapping
-# =============================================================================
 
 def rpm_percentile(score, age):
     """Map RPM Set I score to approximate percentile using Murphy Table 1b."""
@@ -238,9 +229,7 @@ def rpm_percentile(score, age):
     return (bands[-1][0] + 100) / 2
 
 
-# =============================================================================
 # Benedict et al. (1996) BVMT-R age-group norms
-# =============================================================================
 
 # Table 1: M, SD by age group for each measure
 BVMT_NORMS = {
@@ -275,9 +264,7 @@ def bvmt_percentile(score, age, measure_idx):
     return stats.norm.cdf(z) * 100
 
 
-# =============================================================================
 # Main computation
-# =============================================================================
 
 def main():
     df = pd.read_csv('data/dfData.csv')
@@ -347,10 +334,7 @@ def main():
         lambda r: bvmt_percentile(r['bvmt_delayed'], r['age'], 1), axis=1)
     demo['pct_bvmt_pctret'] = demo.apply(
         lambda r: bvmt_percentile(r['bvmt_pctret'], r['age'], 2), axis=1)
-
-    # =================================================================
     # Summary output
-    # =================================================================
     print("=" * 70)
     print("NORMATIVE PERCENTILE COMPUTATIONS")
     print("=" * 70)

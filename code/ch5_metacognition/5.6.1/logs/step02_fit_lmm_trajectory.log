@@ -1,0 +1,167 @@
+Step 02: Fit LMM for HCE Trajectory
+Loading input data...
+step01_hce_rates.csv (400 rows, 6 cols)
+Using columns: ['UID', 'TEST', 'TSVR', 'HCE_rate']
+Observations: 400 (Expected: 400 = 100 participants × 4 tests)
+HCE_rate range: [0.0000, 0.2778]
+TSVR range: [1.00, 246.24] hours
+Fitting LMM: HCE_rate ~ TSVR + (TSVR | UID)...
+Formula components:
+Fixed effects: Intercept + TSVR (population-level trajectory)
+Random effects: (TSVR | UID) (individual intercepts and slopes)
+Groups: UID (participant-level clustering)
+Method: REML=True (variance estimation)
+Preparing theta_scores (without tsvr) and tsvr_data (with tsvr)...
+theta_scores columns: ['UID', 'Test', 'composite_ID', 'theta', 'n_HCE', 'n_total']
+theta_scores shape: (400, 6)
+tsvr_data columns: ['UID', 'Test', 'tsvr', 'composite_ID']
+tsvr_data shape: (400, 4)
+Example composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+
+============================================================
+LMM WITH TSVR TIME VARIABLE (Decision D070)
+============================================================
+
+[1/5] Parsing composite_IDs...
+  Theta scores: 400 rows
+  TSVR data: 400 rows
+
+[2/5] Merging theta scores with TSVR data...
+  ✓ All 400 rows have TSVR data
+
+[3/5] Converting TSVR hours to days...
+  TSVR range: 1.0h - 246.2h
+  Days range: 0.04 - 10.26 days
+
+[4/5] Preparing long-format data for LMM...
+  LMM data shape: (400, 5)
+  Unique UIDs: 100
+  Unique Domains: 1 (['Memory'])
+
+[5/5] Fitting Linear Mixed Model...
+  Formula: Theta ~ Days
+  Random effects: ~Days
+  Grouping: UID
+
+============================================================
+LMM FIT COMPLETE
+============================================================
+Log-Likelihood: 728.55
+AIC: nan
+BIC: nan
+
+LMM fitting complete
+Convergence status: True
+Number of observations: 400
+Number of groups: 100
+Saving model summary...
+step02_hce_lmm.txt (1009 bytes)
+Fixed Effects:
+Intercept: 0.049828
+Days: -0.003005
+Group Var: 1.500225
+Group x Days Cov: -0.082009
+Days Var: 0.011708
+Random Effects Variances:
+Group (UID) Var: 0.001352
+Group x TSVR Var: 0.000011
+Running validate_lmm_convergence...
+Converged: True
+Message: LMM converged successfully
+Additional checks:
+Random effects variance > 0: True
+All fixed effects finite: True
+Observations >= 100: True (n=400)
+Residuals normal (KS p > 0.001): True (p=0.0018)
+PASS: All validation checks passed
+Step 02 complete
+Step 02: Fit LMM for HCE Trajectory
+Loading input data...
+step01_hce_rates.csv (400 rows, 6 cols)
+Using columns: ['UID', 'TEST', 'TSVR', 'HCE_rate']
+Observations: 400 (Expected: 400 = 100 participants × 4 tests)
+HCE_rate range: [0.0000, 0.2778]
+TSVR range: [1.00, 246.24] hours
+Fitting LMM: HCE_rate ~ TSVR + (TSVR | UID)...
+Formula components:
+Fixed effects: Intercept + TSVR (population-level trajectory)
+Random effects: (TSVR | UID) (individual intercepts and slopes)
+Groups: UID (participant-level clustering)
+Method: REML=True (variance estimation)
+Preparing theta_scores (without tsvr) and tsvr_data (with tsvr)...
+theta_scores columns: ['UID', 'Test', 'composite_ID', 'theta', 'n_HCE', 'n_total']
+theta_scores shape: (400, 6)
+tsvr_data columns: ['UID', 'Test', 'tsvr', 'composite_ID']
+tsvr_data shape: (400, 4)
+Example composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+LMM fitting complete
+Convergence status: True
+Number of observations: 400
+Number of groups: 100
+Saving model summary...
+step02_hce_lmm.txt (1009 bytes)
+Fixed Effects:
+Intercept: 0.049828
+Days: -0.003005
+Group Var: 1.500225
+Group x Days Cov: -0.082009
+Days Var: 0.011708
+Random Effects Variances:
+Group (UID) Var: 0.001352
+Group x TSVR Var: 0.000011
+Running validate_lmm_convergence...
+Converged: True
+Message: LMM converged successfully
+Additional checks:
+Random effects variance > 0: True
+All fixed effects finite: True
+Observations >= 100: True (n=400)
+Residuals normal (KS p > 0.001): True (p=0.0018)
+PASS: All validation checks passed
+Step 02 complete
+Step 02: Fit LMM for HCE Trajectory
+Loading input data...
+step01_hce_rates.csv (400 rows, 6 cols)
+Using columns: ['UID', 'TEST', 'TSVR', 'HCE_rate']
+Observations: 400 (Expected: 400 = 100 participants × 4 tests)
+HCE_rate range: [0.0000, 0.2778]
+TSVR range: [1.00, 246.24] hours
+Fitting LMM: HCE_rate ~ TSVR + (TSVR | UID)...
+Formula components:
+Fixed effects: Intercept + TSVR (population-level trajectory)
+Random effects: (TSVR | UID) (individual intercepts and slopes)
+Groups: UID (participant-level clustering)
+Method: REML=True (variance estimation)
+Preparing theta_scores (without tsvr) and tsvr_data (with tsvr)...
+theta_scores columns: ['UID', 'Test', 'composite_ID', 'theta', 'n_HCE', 'n_total']
+theta_scores shape: (400, 6)
+tsvr_data columns: ['UID', 'Test', 'tsvr', 'composite_ID']
+tsvr_data shape: (400, 4)
+Example composite_IDs: ['A010_T1', 'A010_T2', 'A010_T3']
+LMM fitting complete
+Convergence status: True
+Number of observations: 400
+Number of groups: 100
+Saving model summary...
+step02_hce_lmm.txt (1009 bytes)
+Fixed Effects:
+Intercept: 0.049828
+Days: -0.003005
+Group Var: 1.500225
+Group x Days Cov: -0.082009
+Days Var: 0.011708
+Random Effects Variances:
+Group (UID) Var: 0.001352
+Group x TSVR Var: 0.000011
+Running validate_lmm_convergence...
+Converged: True
+Message: LMM converged successfully
+Additional checks:
+Random effects variance > 0: True
+All fixed effects finite: True
+Observations >= 100: True (n=400)
+Residuals normal (KS p > 0.001): True (p=0.0018)
+PASS: All validation checks passed
+Step 02 complete

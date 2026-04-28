@@ -20,9 +20,7 @@ from scipy import stats
 from scipy.stats import pearsonr, spearmanr
 import warnings
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = RQ_DIR / "data"
@@ -124,9 +122,7 @@ def partial_correlation(x: np.ndarray, y: np.ndarray, z: np.ndarray) -> tuple:
     return r_partial, p_value, df
 
 
-# =============================================================================
-# STEP 01: Compute Within-Person Confidence Variability
-# =============================================================================
+# Compute Within-Person Confidence Variability
 
 def step01_compute_sd_confidence():
     """Compute SD of confidence ratings per participant per test."""
@@ -201,9 +197,7 @@ def step01_compute_sd_confidence():
     return sd_conf
 
 
-# =============================================================================
-# STEP 02: Compute Within-Person Accuracy Variability
-# =============================================================================
+# Compute Within-Person Accuracy Variability
 
 def step02_compute_sd_accuracy():
     """Compute SD of accuracy responses per participant per test."""
@@ -276,9 +270,7 @@ def step02_compute_sd_accuracy():
     return sd_acc
 
 
-# =============================================================================
-# STEP 03: Correlate Confidence Variability vs Accuracy Variability
-# =============================================================================
+# Correlate Confidence Variability vs Accuracy Variability
 
 def step03_correlate_variability(sd_conf: pd.DataFrame, sd_acc: pd.DataFrame):
     """Compute correlation with dual p-values per Decision D068."""
@@ -424,9 +416,7 @@ def step03_correlate_variability(sd_conf: pd.DataFrame, sd_acc: pd.DataFrame):
     return merged, person_level, correlation_results
 
 
-# =============================================================================
-# STEP 04: Prepare Scatterplot Data
-# =============================================================================
+# Prepare Scatterplot Data
 
 def step04_prepare_scatterplot_data(person_level: pd.DataFrame):
     """Create plot source data for scatterplot with regression line."""
@@ -473,9 +463,7 @@ def step04_prepare_scatterplot_data(person_level: pd.DataFrame):
     return scatter_data, regression_line
 
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all steps."""

@@ -36,7 +36,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "convergence_investigation.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -48,11 +47,8 @@ if __name__ == "__main__":
         log("="*80)
         log("Testing random intercepts-only vs intercepts+slopes")
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Data
-        # =====================================================================
-        log("[LOAD] Loading standardized scores and TSVR mapping...")
+        # Load Data
+        log("Loading standardized scores and TSVR mapping...")
 
         standardized_scores_path = RQ_DIR / "data" / "step06_standardized_scores.csv"
         df_scores = pd.read_csv(standardized_scores_path, encoding='utf-8')
@@ -73,12 +69,9 @@ if __name__ == "__main__":
         # Create Time variable
         df_merged['Time'] = df_merged['TSVR_hours'] / 24.0
 
-        log(f"[LOADED] {len(df_merged)} observations, Time range: {df_merged['Time'].min():.2f}-{df_merged['Time'].max():.2f} days")
+        log(f"{len(df_merged)} observations, Time range: {df_merged['Time'].min():.2f}-{df_merged['Time'].max():.2f} days")
         log("")
-
-        # =====================================================================
-        # STEP 2: Define Models to Test
-        # =====================================================================
+        # Define Models to Test
         models = [
             {'name': 'Source_IRT',              'location': 'source',      'outcome': 'irt_z'},
             {'name': 'Source_Full_CTT',         'location': 'source',      'outcome': 'ctt_full_z'},
@@ -87,10 +80,7 @@ if __name__ == "__main__":
             {'name': 'Destination_Full_CTT',    'location': 'destination', 'outcome': 'ctt_full_z'},
             {'name': 'Destination_Purified_CTT','location': 'destination', 'outcome': 'ctt_purified_z'},
         ]
-
-        # =====================================================================
-        # STEP 3: Fit Both Specifications
-        # =====================================================================
+        # Fit Both Specifications
         results = []
 
         for model_spec in models:
@@ -99,7 +89,7 @@ if __name__ == "__main__":
             outcome = model_spec['outcome']
 
             log("-" * 80)
-            log(f"[MODEL] {model_name}")
+            log(f"{model_name}")
             log("-" * 80)
 
             # Filter data
@@ -259,7 +249,7 @@ if __name__ == "__main__":
                 recommendation = "Cannot use LMM (convergence failures)"
                 delta_aic = np.nan
 
-            log(f"\n  [RECOMMENDATION] {recommendation}")
+            log(f"\n  {recommendation}")
             log("")
 
             # Store results
@@ -283,10 +273,7 @@ if __name__ == "__main__":
                 'delta_aic': delta_aic,
                 'recommendation': recommendation
             })
-
-        # =====================================================================
-        # STEP 4: Summary Report
-        # =====================================================================
+        # Summary Report
         log("\n" + "="*80)
         log("SUMMARY REPORT")
         log("="*80)
@@ -327,19 +314,16 @@ if __name__ == "__main__":
             log(f"\nMODELS THAT FAILED IN BOTH SPECIFICATIONS:")
             for _, row in still_failed.iterrows():
                 log(f"  - {row['model']}: Data structure issue (insufficient timepoints?)")
-
-        # =====================================================================
-        # STEP 5: Save Results
-        # =====================================================================
+        # Save Results
         output_path = RQ_DIR / "data" / "convergence_investigation.csv"
         df_results.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"\n[SAVED] {output_path.name}")
+        log(f"\n{output_path.name}")
 
-        log("\n[SUCCESS] Convergence investigation complete")
+        log("\nConvergence investigation complete")
         log("="*80)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

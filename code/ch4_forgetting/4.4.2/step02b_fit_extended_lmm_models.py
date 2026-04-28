@@ -32,61 +32,47 @@ CONTEXT:
 - RQ 5.4.1 (ROOT): Extended comparison found Recip+Log competitive (15 models ΔAIC<2)
 - This step: Test if Recip+Log also best for consolidation question
 
-Author: Claude Code
 Date: 2025-12-09
 RQ: ch5/5.4.2
 Step: 02b
 """
 
-# =============================================================================
 # IMPORTS
-# =============================================================================
 
 import sys
 from pathlib import Path
 import pandas as pd
 
-# Add project root to path for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Import kitchen_sink model selection tool
 from tools.model_selection import compare_lmm_models_kitchen_sink
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch5/5.4.2
 LOG_FILE = RQ_DIR / "logs" / "step02b_kitchen_sink.log"
 DATA_DIR = RQ_DIR / "data"
 
-# =============================================================================
 # LOGGING
-# =============================================================================
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
 
-# =============================================================================
 # MAIN ANALYSIS
-# =============================================================================
 
 if __name__ == "__main__":
     try:
         log("=" * 80)
-        log("[START] Step 02b: Kitchen Sink LMM Model Comparison")
+        log("Step 02b: Kitchen Sink LMM Model Comparison")
         log("  Replacing piecewise analysis with continuous-time trajectory models")
         log("=" * 80)
+        # Load LMM Input Data
 
-        # =====================================================================
-        # STEP 1: Load LMM Input Data
-        # =====================================================================
-
-        log("[LOAD] Loading LMM input data...")
+        log("Loading LMM input data...")
         input_path = DATA_DIR / "step01_lmm_input_piecewise.csv"
 
         if not input_path.exists():
@@ -119,13 +105,10 @@ if __name__ == "__main__":
         log("")
         log("  NOTE: Using continuous TSVR_hours, ignoring piecewise Segment/Days_within")
         log("        Rationale: Continuous models fit MUCH better (ΔAIC = -91)")
-
-        # =====================================================================
-        # STEP 2: Run Kitchen Sink Model Comparison
-        # =====================================================================
+        # Run Kitchen Sink Model Comparison
 
         log("")
-        log("[ANALYSIS] Running kitchen sink model comparison...")
+        log("Running kitchen sink model comparison...")
         log("  Model suite: 70+ time transformations")
         log("  Outcome: theta (IRT ability estimates)")
         log("  Time variable: TSVR_hours (continuous)")
@@ -158,14 +141,11 @@ if __name__ == "__main__":
             log_file=LOG_FILE,
         )
 
-        log("[DONE] Kitchen sink comparison complete")
-
-        # =====================================================================
-        # STEP 3: Extract and Report Results
-        # =====================================================================
+        log("Kitchen sink comparison complete")
+        # Extract and Report Results
 
         log("")
-        log("[RESULTS] Model comparison summary:")
+        log("Model comparison summary:")
         log("=" * 80)
 
         comparison = results['comparison']
@@ -221,14 +201,11 @@ if __name__ == "__main__":
             log(f"   Substantial evidence for best model (weight={best_weight*100:.1f}%)")
             log("   Model averaging optional but recommended for robustness")
             log("")
-
-        # =====================================================================
-        # STEP 4: Save Model Comparison and Summary
-        # =====================================================================
+        # Save Model Comparison and Summary
 
         # Rename output to step02b prefix
         comparison.to_csv(DATA_DIR / "step02b_model_comparison.csv", index=False)
-        log(f"[SAVE] Model comparison saved: step02b_model_comparison.csv")
+        log(f"Model comparison saved: step02b_model_comparison.csv")
 
         summary_path = DATA_DIR / "step02b_best_model_summary.txt"
         with open(summary_path, 'w', encoding='utf-8') as f:
@@ -265,14 +242,14 @@ if __name__ == "__main__":
                 f.write(f"   Best weight: {best_weight*100:.1f}% (30-70% range)\n")
                 f.write("   Action: Model averaging optional\n")
 
-        log(f"[SAVE] Summary written to: {summary_path.name}")
+        log(f"Summary written to: {summary_path.name}")
 
         log("=" * 80)
-        log("[SUCCESS] Step 02b complete")
+        log("Step 02b complete")
         log("=" * 80)
 
     except Exception as e:
-        log("[ERROR] Step 02b failed")
+        log("Step 02b failed")
         log(f"  {type(e).__name__}: {str(e)}")
         import traceback
         log(traceback.format_exc())

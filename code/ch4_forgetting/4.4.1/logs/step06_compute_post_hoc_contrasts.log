@@ -1,0 +1,58 @@
+Step 06: Post-Hoc Contrasts and Effect Sizes
+RQ Directory: /home/etai/projects/REMEMVR/results/ch5/rq5
+
+Loading fitted LMM model...
+step05_lmm_fitted_model.pkl
+  AIC: 2652.57
+  N observations: 1200
+
+Computing pairwise slope contrasts...
+  Family-wise alpha: 0.05
+  Number of comparisons: 3
+  Bonferroni-corrected alpha: 0.0167
+
+  Available parameters:
+    Intercept: 0.6541
+    C(congruence, Treatment('common'))[T.congruent]: -0.0596
+    C(congruence, Treatment('common'))[T.incongruent]: 0.0792
+    TSVR_log: -0.1935
+    TSVR_log:C(congruence, Treatment('common'))[T.congruent]: 0.0186
+    TSVR_log:C(congruence, Treatment('common'))[T.incongruent]: -0.0207
+    Group Var: 1.1548
+    Group x TSVR_log Cov: -0.1776
+    TSVR_log Var: 0.0529
+
+  Computing contrast: congruent vs common
+    beta=0.0186, se=0.0273, z=0.6833, p_unc=0.4944
+
+  Computing contrast: incongruent vs common
+    beta=-0.0207, se=0.0273, z=-0.7594, p_unc=0.4476
+
+  Computing contrast: congruent vs incongruent
+    beta=0.0393, se=0.0273, z=1.4427, p_unc=0.1491
+
+Computed 3 contrasts
+
+Computing effect sizes...
+Computed effect sizes for 5 effects
+
+  Effect Size Summary:
+    small: 1
+    negligible: 4
+
+Saving output files...
+step06_post_hoc_contrasts.csv (3 rows)
+step06_effect_sizes.csv (5 rows)
+
+Validating results...
+All 3 contrasts computed
+Dual p-values present
+Bonferroni alpha correct: 0.0167
+All p-values in [0, 1]
+Effect sizes computed: 5 effects
+
+  Contrast Results Summary:
+    Significant (uncorrected alpha=0.05): 0/3
+    Significant (corrected alpha=0.0167): 0/3
+
+Step 06 complete (Post-Hoc Contrasts)

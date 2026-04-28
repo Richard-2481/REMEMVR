@@ -1,0 +1,50 @@
+Step 03: Compute Purified CTT Scores
+Loading input data...
+step00_raw_scores.csv (400 rows, 215 cols)
+step01_item_mapping.csv (105 rows)
+Item retention by domain:
+  What:  19 retained, 10 removed
+  Where: 45 retained, 5 removed
+  When:  5 retained, 21 removed
+Overall retention: 69/105 items (65.7%)
+Computing purified CTT scores per domain...
+Domain 'what': 19 retained items
+CTT_purified_what: mean=0.716, SD=0.165, range=[0.105, 1.000]
+Domain 'where': 45 retained items
+CTT_purified_where: mean=0.615, SD=0.136, range=[0.300, 0.939]
+Domain 'when': 5 retained items
+CTT_purified_when: mean=0.382, SD=0.252, range=[0.000, 1.000]
+Purified CTT computation complete
+Saving purified CTT scores...
+step03_ctt_purified_scores.csv (400 rows, 6 cols)
+Output columns: ['composite_ID', 'UID', 'TEST', 'CTT_purified_what', 'CTT_purified_where', 'CTT_purified_when']
+Running validate_numeric_range for purified CTT scores...
+CTT_purified_what: PASS - CTT_purified_what: All values within range [0.0, 1.0] (n=400).
+CTT_purified_where: PASS - CTT_purified_where: All values within range [0.0, 1.0] (n=400).
+CTT_purified_when: PASS - CTT_purified_when: All values within range [0.0, 1.0] (n=400).
+All purified CTT scores validated successfully
+Step 03 complete
+Step 03: Compute Purified CTT Scores
+Loading input data...
+step00_raw_scores.csv (400 rows, 215 cols)
+step01_item_mapping.csv (79 rows)
+Item retention by domain (What/Where only - When excluded):
+  What:  19 retained, 10 removed
+  Where: 45 retained, 5 removed
+  When:  EXCLUDED (floor effect in RQ 5.2.1)
+Overall retention: 64/79 items (81.0%)
+Computing purified CTT scores per domain...
+When domain EXCLUDED per RQ 5.2.1 floor effect
+Domain 'what': 19 retained items
+CTT_purified_what: mean=0.716, SD=0.165, range=[0.105, 1.000]
+Domain 'where': 45 retained items
+CTT_purified_where: mean=0.615, SD=0.136, range=[0.300, 0.939]
+Purified CTT computation complete
+Saving purified CTT scores...
+step03_ctt_purified_scores.csv (400 rows, 5 cols)
+Output columns: ['composite_ID', 'UID', 'TEST', 'CTT_purified_what', 'CTT_purified_where']
+Running validate_numeric_range for purified CTT scores...
+CTT_purified_what: PASS - CTT_purified_what: All values within range [0.0, 1.0] (n=400).
+CTT_purified_where: PASS - CTT_purified_where: All values within range [0.0, 1.0] (n=400).
+All purified CTT scores validated successfully
+Step 03 complete

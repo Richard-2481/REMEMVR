@@ -1,0 +1,3 @@
+variable,shapiro_W,shapiro_p,normal
+Day0_confidence,0.9891364678213812,0.5953352083814999,True
+forgetting_slope,0.9755100643721326,0.05915404432223008,True

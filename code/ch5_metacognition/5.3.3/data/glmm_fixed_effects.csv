@@ -1,0 +1,13 @@
+term,estimate,se,z_value,p_value,ci_lower,ci_upper
+Intercept,0.837,0.006,146.696,0.0,0.826,0.848
+"C(Domain, Treatment('What'))[T.When]",-0.401,0.008,-49.651,0.0,-0.416,-0.385
+"C(Domain, Treatment('What'))[T.Where]",-0.198,0.007,-28.292,0.0,-0.211,-0.184
+TSVR_hours,-0.001,0.0,-21.325,0.0,-0.001,-0.001
+"TSVR_hours:C(Domain, Treatment('What'))[T.When]",0.0,0.0,1.035,0.301,-0.0,0.0
+"TSVR_hours:C(Domain, Treatment('What'))[T.Where]",-0.0,0.0,-3.345,0.001,-0.0,-0.0
+Age_c,-0.002,0.0,-5.09,0.0,-0.003,-0.001
+"Age_c:C(Domain, Treatment('What'))[T.When]",0.001,0.001,2.113,0.035,0.0,0.002
+"Age_c:C(Domain, Treatment('What'))[T.Where]",-0.0,0.0,-0.843,0.399,-0.001,0.001
+TSVR_hours:Age_c,-0.0,0.0,-0.592,0.554,-0.0,0.0
+"TSVR_hours:Age_c:C(Domain, Treatment('What'))[T.When]",0.0,0.0,2.458,0.014,0.0,0.0
+"TSVR_hours:Age_c:C(Domain, Treatment('What'))[T.Where]",0.0,0.0,2.728,0.006,0.0,0.0

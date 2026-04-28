@@ -259,9 +259,7 @@ def compare_correlations_dependent(
     }
 
 
-# =============================================================================
 # IRT-CTT Convergence Tools (RQ 5.2.4, 5.3.5, 5.4.4)
-# =============================================================================
 
 def compute_ctt_mean_scores_by_factor(
     df_wide: pd.DataFrame,

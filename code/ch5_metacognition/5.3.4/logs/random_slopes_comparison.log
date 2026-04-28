@@ -1,0 +1,106 @@
+================================================================================
+RQ 6.3.4 - Random Slopes Comparison (MANDATORY validation CHECK)
+Started: 2025-12-30T06:16:44.244174
+================================================================================
+
+Loading data:
+  Theta: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step03_theta_confidence.csv
+  TSVR: /home/etai/projects/REMEMVR/results/ch6/6.3.1/data/step00_tsvr_mapping.csv
+  ✓ N=400 observations, 100 participants
+
+================================================================================
+DOMAIN: What
+================================================================================
+
+N observations: 400
+
+[MODEL A] Intercepts-only: (1 | UID)
+  AIC: 379.2035
+  Converged: True
+  var_intercept: 0.214672
+  var_residual: 0.080026
+
+[MODEL B] Intercepts+Slopes: (TSVR_hours | UID)
+  AIC: 1166.7067
+  Converged: False
+  var_intercept: 0.239054
+  var_slope: 0.056810188
+  var_residual: 0.039553
+
+Intercepts-only AIC: 379.2035
+  Intercepts+slopes AIC: 1166.7067
+  ΔAIC (Int - Slopes): -787.5033
+
+  ✓ DECISION: INTERCEPTS BETTER (slopes overfit)
+  ✓ RATIONALE: ΔAIC=-787.50<-2: Intercepts-only preferred
+  ✓ SLOPE VARIANCE: Substantial slope variance (0.0568) - individual differences CONFIRMED
+
+================================================================================
+DOMAIN: Where
+================================================================================
+
+N observations: 400
+
+[MODEL A] Intercepts-only: (1 | UID)
+  AIC: 369.8766
+  Converged: True
+  var_intercept: 0.217598
+  var_residual: 0.077329
+
+[MODEL B] Intercepts+Slopes: (TSVR_hours | UID)
+  AIC: 1191.4754
+  Converged: False
+  var_intercept: 0.267623
+  var_slope: 0.059538910
+  var_residual: 0.041444
+
+Intercepts-only AIC: 369.8766
+  Intercepts+slopes AIC: 1191.4754
+  ΔAIC (Int - Slopes): -821.5988
+
+  ✓ DECISION: INTERCEPTS BETTER (slopes overfit)
+  ✓ RATIONALE: ΔAIC=-821.60<-2: Intercepts-only preferred
+  ✓ SLOPE VARIANCE: Substantial slope variance (0.0595) - individual differences CONFIRMED
+
+================================================================================
+DOMAIN: When
+================================================================================
+
+N observations: 400
+
+[MODEL A] Intercepts-only: (1 | UID)
+  AIC: 554.1580
+  Converged: True
+  var_intercept: 0.206963
+  var_residual: 0.141841
+
+[MODEL B] Intercepts+Slopes: (TSVR_hours | UID)
+  AIC: 549.5900
+  Converged: True
+  var_intercept: 0.156185
+  var_slope: 0.000001646
+  var_residual: 0.134427
+
+Intercepts-only AIC: 554.1580
+  Intercepts+slopes AIC: 549.5900
+  ΔAIC (Int - Slopes): 4.5680
+
+  ✓ DECISION: SLOPES IMPROVE (use slopes model)
+  ✓ RATIONALE: ΔAIC=4.57>2: Slopes model justified by data
+  ✓ SLOPE VARIANCE: Negligible slope variance (0.000002) - homogeneous slopes
+
+================================================================================
+Random Slopes Comparison Complete
+================================================================================
+
+Saved: /home/etai/projects/REMEMVR/results/ch6/6.3.4/data/random_slopes_comparison.csv
+
+[KEY FINDINGS]:
+  What: INTERCEPTS BETTER (slopes overfit)
+    → ΔAIC=-787.50<-2: Intercepts-only preferred
+  Where: INTERCEPTS BETTER (slopes overfit)
+    → ΔAIC=-821.60<-2: Intercepts-only preferred
+  When: SLOPES IMPROVE (use slopes model)
+    → ΔAIC=4.57>2: Slopes model justified by data
+
+Completed: 2025-12-30T06:16:45.925875

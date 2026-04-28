@@ -40,7 +40,6 @@ RQ_DIR = Path(__file__).resolve().parents[1]
 LOG_FILE = RQ_DIR / "logs" / "power_analysis_source_correlation.log"
 
 def log(msg):
-    """Write to both log file and console."""
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(f"{msg}\n")
     print(msg)
@@ -110,11 +109,8 @@ if __name__ == "__main__":
         log("POWER ANALYSIS - SOURCE CORRELATION NULL FINDING")
         log("="*80)
         log("")
-
-        # =====================================================================
-        # STEP 1: Load Correlation Results
-        # =====================================================================
-        log("[LOAD] Loading correlation analysis results...")
+        # Load Correlation Results
+        log("Loading correlation analysis results...")
 
         corr_path = RQ_DIR / "data" / "step05_correlation_analysis.csv"
         df_corr = pd.read_csv(corr_path, encoding='utf-8')
@@ -131,7 +127,7 @@ if __name__ == "__main__":
         p_bonferroni = source_data['p_bonferroni']
         n = int(source_data['n'])
 
-        log(f"[DATA] Source Memory Correlation Results:")
+        log(f"Source Memory Correlation Results:")
         log(f"  Full CTT r = {r_full:.3f}")
         log(f"  Purified CTT r = {r_purified:.3f}")
         log(f"  Δr = {delta_r:+.3f}")
@@ -141,10 +137,7 @@ if __name__ == "__main__":
         log(f"  p_bonferroni = {p_bonferroni:.3f}")
         log(f"  N = {n}")
         log("")
-
-        # =====================================================================
-        # STEP 2: Post-Hoc Power for Observed Effect
-        # =====================================================================
+        # Post-Hoc Power for Observed Effect
         log("[ANALYSIS 1] Post-hoc power for OBSERVED effect (Δr = {:.3f})".format(delta_r))
         log("-" * 80)
 
@@ -177,10 +170,7 @@ if __name__ == "__main__":
             log(f"     Null finding likely represents true absence of effect.")
 
         log("")
-
-        # =====================================================================
-        # STEP 3: Sample Size for 0.80 Power (Observed Effect)
-        # =====================================================================
+        # Sample Size for 0.80 Power (Observed Effect)
         log("[ANALYSIS 2] Sample size required for 0.80 power (Δr = {:.3f})".format(delta_r))
         log("-" * 80)
 
@@ -211,10 +201,7 @@ if __name__ == "__main__":
             log(f"     Current study underpowered; larger sample could detect effect.")
 
         log("")
-
-        # =====================================================================
-        # STEP 4: Power for Meaningful Effect (Δr = 0.05)
-        # =====================================================================
+        # Power for Meaningful Effect (Δr = 0.05)
         log("[ANALYSIS 3] Power for MEANINGFUL effect (Δr = 0.05, small effect)")
         log("-" * 80)
 
@@ -247,10 +234,7 @@ if __name__ == "__main__":
             log(f"     Cannot rule out meaningful effect with current sample size.")
 
         log("")
-
-        # =====================================================================
-        # STEP 5: Ceiling Effect Analysis
-        # =====================================================================
+        # Ceiling Effect Analysis
         log("[ANALYSIS 4] CEILING EFFECT ANALYSIS")
         log("-" * 80)
 
@@ -280,10 +264,7 @@ if __name__ == "__main__":
             log(f"     Headroom = {headroom:.3f} allows substantial improvement.")
 
         log("")
-
-        # =====================================================================
-        # STEP 6: Comparison to Destination Memory
-        # =====================================================================
+        # Comparison to Destination Memory
         log("[ANALYSIS 5] COMPARISON TO DESTINATION MEMORY")
         log("-" * 80)
 
@@ -318,10 +299,7 @@ if __name__ == "__main__":
         log(f"    purification benefit, explaining partial paradox.")
 
         log("")
-
-        # =====================================================================
-        # STEP 7: Summary & Recommendations
-        # =====================================================================
+        # Summary & Recommendations
         log("="*80)
         log("SUMMARY & RECOMMENDATIONS")
         log("="*80)
@@ -355,10 +333,7 @@ if __name__ == "__main__":
         log(f"     Destination memory shows significant effect (Δr = {delta_r_dest:.3f})")
         log(f"     due to lower baseline (r_full = {r_full_dest:.3f}, more headroom).'")
         log("")
-
-        # =====================================================================
-        # STEP 8: Save Results
-        # =====================================================================
+        # Save Results
         results = pd.DataFrame([{
             'location_type': 'source',
             'r_full': r_full,
@@ -379,14 +354,14 @@ if __name__ == "__main__":
 
         output_path = RQ_DIR / "data" / "power_analysis_source_correlation.csv"
         results.to_csv(output_path, index=False, encoding='utf-8')
-        log(f"[SAVED] {output_path.name}")
+        log(f"{output_path.name}")
         log("")
 
-        log("[SUCCESS] Power analysis complete")
+        log("Power analysis complete")
         log("="*80)
 
     except Exception as e:
-        log(f"\n[ERROR] {str(e)}")
+        log(f"\n{str(e)}")
         import traceback
         with open(LOG_FILE, 'a', encoding='utf-8') as f:
             traceback.print_exc(file=f)

@@ -1,0 +1,7 @@
+measurement,AIC_log,delta_AIC_log,AIC_recip_log,BIC_recip_log,logLik_recip_log,delta_AIC_recip_log,paradox_log,paradox_recip_log,paradox_robust
+Full CTT,1780.056230823452,124.99837885323724,,,,,False,False,False
+IRT theta,1655.0578519702149,0.0,,,,,False,False,False
+Purified CTT,1812.262889251052,157.20503728083713,,,,,False,False,False
+z_full_ctt,,,1789.1544460019195,1826.6313398232628,-886.5772230009597,105.83482231467406,False,False,False
+z_irt_theta,,,1683.3196236872454,1720.7965175085887,-833.6598118436227,0.0,False,False,False
+z_purified_ctt,,,,,,,False,False,False

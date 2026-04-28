@@ -64,20 +64,20 @@ content = content.replace("re_formula='~log_TSVR'  # CORRECTED: log_TSVR not TSV
                          "re_formula='~recip_TSVR'  # UPDATED: recip_TSVR for two-process forgetting (per 5.4.1 ROOT)")
 content = content.replace('random_structure = "random intercepts + slopes for log_TSVR (per 5.4.1)"',
                          'random_structure = "random intercepts + slopes for recip_TSVR (per 5.4.1 ROOT)"')
-content = content.replace('[SUCCESS] Model fitted with random slopes on log_TSVR',
-                         '[SUCCESS] Model fitted with random slopes on recip_TSVR (two-process forgetting)')
+content = content.replace('Model fitted with random slopes on log_TSVR',
+                         'Model fitted with random slopes on recip_TSVR (two-process forgetting)')
 
 # Replace log comments
 content = re.sub(
     r'\[INFO\] Random effects:.*?\n',
-    '[INFO] Random effects: ~recip_TSVR | UID (per RQ 5.4.1 ROOT Recip+Log model)\\n[INFO] Two-process forgetting: rapid 1/(t+1) + slow log(t+1)\\n',
+    'Random effects: ~recip_TSVR | UID (per RQ 5.4.1 ROOT Recip+Log model)\\nTwo-process forgetting: rapid 1/(t+1) + slow log(t+1)\\n',
     content
 )
 
 # Replace the fixed effects logging section
 content = re.sub(
     r'\[INFO\] Model formula \(fixed effects\):.*?\+\s+Age_c:Incongruent:log_TSVR',
-    '[INFO] Model formula (fixed effects - Recip+Log two-process):\n  theta ~ 1 + recip_TSVR + log_TSVR + Age_c + Congruent + Incongruent\n        + Age_c:recip_TSVR + Age_c:log_TSVR\n        + Congruent:recip_TSVR + Congruent:log_TSVR\n        + Incongruent:recip_TSVR + Incongruent:log_TSVR\n        + Age_c:Congruent + Age_c:Incongruent\n        + Age_c:Congruent:recip_TSVR + Age_c:Congruent:log_TSVR\n        + Age_c:Incongruent:recip_TSVR + Age_c:Incongruent:log_TSVR',
+    'Model formula (fixed effects - Recip+Log two-process):\n  theta ~ 1 + recip_TSVR + log_TSVR + Age_c + Congruent + Incongruent\n        + Age_c:recip_TSVR + Age_c:log_TSVR\n        + Congruent:recip_TSVR + Congruent:log_TSVR\n        + Incongruent:recip_TSVR + Incongruent:log_TSVR\n        + Age_c:Congruent + Age_c:Incongruent\n        + Age_c:Congruent:recip_TSVR + Age_c:Congruent:log_TSVR\n        + Age_c:Incongruent:recip_TSVR + Age_c:Incongruent:log_TSVR',
     content,
     flags=re.DOTALL
 )

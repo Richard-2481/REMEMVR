@@ -28,7 +28,6 @@ METHODOLOGY:
 - Compute ICCs following Hoffman & Stawski (2009)
 - Compare ICC_slope across domains and to Ch5 5.2.6 accuracy ICC
 
-Author: Claude Code
 Date: 2025-12-11
 RQ: ch6/6.3.4
 """
@@ -78,7 +77,7 @@ def step01_fit_domain_lmms():
     theta_path = PROJECT_ROOT / "results" / "ch6" / "6.3.1" / "data" / "step03_theta_confidence.csv"
     tsvr_path = PROJECT_ROOT / "results" / "ch6" / "6.3.1" / "data" / "step00_tsvr_mapping.csv"
 
-    log(f"\n[LOAD] Loading data from RQ 6.3.1:")
+    log(f"\nLoading data from RQ 6.3.1:")
     log(f"  Theta file: {theta_path}")
     log(f"  TSVR file: {tsvr_path}")
 
@@ -110,7 +109,7 @@ def step01_fit_domain_lmms():
 
         # Check column exists
         if theta_col not in df.columns:
-            log(f"  [ERROR] Column {theta_col} not found!")
+            log(f"  Column {theta_col} not found!")
             raise ValueError(f"Column {theta_col} not found in data")
 
         # Prepare domain-specific data (long format for this domain)
@@ -120,7 +119,7 @@ def step01_fit_domain_lmms():
         # Check for missing values
         n_missing = domain_df['theta_confidence'].isna().sum()
         if n_missing > 0:
-            log(f"  [WARNING] {n_missing} missing theta values - dropping")
+            log(f"  {n_missing} missing theta values - dropping")
             domain_df = domain_df.dropna(subset=['theta_confidence'])
 
         log(f"  N observations: {len(domain_df)}")
@@ -163,7 +162,7 @@ def step01_fit_domain_lmms():
 
         # Validate variance components
         if var_intercept < 0 or var_slope < 0 or var_residual < 0:
-            log(f"  [WARNING] Negative variance component detected - boundary estimate")
+            log(f"  Negative variance component detected - boundary estimate")
 
         # Store model and variance components
         models[domain] = result
@@ -181,7 +180,7 @@ def step01_fit_domain_lmms():
     var_df.to_csv(output_path, index=False)
     log(f"\n  ✓ Saved: {output_path}")
 
-    log(f"\n[VALIDATION]:")
+    log(f"\n:")
     log(f"  ✓ All 3 domain LMMs fitted successfully")
     log(f"  ✓ Variance components extracted for all domains")
 
@@ -228,7 +227,7 @@ def step03_compute_icc_estimates(var_df, df):
 
     # Get time parameters
     max_time = df['TSVR_hours'].max()  # Day 6 ~144-150 hours
-    log(f"\n[PARAMETERS]:")
+    log(f"\n:")
     log(f"  Max TSVR_hours (Day 6): {max_time:.2f}")
 
     icc_list = []
@@ -287,10 +286,10 @@ def step03_compute_icc_estimates(var_df, df):
     # Validate ICC bounds
     for col in ['ICC_intercept', 'ICC_slope_simple']:
         if (icc_df[col] < 0).any():
-            log(f"[ERROR] Negative {col} detected - computation error")
+            log(f"Negative {col} detected - computation error")
             raise ValueError(f"Negative {col} detected")
         if (icc_df[col] > 1).any():
-            log(f"[WARNING] {col} > 1.0 detected - boundary estimate")
+            log(f"{col} > 1.0 detected - boundary estimate")
 
     # Save
     output_path = DATA_DIR / "step03_icc_estimates.csv"
@@ -337,7 +336,7 @@ def step04_extract_random_effects(models, df):
 
     re_df = pd.DataFrame(re_list)
 
-    log(f"\n[VALIDATION]:")
+    log(f"\n:")
     log(f"  ✓ Total rows: {len(re_df)} (expected 300)")
     log(f"  ✓ N unique UIDs: {re_df['UID'].nunique()}")
     log(f"  ✓ N unique domains: {re_df['domain'].nunique()}")
@@ -345,12 +344,12 @@ def step04_extract_random_effects(models, df):
     # Check for complete factorial design
     expected_rows = 100 * 3  # 100 participants × 3 domains
     if len(re_df) != expected_rows:
-        log(f"  [WARNING] Expected {expected_rows} rows, got {len(re_df)}")
+        log(f"  Expected {expected_rows} rows, got {len(re_df)}")
 
     # Check for duplicates
     n_duplicates = re_df.duplicated(subset=['UID', 'domain']).sum()
     if n_duplicates > 0:
-        log(f"  [ERROR] {n_duplicates} duplicate UID×domain combinations")
+        log(f"  {n_duplicates} duplicate UID×domain combinations")
         raise ValueError("Duplicate UID×domain combinations detected")
 
     # Save
@@ -446,7 +445,7 @@ def step06_compare_to_ch5(icc_df):
     ch5_path = PROJECT_ROOT / "results" / "ch5" / "5.2.6" / "data" / "step03_icc_estimates.csv"
 
     if ch5_path.exists():
-        log(f"\n[LOAD] Found Ch5 5.2.6 ICC estimates: {ch5_path}")
+        log(f"\nFound Ch5 5.2.6 ICC estimates: {ch5_path}")
         ch5_df = pd.read_csv(ch5_path)
         log(f"  ✓ Loaded {len(ch5_df)} rows")
 
@@ -505,7 +504,7 @@ def step06_compare_to_ch5(icc_df):
             log(f"    → {row['interpretation']}")
 
     else:
-        log(f"\n[WARNING] Ch5 5.2.6 file not found: {ch5_path}")
+        log(f"\nCh5 5.2.6 file not found: {ch5_path}")
         log("  Creating placeholder comparison with 'pending' status")
 
         comparison_list = []
@@ -554,7 +553,7 @@ if __name__ == "__main__":
         ch5_comparison = step06_compare_to_ch5(icc_df)
 
         log("\n" + "=" * 80)
-        log("[SUCCESS] RQ 6.3.4 Complete")
+        log("RQ 6.3.4 Complete")
         log("=" * 80)
 
         log(f"\n[SUMMARY - ICC by Domain]:")
@@ -574,7 +573,7 @@ if __name__ == "__main__":
         log(f"\n  Completed: {datetime.now().isoformat()}")
 
     except Exception as e:
-        log(f"\n[ERROR] {e}")
+        log(f"\n{e}")
         import traceback
         log(traceback.format_exc())
         raise

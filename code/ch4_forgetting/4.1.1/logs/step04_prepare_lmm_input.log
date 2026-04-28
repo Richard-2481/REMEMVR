@@ -1,0 +1,138 @@
+Step 4: Prepare LMM Input Data
+Loading Pass 2 theta scores...
+step03_theta_scores.csv (400 rows, 3 cols)
+  Columns: ['UID', 'test', 'Theta_All']
+Loading TSVR time variable...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+  TSVR_hours range: [1.0, 246.2]
+Merging theta scores with TSVR data...
+'composite_ID'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/rq7/code/step04_prepare_lmm_input.py", line 175, in <module>
+    lmm_input = theta_data.merge(
+                ^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 10859, in merge
+    return merge(
+           ^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/reshape/merge.py", line 1311, in _get_merge_keys
+    left_keys.append(left._get_label_or_level_values(lk))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1914, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'composite_ID'
+Step 4: Prepare LMM Input Data
+Loading Pass 2 theta scores...
+step03_theta_scores.csv (400 rows, 3 cols)
+  Columns: ['UID', 'test', 'Theta_All']
+Loading TSVR time variable...
+step00_tsvr_mapping.csv (400 rows, 4 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+  TSVR_hours range: [1.0, 246.2]
+Merging theta scores with TSVR data...
+Successfully merged 400 rows
+  Merge success rate: 100% (400 / 400)
+composite_ID column from UID and test
+Renaming columns...
+  Renamed: Theta_All -> Theta, created placeholder SE=0.3
+Creating time transformations...
+  Days range: [0.04, 10.26]
+  Days_squared range: [0.00, 105.27]
+  log_Days_plus1 range: [0.041, 2.421]
+All time transformations valid (no NaN, no Inf)
+Saving LMM input dataset to step04_lmm_input.csv...
+step04_lmm_input.csv (400 rows, 9 cols)
+  Columns: ['composite_ID', 'UID', 'test', 'Theta', 'SE', 'TSVR_hours', 'Days', 'Days_squared', 'log_Days_plus1']
+Validating LMM input dataset...
+Row count correct (400 observations)
+Column count correct (9 columns)
+No NaN values in dataset
+All 100 UIDs appear exactly 4 times (T1-T4)
+TSVR_hours outside expected range:
+  Min: 1.0 (expected >=0)
+  Max: 246.2 (expected <=168)
+Days outside expected range [0, 7]
+converged: False
+message: Model did not converge
+final_loss: None
+epochs_run: None
+warning: Results may be unreliable
+Step 4 complete
+Step 04: Prepare LMM Input Data
+================================================================================
+Loading theta scores from IRT Pass 2...
+  ✓ Loaded step03_theta_scores.csv
+    Rows: 400
+    Columns: ['UID', 'test', 'Theta_All']
+
+Step 04 Failed: Missing required columns in theta data: ['composite_ID', 'SE_All']
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.1/code/step04_prepare_lmm_input.py", line 90, in <module>
+    raise ValueError(f"Missing required columns in theta data: {missing}")
+ValueError: Missing required columns in theta data: ['composite_ID', 'SE_All']
+
+Step 04: Prepare LMM Input Data
+================================================================================
+Loading theta scores from IRT Pass 2...
+  ✓ Loaded step03_theta_scores.csv
+    Rows: 400
+    Columns: ['UID', 'test', 'Theta_All']
+  ✓ Created composite_ID from UID and test
+  ✓ Renamed: Theta_All → theta
+  ✓ Added SE=0.3 (fixed standard error)
+Loading TSVR time variable...
+
+Step 04 Failed: TSVR mapping missing: results/ch5/5.2.1/data/step00_tsvr_mapping.csv
+This is DERIVED data from RQ 5.2.1 Step 00
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.1.1/code/step04_prepare_lmm_input.py", line 114, in <module>
+    raise FileNotFoundError(
+FileNotFoundError: TSVR mapping missing: results/ch5/5.2.1/data/step00_tsvr_mapping.csv
+This is DERIVED data from RQ 5.2.1 Step 00
+
+Step 04: Prepare LMM Input Data
+================================================================================
+Loading theta scores from IRT Pass 2...
+  ✓ Loaded step03_theta_scores.csv
+    Rows: 400
+    Columns: ['UID', 'test', 'Theta_All']
+  ✓ Created composite_ID from UID and test
+  ✓ Renamed: Theta_All → theta
+  ✓ Added SE=0.3 (fixed standard error)
+Loading TSVR time variable...
+  ✓ Loaded step00_tsvr_mapping.csv
+    Rows: 400
+    Columns: ['composite_ID', 'UID', 'test', 'TSVR_hours']
+    TSVR unique values: 295
+    TSVR range: [1.00, 246.24] hours
+Merging theta scores with TSVR on composite_ID...
+  ✓ Merge successful: 400 rows
+  ✓ UIDs: 100 unique
+  ✓ Tests: 4 unique
+Checking output data quality...
+  ✓ Row count: 400 (expected 400)
+  ✓ Participants: 100 (expected 100)
+  ✓ Each participant has 4 tests (balanced design)
+  ✓ No missing values
+  ✓ Theta range: [-2.516, 2.728]
+  ✓ SE range: [0.300, 0.300]
+Saving LMM input data...
+  ✓ Saved to step04_lmm_input.csv
+    Rows: 400
+    Columns: 6
+    Column names: ['composite_ID', 'UID', 'test', 'theta', 'SE', 'TSVR_hours']
+    File size: 13,890 bytes
+================================================================================
+Step 04 Complete
+  Output: step04_lmm_input.csv (400 rows × 6 cols)
+  Time variable: TSVR_hours (continuous, 295 unique values)
+  Outcome: theta (IRT ability estimates)
+  Ready for: Step 05 (kitchen_sink model selection)
+================================================================================

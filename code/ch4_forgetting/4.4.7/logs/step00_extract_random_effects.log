@@ -1,0 +1,49 @@
+Step 00: Extract and Reshape Random Effects
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.6/data/step04_random_effects.csv
+300 rows, 4 columns
+Columns: ['UID', 'congruence', 'Total_Intercept', 'Total_Slope']
+Unique UIDs: 100, Unique congruence levels: 3
+Pivoting from long to wide format
+Actual columns after pivot: ['UID', 'Common_Total_Intercept', 'Congruent_Total_Intercept', 'Incongruent_Total_Intercept', 'Common_Total_Slope', 'Congruent_Total_Slope', 'Incongruent_Total_Slope']
+100 rows, 7 columns
+Final columns: ['UID', 'Common_Intercept', 'Common_Slope', 'Congruent_Intercept', 'Congruent_Slope', 'Incongruent_Intercept', 'Incongruent_Slope']
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step00_random_effects_from_rq546.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step00_random_effects_from_rq546.csv
+Validating output structure
+'type' object is not iterable
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.7/code/step00_extract_random_effects.py", line 101, in <module>
+    validation_result = validate_dataframe_structure(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/tools/validation.py", line 2838, in validate_dataframe_structure
+    if not any(actual_type == exp_type or np.issubdtype(actual_type, exp_type) for exp_type in expected_types):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'type' object is not iterable
+Step 00: Extract and Reshape Random Effects
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.6/data/step04_random_effects.csv
+300 rows, 4 columns
+Columns: ['UID', 'congruence', 'Total_Intercept', 'Total_Slope']
+Unique UIDs: 100, Unique congruence levels: 3
+Pivoting from long to wide format
+Actual columns after pivot: ['UID', 'Common_Total_Intercept', 'Congruent_Total_Intercept', 'Incongruent_Total_Intercept', 'Common_Total_Slope', 'Congruent_Total_Slope', 'Incongruent_Total_Slope']
+100 rows, 7 columns
+Final columns: ['UID', 'Common_Intercept', 'Common_Slope', 'Congruent_Intercept', 'Congruent_Slope', 'Incongruent_Intercept', 'Incongruent_Slope']
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step00_random_effects_from_rq546.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step00_random_effects_from_rq546.csv
+Validating output structure
+[VALIDATION PASS] DataFrame structure valid: 100 rows, 7 columns (required: 7).
+Step 00 complete
+Step 00: Extract and Reshape Random Effects
+Reading /home/etai/projects/REMEMVR/results/ch5/5.4.6/data/step02_averaged_random_effects.csv
+300 rows, 4 columns
+Columns: ['UID', 'congruence', 'intercept_avg', 'slope_avg']
+Unique UIDs: 100, Unique congruence levels: 3
+Pivoting from long to wide format
+Actual columns after pivot: ['UID', 'Common_Intercept', 'Congruent_Intercept', 'Incongruent_Intercept', 'Common_Slope', 'Congruent_Slope', 'Incongruent_Slope']
+100 rows, 7 columns
+Final columns: ['UID', 'Common_Intercept', 'Common_Slope', 'Congruent_Intercept', 'Congruent_Slope', 'Incongruent_Intercept', 'Incongruent_Slope']
+Writing to /home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step00_random_effects_from_rq546.csv
+/home/etai/projects/REMEMVR/results/ch5/5.4.7/data/step00_random_effects_from_rq546.csv
+Validating output structure
+[VALIDATION PASS] DataFrame structure valid: 100 rows, 7 columns (required: 7).
+Step 00 complete

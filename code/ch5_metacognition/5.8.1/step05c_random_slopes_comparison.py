@@ -1,5 +1,5 @@
 """
-Step 5c: Random Slopes Comparison (MANDATORY for PLATINUM)
+Step 5c: Random Slopes Comparison (MANDATORY for validation)
 
 Purpose: Test random intercepts-only vs random intercepts+slopes models
          to determine if individual differences in decline rates exist.
@@ -7,7 +7,6 @@ Purpose: Test random intercepts-only vs random intercepts+slopes models
 CRITICAL: Per improvement_taxonomy.md Section 4.4, we CANNOT claim homogeneous
          effects without testing for heterogeneity. This is NON-NEGOTIABLE.
 
-Author: rq_platinum agent
 Date: 2025-12-27
 """
 
@@ -93,7 +92,7 @@ def compare_models(result_intercepts, result_slopes):
     if result_slopes is None:
         print("\n⚠️  Cannot compare - slopes model failed to converge")
         print("\n🔴 OUTCOME: Random slopes attempted but convergence failed")
-        print("✅ PLATINUM REQUIREMENT MET: Slopes tested, documented as unstable with 4 timepoints")
+        print("✅ VALIDATION REQUIREMENT MET: Slopes tested, documented as unstable with 4 timepoints")
         return
 
     aic_intercepts = result_intercepts.aic
@@ -134,14 +133,14 @@ def compare_models(result_intercepts, result_slopes):
                 print("   → RECOMMENDATION: Use slopes model (more conservative)")
                 print("   → DOCUMENT: Modest individual differences in decline rates")
 
-    print(f"\n✅ PLATINUM REQUIREMENT MET: Random slopes tested and compared")
+    print(f"\n✅ VALIDATION REQUIREMENT MET: Random slopes tested and compared")
 
 def main():
     """Execute random slopes comparison."""
     print("="*80)
     print("RANDOM SLOPES COMPARISON - RQ 6.8.1")
     print("="*80)
-    print("\n🔴 CRITICAL: This analysis is MANDATORY for PLATINUM status")
+    print("\n🔴 CRITICAL: This analysis is MANDATORY for validation status")
     print("Per improvement_taxonomy.md Section 4.4:")
     print("  'Cannot claim homogeneous effects without testing for heterogeneity'")
     print("\nLoading data...")
@@ -206,7 +205,7 @@ def main():
             f.write("OUTCOME: Random slopes attempted but unstable\n")
             f.write("RECOMMENDATION: Keep intercepts-only model\n")
 
-        f.write("\n✅ PLATINUM REQUIREMENT MET: Random slopes tested\n")
+        f.write("\n✅ VALIDATION REQUIREMENT MET: Random slopes tested\n")
 
     print(f"\n✅ Saved: {output_path}")
     print("\n" + "="*80)

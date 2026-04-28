@@ -1,0 +1,158 @@
+================================================================================
+STEP 05: Bootstrap Stability Assessment
+================================================================================
+
+Loading standardized features and cluster assignments...
+Standardized features: (100, 7)
+Original cluster assignments: (100, 2)
+Optimal K: 3
+Feature matrix: (100, 6)
+Original labels: (100,)
+
+Running 100 bootstrap iterations...
+            Subsample size: 80 participants (80%)
+[ITERATION  10] Jaccard: 0.7592
+[ITERATION  20] Jaccard: 0.7473
+[ITERATION  30] Jaccard: 0.6314
+[ITERATION  40] Jaccard: 0.6751
+[ITERATION  50] Jaccard: 0.8598
+[ITERATION  60] Jaccard: 0.7490
+[ITERATION  70] Jaccard: 0.8273
+[ITERATION  80] Jaccard: 0.7247
+[ITERATION  90] Jaccard: 0.7533
+[ITERATION 100] Jaccard: 0.6473
+Completed 100 bootstrap iterations
+
+Computing bootstrap statistics...
+Mean Jaccard: 0.7142
+SD Jaccard:   0.1039
+95% CI:       [0.5504, 0.9488]
+Range:        [0.5208, 1.0000]
+
+Target: Mean Jaccard >= 0.75
+            Status: WARNING (below threshold)
+
+Saving bootstrap results...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step05_bootstrap_stability.csv
+        100 bootstrap iterations recorded
+
+Generating stability summary...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step05_stability_summary.txt
+
+Validating bootstrap stability...
+
+validate_bootstrap_stability() got an unexpected keyword argument 'jaccard_values'
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.8/code/step05_bootstrap_stability.py", line 297, in <module>
+    validation_result = validate_bootstrap_stability(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bootstrap_stability() got an unexpected keyword argument 'jaccard_values'
+================================================================================
+STEP 05: Bootstrap Stability Assessment
+================================================================================
+
+Loading standardized features and cluster assignments...
+Standardized features: (100, 7)
+Original cluster assignments: (100, 2)
+Optimal K: 3
+Feature matrix: (100, 6)
+Original labels: (100,)
+
+Running 100 bootstrap iterations...
+            Subsample size: 80 participants (80%)
+[ITERATION  10] Jaccard: 0.7592
+[ITERATION  20] Jaccard: 0.7473
+[ITERATION  30] Jaccard: 0.6314
+[ITERATION  40] Jaccard: 0.6751
+[ITERATION  50] Jaccard: 0.8598
+[ITERATION  60] Jaccard: 0.7490
+[ITERATION  70] Jaccard: 0.8273
+[ITERATION  80] Jaccard: 0.7247
+[ITERATION  90] Jaccard: 0.7533
+[ITERATION 100] Jaccard: 0.6473
+Completed 100 bootstrap iterations
+
+Computing bootstrap statistics...
+Mean Jaccard: 0.7142
+SD Jaccard:   0.1039
+95% CI:       [0.5504, 0.9488]
+Range:        [0.5208, 1.0000]
+
+Target: Mean Jaccard >= 0.75
+            Status: WARNING (below threshold)
+
+Saving bootstrap results...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step05_bootstrap_stability.csv
+        100 bootstrap iterations recorded
+
+Generating stability summary...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step05_stability_summary.txt
+
+Validating bootstrap stability...
+Validation error: Unstable clustering: mean Jaccard=0.714 (<0.75)
+
+Unstable clustering: mean Jaccard=0.714 (<0.75)
+
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.3.8/code/step05_bootstrap_stability.py", line 308, in <module>
+    raise ValueError(validation_result['message'])
+ValueError: Unstable clustering: mean Jaccard=0.714 (<0.75)
+================================================================================
+STEP 05: Bootstrap Stability Assessment
+================================================================================
+
+Loading standardized features and cluster assignments...
+Standardized features: (100, 7)
+Original cluster assignments: (100, 2)
+Optimal K: 3
+Feature matrix: (100, 6)
+Original labels: (100,)
+
+Running 100 bootstrap iterations...
+            Subsample size: 80 participants (80%)
+[ITERATION  10] Jaccard: 0.7592
+[ITERATION  20] Jaccard: 0.7473
+[ITERATION  30] Jaccard: 0.6314
+[ITERATION  40] Jaccard: 0.6751
+[ITERATION  50] Jaccard: 0.8598
+[ITERATION  60] Jaccard: 0.7490
+[ITERATION  70] Jaccard: 0.8273
+[ITERATION  80] Jaccard: 0.7247
+[ITERATION  90] Jaccard: 0.7533
+[ITERATION 100] Jaccard: 0.6473
+Completed 100 bootstrap iterations
+
+Computing bootstrap statistics...
+Mean Jaccard: 0.7142
+SD Jaccard:   0.1039
+95% CI:       [0.5504, 0.9488]
+Range:        [0.5208, 1.0000]
+
+Target: Mean Jaccard >= 0.75
+            Status: WARNING (below threshold)
+
+Saving bootstrap results...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step05_bootstrap_stability.csv
+        100 bootstrap iterations recorded
+
+Generating stability summary...
+/home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step05_stability_summary.txt
+
+Validating bootstrap stability...
+Bootstrap stability computed: Mean Jaccard = 0.7142
+       95% CI: [0.5504, 0.9488]
+       Status: WARNING (below threshold 0.75)
+
+Bootstrap stability below threshold - tentative clustering
+          This is NOT an error - clustering is exploratory
+
+================================================================================
+Step 05 complete
+================================================================================
+
+Outputs:
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step05_bootstrap_stability.csv
+  - /home/etai/projects/REMEMVR/results/ch5/5.3.8/data/step05_stability_summary.txt
+
+Next: Step 06 (Characterize cluster profiles)

@@ -1,0 +1,55 @@
+Step 04: Extract Random Effects
+Loading fitted LMM models...
+'NoneType' object has no attribute 'f_locals'
+Full error details:
+Traceback (most recent call last):
+  File "/home/etai/projects/REMEMVR/results/ch5/5.4.6/code/step04_extract_random_effects.py", line 67, in <module>
+    models[congruence] = pickle.load(f)
+                         ^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/statsmodels/base/data.py", line 112, in __setstate__
+    _, design = dmatrices(d['formula'], data, eval_env=depth,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/highlevel.py", line 316, in dmatrices
+    eval_env = EvalEnvironment.capture(eval_env, reference=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/etai/projects/REMEMVR/.venv/lib/python3.12/site-packages/patsy/eval.py", line 242, in capture
+    [frame.f_locals, frame.f_globals],
+     ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'f_locals'
+Step 04: Extract Random Effects
+Loading fitted LMM models...
+step02_fitted_model_common.pkl
+step02_fitted_model_congruent.pkl
+step02_fitted_model_incongruent.pkl
+
+Extracting random effects from each model...
+
+Extracting random effects for Common...
+100 participants for Common
+  Intercept: mean=-0.0000, std=0.3293
+  Slope: mean=-0.0000, std=0.0002
+
+Extracting random effects for Congruent...
+100 participants for Congruent
+  Intercept: mean=-0.0000, std=0.3565
+  Slope: mean=0.0000, std=0.0012
+
+Extracting random effects for Incongruent...
+100 participants for Incongruent
+  Intercept: mean=-0.0000, std=0.3184
+  Slope: mean=-0.0000, std=0.0005
+
+Combining random effects across congruence levels...
+300 total rows (100 unique participants x 3 congruence levels)
+Saving random effects...
+step04_random_effects.csv (300 rows)
+Creating descriptive statistics report...
+step04_random_slopes_descriptives.txt
+
+Validating random effects structure...
+Random effects structure validated
+Each UID appears exactly 3 times (once per congruence)
+No NaN values in random effects
+All 3 congruence levels present
+
+Step 04 complete - Random effects extracted and validated

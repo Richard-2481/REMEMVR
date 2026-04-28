@@ -1,0 +1,3 @@
+comparison,z_statistic,p_value_one_tailed,r_ravlt,r_rememvr,r_correlation,n_participants,interpretation,r_pctret
+Age_RAVLT_vs_REMEMVR,-0.12016012068670194,0.45217815395347916,-0.2089856427428832,-0.1932892300063886,0.3179536646237314,100,No significant difference,
+Age_PctRet_vs_REMEMVR,0.03975254380367651,0.5158547945713938,,-0.1932892300063886,0.3652830928916,100,Non-significant difference,-0.1881688615612287

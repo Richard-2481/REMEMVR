@@ -25,9 +25,7 @@ from scipy import stats
 import statsmodels.formula.api as smf
 import warnings
 
-# =============================================================================
 # CONFIGURATION
-# =============================================================================
 
 RQ_DIR = Path(__file__).resolve().parents[1]  # results/ch6/6.8.3
 PROJECT_ROOT = RQ_DIR.parents[2]  # REMEMVR project root
@@ -46,9 +44,7 @@ def log(msg):
         f.flush()
     print(msg, flush=True)
 
-# =============================================================================
-# STEP 00: Extract Confidence Theta Data and Reshape to Long Format
-# =============================================================================
+# Extract Confidence Theta Data and Reshape to Long Format
 
 def step00_extract_and_reshape():
     """
@@ -95,9 +91,7 @@ def step00_extract_and_reshape():
     log(f"\nData extraction complete: {len(df)} rows created")
     return df
 
-# =============================================================================
-# STEP 01: Fit Source Confidence LMM with Random Slopes
-# =============================================================================
+# Fit Source Confidence LMM with Random Slopes
 
 def step01_fit_source_lmm(df_all):
     """
@@ -170,9 +164,7 @@ def step01_fit_source_lmm(df_all):
 
     return result, vc_df
 
-# =============================================================================
-# STEP 02: Fit Destination Confidence LMM with Random Slopes
-# =============================================================================
+# Fit Destination Confidence LMM with Random Slopes
 
 def step02_fit_destination_lmm(df_all):
     """
@@ -237,9 +229,7 @@ def step02_fit_destination_lmm(df_all):
 
     return result, vc_df
 
-# =============================================================================
-# STEP 03: Extract Random Effects for Both Location Types
-# =============================================================================
+# Extract Random Effects for Both Location Types
 
 def step03_extract_random_effects(source_result, dest_result):
     """
@@ -297,9 +287,7 @@ def step03_extract_random_effects(source_result, dest_result):
     log(f"\nRandom effects extraction complete: {len(df_re)} rows created")
     return df_re
 
-# =============================================================================
-# STEP 04: Compute Intercept-Slope Correlations Per Location Type
-# =============================================================================
+# Compute Intercept-Slope Correlations Per Location Type
 
 def step04_compute_correlations(source_vc, dest_vc):
     """
@@ -376,9 +364,7 @@ def step04_compute_correlations(source_vc, dest_vc):
     log(f"\nIntercept-slope correlations computed for 2 location types")
     return df_corr
 
-# =============================================================================
-# STEP 05: Compare to Ch5 5.5.6 Accuracy Correlations
-# =============================================================================
+# Compare to Ch5 5.5.6 Accuracy Correlations
 
 def step05_compare_to_ch5(confidence_corr):
     """
@@ -507,9 +493,7 @@ def step05_compare_to_ch5(confidence_corr):
     log(f"\nCh5 5.5.6 comparison complete: 2 location types compared")
     return df_compare, pattern_replicates
 
-# =============================================================================
 # MAIN EXECUTION
-# =============================================================================
 
 def main():
     """Execute all steps."""

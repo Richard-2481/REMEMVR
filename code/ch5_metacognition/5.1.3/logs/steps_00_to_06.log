@@ -1,0 +1,252 @@
+RQ 6.1.3: Age Effects on Confidence
+======================================================================
+Analysis execution log
+
+Starting RQ 6.1.3 analysis pipeline...
+Output directory: /home/etai/projects/REMEMVR/results/ch6/6.1.3
+======================================================================
+STEP 0: Load Theta Confidence and Merge with TSVR and Age
+======================================================================
+
+Loading theta from: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step03_theta_confidence.csv
+Theta loaded: 400 rows, columns: ['composite_ID', 'theta_All', 'se_All']
+
+Loading TSVR from: /home/etai/projects/REMEMVR/results/ch6/6.1.1/data/step00_tsvr_mapping.csv
+TSVR loaded: 400 rows
+
+Merged theta with TSVR: 400 rows
+
+Loading Age from: /home/etai/projects/REMEMVR/data/cache/dfData.csv
+Age data: 100 unique participants
+
+Merged with Age: 400 rows
+
+--- Step 0 Validation ---
+✓ Row count: 400 (expected 400)
+✓ Column count: 7 (expected 7)
+✓ No missing values
+✓ Theta range: [-2.99, 3.04] (expected within [-4, 4])
+✓ SE range: [0.0734, 0.0734]
+✓ TSVR range: [1.0, 246.2] hours
+✓ Age range: [20, 70] years
+✓ Unique UIDs: 100
+✓ No duplicate composite_IDs
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.1.3/data/step00_lmm_input_raw.csv
+Data loading complete: 400 rows x 7 columns
+
+======================================================================
+STEP 1: Center Age Variable
+======================================================================
+
+Age statistics:
+  Mean Age: 44.57 years
+  SD Age: 14.58 years
+  Range: [20, 70] years
+
+--- Step 1 Validation ---
+✓ Age_c mean: 0.000000 (expected ~0)
+✓ Age_c SD: 14.52 (matches original SD: False)
+✓ No missing Age_c values
+✓ Row count: 400
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.1.3/data/step01_lmm_input.csv
+Age centered: mean(Age_c) = 0.000000
+
+======================================================================
+STEP 2: Create Time Predictors from RQ 6.1.1 Functional Form
+======================================================================
+
+Functional form selected: Reciprocal (1/(TSVR+1))
+Rationale: Among best converged models in RQ 6.1.1 model comparison
+
+--- Step 2 Validation ---
+✓ Time_recip column created
+✓ Time_recip range: [0.0040, 0.5000]
+✓ Time_log range: [0.69, 5.51]
+✓ No missing time values
+✓ Row count: 400
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.1.3/data/step02_lmm_input_with_time.csv
+Time predictors created: Time, Time_recip, Time_log
+
+======================================================================
+STEP 3: Fit LMM with Age x Time Interaction
+======================================================================
+
+Model formula: theta_confidence ~ Time_log * Age_c
+Random effects: (1 + Time_log | UID) - random intercept and slope
+
+Model converged successfully
+
+Full summary saved: /home/etai/projects/REMEMVR/results/ch6/6.1.3/data/step03_lmm_summary.txt
+
+--- Fixed Effects ---
+  Intercept           : β =  0.9377, SE = 0.0897, z =  10.46, p = 0.0000 ***
+  Time_log            : β = -0.2699, SE = 0.0154, z = -17.50, p = 0.0000 ***
+  Age_c               : β = -0.0107, SE = 0.0062, z =  -1.73, p = 0.0837 
+  Time_log:Age_c      : β =  0.0002, SE = 0.0011, z =   0.19, p = 0.8486 
+
+--- Random Effects ---
+Random effects covariance matrix:
+            Group  Time_log
+Group     0.62511  -0.02157
+Time_log -0.02157   0.01104
+
+--- Model Fit ---
+Log-likelihood: -362.37
+AIC: 738.74
+BIC: 766.68
+
+--- Step 3 Validation ---
+✓ Model converged: True
+✓ All fixed effects finite
+✓ Age_c term present
+✓ Time_log:Age_c term present
+
+✓ Fixed effects saved: /home/etai/projects/REMEMVR/results/ch6/6.1.3/data/step03_lmm_fixed_effects.csv
+
+======================================================================
+STEP 4: Extract Age Effects with Dual P-Values (Decision D068)
+======================================================================
+
+Age-related terms extracted: 2 rows
+
+Bonferroni alpha = 0.0167 (0.05 / 3 comparisons)
+
+--- Age Effect Results ---
+
+Age_c:
+  Estimate: -0.0107
+  SE: 0.0062
+  z: -1.73
+  p_uncorrected: 0.0837 (sig @ 0.05: NO)
+  p_bonferroni: 0.0837 (sig @ 0.0167: NO)
+
+Time_log:Age_c:
+  Estimate: 0.0002
+  SE: 0.0011
+  z: 0.19
+  p_uncorrected: 0.8486 (sig @ 0.05: NO)
+  p_bonferroni: 0.8486 (sig @ 0.0167: NO)
+
+*** PRIMARY HYPOTHESIS TEST ***
+Age x Time interaction: NULL - Age-invariant confidence decline (parallels Ch5 accuracy findings)
+
+--- Step 4 Validation ---
+✓ Row count: 2
+✓ Both age-related terms present
+✓ p-values in valid range [0, 1]
+✓ Significance flags correct
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.1.3/data/step04_age_effects.csv
+Dual p-values created per Decision D068
+
+======================================================================
+STEP 5: Compute Effect Size at Day 6
+======================================================================
+
+Age distribution:
+  Mean: 44.6 years
+  SD: 14.6 years
+
+Comparison points:
+  Younger: Age = 30.0 years (Age_c = -14.6)
+  Older: Age = 59.1 years (Age_c = 14.6)
+  Time: Day 6, TSVR = 246.2 hours, Time_log = 5.51
+
+Coefficients:
+  Intercept: 0.9377
+  Time_log: -0.2699
+  Age_c: -0.0107
+  Time_log:Age_c: 0.000203
+
+Predictions at Day 6:
+  Younger (-1 SD): θ = -0.4100
+  Older (+1 SD): θ = -0.6889
+  Difference: -0.2789 theta units
+
+Interpretation: Small age effect at Day 6
+
+--- Step 5 Validation ---
+✓ Row count: 1
+✓ Theta predictions in valid range [-3, 3]
+✓ Difference reasonable: -0.2789
+✓ Age ordering correct: 30.0 < 59.1
+✓ TSVR positive: 246.2 hours
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.1.3/data/step05_effect_size_day6.csv
+Effect size computed at Day 6 (TSVR = 246.2 hours)
+
+======================================================================
+STEP 6: Prepare Age Tertile Comparison Data
+======================================================================
+
+Age tertile cutoffs:
+  33rd percentile: 36.7 years
+  67th percentile: 52.3 years
+
+Participants per tertile:
+  Low: N = 33
+  Medium: N = 34
+  High: N = 33
+
+Aggregated tertile data (12 rows):
+
+  Low tertile:
+    T1: θ = 0.900 ± 0.132 (N=33)
+    T2: θ = 0.349 ± 0.143 (N=33)
+    T3: θ = 0.108 ± 0.128 (N=33)
+    T4: θ = -0.250 ± 0.149 (N=33)
+
+  Medium tertile:
+    T1: θ = 0.686 ± 0.144 (N=34)
+    T2: θ = -0.005 ± 0.150 (N=34)
+    T3: θ = -0.466 ± 0.143 (N=34)
+    T4: θ = -0.730 ± 0.168 (N=34)
+
+  High tertile:
+    T1: θ = 0.542 ± 0.160 (N=33)
+    T2: θ = 0.033 ± 0.166 (N=33)
+    T3: θ = -0.277 ± 0.164 (N=33)
+    T4: θ = -0.499 ± 0.163 (N=33)
+
+--- Step 6 Validation ---
+✓ Row count: 12 (expected 12)
+✓ All tertiles present: Low, Medium, High
+✓ All tests present: T1, T2, T3, T4
+✓ CI ordering correct: CI_upper > CI_lower
+✓ mean_theta in valid range [-3, 3]
+✓ se_theta reasonable (0 to 1)
+✓ No duplicate combinations
+
+✓ Output saved: /home/etai/projects/REMEMVR/results/ch6/6.1.3/data/step06_age_tertile_data.csv
+Aggregated means: 12 rows (3 tertiles x 4 tests)
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+*** KEY FINDING: Age x Time Interaction ***
+  Estimate: 0.000203
+  p-value: 0.8486
+  Significant (Bonferroni): NO
+
+  CONCLUSION: NULL - Age does NOT moderate confidence decline rate
+  This PARALLELS Chapter 5 accuracy findings (age-invariant forgetting)
+  Validates VR ecological encoding framework for metacognitive monitoring
+
+*** EFFECT SIZE at Day 6 ***
+  Difference (Older - Younger): -0.2789 theta units
+  Interpretation: Small practical difference
+
+*** OUTPUT FILES CREATED ***
+  step00_lmm_input_raw.csv
+  step01_lmm_input.csv
+  step02_lmm_input_with_time.csv
+  step03_lmm_fixed_effects.csv
+  step04_age_effects.csv
+  step05_effect_size_day6.csv
+  step06_age_tertile_data.csv
+
+✅ RQ 6.1.3 analysis complete - all validations passed
